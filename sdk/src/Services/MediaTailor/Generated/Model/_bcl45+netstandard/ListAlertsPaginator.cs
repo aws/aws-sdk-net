@@ -45,7 +45,7 @@ namespace Amazon.MediaTailor.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<Alert> Items => 
-            new PaginatedResultKeyResponse<ListAlertsResponse, Alert>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListAlertsResponse, Alert>(this, (i) => i.Items ?? new List<Alert>());
 
         internal ListAlertsPaginator(IAmazonMediaTailor client, ListAlertsRequest request)
         {

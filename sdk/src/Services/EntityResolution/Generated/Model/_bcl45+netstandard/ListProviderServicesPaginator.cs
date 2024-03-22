@@ -45,7 +45,7 @@ namespace Amazon.EntityResolution.Model
         /// Enumerable containing all of the ProviderServiceSummaries
         /// </summary>
         public IPaginatedEnumerable<ProviderServiceSummary> ProviderServiceSummaries => 
-            new PaginatedResultKeyResponse<ListProviderServicesResponse, ProviderServiceSummary>(this, (i) => i.ProviderServiceSummaries);
+            new PaginatedResultKeyResponse<ListProviderServicesResponse, ProviderServiceSummary>(this, (i) => i.ProviderServiceSummaries ?? new List<ProviderServiceSummary>());
 
         internal ListProviderServicesPaginator(IAmazonEntityResolution client, ListProviderServicesRequest request)
         {

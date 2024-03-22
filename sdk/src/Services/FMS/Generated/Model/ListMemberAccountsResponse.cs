@@ -33,7 +33,7 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class ListMemberAccountsResponse : AmazonWebServiceResponse
     {
-        private List<string> _memberAccounts = new List<string>();
+        private List<string> _memberAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FMS.Model
         // Check to see if MemberAccounts property is set
         internal bool IsSetMemberAccounts()
         {
-            return this._memberAccounts != null && this._memberAccounts.Count > 0; 
+            return this._memberAccounts != null && (this._memberAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

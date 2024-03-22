@@ -33,7 +33,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class ListExportJobsResponse : AmazonWebServiceResponse
     {
-        private List<ExportJobSummary> _exportJobs = new List<ExportJobSummary>();
+        private List<ExportJobSummary> _exportJobs = AWSConfigs.InitializeCollections ? new List<ExportJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if ExportJobs property is set
         internal bool IsSetExportJobs()
         {
-            return this._exportJobs != null && this._exportJobs.Count > 0; 
+            return this._exportJobs != null && (this._exportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

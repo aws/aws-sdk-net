@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class VolumeStatusInfo
     {
-        private List<VolumeStatusDetails> _details = new List<VolumeStatusDetails>();
+        private List<VolumeStatusDetails> _details = AWSConfigs.InitializeCollections ? new List<VolumeStatusDetails>() : null;
         private VolumeStatusInfoStatus _status;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this._details != null && this._details.Count > 0; 
+            return this._details != null && (this._details.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

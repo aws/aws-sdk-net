@@ -34,7 +34,7 @@ namespace Amazon.WAF.Model
     public partial class ListXssMatchSetsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<XssMatchSetSummary> _xssMatchSets = new List<XssMatchSetSummary>();
+        private List<XssMatchSetSummary> _xssMatchSets = AWSConfigs.InitializeCollections ? new List<XssMatchSetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -74,7 +74,7 @@ namespace Amazon.WAF.Model
         // Check to see if XssMatchSets property is set
         internal bool IsSetXssMatchSets()
         {
-            return this._xssMatchSets != null && this._xssMatchSets.Count > 0; 
+            return this._xssMatchSets != null && (this._xssMatchSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

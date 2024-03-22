@@ -34,7 +34,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class CompleteMultipartReadSetUploadRequest : AmazonOmicsRequest
     {
-        private List<CompleteReadSetUploadPartListItem> _parts = new List<CompleteReadSetUploadPartListItem>();
+        private List<CompleteReadSetUploadPartListItem> _parts = AWSConfigs.InitializeCollections ? new List<CompleteReadSetUploadPartListItem>() : null;
         private string _sequenceStoreId;
         private string _uploadId;
 
@@ -54,7 +54,7 @@ namespace Amazon.Omics.Model
         // Check to see if Parts property is set
         internal bool IsSetParts()
         {
-            return this._parts != null && this._parts.Count > 0; 
+            return this._parts != null && (this._parts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

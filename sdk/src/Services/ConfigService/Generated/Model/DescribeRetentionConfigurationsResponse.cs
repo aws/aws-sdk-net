@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model
     public partial class DescribeRetentionConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RetentionConfiguration> _retentionConfigurations = new List<RetentionConfiguration>();
+        private List<RetentionConfiguration> _retentionConfigurations = AWSConfigs.InitializeCollections ? new List<RetentionConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if RetentionConfigurations property is set
         internal bool IsSetRetentionConfigurations()
         {
-            return this._retentionConfigurations != null && this._retentionConfigurations.Count > 0; 
+            return this._retentionConfigurations != null && (this._retentionConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

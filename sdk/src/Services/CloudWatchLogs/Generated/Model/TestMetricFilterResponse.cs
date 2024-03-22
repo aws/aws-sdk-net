@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class TestMetricFilterResponse : AmazonWebServiceResponse
     {
-        private List<MetricFilterMatchRecord> _matches = new List<MetricFilterMatchRecord>();
+        private List<MetricFilterMatchRecord> _matches = AWSConfigs.InitializeCollections ? new List<MetricFilterMatchRecord>() : null;
 
         /// <summary>
         /// Gets and sets the property Matches. 
@@ -50,7 +50,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Matches property is set
         internal bool IsSetMatches()
         {
-            return this._matches != null && this._matches.Count > 0; 
+            return this._matches != null && (this._matches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

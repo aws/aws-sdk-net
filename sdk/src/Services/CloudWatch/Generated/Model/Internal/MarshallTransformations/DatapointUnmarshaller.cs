@@ -63,6 +63,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ExtendedStatistics/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
+                        if (unmarshalledObject.ExtendedStatistics == null)
+                        {
+                            unmarshalledObject.ExtendedStatistics = new Dictionary<string, double>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ExtendedStatistics.Add(item);
                         continue;

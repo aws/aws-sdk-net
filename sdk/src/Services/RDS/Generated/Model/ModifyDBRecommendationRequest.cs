@@ -37,7 +37,7 @@ namespace Amazon.RDS.Model
     {
         private string _locale;
         private string _recommendationId;
-        private List<RecommendedActionUpdate> _recommendedActionUpdates = new List<RecommendedActionUpdate>();
+        private List<RecommendedActionUpdate> _recommendedActionUpdates = AWSConfigs.InitializeCollections ? new List<RecommendedActionUpdate>() : null;
         private string _status;
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.RDS.Model
         // Check to see if RecommendedActionUpdates property is set
         internal bool IsSetRecommendedActionUpdates()
         {
-            return this._recommendedActionUpdates != null && this._recommendedActionUpdates.Count > 0; 
+            return this._recommendedActionUpdates != null && (this._recommendedActionUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the JobTemplates
         /// </summary>
         public IPaginatedEnumerable<JobTemplateSummary> JobTemplates => 
-            new PaginatedResultKeyResponse<ListJobTemplatesResponse, JobTemplateSummary>(this, (i) => i.JobTemplates);
+            new PaginatedResultKeyResponse<ListJobTemplatesResponse, JobTemplateSummary>(this, (i) => i.JobTemplates ?? new List<JobTemplateSummary>());
 
         internal ListJobTemplatesPaginator(IAmazonIoT client, ListJobTemplatesRequest request)
         {

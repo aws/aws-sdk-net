@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListProjectsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProjectSummary> _projectSummaryList = new List<ProjectSummary>();
+        private List<ProjectSummary> _projectSummaryList = AWSConfigs.InitializeCollections ? new List<ProjectSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProjectSummaryList property is set
         internal bool IsSetProjectSummaryList()
         {
-            return this._projectSummaryList != null && this._projectSummaryList.Count > 0; 
+            return this._projectSummaryList != null && (this._projectSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

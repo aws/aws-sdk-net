@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("importSnapshotTaskSet/item", targetDepth))
                     {
                         var unmarshaller = ImportSnapshotTaskUnmarshaller.Instance;
+                        if (response.ImportSnapshotTasks == null)
+                        {
+                            response.ImportSnapshotTasks = new List<ImportSnapshotTask>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ImportSnapshotTasks.Add(item);
                         continue;

@@ -69,6 +69,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CidrCollections/member", targetDepth))
                     {
+                        if (response.CidrCollections == null)
+                        {
+                            response.CidrCollections = new List<CollectionSummary>();
+                        }
                         var unmarshaller = CollectionSummaryUnmarshaller.Instance;
                         response.CidrCollections.Add(unmarshaller.Unmarshall(context));
                         continue;

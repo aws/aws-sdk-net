@@ -33,7 +33,7 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class DeviceDefinitionVersion
     {
-        private List<Device> _devices = new List<Device>();
+        private List<Device> _devices = AWSConfigs.InitializeCollections ? new List<Device>() : null;
 
         /// <summary>
         /// Gets and sets the property Devices. A list of devices in the definition version.
@@ -47,7 +47,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Devices property is set
         internal bool IsSetDevices()
         {
-            return this._devices != null && this._devices.Count > 0; 
+            return this._devices != null && (this._devices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

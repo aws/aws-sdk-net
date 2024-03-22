@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model
     public partial class ReplayDestination
     {
         private string _arn;
-        private List<string> _filterArns = new List<string>();
+        private List<string> _filterArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -71,7 +71,7 @@ namespace Amazon.EventBridge.Model
         // Check to see if FilterArns property is set
         internal bool IsSetFilterArns()
         {
-            return this._filterArns != null && this._filterArns.Count > 0; 
+            return this._filterArns != null && (this._filterArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

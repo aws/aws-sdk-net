@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class ListThreatIntelSetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _threatIntelSetIds = new List<string>();
+        private List<string> _threatIntelSetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if ThreatIntelSetIds property is set
         internal bool IsSetThreatIntelSetIds()
         {
-            return this._threatIntelSetIds != null && this._threatIntelSetIds.Count > 0; 
+            return this._threatIntelSetIds != null && (this._threatIntelSetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

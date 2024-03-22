@@ -34,7 +34,7 @@ namespace Amazon.IoTThingsGraph.Model
     public partial class SearchThingsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Thing> _things = new List<Thing>();
+        private List<Thing> _things = AWSConfigs.InitializeCollections ? new List<Thing>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.IoTThingsGraph.Model
         // Check to see if Things property is set
         internal bool IsSetThings()
         {
-            return this._things != null && this._things.Count > 0; 
+            return this._things != null && (this._things.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

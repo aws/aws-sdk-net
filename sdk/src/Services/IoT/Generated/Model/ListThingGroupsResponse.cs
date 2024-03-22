@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ListThingGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<GroupNameAndArn> _thingGroups = new List<GroupNameAndArn>();
+        private List<GroupNameAndArn> _thingGroups = AWSConfigs.InitializeCollections ? new List<GroupNameAndArn>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.IoT.Model
         // Check to see if ThingGroups property is set
         internal bool IsSetThingGroups()
         {
-            return this._thingGroups != null && this._thingGroups.Count > 0; 
+            return this._thingGroups != null && (this._thingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

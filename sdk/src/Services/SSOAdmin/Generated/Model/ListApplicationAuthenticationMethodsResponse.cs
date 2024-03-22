@@ -33,7 +33,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class ListApplicationAuthenticationMethodsResponse : AmazonWebServiceResponse
     {
-        private List<AuthenticationMethodItem> _authenticationMethods = new List<AuthenticationMethodItem>();
+        private List<AuthenticationMethodItem> _authenticationMethods = AWSConfigs.InitializeCollections ? new List<AuthenticationMethodItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if AuthenticationMethods property is set
         internal bool IsSetAuthenticationMethods()
         {
-            return this._authenticationMethods != null && this._authenticationMethods.Count > 0; 
+            return this._authenticationMethods != null && (this._authenticationMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

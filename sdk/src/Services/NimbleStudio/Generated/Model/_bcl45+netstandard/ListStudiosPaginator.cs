@@ -45,7 +45,7 @@ namespace Amazon.NimbleStudio.Model
         /// Enumerable containing all of the Studios
         /// </summary>
         public IPaginatedEnumerable<Studio> Studios => 
-            new PaginatedResultKeyResponse<ListStudiosResponse, Studio>(this, (i) => i.Studios);
+            new PaginatedResultKeyResponse<ListStudiosResponse, Studio>(this, (i) => i.Studios ?? new List<Studio>());
 
         internal ListStudiosPaginator(IAmazonNimbleStudio client, ListStudiosRequest request)
         {

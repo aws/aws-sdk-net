@@ -90,6 +90,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OptionGroupsList/OptionGroup", targetDepth))
                     {
                         var unmarshaller = OptionGroupUnmarshaller.Instance;
+                        if (response.OptionGroupsList == null)
+                        {
+                            response.OptionGroupsList = new List<OptionGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.OptionGroupsList.Add(item);
                         continue;

@@ -45,7 +45,7 @@ namespace Amazon.Neptune.Model
         /// Enumerable containing all of the DBClusterEndpoints
         /// </summary>
         public IPaginatedEnumerable<DBClusterEndpoint> DBClusterEndpoints => 
-            new PaginatedResultKeyResponse<DescribeDBClusterEndpointsResponse, DBClusterEndpoint>(this, (i) => i.DBClusterEndpoints);
+            new PaginatedResultKeyResponse<DescribeDBClusterEndpointsResponse, DBClusterEndpoint>(this, (i) => i.DBClusterEndpoints ?? new List<DBClusterEndpoint>());
 
         internal DescribeDBClusterEndpointsPaginator(IAmazonNeptune client, DescribeDBClusterEndpointsRequest request)
         {

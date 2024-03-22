@@ -33,13 +33,13 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class NetworkFirewallPolicyDescription
     {
-        private List<string> _statefulDefaultActions = new List<string>();
+        private List<string> _statefulDefaultActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private StatefulEngineOptions _statefulEngineOptions;
-        private List<StatefulRuleGroup> _statefulRuleGroups = new List<StatefulRuleGroup>();
-        private List<string> _statelessCustomActions = new List<string>();
-        private List<string> _statelessDefaultActions = new List<string>();
-        private List<string> _statelessFragmentDefaultActions = new List<string>();
-        private List<StatelessRuleGroup> _statelessRuleGroups = new List<StatelessRuleGroup>();
+        private List<StatefulRuleGroup> _statefulRuleGroups = AWSConfigs.InitializeCollections ? new List<StatefulRuleGroup>() : null;
+        private List<string> _statelessCustomActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _statelessDefaultActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _statelessFragmentDefaultActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<StatelessRuleGroup> _statelessRuleGroups = AWSConfigs.InitializeCollections ? new List<StatelessRuleGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property StatefulDefaultActions. 
@@ -79,7 +79,7 @@ namespace Amazon.FMS.Model
         // Check to see if StatefulDefaultActions property is set
         internal bool IsSetStatefulDefaultActions()
         {
-            return this._statefulDefaultActions != null && this._statefulDefaultActions.Count > 0; 
+            return this._statefulDefaultActions != null && (this._statefulDefaultActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.FMS.Model
         // Check to see if StatefulRuleGroups property is set
         internal bool IsSetStatefulRuleGroups()
         {
-            return this._statefulRuleGroups != null && this._statefulRuleGroups.Count > 0; 
+            return this._statefulRuleGroups != null && (this._statefulRuleGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.FMS.Model
         // Check to see if StatelessCustomActions property is set
         internal bool IsSetStatelessCustomActions()
         {
-            return this._statelessCustomActions != null && this._statelessCustomActions.Count > 0; 
+            return this._statelessCustomActions != null && (this._statelessCustomActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.FMS.Model
         // Check to see if StatelessDefaultActions property is set
         internal bool IsSetStatelessDefaultActions()
         {
-            return this._statelessDefaultActions != null && this._statelessDefaultActions.Count > 0; 
+            return this._statelessDefaultActions != null && (this._statelessDefaultActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.FMS.Model
         // Check to see if StatelessFragmentDefaultActions property is set
         internal bool IsSetStatelessFragmentDefaultActions()
         {
-            return this._statelessFragmentDefaultActions != null && this._statelessFragmentDefaultActions.Count > 0; 
+            return this._statelessFragmentDefaultActions != null && (this._statelessFragmentDefaultActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace Amazon.FMS.Model
         // Check to see if StatelessRuleGroups property is set
         internal bool IsSetStatelessRuleGroups()
         {
-            return this._statelessRuleGroups != null && this._statelessRuleGroups.Count > 0; 
+            return this._statelessRuleGroups != null && (this._statelessRuleGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

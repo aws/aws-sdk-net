@@ -33,7 +33,7 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class ProtocolDetails
     {
-        private List<string> _as2Transports = new List<string>();
+        private List<string> _as2Transports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _passiveIp;
         private SetStatOption _setStatOption;
         private TlsSessionResumptionMode _tlsSessionResumptionMode;
@@ -54,7 +54,7 @@ namespace Amazon.Transfer.Model
         // Check to see if As2Transports property is set
         internal bool IsSetAs2Transports()
         {
-            return this._as2Transports != null && this._as2Transports.Count > 0; 
+            return this._as2Transports != null && (this._as2Transports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

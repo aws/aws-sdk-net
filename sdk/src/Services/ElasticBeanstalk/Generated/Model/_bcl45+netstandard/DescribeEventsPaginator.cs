@@ -45,7 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<EventDescription> Events => 
-            new PaginatedResultKeyResponse<DescribeEventsResponse, EventDescription>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<DescribeEventsResponse, EventDescription>(this, (i) => i.Events ?? new List<EventDescription>());
 
         internal DescribeEventsPaginator(IAmazonElasticBeanstalk client, DescribeEventsRequest request)
         {

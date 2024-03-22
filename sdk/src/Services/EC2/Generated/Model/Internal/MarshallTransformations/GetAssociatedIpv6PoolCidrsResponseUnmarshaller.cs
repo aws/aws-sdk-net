@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipv6CidrAssociationSet/item", targetDepth))
                     {
                         var unmarshaller = Ipv6CidrAssociationUnmarshaller.Instance;
+                        if (response.Ipv6CidrAssociations == null)
+                        {
+                            response.Ipv6CidrAssociations = new List<Ipv6CidrAssociation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Ipv6CidrAssociations.Add(item);
                         continue;

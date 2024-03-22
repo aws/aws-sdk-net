@@ -45,7 +45,7 @@ namespace Amazon.Route53.Model
         /// Enumerable containing all of the CidrLocations
         /// </summary>
         public IPaginatedEnumerable<LocationSummary> CidrLocations => 
-            new PaginatedResultKeyResponse<ListCidrLocationsResponse, LocationSummary>(this, (i) => i.CidrLocations);
+            new PaginatedResultKeyResponse<ListCidrLocationsResponse, LocationSummary>(this, (i) => i.CidrLocations ?? new List<LocationSummary>());
 
         internal ListCidrLocationsPaginator(IAmazonRoute53 client, ListCidrLocationsRequest request)
         {

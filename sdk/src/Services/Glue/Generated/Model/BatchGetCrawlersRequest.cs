@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetCrawlersRequest : AmazonGlueRequest
     {
-        private List<string> _crawlerNames = new List<string>();
+        private List<string> _crawlerNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CrawlerNames. 
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         // Check to see if CrawlerNames property is set
         internal bool IsSetCrawlerNames()
         {
-            return this._crawlerNames != null && this._crawlerNames.Count > 0; 
+            return this._crawlerNames != null && (this._crawlerNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

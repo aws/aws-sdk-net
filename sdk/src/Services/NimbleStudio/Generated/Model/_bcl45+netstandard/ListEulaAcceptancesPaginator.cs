@@ -45,7 +45,7 @@ namespace Amazon.NimbleStudio.Model
         /// Enumerable containing all of the EulaAcceptances
         /// </summary>
         public IPaginatedEnumerable<EulaAcceptance> EulaAcceptances => 
-            new PaginatedResultKeyResponse<ListEulaAcceptancesResponse, EulaAcceptance>(this, (i) => i.EulaAcceptances);
+            new PaginatedResultKeyResponse<ListEulaAcceptancesResponse, EulaAcceptance>(this, (i) => i.EulaAcceptances ?? new List<EulaAcceptance>());
 
         internal ListEulaAcceptancesPaginator(IAmazonNimbleStudio client, ListEulaAcceptancesRequest request)
         {

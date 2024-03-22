@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the QueueSummaryList
         /// </summary>
         public IPaginatedEnumerable<QueueSummary> QueueSummaryList => 
-            new PaginatedResultKeyResponse<ListQueuesResponse, QueueSummary>(this, (i) => i.QueueSummaryList);
+            new PaginatedResultKeyResponse<ListQueuesResponse, QueueSummary>(this, (i) => i.QueueSummaryList ?? new List<QueueSummary>());
 
         internal ListQueuesPaginator(IAmazonConnect client, ListQueuesRequest request)
         {

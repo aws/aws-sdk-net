@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _creationTime;
         private BatchDataCaptureConfig _dataCaptureConfig;
         private DataProcessing _dataProcessing;
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ExperimentConfig _experimentConfig;
         private string _failureReason;
         private string _labelingJobArn;
@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         private int? _maxPayloadInMB;
         private ModelClientConfig _modelClientConfig;
         private string _modelName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private DateTime? _transformEndTime;
         private TransformInput _transformInput;
         private string _transformJobArn;
@@ -161,7 +161,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -317,7 +317,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

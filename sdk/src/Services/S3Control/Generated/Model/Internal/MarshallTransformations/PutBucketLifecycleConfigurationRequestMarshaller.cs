@@ -73,7 +73,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("LifecycleConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     var publicRequestLifecycleConfigurationRules = publicRequest.LifecycleConfiguration.Rules;
-                    if (publicRequestLifecycleConfigurationRules != null && publicRequestLifecycleConfigurationRules.Count > 0) 
+                    if (publicRequestLifecycleConfigurationRules != null && (publicRequestLifecycleConfigurationRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {                        
                         xmlWriter.WriteStartElement("Rules", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                         foreach (var publicRequestLifecycleConfigurationRulesValue in publicRequestLifecycleConfigurationRules) 
@@ -124,7 +124,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteElementString("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.Filter.And.Prefix));                 
 
                                     var publicRequestLifecycleConfigurationRulesValueFilterAndTags = publicRequestLifecycleConfigurationRulesValue.Filter.And.Tags;
-                                    if (publicRequestLifecycleConfigurationRulesValueFilterAndTags != null && publicRequestLifecycleConfigurationRulesValueFilterAndTags.Count > 0) 
+                                    if (publicRequestLifecycleConfigurationRulesValueFilterAndTags != null && (publicRequestLifecycleConfigurationRulesValueFilterAndTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
                                     {                        
                                         xmlWriter.WriteStartElement("Tags", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                                         foreach (var publicRequestLifecycleConfigurationRulesValueFilterAndTagsValue in publicRequestLifecycleConfigurationRulesValueFilterAndTags) 
@@ -185,7 +185,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();
                             }
                             var publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions = publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionTransitions;
-                            if (publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions != null && publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions.Count > 0) 
+                            if (publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions != null && (publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {                        
                                 xmlWriter.WriteStartElement("NoncurrentVersionTransitions", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                                 foreach (var publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitionsValue in publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions) 
@@ -209,7 +209,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Status", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.Status));                 
 
                             var publicRequestLifecycleConfigurationRulesValueTransitions = publicRequestLifecycleConfigurationRulesValue.Transitions;
-                            if (publicRequestLifecycleConfigurationRulesValueTransitions != null && publicRequestLifecycleConfigurationRulesValueTransitions.Count > 0) 
+                            if (publicRequestLifecycleConfigurationRulesValueTransitions != null && (publicRequestLifecycleConfigurationRulesValueTransitions.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {                        
                                 xmlWriter.WriteStartElement("Transitions", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                                 foreach (var publicRequestLifecycleConfigurationRulesValueTransitionsValue in publicRequestLifecycleConfigurationRulesValueTransitions) 

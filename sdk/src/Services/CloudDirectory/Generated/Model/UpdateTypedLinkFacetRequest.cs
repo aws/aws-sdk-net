@@ -35,8 +35,8 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class UpdateTypedLinkFacetRequest : AmazonCloudDirectoryRequest
     {
-        private List<TypedLinkFacetAttributeUpdate> _attributeUpdates = new List<TypedLinkFacetAttributeUpdate>();
-        private List<string> _identityAttributeOrder = new List<string>();
+        private List<TypedLinkFacetAttributeUpdate> _attributeUpdates = AWSConfigs.InitializeCollections ? new List<TypedLinkFacetAttributeUpdate>() : null;
+        private List<string> _identityAttributeOrder = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _schemaArn;
 
@@ -56,7 +56,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if AttributeUpdates property is set
         internal bool IsSetAttributeUpdates()
         {
-            return this._attributeUpdates != null && this._attributeUpdates.Count > 0; 
+            return this._attributeUpdates != null && (this._attributeUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if IdentityAttributeOrder property is set
         internal bool IsSetIdentityAttributeOrder()
         {
-            return this._identityAttributeOrder != null && this._identityAttributeOrder.Count > 0; 
+            return this._identityAttributeOrder != null && (this._identityAttributeOrder.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         private string _prefixListId;
         private ReferencedSecurityGroup _referencedGroupInfo;
         private string _securityGroupRuleId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _toPort;
 
         /// <summary>
@@ -267,7 +267,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

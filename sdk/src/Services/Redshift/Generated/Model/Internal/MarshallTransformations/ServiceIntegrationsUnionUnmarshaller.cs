@@ -57,6 +57,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LakeFormation/member", targetDepth))
                     {
                         var unmarshaller = LakeFormationScopeUnionUnmarshaller.Instance;
+                        if (unmarshalledObject.LakeFormation == null)
+                        {
+                            unmarshalledObject.LakeFormation = new List<LakeFormationScopeUnion>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LakeFormation.Add(item);
                         continue;

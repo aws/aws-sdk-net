@@ -42,10 +42,10 @@ namespace Amazon.SQS.Model
     /// </summary>
     public partial class MessageAttributeValue
     {
-        private List<MemoryStream> _binaryListValues = new List<MemoryStream>();
+        private List<MemoryStream> _binaryListValues = AWSConfigs.InitializeCollections ? new List<MemoryStream>() : null;
         private MemoryStream _binaryValue;
         private string _dataType;
-        private List<string> _stringListValues = new List<string>();
+        private List<string> _stringListValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stringValue;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.SQS.Model
         // Check to see if BinaryListValues property is set
         internal bool IsSetBinaryListValues()
         {
-            return this._binaryListValues != null && this._binaryListValues.Count > 0; 
+            return this._binaryListValues != null && (this._binaryListValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.SQS.Model
         // Check to see if StringListValues property is set
         internal bool IsSetStringListValues()
         {
-            return this._stringListValues != null && this._stringListValues.Count > 0; 
+            return this._stringListValues != null && (this._stringListValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

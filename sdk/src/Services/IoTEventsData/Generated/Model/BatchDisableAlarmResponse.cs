@@ -33,7 +33,7 @@ namespace Amazon.IoTEventsData.Model
     /// </summary>
     public partial class BatchDisableAlarmResponse : AmazonWebServiceResponse
     {
-        private List<BatchAlarmActionErrorEntry> _errorEntries = new List<BatchAlarmActionErrorEntry>();
+        private List<BatchAlarmActionErrorEntry> _errorEntries = AWSConfigs.InitializeCollections ? new List<BatchAlarmActionErrorEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property ErrorEntries. 
@@ -51,7 +51,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if ErrorEntries property is set
         internal bool IsSetErrorEntries()
         {
-            return this._errorEntries != null && this._errorEntries.Count > 0; 
+            return this._errorEntries != null && (this._errorEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

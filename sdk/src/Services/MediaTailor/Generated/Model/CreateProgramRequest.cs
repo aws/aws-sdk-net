@@ -35,8 +35,8 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class CreateProgramRequest : AmazonMediaTailorRequest
     {
-        private List<AdBreak> _adBreaks = new List<AdBreak>();
-        private List<AudienceMedia> _audienceMedia = new List<AudienceMedia>();
+        private List<AdBreak> _adBreaks = AWSConfigs.InitializeCollections ? new List<AdBreak>() : null;
+        private List<AudienceMedia> _audienceMedia = AWSConfigs.InitializeCollections ? new List<AudienceMedia>() : null;
         private string _channelName;
         private string _liveSourceName;
         private string _programName;
@@ -59,7 +59,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if AdBreaks property is set
         internal bool IsSetAdBreaks()
         {
-            return this._adBreaks != null && this._adBreaks.Count > 0; 
+            return this._adBreaks != null && (this._adBreaks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if AudienceMedia property is set
         internal bool IsSetAudienceMedia()
         {
-            return this._audienceMedia != null && this._audienceMedia.Count > 0; 
+            return this._audienceMedia != null && (this._audienceMedia.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

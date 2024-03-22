@@ -35,7 +35,7 @@ namespace Amazon.EKS.Model
     {
         private NodegroupIssueCode _code;
         private string _message;
-        private List<string> _resourceIds = new List<string>();
+        private List<string> _resourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Code. 
@@ -176,7 +176,7 @@ namespace Amazon.EKS.Model
         // Check to see if ResourceIds property is set
         internal bool IsSetResourceIds()
         {
-            return this._resourceIds != null && this._resourceIds.Count > 0; 
+            return this._resourceIds != null && (this._resourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AutomationRulesConfig
     {
-        private List<AutomationRulesAction> _actions = new List<AutomationRulesAction>();
+        private List<AutomationRulesAction> _actions = AWSConfigs.InitializeCollections ? new List<AutomationRulesAction>() : null;
         private DateTime? _createdAt;
         private string _createdBy;
         private AutomationRulesFindingFilters _criteria;
@@ -62,7 +62,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

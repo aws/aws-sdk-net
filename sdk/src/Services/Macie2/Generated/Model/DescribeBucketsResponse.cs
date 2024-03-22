@@ -33,7 +33,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class DescribeBucketsResponse : AmazonWebServiceResponse
     {
-        private List<BucketMetadata> _buckets = new List<BucketMetadata>();
+        private List<BucketMetadata> _buckets = AWSConfigs.InitializeCollections ? new List<BucketMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Buckets property is set
         internal bool IsSetBuckets()
         {
-            return this._buckets != null && this._buckets.Count > 0; 
+            return this._buckets != null && (this._buckets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

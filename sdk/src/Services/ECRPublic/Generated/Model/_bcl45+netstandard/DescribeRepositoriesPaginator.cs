@@ -45,7 +45,7 @@ namespace Amazon.ECRPublic.Model
         /// Enumerable containing all of the Repositories
         /// </summary>
         public IPaginatedEnumerable<Repository> Repositories => 
-            new PaginatedResultKeyResponse<DescribeRepositoriesResponse, Repository>(this, (i) => i.Repositories);
+            new PaginatedResultKeyResponse<DescribeRepositoriesResponse, Repository>(this, (i) => i.Repositories ?? new List<Repository>());
 
         internal DescribeRepositoriesPaginator(IAmazonECRPublic client, DescribeRepositoriesRequest request)
         {

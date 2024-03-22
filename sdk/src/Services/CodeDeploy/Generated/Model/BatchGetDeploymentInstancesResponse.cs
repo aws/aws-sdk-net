@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model
     public partial class BatchGetDeploymentInstancesResponse : AmazonWebServiceResponse
     {
         private string _errorMessage;
-        private List<InstanceSummary> _instancesSummary = new List<InstanceSummary>();
+        private List<InstanceSummary> _instancesSummary = AWSConfigs.InitializeCollections ? new List<InstanceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
@@ -69,7 +69,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if InstancesSummary property is set
         internal bool IsSetInstancesSummary()
         {
-            return this._instancesSummary != null && this._instancesSummary.Count > 0; 
+            return this._instancesSummary != null && (this._instancesSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

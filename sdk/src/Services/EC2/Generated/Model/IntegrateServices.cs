@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class IntegrateServices
     {
-        private List<AthenaIntegration> _athenaIntegrations = new List<AthenaIntegration>();
+        private List<AthenaIntegration> _athenaIntegrations = AWSConfigs.InitializeCollections ? new List<AthenaIntegration>() : null;
 
         /// <summary>
         /// Gets and sets the property AthenaIntegrations. 
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if AthenaIntegrations property is set
         internal bool IsSetAthenaIntegrations()
         {
-            return this._athenaIntegrations != null && this._athenaIntegrations.Count > 0; 
+            return this._athenaIntegrations != null && (this._athenaIntegrations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

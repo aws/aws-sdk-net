@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeClusterDbRevisionsResponse : AmazonWebServiceResponse
     {
-        private List<ClusterDbRevision> _clusterDbRevisions = new List<ClusterDbRevision>();
+        private List<ClusterDbRevision> _clusterDbRevisions = AWSConfigs.InitializeCollections ? new List<ClusterDbRevision>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ClusterDbRevisions property is set
         internal bool IsSetClusterDbRevisions()
         {
-            return this._clusterDbRevisions != null && this._clusterDbRevisions.Count > 0; 
+            return this._clusterDbRevisions != null && (this._clusterDbRevisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

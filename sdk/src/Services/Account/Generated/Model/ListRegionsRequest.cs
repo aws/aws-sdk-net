@@ -38,7 +38,7 @@ namespace Amazon.Account.Model
         private string _accountId;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _regionOptStatusContains = new List<string>();
+        private List<string> _regionOptStatusContains = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -141,7 +141,7 @@ namespace Amazon.Account.Model
         // Check to see if RegionOptStatusContains property is set
         internal bool IsSetRegionOptStatusContains()
         {
-            return this._regionOptStatusContains != null && this._regionOptStatusContains.Count > 0; 
+            return this._regionOptStatusContains != null && (this._regionOptStatusContains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

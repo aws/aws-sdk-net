@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("errorSet/item", targetDepth))
                     {
                         var unmarshaller = CreateFleetErrorUnmarshaller.Instance;
+                        if (response.Errors == null)
+                        {
+                            response.Errors = new List<CreateFleetError>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Errors.Add(item);
                         continue;
@@ -71,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("fleetInstanceSet/item", targetDepth))
                     {
                         var unmarshaller = CreateFleetInstanceUnmarshaller.Instance;
+                        if (response.Instances == null)
+                        {
+                            response.Instances = new List<CreateFleetInstance>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Instances.Add(item);
                         continue;

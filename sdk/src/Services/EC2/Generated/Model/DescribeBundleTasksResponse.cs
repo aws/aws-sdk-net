@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeBundleTasksResponse : AmazonWebServiceResponse
     {
-        private List<BundleTask> _bundleTasks = new List<BundleTask>();
+        private List<BundleTask> _bundleTasks = AWSConfigs.InitializeCollections ? new List<BundleTask>() : null;
 
         /// <summary>
         /// Gets and sets the property BundleTasks. 
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         // Check to see if BundleTasks property is set
         internal bool IsSetBundleTasks()
         {
-            return this._bundleTasks != null && this._bundleTasks.Count > 0; 
+            return this._bundleTasks != null && (this._bundleTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

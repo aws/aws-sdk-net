@@ -37,8 +37,8 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _replicationSubnetGroupDescription;
         private string _replicationSubnetGroupIdentifier;
         private string _subnetGroupStatus;
-        private List<Subnet> _subnets = new List<Subnet>();
-        private List<string> _supportedNetworkTypes = new List<string>();
+        private List<Subnet> _subnets = AWSConfigs.InitializeCollections ? new List<Subnet>() : null;
+        private List<string> _supportedNetworkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if SupportedNetworkTypes property is set
         internal bool IsSetSupportedNetworkTypes()
         {
-            return this._supportedNetworkTypes != null && this._supportedNetworkTypes.Count > 0; 
+            return this._supportedNetworkTypes != null && (this._supportedNetworkTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

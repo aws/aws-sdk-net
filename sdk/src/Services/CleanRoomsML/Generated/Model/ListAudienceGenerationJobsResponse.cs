@@ -33,7 +33,7 @@ namespace Amazon.CleanRoomsML.Model
     /// </summary>
     public partial class ListAudienceGenerationJobsResponse : AmazonWebServiceResponse
     {
-        private List<AudienceGenerationJobSummary> _audienceGenerationJobs = new List<AudienceGenerationJobSummary>();
+        private List<AudienceGenerationJobSummary> _audienceGenerationJobs = AWSConfigs.InitializeCollections ? new List<AudienceGenerationJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if AudienceGenerationJobs property is set
         internal bool IsSetAudienceGenerationJobs()
         {
-            return this._audienceGenerationJobs != null && this._audienceGenerationJobs.Count > 0; 
+            return this._audienceGenerationJobs != null && (this._audienceGenerationJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

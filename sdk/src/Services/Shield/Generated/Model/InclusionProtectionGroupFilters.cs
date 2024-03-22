@@ -37,10 +37,10 @@ namespace Amazon.Shield.Model
     /// </summary>
     public partial class InclusionProtectionGroupFilters
     {
-        private List<string> _aggregations = new List<string>();
-        private List<string> _patterns = new List<string>();
-        private List<string> _protectionGroupIds = new List<string>();
-        private List<string> _resourceTypes = new List<string>();
+        private List<string> _aggregations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _patterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _protectionGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Aggregations. 
@@ -58,7 +58,7 @@ namespace Amazon.Shield.Model
         // Check to see if Aggregations property is set
         internal bool IsSetAggregations()
         {
-            return this._aggregations != null && this._aggregations.Count > 0; 
+            return this._aggregations != null && (this._aggregations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.Shield.Model
         // Check to see if Patterns property is set
         internal bool IsSetPatterns()
         {
-            return this._patterns != null && this._patterns.Count > 0; 
+            return this._patterns != null && (this._patterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.Shield.Model
         // Check to see if ProtectionGroupIds property is set
         internal bool IsSetProtectionGroupIds()
         {
-            return this._protectionGroupIds != null && this._protectionGroupIds.Count > 0; 
+            return this._protectionGroupIds != null && (this._protectionGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.Shield.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

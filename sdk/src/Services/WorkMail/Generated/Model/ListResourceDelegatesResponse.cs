@@ -33,7 +33,7 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class ListResourceDelegatesResponse : AmazonWebServiceResponse
     {
-        private List<Delegate> _delegates = new List<Delegate>();
+        private List<Delegate> _delegates = AWSConfigs.InitializeCollections ? new List<Delegate>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if Delegates property is set
         internal bool IsSetDelegates()
         {
-            return this._delegates != null && this._delegates.Count > 0; 
+            return this._delegates != null && (this._delegates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

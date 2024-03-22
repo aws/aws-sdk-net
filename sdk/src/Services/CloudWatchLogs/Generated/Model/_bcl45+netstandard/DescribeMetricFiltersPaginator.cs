@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all of the MetricFilters
         /// </summary>
         public IPaginatedEnumerable<MetricFilter> MetricFilters => 
-            new PaginatedResultKeyResponse<DescribeMetricFiltersResponse, MetricFilter>(this, (i) => i.MetricFilters);
+            new PaginatedResultKeyResponse<DescribeMetricFiltersResponse, MetricFilter>(this, (i) => i.MetricFilters ?? new List<MetricFilter>());
 
         internal DescribeMetricFiltersPaginator(IAmazonCloudWatchLogs client, DescribeMetricFiltersRequest request)
         {

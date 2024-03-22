@@ -33,8 +33,8 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class UpdateKxVolumeResponse : AmazonWebServiceResponse
     {
-        private List<KxAttachedCluster> _attachedClusters = new List<KxAttachedCluster>();
-        private List<string> _availabilityZoneIds = new List<string>();
+        private List<KxAttachedCluster> _attachedClusters = AWSConfigs.InitializeCollections ? new List<KxAttachedCluster>() : null;
+        private List<string> _availabilityZoneIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private KxAzMode _azMode;
         private DateTime? _createdTimestamp;
         private string _description;
@@ -62,7 +62,7 @@ namespace Amazon.Finspace.Model
         // Check to see if AttachedClusters property is set
         internal bool IsSetAttachedClusters()
         {
-            return this._attachedClusters != null && this._attachedClusters.Count > 0; 
+            return this._attachedClusters != null && (this._attachedClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.Finspace.Model
         // Check to see if AvailabilityZoneIds property is set
         internal bool IsSetAvailabilityZoneIds()
         {
-            return this._availabilityZoneIds != null && this._availabilityZoneIds.Count > 0; 
+            return this._availabilityZoneIds != null && (this._availabilityZoneIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

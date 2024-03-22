@@ -55,7 +55,7 @@ namespace Amazon.Kendra.Model
     public partial class BatchPutDocumentRequest : AmazonKendraRequest
     {
         private CustomDocumentEnrichmentConfiguration _customDocumentEnrichmentConfiguration;
-        private List<Document> _documents = new List<Document>();
+        private List<Document> _documents = AWSConfigs.InitializeCollections ? new List<Document>() : null;
         private string _indexId;
         private string _roleArn;
 
@@ -116,7 +116,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Documents property is set
         internal bool IsSetDocuments()
         {
-            return this._documents != null && this._documents.Count > 0; 
+            return this._documents != null && (this._documents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

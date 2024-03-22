@@ -33,7 +33,7 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class WarningDetail
     {
-        private List<WarningProperty> _properties = new List<WarningProperty>();
+        private List<WarningProperty> _properties = AWSConfigs.InitializeCollections ? new List<WarningProperty>() : null;
         private WarningType _type;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

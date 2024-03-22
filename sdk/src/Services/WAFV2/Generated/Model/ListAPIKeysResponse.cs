@@ -33,7 +33,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class ListAPIKeysResponse : AmazonWebServiceResponse
     {
-        private List<APIKeySummary> _apiKeySummaries = new List<APIKeySummary>();
+        private List<APIKeySummary> _apiKeySummaries = AWSConfigs.InitializeCollections ? new List<APIKeySummary>() : null;
         private string _applicationIntegrationURL;
         private string _nextMarker;
 
@@ -53,7 +53,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if APIKeySummaries property is set
         internal bool IsSetAPIKeySummaries()
         {
-            return this._apiKeySummaries != null && this._apiKeySummaries.Count > 0; 
+            return this._apiKeySummaries != null && (this._apiKeySummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

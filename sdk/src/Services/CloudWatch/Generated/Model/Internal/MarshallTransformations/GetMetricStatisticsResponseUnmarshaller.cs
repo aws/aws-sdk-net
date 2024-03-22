@@ -84,6 +84,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Datapoints/member", targetDepth))
                     {
                         var unmarshaller = DatapointUnmarshaller.Instance;
+                        if (response.Datapoints == null)
+                        {
+                            response.Datapoints = new List<Datapoint>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Datapoints.Add(item);
                         continue;

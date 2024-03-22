@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model
     public partial class ListPhoneNumberOrdersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PhoneNumberOrder> _phoneNumberOrders = new List<PhoneNumberOrder>();
+        private List<PhoneNumberOrder> _phoneNumberOrders = AWSConfigs.InitializeCollections ? new List<PhoneNumberOrder>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Chime.Model
         // Check to see if PhoneNumberOrders property is set
         internal bool IsSetPhoneNumberOrders()
         {
-            return this._phoneNumberOrders != null && this._phoneNumberOrders.Count > 0; 
+            return this._phoneNumberOrders != null && (this._phoneNumberOrders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

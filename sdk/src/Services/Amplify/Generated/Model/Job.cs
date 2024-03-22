@@ -33,7 +33,7 @@ namespace Amazon.Amplify.Model
     /// </summary>
     public partial class Job
     {
-        private List<Step> _steps = new List<Step>();
+        private List<Step> _steps = AWSConfigs.InitializeCollections ? new List<Step>() : null;
         private JobSummary _summary;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Amplify.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

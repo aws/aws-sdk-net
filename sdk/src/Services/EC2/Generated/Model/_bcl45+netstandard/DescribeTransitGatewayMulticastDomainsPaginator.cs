@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the TransitGatewayMulticastDomains
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayMulticastDomain> TransitGatewayMulticastDomains => 
-            new PaginatedResultKeyResponse<DescribeTransitGatewayMulticastDomainsResponse, TransitGatewayMulticastDomain>(this, (i) => i.TransitGatewayMulticastDomains);
+            new PaginatedResultKeyResponse<DescribeTransitGatewayMulticastDomainsResponse, TransitGatewayMulticastDomain>(this, (i) => i.TransitGatewayMulticastDomains ?? new List<TransitGatewayMulticastDomain>());
 
         internal DescribeTransitGatewayMulticastDomainsPaginator(IAmazonEC2 client, DescribeTransitGatewayMulticastDomainsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the MulticastDomainAssociations
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayMulticastDomainAssociation> MulticastDomainAssociations => 
-            new PaginatedResultKeyResponse<GetTransitGatewayMulticastDomainAssociationsResponse, TransitGatewayMulticastDomainAssociation>(this, (i) => i.MulticastDomainAssociations);
+            new PaginatedResultKeyResponse<GetTransitGatewayMulticastDomainAssociationsResponse, TransitGatewayMulticastDomainAssociation>(this, (i) => i.MulticastDomainAssociations ?? new List<TransitGatewayMulticastDomainAssociation>());
 
         internal GetTransitGatewayMulticastDomainAssociationsPaginator(IAmazonEC2 client, GetTransitGatewayMulticastDomainAssociationsRequest request)
         {

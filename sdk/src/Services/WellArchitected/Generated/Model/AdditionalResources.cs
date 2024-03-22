@@ -38,7 +38,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class AdditionalResources
     {
-        private List<ChoiceContent> _content = new List<ChoiceContent>();
+        private List<ChoiceContent> _content = AWSConfigs.InitializeCollections ? new List<ChoiceContent>() : null;
         private AdditionalResourceType _type;
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Content property is set
         internal bool IsSetContent()
         {
-            return this._content != null && this._content.Count > 0; 
+            return this._content != null && (this._content.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

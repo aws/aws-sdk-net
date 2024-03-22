@@ -40,7 +40,7 @@ namespace Amazon.RDSDataService.Model
     /// </summary>
     public partial class Record
     {
-        private List<Value> _values = new List<Value>();
+        private List<Value> _values = AWSConfigs.InitializeCollections ? new List<Value>() : null;
 
         /// <summary>
         /// Gets and sets the property Values. 
@@ -57,7 +57,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

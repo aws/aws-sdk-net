@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the Sessions
         /// </summary>
         public IPaginatedEnumerable<Session> Sessions => 
-            new PaginatedResultKeyResponse<DescribeSessionsResponse, Session>(this, (i) => i.Sessions);
+            new PaginatedResultKeyResponse<DescribeSessionsResponse, Session>(this, (i) => i.Sessions ?? new List<Session>());
 
         internal DescribeSessionsPaginator(IAmazonSimpleSystemsManagement client, DescribeSessionsRequest request)
         {

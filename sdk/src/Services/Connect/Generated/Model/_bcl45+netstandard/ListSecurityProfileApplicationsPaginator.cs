@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the Applications
         /// </summary>
         public IPaginatedEnumerable<Application> Applications => 
-            new PaginatedResultKeyResponse<ListSecurityProfileApplicationsResponse, Application>(this, (i) => i.Applications);
+            new PaginatedResultKeyResponse<ListSecurityProfileApplicationsResponse, Application>(this, (i) => i.Applications ?? new List<Application>());
 
         internal ListSecurityProfileApplicationsPaginator(IAmazonConnect client, ListSecurityProfileApplicationsRequest request)
         {

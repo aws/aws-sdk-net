@@ -45,7 +45,7 @@ namespace Amazon.QConnect.Model
         /// Enumerable containing all of the Results
         /// </summary>
         public IPaginatedEnumerable<ResultData> Results => 
-            new PaginatedResultKeyResponse<QueryAssistantResponse, ResultData>(this, (i) => i.Results);
+            new PaginatedResultKeyResponse<QueryAssistantResponse, ResultData>(this, (i) => i.Results ?? new List<ResultData>());
 
         internal QueryAssistantPaginator(IAmazonQConnect client, QueryAssistantRequest request)
         {

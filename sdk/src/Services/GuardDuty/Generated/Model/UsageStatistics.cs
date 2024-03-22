@@ -34,12 +34,12 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class UsageStatistics
     {
-        private List<UsageAccountResult> _sumByAccount = new List<UsageAccountResult>();
-        private List<UsageDataSourceResult> _sumByDataSource = new List<UsageDataSourceResult>();
-        private List<UsageFeatureResult> _sumByFeature = new List<UsageFeatureResult>();
-        private List<UsageResourceResult> _sumByResource = new List<UsageResourceResult>();
-        private List<UsageTopAccountsResult> _topAccountsByFeature = new List<UsageTopAccountsResult>();
-        private List<UsageResourceResult> _topResources = new List<UsageResourceResult>();
+        private List<UsageAccountResult> _sumByAccount = AWSConfigs.InitializeCollections ? new List<UsageAccountResult>() : null;
+        private List<UsageDataSourceResult> _sumByDataSource = AWSConfigs.InitializeCollections ? new List<UsageDataSourceResult>() : null;
+        private List<UsageFeatureResult> _sumByFeature = AWSConfigs.InitializeCollections ? new List<UsageFeatureResult>() : null;
+        private List<UsageResourceResult> _sumByResource = AWSConfigs.InitializeCollections ? new List<UsageResourceResult>() : null;
+        private List<UsageTopAccountsResult> _topAccountsByFeature = AWSConfigs.InitializeCollections ? new List<UsageTopAccountsResult>() : null;
+        private List<UsageResourceResult> _topResources = AWSConfigs.InitializeCollections ? new List<UsageResourceResult>() : null;
 
         /// <summary>
         /// Gets and sets the property SumByAccount. 
@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if SumByAccount property is set
         internal bool IsSetSumByAccount()
         {
-            return this._sumByAccount != null && this._sumByAccount.Count > 0; 
+            return this._sumByAccount != null && (this._sumByAccount.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if SumByDataSource property is set
         internal bool IsSetSumByDataSource()
         {
-            return this._sumByDataSource != null && this._sumByDataSource.Count > 0; 
+            return this._sumByDataSource != null && (this._sumByDataSource.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if SumByFeature property is set
         internal bool IsSetSumByFeature()
         {
-            return this._sumByFeature != null && this._sumByFeature.Count > 0; 
+            return this._sumByFeature != null && (this._sumByFeature.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if SumByResource property is set
         internal bool IsSetSumByResource()
         {
-            return this._sumByResource != null && this._sumByResource.Count > 0; 
+            return this._sumByResource != null && (this._sumByResource.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if TopAccountsByFeature property is set
         internal bool IsSetTopAccountsByFeature()
         {
-            return this._topAccountsByFeature != null && this._topAccountsByFeature.Count > 0; 
+            return this._topAccountsByFeature != null && (this._topAccountsByFeature.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if TopResources property is set
         internal bool IsSetTopResources()
         {
-            return this._topResources != null && this._topResources.Count > 0; 
+            return this._topResources != null && (this._topResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

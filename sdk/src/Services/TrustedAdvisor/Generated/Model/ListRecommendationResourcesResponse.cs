@@ -34,7 +34,7 @@ namespace Amazon.TrustedAdvisor.Model
     public partial class ListRecommendationResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RecommendationResourceSummary> _recommendationResourceSummaries = new List<RecommendationResourceSummary>();
+        private List<RecommendationResourceSummary> _recommendationResourceSummaries = AWSConfigs.InitializeCollections ? new List<RecommendationResourceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.TrustedAdvisor.Model
         // Check to see if RecommendationResourceSummaries property is set
         internal bool IsSetRecommendationResourceSummaries()
         {
-            return this._recommendationResourceSummaries != null && this._recommendationResourceSummaries.Count > 0; 
+            return this._recommendationResourceSummaries != null && (this._recommendationResourceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

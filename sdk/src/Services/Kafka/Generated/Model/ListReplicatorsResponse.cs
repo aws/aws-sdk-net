@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model
     public partial class ListReplicatorsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReplicatorSummary> _replicators = new List<ReplicatorSummary>();
+        private List<ReplicatorSummary> _replicators = AWSConfigs.InitializeCollections ? new List<ReplicatorSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Kafka.Model
         // Check to see if Replicators property is set
         internal bool IsSetReplicators()
         {
-            return this._replicators != null && this._replicators.Count > 0; 
+            return this._replicators != null && (this._replicators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

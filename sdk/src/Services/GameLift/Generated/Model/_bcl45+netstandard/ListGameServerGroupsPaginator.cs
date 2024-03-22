@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the GameServerGroups
         /// </summary>
         public IPaginatedEnumerable<GameServerGroup> GameServerGroups => 
-            new PaginatedResultKeyResponse<ListGameServerGroupsResponse, GameServerGroup>(this, (i) => i.GameServerGroups);
+            new PaginatedResultKeyResponse<ListGameServerGroupsResponse, GameServerGroup>(this, (i) => i.GameServerGroups ?? new List<GameServerGroup>());
 
         internal ListGameServerGroupsPaginator(IAmazonGameLift client, ListGameServerGroupsRequest request)
         {

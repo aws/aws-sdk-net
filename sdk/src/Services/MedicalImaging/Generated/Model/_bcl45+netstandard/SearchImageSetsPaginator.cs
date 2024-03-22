@@ -45,7 +45,7 @@ namespace Amazon.MedicalImaging.Model
         /// Enumerable containing all of the ImageSetsMetadataSummaries
         /// </summary>
         public IPaginatedEnumerable<ImageSetsMetadataSummary> ImageSetsMetadataSummaries => 
-            new PaginatedResultKeyResponse<SearchImageSetsResponse, ImageSetsMetadataSummary>(this, (i) => i.ImageSetsMetadataSummaries);
+            new PaginatedResultKeyResponse<SearchImageSetsResponse, ImageSetsMetadataSummary>(this, (i) => i.ImageSetsMetadataSummaries ?? new List<ImageSetsMetadataSummary>());
 
         internal SearchImageSetsPaginator(IAmazonMedicalImaging client, SearchImageSetsRequest request)
         {

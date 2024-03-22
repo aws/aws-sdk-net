@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the VariantImportJobs
         /// </summary>
         public IPaginatedEnumerable<VariantImportJobItem> VariantImportJobs => 
-            new PaginatedResultKeyResponse<ListVariantImportJobsResponse, VariantImportJobItem>(this, (i) => i.VariantImportJobs);
+            new PaginatedResultKeyResponse<ListVariantImportJobsResponse, VariantImportJobItem>(this, (i) => i.VariantImportJobs ?? new List<VariantImportJobItem>());
 
         internal ListVariantImportJobsPaginator(IAmazonOmics client, ListVariantImportJobsRequest request)
         {

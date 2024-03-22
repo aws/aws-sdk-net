@@ -45,7 +45,7 @@ namespace Amazon.Snowball.Model
         /// Enumerable containing all of the ClusterListEntries
         /// </summary>
         public IPaginatedEnumerable<ClusterListEntry> ClusterListEntries => 
-            new PaginatedResultKeyResponse<ListClustersResponse, ClusterListEntry>(this, (i) => i.ClusterListEntries);
+            new PaginatedResultKeyResponse<ListClustersResponse, ClusterListEntry>(this, (i) => i.ClusterListEntries ?? new List<ClusterListEntry>());
 
         internal ListClustersPaginator(IAmazonSnowball client, ListClustersRequest request)
         {

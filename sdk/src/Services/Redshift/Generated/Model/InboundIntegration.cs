@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class InboundIntegration
     {
         private DateTime? _createTime;
-        private List<IntegrationError> _errors = new List<IntegrationError>();
+        private List<IntegrationError> _errors = AWSConfigs.InitializeCollections ? new List<IntegrationError>() : null;
         private string _integrationArn;
         private string _sourceArn;
         private ZeroETLIntegrationStatus _status;
@@ -74,7 +74,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

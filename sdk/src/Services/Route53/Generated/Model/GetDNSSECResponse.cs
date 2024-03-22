@@ -34,7 +34,7 @@ namespace Amazon.Route53.Model
     public partial class GetDNSSECResponse : AmazonWebServiceResponse
     {
         private DNSSECStatus _status;
-        private List<KeySigningKey> _keySigningKeys = new List<KeySigningKey>();
+        private List<KeySigningKey> _keySigningKeys = AWSConfigs.InitializeCollections ? new List<KeySigningKey>() : null;
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -71,7 +71,7 @@ namespace Amazon.Route53.Model
         // Check to see if KeySigningKeys property is set
         internal bool IsSetKeySigningKeys()
         {
-            return this._keySigningKeys != null && this._keySigningKeys.Count > 0; 
+            return this._keySigningKeys != null && (this._keySigningKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

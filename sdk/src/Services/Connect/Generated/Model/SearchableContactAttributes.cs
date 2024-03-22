@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class SearchableContactAttributes
     {
-        private List<SearchableContactAttributesCriteria> _criteria = new List<SearchableContactAttributesCriteria>();
+        private List<SearchableContactAttributesCriteria> _criteria = AWSConfigs.InitializeCollections ? new List<SearchableContactAttributesCriteria>() : null;
         private SearchContactsMatchType _matchType;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.Connect.Model
         // Check to see if Criteria property is set
         internal bool IsSetCriteria()
         {
-            return this._criteria != null && this._criteria.Count > 0; 
+            return this._criteria != null && (this._criteria.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -66,8 +66,8 @@ namespace Amazon.GameLift.Model
     public partial class CreatePlayerSessionsRequest : AmazonGameLiftRequest
     {
         private string _gameSessionId;
-        private Dictionary<string, string> _playerDataMap = new Dictionary<string, string>();
-        private List<string> _playerIds = new List<string>();
+        private Dictionary<string, string> _playerDataMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _playerIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GameSessionId. 
@@ -106,7 +106,7 @@ namespace Amazon.GameLift.Model
         // Check to see if PlayerDataMap property is set
         internal bool IsSetPlayerDataMap()
         {
-            return this._playerDataMap != null && this._playerDataMap.Count > 0; 
+            return this._playerDataMap != null && (this._playerDataMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.GameLift.Model
         // Check to see if PlayerIds property is set
         internal bool IsSetPlayerIds()
         {
-            return this._playerIds != null && this._playerIds.Count > 0; 
+            return this._playerIds != null && (this._playerIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

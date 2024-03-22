@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<Tag> Tags => 
-            new PaginatedResultKeyResponse<ListTagsResponse, Tag>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<ListTagsResponse, Tag>(this, (i) => i.Tags ?? new List<Tag>());
 
         internal ListTagsPaginator(IAmazonSageMaker client, ListTagsRequest request)
         {

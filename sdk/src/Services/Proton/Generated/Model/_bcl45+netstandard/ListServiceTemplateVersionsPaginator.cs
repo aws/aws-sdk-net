@@ -45,7 +45,7 @@ namespace Amazon.Proton.Model
         /// Enumerable containing all of the TemplateVersions
         /// </summary>
         public IPaginatedEnumerable<ServiceTemplateVersionSummary> TemplateVersions => 
-            new PaginatedResultKeyResponse<ListServiceTemplateVersionsResponse, ServiceTemplateVersionSummary>(this, (i) => i.TemplateVersions);
+            new PaginatedResultKeyResponse<ListServiceTemplateVersionsResponse, ServiceTemplateVersionSummary>(this, (i) => i.TemplateVersions ?? new List<ServiceTemplateVersionSummary>());
 
         internal ListServiceTemplateVersionsPaginator(IAmazonProton client, ListServiceTemplateVersionsRequest request)
         {

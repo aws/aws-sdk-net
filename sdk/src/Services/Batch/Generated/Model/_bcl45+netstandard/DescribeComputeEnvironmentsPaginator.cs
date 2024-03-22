@@ -45,7 +45,7 @@ namespace Amazon.Batch.Model
         /// Enumerable containing all of the ComputeEnvironments
         /// </summary>
         public IPaginatedEnumerable<ComputeEnvironmentDetail> ComputeEnvironments => 
-            new PaginatedResultKeyResponse<DescribeComputeEnvironmentsResponse, ComputeEnvironmentDetail>(this, (i) => i.ComputeEnvironments);
+            new PaginatedResultKeyResponse<DescribeComputeEnvironmentsResponse, ComputeEnvironmentDetail>(this, (i) => i.ComputeEnvironments ?? new List<ComputeEnvironmentDetail>());
 
         internal DescribeComputeEnvironmentsPaginator(IAmazonBatch client, DescribeComputeEnvironmentsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the History
         /// </summary>
         public IPaginatedEnumerable<DataSourceSyncJob> History => 
-            new PaginatedResultKeyResponse<ListDataSourceSyncJobsResponse, DataSourceSyncJob>(this, (i) => i.History);
+            new PaginatedResultKeyResponse<ListDataSourceSyncJobsResponse, DataSourceSyncJob>(this, (i) => i.History ?? new List<DataSourceSyncJob>());
 
         internal ListDataSourceSyncJobsPaginator(IAmazonQBusiness client, ListDataSourceSyncJobsRequest request)
         {

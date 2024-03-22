@@ -45,7 +45,7 @@ namespace Amazon.Pricing.Model
         /// Enumerable containing all of the Services
         /// </summary>
         public IPaginatedEnumerable<Service> Services => 
-            new PaginatedResultKeyResponse<DescribeServicesResponse, Service>(this, (i) => i.Services);
+            new PaginatedResultKeyResponse<DescribeServicesResponse, Service>(this, (i) => i.Services ?? new List<Service>());
 
         internal DescribeServicesPaginator(IAmazonPricing client, DescribeServicesRequest request)
         {

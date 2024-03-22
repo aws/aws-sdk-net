@@ -76,7 +76,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Role", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ReplicationConfiguration.Role));                    
 
                     var publicRequestReplicationConfigurationRules = publicRequest.ReplicationConfiguration.Rules;
-                    if (publicRequestReplicationConfigurationRules != null && publicRequestReplicationConfigurationRules.Count > 0) 
+                    if (publicRequestReplicationConfigurationRules != null && (publicRequestReplicationConfigurationRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {                        
                         xmlWriter.WriteStartElement("Rules", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                         foreach (var publicRequestReplicationConfigurationRulesValue in publicRequestReplicationConfigurationRules) 
@@ -187,7 +187,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteElementString("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Filter.And.Prefix));                 
 
                                     var publicRequestReplicationConfigurationRulesValueFilterAndTags = publicRequestReplicationConfigurationRulesValue.Filter.And.Tags;
-                                    if (publicRequestReplicationConfigurationRulesValueFilterAndTags != null && publicRequestReplicationConfigurationRulesValueFilterAndTags.Count > 0) 
+                                    if (publicRequestReplicationConfigurationRulesValueFilterAndTags != null && (publicRequestReplicationConfigurationRulesValueFilterAndTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
                                     {                        
                                         xmlWriter.WriteStartElement("Tags", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                                         foreach (var publicRequestReplicationConfigurationRulesValueFilterAndTagsValue in publicRequestReplicationConfigurationRulesValueFilterAndTags) 

@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("gpus/item", targetDepth))
                     {
                         var unmarshaller = GpuDeviceInfoUnmarshaller.Instance;
+                        if (unmarshalledObject.Gpus == null)
+                        {
+                            unmarshalledObject.Gpus = new List<GpuDeviceInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Gpus.Add(item);
                         continue;

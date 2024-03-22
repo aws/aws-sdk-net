@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ListRoleMembershipsResponse : AmazonWebServiceResponse
     {
-        private List<string> _membersList = new List<string>();
+        private List<string> _membersList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -53,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if MembersList property is set
         internal bool IsSetMembersList()
         {
-            return this._membersList != null && this._membersList.Count > 0; 
+            return this._membersList != null && (this._membersList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class BatchGetVpcEndpointRequest : AmazonOpenSearchServerlessRequest
     {
-        private List<string> _ids = new List<string>();
+        private List<string> _ids = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Ids. 
@@ -54,7 +54,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if Ids property is set
         internal bool IsSetIds()
         {
-            return this._ids != null && this._ids.Count > 0; 
+            return this._ids != null && (this._ids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

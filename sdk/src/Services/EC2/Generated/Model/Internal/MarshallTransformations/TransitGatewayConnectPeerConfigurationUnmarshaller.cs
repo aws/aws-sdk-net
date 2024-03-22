@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("bgpConfigurations/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayAttachmentBgpConfigurationUnmarshaller.Instance;
+                        if (unmarshalledObject.BgpConfigurations == null)
+                        {
+                            unmarshalledObject.BgpConfigurations = new List<TransitGatewayAttachmentBgpConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.BgpConfigurations.Add(item);
                         continue;
@@ -64,6 +68,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("insideCidrBlocks/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.InsideCidrBlocks == null)
+                        {
+                            unmarshalledObject.InsideCidrBlocks = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.InsideCidrBlocks.Add(item);
                         continue;

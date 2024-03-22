@@ -43,7 +43,7 @@ namespace Amazon.IoTWireless.Model
     [Obsolete("This operation is no longer supported.")]
     public partial class UpdatePositionRequest : AmazonIoTWirelessRequest
     {
-        private List<float> _position = new List<float>();
+        private List<float> _position = AWSConfigs.InitializeCollections ? new List<float>() : null;
         private string _resourceIdentifier;
         private PositionResourceType _resourceType;
 
@@ -63,7 +63,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Position property is set
         internal bool IsSetPosition()
         {
-            return this._position != null && this._position.Count > 0; 
+            return this._position != null && (this._position.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

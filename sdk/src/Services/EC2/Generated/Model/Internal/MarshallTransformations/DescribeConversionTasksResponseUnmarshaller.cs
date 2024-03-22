@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("conversionTasks/item", targetDepth))
                     {
                         var unmarshaller = ConversionTaskUnmarshaller.Instance;
+                        if (response.ConversionTasks == null)
+                        {
+                            response.ConversionTasks = new List<ConversionTask>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ConversionTasks.Add(item);
                         continue;

@@ -34,8 +34,8 @@ namespace Amazon.Neptunedata.Model
     public partial class NodeStructure
     {
         private long? _count;
-        private List<string> _distinctOutgoingEdgeLabels = new List<string>();
-        private List<string> _nodeProperties = new List<string>();
+        private List<string> _distinctOutgoingEdgeLabels = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _nodeProperties = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Count. 
@@ -70,7 +70,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if DistinctOutgoingEdgeLabels property is set
         internal bool IsSetDistinctOutgoingEdgeLabels()
         {
-            return this._distinctOutgoingEdgeLabels != null && this._distinctOutgoingEdgeLabels.Count > 0; 
+            return this._distinctOutgoingEdgeLabels != null && (this._distinctOutgoingEdgeLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if NodeProperties property is set
         internal bool IsSetNodeProperties()
         {
-            return this._nodeProperties != null && this._nodeProperties.Count > 0; 
+            return this._nodeProperties != null && (this._nodeProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

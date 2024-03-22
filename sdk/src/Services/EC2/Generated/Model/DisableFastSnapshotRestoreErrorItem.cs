@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DisableFastSnapshotRestoreErrorItem
     {
-        private List<DisableFastSnapshotRestoreStateErrorItem> _fastSnapshotRestoreStateErrors = new List<DisableFastSnapshotRestoreStateErrorItem>();
+        private List<DisableFastSnapshotRestoreStateErrorItem> _fastSnapshotRestoreStateErrors = AWSConfigs.InitializeCollections ? new List<DisableFastSnapshotRestoreStateErrorItem>() : null;
         private string _snapshotId;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if FastSnapshotRestoreStateErrors property is set
         internal bool IsSetFastSnapshotRestoreStateErrors()
         {
-            return this._fastSnapshotRestoreStateErrors != null && this._fastSnapshotRestoreStateErrors.Count > 0; 
+            return this._fastSnapshotRestoreStateErrors != null && (this._fastSnapshotRestoreStateErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

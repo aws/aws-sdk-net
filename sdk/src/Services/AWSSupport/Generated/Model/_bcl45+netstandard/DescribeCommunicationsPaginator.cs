@@ -45,7 +45,7 @@ namespace Amazon.AWSSupport.Model
         /// Enumerable containing all of the Communications
         /// </summary>
         public IPaginatedEnumerable<Communication> Communications => 
-            new PaginatedResultKeyResponse<DescribeCommunicationsResponse, Communication>(this, (i) => i.Communications);
+            new PaginatedResultKeyResponse<DescribeCommunicationsResponse, Communication>(this, (i) => i.Communications ?? new List<Communication>());
 
         internal DescribeCommunicationsPaginator(IAmazonAWSSupport client, DescribeCommunicationsRequest request)
         {

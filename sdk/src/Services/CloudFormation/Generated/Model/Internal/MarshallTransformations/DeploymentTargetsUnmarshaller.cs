@@ -63,6 +63,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Accounts/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.Accounts == null)
+                        {
+                            unmarshalledObject.Accounts = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Accounts.Add(item);
                         continue;
@@ -76,6 +80,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OrganizationalUnitIds/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.OrganizationalUnitIds == null)
+                        {
+                            unmarshalledObject.OrganizationalUnitIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.OrganizationalUnitIds.Add(item);
                         continue;

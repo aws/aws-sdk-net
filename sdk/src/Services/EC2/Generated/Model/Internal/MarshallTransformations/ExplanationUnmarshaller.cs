@@ -75,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("addressSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.Addresses == null)
+                        {
+                            unmarshalledObject.Addresses = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Addresses.Add(item);
                         continue;
@@ -88,6 +92,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("availabilityZoneSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailabilityZones == null)
+                        {
+                            unmarshalledObject.AvailabilityZones = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
@@ -95,6 +103,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("cidrSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.Cidrs == null)
+                        {
+                            unmarshalledObject.Cidrs = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Cidrs.Add(item);
                         continue;
@@ -210,6 +222,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("loadBalancerTargetGroupSet/item", targetDepth))
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        if (unmarshalledObject.LoadBalancerTargetGroups == null)
+                        {
+                            unmarshalledObject.LoadBalancerTargetGroups = new List<AnalysisComponent>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LoadBalancerTargetGroups.Add(item);
                         continue;
@@ -253,6 +269,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("portRangeSet/item", targetDepth))
                     {
                         var unmarshaller = PortRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.PortRanges == null)
+                        {
+                            unmarshalledObject.PortRanges = new List<PortRange>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PortRanges.Add(item);
                         continue;
@@ -266,6 +286,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("protocolSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.Protocols == null)
+                        {
+                            unmarshalledObject.Protocols = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Protocols.Add(item);
                         continue;
@@ -297,6 +321,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("securityGroupSet/item", targetDepth))
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        if (unmarshalledObject.SecurityGroups == null)
+                        {
+                            unmarshalledObject.SecurityGroups = new List<AnalysisComponent>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SecurityGroups.Add(item);
                         continue;

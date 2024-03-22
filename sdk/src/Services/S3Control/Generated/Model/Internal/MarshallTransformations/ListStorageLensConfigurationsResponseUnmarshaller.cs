@@ -69,6 +69,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("StorageLensConfiguration", targetDepth))
                     {
+                        if (response.StorageLensConfigurationList == null)
+                        {
+                            response.StorageLensConfigurationList = new List<ListStorageLensConfigurationEntry>();
+                        }
                         var unmarshaller = ListStorageLensConfigurationEntryUnmarshaller.Instance;
                         response.StorageLensConfigurationList.Add(unmarshaller.Unmarshall(context));
                         continue;

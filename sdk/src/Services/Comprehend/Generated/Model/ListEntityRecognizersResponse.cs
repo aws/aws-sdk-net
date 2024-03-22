@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ListEntityRecognizersResponse : AmazonWebServiceResponse
     {
-        private List<EntityRecognizerProperties> _entityRecognizerPropertiesList = new List<EntityRecognizerProperties>();
+        private List<EntityRecognizerProperties> _entityRecognizerPropertiesList = AWSConfigs.InitializeCollections ? new List<EntityRecognizerProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if EntityRecognizerPropertiesList property is set
         internal bool IsSetEntityRecognizerPropertiesList()
         {
-            return this._entityRecognizerPropertiesList != null && this._entityRecognizerPropertiesList.Count > 0; 
+            return this._entityRecognizerPropertiesList != null && (this._entityRecognizerPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

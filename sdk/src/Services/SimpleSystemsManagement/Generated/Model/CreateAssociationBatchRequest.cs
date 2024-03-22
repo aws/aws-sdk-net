@@ -47,7 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateAssociationBatchRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<CreateAssociationBatchRequestEntry> _entries = new List<CreateAssociationBatchRequestEntry>();
+        private List<CreateAssociationBatchRequestEntry> _entries = AWSConfigs.InitializeCollections ? new List<CreateAssociationBatchRequestEntry>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -79,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

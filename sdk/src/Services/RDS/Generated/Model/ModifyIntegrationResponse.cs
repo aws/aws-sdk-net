@@ -33,17 +33,17 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ModifyIntegrationResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _additionalEncryptionContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _createTime;
         private string _dataFilter;
         private string _description;
-        private List<IntegrationError> _errors = new List<IntegrationError>();
+        private List<IntegrationError> _errors = AWSConfigs.InitializeCollections ? new List<IntegrationError>() : null;
         private string _integrationArn;
         private string _integrationName;
         private string _kmsKeyId;
         private string _sourceArn;
         private IntegrationStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _targetArn;
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Amazon.RDS.Model
         // Check to see if AdditionalEncryptionContext property is set
         internal bool IsSetAdditionalEncryptionContext()
         {
-            return this._additionalEncryptionContext != null && this._additionalEncryptionContext.Count > 0; 
+            return this._additionalEncryptionContext != null && (this._additionalEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.RDS.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace Amazon.RDS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

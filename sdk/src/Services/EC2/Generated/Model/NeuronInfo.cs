@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NeuronInfo
     {
-        private List<NeuronDeviceInfo> _neuronDevices = new List<NeuronDeviceInfo>();
+        private List<NeuronDeviceInfo> _neuronDevices = AWSConfigs.InitializeCollections ? new List<NeuronDeviceInfo>() : null;
         private int? _totalNeuronDeviceMemoryInMiB;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if NeuronDevices property is set
         internal bool IsSetNeuronDevices()
         {
-            return this._neuronDevices != null && this._neuronDevices.Count > 0; 
+            return this._neuronDevices != null && (this._neuronDevices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

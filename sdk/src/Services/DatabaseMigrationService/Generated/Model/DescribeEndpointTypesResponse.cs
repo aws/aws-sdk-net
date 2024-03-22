@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class DescribeEndpointTypesResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<SupportedEndpointType> _supportedEndpointTypes = new List<SupportedEndpointType>();
+        private List<SupportedEndpointType> _supportedEndpointTypes = AWSConfigs.InitializeCollections ? new List<SupportedEndpointType>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +71,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if SupportedEndpointTypes property is set
         internal bool IsSetSupportedEndpointTypes()
         {
-            return this._supportedEndpointTypes != null && this._supportedEndpointTypes.Count > 0; 
+            return this._supportedEndpointTypes != null && (this._supportedEndpointTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.AccessAnalyzer.Model
         private DateTime? _analyzedAt;
         private DateTime? _createdAt;
         private string _error;
-        private List<FindingDetails> _findingDetails = new List<FindingDetails>();
+        private List<FindingDetails> _findingDetails = AWSConfigs.InitializeCollections ? new List<FindingDetails>() : null;
         private FindingType _findingType;
         private string _id;
         private string _nextToken;
@@ -120,7 +120,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if FindingDetails property is set
         internal bool IsSetFindingDetails()
         {
-            return this._findingDetails != null && this._findingDetails.Count > 0; 
+            return this._findingDetails != null && (this._findingDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

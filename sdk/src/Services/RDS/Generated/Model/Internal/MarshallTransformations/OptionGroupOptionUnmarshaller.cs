@@ -99,6 +99,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OptionGroupOptionSettings/OptionGroupOptionSetting", targetDepth))
                     {
                         var unmarshaller = OptionGroupOptionSettingUnmarshaller.Instance;
+                        if (unmarshalledObject.OptionGroupOptionSettings == null)
+                        {
+                            unmarshalledObject.OptionGroupOptionSettings = new List<OptionGroupOptionSetting>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.OptionGroupOptionSettings.Add(item);
                         continue;
@@ -106,6 +110,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OptionGroupOptionVersions/OptionVersion", targetDepth))
                     {
                         var unmarshaller = OptionVersionUnmarshaller.Instance;
+                        if (unmarshalledObject.OptionGroupOptionVersions == null)
+                        {
+                            unmarshalledObject.OptionGroupOptionVersions = new List<OptionVersion>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.OptionGroupOptionVersions.Add(item);
                         continue;
@@ -113,6 +121,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OptionsConflictsWith/OptionConflictName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.OptionsConflictsWith == null)
+                        {
+                            unmarshalledObject.OptionsConflictsWith = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.OptionsConflictsWith.Add(item);
                         continue;
@@ -120,6 +132,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OptionsDependedOn/OptionName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.OptionsDependedOn == null)
+                        {
+                            unmarshalledObject.OptionsDependedOn = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.OptionsDependedOn.Add(item);
                         continue;

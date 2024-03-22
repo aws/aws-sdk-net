@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeOperatingSystemsResponse : AmazonWebServiceResponse
     {
-        private List<OperatingSystem> _operatingSystems = new List<OperatingSystem>();
+        private List<OperatingSystem> _operatingSystems = AWSConfigs.InitializeCollections ? new List<OperatingSystem>() : null;
 
         /// <summary>
         /// Gets and sets the property OperatingSystems. 
@@ -50,7 +50,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if OperatingSystems property is set
         internal bool IsSetOperatingSystems()
         {
-            return this._operatingSystems != null && this._operatingSystems.Count > 0; 
+            return this._operatingSystems != null && (this._operatingSystems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

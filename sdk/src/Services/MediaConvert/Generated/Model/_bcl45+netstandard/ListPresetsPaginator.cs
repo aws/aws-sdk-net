@@ -45,7 +45,7 @@ namespace Amazon.MediaConvert.Model
         /// Enumerable containing all of the Presets
         /// </summary>
         public IPaginatedEnumerable<Preset> Presets => 
-            new PaginatedResultKeyResponse<ListPresetsResponse, Preset>(this, (i) => i.Presets);
+            new PaginatedResultKeyResponse<ListPresetsResponse, Preset>(this, (i) => i.Presets ?? new List<Preset>());
 
         internal ListPresetsPaginator(IAmazonMediaConvert client, ListPresetsRequest request)
         {

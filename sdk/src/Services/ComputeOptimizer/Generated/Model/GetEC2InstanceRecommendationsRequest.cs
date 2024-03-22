@@ -42,9 +42,9 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetEC2InstanceRecommendationsRequest : AmazonComputeOptimizerRequest
     {
-        private List<string> _accountIds = new List<string>();
-        private List<Filter> _filters = new List<Filter>();
-        private List<string> _instanceArns = new List<string>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _instanceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private RecommendationPreferences _recommendationPreferences;
@@ -73,7 +73,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if InstanceArns property is set
         internal bool IsSetInstanceArns()
         {
-            return this._instanceArns != null && this._instanceArns.Count > 0; 
+            return this._instanceArns != null && (this._instanceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

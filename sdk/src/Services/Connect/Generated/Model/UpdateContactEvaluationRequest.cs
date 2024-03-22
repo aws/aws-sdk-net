@@ -37,10 +37,10 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class UpdateContactEvaluationRequest : AmazonConnectRequest
     {
-        private Dictionary<string, EvaluationAnswerInput> _answers = new Dictionary<string, EvaluationAnswerInput>();
+        private Dictionary<string, EvaluationAnswerInput> _answers = AWSConfigs.InitializeCollections ? new Dictionary<string, EvaluationAnswerInput>() : null;
         private string _evaluationId;
         private string _instanceId;
-        private Dictionary<string, EvaluationNote> _notes = new Dictionary<string, EvaluationNote>();
+        private Dictionary<string, EvaluationNote> _notes = AWSConfigs.InitializeCollections ? new Dictionary<string, EvaluationNote>() : null;
 
         /// <summary>
         /// Gets and sets the property Answers. 
@@ -58,7 +58,7 @@ namespace Amazon.Connect.Model
         // Check to see if Answers property is set
         internal bool IsSetAnswers()
         {
-            return this._answers != null && this._answers.Count > 0; 
+            return this._answers != null && (this._answers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.Connect.Model
         // Check to see if Notes property is set
         internal bool IsSetNotes()
         {
-            return this._notes != null && this._notes.Count > 0; 
+            return this._notes != null && (this._notes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

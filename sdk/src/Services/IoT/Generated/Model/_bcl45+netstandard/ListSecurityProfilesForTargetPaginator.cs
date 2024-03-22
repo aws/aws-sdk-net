@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the SecurityProfileTargetMappings
         /// </summary>
         public IPaginatedEnumerable<SecurityProfileTargetMapping> SecurityProfileTargetMappings => 
-            new PaginatedResultKeyResponse<ListSecurityProfilesForTargetResponse, SecurityProfileTargetMapping>(this, (i) => i.SecurityProfileTargetMappings);
+            new PaginatedResultKeyResponse<ListSecurityProfilesForTargetResponse, SecurityProfileTargetMapping>(this, (i) => i.SecurityProfileTargetMappings ?? new List<SecurityProfileTargetMapping>());
 
         internal ListSecurityProfilesForTargetPaginator(IAmazonIoT client, ListSecurityProfilesForTargetRequest request)
         {

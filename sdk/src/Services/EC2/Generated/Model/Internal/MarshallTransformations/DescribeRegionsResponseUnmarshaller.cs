@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("regionInfo/item", targetDepth))
                     {
                         var unmarshaller = RegionUnmarshaller.Instance;
+                        if (response.Regions == null)
+                        {
+                            response.Regions = new List<Region>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Regions.Add(item);
                         continue;

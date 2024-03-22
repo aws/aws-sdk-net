@@ -45,7 +45,7 @@ namespace Amazon.MediaPackageVod.Model
         /// Enumerable containing all of the PackagingConfigurations
         /// </summary>
         public IPaginatedEnumerable<PackagingConfiguration> PackagingConfigurations => 
-            new PaginatedResultKeyResponse<ListPackagingConfigurationsResponse, PackagingConfiguration>(this, (i) => i.PackagingConfigurations);
+            new PaginatedResultKeyResponse<ListPackagingConfigurationsResponse, PackagingConfiguration>(this, (i) => i.PackagingConfigurations ?? new List<PackagingConfiguration>());
 
         internal ListPackagingConfigurationsPaginator(IAmazonMediaPackageVod client, ListPackagingConfigurationsRequest request)
         {

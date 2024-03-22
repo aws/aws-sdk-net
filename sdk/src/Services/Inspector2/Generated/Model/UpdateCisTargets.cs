@@ -33,8 +33,8 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class UpdateCisTargets
     {
-        private List<string> _accountIds = new List<string>();
-        private Dictionary<string, List<string>> _targetResourceTags = new Dictionary<string, List<string>>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, List<string>> _targetResourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountIds. 
@@ -52,7 +52,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TargetResourceTags property is set
         internal bool IsSetTargetResourceTags()
         {
-            return this._targetResourceTags != null && this._targetResourceTags.Count > 0; 
+            return this._targetResourceTags != null && (this._targetResourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

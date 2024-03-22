@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instancesSet/item", targetDepth))
                     {
                         var unmarshaller = ClassicLinkInstanceUnmarshaller.Instance;
+                        if (response.Instances == null)
+                        {
+                            response.Instances = new List<ClassicLinkInstance>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Instances.Add(item);
                         continue;

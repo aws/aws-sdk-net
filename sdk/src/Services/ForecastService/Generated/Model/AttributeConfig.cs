@@ -56,7 +56,7 @@ namespace Amazon.ForecastService.Model
     public partial class AttributeConfig
     {
         private string _attributeName;
-        private Dictionary<string, string> _transformations = new Dictionary<string, string>();
+        private Dictionary<string, string> _transformations = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeName. 
@@ -148,7 +148,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if Transformations property is set
         internal bool IsSetTransformations()
         {
-            return this._transformations != null && this._transformations.Count > 0; 
+            return this._transformations != null && (this._transformations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

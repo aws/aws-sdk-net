@@ -36,7 +36,7 @@ namespace Amazon.AWSSupport.Model
         private string _category;
         private string _description;
         private string _id;
-        private List<string> _metadata = new List<string>();
+        private List<string> _metadata = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

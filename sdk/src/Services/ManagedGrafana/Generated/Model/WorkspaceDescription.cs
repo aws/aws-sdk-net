@@ -37,7 +37,7 @@ namespace Amazon.ManagedGrafana.Model
         private AccountAccessType _accountAccessType;
         private AuthenticationSummary _authentication;
         private DateTime? _created;
-        private List<string> _dataSources = new List<string>();
+        private List<string> _dataSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _endpoint;
         private bool? _freeTrialConsumed;
@@ -50,13 +50,13 @@ namespace Amazon.ManagedGrafana.Model
         private DateTime? _modified;
         private string _name;
         private NetworkAccessConfiguration _networkAccessControl;
-        private List<string> _notificationDestinations = new List<string>();
-        private List<string> _organizationalUnits = new List<string>();
+        private List<string> _notificationDestinations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _organizationalUnits = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _organizationRoleName;
         private PermissionType _permissionType;
         private string _stackSetName;
         private WorkspaceStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VpcConfiguration _vpcConfiguration;
         private string _workspaceRoleArn;
 
@@ -143,7 +143,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if DataSources property is set
         internal bool IsSetDataSources()
         {
-            return this._dataSources != null && this._dataSources.Count > 0; 
+            return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -408,7 +408,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if NotificationDestinations property is set
         internal bool IsSetNotificationDestinations()
         {
-            return this._notificationDestinations != null && this._notificationDestinations.Count > 0; 
+            return this._notificationDestinations != null && (this._notificationDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -428,7 +428,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if OrganizationalUnits property is set
         internal bool IsSetOrganizationalUnits()
         {
-            return this._organizationalUnits != null && this._organizationalUnits.Count > 0; 
+            return this._organizationalUnits != null && (this._organizationalUnits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -546,7 +546,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

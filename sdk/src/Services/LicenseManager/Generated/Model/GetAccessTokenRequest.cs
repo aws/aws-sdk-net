@@ -36,7 +36,7 @@ namespace Amazon.LicenseManager.Model
     public partial class GetAccessTokenRequest : AmazonLicenseManagerRequest
     {
         private string _token;
-        private List<string> _tokenProperties = new List<string>();
+        private List<string> _tokenProperties = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Token. 
@@ -73,7 +73,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if TokenProperties property is set
         internal bool IsSetTokenProperties()
         {
-            return this._tokenProperties != null && this._tokenProperties.Count > 0; 
+            return this._tokenProperties != null && (this._tokenProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

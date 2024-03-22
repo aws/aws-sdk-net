@@ -75,7 +75,7 @@ namespace Amazon.GameLift.Model
     public partial class StartMatchmakingRequest : AmazonGameLiftRequest
     {
         private string _configurationName;
-        private List<Player> _players = new List<Player>();
+        private List<Player> _players = AWSConfigs.InitializeCollections ? new List<Player>() : null;
         private string _ticketId;
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Players property is set
         internal bool IsSetPlayers()
         {
-            return this._players != null && this._players.Count > 0; 
+            return this._players != null && (this._players.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

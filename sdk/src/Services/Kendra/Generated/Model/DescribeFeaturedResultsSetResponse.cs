@@ -35,12 +35,12 @@ namespace Amazon.Kendra.Model
     {
         private long? _creationTimestamp;
         private string _description;
-        private List<FeaturedDocumentMissing> _featuredDocumentsMissing = new List<FeaturedDocumentMissing>();
-        private List<FeaturedDocumentWithMetadata> _featuredDocumentsWithMetadata = new List<FeaturedDocumentWithMetadata>();
+        private List<FeaturedDocumentMissing> _featuredDocumentsMissing = AWSConfigs.InitializeCollections ? new List<FeaturedDocumentMissing>() : null;
+        private List<FeaturedDocumentWithMetadata> _featuredDocumentsWithMetadata = AWSConfigs.InitializeCollections ? new List<FeaturedDocumentWithMetadata>() : null;
         private string _featuredResultsSetId;
         private string _featuredResultsSetName;
         private long? _lastUpdatedTimestamp;
-        private List<string> _queryTexts = new List<string>();
+        private List<string> _queryTexts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FeaturedResultsSetStatus _status;
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FeaturedDocumentsMissing property is set
         internal bool IsSetFeaturedDocumentsMissing()
         {
-            return this._featuredDocumentsMissing != null && this._featuredDocumentsMissing.Count > 0; 
+            return this._featuredDocumentsMissing != null && (this._featuredDocumentsMissing.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FeaturedDocumentsWithMetadata property is set
         internal bool IsSetFeaturedDocumentsWithMetadata()
         {
-            return this._featuredDocumentsWithMetadata != null && this._featuredDocumentsWithMetadata.Count > 0; 
+            return this._featuredDocumentsWithMetadata != null && (this._featuredDocumentsWithMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace Amazon.Kendra.Model
         // Check to see if QueryTexts property is set
         internal bool IsSetQueryTexts()
         {
-            return this._queryTexts != null && this._queryTexts.Count > 0; 
+            return this._queryTexts != null && (this._queryTexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

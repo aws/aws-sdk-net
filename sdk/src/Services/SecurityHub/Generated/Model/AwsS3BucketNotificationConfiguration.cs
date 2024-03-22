@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsS3BucketNotificationConfiguration
     {
-        private List<AwsS3BucketNotificationConfigurationDetail> _configurations = new List<AwsS3BucketNotificationConfigurationDetail>();
+        private List<AwsS3BucketNotificationConfigurationDetail> _configurations = AWSConfigs.InitializeCollections ? new List<AwsS3BucketNotificationConfigurationDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property Configurations. 
@@ -50,7 +50,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

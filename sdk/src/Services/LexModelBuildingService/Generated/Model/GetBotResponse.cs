@@ -43,7 +43,7 @@ namespace Amazon.LexModelBuildingService.Model
         private bool? _enableModelImprovements;
         private string _failureReason;
         private int? _idleSessionTTLInSeconds;
-        private List<Intent> _intents = new List<Intent>();
+        private List<Intent> _intents = AWSConfigs.InitializeCollections ? new List<Intent>() : null;
         private DateTime? _lastUpdatedDate;
         private Locale _locale;
         private string _name;
@@ -279,7 +279,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if Intents property is set
         internal bool IsSetIntents()
         {
-            return this._intents != null && this._intents.Count > 0; 
+            return this._intents != null && (this._intents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

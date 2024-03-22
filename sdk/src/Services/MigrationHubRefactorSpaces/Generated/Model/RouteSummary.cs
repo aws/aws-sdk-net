@@ -42,15 +42,15 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         private ErrorResponse _error;
         private bool? _includeChildPaths;
         private DateTime? _lastUpdatedTime;
-        private List<string> _methods = new List<string>();
+        private List<string> _methods = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ownerAccountId;
-        private Dictionary<string, string> _pathResourceToId = new Dictionary<string, string>();
+        private Dictionary<string, string> _pathResourceToId = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _routeId;
         private RouteType _routeType;
         private string _serviceId;
         private string _sourcePath;
         private RouteState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AppendSourcePath. 
@@ -237,7 +237,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         // Check to see if Methods property is set
         internal bool IsSetMethods()
         {
-            return this._methods != null && this._methods.Count > 0; 
+            return this._methods != null && (this._methods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -274,7 +274,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         // Check to see if PathResourceToId property is set
         internal bool IsSetPathResourceToId()
         {
-            return this._pathResourceToId != null && this._pathResourceToId.Count > 0; 
+            return this._pathResourceToId != null && (this._pathResourceToId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -389,7 +389,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

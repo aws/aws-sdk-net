@@ -40,7 +40,7 @@ namespace Amazon.ConfigService.Model
         private string _createdByService;
         private ExecutionControls _executionControls;
         private int? _maximumAutomaticAttempts;
-        private Dictionary<string, RemediationParameterValue> _parameters = new Dictionary<string, RemediationParameterValue>();
+        private Dictionary<string, RemediationParameterValue> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, RemediationParameterValue>() : null;
         private string _resourceType;
         private long? _retryAttemptSeconds;
         private string _targetId;
@@ -182,7 +182,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

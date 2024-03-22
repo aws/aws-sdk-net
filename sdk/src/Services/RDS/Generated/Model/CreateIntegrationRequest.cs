@@ -34,13 +34,13 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class CreateIntegrationRequest : AmazonRDSRequest
     {
-        private Dictionary<string, string> _additionalEncryptionContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _dataFilter;
         private string _description;
         private string _integrationName;
         private string _kmsKeyId;
         private string _sourceArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _targetArn;
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         // Check to see if AdditionalEncryptionContext property is set
         internal bool IsSetAdditionalEncryptionContext()
         {
-            return this._additionalEncryptionContext != null && this._additionalEncryptionContext.Count > 0; 
+            return this._additionalEncryptionContext != null && (this._additionalEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.RDS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

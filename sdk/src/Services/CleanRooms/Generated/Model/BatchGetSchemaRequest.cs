@@ -35,7 +35,7 @@ namespace Amazon.CleanRooms.Model
     public partial class BatchGetSchemaRequest : AmazonCleanRoomsRequest
     {
         private string _collaborationIdentifier;
-        private List<string> _names = new List<string>();
+        private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CollaborationIdentifier. 
@@ -73,7 +73,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Names property is set
         internal bool IsSetNames()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

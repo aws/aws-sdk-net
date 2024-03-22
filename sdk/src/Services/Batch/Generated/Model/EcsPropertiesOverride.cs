@@ -33,7 +33,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EcsPropertiesOverride
     {
-        private List<TaskPropertiesOverride> _taskProperties = new List<TaskPropertiesOverride>();
+        private List<TaskPropertiesOverride> _taskProperties = AWSConfigs.InitializeCollections ? new List<TaskPropertiesOverride>() : null;
 
         /// <summary>
         /// Gets and sets the property TaskProperties. 
@@ -55,7 +55,7 @@ namespace Amazon.Batch.Model
         // Check to see if TaskProperties property is set
         internal bool IsSetTaskProperties()
         {
-            return this._taskProperties != null && this._taskProperties.Count > 0; 
+            return this._taskProperties != null && (this._taskProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

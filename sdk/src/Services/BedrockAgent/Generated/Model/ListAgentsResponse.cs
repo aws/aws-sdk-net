@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class ListAgentsResponse : AmazonWebServiceResponse
     {
-        private List<AgentSummary> _agentSummaries = new List<AgentSummary>();
+        private List<AgentSummary> _agentSummaries = AWSConfigs.InitializeCollections ? new List<AgentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if AgentSummaries property is set
         internal bool IsSetAgentSummaries()
         {
-            return this._agentSummaries != null && this._agentSummaries.Count > 0; 
+            return this._agentSummaries != null && (this._agentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

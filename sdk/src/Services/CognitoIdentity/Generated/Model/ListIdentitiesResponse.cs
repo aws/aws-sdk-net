@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentity.Model
     /// </summary>
     public partial class ListIdentitiesResponse : AmazonWebServiceResponse
     {
-        private List<IdentityDescription> _identities = new List<IdentityDescription>();
+        private List<IdentityDescription> _identities = AWSConfigs.InitializeCollections ? new List<IdentityDescription>() : null;
         private string _identityPoolId;
         private string _nextToken;
 
@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if Identities property is set
         internal bool IsSetIdentities()
         {
-            return this._identities != null && this._identities.Count > 0; 
+            return this._identities != null && (this._identities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

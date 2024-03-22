@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the RegistrationAttachments
         /// </summary>
         public IPaginatedEnumerable<RegistrationAttachmentsInformation> RegistrationAttachments => 
-            new PaginatedResultKeyResponse<DescribeRegistrationAttachmentsResponse, RegistrationAttachmentsInformation>(this, (i) => i.RegistrationAttachments);
+            new PaginatedResultKeyResponse<DescribeRegistrationAttachmentsResponse, RegistrationAttachmentsInformation>(this, (i) => i.RegistrationAttachments ?? new List<RegistrationAttachmentsInformation>());
 
         internal DescribeRegistrationAttachmentsPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeRegistrationAttachmentsRequest request)
         {

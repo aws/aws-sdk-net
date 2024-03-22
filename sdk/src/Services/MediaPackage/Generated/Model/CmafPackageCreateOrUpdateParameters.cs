@@ -34,7 +34,7 @@ namespace Amazon.MediaPackage.Model
     public partial class CmafPackageCreateOrUpdateParameters
     {
         private CmafEncryption _encryption;
-        private List<HlsManifestCreateOrUpdateParameters> _hlsManifests = new List<HlsManifestCreateOrUpdateParameters>();
+        private List<HlsManifestCreateOrUpdateParameters> _hlsManifests = AWSConfigs.InitializeCollections ? new List<HlsManifestCreateOrUpdateParameters>() : null;
         private int? _segmentDurationSeconds;
         private string _segmentPrefix;
         private StreamSelection _streamSelection;
@@ -66,7 +66,7 @@ namespace Amazon.MediaPackage.Model
         // Check to see if HlsManifests property is set
         internal bool IsSetHlsManifests()
         {
-            return this._hlsManifests != null && this._hlsManifests.Count > 0; 
+            return this._hlsManifests != null && (this._hlsManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

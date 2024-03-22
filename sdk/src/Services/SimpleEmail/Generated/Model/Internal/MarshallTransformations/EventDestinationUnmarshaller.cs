@@ -75,6 +75,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MatchingEventTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.MatchingEventTypes == null)
+                        {
+                            unmarshalledObject.MatchingEventTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MatchingEventTypes.Add(item);
                         continue;

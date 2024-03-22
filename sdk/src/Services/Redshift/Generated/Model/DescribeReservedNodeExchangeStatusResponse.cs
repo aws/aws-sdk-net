@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeReservedNodeExchangeStatusResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ReservedNodeExchangeStatus> _reservedNodeExchangeStatusDetails = new List<ReservedNodeExchangeStatus>();
+        private List<ReservedNodeExchangeStatus> _reservedNodeExchangeStatusDetails = AWSConfigs.InitializeCollections ? new List<ReservedNodeExchangeStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -72,7 +72,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ReservedNodeExchangeStatusDetails property is set
         internal bool IsSetReservedNodeExchangeStatusDetails()
         {
-            return this._reservedNodeExchangeStatusDetails != null && this._reservedNodeExchangeStatusDetails.Count > 0; 
+            return this._reservedNodeExchangeStatusDetails != null && (this._reservedNodeExchangeStatusDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

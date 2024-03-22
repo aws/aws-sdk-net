@@ -35,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     {
         private string _groupByAttribute;
         private string _insightArn;
-        private List<InsightResultValue> _resultValues = new List<InsightResultValue>();
+        private List<InsightResultValue> _resultValues = AWSConfigs.InitializeCollections ? new List<InsightResultValue>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupByAttribute. 
@@ -93,7 +93,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ResultValues property is set
         internal bool IsSetResultValues()
         {
-            return this._resultValues != null && this._resultValues.Count > 0; 
+            return this._resultValues != null && (this._resultValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

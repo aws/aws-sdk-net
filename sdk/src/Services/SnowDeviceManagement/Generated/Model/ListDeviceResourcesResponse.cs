@@ -34,7 +34,7 @@ namespace Amazon.SnowDeviceManagement.Model
     public partial class ListDeviceResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceSummary> _resources = new List<ResourceSummary>();
+        private List<ResourceSummary> _resources = AWSConfigs.InitializeCollections ? new List<ResourceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SnowDeviceManagement.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

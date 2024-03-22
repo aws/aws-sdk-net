@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// Enumerable containing all of the ProvisionedConcurrencyConfigs
         /// </summary>
         public IPaginatedEnumerable<ProvisionedConcurrencyConfigListItem> ProvisionedConcurrencyConfigs => 
-            new PaginatedResultKeyResponse<ListProvisionedConcurrencyConfigsResponse, ProvisionedConcurrencyConfigListItem>(this, (i) => i.ProvisionedConcurrencyConfigs);
+            new PaginatedResultKeyResponse<ListProvisionedConcurrencyConfigsResponse, ProvisionedConcurrencyConfigListItem>(this, (i) => i.ProvisionedConcurrencyConfigs ?? new List<ProvisionedConcurrencyConfigListItem>());
 
         internal ListProvisionedConcurrencyConfigsPaginator(IAmazonLambda client, ListProvisionedConcurrencyConfigsRequest request)
         {

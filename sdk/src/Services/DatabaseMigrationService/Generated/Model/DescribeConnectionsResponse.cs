@@ -33,7 +33,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DescribeConnectionsResponse : AmazonWebServiceResponse
     {
-        private List<Connection> _connections = new List<Connection>();
+        private List<Connection> _connections = AWSConfigs.InitializeCollections ? new List<Connection>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Connections property is set
         internal bool IsSetConnections()
         {
-            return this._connections != null && this._connections.Count > 0; 
+            return this._connections != null && (this._connections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

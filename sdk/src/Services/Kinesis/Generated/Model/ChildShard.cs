@@ -34,7 +34,7 @@ namespace Amazon.Kinesis.Model
     public partial class ChildShard
     {
         private HashKeyRange _hashKeyRange;
-        private List<string> _parentShards = new List<string>();
+        private List<string> _parentShards = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _shardId;
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if ParentShards property is set
         internal bool IsSetParentShards()
         {
-            return this._parentShards != null && this._parentShards.Count > 0; 
+            return this._parentShards != null && (this._parentShards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

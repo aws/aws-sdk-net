@@ -35,7 +35,7 @@ namespace Amazon.BackupGateway.Model
     {
         private string _hypervisorArn;
         private string _iamRoleArn;
-        private List<VmwareToAwsTagMapping> _vmwareToAwsTagMappings = new List<VmwareToAwsTagMapping>();
+        private List<VmwareToAwsTagMapping> _vmwareToAwsTagMappings = AWSConfigs.InitializeCollections ? new List<VmwareToAwsTagMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property HypervisorArn. 
@@ -91,7 +91,7 @@ namespace Amazon.BackupGateway.Model
         // Check to see if VmwareToAwsTagMappings property is set
         internal bool IsSetVmwareToAwsTagMappings()
         {
-            return this._vmwareToAwsTagMappings != null && this._vmwareToAwsTagMappings.Count > 0; 
+            return this._vmwareToAwsTagMappings != null && (this._vmwareToAwsTagMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

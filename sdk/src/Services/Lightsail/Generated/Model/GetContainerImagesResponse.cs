@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetContainerImagesResponse : AmazonWebServiceResponse
     {
-        private List<ContainerImage> _containerImages = new List<ContainerImage>();
+        private List<ContainerImage> _containerImages = AWSConfigs.InitializeCollections ? new List<ContainerImage>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerImages. 
@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ContainerImages property is set
         internal bool IsSetContainerImages()
         {
-            return this._containerImages != null && this._containerImages.Count > 0; 
+            return this._containerImages != null && (this._containerImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

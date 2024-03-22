@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("spotInstanceRequestSet/item", targetDepth))
                     {
                         var unmarshaller = CancelledSpotInstanceRequestUnmarshaller.Instance;
+                        if (response.CancelledSpotInstanceRequests == null)
+                        {
+                            response.CancelledSpotInstanceRequests = new List<CancelledSpotInstanceRequest>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CancelledSpotInstanceRequests.Add(item);
                         continue;

@@ -33,7 +33,7 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class PutTraceSegmentsResponse : AmazonWebServiceResponse
     {
-        private List<UnprocessedTraceSegment> _unprocessedTraceSegments = new List<UnprocessedTraceSegment>();
+        private List<UnprocessedTraceSegment> _unprocessedTraceSegments = AWSConfigs.InitializeCollections ? new List<UnprocessedTraceSegment>() : null;
 
         /// <summary>
         /// Gets and sets the property UnprocessedTraceSegments. 
@@ -50,7 +50,7 @@ namespace Amazon.XRay.Model
         // Check to see if UnprocessedTraceSegments property is set
         internal bool IsSetUnprocessedTraceSegments()
         {
-            return this._unprocessedTraceSegments != null && this._unprocessedTraceSegments.Count > 0; 
+            return this._unprocessedTraceSegments != null && (this._unprocessedTraceSegments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

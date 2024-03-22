@@ -33,7 +33,7 @@ namespace Amazon.DocDB.Model
     /// </summary>
     public partial class DescribeDBClusterParameterGroupsResponse : AmazonWebServiceResponse
     {
-        private List<DBClusterParameterGroup> _dbClusterParameterGroups = new List<DBClusterParameterGroup>();
+        private List<DBClusterParameterGroup> _dbClusterParameterGroups = AWSConfigs.InitializeCollections ? new List<DBClusterParameterGroup>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DocDB.Model
         // Check to see if DBClusterParameterGroups property is set
         internal bool IsSetDBClusterParameterGroups()
         {
-            return this._dbClusterParameterGroups != null && this._dbClusterParameterGroups.Count > 0; 
+            return this._dbClusterParameterGroups != null && (this._dbClusterParameterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -39,7 +39,7 @@ namespace Amazon.Kendra.Model
         private bool? _freshness;
         private int? _importance;
         private Order _rankOrder;
-        private Dictionary<string, int> _valueImportanceMap = new Dictionary<string, int>();
+        private Dictionary<string, int> _valueImportanceMap = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
 
         /// <summary>
         /// Gets and sets the property Duration. 
@@ -170,7 +170,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ValueImportanceMap property is set
         internal bool IsSetValueImportanceMap()
         {
-            return this._valueImportanceMap != null && this._valueImportanceMap.Count > 0; 
+            return this._valueImportanceMap != null && (this._valueImportanceMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

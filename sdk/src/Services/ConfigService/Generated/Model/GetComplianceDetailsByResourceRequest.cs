@@ -36,7 +36,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class GetComplianceDetailsByResourceRequest : AmazonConfigServiceRequest
     {
-        private List<string> _complianceTypes = new List<string>();
+        private List<string> _complianceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
         private string _resourceEvaluationId;
         private string _resourceId;
@@ -64,7 +64,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ComplianceTypes property is set
         internal bool IsSetComplianceTypes()
         {
-            return this._complianceTypes != null && this._complianceTypes.Count > 0; 
+            return this._complianceTypes != null && (this._complianceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

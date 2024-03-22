@@ -33,7 +33,7 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class ListKxDatabasesResponse : AmazonWebServiceResponse
     {
-        private List<KxDatabaseListEntry> _kxDatabases = new List<KxDatabaseListEntry>();
+        private List<KxDatabaseListEntry> _kxDatabases = AWSConfigs.InitializeCollections ? new List<KxDatabaseListEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Finspace.Model
         // Check to see if KxDatabases property is set
         internal bool IsSetKxDatabases()
         {
-            return this._kxDatabases != null && this._kxDatabases.Count > 0; 
+            return this._kxDatabases != null && (this._kxDatabases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.MediaConnect.Model
         /// Enumerable containing all of the Bridges
         /// </summary>
         public IPaginatedEnumerable<ListedBridge> Bridges => 
-            new PaginatedResultKeyResponse<ListBridgesResponse, ListedBridge>(this, (i) => i.Bridges);
+            new PaginatedResultKeyResponse<ListBridgesResponse, ListedBridge>(this, (i) => i.Bridges ?? new List<ListedBridge>());
 
         internal ListBridgesPaginator(IAmazonMediaConnect client, ListBridgesRequest request)
         {

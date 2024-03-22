@@ -45,7 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// Enumerable containing all of the ResolverQueryLogConfigs
         /// </summary>
         public IPaginatedEnumerable<ResolverQueryLogConfig> ResolverQueryLogConfigs => 
-            new PaginatedResultKeyResponse<ListResolverQueryLogConfigsResponse, ResolverQueryLogConfig>(this, (i) => i.ResolverQueryLogConfigs);
+            new PaginatedResultKeyResponse<ListResolverQueryLogConfigsResponse, ResolverQueryLogConfig>(this, (i) => i.ResolverQueryLogConfigs ?? new List<ResolverQueryLogConfig>());
 
         internal ListResolverQueryLogConfigsPaginator(IAmazonRoute53Resolver client, ListResolverQueryLogConfigsRequest request)
         {

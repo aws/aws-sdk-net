@@ -35,7 +35,7 @@ namespace Amazon.MTurk.Model
     {
         private string _nextToken;
         private int? _numResults;
-        private List<WorkerBlock> _workerBlocks = new List<WorkerBlock>();
+        private List<WorkerBlock> _workerBlocks = AWSConfigs.InitializeCollections ? new List<WorkerBlock>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -88,7 +88,7 @@ namespace Amazon.MTurk.Model
         // Check to see if WorkerBlocks property is set
         internal bool IsSetWorkerBlocks()
         {
-            return this._workerBlocks != null && this._workerBlocks.Count > 0; 
+            return this._workerBlocks != null && (this._workerBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class DescribeVerifiedDestinationNumbersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VerifiedDestinationNumberInformation> _verifiedDestinationNumbers = new List<VerifiedDestinationNumberInformation>();
+        private List<VerifiedDestinationNumberInformation> _verifiedDestinationNumbers = AWSConfigs.InitializeCollections ? new List<VerifiedDestinationNumberInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if VerifiedDestinationNumbers property is set
         internal bool IsSetVerifiedDestinationNumbers()
         {
-            return this._verifiedDestinationNumbers != null && this._verifiedDestinationNumbers.Count > 0; 
+            return this._verifiedDestinationNumbers != null && (this._verifiedDestinationNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

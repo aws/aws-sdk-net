@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("vpnGatewaySet/item", targetDepth))
                     {
                         var unmarshaller = VpnGatewayUnmarshaller.Instance;
+                        if (response.VpnGateways == null)
+                        {
+                            response.VpnGateways = new List<VpnGateway>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.VpnGateways.Add(item);
                         continue;

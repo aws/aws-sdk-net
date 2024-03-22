@@ -45,7 +45,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the TargetResourceAggregations
         /// </summary>
         public IPaginatedEnumerable<CisTargetResourceAggregation> TargetResourceAggregations => 
-            new PaginatedResultKeyResponse<ListCisScanResultsAggregatedByTargetResourceResponse, CisTargetResourceAggregation>(this, (i) => i.TargetResourceAggregations);
+            new PaginatedResultKeyResponse<ListCisScanResultsAggregatedByTargetResourceResponse, CisTargetResourceAggregation>(this, (i) => i.TargetResourceAggregations ?? new List<CisTargetResourceAggregation>());
 
         internal ListCisScanResultsAggregatedByTargetResourcePaginator(IAmazonInspector2 client, ListCisScanResultsAggregatedByTargetResourceRequest request)
         {

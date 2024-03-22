@@ -84,6 +84,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ApplicationVersions/member", targetDepth))
                     {
                         var unmarshaller = ApplicationVersionDescriptionUnmarshaller.Instance;
+                        if (response.ApplicationVersions == null)
+                        {
+                            response.ApplicationVersions = new List<ApplicationVersionDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ApplicationVersions.Add(item);
                         continue;

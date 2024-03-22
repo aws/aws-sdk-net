@@ -45,7 +45,7 @@ namespace Amazon.XRay.Model
         /// Enumerable containing all of the ResourcePolicies
         /// </summary>
         public IPaginatedEnumerable<ResourcePolicy> ResourcePolicies => 
-            new PaginatedResultKeyResponse<ListResourcePoliciesResponse, ResourcePolicy>(this, (i) => i.ResourcePolicies);
+            new PaginatedResultKeyResponse<ListResourcePoliciesResponse, ResourcePolicy>(this, (i) => i.ResourcePolicies ?? new List<ResourcePolicy>());
 
         internal ListResourcePoliciesPaginator(IAmazonXRay client, ListResourcePoliciesRequest request)
         {

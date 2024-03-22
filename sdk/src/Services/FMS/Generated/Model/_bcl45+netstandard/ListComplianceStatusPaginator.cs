@@ -45,7 +45,7 @@ namespace Amazon.FMS.Model
         /// Enumerable containing all of the PolicyComplianceStatusList
         /// </summary>
         public IPaginatedEnumerable<PolicyComplianceStatus> PolicyComplianceStatusList => 
-            new PaginatedResultKeyResponse<ListComplianceStatusResponse, PolicyComplianceStatus>(this, (i) => i.PolicyComplianceStatusList);
+            new PaginatedResultKeyResponse<ListComplianceStatusResponse, PolicyComplianceStatus>(this, (i) => i.PolicyComplianceStatusList ?? new List<PolicyComplianceStatus>());
 
         internal ListComplianceStatusPaginator(IAmazonFMS client, ListComplianceStatusRequest request)
         {

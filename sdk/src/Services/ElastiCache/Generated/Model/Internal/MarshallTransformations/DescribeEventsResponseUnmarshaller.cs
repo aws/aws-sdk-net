@@ -84,6 +84,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Events/Event", targetDepth))
                     {
                         var unmarshaller = EventUnmarshaller.Instance;
+                        if (response.Events == null)
+                        {
+                            response.Events = new List<Event>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Events.Add(item);
                         continue;

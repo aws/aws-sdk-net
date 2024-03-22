@@ -44,15 +44,15 @@ namespace Amazon.CloudWatchLogs.Model
         private string _anomalyId;
         private string _description;
         private long? _firstSeen;
-        private Dictionary<string, long> _histogram = new Dictionary<string, long>();
+        private Dictionary<string, long> _histogram = AWSConfigs.InitializeCollections ? new Dictionary<string, long>() : null;
         private bool? _isPatternLevelSuppression;
         private long? _lastSeen;
-        private List<string> _logGroupArnList = new List<string>();
-        private List<LogEvent> _logSamples = new List<LogEvent>();
+        private List<string> _logGroupArnList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<LogEvent> _logSamples = AWSConfigs.InitializeCollections ? new List<LogEvent>() : null;
         private string _patternId;
         private string _patternRegex;
         private string _patternString;
-        private List<PatternToken> _patternTokens = new List<PatternToken>();
+        private List<PatternToken> _patternTokens = AWSConfigs.InitializeCollections ? new List<PatternToken>() : null;
         private string _priority;
         private State _state;
         private bool? _suppressed;
@@ -174,7 +174,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Histogram property is set
         internal bool IsSetHistogram()
         {
-            return this._histogram != null && this._histogram.Count > 0; 
+            return this._histogram != null && (this._histogram.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogGroupArnList property is set
         internal bool IsSetLogGroupArnList()
         {
-            return this._logGroupArnList != null && this._logGroupArnList.Count > 0; 
+            return this._logGroupArnList != null && (this._logGroupArnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -253,7 +253,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogSamples property is set
         internal bool IsSetLogSamples()
         {
-            return this._logSamples != null && this._logSamples.Count > 0; 
+            return this._logSamples != null && (this._logSamples.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -330,7 +330,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if PatternTokens property is set
         internal bool IsSetPatternTokens()
         {
-            return this._patternTokens != null && this._patternTokens.Count > 0; 
+            return this._patternTokens != null && (this._patternTokens.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

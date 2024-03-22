@@ -44,7 +44,7 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class SftpConnectorConfig
     {
-        private List<string> _trustedHostKeys = new List<string>();
+        private List<string> _trustedHostKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _userSecretId;
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.Transfer.Model
         // Check to see if TrustedHostKeys property is set
         internal bool IsSetTrustedHostKeys()
         {
-            return this._trustedHostKeys != null && this._trustedHostKeys.Count > 0; 
+            return this._trustedHostKeys != null && (this._trustedHostKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

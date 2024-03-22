@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SnapshotUserConfiguration
     {
-        private List<SnapshotAnonymousUser> _anonymousUsers = new List<SnapshotAnonymousUser>();
+        private List<SnapshotAnonymousUser> _anonymousUsers = AWSConfigs.InitializeCollections ? new List<SnapshotAnonymousUser>() : null;
 
         /// <summary>
         /// Gets and sets the property AnonymousUsers. 
@@ -53,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AnonymousUsers property is set
         internal bool IsSetAnonymousUsers()
         {
-            return this._anonymousUsers != null && this._anonymousUsers.Count > 0; 
+            return this._anonymousUsers != null && (this._anonymousUsers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

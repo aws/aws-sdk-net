@@ -35,7 +35,7 @@ namespace Amazon.CodeGuruProfiler.Model
     /// </summary>
     public partial class AgentConfiguration
     {
-        private Dictionary<string, string> _agentParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _agentParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _periodInSeconds;
         private bool? _shouldProfile;
 
@@ -82,7 +82,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if AgentParameters property is set
         internal bool IsSetAgentParameters()
         {
-            return this._agentParameters != null && this._agentParameters.Count > 0; 
+            return this._agentParameters != null && (this._agentParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

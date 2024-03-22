@@ -33,7 +33,7 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class PipelineConfig
     {
-        private List<string> _functions = new List<string>();
+        private List<string> _functions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Functions. 
@@ -50,7 +50,7 @@ namespace Amazon.AppSync.Model
         // Check to see if Functions property is set
         internal bool IsSetFunctions()
         {
-            return this._functions != null && this._functions.Count > 0; 
+            return this._functions != null && (this._functions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

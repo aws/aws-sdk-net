@@ -34,7 +34,7 @@ namespace Amazon.FinSpaceData.Model
     /// </summary>
     public partial class CreatePermissionGroupRequest : AmazonFinSpaceDataRequest
     {
-        private List<string> _applicationPermissions = new List<string>();
+        private List<string> _applicationPermissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientToken;
         private string _description;
         private string _name;
@@ -94,7 +94,7 @@ namespace Amazon.FinSpaceData.Model
         // Check to see if ApplicationPermissions property is set
         internal bool IsSetApplicationPermissions()
         {
-            return this._applicationPermissions != null && this._applicationPermissions.Count > 0; 
+            return this._applicationPermissions != null && (this._applicationPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

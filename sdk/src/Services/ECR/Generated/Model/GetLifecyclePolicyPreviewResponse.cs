@@ -35,7 +35,7 @@ namespace Amazon.ECR.Model
     {
         private string _lifecyclePolicyText;
         private string _nextToken;
-        private List<LifecyclePolicyPreviewResult> _previewResults = new List<LifecyclePolicyPreviewResult>();
+        private List<LifecyclePolicyPreviewResult> _previewResults = AWSConfigs.InitializeCollections ? new List<LifecyclePolicyPreviewResult>() : null;
         private string _registryId;
         private string _repositoryName;
         private LifecyclePolicyPreviewStatus _status;
@@ -96,7 +96,7 @@ namespace Amazon.ECR.Model
         // Check to see if PreviewResults property is set
         internal bool IsSetPreviewResults()
         {
-            return this._previewResults != null && this._previewResults.Count > 0; 
+            return this._previewResults != null && (this._previewResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

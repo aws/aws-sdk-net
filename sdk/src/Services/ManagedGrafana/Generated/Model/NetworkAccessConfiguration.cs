@@ -62,8 +62,8 @@ namespace Amazon.ManagedGrafana.Model
     /// </summary>
     public partial class NetworkAccessConfiguration
     {
-        private List<string> _prefixListIds = new List<string>();
-        private List<string> _vpceIds = new List<string>();
+        private List<string> _prefixListIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _vpceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property PrefixListIds. 
@@ -94,7 +94,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if PrefixListIds property is set
         internal bool IsSetPrefixListIds()
         {
-            return this._prefixListIds != null && this._prefixListIds.Count > 0; 
+            return this._prefixListIds != null && (this._prefixListIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if VpceIds property is set
         internal bool IsSetVpceIds()
         {
-            return this._vpceIds != null && this._vpceIds.Count > 0; 
+            return this._vpceIds != null && (this._vpceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

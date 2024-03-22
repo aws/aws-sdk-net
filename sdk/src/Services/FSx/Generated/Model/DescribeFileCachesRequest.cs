@@ -69,7 +69,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DescribeFileCachesRequest : AmazonFSxRequest
     {
-        private List<string> _fileCacheIds = new List<string>();
+        private List<string> _fileCacheIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -89,7 +89,7 @@ namespace Amazon.FSx.Model
         // Check to see if FileCacheIds property is set
         internal bool IsSetFileCacheIds()
         {
-            return this._fileCacheIds != null && this._fileCacheIds.Count > 0; 
+            return this._fileCacheIds != null && (this._fileCacheIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

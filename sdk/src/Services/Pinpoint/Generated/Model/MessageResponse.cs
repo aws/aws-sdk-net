@@ -35,9 +35,9 @@ namespace Amazon.Pinpoint.Model
     public partial class MessageResponse
     {
         private string _applicationId;
-        private Dictionary<string, EndpointMessageResult> _endpointResult = new Dictionary<string, EndpointMessageResult>();
+        private Dictionary<string, EndpointMessageResult> _endpointResult = AWSConfigs.InitializeCollections ? new Dictionary<string, EndpointMessageResult>() : null;
         private string _requestId;
-        private Dictionary<string, MessageResult> _result = new Dictionary<string, MessageResult>();
+        private Dictionary<string, MessageResult> _result = AWSConfigs.InitializeCollections ? new Dictionary<string, MessageResult>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -74,7 +74,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if EndpointResult property is set
         internal bool IsSetEndpointResult()
         {
-            return this._endpointResult != null && this._endpointResult.Count > 0; 
+            return this._endpointResult != null && (this._endpointResult.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Result property is set
         internal bool IsSetResult()
         {
-            return this._result != null && this._result.Count > 0; 
+            return this._result != null && (this._result.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SSMContacts.Model
     public partial class ListPagesByEngagementResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Page> _pages = new List<Page>();
+        private List<Page> _pages = AWSConfigs.InitializeCollections ? new List<Page>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if Pages property is set
         internal bool IsSetPages()
         {
-            return this._pages != null && this._pages.Count > 0; 
+            return this._pages != null && (this._pages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

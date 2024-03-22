@@ -45,7 +45,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// Enumerable containing all of the AssistantAssociationSummaries
         /// </summary>
         public IPaginatedEnumerable<AssistantAssociationSummary> AssistantAssociationSummaries => 
-            new PaginatedResultKeyResponse<ListAssistantAssociationsResponse, AssistantAssociationSummary>(this, (i) => i.AssistantAssociationSummaries);
+            new PaginatedResultKeyResponse<ListAssistantAssociationsResponse, AssistantAssociationSummary>(this, (i) => i.AssistantAssociationSummaries ?? new List<AssistantAssociationSummary>());
 
         internal ListAssistantAssociationsPaginator(IAmazonConnectWisdomService client, ListAssistantAssociationsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class QueriesConfig
     {
-        private List<Query> _queries = new List<Query>();
+        private List<Query> _queries = AWSConfigs.InitializeCollections ? new List<Query>() : null;
 
         /// <summary>
         /// Gets and sets the property Queries.
@@ -48,7 +48,7 @@ namespace Amazon.Textract.Model
         // Check to see if Queries property is set
         internal bool IsSetQueries()
         {
-            return this._queries != null && this._queries.Count > 0; 
+            return this._queries != null && (this._queries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

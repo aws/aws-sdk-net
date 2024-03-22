@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model
     public partial class ListProtectedResourcesByBackupVaultResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProtectedResource> _results = new List<ProtectedResource>();
+        private List<ProtectedResource> _results = AWSConfigs.InitializeCollections ? new List<ProtectedResource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Backup.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

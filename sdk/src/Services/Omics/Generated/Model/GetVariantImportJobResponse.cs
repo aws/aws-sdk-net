@@ -33,12 +33,12 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class GetVariantImportJobResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _annotationFields = new Dictionary<string, string>();
+        private Dictionary<string, string> _annotationFields = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _completionTime;
         private DateTime? _creationTime;
         private string _destinationName;
         private string _id;
-        private List<VariantImportItemDetail> _items = new List<VariantImportItemDetail>();
+        private List<VariantImportItemDetail> _items = AWSConfigs.InitializeCollections ? new List<VariantImportItemDetail>() : null;
         private string _roleArn;
         private bool? _runLeftNormalization;
         private JobStatus _status;
@@ -60,7 +60,7 @@ namespace Amazon.Omics.Model
         // Check to see if AnnotationFields property is set
         internal bool IsSetAnnotationFields()
         {
-            return this._annotationFields != null && this._annotationFields.Count > 0; 
+            return this._annotationFields != null && (this._annotationFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.Omics.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

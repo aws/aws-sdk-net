@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model
     public partial class RetrieveResponse : AmazonWebServiceResponse
     {
         private string _queryId;
-        private List<RetrieveResultItem> _resultItems = new List<RetrieveResultItem>();
+        private List<RetrieveResultItem> _resultItems = AWSConfigs.InitializeCollections ? new List<RetrieveResultItem>() : null;
 
         /// <summary>
         /// Gets and sets the property QueryId. 
@@ -72,7 +72,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ResultItems property is set
         internal bool IsSetResultItems()
         {
-            return this._resultItems != null && this._resultItems.Count > 0; 
+            return this._resultItems != null && (this._resultItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

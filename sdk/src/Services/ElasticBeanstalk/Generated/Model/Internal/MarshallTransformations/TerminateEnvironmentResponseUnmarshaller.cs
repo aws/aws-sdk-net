@@ -138,6 +138,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EnvironmentLinks/member", targetDepth))
                     {
                         var unmarshaller = EnvironmentLinkUnmarshaller.Instance;
+                        if (response.EnvironmentLinks == null)
+                        {
+                            response.EnvironmentLinks = new List<EnvironmentLink>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.EnvironmentLinks.Add(item);
                         continue;

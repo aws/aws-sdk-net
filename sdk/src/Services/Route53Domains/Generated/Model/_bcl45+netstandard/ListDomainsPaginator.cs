@@ -45,7 +45,7 @@ namespace Amazon.Route53Domains.Model
         /// Enumerable containing all of the Domains
         /// </summary>
         public IPaginatedEnumerable<DomainSummary> Domains => 
-            new PaginatedResultKeyResponse<ListDomainsResponse, DomainSummary>(this, (i) => i.Domains);
+            new PaginatedResultKeyResponse<ListDomainsResponse, DomainSummary>(this, (i) => i.Domains ?? new List<DomainSummary>());
 
         internal ListDomainsPaginator(IAmazonRoute53Domains client, ListDomainsRequest request)
         {

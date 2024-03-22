@@ -34,9 +34,9 @@ namespace Amazon.Glue.Model
     public partial class HudiTarget
     {
         private string _connectionName;
-        private List<string> _exclusions = new List<string>();
+        private List<string> _exclusions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maximumTraversalDepth;
-        private List<string> _paths = new List<string>();
+        private List<string> _paths = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectionName. 
@@ -75,7 +75,7 @@ namespace Amazon.Glue.Model
         // Check to see if Exclusions property is set
         internal bool IsSetExclusions()
         {
-            return this._exclusions != null && this._exclusions.Count > 0; 
+            return this._exclusions != null && (this._exclusions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.Glue.Model
         // Check to see if Paths property is set
         internal bool IsSetPaths()
         {
-            return this._paths != null && this._paths.Count > 0; 
+            return this._paths != null && (this._paths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -41,8 +41,8 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class ResponseInspectionStatusCode
     {
-        private List<int> _failureCodes = new List<int>();
-        private List<int> _successCodes = new List<int>();
+        private List<int> _failureCodes = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<int> _successCodes = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
         /// Gets and sets the property FailureCodes. 
@@ -66,7 +66,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if FailureCodes property is set
         internal bool IsSetFailureCodes()
         {
-            return this._failureCodes != null && this._failureCodes.Count > 0; 
+            return this._failureCodes != null && (this._failureCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if SuccessCodes property is set
         internal bool IsSetSuccessCodes()
         {
-            return this._successCodes != null && this._successCodes.Count > 0; 
+            return this._successCodes != null && (this._successCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

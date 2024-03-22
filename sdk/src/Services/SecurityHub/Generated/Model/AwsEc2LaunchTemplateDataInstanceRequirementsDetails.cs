@@ -34,18 +34,18 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEc2LaunchTemplateDataInstanceRequirementsDetails
     {
         private AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails _acceleratorCount;
-        private List<string> _acceleratorManufacturers = new List<string>();
-        private List<string> _acceleratorNames = new List<string>();
+        private List<string> _acceleratorManufacturers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _acceleratorNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails _acceleratorTotalMemoryMiB;
-        private List<string> _acceleratorTypes = new List<string>();
+        private List<string> _acceleratorTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _bareMetal;
         private AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails _baselineEbsBandwidthMbps;
         private string _burstablePerformance;
-        private List<string> _cpuManufacturers = new List<string>();
-        private List<string> _excludedInstanceTypes = new List<string>();
-        private List<string> _instanceGenerations = new List<string>();
+        private List<string> _cpuManufacturers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _excludedInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _instanceGenerations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _localStorage;
-        private List<string> _localStorageTypes = new List<string>();
+        private List<string> _localStorageTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails _memoryGiBPerVCpu;
         private AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails _memoryMiB;
         private AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails _networkInterfaceCount;
@@ -90,7 +90,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AcceleratorManufacturers property is set
         internal bool IsSetAcceleratorManufacturers()
         {
-            return this._acceleratorManufacturers != null && this._acceleratorManufacturers.Count > 0; 
+            return this._acceleratorManufacturers != null && (this._acceleratorManufacturers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AcceleratorNames property is set
         internal bool IsSetAcceleratorNames()
         {
-            return this._acceleratorNames != null && this._acceleratorNames.Count > 0; 
+            return this._acceleratorNames != null && (this._acceleratorNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AcceleratorTypes property is set
         internal bool IsSetAcceleratorTypes()
         {
-            return this._acceleratorTypes != null && this._acceleratorTypes.Count > 0; 
+            return this._acceleratorTypes != null && (this._acceleratorTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -221,7 +221,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if CpuManufacturers property is set
         internal bool IsSetCpuManufacturers()
         {
-            return this._cpuManufacturers != null && this._cpuManufacturers.Count > 0; 
+            return this._cpuManufacturers != null && (this._cpuManufacturers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ExcludedInstanceTypes property is set
         internal bool IsSetExcludedInstanceTypes()
         {
-            return this._excludedInstanceTypes != null && this._excludedInstanceTypes.Count > 0; 
+            return this._excludedInstanceTypes != null && (this._excludedInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -257,7 +257,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if InstanceGenerations property is set
         internal bool IsSetInstanceGenerations()
         {
-            return this._instanceGenerations != null && this._instanceGenerations.Count > 0; 
+            return this._instanceGenerations != null && (this._instanceGenerations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -295,7 +295,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if LocalStorageTypes property is set
         internal bool IsSetLocalStorageTypes()
         {
-            return this._localStorageTypes != null && this._localStorageTypes.Count > 0; 
+            return this._localStorageTypes != null && (this._localStorageTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

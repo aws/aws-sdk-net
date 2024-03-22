@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("verifiedAccessEndpointSet/item", targetDepth))
                     {
                         var unmarshaller = VerifiedAccessEndpointUnmarshaller.Instance;
+                        if (response.VerifiedAccessEndpoints == null)
+                        {
+                            response.VerifiedAccessEndpoints = new List<VerifiedAccessEndpoint>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.VerifiedAccessEndpoints.Add(item);
                         continue;

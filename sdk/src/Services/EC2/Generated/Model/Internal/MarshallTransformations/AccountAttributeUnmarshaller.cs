@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("attributeValueSet/item", targetDepth))
                     {
                         var unmarshaller = AccountAttributeValueUnmarshaller.Instance;
+                        if (unmarshalledObject.AttributeValues == null)
+                        {
+                            unmarshalledObject.AttributeValues = new List<AccountAttributeValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AttributeValues.Add(item);
                         continue;

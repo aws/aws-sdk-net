@@ -75,6 +75,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CheckpointPercentages/member", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
+                        if (unmarshalledObject.CheckpointPercentages == null)
+                        {
+                            unmarshalledObject.CheckpointPercentages = new List<int>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CheckpointPercentages.Add(item);
                         continue;

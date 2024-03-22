@@ -35,7 +35,7 @@ namespace Amazon.ServerMigrationService.Model
     {
         private string _name;
         private string _serverGroupId;
-        private List<Server> _serverList = new List<Server>();
+        private List<Server> _serverList = AWSConfigs.InitializeCollections ? new List<Server>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -88,7 +88,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ServerList property is set
         internal bool IsSetServerList()
         {
-            return this._serverList != null && this._serverList.Count > 0; 
+            return this._serverList != null && (this._serverList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

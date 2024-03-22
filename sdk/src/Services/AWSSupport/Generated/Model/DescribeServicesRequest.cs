@@ -60,7 +60,7 @@ namespace Amazon.AWSSupport.Model
     public partial class DescribeServicesRequest : AmazonAWSSupportRequest
     {
         private string _language;
-        private List<string> _serviceCodeList = new List<string>();
+        private List<string> _serviceCodeList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Language. 
@@ -99,7 +99,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if ServiceCodeList property is set
         internal bool IsSetServiceCodeList()
         {
-            return this._serviceCodeList != null && this._serviceCodeList.Count > 0; 
+            return this._serviceCodeList != null && (this._serviceCodeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

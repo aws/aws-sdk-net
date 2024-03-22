@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model
     public partial class CollapsedResultDetail
     {
         private DocumentAttribute _documentAttribute;
-        private List<ExpandedResultItem> _expandedResults = new List<ExpandedResultItem>();
+        private List<ExpandedResultItem> _expandedResults = AWSConfigs.InitializeCollections ? new List<ExpandedResultItem>() : null;
 
         /// <summary>
         /// Gets and sets the property DocumentAttribute. 
@@ -70,7 +70,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ExpandedResults property is set
         internal bool IsSetExpandedResults()
         {
-            return this._expandedResults != null && this._expandedResults.Count > 0; 
+            return this._expandedResults != null && (this._expandedResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

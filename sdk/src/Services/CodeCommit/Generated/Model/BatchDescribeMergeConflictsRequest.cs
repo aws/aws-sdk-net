@@ -38,7 +38,7 @@ namespace Amazon.CodeCommit.Model
         private ConflictDetailLevelTypeEnum _conflictDetailLevel;
         private ConflictResolutionStrategyTypeEnum _conflictResolutionStrategy;
         private string _destinationCommitSpecifier;
-        private List<string> _filePaths = new List<string>();
+        private List<string> _filePaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxConflictFiles;
         private int? _maxMergeHunks;
         private MergeOptionTypeEnum _mergeOption;
@@ -123,7 +123,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if FilePaths property is set
         internal bool IsSetFilePaths()
         {
-            return this._filePaths != null && this._filePaths.Count > 0; 
+            return this._filePaths != null && (this._filePaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class GetInventorySchemaResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<InventoryItemSchema> _schemas = new List<InventoryItemSchema>();
+        private List<InventoryItemSchema> _schemas = AWSConfigs.InitializeCollections ? new List<InventoryItemSchema>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Schemas property is set
         internal bool IsSetSchemas()
         {
-            return this._schemas != null && this._schemas.Count > 0; 
+            return this._schemas != null && (this._schemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

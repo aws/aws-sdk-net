@@ -38,7 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private int? _limit;
         private string _limitType;
-        private List<string> _resourceTypes = new List<string>();
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Constructs a new OpsItemLimitExceededException with the specified error
@@ -171,7 +171,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

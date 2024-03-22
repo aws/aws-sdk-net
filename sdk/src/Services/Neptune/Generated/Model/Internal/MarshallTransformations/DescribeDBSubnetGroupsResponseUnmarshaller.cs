@@ -84,6 +84,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBSubnetGroups/DBSubnetGroup", targetDepth))
                     {
                         var unmarshaller = DBSubnetGroupUnmarshaller.Instance;
+                        if (response.DBSubnetGroups == null)
+                        {
+                            response.DBSubnetGroups = new List<DBSubnetGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DBSubnetGroups.Add(item);
                         continue;

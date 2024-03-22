@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagDescriptionUnmarshaller.Instance;
+                        if (response.Tags == null)
+                        {
+                            response.Tags = new List<TagDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Tags.Add(item);
                         continue;

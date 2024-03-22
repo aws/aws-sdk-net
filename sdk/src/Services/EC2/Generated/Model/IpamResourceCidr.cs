@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         private string _resourceName;
         private string _resourceOwnerId;
         private string _resourceRegion;
-        private List<IpamResourceTag> _resourceTags = new List<IpamResourceTag>();
+        private List<IpamResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<IpamResourceTag>() : null;
         private IpamResourceType _resourceType;
         private string _vpcId;
 
@@ -307,7 +307,7 @@ namespace Amazon.EC2.Model
         // Check to see if ResourceTags property is set
         internal bool IsSetResourceTags()
         {
-            return this._resourceTags != null && this._resourceTags.Count > 0; 
+            return this._resourceTags != null && (this._resourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

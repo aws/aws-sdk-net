@@ -45,7 +45,7 @@ namespace Amazon.ServerMigrationService.Model
         /// Enumerable containing all of the ReplicationJobList
         /// </summary>
         public IPaginatedEnumerable<ReplicationJob> ReplicationJobList => 
-            new PaginatedResultKeyResponse<GetReplicationJobsResponse, ReplicationJob>(this, (i) => i.ReplicationJobList);
+            new PaginatedResultKeyResponse<GetReplicationJobsResponse, ReplicationJob>(this, (i) => i.ReplicationJobList ?? new List<ReplicationJob>());
 
         internal GetReplicationJobsPaginator(IAmazonServerMigrationService client, GetReplicationJobsRequest request)
         {

@@ -37,9 +37,9 @@ namespace Amazon.ChimeSDKVoice.Model
     public partial class CreateSipMediaApplicationRequest : AmazonChimeSDKVoiceRequest
     {
         private string _awsRegion;
-        private List<SipMediaApplicationEndpoint> _endpoints = new List<SipMediaApplicationEndpoint>();
+        private List<SipMediaApplicationEndpoint> _endpoints = AWSConfigs.InitializeCollections ? new List<SipMediaApplicationEndpoint>() : null;
         private string _name;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsRegion. 
@@ -76,7 +76,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

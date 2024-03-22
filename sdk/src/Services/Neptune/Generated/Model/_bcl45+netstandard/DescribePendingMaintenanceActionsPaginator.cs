@@ -45,7 +45,7 @@ namespace Amazon.Neptune.Model
         /// Enumerable containing all of the PendingMaintenanceActions
         /// </summary>
         public IPaginatedEnumerable<ResourcePendingMaintenanceActions> PendingMaintenanceActions => 
-            new PaginatedResultKeyResponse<DescribePendingMaintenanceActionsResponse, ResourcePendingMaintenanceActions>(this, (i) => i.PendingMaintenanceActions);
+            new PaginatedResultKeyResponse<DescribePendingMaintenanceActionsResponse, ResourcePendingMaintenanceActions>(this, (i) => i.PendingMaintenanceActions ?? new List<ResourcePendingMaintenanceActions>());
 
         internal DescribePendingMaintenanceActionsPaginator(IAmazonNeptune client, DescribePendingMaintenanceActionsRequest request)
         {

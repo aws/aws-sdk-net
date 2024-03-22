@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class ListInventoryEntriesResponse : AmazonWebServiceResponse
     {
         private string _captureTime;
-        private List<Dictionary<string, string>> _entries = new List<Dictionary<string, string>>();
+        private List<Dictionary<string, string>> _entries = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
         private string _instanceId;
         private string _nextToken;
         private string _schemaVersion;
@@ -74,7 +74,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

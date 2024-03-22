@@ -90,6 +90,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SslPolicies/member", targetDepth))
                     {
                         var unmarshaller = SslPolicyUnmarshaller.Instance;
+                        if (response.SslPolicies == null)
+                        {
+                            response.SslPolicies = new List<SslPolicy>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SslPolicies.Add(item);
                         continue;

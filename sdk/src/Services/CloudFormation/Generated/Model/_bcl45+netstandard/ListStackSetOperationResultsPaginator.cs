@@ -45,7 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<StackSetOperationResultSummary> Summaries => 
-            new PaginatedResultKeyResponse<ListStackSetOperationResultsResponse, StackSetOperationResultSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<ListStackSetOperationResultsResponse, StackSetOperationResultSummary>(this, (i) => i.Summaries ?? new List<StackSetOperationResultSummary>());
 
         internal ListStackSetOperationResultsPaginator(IAmazonCloudFormation client, ListStackSetOperationResultsRequest request)
         {

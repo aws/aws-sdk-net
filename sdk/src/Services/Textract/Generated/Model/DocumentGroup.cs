@@ -33,10 +33,10 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class DocumentGroup
     {
-        private List<DetectedSignature> _detectedSignatures = new List<DetectedSignature>();
-        private List<SplitDocument> _splitDocuments = new List<SplitDocument>();
+        private List<DetectedSignature> _detectedSignatures = AWSConfigs.InitializeCollections ? new List<DetectedSignature>() : null;
+        private List<SplitDocument> _splitDocuments = AWSConfigs.InitializeCollections ? new List<SplitDocument>() : null;
         private string _type;
-        private List<UndetectedSignature> _undetectedSignatures = new List<UndetectedSignature>();
+        private List<UndetectedSignature> _undetectedSignatures = AWSConfigs.InitializeCollections ? new List<UndetectedSignature>() : null;
 
         /// <summary>
         /// Gets and sets the property DetectedSignatures. 
@@ -53,7 +53,7 @@ namespace Amazon.Textract.Model
         // Check to see if DetectedSignatures property is set
         internal bool IsSetDetectedSignatures()
         {
-            return this._detectedSignatures != null && this._detectedSignatures.Count > 0; 
+            return this._detectedSignatures != null && (this._detectedSignatures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Textract.Model
         // Check to see if SplitDocuments property is set
         internal bool IsSetSplitDocuments()
         {
-            return this._splitDocuments != null && this._splitDocuments.Count > 0; 
+            return this._splitDocuments != null && (this._splitDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.Textract.Model
         // Check to see if UndetectedSignatures property is set
         internal bool IsSetUndetectedSignatures()
         {
-            return this._undetectedSignatures != null && this._undetectedSignatures.Count > 0; 
+            return this._undetectedSignatures != null && (this._undetectedSignatures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

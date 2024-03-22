@@ -33,7 +33,7 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class Origins
     {
-        private List<Origin> _items = new List<Origin>();
+        private List<Origin> _items = AWSConfigs.InitializeCollections ? new List<Origin>() : null;
         private int? _quantity;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

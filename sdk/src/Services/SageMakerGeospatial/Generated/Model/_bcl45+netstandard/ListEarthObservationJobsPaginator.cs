@@ -45,7 +45,7 @@ namespace Amazon.SageMakerGeospatial.Model
         /// Enumerable containing all of the EarthObservationJobSummaries
         /// </summary>
         public IPaginatedEnumerable<ListEarthObservationJobOutputConfig> EarthObservationJobSummaries => 
-            new PaginatedResultKeyResponse<ListEarthObservationJobsResponse, ListEarthObservationJobOutputConfig>(this, (i) => i.EarthObservationJobSummaries);
+            new PaginatedResultKeyResponse<ListEarthObservationJobsResponse, ListEarthObservationJobOutputConfig>(this, (i) => i.EarthObservationJobSummaries ?? new List<ListEarthObservationJobOutputConfig>());
 
         internal ListEarthObservationJobsPaginator(IAmazonSageMakerGeospatial client, ListEarthObservationJobsRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model
     public partial class DescribeReservedElasticsearchInstancesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReservedElasticsearchInstance> _reservedElasticsearchInstances = new List<ReservedElasticsearchInstance>();
+        private List<ReservedElasticsearchInstance> _reservedElasticsearchInstances = AWSConfigs.InitializeCollections ? new List<ReservedElasticsearchInstance>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if ReservedElasticsearchInstances property is set
         internal bool IsSetReservedElasticsearchInstances()
         {
-            return this._reservedElasticsearchInstances != null && this._reservedElasticsearchInstances.Count > 0; 
+            return this._reservedElasticsearchInstances != null && (this._reservedElasticsearchInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

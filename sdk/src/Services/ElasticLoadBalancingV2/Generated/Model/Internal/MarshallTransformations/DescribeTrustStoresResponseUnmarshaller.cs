@@ -90,6 +90,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TrustStores/member", targetDepth))
                     {
                         var unmarshaller = TrustStoreUnmarshaller.Instance;
+                        if (response.TrustStores == null)
+                        {
+                            response.TrustStores = new List<TrustStore>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TrustStores.Add(item);
                         continue;

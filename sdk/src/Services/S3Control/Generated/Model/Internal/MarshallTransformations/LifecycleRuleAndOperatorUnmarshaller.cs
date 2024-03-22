@@ -75,6 +75,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Tags/member", targetDepth))
                     {
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<S3Tag>();
+                        }
                         var unmarshaller = S3TagUnmarshaller.Instance;
                         unmarshalledObject.Tags.Add(unmarshaller.Unmarshall(context));
                         continue;

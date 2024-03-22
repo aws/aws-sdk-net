@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private string _commandId;
         private bool? _details;
-        private List<CommandFilter> _filters = new List<CommandFilter>();
+        private List<CommandFilter> _filters = AWSConfigs.InitializeCollections ? new List<CommandFilter>() : null;
         private string _instanceId;
         private int? _maxResults;
         private string _nextToken;
@@ -113,7 +113,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

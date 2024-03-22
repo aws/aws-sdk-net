@@ -45,7 +45,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Enumerable containing all of the Entities
         /// </summary>
         public IPaginatedEnumerable<FormSummary> Entities => 
-            new PaginatedResultKeyResponse<ListFormsResponse, FormSummary>(this, (i) => i.Entities);
+            new PaginatedResultKeyResponse<ListFormsResponse, FormSummary>(this, (i) => i.Entities ?? new List<FormSummary>());
 
         internal ListFormsPaginator(IAmazonAmplifyUIBuilder client, ListFormsRequest request)
         {

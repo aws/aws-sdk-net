@@ -36,7 +36,7 @@ namespace Amazon.LakeFormation.Model
     public partial class LFTag
     {
         private string _tagKey;
-        private List<string> _tagValues = new List<string>();
+        private List<string> _tagValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TagKey. 
@@ -78,7 +78,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if TagValues property is set
         internal bool IsSetTagValues()
         {
-            return this._tagValues != null && this._tagValues.Count > 0; 
+            return this._tagValues != null && (this._tagValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

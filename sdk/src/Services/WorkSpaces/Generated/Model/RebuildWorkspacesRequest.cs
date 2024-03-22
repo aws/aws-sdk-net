@@ -51,7 +51,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class RebuildWorkspacesRequest : AmazonWorkSpacesRequest
     {
-        private List<RebuildRequest> _rebuildWorkspaceRequests = new List<RebuildRequest>();
+        private List<RebuildRequest> _rebuildWorkspaceRequests = AWSConfigs.InitializeCollections ? new List<RebuildRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property RebuildWorkspaceRequests. 
@@ -69,7 +69,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if RebuildWorkspaceRequests property is set
         internal bool IsSetRebuildWorkspaceRequests()
         {
-            return this._rebuildWorkspaceRequests != null && this._rebuildWorkspaceRequests.Count > 0; 
+            return this._rebuildWorkspaceRequests != null && (this._rebuildWorkspaceRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

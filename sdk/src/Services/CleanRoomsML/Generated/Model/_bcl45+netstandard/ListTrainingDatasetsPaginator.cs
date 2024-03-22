@@ -45,7 +45,7 @@ namespace Amazon.CleanRoomsML.Model
         /// Enumerable containing all of the TrainingDatasets
         /// </summary>
         public IPaginatedEnumerable<TrainingDatasetSummary> TrainingDatasets => 
-            new PaginatedResultKeyResponse<ListTrainingDatasetsResponse, TrainingDatasetSummary>(this, (i) => i.TrainingDatasets);
+            new PaginatedResultKeyResponse<ListTrainingDatasetsResponse, TrainingDatasetSummary>(this, (i) => i.TrainingDatasets ?? new List<TrainingDatasetSummary>());
 
         internal ListTrainingDatasetsPaginator(IAmazonCleanRoomsML client, ListTrainingDatasetsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the TaskIds
         /// </summary>
         public IPaginatedEnumerable<string> TaskIds => 
-            new PaginatedResultKeyResponse<ListThingRegistrationTasksResponse, string>(this, (i) => i.TaskIds);
+            new PaginatedResultKeyResponse<ListThingRegistrationTasksResponse, string>(this, (i) => i.TaskIds ?? new List<string>());
 
         internal ListThingRegistrationTasksPaginator(IAmazonIoT client, ListThingRegistrationTasksRequest request)
         {

@@ -36,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
         private string _botId;
         private BotReplicaStatus _botReplicaStatus;
         private DateTime? _creationDateTime;
-        private List<string> _failureReasons = new List<string>();
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicaRegion;
         private string _sourceRegion;
 
@@ -110,7 +110,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

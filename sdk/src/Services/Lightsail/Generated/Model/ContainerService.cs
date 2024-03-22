@@ -45,12 +45,12 @@ namespace Amazon.Lightsail.Model
         private string _principalArn;
         private string _privateDomainName;
         private PrivateRegistryAccess _privateRegistryAccess;
-        private Dictionary<string, List<string>> _publicDomainNames = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _publicDomainNames = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private ResourceType _resourceType;
         private int? _scale;
         private ContainerServiceState _state;
         private ContainerServiceStateDetail _stateDetail;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _url;
 
         /// <summary>
@@ -337,7 +337,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if PublicDomainNames property is set
         internal bool IsSetPublicDomainNames()
         {
-            return this._publicDomainNames != null && this._publicDomainNames.Count > 0; 
+            return this._publicDomainNames != null && (this._publicDomainNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -477,7 +477,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

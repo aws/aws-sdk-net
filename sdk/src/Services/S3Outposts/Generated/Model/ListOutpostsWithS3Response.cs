@@ -34,7 +34,7 @@ namespace Amazon.S3Outposts.Model
     public partial class ListOutpostsWithS3Response : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Outpost> _outposts = new List<Outpost>();
+        private List<Outpost> _outposts = AWSConfigs.InitializeCollections ? new List<Outpost>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -84,7 +84,7 @@ namespace Amazon.S3Outposts.Model
         // Check to see if Outposts property is set
         internal bool IsSetOutposts()
         {
-            return this._outposts != null && this._outposts.Count > 0; 
+            return this._outposts != null && (this._outposts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

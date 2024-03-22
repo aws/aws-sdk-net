@@ -35,12 +35,12 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class Edge
     {
-        private List<Alias> _aliases = new List<Alias>();
+        private List<Alias> _aliases = AWSConfigs.InitializeCollections ? new List<Alias>() : null;
         private string _edgeType;
         private DateTime? _endTime;
-        private List<HistogramEntry> _receivedEventAgeHistogram = new List<HistogramEntry>();
+        private List<HistogramEntry> _receivedEventAgeHistogram = AWSConfigs.InitializeCollections ? new List<HistogramEntry>() : null;
         private int? _referenceId;
-        private List<HistogramEntry> _responseTimeHistogram = new List<HistogramEntry>();
+        private List<HistogramEntry> _responseTimeHistogram = AWSConfigs.InitializeCollections ? new List<HistogramEntry>() : null;
         private DateTime? _startTime;
         private EdgeStatistics _summaryStatistics;
 
@@ -59,7 +59,7 @@ namespace Amazon.XRay.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this._aliases != null && this._aliases.Count > 0; 
+            return this._aliases != null && (this._aliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.XRay.Model
         // Check to see if ReceivedEventAgeHistogram property is set
         internal bool IsSetReceivedEventAgeHistogram()
         {
-            return this._receivedEventAgeHistogram != null && this._receivedEventAgeHistogram.Count > 0; 
+            return this._receivedEventAgeHistogram != null && (this._receivedEventAgeHistogram.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.XRay.Model
         // Check to see if ResponseTimeHistogram property is set
         internal bool IsSetResponseTimeHistogram()
         {
-            return this._responseTimeHistogram != null && this._responseTimeHistogram.Count > 0; 
+            return this._responseTimeHistogram != null && (this._responseTimeHistogram.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

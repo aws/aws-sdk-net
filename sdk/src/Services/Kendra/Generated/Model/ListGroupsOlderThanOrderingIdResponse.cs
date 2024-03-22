@@ -33,7 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class ListGroupsOlderThanOrderingIdResponse : AmazonWebServiceResponse
     {
-        private List<GroupSummary> _groupsSummaries = new List<GroupSummary>();
+        private List<GroupSummary> _groupsSummaries = AWSConfigs.InitializeCollections ? new List<GroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Kendra.Model
         // Check to see if GroupsSummaries property is set
         internal bool IsSetGroupsSummaries()
         {
-            return this._groupsSummaries != null && this._groupsSummaries.Count > 0; 
+            return this._groupsSummaries != null && (this._groupsSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

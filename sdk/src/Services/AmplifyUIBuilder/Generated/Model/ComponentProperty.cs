@@ -35,10 +35,10 @@ namespace Amazon.AmplifyUIBuilder.Model
     public partial class ComponentProperty
     {
         private ComponentPropertyBindingProperties _bindingProperties;
-        private Dictionary<string, FormBindingElement> _bindings = new Dictionary<string, FormBindingElement>();
+        private Dictionary<string, FormBindingElement> _bindings = AWSConfigs.InitializeCollections ? new Dictionary<string, FormBindingElement>() : null;
         private ComponentPropertyBindingProperties _collectionBindingProperties;
         private string _componentName;
-        private List<ComponentProperty> _concat = new List<ComponentProperty>();
+        private List<ComponentProperty> _concat = AWSConfigs.InitializeCollections ? new List<ComponentProperty>() : null;
         private ComponentConditionProperty _condition;
         private bool? _configured;
         private string _defaultValue;
@@ -83,7 +83,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Bindings property is set
         internal bool IsSetBindings()
         {
-            return this._bindings != null && this._bindings.Count > 0; 
+            return this._bindings != null && (this._bindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Concat property is set
         internal bool IsSetConcat()
         {
-            return this._concat != null && this._concat.Count > 0; 
+            return this._concat != null && (this._concat.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

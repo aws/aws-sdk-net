@@ -47,8 +47,8 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class EventSelector
     {
-        private List<DataResource> _dataResources = new List<DataResource>();
-        private List<string> _excludeManagementEventSources = new List<string>();
+        private List<DataResource> _dataResources = AWSConfigs.InitializeCollections ? new List<DataResource>() : null;
+        private List<string> _excludeManagementEventSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _includeManagementEvents;
         private ReadWriteType _readWriteType;
 
@@ -77,7 +77,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if DataResources property is set
         internal bool IsSetDataResources()
         {
-            return this._dataResources != null && this._dataResources.Count > 0; 
+            return this._dataResources != null && (this._dataResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if ExcludeManagementEventSources property is set
         internal bool IsSetExcludeManagementEventSources()
         {
-            return this._excludeManagementEventSources != null && this._excludeManagementEventSources.Count > 0; 
+            return this._excludeManagementEventSources != null && (this._excludeManagementEventSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

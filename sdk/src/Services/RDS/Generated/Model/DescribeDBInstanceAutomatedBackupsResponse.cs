@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBInstanceAutomatedBackupsResponse : AmazonWebServiceResponse
     {
-        private List<DBInstanceAutomatedBackup> _dbInstanceAutomatedBackups = new List<DBInstanceAutomatedBackup>();
+        private List<DBInstanceAutomatedBackup> _dbInstanceAutomatedBackups = AWSConfigs.InitializeCollections ? new List<DBInstanceAutomatedBackup>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceAutomatedBackups property is set
         internal bool IsSetDBInstanceAutomatedBackups()
         {
-            return this._dbInstanceAutomatedBackups != null && this._dbInstanceAutomatedBackups.Count > 0; 
+            return this._dbInstanceAutomatedBackups != null && (this._dbInstanceAutomatedBackups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

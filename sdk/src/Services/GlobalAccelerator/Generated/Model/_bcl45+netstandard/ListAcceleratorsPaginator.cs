@@ -45,7 +45,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Enumerable containing all of the Accelerators
         /// </summary>
         public IPaginatedEnumerable<Accelerator> Accelerators => 
-            new PaginatedResultKeyResponse<ListAcceleratorsResponse, Accelerator>(this, (i) => i.Accelerators);
+            new PaginatedResultKeyResponse<ListAcceleratorsResponse, Accelerator>(this, (i) => i.Accelerators ?? new List<Accelerator>());
 
         internal ListAcceleratorsPaginator(IAmazonGlobalAccelerator client, ListAcceleratorsRequest request)
         {

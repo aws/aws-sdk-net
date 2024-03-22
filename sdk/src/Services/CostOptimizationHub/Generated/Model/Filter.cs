@@ -34,17 +34,17 @@ namespace Amazon.CostOptimizationHub.Model
     /// </summary>
     public partial class Filter
     {
-        private List<string> _accountIds = new List<string>();
-        private List<string> _actionTypes = new List<string>();
-        private List<string> _implementationEfforts = new List<string>();
-        private List<string> _recommendationIds = new List<string>();
-        private List<string> _regions = new List<string>();
-        private List<string> _resourceArns = new List<string>();
-        private List<string> _resourceIds = new List<string>();
-        private List<string> _resourceTypes = new List<string>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _actionTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _implementationEfforts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _recommendationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _restartNeeded;
         private bool? _rollbackPossible;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountIds. 
@@ -62,7 +62,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if ActionTypes property is set
         internal bool IsSetActionTypes()
         {
-            return this._actionTypes != null && this._actionTypes.Count > 0; 
+            return this._actionTypes != null && (this._actionTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if ImplementationEfforts property is set
         internal bool IsSetImplementationEfforts()
         {
-            return this._implementationEfforts != null && this._implementationEfforts.Count > 0; 
+            return this._implementationEfforts != null && (this._implementationEfforts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if RecommendationIds property is set
         internal bool IsSetRecommendationIds()
         {
-            return this._recommendationIds != null && this._recommendationIds.Count > 0; 
+            return this._recommendationIds != null && (this._recommendationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if ResourceIds property is set
         internal bool IsSetResourceIds()
         {
-            return this._resourceIds != null && this._resourceIds.Count > 0; 
+            return this._resourceIds != null && (this._resourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

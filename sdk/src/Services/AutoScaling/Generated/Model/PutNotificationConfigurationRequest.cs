@@ -53,7 +53,7 @@ namespace Amazon.AutoScaling.Model
     public partial class PutNotificationConfigurationRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _notificationTypes = new List<string>();
+        private List<string> _notificationTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _topicARN;
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NotificationTypes property is set
         internal bool IsSetNotificationTypes()
         {
-            return this._notificationTypes != null && this._notificationTypes.Count > 0; 
+            return this._notificationTypes != null && (this._notificationTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

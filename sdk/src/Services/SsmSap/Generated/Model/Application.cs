@@ -35,7 +35,7 @@ namespace Amazon.SsmSap.Model
     {
         private string _appRegistryArn;
         private string _arn;
-        private List<string> _components = new List<string>();
+        private List<string> _components = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ApplicationDiscoveryStatus _discoveryStatus;
         private string _id;
         private DateTime? _lastUpdated;
@@ -94,7 +94,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if Components property is set
         internal bool IsSetComponents()
         {
-            return this._components != null && this._components.Count > 0; 
+            return this._components != null && (this._components.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

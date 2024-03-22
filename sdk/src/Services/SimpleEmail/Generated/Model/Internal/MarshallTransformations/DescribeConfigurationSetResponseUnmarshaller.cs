@@ -96,6 +96,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EventDestinations/member", targetDepth))
                     {
                         var unmarshaller = EventDestinationUnmarshaller.Instance;
+                        if (response.EventDestinations == null)
+                        {
+                            response.EventDestinations = new List<EventDestination>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.EventDestinations.Add(item);
                         continue;

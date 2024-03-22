@@ -38,9 +38,9 @@ namespace Amazon.NetworkMonitor.Model
         private DateTime? _modifiedAt;
         private string _monitorArn;
         private string _monitorName;
-        private List<Probe> _probes = new List<Probe>();
+        private List<Probe> _probes = AWSConfigs.InitializeCollections ? new List<Probe>() : null;
         private MonitorState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AggregationPeriod. 
@@ -153,7 +153,7 @@ namespace Amazon.NetworkMonitor.Model
         // Check to see if Probes property is set
         internal bool IsSetProbes()
         {
-            return this._probes != null && this._probes.Count > 0; 
+            return this._probes != null && (this._probes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Amazon.NetworkMonitor.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

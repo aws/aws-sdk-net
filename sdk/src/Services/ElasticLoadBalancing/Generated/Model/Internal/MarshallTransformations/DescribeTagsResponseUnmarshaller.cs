@@ -84,6 +84,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TagDescriptions/member", targetDepth))
                     {
                         var unmarshaller = TagDescriptionUnmarshaller.Instance;
+                        if (response.TagDescriptions == null)
+                        {
+                            response.TagDescriptions = new List<TagDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TagDescriptions.Add(item);
                         continue;

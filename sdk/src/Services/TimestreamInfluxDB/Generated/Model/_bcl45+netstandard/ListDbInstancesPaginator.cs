@@ -45,7 +45,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<DbInstanceSummary> Items => 
-            new PaginatedResultKeyResponse<ListDbInstancesResponse, DbInstanceSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListDbInstancesResponse, DbInstanceSummary>(this, (i) => i.Items ?? new List<DbInstanceSummary>());
 
         internal ListDbInstancesPaginator(IAmazonTimestreamInfluxDB client, ListDbInstancesRequest request)
         {

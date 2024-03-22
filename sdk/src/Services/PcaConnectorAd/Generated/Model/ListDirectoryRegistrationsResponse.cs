@@ -33,7 +33,7 @@ namespace Amazon.PcaConnectorAd.Model
     /// </summary>
     public partial class ListDirectoryRegistrationsResponse : AmazonWebServiceResponse
     {
-        private List<DirectoryRegistrationSummary> _directoryRegistrations = new List<DirectoryRegistrationSummary>();
+        private List<DirectoryRegistrationSummary> _directoryRegistrations = AWSConfigs.InitializeCollections ? new List<DirectoryRegistrationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.PcaConnectorAd.Model
         // Check to see if DirectoryRegistrations property is set
         internal bool IsSetDirectoryRegistrations()
         {
-            return this._directoryRegistrations != null && this._directoryRegistrations.Count > 0; 
+            return this._directoryRegistrations != null && (this._directoryRegistrations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

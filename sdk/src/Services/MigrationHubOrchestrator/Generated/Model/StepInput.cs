@@ -35,8 +35,8 @@ namespace Amazon.MigrationHubOrchestrator.Model
     public partial class StepInput
     {
         private int? _integerValue;
-        private List<string> _listOfStringsValue = new List<string>();
-        private Dictionary<string, string> _mapOfStringValue = new Dictionary<string, string>();
+        private List<string> _listOfStringsValue = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _mapOfStringValue = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _stringValue;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if ListOfStringsValue property is set
         internal bool IsSetListOfStringsValue()
         {
-            return this._listOfStringsValue != null && this._listOfStringsValue.Count > 0; 
+            return this._listOfStringsValue != null && (this._listOfStringsValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if MapOfStringValue property is set
         internal bool IsSetMapOfStringValue()
         {
-            return this._mapOfStringValue != null && this._mapOfStringValue.Count > 0; 
+            return this._mapOfStringValue != null && (this._mapOfStringValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

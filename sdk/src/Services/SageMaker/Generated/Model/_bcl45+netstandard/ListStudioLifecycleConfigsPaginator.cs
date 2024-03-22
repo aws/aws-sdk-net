@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the StudioLifecycleConfigs
         /// </summary>
         public IPaginatedEnumerable<StudioLifecycleConfigDetails> StudioLifecycleConfigs => 
-            new PaginatedResultKeyResponse<ListStudioLifecycleConfigsResponse, StudioLifecycleConfigDetails>(this, (i) => i.StudioLifecycleConfigs);
+            new PaginatedResultKeyResponse<ListStudioLifecycleConfigsResponse, StudioLifecycleConfigDetails>(this, (i) => i.StudioLifecycleConfigs ?? new List<StudioLifecycleConfigDetails>());
 
         internal ListStudioLifecycleConfigsPaginator(IAmazonSageMaker client, ListStudioLifecycleConfigsRequest request)
         {

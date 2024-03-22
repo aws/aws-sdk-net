@@ -45,7 +45,7 @@ namespace Amazon.RoboMaker.Model
         /// Enumerable containing all of the WorldGenerationJobSummaries
         /// </summary>
         public IPaginatedEnumerable<WorldGenerationJobSummary> WorldGenerationJobSummaries => 
-            new PaginatedResultKeyResponse<ListWorldGenerationJobsResponse, WorldGenerationJobSummary>(this, (i) => i.WorldGenerationJobSummaries);
+            new PaginatedResultKeyResponse<ListWorldGenerationJobsResponse, WorldGenerationJobSummary>(this, (i) => i.WorldGenerationJobSummaries ?? new List<WorldGenerationJobSummary>());
 
         internal ListWorldGenerationJobsPaginator(IAmazonRoboMaker client, ListWorldGenerationJobsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetManagedPrefixListEntriesResponse : AmazonWebServiceResponse
     {
-        private List<PrefixListEntry> _entries = new List<PrefixListEntry>();
+        private List<PrefixListEntry> _entries = AWSConfigs.InitializeCollections ? new List<PrefixListEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

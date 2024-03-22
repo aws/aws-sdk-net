@@ -36,8 +36,8 @@ namespace Amazon.EMRContainers.Model
         private ParametricConfigurationOverrides _configurationOverrides;
         private string _executionRoleArn;
         private JobDriver _jobDriver;
-        private Dictionary<string, string> _jobTags = new Dictionary<string, string>();
-        private Dictionary<string, TemplateParameterConfiguration> _parameterConfiguration = new Dictionary<string, TemplateParameterConfiguration>();
+        private Dictionary<string, string> _jobTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, TemplateParameterConfiguration> _parameterConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, TemplateParameterConfiguration>() : null;
         private string _releaseLabel;
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if JobTags property is set
         internal bool IsSetJobTags()
         {
-            return this._jobTags != null && this._jobTags.Count > 0; 
+            return this._jobTags != null && (this._jobTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if ParameterConfiguration property is set
         internal bool IsSetParameterConfiguration()
         {
-            return this._parameterConfiguration != null && this._parameterConfiguration.Count > 0; 
+            return this._parameterConfiguration != null && (this._parameterConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

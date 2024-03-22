@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the VolumesModifications
         /// </summary>
         public IPaginatedEnumerable<VolumeModification> VolumesModifications => 
-            new PaginatedResultKeyResponse<DescribeVolumesModificationsResponse, VolumeModification>(this, (i) => i.VolumesModifications);
+            new PaginatedResultKeyResponse<DescribeVolumesModificationsResponse, VolumeModification>(this, (i) => i.VolumesModifications ?? new List<VolumeModification>());
 
         internal DescribeVolumesModificationsPaginator(IAmazonEC2 client, DescribeVolumesModificationsRequest request)
         {

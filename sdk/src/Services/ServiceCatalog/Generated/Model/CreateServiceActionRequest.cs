@@ -35,7 +35,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class CreateServiceActionRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
-        private Dictionary<string, string> _definition = new Dictionary<string, string>();
+        private Dictionary<string, string> _definition = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ServiceActionDefinitionType _definitionType;
         private string _description;
         private string _idempotencyToken;
@@ -117,7 +117,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Definition property is set
         internal bool IsSetDefinition()
         {
-            return this._definition != null && this._definition.Count > 0; 
+            return this._definition != null && (this._definition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

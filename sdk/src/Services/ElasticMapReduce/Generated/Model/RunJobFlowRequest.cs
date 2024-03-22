@@ -70,11 +70,11 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _additionalInfo;
         private string _amiVersion;
-        private List<Application> _applications = new List<Application>();
+        private List<Application> _applications = AWSConfigs.InitializeCollections ? new List<Application>() : null;
         private string _autoScalingRole;
         private AutoTerminationPolicy _autoTerminationPolicy;
-        private List<BootstrapActionConfig> _bootstrapActions = new List<BootstrapActionConfig>();
-        private List<Configuration> _configurations = new List<Configuration>();
+        private List<BootstrapActionConfig> _bootstrapActions = AWSConfigs.InitializeCollections ? new List<BootstrapActionConfig>() : null;
+        private List<Configuration> _configurations = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
         private string _customAmiId;
         private int? _ebsRootVolumeIops;
         private int? _ebsRootVolumeSize;
@@ -86,18 +86,18 @@ namespace Amazon.ElasticMapReduce.Model
         private string _logUri;
         private ManagedScalingPolicy _managedScalingPolicy;
         private string _name;
-        private List<SupportedProductConfig> _newSupportedProducts = new List<SupportedProductConfig>();
+        private List<SupportedProductConfig> _newSupportedProducts = AWSConfigs.InitializeCollections ? new List<SupportedProductConfig>() : null;
         private string _osReleaseLabel;
-        private List<PlacementGroupConfig> _placementGroupConfigs = new List<PlacementGroupConfig>();
+        private List<PlacementGroupConfig> _placementGroupConfigs = AWSConfigs.InitializeCollections ? new List<PlacementGroupConfig>() : null;
         private string _releaseLabel;
         private RepoUpgradeOnBoot _repoUpgradeOnBoot;
         private ScaleDownBehavior _scaleDownBehavior;
         private string _securityConfiguration;
         private string _serviceRole;
         private int? _stepConcurrencyLevel;
-        private List<StepConfig> _steps = new List<StepConfig>();
-        private List<string> _supportedProducts = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<StepConfig> _steps = AWSConfigs.InitializeCollections ? new List<StepConfig>() : null;
+        private List<string> _supportedProducts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _visibleToAllUsers;
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if BootstrapActions property is set
         internal bool IsSetBootstrapActions()
         {
-            return this._bootstrapActions != null && this._bootstrapActions.Count > 0; 
+            return this._bootstrapActions != null && (this._bootstrapActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -534,7 +534,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if NewSupportedProducts property is set
         internal bool IsSetNewSupportedProducts()
         {
-            return this._newSupportedProducts != null && this._newSupportedProducts.Count > 0; 
+            return this._newSupportedProducts != null && (this._newSupportedProducts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -573,7 +573,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if PlacementGroupConfigs property is set
         internal bool IsSetPlacementGroupConfigs()
         {
-            return this._placementGroupConfigs != null && this._placementGroupConfigs.Count > 0; 
+            return this._placementGroupConfigs != null && (this._placementGroupConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -725,7 +725,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -758,7 +758,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if SupportedProducts property is set
         internal bool IsSetSupportedProducts()
         {
-            return this._supportedProducts != null && this._supportedProducts.Count > 0; 
+            return this._supportedProducts != null && (this._supportedProducts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -776,7 +776,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

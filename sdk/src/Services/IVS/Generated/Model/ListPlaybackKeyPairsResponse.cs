@@ -33,7 +33,7 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class ListPlaybackKeyPairsResponse : AmazonWebServiceResponse
     {
-        private List<PlaybackKeyPairSummary> _keyPairs = new List<PlaybackKeyPairSummary>();
+        private List<PlaybackKeyPairSummary> _keyPairs = AWSConfigs.InitializeCollections ? new List<PlaybackKeyPairSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IVS.Model
         // Check to see if KeyPairs property is set
         internal bool IsSetKeyPairs()
         {
-            return this._keyPairs != null && this._keyPairs.Count > 0; 
+            return this._keyPairs != null && (this._keyPairs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

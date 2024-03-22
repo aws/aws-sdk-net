@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("acceleratorManufacturerSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AcceleratorManufacturers == null)
+                        {
+                            unmarshalledObject.AcceleratorManufacturers = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AcceleratorManufacturers.Add(item);
                         continue;
@@ -70,6 +74,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("acceleratorNameSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AcceleratorNames == null)
+                        {
+                            unmarshalledObject.AcceleratorNames = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AcceleratorNames.Add(item);
                         continue;
@@ -83,6 +91,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("acceleratorTypeSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AcceleratorTypes == null)
+                        {
+                            unmarshalledObject.AcceleratorTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AcceleratorTypes.Add(item);
                         continue;
@@ -90,6 +102,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("allowedInstanceTypeSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AllowedInstanceTypes == null)
+                        {
+                            unmarshalledObject.AllowedInstanceTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AllowedInstanceTypes.Add(item);
                         continue;
@@ -115,6 +131,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("cpuManufacturerSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.CpuManufacturers == null)
+                        {
+                            unmarshalledObject.CpuManufacturers = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CpuManufacturers.Add(item);
                         continue;
@@ -122,6 +142,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("excludedInstanceTypeSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ExcludedInstanceTypes == null)
+                        {
+                            unmarshalledObject.ExcludedInstanceTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ExcludedInstanceTypes.Add(item);
                         continue;
@@ -129,6 +153,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instanceGenerationSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.InstanceGenerations == null)
+                        {
+                            unmarshalledObject.InstanceGenerations = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.InstanceGenerations.Add(item);
                         continue;
@@ -142,6 +170,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("localStorageTypeSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.LocalStorageTypes == null)
+                        {
+                            unmarshalledObject.LocalStorageTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LocalStorageTypes.Add(item);
                         continue;

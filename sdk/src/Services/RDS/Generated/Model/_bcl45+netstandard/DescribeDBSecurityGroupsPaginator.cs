@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
         /// Enumerable containing all of the DBSecurityGroups
         /// </summary>
         public IPaginatedEnumerable<DBSecurityGroup> DBSecurityGroups => 
-            new PaginatedResultKeyResponse<DescribeDBSecurityGroupsResponse, DBSecurityGroup>(this, (i) => i.DBSecurityGroups);
+            new PaginatedResultKeyResponse<DescribeDBSecurityGroupsResponse, DBSecurityGroup>(this, (i) => i.DBSecurityGroups ?? new List<DBSecurityGroup>());
 
         internal DescribeDBSecurityGroupsPaginator(IAmazonRDS client, DescribeDBSecurityGroupsRequest request)
         {

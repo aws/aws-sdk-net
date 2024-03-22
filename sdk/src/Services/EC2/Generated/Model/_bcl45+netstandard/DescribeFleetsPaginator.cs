@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Fleets
         /// </summary>
         public IPaginatedEnumerable<FleetData> Fleets => 
-            new PaginatedResultKeyResponse<DescribeFleetsResponse, FleetData>(this, (i) => i.Fleets);
+            new PaginatedResultKeyResponse<DescribeFleetsResponse, FleetData>(this, (i) => i.Fleets ?? new List<FleetData>());
 
         internal DescribeFleetsPaginator(IAmazonEC2 client, DescribeFleetsRequest request)
         {

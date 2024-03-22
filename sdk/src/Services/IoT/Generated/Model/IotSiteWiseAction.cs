@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class IotSiteWiseAction
     {
-        private List<PutAssetPropertyValueEntry> _putAssetPropertyValueEntries = new List<PutAssetPropertyValueEntry>();
+        private List<PutAssetPropertyValueEntry> _putAssetPropertyValueEntries = AWSConfigs.InitializeCollections ? new List<PutAssetPropertyValueEntry>() : null;
         private string _roleArn;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.IoT.Model
         // Check to see if PutAssetPropertyValueEntries property is set
         internal bool IsSetPutAssetPropertyValueEntries()
         {
-            return this._putAssetPropertyValueEntries != null && this._putAssetPropertyValueEntries.Count > 0; 
+            return this._putAssetPropertyValueEntries != null && (this._putAssetPropertyValueEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Amazon.IoT.Model
     {
         private JobEndBehavior _endBehavior;
         private string _endTime;
-        private List<MaintenanceWindow> _maintenanceWindows = new List<MaintenanceWindow>();
+        private List<MaintenanceWindow> _maintenanceWindows = AWSConfigs.InitializeCollections ? new List<MaintenanceWindow>() : null;
         private string _startTime;
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Amazon.IoT.Model
         // Check to see if MaintenanceWindows property is set
         internal bool IsSetMaintenanceWindows()
         {
-            return this._maintenanceWindows != null && this._maintenanceWindows.Count > 0; 
+            return this._maintenanceWindows != null && (this._maintenanceWindows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,8 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchDeleteAutomationRulesResponse : AmazonWebServiceResponse
     {
-        private List<string> _processedAutomationRules = new List<string>();
-        private List<UnprocessedAutomationRule> _unprocessedAutomationRules = new List<UnprocessedAutomationRule>();
+        private List<string> _processedAutomationRules = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<UnprocessedAutomationRule> _unprocessedAutomationRules = AWSConfigs.InitializeCollections ? new List<UnprocessedAutomationRule>() : null;
 
         /// <summary>
         /// Gets and sets the property ProcessedAutomationRules. 
@@ -52,7 +52,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ProcessedAutomationRules property is set
         internal bool IsSetProcessedAutomationRules()
         {
-            return this._processedAutomationRules != null && this._processedAutomationRules.Count > 0; 
+            return this._processedAutomationRules != null && (this._processedAutomationRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UnprocessedAutomationRules property is set
         internal bool IsSetUnprocessedAutomationRules()
         {
-            return this._unprocessedAutomationRules != null && this._unprocessedAutomationRules.Count > 0; 
+            return this._unprocessedAutomationRules != null && (this._unprocessedAutomationRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

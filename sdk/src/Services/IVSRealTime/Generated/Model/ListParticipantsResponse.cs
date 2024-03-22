@@ -34,7 +34,7 @@ namespace Amazon.IVSRealTime.Model
     public partial class ListParticipantsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ParticipantSummary> _participants = new List<ParticipantSummary>();
+        private List<ParticipantSummary> _participants = AWSConfigs.InitializeCollections ? new List<ParticipantSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if Participants property is set
         internal bool IsSetParticipants()
         {
-            return this._participants != null && this._participants.Count > 0; 
+            return this._participants != null && (this._participants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

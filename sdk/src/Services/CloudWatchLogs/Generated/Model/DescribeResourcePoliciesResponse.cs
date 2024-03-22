@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class DescribeResourcePoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourcePolicy> _resourcePolicies = new List<ResourcePolicy>();
+        private List<ResourcePolicy> _resourcePolicies = AWSConfigs.InitializeCollections ? new List<ResourcePolicy>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -67,7 +67,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if ResourcePolicies property is set
         internal bool IsSetResourcePolicies()
         {
-            return this._resourcePolicies != null && this._resourcePolicies.Count > 0; 
+            return this._resourcePolicies != null && (this._resourcePolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

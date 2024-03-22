@@ -33,7 +33,7 @@ namespace Amazon.PI.Model
     /// </summary>
     public partial class ListAvailableResourceDimensionsResponse : AmazonWebServiceResponse
     {
-        private List<MetricDimensionGroups> _metricDimensions = new List<MetricDimensionGroups>();
+        private List<MetricDimensionGroups> _metricDimensions = AWSConfigs.InitializeCollections ? new List<MetricDimensionGroups>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.PI.Model
         // Check to see if MetricDimensions property is set
         internal bool IsSetMetricDimensions()
         {
-            return this._metricDimensions != null && this._metricDimensions.Count > 0; 
+            return this._metricDimensions != null && (this._metricDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

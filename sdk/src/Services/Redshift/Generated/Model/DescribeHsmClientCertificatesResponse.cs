@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeHsmClientCertificatesResponse : AmazonWebServiceResponse
     {
-        private List<HsmClientCertificate> _hsmClientCertificates = new List<HsmClientCertificate>();
+        private List<HsmClientCertificate> _hsmClientCertificates = AWSConfigs.InitializeCollections ? new List<HsmClientCertificate>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Redshift.Model
         // Check to see if HsmClientCertificates property is set
         internal bool IsSetHsmClientCertificates()
         {
-            return this._hsmClientCertificates != null && this._hsmClientCertificates.Count > 0; 
+            return this._hsmClientCertificates != null && (this._hsmClientCertificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

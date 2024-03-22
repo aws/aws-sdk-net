@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class ComponentPropertyGroupRequest
     {
         private GroupType _groupType;
-        private List<string> _propertyNames = new List<string>();
+        private List<string> _propertyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PropertyGroupUpdateType _updateType;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyNames property is set
         internal bool IsSetPropertyNames()
         {
-            return this._propertyNames != null && this._propertyNames.Count > 0; 
+            return this._propertyNames != null && (this._propertyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.Omics.Model
     public partial class ListVariantImportJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VariantImportJobItem> _variantImportJobs = new List<VariantImportJobItem>();
+        private List<VariantImportJobItem> _variantImportJobs = AWSConfigs.InitializeCollections ? new List<VariantImportJobItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Omics.Model
         // Check to see if VariantImportJobs property is set
         internal bool IsSetVariantImportJobs()
         {
-            return this._variantImportJobs != null && this._variantImportJobs.Count > 0; 
+            return this._variantImportJobs != null && (this._variantImportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

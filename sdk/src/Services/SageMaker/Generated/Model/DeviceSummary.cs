@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _deviceName;
         private string _iotThingName;
         private DateTime? _latestHeartbeat;
-        private List<EdgeModelSummary> _models = new List<EdgeModelSummary>();
+        private List<EdgeModelSummary> _models = AWSConfigs.InitializeCollections ? new List<EdgeModelSummary>() : null;
         private DateTime? _registrationTime;
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Models property is set
         internal bool IsSetModels()
         {
-            return this._models != null && this._models.Count > 0; 
+            return this._models != null && (this._models.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.MarketplaceCatalog.Model
     public partial class ResaleAuthorizationCreatedDateFilter
     {
         private ResaleAuthorizationCreatedDateFilterDateRange _dateRange;
-        private List<string> _valueList = new List<string>();
+        private List<string> _valueList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DateRange. 
@@ -72,7 +72,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if ValueList property is set
         internal bool IsSetValueList()
         {
-            return this._valueList != null && this._valueList.Count > 0; 
+            return this._valueList != null && (this._valueList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

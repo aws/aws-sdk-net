@@ -34,7 +34,7 @@ namespace Amazon.CodeArtifact.Model
     public partial class ListAssociatedPackagesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<AssociatedPackage> _packages = new List<AssociatedPackage>();
+        private List<AssociatedPackage> _packages = AWSConfigs.InitializeCollections ? new List<AssociatedPackage>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Packages property is set
         internal bool IsSetPackages()
         {
-            return this._packages != null && this._packages.Count > 0; 
+            return this._packages != null && (this._packages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

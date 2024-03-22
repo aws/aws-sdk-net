@@ -58,9 +58,9 @@ namespace Amazon.AutoScaling.Model
     public partial class CreateLaunchConfigurationRequest : AmazonAutoScalingRequest
     {
         private bool? _associatePublicIpAddress;
-        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private List<BlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<BlockDeviceMapping>() : null;
         private string _classicLinkVPCId;
-        private List<string> _classicLinkVPCSecurityGroups = new List<string>();
+        private List<string> _classicLinkVPCSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _ebsOptimized;
         private string _iamInstanceProfile;
         private string _imageId;
@@ -73,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         private InstanceMetadataOptions _metadataOptions;
         private string _placementTenancy;
         private string _ramdiskId;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _spotPrice;
         private string _userData;
 
@@ -129,7 +129,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ClassicLinkVPCSecurityGroups property is set
         internal bool IsSetClassicLinkVPCSecurityGroups()
         {
-            return this._classicLinkVPCSecurityGroups != null && this._classicLinkVPCSecurityGroups.Count > 0; 
+            return this._classicLinkVPCSecurityGroups != null && (this._classicLinkVPCSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -494,7 +494,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

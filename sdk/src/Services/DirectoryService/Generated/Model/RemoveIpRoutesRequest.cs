@@ -34,7 +34,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class RemoveIpRoutesRequest : AmazonDirectoryServiceRequest
     {
-        private List<string> _cidrIps = new List<string>();
+        private List<string> _cidrIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _directoryId;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if CidrIps property is set
         internal bool IsSetCidrIps()
         {
-            return this._cidrIps != null && this._cidrIps.Count > 0; 
+            return this._cidrIps != null && (this._cidrIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

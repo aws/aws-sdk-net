@@ -106,19 +106,19 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class CreateFunctionRequest : AmazonLambdaRequest
     {
-        private List<string> _architectures = new List<string>();
+        private List<string> _architectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FunctionCode _code;
         private string _codeSigningConfigArn;
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
         private Environment _environment;
         private EphemeralStorage _ephemeralStorage;
-        private List<FileSystemConfig> _fileSystemConfigs = new List<FileSystemConfig>();
+        private List<FileSystemConfig> _fileSystemConfigs = AWSConfigs.InitializeCollections ? new List<FileSystemConfig>() : null;
         private string _functionName;
         private string _handler;
         private ImageConfig _imageConfig;
         private string _kmsKeyArn;
-        private List<string> _layers = new List<string>();
+        private List<string> _layers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LoggingConfig _loggingConfig;
         private int? _memorySize;
         private PackageType _packageType;
@@ -126,7 +126,7 @@ namespace Amazon.Lambda.Model
         private string _role;
         private Runtime _runtime;
         private SnapStart _snapStart;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _timeout;
         private TracingConfig _tracingConfig;
         private VpcConfig _vpcConfig;
@@ -148,7 +148,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Architectures property is set
         internal bool IsSetArchitectures()
         {
-            return this._architectures != null && this._architectures.Count > 0; 
+            return this._architectures != null && (this._architectures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -285,7 +285,7 @@ namespace Amazon.Lambda.Model
         // Check to see if FileSystemConfigs property is set
         internal bool IsSetFileSystemConfigs()
         {
-            return this._fileSystemConfigs != null && this._fileSystemConfigs.Count > 0; 
+            return this._fileSystemConfigs != null && (this._fileSystemConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -413,7 +413,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Layers property is set
         internal bool IsSetLayers()
         {
-            return this._layers != null && this._layers.Count > 0; 
+            return this._layers != null && (this._layers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -571,7 +571,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

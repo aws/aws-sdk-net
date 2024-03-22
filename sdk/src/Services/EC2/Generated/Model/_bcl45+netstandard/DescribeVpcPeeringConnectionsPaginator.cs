@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the VpcPeeringConnections
         /// </summary>
         public IPaginatedEnumerable<VpcPeeringConnection> VpcPeeringConnections => 
-            new PaginatedResultKeyResponse<DescribeVpcPeeringConnectionsResponse, VpcPeeringConnection>(this, (i) => i.VpcPeeringConnections);
+            new PaginatedResultKeyResponse<DescribeVpcPeeringConnectionsResponse, VpcPeeringConnection>(this, (i) => i.VpcPeeringConnections ?? new List<VpcPeeringConnection>());
 
         internal DescribeVpcPeeringConnectionsPaginator(IAmazonEC2 client, DescribeVpcPeeringConnectionsRequest request)
         {

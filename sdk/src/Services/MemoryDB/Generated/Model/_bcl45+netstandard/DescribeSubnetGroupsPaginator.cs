@@ -45,7 +45,7 @@ namespace Amazon.MemoryDB.Model
         /// Enumerable containing all of the SubnetGroups
         /// </summary>
         public IPaginatedEnumerable<SubnetGroup> SubnetGroups => 
-            new PaginatedResultKeyResponse<DescribeSubnetGroupsResponse, SubnetGroup>(this, (i) => i.SubnetGroups);
+            new PaginatedResultKeyResponse<DescribeSubnetGroupsResponse, SubnetGroup>(this, (i) => i.SubnetGroups ?? new List<SubnetGroup>());
 
         internal DescribeSubnetGroupsPaginator(IAmazonMemoryDB client, DescribeSubnetGroupsRequest request)
         {

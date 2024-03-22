@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model
         private AutoEnableMembers _autoEnableOrganizationMembers;
         private OrganizationDataSourceConfigurations _dataSources;
         private string _detectorId;
-        private List<OrganizationFeatureConfiguration> _features = new List<OrganizationFeatureConfiguration>();
+        private List<OrganizationFeatureConfiguration> _features = AWSConfigs.InitializeCollections ? new List<OrganizationFeatureConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoEnable. 
@@ -190,7 +190,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

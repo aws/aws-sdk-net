@@ -33,7 +33,7 @@ namespace Amazon.CodeGuruReviewer.Model
     /// </summary>
     public partial class ListCodeReviewsResponse : AmazonWebServiceResponse
     {
-        private List<CodeReviewSummary> _codeReviewSummaries = new List<CodeReviewSummary>();
+        private List<CodeReviewSummary> _codeReviewSummaries = AWSConfigs.InitializeCollections ? new List<CodeReviewSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if CodeReviewSummaries property is set
         internal bool IsSetCodeReviewSummaries()
         {
-            return this._codeReviewSummaries != null && this._codeReviewSummaries.Count > 0; 
+            return this._codeReviewSummaries != null && (this._codeReviewSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

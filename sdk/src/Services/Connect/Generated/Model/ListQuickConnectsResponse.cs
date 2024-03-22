@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListQuickConnectsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<QuickConnectSummary> _quickConnectSummaryList = new List<QuickConnectSummary>();
+        private List<QuickConnectSummary> _quickConnectSummaryList = AWSConfigs.InitializeCollections ? new List<QuickConnectSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         // Check to see if QuickConnectSummaryList property is set
         internal bool IsSetQuickConnectSummaryList()
         {
-            return this._quickConnectSummaryList != null && this._quickConnectSummaryList.Count > 0; 
+            return this._quickConnectSummaryList != null && (this._quickConnectSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

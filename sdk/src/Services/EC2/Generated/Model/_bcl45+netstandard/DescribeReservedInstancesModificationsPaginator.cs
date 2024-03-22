@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the ReservedInstancesModifications
         /// </summary>
         public IPaginatedEnumerable<ReservedInstancesModification> ReservedInstancesModifications => 
-            new PaginatedResultKeyResponse<DescribeReservedInstancesModificationsResponse, ReservedInstancesModification>(this, (i) => i.ReservedInstancesModifications);
+            new PaginatedResultKeyResponse<DescribeReservedInstancesModificationsResponse, ReservedInstancesModification>(this, (i) => i.ReservedInstancesModifications ?? new List<ReservedInstancesModification>());
 
         internal DescribeReservedInstancesModificationsPaginator(IAmazonEC2 client, DescribeReservedInstancesModificationsRequest request)
         {

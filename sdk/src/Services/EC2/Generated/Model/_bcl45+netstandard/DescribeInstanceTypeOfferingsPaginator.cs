@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the InstanceTypeOfferings
         /// </summary>
         public IPaginatedEnumerable<InstanceTypeOffering> InstanceTypeOfferings => 
-            new PaginatedResultKeyResponse<DescribeInstanceTypeOfferingsResponse, InstanceTypeOffering>(this, (i) => i.InstanceTypeOfferings);
+            new PaginatedResultKeyResponse<DescribeInstanceTypeOfferingsResponse, InstanceTypeOffering>(this, (i) => i.InstanceTypeOfferings ?? new List<InstanceTypeOffering>());
 
         internal DescribeInstanceTypeOfferingsPaginator(IAmazonEC2 client, DescribeInstanceTypeOfferingsRequest request)
         {

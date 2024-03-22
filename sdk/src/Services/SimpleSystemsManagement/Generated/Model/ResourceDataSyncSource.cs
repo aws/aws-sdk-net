@@ -36,7 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private ResourceDataSyncAwsOrganizationsSource _awsOrganizationsSource;
         private bool? _enableAllOpsDataSources;
         private bool? _includeFutureRegions;
-        private List<string> _sourceRegions = new List<string>();
+        private List<string> _sourceRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sourceType;
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if SourceRegions property is set
         internal bool IsSetSourceRegions()
         {
-            return this._sourceRegions != null && this._sourceRegions.Count > 0; 
+            return this._sourceRegions != null && (this._sourceRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

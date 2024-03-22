@@ -35,7 +35,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class GetDeploymentsResponse : AmazonWebServiceResponse
     {
-        private List<Deployment> _items = new List<Deployment>();
+        private List<Deployment> _items = AWSConfigs.InitializeCollections ? new List<Deployment>() : null;
         private string _position;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

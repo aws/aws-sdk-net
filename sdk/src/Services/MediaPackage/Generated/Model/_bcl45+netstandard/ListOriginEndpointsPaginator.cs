@@ -45,7 +45,7 @@ namespace Amazon.MediaPackage.Model
         /// Enumerable containing all of the OriginEndpoints
         /// </summary>
         public IPaginatedEnumerable<OriginEndpoint> OriginEndpoints => 
-            new PaginatedResultKeyResponse<ListOriginEndpointsResponse, OriginEndpoint>(this, (i) => i.OriginEndpoints);
+            new PaginatedResultKeyResponse<ListOriginEndpointsResponse, OriginEndpoint>(this, (i) => i.OriginEndpoints ?? new List<OriginEndpoint>());
 
         internal ListOriginEndpointsPaginator(IAmazonMediaPackage client, ListOriginEndpointsRequest request)
         {

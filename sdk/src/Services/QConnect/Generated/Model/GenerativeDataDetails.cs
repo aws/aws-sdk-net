@@ -35,7 +35,7 @@ namespace Amazon.QConnect.Model
     {
         private string _completion;
         private RankingData _rankingData;
-        private List<DataSummary> _references = new List<DataSummary>();
+        private List<DataSummary> _references = AWSConfigs.InitializeCollections ? new List<DataSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property Completion. 
@@ -91,7 +91,7 @@ namespace Amazon.QConnect.Model
         // Check to see if References property is set
         internal bool IsSetReferences()
         {
-            return this._references != null && this._references.Count > 0; 
+            return this._references != null && (this._references.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

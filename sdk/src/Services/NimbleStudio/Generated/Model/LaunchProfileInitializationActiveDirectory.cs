@@ -34,10 +34,10 @@ namespace Amazon.NimbleStudio.Model
     /// </summary>
     public partial class LaunchProfileInitializationActiveDirectory
     {
-        private List<ActiveDirectoryComputerAttribute> _computerAttributes = new List<ActiveDirectoryComputerAttribute>();
+        private List<ActiveDirectoryComputerAttribute> _computerAttributes = AWSConfigs.InitializeCollections ? new List<ActiveDirectoryComputerAttribute>() : null;
         private string _directoryId;
         private string _directoryName;
-        private List<string> _dnsIpAddresses = new List<string>();
+        private List<string> _dnsIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _organizationalUnitDistinguishedName;
         private string _studioComponentId;
         private string _studioComponentName;
@@ -58,7 +58,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if ComputerAttributes property is set
         internal bool IsSetComputerAttributes()
         {
-            return this._computerAttributes != null && this._computerAttributes.Count > 0; 
+            return this._computerAttributes != null && (this._computerAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if DnsIpAddresses property is set
         internal bool IsSetDnsIpAddresses()
         {
-            return this._dnsIpAddresses != null && this._dnsIpAddresses.Count > 0; 
+            return this._dnsIpAddresses != null && (this._dnsIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

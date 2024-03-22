@@ -45,7 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// Enumerable containing all of the FileSystemAssociationSummaryList
         /// </summary>
         public IPaginatedEnumerable<FileSystemAssociationSummary> FileSystemAssociationSummaryList => 
-            new PaginatedResultKeyResponse<ListFileSystemAssociationsResponse, FileSystemAssociationSummary>(this, (i) => i.FileSystemAssociationSummaryList);
+            new PaginatedResultKeyResponse<ListFileSystemAssociationsResponse, FileSystemAssociationSummary>(this, (i) => i.FileSystemAssociationSummaryList ?? new List<FileSystemAssociationSummary>());
 
         internal ListFileSystemAssociationsPaginator(IAmazonStorageGateway client, ListFileSystemAssociationsRequest request)
         {

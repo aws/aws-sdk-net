@@ -38,7 +38,7 @@ namespace Amazon.Personalize.Model
     public partial class CreateMetricAttributionRequest : AmazonPersonalizeRequest
     {
         private string _datasetGroupArn;
-        private List<MetricAttribute> _metrics = new List<MetricAttribute>();
+        private List<MetricAttribute> _metrics = AWSConfigs.InitializeCollections ? new List<MetricAttribute>() : null;
         private MetricAttributionOutput _metricsOutputConfig;
         private string _name;
 
@@ -80,7 +80,7 @@ namespace Amazon.Personalize.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

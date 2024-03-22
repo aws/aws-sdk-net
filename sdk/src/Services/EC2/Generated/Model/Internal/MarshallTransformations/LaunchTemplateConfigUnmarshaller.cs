@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("overrides/item", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateOverridesUnmarshaller.Instance;
+                        if (unmarshalledObject.Overrides == null)
+                        {
+                            unmarshalledObject.Overrides = new List<LaunchTemplateOverrides>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Overrides.Add(item);
                         continue;

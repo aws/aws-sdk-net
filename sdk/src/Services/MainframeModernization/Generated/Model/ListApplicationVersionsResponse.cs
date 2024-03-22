@@ -33,7 +33,7 @@ namespace Amazon.MainframeModernization.Model
     /// </summary>
     public partial class ListApplicationVersionsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationVersionSummary> _applicationVersions = new List<ApplicationVersionSummary>();
+        private List<ApplicationVersionSummary> _applicationVersions = AWSConfigs.InitializeCollections ? new List<ApplicationVersionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if ApplicationVersions property is set
         internal bool IsSetApplicationVersions()
         {
-            return this._applicationVersions != null && this._applicationVersions.Count > 0; 
+            return this._applicationVersions != null && (this._applicationVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -42,12 +42,12 @@ namespace Amazon.Lex.Model
     public partial class PutSessionRequest : AmazonLexRequest
     {
         private string _accept;
-        private List<ActiveContext> _activeContexts = new List<ActiveContext>();
+        private List<ActiveContext> _activeContexts = AWSConfigs.InitializeCollections ? new List<ActiveContext>() : null;
         private string _botAlias;
         private string _botName;
         private DialogAction _dialogAction;
-        private List<IntentSummary> _recentIntentSummaryView = new List<IntentSummary>();
-        private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
+        private List<IntentSummary> _recentIntentSummaryView = AWSConfigs.InitializeCollections ? new List<IntentSummary>() : null;
+        private Dictionary<string, string> _sessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _userId;
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.Lex.Model
         // Check to see if ActiveContexts property is set
         internal bool IsSetActiveContexts()
         {
-            return this._activeContexts != null && this._activeContexts.Count > 0; 
+            return this._activeContexts != null && (this._activeContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Amazon.Lex.Model
         // Check to see if RecentIntentSummaryView property is set
         internal bool IsSetRecentIntentSummaryView()
         {
-            return this._recentIntentSummaryView != null && this._recentIntentSummaryView.Count > 0; 
+            return this._recentIntentSummaryView != null && (this._recentIntentSummaryView.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace Amazon.Lex.Model
         // Check to see if SessionAttributes property is set
         internal bool IsSetSessionAttributes()
         {
-            return this._sessionAttributes != null && this._sessionAttributes.Count > 0; 
+            return this._sessionAttributes != null && (this._sessionAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

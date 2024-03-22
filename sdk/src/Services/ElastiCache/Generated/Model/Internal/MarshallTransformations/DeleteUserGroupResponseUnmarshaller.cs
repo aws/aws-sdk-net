@@ -108,6 +108,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReplicationGroups/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.ReplicationGroups == null)
+                        {
+                            response.ReplicationGroups = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ReplicationGroups.Add(item);
                         continue;
@@ -115,6 +119,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ServerlessCaches/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.ServerlessCaches == null)
+                        {
+                            response.ServerlessCaches = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ServerlessCaches.Add(item);
                         continue;
@@ -134,6 +142,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UserIds/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.UserIds == null)
+                        {
+                            response.UserIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.UserIds.Add(item);
                         continue;

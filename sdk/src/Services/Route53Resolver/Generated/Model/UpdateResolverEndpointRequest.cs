@@ -37,10 +37,10 @@ namespace Amazon.Route53Resolver.Model
     public partial class UpdateResolverEndpointRequest : AmazonRoute53ResolverRequest
     {
         private string _name;
-        private List<string> _protocols = new List<string>();
+        private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resolverEndpointId;
         private ResolverEndpointType _resolverEndpointType;
-        private List<UpdateIpAddress> _updateIpAddresses = new List<UpdateIpAddress>();
+        private List<UpdateIpAddress> _updateIpAddresses = AWSConfigs.InitializeCollections ? new List<UpdateIpAddress>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -135,7 +135,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if UpdateIpAddresses property is set
         internal bool IsSetUpdateIpAddresses()
         {
-            return this._updateIpAddresses != null && this._updateIpAddresses.Count > 0; 
+            return this._updateIpAddresses != null && (this._updateIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

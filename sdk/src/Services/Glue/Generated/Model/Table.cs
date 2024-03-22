@@ -44,8 +44,8 @@ namespace Amazon.Glue.Model
         private DateTime? _lastAnalyzedTime;
         private string _name;
         private string _owner;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
-        private List<Column> _partitionKeys = new List<Column>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Column> _partitionKeys = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private int? _retention;
         private StorageDescriptor _storageDescriptor;
         private string _tableType;
@@ -277,7 +277,7 @@ namespace Amazon.Glue.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -305,7 +305,7 @@ namespace Amazon.Glue.Model
         // Check to see if PartitionKeys property is set
         internal bool IsSetPartitionKeys()
         {
-            return this._partitionKeys != null && this._partitionKeys.Count > 0; 
+            return this._partitionKeys != null && (this._partitionKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

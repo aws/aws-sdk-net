@@ -37,7 +37,7 @@ namespace Amazon.OpenSearchService.Model
     #endif
     public partial class SlotNotAvailableException : AmazonOpenSearchServiceException
     {
-        private List<long> _slotSuggestions = new List<long>();
+        private List<long> _slotSuggestions = AWSConfigs.InitializeCollections ? new List<long>() : null;
 
         /// <summary>
         /// Constructs a new SlotNotAvailableException with the specified error
@@ -140,7 +140,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if SlotSuggestions property is set
         internal bool IsSetSlotSuggestions()
         {
-            return this._slotSuggestions != null && this._slotSuggestions.Count > 0; 
+            return this._slotSuggestions != null && (this._slotSuggestions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

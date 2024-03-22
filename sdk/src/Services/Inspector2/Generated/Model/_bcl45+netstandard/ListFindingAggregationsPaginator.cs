@@ -45,7 +45,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the Aggregations
         /// </summary>
         public IPaginatedEnumerable<AggregationResponse> Aggregations => 
-            new PaginatedResultKeyResponse<ListFindingAggregationsResponse, AggregationResponse>(this, (i) => i.Aggregations);
+            new PaginatedResultKeyResponse<ListFindingAggregationsResponse, AggregationResponse>(this, (i) => i.Aggregations ?? new List<AggregationResponse>());
 
         internal ListFindingAggregationsPaginator(IAmazonInspector2 client, ListFindingAggregationsRequest request)
         {

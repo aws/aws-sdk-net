@@ -33,8 +33,8 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class BatchUpdateMemberEc2DeepInspectionStatusResponse : AmazonWebServiceResponse
     {
-        private List<MemberAccountEc2DeepInspectionStatusState> _accountIds = new List<MemberAccountEc2DeepInspectionStatusState>();
-        private List<FailedMemberAccountEc2DeepInspectionStatusState> _failedAccountIds = new List<FailedMemberAccountEc2DeepInspectionStatusState>();
+        private List<MemberAccountEc2DeepInspectionStatusState> _accountIds = AWSConfigs.InitializeCollections ? new List<MemberAccountEc2DeepInspectionStatusState>() : null;
+        private List<FailedMemberAccountEc2DeepInspectionStatusState> _failedAccountIds = AWSConfigs.InitializeCollections ? new List<FailedMemberAccountEc2DeepInspectionStatusState>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountIds. 
@@ -53,7 +53,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FailedAccountIds property is set
         internal bool IsSetFailedAccountIds()
         {
-            return this._failedAccountIds != null && this._failedAccountIds.Count > 0; 
+            return this._failedAccountIds != null && (this._failedAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

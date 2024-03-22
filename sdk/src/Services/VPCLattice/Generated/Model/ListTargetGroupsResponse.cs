@@ -33,7 +33,7 @@ namespace Amazon.VPCLattice.Model
     /// </summary>
     public partial class ListTargetGroupsResponse : AmazonWebServiceResponse
     {
-        private List<TargetGroupSummary> _items = new List<TargetGroupSummary>();
+        private List<TargetGroupSummary> _items = AWSConfigs.InitializeCollections ? new List<TargetGroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.VPCLattice.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

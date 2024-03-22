@@ -33,7 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class GetListsMetadataResponse : AmazonWebServiceResponse
     {
-        private List<AllowDenyList> _lists = new List<AllowDenyList>();
+        private List<AllowDenyList> _lists = AWSConfigs.InitializeCollections ? new List<AllowDenyList>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Lists property is set
         internal bool IsSetLists()
         {
-            return this._lists != null && this._lists.Count > 0; 
+            return this._lists != null && (this._lists.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.RoboMaker.Model
     /// </summary>
     public partial class BatchDeleteWorldsResponse : AmazonWebServiceResponse
     {
-        private List<string> _unprocessedWorlds = new List<string>();
+        private List<string> _unprocessedWorlds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property UnprocessedWorlds. 
@@ -51,7 +51,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if UnprocessedWorlds property is set
         internal bool IsSetUnprocessedWorlds()
         {
-            return this._unprocessedWorlds != null && this._unprocessedWorlds.Count > 0; 
+            return this._unprocessedWorlds != null && (this._unprocessedWorlds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

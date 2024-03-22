@@ -33,8 +33,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class RiskExceptionConfigurationType
     {
-        private List<string> _blockedIPRangeList = new List<string>();
-        private List<string> _skippedIPRangeList = new List<string>();
+        private List<string> _blockedIPRangeList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _skippedIPRangeList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BlockedIPRangeList. 
@@ -54,7 +54,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if BlockedIPRangeList property is set
         internal bool IsSetBlockedIPRangeList()
         {
-            return this._blockedIPRangeList != null && this._blockedIPRangeList.Count > 0; 
+            return this._blockedIPRangeList != null && (this._blockedIPRangeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if SkippedIPRangeList property is set
         internal bool IsSetSkippedIPRangeList()
         {
-            return this._skippedIPRangeList != null && this._skippedIPRangeList.Count > 0; 
+            return this._skippedIPRangeList != null && (this._skippedIPRangeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

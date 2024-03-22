@@ -42,7 +42,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// </summary>
     public partial class EntitiesDefinition
     {
-        private List<EntityItem> _entityList = new List<EntityItem>();
+        private List<EntityItem> _entityList = AWSConfigs.InitializeCollections ? new List<EntityItem>() : null;
 
         /// <summary>
         /// Gets and sets the property EntityList. 
@@ -61,7 +61,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if EntityList property is set
         internal bool IsSetEntityList()
         {
-            return this._entityList != null && this._entityList.Count > 0; 
+            return this._entityList != null && (this._entityList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

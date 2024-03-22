@@ -37,7 +37,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _arn;
         private string _editorId;
         private DateTime? _endTime;
-        private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
+        private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ExecutionEngineConfig _executionEngine;
         private string _lastStateChangeReason;
         private string _notebookExecutionId;
@@ -50,7 +50,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _outputNotebookURI;
         private DateTime? _startTime;
         private NotebookExecutionStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -123,7 +123,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if EnvironmentVariables property is set
         internal bool IsSetEnvironmentVariables()
         {
-            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
+            return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -414,7 +414,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

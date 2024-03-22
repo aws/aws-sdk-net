@@ -63,6 +63,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Listeners/member", targetDepth))
                     {
                         var unmarshaller = ListenerUnmarshaller.Instance;
+                        if (unmarshalledObject.Listeners == null)
+                        {
+                            unmarshalledObject.Listeners = new List<Listener>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Listeners.Add(item);
                         continue;

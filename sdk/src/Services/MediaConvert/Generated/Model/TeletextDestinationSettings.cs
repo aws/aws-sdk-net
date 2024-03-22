@@ -35,7 +35,7 @@ namespace Amazon.MediaConvert.Model
     public partial class TeletextDestinationSettings
     {
         private string _pageNumber;
-        private List<string> _pageTypes = new List<string>();
+        private List<string> _pageTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property PageNumber. Set pageNumber to the Teletext page number
@@ -72,7 +72,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if PageTypes property is set
         internal bool IsSetPageTypes()
         {
-            return this._pageTypes != null && this._pageTypes.Count > 0; 
+            return this._pageTypes != null && (this._pageTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

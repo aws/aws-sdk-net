@@ -40,10 +40,10 @@ namespace Amazon.ComputeOptimizer.Model
         private EBSFinding _finding;
         private DateTime? _lastRefreshTimestamp;
         private double? _lookBackPeriodInDays;
-        private List<Tag> _tags = new List<Tag>();
-        private List<EBSUtilizationMetric> _utilizationMetrics = new List<EBSUtilizationMetric>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<EBSUtilizationMetric> _utilizationMetrics = AWSConfigs.InitializeCollections ? new List<EBSUtilizationMetric>() : null;
         private string _volumeArn;
-        private List<VolumeRecommendationOption> _volumeRecommendationOptions = new List<VolumeRecommendationOption>();
+        private List<VolumeRecommendationOption> _volumeRecommendationOptions = AWSConfigs.InitializeCollections ? new List<VolumeRecommendationOption>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -205,7 +205,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if UtilizationMetrics property is set
         internal bool IsSetUtilizationMetrics()
         {
-            return this._utilizationMetrics != null && this._utilizationMetrics.Count > 0; 
+            return this._utilizationMetrics != null && (this._utilizationMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if VolumeRecommendationOptions property is set
         internal bool IsSetVolumeRecommendationOptions()
         {
-            return this._volumeRecommendationOptions != null && this._volumeRecommendationOptions.Count > 0; 
+            return this._volumeRecommendationOptions != null && (this._volumeRecommendationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

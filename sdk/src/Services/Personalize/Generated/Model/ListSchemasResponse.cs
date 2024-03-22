@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model
     public partial class ListSchemasResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<DatasetSchemaSummary> _schemas = new List<DatasetSchemaSummary>();
+        private List<DatasetSchemaSummary> _schemas = AWSConfigs.InitializeCollections ? new List<DatasetSchemaSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Personalize.Model
         // Check to see if Schemas property is set
         internal bool IsSetSchemas()
         {
-            return this._schemas != null && this._schemas.Count > 0; 
+            return this._schemas != null && (this._schemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

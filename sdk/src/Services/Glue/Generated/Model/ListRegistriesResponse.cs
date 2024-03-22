@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     public partial class ListRegistriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RegistryListItem> _registries = new List<RegistryListItem>();
+        private List<RegistryListItem> _registries = AWSConfigs.InitializeCollections ? new List<RegistryListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Glue.Model
         // Check to see if Registries property is set
         internal bool IsSetRegistries()
         {
-            return this._registries != null && this._registries.Count > 0; 
+            return this._registries != null && (this._registries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

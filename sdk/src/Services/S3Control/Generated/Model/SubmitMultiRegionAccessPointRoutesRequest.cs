@@ -90,7 +90,7 @@ namespace Amazon.S3Control.Model
     {
         private string _accountId;
         private string _mrap;
-        private List<MultiRegionAccessPointRoute> _routeUpdates = new List<MultiRegionAccessPointRoute>();
+        private List<MultiRegionAccessPointRoute> _routeUpdates = AWSConfigs.InitializeCollections ? new List<MultiRegionAccessPointRoute>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -147,7 +147,7 @@ namespace Amazon.S3Control.Model
         // Check to see if RouteUpdates property is set
         internal bool IsSetRouteUpdates()
         {
-            return this._routeUpdates != null && this._routeUpdates.Count > 0; 
+            return this._routeUpdates != null && (this._routeUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

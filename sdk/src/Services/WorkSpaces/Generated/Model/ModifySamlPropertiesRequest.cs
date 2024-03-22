@@ -36,7 +36,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class ModifySamlPropertiesRequest : AmazonWorkSpacesRequest
     {
-        private List<string> _propertiesToDelete = new List<string>();
+        private List<string> _propertiesToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceId;
         private SamlProperties _samlProperties;
 
@@ -69,7 +69,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if PropertiesToDelete property is set
         internal bool IsSetPropertiesToDelete()
         {
-            return this._propertiesToDelete != null && this._propertiesToDelete.Count > 0; 
+            return this._propertiesToDelete != null && (this._propertiesToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.ConnectWisdomService.Model
     public partial class QueryAssistantResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResultData> _results = new List<ResultData>();
+        private List<ResultData> _results = AWSConfigs.InitializeCollections ? new List<ResultData>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

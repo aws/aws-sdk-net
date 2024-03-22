@@ -45,7 +45,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Enumerable containing all of the Campaigns
         /// </summary>
         public IPaginatedEnumerable<VehicleStatus> Campaigns => 
-            new PaginatedResultKeyResponse<GetVehicleStatusResponse, VehicleStatus>(this, (i) => i.Campaigns);
+            new PaginatedResultKeyResponse<GetVehicleStatusResponse, VehicleStatus>(this, (i) => i.Campaigns ?? new List<VehicleStatus>());
 
         internal GetVehicleStatusPaginator(IAmazonIoTFleetWise client, GetVehicleStatusRequest request)
         {

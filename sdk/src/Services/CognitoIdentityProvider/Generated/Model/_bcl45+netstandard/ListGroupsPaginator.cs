@@ -45,7 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Enumerable containing all of the Groups
         /// </summary>
         public IPaginatedEnumerable<GroupType> Groups => 
-            new PaginatedResultKeyResponse<ListGroupsResponse, GroupType>(this, (i) => i.Groups);
+            new PaginatedResultKeyResponse<ListGroupsResponse, GroupType>(this, (i) => i.Groups ?? new List<GroupType>());
 
         internal ListGroupsPaginator(IAmazonCognitoIdentityProvider client, ListGroupsRequest request)
         {

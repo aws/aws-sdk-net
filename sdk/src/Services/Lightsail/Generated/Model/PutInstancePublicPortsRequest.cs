@@ -48,7 +48,7 @@ namespace Amazon.Lightsail.Model
     public partial class PutInstancePublicPortsRequest : AmazonLightsailRequest
     {
         private string _instanceName;
-        private List<PortInfo> _portInfos = new List<PortInfo>();
+        private List<PortInfo> _portInfos = AWSConfigs.InitializeCollections ? new List<PortInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceName. 
@@ -85,7 +85,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if PortInfos property is set
         internal bool IsSetPortInfos()
         {
-            return this._portInfos != null && this._portInfos.Count > 0; 
+            return this._portInfos != null && (this._portInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

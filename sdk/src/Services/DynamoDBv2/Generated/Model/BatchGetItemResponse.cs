@@ -33,9 +33,9 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class BatchGetItemResponse : AmazonWebServiceResponse
     {
-        private List<ConsumedCapacity> _consumedCapacity = new List<ConsumedCapacity>();
-        private Dictionary<string, List<Dictionary<string, AttributeValue>>> _responses = new Dictionary<string, List<Dictionary<string, AttributeValue>>>();
-        private Dictionary<string, KeysAndAttributes> _unprocessedKeys = new Dictionary<string, KeysAndAttributes>();
+        private List<ConsumedCapacity> _consumedCapacity = AWSConfigs.InitializeCollections ? new List<ConsumedCapacity>() : null;
+        private Dictionary<string, List<Dictionary<string, AttributeValue>>> _responses = AWSConfigs.InitializeCollections ? new Dictionary<string, List<Dictionary<string, AttributeValue>>>() : null;
+        private Dictionary<string, KeysAndAttributes> _unprocessedKeys = AWSConfigs.InitializeCollections ? new Dictionary<string, KeysAndAttributes>() : null;
 
         /// <summary>
         /// Gets and sets the property ConsumedCapacity. 
@@ -65,7 +65,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ConsumedCapacity property is set
         internal bool IsSetConsumedCapacity()
         {
-            return this._consumedCapacity != null && this._consumedCapacity.Count > 0; 
+            return this._consumedCapacity != null && (this._consumedCapacity.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Responses property is set
         internal bool IsSetResponses()
         {
-            return this._responses != null && this._responses.Count > 0; 
+            return this._responses != null && (this._responses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if UnprocessedKeys property is set
         internal bool IsSetUnprocessedKeys()
         {
-            return this._unprocessedKeys != null && this._unprocessedKeys.Count > 0; 
+            return this._unprocessedKeys != null && (this._unprocessedKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

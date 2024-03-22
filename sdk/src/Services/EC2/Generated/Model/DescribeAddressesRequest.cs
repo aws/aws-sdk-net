@@ -34,9 +34,9 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeAddressesRequest : AmazonEC2Request
     {
-        private List<string> _allocationIds = new List<string>();
-        private List<Filter> _filters = new List<Filter>();
-        private List<string> _publicIps = new List<string>();
+        private List<string> _allocationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _publicIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocationIds. 
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if AllocationIds property is set
         internal bool IsSetAllocationIds()
         {
-            return this._allocationIds != null && this._allocationIds.Count > 0; 
+            return this._allocationIds != null && (this._allocationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.EC2.Model
         // Check to see if PublicIps property is set
         internal bool IsSetPublicIps()
         {
-            return this._publicIps != null && this._publicIps.Count > 0; 
+            return this._publicIps != null && (this._publicIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

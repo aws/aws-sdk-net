@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         private int? _permissionsBoundaryUsageCount;
         private string _policyId;
         private string _policyName;
-        private List<AwsIamPolicyVersion> _policyVersionList = new List<AwsIamPolicyVersion>();
+        private List<AwsIamPolicyVersion> _policyVersionList = AWSConfigs.InitializeCollections ? new List<AwsIamPolicyVersion>() : null;
         private string _updateDate;
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PolicyVersionList property is set
         internal bool IsSetPolicyVersionList()
         {
-            return this._policyVersionList != null && this._policyVersionList.Count > 0; 
+            return this._policyVersionList != null && (this._policyVersionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

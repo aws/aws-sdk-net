@@ -34,7 +34,7 @@ namespace Amazon.NeptuneGraph.Model
     public partial class ListImportTasksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ImportTaskSummary> _tasks = new List<ImportTaskSummary>();
+        private List<ImportTaskSummary> _tasks = AWSConfigs.InitializeCollections ? new List<ImportTaskSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -77,7 +77,7 @@ namespace Amazon.NeptuneGraph.Model
         // Check to see if Tasks property is set
         internal bool IsSetTasks()
         {
-            return this._tasks != null && this._tasks.Count > 0; 
+            return this._tasks != null && (this._tasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// Enumerable containing all of the Trusts
         /// </summary>
         public IPaginatedEnumerable<Trust> Trusts => 
-            new PaginatedResultKeyResponse<DescribeTrustsResponse, Trust>(this, (i) => i.Trusts);
+            new PaginatedResultKeyResponse<DescribeTrustsResponse, Trust>(this, (i) => i.Trusts ?? new List<Trust>());
 
         internal DescribeTrustsPaginator(IAmazonDirectoryService client, DescribeTrustsRequest request)
         {

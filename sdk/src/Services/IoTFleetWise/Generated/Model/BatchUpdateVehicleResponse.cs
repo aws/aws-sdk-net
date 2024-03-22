@@ -33,8 +33,8 @@ namespace Amazon.IoTFleetWise.Model
     /// </summary>
     public partial class BatchUpdateVehicleResponse : AmazonWebServiceResponse
     {
-        private List<UpdateVehicleError> _errors = new List<UpdateVehicleError>();
-        private List<UpdateVehicleResponseItem> _vehicles = new List<UpdateVehicleResponseItem>();
+        private List<UpdateVehicleError> _errors = AWSConfigs.InitializeCollections ? new List<UpdateVehicleError>() : null;
+        private List<UpdateVehicleResponseItem> _vehicles = AWSConfigs.InitializeCollections ? new List<UpdateVehicleResponseItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -52,7 +52,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Vehicles property is set
         internal bool IsSetVehicles()
         {
-            return this._vehicles != null && this._vehicles.Count > 0; 
+            return this._vehicles != null && (this._vehicles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

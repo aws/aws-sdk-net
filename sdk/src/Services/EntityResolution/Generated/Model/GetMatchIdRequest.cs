@@ -34,7 +34,7 @@ namespace Amazon.EntityResolution.Model
     /// </summary>
     public partial class GetMatchIdRequest : AmazonEntityResolutionRequest
     {
-        private Dictionary<string, string> _record = new Dictionary<string, string>();
+        private Dictionary<string, string> _record = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workflowName;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if Record property is set
         internal bool IsSetRecord()
         {
-            return this._record != null && this._record.Count > 0; 
+            return this._record != null && (this._record.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.DocDB.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<Event> Events => 
-            new PaginatedResultKeyResponse<DescribeEventsResponse, Event>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<DescribeEventsResponse, Event>(this, (i) => i.Events ?? new List<Event>());
 
         internal DescribeEventsPaginator(IAmazonDocDB client, DescribeEventsRequest request)
         {

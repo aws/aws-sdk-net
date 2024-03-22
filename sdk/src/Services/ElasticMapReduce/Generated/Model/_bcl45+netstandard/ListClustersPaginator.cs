@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Enumerable containing all of the Clusters
         /// </summary>
         public IPaginatedEnumerable<ClusterSummary> Clusters => 
-            new PaginatedResultKeyResponse<ListClustersResponse, ClusterSummary>(this, (i) => i.Clusters);
+            new PaginatedResultKeyResponse<ListClustersResponse, ClusterSummary>(this, (i) => i.Clusters ?? new List<ClusterSummary>());
 
         internal ListClustersPaginator(IAmazonElasticMapReduce client, ListClustersRequest request)
         {

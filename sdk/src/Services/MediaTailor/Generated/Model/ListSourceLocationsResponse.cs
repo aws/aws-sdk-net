@@ -33,7 +33,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class ListSourceLocationsResponse : AmazonWebServiceResponse
     {
-        private List<SourceLocation> _items = new List<SourceLocation>();
+        private List<SourceLocation> _items = AWSConfigs.InitializeCollections ? new List<SourceLocation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

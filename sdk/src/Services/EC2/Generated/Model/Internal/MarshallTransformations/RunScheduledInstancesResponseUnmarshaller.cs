@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instanceIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.InstanceIdSet == null)
+                        {
+                            response.InstanceIdSet = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.InstanceIdSet.Add(item);
                         continue;

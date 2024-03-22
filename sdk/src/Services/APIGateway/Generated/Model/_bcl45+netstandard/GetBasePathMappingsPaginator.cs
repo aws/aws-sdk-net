@@ -45,7 +45,7 @@ namespace Amazon.APIGateway.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<BasePathMapping> Items => 
-            new PaginatedResultKeyResponse<GetBasePathMappingsResponse, BasePathMapping>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<GetBasePathMappingsResponse, BasePathMapping>(this, (i) => i.Items ?? new List<BasePathMapping>());
 
         internal GetBasePathMappingsPaginator(IAmazonAPIGateway client, GetBasePathMappingsRequest request)
         {

@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model
     public partial class NodeGroup
     {
         private string _nodeGroupId;
-        private List<NodeGroupMember> _nodeGroupMembers = new List<NodeGroupMember>();
+        private List<NodeGroupMember> _nodeGroupMembers = AWSConfigs.InitializeCollections ? new List<NodeGroupMember>() : null;
         private Endpoint _primaryEndpoint;
         private Endpoint _readerEndpoint;
         private string _slots;
@@ -77,7 +77,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NodeGroupMembers property is set
         internal bool IsSetNodeGroupMembers()
         {
-            return this._nodeGroupMembers != null && this._nodeGroupMembers.Count > 0; 
+            return this._nodeGroupMembers != null && (this._nodeGroupMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

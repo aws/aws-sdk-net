@@ -33,8 +33,8 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class BatchGetLifecyclePolicyResponse : AmazonWebServiceResponse
     {
-        private List<LifecyclePolicyDetail> _lifecyclePolicyDetails = new List<LifecyclePolicyDetail>();
-        private List<LifecyclePolicyErrorDetail> _lifecyclePolicyErrorDetails = new List<LifecyclePolicyErrorDetail>();
+        private List<LifecyclePolicyDetail> _lifecyclePolicyDetails = AWSConfigs.InitializeCollections ? new List<LifecyclePolicyDetail>() : null;
+        private List<LifecyclePolicyErrorDetail> _lifecyclePolicyErrorDetails = AWSConfigs.InitializeCollections ? new List<LifecyclePolicyErrorDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property LifecyclePolicyDetails. 
@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if LifecyclePolicyDetails property is set
         internal bool IsSetLifecyclePolicyDetails()
         {
-            return this._lifecyclePolicyDetails != null && this._lifecyclePolicyDetails.Count > 0; 
+            return this._lifecyclePolicyDetails != null && (this._lifecyclePolicyDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if LifecyclePolicyErrorDetails property is set
         internal bool IsSetLifecyclePolicyErrorDetails()
         {
-            return this._lifecyclePolicyErrorDetails != null && this._lifecyclePolicyErrorDetails.Count > 0; 
+            return this._lifecyclePolicyErrorDetails != null && (this._lifecyclePolicyErrorDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

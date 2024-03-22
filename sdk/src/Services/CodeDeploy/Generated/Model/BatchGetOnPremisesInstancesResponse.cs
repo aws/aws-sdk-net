@@ -33,7 +33,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class BatchGetOnPremisesInstancesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceInfo> _instanceInfos = new List<InstanceInfo>();
+        private List<InstanceInfo> _instanceInfos = AWSConfigs.InitializeCollections ? new List<InstanceInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceInfos. 
@@ -50,7 +50,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if InstanceInfos property is set
         internal bool IsSetInstanceInfos()
         {
-            return this._instanceInfos != null && this._instanceInfos.Count > 0; 
+            return this._instanceInfos != null && (this._instanceInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

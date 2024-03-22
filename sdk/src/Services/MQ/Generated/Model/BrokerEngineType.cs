@@ -34,7 +34,7 @@ namespace Amazon.MQ.Model
     public partial class BrokerEngineType
     {
         private EngineType _engineType;
-        private List<EngineVersion> _engineVersions = new List<EngineVersion>();
+        private List<EngineVersion> _engineVersions = AWSConfigs.InitializeCollections ? new List<EngineVersion>() : null;
 
         /// <summary>
         /// Gets and sets the property EngineType. 
@@ -69,7 +69,7 @@ namespace Amazon.MQ.Model
         // Check to see if EngineVersions property is set
         internal bool IsSetEngineVersions()
         {
-            return this._engineVersions != null && this._engineVersions.Count > 0; 
+            return this._engineVersions != null && (this._engineVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -43,7 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     {
         private ApplicationConfigurationUpdate _applicationConfigurationUpdate;
         private string _applicationName;
-        private List<CloudWatchLoggingOptionUpdate> _cloudWatchLoggingOptionUpdates = new List<CloudWatchLoggingOptionUpdate>();
+        private List<CloudWatchLoggingOptionUpdate> _cloudWatchLoggingOptionUpdates = AWSConfigs.InitializeCollections ? new List<CloudWatchLoggingOptionUpdate>() : null;
         private string _conditionalToken;
         private long? _currentApplicationVersionId;
         private RunConfigurationUpdate _runConfigurationUpdate;
@@ -104,7 +104,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if CloudWatchLoggingOptionUpdates property is set
         internal bool IsSetCloudWatchLoggingOptionUpdates()
         {
-            return this._cloudWatchLoggingOptionUpdates != null && this._cloudWatchLoggingOptionUpdates.Count > 0; 
+            return this._cloudWatchLoggingOptionUpdates != null && (this._cloudWatchLoggingOptionUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

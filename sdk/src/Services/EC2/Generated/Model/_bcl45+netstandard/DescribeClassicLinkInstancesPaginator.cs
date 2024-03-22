@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Instances
         /// </summary>
         public IPaginatedEnumerable<ClassicLinkInstance> Instances => 
-            new PaginatedResultKeyResponse<DescribeClassicLinkInstancesResponse, ClassicLinkInstance>(this, (i) => i.Instances);
+            new PaginatedResultKeyResponse<DescribeClassicLinkInstancesResponse, ClassicLinkInstance>(this, (i) => i.Instances ?? new List<ClassicLinkInstance>());
 
         internal DescribeClassicLinkInstancesPaginator(IAmazonEC2 client, DescribeClassicLinkInstancesRequest request)
         {

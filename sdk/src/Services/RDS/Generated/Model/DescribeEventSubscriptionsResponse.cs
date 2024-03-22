@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeEventSubscriptionsResponse : AmazonWebServiceResponse
     {
-        private List<EventSubscription> _eventSubscriptionsList = new List<EventSubscription>();
+        private List<EventSubscription> _eventSubscriptionsList = AWSConfigs.InitializeCollections ? new List<EventSubscription>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         // Check to see if EventSubscriptionsList property is set
         internal bool IsSetEventSubscriptionsList()
         {
-            return this._eventSubscriptionsList != null && this._eventSubscriptionsList.Count > 0; 
+            return this._eventSubscriptionsList != null && (this._eventSubscriptionsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

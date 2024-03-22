@@ -45,7 +45,7 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the Users
         /// </summary>
         public IPaginatedEnumerable<User> Users => 
-            new PaginatedResultKeyResponse<DescribeUsersResponse, User>(this, (i) => i.Users);
+            new PaginatedResultKeyResponse<DescribeUsersResponse, User>(this, (i) => i.Users ?? new List<User>());
 
         internal DescribeUsersPaginator(IAmazonWorkDocs client, DescribeUsersRequest request)
         {

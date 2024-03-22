@@ -45,7 +45,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<SystemTemplateSummary> Summaries => 
-            new PaginatedResultKeyResponse<GetSystemTemplateRevisionsResponse, SystemTemplateSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<GetSystemTemplateRevisionsResponse, SystemTemplateSummary>(this, (i) => i.Summaries ?? new List<SystemTemplateSummary>());
 
         internal GetSystemTemplateRevisionsPaginator(IAmazonIoTThingsGraph client, GetSystemTemplateRevisionsRequest request)
         {

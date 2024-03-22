@@ -33,7 +33,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class DescribeDirectConnectGatewayAssociationProposalsResponse : AmazonWebServiceResponse
     {
-        private List<DirectConnectGatewayAssociationProposal> _directConnectGatewayAssociationProposals = new List<DirectConnectGatewayAssociationProposal>();
+        private List<DirectConnectGatewayAssociationProposal> _directConnectGatewayAssociationProposals = AWSConfigs.InitializeCollections ? new List<DirectConnectGatewayAssociationProposal>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if DirectConnectGatewayAssociationProposals property is set
         internal bool IsSetDirectConnectGatewayAssociationProposals()
         {
-            return this._directConnectGatewayAssociationProposals != null && this._directConnectGatewayAssociationProposals.Count > 0; 
+            return this._directConnectGatewayAssociationProposals != null && (this._directConnectGatewayAssociationProposals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

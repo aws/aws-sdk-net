@@ -33,8 +33,8 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EksPodPropertiesOverride
     {
-        private List<EksContainerOverride> _containers = new List<EksContainerOverride>();
-        private List<EksContainerOverride> _initContainers = new List<EksContainerOverride>();
+        private List<EksContainerOverride> _containers = AWSConfigs.InitializeCollections ? new List<EksContainerOverride>() : null;
+        private List<EksContainerOverride> _initContainers = AWSConfigs.InitializeCollections ? new List<EksContainerOverride>() : null;
         private EksMetadata _metadata;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Batch.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.Batch.Model
         // Check to see if InitContainers property is set
         internal bool IsSetInitContainers()
         {
-            return this._initContainers != null && this._initContainers.Count > 0; 
+            return this._initContainers != null && (this._initContainers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

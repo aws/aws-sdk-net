@@ -34,7 +34,7 @@ namespace Amazon.Omics.Model
     public partial class ListReadSetUploadPartsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReadSetUploadPartListItem> _parts = new List<ReadSetUploadPartListItem>();
+        private List<ReadSetUploadPartListItem> _parts = AWSConfigs.InitializeCollections ? new List<ReadSetUploadPartListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Omics.Model
         // Check to see if Parts property is set
         internal bool IsSetParts()
         {
-            return this._parts != null && this._parts.Count > 0; 
+            return this._parts != null && (this._parts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

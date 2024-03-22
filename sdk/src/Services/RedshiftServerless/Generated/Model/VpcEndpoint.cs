@@ -33,7 +33,7 @@ namespace Amazon.RedshiftServerless.Model
     /// </summary>
     public partial class VpcEndpoint
     {
-        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
+        private List<NetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
         private string _vpcEndpointId;
         private string _vpcId;
 
@@ -52,7 +52,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

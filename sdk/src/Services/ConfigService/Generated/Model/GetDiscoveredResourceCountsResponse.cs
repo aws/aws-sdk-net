@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model
     public partial class GetDiscoveredResourceCountsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceCount> _resourceCounts = new List<ResourceCount>();
+        private List<ResourceCount> _resourceCounts = AWSConfigs.InitializeCollections ? new List<ResourceCount>() : null;
         private long? _totalDiscoveredResources;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ResourceCounts property is set
         internal bool IsSetResourceCounts()
         {
-            return this._resourceCounts != null && this._resourceCounts.Count > 0; 
+            return this._resourceCounts != null && (this._resourceCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

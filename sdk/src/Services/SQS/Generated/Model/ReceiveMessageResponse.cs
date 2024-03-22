@@ -33,7 +33,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     public partial class ReceiveMessageResponse : AmazonWebServiceResponse
     {
-        private List<Message> _messages = new List<Message>();
+        private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
 
         /// <summary>
         /// Gets and sets the property Messages. 
@@ -50,7 +50,7 @@ namespace Amazon.SQS.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

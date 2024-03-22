@@ -35,7 +35,7 @@ namespace Amazon.Comprehend.Model
     {
         private int? _beginOffset;
         private string _blockId;
-        private List<ChildBlock> _childBlocks = new List<ChildBlock>();
+        private List<ChildBlock> _childBlocks = AWSConfigs.InitializeCollections ? new List<ChildBlock>() : null;
         private int? _endOffset;
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if ChildBlocks property is set
         internal bool IsSetChildBlocks()
         {
-            return this._childBlocks != null && this._childBlocks.Count > 0; 
+            return this._childBlocks != null && (this._childBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

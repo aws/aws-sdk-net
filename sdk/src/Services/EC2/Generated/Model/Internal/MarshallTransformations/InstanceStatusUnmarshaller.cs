@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("eventsSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceStatusEventUnmarshaller.Instance;
+                        if (unmarshalledObject.Events == null)
+                        {
+                            unmarshalledObject.Events = new List<InstanceStatusEvent>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Events.Add(item);
                         continue;

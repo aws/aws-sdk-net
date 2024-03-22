@@ -90,6 +90,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ResourceTags/member", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (response.ResourceTags == null)
+                        {
+                            response.ResourceTags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ResourceTags.Add(item);
                         continue;

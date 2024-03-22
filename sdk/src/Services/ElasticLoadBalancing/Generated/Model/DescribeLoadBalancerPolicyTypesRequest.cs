@@ -47,7 +47,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class DescribeLoadBalancerPolicyTypesRequest : AmazonElasticLoadBalancingRequest
     {
-        private List<string> _policyTypeNames = new List<string>();
+        private List<string> _policyTypeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property PolicyTypeNames. 
@@ -65,7 +65,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyTypeNames property is set
         internal bool IsSetPolicyTypeNames()
         {
-            return this._policyTypeNames != null && this._policyTypeNames.Count > 0; 
+            return this._policyTypeNames != null && (this._policyTypeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

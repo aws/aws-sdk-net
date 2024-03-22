@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class StartJobRunRequest : AmazonGlueRequest
     {
         private int? _allocatedCapacity;
-        private Dictionary<string, string> _arguments = new Dictionary<string, string>();
+        private Dictionary<string, string> _arguments = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ExecutionClass _executionClass;
         private string _jobName;
         private string _jobRunId;
@@ -117,7 +117,7 @@ namespace Amazon.Glue.Model
         // Check to see if Arguments property is set
         internal bool IsSetArguments()
         {
-            return this._arguments != null && this._arguments.Count > 0; 
+            return this._arguments != null && (this._arguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

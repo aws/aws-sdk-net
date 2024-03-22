@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class ListUsersResponse : AmazonWebServiceResponse
     {
         private string _paginationToken;
-        private List<UserType> _users = new List<UserType>();
+        private List<UserType> _users = AWSConfigs.InitializeCollections ? new List<UserType>() : null;
 
         /// <summary>
         /// Gets and sets the property PaginationToken. 
@@ -83,7 +83,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

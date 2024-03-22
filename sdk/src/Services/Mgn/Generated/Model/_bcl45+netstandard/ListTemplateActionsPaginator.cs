@@ -45,7 +45,7 @@ namespace Amazon.Mgn.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<TemplateActionDocument> Items => 
-            new PaginatedResultKeyResponse<ListTemplateActionsResponse, TemplateActionDocument>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListTemplateActionsResponse, TemplateActionDocument>(this, (i) => i.Items ?? new List<TemplateActionDocument>());
 
         internal ListTemplateActionsPaginator(IAmazonMgn client, ListTemplateActionsRequest request)
         {

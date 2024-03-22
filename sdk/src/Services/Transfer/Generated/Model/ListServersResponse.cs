@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model
     public partial class ListServersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ListedServer> _servers = new List<ListedServer>();
+        private List<ListedServer> _servers = AWSConfigs.InitializeCollections ? new List<ListedServer>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Servers property is set
         internal bool IsSetServers()
         {
-            return this._servers != null && this._servers.Count > 0; 
+            return this._servers != null && (this._servers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

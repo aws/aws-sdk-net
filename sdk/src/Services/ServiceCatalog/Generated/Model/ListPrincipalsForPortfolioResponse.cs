@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ListPrincipalsForPortfolioResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<Principal> _principals = new List<Principal>();
+        private List<Principal> _principals = AWSConfigs.InitializeCollections ? new List<Principal>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -72,7 +72,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

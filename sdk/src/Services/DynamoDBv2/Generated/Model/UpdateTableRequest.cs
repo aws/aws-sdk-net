@@ -65,12 +65,12 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class UpdateTableRequest : AmazonDynamoDBRequest
     {
-        private List<AttributeDefinition> _attributeDefinitions = new List<AttributeDefinition>();
+        private List<AttributeDefinition> _attributeDefinitions = AWSConfigs.InitializeCollections ? new List<AttributeDefinition>() : null;
         private BillingMode _billingMode;
         private bool? _deletionProtectionEnabled;
-        private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = new List<GlobalSecondaryIndexUpdate>();
+        private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndexUpdate>() : null;
         private ProvisionedThroughput _provisionedThroughput;
-        private List<ReplicationGroupUpdate> _replicaUpdates = new List<ReplicationGroupUpdate>();
+        private List<ReplicationGroupUpdate> _replicaUpdates = AWSConfigs.InitializeCollections ? new List<ReplicationGroupUpdate>() : null;
         private SSESpecification _sseSpecification;
         private StreamSpecification _streamSpecification;
         private TableClass _tableClass;
@@ -109,7 +109,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if AttributeDefinitions property is set
         internal bool IsSetAttributeDefinitions()
         {
-            return this._attributeDefinitions != null && this._attributeDefinitions.Count > 0; 
+            return this._attributeDefinitions != null && (this._attributeDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if GlobalSecondaryIndexUpdates property is set
         internal bool IsSetGlobalSecondaryIndexUpdates()
         {
-            return this._globalSecondaryIndexUpdates != null && this._globalSecondaryIndexUpdates.Count > 0; 
+            return this._globalSecondaryIndexUpdates != null && (this._globalSecondaryIndexUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ReplicaUpdates property is set
         internal bool IsSetReplicaUpdates()
         {
-            return this._replicaUpdates != null && this._replicaUpdates.Count > 0; 
+            return this._replicaUpdates != null && (this._replicaUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

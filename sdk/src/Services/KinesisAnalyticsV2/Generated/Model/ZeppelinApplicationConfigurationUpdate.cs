@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class ZeppelinApplicationConfigurationUpdate
     {
         private CatalogConfigurationUpdate _catalogConfigurationUpdate;
-        private List<CustomArtifactConfiguration> _customArtifactsConfigurationUpdate = new List<CustomArtifactConfiguration>();
+        private List<CustomArtifactConfiguration> _customArtifactsConfigurationUpdate = AWSConfigs.InitializeCollections ? new List<CustomArtifactConfiguration>() : null;
         private DeployAsApplicationConfigurationUpdate _deployAsApplicationConfigurationUpdate;
         private ZeppelinMonitoringConfigurationUpdate _monitoringConfigurationUpdate;
 
@@ -74,7 +74,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if CustomArtifactsConfigurationUpdate property is set
         internal bool IsSetCustomArtifactsConfigurationUpdate()
         {
-            return this._customArtifactsConfigurationUpdate != null && this._customArtifactsConfigurationUpdate.Count > 0; 
+            return this._customArtifactsConfigurationUpdate != null && (this._customArtifactsConfigurationUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

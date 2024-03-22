@@ -45,7 +45,7 @@ namespace Amazon.Braket.Model
         /// Enumerable containing all of the QuantumTasks
         /// </summary>
         public IPaginatedEnumerable<QuantumTaskSummary> QuantumTasks => 
-            new PaginatedResultKeyResponse<SearchQuantumTasksResponse, QuantumTaskSummary>(this, (i) => i.QuantumTasks);
+            new PaginatedResultKeyResponse<SearchQuantumTasksResponse, QuantumTaskSummary>(this, (i) => i.QuantumTasks ?? new List<QuantumTaskSummary>());
 
         internal SearchQuantumTasksPaginator(IAmazonBraket client, SearchQuantumTasksRequest request)
         {

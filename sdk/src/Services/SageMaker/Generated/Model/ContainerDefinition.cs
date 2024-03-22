@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ContainerDefinition
     {
         private string _containerHostname;
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _image;
         private ImageConfig _imageConfig;
         private string _inferenceSpecificationName;
@@ -98,7 +98,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

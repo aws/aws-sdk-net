@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model
         private long? _objectSizeGreaterThan;
         private long? _objectSizeLessThan;
         private string _prefix;
-        private List<S3Tag> _tags = new List<S3Tag>();
+        private List<S3Tag> _tags = AWSConfigs.InitializeCollections ? new List<S3Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ObjectSizeGreaterThan. 
@@ -107,7 +107,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

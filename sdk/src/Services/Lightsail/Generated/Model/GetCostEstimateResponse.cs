@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetCostEstimateResponse : AmazonWebServiceResponse
     {
-        private List<ResourceBudgetEstimate> _resourcesBudgetEstimate = new List<ResourceBudgetEstimate>();
+        private List<ResourceBudgetEstimate> _resourcesBudgetEstimate = AWSConfigs.InitializeCollections ? new List<ResourceBudgetEstimate>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourcesBudgetEstimate. 
@@ -50,7 +50,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ResourcesBudgetEstimate property is set
         internal bool IsSetResourcesBudgetEstimate()
         {
-            return this._resourcesBudgetEstimate != null && this._resourcesBudgetEstimate.Count > 0; 
+            return this._resourcesBudgetEstimate != null && (this._resourcesBudgetEstimate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

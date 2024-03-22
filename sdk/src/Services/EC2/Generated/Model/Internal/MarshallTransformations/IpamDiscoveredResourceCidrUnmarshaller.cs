@@ -93,6 +93,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("resourceTagSet/item", targetDepth))
                     {
                         var unmarshaller = IpamResourceTagUnmarshaller.Instance;
+                        if (unmarshalledObject.ResourceTags == null)
+                        {
+                            unmarshalledObject.ResourceTags = new List<IpamResourceTag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ResourceTags.Add(item);
                         continue;

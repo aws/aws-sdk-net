@@ -41,7 +41,7 @@ namespace Amazon.Chime.Model
     public partial class Origination
     {
         private bool? _disabled;
-        private List<OriginationRoute> _routes = new List<OriginationRoute>();
+        private List<OriginationRoute> _routes = AWSConfigs.InitializeCollections ? new List<OriginationRoute>() : null;
 
         /// <summary>
         /// Gets and sets the property Disabled. 
@@ -80,7 +80,7 @@ namespace Amazon.Chime.Model
         // Check to see if Routes property is set
         internal bool IsSetRoutes()
         {
-            return this._routes != null && this._routes.Count > 0; 
+            return this._routes != null && (this._routes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

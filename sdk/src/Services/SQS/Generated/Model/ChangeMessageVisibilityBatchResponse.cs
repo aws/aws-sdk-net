@@ -35,8 +35,8 @@ namespace Amazon.SQS.Model
     /// </summary>
     public partial class ChangeMessageVisibilityBatchResponse : AmazonWebServiceResponse
     {
-        private List<BatchResultErrorEntry> _failed = new List<BatchResultErrorEntry>();
-        private List<ChangeMessageVisibilityBatchResultEntry> _successful = new List<ChangeMessageVisibilityBatchResultEntry>();
+        private List<BatchResultErrorEntry> _failed = AWSConfigs.InitializeCollections ? new List<BatchResultErrorEntry>() : null;
+        private List<ChangeMessageVisibilityBatchResultEntry> _successful = AWSConfigs.InitializeCollections ? new List<ChangeMessageVisibilityBatchResultEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Failed. 
@@ -54,7 +54,7 @@ namespace Amazon.SQS.Model
         // Check to see if Failed property is set
         internal bool IsSetFailed()
         {
-            return this._failed != null && this._failed.Count > 0; 
+            return this._failed != null && (this._failed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SQS.Model
         // Check to see if Successful property is set
         internal bool IsSetSuccessful()
         {
-            return this._successful != null && this._successful.Count > 0; 
+            return this._successful != null && (this._successful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

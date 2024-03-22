@@ -33,7 +33,7 @@ namespace Amazon.AppRunner.Model
     /// </summary>
     public partial class ListConnectionsResponse : AmazonWebServiceResponse
     {
-        private List<ConnectionSummary> _connectionSummaryList = new List<ConnectionSummary>();
+        private List<ConnectionSummary> _connectionSummaryList = AWSConfigs.InitializeCollections ? new List<ConnectionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if ConnectionSummaryList property is set
         internal bool IsSetConnectionSummaryList()
         {
-            return this._connectionSummaryList != null && this._connectionSummaryList.Count > 0; 
+            return this._connectionSummaryList != null && (this._connectionSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

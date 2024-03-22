@@ -90,6 +90,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReplicationGroups/ReplicationGroup", targetDepth))
                     {
                         var unmarshaller = ReplicationGroupUnmarshaller.Instance;
+                        if (response.ReplicationGroups == null)
+                        {
+                            response.ReplicationGroups = new List<ReplicationGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ReplicationGroups.Add(item);
                         continue;

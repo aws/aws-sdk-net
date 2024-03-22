@@ -35,7 +35,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
     {
         private string _groupId;
         private string _groupName;
-        private List<TestCaseRun> _tests = new List<TestCaseRun>();
+        private List<TestCaseRun> _tests = AWSConfigs.InitializeCollections ? new List<TestCaseRun>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -89,7 +89,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         // Check to see if Tests property is set
         internal bool IsSetTests()
         {
-            return this._tests != null && this._tests.Count > 0; 
+            return this._tests != null && (this._tests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

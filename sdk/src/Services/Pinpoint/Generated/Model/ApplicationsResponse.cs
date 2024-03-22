@@ -33,7 +33,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class ApplicationsResponse
     {
-        private List<ApplicationResponse> _item = new List<ApplicationResponse>();
+        private List<ApplicationResponse> _item = AWSConfigs.InitializeCollections ? new List<ApplicationResponse>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Item property is set
         internal bool IsSetItem()
         {
-            return this._item != null && this._item.Count > 0; 
+            return this._item != null && (this._item.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -64,7 +64,7 @@ namespace Amazon.LocationService.Model
     public partial class BatchUpdateDevicePositionRequest : AmazonLocationServiceRequest
     {
         private string _trackerName;
-        private List<DevicePositionUpdate> _updates = new List<DevicePositionUpdate>();
+        private List<DevicePositionUpdate> _updates = AWSConfigs.InitializeCollections ? new List<DevicePositionUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property TrackerName. 
@@ -101,7 +101,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Updates property is set
         internal bool IsSetUpdates()
         {
-            return this._updates != null && this._updates.Count > 0; 
+            return this._updates != null && (this._updates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

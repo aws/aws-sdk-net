@@ -79,7 +79,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("Cookies", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             var publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems = publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.Items;
-                            if (publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems != null && publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems.Count > 0) 
+                            if (publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems != null && (publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {                        
                                 xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                                 foreach (var publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItemsValue in publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems) 
@@ -109,7 +109,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("Headers", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             var publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems = publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.Items;
-                            if (publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems != null && publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems.Count > 0) 
+                            if (publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems != null && (publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {                        
                                 xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                                 foreach (var publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItemsValue in publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems) 
@@ -142,7 +142,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("QueryStrings", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             var publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems = publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.Items;
-                            if (publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems != null && publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems.Count > 0) 
+                            if (publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems != null && (publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {                        
                                 xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                                 foreach (var publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItemsValue in publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems) 

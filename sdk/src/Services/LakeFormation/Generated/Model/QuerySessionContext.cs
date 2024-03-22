@@ -35,7 +35,7 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class QuerySessionContext
     {
-        private Dictionary<string, string> _additionalContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _clusterId;
         private string _queryAuthorizationId;
         private string _queryId;
@@ -56,7 +56,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if AdditionalContext property is set
         internal bool IsSetAdditionalContext()
         {
-            return this._additionalContext != null && this._additionalContext.Count > 0; 
+            return this._additionalContext != null && (this._additionalContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

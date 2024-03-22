@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model
     public partial class DescribeStorageVirtualMachinesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StorageVirtualMachine> _storageVirtualMachines = new List<StorageVirtualMachine>();
+        private List<StorageVirtualMachine> _storageVirtualMachines = AWSConfigs.InitializeCollections ? new List<StorageVirtualMachine>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -69,7 +69,7 @@ namespace Amazon.FSx.Model
         // Check to see if StorageVirtualMachines property is set
         internal bool IsSetStorageVirtualMachines()
         {
-            return this._storageVirtualMachines != null && this._storageVirtualMachines.Count > 0; 
+            return this._storageVirtualMachines != null && (this._storageVirtualMachines.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

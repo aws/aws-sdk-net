@@ -47,7 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<OpsItemFilter> _opsItemFilters = new List<OpsItemFilter>();
+        private List<OpsItemFilter> _opsItemFilters = AWSConfigs.InitializeCollections ? new List<OpsItemFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -225,7 +225,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if OpsItemFilters property is set
         internal bool IsSetOpsItemFilters()
         {
-            return this._opsItemFilters != null && this._opsItemFilters.Count > 0; 
+            return this._opsItemFilters != null && (this._opsItemFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -87,6 +87,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;
@@ -94,6 +98,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("timeRangeSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceEventWindowTimeRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.TimeRanges == null)
+                        {
+                            unmarshalledObject.TimeRanges = new List<InstanceEventWindowTimeRange>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TimeRanges.Add(item);
                         continue;

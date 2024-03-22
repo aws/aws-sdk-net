@@ -38,7 +38,7 @@ namespace Amazon.MQ.Model
         private string _id;
         private ConfigurationRevision _latestRevision;
         private string _name;
-        private List<SanitizationWarning> _warnings = new List<SanitizationWarning>();
+        private List<SanitizationWarning> _warnings = AWSConfigs.InitializeCollections ? new List<SanitizationWarning>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -148,7 +148,7 @@ namespace Amazon.MQ.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

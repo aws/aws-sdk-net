@@ -34,8 +34,8 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class ObjectTypeKey
     {
-        private List<string> _fieldNames = new List<string>();
-        private List<string> _standardIdentifiers = new List<string>();
+        private List<string> _fieldNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _standardIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FieldNames. 
@@ -52,7 +52,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if FieldNames property is set
         internal bool IsSetFieldNames()
         {
-            return this._fieldNames != null && this._fieldNames.Count > 0; 
+            return this._fieldNames != null && (this._fieldNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if StandardIdentifiers property is set
         internal bool IsSetStandardIdentifiers()
         {
-            return this._standardIdentifiers != null && this._standardIdentifiers.Count > 0; 
+            return this._standardIdentifiers != null && (this._standardIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

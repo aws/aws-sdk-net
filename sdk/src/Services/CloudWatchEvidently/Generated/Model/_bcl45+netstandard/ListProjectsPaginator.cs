@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Enumerable containing all of the Projects
         /// </summary>
         public IPaginatedEnumerable<ProjectSummary> Projects => 
-            new PaginatedResultKeyResponse<ListProjectsResponse, ProjectSummary>(this, (i) => i.Projects);
+            new PaginatedResultKeyResponse<ListProjectsResponse, ProjectSummary>(this, (i) => i.Projects ?? new List<ProjectSummary>());
 
         internal ListProjectsPaginator(IAmazonCloudWatchEvidently client, ListProjectsRequest request)
         {

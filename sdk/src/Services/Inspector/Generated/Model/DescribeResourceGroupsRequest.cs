@@ -34,7 +34,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class DescribeResourceGroupsRequest : AmazonInspectorRequest
     {
-        private List<string> _resourceGroupArns = new List<string>();
+        private List<string> _resourceGroupArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceGroupArns. 
@@ -52,7 +52,7 @@ namespace Amazon.Inspector.Model
         // Check to see if ResourceGroupArns property is set
         internal bool IsSetResourceGroupArns()
         {
-            return this._resourceGroupArns != null && this._resourceGroupArns.Count > 0; 
+            return this._resourceGroupArns != null && (this._resourceGroupArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

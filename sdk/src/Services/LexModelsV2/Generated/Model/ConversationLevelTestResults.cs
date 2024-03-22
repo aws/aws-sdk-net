@@ -33,7 +33,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class ConversationLevelTestResults
     {
-        private List<ConversationLevelTestResultItem> _items = new List<ConversationLevelTestResultItem>();
+        private List<ConversationLevelTestResultItem> _items = AWSConfigs.InitializeCollections ? new List<ConversationLevelTestResultItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Items. 
@@ -51,7 +51,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

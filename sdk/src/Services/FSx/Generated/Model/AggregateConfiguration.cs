@@ -33,7 +33,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class AggregateConfiguration
     {
-        private List<string> _aggregates = new List<string>();
+        private List<string> _aggregates = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _totalConstituents;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.FSx.Model
         // Check to see if Aggregates property is set
         internal bool IsSetAggregates()
         {
-            return this._aggregates != null && this._aggregates.Count > 0; 
+            return this._aggregates != null && (this._aggregates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

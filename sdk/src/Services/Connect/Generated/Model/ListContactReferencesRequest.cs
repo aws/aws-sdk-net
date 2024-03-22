@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         private string _contactId;
         private string _instanceId;
         private string _nextToken;
-        private List<string> _referenceTypes = new List<string>();
+        private List<string> _referenceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactId. 
@@ -126,7 +126,7 @@ namespace Amazon.Connect.Model
         // Check to see if ReferenceTypes property is set
         internal bool IsSetReferenceTypes()
         {
-            return this._referenceTypes != null && this._referenceTypes.Count > 0; 
+            return this._referenceTypes != null && (this._referenceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -35,7 +35,7 @@ namespace Amazon.Rekognition.Model
     public partial class HumanLoopActivationOutput
     {
         private string _humanLoopActivationConditionsEvaluationResults;
-        private List<string> _humanLoopActivationReasons = new List<string>();
+        private List<string> _humanLoopActivationReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _humanLoopArn;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if HumanLoopActivationReasons property is set
         internal bool IsSetHumanLoopActivationReasons()
         {
-            return this._humanLoopActivationReasons != null && this._humanLoopActivationReasons.Count > 0; 
+            return this._humanLoopActivationReasons != null && (this._humanLoopActivationReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

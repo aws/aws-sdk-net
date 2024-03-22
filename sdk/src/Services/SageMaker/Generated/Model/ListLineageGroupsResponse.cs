@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListLineageGroupsResponse : AmazonWebServiceResponse
     {
-        private List<LineageGroupSummary> _lineageGroupSummaries = new List<LineageGroupSummary>();
+        private List<LineageGroupSummary> _lineageGroupSummaries = AWSConfigs.InitializeCollections ? new List<LineageGroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if LineageGroupSummaries property is set
         internal bool IsSetLineageGroupSummaries()
         {
-            return this._lineageGroupSummaries != null && this._lineageGroupSummaries.Count > 0; 
+            return this._lineageGroupSummaries != null && (this._lineageGroupSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

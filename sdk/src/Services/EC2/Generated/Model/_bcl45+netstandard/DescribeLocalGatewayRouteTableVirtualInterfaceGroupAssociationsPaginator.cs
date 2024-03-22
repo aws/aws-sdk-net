@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the LocalGatewayRouteTableVirtualInterfaceGroupAssociations
         /// </summary>
         public IPaginatedEnumerable<LocalGatewayRouteTableVirtualInterfaceGroupAssociation> LocalGatewayRouteTableVirtualInterfaceGroupAssociations => 
-            new PaginatedResultKeyResponse<DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse, LocalGatewayRouteTableVirtualInterfaceGroupAssociation>(this, (i) => i.LocalGatewayRouteTableVirtualInterfaceGroupAssociations);
+            new PaginatedResultKeyResponse<DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse, LocalGatewayRouteTableVirtualInterfaceGroupAssociation>(this, (i) => i.LocalGatewayRouteTableVirtualInterfaceGroupAssociations ?? new List<LocalGatewayRouteTableVirtualInterfaceGroupAssociation>());
 
         internal DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator(IAmazonEC2 client, DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest request)
         {

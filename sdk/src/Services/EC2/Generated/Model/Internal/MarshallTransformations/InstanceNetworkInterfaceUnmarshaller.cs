@@ -81,6 +81,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("groupSet/item", targetDepth))
                     {
                         var unmarshaller = GroupIdentifierUnmarshaller.Instance;
+                        if (unmarshalledObject.Groups == null)
+                        {
+                            unmarshalledObject.Groups = new List<GroupIdentifier>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Groups.Add(item);
                         continue;
@@ -94,6 +98,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipv4PrefixSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceIpv4PrefixUnmarshaller.Instance;
+                        if (unmarshalledObject.Ipv4Prefixes == null)
+                        {
+                            unmarshalledObject.Ipv4Prefixes = new List<InstanceIpv4Prefix>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Ipv4Prefixes.Add(item);
                         continue;
@@ -101,6 +109,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipv6AddressesSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceIpv6AddressUnmarshaller.Instance;
+                        if (unmarshalledObject.Ipv6Addresses == null)
+                        {
+                            unmarshalledObject.Ipv6Addresses = new List<InstanceIpv6Address>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Ipv6Addresses.Add(item);
                         continue;
@@ -108,6 +120,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipv6PrefixSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceIpv6PrefixUnmarshaller.Instance;
+                        if (unmarshalledObject.Ipv6Prefixes == null)
+                        {
+                            unmarshalledObject.Ipv6Prefixes = new List<InstanceIpv6Prefix>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Ipv6Prefixes.Add(item);
                         continue;
@@ -145,6 +161,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("privateIpAddressesSet/item", targetDepth))
                     {
                         var unmarshaller = InstancePrivateIpAddressUnmarshaller.Instance;
+                        if (unmarshalledObject.PrivateIpAddresses == null)
+                        {
+                            unmarshalledObject.PrivateIpAddresses = new List<InstancePrivateIpAddress>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PrivateIpAddresses.Add(item);
                         continue;

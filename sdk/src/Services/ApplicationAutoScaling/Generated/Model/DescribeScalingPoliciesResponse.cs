@@ -34,7 +34,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     public partial class DescribeScalingPoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScalingPolicy> _scalingPolicies = new List<ScalingPolicy>();
+        private List<ScalingPolicy> _scalingPolicies = AWSConfigs.InitializeCollections ? new List<ScalingPolicy>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if ScalingPolicies property is set
         internal bool IsSetScalingPolicies()
         {
-            return this._scalingPolicies != null && this._scalingPolicies.Count > 0; 
+            return this._scalingPolicies != null && (this._scalingPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

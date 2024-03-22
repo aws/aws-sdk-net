@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Enumerable containing all of the SessionMappings
         /// </summary>
         public IPaginatedEnumerable<SessionMappingSummary> SessionMappings => 
-            new PaginatedResultKeyResponse<ListStudioSessionMappingsResponse, SessionMappingSummary>(this, (i) => i.SessionMappings);
+            new PaginatedResultKeyResponse<ListStudioSessionMappingsResponse, SessionMappingSummary>(this, (i) => i.SessionMappings ?? new List<SessionMappingSummary>());
 
         internal ListStudioSessionMappingsPaginator(IAmazonElasticMapReduce client, ListStudioSessionMappingsRequest request)
         {

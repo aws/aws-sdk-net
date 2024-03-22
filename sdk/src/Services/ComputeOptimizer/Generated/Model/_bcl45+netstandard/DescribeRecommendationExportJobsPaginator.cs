@@ -45,7 +45,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Enumerable containing all of the RecommendationExportJobs
         /// </summary>
         public IPaginatedEnumerable<RecommendationExportJob> RecommendationExportJobs => 
-            new PaginatedResultKeyResponse<DescribeRecommendationExportJobsResponse, RecommendationExportJob>(this, (i) => i.RecommendationExportJobs);
+            new PaginatedResultKeyResponse<DescribeRecommendationExportJobsResponse, RecommendationExportJob>(this, (i) => i.RecommendationExportJobs ?? new List<RecommendationExportJob>());
 
         internal DescribeRecommendationExportJobsPaginator(IAmazonComputeOptimizer client, DescribeRecommendationExportJobsRequest request)
         {

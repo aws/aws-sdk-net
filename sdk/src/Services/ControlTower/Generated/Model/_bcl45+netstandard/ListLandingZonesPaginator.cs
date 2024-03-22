@@ -45,7 +45,7 @@ namespace Amazon.ControlTower.Model
         /// Enumerable containing all of the LandingZones
         /// </summary>
         public IPaginatedEnumerable<LandingZoneSummary> LandingZones => 
-            new PaginatedResultKeyResponse<ListLandingZonesResponse, LandingZoneSummary>(this, (i) => i.LandingZones);
+            new PaginatedResultKeyResponse<ListLandingZonesResponse, LandingZoneSummary>(this, (i) => i.LandingZones ?? new List<LandingZoneSummary>());
 
         internal ListLandingZonesPaginator(IAmazonControlTower client, ListLandingZonesRequest request)
         {

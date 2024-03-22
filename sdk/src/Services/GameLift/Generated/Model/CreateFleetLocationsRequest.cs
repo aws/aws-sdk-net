@@ -70,7 +70,7 @@ namespace Amazon.GameLift.Model
     public partial class CreateFleetLocationsRequest : AmazonGameLiftRequest
     {
         private string _fleetId;
-        private List<LocationConfiguration> _locations = new List<LocationConfiguration>();
+        private List<LocationConfiguration> _locations = AWSConfigs.InitializeCollections ? new List<LocationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property FleetId. 
@@ -110,7 +110,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Locations property is set
         internal bool IsSetLocations()
         {
-            return this._locations != null && this._locations.Count > 0; 
+            return this._locations != null && (this._locations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

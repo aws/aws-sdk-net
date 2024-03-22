@@ -37,7 +37,7 @@ namespace Amazon.Pinpoint.Model
         private string _applicationId;
         private string _journeyId;
         private string _lastEvaluatedTime;
-        private Dictionary<string, string> _metrics = new Dictionary<string, string>();
+        private Dictionary<string, string> _metrics = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _runId;
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the AnalysisSummaryList
         /// </summary>
         public IPaginatedEnumerable<AnalysisSummary> AnalysisSummaryList => 
-            new PaginatedResultKeyResponse<SearchAnalysesResponse, AnalysisSummary>(this, (i) => i.AnalysisSummaryList);
+            new PaginatedResultKeyResponse<SearchAnalysesResponse, AnalysisSummary>(this, (i) => i.AnalysisSummaryList ?? new List<AnalysisSummary>());
 
         internal SearchAnalysesPaginator(IAmazonQuickSight client, SearchAnalysesRequest request)
         {

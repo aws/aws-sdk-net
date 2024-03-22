@@ -35,7 +35,7 @@ namespace Amazon.ChimeSDKVoice.Model
     {
         private Address _address;
         private string _addressExternalId;
-        private List<CandidateAddress> _candidateAddressList = new List<CandidateAddress>();
+        private List<CandidateAddress> _candidateAddressList = AWSConfigs.InitializeCollections ? new List<CandidateAddress>() : null;
         private int? _validationResult;
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if CandidateAddressList property is set
         internal bool IsSetCandidateAddressList()
         {
-            return this._candidateAddressList != null && this._candidateAddressList.Count > 0; 
+            return this._candidateAddressList != null && (this._candidateAddressList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

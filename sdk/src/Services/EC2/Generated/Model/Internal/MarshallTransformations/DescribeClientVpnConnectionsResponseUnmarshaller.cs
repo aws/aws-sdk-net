@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("connections/item", targetDepth))
                     {
                         var unmarshaller = ClientVpnConnectionUnmarshaller.Instance;
+                        if (response.Connections == null)
+                        {
+                            response.Connections = new List<ClientVpnConnection>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Connections.Add(item);
                         continue;

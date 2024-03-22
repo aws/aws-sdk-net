@@ -76,14 +76,14 @@ namespace Amazon.GameLift.Model
         private string _customEventData;
         private string _description;
         private FlexMatchMode _flexMatchMode;
-        private List<GameProperty> _gameProperties = new List<GameProperty>();
+        private List<GameProperty> _gameProperties = AWSConfigs.InitializeCollections ? new List<GameProperty>() : null;
         private string _gameSessionData;
-        private List<string> _gameSessionQueueArns = new List<string>();
+        private List<string> _gameSessionQueueArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _notificationTarget;
         private int? _requestTimeoutSeconds;
         private string _ruleSetName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AcceptanceRequired. 
@@ -262,7 +262,7 @@ namespace Amazon.GameLift.Model
         // Check to see if GameProperties property is set
         internal bool IsSetGameProperties()
         {
-            return this._gameProperties != null && this._gameProperties.Count > 0; 
+            return this._gameProperties != null && (this._gameProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -309,7 +309,7 @@ namespace Amazon.GameLift.Model
         // Check to see if GameSessionQueueArns property is set
         internal bool IsSetGameSessionQueueArns()
         {
-            return this._gameSessionQueueArns != null && this._gameSessionQueueArns.Count > 0; 
+            return this._gameSessionQueueArns != null && (this._gameSessionQueueArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -413,7 +413,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

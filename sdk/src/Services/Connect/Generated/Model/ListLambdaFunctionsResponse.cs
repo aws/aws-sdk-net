@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListLambdaFunctionsResponse : AmazonWebServiceResponse
     {
-        private List<string> _lambdaFunctions = new List<string>();
+        private List<string> _lambdaFunctions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if LambdaFunctions property is set
         internal bool IsSetLambdaFunctions()
         {
-            return this._lambdaFunctions != null && this._lambdaFunctions.Count > 0; 
+            return this._lambdaFunctions != null && (this._lambdaFunctions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

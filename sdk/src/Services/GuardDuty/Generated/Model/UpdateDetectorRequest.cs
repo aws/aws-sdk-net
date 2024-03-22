@@ -53,7 +53,7 @@ namespace Amazon.GuardDuty.Model
         private DataSourceConfigurations _dataSources;
         private string _detectorId;
         private bool? _enable;
-        private List<DetectorFeatureConfiguration> _features = new List<DetectorFeatureConfiguration>();
+        private List<DetectorFeatureConfiguration> _features = AWSConfigs.InitializeCollections ? new List<DetectorFeatureConfiguration>() : null;
         private FindingPublishingFrequency _findingPublishingFrequency;
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

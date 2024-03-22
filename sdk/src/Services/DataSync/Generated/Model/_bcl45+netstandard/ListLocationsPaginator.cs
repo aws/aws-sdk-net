@@ -45,7 +45,7 @@ namespace Amazon.DataSync.Model
         /// Enumerable containing all of the Locations
         /// </summary>
         public IPaginatedEnumerable<LocationListEntry> Locations => 
-            new PaginatedResultKeyResponse<ListLocationsResponse, LocationListEntry>(this, (i) => i.Locations);
+            new PaginatedResultKeyResponse<ListLocationsResponse, LocationListEntry>(this, (i) => i.Locations ?? new List<LocationListEntry>());
 
         internal ListLocationsPaginator(IAmazonDataSync client, ListLocationsRequest request)
         {

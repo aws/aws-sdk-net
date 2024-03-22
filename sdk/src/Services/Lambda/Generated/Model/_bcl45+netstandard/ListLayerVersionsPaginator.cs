@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// Enumerable containing all of the LayerVersions
         /// </summary>
         public IPaginatedEnumerable<LayerVersionsListItem> LayerVersions => 
-            new PaginatedResultKeyResponse<ListLayerVersionsResponse, LayerVersionsListItem>(this, (i) => i.LayerVersions);
+            new PaginatedResultKeyResponse<ListLayerVersionsResponse, LayerVersionsListItem>(this, (i) => i.LayerVersions ?? new List<LayerVersionsListItem>());
 
         internal ListLayerVersionsPaginator(IAmazonLambda client, ListLayerVersionsRequest request)
         {

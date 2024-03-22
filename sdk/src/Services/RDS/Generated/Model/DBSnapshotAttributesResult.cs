@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBSnapshotAttributesResult
     {
-        private List<DBSnapshotAttribute> _dbSnapshotAttributes = new List<DBSnapshotAttribute>();
+        private List<DBSnapshotAttribute> _dbSnapshotAttributes = AWSConfigs.InitializeCollections ? new List<DBSnapshotAttribute>() : null;
         private string _dbSnapshotIdentifier;
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSnapshotAttributes property is set
         internal bool IsSetDBSnapshotAttributes()
         {
-            return this._dbSnapshotAttributes != null && this._dbSnapshotAttributes.Count > 0; 
+            return this._dbSnapshotAttributes != null && (this._dbSnapshotAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

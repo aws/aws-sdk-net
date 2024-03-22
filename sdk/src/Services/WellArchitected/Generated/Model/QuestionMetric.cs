@@ -33,7 +33,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class QuestionMetric
     {
-        private List<BestPractice> _bestPractices = new List<BestPractice>();
+        private List<BestPractice> _bestPractices = AWSConfigs.InitializeCollections ? new List<BestPractice>() : null;
         private string _questionId;
         private Risk _risk;
 
@@ -53,7 +53,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if BestPractices property is set
         internal bool IsSetBestPractices()
         {
-            return this._bestPractices != null && this._bestPractices.Count > 0; 
+            return this._bestPractices != null && (this._bestPractices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

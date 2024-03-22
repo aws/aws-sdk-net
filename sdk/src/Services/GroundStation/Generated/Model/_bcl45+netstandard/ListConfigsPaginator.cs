@@ -45,7 +45,7 @@ namespace Amazon.GroundStation.Model
         /// Enumerable containing all of the ConfigList
         /// </summary>
         public IPaginatedEnumerable<ConfigListItem> ConfigList => 
-            new PaginatedResultKeyResponse<ListConfigsResponse, ConfigListItem>(this, (i) => i.ConfigList);
+            new PaginatedResultKeyResponse<ListConfigsResponse, ConfigListItem>(this, (i) => i.ConfigList ?? new List<ConfigListItem>());
 
         internal ListConfigsPaginator(IAmazonGroundStation client, ListConfigsRequest request)
         {

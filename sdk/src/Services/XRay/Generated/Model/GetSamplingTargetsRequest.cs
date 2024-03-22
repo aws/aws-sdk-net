@@ -34,7 +34,7 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class GetSamplingTargetsRequest : AmazonXRayRequest
     {
-        private List<SamplingStatisticsDocument> _samplingStatisticsDocuments = new List<SamplingStatisticsDocument>();
+        private List<SamplingStatisticsDocument> _samplingStatisticsDocuments = AWSConfigs.InitializeCollections ? new List<SamplingStatisticsDocument>() : null;
 
         /// <summary>
         /// Gets and sets the property SamplingStatisticsDocuments. 
@@ -52,7 +52,7 @@ namespace Amazon.XRay.Model
         // Check to see if SamplingStatisticsDocuments property is set
         internal bool IsSetSamplingStatisticsDocuments()
         {
-            return this._samplingStatisticsDocuments != null && this._samplingStatisticsDocuments.Count > 0; 
+            return this._samplingStatisticsDocuments != null && (this._samplingStatisticsDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

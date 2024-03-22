@@ -33,7 +33,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class BlockedPhrasesConfiguration
     {
-        private List<string> _blockedPhrases = new List<string>();
+        private List<string> _blockedPhrases = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _systemMessageOverride;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if BlockedPhrases property is set
         internal bool IsSetBlockedPhrases()
         {
-            return this._blockedPhrases != null && this._blockedPhrases.Count > 0; 
+            return this._blockedPhrases != null && (this._blockedPhrases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

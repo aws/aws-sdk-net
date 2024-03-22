@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the ReferenceSummaryList
         /// </summary>
         public IPaginatedEnumerable<ReferenceSummary> ReferenceSummaryList => 
-            new PaginatedResultKeyResponse<ListContactReferencesResponse, ReferenceSummary>(this, (i) => i.ReferenceSummaryList);
+            new PaginatedResultKeyResponse<ListContactReferencesResponse, ReferenceSummary>(this, (i) => i.ReferenceSummaryList ?? new List<ReferenceSummary>());
 
         internal ListContactReferencesPaginator(IAmazonConnect client, ListContactReferencesRequest request)
         {

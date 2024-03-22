@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model
     public partial class ListReservationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Reservation> _reservations = new List<Reservation>();
+        private List<Reservation> _reservations = AWSConfigs.InitializeCollections ? new List<Reservation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. The token that identifies which batch of results
@@ -68,7 +68,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Reservations property is set
         internal bool IsSetReservations()
         {
-            return this._reservations != null && this._reservations.Count > 0; 
+            return this._reservations != null && (this._reservations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

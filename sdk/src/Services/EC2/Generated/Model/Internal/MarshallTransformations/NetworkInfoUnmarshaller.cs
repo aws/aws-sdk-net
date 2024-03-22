@@ -123,6 +123,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("networkCards/item", targetDepth))
                     {
                         var unmarshaller = NetworkCardInfoUnmarshaller.Instance;
+                        if (unmarshalledObject.NetworkCards == null)
+                        {
+                            unmarshalledObject.NetworkCards = new List<NetworkCardInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NetworkCards.Add(item);
                         continue;

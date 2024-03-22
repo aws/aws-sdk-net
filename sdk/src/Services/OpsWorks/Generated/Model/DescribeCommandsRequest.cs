@@ -46,7 +46,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeCommandsRequest : AmazonOpsWorksRequest
     {
-        private List<string> _commandIds = new List<string>();
+        private List<string> _commandIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _deploymentId;
         private string _instanceId;
 
@@ -67,7 +67,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if CommandIds property is set
         internal bool IsSetCommandIds()
         {
-            return this._commandIds != null && this._commandIds.Count > 0; 
+            return this._commandIds != null && (this._commandIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

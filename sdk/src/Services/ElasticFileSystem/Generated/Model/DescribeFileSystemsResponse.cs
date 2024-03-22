@@ -33,7 +33,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// </summary>
     public partial class DescribeFileSystemsResponse : AmazonWebServiceResponse
     {
-        private List<FileSystemDescription> _fileSystems = new List<FileSystemDescription>();
+        private List<FileSystemDescription> _fileSystems = AWSConfigs.InitializeCollections ? new List<FileSystemDescription>() : null;
         private string _marker;
         private string _nextMarker;
 
@@ -52,7 +52,7 @@ namespace Amazon.ElasticFileSystem.Model
         // Check to see if FileSystems property is set
         internal bool IsSetFileSystems()
         {
-            return this._fileSystems != null && this._fileSystems.Count > 0; 
+            return this._fileSystems != null && (this._fileSystems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.MediaConvert.Model
     public partial class UntagResourceRequest : AmazonMediaConvertRequest
     {
         private string _arn;
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. The Amazon Resource Name (ARN) of the resource that
@@ -69,7 +69,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

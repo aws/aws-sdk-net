@@ -41,7 +41,7 @@ namespace Amazon.VPCLattice.Model
         private string _id;
         private DateTime? _lastUpdatedAt;
         private string _name;
-        private List<string> _serviceArns = new List<string>();
+        private List<string> _serviceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TargetGroupStatus _status;
         private TargetGroupType _type;
 
@@ -207,7 +207,7 @@ namespace Amazon.VPCLattice.Model
         // Check to see if ServiceArns property is set
         internal bool IsSetServiceArns()
         {
-            return this._serviceArns != null && this._serviceArns.Count > 0; 
+            return this._serviceArns != null && (this._serviceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

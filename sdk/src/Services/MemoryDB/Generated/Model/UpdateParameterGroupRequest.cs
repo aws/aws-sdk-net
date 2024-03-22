@@ -36,7 +36,7 @@ namespace Amazon.MemoryDB.Model
     public partial class UpdateParameterGroupRequest : AmazonMemoryDBRequest
     {
         private string _parameterGroupName;
-        private List<ParameterNameValue> _parameterNameValues = new List<ParameterNameValue>();
+        private List<ParameterNameValue> _parameterNameValues = AWSConfigs.InitializeCollections ? new List<ParameterNameValue>() : null;
 
         /// <summary>
         /// Gets and sets the property ParameterGroupName. 
@@ -75,7 +75,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ParameterNameValues property is set
         internal bool IsSetParameterNameValues()
         {
-            return this._parameterNameValues != null && this._parameterNameValues.Count > 0; 
+            return this._parameterNameValues != null && (this._parameterNameValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

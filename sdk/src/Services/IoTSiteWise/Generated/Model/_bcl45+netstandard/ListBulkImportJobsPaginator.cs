@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the JobSummaries
         /// </summary>
         public IPaginatedEnumerable<JobSummary> JobSummaries => 
-            new PaginatedResultKeyResponse<ListBulkImportJobsResponse, JobSummary>(this, (i) => i.JobSummaries);
+            new PaginatedResultKeyResponse<ListBulkImportJobsResponse, JobSummary>(this, (i) => i.JobSummaries ?? new List<JobSummary>());
 
         internal ListBulkImportJobsPaginator(IAmazonIoTSiteWise client, ListBulkImportJobsRequest request)
         {

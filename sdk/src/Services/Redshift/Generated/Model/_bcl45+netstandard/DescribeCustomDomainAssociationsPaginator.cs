@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the Associations
         /// </summary>
         public IPaginatedEnumerable<Association> Associations => 
-            new PaginatedResultKeyResponse<DescribeCustomDomainAssociationsResponse, Association>(this, (i) => i.Associations);
+            new PaginatedResultKeyResponse<DescribeCustomDomainAssociationsResponse, Association>(this, (i) => i.Associations ?? new List<Association>());
 
         internal DescribeCustomDomainAssociationsPaginator(IAmazonRedshift client, DescribeCustomDomainAssociationsRequest request)
         {

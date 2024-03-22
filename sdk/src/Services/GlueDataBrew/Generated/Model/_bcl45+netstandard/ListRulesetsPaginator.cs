@@ -45,7 +45,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Enumerable containing all of the Rulesets
         /// </summary>
         public IPaginatedEnumerable<RulesetItem> Rulesets => 
-            new PaginatedResultKeyResponse<ListRulesetsResponse, RulesetItem>(this, (i) => i.Rulesets);
+            new PaginatedResultKeyResponse<ListRulesetsResponse, RulesetItem>(this, (i) => i.Rulesets ?? new List<RulesetItem>());
 
         internal ListRulesetsPaginator(IAmazonGlueDataBrew client, ListRulesetsRequest request)
         {

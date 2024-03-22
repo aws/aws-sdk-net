@@ -33,7 +33,7 @@ namespace Amazon.Cloud9.Model
     /// </summary>
     public partial class ListEnvironmentsResponse : AmazonWebServiceResponse
     {
-        private List<string> _environmentIds = new List<string>();
+        private List<string> _environmentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Cloud9.Model
         // Check to see if EnvironmentIds property is set
         internal bool IsSetEnvironmentIds()
         {
-            return this._environmentIds != null && this._environmentIds.Count > 0; 
+            return this._environmentIds != null && (this._environmentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

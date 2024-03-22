@@ -35,7 +35,7 @@ namespace Amazon.IoT.Model
     {
         private HttpAuthorization _auth;
         private string _confirmationUrl;
-        private List<HttpActionHeader> _headers = new List<HttpActionHeader>();
+        private List<HttpActionHeader> _headers = AWSConfigs.InitializeCollections ? new List<HttpActionHeader>() : null;
         private string _url;
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.IoT.Model
         // Check to see if Headers property is set
         internal bool IsSetHeaders()
         {
-            return this._headers != null && this._headers.Count > 0; 
+            return this._headers != null && (this._headers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

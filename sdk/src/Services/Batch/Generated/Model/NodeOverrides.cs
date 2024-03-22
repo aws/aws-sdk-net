@@ -42,7 +42,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class NodeOverrides
     {
-        private List<NodePropertyOverride> _nodePropertyOverrides = new List<NodePropertyOverride>();
+        private List<NodePropertyOverride> _nodePropertyOverrides = AWSConfigs.InitializeCollections ? new List<NodePropertyOverride>() : null;
         private int? _numNodes;
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Batch.Model
         // Check to see if NodePropertyOverrides property is set
         internal bool IsSetNodePropertyOverrides()
         {
-            return this._nodePropertyOverrides != null && this._nodePropertyOverrides.Count > 0; 
+            return this._nodePropertyOverrides != null && (this._nodePropertyOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

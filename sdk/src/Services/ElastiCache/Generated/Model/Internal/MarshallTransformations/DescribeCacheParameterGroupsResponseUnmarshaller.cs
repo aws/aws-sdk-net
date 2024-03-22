@@ -84,6 +84,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheParameterGroups/CacheParameterGroup", targetDepth))
                     {
                         var unmarshaller = CacheParameterGroupUnmarshaller.Instance;
+                        if (response.CacheParameterGroups == null)
+                        {
+                            response.CacheParameterGroups = new List<CacheParameterGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CacheParameterGroups.Add(item);
                         continue;

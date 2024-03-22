@@ -45,7 +45,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Enumerable containing all of the Servers
         /// </summary>
         public IPaginatedEnumerable<CMServer> Servers => 
-            new PaginatedResultKeyResponse<DescribeServersResponse, CMServer>(this, (i) => i.Servers);
+            new PaginatedResultKeyResponse<DescribeServersResponse, CMServer>(this, (i) => i.Servers ?? new List<CMServer>());
 
         internal DescribeServersPaginator(IAmazonOpsWorksCM client, DescribeServersRequest request)
         {

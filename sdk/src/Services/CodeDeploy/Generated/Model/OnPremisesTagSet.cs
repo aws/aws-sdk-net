@@ -33,7 +33,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class OnPremisesTagSet
     {
-        private List<List<TagFilter>> _onPremisesTagSetList = new List<List<TagFilter>>();
+        private List<List<TagFilter>> _onPremisesTagSetList = AWSConfigs.InitializeCollections ? new List<List<TagFilter>>() : null;
 
         /// <summary>
         /// Gets and sets the property OnPremisesTagSetList. 
@@ -52,7 +52,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if OnPremisesTagSetList property is set
         internal bool IsSetOnPremisesTagSetList()
         {
-            return this._onPremisesTagSetList != null && this._onPremisesTagSetList.Count > 0; 
+            return this._onPremisesTagSetList != null && (this._onPremisesTagSetList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

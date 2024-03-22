@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model
     public partial class RunPipelineActivityResponse : AmazonWebServiceResponse
     {
         private string _logResult;
-        private List<MemoryStream> _payloads = new List<MemoryStream>();
+        private List<MemoryStream> _payloads = AWSConfigs.InitializeCollections ? new List<MemoryStream>() : null;
 
         /// <summary>
         /// Gets and sets the property LogResult. 
@@ -72,7 +72,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if Payloads property is set
         internal bool IsSetPayloads()
         {
-            return this._payloads != null && this._payloads.Count > 0; 
+            return this._payloads != null && (this._payloads.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

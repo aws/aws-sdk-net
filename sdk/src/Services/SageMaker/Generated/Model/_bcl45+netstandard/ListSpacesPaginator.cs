@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the Spaces
         /// </summary>
         public IPaginatedEnumerable<SpaceDetails> Spaces => 
-            new PaginatedResultKeyResponse<ListSpacesResponse, SpaceDetails>(this, (i) => i.Spaces);
+            new PaginatedResultKeyResponse<ListSpacesResponse, SpaceDetails>(this, (i) => i.Spaces ?? new List<SpaceDetails>());
 
         internal ListSpacesPaginator(IAmazonSageMaker client, ListSpacesRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model
     public partial class SkillsStoreSkill
     {
         private string _iconUrl;
-        private List<string> _sampleUtterances = new List<string>();
+        private List<string> _sampleUtterances = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _shortDescription;
         private SkillDetails _skillDetails;
         private string _skillId;
@@ -74,7 +74,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if SampleUtterances property is set
         internal bool IsSetSampleUtterances()
         {
-            return this._sampleUtterances != null && this._sampleUtterances.Count > 0; 
+            return this._sampleUtterances != null && (this._sampleUtterances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

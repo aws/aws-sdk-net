@@ -35,7 +35,7 @@ namespace Amazon.CloudTrail.Model
     {
         private string _eventDataStoreArn;
         private string _insightsDestination;
-        private List<InsightSelector> _insightSelectors = new List<InsightSelector>();
+        private List<InsightSelector> _insightSelectors = AWSConfigs.InitializeCollections ? new List<InsightSelector>() : null;
         private string _trailARN;
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if InsightSelectors property is set
         internal bool IsSetInsightSelectors()
         {
-            return this._insightSelectors != null && this._insightSelectors.Count > 0; 
+            return this._insightSelectors != null && (this._insightSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

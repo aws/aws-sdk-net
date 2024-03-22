@@ -37,7 +37,7 @@ namespace Amazon.DataZone.Model
         private string _createdBy;
         private string _description;
         private string _domainId;
-        private List<ProjectDeletionError> _failureReasons = new List<ProjectDeletionError>();
+        private List<ProjectDeletionError> _failureReasons = AWSConfigs.InitializeCollections ? new List<ProjectDeletionError>() : null;
         private string _id;
         private string _name;
         private ProjectStatus _projectStatus;
@@ -133,7 +133,7 @@ namespace Amazon.DataZone.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

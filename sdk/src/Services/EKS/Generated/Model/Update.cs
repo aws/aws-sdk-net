@@ -34,9 +34,9 @@ namespace Amazon.EKS.Model
     public partial class Update
     {
         private DateTime? _createdAt;
-        private List<ErrorDetail> _errors = new List<ErrorDetail>();
+        private List<ErrorDetail> _errors = AWSConfigs.InitializeCollections ? new List<ErrorDetail>() : null;
         private string _id;
-        private List<UpdateParam> _params = new List<UpdateParam>();
+        private List<UpdateParam> _params = AWSConfigs.InitializeCollections ? new List<UpdateParam>() : null;
         private UpdateStatus _status;
         private UpdateType _type;
 
@@ -73,7 +73,7 @@ namespace Amazon.EKS.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.EKS.Model
         // Check to see if Params property is set
         internal bool IsSetParams()
         {
-            return this._params != null && this._params.Count > 0; 
+            return this._params != null && (this._params.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

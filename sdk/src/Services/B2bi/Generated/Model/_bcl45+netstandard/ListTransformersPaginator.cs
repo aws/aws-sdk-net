@@ -45,7 +45,7 @@ namespace Amazon.B2bi.Model
         /// Enumerable containing all of the Transformers
         /// </summary>
         public IPaginatedEnumerable<TransformerSummary> Transformers => 
-            new PaginatedResultKeyResponse<ListTransformersResponse, TransformerSummary>(this, (i) => i.Transformers);
+            new PaginatedResultKeyResponse<ListTransformersResponse, TransformerSummary>(this, (i) => i.Transformers ?? new List<TransformerSummary>());
 
         internal ListTransformersPaginator(IAmazonB2bi client, ListTransformersRequest request)
         {

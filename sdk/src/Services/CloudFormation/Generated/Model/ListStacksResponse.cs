@@ -34,7 +34,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ListStacksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StackSummary> _stackSummaries = new List<StackSummary>();
+        private List<StackSummary> _stackSummaries = AWSConfigs.InitializeCollections ? new List<StackSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackSummaries property is set
         internal bool IsSetStackSummaries()
         {
-            return this._stackSummaries != null && this._stackSummaries.Count > 0; 
+            return this._stackSummaries != null && (this._stackSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

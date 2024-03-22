@@ -33,7 +33,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class ListBuildsResponse : AmazonWebServiceResponse
     {
-        private List<Build> _builds = new List<Build>();
+        private List<Build> _builds = AWSConfigs.InitializeCollections ? new List<Build>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Builds property is set
         internal bool IsSetBuilds()
         {
-            return this._builds != null && this._builds.Count > 0; 
+            return this._builds != null && (this._builds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,8 +33,8 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class DeleteMembersResponse : AmazonWebServiceResponse
     {
-        private List<string> _accountIds = new List<string>();
-        private List<UnprocessedAccount> _unprocessedAccounts = new List<UnprocessedAccount>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<UnprocessedAccount> _unprocessedAccounts = AWSConfigs.InitializeCollections ? new List<UnprocessedAccount>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountIds. 
@@ -53,7 +53,7 @@ namespace Amazon.Detective.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Detective.Model
         // Check to see if UnprocessedAccounts property is set
         internal bool IsSetUnprocessedAccounts()
         {
-            return this._unprocessedAccounts != null && this._unprocessedAccounts.Count > 0; 
+            return this._unprocessedAccounts != null && (this._unprocessedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

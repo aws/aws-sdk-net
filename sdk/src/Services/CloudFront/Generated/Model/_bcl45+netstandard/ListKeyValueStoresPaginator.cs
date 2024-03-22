@@ -45,7 +45,7 @@ namespace Amazon.CloudFront.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<KeyValueStore> Items => 
-            new PaginatedResultKeyResponse<ListKeyValueStoresResponse, KeyValueStore>(this, (i) => i.KeyValueStoreList.Items);
+            new PaginatedResultKeyResponse<ListKeyValueStoresResponse, KeyValueStore>(this, (i) => i.KeyValueStoreList.Items ?? new List<KeyValueStore>());
 
         internal ListKeyValueStoresPaginator(IAmazonCloudFront client, ListKeyValueStoresRequest request)
         {

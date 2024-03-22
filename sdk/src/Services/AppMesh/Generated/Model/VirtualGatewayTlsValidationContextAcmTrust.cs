@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class VirtualGatewayTlsValidationContextAcmTrust
     {
-        private List<string> _certificateAuthorityArns = new List<string>();
+        private List<string> _certificateAuthorityArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArns. 
@@ -52,7 +52,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if CertificateAuthorityArns property is set
         internal bool IsSetCertificateAuthorityArns()
         {
-            return this._certificateAuthorityArns != null && this._certificateAuthorityArns.Count > 0; 
+            return this._certificateAuthorityArns != null && (this._certificateAuthorityArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

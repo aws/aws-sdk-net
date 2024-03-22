@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetDatabasesResponse : AmazonWebServiceResponse
     {
-        private List<Database> _databaseList = new List<Database>();
+        private List<Database> _databaseList = AWSConfigs.InitializeCollections ? new List<Database>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if DatabaseList property is set
         internal bool IsSetDatabaseList()
         {
-            return this._databaseList != null && this._databaseList.Count > 0; 
+            return this._databaseList != null && (this._databaseList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

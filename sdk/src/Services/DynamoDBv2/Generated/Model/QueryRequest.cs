@@ -99,19 +99,19 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class QueryRequest : AmazonDynamoDBRequest
     {
-        private List<string> _attributesToGet = new List<string>();
+        private List<string> _attributesToGet = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ConditionalOperator _conditionalOperator;
         private bool? _consistentRead;
-        private Dictionary<string, AttributeValue> _exclusiveStartKey = new Dictionary<string, AttributeValue>();
-        private Dictionary<string, string> _expressionAttributeNames = new Dictionary<string, string>();
-        private Dictionary<string, AttributeValue> _expressionAttributeValues = new Dictionary<string, AttributeValue>();
+        private Dictionary<string, AttributeValue> _exclusiveStartKey = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
+        private Dictionary<string, string> _expressionAttributeNames = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, AttributeValue> _expressionAttributeValues = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
         private string _filterExpression;
         private string _indexName;
         private string _keyConditionExpression;
-        private Dictionary<string, Condition> _keyConditions = new Dictionary<string, Condition>();
+        private Dictionary<string, Condition> _keyConditions = AWSConfigs.InitializeCollections ? new Dictionary<string, Condition>() : null;
         private int? _limit;
         private string _projectionExpression;
-        private Dictionary<string, Condition> _queryFilter = new Dictionary<string, Condition>();
+        private Dictionary<string, Condition> _queryFilter = AWSConfigs.InitializeCollections ? new Dictionary<string, Condition>() : null;
         private ReturnConsumedCapacity _returnConsumedCapacity;
         private bool? _scanIndexForward;
         private Select _select;
@@ -149,7 +149,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if AttributesToGet property is set
         internal bool IsSetAttributesToGet()
         {
-            return this._attributesToGet != null && this._attributesToGet.Count > 0; 
+            return this._attributesToGet != null && (this._attributesToGet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ExclusiveStartKey property is set
         internal bool IsSetExclusiveStartKey()
         {
-            return this._exclusiveStartKey != null && this._exclusiveStartKey.Count > 0; 
+            return this._exclusiveStartKey != null && (this._exclusiveStartKey.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -288,7 +288,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ExpressionAttributeNames property is set
         internal bool IsSetExpressionAttributeNames()
         {
-            return this._expressionAttributeNames != null && this._expressionAttributeNames.Count > 0; 
+            return this._expressionAttributeNames != null && (this._expressionAttributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -338,7 +338,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ExpressionAttributeValues property is set
         internal bool IsSetExpressionAttributeValues()
         {
-            return this._expressionAttributeValues != null && this._expressionAttributeValues.Count > 0; 
+            return this._expressionAttributeValues != null && (this._expressionAttributeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -544,7 +544,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if KeyConditions property is set
         internal bool IsSetKeyConditions()
         {
-            return this._keyConditions != null && this._keyConditions.Count > 0; 
+            return this._keyConditions != null && (this._keyConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -643,7 +643,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if QueryFilter property is set
         internal bool IsSetQueryFilter()
         {
-            return this._queryFilter != null && this._queryFilter.Count > 0; 
+            return this._queryFilter != null && (this._queryFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

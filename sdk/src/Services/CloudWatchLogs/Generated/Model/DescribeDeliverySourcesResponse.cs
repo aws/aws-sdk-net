@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class DescribeDeliverySourcesResponse : AmazonWebServiceResponse
     {
-        private List<DeliverySource> _deliverySources = new List<DeliverySource>();
+        private List<DeliverySource> _deliverySources = AWSConfigs.InitializeCollections ? new List<DeliverySource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if DeliverySources property is set
         internal bool IsSetDeliverySources()
         {
-            return this._deliverySources != null && this._deliverySources.Count > 0; 
+            return this._deliverySources != null && (this._deliverySources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

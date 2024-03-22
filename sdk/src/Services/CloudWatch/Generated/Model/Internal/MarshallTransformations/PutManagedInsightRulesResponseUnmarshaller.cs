@@ -84,6 +84,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Failures/member", targetDepth))
                     {
                         var unmarshaller = PartialFailureUnmarshaller.Instance;
+                        if (response.Failures == null)
+                        {
+                            response.Failures = new List<PartialFailure>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Failures.Add(item);
                         continue;

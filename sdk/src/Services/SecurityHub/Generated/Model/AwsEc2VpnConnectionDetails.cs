@@ -37,11 +37,11 @@ namespace Amazon.SecurityHub.Model
         private string _customerGatewayConfiguration;
         private string _customerGatewayId;
         private AwsEc2VpnConnectionOptionsDetails _options;
-        private List<AwsEc2VpnConnectionRoutesDetails> _routes = new List<AwsEc2VpnConnectionRoutesDetails>();
+        private List<AwsEc2VpnConnectionRoutesDetails> _routes = AWSConfigs.InitializeCollections ? new List<AwsEc2VpnConnectionRoutesDetails>() : null;
         private string _state;
         private string _transitGatewayId;
         private string _type;
-        private List<AwsEc2VpnConnectionVgwTelemetryDetails> _vgwTelemetry = new List<AwsEc2VpnConnectionVgwTelemetryDetails>();
+        private List<AwsEc2VpnConnectionVgwTelemetryDetails> _vgwTelemetry = AWSConfigs.InitializeCollections ? new List<AwsEc2VpnConnectionVgwTelemetryDetails>() : null;
         private string _vpnConnectionId;
         private string _vpnGatewayId;
 
@@ -134,7 +134,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Routes property is set
         internal bool IsSetRoutes()
         {
-            return this._routes != null && this._routes.Count > 0; 
+            return this._routes != null && (this._routes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if VgwTelemetry property is set
         internal bool IsSetVgwTelemetry()
         {
-            return this._vgwTelemetry != null && this._vgwTelemetry.Count > 0; 
+            return this._vgwTelemetry != null && (this._vgwTelemetry.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

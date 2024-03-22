@@ -35,9 +35,9 @@ namespace Amazon.IoTWireless.Model
     {
         private string _amazonId;
         private string _certificateId;
-        private List<CertificateList> _deviceCertificates = new List<CertificateList>();
+        private List<CertificateList> _deviceCertificates = AWSConfigs.InitializeCollections ? new List<CertificateList>() : null;
         private string _deviceProfileId;
-        private List<CertificateList> _privateKeys = new List<CertificateList>();
+        private List<CertificateList> _privateKeys = AWSConfigs.InitializeCollections ? new List<CertificateList>() : null;
         private string _sidewalkId;
         private string _sidewalkManufacturingSn;
         private WirelessDeviceSidewalkStatus _status;
@@ -92,7 +92,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if DeviceCertificates property is set
         internal bool IsSetDeviceCertificates()
         {
-            return this._deviceCertificates != null && this._deviceCertificates.Count > 0; 
+            return this._deviceCertificates != null && (this._deviceCertificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if PrivateKeys property is set
         internal bool IsSetPrivateKeys()
         {
-            return this._privateKeys != null && this._privateKeys.Count > 0; 
+            return this._privateKeys != null && (this._privateKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

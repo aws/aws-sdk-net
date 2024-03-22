@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the OtaUpdates
         /// </summary>
         public IPaginatedEnumerable<OTAUpdateSummary> OtaUpdates => 
-            new PaginatedResultKeyResponse<ListOTAUpdatesResponse, OTAUpdateSummary>(this, (i) => i.OtaUpdates);
+            new PaginatedResultKeyResponse<ListOTAUpdatesResponse, OTAUpdateSummary>(this, (i) => i.OtaUpdates ?? new List<OTAUpdateSummary>());
 
         internal ListOTAUpdatesPaginator(IAmazonIoT client, ListOTAUpdatesRequest request)
         {

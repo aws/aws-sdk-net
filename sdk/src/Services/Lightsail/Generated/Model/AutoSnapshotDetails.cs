@@ -35,7 +35,7 @@ namespace Amazon.Lightsail.Model
     {
         private DateTime? _createdAt;
         private string _date;
-        private List<AttachedDisk> _fromAttachedDisks = new List<AttachedDisk>();
+        private List<AttachedDisk> _fromAttachedDisks = AWSConfigs.InitializeCollections ? new List<AttachedDisk>() : null;
         private AutoSnapshotStatus _status;
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if FromAttachedDisks property is set
         internal bool IsSetFromAttachedDisks()
         {
-            return this._fromAttachedDisks != null && this._fromAttachedDisks.Count > 0; 
+            return this._fromAttachedDisks != null && (this._fromAttachedDisks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

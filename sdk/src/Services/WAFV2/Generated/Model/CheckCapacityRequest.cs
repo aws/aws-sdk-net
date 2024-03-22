@@ -47,7 +47,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class CheckCapacityRequest : AmazonWAFV2Request
     {
-        private List<Rule> _rules = new List<Rule>();
+        private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
         private Scope _scope;
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

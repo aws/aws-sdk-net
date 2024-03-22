@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetCoipPoolUsageResponse : AmazonWebServiceResponse
     {
-        private List<CoipAddressUsage> _coipAddressUsages = new List<CoipAddressUsage>();
+        private List<CoipAddressUsage> _coipAddressUsages = AWSConfigs.InitializeCollections ? new List<CoipAddressUsage>() : null;
         private string _coipPoolId;
         private string _localGatewayRouteTableId;
         private string _nextToken;
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if CoipAddressUsages property is set
         internal bool IsSetCoipAddressUsages()
         {
-            return this._coipAddressUsages != null && this._coipAddressUsages.Count > 0; 
+            return this._coipAddressUsages != null && (this._coipAddressUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

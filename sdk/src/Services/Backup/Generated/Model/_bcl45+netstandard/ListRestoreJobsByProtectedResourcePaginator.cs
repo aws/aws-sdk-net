@@ -45,7 +45,7 @@ namespace Amazon.Backup.Model
         /// Enumerable containing all of the RestoreJobs
         /// </summary>
         public IPaginatedEnumerable<RestoreJobsListMember> RestoreJobs => 
-            new PaginatedResultKeyResponse<ListRestoreJobsByProtectedResourceResponse, RestoreJobsListMember>(this, (i) => i.RestoreJobs);
+            new PaginatedResultKeyResponse<ListRestoreJobsByProtectedResourceResponse, RestoreJobsListMember>(this, (i) => i.RestoreJobs ?? new List<RestoreJobsListMember>());
 
         internal ListRestoreJobsByProtectedResourcePaginator(IAmazonBackup client, ListRestoreJobsByProtectedResourceRequest request)
         {

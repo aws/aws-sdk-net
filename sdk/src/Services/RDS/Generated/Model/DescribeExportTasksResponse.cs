@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeExportTasksResponse : AmazonWebServiceResponse
     {
-        private List<ExportTask> _exportTasks = new List<ExportTask>();
+        private List<ExportTask> _exportTasks = AWSConfigs.InitializeCollections ? new List<ExportTask>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         // Check to see if ExportTasks property is set
         internal bool IsSetExportTasks()
         {
-            return this._exportTasks != null && this._exportTasks.Count > 0; 
+            return this._exportTasks != null && (this._exportTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

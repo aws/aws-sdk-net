@@ -36,7 +36,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class AttachTypedLinkRequest : AmazonCloudDirectoryRequest
     {
-        private List<AttributeNameAndValue> _attributes = new List<AttributeNameAndValue>();
+        private List<AttributeNameAndValue> _attributes = AWSConfigs.InitializeCollections ? new List<AttributeNameAndValue>() : null;
         private string _directoryArn;
         private ObjectReference _sourceObjectReference;
         private ObjectReference _targetObjectReference;
@@ -58,7 +58,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

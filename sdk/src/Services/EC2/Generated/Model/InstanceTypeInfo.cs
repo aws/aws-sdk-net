@@ -57,10 +57,10 @@ namespace Amazon.EC2.Model
         private NitroTpmSupport _nitroTpmSupport;
         private PlacementGroupInfo _placementGroupInfo;
         private ProcessorInfo _processorInfo;
-        private List<string> _supportedBootModes = new List<string>();
-        private List<string> _supportedRootDeviceTypes = new List<string>();
-        private List<string> _supportedUsageClasses = new List<string>();
-        private List<string> _supportedVirtualizationTypes = new List<string>();
+        private List<string> _supportedBootModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedRootDeviceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedUsageClasses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedVirtualizationTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VCpuInfo _vCpuInfo;
 
         /// <summary>
@@ -514,7 +514,7 @@ namespace Amazon.EC2.Model
         // Check to see if SupportedBootModes property is set
         internal bool IsSetSupportedBootModes()
         {
-            return this._supportedBootModes != null && this._supportedBootModes.Count > 0; 
+            return this._supportedBootModes != null && (this._supportedBootModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -532,7 +532,7 @@ namespace Amazon.EC2.Model
         // Check to see if SupportedRootDeviceTypes property is set
         internal bool IsSetSupportedRootDeviceTypes()
         {
-            return this._supportedRootDeviceTypes != null && this._supportedRootDeviceTypes.Count > 0; 
+            return this._supportedRootDeviceTypes != null && (this._supportedRootDeviceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -550,7 +550,7 @@ namespace Amazon.EC2.Model
         // Check to see if SupportedUsageClasses property is set
         internal bool IsSetSupportedUsageClasses()
         {
-            return this._supportedUsageClasses != null && this._supportedUsageClasses.Count > 0; 
+            return this._supportedUsageClasses != null && (this._supportedUsageClasses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -568,7 +568,7 @@ namespace Amazon.EC2.Model
         // Check to see if SupportedVirtualizationTypes property is set
         internal bool IsSetSupportedVirtualizationTypes()
         {
-            return this._supportedVirtualizationTypes != null && this._supportedVirtualizationTypes.Count > 0; 
+            return this._supportedVirtualizationTypes != null && (this._supportedVirtualizationTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

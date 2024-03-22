@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetAssociatedEnclaveCertificateIamRolesResponse : AmazonWebServiceResponse
     {
-        private List<AssociatedRole> _associatedRoles = new List<AssociatedRole>();
+        private List<AssociatedRole> _associatedRoles = AWSConfigs.InitializeCollections ? new List<AssociatedRole>() : null;
 
         /// <summary>
         /// Gets and sets the property AssociatedRoles. 
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         // Check to see if AssociatedRoles property is set
         internal bool IsSetAssociatedRoles()
         {
-            return this._associatedRoles != null && this._associatedRoles.Count > 0; 
+            return this._associatedRoles != null && (this._associatedRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -73,7 +73,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.ChangeBatch.Comment));                 
 
                     var publicRequestChangeBatchChanges = publicRequest.ChangeBatch.Changes;
-                    if (publicRequestChangeBatchChanges != null && publicRequestChangeBatchChanges.Count > 0) 
+                    if (publicRequestChangeBatchChanges != null && (publicRequestChangeBatchChanges.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {                        
                         xmlWriter.WriteStartElement("Changes", "https://route53.amazonaws.com/doc/2013-04-01/");
                         foreach (var publicRequestChangeBatchChangesValue in publicRequestChangeBatchChanges) 
@@ -129,7 +129,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("TTL", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequestChangeBatchChangesValue.ResourceRecordSet.TTL));                 
 
                                 var publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords = publicRequestChangeBatchChangesValue.ResourceRecordSet.ResourceRecords;
-                                if (publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords != null && publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords.Count > 0) 
+                                if (publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords != null && (publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords.Count > 0 || !AWSConfigs.InitializeCollections)) 
                                 {                        
                                     xmlWriter.WriteStartElement("ResourceRecords", "https://route53.amazonaws.com/doc/2013-04-01/");
                                     foreach (var publicRequestChangeBatchChangesValueResourceRecordSetResourceRecordsValue in publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords) 

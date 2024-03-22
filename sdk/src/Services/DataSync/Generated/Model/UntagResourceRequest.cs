@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class UntagResourceRequest : AmazonDataSyncRequest
     {
-        private List<string> _keys = new List<string>();
+        private List<string> _keys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceArn;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

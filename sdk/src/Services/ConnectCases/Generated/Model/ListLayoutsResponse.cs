@@ -33,7 +33,7 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class ListLayoutsResponse : AmazonWebServiceResponse
     {
-        private List<LayoutSummary> _layouts = new List<LayoutSummary>();
+        private List<LayoutSummary> _layouts = AWSConfigs.InitializeCollections ? new List<LayoutSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Layouts property is set
         internal bool IsSetLayouts()
         {
-            return this._layouts != null && this._layouts.Count > 0; 
+            return this._layouts != null && (this._layouts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

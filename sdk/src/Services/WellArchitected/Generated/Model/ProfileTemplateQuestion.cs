@@ -35,7 +35,7 @@ namespace Amazon.WellArchitected.Model
     {
         private int? _maxSelectedChoices;
         private int? _minSelectedChoices;
-        private List<ProfileTemplateChoice> _questionChoices = new List<ProfileTemplateChoice>();
+        private List<ProfileTemplateChoice> _questionChoices = AWSConfigs.InitializeCollections ? new List<ProfileTemplateChoice>() : null;
         private string _questionDescription;
         private string _questionId;
         private string _questionTitle;
@@ -93,7 +93,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if QuestionChoices property is set
         internal bool IsSetQuestionChoices()
         {
-            return this._questionChoices != null && this._questionChoices.Count > 0; 
+            return this._questionChoices != null && (this._questionChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

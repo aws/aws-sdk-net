@@ -38,7 +38,7 @@ namespace Amazon.QBusiness.Model
         private DateTime? _createdAt;
         private string _description;
         private string _displayName;
-        private List<DocumentAttributeConfiguration> _documentAttributeConfigurations = new List<DocumentAttributeConfiguration>();
+        private List<DocumentAttributeConfiguration> _documentAttributeConfigurations = AWSConfigs.InitializeCollections ? new List<DocumentAttributeConfiguration>() : null;
         private ErrorDetail _error;
         private string _indexArn;
         private string _indexId;
@@ -158,7 +158,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if DocumentAttributeConfigurations property is set
         internal bool IsSetDocumentAttributeConfigurations()
         {
-            return this._documentAttributeConfigurations != null && this._documentAttributeConfigurations.Count > 0; 
+            return this._documentAttributeConfigurations != null && (this._documentAttributeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

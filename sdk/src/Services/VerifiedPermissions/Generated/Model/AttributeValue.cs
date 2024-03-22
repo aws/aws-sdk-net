@@ -50,8 +50,8 @@ namespace Amazon.VerifiedPermissions.Model
         private bool? _boolean;
         private EntityIdentifier _entityIdentifier;
         private long? _long;
-        private Dictionary<string, AttributeValue> _record = new Dictionary<string, AttributeValue>();
-        private List<AttributeValue> _set = new List<AttributeValue>();
+        private Dictionary<string, AttributeValue> _record = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
+        private List<AttributeValue> _set = AWSConfigs.InitializeCollections ? new List<AttributeValue>() : null;
         private string _string;
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if Record property is set
         internal bool IsSetRecord()
         {
-            return this._record != null && this._record.Count > 0; 
+            return this._record != null && (this._record.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if Set property is set
         internal bool IsSetSet()
         {
-            return this._set != null && this._set.Count > 0; 
+            return this._set != null && (this._set.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

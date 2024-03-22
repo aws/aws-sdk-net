@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeCertificatesResponse : AmazonWebServiceResponse
     {
-        private List<Certificate> _certificates = new List<Certificate>();
+        private List<Certificate> _certificates = AWSConfigs.InitializeCollections ? new List<Certificate>() : null;
         private string _defaultCertificateForNewLaunches;
         private string _marker;
 
@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
         // Check to see if Certificates property is set
         internal bool IsSetCertificates()
         {
-            return this._certificates != null && this._certificates.Count > 0; 
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

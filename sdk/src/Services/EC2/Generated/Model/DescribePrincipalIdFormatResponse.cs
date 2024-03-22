@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribePrincipalIdFormatResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PrincipalIdFormat> _principals = new List<PrincipalIdFormat>();
+        private List<PrincipalIdFormat> _principals = AWSConfigs.InitializeCollections ? new List<PrincipalIdFormat>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

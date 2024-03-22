@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class BatchDetectEntitiesItemResult
     {
-        private List<Entity> _entities = new List<Entity>();
+        private List<Entity> _entities = AWSConfigs.InitializeCollections ? new List<Entity>() : null;
         private int? _index;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Entities property is set
         internal bool IsSetEntities()
         {
-            return this._entities != null && this._entities.Count > 0; 
+            return this._entities != null && (this._entities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

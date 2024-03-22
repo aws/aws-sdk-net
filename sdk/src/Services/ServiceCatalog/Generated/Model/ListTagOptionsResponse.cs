@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ListTagOptionsResponse : AmazonWebServiceResponse
     {
         private string _pageToken;
-        private List<TagOptionDetail> _tagOptionDetails = new List<TagOptionDetail>();
+        private List<TagOptionDetail> _tagOptionDetails = AWSConfigs.InitializeCollections ? new List<TagOptionDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property PageToken. 
@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if TagOptionDetails property is set
         internal bool IsSetTagOptionDetails()
         {
-            return this._tagOptionDetails != null && this._tagOptionDetails.Count > 0; 
+            return this._tagOptionDetails != null && (this._tagOptionDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

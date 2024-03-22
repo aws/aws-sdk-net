@@ -35,7 +35,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class ConfluenceAttachmentConfiguration
     {
-        private List<ConfluenceAttachmentToIndexFieldMapping> _attachmentFieldMappings = new List<ConfluenceAttachmentToIndexFieldMapping>();
+        private List<ConfluenceAttachmentToIndexFieldMapping> _attachmentFieldMappings = AWSConfigs.InitializeCollections ? new List<ConfluenceAttachmentToIndexFieldMapping>() : null;
         private bool? _crawlAttachments;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.Kendra.Model
         // Check to see if AttachmentFieldMappings property is set
         internal bool IsSetAttachmentFieldMappings()
         {
-            return this._attachmentFieldMappings != null && this._attachmentFieldMappings.Count > 0; 
+            return this._attachmentFieldMappings != null && (this._attachmentFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

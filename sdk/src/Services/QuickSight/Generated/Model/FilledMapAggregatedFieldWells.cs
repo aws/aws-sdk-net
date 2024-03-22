@@ -33,8 +33,8 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class FilledMapAggregatedFieldWells
     {
-        private List<DimensionField> _geospatial = new List<DimensionField>();
-        private List<MeasureField> _values = new List<MeasureField>();
+        private List<DimensionField> _geospatial = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<MeasureField> _values = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
 
         /// <summary>
         /// Gets and sets the property Geospatial. 
@@ -53,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Geospatial property is set
         internal bool IsSetGeospatial()
         {
-            return this._geospatial != null && this._geospatial.Count > 0; 
+            return this._geospatial != null && (this._geospatial.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

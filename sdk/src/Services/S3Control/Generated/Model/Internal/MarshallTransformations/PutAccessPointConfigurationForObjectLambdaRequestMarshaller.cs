@@ -75,7 +75,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("Configuration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                     var publicRequestConfigurationAllowedFeatures = publicRequest.Configuration.AllowedFeatures;
-                    if (publicRequestConfigurationAllowedFeatures != null && publicRequestConfigurationAllowedFeatures.Count > 0) 
+                    if (publicRequestConfigurationAllowedFeatures != null && (publicRequestConfigurationAllowedFeatures.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {                        
                         xmlWriter.WriteStartElement("AllowedFeatures", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                         foreach (var publicRequestConfigurationAllowedFeaturesValue in publicRequestConfigurationAllowedFeatures) 
@@ -93,7 +93,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("SupportingAccessPoint", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Configuration.SupportingAccessPoint));                 
 
                     var publicRequestConfigurationTransformationConfigurations = publicRequest.Configuration.TransformationConfigurations;
-                    if (publicRequestConfigurationTransformationConfigurations != null && publicRequestConfigurationTransformationConfigurations.Count > 0) 
+                    if (publicRequestConfigurationTransformationConfigurations != null && (publicRequestConfigurationTransformationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {                        
                         xmlWriter.WriteStartElement("TransformationConfigurations", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                         foreach (var publicRequestConfigurationTransformationConfigurationsValue in publicRequestConfigurationTransformationConfigurations) 
@@ -103,7 +103,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("TransformationConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                             var publicRequestConfigurationTransformationConfigurationsValueActions = publicRequestConfigurationTransformationConfigurationsValue.Actions;
-                            if (publicRequestConfigurationTransformationConfigurationsValueActions != null && publicRequestConfigurationTransformationConfigurationsValueActions.Count > 0) 
+                            if (publicRequestConfigurationTransformationConfigurationsValueActions != null && (publicRequestConfigurationTransformationConfigurationsValueActions.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {                        
                                 xmlWriter.WriteStartElement("Actions", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                                 foreach (var publicRequestConfigurationTransformationConfigurationsValueActionsValue in publicRequestConfigurationTransformationConfigurationsValueActions) 

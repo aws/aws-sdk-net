@@ -38,7 +38,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private DateTime? _createdTimestamp;
         private MessageType _defaultMessageType;
         private string _defaultSenderId;
-        private List<EventDestination> _eventDestinations = new List<EventDestination>();
+        private List<EventDestination> _eventDestinations = AWSConfigs.InitializeCollections ? new List<EventDestination>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationSetArn. 
@@ -149,7 +149,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if EventDestinations property is set
         internal bool IsSetEventDestinations()
         {
-            return this._eventDestinations != null && this._eventDestinations.Count > 0; 
+            return this._eventDestinations != null && (this._eventDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

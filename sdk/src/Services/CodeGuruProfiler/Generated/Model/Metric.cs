@@ -37,7 +37,7 @@ namespace Amazon.CodeGuruProfiler.Model
     public partial class Metric
     {
         private string _frameName;
-        private List<string> _threadStates = new List<string>();
+        private List<string> _threadStates = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MetricType _type;
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if ThreadStates property is set
         internal bool IsSetThreadStates()
         {
-            return this._threadStates != null && this._threadStates.Count > 0; 
+            return this._threadStates != null && (this._threadStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

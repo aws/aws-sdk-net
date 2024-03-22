@@ -43,9 +43,9 @@ namespace Amazon.ManagedGrafana.Model
         private LicenseType _licenseType;
         private DateTime? _modified;
         private string _name;
-        private List<string> _notificationDestinations = new List<string>();
+        private List<string> _notificationDestinations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WorkspaceStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Authentication. 
@@ -260,7 +260,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if NotificationDestinations property is set
         internal bool IsSetNotificationDestinations()
         {
-            return this._notificationDestinations != null && this._notificationDestinations.Count > 0; 
+            return this._notificationDestinations != null && (this._notificationDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

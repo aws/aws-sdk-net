@@ -40,7 +40,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class StartWorkspacesRequest : AmazonWorkSpacesRequest
     {
-        private List<StartRequest> _startWorkspaceRequests = new List<StartRequest>();
+        private List<StartRequest> _startWorkspaceRequests = AWSConfigs.InitializeCollections ? new List<StartRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property StartWorkspaceRequests. 
@@ -58,7 +58,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if StartWorkspaceRequests property is set
         internal bool IsSetStartWorkspaceRequests()
         {
-            return this._startWorkspaceRequests != null && this._startWorkspaceRequests.Count > 0; 
+            return this._startWorkspaceRequests != null && (this._startWorkspaceRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class ContentRedaction
     {
-        private List<string> _piiEntityTypes = new List<string>();
+        private List<string> _piiEntityTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RedactionOutput _redactionOutput;
         private RedactionType _redactionType;
 
@@ -59,7 +59,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if PiiEntityTypes property is set
         internal bool IsSetPiiEntityTypes()
         {
-            return this._piiEntityTypes != null && this._piiEntityTypes.Count > 0; 
+            return this._piiEntityTypes != null && (this._piiEntityTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

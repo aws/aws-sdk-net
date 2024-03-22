@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class ListBotLocalesResponse : AmazonWebServiceResponse
     {
         private string _botId;
-        private List<BotLocaleSummary> _botLocaleSummaries = new List<BotLocaleSummary>();
+        private List<BotLocaleSummary> _botLocaleSummaries = AWSConfigs.InitializeCollections ? new List<BotLocaleSummary>() : null;
         private string _botVersion;
         private string _nextToken;
 
@@ -75,7 +75,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotLocaleSummaries property is set
         internal bool IsSetBotLocaleSummaries()
         {
-            return this._botLocaleSummaries != null && this._botLocaleSummaries.Count > 0; 
+            return this._botLocaleSummaries != null && (this._botLocaleSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

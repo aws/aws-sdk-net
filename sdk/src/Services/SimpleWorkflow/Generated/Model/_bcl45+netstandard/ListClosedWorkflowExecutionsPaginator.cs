@@ -45,7 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Enumerable containing all of the ExecutionInfos
         /// </summary>
         public IPaginatedEnumerable<WorkflowExecutionInfo> ExecutionInfos => 
-            new PaginatedResultKeyResponse<ListClosedWorkflowExecutionsResponse, WorkflowExecutionInfo>(this, (i) => i.WorkflowExecutionInfos.ExecutionInfos);
+            new PaginatedResultKeyResponse<ListClosedWorkflowExecutionsResponse, WorkflowExecutionInfo>(this, (i) => i.WorkflowExecutionInfos.ExecutionInfos ?? new List<WorkflowExecutionInfo>());
 
         internal ListClosedWorkflowExecutionsPaginator(IAmazonSimpleWorkflow client, ListClosedWorkflowExecutionsRequest request)
         {

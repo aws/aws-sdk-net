@@ -35,7 +35,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     public partial class CreateTemplateRequest : AmazonMigrationHubOrchestratorRequest
     {
         private string _clientToken;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _templateDescription;
         private string _templateName;
         private TemplateSource _templateSource;
@@ -76,7 +76,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

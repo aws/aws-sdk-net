@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class Attribution
     {
-        private List<Citation> _citations = new List<Citation>();
+        private List<Citation> _citations = AWSConfigs.InitializeCollections ? new List<Citation>() : null;
 
         /// <summary>
         /// Gets and sets the property Citations. 
@@ -50,7 +50,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if Citations property is set
         internal bool IsSetCitations()
         {
-            return this._citations != null && this._citations.Count > 0; 
+            return this._citations != null && (this._citations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

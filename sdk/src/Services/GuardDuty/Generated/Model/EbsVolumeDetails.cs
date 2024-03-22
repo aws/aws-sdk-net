@@ -33,8 +33,8 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class EbsVolumeDetails
     {
-        private List<VolumeDetail> _scannedVolumeDetails = new List<VolumeDetail>();
-        private List<VolumeDetail> _skippedVolumeDetails = new List<VolumeDetail>();
+        private List<VolumeDetail> _scannedVolumeDetails = AWSConfigs.InitializeCollections ? new List<VolumeDetail>() : null;
+        private List<VolumeDetail> _skippedVolumeDetails = AWSConfigs.InitializeCollections ? new List<VolumeDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property ScannedVolumeDetails. 
@@ -51,7 +51,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if ScannedVolumeDetails property is set
         internal bool IsSetScannedVolumeDetails()
         {
-            return this._scannedVolumeDetails != null && this._scannedVolumeDetails.Count > 0; 
+            return this._scannedVolumeDetails != null && (this._scannedVolumeDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if SkippedVolumeDetails property is set
         internal bool IsSetSkippedVolumeDetails()
         {
-            return this._skippedVolumeDetails != null && this._skippedVolumeDetails.Count > 0; 
+            return this._skippedVolumeDetails != null && (this._skippedVolumeDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

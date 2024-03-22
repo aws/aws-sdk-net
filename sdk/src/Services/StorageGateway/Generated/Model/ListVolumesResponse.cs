@@ -45,7 +45,7 @@ namespace Amazon.StorageGateway.Model
     {
         private string _gatewayARN;
         private string _marker;
-        private List<VolumeInfo> _volumeInfos = new List<VolumeInfo>();
+        private List<VolumeInfo> _volumeInfos = AWSConfigs.InitializeCollections ? new List<VolumeInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property GatewayARN.
@@ -100,7 +100,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeInfos property is set
         internal bool IsSetVolumeInfos()
         {
-            return this._volumeInfos != null && this._volumeInfos.Count > 0; 
+            return this._volumeInfos != null && (this._volumeInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

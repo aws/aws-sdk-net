@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetDocumentResponse : AmazonWebServiceResponse
     {
-        private List<AttachmentContent> _attachmentsContent = new List<AttachmentContent>();
+        private List<AttachmentContent> _attachmentsContent = AWSConfigs.InitializeCollections ? new List<AttachmentContent>() : null;
         private string _content;
         private DateTime? _createdDate;
         private string _displayName;
@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DocumentType _documentType;
         private string _documentVersion;
         private string _name;
-        private List<DocumentRequires> _requires = new List<DocumentRequires>();
+        private List<DocumentRequires> _requires = AWSConfigs.InitializeCollections ? new List<DocumentRequires>() : null;
         private ReviewStatus _reviewStatus;
         private DocumentStatus _status;
         private string _statusInformation;
@@ -63,7 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AttachmentsContent property is set
         internal bool IsSetAttachmentsContent()
         {
-            return this._attachmentsContent != null && this._attachmentsContent.Count > 0; 
+            return this._attachmentsContent != null && (this._attachmentsContent.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -212,7 +212,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Requires property is set
         internal bool IsSetRequires()
         {
-            return this._requires != null && this._requires.Count > 0; 
+            return this._requires != null && (this._requires.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

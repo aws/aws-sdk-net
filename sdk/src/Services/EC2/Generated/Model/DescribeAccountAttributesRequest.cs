@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeAccountAttributesRequest : AmazonEC2Request
     {
-        private List<string> _attributeNames = new List<string>();
+        private List<string> _attributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeNames. 
@@ -88,7 +88,7 @@ namespace Amazon.EC2.Model
         // Check to see if AttributeNames property is set
         internal bool IsSetAttributeNames()
         {
-            return this._attributeNames != null && this._attributeNames.Count > 0; 
+            return this._attributeNames != null && (this._attributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

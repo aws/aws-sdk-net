@@ -78,7 +78,7 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class CreateMembersRequest : AmazonDetectiveRequest
     {
-        private List<Account> _accounts = new List<Account>();
+        private List<Account> _accounts = AWSConfigs.InitializeCollections ? new List<Account>() : null;
         private bool? _disableEmailNotification;
         private string _graphArn;
         private string _message;
@@ -103,7 +103,7 @@ namespace Amazon.Detective.Model
         // Check to see if Accounts property is set
         internal bool IsSetAccounts()
         {
-            return this._accounts != null && this._accounts.Count > 0; 
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

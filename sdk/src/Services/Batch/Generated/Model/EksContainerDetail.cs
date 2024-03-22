@@ -34,9 +34,9 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EksContainerDetail
     {
-        private List<string> _args = new List<string>();
-        private List<string> _command = new List<string>();
-        private List<EksContainerEnvironmentVariable> _env = new List<EksContainerEnvironmentVariable>();
+        private List<string> _args = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<EksContainerEnvironmentVariable> _env = AWSConfigs.InitializeCollections ? new List<EksContainerEnvironmentVariable>() : null;
         private int? _exitCode;
         private string _image;
         private string _imagePullPolicy;
@@ -44,7 +44,7 @@ namespace Amazon.Batch.Model
         private string _reason;
         private EksContainerResourceRequirements _resources;
         private EksContainerSecurityContext _securityContext;
-        private List<EksContainerVolumeMount> _volumeMounts = new List<EksContainerVolumeMount>();
+        private List<EksContainerVolumeMount> _volumeMounts = AWSConfigs.InitializeCollections ? new List<EksContainerVolumeMount>() : null;
 
         /// <summary>
         /// Gets and sets the property Args. 
@@ -77,7 +77,7 @@ namespace Amazon.Batch.Model
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this._args != null && this._args.Count > 0; 
+            return this._args != null && (this._args.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.Batch.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.Batch.Model
         // Check to see if Env property is set
         internal bool IsSetEnv()
         {
-            return this._env != null && this._env.Count > 0; 
+            return this._env != null && (this._env.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -276,7 +276,7 @@ namespace Amazon.Batch.Model
         // Check to see if VolumeMounts property is set
         internal bool IsSetVolumeMounts()
         {
-            return this._volumeMounts != null && this._volumeMounts.Count > 0; 
+            return this._volumeMounts != null && (this._volumeMounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

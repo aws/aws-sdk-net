@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class ListSAMLProvidersResponse : AmazonWebServiceResponse
     {
-        private List<SAMLProviderListEntry> _samlProviderList = new List<SAMLProviderListEntry>();
+        private List<SAMLProviderListEntry> _samlProviderList = AWSConfigs.InitializeCollections ? new List<SAMLProviderListEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property SAMLProviderList. 
@@ -51,7 +51,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if SAMLProviderList property is set
         internal bool IsSetSAMLProviderList()
         {
-            return this._samlProviderList != null && this._samlProviderList.Count > 0; 
+            return this._samlProviderList != null && (this._samlProviderList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

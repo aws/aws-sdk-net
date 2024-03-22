@@ -50,7 +50,7 @@ namespace Amazon.IoT.Model
     {
         private string _aggregationField;
         private string _indexName;
-        private List<double> _percents = new List<double>();
+        private List<double> _percents = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private string _queryString;
         private string _queryVersion;
 
@@ -107,7 +107,7 @@ namespace Amazon.IoT.Model
         // Check to see if Percents property is set
         internal bool IsSetPercents()
         {
-            return this._percents != null && this._percents.Count > 0; 
+            return this._percents != null && (this._percents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

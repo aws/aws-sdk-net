@@ -33,7 +33,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ListMilestonesResponse : AmazonWebServiceResponse
     {
-        private List<MilestoneSummary> _milestoneSummaries = new List<MilestoneSummary>();
+        private List<MilestoneSummary> _milestoneSummaries = AWSConfigs.InitializeCollections ? new List<MilestoneSummary>() : null;
         private string _nextToken;
         private string _workloadId;
 
@@ -49,7 +49,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if MilestoneSummaries property is set
         internal bool IsSetMilestoneSummaries()
         {
-            return this._milestoneSummaries != null && this._milestoneSummaries.Count > 0; 
+            return this._milestoneSummaries != null && (this._milestoneSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

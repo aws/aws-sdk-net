@@ -33,7 +33,7 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BatchRestrictions
     {
-        private List<string> _computeTypesAllowed = new List<string>();
+        private List<string> _computeTypesAllowed = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maximumBuildsAllowed;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if ComputeTypesAllowed property is set
         internal bool IsSetComputeTypesAllowed()
         {
-            return this._computeTypesAllowed != null && this._computeTypesAllowed.Count > 0; 
+            return this._computeTypesAllowed != null && (this._computeTypesAllowed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

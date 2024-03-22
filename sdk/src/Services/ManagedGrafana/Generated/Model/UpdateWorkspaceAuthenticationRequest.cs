@@ -44,7 +44,7 @@ namespace Amazon.ManagedGrafana.Model
     /// </summary>
     public partial class UpdateWorkspaceAuthenticationRequest : AmazonManagedGrafanaRequest
     {
-        private List<string> _authenticationProviders = new List<string>();
+        private List<string> _authenticationProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SamlConfiguration _samlConfiguration;
         private string _workspaceId;
 
@@ -67,7 +67,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if AuthenticationProviders property is set
         internal bool IsSetAuthenticationProviders()
         {
-            return this._authenticationProviders != null && this._authenticationProviders.Count > 0; 
+            return this._authenticationProviders != null && (this._authenticationProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

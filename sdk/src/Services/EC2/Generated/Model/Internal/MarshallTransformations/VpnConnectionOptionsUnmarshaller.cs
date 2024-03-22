@@ -111,6 +111,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tunnelOptionSet/item", targetDepth))
                     {
                         var unmarshaller = TunnelOptionUnmarshaller.Instance;
+                        if (unmarshalledObject.TunnelOptions == null)
+                        {
+                            unmarshalledObject.TunnelOptions = new List<TunnelOption>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TunnelOptions.Add(item);
                         continue;

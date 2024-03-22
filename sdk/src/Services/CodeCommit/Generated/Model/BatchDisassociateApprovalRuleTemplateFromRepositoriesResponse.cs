@@ -33,8 +33,8 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class BatchDisassociateApprovalRuleTemplateFromRepositoriesResponse : AmazonWebServiceResponse
     {
-        private List<string> _disassociatedRepositoryNames = new List<string>();
-        private List<BatchDisassociateApprovalRuleTemplateFromRepositoriesError> _errors = new List<BatchDisassociateApprovalRuleTemplateFromRepositoriesError>();
+        private List<string> _disassociatedRepositoryNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<BatchDisassociateApprovalRuleTemplateFromRepositoriesError> _errors = AWSConfigs.InitializeCollections ? new List<BatchDisassociateApprovalRuleTemplateFromRepositoriesError>() : null;
 
         /// <summary>
         /// Gets and sets the property DisassociatedRepositoryNames. 
@@ -52,7 +52,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if DisassociatedRepositoryNames property is set
         internal bool IsSetDisassociatedRepositoryNames()
         {
-            return this._disassociatedRepositoryNames != null && this._disassociatedRepositoryNames.Count > 0; 
+            return this._disassociatedRepositoryNames != null && (this._disassociatedRepositoryNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

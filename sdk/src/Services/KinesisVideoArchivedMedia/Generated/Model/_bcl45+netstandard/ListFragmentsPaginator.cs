@@ -45,7 +45,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Enumerable containing all of the Fragments
         /// </summary>
         public IPaginatedEnumerable<Fragment> Fragments => 
-            new PaginatedResultKeyResponse<ListFragmentsResponse, Fragment>(this, (i) => i.Fragments);
+            new PaginatedResultKeyResponse<ListFragmentsResponse, Fragment>(this, (i) => i.Fragments ?? new List<Fragment>());
 
         internal ListFragmentsPaginator(IAmazonKinesisVideoArchivedMedia client, ListFragmentsRequest request)
         {

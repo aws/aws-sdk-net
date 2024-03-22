@@ -36,7 +36,7 @@ namespace Amazon.IdentityStore.Model
     public partial class UpdateUserRequest : AmazonIdentityStoreRequest
     {
         private string _identityStoreId;
-        private List<AttributeOperation> _operations = new List<AttributeOperation>();
+        private List<AttributeOperation> _operations = AWSConfigs.InitializeCollections ? new List<AttributeOperation>() : null;
         private string _userId;
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.IdentityStore.Model
         // Check to see if Operations property is set
         internal bool IsSetOperations()
         {
-            return this._operations != null && this._operations.Count > 0; 
+            return this._operations != null && (this._operations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

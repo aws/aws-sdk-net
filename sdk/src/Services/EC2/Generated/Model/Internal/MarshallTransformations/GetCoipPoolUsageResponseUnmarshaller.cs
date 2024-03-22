@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("coipAddressUsageSet/item", targetDepth))
                     {
                         var unmarshaller = CoipAddressUsageUnmarshaller.Instance;
+                        if (response.CoipAddressUsages == null)
+                        {
+                            response.CoipAddressUsages = new List<CoipAddressUsage>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CoipAddressUsages.Add(item);
                         continue;

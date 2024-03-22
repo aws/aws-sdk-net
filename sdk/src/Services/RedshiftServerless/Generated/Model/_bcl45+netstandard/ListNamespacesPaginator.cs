@@ -45,7 +45,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Enumerable containing all of the Namespaces
         /// </summary>
         public IPaginatedEnumerable<Namespace> Namespaces => 
-            new PaginatedResultKeyResponse<ListNamespacesResponse, Namespace>(this, (i) => i.Namespaces);
+            new PaginatedResultKeyResponse<ListNamespacesResponse, Namespace>(this, (i) => i.Namespaces ?? new List<Namespace>());
 
         internal ListNamespacesPaginator(IAmazonRedshiftServerless client, ListNamespacesRequest request)
         {

@@ -111,7 +111,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _complianceType;
         private ComplianceExecutionSummary _executionSummary;
         private string _itemContentHash;
-        private List<ComplianceItemEntry> _items = new List<ComplianceItemEntry>();
+        private List<ComplianceItemEntry> _items = AWSConfigs.InitializeCollections ? new List<ComplianceItemEntry>() : null;
         private string _resourceId;
         private string _resourceType;
         private ComplianceUploadType _uploadType;
@@ -196,7 +196,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.Budgets.Model
     public partial class DescribeSubscribersForNotificationResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Subscriber> _subscribers = new List<Subscriber>();
+        private List<Subscriber> _subscribers = AWSConfigs.InitializeCollections ? new List<Subscriber>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.Budgets.Model
         // Check to see if Subscribers property is set
         internal bool IsSetSubscribers()
         {
-            return this._subscribers != null && this._subscribers.Count > 0; 
+            return this._subscribers != null && (this._subscribers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

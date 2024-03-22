@@ -33,7 +33,7 @@ namespace Amazon.CodeArtifact.Model
     /// </summary>
     public partial class ListPackageVersionDependenciesResponse : AmazonWebServiceResponse
     {
-        private List<PackageDependency> _dependencies = new List<PackageDependency>();
+        private List<PackageDependency> _dependencies = AWSConfigs.InitializeCollections ? new List<PackageDependency>() : null;
         private PackageFormat _format;
         private string _awsNamespace;
         private string _nextToken;
@@ -57,7 +57,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Dependencies property is set
         internal bool IsSetDependencies()
         {
-            return this._dependencies != null && this._dependencies.Count > 0; 
+            return this._dependencies != null && (this._dependencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

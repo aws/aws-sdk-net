@@ -37,7 +37,7 @@ namespace Amazon.Kafka.Model
         private string _clusterName;
         private ProvisionedRequest _provisioned;
         private ServerlessRequest _serverless;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterName.             
@@ -109,7 +109,7 @@ namespace Amazon.Kafka.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

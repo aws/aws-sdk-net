@@ -33,11 +33,11 @@ namespace Amazon.AppRunner.Model
     /// </summary>
     public partial class DescribeCustomDomainsResponse : AmazonWebServiceResponse
     {
-        private List<CustomDomain> _customDomains = new List<CustomDomain>();
+        private List<CustomDomain> _customDomains = AWSConfigs.InitializeCollections ? new List<CustomDomain>() : null;
         private string _dnsTarget;
         private string _nextToken;
         private string _serviceArn;
-        private List<VpcDNSTarget> _vpcDNSTargets = new List<VpcDNSTarget>();
+        private List<VpcDNSTarget> _vpcDNSTargets = AWSConfigs.InitializeCollections ? new List<VpcDNSTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomDomains. 
@@ -56,7 +56,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if CustomDomains property is set
         internal bool IsSetCustomDomains()
         {
-            return this._customDomains != null && this._customDomains.Count > 0; 
+            return this._customDomains != null && (this._customDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if VpcDNSTargets property is set
         internal bool IsSetVpcDNSTargets()
         {
-            return this._vpcDNSTargets != null && this._vpcDNSTargets.Count > 0; 
+            return this._vpcDNSTargets != null && (this._vpcDNSTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

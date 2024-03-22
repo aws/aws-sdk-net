@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the PipelineExecutionSteps
         /// </summary>
         public IPaginatedEnumerable<PipelineExecutionStep> PipelineExecutionSteps => 
-            new PaginatedResultKeyResponse<ListPipelineExecutionStepsResponse, PipelineExecutionStep>(this, (i) => i.PipelineExecutionSteps);
+            new PaginatedResultKeyResponse<ListPipelineExecutionStepsResponse, PipelineExecutionStep>(this, (i) => i.PipelineExecutionSteps ?? new List<PipelineExecutionStep>());
 
         internal ListPipelineExecutionStepsPaginator(IAmazonSageMaker client, ListPipelineExecutionStepsRequest request)
         {

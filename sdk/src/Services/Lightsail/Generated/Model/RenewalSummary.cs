@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class RenewalSummary
     {
-        private List<DomainValidationRecord> _domainValidationRecords = new List<DomainValidationRecord>();
+        private List<DomainValidationRecord> _domainValidationRecords = AWSConfigs.InitializeCollections ? new List<DomainValidationRecord>() : null;
         private RenewalStatus _renewalStatus;
         private string _renewalStatusReason;
         private DateTime? _updatedAt;
@@ -53,7 +53,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if DomainValidationRecords property is set
         internal bool IsSetDomainValidationRecords()
         {
-            return this._domainValidationRecords != null && this._domainValidationRecords.Count > 0; 
+            return this._domainValidationRecords != null && (this._domainValidationRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

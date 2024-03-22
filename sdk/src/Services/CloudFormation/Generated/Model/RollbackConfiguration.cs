@@ -44,7 +44,7 @@ namespace Amazon.CloudFormation.Model
     public partial class RollbackConfiguration
     {
         private int? _monitoringTimeInMinutes;
-        private List<RollbackTrigger> _rollbackTriggers = new List<RollbackTrigger>();
+        private List<RollbackTrigger> _rollbackTriggers = AWSConfigs.InitializeCollections ? new List<RollbackTrigger>() : null;
 
         /// <summary>
         /// Gets and sets the property MonitoringTimeInMinutes. 
@@ -129,7 +129,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if RollbackTriggers property is set
         internal bool IsSetRollbackTriggers()
         {
-            return this._rollbackTriggers != null && this._rollbackTriggers.Count > 0; 
+            return this._rollbackTriggers != null && (this._rollbackTriggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class ListDataSourceSyncJobsResponse : AmazonWebServiceResponse
     {
-        private List<DataSourceSyncJob> _history = new List<DataSourceSyncJob>();
+        private List<DataSourceSyncJob> _history = AWSConfigs.InitializeCollections ? new List<DataSourceSyncJob>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Kendra.Model
         // Check to see if History property is set
         internal bool IsSetHistory()
         {
-            return this._history != null && this._history.Count > 0; 
+            return this._history != null && (this._history.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

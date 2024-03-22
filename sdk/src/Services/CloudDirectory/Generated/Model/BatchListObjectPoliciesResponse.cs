@@ -33,7 +33,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class BatchListObjectPoliciesResponse
     {
-        private List<string> _attachedPolicyIds = new List<string>();
+        private List<string> _attachedPolicyIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if AttachedPolicyIds property is set
         internal bool IsSetAttachedPolicyIds()
         {
-            return this._attachedPolicyIds != null && this._attachedPolicyIds.Count > 0; 
+            return this._attachedPolicyIds != null && (this._attachedPolicyIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the Solutions
         /// </summary>
         public IPaginatedEnumerable<SolutionSummary> Solutions => 
-            new PaginatedResultKeyResponse<ListSolutionsResponse, SolutionSummary>(this, (i) => i.Solutions);
+            new PaginatedResultKeyResponse<ListSolutionsResponse, SolutionSummary>(this, (i) => i.Solutions ?? new List<SolutionSummary>());
 
         internal ListSolutionsPaginator(IAmazonPersonalize client, ListSolutionsRequest request)
         {

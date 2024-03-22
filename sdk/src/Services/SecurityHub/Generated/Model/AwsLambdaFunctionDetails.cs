@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsLambdaFunctionDetails
     {
-        private List<string> _architectures = new List<string>();
+        private List<string> _architectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AwsLambdaFunctionCode _code;
         private string _codeSha256;
         private AwsLambdaFunctionDeadLetterConfig _deadLetterConfig;
@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         private string _handler;
         private string _kmsKeyArn;
         private string _lastModified;
-        private List<AwsLambdaFunctionLayer> _layers = new List<AwsLambdaFunctionLayer>();
+        private List<AwsLambdaFunctionLayer> _layers = AWSConfigs.InitializeCollections ? new List<AwsLambdaFunctionLayer>() : null;
         private string _masterArn;
         private int? _memorySize;
         private string _packageType;
@@ -70,7 +70,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Architectures property is set
         internal bool IsSetArchitectures()
         {
-            return this._architectures != null && this._architectures.Count > 0; 
+            return this._architectures != null && (this._architectures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Layers property is set
         internal bool IsSetLayers()
         {
-            return this._layers != null && this._layers.Count > 0; 
+            return this._layers != null && (this._layers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

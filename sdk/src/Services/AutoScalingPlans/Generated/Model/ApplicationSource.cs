@@ -34,7 +34,7 @@ namespace Amazon.AutoScalingPlans.Model
     public partial class ApplicationSource
     {
         private string _cloudFormationStackARN;
-        private List<TagFilter> _tagFilters = new List<TagFilter>();
+        private List<TagFilter> _tagFilters = AWSConfigs.InitializeCollections ? new List<TagFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property CloudFormationStackARN. 
@@ -69,7 +69,7 @@ namespace Amazon.AutoScalingPlans.Model
         // Check to see if TagFilters property is set
         internal bool IsSetTagFilters()
         {
-            return this._tagFilters != null && this._tagFilters.Count > 0; 
+            return this._tagFilters != null && (this._tagFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("carrierGatewaySet/item", targetDepth))
                     {
                         var unmarshaller = CarrierGatewayUnmarshaller.Instance;
+                        if (response.CarrierGateways == null)
+                        {
+                            response.CarrierGateways = new List<CarrierGateway>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CarrierGateways.Add(item);
                         continue;

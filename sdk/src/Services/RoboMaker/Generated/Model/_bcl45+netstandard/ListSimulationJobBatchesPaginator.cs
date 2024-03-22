@@ -45,7 +45,7 @@ namespace Amazon.RoboMaker.Model
         /// Enumerable containing all of the SimulationJobBatchSummaries
         /// </summary>
         public IPaginatedEnumerable<SimulationJobBatchSummary> SimulationJobBatchSummaries => 
-            new PaginatedResultKeyResponse<ListSimulationJobBatchesResponse, SimulationJobBatchSummary>(this, (i) => i.SimulationJobBatchSummaries);
+            new PaginatedResultKeyResponse<ListSimulationJobBatchesResponse, SimulationJobBatchSummary>(this, (i) => i.SimulationJobBatchSummaries ?? new List<SimulationJobBatchSummary>());
 
         internal ListSimulationJobBatchesPaginator(IAmazonRoboMaker client, ListSimulationJobBatchesRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class DescribeDirectConnectGatewayAttachmentsResponse : AmazonWebServiceResponse
     {
-        private List<DirectConnectGatewayAttachment> _directConnectGatewayAttachments = new List<DirectConnectGatewayAttachment>();
+        private List<DirectConnectGatewayAttachment> _directConnectGatewayAttachments = AWSConfigs.InitializeCollections ? new List<DirectConnectGatewayAttachment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if DirectConnectGatewayAttachments property is set
         internal bool IsSetDirectConnectGatewayAttachments()
         {
-            return this._directConnectGatewayAttachments != null && this._directConnectGatewayAttachments.Count > 0; 
+            return this._directConnectGatewayAttachments != null && (this._directConnectGatewayAttachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

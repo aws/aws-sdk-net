@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class DescribeTargetGroupAttributesResponse : AmazonWebServiceResponse
     {
-        private List<TargetGroupAttribute> _attributes = new List<TargetGroupAttribute>();
+        private List<TargetGroupAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<TargetGroupAttribute>() : null;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -50,7 +50,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

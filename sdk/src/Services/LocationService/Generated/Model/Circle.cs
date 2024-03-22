@@ -33,7 +33,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class Circle
     {
-        private List<double> _center = new List<double>();
+        private List<double> _center = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private double? _radius;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Center property is set
         internal bool IsSetCenter()
         {
-            return this._center != null && this._center.Count > 0; 
+            return this._center != null && (this._center.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

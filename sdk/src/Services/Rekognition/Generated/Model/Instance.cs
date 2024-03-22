@@ -36,7 +36,7 @@ namespace Amazon.Rekognition.Model
     {
         private BoundingBox _boundingBox;
         private float? _confidence;
-        private List<DominantColor> _dominantColors = new List<DominantColor>();
+        private List<DominantColor> _dominantColors = AWSConfigs.InitializeCollections ? new List<DominantColor>() : null;
 
         /// <summary>
         /// Gets and sets the property BoundingBox. 
@@ -90,7 +90,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if DominantColors property is set
         internal bool IsSetDominantColors()
         {
-            return this._dominantColors != null && this._dominantColors.Count > 0; 
+            return this._dominantColors != null && (this._dominantColors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

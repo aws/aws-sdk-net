@@ -34,7 +34,7 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class SystemStatus
     {
         private CPUUtilization _cpuUtilization;
-        private List<double> _loadAverage = new List<double>();
+        private List<double> _loadAverage = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property CPUUtilization. 
@@ -71,7 +71,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if LoadAverage property is set
         internal bool IsSetLoadAverage()
         {
-            return this._loadAverage != null && this._loadAverage.Count > 0; 
+            return this._loadAverage != null && (this._loadAverage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

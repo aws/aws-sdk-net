@@ -45,7 +45,7 @@ namespace Amazon.GroundStation.Model
         /// Enumerable containing all of the MissionProfileList
         /// </summary>
         public IPaginatedEnumerable<MissionProfileListItem> MissionProfileList => 
-            new PaginatedResultKeyResponse<ListMissionProfilesResponse, MissionProfileListItem>(this, (i) => i.MissionProfileList);
+            new PaginatedResultKeyResponse<ListMissionProfilesResponse, MissionProfileListItem>(this, (i) => i.MissionProfileList ?? new List<MissionProfileListItem>());
 
         internal ListMissionProfilesPaginator(IAmazonGroundStation client, ListMissionProfilesRequest request)
         {

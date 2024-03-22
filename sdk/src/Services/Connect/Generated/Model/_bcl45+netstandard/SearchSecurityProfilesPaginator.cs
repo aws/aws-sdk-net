@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the SecurityProfiles
         /// </summary>
         public IPaginatedEnumerable<SecurityProfileSearchSummary> SecurityProfiles => 
-            new PaginatedResultKeyResponse<SearchSecurityProfilesResponse, SecurityProfileSearchSummary>(this, (i) => i.SecurityProfiles);
+            new PaginatedResultKeyResponse<SearchSecurityProfilesResponse, SecurityProfileSearchSummary>(this, (i) => i.SecurityProfiles ?? new List<SecurityProfileSearchSummary>());
 
         internal SearchSecurityProfilesPaginator(IAmazonConnect client, SearchSecurityProfilesRequest request)
         {

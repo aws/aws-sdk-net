@@ -33,7 +33,7 @@ namespace Amazon.Private5G.Model
     /// </summary>
     public partial class ListNetworkSitesResponse : AmazonWebServiceResponse
     {
-        private List<NetworkSite> _networkSites = new List<NetworkSite>();
+        private List<NetworkSite> _networkSites = AWSConfigs.InitializeCollections ? new List<NetworkSite>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Private5G.Model
         // Check to see if NetworkSites property is set
         internal bool IsSetNetworkSites()
         {
-            return this._networkSites != null && this._networkSites.Count > 0; 
+            return this._networkSites != null && (this._networkSites.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

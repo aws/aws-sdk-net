@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails
     {
         private AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification _launchTemplateSpecification;
-        private List<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails> _overrides = new List<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>();
+        private List<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails> _overrides = AWSConfigs.InitializeCollections ? new List<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property LaunchTemplateSpecification. 
@@ -69,7 +69,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Overrides property is set
         internal bool IsSetOverrides()
         {
-            return this._overrides != null && this._overrides.Count > 0; 
+            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

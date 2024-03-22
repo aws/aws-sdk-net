@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the AttachedManagedPolicies
         /// </summary>
         public IPaginatedEnumerable<AttachedManagedPolicy> AttachedManagedPolicies => 
-            new PaginatedResultKeyResponse<ListManagedPoliciesInPermissionSetResponse, AttachedManagedPolicy>(this, (i) => i.AttachedManagedPolicies);
+            new PaginatedResultKeyResponse<ListManagedPoliciesInPermissionSetResponse, AttachedManagedPolicy>(this, (i) => i.AttachedManagedPolicies ?? new List<AttachedManagedPolicy>());
 
         internal ListManagedPoliciesInPermissionSetPaginator(IAmazonSSOAdmin client, ListManagedPoliciesInPermissionSetRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.Transfer.Model
         /// Enumerable containing all of the Certificates
         /// </summary>
         public IPaginatedEnumerable<ListedCertificate> Certificates => 
-            new PaginatedResultKeyResponse<ListCertificatesResponse, ListedCertificate>(this, (i) => i.Certificates);
+            new PaginatedResultKeyResponse<ListCertificatesResponse, ListedCertificate>(this, (i) => i.Certificates ?? new List<ListedCertificate>());
 
         internal ListCertificatesPaginator(IAmazonTransfer client, ListCertificatesRequest request)
         {

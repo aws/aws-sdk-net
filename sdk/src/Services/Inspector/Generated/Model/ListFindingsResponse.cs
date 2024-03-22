@@ -33,7 +33,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class ListFindingsResponse : AmazonWebServiceResponse
     {
-        private List<string> _findingArns = new List<string>();
+        private List<string> _findingArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Inspector.Model
         // Check to see if FindingArns property is set
         internal bool IsSetFindingArns()
         {
-            return this._findingArns != null && this._findingArns.Count > 0; 
+            return this._findingArns != null && (this._findingArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

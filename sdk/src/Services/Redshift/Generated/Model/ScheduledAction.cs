@@ -37,7 +37,7 @@ namespace Amazon.Redshift.Model
     {
         private DateTime? _endTime;
         private string _iamRole;
-        private List<DateTime> _nextInvocations = new List<DateTime>();
+        private List<DateTime> _nextInvocations = AWSConfigs.InitializeCollections ? new List<DateTime>() : null;
         private string _schedule;
         private string _scheduledActionDescription;
         private string _scheduledActionName;
@@ -104,7 +104,7 @@ namespace Amazon.Redshift.Model
         // Check to see if NextInvocations property is set
         internal bool IsSetNextInvocations()
         {
-            return this._nextInvocations != null && this._nextInvocations.Count > 0; 
+            return this._nextInvocations != null && (this._nextInvocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

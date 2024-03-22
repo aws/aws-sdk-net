@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class EventCategoriesMap
     {
-        private List<EventInfoMap> _events = new List<EventInfoMap>();
+        private List<EventInfoMap> _events = AWSConfigs.InitializeCollections ? new List<EventInfoMap>() : null;
         private string _sourceType;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

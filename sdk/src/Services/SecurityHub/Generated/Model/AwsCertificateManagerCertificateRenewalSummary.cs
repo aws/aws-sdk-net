@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsCertificateManagerCertificateRenewalSummary
     {
-        private List<AwsCertificateManagerCertificateDomainValidationOption> _domainValidationOptions = new List<AwsCertificateManagerCertificateDomainValidationOption>();
+        private List<AwsCertificateManagerCertificateDomainValidationOption> _domainValidationOptions = AWSConfigs.InitializeCollections ? new List<AwsCertificateManagerCertificateDomainValidationOption>() : null;
         private string _renewalStatus;
         private string _renewalStatusReason;
         private string _updatedAt;
@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DomainValidationOptions property is set
         internal bool IsSetDomainValidationOptions()
         {
-            return this._domainValidationOptions != null && this._domainValidationOptions.Count > 0; 
+            return this._domainValidationOptions != null && (this._domainValidationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

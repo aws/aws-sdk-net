@@ -35,7 +35,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class Citation
     {
         private GeneratedResponsePart _generatedResponsePart;
-        private List<RetrievedReference> _retrievedReferences = new List<RetrievedReference>();
+        private List<RetrievedReference> _retrievedReferences = AWSConfigs.InitializeCollections ? new List<RetrievedReference>() : null;
 
         /// <summary>
         /// Gets and sets the property GeneratedResponsePart. 
@@ -70,7 +70,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if RetrievedReferences property is set
         internal bool IsSetRetrievedReferences()
         {
-            return this._retrievedReferences != null && this._retrievedReferences.Count > 0; 
+            return this._retrievedReferences != null && (this._retrievedReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

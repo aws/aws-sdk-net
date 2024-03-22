@@ -43,7 +43,7 @@ namespace Amazon.ConfigService.Model
     public partial class StartRemediationExecutionRequest : AmazonConfigServiceRequest
     {
         private string _configRuleName;
-        private List<ResourceKey> _resourceKeys = new List<ResourceKey>();
+        private List<ResourceKey> _resourceKeys = AWSConfigs.InitializeCollections ? new List<ResourceKey>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
@@ -81,7 +81,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ResourceKeys property is set
         internal bool IsSetResourceKeys()
         {
-            return this._resourceKeys != null && this._resourceKeys.Count > 0; 
+            return this._resourceKeys != null && (this._resourceKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

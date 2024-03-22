@@ -45,7 +45,7 @@ namespace Amazon.WorkSpaces.Model
         /// Enumerable containing all of the Bundles
         /// </summary>
         public IPaginatedEnumerable<WorkspaceBundle> Bundles => 
-            new PaginatedResultKeyResponse<DescribeWorkspaceBundlesResponse, WorkspaceBundle>(this, (i) => i.Bundles);
+            new PaginatedResultKeyResponse<DescribeWorkspaceBundlesResponse, WorkspaceBundle>(this, (i) => i.Bundles ?? new List<WorkspaceBundle>());
 
         internal DescribeWorkspaceBundlesPaginator(IAmazonWorkSpaces client, DescribeWorkspaceBundlesRequest request)
         {

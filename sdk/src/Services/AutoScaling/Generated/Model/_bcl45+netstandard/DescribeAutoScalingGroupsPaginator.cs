@@ -45,7 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// Enumerable containing all of the AutoScalingGroups
         /// </summary>
         public IPaginatedEnumerable<AutoScalingGroup> AutoScalingGroups => 
-            new PaginatedResultKeyResponse<DescribeAutoScalingGroupsResponse, AutoScalingGroup>(this, (i) => i.AutoScalingGroups);
+            new PaginatedResultKeyResponse<DescribeAutoScalingGroupsResponse, AutoScalingGroup>(this, (i) => i.AutoScalingGroups ?? new List<AutoScalingGroup>());
 
         internal DescribeAutoScalingGroupsPaginator(IAmazonAutoScaling client, DescribeAutoScalingGroupsRequest request)
         {

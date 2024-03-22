@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
         private string _databaseName;
         private string _dlqEventQueueArn;
         private string _eventQueueArn;
-        private List<string> _tables = new List<string>();
+        private List<string> _tables = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectionName. 
@@ -130,7 +130,7 @@ namespace Amazon.Glue.Model
         // Check to see if Tables property is set
         internal bool IsSetTables()
         {
-            return this._tables != null && this._tables.Count > 0; 
+            return this._tables != null && (this._tables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

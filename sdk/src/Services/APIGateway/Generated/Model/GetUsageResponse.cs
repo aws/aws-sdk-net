@@ -34,7 +34,7 @@ namespace Amazon.APIGateway.Model
     public partial class GetUsageResponse : AmazonWebServiceResponse
     {
         private string _endDate;
-        private Dictionary<string, List<List<long>>> _items = new Dictionary<string, List<List<long>>>();
+        private Dictionary<string, List<List<long>>> _items = AWSConfigs.InitializeCollections ? new Dictionary<string, List<List<long>>>() : null;
         private string _position;
         private string _startDate;
         private string _usagePlanId;
@@ -76,7 +76,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

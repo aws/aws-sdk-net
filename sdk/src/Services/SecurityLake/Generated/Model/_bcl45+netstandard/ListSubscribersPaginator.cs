@@ -45,7 +45,7 @@ namespace Amazon.SecurityLake.Model
         /// Enumerable containing all of the Subscribers
         /// </summary>
         public IPaginatedEnumerable<SubscriberResource> Subscribers => 
-            new PaginatedResultKeyResponse<ListSubscribersResponse, SubscriberResource>(this, (i) => i.Subscribers);
+            new PaginatedResultKeyResponse<ListSubscribersResponse, SubscriberResource>(this, (i) => i.Subscribers ?? new List<SubscriberResource>());
 
         internal ListSubscribersPaginator(IAmazonSecurityLake client, ListSubscribersRequest request)
         {

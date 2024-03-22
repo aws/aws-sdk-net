@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("staleSecurityGroupSet/item", targetDepth))
                     {
                         var unmarshaller = StaleSecurityGroupUnmarshaller.Instance;
+                        if (response.StaleSecurityGroupSet == null)
+                        {
+                            response.StaleSecurityGroupSet = new List<StaleSecurityGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.StaleSecurityGroupSet.Add(item);
                         continue;

@@ -35,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class HyperParameterAlgorithmSpecification
     {
         private string _algorithmName;
-        private List<MetricDefinition> _metricDefinitions = new List<MetricDefinition>();
+        private List<MetricDefinition> _metricDefinitions = AWSConfigs.InitializeCollections ? new List<MetricDefinition>() : null;
         private string _trainingImage;
         private TrainingInputMode _trainingInputMode;
 
@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MetricDefinitions property is set
         internal bool IsSetMetricDefinitions()
         {
-            return this._metricDefinitions != null && this._metricDefinitions.Count > 0; 
+            return this._metricDefinitions != null && (this._metricDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

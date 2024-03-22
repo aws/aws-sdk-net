@@ -37,7 +37,7 @@ namespace Amazon.CloudFormation.Model
     public partial class DeleteStackRequest : AmazonCloudFormationRequest
     {
         private string _clientRequestToken;
-        private List<string> _retainResources = new List<string>();
+        private List<string> _retainResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleARN;
         private string _stackName;
 
@@ -100,7 +100,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if RetainResources property is set
         internal bool IsSetRetainResources()
         {
-            return this._retainResources != null && this._retainResources.Count > 0; 
+            return this._retainResources != null && (this._retainResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

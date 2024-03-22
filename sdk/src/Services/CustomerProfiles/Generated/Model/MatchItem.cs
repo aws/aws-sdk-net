@@ -35,7 +35,7 @@ namespace Amazon.CustomerProfiles.Model
     {
         private double? _confidenceScore;
         private string _matchId;
-        private List<string> _profileIds = new List<string>();
+        private List<string> _profileIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfidenceScore. 
@@ -95,7 +95,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if ProfileIds property is set
         internal bool IsSetProfileIds()
         {
-            return this._profileIds != null && this._profileIds.Count > 0; 
+            return this._profileIds != null && (this._profileIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

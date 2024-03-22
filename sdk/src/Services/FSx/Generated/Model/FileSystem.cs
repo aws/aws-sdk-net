@@ -33,7 +33,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class FileSystem
     {
-        private List<AdministrativeAction> _administrativeActions = new List<AdministrativeAction>();
+        private List<AdministrativeAction> _administrativeActions = AWSConfigs.InitializeCollections ? new List<AdministrativeAction>() : null;
         private DateTime? _creationTime;
         private string _dnsName;
         private FileSystemFailureDetails _failureDetails;
@@ -43,15 +43,15 @@ namespace Amazon.FSx.Model
         private string _kmsKeyId;
         private FileSystemLifecycle _lifecycle;
         private LustreFileSystemConfiguration _lustreConfiguration;
-        private List<string> _networkInterfaceIds = new List<string>();
+        private List<string> _networkInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OntapFileSystemConfiguration _ontapConfiguration;
         private OpenZFSFileSystemConfiguration _openZFSConfiguration;
         private string _ownerId;
         private string _resourceARN;
         private int? _storageCapacity;
         private StorageType _storageType;
-        private List<string> _subnetIds = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
         private WindowsFileSystemConfiguration _windowsConfiguration;
 
@@ -73,7 +73,7 @@ namespace Amazon.FSx.Model
         // Check to see if AdministrativeActions property is set
         internal bool IsSetAdministrativeActions()
         {
-            return this._administrativeActions != null && this._administrativeActions.Count > 0; 
+            return this._administrativeActions != null && (this._administrativeActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace Amazon.FSx.Model
         // Check to see if NetworkInterfaceIds property is set
         internal bool IsSetNetworkInterfaceIds()
         {
-            return this._networkInterfaceIds != null && this._networkInterfaceIds.Count > 0; 
+            return this._networkInterfaceIds != null && (this._networkInterfaceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -470,7 +470,7 @@ namespace Amazon.FSx.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -490,7 +490,7 @@ namespace Amazon.FSx.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

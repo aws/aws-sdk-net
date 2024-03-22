@@ -33,7 +33,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class DescribeFlowExecutionRecordsResponse : AmazonWebServiceResponse
     {
-        private List<ExecutionRecord> _flowExecutions = new List<ExecutionRecord>();
+        private List<ExecutionRecord> _flowExecutions = AWSConfigs.InitializeCollections ? new List<ExecutionRecord>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Appflow.Model
         // Check to see if FlowExecutions property is set
         internal bool IsSetFlowExecutions()
         {
-            return this._flowExecutions != null && this._flowExecutions.Count > 0; 
+            return this._flowExecutions != null && (this._flowExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

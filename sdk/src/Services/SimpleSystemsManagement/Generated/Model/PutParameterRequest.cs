@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _name;
         private bool? _overwrite;
         private string _policies;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private ParameterTier _tier;
         private ParameterType _type;
         private string _value;
@@ -364,7 +364,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ImprovementSummary
     {
-        private List<ChoiceImprovementPlan> _improvementPlans = new List<ChoiceImprovementPlan>();
+        private List<ChoiceImprovementPlan> _improvementPlans = AWSConfigs.InitializeCollections ? new List<ChoiceImprovementPlan>() : null;
         private string _improvementPlanUrl;
         private string _pillarId;
         private string _questionId;
@@ -55,7 +55,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ImprovementPlans property is set
         internal bool IsSetImprovementPlans()
         {
-            return this._improvementPlans != null && this._improvementPlans.Count > 0; 
+            return this._improvementPlans != null && (this._improvementPlans.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

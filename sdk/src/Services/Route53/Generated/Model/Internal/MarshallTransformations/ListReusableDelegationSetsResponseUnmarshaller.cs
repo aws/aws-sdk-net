@@ -63,6 +63,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("DelegationSets/DelegationSet", targetDepth))
                     {
+                        if (response.DelegationSets == null)
+                        {
+                            response.DelegationSets = new List<DelegationSet>();
+                        }
                         var unmarshaller = DelegationSetUnmarshaller.Instance;
                         response.DelegationSets.Add(unmarshaller.Unmarshall(context));
                         continue;

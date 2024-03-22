@@ -33,7 +33,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class ListLocationsResponse : AmazonWebServiceResponse
     {
-        private List<LocationModel> _locations = new List<LocationModel>();
+        private List<LocationModel> _locations = AWSConfigs.InitializeCollections ? new List<LocationModel>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Locations property is set
         internal bool IsSetLocations()
         {
-            return this._locations != null && this._locations.Count > 0; 
+            return this._locations != null && (this._locations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

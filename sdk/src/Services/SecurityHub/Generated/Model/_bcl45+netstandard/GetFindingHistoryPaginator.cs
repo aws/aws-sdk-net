@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all of the Records
         /// </summary>
         public IPaginatedEnumerable<FindingHistoryRecord> Records => 
-            new PaginatedResultKeyResponse<GetFindingHistoryResponse, FindingHistoryRecord>(this, (i) => i.Records);
+            new PaginatedResultKeyResponse<GetFindingHistoryResponse, FindingHistoryRecord>(this, (i) => i.Records ?? new List<FindingHistoryRecord>());
 
         internal GetFindingHistoryPaginator(IAmazonSecurityHub client, GetFindingHistoryRequest request)
         {

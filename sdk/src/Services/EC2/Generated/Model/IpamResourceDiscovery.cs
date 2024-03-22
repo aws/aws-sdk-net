@@ -39,10 +39,10 @@ namespace Amazon.EC2.Model
         private string _ipamResourceDiscoveryId;
         private string _ipamResourceDiscoveryRegion;
         private bool? _isDefault;
-        private List<IpamOperatingRegion> _operatingRegions = new List<IpamOperatingRegion>();
+        private List<IpamOperatingRegion> _operatingRegions = AWSConfigs.InitializeCollections ? new List<IpamOperatingRegion>() : null;
         private string _ownerId;
         private IpamResourceDiscoveryState _state;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -153,7 +153,7 @@ namespace Amazon.EC2.Model
         // Check to see if OperatingRegions property is set
         internal bool IsSetOperatingRegions()
         {
-            return this._operatingRegions != null && this._operatingRegions.Count > 0; 
+            return this._operatingRegions != null && (this._operatingRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     public partial class ListChannelBansResponse : AmazonWebServiceResponse
     {
         private string _channelArn;
-        private List<ChannelBanSummary> _channelBans = new List<ChannelBanSummary>();
+        private List<ChannelBanSummary> _channelBans = AWSConfigs.InitializeCollections ? new List<ChannelBanSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if ChannelBans property is set
         internal bool IsSetChannelBans()
         {
-            return this._channelBans != null && this._channelBans.Count > 0; 
+            return this._channelBans != null && (this._channelBans.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

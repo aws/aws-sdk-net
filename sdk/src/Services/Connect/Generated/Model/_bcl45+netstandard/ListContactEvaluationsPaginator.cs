@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the EvaluationSummaryList
         /// </summary>
         public IPaginatedEnumerable<EvaluationSummary> EvaluationSummaryList => 
-            new PaginatedResultKeyResponse<ListContactEvaluationsResponse, EvaluationSummary>(this, (i) => i.EvaluationSummaryList);
+            new PaginatedResultKeyResponse<ListContactEvaluationsResponse, EvaluationSummary>(this, (i) => i.EvaluationSummaryList ?? new List<EvaluationSummary>());
 
         internal ListContactEvaluationsPaginator(IAmazonConnect client, ListContactEvaluationsRequest request)
         {

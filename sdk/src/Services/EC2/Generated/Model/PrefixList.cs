@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class PrefixList
     {
-        private List<string> _cidrs = new List<string>();
+        private List<string> _cidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _prefixListId;
         private string _prefixListName;
 
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if Cidrs property is set
         internal bool IsSetCidrs()
         {
-            return this._cidrs != null && this._cidrs.Count > 0; 
+            return this._cidrs != null && (this._cidrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     public partial class DescribeProductsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Product> _products = new List<Product>();
+        private List<Product> _products = AWSConfigs.InitializeCollections ? new List<Product>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Products property is set
         internal bool IsSetProducts()
         {
-            return this._products != null && this._products.Count > 0; 
+            return this._products != null && (this._products.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

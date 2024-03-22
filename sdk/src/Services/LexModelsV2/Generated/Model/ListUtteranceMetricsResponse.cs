@@ -35,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _nextToken;
-        private List<AnalyticsUtteranceResult> _results = new List<AnalyticsUtteranceResult>();
+        private List<AnalyticsUtteranceResult> _results = AWSConfigs.InitializeCollections ? new List<AnalyticsUtteranceResult>() : null;
 
         /// <summary>
         /// Gets and sets the property BotId. 
@@ -96,7 +96,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

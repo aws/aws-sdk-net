@@ -46,7 +46,7 @@ namespace Amazon.DataPipeline.Model
     /// </summary>
     public partial class ActivatePipelineRequest : AmazonDataPipelineRequest
     {
-        private List<ParameterValue> _parameterValues = new List<ParameterValue>();
+        private List<ParameterValue> _parameterValues = AWSConfigs.InitializeCollections ? new List<ParameterValue>() : null;
         private string _pipelineId;
         private DateTime? _startTimestamp;
 
@@ -65,7 +65,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if ParameterValues property is set
         internal bool IsSetParameterValues()
         {
-            return this._parameterValues != null && this._parameterValues.Count > 0; 
+            return this._parameterValues != null && (this._parameterValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,8 +33,8 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class Answer
     {
-        private List<ChoiceAnswer> _choiceAnswers = new List<ChoiceAnswer>();
-        private List<Choice> _choices = new List<Choice>();
+        private List<ChoiceAnswer> _choiceAnswers = AWSConfigs.InitializeCollections ? new List<ChoiceAnswer>() : null;
+        private List<Choice> _choices = AWSConfigs.InitializeCollections ? new List<Choice>() : null;
         private string _helpfulResourceDisplayText;
         private string _helpfulResourceUrl;
         private string _improvementPlanUrl;
@@ -46,7 +46,7 @@ namespace Amazon.WellArchitected.Model
         private string _questionTitle;
         private AnswerReason _reason;
         private Risk _risk;
-        private List<string> _selectedChoices = new List<string>();
+        private List<string> _selectedChoices = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ChoiceAnswers. 
@@ -63,7 +63,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ChoiceAnswers property is set
         internal bool IsSetChoiceAnswers()
         {
-            return this._choiceAnswers != null && this._choiceAnswers.Count > 0; 
+            return this._choiceAnswers != null && (this._choiceAnswers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Choices property is set
         internal bool IsSetChoices()
         {
-            return this._choices != null && this._choices.Count > 0; 
+            return this._choices != null && (this._choices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -276,7 +276,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if SelectedChoices property is set
         internal bool IsSetSelectedChoices()
         {
-            return this._selectedChoices != null && this._selectedChoices.Count > 0; 
+            return this._selectedChoices != null && (this._selectedChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

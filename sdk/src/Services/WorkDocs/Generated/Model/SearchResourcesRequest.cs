@@ -34,14 +34,14 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class SearchResourcesRequest : AmazonWorkDocsRequest
     {
-        private List<string> _additionalResponseFields = new List<string>();
+        private List<string> _additionalResponseFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _authenticationToken;
         private Filters _filters;
         private int? _limit;
         private string _marker;
-        private List<SearchSortResult> _orderBy = new List<SearchSortResult>();
+        private List<SearchSortResult> _orderBy = AWSConfigs.InitializeCollections ? new List<SearchSortResult>() : null;
         private string _organizationId;
-        private List<string> _queryScopes = new List<string>();
+        private List<string> _queryScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _queryText;
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if AdditionalResponseFields property is set
         internal bool IsSetAdditionalResponseFields()
         {
-            return this._additionalResponseFields != null && this._additionalResponseFields.Count > 0; 
+            return this._additionalResponseFields != null && (this._additionalResponseFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if OrderBy property is set
         internal bool IsSetOrderBy()
         {
-            return this._orderBy != null && this._orderBy.Count > 0; 
+            return this._orderBy != null && (this._orderBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if QueryScopes property is set
         internal bool IsSetQueryScopes()
         {
-            return this._queryScopes != null && this._queryScopes.Count > 0; 
+            return this._queryScopes != null && (this._queryScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

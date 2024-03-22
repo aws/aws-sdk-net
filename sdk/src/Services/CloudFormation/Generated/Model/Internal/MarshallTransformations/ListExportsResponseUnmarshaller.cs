@@ -84,6 +84,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Exports/member", targetDepth))
                     {
                         var unmarshaller = ExportUnmarshaller.Instance;
+                        if (response.Exports == null)
+                        {
+                            response.Exports = new List<Export>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Exports.Add(item);
                         continue;

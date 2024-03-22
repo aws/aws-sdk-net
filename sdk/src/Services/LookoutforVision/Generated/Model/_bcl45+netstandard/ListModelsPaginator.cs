@@ -45,7 +45,7 @@ namespace Amazon.LookoutforVision.Model
         /// Enumerable containing all of the Models
         /// </summary>
         public IPaginatedEnumerable<ModelMetadata> Models => 
-            new PaginatedResultKeyResponse<ListModelsResponse, ModelMetadata>(this, (i) => i.Models);
+            new PaginatedResultKeyResponse<ListModelsResponse, ModelMetadata>(this, (i) => i.Models ?? new List<ModelMetadata>());
 
         internal ListModelsPaginator(IAmazonLookoutforVision client, ListModelsRequest request)
         {

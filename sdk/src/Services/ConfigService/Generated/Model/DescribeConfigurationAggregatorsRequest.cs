@@ -36,7 +36,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeConfigurationAggregatorsRequest : AmazonConfigServiceRequest
     {
-        private List<string> _configurationAggregatorNames = new List<string>();
+        private List<string> _configurationAggregatorNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _limit;
         private string _nextToken;
 
@@ -56,7 +56,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConfigurationAggregatorNames property is set
         internal bool IsSetConfigurationAggregatorNames()
         {
-            return this._configurationAggregatorNames != null && this._configurationAggregatorNames.Count > 0; 
+            return this._configurationAggregatorNames != null && (this._configurationAggregatorNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Enumerable containing all of the AccessPoints
         /// </summary>
         public IPaginatedEnumerable<AccessPointDescription> AccessPoints => 
-            new PaginatedResultKeyResponse<DescribeAccessPointsResponse, AccessPointDescription>(this, (i) => i.AccessPoints);
+            new PaginatedResultKeyResponse<DescribeAccessPointsResponse, AccessPointDescription>(this, (i) => i.AccessPoints ?? new List<AccessPointDescription>());
 
         internal DescribeAccessPointsPaginator(IAmazonElasticFileSystem client, DescribeAccessPointsRequest request)
         {

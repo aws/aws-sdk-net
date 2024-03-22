@@ -57,6 +57,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Auth/member", targetDepth))
                     {
                         var unmarshaller = UserAuthConfigInfoUnmarshaller.Instance;
+                        if (unmarshalledObject.Auth == null)
+                        {
+                            unmarshalledObject.Auth = new List<UserAuthConfigInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Auth.Add(item);
                         continue;
@@ -136,6 +140,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("VpcSecurityGroupIds/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.VpcSecurityGroupIds == null)
+                        {
+                            unmarshalledObject.VpcSecurityGroupIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.VpcSecurityGroupIds.Add(item);
                         continue;
@@ -143,6 +151,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("VpcSubnetIds/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.VpcSubnetIds == null)
+                        {
+                            unmarshalledObject.VpcSubnetIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.VpcSubnetIds.Add(item);
                         continue;

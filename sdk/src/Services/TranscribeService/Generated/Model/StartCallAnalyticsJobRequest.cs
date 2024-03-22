@@ -99,7 +99,7 @@ namespace Amazon.TranscribeService.Model
     public partial class StartCallAnalyticsJobRequest : AmazonTranscribeServiceRequest
     {
         private string _callAnalyticsJobName;
-        private List<ChannelDefinition> _channelDefinitions = new List<ChannelDefinition>();
+        private List<ChannelDefinition> _channelDefinitions = AWSConfigs.InitializeCollections ? new List<ChannelDefinition>() : null;
         private string _dataAccessRoleArn;
         private Media _media;
         private string _outputEncryptionKMSKeyId;
@@ -150,7 +150,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if ChannelDefinitions property is set
         internal bool IsSetChannelDefinitions()
         {
-            return this._channelDefinitions != null && this._channelDefinitions.Count > 0; 
+            return this._channelDefinitions != null && (this._channelDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

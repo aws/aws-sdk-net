@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the ImportSnapshotTasks
         /// </summary>
         public IPaginatedEnumerable<ImportSnapshotTask> ImportSnapshotTasks => 
-            new PaginatedResultKeyResponse<DescribeImportSnapshotTasksResponse, ImportSnapshotTask>(this, (i) => i.ImportSnapshotTasks);
+            new PaginatedResultKeyResponse<DescribeImportSnapshotTasksResponse, ImportSnapshotTask>(this, (i) => i.ImportSnapshotTasks ?? new List<ImportSnapshotTask>());
 
         internal DescribeImportSnapshotTasksPaginator(IAmazonEC2 client, DescribeImportSnapshotTasksRequest request)
         {

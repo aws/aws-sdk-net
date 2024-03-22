@@ -56,7 +56,7 @@ namespace Amazon.DocDB.Model
         private string _dbClusterParameterGroupName;
         private string _dbParameterGroupFamily;
         private string _description;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
@@ -143,7 +143,7 @@ namespace Amazon.DocDB.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

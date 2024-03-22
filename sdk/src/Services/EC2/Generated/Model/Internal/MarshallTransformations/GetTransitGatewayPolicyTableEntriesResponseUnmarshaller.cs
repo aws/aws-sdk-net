@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("transitGatewayPolicyTableEntries/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayPolicyTableEntryUnmarshaller.Instance;
+                        if (response.TransitGatewayPolicyTableEntries == null)
+                        {
+                            response.TransitGatewayPolicyTableEntries = new List<TransitGatewayPolicyTableEntry>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TransitGatewayPolicyTableEntries.Add(item);
                         continue;

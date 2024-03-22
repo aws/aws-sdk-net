@@ -75,6 +75,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RevisionTargets/RevisionTarget", targetDepth))
                     {
                         var unmarshaller = RevisionTargetUnmarshaller.Instance;
+                        if (unmarshalledObject.RevisionTargets == null)
+                        {
+                            unmarshalledObject.RevisionTargets = new List<RevisionTarget>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RevisionTargets.Add(item);
                         continue;

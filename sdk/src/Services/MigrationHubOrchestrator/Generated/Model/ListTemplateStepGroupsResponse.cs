@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     public partial class ListTemplateStepGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TemplateStepGroupSummary> _templateStepGroupSummary = new List<TemplateStepGroupSummary>();
+        private List<TemplateStepGroupSummary> _templateStepGroupSummary = AWSConfigs.InitializeCollections ? new List<TemplateStepGroupSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if TemplateStepGroupSummary property is set
         internal bool IsSetTemplateStepGroupSummary()
         {
-            return this._templateStepGroupSummary != null && this._templateStepGroupSummary.Count > 0; 
+            return this._templateStepGroupSummary != null && (this._templateStepGroupSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

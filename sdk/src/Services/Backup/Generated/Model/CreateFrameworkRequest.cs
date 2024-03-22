@@ -37,10 +37,10 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class CreateFrameworkRequest : AmazonBackupRequest
     {
-        private List<FrameworkControl> _frameworkControls = new List<FrameworkControl>();
+        private List<FrameworkControl> _frameworkControls = AWSConfigs.InitializeCollections ? new List<FrameworkControl>() : null;
         private string _frameworkDescription;
         private string _frameworkName;
-        private Dictionary<string, string> _frameworkTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _frameworkTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _idempotencyToken;
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Backup.Model
         // Check to see if FrameworkControls property is set
         internal bool IsSetFrameworkControls()
         {
-            return this._frameworkControls != null && this._frameworkControls.Count > 0; 
+            return this._frameworkControls != null && (this._frameworkControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.Backup.Model
         // Check to see if FrameworkTags property is set
         internal bool IsSetFrameworkTags()
         {
-            return this._frameworkTags != null && this._frameworkTags.Count > 0; 
+            return this._frameworkTags != null && (this._frameworkTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

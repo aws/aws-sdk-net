@@ -45,9 +45,9 @@ namespace Amazon.Outposts.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _operatingAddressCityFilter = new List<string>();
-        private List<string> _operatingAddressCountryCodeFilter = new List<string>();
-        private List<string> _operatingAddressStateOrRegionFilter = new List<string>();
+        private List<string> _operatingAddressCityFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _operatingAddressCountryCodeFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _operatingAddressStateOrRegionFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults.
@@ -96,7 +96,7 @@ namespace Amazon.Outposts.Model
         // Check to see if OperatingAddressCityFilter property is set
         internal bool IsSetOperatingAddressCityFilter()
         {
-            return this._operatingAddressCityFilter != null && this._operatingAddressCityFilter.Count > 0; 
+            return this._operatingAddressCityFilter != null && (this._operatingAddressCityFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.Outposts.Model
         // Check to see if OperatingAddressCountryCodeFilter property is set
         internal bool IsSetOperatingAddressCountryCodeFilter()
         {
-            return this._operatingAddressCountryCodeFilter != null && this._operatingAddressCountryCodeFilter.Count > 0; 
+            return this._operatingAddressCountryCodeFilter != null && (this._operatingAddressCountryCodeFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.Outposts.Model
         // Check to see if OperatingAddressStateOrRegionFilter property is set
         internal bool IsSetOperatingAddressStateOrRegionFilter()
         {
-            return this._operatingAddressStateOrRegionFilter != null && this._operatingAddressStateOrRegionFilter.Count > 0; 
+            return this._operatingAddressStateOrRegionFilter != null && (this._operatingAddressStateOrRegionFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.WorkSpacesWeb.Model
     {
         private string _clientToken;
         private string _identityProviderArn;
-        private Dictionary<string, string> _identityProviderDetails = new Dictionary<string, string>();
+        private Dictionary<string, string> _identityProviderDetails = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _identityProviderName;
         private IdentityProviderType _identityProviderType;
 
@@ -220,7 +220,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if IdentityProviderDetails property is set
         internal bool IsSetIdentityProviderDetails()
         {
-            return this._identityProviderDetails != null && this._identityProviderDetails.Count > 0; 
+            return this._identityProviderDetails != null && (this._identityProviderDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

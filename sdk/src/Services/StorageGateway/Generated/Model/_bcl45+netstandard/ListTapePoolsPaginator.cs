@@ -45,7 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// Enumerable containing all of the PoolInfos
         /// </summary>
         public IPaginatedEnumerable<PoolInfo> PoolInfos => 
-            new PaginatedResultKeyResponse<ListTapePoolsResponse, PoolInfo>(this, (i) => i.PoolInfos);
+            new PaginatedResultKeyResponse<ListTapePoolsResponse, PoolInfo>(this, (i) => i.PoolInfos ?? new List<PoolInfo>());
 
         internal ListTapePoolsPaginator(IAmazonStorageGateway client, ListTapePoolsRequest request)
         {

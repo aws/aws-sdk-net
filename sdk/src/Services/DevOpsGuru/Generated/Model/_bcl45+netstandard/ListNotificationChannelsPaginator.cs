@@ -45,7 +45,7 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the Channels
         /// </summary>
         public IPaginatedEnumerable<NotificationChannel> Channels => 
-            new PaginatedResultKeyResponse<ListNotificationChannelsResponse, NotificationChannel>(this, (i) => i.Channels);
+            new PaginatedResultKeyResponse<ListNotificationChannelsResponse, NotificationChannel>(this, (i) => i.Channels ?? new List<NotificationChannel>());
 
         internal ListNotificationChannelsPaginator(IAmazonDevOpsGuru client, ListNotificationChannelsRequest request)
         {

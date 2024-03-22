@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the ConnectPeerAssociations
         /// </summary>
         public IPaginatedEnumerable<ConnectPeerAssociation> ConnectPeerAssociations => 
-            new PaginatedResultKeyResponse<GetConnectPeerAssociationsResponse, ConnectPeerAssociation>(this, (i) => i.ConnectPeerAssociations);
+            new PaginatedResultKeyResponse<GetConnectPeerAssociationsResponse, ConnectPeerAssociation>(this, (i) => i.ConnectPeerAssociations ?? new List<ConnectPeerAssociation>());
 
         internal GetConnectPeerAssociationsPaginator(IAmazonNetworkManager client, GetConnectPeerAssociationsRequest request)
         {

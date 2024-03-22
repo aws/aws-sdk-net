@@ -33,7 +33,7 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class ListGraphsResponse : AmazonWebServiceResponse
     {
-        private List<Graph> _graphList = new List<Graph>();
+        private List<Graph> _graphList = AWSConfigs.InitializeCollections ? new List<Graph>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Detective.Model
         // Check to see if GraphList property is set
         internal bool IsSetGraphList()
         {
-            return this._graphList != null && this._graphList.Count > 0; 
+            return this._graphList != null && (this._graphList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

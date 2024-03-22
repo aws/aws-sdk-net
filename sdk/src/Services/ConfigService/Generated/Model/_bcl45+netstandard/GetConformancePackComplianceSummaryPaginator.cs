@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the ConformancePackComplianceSummaryList
         /// </summary>
         public IPaginatedEnumerable<ConformancePackComplianceSummary> ConformancePackComplianceSummaryList => 
-            new PaginatedResultKeyResponse<GetConformancePackComplianceSummaryResponse, ConformancePackComplianceSummary>(this, (i) => i.ConformancePackComplianceSummaryList);
+            new PaginatedResultKeyResponse<GetConformancePackComplianceSummaryResponse, ConformancePackComplianceSummary>(this, (i) => i.ConformancePackComplianceSummaryList ?? new List<ConformancePackComplianceSummary>());
 
         internal GetConformancePackComplianceSummaryPaginator(IAmazonConfigService client, GetConformancePackComplianceSummaryRequest request)
         {

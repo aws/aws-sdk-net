@@ -45,7 +45,7 @@ namespace Amazon.SecurityLake.Model
         /// Enumerable containing all of the DataLakeSources
         /// </summary>
         public IPaginatedEnumerable<DataLakeSource> DataLakeSources => 
-            new PaginatedResultKeyResponse<GetDataLakeSourcesResponse, DataLakeSource>(this, (i) => i.DataLakeSources);
+            new PaginatedResultKeyResponse<GetDataLakeSourcesResponse, DataLakeSource>(this, (i) => i.DataLakeSources ?? new List<DataLakeSource>());
 
         internal GetDataLakeSourcesPaginator(IAmazonSecurityLake client, GetDataLakeSourcesRequest request)
         {

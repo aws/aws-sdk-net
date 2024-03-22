@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeVpcPeeringConnectionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VpcPeeringConnection> _vpcPeeringConnections = new List<VpcPeeringConnection>();
+        private List<VpcPeeringConnection> _vpcPeeringConnections = AWSConfigs.InitializeCollections ? new List<VpcPeeringConnection>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if VpcPeeringConnections property is set
         internal bool IsSetVpcPeeringConnections()
         {
-            return this._vpcPeeringConnections != null && this._vpcPeeringConnections.Count > 0; 
+            return this._vpcPeeringConnections != null && (this._vpcPeeringConnections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

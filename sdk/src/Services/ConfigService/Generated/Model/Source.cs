@@ -38,7 +38,7 @@ namespace Amazon.ConfigService.Model
     {
         private CustomPolicyDetails _customPolicyDetails;
         private Owner _owner;
-        private List<SourceDetail> _sourceDetails = new List<SourceDetail>();
+        private List<SourceDetail> _sourceDetails = AWSConfigs.InitializeCollections ? new List<SourceDetail>() : null;
         private string _sourceIdentifier;
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if SourceDetails property is set
         internal bool IsSetSourceDetails()
         {
-            return this._sourceDetails != null && this._sourceDetails.Count > 0; 
+            return this._sourceDetails != null && (this._sourceDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

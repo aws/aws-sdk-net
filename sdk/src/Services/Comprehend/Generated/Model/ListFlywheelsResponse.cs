@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ListFlywheelsResponse : AmazonWebServiceResponse
     {
-        private List<FlywheelSummary> _flywheelSummaryList = new List<FlywheelSummary>();
+        private List<FlywheelSummary> _flywheelSummaryList = AWSConfigs.InitializeCollections ? new List<FlywheelSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if FlywheelSummaryList property is set
         internal bool IsSetFlywheelSummaryList()
         {
-            return this._flywheelSummaryList != null && this._flywheelSummaryList.Count > 0; 
+            return this._flywheelSummaryList != null && (this._flywheelSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

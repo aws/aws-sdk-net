@@ -35,7 +35,7 @@ namespace Amazon.MTurk.Model
     {
         private string _nextToken;
         private int? _numResults;
-        private List<QualificationRequest> _qualificationRequests = new List<QualificationRequest>();
+        private List<QualificationRequest> _qualificationRequests = AWSConfigs.InitializeCollections ? new List<QualificationRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -88,7 +88,7 @@ namespace Amazon.MTurk.Model
         // Check to see if QualificationRequests property is set
         internal bool IsSetQualificationRequests()
         {
-            return this._qualificationRequests != null && this._qualificationRequests.Count > 0; 
+            return this._qualificationRequests != null && (this._qualificationRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

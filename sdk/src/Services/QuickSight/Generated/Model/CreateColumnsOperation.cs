@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class CreateColumnsOperation
     {
-        private List<CalculatedColumn> _columns = new List<CalculatedColumn>();
+        private List<CalculatedColumn> _columns = AWSConfigs.InitializeCollections ? new List<CalculatedColumn>() : null;
 
         /// <summary>
         /// Gets and sets the property Columns. 
@@ -52,7 +52,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

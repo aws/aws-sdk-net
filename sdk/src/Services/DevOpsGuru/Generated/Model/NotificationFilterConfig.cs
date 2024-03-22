@@ -36,8 +36,8 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class NotificationFilterConfig
     {
-        private List<string> _messageTypes = new List<string>();
-        private List<string> _severities = new List<string>();
+        private List<string> _messageTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _severities = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MessageTypes. 
@@ -57,7 +57,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if MessageTypes property is set
         internal bool IsSetMessageTypes()
         {
-            return this._messageTypes != null && this._messageTypes.Count > 0; 
+            return this._messageTypes != null && (this._messageTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Severities property is set
         internal bool IsSetSeverities()
         {
-            return this._severities != null && this._severities.Count > 0; 
+            return this._severities != null && (this._severities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

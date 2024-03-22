@@ -37,10 +37,10 @@ namespace Amazon.Imagebuilder.Model
         private string _accountId;
         private LifecycleExecutionResourceAction _action;
         private DateTime? _endTime;
-        private List<string> _imageUris = new List<string>();
+        private List<string> _imageUris = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _region;
         private string _resourceId;
-        private List<LifecycleExecutionSnapshotResource> _snapshots = new List<LifecycleExecutionSnapshotResource>();
+        private List<LifecycleExecutionSnapshotResource> _snapshots = AWSConfigs.InitializeCollections ? new List<LifecycleExecutionSnapshotResource>() : null;
         private DateTime? _startTime;
         private LifecycleExecutionResourceState _state;
 
@@ -115,7 +115,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if ImageUris property is set
         internal bool IsSetImageUris()
         {
-            return this._imageUris != null && this._imageUris.Count > 0; 
+            return this._imageUris != null && (this._imageUris.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Snapshots property is set
         internal bool IsSetSnapshots()
         {
-            return this._snapshots != null && this._snapshots.Count > 0; 
+            return this._snapshots != null && (this._snapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

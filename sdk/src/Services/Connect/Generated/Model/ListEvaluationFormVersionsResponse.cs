@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListEvaluationFormVersionsResponse : AmazonWebServiceResponse
     {
-        private List<EvaluationFormVersionSummary> _evaluationFormVersionSummaryList = new List<EvaluationFormVersionSummary>();
+        private List<EvaluationFormVersionSummary> _evaluationFormVersionSummaryList = AWSConfigs.InitializeCollections ? new List<EvaluationFormVersionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if EvaluationFormVersionSummaryList property is set
         internal bool IsSetEvaluationFormVersionSummaryList()
         {
-            return this._evaluationFormVersionSummaryList != null && this._evaluationFormVersionSummaryList.Count > 0; 
+            return this._evaluationFormVersionSummaryList != null && (this._evaluationFormVersionSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

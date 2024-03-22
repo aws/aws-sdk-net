@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class MediaAcceleratorInfo
     {
-        private List<MediaDeviceInfo> _accelerators = new List<MediaDeviceInfo>();
+        private List<MediaDeviceInfo> _accelerators = AWSConfigs.InitializeCollections ? new List<MediaDeviceInfo>() : null;
         private int? _totalMediaMemoryInMiB;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Accelerators property is set
         internal bool IsSetAccelerators()
         {
-            return this._accelerators != null && this._accelerators.Count > 0; 
+            return this._accelerators != null && (this._accelerators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

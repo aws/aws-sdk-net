@@ -45,7 +45,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Enumerable containing all of the GraphSnapshots
         /// </summary>
         public IPaginatedEnumerable<GraphSnapshotSummary> GraphSnapshots => 
-            new PaginatedResultKeyResponse<ListGraphSnapshotsResponse, GraphSnapshotSummary>(this, (i) => i.GraphSnapshots);
+            new PaginatedResultKeyResponse<ListGraphSnapshotsResponse, GraphSnapshotSummary>(this, (i) => i.GraphSnapshots ?? new List<GraphSnapshotSummary>());
 
         internal ListGraphSnapshotsPaginator(IAmazonNeptuneGraph client, ListGraphSnapshotsRequest request)
         {

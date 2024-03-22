@@ -33,7 +33,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class ListAssessmentFrameworksResponse : AmazonWebServiceResponse
     {
-        private List<AssessmentFrameworkMetadata> _frameworkMetadataList = new List<AssessmentFrameworkMetadata>();
+        private List<AssessmentFrameworkMetadata> _frameworkMetadataList = AWSConfigs.InitializeCollections ? new List<AssessmentFrameworkMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if FrameworkMetadataList property is set
         internal bool IsSetFrameworkMetadataList()
         {
-            return this._frameworkMetadataList != null && this._frameworkMetadataList.Count > 0; 
+            return this._frameworkMetadataList != null && (this._frameworkMetadataList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

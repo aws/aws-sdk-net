@@ -38,7 +38,7 @@ namespace Amazon.SSOOIDC.Model
         private string _idToken;
         private string _issuedTokenType;
         private string _refreshToken;
-        private List<string> _scope = new List<string>();
+        private List<string> _scope = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tokenType;
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Amazon.SSOOIDC.Model
         // Check to see if Scope property is set
         internal bool IsSetScope()
         {
-            return this._scope != null && this._scope.Count > 0; 
+            return this._scope != null && (this._scope.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.MQ.Model
         /// Enumerable containing all of the BrokerSummaries
         /// </summary>
         public IPaginatedEnumerable<BrokerSummary> BrokerSummaries => 
-            new PaginatedResultKeyResponse<ListBrokersResponse, BrokerSummary>(this, (i) => i.BrokerSummaries);
+            new PaginatedResultKeyResponse<ListBrokersResponse, BrokerSummary>(this, (i) => i.BrokerSummaries ?? new List<BrokerSummary>());
 
         internal ListBrokersPaginator(IAmazonMQ client, ListBrokersRequest request)
         {

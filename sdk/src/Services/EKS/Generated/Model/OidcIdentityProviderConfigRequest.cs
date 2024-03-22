@@ -41,7 +41,7 @@ namespace Amazon.EKS.Model
         private string _groupsPrefix;
         private string _identityProviderConfigName;
         private string _issuerUrl;
-        private Dictionary<string, string> _requiredClaims = new Dictionary<string, string>();
+        private Dictionary<string, string> _requiredClaims = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _usernameClaim;
         private string _usernamePrefix;
 
@@ -165,7 +165,7 @@ namespace Amazon.EKS.Model
         // Check to see if RequiredClaims property is set
         internal bool IsSetRequiredClaims()
         {
-            return this._requiredClaims != null && this._requiredClaims.Count > 0; 
+            return this._requiredClaims != null && (this._requiredClaims.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

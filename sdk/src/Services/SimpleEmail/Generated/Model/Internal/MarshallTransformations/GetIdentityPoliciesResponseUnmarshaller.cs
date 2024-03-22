@@ -84,6 +84,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Policies/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        if (response.Policies == null)
+                        {
+                            response.Policies = new Dictionary<string, string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Policies.Add(item);
                         continue;

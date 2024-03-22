@@ -45,7 +45,7 @@ namespace Amazon.LocationService.Model
         /// Enumerable containing all of the Entries
         /// </summary>
         public IPaginatedEnumerable<ListKeysResponseEntry> Entries => 
-            new PaginatedResultKeyResponse<ListKeysResponse, ListKeysResponseEntry>(this, (i) => i.Entries);
+            new PaginatedResultKeyResponse<ListKeysResponse, ListKeysResponseEntry>(this, (i) => i.Entries ?? new List<ListKeysResponseEntry>());
 
         internal ListKeysPaginator(IAmazonLocationService client, ListKeysRequest request)
         {

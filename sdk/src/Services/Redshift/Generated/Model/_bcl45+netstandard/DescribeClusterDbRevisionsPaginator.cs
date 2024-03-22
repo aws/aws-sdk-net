@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the ClusterDbRevisions
         /// </summary>
         public IPaginatedEnumerable<ClusterDbRevision> ClusterDbRevisions => 
-            new PaginatedResultKeyResponse<DescribeClusterDbRevisionsResponse, ClusterDbRevision>(this, (i) => i.ClusterDbRevisions);
+            new PaginatedResultKeyResponse<DescribeClusterDbRevisionsResponse, ClusterDbRevision>(this, (i) => i.ClusterDbRevisions ?? new List<ClusterDbRevision>());
 
         internal DescribeClusterDbRevisionsPaginator(IAmazonRedshift client, DescribeClusterDbRevisionsRequest request)
         {

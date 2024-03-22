@@ -45,7 +45,7 @@ namespace Amazon.KinesisVideo.Model
         /// Enumerable containing all of the ChannelInfoList
         /// </summary>
         public IPaginatedEnumerable<ChannelInfo> ChannelInfoList => 
-            new PaginatedResultKeyResponse<ListSignalingChannelsResponse, ChannelInfo>(this, (i) => i.ChannelInfoList);
+            new PaginatedResultKeyResponse<ListSignalingChannelsResponse, ChannelInfo>(this, (i) => i.ChannelInfoList ?? new List<ChannelInfo>());
 
         internal ListSignalingChannelsPaginator(IAmazonKinesisVideo client, ListSignalingChannelsRequest request)
         {

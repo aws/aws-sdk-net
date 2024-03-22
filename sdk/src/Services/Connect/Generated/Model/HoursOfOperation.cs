@@ -33,14 +33,14 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class HoursOfOperation
     {
-        private List<HoursOfOperationConfig> _config = new List<HoursOfOperationConfig>();
+        private List<HoursOfOperationConfig> _config = AWSConfigs.InitializeCollections ? new List<HoursOfOperationConfig>() : null;
         private string _description;
         private string _hoursOfOperationArn;
         private string _hoursOfOperationId;
         private string _lastModifiedRegion;
         private DateTime? _lastModifiedTime;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _timeZone;
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Amazon.Connect.Model
         // Check to see if Config property is set
         internal bool IsSetConfig()
         {
-            return this._config != null && this._config.Count > 0; 
+            return this._config != null && (this._config.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.Connect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

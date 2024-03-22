@@ -37,10 +37,10 @@ namespace Amazon.DirectConnect.Model
         private AssociatedGateway _associatedGateway;
         private string _directConnectGatewayId;
         private string _directConnectGatewayOwnerAccount;
-        private List<RouteFilterPrefix> _existingAllowedPrefixesToDirectConnectGateway = new List<RouteFilterPrefix>();
+        private List<RouteFilterPrefix> _existingAllowedPrefixesToDirectConnectGateway = AWSConfigs.InitializeCollections ? new List<RouteFilterPrefix>() : null;
         private string _proposalId;
         private DirectConnectGatewayAssociationProposalState _proposalState;
-        private List<RouteFilterPrefix> _requestedAllowedPrefixesToDirectConnectGateway = new List<RouteFilterPrefix>();
+        private List<RouteFilterPrefix> _requestedAllowedPrefixesToDirectConnectGateway = AWSConfigs.InitializeCollections ? new List<RouteFilterPrefix>() : null;
 
         /// <summary>
         /// Gets and sets the property AssociatedGateway. 
@@ -111,7 +111,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if ExistingAllowedPrefixesToDirectConnectGateway property is set
         internal bool IsSetExistingAllowedPrefixesToDirectConnectGateway()
         {
-            return this._existingAllowedPrefixesToDirectConnectGateway != null && this._existingAllowedPrefixesToDirectConnectGateway.Count > 0; 
+            return this._existingAllowedPrefixesToDirectConnectGateway != null && (this._existingAllowedPrefixesToDirectConnectGateway.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if RequestedAllowedPrefixesToDirectConnectGateway property is set
         internal bool IsSetRequestedAllowedPrefixesToDirectConnectGateway()
         {
-            return this._requestedAllowedPrefixesToDirectConnectGateway != null && this._requestedAllowedPrefixesToDirectConnectGateway.Count > 0; 
+            return this._requestedAllowedPrefixesToDirectConnectGateway != null && (this._requestedAllowedPrefixesToDirectConnectGateway.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

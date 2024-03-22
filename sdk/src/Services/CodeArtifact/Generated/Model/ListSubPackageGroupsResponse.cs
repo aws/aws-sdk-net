@@ -34,7 +34,7 @@ namespace Amazon.CodeArtifact.Model
     public partial class ListSubPackageGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PackageGroupSummary> _packageGroups = new List<PackageGroupSummary>();
+        private List<PackageGroupSummary> _packageGroups = AWSConfigs.InitializeCollections ? new List<PackageGroupSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if PackageGroups property is set
         internal bool IsSetPackageGroups()
         {
-            return this._packageGroups != null && this._packageGroups.Count > 0; 
+            return this._packageGroups != null && (this._packageGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

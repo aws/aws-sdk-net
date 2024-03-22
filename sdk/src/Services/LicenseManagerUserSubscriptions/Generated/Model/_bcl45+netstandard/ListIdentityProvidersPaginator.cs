@@ -45,7 +45,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// Enumerable containing all of the IdentityProviderSummaries
         /// </summary>
         public IPaginatedEnumerable<IdentityProviderSummary> IdentityProviderSummaries => 
-            new PaginatedResultKeyResponse<ListIdentityProvidersResponse, IdentityProviderSummary>(this, (i) => i.IdentityProviderSummaries);
+            new PaginatedResultKeyResponse<ListIdentityProvidersResponse, IdentityProviderSummary>(this, (i) => i.IdentityProviderSummaries ?? new List<IdentityProviderSummary>());
 
         internal ListIdentityProvidersPaginator(IAmazonLicenseManagerUserSubscriptions client, ListIdentityProvidersRequest request)
         {

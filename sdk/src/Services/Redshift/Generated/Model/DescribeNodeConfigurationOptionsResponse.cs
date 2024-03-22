@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeNodeConfigurationOptionsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<NodeConfigurationOption> _nodeConfigurationOptionList = new List<NodeConfigurationOption>();
+        private List<NodeConfigurationOption> _nodeConfigurationOptionList = AWSConfigs.InitializeCollections ? new List<NodeConfigurationOption>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -74,7 +74,7 @@ namespace Amazon.Redshift.Model
         // Check to see if NodeConfigurationOptionList property is set
         internal bool IsSetNodeConfigurationOptionList()
         {
-            return this._nodeConfigurationOptionList != null && this._nodeConfigurationOptionList.Count > 0; 
+            return this._nodeConfigurationOptionList != null && (this._nodeConfigurationOptionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

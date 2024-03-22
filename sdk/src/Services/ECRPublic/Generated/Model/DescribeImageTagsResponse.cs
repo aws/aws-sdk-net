@@ -33,7 +33,7 @@ namespace Amazon.ECRPublic.Model
     /// </summary>
     public partial class DescribeImageTagsResponse : AmazonWebServiceResponse
     {
-        private List<ImageTagDetail> _imageTagDetails = new List<ImageTagDetail>();
+        private List<ImageTagDetail> _imageTagDetails = AWSConfigs.InitializeCollections ? new List<ImageTagDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if ImageTagDetails property is set
         internal bool IsSetImageTagDetails()
         {
-            return this._imageTagDetails != null && this._imageTagDetails.Count > 0; 
+            return this._imageTagDetails != null && (this._imageTagDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

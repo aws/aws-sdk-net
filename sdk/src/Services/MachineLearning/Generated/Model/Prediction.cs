@@ -54,9 +54,9 @@ namespace Amazon.MachineLearning.Model
     /// </summary>
     public partial class Prediction
     {
-        private Dictionary<string, string> _details = new Dictionary<string, string>();
+        private Dictionary<string, string> _details = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _predictedLabel;
-        private Dictionary<string, float> _predictedScores = new Dictionary<string, float>();
+        private Dictionary<string, float> _predictedScores = AWSConfigs.InitializeCollections ? new Dictionary<string, float>() : null;
         private float? _predictedValue;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.MachineLearning.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this._details != null && this._details.Count > 0; 
+            return this._details != null && (this._details.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.MachineLearning.Model
         // Check to see if PredictedScores property is set
         internal bool IsSetPredictedScores()
         {
-            return this._predictedScores != null && this._predictedScores.Count > 0; 
+            return this._predictedScores != null && (this._predictedScores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

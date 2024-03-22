@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// Enumerable containing all of the Plugins
         /// </summary>
         public IPaginatedEnumerable<PluginSummary> Plugins => 
-            new PaginatedResultKeyResponse<ListPluginsResponse, PluginSummary>(this, (i) => i.Plugins);
+            new PaginatedResultKeyResponse<ListPluginsResponse, PluginSummary>(this, (i) => i.Plugins ?? new List<PluginSummary>());
 
         internal ListPluginsPaginator(IAmazonMigrationHubOrchestrator client, ListPluginsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.ServiceQuotas.Model
         /// Enumerable containing all of the ServiceQuotaIncreaseRequestInTemplateList
         /// </summary>
         public IPaginatedEnumerable<ServiceQuotaIncreaseRequestInTemplate> ServiceQuotaIncreaseRequestInTemplateList => 
-            new PaginatedResultKeyResponse<ListServiceQuotaIncreaseRequestsInTemplateResponse, ServiceQuotaIncreaseRequestInTemplate>(this, (i) => i.ServiceQuotaIncreaseRequestInTemplateList);
+            new PaginatedResultKeyResponse<ListServiceQuotaIncreaseRequestsInTemplateResponse, ServiceQuotaIncreaseRequestInTemplate>(this, (i) => i.ServiceQuotaIncreaseRequestInTemplateList ?? new List<ServiceQuotaIncreaseRequestInTemplate>());
 
         internal ListServiceQuotaIncreaseRequestsInTemplatePaginator(IAmazonServiceQuotas client, ListServiceQuotaIncreaseRequestsInTemplateRequest request)
         {

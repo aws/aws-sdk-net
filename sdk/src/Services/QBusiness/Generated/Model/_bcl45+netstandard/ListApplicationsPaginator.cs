@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the Applications
         /// </summary>
         public IPaginatedEnumerable<Application> Applications => 
-            new PaginatedResultKeyResponse<ListApplicationsResponse, Application>(this, (i) => i.Applications);
+            new PaginatedResultKeyResponse<ListApplicationsResponse, Application>(this, (i) => i.Applications ?? new List<Application>());
 
         internal ListApplicationsPaginator(IAmazonQBusiness client, ListApplicationsRequest request)
         {

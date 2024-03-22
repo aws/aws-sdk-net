@@ -45,7 +45,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// Enumerable containing all of the Transactions
         /// </summary>
         public IPaginatedEnumerable<TransactionOutputItem> Transactions => 
-            new PaginatedResultKeyResponse<ListTransactionsResponse, TransactionOutputItem>(this, (i) => i.Transactions);
+            new PaginatedResultKeyResponse<ListTransactionsResponse, TransactionOutputItem>(this, (i) => i.Transactions ?? new List<TransactionOutputItem>());
 
         internal ListTransactionsPaginator(IAmazonManagedBlockchainQuery client, ListTransactionsRequest request)
         {

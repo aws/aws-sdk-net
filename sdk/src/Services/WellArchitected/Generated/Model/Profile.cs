@@ -38,10 +38,10 @@ namespace Amazon.WellArchitected.Model
         private string _profileArn;
         private string _profileDescription;
         private string _profileName;
-        private List<ProfileQuestion> _profileQuestions = new List<ProfileQuestion>();
+        private List<ProfileQuestion> _profileQuestions = AWSConfigs.InitializeCollections ? new List<ProfileQuestion>() : null;
         private string _profileVersion;
         private string _shareInvitationId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ProfileQuestions property is set
         internal bool IsSetProfileQuestions()
         {
-            return this._profileQuestions != null && this._profileQuestions.Count > 0; 
+            return this._profileQuestions != null && (this._profileQuestions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("snapshotTierStatusSet/item", targetDepth))
                     {
                         var unmarshaller = SnapshotTierStatusUnmarshaller.Instance;
+                        if (response.SnapshotTierStatuses == null)
+                        {
+                            response.SnapshotTierStatuses = new List<SnapshotTierStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SnapshotTierStatuses.Add(item);
                         continue;

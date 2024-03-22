@@ -33,7 +33,7 @@ namespace Amazon.Pricing.Model
     /// </summary>
     public partial class GetAttributeValuesResponse : AmazonWebServiceResponse
     {
-        private List<AttributeValue> _attributeValues = new List<AttributeValue>();
+        private List<AttributeValue> _attributeValues = AWSConfigs.InitializeCollections ? new List<AttributeValue>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Pricing.Model
         // Check to see if AttributeValues property is set
         internal bool IsSetAttributeValues()
         {
-            return this._attributeValues != null && this._attributeValues.Count > 0; 
+            return this._attributeValues != null && (this._attributeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

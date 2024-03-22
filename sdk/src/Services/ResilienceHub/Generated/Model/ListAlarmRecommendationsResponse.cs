@@ -33,7 +33,7 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class ListAlarmRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<AlarmRecommendation> _alarmRecommendations = new List<AlarmRecommendation>();
+        private List<AlarmRecommendation> _alarmRecommendations = AWSConfigs.InitializeCollections ? new List<AlarmRecommendation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if AlarmRecommendations property is set
         internal bool IsSetAlarmRecommendations()
         {
-            return this._alarmRecommendations != null && this._alarmRecommendations.Count > 0; 
+            return this._alarmRecommendations != null && (this._alarmRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

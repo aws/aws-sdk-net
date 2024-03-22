@@ -84,6 +84,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("NotificationAttributes/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, IdentityNotificationAttributes, StringUnmarshaller, IdentityNotificationAttributesUnmarshaller>(StringUnmarshaller.Instance, IdentityNotificationAttributesUnmarshaller.Instance);
+                        if (response.NotificationAttributes == null)
+                        {
+                            response.NotificationAttributes = new Dictionary<string, IdentityNotificationAttributes>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.NotificationAttributes.Add(item);
                         continue;

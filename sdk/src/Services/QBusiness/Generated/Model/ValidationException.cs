@@ -37,7 +37,7 @@ namespace Amazon.QBusiness.Model
     #endif
     public partial class ValidationException : AmazonQBusinessException
     {
-        private List<ValidationExceptionField> _fields = new List<ValidationExceptionField>();
+        private List<ValidationExceptionField> _fields = AWSConfigs.InitializeCollections ? new List<ValidationExceptionField>() : null;
         private ValidationExceptionReason _reason;
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

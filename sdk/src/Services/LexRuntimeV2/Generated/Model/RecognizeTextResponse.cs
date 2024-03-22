@@ -33,10 +33,10 @@ namespace Amazon.LexRuntimeV2.Model
     /// </summary>
     public partial class RecognizeTextResponse : AmazonWebServiceResponse
     {
-        private List<Interpretation> _interpretations = new List<Interpretation>();
-        private List<Message> _messages = new List<Message>();
+        private List<Interpretation> _interpretations = AWSConfigs.InitializeCollections ? new List<Interpretation>() : null;
+        private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
         private RecognizedBotMember _recognizedBotMember;
-        private Dictionary<string, string> _requestAttributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _requestAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _sessionId;
         private SessionState _sessionStateValue;
 
@@ -63,7 +63,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if Interpretations property is set
         internal bool IsSetInterpretations()
         {
-            return this._interpretations != null && this._interpretations.Count > 0; 
+            return this._interpretations != null && (this._interpretations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if RequestAttributes property is set
         internal bool IsSetRequestAttributes()
         {
-            return this._requestAttributes != null && this._requestAttributes.Count > 0; 
+            return this._requestAttributes != null && (this._requestAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

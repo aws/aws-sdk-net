@@ -33,7 +33,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetAnomaliesResponse : AmazonWebServiceResponse
     {
-        private List<Anomaly> _anomalies = new List<Anomaly>();
+        private List<Anomaly> _anomalies = AWSConfigs.InitializeCollections ? new List<Anomaly>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Anomalies property is set
         internal bool IsSetAnomalies()
         {
-            return this._anomalies != null && this._anomalies.Count > 0; 
+            return this._anomalies != null && (this._anomalies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

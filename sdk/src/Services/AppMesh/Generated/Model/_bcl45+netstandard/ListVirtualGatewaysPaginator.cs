@@ -45,7 +45,7 @@ namespace Amazon.AppMesh.Model
         /// Enumerable containing all of the VirtualGateways
         /// </summary>
         public IPaginatedEnumerable<VirtualGatewayRef> VirtualGateways => 
-            new PaginatedResultKeyResponse<ListVirtualGatewaysResponse, VirtualGatewayRef>(this, (i) => i.VirtualGateways);
+            new PaginatedResultKeyResponse<ListVirtualGatewaysResponse, VirtualGatewayRef>(this, (i) => i.VirtualGateways ?? new List<VirtualGatewayRef>());
 
         internal ListVirtualGatewaysPaginator(IAmazonAppMesh client, ListVirtualGatewaysRequest request)
         {

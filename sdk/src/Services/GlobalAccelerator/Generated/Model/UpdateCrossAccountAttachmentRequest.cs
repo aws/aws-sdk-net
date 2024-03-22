@@ -56,12 +56,12 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class UpdateCrossAccountAttachmentRequest : AmazonGlobalAcceleratorRequest
     {
-        private List<string> _addPrincipals = new List<string>();
-        private List<Resource> _addResources = new List<Resource>();
+        private List<string> _addPrincipals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Resource> _addResources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
         private string _attachmentArn;
         private string _name;
-        private List<string> _removePrincipals = new List<string>();
-        private List<Resource> _removeResources = new List<Resource>();
+        private List<string> _removePrincipals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Resource> _removeResources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
 
         /// <summary>
         /// Gets and sets the property AddPrincipals. 
@@ -85,7 +85,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if AddPrincipals property is set
         internal bool IsSetAddPrincipals()
         {
-            return this._addPrincipals != null && this._addPrincipals.Count > 0; 
+            return this._addPrincipals != null && (this._addPrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if AddResources property is set
         internal bool IsSetAddResources()
         {
-            return this._addResources != null && this._addResources.Count > 0; 
+            return this._addResources != null && (this._addResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if RemovePrincipals property is set
         internal bool IsSetRemovePrincipals()
         {
-            return this._removePrincipals != null && this._removePrincipals.Count > 0; 
+            return this._removePrincipals != null && (this._removePrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if RemoveResources property is set
         internal bool IsSetRemoveResources()
         {
-            return this._removeResources != null && this._removeResources.Count > 0; 
+            return this._removeResources != null && (this._removeResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

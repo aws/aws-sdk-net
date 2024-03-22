@@ -33,7 +33,7 @@ namespace Amazon.MedicalImaging.Model
     /// </summary>
     public partial class SearchImageSetsResponse : AmazonWebServiceResponse
     {
-        private List<ImageSetsMetadataSummary> _imageSetsMetadataSummaries = new List<ImageSetsMetadataSummary>();
+        private List<ImageSetsMetadataSummary> _imageSetsMetadataSummaries = AWSConfigs.InitializeCollections ? new List<ImageSetsMetadataSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.MedicalImaging.Model
         // Check to see if ImageSetsMetadataSummaries property is set
         internal bool IsSetImageSetsMetadataSummaries()
         {
-            return this._imageSetsMetadataSummaries != null && this._imageSetsMetadataSummaries.Count > 0; 
+            return this._imageSetsMetadataSummaries != null && (this._imageSetsMetadataSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.EntityResolution.Model
     public partial class ListProviderServicesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProviderServiceSummary> _providerServiceSummaries = new List<ProviderServiceSummary>();
+        private List<ProviderServiceSummary> _providerServiceSummaries = AWSConfigs.InitializeCollections ? new List<ProviderServiceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if ProviderServiceSummaries property is set
         internal bool IsSetProviderServiceSummaries()
         {
-            return this._providerServiceSummaries != null && this._providerServiceSummaries.Count > 0; 
+            return this._providerServiceSummaries != null && (this._providerServiceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

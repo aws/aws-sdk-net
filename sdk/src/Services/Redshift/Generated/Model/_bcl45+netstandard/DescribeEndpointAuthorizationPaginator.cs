@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the EndpointAuthorizationList
         /// </summary>
         public IPaginatedEnumerable<EndpointAuthorization> EndpointAuthorizationList => 
-            new PaginatedResultKeyResponse<DescribeEndpointAuthorizationResponse, EndpointAuthorization>(this, (i) => i.EndpointAuthorizationList);
+            new PaginatedResultKeyResponse<DescribeEndpointAuthorizationResponse, EndpointAuthorization>(this, (i) => i.EndpointAuthorizationList ?? new List<EndpointAuthorization>());
 
         internal DescribeEndpointAuthorizationPaginator(IAmazonRedshift client, DescribeEndpointAuthorizationRequest request)
         {

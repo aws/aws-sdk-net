@@ -35,7 +35,7 @@ namespace Amazon.RoboMaker.Model
     {
         private FailureSummary _failureSummary;
         private int? _finishedCount;
-        private List<string> _succeededWorlds = new List<string>();
+        private List<string> _succeededWorlds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FailureSummary. 
@@ -89,7 +89,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if SucceededWorlds property is set
         internal bool IsSetSucceededWorlds()
         {
-            return this._succeededWorlds != null && this._succeededWorlds.Count > 0; 
+            return this._succeededWorlds != null && (this._succeededWorlds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         /// Enumerable containing all of the ReadinessChecks
         /// </summary>
         public IPaginatedEnumerable<ReadinessCheckSummary> ReadinessChecks => 
-            new PaginatedResultKeyResponse<GetCellReadinessSummaryResponse, ReadinessCheckSummary>(this, (i) => i.ReadinessChecks);
+            new PaginatedResultKeyResponse<GetCellReadinessSummaryResponse, ReadinessCheckSummary>(this, (i) => i.ReadinessChecks ?? new List<ReadinessCheckSummary>());
 
         internal GetCellReadinessSummaryPaginator(IAmazonRoute53RecoveryReadiness client, GetCellReadinessSummaryRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class AudienceMedia
     {
-        private List<AlternateMedia> _alternateMedia = new List<AlternateMedia>();
+        private List<AlternateMedia> _alternateMedia = AWSConfigs.InitializeCollections ? new List<AlternateMedia>() : null;
         private string _audience;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if AlternateMedia property is set
         internal bool IsSetAlternateMedia()
         {
-            return this._alternateMedia != null && this._alternateMedia.Count > 0; 
+            return this._alternateMedia != null && (this._alternateMedia.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

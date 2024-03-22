@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the DashboardSummaries
         /// </summary>
         public IPaginatedEnumerable<DashboardSummary> DashboardSummaries => 
-            new PaginatedResultKeyResponse<ListDashboardsResponse, DashboardSummary>(this, (i) => i.DashboardSummaries);
+            new PaginatedResultKeyResponse<ListDashboardsResponse, DashboardSummary>(this, (i) => i.DashboardSummaries ?? new List<DashboardSummary>());
 
         internal ListDashboardsPaginator(IAmazonIoTSiteWise client, ListDashboardsRequest request)
         {

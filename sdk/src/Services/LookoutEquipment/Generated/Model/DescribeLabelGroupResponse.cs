@@ -34,7 +34,7 @@ namespace Amazon.LookoutEquipment.Model
     public partial class DescribeLabelGroupResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdAt;
-        private List<string> _faultCodes = new List<string>();
+        private List<string> _faultCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _labelGroupArn;
         private string _labelGroupName;
         private DateTime? _updatedAt;
@@ -74,7 +74,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if FaultCodes property is set
         internal bool IsSetFaultCodes()
         {
-            return this._faultCodes != null && this._faultCodes.Count > 0; 
+            return this._faultCodes != null && (this._faultCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

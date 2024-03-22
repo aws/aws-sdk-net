@@ -34,7 +34,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     public partial class GetComplianceSummaryResponse : AmazonWebServiceResponse
     {
         private string _paginationToken;
-        private List<Summary> _summaryList = new List<Summary>();
+        private List<Summary> _summaryList = AWSConfigs.InitializeCollections ? new List<Summary>() : null;
 
         /// <summary>
         /// Gets and sets the property PaginationToken. 
@@ -72,7 +72,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if SummaryList property is set
         internal bool IsSetSummaryList()
         {
-            return this._summaryList != null && this._summaryList.Count > 0; 
+            return this._summaryList != null && (this._summaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

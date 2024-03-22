@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model
     public partial class ListSecurityPoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _securityPolicyNames = new List<string>();
+        private List<string> _securityPolicyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.Transfer.Model
         // Check to see if SecurityPolicyNames property is set
         internal bool IsSetSecurityPolicyNames()
         {
-            return this._securityPolicyNames != null && this._securityPolicyNames.Count > 0; 
+            return this._securityPolicyNames != null && (this._securityPolicyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

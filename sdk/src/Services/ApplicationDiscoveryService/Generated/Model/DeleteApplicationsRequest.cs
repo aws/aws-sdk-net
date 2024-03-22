@@ -34,7 +34,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class DeleteApplicationsRequest : AmazonApplicationDiscoveryServiceRequest
     {
-        private List<string> _configurationIds = new List<string>();
+        private List<string> _configurationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationIds. 
@@ -52,7 +52,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if ConfigurationIds property is set
         internal bool IsSetConfigurationIds()
         {
-            return this._configurationIds != null && this._configurationIds.Count > 0; 
+            return this._configurationIds != null && (this._configurationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

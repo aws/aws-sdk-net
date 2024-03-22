@@ -33,9 +33,9 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class UserTurnSlotOutput
     {
-        private Dictionary<string, UserTurnSlotOutput> _subSlots = new Dictionary<string, UserTurnSlotOutput>();
+        private Dictionary<string, UserTurnSlotOutput> _subSlots = AWSConfigs.InitializeCollections ? new Dictionary<string, UserTurnSlotOutput>() : null;
         private string _value;
-        private List<UserTurnSlotOutput> _values = new List<UserTurnSlotOutput>();
+        private List<UserTurnSlotOutput> _values = AWSConfigs.InitializeCollections ? new List<UserTurnSlotOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property SubSlots. 
@@ -52,7 +52,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SubSlots property is set
         internal bool IsSetSubSlots()
         {
-            return this._subSlots != null && this._subSlots.Count > 0; 
+            return this._subSlots != null && (this._subSlots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

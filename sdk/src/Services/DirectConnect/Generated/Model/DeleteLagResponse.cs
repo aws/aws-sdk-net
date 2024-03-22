@@ -37,7 +37,7 @@ namespace Amazon.DirectConnect.Model
         private string _awsDevice;
         private string _awsDeviceV2;
         private string _awsLogicalDeviceId;
-        private List<Connection> _connections = new List<Connection>();
+        private List<Connection> _connections = AWSConfigs.InitializeCollections ? new List<Connection>() : null;
         private string _connectionsBandwidth;
         private string _encryptionMode;
         private HasLogicalRedundancy _hasLogicalRedundancy;
@@ -47,13 +47,13 @@ namespace Amazon.DirectConnect.Model
         private LagState _lagState;
         private string _location;
         private bool? _macSecCapable;
-        private List<MacSecKey> _macSecKeys = new List<MacSecKey>();
+        private List<MacSecKey> _macSecKeys = AWSConfigs.InitializeCollections ? new List<MacSecKey>() : null;
         private int? _minimumLinks;
         private int? _numberOfConnections;
         private string _ownerAccount;
         private string _providerName;
         private string _region;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowsHostedConnections. 
@@ -143,7 +143,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Connections property is set
         internal bool IsSetConnections()
         {
-            return this._connections != null && this._connections.Count > 0; 
+            return this._connections != null && (this._connections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -359,7 +359,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if MacSecKeys property is set
         internal bool IsSetMacSecKeys()
         {
-            return this._macSecKeys != null && this._macSecKeys.Count > 0; 
+            return this._macSecKeys != null && (this._macSecKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -470,7 +470,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

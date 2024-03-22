@@ -33,8 +33,8 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class BatchDisassociateResourcesFromCustomLineItemResponse : AmazonWebServiceResponse
     {
-        private List<DisassociateResourceResponseElement> _failedDisassociatedResources = new List<DisassociateResourceResponseElement>();
-        private List<DisassociateResourceResponseElement> _successfullyDisassociatedResources = new List<DisassociateResourceResponseElement>();
+        private List<DisassociateResourceResponseElement> _failedDisassociatedResources = AWSConfigs.InitializeCollections ? new List<DisassociateResourceResponseElement>() : null;
+        private List<DisassociateResourceResponseElement> _successfullyDisassociatedResources = AWSConfigs.InitializeCollections ? new List<DisassociateResourceResponseElement>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedDisassociatedResources. 
@@ -52,7 +52,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if FailedDisassociatedResources property is set
         internal bool IsSetFailedDisassociatedResources()
         {
-            return this._failedDisassociatedResources != null && this._failedDisassociatedResources.Count > 0; 
+            return this._failedDisassociatedResources != null && (this._failedDisassociatedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if SuccessfullyDisassociatedResources property is set
         internal bool IsSetSuccessfullyDisassociatedResources()
         {
-            return this._successfullyDisassociatedResources != null && this._successfullyDisassociatedResources.Count > 0; 
+            return this._successfullyDisassociatedResources != null && (this._successfullyDisassociatedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

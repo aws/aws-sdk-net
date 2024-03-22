@@ -33,7 +33,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class ListFindingsV2Response : AmazonWebServiceResponse
     {
-        private List<FindingSummaryV2> _findings = new List<FindingSummaryV2>();
+        private List<FindingSummaryV2> _findings = AWSConfigs.InitializeCollections ? new List<FindingSummaryV2>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

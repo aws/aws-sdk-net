@@ -45,7 +45,7 @@ namespace Amazon.ECR.Model
         /// Enumerable containing all of the ImageIds
         /// </summary>
         public IPaginatedEnumerable<ImageIdentifier> ImageIds => 
-            new PaginatedResultKeyResponse<ListImagesResponse, ImageIdentifier>(this, (i) => i.ImageIds);
+            new PaginatedResultKeyResponse<ListImagesResponse, ImageIdentifier>(this, (i) => i.ImageIds ?? new List<ImageIdentifier>());
 
         internal ListImagesPaginator(IAmazonECR client, ListImagesRequest request)
         {

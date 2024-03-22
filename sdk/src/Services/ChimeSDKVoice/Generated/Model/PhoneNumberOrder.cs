@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKVoice.Model
     public partial class PhoneNumberOrder
     {
         private DateTime? _createdTimestamp;
-        private List<OrderedPhoneNumber> _orderedPhoneNumbers = new List<OrderedPhoneNumber>();
+        private List<OrderedPhoneNumber> _orderedPhoneNumbers = AWSConfigs.InitializeCollections ? new List<OrderedPhoneNumber>() : null;
         private PhoneNumberOrderType _orderType;
         private string _phoneNumberOrderId;
         private PhoneNumberProductType _productType;
@@ -75,7 +75,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if OrderedPhoneNumbers property is set
         internal bool IsSetOrderedPhoneNumbers()
         {
-            return this._orderedPhoneNumbers != null && this._orderedPhoneNumbers.Count > 0; 
+            return this._orderedPhoneNumbers != null && (this._orderedPhoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

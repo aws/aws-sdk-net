@@ -33,7 +33,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class ListOnPremisesInstancesResponse : AmazonWebServiceResponse
     {
-        private List<string> _instanceNames = new List<string>();
+        private List<string> _instanceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if InstanceNames property is set
         internal bool IsSetInstanceNames()
         {
-            return this._instanceNames != null && this._instanceNames.Count > 0; 
+            return this._instanceNames != null && (this._instanceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

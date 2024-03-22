@@ -45,7 +45,7 @@ namespace Amazon.LookoutforVision.Model
         /// Enumerable containing all of the ModelPackagingJobs
         /// </summary>
         public IPaginatedEnumerable<ModelPackagingJobMetadata> ModelPackagingJobs => 
-            new PaginatedResultKeyResponse<ListModelPackagingJobsResponse, ModelPackagingJobMetadata>(this, (i) => i.ModelPackagingJobs);
+            new PaginatedResultKeyResponse<ListModelPackagingJobsResponse, ModelPackagingJobMetadata>(this, (i) => i.ModelPackagingJobs ?? new List<ModelPackagingJobMetadata>());
 
         internal ListModelPackagingJobsPaginator(IAmazonLookoutforVision client, ListModelPackagingJobsRequest request)
         {

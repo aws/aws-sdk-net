@@ -55,7 +55,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _entryId;
         private string _propertyAlias;
         private string _propertyId;
-        private List<string> _qualities = new List<string>();
+        private List<string> _qualities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _startDate;
         private TimeOrdering _timeOrdering;
 
@@ -173,7 +173,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Qualities property is set
         internal bool IsSetQualities()
         {
-            return this._qualities != null && this._qualities.Count > 0; 
+            return this._qualities != null && (this._qualities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

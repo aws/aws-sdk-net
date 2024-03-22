@@ -35,7 +35,7 @@ namespace Amazon.MainframeModernization.Model
     {
         private string _encoding;
         private string _format;
-        private List<string> _memberFileExtensions = new List<string>();
+        private List<string> _memberFileExtensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Encoding. 
@@ -91,7 +91,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if MemberFileExtensions property is set
         internal bool IsSetMemberFileExtensions()
         {
-            return this._memberFileExtensions != null && this._memberFileExtensions.Count > 0; 
+            return this._memberFileExtensions != null && (this._memberFileExtensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

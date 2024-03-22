@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the ScheduledWindowExecutions
         /// </summary>
         public IPaginatedEnumerable<ScheduledWindowExecution> ScheduledWindowExecutions => 
-            new PaginatedResultKeyResponse<DescribeMaintenanceWindowScheduleResponse, ScheduledWindowExecution>(this, (i) => i.ScheduledWindowExecutions);
+            new PaginatedResultKeyResponse<DescribeMaintenanceWindowScheduleResponse, ScheduledWindowExecution>(this, (i) => i.ScheduledWindowExecutions ?? new List<ScheduledWindowExecution>());
 
         internal DescribeMaintenanceWindowSchedulePaginator(IAmazonSimpleSystemsManagement client, DescribeMaintenanceWindowScheduleRequest request)
         {

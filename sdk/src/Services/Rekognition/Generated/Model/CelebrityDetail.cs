@@ -39,7 +39,7 @@ namespace Amazon.Rekognition.Model
         private string _id;
         private KnownGender _knownGender;
         private string _name;
-        private List<string> _urls = new List<string>();
+        private List<string> _urls = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BoundingBox. 
@@ -167,7 +167,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Urls property is set
         internal bool IsSetUrls()
         {
-            return this._urls != null && this._urls.Count > 0; 
+            return this._urls != null && (this._urls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

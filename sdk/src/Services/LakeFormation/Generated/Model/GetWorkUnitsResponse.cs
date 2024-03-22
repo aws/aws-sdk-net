@@ -35,7 +35,7 @@ namespace Amazon.LakeFormation.Model
     {
         private string _nextToken;
         private string _queryId;
-        private List<WorkUnitRange> _workUnitRanges = new List<WorkUnitRange>();
+        private List<WorkUnitRange> _workUnitRanges = AWSConfigs.InitializeCollections ? new List<WorkUnitRange>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -92,7 +92,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if WorkUnitRanges property is set
         internal bool IsSetWorkUnitRanges()
         {
-            return this._workUnitRanges != null && this._workUnitRanges.Count > 0; 
+            return this._workUnitRanges != null && (this._workUnitRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all of the RelatedResources
         /// </summary>
         public IPaginatedEnumerable<ScannedResource> RelatedResources => 
-            new PaginatedResultKeyResponse<ListResourceScanRelatedResourcesResponse, ScannedResource>(this, (i) => i.RelatedResources);
+            new PaginatedResultKeyResponse<ListResourceScanRelatedResourcesResponse, ScannedResource>(this, (i) => i.RelatedResources ?? new List<ScannedResource>());
 
         internal ListResourceScanRelatedResourcesPaginator(IAmazonCloudFormation client, ListResourceScanRelatedResourcesRequest request)
         {

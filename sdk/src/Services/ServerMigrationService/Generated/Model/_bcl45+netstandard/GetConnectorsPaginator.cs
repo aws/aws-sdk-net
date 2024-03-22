@@ -45,7 +45,7 @@ namespace Amazon.ServerMigrationService.Model
         /// Enumerable containing all of the ConnectorList
         /// </summary>
         public IPaginatedEnumerable<Connector> ConnectorList => 
-            new PaginatedResultKeyResponse<GetConnectorsResponse, Connector>(this, (i) => i.ConnectorList);
+            new PaginatedResultKeyResponse<GetConnectorsResponse, Connector>(this, (i) => i.ConnectorList ?? new List<Connector>());
 
         internal GetConnectorsPaginator(IAmazonServerMigrationService client, GetConnectorsRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model
     public partial class BatchListObjectParentsResponse
     {
         private string _nextToken;
-        private List<ObjectIdentifierAndLinkNameTuple> _parentLinks = new List<ObjectIdentifierAndLinkNameTuple>();
+        private List<ObjectIdentifierAndLinkNameTuple> _parentLinks = AWSConfigs.InitializeCollections ? new List<ObjectIdentifierAndLinkNameTuple>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if ParentLinks property is set
         internal bool IsSetParentLinks()
         {
-            return this._parentLinks != null && this._parentLinks.Count > 0; 
+            return this._parentLinks != null && (this._parentLinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

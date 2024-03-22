@@ -37,7 +37,7 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private string _clientToken;
-        private List<UserAlias> _userAliases = new List<UserAlias>();
+        private List<UserAlias> _userAliases = AWSConfigs.InitializeCollections ? new List<UserAlias>() : null;
         private string _userId;
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if UserAliases property is set
         internal bool IsSetUserAliases()
         {
-            return this._userAliases != null && this._userAliases.Count > 0; 
+            return this._userAliases != null && (this._userAliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

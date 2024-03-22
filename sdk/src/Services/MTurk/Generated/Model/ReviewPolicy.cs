@@ -34,7 +34,7 @@ namespace Amazon.MTurk.Model
     /// </summary>
     public partial class ReviewPolicy
     {
-        private List<PolicyParameter> _parameters = new List<PolicyParameter>();
+        private List<PolicyParameter> _parameters = AWSConfigs.InitializeCollections ? new List<PolicyParameter>() : null;
         private string _policyName;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.MTurk.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

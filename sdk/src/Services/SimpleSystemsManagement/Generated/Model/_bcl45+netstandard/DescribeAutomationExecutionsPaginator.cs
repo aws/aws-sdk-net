@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the AutomationExecutionMetadataList
         /// </summary>
         public IPaginatedEnumerable<AutomationExecutionMetadata> AutomationExecutionMetadataList => 
-            new PaginatedResultKeyResponse<DescribeAutomationExecutionsResponse, AutomationExecutionMetadata>(this, (i) => i.AutomationExecutionMetadataList);
+            new PaginatedResultKeyResponse<DescribeAutomationExecutionsResponse, AutomationExecutionMetadata>(this, (i) => i.AutomationExecutionMetadataList ?? new List<AutomationExecutionMetadata>());
 
         internal DescribeAutomationExecutionsPaginator(IAmazonSimpleSystemsManagement client, DescribeAutomationExecutionsRequest request)
         {

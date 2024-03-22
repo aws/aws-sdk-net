@@ -69,6 +69,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CidrLocations/member", targetDepth))
                     {
+                        if (response.CidrLocations == null)
+                        {
+                            response.CidrLocations = new List<LocationSummary>();
+                        }
                         var unmarshaller = LocationSummaryUnmarshaller.Instance;
                         response.CidrLocations.Add(unmarshaller.Unmarshall(context));
                         continue;

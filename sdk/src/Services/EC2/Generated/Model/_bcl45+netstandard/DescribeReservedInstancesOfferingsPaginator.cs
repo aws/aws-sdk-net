@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the ReservedInstancesOfferings
         /// </summary>
         public IPaginatedEnumerable<ReservedInstancesOffering> ReservedInstancesOfferings => 
-            new PaginatedResultKeyResponse<DescribeReservedInstancesOfferingsResponse, ReservedInstancesOffering>(this, (i) => i.ReservedInstancesOfferings);
+            new PaginatedResultKeyResponse<DescribeReservedInstancesOfferingsResponse, ReservedInstancesOffering>(this, (i) => i.ReservedInstancesOfferings ?? new List<ReservedInstancesOffering>());
 
         internal DescribeReservedInstancesOfferingsPaginator(IAmazonEC2 client, DescribeReservedInstancesOfferingsRequest request)
         {

@@ -40,7 +40,7 @@ namespace Amazon.CodePipeline.Model
         private ActionTypeArtifactDetails _inputArtifactDetails;
         private ActionTypeArtifactDetails _outputArtifactDetails;
         private ActionTypePermissions _permissions;
-        private List<ActionTypeProperty> _properties = new List<ActionTypeProperty>();
+        private List<ActionTypeProperty> _properties = AWSConfigs.InitializeCollections ? new List<ActionTypeProperty>() : null;
         private ActionTypeUrls _urls;
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

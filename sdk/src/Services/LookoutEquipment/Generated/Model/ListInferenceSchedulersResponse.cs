@@ -33,7 +33,7 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class ListInferenceSchedulersResponse : AmazonWebServiceResponse
     {
-        private List<InferenceSchedulerSummary> _inferenceSchedulerSummaries = new List<InferenceSchedulerSummary>();
+        private List<InferenceSchedulerSummary> _inferenceSchedulerSummaries = AWSConfigs.InitializeCollections ? new List<InferenceSchedulerSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if InferenceSchedulerSummaries property is set
         internal bool IsSetInferenceSchedulerSummaries()
         {
-            return this._inferenceSchedulerSummaries != null && this._inferenceSchedulerSummaries.Count > 0; 
+            return this._inferenceSchedulerSummaries != null && (this._inferenceSchedulerSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

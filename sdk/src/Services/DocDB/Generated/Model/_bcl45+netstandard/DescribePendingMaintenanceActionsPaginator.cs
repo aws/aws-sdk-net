@@ -45,7 +45,7 @@ namespace Amazon.DocDB.Model
         /// Enumerable containing all of the PendingMaintenanceActions
         /// </summary>
         public IPaginatedEnumerable<ResourcePendingMaintenanceActions> PendingMaintenanceActions => 
-            new PaginatedResultKeyResponse<DescribePendingMaintenanceActionsResponse, ResourcePendingMaintenanceActions>(this, (i) => i.PendingMaintenanceActions);
+            new PaginatedResultKeyResponse<DescribePendingMaintenanceActionsResponse, ResourcePendingMaintenanceActions>(this, (i) => i.PendingMaintenanceActions ?? new List<ResourcePendingMaintenanceActions>());
 
         internal DescribePendingMaintenanceActionsPaginator(IAmazonDocDB client, DescribePendingMaintenanceActionsRequest request)
         {

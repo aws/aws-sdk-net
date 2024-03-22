@@ -67,7 +67,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class CancelFlowExecutionsRequest : AmazonAppflowRequest
     {
-        private List<string> _executionIds = new List<string>();
+        private List<string> _executionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _flowName;
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Appflow.Model
         // Check to see if ExecutionIds property is set
         internal bool IsSetExecutionIds()
         {
-            return this._executionIds != null && this._executionIds.Count > 0; 
+            return this._executionIds != null && (this._executionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

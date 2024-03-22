@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class AccountRecoverySettingType
     {
-        private List<RecoveryOptionType> _recoveryMechanisms = new List<RecoveryOptionType>();
+        private List<RecoveryOptionType> _recoveryMechanisms = AWSConfigs.InitializeCollections ? new List<RecoveryOptionType>() : null;
 
         /// <summary>
         /// Gets and sets the property RecoveryMechanisms. 
@@ -51,7 +51,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if RecoveryMechanisms property is set
         internal bool IsSetRecoveryMechanisms()
         {
-            return this._recoveryMechanisms != null && this._recoveryMechanisms.Count > 0; 
+            return this._recoveryMechanisms != null && (this._recoveryMechanisms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

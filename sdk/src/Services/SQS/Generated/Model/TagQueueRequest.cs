@@ -72,7 +72,7 @@ namespace Amazon.SQS.Model
     public partial class TagQueueRequest : AmazonSQSRequest
     {
         private string _queueUrl;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property QueueUrl. 
@@ -109,7 +109,7 @@ namespace Amazon.SQS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

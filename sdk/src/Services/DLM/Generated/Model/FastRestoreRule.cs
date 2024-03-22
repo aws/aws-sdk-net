@@ -35,7 +35,7 @@ namespace Amazon.DLM.Model
     /// </summary>
     public partial class FastRestoreRule
     {
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _count;
         private int? _interval;
         private RetentionIntervalUnitValues _intervalUnit;
@@ -56,7 +56,7 @@ namespace Amazon.DLM.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

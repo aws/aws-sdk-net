@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class RequestBody
     {
-        private Dictionary<string, List<Parameter>> _content = new Dictionary<string, List<Parameter>>();
+        private Dictionary<string, List<Parameter>> _content = AWSConfigs.InitializeCollections ? new Dictionary<string, List<Parameter>>() : null;
 
         /// <summary>
         /// Gets and sets the property Content. 
@@ -50,7 +50,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if Content property is set
         internal bool IsSetContent()
         {
-            return this._content != null && this._content.Count > 0; 
+            return this._content != null && (this._content.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

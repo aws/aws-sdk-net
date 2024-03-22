@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model
     public partial class DescribeStacksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Stack> _stacks = new List<Stack>();
+        private List<Stack> _stacks = AWSConfigs.InitializeCollections ? new List<Stack>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Stacks property is set
         internal bool IsSetStacks()
         {
-            return this._stacks != null && this._stacks.Count > 0; 
+            return this._stacks != null && (this._stacks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

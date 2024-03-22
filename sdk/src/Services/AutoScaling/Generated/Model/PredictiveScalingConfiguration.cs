@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model
     {
         private PredictiveScalingMaxCapacityBreachBehavior _maxCapacityBreachBehavior;
         private int? _maxCapacityBuffer;
-        private List<PredictiveScalingMetricSpecification> _metricSpecifications = new List<PredictiveScalingMetricSpecification>();
+        private List<PredictiveScalingMetricSpecification> _metricSpecifications = AWSConfigs.InitializeCollections ? new List<PredictiveScalingMetricSpecification>() : null;
         private PredictiveScalingMode _mode;
         private int? _schedulingBufferTime;
 
@@ -132,7 +132,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MetricSpecifications property is set
         internal bool IsSetMetricSpecifications()
         {
-            return this._metricSpecifications != null && this._metricSpecifications.Count > 0; 
+            return this._metricSpecifications != null && (this._metricSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

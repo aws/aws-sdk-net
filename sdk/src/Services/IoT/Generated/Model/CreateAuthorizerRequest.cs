@@ -45,9 +45,9 @@ namespace Amazon.IoT.Model
         private bool? _enableCachingForHttp;
         private bool? _signingDisabled;
         private AuthorizerStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tokenKeyName;
-        private Dictionary<string, string> _tokenSigningPublicKeys = new Dictionary<string, string>();
+        private Dictionary<string, string> _tokenSigningPublicKeys = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthorizerFunctionArn. 
@@ -176,7 +176,7 @@ namespace Amazon.IoT.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -214,7 +214,7 @@ namespace Amazon.IoT.Model
         // Check to see if TokenSigningPublicKeys property is set
         internal bool IsSetTokenSigningPublicKeys()
         {
-            return this._tokenSigningPublicKeys != null && this._tokenSigningPublicKeys.Count > 0; 
+            return this._tokenSigningPublicKeys != null && (this._tokenSigningPublicKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

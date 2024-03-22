@@ -33,7 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListImagePackagesResponse : AmazonWebServiceResponse
     {
-        private List<ImagePackage> _imagePackageList = new List<ImagePackage>();
+        private List<ImagePackage> _imagePackageList = AWSConfigs.InitializeCollections ? new List<ImagePackage>() : null;
         private string _nextToken;
         private string _requestId;
 
@@ -52,7 +52,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if ImagePackageList property is set
         internal bool IsSetImagePackageList()
         {
-            return this._imagePackageList != null && this._imagePackageList.Count > 0; 
+            return this._imagePackageList != null && (this._imagePackageList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

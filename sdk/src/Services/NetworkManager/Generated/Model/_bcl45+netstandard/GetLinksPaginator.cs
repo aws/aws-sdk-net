@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the Links
         /// </summary>
         public IPaginatedEnumerable<Link> Links => 
-            new PaginatedResultKeyResponse<GetLinksResponse, Link>(this, (i) => i.Links);
+            new PaginatedResultKeyResponse<GetLinksResponse, Link>(this, (i) => i.Links ?? new List<Link>());
 
         internal GetLinksPaginator(IAmazonNetworkManager client, GetLinksRequest request)
         {

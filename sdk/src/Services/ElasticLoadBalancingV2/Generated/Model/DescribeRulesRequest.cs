@@ -38,7 +38,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _listenerArn;
         private string _marker;
         private int? _pageSize;
-        private List<string> _ruleArns = new List<string>();
+        private List<string> _ruleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ListenerArn. 
@@ -111,7 +111,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if RuleArns property is set
         internal bool IsSetRuleArns()
         {
-            return this._ruleArns != null && this._ruleArns.Count > 0; 
+            return this._ruleArns != null && (this._ruleArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

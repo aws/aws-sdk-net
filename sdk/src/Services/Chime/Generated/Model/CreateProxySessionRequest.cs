@@ -49,13 +49,13 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class CreateProxySessionRequest : AmazonChimeRequest
     {
-        private List<string> _capabilities = new List<string>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _expiryMinutes;
         private GeoMatchLevel _geoMatchLevel;
         private GeoMatchParams _geoMatchParams;
         private string _name;
         private NumberSelectionBehavior _numberSelectionBehavior;
-        private List<string> _participantPhoneNumbers = new List<string>();
+        private List<string> _participantPhoneNumbers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _voiceConnectorId;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.Chime.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Amazon.Chime.Model
         // Check to see if ParticipantPhoneNumbers property is set
         internal bool IsSetParticipantPhoneNumbers()
         {
-            return this._participantPhoneNumbers != null && this._participantPhoneNumbers.Count > 0; 
+            return this._participantPhoneNumbers != null && (this._participantPhoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

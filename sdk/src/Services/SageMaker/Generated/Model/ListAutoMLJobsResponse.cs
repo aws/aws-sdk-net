@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListAutoMLJobsResponse : AmazonWebServiceResponse
     {
-        private List<AutoMLJobSummary> _autoMLJobSummaries = new List<AutoMLJobSummary>();
+        private List<AutoMLJobSummary> _autoMLJobSummaries = AWSConfigs.InitializeCollections ? new List<AutoMLJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AutoMLJobSummaries property is set
         internal bool IsSetAutoMLJobSummaries()
         {
-            return this._autoMLJobSummaries != null && this._autoMLJobSummaries.Count > 0; 
+            return this._autoMLJobSummaries != null && (this._autoMLJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the Filters
         /// </summary>
         public IPaginatedEnumerable<Filter> Filters => 
-            new PaginatedResultKeyResponse<ListFiltersResponse, Filter>(this, (i) => i.Filters);
+            new PaginatedResultKeyResponse<ListFiltersResponse, Filter>(this, (i) => i.Filters ?? new List<Filter>());
 
         internal ListFiltersPaginator(IAmazonInspector2 client, ListFiltersRequest request)
         {

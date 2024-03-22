@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ScanProvisionedProductsResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<ProvisionedProductDetail> _provisionedProducts = new List<ProvisionedProductDetail>();
+        private List<ProvisionedProductDetail> _provisionedProducts = AWSConfigs.InitializeCollections ? new List<ProvisionedProductDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisionedProducts property is set
         internal bool IsSetProvisionedProducts()
         {
-            return this._provisionedProducts != null && this._provisionedProducts.Count > 0; 
+            return this._provisionedProducts != null && (this._provisionedProducts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.MedicalImaging.Model
     /// </summary>
     public partial class ListDICOMImportJobsResponse : AmazonWebServiceResponse
     {
-        private List<DICOMImportJobSummary> _jobSummaries = new List<DICOMImportJobSummary>();
+        private List<DICOMImportJobSummary> _jobSummaries = AWSConfigs.InitializeCollections ? new List<DICOMImportJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.MedicalImaging.Model
         // Check to see if JobSummaries property is set
         internal bool IsSetJobSummaries()
         {
-            return this._jobSummaries != null && this._jobSummaries.Count > 0; 
+            return this._jobSummaries != null && (this._jobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

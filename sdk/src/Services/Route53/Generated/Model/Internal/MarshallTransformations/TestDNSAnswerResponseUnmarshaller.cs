@@ -81,6 +81,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("RecordData/RecordDataEntry", targetDepth))
                     {
+                        if (response.RecordData == null)
+                        {
+                            response.RecordData = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.RecordData.Add(unmarshaller.Unmarshall(context));
                         continue;

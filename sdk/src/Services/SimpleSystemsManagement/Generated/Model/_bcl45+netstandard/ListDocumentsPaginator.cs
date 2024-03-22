@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the DocumentIdentifiers
         /// </summary>
         public IPaginatedEnumerable<DocumentIdentifier> DocumentIdentifiers => 
-            new PaginatedResultKeyResponse<ListDocumentsResponse, DocumentIdentifier>(this, (i) => i.DocumentIdentifiers);
+            new PaginatedResultKeyResponse<ListDocumentsResponse, DocumentIdentifier>(this, (i) => i.DocumentIdentifiers ?? new List<DocumentIdentifier>());
 
         internal ListDocumentsPaginator(IAmazonSimpleSystemsManagement client, ListDocumentsRequest request)
         {

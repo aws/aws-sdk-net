@@ -36,10 +36,10 @@ namespace Amazon.EC2.Model
     {
         private string _additionalDetailType;
         private AnalysisComponent _component;
-        private List<AnalysisComponent> _loadBalancers = new List<AnalysisComponent>();
-        private List<RuleGroupRuleOptionsPair> _ruleGroupRuleOptionsPairs = new List<RuleGroupRuleOptionsPair>();
-        private List<RuleGroupTypePair> _ruleGroupTypePairs = new List<RuleGroupTypePair>();
-        private List<RuleOption> _ruleOptions = new List<RuleOption>();
+        private List<AnalysisComponent> _loadBalancers = AWSConfigs.InitializeCollections ? new List<AnalysisComponent>() : null;
+        private List<RuleGroupRuleOptionsPair> _ruleGroupRuleOptionsPairs = AWSConfigs.InitializeCollections ? new List<RuleGroupRuleOptionsPair>() : null;
+        private List<RuleGroupTypePair> _ruleGroupTypePairs = AWSConfigs.InitializeCollections ? new List<RuleGroupTypePair>() : null;
+        private List<RuleOption> _ruleOptions = AWSConfigs.InitializeCollections ? new List<RuleOption>() : null;
         private string _serviceName;
         private AnalysisComponent _vpcEndpointService;
 
@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         // Check to see if LoadBalancers property is set
         internal bool IsSetLoadBalancers()
         {
-            return this._loadBalancers != null && this._loadBalancers.Count > 0; 
+            return this._loadBalancers != null && (this._loadBalancers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.EC2.Model
         // Check to see if RuleGroupRuleOptionsPairs property is set
         internal bool IsSetRuleGroupRuleOptionsPairs()
         {
-            return this._ruleGroupRuleOptionsPairs != null && this._ruleGroupRuleOptionsPairs.Count > 0; 
+            return this._ruleGroupRuleOptionsPairs != null && (this._ruleGroupRuleOptionsPairs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         // Check to see if RuleGroupTypePairs property is set
         internal bool IsSetRuleGroupTypePairs()
         {
-            return this._ruleGroupTypePairs != null && this._ruleGroupTypePairs.Count > 0; 
+            return this._ruleGroupTypePairs != null && (this._ruleGroupTypePairs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.EC2.Model
         // Check to see if RuleOptions property is set
         internal bool IsSetRuleOptions()
         {
-            return this._ruleOptions != null && this._ruleOptions.Count > 0; 
+            return this._ruleOptions != null && (this._ruleOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

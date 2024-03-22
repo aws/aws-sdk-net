@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the NetworkInsightsPaths
         /// </summary>
         public IPaginatedEnumerable<NetworkInsightsPath> NetworkInsightsPaths => 
-            new PaginatedResultKeyResponse<DescribeNetworkInsightsPathsResponse, NetworkInsightsPath>(this, (i) => i.NetworkInsightsPaths);
+            new PaginatedResultKeyResponse<DescribeNetworkInsightsPathsResponse, NetworkInsightsPath>(this, (i) => i.NetworkInsightsPaths ?? new List<NetworkInsightsPath>());
 
         internal DescribeNetworkInsightsPathsPaginator(IAmazonEC2 client, DescribeNetworkInsightsPathsRequest request)
         {

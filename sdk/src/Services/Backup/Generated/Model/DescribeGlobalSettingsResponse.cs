@@ -33,7 +33,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class DescribeGlobalSettingsResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _globalSettings = new Dictionary<string, string>();
+        private Dictionary<string, string> _globalSettings = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _lastUpdateTime;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Backup.Model
         // Check to see if GlobalSettings property is set
         internal bool IsSetGlobalSettings()
         {
-            return this._globalSettings != null && this._globalSettings.Count > 0; 
+            return this._globalSettings != null && (this._globalSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

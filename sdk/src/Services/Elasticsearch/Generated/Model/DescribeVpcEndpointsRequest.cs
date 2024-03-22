@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class DescribeVpcEndpointsRequest : AmazonElasticsearchRequest
     {
-        private List<string> _vpcEndpointIds = new List<string>();
+        private List<string> _vpcEndpointIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property VpcEndpointIds. 
@@ -52,7 +52,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if VpcEndpointIds property is set
         internal bool IsSetVpcEndpointIds()
         {
-            return this._vpcEndpointIds != null && this._vpcEndpointIds.Count > 0; 
+            return this._vpcEndpointIds != null && (this._vpcEndpointIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

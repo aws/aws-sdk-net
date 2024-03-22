@@ -37,7 +37,7 @@ namespace Amazon.SimpleEmail.Model
     {
         private ConfigurationSet _configurationSet;
         private DeliveryOptions _deliveryOptions;
-        private List<EventDestination> _eventDestinations = new List<EventDestination>();
+        private List<EventDestination> _eventDestinations = AWSConfigs.InitializeCollections ? new List<EventDestination>() : null;
         private ReputationOptions _reputationOptions;
         private TrackingOptions _trackingOptions;
 
@@ -89,7 +89,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if EventDestinations property is set
         internal bool IsSetEventDestinations()
         {
-            return this._eventDestinations != null && this._eventDestinations.Count > 0; 
+            return this._eventDestinations != null && (this._eventDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

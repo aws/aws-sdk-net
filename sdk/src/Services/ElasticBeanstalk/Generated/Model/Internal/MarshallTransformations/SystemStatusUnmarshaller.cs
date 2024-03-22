@@ -63,6 +63,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LoadAverage/member", targetDepth))
                     {
                         var unmarshaller = DoubleUnmarshaller.Instance;
+                        if (unmarshalledObject.LoadAverage == null)
+                        {
+                            unmarshalledObject.LoadAverage = new List<double>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LoadAverage.Add(item);
                         continue;

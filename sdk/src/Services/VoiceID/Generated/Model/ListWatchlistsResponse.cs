@@ -34,7 +34,7 @@ namespace Amazon.VoiceID.Model
     public partial class ListWatchlistsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WatchlistSummary> _watchlistSummaries = new List<WatchlistSummary>();
+        private List<WatchlistSummary> _watchlistSummaries = AWSConfigs.InitializeCollections ? new List<WatchlistSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.VoiceID.Model
         // Check to see if WatchlistSummaries property is set
         internal bool IsSetWatchlistSummaries()
         {
-            return this._watchlistSummaries != null && this._watchlistSummaries.Count > 0; 
+            return this._watchlistSummaries != null && (this._watchlistSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

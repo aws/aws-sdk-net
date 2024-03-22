@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the MetricNames
         /// </summary>
         public IPaginatedEnumerable<string> MetricNames => 
-            new PaginatedResultKeyResponse<ListCustomMetricsResponse, string>(this, (i) => i.MetricNames);
+            new PaginatedResultKeyResponse<ListCustomMetricsResponse, string>(this, (i) => i.MetricNames ?? new List<string>());
 
         internal ListCustomMetricsPaginator(IAmazonIoT client, ListCustomMetricsRequest request)
         {

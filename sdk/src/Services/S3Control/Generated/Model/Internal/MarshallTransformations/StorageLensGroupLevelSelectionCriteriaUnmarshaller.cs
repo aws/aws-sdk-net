@@ -57,12 +57,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Exclude/Arn", targetDepth))
                     {
+                        if (unmarshalledObject.Exclude == null)
+                        {
+                            unmarshalledObject.Exclude = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Exclude.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("Include/Arn", targetDepth))
                     {
+                        if (unmarshalledObject.Include == null)
+                        {
+                            unmarshalledObject.Include = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Include.Add(unmarshaller.Unmarshall(context));
                         continue;

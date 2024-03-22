@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// Enumerable containing all of the DirectoryDescriptions
         /// </summary>
         public IPaginatedEnumerable<DirectoryDescription> DirectoryDescriptions => 
-            new PaginatedResultKeyResponse<DescribeDirectoriesResponse, DirectoryDescription>(this, (i) => i.DirectoryDescriptions);
+            new PaginatedResultKeyResponse<DescribeDirectoriesResponse, DirectoryDescription>(this, (i) => i.DirectoryDescriptions ?? new List<DirectoryDescription>());
 
         internal DescribeDirectoriesPaginator(IAmazonDirectoryService client, DescribeDirectoriesRequest request)
         {

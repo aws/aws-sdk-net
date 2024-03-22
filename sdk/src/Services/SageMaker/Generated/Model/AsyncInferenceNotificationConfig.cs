@@ -35,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class AsyncInferenceNotificationConfig
     {
         private string _errorTopic;
-        private List<string> _includeInferenceResponseIn = new List<string>();
+        private List<string> _includeInferenceResponseIn = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _successTopic;
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if IncludeInferenceResponseIn property is set
         internal bool IsSetIncludeInferenceResponseIn()
         {
-            return this._includeInferenceResponseIn != null && this._includeInferenceResponseIn.Count > 0; 
+            return this._includeInferenceResponseIn != null && (this._includeInferenceResponseIn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

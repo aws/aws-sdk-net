@@ -109,23 +109,23 @@ namespace Amazon.CloudWatch.Model
     public partial class PutMetricAlarmRequest : AmazonCloudWatchRequest
     {
         private bool? _actionsEnabled;
-        private List<string> _alarmActions = new List<string>();
+        private List<string> _alarmActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _alarmDescription;
         private string _alarmName;
         private ComparisonOperator _comparisonOperator;
         private int? _datapointsToAlarm;
-        private List<Dimension> _dimensions = new List<Dimension>();
+        private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private string _evaluateLowSampleCountPercentile;
         private int? _evaluationPeriods;
         private string _extendedStatistic;
-        private List<string> _insufficientDataActions = new List<string>();
+        private List<string> _insufficientDataActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _metricName;
-        private List<MetricDataQuery> _metrics = new List<MetricDataQuery>();
+        private List<MetricDataQuery> _metrics = AWSConfigs.InitializeCollections ? new List<MetricDataQuery>() : null;
         private string _awsNamespace;
-        private List<string> _okActions = new List<string>();
+        private List<string> _okActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _period;
         private Statistic _statistic;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private double? _threshold;
         private string _thresholdMetricId;
         private string _treatMissingData;
@@ -241,7 +241,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if AlarmActions property is set
         internal bool IsSetAlarmActions()
         {
-            return this._alarmActions != null && this._alarmActions.Count > 0; 
+            return this._alarmActions != null && (this._alarmActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -350,7 +350,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -572,7 +572,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if InsufficientDataActions property is set
         internal bool IsSetInsufficientDataActions()
         {
-            return this._insufficientDataActions != null && this._insufficientDataActions.Count > 0; 
+            return this._insufficientDataActions != null && (this._insufficientDataActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -638,7 +638,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -750,7 +750,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if OKActions property is set
         internal bool IsSetOKActions()
         {
-            return this._okActions != null && this._okActions.Count > 0; 
+            return this._okActions != null && (this._okActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -846,7 +846,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

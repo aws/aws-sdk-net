@@ -37,11 +37,11 @@ namespace Amazon.FMS.Model
     {
         private bool? _evaluationLimitExceeded;
         private DateTime? _expiredAt;
-        private Dictionary<string, string> _issueInfoMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _issueInfoMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _memberAccount;
         private string _policyId;
         private string _policyOwner;
-        private List<ComplianceViolator> _violators = new List<ComplianceViolator>();
+        private List<ComplianceViolator> _violators = AWSConfigs.InitializeCollections ? new List<ComplianceViolator>() : null;
 
         /// <summary>
         /// Gets and sets the property EvaluationLimitExceeded. 
@@ -96,7 +96,7 @@ namespace Amazon.FMS.Model
         // Check to see if IssueInfoMap property is set
         internal bool IsSetIssueInfoMap()
         {
-            return this._issueInfoMap != null && this._issueInfoMap.Count > 0; 
+            return this._issueInfoMap != null && (this._issueInfoMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.FMS.Model
         // Check to see if Violators property is set
         internal bool IsSetViolators()
         {
-            return this._violators != null && this._violators.Count > 0; 
+            return this._violators != null && (this._violators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -37,7 +37,7 @@ namespace Amazon.DAX.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _subnetGroupNames = new List<string>();
+        private List<string> _subnetGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -98,7 +98,7 @@ namespace Amazon.DAX.Model
         // Check to see if SubnetGroupNames property is set
         internal bool IsSetSubnetGroupNames()
         {
-            return this._subnetGroupNames != null && this._subnetGroupNames.Count > 0; 
+            return this._subnetGroupNames != null && (this._subnetGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

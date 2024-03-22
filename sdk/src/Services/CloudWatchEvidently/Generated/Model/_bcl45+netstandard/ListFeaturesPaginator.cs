@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Enumerable containing all of the Features
         /// </summary>
         public IPaginatedEnumerable<FeatureSummary> Features => 
-            new PaginatedResultKeyResponse<ListFeaturesResponse, FeatureSummary>(this, (i) => i.Features);
+            new PaginatedResultKeyResponse<ListFeaturesResponse, FeatureSummary>(this, (i) => i.Features ?? new List<FeatureSummary>());
 
         internal ListFeaturesPaginator(IAmazonCloudWatchEvidently client, ListFeaturesRequest request)
         {

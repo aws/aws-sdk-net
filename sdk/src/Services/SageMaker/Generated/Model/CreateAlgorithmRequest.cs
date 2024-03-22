@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _algorithmName;
         private bool? _certifyForMarketplace;
         private InferenceSpecification _inferenceSpecification;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TrainingSpecification _trainingSpecification;
         private AlgorithmValidationSpecification _validationSpecification;
 
@@ -150,7 +150,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

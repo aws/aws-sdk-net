@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class FrameworkControl
     {
-        private List<ControlInputParameter> _controlInputParameters = new List<ControlInputParameter>();
+        private List<ControlInputParameter> _controlInputParameters = AWSConfigs.InitializeCollections ? new List<ControlInputParameter>() : null;
         private string _controlName;
         private ControlScope _controlScope;
 
@@ -53,7 +53,7 @@ namespace Amazon.Backup.Model
         // Check to see if ControlInputParameters property is set
         internal bool IsSetControlInputParameters()
         {
-            return this._controlInputParameters != null && this._controlInputParameters.Count > 0; 
+            return this._controlInputParameters != null && (this._controlInputParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

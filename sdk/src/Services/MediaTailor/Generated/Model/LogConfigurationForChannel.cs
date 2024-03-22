@@ -33,7 +33,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class LogConfigurationForChannel
     {
-        private List<string> _logTypes = new List<string>();
+        private List<string> _logTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LogTypes. 
@@ -50,7 +50,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if LogTypes property is set
         internal bool IsSetLogTypes()
         {
-            return this._logTypes != null && this._logTypes.Count > 0; 
+            return this._logTypes != null && (this._logTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

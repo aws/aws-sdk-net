@@ -45,7 +45,7 @@ namespace Amazon.Mgn.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<LaunchConfigurationTemplate> Items => 
-            new PaginatedResultKeyResponse<DescribeLaunchConfigurationTemplatesResponse, LaunchConfigurationTemplate>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<DescribeLaunchConfigurationTemplatesResponse, LaunchConfigurationTemplate>(this, (i) => i.Items ?? new List<LaunchConfigurationTemplate>());
 
         internal DescribeLaunchConfigurationTemplatesPaginator(IAmazonMgn client, DescribeLaunchConfigurationTemplatesRequest request)
         {

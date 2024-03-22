@@ -36,9 +36,9 @@ namespace Amazon.SageMaker.Model
         private DateTime? _createDate;
         private string _description;
         private DateTime? _lastUpdatedDate;
-        private List<MemberDefinition> _memberDefinitions = new List<MemberDefinition>();
+        private List<MemberDefinition> _memberDefinitions = AWSConfigs.InitializeCollections ? new List<MemberDefinition>() : null;
         private NotificationConfiguration _notificationConfiguration;
-        private List<string> _productListingIds = new List<string>();
+        private List<string> _productListingIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subDomain;
         private string _workforceArn;
         private string _workteamArn;
@@ -122,7 +122,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MemberDefinitions property is set
         internal bool IsSetMemberDefinitions()
         {
-            return this._memberDefinitions != null && this._memberDefinitions.Count > 0; 
+            return this._memberDefinitions != null && (this._memberDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProductListingIds property is set
         internal bool IsSetProductListingIds()
         {
-            return this._productListingIds != null && this._productListingIds.Count > 0; 
+            return this._productListingIds != null && (this._productListingIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

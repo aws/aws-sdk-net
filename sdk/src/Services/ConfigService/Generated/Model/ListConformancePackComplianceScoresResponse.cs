@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class ListConformancePackComplianceScoresResponse : AmazonWebServiceResponse
     {
-        private List<ConformancePackComplianceScore> _conformancePackComplianceScores = new List<ConformancePackComplianceScore>();
+        private List<ConformancePackComplianceScore> _conformancePackComplianceScores = AWSConfigs.InitializeCollections ? new List<ConformancePackComplianceScore>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConformancePackComplianceScores property is set
         internal bool IsSetConformancePackComplianceScores()
         {
-            return this._conformancePackComplianceScores != null && this._conformancePackComplianceScores.Count > 0; 
+            return this._conformancePackComplianceScores != null && (this._conformancePackComplianceScores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

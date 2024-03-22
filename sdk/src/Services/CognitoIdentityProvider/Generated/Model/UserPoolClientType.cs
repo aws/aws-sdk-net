@@ -34,12 +34,12 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class UserPoolClientType
     {
         private int? _accessTokenValidity;
-        private List<string> _allowedOAuthFlows = new List<string>();
+        private List<string> _allowedOAuthFlows = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _allowedOAuthFlowsUserPoolClient;
-        private List<string> _allowedOAuthScopes = new List<string>();
+        private List<string> _allowedOAuthScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AnalyticsConfigurationType _analyticsConfiguration;
         private int? _authSessionValidity;
-        private List<string> _callbackURLs = new List<string>();
+        private List<string> _callbackURLs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientId;
         private string _clientName;
         private string _clientSecret;
@@ -47,17 +47,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _defaultRedirectURI;
         private bool? _enablePropagateAdditionalUserContextData;
         private bool? _enableTokenRevocation;
-        private List<string> _explicitAuthFlows = new List<string>();
+        private List<string> _explicitAuthFlows = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _idTokenValidity;
         private DateTime? _lastModifiedDate;
-        private List<string> _logoutURLs = new List<string>();
+        private List<string> _logoutURLs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PreventUserExistenceErrorTypes _preventUserExistenceErrors;
-        private List<string> _readAttributes = new List<string>();
+        private List<string> _readAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _refreshTokenValidity;
-        private List<string> _supportedIdentityProviders = new List<string>();
+        private List<string> _supportedIdentityProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TokenValidityUnitsType _tokenValidityUnits;
         private string _userPoolId;
-        private List<string> _writeAttributes = new List<string>();
+        private List<string> _writeAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessTokenValidity. 
@@ -128,7 +128,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if AllowedOAuthFlows property is set
         internal bool IsSetAllowedOAuthFlows()
         {
-            return this._allowedOAuthFlows != null && this._allowedOAuthFlows.Count > 0; 
+            return this._allowedOAuthFlows != null && (this._allowedOAuthFlows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if AllowedOAuthScopes property is set
         internal bool IsSetAllowedOAuthScopes()
         {
-            return this._allowedOAuthScopes != null && this._allowedOAuthScopes.Count > 0; 
+            return this._allowedOAuthScopes != null && (this._allowedOAuthScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -293,7 +293,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if CallbackURLs property is set
         internal bool IsSetCallbackURLs()
         {
-            return this._callbackURLs != null && this._callbackURLs.Count > 0; 
+            return this._callbackURLs != null && (this._callbackURLs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -539,7 +539,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ExplicitAuthFlows property is set
         internal bool IsSetExplicitAuthFlows()
         {
-            return this._explicitAuthFlows != null && this._explicitAuthFlows.Count > 0; 
+            return this._explicitAuthFlows != null && (this._explicitAuthFlows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -614,7 +614,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if LogoutURLs property is set
         internal bool IsSetLogoutURLs()
         {
-            return this._logoutURLs != null && this._logoutURLs.Count > 0; 
+            return this._logoutURLs != null && (this._logoutURLs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -684,7 +684,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ReadAttributes property is set
         internal bool IsSetReadAttributes()
         {
-            return this._readAttributes != null && this._readAttributes.Count > 0; 
+            return this._readAttributes != null && (this._readAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -744,7 +744,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if SupportedIdentityProviders property is set
         internal bool IsSetSupportedIdentityProviders()
         {
-            return this._supportedIdentityProviders != null && this._supportedIdentityProviders.Count > 0; 
+            return this._supportedIdentityProviders != null && (this._supportedIdentityProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -822,7 +822,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if WriteAttributes property is set
         internal bool IsSetWriteAttributes()
         {
-            return this._writeAttributes != null && this._writeAttributes.Count > 0; 
+            return this._writeAttributes != null && (this._writeAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

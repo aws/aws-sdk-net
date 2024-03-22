@@ -45,7 +45,7 @@ namespace Amazon.TimestreamQuery.Model
         /// Enumerable containing all of the ScheduledQueries
         /// </summary>
         public IPaginatedEnumerable<ScheduledQuery> ScheduledQueries => 
-            new PaginatedResultKeyResponse<ListScheduledQueriesResponse, ScheduledQuery>(this, (i) => i.ScheduledQueries);
+            new PaginatedResultKeyResponse<ListScheduledQueriesResponse, ScheduledQuery>(this, (i) => i.ScheduledQueries ?? new List<ScheduledQuery>());
 
         internal ListScheduledQueriesPaginator(IAmazonTimestreamQuery client, ListScheduledQueriesRequest request)
         {

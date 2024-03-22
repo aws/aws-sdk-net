@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the SnapshotTierStatuses
         /// </summary>
         public IPaginatedEnumerable<SnapshotTierStatus> SnapshotTierStatuses => 
-            new PaginatedResultKeyResponse<DescribeSnapshotTierStatusResponse, SnapshotTierStatus>(this, (i) => i.SnapshotTierStatuses);
+            new PaginatedResultKeyResponse<DescribeSnapshotTierStatusResponse, SnapshotTierStatus>(this, (i) => i.SnapshotTierStatuses ?? new List<SnapshotTierStatus>());
 
         internal DescribeSnapshotTierStatusPaginator(IAmazonEC2 client, DescribeSnapshotTierStatusRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the DestinationSummaries
         /// </summary>
         public IPaginatedEnumerable<TopicRuleDestinationSummary> DestinationSummaries => 
-            new PaginatedResultKeyResponse<ListTopicRuleDestinationsResponse, TopicRuleDestinationSummary>(this, (i) => i.DestinationSummaries);
+            new PaginatedResultKeyResponse<ListTopicRuleDestinationsResponse, TopicRuleDestinationSummary>(this, (i) => i.DestinationSummaries ?? new List<TopicRuleDestinationSummary>());
 
         internal ListTopicRuleDestinationsPaginator(IAmazonIoT client, ListTopicRuleDestinationsRequest request)
         {

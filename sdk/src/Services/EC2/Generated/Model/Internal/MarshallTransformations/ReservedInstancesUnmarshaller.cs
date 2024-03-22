@@ -123,6 +123,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("recurringCharges/item", targetDepth))
                     {
                         var unmarshaller = RecurringChargeUnmarshaller.Instance;
+                        if (unmarshalledObject.RecurringCharges == null)
+                        {
+                            unmarshalledObject.RecurringCharges = new List<RecurringCharge>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RecurringCharges.Add(item);
                         continue;
@@ -154,6 +158,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

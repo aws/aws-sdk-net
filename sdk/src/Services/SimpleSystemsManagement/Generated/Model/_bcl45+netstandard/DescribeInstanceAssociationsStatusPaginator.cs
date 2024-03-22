@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the InstanceAssociationStatusInfos
         /// </summary>
         public IPaginatedEnumerable<InstanceAssociationStatusInfo> InstanceAssociationStatusInfos => 
-            new PaginatedResultKeyResponse<DescribeInstanceAssociationsStatusResponse, InstanceAssociationStatusInfo>(this, (i) => i.InstanceAssociationStatusInfos);
+            new PaginatedResultKeyResponse<DescribeInstanceAssociationsStatusResponse, InstanceAssociationStatusInfo>(this, (i) => i.InstanceAssociationStatusInfos ?? new List<InstanceAssociationStatusInfo>());
 
         internal DescribeInstanceAssociationsStatusPaginator(IAmazonSimpleSystemsManagement client, DescribeInstanceAssociationsStatusRequest request)
         {

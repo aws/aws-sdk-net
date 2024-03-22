@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class SearchContactsResponse : AmazonWebServiceResponse
     {
-        private List<ContactSearchSummary> _contacts = new List<ContactSearchSummary>();
+        private List<ContactSearchSummary> _contacts = AWSConfigs.InitializeCollections ? new List<ContactSearchSummary>() : null;
         private string _nextToken;
         private long? _totalCount;
 
@@ -53,7 +53,7 @@ namespace Amazon.Connect.Model
         // Check to see if Contacts property is set
         internal bool IsSetContacts()
         {
-            return this._contacts != null && this._contacts.Count > 0; 
+            return this._contacts != null && (this._contacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

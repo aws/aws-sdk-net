@@ -63,6 +63,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("AliasICPRecordals/AliasICPRecordal", targetDepth))
                     {
+                        if (unmarshalledObject.AliasICPRecordals == null)
+                        {
+                            unmarshalledObject.AliasICPRecordals = new List<AliasICPRecordal>();
+                        }
                         var unmarshaller = AliasICPRecordalUnmarshaller.Instance;
                         unmarshalledObject.AliasICPRecordals.Add(unmarshaller.Unmarshall(context));
                         continue;

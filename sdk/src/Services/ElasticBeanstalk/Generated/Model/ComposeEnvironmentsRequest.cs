@@ -41,7 +41,7 @@ namespace Amazon.ElasticBeanstalk.Model
     {
         private string _applicationName;
         private string _groupName;
-        private List<string> _versionLabels = new List<string>();
+        private List<string> _versionLabels = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -102,7 +102,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if VersionLabels property is set
         internal bool IsSetVersionLabels()
         {
-            return this._versionLabels != null && this._versionLabels.Count > 0; 
+            return this._versionLabels != null && (this._versionLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

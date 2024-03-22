@@ -50,8 +50,8 @@ namespace Amazon.DLM.Model
         private int? _interval;
         private IntervalUnitValues _intervalUnit;
         private LocationValues _location;
-        private List<Script> _scripts = new List<Script>();
-        private List<string> _times = new List<string>();
+        private List<Script> _scripts = AWSConfigs.InitializeCollections ? new List<Script>() : null;
+        private List<string> _times = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CronExpression. 
@@ -164,7 +164,7 @@ namespace Amazon.DLM.Model
         // Check to see if Scripts property is set
         internal bool IsSetScripts()
         {
-            return this._scripts != null && this._scripts.Count > 0; 
+            return this._scripts != null && (this._scripts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.DLM.Model
         // Check to see if Times property is set
         internal bool IsSetTimes()
         {
-            return this._times != null && this._times.Count > 0; 
+            return this._times != null && (this._times.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

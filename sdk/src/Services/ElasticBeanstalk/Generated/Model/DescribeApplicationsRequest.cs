@@ -34,7 +34,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class DescribeApplicationsRequest : AmazonElasticBeanstalkRequest
     {
-        private List<string> _applicationNames = new List<string>();
+        private List<string> _applicationNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -57,7 +57,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationNames property is set
         internal bool IsSetApplicationNames()
         {
-            return this._applicationNames != null && this._applicationNames.Count > 0; 
+            return this._applicationNames != null && (this._applicationNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

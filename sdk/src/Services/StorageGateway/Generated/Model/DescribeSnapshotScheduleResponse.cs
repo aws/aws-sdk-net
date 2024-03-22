@@ -36,7 +36,7 @@ namespace Amazon.StorageGateway.Model
         private string _description;
         private int? _recurrenceInHours;
         private int? _startAt;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _timezone;
         private string _volumeARN;
 
@@ -116,7 +116,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

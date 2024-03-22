@@ -33,9 +33,9 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class ListSessionsResponse : AmazonWebServiceResponse
     {
-        private List<string> _ids = new List<string>();
+        private List<string> _ids = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
-        private List<Session> _sessions = new List<Session>();
+        private List<Session> _sessions = AWSConfigs.InitializeCollections ? new List<Session>() : null;
 
         /// <summary>
         /// Gets and sets the property Ids. 
@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if Ids property is set
         internal bool IsSetIds()
         {
-            return this._ids != null && this._ids.Count > 0; 
+            return this._ids != null && (this._ids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.Glue.Model
         // Check to see if Sessions property is set
         internal bool IsSetSessions()
         {
-            return this._sessions != null && this._sessions.Count > 0; 
+            return this._sessions != null && (this._sessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

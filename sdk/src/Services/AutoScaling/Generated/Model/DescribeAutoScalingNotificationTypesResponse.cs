@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeAutoScalingNotificationTypesResponse : AmazonWebServiceResponse
     {
-        private List<string> _autoScalingNotificationTypes = new List<string>();
+        private List<string> _autoScalingNotificationTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoScalingNotificationTypes. 
@@ -50,7 +50,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingNotificationTypes property is set
         internal bool IsSetAutoScalingNotificationTypes()
         {
-            return this._autoScalingNotificationTypes != null && this._autoScalingNotificationTypes.Count > 0; 
+            return this._autoScalingNotificationTypes != null && (this._autoScalingNotificationTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

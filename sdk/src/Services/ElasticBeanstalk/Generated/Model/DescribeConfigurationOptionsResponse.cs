@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class DescribeConfigurationOptionsResponse : AmazonWebServiceResponse
     {
-        private List<ConfigurationOptionDescription> _options = new List<ConfigurationOptionDescription>();
+        private List<ConfigurationOptionDescription> _options = AWSConfigs.InitializeCollections ? new List<ConfigurationOptionDescription>() : null;
         private string _platformArn;
         private string _solutionStackName;
 
@@ -52,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

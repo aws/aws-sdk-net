@@ -41,7 +41,7 @@ namespace Amazon.WorkSpaces.Model
         private ComputeType _computeType;
         private string _imageId;
         private RootStorage _rootStorage;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private UserStorage _userStorage;
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

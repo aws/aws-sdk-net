@@ -33,7 +33,7 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class GetCanaryRunsResponse : AmazonWebServiceResponse
     {
-        private List<CanaryRun> _canaryRuns = new List<CanaryRun>();
+        private List<CanaryRun> _canaryRuns = AWSConfigs.InitializeCollections ? new List<CanaryRun>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Synthetics.Model
         // Check to see if CanaryRuns property is set
         internal bool IsSetCanaryRuns()
         {
-            return this._canaryRuns != null && this._canaryRuns.Count > 0; 
+            return this._canaryRuns != null && (this._canaryRuns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

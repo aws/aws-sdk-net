@@ -35,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _botVersion;
-        private List<ImportSummary> _importSummaries = new List<ImportSummary>();
+        private List<ImportSummary> _importSummaries = AWSConfigs.InitializeCollections ? new List<ImportSummary>() : null;
         private string _localeId;
         private string _nextToken;
 
@@ -95,7 +95,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if ImportSummaries property is set
         internal bool IsSetImportSummaries()
         {
-            return this._importSummaries != null && this._importSummaries.Count > 0; 
+            return this._importSummaries != null && (this._importSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

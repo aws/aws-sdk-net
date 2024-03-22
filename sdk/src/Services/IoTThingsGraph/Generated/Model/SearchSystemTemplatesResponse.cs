@@ -34,7 +34,7 @@ namespace Amazon.IoTThingsGraph.Model
     public partial class SearchSystemTemplatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SystemTemplateSummary> _summaries = new List<SystemTemplateSummary>();
+        private List<SystemTemplateSummary> _summaries = AWSConfigs.InitializeCollections ? new List<SystemTemplateSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.IoTThingsGraph.Model
         // Check to see if Summaries property is set
         internal bool IsSetSummaries()
         {
-            return this._summaries != null && this._summaries.Count > 0; 
+            return this._summaries != null && (this._summaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

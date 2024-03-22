@@ -41,9 +41,9 @@ namespace Amazon.ServiceCatalog.Model
         private string _provisionedProductName;
         private string _provisionedProductType;
         private string _provisioningArtifactId;
-        private List<RecordError> _recordErrors = new List<RecordError>();
+        private List<RecordError> _recordErrors = AWSConfigs.InitializeCollections ? new List<RecordError>() : null;
         private string _recordId;
-        private List<RecordTag> _recordTags = new List<RecordTag>();
+        private List<RecordTag> _recordTags = AWSConfigs.InitializeCollections ? new List<RecordTag>() : null;
         private string _recordType;
         private RecordStatus _status;
         private DateTime? _updatedTime;
@@ -214,7 +214,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if RecordErrors property is set
         internal bool IsSetRecordErrors()
         {
-            return this._recordErrors != null && this._recordErrors.Count > 0; 
+            return this._recordErrors != null && (this._recordErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -252,7 +252,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if RecordTags property is set
         internal bool IsSetRecordTags()
         {
-            return this._recordTags != null && this._recordTags.Count > 0; 
+            return this._recordTags != null && (this._recordTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

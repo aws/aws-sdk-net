@@ -35,7 +35,7 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private string _applicability;
         private string _defaultValue;
-        private List<string> _enumValues = new List<string>();
+        private List<string> _enumValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _intValueMax;
         private int? _intValueMin;
         private string _name;
@@ -96,7 +96,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if EnumValues property is set
         internal bool IsSetEnumValues()
         {
-            return this._enumValues != null && this._enumValues.Count > 0; 
+            return this._enumValues != null && (this._enumValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

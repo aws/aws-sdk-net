@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model
     public partial class GetSavingsPlansUtilizationDetailsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SavingsPlansUtilizationDetail> _savingsPlansUtilizationDetails = new List<SavingsPlansUtilizationDetail>();
+        private List<SavingsPlansUtilizationDetail> _savingsPlansUtilizationDetails = AWSConfigs.InitializeCollections ? new List<SavingsPlansUtilizationDetail>() : null;
         private DateInterval _timePeriod;
         private SavingsPlansUtilizationAggregates _total;
 
@@ -75,7 +75,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if SavingsPlansUtilizationDetails property is set
         internal bool IsSetSavingsPlansUtilizationDetails()
         {
-            return this._savingsPlansUtilizationDetails != null && this._savingsPlansUtilizationDetails.Count > 0; 
+            return this._savingsPlansUtilizationDetails != null && (this._savingsPlansUtilizationDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

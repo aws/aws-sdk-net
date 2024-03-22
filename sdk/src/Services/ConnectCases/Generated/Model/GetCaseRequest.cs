@@ -36,7 +36,7 @@ namespace Amazon.ConnectCases.Model
     {
         private string _caseId;
         private string _domainId;
-        private List<FieldIdentifier> _fields = new List<FieldIdentifier>();
+        private List<FieldIdentifier> _fields = AWSConfigs.InitializeCollections ? new List<FieldIdentifier>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

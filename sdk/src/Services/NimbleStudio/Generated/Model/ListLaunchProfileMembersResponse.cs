@@ -33,7 +33,7 @@ namespace Amazon.NimbleStudio.Model
     /// </summary>
     public partial class ListLaunchProfileMembersResponse : AmazonWebServiceResponse
     {
-        private List<LaunchProfileMembership> _members = new List<LaunchProfileMembership>();
+        private List<LaunchProfileMembership> _members = AWSConfigs.InitializeCollections ? new List<LaunchProfileMembership>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

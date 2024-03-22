@@ -42,7 +42,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class DetectorFeatureConfigurationResult
     {
-        private List<DetectorAdditionalConfigurationResult> _additionalConfiguration = new List<DetectorAdditionalConfigurationResult>();
+        private List<DetectorAdditionalConfigurationResult> _additionalConfiguration = AWSConfigs.InitializeCollections ? new List<DetectorAdditionalConfigurationResult>() : null;
         private DetectorFeatureResult _name;
         private FeatureStatus _status;
         private DateTime? _updatedAt;
@@ -62,7 +62,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if AdditionalConfiguration property is set
         internal bool IsSetAdditionalConfiguration()
         {
-            return this._additionalConfiguration != null && this._additionalConfiguration.Count > 0; 
+            return this._additionalConfiguration != null && (this._additionalConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class InstanceAggregatedAssociationOverview
     {
         private string _detailedStatus;
-        private Dictionary<string, int> _instanceAssociationStatusAggregatedCount = new Dictionary<string, int>();
+        private Dictionary<string, int> _instanceAssociationStatusAggregatedCount = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
 
         /// <summary>
         /// Gets and sets the property DetailedStatus. 
@@ -69,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if InstanceAssociationStatusAggregatedCount property is set
         internal bool IsSetInstanceAssociationStatusAggregatedCount()
         {
-            return this._instanceAssociationStatusAggregatedCount != null && this._instanceAssociationStatusAggregatedCount.Count > 0; 
+            return this._instanceAssociationStatusAggregatedCount != null && (this._instanceAssociationStatusAggregatedCount.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

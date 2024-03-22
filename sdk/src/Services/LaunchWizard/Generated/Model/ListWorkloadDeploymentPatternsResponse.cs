@@ -34,7 +34,7 @@ namespace Amazon.LaunchWizard.Model
     public partial class ListWorkloadDeploymentPatternsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkloadDeploymentPatternDataSummary> _workloadDeploymentPatterns = new List<WorkloadDeploymentPatternDataSummary>();
+        private List<WorkloadDeploymentPatternDataSummary> _workloadDeploymentPatterns = AWSConfigs.InitializeCollections ? new List<WorkloadDeploymentPatternDataSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.LaunchWizard.Model
         // Check to see if WorkloadDeploymentPatterns property is set
         internal bool IsSetWorkloadDeploymentPatterns()
         {
-            return this._workloadDeploymentPatterns != null && this._workloadDeploymentPatterns.Count > 0; 
+            return this._workloadDeploymentPatterns != null && (this._workloadDeploymentPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

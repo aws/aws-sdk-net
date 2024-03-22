@@ -38,12 +38,12 @@ namespace Amazon.CodeStarNotifications.Model
     {
         private string _clientRequestToken;
         private DetailType _detailType;
-        private List<string> _eventTypeIds = new List<string>();
+        private List<string> _eventTypeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _resource;
         private NotificationRuleStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<Target> _targets = new List<Target>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -112,7 +112,7 @@ namespace Amazon.CodeStarNotifications.Model
         // Check to see if EventTypeIds property is set
         internal bool IsSetEventTypeIds()
         {
-            return this._eventTypeIds != null && this._eventTypeIds.Count > 0; 
+            return this._eventTypeIds != null && (this._eventTypeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Amazon.CodeStarNotifications.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Amazon.CodeStarNotifications.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

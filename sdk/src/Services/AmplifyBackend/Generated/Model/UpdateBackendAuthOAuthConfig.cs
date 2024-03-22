@@ -35,9 +35,9 @@ namespace Amazon.AmplifyBackend.Model
     {
         private string _domainPrefix;
         private OAuthGrantType _oAuthGrantType;
-        private List<string> _oAuthScopes = new List<string>();
-        private List<string> _redirectSignInURIs = new List<string>();
-        private List<string> _redirectSignOutURIs = new List<string>();
+        private List<string> _oAuthScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _redirectSignInURIs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _redirectSignOutURIs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SocialProviderSettings _socialProviderSettings;
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.AmplifyBackend.Model
         // Check to see if OAuthScopes property is set
         internal bool IsSetOAuthScopes()
         {
-            return this._oAuthScopes != null && this._oAuthScopes.Count > 0; 
+            return this._oAuthScopes != null && (this._oAuthScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.AmplifyBackend.Model
         // Check to see if RedirectSignInURIs property is set
         internal bool IsSetRedirectSignInURIs()
         {
-            return this._redirectSignInURIs != null && this._redirectSignInURIs.Count > 0; 
+            return this._redirectSignInURIs != null && (this._redirectSignInURIs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.AmplifyBackend.Model
         // Check to see if RedirectSignOutURIs property is set
         internal bool IsSetRedirectSignOutURIs()
         {
-            return this._redirectSignOutURIs != null && this._redirectSignOutURIs.Count > 0; 
+            return this._redirectSignOutURIs != null && (this._redirectSignOutURIs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

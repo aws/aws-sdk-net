@@ -201,6 +201,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("supportedBootModes/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedBootModes == null)
+                        {
+                            unmarshalledObject.SupportedBootModes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedBootModes.Add(item);
                         continue;
@@ -208,6 +212,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("supportedRootDeviceTypes/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedRootDeviceTypes == null)
+                        {
+                            unmarshalledObject.SupportedRootDeviceTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedRootDeviceTypes.Add(item);
                         continue;
@@ -215,6 +223,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("supportedUsageClasses/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedUsageClasses == null)
+                        {
+                            unmarshalledObject.SupportedUsageClasses = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedUsageClasses.Add(item);
                         continue;
@@ -222,6 +234,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("supportedVirtualizationTypes/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedVirtualizationTypes == null)
+                        {
+                            unmarshalledObject.SupportedVirtualizationTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedVirtualizationTypes.Add(item);
                         continue;

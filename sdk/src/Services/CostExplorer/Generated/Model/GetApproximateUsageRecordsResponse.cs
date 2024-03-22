@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model
     public partial class GetApproximateUsageRecordsResponse : AmazonWebServiceResponse
     {
         private DateInterval _lookbackPeriod;
-        private Dictionary<string, long> _services = new Dictionary<string, long>();
+        private Dictionary<string, long> _services = AWSConfigs.InitializeCollections ? new Dictionary<string, long>() : null;
         private long? _totalRecords;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

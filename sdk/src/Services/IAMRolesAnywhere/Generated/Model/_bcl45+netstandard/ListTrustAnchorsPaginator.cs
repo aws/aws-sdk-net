@@ -45,7 +45,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Enumerable containing all of the TrustAnchors
         /// </summary>
         public IPaginatedEnumerable<TrustAnchorDetail> TrustAnchors => 
-            new PaginatedResultKeyResponse<ListTrustAnchorsResponse, TrustAnchorDetail>(this, (i) => i.TrustAnchors);
+            new PaginatedResultKeyResponse<ListTrustAnchorsResponse, TrustAnchorDetail>(this, (i) => i.TrustAnchors ?? new List<TrustAnchorDetail>());
 
         internal ListTrustAnchorsPaginator(IAmazonIAMRolesAnywhere client, ListTrustAnchorsRequest request)
         {

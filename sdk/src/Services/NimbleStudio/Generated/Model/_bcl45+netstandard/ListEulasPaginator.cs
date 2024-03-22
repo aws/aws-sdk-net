@@ -45,7 +45,7 @@ namespace Amazon.NimbleStudio.Model
         /// Enumerable containing all of the Eulas
         /// </summary>
         public IPaginatedEnumerable<Eula> Eulas => 
-            new PaginatedResultKeyResponse<ListEulasResponse, Eula>(this, (i) => i.Eulas);
+            new PaginatedResultKeyResponse<ListEulasResponse, Eula>(this, (i) => i.Eulas ?? new List<Eula>());
 
         internal ListEulasPaginator(IAmazonNimbleStudio client, ListEulasRequest request)
         {

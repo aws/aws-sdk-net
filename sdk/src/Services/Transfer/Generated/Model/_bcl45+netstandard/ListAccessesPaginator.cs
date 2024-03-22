@@ -45,7 +45,7 @@ namespace Amazon.Transfer.Model
         /// Enumerable containing all of the Accesses
         /// </summary>
         public IPaginatedEnumerable<ListedAccess> Accesses => 
-            new PaginatedResultKeyResponse<ListAccessesResponse, ListedAccess>(this, (i) => i.Accesses);
+            new PaginatedResultKeyResponse<ListAccessesResponse, ListedAccess>(this, (i) => i.Accesses ?? new List<ListedAccess>());
 
         internal ListAccessesPaginator(IAmazonTransfer client, ListAccessesRequest request)
         {

@@ -63,7 +63,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DistributeDatasetEntriesRequest : AmazonRekognitionRequest
     {
-        private List<DistributeDataset> _datasets = new List<DistributeDataset>();
+        private List<DistributeDataset> _datasets = AWSConfigs.InitializeCollections ? new List<DistributeDataset>() : null;
 
         /// <summary>
         /// Gets and sets the property Datasets. 
@@ -82,7 +82,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Datasets property is set
         internal bool IsSetDatasets()
         {
-            return this._datasets != null && this._datasets.Count > 0; 
+            return this._datasets != null && (this._datasets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

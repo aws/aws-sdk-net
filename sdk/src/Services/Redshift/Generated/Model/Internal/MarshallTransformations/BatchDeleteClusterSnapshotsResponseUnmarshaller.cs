@@ -84,6 +84,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Errors/SnapshotErrorMessage", targetDepth))
                     {
                         var unmarshaller = SnapshotErrorMessageUnmarshaller.Instance;
+                        if (response.Errors == null)
+                        {
+                            response.Errors = new List<SnapshotErrorMessage>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Errors.Add(item);
                         continue;
@@ -91,6 +95,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Resources/String", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.Resources == null)
+                        {
+                            response.Resources = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Resources.Add(item);
                         continue;

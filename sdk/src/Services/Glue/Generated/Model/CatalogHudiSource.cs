@@ -33,10 +33,10 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CatalogHudiSource
     {
-        private Dictionary<string, string> _additionalHudiOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalHudiOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _database;
         private string _name;
-        private List<GlueSchema> _outputSchemas = new List<GlueSchema>();
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
         private string _table;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.Glue.Model
         // Check to see if AdditionalHudiOptions property is set
         internal bool IsSetAdditionalHudiOptions()
         {
-            return this._additionalHudiOptions != null && this._additionalHudiOptions.Count > 0; 
+            return this._additionalHudiOptions != null && (this._additionalHudiOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.Glue.Model
         // Check to see if OutputSchemas property is set
         internal bool IsSetOutputSchemas()
         {
-            return this._outputSchemas != null && this._outputSchemas.Count > 0; 
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

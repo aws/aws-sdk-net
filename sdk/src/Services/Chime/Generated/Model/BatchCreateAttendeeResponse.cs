@@ -33,8 +33,8 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class BatchCreateAttendeeResponse : AmazonWebServiceResponse
     {
-        private List<Attendee> _attendees = new List<Attendee>();
-        private List<CreateAttendeeError> _errors = new List<CreateAttendeeError>();
+        private List<Attendee> _attendees = AWSConfigs.InitializeCollections ? new List<Attendee>() : null;
+        private List<CreateAttendeeError> _errors = AWSConfigs.InitializeCollections ? new List<CreateAttendeeError>() : null;
 
         /// <summary>
         /// Gets and sets the property Attendees. 
@@ -51,7 +51,7 @@ namespace Amazon.Chime.Model
         // Check to see if Attendees property is set
         internal bool IsSetAttendees()
         {
-            return this._attendees != null && this._attendees.Count > 0; 
+            return this._attendees != null && (this._attendees.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.Chime.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

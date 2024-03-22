@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class EnvironmentParameterRanges
     {
-        private List<CategoricalParameter> _categoricalParameterRanges = new List<CategoricalParameter>();
+        private List<CategoricalParameter> _categoricalParameterRanges = AWSConfigs.InitializeCollections ? new List<CategoricalParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property CategoricalParameterRanges. 
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CategoricalParameterRanges property is set
         internal bool IsSetCategoricalParameterRanges()
         {
-            return this._categoricalParameterRanges != null && this._categoricalParameterRanges.Count > 0; 
+            return this._categoricalParameterRanges != null && (this._categoricalParameterRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

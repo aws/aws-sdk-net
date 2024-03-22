@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the QuickConnects
         /// </summary>
         public IPaginatedEnumerable<QuickConnect> QuickConnects => 
-            new PaginatedResultKeyResponse<SearchQuickConnectsResponse, QuickConnect>(this, (i) => i.QuickConnects);
+            new PaginatedResultKeyResponse<SearchQuickConnectsResponse, QuickConnect>(this, (i) => i.QuickConnects ?? new List<QuickConnect>());
 
         internal SearchQuickConnectsPaginator(IAmazonConnect client, SearchQuickConnectsRequest request)
         {

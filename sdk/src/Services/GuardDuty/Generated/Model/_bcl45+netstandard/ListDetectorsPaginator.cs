@@ -45,7 +45,7 @@ namespace Amazon.GuardDuty.Model
         /// Enumerable containing all of the DetectorIds
         /// </summary>
         public IPaginatedEnumerable<string> DetectorIds => 
-            new PaginatedResultKeyResponse<ListDetectorsResponse, string>(this, (i) => i.DetectorIds);
+            new PaginatedResultKeyResponse<ListDetectorsResponse, string>(this, (i) => i.DetectorIds ?? new List<string>());
 
         internal ListDetectorsPaginator(IAmazonGuardDuty client, ListDetectorsRequest request)
         {

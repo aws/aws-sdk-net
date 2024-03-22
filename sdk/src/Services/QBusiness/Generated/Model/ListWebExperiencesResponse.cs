@@ -34,7 +34,7 @@ namespace Amazon.QBusiness.Model
     public partial class ListWebExperiencesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WebExperience> _webExperiences = new List<WebExperience>();
+        private List<WebExperience> _webExperiences = AWSConfigs.InitializeCollections ? new List<WebExperience>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if WebExperiences property is set
         internal bool IsSetWebExperiences()
         {
-            return this._webExperiences != null && this._webExperiences.Count > 0; 
+            return this._webExperiences != null && (this._webExperiences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -57,6 +57,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AllowedFeatures/AllowedFeature", targetDepth))
                     {
+                        if (unmarshalledObject.AllowedFeatures == null)
+                        {
+                            unmarshalledObject.AllowedFeatures = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AllowedFeatures.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -75,6 +79,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("TransformationConfigurations/TransformationConfiguration", targetDepth))
                     {
+                        if (unmarshalledObject.TransformationConfigurations == null)
+                        {
+                            unmarshalledObject.TransformationConfigurations = new List<ObjectLambdaTransformationConfiguration>();
+                        }
                         var unmarshaller = ObjectLambdaTransformationConfigurationUnmarshaller.Instance;
                         unmarshalledObject.TransformationConfigurations.Add(unmarshaller.Unmarshall(context));
                         continue;

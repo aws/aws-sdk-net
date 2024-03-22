@@ -45,7 +45,7 @@ namespace Amazon.Batch.Model
         /// Enumerable containing all of the SchedulingPolicies
         /// </summary>
         public IPaginatedEnumerable<SchedulingPolicyListingDetail> SchedulingPolicies => 
-            new PaginatedResultKeyResponse<ListSchedulingPoliciesResponse, SchedulingPolicyListingDetail>(this, (i) => i.SchedulingPolicies);
+            new PaginatedResultKeyResponse<ListSchedulingPoliciesResponse, SchedulingPolicyListingDetail>(this, (i) => i.SchedulingPolicies ?? new List<SchedulingPolicyListingDetail>());
 
         internal ListSchedulingPoliciesPaginator(IAmazonBatch client, ListSchedulingPoliciesRequest request)
         {

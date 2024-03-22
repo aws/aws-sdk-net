@@ -84,6 +84,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AccessDetails/member", targetDepth))
                     {
                         var unmarshaller = AccessDetailUnmarshaller.Instance;
+                        if (response.AccessDetails == null)
+                        {
+                            response.AccessDetails = new List<AccessDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AccessDetails.Add(item);
                         continue;

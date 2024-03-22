@@ -62,10 +62,10 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class SearchExpression
     {
-        private List<Filter> _filters = new List<Filter>();
-        private List<NestedFilters> _nestedFilters = new List<NestedFilters>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<NestedFilters> _nestedFilters = AWSConfigs.InitializeCollections ? new List<NestedFilters>() : null;
         private BooleanOperator _operator;
-        private List<SearchExpression> _subExpressions = new List<SearchExpression>();
+        private List<SearchExpression> _subExpressions = AWSConfigs.InitializeCollections ? new List<SearchExpression>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -83,7 +83,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if NestedFilters property is set
         internal bool IsSetNestedFilters()
         {
-            return this._nestedFilters != null && this._nestedFilters.Count > 0; 
+            return this._nestedFilters != null && (this._nestedFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SubExpressions property is set
         internal bool IsSetSubExpressions()
         {
-            return this._subExpressions != null && this._subExpressions.Count > 0; 
+            return this._subExpressions != null && (this._subExpressions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

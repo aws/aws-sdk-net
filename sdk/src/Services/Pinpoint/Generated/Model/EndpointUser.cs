@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class EndpointUser
     {
-        private Dictionary<string, List<string>> _userAttributes = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _userAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _userId;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if UserAttributes property is set
         internal bool IsSetUserAttributes()
         {
-            return this._userAttributes != null && this._userAttributes.Count > 0; 
+            return this._userAttributes != null && (this._userAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

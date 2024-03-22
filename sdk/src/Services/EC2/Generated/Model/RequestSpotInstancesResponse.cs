@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class RequestSpotInstancesResponse : AmazonWebServiceResponse
     {
-        private List<SpotInstanceRequest> _spotInstanceRequests = new List<SpotInstanceRequest>();
+        private List<SpotInstanceRequest> _spotInstanceRequests = AWSConfigs.InitializeCollections ? new List<SpotInstanceRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property SpotInstanceRequests. 
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         // Check to see if SpotInstanceRequests property is set
         internal bool IsSetSpotInstanceRequests()
         {
-            return this._spotInstanceRequests != null && this._spotInstanceRequests.Count > 0; 
+            return this._spotInstanceRequests != null && (this._spotInstanceRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

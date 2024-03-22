@@ -34,8 +34,8 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class RemoveTagsFromOnPremisesInstancesRequest : AmazonCodeDeployRequest
     {
-        private List<string> _instanceNames = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _instanceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceNames. 
@@ -53,7 +53,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if InstanceNames property is set
         internal bool IsSetInstanceNames()
         {
-            return this._instanceNames != null && this._instanceNames.Count > 0; 
+            return this._instanceNames != null && (this._instanceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

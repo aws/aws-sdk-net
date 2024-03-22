@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribePatchGroupsResponse : AmazonWebServiceResponse
     {
-        private List<PatchGroupPatchBaselineMapping> _mappings = new List<PatchGroupPatchBaselineMapping>();
+        private List<PatchGroupPatchBaselineMapping> _mappings = AWSConfigs.InitializeCollections ? new List<PatchGroupPatchBaselineMapping>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Mappings property is set
         internal bool IsSetMappings()
         {
-            return this._mappings != null && this._mappings.Count > 0; 
+            return this._mappings != null && (this._mappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

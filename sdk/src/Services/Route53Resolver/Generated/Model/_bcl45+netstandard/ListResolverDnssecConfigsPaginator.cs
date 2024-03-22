@@ -45,7 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// Enumerable containing all of the ResolverDnssecConfigs
         /// </summary>
         public IPaginatedEnumerable<ResolverDnssecConfig> ResolverDnssecConfigs => 
-            new PaginatedResultKeyResponse<ListResolverDnssecConfigsResponse, ResolverDnssecConfig>(this, (i) => i.ResolverDnssecConfigs);
+            new PaginatedResultKeyResponse<ListResolverDnssecConfigsResponse, ResolverDnssecConfig>(this, (i) => i.ResolverDnssecConfigs ?? new List<ResolverDnssecConfig>());
 
         internal ListResolverDnssecConfigsPaginator(IAmazonRoute53Resolver client, ListResolverDnssecConfigsRequest request)
         {

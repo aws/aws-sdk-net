@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("vpnConnectionDeviceTypeSet/item", targetDepth))
                     {
                         var unmarshaller = VpnConnectionDeviceTypeUnmarshaller.Instance;
+                        if (response.VpnConnectionDeviceTypes == null)
+                        {
+                            response.VpnConnectionDeviceTypes = new List<VpnConnectionDeviceType>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.VpnConnectionDeviceTypes.Add(item);
                         continue;

@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model
     {
         private string _originalTypeName;
         private string _publisherId;
-        private List<int> _supportedMajorVersions = new List<int>();
+        private List<int> _supportedMajorVersions = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private string _typeNameAlias;
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if SupportedMajorVersions property is set
         internal bool IsSetSupportedMajorVersions()
         {
-            return this._supportedMajorVersions != null && this._supportedMajorVersions.Count > 0; 
+            return this._supportedMajorVersions != null && (this._supportedMajorVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

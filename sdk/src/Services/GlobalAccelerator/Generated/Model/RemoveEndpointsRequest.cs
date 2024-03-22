@@ -58,7 +58,7 @@ namespace Amazon.GlobalAccelerator.Model
     public partial class RemoveEndpointsRequest : AmazonGlobalAcceleratorRequest
     {
         private string _endpointGroupArn;
-        private List<EndpointIdentifier> _endpointIdentifiers = new List<EndpointIdentifier>();
+        private List<EndpointIdentifier> _endpointIdentifiers = AWSConfigs.InitializeCollections ? new List<EndpointIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property EndpointGroupArn. 
@@ -95,7 +95,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if EndpointIdentifiers property is set
         internal bool IsSetEndpointIdentifiers()
         {
-            return this._endpointIdentifiers != null && this._endpointIdentifiers.Count > 0; 
+            return this._endpointIdentifiers != null && (this._endpointIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

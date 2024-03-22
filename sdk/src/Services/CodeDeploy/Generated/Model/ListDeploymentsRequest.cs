@@ -39,7 +39,7 @@ namespace Amazon.CodeDeploy.Model
         private TimeRange _createTimeRange;
         private string _deploymentGroupName;
         private string _externalId;
-        private List<string> _includeOnlyStatuses = new List<string>();
+        private List<string> _includeOnlyStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if IncludeOnlyStatuses property is set
         internal bool IsSetIncludeOnlyStatuses()
         {
-            return this._includeOnlyStatuses != null && this._includeOnlyStatuses.Count > 0; 
+            return this._includeOnlyStatuses != null && (this._includeOnlyStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

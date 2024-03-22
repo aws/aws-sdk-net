@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetHostReservationPurchasePreviewRequest : AmazonEC2Request
     {
-        private List<string> _hostIdSet = new List<string>();
+        private List<string> _hostIdSet = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _offeringId;
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         // Check to see if HostIdSet property is set
         internal bool IsSetHostIdSet()
         {
-            return this._hostIdSet != null && this._hostIdSet.Count > 0; 
+            return this._hostIdSet != null && (this._hostIdSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

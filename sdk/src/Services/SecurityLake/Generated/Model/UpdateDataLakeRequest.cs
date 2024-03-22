@@ -35,7 +35,7 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class UpdateDataLakeRequest : AmazonSecurityLakeRequest
     {
-        private List<DataLakeConfiguration> _configurations = new List<DataLakeConfiguration>();
+        private List<DataLakeConfiguration> _configurations = AWSConfigs.InitializeCollections ? new List<DataLakeConfiguration>() : null;
         private string _metaStoreManagerRoleArn;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

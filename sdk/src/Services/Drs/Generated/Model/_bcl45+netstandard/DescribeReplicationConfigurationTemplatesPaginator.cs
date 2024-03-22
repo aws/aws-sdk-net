@@ -45,7 +45,7 @@ namespace Amazon.Drs.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ReplicationConfigurationTemplate> Items => 
-            new PaginatedResultKeyResponse<DescribeReplicationConfigurationTemplatesResponse, ReplicationConfigurationTemplate>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<DescribeReplicationConfigurationTemplatesResponse, ReplicationConfigurationTemplate>(this, (i) => i.Items ?? new List<ReplicationConfigurationTemplate>());
 
         internal DescribeReplicationConfigurationTemplatesPaginator(IAmazonDrs client, DescribeReplicationConfigurationTemplatesRequest request)
         {

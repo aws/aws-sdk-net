@@ -35,7 +35,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     {
         private ApplicationRestoreConfiguration _applicationRestoreConfiguration;
         private FlinkRunConfiguration _flinkRunConfiguration;
-        private List<SqlRunConfiguration> _sqlRunConfigurations = new List<SqlRunConfiguration>();
+        private List<SqlRunConfiguration> _sqlRunConfigurations = AWSConfigs.InitializeCollections ? new List<SqlRunConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationRestoreConfiguration. 
@@ -89,7 +89,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if SqlRunConfigurations property is set
         internal bool IsSetSqlRunConfigurations()
         {
-            return this._sqlRunConfigurations != null && this._sqlRunConfigurations.Count > 0; 
+            return this._sqlRunConfigurations != null && (this._sqlRunConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

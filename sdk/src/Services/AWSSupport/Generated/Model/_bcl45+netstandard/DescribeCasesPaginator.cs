@@ -45,7 +45,7 @@ namespace Amazon.AWSSupport.Model
         /// Enumerable containing all of the Cases
         /// </summary>
         public IPaginatedEnumerable<CaseDetails> Cases => 
-            new PaginatedResultKeyResponse<DescribeCasesResponse, CaseDetails>(this, (i) => i.Cases);
+            new PaginatedResultKeyResponse<DescribeCasesResponse, CaseDetails>(this, (i) => i.Cases ?? new List<CaseDetails>());
 
         internal DescribeCasesPaginator(IAmazonAWSSupport client, DescribeCasesRequest request)
         {

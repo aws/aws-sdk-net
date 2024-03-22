@@ -43,7 +43,7 @@ namespace Amazon.ManagedGrafana.Model
     public partial class CreateWorkspaceRequest : AmazonManagedGrafanaRequest
     {
         private AccountAccessType _accountAccessType;
-        private List<string> _authenticationProviders = new List<string>();
+        private List<string> _authenticationProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientToken;
         private string _configuration;
         private string _grafanaVersion;
@@ -51,13 +51,13 @@ namespace Amazon.ManagedGrafana.Model
         private string _organizationRoleName;
         private PermissionType _permissionType;
         private string _stackSetName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VpcConfiguration _vpcConfiguration;
-        private List<string> _workspaceDataSources = new List<string>();
+        private List<string> _workspaceDataSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workspaceDescription;
         private string _workspaceName;
-        private List<string> _workspaceNotificationDestinations = new List<string>();
-        private List<string> _workspaceOrganizationalUnits = new List<string>();
+        private List<string> _workspaceNotificationDestinations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _workspaceOrganizationalUnits = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workspaceRoleArn;
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if AuthenticationProviders property is set
         internal bool IsSetAuthenticationProviders()
         {
-            return this._authenticationProviders != null && this._authenticationProviders.Count > 0; 
+            return this._authenticationProviders != null && (this._authenticationProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -296,7 +296,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -339,7 +339,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if WorkspaceDataSources property is set
         internal bool IsSetWorkspaceDataSources()
         {
-            return this._workspaceDataSources != null && this._workspaceDataSources.Count > 0; 
+            return this._workspaceDataSources != null && (this._workspaceDataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -401,7 +401,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if WorkspaceNotificationDestinations property is set
         internal bool IsSetWorkspaceNotificationDestinations()
         {
-            return this._workspaceNotificationDestinations != null && this._workspaceNotificationDestinations.Count > 0; 
+            return this._workspaceNotificationDestinations != null && (this._workspaceNotificationDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -421,7 +421,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if WorkspaceOrganizationalUnits property is set
         internal bool IsSetWorkspaceOrganizationalUnits()
         {
-            return this._workspaceOrganizationalUnits != null && this._workspaceOrganizationalUnits.Count > 0; 
+            return this._workspaceOrganizationalUnits != null && (this._workspaceOrganizationalUnits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

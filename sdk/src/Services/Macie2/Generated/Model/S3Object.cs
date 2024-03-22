@@ -43,7 +43,7 @@ namespace Amazon.Macie2.Model
         private ServerSideEncryption _serverSideEncryption;
         private long? _size;
         private StorageClass _storageClass;
-        private List<KeyValuePair> _tags = new List<KeyValuePair>();
+        private List<KeyValuePair> _tags = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
         private string _versionId;
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

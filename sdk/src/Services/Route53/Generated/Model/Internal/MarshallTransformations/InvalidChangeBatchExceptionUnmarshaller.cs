@@ -65,6 +65,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     if (context.TestExpression("messages/Message"))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.Messages == null)
+                        {
+                            response.Messages = new List<string>();
+                        }
                         response.Messages.Add(unmarshaller.Unmarshall(context));
                     }
                 }

@@ -84,6 +84,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBClusters/DBCluster", targetDepth))
                     {
                         var unmarshaller = DBClusterUnmarshaller.Instance;
+                        if (response.DBClusters == null)
+                        {
+                            response.DBClusters = new List<DBCluster>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DBClusters.Add(item);
                         continue;

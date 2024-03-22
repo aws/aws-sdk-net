@@ -33,7 +33,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class ContainerInstanceHealthStatus
     {
-        private List<InstanceHealthCheckResult> _details = new List<InstanceHealthCheckResult>();
+        private List<InstanceHealthCheckResult> _details = AWSConfigs.InitializeCollections ? new List<InstanceHealthCheckResult>() : null;
         private InstanceHealthCheckState _overallStatus;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ECS.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this._details != null && this._details.Count > 0; 
+            return this._details != null && (this._details.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

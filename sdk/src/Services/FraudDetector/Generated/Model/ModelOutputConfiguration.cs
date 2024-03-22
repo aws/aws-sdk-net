@@ -33,9 +33,9 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class ModelOutputConfiguration
     {
-        private Dictionary<string, string> _csvIndexToVariableMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _csvIndexToVariableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ModelOutputDataFormat _format;
-        private Dictionary<string, string> _jsonKeyToVariableMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _jsonKeyToVariableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CsvIndexToVariableMap. 
@@ -53,7 +53,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if CsvIndexToVariableMap property is set
         internal bool IsSetCsvIndexToVariableMap()
         {
-            return this._csvIndexToVariableMap != null && this._csvIndexToVariableMap.Count > 0; 
+            return this._csvIndexToVariableMap != null && (this._csvIndexToVariableMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if JsonKeyToVariableMap property is set
         internal bool IsSetJsonKeyToVariableMap()
         {
-            return this._jsonKeyToVariableMap != null && this._jsonKeyToVariableMap.Count > 0; 
+            return this._jsonKeyToVariableMap != null && (this._jsonKeyToVariableMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

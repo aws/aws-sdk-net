@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// Enumerable containing all of the ClientAuthenticationSettingsInfo
         /// </summary>
         public IPaginatedEnumerable<ClientAuthenticationSettingInfo> ClientAuthenticationSettingsInfo => 
-            new PaginatedResultKeyResponse<DescribeClientAuthenticationSettingsResponse, ClientAuthenticationSettingInfo>(this, (i) => i.ClientAuthenticationSettingsInfo);
+            new PaginatedResultKeyResponse<DescribeClientAuthenticationSettingsResponse, ClientAuthenticationSettingInfo>(this, (i) => i.ClientAuthenticationSettingsInfo ?? new List<ClientAuthenticationSettingInfo>());
 
         internal DescribeClientAuthenticationSettingsPaginator(IAmazonDirectoryService client, DescribeClientAuthenticationSettingsRequest request)
         {

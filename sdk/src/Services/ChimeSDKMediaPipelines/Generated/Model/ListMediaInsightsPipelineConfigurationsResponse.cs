@@ -33,7 +33,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// </summary>
     public partial class ListMediaInsightsPipelineConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<MediaInsightsPipelineConfigurationSummary> _mediaInsightsPipelineConfigurations = new List<MediaInsightsPipelineConfigurationSummary>();
+        private List<MediaInsightsPipelineConfigurationSummary> _mediaInsightsPipelineConfigurations = AWSConfigs.InitializeCollections ? new List<MediaInsightsPipelineConfigurationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if MediaInsightsPipelineConfigurations property is set
         internal bool IsSetMediaInsightsPipelineConfigurations()
         {
-            return this._mediaInsightsPipelineConfigurations != null && this._mediaInsightsPipelineConfigurations.Count > 0; 
+            return this._mediaInsightsPipelineConfigurations != null && (this._mediaInsightsPipelineConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

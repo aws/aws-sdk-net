@@ -33,7 +33,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class AnomalyUnusual
     {
-        private Dictionary<string, Dictionary<string, AnomalyObject>> _behavior = new Dictionary<string, Dictionary<string, AnomalyObject>>();
+        private Dictionary<string, Dictionary<string, AnomalyObject>> _behavior = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, AnomalyObject>>() : null;
 
         /// <summary>
         /// Gets and sets the property Behavior. 
@@ -50,7 +50,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Behavior property is set
         internal bool IsSetBehavior()
         {
-            return this._behavior != null && this._behavior.Count > 0; 
+            return this._behavior != null && (this._behavior.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

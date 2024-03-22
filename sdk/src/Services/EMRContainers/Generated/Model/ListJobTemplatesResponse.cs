@@ -34,7 +34,7 @@ namespace Amazon.EMRContainers.Model
     public partial class ListJobTemplatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<JobTemplate> _templates = new List<JobTemplate>();
+        private List<JobTemplate> _templates = AWSConfigs.InitializeCollections ? new List<JobTemplate>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if Templates property is set
         internal bool IsSetTemplates()
         {
-            return this._templates != null && this._templates.Count > 0; 
+            return this._templates != null && (this._templates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

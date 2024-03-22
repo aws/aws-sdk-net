@@ -33,8 +33,8 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class GitBranchFilterCriteria
     {
-        private List<string> _excludes = new List<string>();
-        private List<string> _includes = new List<string>();
+        private List<string> _excludes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _includes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Excludes. 
@@ -53,7 +53,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Excludes property is set
         internal bool IsSetExcludes()
         {
-            return this._excludes != null && this._excludes.Count > 0; 
+            return this._excludes != null && (this._excludes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Includes property is set
         internal bool IsSetIncludes()
         {
-            return this._includes != null && this._includes.Count > 0; 
+            return this._includes != null && (this._includes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

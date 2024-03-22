@@ -63,6 +63,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AttributeValues/AttributeValue", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AttributeValues == null)
+                        {
+                            unmarshalledObject.AttributeValues = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AttributeValues.Add(item);
                         continue;

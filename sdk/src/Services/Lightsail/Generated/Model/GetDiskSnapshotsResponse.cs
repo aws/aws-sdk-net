@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetDiskSnapshotsResponse : AmazonWebServiceResponse
     {
-        private List<DiskSnapshot> _diskSnapshots = new List<DiskSnapshot>();
+        private List<DiskSnapshot> _diskSnapshots = AWSConfigs.InitializeCollections ? new List<DiskSnapshot>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if DiskSnapshots property is set
         internal bool IsSetDiskSnapshots()
         {
-            return this._diskSnapshots != null && this._diskSnapshots.Count > 0; 
+            return this._diskSnapshots != null && (this._diskSnapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

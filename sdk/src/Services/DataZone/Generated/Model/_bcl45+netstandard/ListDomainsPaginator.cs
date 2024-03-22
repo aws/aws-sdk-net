@@ -45,7 +45,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<DomainSummary> Items => 
-            new PaginatedResultKeyResponse<ListDomainsResponse, DomainSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListDomainsResponse, DomainSummary>(this, (i) => i.Items ?? new List<DomainSummary>());
 
         internal ListDomainsPaginator(IAmazonDataZone client, ListDomainsRequest request)
         {

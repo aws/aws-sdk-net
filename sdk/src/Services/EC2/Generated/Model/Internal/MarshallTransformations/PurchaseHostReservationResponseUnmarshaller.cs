@@ -70,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("purchase/item", targetDepth))
                     {
                         var unmarshaller = PurchaseUnmarshaller.Instance;
+                        if (response.Purchase == null)
+                        {
+                            response.Purchase = new List<Purchase>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Purchase.Add(item);
                         continue;

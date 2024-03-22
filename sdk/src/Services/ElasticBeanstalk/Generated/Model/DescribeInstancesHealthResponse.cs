@@ -34,7 +34,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class DescribeInstancesHealthResponse : AmazonWebServiceResponse
     {
-        private List<SingleInstanceHealth> _instanceHealthList = new List<SingleInstanceHealth>();
+        private List<SingleInstanceHealth> _instanceHealthList = AWSConfigs.InitializeCollections ? new List<SingleInstanceHealth>() : null;
         private string _nextToken;
         private DateTime? _refreshedAt;
 
@@ -58,7 +58,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if InstanceHealthList property is set
         internal bool IsSetInstanceHealthList()
         {
-            return this._instanceHealthList != null && this._instanceHealthList.Count > 0; 
+            return this._instanceHealthList != null && (this._instanceHealthList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

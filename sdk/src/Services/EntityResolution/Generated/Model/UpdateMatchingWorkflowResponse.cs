@@ -35,8 +35,8 @@ namespace Amazon.EntityResolution.Model
     {
         private string _description;
         private IncrementalRunConfig _incrementalRunConfig;
-        private List<InputSource> _inputSourceConfig = new List<InputSource>();
-        private List<OutputSource> _outputSourceConfig = new List<OutputSource>();
+        private List<InputSource> _inputSourceConfig = AWSConfigs.InitializeCollections ? new List<InputSource>() : null;
+        private List<OutputSource> _outputSourceConfig = AWSConfigs.InitializeCollections ? new List<OutputSource>() : null;
         private ResolutionTechniques _resolutionTechniques;
         private string _roleArn;
         private string _workflowName;
@@ -96,7 +96,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if InputSourceConfig property is set
         internal bool IsSetInputSourceConfig()
         {
-            return this._inputSourceConfig != null && this._inputSourceConfig.Count > 0; 
+            return this._inputSourceConfig != null && (this._inputSourceConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if OutputSourceConfig property is set
         internal bool IsSetOutputSourceConfig()
         {
-            return this._outputSourceConfig != null && this._outputSourceConfig.Count > 0; 
+            return this._outputSourceConfig != null && (this._outputSourceConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

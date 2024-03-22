@@ -45,7 +45,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// Enumerable containing all of the RoutingControls
         /// </summary>
         public IPaginatedEnumerable<RoutingControl> RoutingControls => 
-            new PaginatedResultKeyResponse<ListRoutingControlsResponse, RoutingControl>(this, (i) => i.RoutingControls);
+            new PaginatedResultKeyResponse<ListRoutingControlsResponse, RoutingControl>(this, (i) => i.RoutingControls ?? new List<RoutingControl>());
 
         internal ListRoutingControlsPaginator(IAmazonRoute53RecoveryControlConfig client, ListRoutingControlsRequest request)
         {

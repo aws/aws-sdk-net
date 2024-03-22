@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the Policies
         /// </summary>
         public IPaginatedEnumerable<ManagedPolicy> Policies => 
-            new PaginatedResultKeyResponse<ListPoliciesResponse, ManagedPolicy>(this, (i) => i.Policies);
+            new PaginatedResultKeyResponse<ListPoliciesResponse, ManagedPolicy>(this, (i) => i.Policies ?? new List<ManagedPolicy>());
 
         internal ListPoliciesPaginator(IAmazonIdentityManagementService client, ListPoliciesRequest request)
         {

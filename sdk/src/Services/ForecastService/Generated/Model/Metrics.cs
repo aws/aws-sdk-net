@@ -35,9 +35,9 @@ namespace Amazon.ForecastService.Model
     public partial class Metrics
     {
         private double? _averageWeightedQuantileLoss;
-        private List<ErrorMetric> _errorMetrics = new List<ErrorMetric>();
+        private List<ErrorMetric> _errorMetrics = AWSConfigs.InitializeCollections ? new List<ErrorMetric>() : null;
         private double? _rmse;
-        private List<WeightedQuantileLoss> _weightedQuantileLosses = new List<WeightedQuantileLoss>();
+        private List<WeightedQuantileLoss> _weightedQuantileLosses = AWSConfigs.InitializeCollections ? new List<WeightedQuantileLoss>() : null;
 
         /// <summary>
         /// Gets and sets the property AverageWeightedQuantileLoss. 
@@ -74,7 +74,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if ErrorMetrics property is set
         internal bool IsSetErrorMetrics()
         {
-            return this._errorMetrics != null && this._errorMetrics.Count > 0; 
+            return this._errorMetrics != null && (this._errorMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if WeightedQuantileLosses property is set
         internal bool IsSetWeightedQuantileLosses()
         {
-            return this._weightedQuantileLosses != null && this._weightedQuantileLosses.Count > 0; 
+            return this._weightedQuantileLosses != null && (this._weightedQuantileLosses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

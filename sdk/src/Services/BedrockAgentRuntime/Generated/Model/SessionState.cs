@@ -40,8 +40,8 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class SessionState
     {
-        private Dictionary<string, string> _promptSessionAttributes = new Dictionary<string, string>();
-        private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _promptSessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _sessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property PromptSessionAttributes. 
@@ -61,7 +61,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if PromptSessionAttributes property is set
         internal bool IsSetPromptSessionAttributes()
         {
-            return this._promptSessionAttributes != null && this._promptSessionAttributes.Count > 0; 
+            return this._promptSessionAttributes != null && (this._promptSessionAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if SessionAttributes property is set
         internal bool IsSetSessionAttributes()
         {
-            return this._sessionAttributes != null && this._sessionAttributes.Count > 0; 
+            return this._sessionAttributes != null && (this._sessionAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.AWSSupport.Model
     /// </summary>
     public partial class DescribeCommunicationsResponse : AmazonWebServiceResponse
     {
-        private List<Communication> _communications = new List<Communication>();
+        private List<Communication> _communications = AWSConfigs.InitializeCollections ? new List<Communication>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if Communications property is set
         internal bool IsSetCommunications()
         {
-            return this._communications != null && this._communications.Count > 0; 
+            return this._communications != null && (this._communications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

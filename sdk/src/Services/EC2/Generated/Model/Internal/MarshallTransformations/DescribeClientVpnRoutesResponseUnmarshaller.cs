@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("routes/item", targetDepth))
                     {
                         var unmarshaller = ClientVpnRouteUnmarshaller.Instance;
+                        if (response.Routes == null)
+                        {
+                            response.Routes = new List<ClientVpnRoute>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Routes.Add(item);
                         continue;

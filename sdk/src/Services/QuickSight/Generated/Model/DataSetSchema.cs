@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DataSetSchema
     {
-        private List<ColumnSchema> _columnSchemaList = new List<ColumnSchema>();
+        private List<ColumnSchema> _columnSchemaList = AWSConfigs.InitializeCollections ? new List<ColumnSchema>() : null;
 
         /// <summary>
         /// Gets and sets the property ColumnSchemaList. 
@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ColumnSchemaList property is set
         internal bool IsSetColumnSchemaList()
         {
-            return this._columnSchemaList != null && this._columnSchemaList.Count > 0; 
+            return this._columnSchemaList != null && (this._columnSchemaList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

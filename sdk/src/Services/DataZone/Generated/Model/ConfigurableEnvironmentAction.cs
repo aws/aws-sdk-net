@@ -34,7 +34,7 @@ namespace Amazon.DataZone.Model
     public partial class ConfigurableEnvironmentAction
     {
         private ConfigurableActionTypeAuthorization _auth;
-        private List<ConfigurableActionParameter> _parameters = new List<ConfigurableActionParameter>();
+        private List<ConfigurableActionParameter> _parameters = AWSConfigs.InitializeCollections ? new List<ConfigurableActionParameter>() : null;
         private string _type;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.ForecastService.Model
         /// Enumerable containing all of the PredictorBacktestExportJobs
         /// </summary>
         public IPaginatedEnumerable<PredictorBacktestExportJobSummary> PredictorBacktestExportJobs => 
-            new PaginatedResultKeyResponse<ListPredictorBacktestExportJobsResponse, PredictorBacktestExportJobSummary>(this, (i) => i.PredictorBacktestExportJobs);
+            new PaginatedResultKeyResponse<ListPredictorBacktestExportJobsResponse, PredictorBacktestExportJobSummary>(this, (i) => i.PredictorBacktestExportJobs ?? new List<PredictorBacktestExportJobSummary>());
 
         internal ListPredictorBacktestExportJobsPaginator(IAmazonForecastService client, ListPredictorBacktestExportJobsRequest request)
         {

@@ -53,12 +53,12 @@ namespace Amazon.SsmSap.Model
     {
         private string _applicationId;
         private ApplicationType _applicationType;
-        private List<ApplicationCredential> _credentials = new List<ApplicationCredential>();
+        private List<ApplicationCredential> _credentials = AWSConfigs.InitializeCollections ? new List<ApplicationCredential>() : null;
         private string _databaseArn;
-        private List<string> _instances = new List<string>();
+        private List<string> _instances = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sapInstanceNumber;
         private string _sid;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -114,7 +114,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if Credentials property is set
         internal bool IsSetCredentials()
         {
-            return this._credentials != null && this._credentials.Count > 0; 
+            return this._credentials != null && (this._credentials.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

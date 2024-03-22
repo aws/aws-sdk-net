@@ -35,7 +35,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class DescribeAssessmentTemplatesRequest : AmazonInspectorRequest
     {
-        private List<string> _assessmentTemplateArns = new List<string>();
+        private List<string> _assessmentTemplateArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssessmentTemplateArns.
@@ -50,7 +50,7 @@ namespace Amazon.Inspector.Model
         // Check to see if AssessmentTemplateArns property is set
         internal bool IsSetAssessmentTemplateArns()
         {
-            return this._assessmentTemplateArns != null && this._assessmentTemplateArns.Count > 0; 
+            return this._assessmentTemplateArns != null && (this._assessmentTemplateArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

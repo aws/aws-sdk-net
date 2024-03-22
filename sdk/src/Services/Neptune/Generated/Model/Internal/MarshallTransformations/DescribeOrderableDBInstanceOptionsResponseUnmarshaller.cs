@@ -90,6 +90,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OrderableDBInstanceOptions/OrderableDBInstanceOption", targetDepth))
                     {
                         var unmarshaller = OrderableDBInstanceOptionUnmarshaller.Instance;
+                        if (response.OrderableDBInstanceOptions == null)
+                        {
+                            response.OrderableDBInstanceOptions = new List<OrderableDBInstanceOption>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.OrderableDBInstanceOptions.Add(item);
                         continue;

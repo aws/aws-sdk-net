@@ -33,7 +33,7 @@ namespace Amazon.RedshiftServerless.Model
     /// </summary>
     public partial class ListEndpointAccessResponse : AmazonWebServiceResponse
     {
-        private List<EndpointAccess> _endpoints = new List<EndpointAccess>();
+        private List<EndpointAccess> _endpoints = AWSConfigs.InitializeCollections ? new List<EndpointAccess>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

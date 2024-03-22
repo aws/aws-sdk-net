@@ -36,7 +36,7 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class EstimateTemplateCostRequest : AmazonCloudFormationRequest
     {
-        private List<Parameter> _parameters = new List<Parameter>();
+        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
         private string _templateBody;
         private string _templateURL;
 
@@ -55,7 +55,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model
     public partial class ListRestoreJobsByProtectedResourceResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RestoreJobsListMember> _restoreJobs = new List<RestoreJobsListMember>();
+        private List<RestoreJobsListMember> _restoreJobs = AWSConfigs.InitializeCollections ? new List<RestoreJobsListMember>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.Backup.Model
         // Check to see if RestoreJobs property is set
         internal bool IsSetRestoreJobs()
         {
-            return this._restoreJobs != null && this._restoreJobs.Count > 0; 
+            return this._restoreJobs != null && (this._restoreJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

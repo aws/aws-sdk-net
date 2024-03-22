@@ -57,6 +57,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TargetGroups/member", targetDepth))
                     {
                         var unmarshaller = TargetGroupTupleUnmarshaller.Instance;
+                        if (unmarshalledObject.TargetGroups == null)
+                        {
+                            unmarshalledObject.TargetGroups = new List<TargetGroupTuple>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TargetGroups.Add(item);
                         continue;

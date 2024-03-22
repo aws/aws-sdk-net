@@ -33,7 +33,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// </summary>
     public partial class ListFilteredTransactionEventsResponse : AmazonWebServiceResponse
     {
-        private List<TransactionEvent> _events = new List<TransactionEvent>();
+        private List<TransactionEvent> _events = AWSConfigs.InitializeCollections ? new List<TransactionEvent>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

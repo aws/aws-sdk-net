@@ -45,7 +45,7 @@ namespace Amazon.MediaTailor.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<Channel> Items => 
-            new PaginatedResultKeyResponse<ListChannelsResponse, Channel>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListChannelsResponse, Channel>(this, (i) => i.Items ?? new List<Channel>());
 
         internal ListChannelsPaginator(IAmazonMediaTailor client, ListChannelsRequest request)
         {

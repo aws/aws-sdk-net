@@ -37,7 +37,7 @@ namespace Amazon.LexModelsV2.Model
         private string _domainEndpoint;
         private bool? _exactResponse;
         private ExactResponseFields _exactResponseFields;
-        private List<string> _includeFields = new List<string>();
+        private List<string> _includeFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _indexName;
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if IncludeFields property is set
         internal bool IsSetIncludeFields()
         {
-            return this._includeFields != null && this._includeFields.Count > 0; 
+            return this._includeFields != null && (this._includeFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Rekognition.Model
         /// Enumerable containing all of the DatasetLabelDescriptions
         /// </summary>
         public IPaginatedEnumerable<DatasetLabelDescription> DatasetLabelDescriptions => 
-            new PaginatedResultKeyResponse<ListDatasetLabelsResponse, DatasetLabelDescription>(this, (i) => i.DatasetLabelDescriptions);
+            new PaginatedResultKeyResponse<ListDatasetLabelsResponse, DatasetLabelDescription>(this, (i) => i.DatasetLabelDescriptions ?? new List<DatasetLabelDescription>());
 
         internal ListDatasetLabelsPaginator(IAmazonRekognition client, ListDatasetLabelsRequest request)
         {

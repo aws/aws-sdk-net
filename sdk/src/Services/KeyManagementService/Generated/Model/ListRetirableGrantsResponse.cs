@@ -33,7 +33,7 @@ namespace Amazon.KeyManagementService.Model
     /// </summary>
     public partial class ListRetirableGrantsResponse : AmazonWebServiceResponse
     {
-        private List<GrantListEntry> _grants = new List<GrantListEntry>();
+        private List<GrantListEntry> _grants = AWSConfigs.InitializeCollections ? new List<GrantListEntry>() : null;
         private string _nextMarker;
         private bool? _truncated;
 
@@ -52,7 +52,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if Grants property is set
         internal bool IsSetGrants()
         {
-            return this._grants != null && this._grants.Count > 0; 
+            return this._grants != null && (this._grants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

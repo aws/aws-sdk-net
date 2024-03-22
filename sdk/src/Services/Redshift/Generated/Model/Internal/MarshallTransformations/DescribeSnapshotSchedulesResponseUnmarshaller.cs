@@ -90,6 +90,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SnapshotSchedules/SnapshotSchedule", targetDepth))
                     {
                         var unmarshaller = SnapshotScheduleUnmarshaller.Instance;
+                        if (response.SnapshotSchedules == null)
+                        {
+                            response.SnapshotSchedules = new List<SnapshotSchedule>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SnapshotSchedules.Add(item);
                         continue;

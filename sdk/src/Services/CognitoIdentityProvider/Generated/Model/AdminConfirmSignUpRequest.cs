@@ -67,7 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class AdminConfirmSignUpRequest : AmazonCognitoIdentityProviderRequest
     {
-        private Dictionary<string, string> _clientMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _clientMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _username;
         private string _userPoolId;
 
@@ -123,7 +123,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ClientMetadata property is set
         internal bool IsSetClientMetadata()
         {
-            return this._clientMetadata != null && this._clientMetadata.Count > 0; 
+            return this._clientMetadata != null && (this._clientMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

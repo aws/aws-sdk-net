@@ -41,15 +41,15 @@ namespace Amazon.LexModelBuildingService.Model
         private CodeHook _dialogCodeHook;
         private FollowUpPrompt _followUpPrompt;
         private FulfillmentActivity _fulfillmentActivity;
-        private List<InputContext> _inputContexts = new List<InputContext>();
+        private List<InputContext> _inputContexts = AWSConfigs.InitializeCollections ? new List<InputContext>() : null;
         private KendraConfiguration _kendraConfiguration;
         private DateTime? _lastUpdatedDate;
         private string _name;
-        private List<OutputContext> _outputContexts = new List<OutputContext>();
+        private List<OutputContext> _outputContexts = AWSConfigs.InitializeCollections ? new List<OutputContext>() : null;
         private string _parentIntentSignature;
         private Statement _rejectionStatement;
-        private List<string> _sampleUtterances = new List<string>();
-        private List<Slot> _slots = new List<Slot>();
+        private List<string> _sampleUtterances = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Slot> _slots = AWSConfigs.InitializeCollections ? new List<Slot>() : null;
         private string _version;
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if InputContexts property is set
         internal bool IsSetInputContexts()
         {
-            return this._inputContexts != null && this._inputContexts.Count > 0; 
+            return this._inputContexts != null && (this._inputContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -293,7 +293,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if OutputContexts property is set
         internal bool IsSetOutputContexts()
         {
-            return this._outputContexts != null && this._outputContexts.Count > 0; 
+            return this._outputContexts != null && (this._outputContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -349,7 +349,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if SampleUtterances property is set
         internal bool IsSetSampleUtterances()
         {
-            return this._sampleUtterances != null && this._sampleUtterances.Count > 0; 
+            return this._sampleUtterances != null && (this._sampleUtterances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -368,7 +368,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if Slots property is set
         internal bool IsSetSlots()
         {
-            return this._slots != null && this._slots.Count > 0; 
+            return this._slots != null && (this._slots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

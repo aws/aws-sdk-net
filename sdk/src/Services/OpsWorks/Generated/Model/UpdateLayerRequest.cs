@@ -42,23 +42,23 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class UpdateLayerRequest : AmazonOpsWorksRequest
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _autoAssignElasticIps;
         private bool? _autoAssignPublicIps;
         private CloudWatchLogsConfiguration _cloudWatchLogsConfiguration;
         private string _customInstanceProfileArn;
         private string _customJson;
         private Recipes _customRecipes;
-        private List<string> _customSecurityGroupIds = new List<string>();
+        private List<string> _customSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableAutoHealing;
         private bool? _installUpdatesOnBoot;
         private string _layerId;
         private LifecycleEventConfiguration _lifecycleEventConfiguration;
         private string _name;
-        private List<string> _packages = new List<string>();
+        private List<string> _packages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _shortname;
         private bool? _useEbsOptimizedInstances;
-        private List<VolumeConfiguration> _volumeConfigurations = new List<VolumeConfiguration>();
+        private List<VolumeConfiguration> _volumeConfigurations = AWSConfigs.InitializeCollections ? new List<VolumeConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -75,7 +75,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if CustomSecurityGroupIds property is set
         internal bool IsSetCustomSecurityGroupIds()
         {
-            return this._customSecurityGroupIds != null && this._customSecurityGroupIds.Count > 0; 
+            return this._customSecurityGroupIds != null && (this._customSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -326,7 +326,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Packages property is set
         internal bool IsSetPackages()
         {
-            return this._packages != null && this._packages.Count > 0; 
+            return this._packages != null && (this._packages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -389,7 +389,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if VolumeConfigurations property is set
         internal bool IsSetVolumeConfigurations()
         {
-            return this._volumeConfigurations != null && this._volumeConfigurations.Count > 0; 
+            return this._volumeConfigurations != null && (this._volumeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

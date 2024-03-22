@@ -45,7 +45,7 @@ namespace Amazon.PrometheusService.Model
         /// Enumerable containing all of the RuleGroupsNamespaces
         /// </summary>
         public IPaginatedEnumerable<RuleGroupsNamespaceSummary> RuleGroupsNamespaces => 
-            new PaginatedResultKeyResponse<ListRuleGroupsNamespacesResponse, RuleGroupsNamespaceSummary>(this, (i) => i.RuleGroupsNamespaces);
+            new PaginatedResultKeyResponse<ListRuleGroupsNamespacesResponse, RuleGroupsNamespaceSummary>(this, (i) => i.RuleGroupsNamespaces ?? new List<RuleGroupsNamespaceSummary>());
 
         internal ListRuleGroupsNamespacesPaginator(IAmazonPrometheusService client, ListRuleGroupsNamespacesRequest request)
         {

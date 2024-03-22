@@ -57,6 +57,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AuthorizedAudiencesList/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AuthorizedAudiencesList == null)
+                        {
+                            unmarshalledObject.AuthorizedAudiencesList = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AuthorizedAudiencesList.Add(item);
                         continue;

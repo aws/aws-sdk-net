@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DocumentReviews
     {
         private DocumentReviewAction _action;
-        private List<DocumentReviewCommentSource> _comment = new List<DocumentReviewCommentSource>();
+        private List<DocumentReviewCommentSource> _comment = AWSConfigs.InitializeCollections ? new List<DocumentReviewCommentSource>() : null;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -71,7 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this._comment != null && this._comment.Count > 0; 
+            return this._comment != null && (this._comment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

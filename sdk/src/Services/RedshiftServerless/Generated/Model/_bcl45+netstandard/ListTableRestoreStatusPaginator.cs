@@ -45,7 +45,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Enumerable containing all of the TableRestoreStatuses
         /// </summary>
         public IPaginatedEnumerable<TableRestoreStatus> TableRestoreStatuses => 
-            new PaginatedResultKeyResponse<ListTableRestoreStatusResponse, TableRestoreStatus>(this, (i) => i.TableRestoreStatuses);
+            new PaginatedResultKeyResponse<ListTableRestoreStatusResponse, TableRestoreStatus>(this, (i) => i.TableRestoreStatuses ?? new List<TableRestoreStatus>());
 
         internal ListTableRestoreStatusPaginator(IAmazonRedshiftServerless client, ListTableRestoreStatusRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class GetResourcePoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<GetResourcePoliciesResponseEntry> _policies = new List<GetResourcePoliciesResponseEntry>();
+        private List<GetResourcePoliciesResponseEntry> _policies = AWSConfigs.InitializeCollections ? new List<GetResourcePoliciesResponseEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._policies != null && (this._policies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

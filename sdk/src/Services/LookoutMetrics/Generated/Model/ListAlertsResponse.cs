@@ -33,7 +33,7 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class ListAlertsResponse : AmazonWebServiceResponse
     {
-        private List<AlertSummary> _alertSummaryList = new List<AlertSummary>();
+        private List<AlertSummary> _alertSummaryList = AWSConfigs.InitializeCollections ? new List<AlertSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if AlertSummaryList property is set
         internal bool IsSetAlertSummaryList()
         {
-            return this._alertSummaryList != null && this._alertSummaryList.Count > 0; 
+            return this._alertSummaryList != null && (this._alertSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Amazon.ResourceExplorer2.Model
     /// </summary>
     public partial class ListIndexesForMembersRequest : AmazonResourceExplorer2Request
     {
-        private List<string> _accountIdList = new List<string>();
+        private List<string> _accountIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -57,7 +57,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if AccountIdList property is set
         internal bool IsSetAccountIdList()
         {
-            return this._accountIdList != null && this._accountIdList.Count > 0; 
+            return this._accountIdList != null && (this._accountIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

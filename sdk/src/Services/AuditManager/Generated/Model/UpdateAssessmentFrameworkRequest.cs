@@ -35,7 +35,7 @@ namespace Amazon.AuditManager.Model
     public partial class UpdateAssessmentFrameworkRequest : AmazonAuditManagerRequest
     {
         private string _complianceType;
-        private List<UpdateAssessmentFrameworkControlSet> _controlSets = new List<UpdateAssessmentFrameworkControlSet>();
+        private List<UpdateAssessmentFrameworkControlSet> _controlSets = AWSConfigs.InitializeCollections ? new List<UpdateAssessmentFrameworkControlSet>() : null;
         private string _description;
         private string _frameworkId;
         private string _name;
@@ -76,7 +76,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if ControlSets property is set
         internal bool IsSetControlSets()
         {
-            return this._controlSets != null && this._controlSets.Count > 0; 
+            return this._controlSets != null && (this._controlSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

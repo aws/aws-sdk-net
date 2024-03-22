@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the Campaigns
         /// </summary>
         public IPaginatedEnumerable<CampaignSummary> Campaigns => 
-            new PaginatedResultKeyResponse<ListCampaignsResponse, CampaignSummary>(this, (i) => i.Campaigns);
+            new PaginatedResultKeyResponse<ListCampaignsResponse, CampaignSummary>(this, (i) => i.Campaigns ?? new List<CampaignSummary>());
 
         internal ListCampaignsPaginator(IAmazonPersonalize client, ListCampaignsRequest request)
         {

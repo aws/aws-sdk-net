@@ -33,7 +33,7 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class ListDatasetContentsResponse : AmazonWebServiceResponse
     {
-        private List<DatasetContentSummary> _datasetContentSummaries = new List<DatasetContentSummary>();
+        private List<DatasetContentSummary> _datasetContentSummaries = AWSConfigs.InitializeCollections ? new List<DatasetContentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if DatasetContentSummaries property is set
         internal bool IsSetDatasetContentSummaries()
         {
-            return this._datasetContentSummaries != null && this._datasetContentSummaries.Count > 0; 
+            return this._datasetContentSummaries != null && (this._datasetContentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

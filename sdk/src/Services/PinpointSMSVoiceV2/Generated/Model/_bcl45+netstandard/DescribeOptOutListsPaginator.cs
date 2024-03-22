@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the OptOutLists
         /// </summary>
         public IPaginatedEnumerable<OptOutListInformation> OptOutLists => 
-            new PaginatedResultKeyResponse<DescribeOptOutListsResponse, OptOutListInformation>(this, (i) => i.OptOutLists);
+            new PaginatedResultKeyResponse<DescribeOptOutListsResponse, OptOutListInformation>(this, (i) => i.OptOutLists ?? new List<OptOutListInformation>());
 
         internal DescribeOptOutListsPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeOptOutListsRequest request)
         {

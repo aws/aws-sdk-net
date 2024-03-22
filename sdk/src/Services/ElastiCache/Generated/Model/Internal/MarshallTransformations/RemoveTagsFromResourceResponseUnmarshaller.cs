@@ -84,6 +84,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TagList/Tag", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (response.TagList == null)
+                        {
+                            response.TagList = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TagList.Add(item);
                         continue;

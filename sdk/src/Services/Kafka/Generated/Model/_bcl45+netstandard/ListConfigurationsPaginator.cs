@@ -45,7 +45,7 @@ namespace Amazon.Kafka.Model
         /// Enumerable containing all of the Configurations
         /// </summary>
         public IPaginatedEnumerable<Configuration> Configurations => 
-            new PaginatedResultKeyResponse<ListConfigurationsResponse, Configuration>(this, (i) => i.Configurations);
+            new PaginatedResultKeyResponse<ListConfigurationsResponse, Configuration>(this, (i) => i.Configurations ?? new List<Configuration>());
 
         internal ListConfigurationsPaginator(IAmazonKafka client, ListConfigurationsRequest request)
         {

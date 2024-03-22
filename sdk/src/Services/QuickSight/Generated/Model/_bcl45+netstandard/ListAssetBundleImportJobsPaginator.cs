@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the AssetBundleImportJobSummaryList
         /// </summary>
         public IPaginatedEnumerable<AssetBundleImportJobSummary> AssetBundleImportJobSummaryList => 
-            new PaginatedResultKeyResponse<ListAssetBundleImportJobsResponse, AssetBundleImportJobSummary>(this, (i) => i.AssetBundleImportJobSummaryList);
+            new PaginatedResultKeyResponse<ListAssetBundleImportJobsResponse, AssetBundleImportJobSummary>(this, (i) => i.AssetBundleImportJobSummaryList ?? new List<AssetBundleImportJobSummary>());
 
         internal ListAssetBundleImportJobsPaginator(IAmazonQuickSight client, ListAssetBundleImportJobsRequest request)
         {

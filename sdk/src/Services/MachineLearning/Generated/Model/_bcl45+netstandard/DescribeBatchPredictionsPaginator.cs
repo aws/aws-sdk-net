@@ -45,7 +45,7 @@ namespace Amazon.MachineLearning.Model
         /// Enumerable containing all of the Results
         /// </summary>
         public IPaginatedEnumerable<BatchPrediction> Results => 
-            new PaginatedResultKeyResponse<DescribeBatchPredictionsResponse, BatchPrediction>(this, (i) => i.Results);
+            new PaginatedResultKeyResponse<DescribeBatchPredictionsResponse, BatchPrediction>(this, (i) => i.Results ?? new List<BatchPrediction>());
 
         internal DescribeBatchPredictionsPaginator(IAmazonMachineLearning client, DescribeBatchPredictionsRequest request)
         {

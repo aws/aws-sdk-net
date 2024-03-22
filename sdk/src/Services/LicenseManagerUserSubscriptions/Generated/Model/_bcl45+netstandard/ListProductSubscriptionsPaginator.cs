@@ -45,7 +45,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// Enumerable containing all of the ProductUserSummaries
         /// </summary>
         public IPaginatedEnumerable<ProductUserSummary> ProductUserSummaries => 
-            new PaginatedResultKeyResponse<ListProductSubscriptionsResponse, ProductUserSummary>(this, (i) => i.ProductUserSummaries);
+            new PaginatedResultKeyResponse<ListProductSubscriptionsResponse, ProductUserSummary>(this, (i) => i.ProductUserSummaries ?? new List<ProductUserSummary>());
 
         internal ListProductSubscriptionsPaginator(IAmazonLicenseManagerUserSubscriptions client, ListProductSubscriptionsRequest request)
         {

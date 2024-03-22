@@ -33,7 +33,7 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class GetConnectivityInfoResponse : AmazonWebServiceResponse
     {
-        private List<ConnectivityInfo> _connectivityInfo = new List<ConnectivityInfo>();
+        private List<ConnectivityInfo> _connectivityInfo = AWSConfigs.InitializeCollections ? new List<ConnectivityInfo>() : null;
         private string _message;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if ConnectivityInfo property is set
         internal bool IsSetConnectivityInfo()
         {
-            return this._connectivityInfo != null && this._connectivityInfo.Count > 0; 
+            return this._connectivityInfo != null && (this._connectivityInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

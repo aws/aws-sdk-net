@@ -34,7 +34,7 @@ namespace Amazon.ECRPublic.Model
     public partial class DescribeRepositoriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Repository> _repositories = new List<Repository>();
+        private List<Repository> _repositories = AWSConfigs.InitializeCollections ? new List<Repository>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if Repositories property is set
         internal bool IsSetRepositories()
         {
-            return this._repositories != null && this._repositories.Count > 0; 
+            return this._repositories != null && (this._repositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

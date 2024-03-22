@@ -33,7 +33,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class ListJobsResponse : AmazonWebServiceResponse
     {
-        private List<JobSummary> _jobSummaryList = new List<JobSummary>();
+        private List<JobSummary> _jobSummaryList = AWSConfigs.InitializeCollections ? new List<JobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Batch.Model
         // Check to see if JobSummaryList property is set
         internal bool IsSetJobSummaryList()
         {
-            return this._jobSummaryList != null && this._jobSummaryList.Count > 0; 
+            return this._jobSummaryList != null && (this._jobSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

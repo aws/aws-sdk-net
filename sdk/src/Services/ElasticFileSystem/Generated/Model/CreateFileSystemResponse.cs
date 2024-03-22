@@ -49,7 +49,7 @@ namespace Amazon.ElasticFileSystem.Model
         private PerformanceMode _performanceMode;
         private double? _provisionedThroughputInMibps;
         private FileSystemSize _sizeInBytes;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private ThroughputMode _throughputMode;
 
         /// <summary>
@@ -386,7 +386,7 @@ namespace Amazon.ElasticFileSystem.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

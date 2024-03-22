@@ -41,7 +41,7 @@ namespace Amazon.SimpleEmailV2.Model
         private CloudWatchDestination _cloudWatchDestination;
         private bool? _enabled;
         private KinesisFirehoseDestination _kinesisFirehoseDestination;
-        private List<string> _matchingEventTypes = new List<string>();
+        private List<string> _matchingEventTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private PinpointDestination _pinpointDestination;
         private SnsDestination _snsDestination;
@@ -183,7 +183,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if MatchingEventTypes property is set
         internal bool IsSetMatchingEventTypes()
         {
-            return this._matchingEventTypes != null && this._matchingEventTypes.Count > 0; 
+            return this._matchingEventTypes != null && (this._matchingEventTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -63,8 +63,8 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class UpdateTagsForResourceRequest : AmazonElasticBeanstalkRequest
     {
         private string _resourceArn;
-        private List<Tag> _tagsToAdd = new List<Tag>();
-        private List<string> _tagsToRemove = new List<string>();
+        private List<Tag> _tagsToAdd = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _tagsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -109,7 +109,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if TagsToAdd property is set
         internal bool IsSetTagsToAdd()
         {
-            return this._tagsToAdd != null && this._tagsToAdd.Count > 0; 
+            return this._tagsToAdd != null && (this._tagsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if TagsToRemove property is set
         internal bool IsSetTagsToRemove()
         {
-            return this._tagsToRemove != null && this._tagsToRemove.Count > 0; 
+            return this._tagsToRemove != null && (this._tagsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

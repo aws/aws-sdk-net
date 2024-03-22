@@ -35,7 +35,7 @@ namespace Amazon.LexRuntimeV2.Model
     {
         private string _interpretedValue;
         private string _originalValue;
-        private List<string> _resolvedValues = new List<string>();
+        private List<string> _resolvedValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property InterpretedValue. 
@@ -95,7 +95,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if ResolvedValues property is set
         internal bool IsSetResolvedValues()
         {
-            return this._resolvedValues != null && this._resolvedValues.Count > 0; 
+            return this._resolvedValues != null && (this._resolvedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

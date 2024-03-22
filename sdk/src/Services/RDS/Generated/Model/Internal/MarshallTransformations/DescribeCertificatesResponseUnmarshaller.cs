@@ -84,6 +84,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Certificates/Certificate", targetDepth))
                     {
                         var unmarshaller = CertificateUnmarshaller.Instance;
+                        if (response.Certificates == null)
+                        {
+                            response.Certificates = new List<Certificate>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Certificates.Add(item);
                         continue;

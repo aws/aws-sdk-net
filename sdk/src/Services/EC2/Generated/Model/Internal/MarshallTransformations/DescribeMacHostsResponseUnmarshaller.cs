@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("macHostSet/item", targetDepth))
                     {
                         var unmarshaller = MacHostUnmarshaller.Instance;
+                        if (response.MacHosts == null)
+                        {
+                            response.MacHosts = new List<MacHost>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.MacHosts.Add(item);
                         continue;

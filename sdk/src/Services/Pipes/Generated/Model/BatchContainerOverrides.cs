@@ -33,10 +33,10 @@ namespace Amazon.Pipes.Model
     /// </summary>
     public partial class BatchContainerOverrides
     {
-        private List<string> _command = new List<string>();
-        private List<BatchEnvironmentVariable> _environment = new List<BatchEnvironmentVariable>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<BatchEnvironmentVariable> _environment = AWSConfigs.InitializeCollections ? new List<BatchEnvironmentVariable>() : null;
         private string _instanceType;
-        private List<BatchResourceRequirement> _resourceRequirements = new List<BatchResourceRequirement>();
+        private List<BatchResourceRequirement> _resourceRequirements = AWSConfigs.InitializeCollections ? new List<BatchResourceRequirement>() : null;
 
         /// <summary>
         /// Gets and sets the property Command. 
@@ -54,7 +54,7 @@ namespace Amazon.Pipes.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.Pipes.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.Pipes.Model
         // Check to see if ResourceRequirements property is set
         internal bool IsSetResourceRequirements()
         {
-            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
+            return this._resourceRequirements != null && (this._resourceRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

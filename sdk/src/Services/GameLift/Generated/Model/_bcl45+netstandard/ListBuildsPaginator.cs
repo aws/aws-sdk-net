@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the Builds
         /// </summary>
         public IPaginatedEnumerable<Build> Builds => 
-            new PaginatedResultKeyResponse<ListBuildsResponse, Build>(this, (i) => i.Builds);
+            new PaginatedResultKeyResponse<ListBuildsResponse, Build>(this, (i) => i.Builds ?? new List<Build>());
 
         internal ListBuildsPaginator(IAmazonGameLift client, ListBuildsRequest request)
         {

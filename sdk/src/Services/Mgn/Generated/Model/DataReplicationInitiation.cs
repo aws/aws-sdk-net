@@ -35,7 +35,7 @@ namespace Amazon.Mgn.Model
     {
         private string _nextAttemptDateTime;
         private string _startDateTime;
-        private List<DataReplicationInitiationStep> _steps = new List<DataReplicationInitiationStep>();
+        private List<DataReplicationInitiationStep> _steps = AWSConfigs.InitializeCollections ? new List<DataReplicationInitiationStep>() : null;
 
         /// <summary>
         /// Gets and sets the property NextAttemptDateTime. 
@@ -90,7 +90,7 @@ namespace Amazon.Mgn.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

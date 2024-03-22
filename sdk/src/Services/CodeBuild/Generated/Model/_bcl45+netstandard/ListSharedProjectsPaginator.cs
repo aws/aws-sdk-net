@@ -45,7 +45,7 @@ namespace Amazon.CodeBuild.Model
         /// Enumerable containing all of the Projects
         /// </summary>
         public IPaginatedEnumerable<string> Projects => 
-            new PaginatedResultKeyResponse<ListSharedProjectsResponse, string>(this, (i) => i.Projects);
+            new PaginatedResultKeyResponse<ListSharedProjectsResponse, string>(this, (i) => i.Projects ?? new List<string>());
 
         internal ListSharedProjectsPaginator(IAmazonCodeBuild client, ListSharedProjectsRequest request)
         {

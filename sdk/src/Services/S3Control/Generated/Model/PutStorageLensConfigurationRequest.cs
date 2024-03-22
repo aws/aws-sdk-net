@@ -55,7 +55,7 @@ namespace Amazon.S3Control.Model
         private string _accountId;
         private string _configId;
         private StorageLensConfiguration _storageLensConfiguration;
-        private List<StorageLensTag> _tags = new List<StorageLensTag>();
+        private List<StorageLensTag> _tags = AWSConfigs.InitializeCollections ? new List<StorageLensTag>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -134,7 +134,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

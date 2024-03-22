@@ -34,45 +34,45 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class ContainerDefinition
     {
-        private List<string> _command = new List<string>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _cpu;
-        private List<string> _credentialSpecs = new List<string>();
-        private List<ContainerDependency> _dependsOn = new List<ContainerDependency>();
+        private List<string> _credentialSpecs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ContainerDependency> _dependsOn = AWSConfigs.InitializeCollections ? new List<ContainerDependency>() : null;
         private bool? _disableNetworking;
-        private List<string> _dnsSearchDomains = new List<string>();
-        private List<string> _dnsServers = new List<string>();
-        private Dictionary<string, string> _dockerLabels = new Dictionary<string, string>();
-        private List<string> _dockerSecurityOptions = new List<string>();
-        private List<string> _entryPoint = new List<string>();
-        private List<KeyValuePair> _environment = new List<KeyValuePair>();
-        private List<EnvironmentFile> _environmentFiles = new List<EnvironmentFile>();
+        private List<string> _dnsSearchDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _dnsServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _dockerLabels = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _dockerSecurityOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _entryPoint = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<KeyValuePair> _environment = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
+        private List<EnvironmentFile> _environmentFiles = AWSConfigs.InitializeCollections ? new List<EnvironmentFile>() : null;
         private bool? _essential;
-        private List<HostEntry> _extraHosts = new List<HostEntry>();
+        private List<HostEntry> _extraHosts = AWSConfigs.InitializeCollections ? new List<HostEntry>() : null;
         private FirelensConfiguration _firelensConfiguration;
         private HealthCheck _healthCheck;
         private string _hostname;
         private string _image;
         private bool? _interactive;
-        private List<string> _links = new List<string>();
+        private List<string> _links = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LinuxParameters _linuxParameters;
         private LogConfiguration _logConfiguration;
         private int? _memory;
         private int? _memoryReservation;
-        private List<MountPoint> _mountPoints = new List<MountPoint>();
+        private List<MountPoint> _mountPoints = AWSConfigs.InitializeCollections ? new List<MountPoint>() : null;
         private string _name;
-        private List<PortMapping> _portMappings = new List<PortMapping>();
+        private List<PortMapping> _portMappings = AWSConfigs.InitializeCollections ? new List<PortMapping>() : null;
         private bool? _privileged;
         private bool? _pseudoTerminal;
         private bool? _readonlyRootFilesystem;
         private RepositoryCredentials _repositoryCredentials;
-        private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
-        private List<Secret> _secrets = new List<Secret>();
+        private List<ResourceRequirement> _resourceRequirements = AWSConfigs.InitializeCollections ? new List<ResourceRequirement>() : null;
+        private List<Secret> _secrets = AWSConfigs.InitializeCollections ? new List<Secret>() : null;
         private int? _startTimeout;
         private int? _stopTimeout;
-        private List<SystemControl> _systemControls = new List<SystemControl>();
-        private List<Ulimit> _ulimits = new List<Ulimit>();
+        private List<SystemControl> _systemControls = AWSConfigs.InitializeCollections ? new List<SystemControl>() : null;
+        private List<Ulimit> _ulimits = AWSConfigs.InitializeCollections ? new List<Ulimit>() : null;
         private string _user;
-        private List<VolumeFrom> _volumesFrom = new List<VolumeFrom>();
+        private List<VolumeFrom> _volumesFrom = AWSConfigs.InitializeCollections ? new List<VolumeFrom>() : null;
         private string _workingDirectory;
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.ECS.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace Amazon.ECS.Model
         // Check to see if CredentialSpecs property is set
         internal bool IsSetCredentialSpecs()
         {
-            return this._credentialSpecs != null && this._credentialSpecs.Count > 0; 
+            return this._credentialSpecs != null && (this._credentialSpecs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -280,7 +280,7 @@ namespace Amazon.ECS.Model
         // Check to see if DependsOn property is set
         internal bool IsSetDependsOn()
         {
-            return this._dependsOn != null && this._dependsOn.Count > 0; 
+            return this._dependsOn != null && (this._dependsOn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -333,7 +333,7 @@ namespace Amazon.ECS.Model
         // Check to see if DnsSearchDomains property is set
         internal bool IsSetDnsSearchDomains()
         {
-            return this._dnsSearchDomains != null && this._dnsSearchDomains.Count > 0; 
+            return this._dnsSearchDomains != null && (this._dnsSearchDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -360,7 +360,7 @@ namespace Amazon.ECS.Model
         // Check to see if DnsServers property is set
         internal bool IsSetDnsServers()
         {
-            return this._dnsServers != null && this._dnsServers.Count > 0; 
+            return this._dnsServers != null && (this._dnsServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -385,7 +385,7 @@ namespace Amazon.ECS.Model
         // Check to see if DockerLabels property is set
         internal bool IsSetDockerLabels()
         {
-            return this._dockerLabels != null && this._dockerLabels.Count > 0; 
+            return this._dockerLabels != null && (this._dockerLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -445,7 +445,7 @@ namespace Amazon.ECS.Model
         // Check to see if DockerSecurityOptions property is set
         internal bool IsSetDockerSecurityOptions()
         {
-            return this._dockerSecurityOptions != null && this._dockerSecurityOptions.Count > 0; 
+            return this._dockerSecurityOptions != null && (this._dockerSecurityOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -473,7 +473,7 @@ namespace Amazon.ECS.Model
         // Check to see if EntryPoint property is set
         internal bool IsSetEntryPoint()
         {
-            return this._entryPoint != null && this._entryPoint.Count > 0; 
+            return this._entryPoint != null && (this._entryPoint.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -501,7 +501,7 @@ namespace Amazon.ECS.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -538,7 +538,7 @@ namespace Amazon.ECS.Model
         // Check to see if EnvironmentFiles property is set
         internal bool IsSetEnvironmentFiles()
         {
-            return this._environmentFiles != null && this._environmentFiles.Count > 0; 
+            return this._environmentFiles != null && (this._environmentFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -596,7 +596,7 @@ namespace Amazon.ECS.Model
         // Check to see if ExtraHosts property is set
         internal bool IsSetExtraHosts()
         {
-            return this._extraHosts != null && this._extraHosts.Count > 0; 
+            return this._extraHosts != null && (this._extraHosts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -783,7 +783,7 @@ namespace Amazon.ECS.Model
         // Check to see if Links property is set
         internal bool IsSetLinks()
         {
-            return this._links != null && this._links.Count > 0; 
+            return this._links != null && (this._links.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -994,7 +994,7 @@ namespace Amazon.ECS.Model
         // Check to see if MountPoints property is set
         internal bool IsSetMountPoints()
         {
-            return this._mountPoints != null && this._mountPoints.Count > 0; 
+            return this._mountPoints != null && (this._mountPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1067,7 +1067,7 @@ namespace Amazon.ECS.Model
         // Check to see if PortMappings property is set
         internal bool IsSetPortMappings()
         {
-            return this._portMappings != null && this._portMappings.Count > 0; 
+            return this._portMappings != null && (this._portMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1181,7 +1181,7 @@ namespace Amazon.ECS.Model
         // Check to see if ResourceRequirements property is set
         internal bool IsSetResourceRequirements()
         {
-            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
+            return this._resourceRequirements != null && (this._resourceRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1200,7 +1200,7 @@ namespace Amazon.ECS.Model
         // Check to see if Secrets property is set
         internal bool IsSetSecrets()
         {
-            return this._secrets != null && this._secrets.Count > 0; 
+            return this._secrets != null && (this._secrets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1342,7 +1342,7 @@ namespace Amazon.ECS.Model
         // Check to see if SystemControls property is set
         internal bool IsSetSystemControls()
         {
-            return this._systemControls != null && this._systemControls.Count > 0; 
+            return this._systemControls != null && (this._systemControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1385,7 +1385,7 @@ namespace Amazon.ECS.Model
         // Check to see if Ulimits property is set
         internal bool IsSetUlimits()
         {
-            return this._ulimits != null && this._ulimits.Count > 0; 
+            return this._ulimits != null && (this._ulimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1468,7 +1468,7 @@ namespace Amazon.ECS.Model
         // Check to see if VolumesFrom property is set
         internal bool IsSetVolumesFrom()
         {
-            return this._volumesFrom != null && this._volumesFrom.Count > 0; 
+            return this._volumesFrom != null && (this._volumesFrom.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

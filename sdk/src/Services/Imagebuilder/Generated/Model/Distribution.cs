@@ -35,9 +35,9 @@ namespace Amazon.Imagebuilder.Model
     {
         private AmiDistributionConfiguration _amiDistributionConfiguration;
         private ContainerDistributionConfiguration _containerDistributionConfiguration;
-        private List<FastLaunchConfiguration> _fastLaunchConfigurations = new List<FastLaunchConfiguration>();
-        private List<LaunchTemplateConfiguration> _launchTemplateConfigurations = new List<LaunchTemplateConfiguration>();
-        private List<string> _licenseConfigurationArns = new List<string>();
+        private List<FastLaunchConfiguration> _fastLaunchConfigurations = AWSConfigs.InitializeCollections ? new List<FastLaunchConfiguration>() : null;
+        private List<LaunchTemplateConfiguration> _launchTemplateConfigurations = AWSConfigs.InitializeCollections ? new List<LaunchTemplateConfiguration>() : null;
+        private List<string> _licenseConfigurationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _region;
         private S3ExportConfiguration _s3ExportConfiguration;
 
@@ -94,7 +94,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if FastLaunchConfigurations property is set
         internal bool IsSetFastLaunchConfigurations()
         {
-            return this._fastLaunchConfigurations != null && this._fastLaunchConfigurations.Count > 0; 
+            return this._fastLaunchConfigurations != null && (this._fastLaunchConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if LaunchTemplateConfigurations property is set
         internal bool IsSetLaunchTemplateConfigurations()
         {
-            return this._launchTemplateConfigurations != null && this._launchTemplateConfigurations.Count > 0; 
+            return this._launchTemplateConfigurations != null && (this._launchTemplateConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if LicenseConfigurationArns property is set
         internal bool IsSetLicenseConfigurationArns()
         {
-            return this._licenseConfigurationArns != null && this._licenseConfigurationArns.Count > 0; 
+            return this._licenseConfigurationArns != null && (this._licenseConfigurationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

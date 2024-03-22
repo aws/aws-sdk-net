@@ -52,7 +52,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class AssociationConfig
     {
-        private Dictionary<string, RequestBodyAssociatedResourceTypeConfig> _requestBody = new Dictionary<string, RequestBodyAssociatedResourceTypeConfig>();
+        private Dictionary<string, RequestBodyAssociatedResourceTypeConfig> _requestBody = AWSConfigs.InitializeCollections ? new Dictionary<string, RequestBodyAssociatedResourceTypeConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property RequestBody. 
@@ -86,7 +86,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if RequestBody property is set
         internal bool IsSetRequestBody()
         {
-            return this._requestBody != null && this._requestBody.Count > 0; 
+            return this._requestBody != null && (this._requestBody.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

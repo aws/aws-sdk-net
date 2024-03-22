@@ -45,7 +45,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Enumerable containing all of the FindingDetails
         /// </summary>
         public IPaginatedEnumerable<FindingDetails> FindingDetails => 
-            new PaginatedResultKeyResponse<GetFindingV2Response, FindingDetails>(this, (i) => i.FindingDetails);
+            new PaginatedResultKeyResponse<GetFindingV2Response, FindingDetails>(this, (i) => i.FindingDetails ?? new List<FindingDetails>());
 
         internal GetFindingV2Paginator(IAmazonAccessAnalyzer client, GetFindingV2Request request)
         {

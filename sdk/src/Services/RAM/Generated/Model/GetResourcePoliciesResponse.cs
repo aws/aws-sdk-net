@@ -34,7 +34,7 @@ namespace Amazon.RAM.Model
     public partial class GetResourcePoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _policies = new List<string>();
+        private List<string> _policies = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.RAM.Model
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._policies != null && (this._policies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

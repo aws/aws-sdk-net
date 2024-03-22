@@ -78,7 +78,7 @@ namespace Amazon.AWSHealth.Model
     public partial class DescribeEventDetailsForOrganizationRequest : AmazonAWSHealthRequest
     {
         private string _locale;
-        private List<EventAccountFilter> _organizationEventDetailFilters = new List<EventAccountFilter>();
+        private List<EventAccountFilter> _organizationEventDetailFilters = AWSConfigs.InitializeCollections ? new List<EventAccountFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property Locale. 
@@ -116,7 +116,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if OrganizationEventDetailFilters property is set
         internal bool IsSetOrganizationEventDetailFilters()
         {
-            return this._organizationEventDetailFilters != null && this._organizationEventDetailFilters.Count > 0; 
+            return this._organizationEventDetailFilters != null && (this._organizationEventDetailFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

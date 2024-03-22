@@ -34,9 +34,9 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class AnalyticsIntentResult
     {
-        private List<AnalyticsBinKey> _binKeys = new List<AnalyticsBinKey>();
-        private List<AnalyticsIntentGroupByKey> _groupByKeys = new List<AnalyticsIntentGroupByKey>();
-        private List<AnalyticsIntentMetricResult> _metricsResults = new List<AnalyticsIntentMetricResult>();
+        private List<AnalyticsBinKey> _binKeys = AWSConfigs.InitializeCollections ? new List<AnalyticsBinKey>() : null;
+        private List<AnalyticsIntentGroupByKey> _groupByKeys = AWSConfigs.InitializeCollections ? new List<AnalyticsIntentGroupByKey>() : null;
+        private List<AnalyticsIntentMetricResult> _metricsResults = AWSConfigs.InitializeCollections ? new List<AnalyticsIntentMetricResult>() : null;
 
         /// <summary>
         /// Gets and sets the property BinKeys. 
@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BinKeys property is set
         internal bool IsSetBinKeys()
         {
-            return this._binKeys != null && this._binKeys.Count > 0; 
+            return this._binKeys != null && (this._binKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if GroupByKeys property is set
         internal bool IsSetGroupByKeys()
         {
-            return this._groupByKeys != null && this._groupByKeys.Count > 0; 
+            return this._groupByKeys != null && (this._groupByKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if MetricsResults property is set
         internal bool IsSetMetricsResults()
         {
-            return this._metricsResults != null && this._metricsResults.Count > 0; 
+            return this._metricsResults != null && (this._metricsResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

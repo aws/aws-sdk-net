@@ -44,8 +44,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class SendTextMessageRequest : AmazonPinpointSMSVoiceV2Request
     {
         private string _configurationSetName;
-        private Dictionary<string, string> _context = new Dictionary<string, string>();
-        private Dictionary<string, string> _destinationCountryParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _context = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _destinationCountryParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _destinationPhoneNumber;
         private bool? _dryRun;
         private string _keyword;
@@ -92,7 +92,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Context property is set
         internal bool IsSetContext()
         {
-            return this._context != null && this._context.Count > 0; 
+            return this._context != null && (this._context.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if DestinationCountryParameters property is set
         internal bool IsSetDestinationCountryParameters()
         {
-            return this._destinationCountryParameters != null && this._destinationCountryParameters.Count > 0; 
+            return this._destinationCountryParameters != null && (this._destinationCountryParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

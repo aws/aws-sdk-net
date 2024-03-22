@@ -69,6 +69,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NameServers/NameServer", targetDepth))
                     {
+                        if (unmarshalledObject.NameServers == null)
+                        {
+                            unmarshalledObject.NameServers = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.NameServers.Add(unmarshaller.Unmarshall(context));
                         continue;

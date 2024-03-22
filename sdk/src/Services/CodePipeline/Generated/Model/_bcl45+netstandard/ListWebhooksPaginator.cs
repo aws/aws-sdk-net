@@ -45,7 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// Enumerable containing all of the Webhooks
         /// </summary>
         public IPaginatedEnumerable<ListWebhookItem> Webhooks => 
-            new PaginatedResultKeyResponse<ListWebhooksResponse, ListWebhookItem>(this, (i) => i.Webhooks);
+            new PaginatedResultKeyResponse<ListWebhooksResponse, ListWebhookItem>(this, (i) => i.Webhooks ?? new List<ListWebhookItem>());
 
         internal ListWebhooksPaginator(IAmazonCodePipeline client, ListWebhooksRequest request)
         {

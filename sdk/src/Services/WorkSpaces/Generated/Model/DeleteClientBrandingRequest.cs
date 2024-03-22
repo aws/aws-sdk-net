@@ -43,7 +43,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DeleteClientBrandingRequest : AmazonWorkSpacesRequest
     {
-        private List<string> _platforms = new List<string>();
+        private List<string> _platforms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceId;
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Platforms property is set
         internal bool IsSetPlatforms()
         {
-            return this._platforms != null && this._platforms.Count > 0; 
+            return this._platforms != null && (this._platforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

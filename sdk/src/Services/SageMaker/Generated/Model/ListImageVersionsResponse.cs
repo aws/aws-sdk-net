@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListImageVersionsResponse : AmazonWebServiceResponse
     {
-        private List<ImageVersion> _imageVersions = new List<ImageVersion>();
+        private List<ImageVersion> _imageVersions = AWSConfigs.InitializeCollections ? new List<ImageVersion>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ImageVersions property is set
         internal bool IsSetImageVersions()
         {
-            return this._imageVersions != null && this._imageVersions.Count > 0; 
+            return this._imageVersions != null && (this._imageVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

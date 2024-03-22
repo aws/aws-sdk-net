@@ -33,7 +33,7 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class SearchCasesResponse : AmazonWebServiceResponse
     {
-        private List<SearchCasesResponseItem> _cases = new List<SearchCasesResponseItem>();
+        private List<SearchCasesResponseItem> _cases = AWSConfigs.InitializeCollections ? new List<SearchCasesResponseItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Cases property is set
         internal bool IsSetCases()
         {
-            return this._cases != null && this._cases.Count > 0; 
+            return this._cases != null && (this._cases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

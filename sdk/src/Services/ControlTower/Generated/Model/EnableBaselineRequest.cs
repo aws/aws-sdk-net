@@ -37,8 +37,8 @@ namespace Amazon.ControlTower.Model
     {
         private string _baselineIdentifier;
         private string _baselineVersion;
-        private List<EnabledBaselineParameter> _parameters = new List<EnabledBaselineParameter>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<EnabledBaselineParameter> _parameters = AWSConfigs.InitializeCollections ? new List<EnabledBaselineParameter>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _targetIdentifier;
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.ControlTower.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.ControlTower.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

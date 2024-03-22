@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class ListBotVersionReplicasResponse : AmazonWebServiceResponse
     {
         private string _botId;
-        private List<BotVersionReplicaSummary> _botVersionReplicaSummaries = new List<BotVersionReplicaSummary>();
+        private List<BotVersionReplicaSummary> _botVersionReplicaSummaries = AWSConfigs.InitializeCollections ? new List<BotVersionReplicaSummary>() : null;
         private string _nextToken;
         private string _replicaRegion;
         private string _sourceRegion;
@@ -73,7 +73,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotVersionReplicaSummaries property is set
         internal bool IsSetBotVersionReplicaSummaries()
         {
-            return this._botVersionReplicaSummaries != null && this._botVersionReplicaSummaries.Count > 0; 
+            return this._botVersionReplicaSummaries != null && (this._botVersionReplicaSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

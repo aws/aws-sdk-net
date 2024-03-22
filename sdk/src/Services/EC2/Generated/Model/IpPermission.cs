@@ -35,11 +35,11 @@ namespace Amazon.EC2.Model
     {
         private int? _fromPort;
         private string _ipProtocol;
-        private List<IpRange> _ipv4Ranges = new List<IpRange>();
-        private List<Ipv6Range> _ipv6Ranges = new List<Ipv6Range>();
-        private List<PrefixListId> _prefixListIds = new List<PrefixListId>();
+        private List<IpRange> _ipv4Ranges = AWSConfigs.InitializeCollections ? new List<IpRange>() : null;
+        private List<Ipv6Range> _ipv6Ranges = AWSConfigs.InitializeCollections ? new List<Ipv6Range>() : null;
+        private List<PrefixListId> _prefixListIds = AWSConfigs.InitializeCollections ? new List<PrefixListId>() : null;
         private int? _toPort;
-        private List<UserIdGroupPair> _userIdGroupPairs = new List<UserIdGroupPair>();
+        private List<UserIdGroupPair> _userIdGroupPairs = AWSConfigs.InitializeCollections ? new List<UserIdGroupPair>() : null;
 
         /// <summary>
         /// Gets and sets the property FromPort. 
@@ -104,7 +104,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv4Ranges property is set
         internal bool IsSetIpv4Ranges()
         {
-            return this._ipv4Ranges != null && this._ipv4Ranges.Count > 0; 
+            return this._ipv4Ranges != null && (this._ipv4Ranges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv6Ranges property is set
         internal bool IsSetIpv6Ranges()
         {
-            return this._ipv6Ranges != null && this._ipv6Ranges.Count > 0; 
+            return this._ipv6Ranges != null && (this._ipv6Ranges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.EC2.Model
         // Check to see if PrefixListIds property is set
         internal bool IsSetPrefixListIds()
         {
-            return this._prefixListIds != null && this._prefixListIds.Count > 0; 
+            return this._prefixListIds != null && (this._prefixListIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -178,7 +178,7 @@ namespace Amazon.EC2.Model
         // Check to see if UserIdGroupPairs property is set
         internal bool IsSetUserIdGroupPairs()
         {
-            return this._userIdGroupPairs != null && this._userIdGroupPairs.Count > 0; 
+            return this._userIdGroupPairs != null && (this._userIdGroupPairs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.NeptuneGraph.Model
     /// </summary>
     public partial class ListGraphSnapshotsResponse : AmazonWebServiceResponse
     {
-        private List<GraphSnapshotSummary> _graphSnapshots = new List<GraphSnapshotSummary>();
+        private List<GraphSnapshotSummary> _graphSnapshots = AWSConfigs.InitializeCollections ? new List<GraphSnapshotSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.NeptuneGraph.Model
         // Check to see if GraphSnapshots property is set
         internal bool IsSetGraphSnapshots()
         {
-            return this._graphSnapshots != null && this._graphSnapshots.Count > 0; 
+            return this._graphSnapshots != null && (this._graphSnapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         private ConnectionLogOptions _connectionLogOptions;
         private string _description;
         private DnsServersOptionsModifyStructure _dnsServers;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SelfServicePortal _selfServicePortal;
         private string _serverCertificateArn;
         private int? _sessionTimeoutHours;
@@ -197,7 +197,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

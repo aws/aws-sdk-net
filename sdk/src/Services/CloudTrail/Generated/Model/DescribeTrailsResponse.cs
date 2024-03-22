@@ -33,7 +33,7 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class DescribeTrailsResponse : AmazonWebServiceResponse
     {
-        private List<Trail> _trailList = new List<Trail>();
+        private List<Trail> _trailList = AWSConfigs.InitializeCollections ? new List<Trail>() : null;
 
         /// <summary>
         /// Gets and sets the property TrailList. 
@@ -54,7 +54,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if TrailList property is set
         internal bool IsSetTrailList()
         {
-            return this._trailList != null && this._trailList.Count > 0; 
+            return this._trailList != null && (this._trailList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

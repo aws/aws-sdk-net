@@ -34,10 +34,10 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyIpamRequest : AmazonEC2Request
     {
-        private List<AddIpamOperatingRegion> _addOperatingRegions = new List<AddIpamOperatingRegion>();
+        private List<AddIpamOperatingRegion> _addOperatingRegions = AWSConfigs.InitializeCollections ? new List<AddIpamOperatingRegion>() : null;
         private string _description;
         private string _ipamId;
-        private List<RemoveIpamOperatingRegion> _removeOperatingRegions = new List<RemoveIpamOperatingRegion>();
+        private List<RemoveIpamOperatingRegion> _removeOperatingRegions = AWSConfigs.InitializeCollections ? new List<RemoveIpamOperatingRegion>() : null;
         private IpamTier _tier;
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddOperatingRegions property is set
         internal bool IsSetAddOperatingRegions()
         {
-            return this._addOperatingRegions != null && this._addOperatingRegions.Count > 0; 
+            return this._addOperatingRegions != null && (this._addOperatingRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveOperatingRegions property is set
         internal bool IsSetRemoveOperatingRegions()
         {
-            return this._removeOperatingRegions != null && this._removeOperatingRegions.Count > 0; 
+            return this._removeOperatingRegions != null && (this._removeOperatingRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

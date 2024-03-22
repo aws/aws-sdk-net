@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model
     public partial class ListTopicsDetectionJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TopicsDetectionJobProperties> _topicsDetectionJobPropertiesList = new List<TopicsDetectionJobProperties>();
+        private List<TopicsDetectionJobProperties> _topicsDetectionJobPropertiesList = AWSConfigs.InitializeCollections ? new List<TopicsDetectionJobProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if TopicsDetectionJobPropertiesList property is set
         internal bool IsSetTopicsDetectionJobPropertiesList()
         {
-            return this._topicsDetectionJobPropertiesList != null && this._topicsDetectionJobPropertiesList.Count > 0; 
+            return this._topicsDetectionJobPropertiesList != null && (this._topicsDetectionJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

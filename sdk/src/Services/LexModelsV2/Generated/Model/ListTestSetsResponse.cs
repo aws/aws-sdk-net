@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class ListTestSetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TestSetSummary> _testSets = new List<TestSetSummary>();
+        private List<TestSetSummary> _testSets = AWSConfigs.InitializeCollections ? new List<TestSetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if TestSets property is set
         internal bool IsSetTestSets()
         {
-            return this._testSets != null && this._testSets.Count > 0; 
+            return this._testSets != null && (this._testSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -83,7 +83,7 @@ namespace Amazon.ServiceDiscovery.Model
         private HealthCheckCustomConfig _healthCheckCustomConfig;
         private string _name;
         private string _namespaceId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private ServiceTypeOption _type;
 
         /// <summary>
@@ -300,7 +300,7 @@ namespace Amazon.ServiceDiscovery.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

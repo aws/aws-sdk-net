@@ -90,6 +90,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("NotificationConfigurations/member", targetDepth))
                     {
                         var unmarshaller = NotificationConfigurationUnmarshaller.Instance;
+                        if (response.NotificationConfigurations == null)
+                        {
+                            response.NotificationConfigurations = new List<NotificationConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.NotificationConfigurations.Add(item);
                         continue;

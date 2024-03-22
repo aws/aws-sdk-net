@@ -34,8 +34,8 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class UpdateTrustStoreRequest : AmazonWorkSpacesWebRequest
     {
-        private List<MemoryStream> _certificatesToAdd = new List<MemoryStream>();
-        private List<string> _certificatesToDelete = new List<string>();
+        private List<MemoryStream> _certificatesToAdd = AWSConfigs.InitializeCollections ? new List<MemoryStream>() : null;
+        private List<string> _certificatesToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientToken;
         private string _trustStoreArn;
 
@@ -54,7 +54,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if CertificatesToAdd property is set
         internal bool IsSetCertificatesToAdd()
         {
-            return this._certificatesToAdd != null && this._certificatesToAdd.Count > 0; 
+            return this._certificatesToAdd != null && (this._certificatesToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if CertificatesToDelete property is set
         internal bool IsSetCertificatesToDelete()
         {
-            return this._certificatesToDelete != null && this._certificatesToDelete.Count > 0; 
+            return this._certificatesToDelete != null && (this._certificatesToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

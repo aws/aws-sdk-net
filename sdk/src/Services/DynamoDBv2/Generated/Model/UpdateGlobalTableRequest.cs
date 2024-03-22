@@ -83,7 +83,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class UpdateGlobalTableRequest : AmazonDynamoDBRequest
     {
         private string _globalTableName;
-        private List<ReplicaUpdate> _replicaUpdates = new List<ReplicaUpdate>();
+        private List<ReplicaUpdate> _replicaUpdates = AWSConfigs.InitializeCollections ? new List<ReplicaUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property GlobalTableName. 
@@ -120,7 +120,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ReplicaUpdates property is set
         internal bool IsSetReplicaUpdates()
         {
-            return this._replicaUpdates != null && this._replicaUpdates.Count > 0; 
+            return this._replicaUpdates != null && (this._replicaUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -35,7 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private AuthenticationResultType _authenticationResult;
         private ChallengeNameType _challengeName;
-        private Dictionary<string, string> _challengeParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _challengeParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _session;
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ChallengeParameters property is set
         internal bool IsSetChallengeParameters()
         {
-            return this._challengeParameters != null && this._challengeParameters.Count > 0; 
+            return this._challengeParameters != null && (this._challengeParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

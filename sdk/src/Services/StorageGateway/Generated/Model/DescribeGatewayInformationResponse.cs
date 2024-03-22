@@ -42,7 +42,7 @@ namespace Amazon.StorageGateway.Model
         private GatewayCapacity _gatewayCapacity;
         private string _gatewayId;
         private string _gatewayName;
-        private List<NetworkInterface> _gatewayNetworkInterfaces = new List<NetworkInterface>();
+        private List<NetworkInterface> _gatewayNetworkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
         private string _gatewayState;
         private string _gatewayTimezone;
         private string _gatewayType;
@@ -52,8 +52,8 @@ namespace Amazon.StorageGateway.Model
         private string _nextUpdateAvailabilityDate;
         private string _softwareUpdatesEndDate;
         private string _softwareVersion;
-        private List<string> _supportedGatewayCapacities = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _supportedGatewayCapacities = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcEndpoint;
 
         /// <summary>
@@ -244,7 +244,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayNetworkInterfaces property is set
         internal bool IsSetGatewayNetworkInterfaces()
         {
-            return this._gatewayNetworkInterfaces != null && this._gatewayNetworkInterfaces.Count > 0; 
+            return this._gatewayNetworkInterfaces != null && (this._gatewayNetworkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -439,7 +439,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if SupportedGatewayCapacities property is set
         internal bool IsSetSupportedGatewayCapacities()
         {
-            return this._supportedGatewayCapacities != null && this._supportedGatewayCapacities.Count > 0; 
+            return this._supportedGatewayCapacities != null && (this._supportedGatewayCapacities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -459,7 +459,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

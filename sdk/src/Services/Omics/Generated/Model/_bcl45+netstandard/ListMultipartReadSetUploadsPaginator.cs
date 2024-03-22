@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the Uploads
         /// </summary>
         public IPaginatedEnumerable<MultipartReadSetUploadListItem> Uploads => 
-            new PaginatedResultKeyResponse<ListMultipartReadSetUploadsResponse, MultipartReadSetUploadListItem>(this, (i) => i.Uploads);
+            new PaginatedResultKeyResponse<ListMultipartReadSetUploadsResponse, MultipartReadSetUploadListItem>(this, (i) => i.Uploads ?? new List<MultipartReadSetUploadListItem>());
 
         internal ListMultipartReadSetUploadsPaginator(IAmazonOmics client, ListMultipartReadSetUploadsRequest request)
         {

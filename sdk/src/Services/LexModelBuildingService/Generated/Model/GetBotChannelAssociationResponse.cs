@@ -34,7 +34,7 @@ namespace Amazon.LexModelBuildingService.Model
     public partial class GetBotChannelAssociationResponse : AmazonWebServiceResponse
     {
         private string _botAlias;
-        private Dictionary<string, string> _botConfiguration = new Dictionary<string, string>();
+        private Dictionary<string, string> _botConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _botName;
         private DateTime? _createdDate;
         private string _description;
@@ -80,7 +80,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if BotConfiguration property is set
         internal bool IsSetBotConfiguration()
         {
-            return this._botConfiguration != null && this._botConfiguration.Count > 0; 
+            return this._botConfiguration != null && (this._botConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

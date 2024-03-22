@@ -45,7 +45,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Enumerable containing all of the Jobs
         /// </summary>
         public IPaginatedEnumerable<Job> Jobs => 
-            new PaginatedResultKeyResponse<ListJobsByStatusResponse, Job>(this, (i) => i.Jobs);
+            new PaginatedResultKeyResponse<ListJobsByStatusResponse, Job>(this, (i) => i.Jobs ?? new List<Job>());
 
         internal ListJobsByStatusPaginator(IAmazonElasticTranscoder client, ListJobsByStatusRequest request)
         {

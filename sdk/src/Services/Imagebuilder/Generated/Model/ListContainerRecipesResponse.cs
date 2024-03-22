@@ -33,7 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListContainerRecipesResponse : AmazonWebServiceResponse
     {
-        private List<ContainerRecipeSummary> _containerRecipeSummaryList = new List<ContainerRecipeSummary>();
+        private List<ContainerRecipeSummary> _containerRecipeSummaryList = AWSConfigs.InitializeCollections ? new List<ContainerRecipeSummary>() : null;
         private string _nextToken;
         private string _requestId;
 
@@ -52,7 +52,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if ContainerRecipeSummaryList property is set
         internal bool IsSetContainerRecipeSummaryList()
         {
-            return this._containerRecipeSummaryList != null && this._containerRecipeSummaryList.Count > 0; 
+            return this._containerRecipeSummaryList != null && (this._containerRecipeSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Amazon.CodeCatalyst.Model
         private int? _maxResults;
         private string _nextToken;
         private string _projectName;
-        private List<WorkflowSortCriteria> _sortBy = new List<WorkflowSortCriteria>();
+        private List<WorkflowSortCriteria> _sortBy = AWSConfigs.InitializeCollections ? new List<WorkflowSortCriteria>() : null;
         private string _spaceName;
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.CodeCatalyst.Model
         // Check to see if SortBy property is set
         internal bool IsSetSortBy()
         {
-            return this._sortBy != null && this._sortBy.Count > 0; 
+            return this._sortBy != null && (this._sortBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

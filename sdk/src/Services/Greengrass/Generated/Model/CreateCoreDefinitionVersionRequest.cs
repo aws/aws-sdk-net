@@ -37,7 +37,7 @@ namespace Amazon.Greengrass.Model
     {
         private string _amznClientToken;
         private string _coreDefinitionId;
-        private List<Core> _cores = new List<Core>();
+        private List<Core> _cores = AWSConfigs.InitializeCollections ? new List<Core>() : null;
 
         /// <summary>
         /// Gets and sets the property AmznClientToken. A client token used to correlate requests
@@ -83,7 +83,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Cores property is set
         internal bool IsSetCores()
         {
-            return this._cores != null && this._cores.Count > 0; 
+            return this._cores != null && (this._cores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -63,6 +63,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ResourceIdentifier/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        if (unmarshalledObject.ResourceIdentifier == null)
+                        {
+                            unmarshalledObject.ResourceIdentifier = new Dictionary<string, string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ResourceIdentifier.Add(item);
                         continue;

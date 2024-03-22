@@ -45,7 +45,7 @@ namespace Amazon.Finspace.Model
         private string _releaseLabel;
         private KxClusterStatus _status;
         private string _statusReason;
-        private List<Volume> _volumes = new List<Volume>();
+        private List<Volume> _volumes = AWSConfigs.InitializeCollections ? new List<Volume>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZoneId. 
@@ -371,7 +371,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

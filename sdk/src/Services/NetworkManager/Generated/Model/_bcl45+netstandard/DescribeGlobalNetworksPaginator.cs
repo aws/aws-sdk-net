@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the GlobalNetworks
         /// </summary>
         public IPaginatedEnumerable<GlobalNetwork> GlobalNetworks => 
-            new PaginatedResultKeyResponse<DescribeGlobalNetworksResponse, GlobalNetwork>(this, (i) => i.GlobalNetworks);
+            new PaginatedResultKeyResponse<DescribeGlobalNetworksResponse, GlobalNetwork>(this, (i) => i.GlobalNetworks ?? new List<GlobalNetwork>());
 
         internal DescribeGlobalNetworksPaginator(IAmazonNetworkManager client, DescribeGlobalNetworksRequest request)
         {

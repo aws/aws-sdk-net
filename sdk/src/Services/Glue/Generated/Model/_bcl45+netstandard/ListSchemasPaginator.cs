@@ -45,7 +45,7 @@ namespace Amazon.Glue.Model
         /// Enumerable containing all of the Schemas
         /// </summary>
         public IPaginatedEnumerable<SchemaListItem> Schemas => 
-            new PaginatedResultKeyResponse<ListSchemasResponse, SchemaListItem>(this, (i) => i.Schemas);
+            new PaginatedResultKeyResponse<ListSchemasResponse, SchemaListItem>(this, (i) => i.Schemas ?? new List<SchemaListItem>());
 
         internal ListSchemasPaginator(IAmazonGlue client, ListSchemasRequest request)
         {

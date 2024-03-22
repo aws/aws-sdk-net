@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeModelResponse : AmazonWebServiceResponse
     {
-        private List<ContainerDefinition> _containers = new List<ContainerDefinition>();
+        private List<ContainerDefinition> _containers = AWSConfigs.InitializeCollections ? new List<ContainerDefinition>() : null;
         private DateTime? _creationTime;
         private DeploymentRecommendation _deploymentRecommendation;
         private bool? _enableNetworkIsolation;
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

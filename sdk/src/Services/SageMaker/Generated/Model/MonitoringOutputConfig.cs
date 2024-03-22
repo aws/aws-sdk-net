@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class MonitoringOutputConfig
     {
         private string _kmsKeyId;
-        private List<MonitoringOutput> _monitoringOutputs = new List<MonitoringOutput>();
+        private List<MonitoringOutput> _monitoringOutputs = AWSConfigs.InitializeCollections ? new List<MonitoringOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
@@ -73,7 +73,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MonitoringOutputs property is set
         internal bool IsSetMonitoringOutputs()
         {
-            return this._monitoringOutputs != null && this._monitoringOutputs.Count > 0; 
+            return this._monitoringOutputs != null && (this._monitoringOutputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

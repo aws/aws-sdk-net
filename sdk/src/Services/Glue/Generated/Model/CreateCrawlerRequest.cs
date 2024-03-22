@@ -36,7 +36,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CreateCrawlerRequest : AmazonGlueRequest
     {
-        private List<string> _classifiers = new List<string>();
+        private List<string> _classifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _configuration;
         private string _crawlerSecurityConfiguration;
         private string _databaseName;
@@ -49,7 +49,7 @@ namespace Amazon.Glue.Model
         private string _schedule;
         private SchemaChangePolicy _schemaChangePolicy;
         private string _tablePrefix;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private CrawlerTargets _targets;
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.Glue.Model
         // Check to see if Classifiers property is set
         internal bool IsSetClassifiers()
         {
-            return this._classifiers != null && this._classifiers.Count > 0; 
+            return this._classifiers != null && (this._classifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -317,7 +317,7 @@ namespace Amazon.Glue.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

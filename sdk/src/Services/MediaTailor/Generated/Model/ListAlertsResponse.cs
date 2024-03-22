@@ -33,7 +33,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class ListAlertsResponse : AmazonWebServiceResponse
     {
-        private List<Alert> _items = new List<Alert>();
+        private List<Alert> _items = AWSConfigs.InitializeCollections ? new List<Alert>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

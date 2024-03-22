@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class Transcript
     {
-        private List<TranscriptCriteria> _criteria = new List<TranscriptCriteria>();
+        private List<TranscriptCriteria> _criteria = AWSConfigs.InitializeCollections ? new List<TranscriptCriteria>() : null;
         private SearchContactsMatchType _matchType;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Connect.Model
         // Check to see if Criteria property is set
         internal bool IsSetCriteria()
         {
-            return this._criteria != null && this._criteria.Count > 0; 
+            return this._criteria != null && (this._criteria.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

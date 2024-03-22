@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     public partial class ListChannelMessagesResponse : AmazonWebServiceResponse
     {
         private string _channelArn;
-        private List<ChannelMessageSummary> _channelMessages = new List<ChannelMessageSummary>();
+        private List<ChannelMessageSummary> _channelMessages = AWSConfigs.InitializeCollections ? new List<ChannelMessageSummary>() : null;
         private string _nextToken;
         private string _subChannelId;
 
@@ -72,7 +72,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if ChannelMessages property is set
         internal bool IsSetChannelMessages()
         {
-            return this._channelMessages != null && this._channelMessages.Count > 0; 
+            return this._channelMessages != null && (this._channelMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

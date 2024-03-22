@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<OutputLogEvent> Events => 
-            new PaginatedResultKeyResponse<GetLogEventsResponse, OutputLogEvent>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<GetLogEventsResponse, OutputLogEvent>(this, (i) => i.Events ?? new List<OutputLogEvent>());
 
         internal GetLogEventsPaginator(IAmazonCloudWatchLogs client, GetLogEventsRequest request)
         {

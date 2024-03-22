@@ -45,7 +45,7 @@ namespace Amazon.RoboMaker.Model
         /// Enumerable containing all of the DeploymentJobs
         /// </summary>
         public IPaginatedEnumerable<DeploymentJob> DeploymentJobs => 
-            new PaginatedResultKeyResponse<ListDeploymentJobsResponse, DeploymentJob>(this, (i) => i.DeploymentJobs);
+            new PaginatedResultKeyResponse<ListDeploymentJobsResponse, DeploymentJob>(this, (i) => i.DeploymentJobs ?? new List<DeploymentJob>());
 
         internal ListDeploymentJobsPaginator(IAmazonRoboMaker client, ListDeploymentJobsRequest request)
         {

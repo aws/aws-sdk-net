@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
         private DateTime? _lastModifiedTime;
         private string _name;
         private AgentStatusState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AgentStatusType _type;
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace Amazon.Connect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,17 +34,17 @@ namespace Amazon.LexModelsV2.Model
     public partial class CreateBotResponse : AmazonWebServiceResponse
     {
         private string _botId;
-        private List<BotMember> _botMembers = new List<BotMember>();
+        private List<BotMember> _botMembers = AWSConfigs.InitializeCollections ? new List<BotMember>() : null;
         private string _botName;
         private BotStatus _botStatus;
-        private Dictionary<string, string> _botTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _botTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private BotType _botType;
         private DateTime? _creationDateTime;
         private DataPrivacy _dataPrivacy;
         private string _description;
         private int? _idleSessionTTLInSeconds;
         private string _roleArn;
-        private Dictionary<string, string> _testBotAliasTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _testBotAliasTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property BotId. 
@@ -82,7 +82,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotMembers property is set
         internal bool IsSetBotMembers()
         {
-            return this._botMembers != null && this._botMembers.Count > 0; 
+            return this._botMembers != null && (this._botMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotTags property is set
         internal bool IsSetBotTags()
         {
-            return this._botTags != null && this._botTags.Count > 0; 
+            return this._botTags != null && (this._botTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -270,7 +270,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if TestBotAliasTags property is set
         internal bool IsSetTestBotAliasTags()
         {
-            return this._testBotAliasTags != null && this._testBotAliasTags.Count > 0; 
+            return this._testBotAliasTags != null && (this._testBotAliasTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

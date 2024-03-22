@@ -41,7 +41,7 @@ namespace Amazon.CleanRooms.Model
         private string _membershipIdentifier;
         private PrivacyBudgetTemplateParametersInput _parameters;
         private PrivacyBudgetType _privacyBudgetType;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoRefresh. 
@@ -148,7 +148,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

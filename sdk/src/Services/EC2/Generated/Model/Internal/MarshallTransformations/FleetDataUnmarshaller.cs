@@ -81,6 +81,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("errorSet/item", targetDepth))
                     {
                         var unmarshaller = DescribeFleetErrorUnmarshaller.Instance;
+                        if (unmarshalledObject.Errors == null)
+                        {
+                            unmarshalledObject.Errors = new List<DescribeFleetError>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Errors.Add(item);
                         continue;
@@ -118,6 +122,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("fleetInstanceSet/item", targetDepth))
                     {
                         var unmarshaller = DescribeFleetsInstancesUnmarshaller.Instance;
+                        if (unmarshalledObject.Instances == null)
+                        {
+                            unmarshalledObject.Instances = new List<DescribeFleetsInstances>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Instances.Add(item);
                         continue;
@@ -125,6 +133,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("launchTemplateConfigs/item", targetDepth))
                     {
                         var unmarshaller = FleetLaunchTemplateConfigUnmarshaller.Instance;
+                        if (unmarshalledObject.LaunchTemplateConfigs == null)
+                        {
+                            unmarshalledObject.LaunchTemplateConfigs = new List<FleetLaunchTemplateConfig>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LaunchTemplateConfigs.Add(item);
                         continue;
@@ -150,6 +162,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

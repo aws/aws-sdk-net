@@ -34,12 +34,12 @@ namespace Amazon.KeyManagementService.Model
     public partial class GetPublicKeyResponse : AmazonWebServiceResponse
     {
         private CustomerMasterKeySpec _customerMasterKeySpec;
-        private List<string> _encryptionAlgorithms = new List<string>();
+        private List<string> _encryptionAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyId;
         private KeySpec _keySpec;
         private KeyUsageType _keyUsage;
         private MemoryStream _publicKey;
-        private List<string> _signingAlgorithms = new List<string>();
+        private List<string> _signingAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomerMasterKeySpec. 
@@ -91,7 +91,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if EncryptionAlgorithms property is set
         internal bool IsSetEncryptionAlgorithms()
         {
-            return this._encryptionAlgorithms != null && this._encryptionAlgorithms.Count > 0; 
+            return this._encryptionAlgorithms != null && (this._encryptionAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if SigningAlgorithms property is set
         internal bool IsSetSigningAlgorithms()
         {
-            return this._signingAlgorithms != null && this._signingAlgorithms.Count > 0; 
+            return this._signingAlgorithms != null && (this._signingAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

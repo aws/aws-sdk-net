@@ -34,7 +34,7 @@ namespace Amazon.CleanRoomsML.Model
     public partial class ColumnSchema
     {
         private string _columnName;
-        private List<string> _columnTypes = new List<string>();
+        private List<string> _columnTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ColumnName. 
@@ -71,7 +71,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if ColumnTypes property is set
         internal bool IsSetColumnTypes()
         {
-            return this._columnTypes != null && this._columnTypes.Count > 0; 
+            return this._columnTypes != null && (this._columnTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

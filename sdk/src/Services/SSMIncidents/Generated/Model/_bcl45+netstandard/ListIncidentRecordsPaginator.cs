@@ -45,7 +45,7 @@ namespace Amazon.SSMIncidents.Model
         /// Enumerable containing all of the IncidentRecordSummaries
         /// </summary>
         public IPaginatedEnumerable<IncidentRecordSummary> IncidentRecordSummaries => 
-            new PaginatedResultKeyResponse<ListIncidentRecordsResponse, IncidentRecordSummary>(this, (i) => i.IncidentRecordSummaries);
+            new PaginatedResultKeyResponse<ListIncidentRecordsResponse, IncidentRecordSummary>(this, (i) => i.IncidentRecordSummaries ?? new List<IncidentRecordSummary>());
 
         internal ListIncidentRecordsPaginator(IAmazonSSMIncidents client, ListIncidentRecordsRequest request)
         {

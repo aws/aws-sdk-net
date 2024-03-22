@@ -45,7 +45,7 @@ namespace Amazon.SSMIncidents.Model
         /// Enumerable containing all of the EventSummaries
         /// </summary>
         public IPaginatedEnumerable<EventSummary> EventSummaries => 
-            new PaginatedResultKeyResponse<ListTimelineEventsResponse, EventSummary>(this, (i) => i.EventSummaries);
+            new PaginatedResultKeyResponse<ListTimelineEventsResponse, EventSummary>(this, (i) => i.EventSummaries ?? new List<EventSummary>());
 
         internal ListTimelineEventsPaginator(IAmazonSSMIncidents client, ListTimelineEventsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.WAFRegional.Model
     /// </summary>
     public partial class ListGeoMatchSetsResponse : AmazonWebServiceResponse
     {
-        private List<GeoMatchSetSummary> _geoMatchSets = new List<GeoMatchSetSummary>();
+        private List<GeoMatchSetSummary> _geoMatchSets = AWSConfigs.InitializeCollections ? new List<GeoMatchSetSummary>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if GeoMatchSets property is set
         internal bool IsSetGeoMatchSets()
         {
-            return this._geoMatchSets != null && this._geoMatchSets.Count > 0; 
+            return this._geoMatchSets != null && (this._geoMatchSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

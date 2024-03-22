@@ -54,8 +54,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _expirationDate;
         private string _iamRole;
         private int? _registrationLimit;
-        private List<RegistrationMetadataItem> _registrationMetadata = new List<RegistrationMetadataItem>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<RegistrationMetadataItem> _registrationMetadata = AWSConfigs.InitializeCollections ? new List<RegistrationMetadataItem>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultInstanceName. 
@@ -193,7 +193,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if RegistrationMetadata property is set
         internal bool IsSetRegistrationMetadata()
         {
-            return this._registrationMetadata != null && this._registrationMetadata.Count > 0; 
+            return this._registrationMetadata != null && (this._registrationMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

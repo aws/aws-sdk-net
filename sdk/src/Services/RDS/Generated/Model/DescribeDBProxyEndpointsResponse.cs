@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBProxyEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<DBProxyEndpoint> _dbProxyEndpoints = new List<DBProxyEndpoint>();
+        private List<DBProxyEndpoint> _dbProxyEndpoints = AWSConfigs.InitializeCollections ? new List<DBProxyEndpoint>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBProxyEndpoints property is set
         internal bool IsSetDBProxyEndpoints()
         {
-            return this._dbProxyEndpoints != null && this._dbProxyEndpoints.Count > 0; 
+            return this._dbProxyEndpoints != null && (this._dbProxyEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,8 +33,8 @@ namespace Amazon.ECRPublic.Model
     /// </summary>
     public partial class BatchDeleteImageResponse : AmazonWebServiceResponse
     {
-        private List<ImageFailure> _failures = new List<ImageFailure>();
-        private List<ImageIdentifier> _imageIds = new List<ImageIdentifier>();
+        private List<ImageFailure> _failures = AWSConfigs.InitializeCollections ? new List<ImageFailure>() : null;
+        private List<ImageIdentifier> _imageIds = AWSConfigs.InitializeCollections ? new List<ImageIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property Failures. 
@@ -51,7 +51,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if ImageIds property is set
         internal bool IsSetImageIds()
         {
-            return this._imageIds != null && this._imageIds.Count > 0; 
+            return this._imageIds != null && (this._imageIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

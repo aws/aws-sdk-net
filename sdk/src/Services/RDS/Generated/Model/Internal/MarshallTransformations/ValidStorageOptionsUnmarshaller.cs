@@ -57,6 +57,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("IopsToStorageRatio/DoubleRange", targetDepth))
                     {
                         var unmarshaller = DoubleRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.IopsToStorageRatio == null)
+                        {
+                            unmarshalledObject.IopsToStorageRatio = new List<DoubleRange>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.IopsToStorageRatio.Add(item);
                         continue;
@@ -64,6 +68,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ProvisionedIops/Range", targetDepth))
                     {
                         var unmarshaller = RangeUnmarshaller.Instance;
+                        if (unmarshalledObject.ProvisionedIops == null)
+                        {
+                            unmarshalledObject.ProvisionedIops = new List<Range>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ProvisionedIops.Add(item);
                         continue;
@@ -71,6 +79,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ProvisionedStorageThroughput/Range", targetDepth))
                     {
                         var unmarshaller = RangeUnmarshaller.Instance;
+                        if (unmarshalledObject.ProvisionedStorageThroughput == null)
+                        {
+                            unmarshalledObject.ProvisionedStorageThroughput = new List<Range>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ProvisionedStorageThroughput.Add(item);
                         continue;
@@ -78,6 +90,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("StorageSize/Range", targetDepth))
                     {
                         var unmarshaller = RangeUnmarshaller.Instance;
+                        if (unmarshalledObject.StorageSize == null)
+                        {
+                            unmarshalledObject.StorageSize = new List<Range>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.StorageSize.Add(item);
                         continue;
@@ -85,6 +101,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("StorageThroughputToIopsRatio/DoubleRange", targetDepth))
                     {
                         var unmarshaller = DoubleRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.StorageThroughputToIopsRatio == null)
+                        {
+                            unmarshalledObject.StorageThroughputToIopsRatio = new List<DoubleRange>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.StorageThroughputToIopsRatio.Add(item);
                         continue;

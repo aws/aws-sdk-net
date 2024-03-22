@@ -33,7 +33,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class Choice
     {
-        private List<AdditionalResources> _additionalResources = new List<AdditionalResources>();
+        private List<AdditionalResources> _additionalResources = AWSConfigs.InitializeCollections ? new List<AdditionalResources>() : null;
         private string _choiceId;
         private string _description;
         private ChoiceContent _helpfulResource;
@@ -60,7 +60,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if AdditionalResources property is set
         internal bool IsSetAdditionalResources()
         {
-            return this._additionalResources != null && this._additionalResources.Count > 0; 
+            return this._additionalResources != null && (this._additionalResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

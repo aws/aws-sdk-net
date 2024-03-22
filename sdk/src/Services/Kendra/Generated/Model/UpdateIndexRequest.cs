@@ -36,13 +36,13 @@ namespace Amazon.Kendra.Model
     {
         private CapacityUnitsConfiguration _capacityUnits;
         private string _description;
-        private List<DocumentMetadataConfiguration> _documentMetadataConfigurationUpdates = new List<DocumentMetadataConfiguration>();
+        private List<DocumentMetadataConfiguration> _documentMetadataConfigurationUpdates = AWSConfigs.InitializeCollections ? new List<DocumentMetadataConfiguration>() : null;
         private string _id;
         private string _name;
         private string _roleArn;
         private UserContextPolicy _userContextPolicy;
         private UserGroupResolutionConfiguration _userGroupResolutionConfiguration;
-        private List<UserTokenConfiguration> _userTokenConfigurations = new List<UserTokenConfiguration>();
+        private List<UserTokenConfiguration> _userTokenConfigurations = AWSConfigs.InitializeCollections ? new List<UserTokenConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property CapacityUnits. 
@@ -106,7 +106,7 @@ namespace Amazon.Kendra.Model
         // Check to see if DocumentMetadataConfigurationUpdates property is set
         internal bool IsSetDocumentMetadataConfigurationUpdates()
         {
-            return this._documentMetadataConfigurationUpdates != null && this._documentMetadataConfigurationUpdates.Count > 0; 
+            return this._documentMetadataConfigurationUpdates != null && (this._documentMetadataConfigurationUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace Amazon.Kendra.Model
         // Check to see if UserTokenConfigurations property is set
         internal bool IsSetUserTokenConfigurations()
         {
-            return this._userTokenConfigurations != null && this._userTokenConfigurations.Count > 0; 
+            return this._userTokenConfigurations != null && (this._userTokenConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -35,8 +35,8 @@ namespace Amazon.LocationService.Model
     {
         private PositionalAccuracy _accuracy;
         private string _deviceId;
-        private List<double> _position = new List<double>();
-        private Dictionary<string, string> _positionProperties = new Dictionary<string, string>();
+        private List<double> _position = AWSConfigs.InitializeCollections ? new List<double>() : null;
+        private Dictionary<string, string> _positionProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _sampleTime;
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Position property is set
         internal bool IsSetPosition()
         {
-            return this._position != null && this._position.Count > 0; 
+            return this._position != null && (this._position.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.LocationService.Model
         // Check to see if PositionProperties property is set
         internal bool IsSetPositionProperties()
         {
-            return this._positionProperties != null && this._positionProperties.Count > 0; 
+            return this._positionProperties != null && (this._positionProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

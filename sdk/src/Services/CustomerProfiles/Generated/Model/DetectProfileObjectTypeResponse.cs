@@ -33,7 +33,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class DetectProfileObjectTypeResponse : AmazonWebServiceResponse
     {
-        private List<DetectedProfileObjectType> _detectedProfileObjectTypes = new List<DetectedProfileObjectType>();
+        private List<DetectedProfileObjectType> _detectedProfileObjectTypes = AWSConfigs.InitializeCollections ? new List<DetectedProfileObjectType>() : null;
 
         /// <summary>
         /// Gets and sets the property DetectedProfileObjectTypes. 
@@ -51,7 +51,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if DetectedProfileObjectTypes property is set
         internal bool IsSetDetectedProfileObjectTypes()
         {
-            return this._detectedProfileObjectTypes != null && this._detectedProfileObjectTypes.Count > 0; 
+            return this._detectedProfileObjectTypes != null && (this._detectedProfileObjectTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

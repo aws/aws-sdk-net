@@ -35,8 +35,8 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class BatchIsAuthorizedOutputItem
     {
         private Decision _decision;
-        private List<DeterminingPolicyItem> _determiningPolicies = new List<DeterminingPolicyItem>();
-        private List<EvaluationErrorItem> _errors = new List<EvaluationErrorItem>();
+        private List<DeterminingPolicyItem> _determiningPolicies = AWSConfigs.InitializeCollections ? new List<DeterminingPolicyItem>() : null;
+        private List<EvaluationErrorItem> _errors = AWSConfigs.InitializeCollections ? new List<EvaluationErrorItem>() : null;
         private BatchIsAuthorizedInputItem _request;
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if DeterminingPolicies property is set
         internal bool IsSetDeterminingPolicies()
         {
-            return this._determiningPolicies != null && this._determiningPolicies.Count > 0; 
+            return this._determiningPolicies != null && (this._determiningPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

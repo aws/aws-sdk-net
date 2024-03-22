@@ -36,7 +36,7 @@ namespace Amazon.GuardDuty.Model
         private bool? _autoEnable;
         private AutoEnableMembers _autoEnableOrganizationMembers;
         private OrganizationDataSourceConfigurationsResult _dataSources;
-        private List<OrganizationFeatureConfigurationResult> _features = new List<OrganizationFeatureConfigurationResult>();
+        private List<OrganizationFeatureConfigurationResult> _features = AWSConfigs.InitializeCollections ? new List<OrganizationFeatureConfigurationResult>() : null;
         private bool? _memberAccountLimitReached;
         private string _nextToken;
 
@@ -144,7 +144,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

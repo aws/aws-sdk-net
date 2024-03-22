@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetIpamDiscoveredAccountsResponse : AmazonWebServiceResponse
     {
-        private List<IpamDiscoveredAccount> _ipamDiscoveredAccounts = new List<IpamDiscoveredAccount>();
+        private List<IpamDiscoveredAccount> _ipamDiscoveredAccounts = AWSConfigs.InitializeCollections ? new List<IpamDiscoveredAccount>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if IpamDiscoveredAccounts property is set
         internal bool IsSetIpamDiscoveredAccounts()
         {
-            return this._ipamDiscoveredAccounts != null && this._ipamDiscoveredAccounts.Count > 0; 
+            return this._ipamDiscoveredAccounts != null && (this._ipamDiscoveredAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

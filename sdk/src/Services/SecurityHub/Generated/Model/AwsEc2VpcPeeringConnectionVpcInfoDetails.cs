@@ -34,8 +34,8 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEc2VpcPeeringConnectionVpcInfoDetails
     {
         private string _cidrBlock;
-        private List<VpcInfoCidrBlockSetDetails> _cidrBlockSet = new List<VpcInfoCidrBlockSetDetails>();
-        private List<VpcInfoIpv6CidrBlockSetDetails> _ipv6CidrBlockSet = new List<VpcInfoIpv6CidrBlockSetDetails>();
+        private List<VpcInfoCidrBlockSetDetails> _cidrBlockSet = AWSConfigs.InitializeCollections ? new List<VpcInfoCidrBlockSetDetails>() : null;
+        private List<VpcInfoIpv6CidrBlockSetDetails> _ipv6CidrBlockSet = AWSConfigs.InitializeCollections ? new List<VpcInfoIpv6CidrBlockSetDetails>() : null;
         private string _ownerId;
         private VpcInfoPeeringOptionsDetails _peeringOptions;
         private string _region;
@@ -74,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if CidrBlockSet property is set
         internal bool IsSetCidrBlockSet()
         {
-            return this._cidrBlockSet != null && this._cidrBlockSet.Count > 0; 
+            return this._cidrBlockSet != null && (this._cidrBlockSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Ipv6CidrBlockSet property is set
         internal bool IsSetIpv6CidrBlockSet()
         {
-            return this._ipv6CidrBlockSet != null && this._ipv6CidrBlockSet.Count > 0; 
+            return this._ipv6CidrBlockSet != null && (this._ipv6CidrBlockSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class AuthorizationCodeGrant
     {
-        private List<string> _redirectUris = new List<string>();
+        private List<string> _redirectUris = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property RedirectUris. 
@@ -53,7 +53,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if RedirectUris property is set
         internal bool IsSetRedirectUris()
         {
-            return this._redirectUris != null && this._redirectUris.Count > 0; 
+            return this._redirectUris != null && (this._redirectUris.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

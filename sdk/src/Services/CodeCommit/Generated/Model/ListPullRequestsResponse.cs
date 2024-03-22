@@ -34,7 +34,7 @@ namespace Amazon.CodeCommit.Model
     public partial class ListPullRequestsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _pullRequestIds = new List<string>();
+        private List<string> _pullRequestIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if PullRequestIds property is set
         internal bool IsSetPullRequestIds()
         {
-            return this._pullRequestIds != null && this._pullRequestIds.Count > 0; 
+            return this._pullRequestIds != null && (this._pullRequestIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

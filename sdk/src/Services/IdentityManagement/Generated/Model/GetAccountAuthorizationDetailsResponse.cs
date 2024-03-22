@@ -33,12 +33,12 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class GetAccountAuthorizationDetailsResponse : AmazonWebServiceResponse
     {
-        private List<GroupDetail> _groupDetailList = new List<GroupDetail>();
+        private List<GroupDetail> _groupDetailList = AWSConfigs.InitializeCollections ? new List<GroupDetail>() : null;
         private bool? _isTruncated;
         private string _marker;
-        private List<ManagedPolicyDetail> _policies = new List<ManagedPolicyDetail>();
-        private List<RoleDetail> _roleDetailList = new List<RoleDetail>();
-        private List<UserDetail> _userDetailList = new List<UserDetail>();
+        private List<ManagedPolicyDetail> _policies = AWSConfigs.InitializeCollections ? new List<ManagedPolicyDetail>() : null;
+        private List<RoleDetail> _roleDetailList = AWSConfigs.InitializeCollections ? new List<RoleDetail>() : null;
+        private List<UserDetail> _userDetailList = AWSConfigs.InitializeCollections ? new List<UserDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupDetailList. 
@@ -55,7 +55,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if GroupDetailList property is set
         internal bool IsSetGroupDetailList()
         {
-            return this._groupDetailList != null && this._groupDetailList.Count > 0; 
+            return this._groupDetailList != null && (this._groupDetailList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._policies != null && (this._policies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RoleDetailList property is set
         internal bool IsSetRoleDetailList()
         {
-            return this._roleDetailList != null && this._roleDetailList.Count > 0; 
+            return this._roleDetailList != null && (this._roleDetailList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserDetailList property is set
         internal bool IsSetUserDetailList()
         {
-            return this._userDetailList != null && this._userDetailList.Count > 0; 
+            return this._userDetailList != null && (this._userDetailList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

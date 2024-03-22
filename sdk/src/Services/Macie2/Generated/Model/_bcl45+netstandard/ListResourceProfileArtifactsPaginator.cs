@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the Artifacts
         /// </summary>
         public IPaginatedEnumerable<ResourceProfileArtifact> Artifacts => 
-            new PaginatedResultKeyResponse<ListResourceProfileArtifactsResponse, ResourceProfileArtifact>(this, (i) => i.Artifacts);
+            new PaginatedResultKeyResponse<ListResourceProfileArtifactsResponse, ResourceProfileArtifact>(this, (i) => i.Artifacts ?? new List<ResourceProfileArtifact>());
 
         internal ListResourceProfileArtifactsPaginator(IAmazonMacie2 client, ListResourceProfileArtifactsRequest request)
         {

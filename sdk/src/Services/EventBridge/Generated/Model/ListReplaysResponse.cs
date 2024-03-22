@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model
     public partial class ListReplaysResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Replay> _replays = new List<Replay>();
+        private List<Replay> _replays = AWSConfigs.InitializeCollections ? new List<Replay>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EventBridge.Model
         // Check to see if Replays property is set
         internal bool IsSetReplays()
         {
-            return this._replays != null && this._replays.Count > 0; 
+            return this._replays != null && (this._replays.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

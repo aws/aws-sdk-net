@@ -45,7 +45,7 @@ namespace Amazon.Backup.Model
         /// Enumerable containing all of the RestoreTestingPlans
         /// </summary>
         public IPaginatedEnumerable<RestoreTestingPlanForList> RestoreTestingPlans => 
-            new PaginatedResultKeyResponse<ListRestoreTestingPlansResponse, RestoreTestingPlanForList>(this, (i) => i.RestoreTestingPlans);
+            new PaginatedResultKeyResponse<ListRestoreTestingPlansResponse, RestoreTestingPlanForList>(this, (i) => i.RestoreTestingPlans ?? new List<RestoreTestingPlanForList>());
 
         internal ListRestoreTestingPlansPaginator(IAmazonBackup client, ListRestoreTestingPlansRequest request)
         {

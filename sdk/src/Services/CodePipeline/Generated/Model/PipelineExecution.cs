@@ -33,7 +33,7 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class PipelineExecution
     {
-        private List<ArtifactRevision> _artifactRevisions = new List<ArtifactRevision>();
+        private List<ArtifactRevision> _artifactRevisions = AWSConfigs.InitializeCollections ? new List<ArtifactRevision>() : null;
         private ExecutionMode _executionMode;
         private string _pipelineExecutionId;
         private string _pipelineName;
@@ -41,7 +41,7 @@ namespace Amazon.CodePipeline.Model
         private PipelineExecutionStatus _status;
         private string _statusSummary;
         private ExecutionTrigger _trigger;
-        private List<ResolvedPipelineVariable> _variables = new List<ResolvedPipelineVariable>();
+        private List<ResolvedPipelineVariable> _variables = AWSConfigs.InitializeCollections ? new List<ResolvedPipelineVariable>() : null;
 
         /// <summary>
         /// Gets and sets the property ArtifactRevisions. 
@@ -58,7 +58,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if ArtifactRevisions property is set
         internal bool IsSetArtifactRevisions()
         {
-            return this._artifactRevisions != null && this._artifactRevisions.Count > 0; 
+            return this._artifactRevisions != null && (this._artifactRevisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -240,7 +240,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

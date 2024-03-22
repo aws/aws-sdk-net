@@ -45,7 +45,7 @@ namespace Amazon.CleanRooms.Model
         /// Enumerable containing all of the CollaborationPrivacyBudgetSummaries
         /// </summary>
         public IPaginatedEnumerable<CollaborationPrivacyBudgetSummary> CollaborationPrivacyBudgetSummaries => 
-            new PaginatedResultKeyResponse<ListCollaborationPrivacyBudgetsResponse, CollaborationPrivacyBudgetSummary>(this, (i) => i.CollaborationPrivacyBudgetSummaries);
+            new PaginatedResultKeyResponse<ListCollaborationPrivacyBudgetsResponse, CollaborationPrivacyBudgetSummary>(this, (i) => i.CollaborationPrivacyBudgetSummaries ?? new List<CollaborationPrivacyBudgetSummary>());
 
         internal ListCollaborationPrivacyBudgetsPaginator(IAmazonCleanRooms client, ListCollaborationPrivacyBudgetsRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class SearchProvisionedProductsResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<ProvisionedProductAttribute> _provisionedProducts = new List<ProvisionedProductAttribute>();
+        private List<ProvisionedProductAttribute> _provisionedProducts = AWSConfigs.InitializeCollections ? new List<ProvisionedProductAttribute>() : null;
         private int? _totalResultsCount;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisionedProducts property is set
         internal bool IsSetProvisionedProducts()
         {
-            return this._provisionedProducts != null && this._provisionedProducts.Count > 0; 
+            return this._provisionedProducts != null && (this._provisionedProducts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

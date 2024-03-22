@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the EvaluationFormVersionSummaryList
         /// </summary>
         public IPaginatedEnumerable<EvaluationFormVersionSummary> EvaluationFormVersionSummaryList => 
-            new PaginatedResultKeyResponse<ListEvaluationFormVersionsResponse, EvaluationFormVersionSummary>(this, (i) => i.EvaluationFormVersionSummaryList);
+            new PaginatedResultKeyResponse<ListEvaluationFormVersionsResponse, EvaluationFormVersionSummary>(this, (i) => i.EvaluationFormVersionSummaryList ?? new List<EvaluationFormVersionSummary>());
 
         internal ListEvaluationFormVersionsPaginator(IAmazonConnect client, ListEvaluationFormVersionsRequest request)
         {

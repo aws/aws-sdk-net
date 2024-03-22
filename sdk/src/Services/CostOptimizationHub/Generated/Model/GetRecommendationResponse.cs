@@ -55,7 +55,7 @@ namespace Amazon.CostOptimizationHub.Model
         private bool? _restartNeeded;
         private bool? _rollbackPossible;
         private Source _source;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -472,7 +472,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

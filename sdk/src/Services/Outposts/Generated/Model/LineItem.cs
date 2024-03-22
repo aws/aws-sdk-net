@@ -33,7 +33,7 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class LineItem
     {
-        private List<LineItemAssetInformation> _assetInformationList = new List<LineItemAssetInformation>();
+        private List<LineItemAssetInformation> _assetInformationList = AWSConfigs.InitializeCollections ? new List<LineItemAssetInformation>() : null;
         private string _catalogItemId;
         private string _lineItemId;
         private string _previousLineItemId;
@@ -57,7 +57,7 @@ namespace Amazon.Outposts.Model
         // Check to see if AssetInformationList property is set
         internal bool IsSetAssetInformationList()
         {
-            return this._assetInformationList != null && this._assetInformationList.Count > 0; 
+            return this._assetInformationList != null && (this._assetInformationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

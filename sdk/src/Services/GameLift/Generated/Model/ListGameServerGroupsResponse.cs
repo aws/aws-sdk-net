@@ -33,7 +33,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class ListGameServerGroupsResponse : AmazonWebServiceResponse
     {
-        private List<GameServerGroup> _gameServerGroups = new List<GameServerGroup>();
+        private List<GameServerGroup> _gameServerGroups = AWSConfigs.InitializeCollections ? new List<GameServerGroup>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GameLift.Model
         // Check to see if GameServerGroups property is set
         internal bool IsSetGameServerGroups()
         {
-            return this._gameServerGroups != null && this._gameServerGroups.Count > 0; 
+            return this._gameServerGroups != null && (this._gameServerGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

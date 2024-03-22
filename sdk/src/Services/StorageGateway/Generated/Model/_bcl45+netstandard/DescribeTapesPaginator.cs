@@ -45,7 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// Enumerable containing all of the Tapes
         /// </summary>
         public IPaginatedEnumerable<Tape> Tapes => 
-            new PaginatedResultKeyResponse<DescribeTapesResponse, Tape>(this, (i) => i.Tapes);
+            new PaginatedResultKeyResponse<DescribeTapesResponse, Tape>(this, (i) => i.Tapes ?? new List<Tape>());
 
         internal DescribeTapesPaginator(IAmazonStorageGateway client, DescribeTapesRequest request)
         {

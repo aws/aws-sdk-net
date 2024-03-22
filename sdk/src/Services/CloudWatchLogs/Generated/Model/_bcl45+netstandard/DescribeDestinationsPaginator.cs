@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all of the Destinations
         /// </summary>
         public IPaginatedEnumerable<Destination> Destinations => 
-            new PaginatedResultKeyResponse<DescribeDestinationsResponse, Destination>(this, (i) => i.Destinations);
+            new PaginatedResultKeyResponse<DescribeDestinationsResponse, Destination>(this, (i) => i.Destinations ?? new List<Destination>());
 
         internal DescribeDestinationsPaginator(IAmazonCloudWatchLogs client, DescribeDestinationsRequest request)
         {

@@ -48,10 +48,10 @@ namespace Amazon.EC2.Model
         private string _lastUpdatedTime;
         private VerifiedAccessEndpointLoadBalancerOptions _loadBalancerOptions;
         private VerifiedAccessEndpointEniOptions _networkInterfaceOptions;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VerifiedAccessSseSpecificationResponse _sseSpecification;
         private VerifiedAccessEndpointStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _verifiedAccessEndpointId;
         private string _verifiedAccessGroupId;
         private string _verifiedAccessInstanceId;
@@ -291,7 +291,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -345,7 +345,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

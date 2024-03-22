@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Enumerable containing all of the ServiceSummaryList
         /// </summary>
         public IPaginatedEnumerable<ServiceSummary> ServiceSummaryList => 
-            new PaginatedResultKeyResponse<ListServicesResponse, ServiceSummary>(this, (i) => i.ServiceSummaryList);
+            new PaginatedResultKeyResponse<ListServicesResponse, ServiceSummary>(this, (i) => i.ServiceSummaryList ?? new List<ServiceSummary>());
 
         internal ListServicesPaginator(IAmazonMigrationHubRefactorSpaces client, ListServicesRequest request)
         {

@@ -35,8 +35,8 @@ namespace Amazon.AmplifyUIBuilder.Model
     {
         private string _id;
         private string _name;
-        private List<ThemeValues> _overrides = new List<ThemeValues>();
-        private List<ThemeValues> _values = new List<ThemeValues>();
+        private List<ThemeValues> _overrides = AWSConfigs.InitializeCollections ? new List<ThemeValues>() : null;
+        private List<ThemeValues> _values = AWSConfigs.InitializeCollections ? new List<ThemeValues>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -90,7 +90,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Overrides property is set
         internal bool IsSetOverrides()
         {
-            return this._overrides != null && this._overrides.Count > 0; 
+            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

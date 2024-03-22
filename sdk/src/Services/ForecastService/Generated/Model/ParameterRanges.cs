@@ -36,9 +36,9 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class ParameterRanges
     {
-        private List<CategoricalParameterRange> _categoricalParameterRanges = new List<CategoricalParameterRange>();
-        private List<ContinuousParameterRange> _continuousParameterRanges = new List<ContinuousParameterRange>();
-        private List<IntegerParameterRange> _integerParameterRanges = new List<IntegerParameterRange>();
+        private List<CategoricalParameterRange> _categoricalParameterRanges = AWSConfigs.InitializeCollections ? new List<CategoricalParameterRange>() : null;
+        private List<ContinuousParameterRange> _continuousParameterRanges = AWSConfigs.InitializeCollections ? new List<ContinuousParameterRange>() : null;
+        private List<IntegerParameterRange> _integerParameterRanges = AWSConfigs.InitializeCollections ? new List<IntegerParameterRange>() : null;
 
         /// <summary>
         /// Gets and sets the property CategoricalParameterRanges. 
@@ -56,7 +56,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if CategoricalParameterRanges property is set
         internal bool IsSetCategoricalParameterRanges()
         {
-            return this._categoricalParameterRanges != null && this._categoricalParameterRanges.Count > 0; 
+            return this._categoricalParameterRanges != null && (this._categoricalParameterRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if ContinuousParameterRanges property is set
         internal bool IsSetContinuousParameterRanges()
         {
-            return this._continuousParameterRanges != null && this._continuousParameterRanges.Count > 0; 
+            return this._continuousParameterRanges != null && (this._continuousParameterRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if IntegerParameterRanges property is set
         internal bool IsSetIntegerParameterRanges()
         {
-            return this._integerParameterRanges != null && this._integerParameterRanges.Count > 0; 
+            return this._integerParameterRanges != null && (this._integerParameterRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

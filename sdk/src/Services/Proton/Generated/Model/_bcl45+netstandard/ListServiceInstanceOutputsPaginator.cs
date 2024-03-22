@@ -45,7 +45,7 @@ namespace Amazon.Proton.Model
         /// Enumerable containing all of the Outputs
         /// </summary>
         public IPaginatedEnumerable<Output> Outputs => 
-            new PaginatedResultKeyResponse<ListServiceInstanceOutputsResponse, Output>(this, (i) => i.Outputs);
+            new PaginatedResultKeyResponse<ListServiceInstanceOutputsResponse, Output>(this, (i) => i.Outputs ?? new List<Output>());
 
         internal ListServiceInstanceOutputsPaginator(IAmazonProton client, ListServiceInstanceOutputsRequest request)
         {

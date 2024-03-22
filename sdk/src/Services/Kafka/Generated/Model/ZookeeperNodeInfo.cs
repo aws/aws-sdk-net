@@ -35,7 +35,7 @@ namespace Amazon.Kafka.Model
     {
         private string _attachedENIId;
         private string _clientVpcIpAddress;
-        private List<string> _endpoints = new List<string>();
+        private List<string> _endpoints = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _zookeeperId;
         private string _zookeeperVersion;
 
@@ -90,7 +90,7 @@ namespace Amazon.Kafka.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribePartnersResponse : AmazonWebServiceResponse
     {
-        private List<PartnerIntegrationInfo> _partnerIntegrationInfoList = new List<PartnerIntegrationInfo>();
+        private List<PartnerIntegrationInfo> _partnerIntegrationInfoList = AWSConfigs.InitializeCollections ? new List<PartnerIntegrationInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property PartnerIntegrationInfoList. 
@@ -50,7 +50,7 @@ namespace Amazon.Redshift.Model
         // Check to see if PartnerIntegrationInfoList property is set
         internal bool IsSetPartnerIntegrationInfoList()
         {
-            return this._partnerIntegrationInfoList != null && this._partnerIntegrationInfoList.Count > 0; 
+            return this._partnerIntegrationInfoList != null && (this._partnerIntegrationInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Finspace.Model
     public partial class FederationParameters
     {
         private string _applicationCallBackURL;
-        private Dictionary<string, string> _attributeMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributeMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _federationProviderName;
         private string _federationurn;
         private string _samlMetadataDocument;
@@ -78,7 +78,7 @@ namespace Amazon.Finspace.Model
         // Check to see if AttributeMap property is set
         internal bool IsSetAttributeMap()
         {
-            return this._attributeMap != null && this._attributeMap.Count > 0; 
+            return this._attributeMap != null && (this._attributeMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.GuardDuty.Model
         /// Enumerable containing all of the Members
         /// </summary>
         public IPaginatedEnumerable<Member> Members => 
-            new PaginatedResultKeyResponse<ListMembersResponse, Member>(this, (i) => i.Members);
+            new PaginatedResultKeyResponse<ListMembersResponse, Member>(this, (i) => i.Members ?? new List<Member>());
 
         internal ListMembersPaginator(IAmazonGuardDuty client, ListMembersRequest request)
         {

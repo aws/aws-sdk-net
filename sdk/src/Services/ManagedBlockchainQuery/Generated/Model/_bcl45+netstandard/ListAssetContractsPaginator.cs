@@ -45,7 +45,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// Enumerable containing all of the Contracts
         /// </summary>
         public IPaginatedEnumerable<AssetContract> Contracts => 
-            new PaginatedResultKeyResponse<ListAssetContractsResponse, AssetContract>(this, (i) => i.Contracts);
+            new PaginatedResultKeyResponse<ListAssetContractsResponse, AssetContract>(this, (i) => i.Contracts ?? new List<AssetContract>());
 
         internal ListAssetContractsPaginator(IAmazonManagedBlockchainQuery client, ListAssetContractsRequest request)
         {

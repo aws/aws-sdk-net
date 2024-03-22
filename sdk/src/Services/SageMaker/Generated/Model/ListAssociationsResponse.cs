@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<AssociationSummary> _associationSummaries = new List<AssociationSummary>();
+        private List<AssociationSummary> _associationSummaries = AWSConfigs.InitializeCollections ? new List<AssociationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AssociationSummaries property is set
         internal bool IsSetAssociationSummaries()
         {
-            return this._associationSummaries != null && this._associationSummaries.Count > 0; 
+            return this._associationSummaries != null && (this._associationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

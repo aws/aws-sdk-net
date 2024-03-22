@@ -33,7 +33,7 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class ListAppComponentRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<ComponentRecommendation> _componentRecommendations = new List<ComponentRecommendation>();
+        private List<ComponentRecommendation> _componentRecommendations = AWSConfigs.InitializeCollections ? new List<ComponentRecommendation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if ComponentRecommendations property is set
         internal bool IsSetComponentRecommendations()
         {
-            return this._componentRecommendations != null && this._componentRecommendations.Count > 0; 
+            return this._componentRecommendations != null && (this._componentRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListV2LoggingLevelsResponse : AmazonWebServiceResponse
     {
-        private List<LogTargetConfiguration> _logTargetConfigurations = new List<LogTargetConfiguration>();
+        private List<LogTargetConfiguration> _logTargetConfigurations = AWSConfigs.InitializeCollections ? new List<LogTargetConfiguration>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model
         // Check to see if LogTargetConfigurations property is set
         internal bool IsSetLogTargetConfigurations()
         {
-            return this._logTargetConfigurations != null && this._logTargetConfigurations.Count > 0; 
+            return this._logTargetConfigurations != null && (this._logTargetConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

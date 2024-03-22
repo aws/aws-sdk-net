@@ -33,7 +33,7 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class BatchInferenceJobConfig
     {
-        private Dictionary<string, string> _itemExplorationConfig = new Dictionary<string, string>();
+        private Dictionary<string, string> _itemExplorationConfig = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ItemExplorationConfig. 
@@ -54,7 +54,7 @@ namespace Amazon.Personalize.Model
         // Check to see if ItemExplorationConfig property is set
         internal bool IsSetItemExplorationConfig()
         {
-            return this._itemExplorationConfig != null && this._itemExplorationConfig.Count > 0; 
+            return this._itemExplorationConfig != null && (this._itemExplorationConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

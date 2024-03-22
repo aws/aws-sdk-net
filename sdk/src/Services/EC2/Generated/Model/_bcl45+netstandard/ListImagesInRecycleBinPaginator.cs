@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Images
         /// </summary>
         public IPaginatedEnumerable<ImageRecycleBinInfo> Images => 
-            new PaginatedResultKeyResponse<ListImagesInRecycleBinResponse, ImageRecycleBinInfo>(this, (i) => i.Images);
+            new PaginatedResultKeyResponse<ListImagesInRecycleBinResponse, ImageRecycleBinInfo>(this, (i) => i.Images ?? new List<ImageRecycleBinInfo>());
 
         internal ListImagesInRecycleBinPaginator(IAmazonEC2 client, ListImagesInRecycleBinRequest request)
         {

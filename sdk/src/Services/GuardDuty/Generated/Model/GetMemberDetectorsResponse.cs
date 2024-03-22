@@ -33,8 +33,8 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class GetMemberDetectorsResponse : AmazonWebServiceResponse
     {
-        private List<MemberDataSourceConfiguration> _memberDataSourceConfigurations = new List<MemberDataSourceConfiguration>();
-        private List<UnprocessedAccount> _unprocessedAccounts = new List<UnprocessedAccount>();
+        private List<MemberDataSourceConfiguration> _memberDataSourceConfigurations = AWSConfigs.InitializeCollections ? new List<MemberDataSourceConfiguration>() : null;
+        private List<UnprocessedAccount> _unprocessedAccounts = AWSConfigs.InitializeCollections ? new List<UnprocessedAccount>() : null;
 
         /// <summary>
         /// Gets and sets the property MemberDataSourceConfigurations. 
@@ -52,7 +52,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if MemberDataSourceConfigurations property is set
         internal bool IsSetMemberDataSourceConfigurations()
         {
-            return this._memberDataSourceConfigurations != null && this._memberDataSourceConfigurations.Count > 0; 
+            return this._memberDataSourceConfigurations != null && (this._memberDataSourceConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if UnprocessedAccounts property is set
         internal bool IsSetUnprocessedAccounts()
         {
-            return this._unprocessedAccounts != null && this._unprocessedAccounts.Count > 0; 
+            return this._unprocessedAccounts != null && (this._unprocessedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

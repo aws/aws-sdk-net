@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetContainerAPIMetadataResponse : AmazonWebServiceResponse
     {
-        private List<Dictionary<string, string>> _metadata = new List<Dictionary<string, string>>();
+        private List<Dictionary<string, string>> _metadata = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
 
         /// <summary>
         /// Gets and sets the property Metadata. 
@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

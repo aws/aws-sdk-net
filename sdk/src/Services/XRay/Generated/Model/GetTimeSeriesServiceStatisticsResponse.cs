@@ -35,7 +35,7 @@ namespace Amazon.XRay.Model
     {
         private bool? _containsOldGroupVersions;
         private string _nextToken;
-        private List<TimeSeriesServiceStatistics> _timeSeriesServiceStatistics = new List<TimeSeriesServiceStatistics>();
+        private List<TimeSeriesServiceStatistics> _timeSeriesServiceStatistics = AWSConfigs.InitializeCollections ? new List<TimeSeriesServiceStatistics>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainsOldGroupVersions. 
@@ -90,7 +90,7 @@ namespace Amazon.XRay.Model
         // Check to see if TimeSeriesServiceStatistics property is set
         internal bool IsSetTimeSeriesServiceStatistics()
         {
-            return this._timeSeriesServiceStatistics != null && this._timeSeriesServiceStatistics.Count > 0; 
+            return this._timeSeriesServiceStatistics != null && (this._timeSeriesServiceStatistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

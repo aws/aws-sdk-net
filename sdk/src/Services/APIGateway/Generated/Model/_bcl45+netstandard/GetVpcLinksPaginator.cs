@@ -45,7 +45,7 @@ namespace Amazon.APIGateway.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<VpcLink> Items => 
-            new PaginatedResultKeyResponse<GetVpcLinksResponse, VpcLink>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<GetVpcLinksResponse, VpcLink>(this, (i) => i.Items ?? new List<VpcLink>());
 
         internal GetVpcLinksPaginator(IAmazonAPIGateway client, GetVpcLinksRequest request)
         {

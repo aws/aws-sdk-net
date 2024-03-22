@@ -33,7 +33,7 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class GetCommentsForComparedCommitResponse : AmazonWebServiceResponse
     {
-        private List<CommentsForComparedCommit> _commentsForComparedCommitData = new List<CommentsForComparedCommit>();
+        private List<CommentsForComparedCommit> _commentsForComparedCommitData = AWSConfigs.InitializeCollections ? new List<CommentsForComparedCommit>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if CommentsForComparedCommitData property is set
         internal bool IsSetCommentsForComparedCommitData()
         {
-            return this._commentsForComparedCommitData != null && this._commentsForComparedCommitData.Count > 0; 
+            return this._commentsForComparedCommitData != null && (this._commentsForComparedCommitData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

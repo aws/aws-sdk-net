@@ -36,7 +36,7 @@ namespace Amazon.MQ.Model
         private string _brokerId;
         private int? _maxResults;
         private string _nextToken;
-        private List<UserSummary> _users = new List<UserSummary>();
+        private List<UserSummary> _users = AWSConfigs.InitializeCollections ? new List<UserSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property BrokerId. 
@@ -111,7 +111,7 @@ namespace Amazon.MQ.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

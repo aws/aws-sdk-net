@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     {
         private PathStatement _destination;
         private PathStatement _source;
-        private List<ThroughResourcesStatement> _throughResources = new List<ThroughResourcesStatement>();
+        private List<ThroughResourcesStatement> _throughResources = AWSConfigs.InitializeCollections ? new List<ThroughResourcesStatement>() : null;
 
         /// <summary>
         /// Gets and sets the property Destination. 
@@ -88,7 +88,7 @@ namespace Amazon.EC2.Model
         // Check to see if ThroughResources property is set
         internal bool IsSetThroughResources()
         {
-            return this._throughResources != null && this._throughResources.Count > 0; 
+            return this._throughResources != null && (this._throughResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

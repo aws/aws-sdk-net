@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the UsageLimits
         /// </summary>
         public IPaginatedEnumerable<UsageLimit> UsageLimits => 
-            new PaginatedResultKeyResponse<DescribeUsageLimitsResponse, UsageLimit>(this, (i) => i.UsageLimits);
+            new PaginatedResultKeyResponse<DescribeUsageLimitsResponse, UsageLimit>(this, (i) => i.UsageLimits ?? new List<UsageLimit>());
 
         internal DescribeUsageLimitsPaginator(IAmazonRedshift client, DescribeUsageLimitsRequest request)
         {

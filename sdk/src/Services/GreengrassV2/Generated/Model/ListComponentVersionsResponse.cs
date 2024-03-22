@@ -33,7 +33,7 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class ListComponentVersionsResponse : AmazonWebServiceResponse
     {
-        private List<ComponentVersionListItem> _componentVersions = new List<ComponentVersionListItem>();
+        private List<ComponentVersionListItem> _componentVersions = AWSConfigs.InitializeCollections ? new List<ComponentVersionListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if ComponentVersions property is set
         internal bool IsSetComponentVersions()
         {
-            return this._componentVersions != null && this._componentVersions.Count > 0; 
+            return this._componentVersions != null && (this._componentVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

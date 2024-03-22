@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKVoice.Model
     public partial class PhoneNumberCountry
     {
         private string _countryCode;
-        private List<string> _supportedPhoneNumberTypes = new List<string>();
+        private List<string> _supportedPhoneNumberTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CountryCode. 
@@ -69,7 +69,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if SupportedPhoneNumberTypes property is set
         internal bool IsSetSupportedPhoneNumberTypes()
         {
-            return this._supportedPhoneNumberTypes != null && this._supportedPhoneNumberTypes.Count > 0; 
+            return this._supportedPhoneNumberTypes != null && (this._supportedPhoneNumberTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

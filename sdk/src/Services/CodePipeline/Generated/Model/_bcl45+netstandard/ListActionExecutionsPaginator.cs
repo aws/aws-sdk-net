@@ -45,7 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// Enumerable containing all of the ActionExecutionDetails
         /// </summary>
         public IPaginatedEnumerable<ActionExecutionDetail> ActionExecutionDetails => 
-            new PaginatedResultKeyResponse<ListActionExecutionsResponse, ActionExecutionDetail>(this, (i) => i.ActionExecutionDetails);
+            new PaginatedResultKeyResponse<ListActionExecutionsResponse, ActionExecutionDetail>(this, (i) => i.ActionExecutionDetails ?? new List<ActionExecutionDetail>());
 
         internal ListActionExecutionsPaginator(IAmazonCodePipeline client, ListActionExecutionsRequest request)
         {

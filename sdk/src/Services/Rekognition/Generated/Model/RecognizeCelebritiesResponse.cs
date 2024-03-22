@@ -33,9 +33,9 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class RecognizeCelebritiesResponse : AmazonWebServiceResponse
     {
-        private List<Celebrity> _celebrityFaces = new List<Celebrity>();
+        private List<Celebrity> _celebrityFaces = AWSConfigs.InitializeCollections ? new List<Celebrity>() : null;
         private OrientationCorrection _orientationCorrection;
-        private List<ComparedFace> _unrecognizedFaces = new List<ComparedFace>();
+        private List<ComparedFace> _unrecognizedFaces = AWSConfigs.InitializeCollections ? new List<ComparedFace>() : null;
 
         /// <summary>
         /// Gets and sets the property CelebrityFaces. 
@@ -56,7 +56,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if CelebrityFaces property is set
         internal bool IsSetCelebrityFaces()
         {
-            return this._celebrityFaces != null && this._celebrityFaces.Count > 0; 
+            return this._celebrityFaces != null && (this._celebrityFaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if UnrecognizedFaces property is set
         internal bool IsSetUnrecognizedFaces()
         {
-            return this._unrecognizedFaces != null && this._unrecognizedFaces.Count > 0; 
+            return this._unrecognizedFaces != null && (this._unrecognizedFaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

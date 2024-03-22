@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBShardGroupsResponse : AmazonWebServiceResponse
     {
-        private List<DBShardGroup> _dbShardGroups = new List<DBShardGroup>();
+        private List<DBShardGroup> _dbShardGroups = AWSConfigs.InitializeCollections ? new List<DBShardGroup>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBShardGroups property is set
         internal bool IsSetDBShardGroups()
         {
-            return this._dbShardGroups != null && this._dbShardGroups.Count > 0; 
+            return this._dbShardGroups != null && (this._dbShardGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

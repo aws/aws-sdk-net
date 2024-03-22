@@ -40,7 +40,7 @@ namespace Amazon.FSx.Model
         private bool? _deleteIntermediateData;
         private bool? _deleteIntermediateSnaphots;
         private string _destinationSnapshot;
-        private List<OpenZFSNfsExport> _nfsExports = new List<OpenZFSNfsExport>();
+        private List<OpenZFSNfsExport> _nfsExports = AWSConfigs.InitializeCollections ? new List<OpenZFSNfsExport>() : null;
         private OpenZFSOriginSnapshotConfiguration _originSnapshot;
         private string _parentVolumeId;
         private bool? _readOnly;
@@ -49,7 +49,7 @@ namespace Amazon.FSx.Model
         private string _sourceSnapshotARN;
         private int? _storageCapacityQuotaGiB;
         private int? _storageCapacityReservationGiB;
-        private List<OpenZFSUserOrGroupQuota> _userAndGroupQuotas = new List<OpenZFSUserOrGroupQuota>();
+        private List<OpenZFSUserOrGroupQuota> _userAndGroupQuotas = AWSConfigs.InitializeCollections ? new List<OpenZFSUserOrGroupQuota>() : null;
         private string _volumePath;
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace Amazon.FSx.Model
         // Check to see if NfsExports property is set
         internal bool IsSetNfsExports()
         {
-            return this._nfsExports != null && this._nfsExports.Count > 0; 
+            return this._nfsExports != null && (this._nfsExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -419,7 +419,7 @@ namespace Amazon.FSx.Model
         // Check to see if UserAndGroupQuotas property is set
         internal bool IsSetUserAndGroupQuotas()
         {
-            return this._userAndGroupQuotas != null && this._userAndGroupQuotas.Count > 0; 
+            return this._userAndGroupQuotas != null && (this._userAndGroupQuotas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

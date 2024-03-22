@@ -33,7 +33,7 @@ namespace Amazon.IoTEvents.Model
     /// </summary>
     public partial class ListAlarmModelVersionsResponse : AmazonWebServiceResponse
     {
-        private List<AlarmModelVersionSummary> _alarmModelVersionSummaries = new List<AlarmModelVersionSummary>();
+        private List<AlarmModelVersionSummary> _alarmModelVersionSummaries = AWSConfigs.InitializeCollections ? new List<AlarmModelVersionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if AlarmModelVersionSummaries property is set
         internal bool IsSetAlarmModelVersionSummaries()
         {
-            return this._alarmModelVersionSummaries != null && this._alarmModelVersionSummaries.Count > 0; 
+            return this._alarmModelVersionSummaries != null && (this._alarmModelVersionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

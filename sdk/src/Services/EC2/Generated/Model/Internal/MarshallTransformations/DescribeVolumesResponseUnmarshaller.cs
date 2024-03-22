@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("volumeSet/item", targetDepth))
                     {
                         var unmarshaller = VolumeUnmarshaller.Instance;
+                        if (response.Volumes == null)
+                        {
+                            response.Volumes = new List<Volume>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Volumes.Add(item);
                         continue;

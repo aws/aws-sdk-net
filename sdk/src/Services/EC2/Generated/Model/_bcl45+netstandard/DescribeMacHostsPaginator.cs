@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the MacHosts
         /// </summary>
         public IPaginatedEnumerable<MacHost> MacHosts => 
-            new PaginatedResultKeyResponse<DescribeMacHostsResponse, MacHost>(this, (i) => i.MacHosts);
+            new PaginatedResultKeyResponse<DescribeMacHostsResponse, MacHost>(this, (i) => i.MacHosts ?? new List<MacHost>());
 
         internal DescribeMacHostsPaginator(IAmazonEC2 client, DescribeMacHostsRequest request)
         {

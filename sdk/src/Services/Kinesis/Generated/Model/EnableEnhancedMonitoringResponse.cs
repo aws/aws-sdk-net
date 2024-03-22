@@ -33,8 +33,8 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class EnableEnhancedMonitoringResponse : AmazonWebServiceResponse
     {
-        private List<string> _currentShardLevelMetrics = new List<string>();
-        private List<string> _desiredShardLevelMetrics = new List<string>();
+        private List<string> _currentShardLevelMetrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _desiredShardLevelMetrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _streamARN;
         private string _streamName;
 
@@ -55,7 +55,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if CurrentShardLevelMetrics property is set
         internal bool IsSetCurrentShardLevelMetrics()
         {
-            return this._currentShardLevelMetrics != null && this._currentShardLevelMetrics.Count > 0; 
+            return this._currentShardLevelMetrics != null && (this._currentShardLevelMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if DesiredShardLevelMetrics property is set
         internal bool IsSetDesiredShardLevelMetrics()
         {
-            return this._desiredShardLevelMetrics != null && this._desiredShardLevelMetrics.Count > 0; 
+            return this._desiredShardLevelMetrics != null && (this._desiredShardLevelMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

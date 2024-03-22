@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model
     public partial class GetUsageTotalsResponse : AmazonWebServiceResponse
     {
         private TimeRange _timeRange;
-        private List<UsageTotal> _usageTotals = new List<UsageTotal>();
+        private List<UsageTotal> _usageTotals = AWSConfigs.InitializeCollections ? new List<UsageTotal>() : null;
 
         /// <summary>
         /// Gets and sets the property TimeRange. 
@@ -71,7 +71,7 @@ namespace Amazon.Macie2.Model
         // Check to see if UsageTotals property is set
         internal bool IsSetUsageTotals()
         {
-            return this._usageTotals != null && this._usageTotals.Count > 0; 
+            return this._usageTotals != null && (this._usageTotals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

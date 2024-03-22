@@ -55,7 +55,7 @@ namespace Amazon.DynamoDBv2.Model
         private bool? _consistentRead;
         private int? _limit;
         private string _nextToken;
-        private List<AttributeValue> _parameters = new List<AttributeValue>();
+        private List<AttributeValue> _parameters = AWSConfigs.InitializeCollections ? new List<AttributeValue>() : null;
         private ReturnConsumedCapacity _returnConsumedCapacity;
         private ReturnValuesOnConditionCheckFailure _returnValuesOnConditionCheckFailure;
         private string _statement;
@@ -141,7 +141,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

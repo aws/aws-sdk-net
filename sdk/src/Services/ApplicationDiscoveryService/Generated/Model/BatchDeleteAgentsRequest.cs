@@ -36,7 +36,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class BatchDeleteAgentsRequest : AmazonApplicationDiscoveryServiceRequest
     {
-        private List<DeleteAgent> _deleteAgents = new List<DeleteAgent>();
+        private List<DeleteAgent> _deleteAgents = AWSConfigs.InitializeCollections ? new List<DeleteAgent>() : null;
 
         /// <summary>
         /// Gets and sets the property DeleteAgents. 
@@ -54,7 +54,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if DeleteAgents property is set
         internal bool IsSetDeleteAgents()
         {
-            return this._deleteAgents != null && this._deleteAgents.Count > 0; 
+            return this._deleteAgents != null && (this._deleteAgents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

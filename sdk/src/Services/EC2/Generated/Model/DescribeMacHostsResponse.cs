@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeMacHostsResponse : AmazonWebServiceResponse
     {
-        private List<MacHost> _macHosts = new List<MacHost>();
+        private List<MacHost> _macHosts = AWSConfigs.InitializeCollections ? new List<MacHost>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if MacHosts property is set
         internal bool IsSetMacHosts()
         {
-            return this._macHosts != null && this._macHosts.Count > 0; 
+            return this._macHosts != null && (this._macHosts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

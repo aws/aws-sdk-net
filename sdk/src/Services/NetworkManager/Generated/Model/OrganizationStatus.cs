@@ -33,7 +33,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class OrganizationStatus
     {
-        private List<AccountStatus> _accountStatusList = new List<AccountStatus>();
+        private List<AccountStatus> _accountStatusList = AWSConfigs.InitializeCollections ? new List<AccountStatus>() : null;
         private string _organizationAwsServiceAccessStatus;
         private string _organizationId;
         private string _slrDeploymentStatus;
@@ -54,7 +54,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if AccountStatusList property is set
         internal bool IsSetAccountStatusList()
         {
-            return this._accountStatusList != null && this._accountStatusList.Count > 0; 
+            return this._accountStatusList != null && (this._accountStatusList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

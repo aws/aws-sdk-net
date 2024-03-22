@@ -33,7 +33,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class ListAccountAssignmentDeletionStatusResponse : AmazonWebServiceResponse
     {
-        private List<AccountAssignmentOperationStatusMetadata> _accountAssignmentsDeletionStatus = new List<AccountAssignmentOperationStatusMetadata>();
+        private List<AccountAssignmentOperationStatusMetadata> _accountAssignmentsDeletionStatus = AWSConfigs.InitializeCollections ? new List<AccountAssignmentOperationStatusMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if AccountAssignmentsDeletionStatus property is set
         internal bool IsSetAccountAssignmentsDeletionStatus()
         {
-            return this._accountAssignmentsDeletionStatus != null && this._accountAssignmentsDeletionStatus.Count > 0; 
+            return this._accountAssignmentsDeletionStatus != null && (this._accountAssignmentsDeletionStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

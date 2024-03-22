@@ -43,7 +43,7 @@ namespace Amazon.SimpleDB.Model
     public partial class BatchDeleteAttributesRequest : AmazonSimpleDBRequest
     {
         private string _domainName;
-        private List<DeletableItem> _items = new List<DeletableItem>();
+        private List<DeletableItem> _items = AWSConfigs.InitializeCollections ? new List<DeletableItem>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -91,7 +91,7 @@ namespace Amazon.SimpleDB.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

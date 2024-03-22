@@ -36,7 +36,7 @@ namespace Amazon.GlueDataBrew.Model
     {
         private FilesLimit _filesLimit;
         private FilterExpression _lastModifiedDateCondition;
-        private Dictionary<string, DatasetParameter> _parameters = new Dictionary<string, DatasetParameter>();
+        private Dictionary<string, DatasetParameter> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, DatasetParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property FilesLimit. 
@@ -92,7 +92,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

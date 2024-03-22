@@ -33,7 +33,7 @@ namespace Amazon.Organizations.Model
     /// </summary>
     public partial class HandshakeResource
     {
-        private List<HandshakeResource> _resources = new List<HandshakeResource>();
+        private List<HandshakeResource> _resources = AWSConfigs.InitializeCollections ? new List<HandshakeResource>() : null;
         private HandshakeResourceType _type;
         private string _value;
 
@@ -52,7 +52,7 @@ namespace Amazon.Organizations.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

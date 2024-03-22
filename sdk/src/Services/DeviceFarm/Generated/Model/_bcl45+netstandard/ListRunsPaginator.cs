@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// Enumerable containing all of the Runs
         /// </summary>
         public IPaginatedEnumerable<Run> Runs => 
-            new PaginatedResultKeyResponse<ListRunsResponse, Run>(this, (i) => i.Runs);
+            new PaginatedResultKeyResponse<ListRunsResponse, Run>(this, (i) => i.Runs ?? new List<Run>());
 
         internal ListRunsPaginator(IAmazonDeviceFarm client, ListRunsRequest request)
         {

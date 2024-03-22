@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     {
         private NetworkInterfaceAttachment _attachment;
         private string _description;
-        private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
+        private List<GroupIdentifier> _groups = AWSConfigs.InitializeCollections ? new List<GroupIdentifier>() : null;
         private string _networkInterfaceId;
         private bool? _sourceDestCheck;
 
@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

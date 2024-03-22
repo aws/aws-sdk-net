@@ -66,8 +66,8 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeComplianceByConfigRuleRequest : AmazonConfigServiceRequest
     {
-        private List<string> _complianceTypes = new List<string>();
-        private List<string> _configRuleNames = new List<string>();
+        private List<string> _complianceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _configRuleNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ComplianceTypes property is set
         internal bool IsSetComplianceTypes()
         {
-            return this._complianceTypes != null && this._complianceTypes.Count > 0; 
+            return this._complianceTypes != null && (this._complianceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConfigRuleNames property is set
         internal bool IsSetConfigRuleNames()
         {
-            return this._configRuleNames != null && this._configRuleNames.Count > 0; 
+            return this._configRuleNames != null && (this._configRuleNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

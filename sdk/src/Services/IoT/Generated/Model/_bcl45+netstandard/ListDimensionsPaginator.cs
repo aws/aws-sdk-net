@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the DimensionNames
         /// </summary>
         public IPaginatedEnumerable<string> DimensionNames => 
-            new PaginatedResultKeyResponse<ListDimensionsResponse, string>(this, (i) => i.DimensionNames);
+            new PaginatedResultKeyResponse<ListDimensionsResponse, string>(this, (i) => i.DimensionNames ?? new List<string>());
 
         internal ListDimensionsPaginator(IAmazonIoT client, ListDimensionsRequest request)
         {

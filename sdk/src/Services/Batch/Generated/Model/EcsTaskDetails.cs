@@ -35,7 +35,7 @@ namespace Amazon.Batch.Model
     public partial class EcsTaskDetails
     {
         private string _containerInstanceArn;
-        private List<TaskContainerDetails> _containers = new List<TaskContainerDetails>();
+        private List<TaskContainerDetails> _containers = AWSConfigs.InitializeCollections ? new List<TaskContainerDetails>() : null;
         private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
         private string _ipcMode;
@@ -45,7 +45,7 @@ namespace Amazon.Batch.Model
         private RuntimePlatform _runtimePlatform;
         private string _taskArn;
         private string _taskRoleArn;
-        private List<Volume> _volumes = new List<Volume>();
+        private List<Volume> _volumes = AWSConfigs.InitializeCollections ? new List<Volume>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerInstanceArn. 
@@ -80,7 +80,7 @@ namespace Amazon.Batch.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -270,7 +270,7 @@ namespace Amazon.Batch.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

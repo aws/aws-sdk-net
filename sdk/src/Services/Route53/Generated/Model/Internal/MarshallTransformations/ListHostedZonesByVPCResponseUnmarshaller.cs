@@ -63,6 +63,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("HostedZoneSummaries/HostedZoneSummary", targetDepth))
                     {
+                        if (response.HostedZoneSummaries == null)
+                        {
+                            response.HostedZoneSummaries = new List<HostedZoneSummary>();
+                        }
                         var unmarshaller = HostedZoneSummaryUnmarshaller.Instance;
                         response.HostedZoneSummaries.Add(unmarshaller.Unmarshall(context));
                         continue;

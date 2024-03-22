@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the LocalGateways
         /// </summary>
         public IPaginatedEnumerable<LocalGateway> LocalGateways => 
-            new PaginatedResultKeyResponse<DescribeLocalGatewaysResponse, LocalGateway>(this, (i) => i.LocalGateways);
+            new PaginatedResultKeyResponse<DescribeLocalGatewaysResponse, LocalGateway>(this, (i) => i.LocalGateways ?? new List<LocalGateway>());
 
         internal DescribeLocalGatewaysPaginator(IAmazonEC2 client, DescribeLocalGatewaysRequest request)
         {

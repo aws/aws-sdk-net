@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class ListStreamsResponse : AmazonWebServiceResponse
     {
         private string _lastEvaluatedStreamArn;
-        private List<StreamSummary> _streams = new List<StreamSummary>();
+        private List<StreamSummary> _streams = AWSConfigs.InitializeCollections ? new List<StreamSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property LastEvaluatedStreamArn. 
@@ -83,7 +83,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Streams property is set
         internal bool IsSetStreams()
         {
-            return this._streams != null && this._streams.Count > 0; 
+            return this._streams != null && (this._streams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

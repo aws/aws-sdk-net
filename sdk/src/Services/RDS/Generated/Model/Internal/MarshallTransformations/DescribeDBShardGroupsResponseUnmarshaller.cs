@@ -84,6 +84,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBShardGroups/DBShardGroup", targetDepth))
                     {
                         var unmarshaller = DBShardGroupUnmarshaller.Instance;
+                        if (response.DBShardGroups == null)
+                        {
+                            response.DBShardGroups = new List<DBShardGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DBShardGroups.Add(item);
                         continue;

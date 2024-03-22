@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ByoipCidr
     {
-        private List<AsnAssociation> _asnAssociations = new List<AsnAssociation>();
+        private List<AsnAssociation> _asnAssociations = AWSConfigs.InitializeCollections ? new List<AsnAssociation>() : null;
         private string _cidr;
         private string _description;
         private string _networkBorderGroup;
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         // Check to see if AsnAssociations property is set
         internal bool IsSetAsnAssociations()
         {
-            return this._asnAssociations != null && this._asnAssociations.Count > 0; 
+            return this._asnAssociations != null && (this._asnAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

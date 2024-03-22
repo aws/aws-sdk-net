@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class PrincipalIdFormat
     {
         private string _arn;
-        private List<IdFormat> _statuses = new List<IdFormat>();
+        private List<IdFormat> _statuses = AWSConfigs.InitializeCollections ? new List<IdFormat>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         // Check to see if Statuses property is set
         internal bool IsSetStatuses()
         {
-            return this._statuses != null && this._statuses.Count > 0; 
+            return this._statuses != null && (this._statuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

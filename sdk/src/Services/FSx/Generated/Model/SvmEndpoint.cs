@@ -37,7 +37,7 @@ namespace Amazon.FSx.Model
     public partial class SvmEndpoint
     {
         private string _dnsName;
-        private List<string> _ipAddresses = new List<string>();
+        private List<string> _ipAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DNSName.
@@ -71,7 +71,7 @@ namespace Amazon.FSx.Model
         // Check to see if IpAddresses property is set
         internal bool IsSetIpAddresses()
         {
-            return this._ipAddresses != null && this._ipAddresses.Count > 0; 
+            return this._ipAddresses != null && (this._ipAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

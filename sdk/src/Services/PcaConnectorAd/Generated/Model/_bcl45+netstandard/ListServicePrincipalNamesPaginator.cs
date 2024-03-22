@@ -45,7 +45,7 @@ namespace Amazon.PcaConnectorAd.Model
         /// Enumerable containing all of the ServicePrincipalNames
         /// </summary>
         public IPaginatedEnumerable<ServicePrincipalNameSummary> ServicePrincipalNames => 
-            new PaginatedResultKeyResponse<ListServicePrincipalNamesResponse, ServicePrincipalNameSummary>(this, (i) => i.ServicePrincipalNames);
+            new PaginatedResultKeyResponse<ListServicePrincipalNamesResponse, ServicePrincipalNameSummary>(this, (i) => i.ServicePrincipalNames ?? new List<ServicePrincipalNameSummary>());
 
         internal ListServicePrincipalNamesPaginator(IAmazonPcaConnectorAd client, ListServicePrincipalNamesRequest request)
         {

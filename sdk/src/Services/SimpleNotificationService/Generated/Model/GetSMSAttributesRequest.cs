@@ -39,7 +39,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// </summary>
     public partial class GetSMSAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
-        private List<string> _attributes = new List<string>();
+        private List<string> _attributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -65,7 +65,7 @@ namespace Amazon.SimpleNotificationService.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

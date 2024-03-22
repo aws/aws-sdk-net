@@ -33,7 +33,7 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class CapacityAssignment
     {
-        private List<string> _workGroupNames = new List<string>();
+        private List<string> _workGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property WorkGroupNames. 
@@ -50,7 +50,7 @@ namespace Amazon.Athena.Model
         // Check to see if WorkGroupNames property is set
         internal bool IsSetWorkGroupNames()
         {
-            return this._workGroupNames != null && this._workGroupNames.Count > 0; 
+            return this._workGroupNames != null && (this._workGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

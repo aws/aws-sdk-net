@@ -52,8 +52,8 @@ namespace Amazon.EC2.Model
     public partial class DescribeRegionsRequest : AmazonEC2Request
     {
         private bool? _allRegions;
-        private List<Filter> _filters = new List<Filter>();
-        private List<string> _regionNames = new List<string>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _regionNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllRegions. 
@@ -103,7 +103,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.EC2.Model
         // Check to see if RegionNames property is set
         internal bool IsSetRegionNames()
         {
-            return this._regionNames != null && this._regionNames.Count > 0; 
+            return this._regionNames != null && (this._regionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -93,6 +93,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instanceTypeSpecificationSet/item", targetDepth))
                     {
                         var unmarshaller = FleetCapacityReservationUnmarshaller.Instance;
+                        if (unmarshalledObject.InstanceTypeSpecifications == null)
+                        {
+                            unmarshalledObject.InstanceTypeSpecifications = new List<FleetCapacityReservation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.InstanceTypeSpecifications.Add(item);
                         continue;
@@ -106,6 +110,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

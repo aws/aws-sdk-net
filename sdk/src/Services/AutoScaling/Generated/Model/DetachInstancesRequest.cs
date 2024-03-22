@@ -58,7 +58,7 @@ namespace Amazon.AutoScaling.Model
     public partial class DetachInstancesRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _instanceIds = new List<string>();
+        private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _shouldDecrementDesiredCapacity;
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
+            return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

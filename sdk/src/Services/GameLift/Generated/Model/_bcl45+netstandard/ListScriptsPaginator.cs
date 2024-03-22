@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the Scripts
         /// </summary>
         public IPaginatedEnumerable<Script> Scripts => 
-            new PaginatedResultKeyResponse<ListScriptsResponse, Script>(this, (i) => i.Scripts);
+            new PaginatedResultKeyResponse<ListScriptsResponse, Script>(this, (i) => i.Scripts ?? new List<Script>());
 
         internal ListScriptsPaginator(IAmazonGameLift client, ListScriptsRequest request)
         {

@@ -37,8 +37,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ModifyDocumentPermissionRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<string> _accountIdsToAdd = new List<string>();
-        private List<string> _accountIdsToRemove = new List<string>();
+        private List<string> _accountIdsToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _accountIdsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private DocumentPermissionType _permissionType;
         private string _sharedDocumentVersion;
@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AccountIdsToAdd property is set
         internal bool IsSetAccountIdsToAdd()
         {
-            return this._accountIdsToAdd != null && this._accountIdsToAdd.Count > 0; 
+            return this._accountIdsToAdd != null && (this._accountIdsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AccountIdsToRemove property is set
         internal bool IsSetAccountIdsToRemove()
         {
-            return this._accountIdsToRemove != null && this._accountIdsToRemove.Count > 0; 
+            return this._accountIdsToRemove != null && (this._accountIdsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

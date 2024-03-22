@@ -90,6 +90,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RegistrationTokenList/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.RegistrationTokenList == null)
+                        {
+                            response.RegistrationTokenList = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.RegistrationTokenList.Add(item);
                         continue;

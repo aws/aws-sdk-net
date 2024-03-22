@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the DashboardSummaryList
         /// </summary>
         public IPaginatedEnumerable<DashboardSummary> DashboardSummaryList => 
-            new PaginatedResultKeyResponse<SearchDashboardsResponse, DashboardSummary>(this, (i) => i.DashboardSummaryList);
+            new PaginatedResultKeyResponse<SearchDashboardsResponse, DashboardSummary>(this, (i) => i.DashboardSummaryList ?? new List<DashboardSummary>());
 
         internal SearchDashboardsPaginator(IAmazonQuickSight client, SearchDashboardsRequest request)
         {

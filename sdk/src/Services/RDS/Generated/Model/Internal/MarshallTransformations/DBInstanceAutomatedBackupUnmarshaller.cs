@@ -99,6 +99,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBInstanceAutomatedBackupsReplications/DBInstanceAutomatedBackupsReplication", targetDepth))
                     {
                         var unmarshaller = DBInstanceAutomatedBackupsReplicationUnmarshaller.Instance;
+                        if (unmarshalledObject.DBInstanceAutomatedBackupsReplications == null)
+                        {
+                            unmarshalledObject.DBInstanceAutomatedBackupsReplications = new List<DBInstanceAutomatedBackupsReplication>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DBInstanceAutomatedBackupsReplications.Add(item);
                         continue;

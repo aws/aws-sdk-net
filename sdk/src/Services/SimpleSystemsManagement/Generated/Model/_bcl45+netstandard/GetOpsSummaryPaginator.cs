@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the Entities
         /// </summary>
         public IPaginatedEnumerable<OpsEntity> Entities => 
-            new PaginatedResultKeyResponse<GetOpsSummaryResponse, OpsEntity>(this, (i) => i.Entities);
+            new PaginatedResultKeyResponse<GetOpsSummaryResponse, OpsEntity>(this, (i) => i.Entities ?? new List<OpsEntity>());
 
         internal GetOpsSummaryPaginator(IAmazonSimpleSystemsManagement client, GetOpsSummaryRequest request)
         {

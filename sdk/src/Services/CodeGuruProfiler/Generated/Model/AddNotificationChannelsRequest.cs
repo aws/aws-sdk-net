@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruProfiler.Model
     /// </summary>
     public partial class AddNotificationChannelsRequest : AmazonCodeGuruProfilerRequest
     {
-        private List<Channel> _channels = new List<Channel>();
+        private List<Channel> _channels = AWSConfigs.InitializeCollections ? new List<Channel>() : null;
         private string _profilingGroupName;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if Channels property is set
         internal bool IsSetChannels()
         {
-            return this._channels != null && this._channels.Count > 0; 
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

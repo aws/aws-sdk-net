@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the AnalysisFindings
         /// </summary>
         public IPaginatedEnumerable<AccessScopeAnalysisFinding> AnalysisFindings => 
-            new PaginatedResultKeyResponse<GetNetworkInsightsAccessScopeAnalysisFindingsResponse, AccessScopeAnalysisFinding>(this, (i) => i.AnalysisFindings);
+            new PaginatedResultKeyResponse<GetNetworkInsightsAccessScopeAnalysisFindingsResponse, AccessScopeAnalysisFinding>(this, (i) => i.AnalysisFindings ?? new List<AccessScopeAnalysisFinding>());
 
         internal GetNetworkInsightsAccessScopeAnalysisFindingsPaginator(IAmazonEC2 client, GetNetworkInsightsAccessScopeAnalysisFindingsRequest request)
         {

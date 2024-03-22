@@ -34,8 +34,8 @@ namespace Amazon.NimbleStudio.Model
     public partial class GetLaunchProfileDetailsResponse : AmazonWebServiceResponse
     {
         private LaunchProfile _launchProfile;
-        private List<StreamingImage> _streamingImages = new List<StreamingImage>();
-        private List<StudioComponentSummary> _studioComponentSummaries = new List<StudioComponentSummary>();
+        private List<StreamingImage> _streamingImages = AWSConfigs.InitializeCollections ? new List<StreamingImage>() : null;
+        private List<StudioComponentSummary> _studioComponentSummaries = AWSConfigs.InitializeCollections ? new List<StudioComponentSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property LaunchProfile. 
@@ -70,7 +70,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if StreamingImages property is set
         internal bool IsSetStreamingImages()
         {
-            return this._streamingImages != null && this._streamingImages.Count > 0; 
+            return this._streamingImages != null && (this._streamingImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if StudioComponentSummaries property is set
         internal bool IsSetStudioComponentSummaries()
         {
-            return this._studioComponentSummaries != null && this._studioComponentSummaries.Count > 0; 
+            return this._studioComponentSummaries != null && (this._studioComponentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

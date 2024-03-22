@@ -33,7 +33,7 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class ListEphemeridesResponse : AmazonWebServiceResponse
     {
-        private List<EphemerisItem> _ephemerides = new List<EphemerisItem>();
+        private List<EphemerisItem> _ephemerides = AWSConfigs.InitializeCollections ? new List<EphemerisItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if Ephemerides property is set
         internal bool IsSetEphemerides()
         {
-            return this._ephemerides != null && this._ephemerides.Count > 0; 
+            return this._ephemerides != null && (this._ephemerides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

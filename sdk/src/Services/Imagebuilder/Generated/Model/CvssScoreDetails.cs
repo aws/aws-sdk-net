@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class CvssScoreDetails
     {
-        private List<CvssScoreAdjustment> _adjustments = new List<CvssScoreAdjustment>();
+        private List<CvssScoreAdjustment> _adjustments = AWSConfigs.InitializeCollections ? new List<CvssScoreAdjustment>() : null;
         private string _cvssSource;
         private double? _score;
         private string _scoreSource;
@@ -57,7 +57,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Adjustments property is set
         internal bool IsSetAdjustments()
         {
-            return this._adjustments != null && this._adjustments.Count > 0; 
+            return this._adjustments != null && (this._adjustments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

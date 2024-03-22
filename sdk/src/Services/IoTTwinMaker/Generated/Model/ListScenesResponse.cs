@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class ListScenesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SceneSummary> _sceneSummaries = new List<SceneSummary>();
+        private List<SceneSummary> _sceneSummaries = AWSConfigs.InitializeCollections ? new List<SceneSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if SceneSummaries property is set
         internal bool IsSetSceneSummaries()
         {
-            return this._sceneSummaries != null && this._sceneSummaries.Count > 0; 
+            return this._sceneSummaries != null && (this._sceneSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

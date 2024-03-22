@@ -37,8 +37,8 @@ namespace Amazon.SageMaker.Model
         private string _description;
         private string _featureGroupName;
         private string _featureName;
-        private List<FeatureParameter> _parameterAdditions = new List<FeatureParameter>();
-        private List<string> _parameterRemovals = new List<string>();
+        private List<FeatureParameter> _parameterAdditions = AWSConfigs.InitializeCollections ? new List<FeatureParameter>() : null;
+        private List<string> _parameterRemovals = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -114,7 +114,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ParameterAdditions property is set
         internal bool IsSetParameterAdditions()
         {
-            return this._parameterAdditions != null && this._parameterAdditions.Count > 0; 
+            return this._parameterAdditions != null && (this._parameterAdditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ParameterRemovals property is set
         internal bool IsSetParameterRemovals()
         {
-            return this._parameterRemovals != null && this._parameterRemovals.Count > 0; 
+            return this._parameterRemovals != null && (this._parameterRemovals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

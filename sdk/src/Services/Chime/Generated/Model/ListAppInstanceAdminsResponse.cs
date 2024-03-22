@@ -33,7 +33,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class ListAppInstanceAdminsResponse : AmazonWebServiceResponse
     {
-        private List<AppInstanceAdminSummary> _appInstanceAdmins = new List<AppInstanceAdminSummary>();
+        private List<AppInstanceAdminSummary> _appInstanceAdmins = AWSConfigs.InitializeCollections ? new List<AppInstanceAdminSummary>() : null;
         private string _appInstanceArn;
         private string _nextToken;
 
@@ -52,7 +52,7 @@ namespace Amazon.Chime.Model
         // Check to see if AppInstanceAdmins property is set
         internal bool IsSetAppInstanceAdmins()
         {
-            return this._appInstanceAdmins != null && this._appInstanceAdmins.Count > 0; 
+            return this._appInstanceAdmins != null && (this._appInstanceAdmins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

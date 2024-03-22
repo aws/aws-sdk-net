@@ -45,7 +45,7 @@ namespace Amazon.Batch.Model
         /// Enumerable containing all of the JobSummaryList
         /// </summary>
         public IPaginatedEnumerable<JobSummary> JobSummaryList => 
-            new PaginatedResultKeyResponse<ListJobsResponse, JobSummary>(this, (i) => i.JobSummaryList);
+            new PaginatedResultKeyResponse<ListJobsResponse, JobSummary>(this, (i) => i.JobSummaryList ?? new List<JobSummary>());
 
         internal ListJobsPaginator(IAmazonBatch client, ListJobsRequest request)
         {

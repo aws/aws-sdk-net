@@ -33,7 +33,7 @@ namespace Amazon.ResourceExplorer2.Model
     /// </summary>
     public partial class ListIndexesResponse : AmazonWebServiceResponse
     {
-        private List<Index> _indexes = new List<Index>();
+        private List<Index> _indexes = AWSConfigs.InitializeCollections ? new List<Index>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if Indexes property is set
         internal bool IsSetIndexes()
         {
-            return this._indexes != null && this._indexes.Count > 0; 
+            return this._indexes != null && (this._indexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

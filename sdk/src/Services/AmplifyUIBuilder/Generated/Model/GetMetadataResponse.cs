@@ -33,7 +33,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class GetMetadataResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _features = new Dictionary<string, string>();
+        private Dictionary<string, string> _features = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Features. 
@@ -51,7 +51,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

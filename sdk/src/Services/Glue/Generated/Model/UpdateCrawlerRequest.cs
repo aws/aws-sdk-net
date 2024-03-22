@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class UpdateCrawlerRequest : AmazonGlueRequest
     {
-        private List<string> _classifiers = new List<string>();
+        private List<string> _classifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _configuration;
         private string _crawlerSecurityConfiguration;
         private string _databaseName;
@@ -67,7 +67,7 @@ namespace Amazon.Glue.Model
         // Check to see if Classifiers property is set
         internal bool IsSetClassifiers()
         {
-            return this._classifiers != null && this._classifiers.Count > 0; 
+            return this._classifiers != null && (this._classifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeIamInstanceProfileAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<IamInstanceProfileAssociation> _iamInstanceProfileAssociations = new List<IamInstanceProfileAssociation>();
+        private List<IamInstanceProfileAssociation> _iamInstanceProfileAssociations = AWSConfigs.InitializeCollections ? new List<IamInstanceProfileAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if IamInstanceProfileAssociations property is set
         internal bool IsSetIamInstanceProfileAssociations()
         {
-            return this._iamInstanceProfileAssociations != null && this._iamInstanceProfileAssociations.Count > 0; 
+            return this._iamInstanceProfileAssociations != null && (this._iamInstanceProfileAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class EnvironmentPlatform
     {
-        private List<EnvironmentLanguage> _languages = new List<EnvironmentLanguage>();
+        private List<EnvironmentLanguage> _languages = AWSConfigs.InitializeCollections ? new List<EnvironmentLanguage>() : null;
         private PlatformType _platform;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Languages property is set
         internal bool IsSetLanguages()
         {
-            return this._languages != null && this._languages.Count > 0; 
+            return this._languages != null && (this._languages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

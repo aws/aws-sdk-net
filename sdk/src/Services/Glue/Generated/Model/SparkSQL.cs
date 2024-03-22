@@ -34,10 +34,10 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class SparkSQL
     {
-        private List<string> _inputs = new List<string>();
+        private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private List<GlueSchema> _outputSchemas = new List<GlueSchema>();
-        private List<SqlAlias> _sqlAliases = new List<SqlAlias>();
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
+        private List<SqlAlias> _sqlAliases = AWSConfigs.InitializeCollections ? new List<SqlAlias>() : null;
         private string _sqlQuery;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.Glue.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.Glue.Model
         // Check to see if OutputSchemas property is set
         internal bool IsSetOutputSchemas()
         {
-            return this._outputSchemas != null && this._outputSchemas.Count > 0; 
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.Glue.Model
         // Check to see if SqlAliases property is set
         internal bool IsSetSqlAliases()
         {
-            return this._sqlAliases != null && this._sqlAliases.Count > 0; 
+            return this._sqlAliases != null && (this._sqlAliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -63,6 +63,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("TagSet/member", targetDepth))
                     {
+                        if (response.TagSet == null)
+                        {
+                            response.TagSet = new List<S3Tag>();
+                        }
                         var unmarshaller = S3TagUnmarshaller.Instance;
                         response.TagSet.Add(unmarshaller.Unmarshall(context));
                         continue;

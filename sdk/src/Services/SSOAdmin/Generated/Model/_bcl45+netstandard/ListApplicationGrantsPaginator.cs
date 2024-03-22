@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the Grants
         /// </summary>
         public IPaginatedEnumerable<GrantItem> Grants => 
-            new PaginatedResultKeyResponse<ListApplicationGrantsResponse, GrantItem>(this, (i) => i.Grants);
+            new PaginatedResultKeyResponse<ListApplicationGrantsResponse, GrantItem>(this, (i) => i.Grants ?? new List<GrantItem>());
 
         internal ListApplicationGrantsPaginator(IAmazonSSOAdmin client, ListApplicationGrantsRequest request)
         {

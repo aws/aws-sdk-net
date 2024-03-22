@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the AccountLimits
         /// </summary>
         public IPaginatedEnumerable<AccountLimit> AccountLimits => 
-            new PaginatedResultKeyResponse<DescribeAccountLimitsResponse, AccountLimit>(this, (i) => i.AccountLimits);
+            new PaginatedResultKeyResponse<DescribeAccountLimitsResponse, AccountLimit>(this, (i) => i.AccountLimits ?? new List<AccountLimit>());
 
         internal DescribeAccountLimitsPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeAccountLimitsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all of the ContainerRecipeSummaryList
         /// </summary>
         public IPaginatedEnumerable<ContainerRecipeSummary> ContainerRecipeSummaryList => 
-            new PaginatedResultKeyResponse<ListContainerRecipesResponse, ContainerRecipeSummary>(this, (i) => i.ContainerRecipeSummaryList);
+            new PaginatedResultKeyResponse<ListContainerRecipesResponse, ContainerRecipeSummary>(this, (i) => i.ContainerRecipeSummaryList ?? new List<ContainerRecipeSummary>());
 
         internal ListContainerRecipesPaginator(IAmazonImagebuilder client, ListContainerRecipesRequest request)
         {

@@ -33,9 +33,9 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateFleetResponse : AmazonWebServiceResponse
     {
-        private List<CreateFleetError> _errors = new List<CreateFleetError>();
+        private List<CreateFleetError> _errors = AWSConfigs.InitializeCollections ? new List<CreateFleetError>() : null;
         private string _fleetId;
-        private List<CreateFleetInstance> _instances = new List<CreateFleetInstance>();
+        private List<CreateFleetInstance> _instances = AWSConfigs.InitializeCollections ? new List<CreateFleetInstance>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Enumerable containing all of the AgentsInfo
         /// </summary>
         public IPaginatedEnumerable<AgentInfo> AgentsInfo => 
-            new PaginatedResultKeyResponse<DescribeAgentsResponse, AgentInfo>(this, (i) => i.AgentsInfo);
+            new PaginatedResultKeyResponse<DescribeAgentsResponse, AgentInfo>(this, (i) => i.AgentsInfo ?? new List<AgentInfo>());
 
         internal DescribeAgentsPaginator(IAmazonApplicationDiscoveryService client, DescribeAgentsRequest request)
         {

@@ -36,8 +36,8 @@ namespace Amazon.RAM.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _resourceShareArns = new List<string>();
-        private List<string> _resourceShareInvitationArns = new List<string>();
+        private List<string> _resourceShareArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceShareInvitationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -103,7 +103,7 @@ namespace Amazon.RAM.Model
         // Check to see if ResourceShareArns property is set
         internal bool IsSetResourceShareArns()
         {
-            return this._resourceShareArns != null && this._resourceShareArns.Count > 0; 
+            return this._resourceShareArns != null && (this._resourceShareArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.RAM.Model
         // Check to see if ResourceShareInvitationArns property is set
         internal bool IsSetResourceShareInvitationArns()
         {
-            return this._resourceShareInvitationArns != null && this._resourceShareInvitationArns.Count > 0; 
+            return this._resourceShareInvitationArns != null && (this._resourceShareInvitationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

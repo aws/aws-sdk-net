@@ -33,7 +33,7 @@ namespace Amazon.OAM.Model
     /// </summary>
     public partial class ListSinksResponse : AmazonWebServiceResponse
     {
-        private List<ListSinksItem> _items = new List<ListSinksItem>();
+        private List<ListSinksItem> _items = AWSConfigs.InitializeCollections ? new List<ListSinksItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.OAM.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

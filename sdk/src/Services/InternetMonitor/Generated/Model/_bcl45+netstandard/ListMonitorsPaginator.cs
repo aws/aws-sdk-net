@@ -45,7 +45,7 @@ namespace Amazon.InternetMonitor.Model
         /// Enumerable containing all of the Monitors
         /// </summary>
         public IPaginatedEnumerable<Monitor> Monitors => 
-            new PaginatedResultKeyResponse<ListMonitorsResponse, Monitor>(this, (i) => i.Monitors);
+            new PaginatedResultKeyResponse<ListMonitorsResponse, Monitor>(this, (i) => i.Monitors ?? new List<Monitor>());
 
         internal ListMonitorsPaginator(IAmazonInternetMonitor client, ListMonitorsRequest request)
         {

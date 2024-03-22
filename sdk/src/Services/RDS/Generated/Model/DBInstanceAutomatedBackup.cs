@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         private string _backupTarget;
         private string _dbInstanceArn;
         private string _dbInstanceAutomatedBackupsArn;
-        private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = new List<DBInstanceAutomatedBackupsReplication>();
+        private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = AWSConfigs.InitializeCollections ? new List<DBInstanceAutomatedBackupsReplication>() : null;
         private string _dbInstanceIdentifier;
         private string _dbiResourceId;
         private bool? _dedicatedLogVolume;
@@ -212,7 +212,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceAutomatedBackupsReplications property is set
         internal bool IsSetDBInstanceAutomatedBackupsReplications()
         {
-            return this._dbInstanceAutomatedBackupsReplications != null && this._dbInstanceAutomatedBackupsReplications.Count > 0; 
+            return this._dbInstanceAutomatedBackupsReplications != null && (this._dbInstanceAutomatedBackupsReplications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

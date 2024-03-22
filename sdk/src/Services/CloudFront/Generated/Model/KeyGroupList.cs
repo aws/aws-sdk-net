@@ -33,7 +33,7 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class KeyGroupList
     {
-        private List<KeyGroupSummary> _items = new List<KeyGroupSummary>();
+        private List<KeyGroupSummary> _items = AWSConfigs.InitializeCollections ? new List<KeyGroupSummary>() : null;
         private int? _maxItems;
         private string _nextMarker;
         private int? _quantity;
@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

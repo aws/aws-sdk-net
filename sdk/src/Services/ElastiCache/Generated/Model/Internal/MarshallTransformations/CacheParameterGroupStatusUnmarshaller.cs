@@ -57,6 +57,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheNodeIdsToReboot/CacheNodeId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.CacheNodeIdsToReboot == null)
+                        {
+                            unmarshalledObject.CacheNodeIdsToReboot = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CacheNodeIdsToReboot.Add(item);
                         continue;

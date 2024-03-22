@@ -33,7 +33,7 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class BatchPutFieldOptionsResponse : AmazonWebServiceResponse
     {
-        private List<FieldOptionError> _errors = new List<FieldOptionError>();
+        private List<FieldOptionError> _errors = AWSConfigs.InitializeCollections ? new List<FieldOptionError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +51,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

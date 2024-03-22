@@ -34,7 +34,7 @@ namespace Amazon.Chatbot.Model
     public partial class ListMicrosoftTeamsUserIdentitiesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TeamsUserIdentity> _teamsUserIdentities = new List<TeamsUserIdentity>();
+        private List<TeamsUserIdentity> _teamsUserIdentities = AWSConfigs.InitializeCollections ? new List<TeamsUserIdentity>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. An optional token returned from a prior request.
@@ -68,7 +68,7 @@ namespace Amazon.Chatbot.Model
         // Check to see if TeamsUserIdentities property is set
         internal bool IsSetTeamsUserIdentities()
         {
-            return this._teamsUserIdentities != null && this._teamsUserIdentities.Count > 0; 
+            return this._teamsUserIdentities != null && (this._teamsUserIdentities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

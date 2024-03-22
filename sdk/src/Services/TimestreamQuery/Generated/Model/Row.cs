@@ -33,7 +33,7 @@ namespace Amazon.TimestreamQuery.Model
     /// </summary>
     public partial class Row
     {
-        private List<Datum> _data = new List<Datum>();
+        private List<Datum> _data = AWSConfigs.InitializeCollections ? new List<Datum>() : null;
 
         /// <summary>
         /// Gets and sets the property Data. 
@@ -51,7 +51,7 @@ namespace Amazon.TimestreamQuery.Model
         // Check to see if Data property is set
         internal bool IsSetData()
         {
-            return this._data != null && this._data.Count > 0; 
+            return this._data != null && (this._data.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

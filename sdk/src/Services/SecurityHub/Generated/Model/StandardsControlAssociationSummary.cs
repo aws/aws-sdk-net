@@ -35,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class StandardsControlAssociationSummary
     {
         private AssociationStatus _associationStatus;
-        private List<string> _relatedRequirements = new List<string>();
+        private List<string> _relatedRequirements = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _securityControlArn;
         private string _securityControlId;
         private string _standardsArn;
@@ -79,7 +79,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RelatedRequirements property is set
         internal bool IsSetRelatedRequirements()
         {
-            return this._relatedRequirements != null && this._relatedRequirements.Count > 0; 
+            return this._relatedRequirements != null && (this._relatedRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

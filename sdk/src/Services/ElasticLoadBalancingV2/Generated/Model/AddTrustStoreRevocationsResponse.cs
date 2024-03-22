@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class AddTrustStoreRevocationsResponse : AmazonWebServiceResponse
     {
-        private List<TrustStoreRevocation> _trustStoreRevocations = new List<TrustStoreRevocation>();
+        private List<TrustStoreRevocation> _trustStoreRevocations = AWSConfigs.InitializeCollections ? new List<TrustStoreRevocation>() : null;
 
         /// <summary>
         /// Gets and sets the property TrustStoreRevocations. 
@@ -50,7 +50,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if TrustStoreRevocations property is set
         internal bool IsSetTrustStoreRevocations()
         {
-            return this._trustStoreRevocations != null && this._trustStoreRevocations.Count > 0; 
+            return this._trustStoreRevocations != null && (this._trustStoreRevocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     {
         private string _description;
         private int? _packetLength;
-        private List<string> _removeFields = new List<string>();
+        private List<string> _removeFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _sessionNumber;
         private string _trafficMirrorFilterId;
         private string _trafficMirrorSessionId;
@@ -109,7 +109,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveFields property is set
         internal bool IsSetRemoveFields()
         {
-            return this._removeFields != null && this._removeFields.Count > 0; 
+            return this._removeFields != null && (this._removeFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

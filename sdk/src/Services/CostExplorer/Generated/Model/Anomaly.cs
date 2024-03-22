@@ -42,7 +42,7 @@ namespace Amazon.CostExplorer.Model
         private AnomalyFeedbackType _feedback;
         private Impact _impact;
         private string _monitorArn;
-        private List<RootCause> _rootCauses = new List<RootCause>();
+        private List<RootCause> _rootCauses = AWSConfigs.InitializeCollections ? new List<RootCause>() : null;
 
         /// <summary>
         /// Gets and sets the property AnomalyEndDate. 
@@ -211,7 +211,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if RootCauses property is set
         internal bool IsSetRootCauses()
         {
-            return this._rootCauses != null && this._rootCauses.Count > 0; 
+            return this._rootCauses != null && (this._rootCauses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

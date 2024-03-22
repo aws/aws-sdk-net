@@ -45,7 +45,7 @@ namespace Amazon.MainframeModernization.Model
         /// Enumerable containing all of the EngineVersions
         /// </summary>
         public IPaginatedEnumerable<EngineVersionsSummary> EngineVersions => 
-            new PaginatedResultKeyResponse<ListEngineVersionsResponse, EngineVersionsSummary>(this, (i) => i.EngineVersions);
+            new PaginatedResultKeyResponse<ListEngineVersionsResponse, EngineVersionsSummary>(this, (i) => i.EngineVersions ?? new List<EngineVersionsSummary>());
 
         internal ListEngineVersionsPaginator(IAmazonMainframeModernization client, ListEngineVersionsRequest request)
         {

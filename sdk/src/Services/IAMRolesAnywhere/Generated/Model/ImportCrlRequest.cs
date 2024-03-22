@@ -44,7 +44,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         private MemoryStream _crlData;
         private bool? _enabled;
         private string _name;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _trustAnchorArn;
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

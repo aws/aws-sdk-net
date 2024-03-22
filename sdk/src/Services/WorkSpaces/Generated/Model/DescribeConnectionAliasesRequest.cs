@@ -36,7 +36,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeConnectionAliasesRequest : AmazonWorkSpacesRequest
     {
-        private List<string> _aliasIds = new List<string>();
+        private List<string> _aliasIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _limit;
         private string _nextToken;
         private string _resourceId;
@@ -57,7 +57,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if AliasIds property is set
         internal bool IsSetAliasIds()
         {
-            return this._aliasIds != null && this._aliasIds.Count > 0; 
+            return this._aliasIds != null && (this._aliasIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class ListFirewallsResponse : AmazonWebServiceResponse
     {
-        private List<FirewallMetadata> _firewalls = new List<FirewallMetadata>();
+        private List<FirewallMetadata> _firewalls = AWSConfigs.InitializeCollections ? new List<FirewallMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Firewalls property is set
         internal bool IsSetFirewalls()
         {
-            return this._firewalls != null && this._firewalls.Count > 0; 
+            return this._firewalls != null && (this._firewalls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

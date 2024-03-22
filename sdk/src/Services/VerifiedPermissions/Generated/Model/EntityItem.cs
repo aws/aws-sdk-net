@@ -45,9 +45,9 @@ namespace Amazon.VerifiedPermissions.Model
     /// </summary>
     public partial class EntityItem
     {
-        private Dictionary<string, AttributeValue> _attributes = new Dictionary<string, AttributeValue>();
+        private Dictionary<string, AttributeValue> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
         private EntityIdentifier _identifier;
-        private List<EntityIdentifier> _parents = new List<EntityIdentifier>();
+        private List<EntityIdentifier> _parents = AWSConfigs.InitializeCollections ? new List<EntityIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -64,7 +64,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if Parents property is set
         internal bool IsSetParents()
         {
-            return this._parents != null && this._parents.Count > 0; 
+            return this._parents != null && (this._parents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -35,7 +35,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private string _actionGroupName;
         private string _apiPath;
-        private List<Parameter> _parameters = new List<Parameter>();
+        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
         private RequestBody _requestBody;
         private string _verb;
 
@@ -92,7 +92,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Enumerable containing all of the Schemas
         /// </summary>
         public IPaginatedEnumerable<string> Schemas => 
-            new PaginatedResultKeyResponse<ListSchemasResponse, string>(this, (i) => i.Schemas);
+            new PaginatedResultKeyResponse<ListSchemasResponse, string>(this, (i) => i.Schemas ?? new List<string>());
 
         internal ListSchemasPaginator(IAmazonRedshiftDataAPIService client, ListSchemasRequest request)
         {

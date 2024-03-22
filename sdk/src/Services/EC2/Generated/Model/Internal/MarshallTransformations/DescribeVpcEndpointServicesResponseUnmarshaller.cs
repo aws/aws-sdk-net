@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("serviceDetailSet/item", targetDepth))
                     {
                         var unmarshaller = ServiceDetailUnmarshaller.Instance;
+                        if (response.ServiceDetails == null)
+                        {
+                            response.ServiceDetails = new List<ServiceDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ServiceDetails.Add(item);
                         continue;
@@ -71,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("serviceNameSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.ServiceNames == null)
+                        {
+                            response.ServiceNames = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ServiceNames.Add(item);
                         continue;

@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the VerifiedDestinationNumbers
         /// </summary>
         public IPaginatedEnumerable<VerifiedDestinationNumberInformation> VerifiedDestinationNumbers => 
-            new PaginatedResultKeyResponse<DescribeVerifiedDestinationNumbersResponse, VerifiedDestinationNumberInformation>(this, (i) => i.VerifiedDestinationNumbers);
+            new PaginatedResultKeyResponse<DescribeVerifiedDestinationNumbersResponse, VerifiedDestinationNumberInformation>(this, (i) => i.VerifiedDestinationNumbers ?? new List<VerifiedDestinationNumberInformation>());
 
         internal DescribeVerifiedDestinationNumbersPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeVerifiedDestinationNumbersRequest request)
         {

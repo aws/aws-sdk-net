@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         private CurrencyCodeValues _currencyCode;
         private int? _duration;
         private DateTime? _end;
-        private List<string> _hostIdSet = new List<string>();
+        private List<string> _hostIdSet = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _hostReservationId;
         private string _hourlyPrice;
         private string _instanceFamily;
@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         private PaymentOption _paymentOption;
         private DateTime? _start;
         private ReservationState _state;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _upfrontPrice;
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.EC2.Model
         // Check to see if HostIdSet property is set
         internal bool IsSetHostIdSet()
         {
-            return this._hostIdSet != null && this._hostIdSet.Count > 0; 
+            return this._hostIdSet != null && (this._hostIdSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -283,7 +283,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

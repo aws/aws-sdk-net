@@ -35,7 +35,7 @@ namespace Amazon.WorkSpaces.Model
     {
         private Compute _computeTypeName;
         private OperatingSystemName _operatingSystemName;
-        private List<string> _protocols = new List<string>();
+        private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _rootVolumeSizeGib;
         private RunningMode _runningMode;
         private int? _runningModeAutoStopTimeoutInMinutes;
@@ -108,7 +108,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

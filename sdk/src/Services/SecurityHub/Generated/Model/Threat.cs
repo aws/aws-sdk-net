@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class Threat
     {
-        private List<FilePaths> _filePaths = new List<FilePaths>();
+        private List<FilePaths> _filePaths = AWSConfigs.InitializeCollections ? new List<FilePaths>() : null;
         private int? _itemCount;
         private string _name;
         private string _severity;
@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if FilePaths property is set
         internal bool IsSetFilePaths()
         {
-            return this._filePaths != null && this._filePaths.Count > 0; 
+            return this._filePaths != null && (this._filePaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

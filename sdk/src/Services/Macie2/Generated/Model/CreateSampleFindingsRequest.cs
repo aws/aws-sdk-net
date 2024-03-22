@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class CreateSampleFindingsRequest : AmazonMacie2Request
     {
-        private List<string> _findingTypes = new List<string>();
+        private List<string> _findingTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FindingTypes. 
@@ -53,7 +53,7 @@ namespace Amazon.Macie2.Model
         // Check to see if FindingTypes property is set
         internal bool IsSetFindingTypes()
         {
-            return this._findingTypes != null && this._findingTypes.Count > 0; 
+            return this._findingTypes != null && (this._findingTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

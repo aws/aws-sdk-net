@@ -81,7 +81,7 @@ namespace Amazon.AutoScaling.Model
     public partial class AttachLoadBalancerTargetGroupsRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _targetGroupARNs = new List<string>();
+        private List<string> _targetGroupARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -120,7 +120,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TargetGroupARNs property is set
         internal bool IsSetTargetGroupARNs()
         {
-            return this._targetGroupARNs != null && this._targetGroupARNs.Count > 0; 
+            return this._targetGroupARNs != null && (this._targetGroupARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

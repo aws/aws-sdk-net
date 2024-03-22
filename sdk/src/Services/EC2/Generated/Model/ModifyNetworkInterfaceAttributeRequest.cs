@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private bool? _enablePrimaryIpv6;
         private EnaSrdSpecification _enaSrdSpecification;
-        private List<string> _groups = new List<string>();
+        private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _networkInterfaceId;
         private bool? _sourceDestCheck;
 
@@ -166,7 +166,7 @@ namespace Amazon.EC2.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

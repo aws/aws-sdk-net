@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the GlobalReplicationGroups
         /// </summary>
         public IPaginatedEnumerable<GlobalReplicationGroup> GlobalReplicationGroups => 
-            new PaginatedResultKeyResponse<DescribeGlobalReplicationGroupsResponse, GlobalReplicationGroup>(this, (i) => i.GlobalReplicationGroups);
+            new PaginatedResultKeyResponse<DescribeGlobalReplicationGroupsResponse, GlobalReplicationGroup>(this, (i) => i.GlobalReplicationGroups ?? new List<GlobalReplicationGroup>());
 
         internal DescribeGlobalReplicationGroupsPaginator(IAmazonElastiCache client, DescribeGlobalReplicationGroupsRequest request)
         {

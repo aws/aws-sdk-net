@@ -45,7 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// Enumerable containing all of the VolumeInfos
         /// </summary>
         public IPaginatedEnumerable<VolumeInfo> VolumeInfos => 
-            new PaginatedResultKeyResponse<ListVolumesResponse, VolumeInfo>(this, (i) => i.VolumeInfos);
+            new PaginatedResultKeyResponse<ListVolumesResponse, VolumeInfo>(this, (i) => i.VolumeInfos ?? new List<VolumeInfo>());
 
         internal ListVolumesPaginator(IAmazonStorageGateway client, ListVolumesRequest request)
         {

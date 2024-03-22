@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class PortProbeAction
     {
         private bool? _blocked;
-        private List<PortProbeDetail> _portProbeDetails = new List<PortProbeDetail>();
+        private List<PortProbeDetail> _portProbeDetails = AWSConfigs.InitializeCollections ? new List<PortProbeDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property Blocked. 
@@ -69,7 +69,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if PortProbeDetails property is set
         internal bool IsSetPortProbeDetails()
         {
-            return this._portProbeDetails != null && this._portProbeDetails.Count > 0; 
+            return this._portProbeDetails != null && (this._portProbeDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class ListInferenceEventsResponse : AmazonWebServiceResponse
     {
-        private List<InferenceEventSummary> _inferenceEventSummaries = new List<InferenceEventSummary>();
+        private List<InferenceEventSummary> _inferenceEventSummaries = AWSConfigs.InitializeCollections ? new List<InferenceEventSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if InferenceEventSummaries property is set
         internal bool IsSetInferenceEventSummaries()
         {
-            return this._inferenceEventSummaries != null && this._inferenceEventSummaries.Count > 0; 
+            return this._inferenceEventSummaries != null && (this._inferenceEventSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

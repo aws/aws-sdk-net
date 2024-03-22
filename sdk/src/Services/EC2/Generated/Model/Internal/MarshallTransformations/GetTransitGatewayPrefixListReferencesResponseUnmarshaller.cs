@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("transitGatewayPrefixListReferenceSet/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayPrefixListReferenceUnmarshaller.Instance;
+                        if (response.TransitGatewayPrefixListReferences == null)
+                        {
+                            response.TransitGatewayPrefixListReferences = new List<TransitGatewayPrefixListReference>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TransitGatewayPrefixListReferences.Add(item);
                         continue;

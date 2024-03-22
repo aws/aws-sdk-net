@@ -45,7 +45,7 @@ namespace Amazon.SSO.Model
         /// Enumerable containing all of the AccountList
         /// </summary>
         public IPaginatedEnumerable<AccountInfo> AccountList => 
-            new PaginatedResultKeyResponse<ListAccountsResponse, AccountInfo>(this, (i) => i.AccountList);
+            new PaginatedResultKeyResponse<ListAccountsResponse, AccountInfo>(this, (i) => i.AccountList ?? new List<AccountInfo>());
 
         internal ListAccountsPaginator(IAmazonSSO client, ListAccountsRequest request)
         {

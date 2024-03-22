@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class DescribeLoadBalancersResponse : AmazonWebServiceResponse
     {
-        private List<LoadBalancerDescription> _loadBalancerDescriptions = new List<LoadBalancerDescription>();
+        private List<LoadBalancerDescription> _loadBalancerDescriptions = AWSConfigs.InitializeCollections ? new List<LoadBalancerDescription>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerDescriptions property is set
         internal bool IsSetLoadBalancerDescriptions()
         {
-            return this._loadBalancerDescriptions != null && this._loadBalancerDescriptions.Count > 0; 
+            return this._loadBalancerDescriptions != null && (this._loadBalancerDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

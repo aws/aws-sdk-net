@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the NotebookInstanceLifecycleConfigs
         /// </summary>
         public IPaginatedEnumerable<NotebookInstanceLifecycleConfigSummary> NotebookInstanceLifecycleConfigs => 
-            new PaginatedResultKeyResponse<ListNotebookInstanceLifecycleConfigsResponse, NotebookInstanceLifecycleConfigSummary>(this, (i) => i.NotebookInstanceLifecycleConfigs);
+            new PaginatedResultKeyResponse<ListNotebookInstanceLifecycleConfigsResponse, NotebookInstanceLifecycleConfigSummary>(this, (i) => i.NotebookInstanceLifecycleConfigs ?? new List<NotebookInstanceLifecycleConfigSummary>());
 
         internal ListNotebookInstanceLifecycleConfigsPaginator(IAmazonSageMaker client, ListNotebookInstanceLifecycleConfigsRequest request)
         {

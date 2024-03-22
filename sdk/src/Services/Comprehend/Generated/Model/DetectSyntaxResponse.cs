@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class DetectSyntaxResponse : AmazonWebServiceResponse
     {
-        private List<SyntaxToken> _syntaxTokens = new List<SyntaxToken>();
+        private List<SyntaxToken> _syntaxTokens = AWSConfigs.InitializeCollections ? new List<SyntaxToken>() : null;
 
         /// <summary>
         /// Gets and sets the property SyntaxTokens. 
@@ -54,7 +54,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if SyntaxTokens property is set
         internal bool IsSetSyntaxTokens()
         {
-            return this._syntaxTokens != null && this._syntaxTokens.Count > 0; 
+            return this._syntaxTokens != null && (this._syntaxTokens.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

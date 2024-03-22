@@ -36,7 +36,7 @@ namespace Amazon.Connect.Model
     {
         private string _instanceId;
         private string _userId;
-        private List<UserProficiency> _userProficiencies = new List<UserProficiency>();
+        private List<UserProficiency> _userProficiencies = AWSConfigs.InitializeCollections ? new List<UserProficiency>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -94,7 +94,7 @@ namespace Amazon.Connect.Model
         // Check to see if UserProficiencies property is set
         internal bool IsSetUserProficiencies()
         {
-            return this._userProficiencies != null && this._userProficiencies.Count > 0; 
+            return this._userProficiencies != null && (this._userProficiencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

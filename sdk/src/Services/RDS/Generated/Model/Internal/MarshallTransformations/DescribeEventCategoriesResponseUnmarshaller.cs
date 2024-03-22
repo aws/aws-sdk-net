@@ -84,6 +84,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EventCategoriesMapList/EventCategoriesMap", targetDepth))
                     {
                         var unmarshaller = EventCategoriesMapUnmarshaller.Instance;
+                        if (response.EventCategoriesMapList == null)
+                        {
+                            response.EventCategoriesMapList = new List<EventCategoriesMap>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.EventCategoriesMapList.Add(item);
                         continue;

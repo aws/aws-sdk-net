@@ -33,14 +33,14 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class ResourceFilterCriteria
     {
-        private List<ResourceStringFilter> _accountId = new List<ResourceStringFilter>();
-        private List<ResourceMapFilter> _ec2InstanceTags = new List<ResourceMapFilter>();
-        private List<ResourceStringFilter> _ecrImageTags = new List<ResourceStringFilter>();
-        private List<ResourceStringFilter> _ecrRepositoryName = new List<ResourceStringFilter>();
-        private List<ResourceStringFilter> _lambdaFunctionName = new List<ResourceStringFilter>();
-        private List<ResourceMapFilter> _lambdaFunctionTags = new List<ResourceMapFilter>();
-        private List<ResourceStringFilter> _resourceId = new List<ResourceStringFilter>();
-        private List<ResourceStringFilter> _resourceType = new List<ResourceStringFilter>();
+        private List<ResourceStringFilter> _accountId = AWSConfigs.InitializeCollections ? new List<ResourceStringFilter>() : null;
+        private List<ResourceMapFilter> _ec2InstanceTags = AWSConfigs.InitializeCollections ? new List<ResourceMapFilter>() : null;
+        private List<ResourceStringFilter> _ecrImageTags = AWSConfigs.InitializeCollections ? new List<ResourceStringFilter>() : null;
+        private List<ResourceStringFilter> _ecrRepositoryName = AWSConfigs.InitializeCollections ? new List<ResourceStringFilter>() : null;
+        private List<ResourceStringFilter> _lambdaFunctionName = AWSConfigs.InitializeCollections ? new List<ResourceStringFilter>() : null;
+        private List<ResourceMapFilter> _lambdaFunctionTags = AWSConfigs.InitializeCollections ? new List<ResourceMapFilter>() : null;
+        private List<ResourceStringFilter> _resourceId = AWSConfigs.InitializeCollections ? new List<ResourceStringFilter>() : null;
+        private List<ResourceStringFilter> _resourceType = AWSConfigs.InitializeCollections ? new List<ResourceStringFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -58,7 +58,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if AccountId property is set
         internal bool IsSetAccountId()
         {
-            return this._accountId != null && this._accountId.Count > 0; 
+            return this._accountId != null && (this._accountId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Ec2InstanceTags property is set
         internal bool IsSetEc2InstanceTags()
         {
-            return this._ec2InstanceTags != null && this._ec2InstanceTags.Count > 0; 
+            return this._ec2InstanceTags != null && (this._ec2InstanceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if EcrImageTags property is set
         internal bool IsSetEcrImageTags()
         {
-            return this._ecrImageTags != null && this._ecrImageTags.Count > 0; 
+            return this._ecrImageTags != null && (this._ecrImageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if EcrRepositoryName property is set
         internal bool IsSetEcrRepositoryName()
         {
-            return this._ecrRepositoryName != null && this._ecrRepositoryName.Count > 0; 
+            return this._ecrRepositoryName != null && (this._ecrRepositoryName.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if LambdaFunctionName property is set
         internal bool IsSetLambdaFunctionName()
         {
-            return this._lambdaFunctionName != null && this._lambdaFunctionName.Count > 0; 
+            return this._lambdaFunctionName != null && (this._lambdaFunctionName.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if LambdaFunctionTags property is set
         internal bool IsSetLambdaFunctionTags()
         {
-            return this._lambdaFunctionTags != null && this._lambdaFunctionTags.Count > 0; 
+            return this._lambdaFunctionTags != null && (this._lambdaFunctionTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ResourceId property is set
         internal bool IsSetResourceId()
         {
-            return this._resourceId != null && this._resourceId.Count > 0; 
+            return this._resourceId != null && (this._resourceId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ResourceType property is set
         internal bool IsSetResourceType()
         {
-            return this._resourceType != null && this._resourceType.Count > 0; 
+            return this._resourceType != null && (this._resourceType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

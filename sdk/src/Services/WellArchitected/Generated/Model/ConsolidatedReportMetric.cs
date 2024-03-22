@@ -33,10 +33,10 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ConsolidatedReportMetric
     {
-        private List<LensMetric> _lenses = new List<LensMetric>();
+        private List<LensMetric> _lenses = AWSConfigs.InitializeCollections ? new List<LensMetric>() : null;
         private int? _lensesAppliedCount;
         private MetricType _metricType;
-        private Dictionary<string, int> _riskCounts = new Dictionary<string, int>();
+        private Dictionary<string, int> _riskCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private DateTime? _updatedAt;
         private string _workloadArn;
         private string _workloadId;
@@ -57,7 +57,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Lenses property is set
         internal bool IsSetLenses()
         {
-            return this._lenses != null && this._lenses.Count > 0; 
+            return this._lenses != null && (this._lenses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if RiskCounts property is set
         internal bool IsSetRiskCounts()
         {
-            return this._riskCounts != null && this._riskCounts.Count > 0; 
+            return this._riskCounts != null && (this._riskCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

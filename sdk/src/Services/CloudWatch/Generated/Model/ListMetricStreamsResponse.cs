@@ -33,7 +33,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class ListMetricStreamsResponse : AmazonWebServiceResponse
     {
-        private List<MetricStreamEntry> _entries = new List<MetricStreamEntry>();
+        private List<MetricStreamEntry> _entries = AWSConfigs.InitializeCollections ? new List<MetricStreamEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

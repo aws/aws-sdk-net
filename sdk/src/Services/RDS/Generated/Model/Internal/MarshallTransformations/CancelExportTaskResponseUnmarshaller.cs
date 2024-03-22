@@ -84,6 +84,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ExportOnly/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.ExportOnly == null)
+                        {
+                            response.ExportOnly = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ExportOnly.Add(item);
                         continue;

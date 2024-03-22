@@ -33,8 +33,8 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class AppBlockBuilder
     {
-        private List<AccessEndpoint> _accessEndpoints = new List<AccessEndpoint>();
-        private List<ResourceError> _appBlockBuilderErrors = new List<ResourceError>();
+        private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
+        private List<ResourceError> _appBlockBuilderErrors = AWSConfigs.InitializeCollections ? new List<ResourceError>() : null;
         private string _arn;
         private DateTime? _createdTime;
         private string _description;
@@ -65,7 +65,7 @@ namespace Amazon.AppStream.Model
         // Check to see if AccessEndpoints property is set
         internal bool IsSetAccessEndpoints()
         {
-            return this._accessEndpoints != null && this._accessEndpoints.Count > 0; 
+            return this._accessEndpoints != null && (this._accessEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.AppStream.Model
         // Check to see if AppBlockBuilderErrors property is set
         internal bool IsSetAppBlockBuilderErrors()
         {
-            return this._appBlockBuilderErrors != null && this._appBlockBuilderErrors.Count > 0; 
+            return this._appBlockBuilderErrors != null && (this._appBlockBuilderErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

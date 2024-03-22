@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListDataQualityJobDefinitionsResponse : AmazonWebServiceResponse
     {
-        private List<MonitoringJobDefinitionSummary> _jobDefinitionSummaries = new List<MonitoringJobDefinitionSummary>();
+        private List<MonitoringJobDefinitionSummary> _jobDefinitionSummaries = AWSConfigs.InitializeCollections ? new List<MonitoringJobDefinitionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if JobDefinitionSummaries property is set
         internal bool IsSetJobDefinitionSummaries()
         {
-            return this._jobDefinitionSummaries != null && this._jobDefinitionSummaries.Count > 0; 
+            return this._jobDefinitionSummaries != null && (this._jobDefinitionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

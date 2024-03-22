@@ -38,7 +38,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class DisassociatePersonasFromEntitiesRequest : AmazonKendraRequest
     {
-        private List<string> _entityIds = new List<string>();
+        private List<string> _entityIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private string _indexId;
 
@@ -59,7 +59,7 @@ namespace Amazon.Kendra.Model
         // Check to see if EntityIds property is set
         internal bool IsSetEntityIds()
         {
-            return this._entityIds != null && this._entityIds.Count > 0; 
+            return this._entityIds != null && (this._entityIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

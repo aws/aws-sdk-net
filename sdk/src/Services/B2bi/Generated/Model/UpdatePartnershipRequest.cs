@@ -36,7 +36,7 @@ namespace Amazon.B2bi.Model
     /// </summary>
     public partial class UpdatePartnershipRequest : AmazonB2biRequest
     {
-        private List<string> _capabilities = new List<string>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _partnershipId;
 
@@ -55,7 +55,7 @@ namespace Amazon.B2bi.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

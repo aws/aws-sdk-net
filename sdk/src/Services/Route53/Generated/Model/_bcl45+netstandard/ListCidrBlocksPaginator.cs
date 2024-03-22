@@ -45,7 +45,7 @@ namespace Amazon.Route53.Model
         /// Enumerable containing all of the CidrBlocks
         /// </summary>
         public IPaginatedEnumerable<CidrBlockSummary> CidrBlocks => 
-            new PaginatedResultKeyResponse<ListCidrBlocksResponse, CidrBlockSummary>(this, (i) => i.CidrBlocks);
+            new PaginatedResultKeyResponse<ListCidrBlocksResponse, CidrBlockSummary>(this, (i) => i.CidrBlocks ?? new List<CidrBlockSummary>());
 
         internal ListCidrBlocksPaginator(IAmazonRoute53 client, ListCidrBlocksRequest request)
         {

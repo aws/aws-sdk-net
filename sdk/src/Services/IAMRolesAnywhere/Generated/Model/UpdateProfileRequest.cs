@@ -41,10 +41,10 @@ namespace Amazon.IAMRolesAnywhere.Model
     public partial class UpdateProfileRequest : AmazonIAMRolesAnywhereRequest
     {
         private int? _durationSeconds;
-        private List<string> _managedPolicyArns = new List<string>();
+        private List<string> _managedPolicyArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _profileId;
-        private List<string> _roleArns = new List<string>();
+        private List<string> _roleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sessionPolicy;
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if ManagedPolicyArns property is set
         internal bool IsSetManagedPolicyArns()
         {
-            return this._managedPolicyArns != null && this._managedPolicyArns.Count > 0; 
+            return this._managedPolicyArns != null && (this._managedPolicyArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if RoleArns property is set
         internal bool IsSetRoleArns()
         {
-            return this._roleArns != null && this._roleArns.Count > 0; 
+            return this._roleArns != null && (this._roleArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

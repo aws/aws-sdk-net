@@ -34,7 +34,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class RetrieveResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<KnowledgeBaseRetrievalResult> _retrievalResults = new List<KnowledgeBaseRetrievalResult>();
+        private List<KnowledgeBaseRetrievalResult> _retrievalResults = AWSConfigs.InitializeCollections ? new List<KnowledgeBaseRetrievalResult>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if RetrievalResults property is set
         internal bool IsSetRetrievalResults()
         {
-            return this._retrievalResults != null && this._retrievalResults.Count > 0; 
+            return this._retrievalResults != null && (this._retrievalResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.Inspector2.Model
     public partial class UpdateEc2DeepInspectionConfigurationRequest : AmazonInspector2Request
     {
         private bool? _activateDeepInspection;
-        private List<string> _packagePaths = new List<string>();
+        private List<string> _packagePaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ActivateDeepInspection. 
@@ -75,7 +75,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if PackagePaths property is set
         internal bool IsSetPackagePaths()
         {
-            return this._packagePaths != null && this._packagePaths.Count > 0; 
+            return this._packagePaths != null && (this._packagePaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

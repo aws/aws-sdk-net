@@ -45,7 +45,7 @@ namespace Amazon.Snowball.Model
         /// Enumerable containing all of the LongTermPricingEntries
         /// </summary>
         public IPaginatedEnumerable<LongTermPricingListEntry> LongTermPricingEntries => 
-            new PaginatedResultKeyResponse<ListLongTermPricingResponse, LongTermPricingListEntry>(this, (i) => i.LongTermPricingEntries);
+            new PaginatedResultKeyResponse<ListLongTermPricingResponse, LongTermPricingListEntry>(this, (i) => i.LongTermPricingEntries ?? new List<LongTermPricingListEntry>());
 
         internal ListLongTermPricingPaginator(IAmazonSnowball client, ListLongTermPricingRequest request)
         {

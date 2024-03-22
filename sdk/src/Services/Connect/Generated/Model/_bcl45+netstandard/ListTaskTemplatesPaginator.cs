@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the TaskTemplates
         /// </summary>
         public IPaginatedEnumerable<TaskTemplateMetadata> TaskTemplates => 
-            new PaginatedResultKeyResponse<ListTaskTemplatesResponse, TaskTemplateMetadata>(this, (i) => i.TaskTemplates);
+            new PaginatedResultKeyResponse<ListTaskTemplatesResponse, TaskTemplateMetadata>(this, (i) => i.TaskTemplates ?? new List<TaskTemplateMetadata>());
 
         internal ListTaskTemplatesPaginator(IAmazonConnect client, ListTaskTemplatesRequest request)
         {

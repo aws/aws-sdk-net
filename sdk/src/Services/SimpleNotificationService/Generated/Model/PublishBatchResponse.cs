@@ -33,8 +33,8 @@ namespace Amazon.SimpleNotificationService.Model
     /// </summary>
     public partial class PublishBatchResponse : AmazonWebServiceResponse
     {
-        private List<BatchResultErrorEntry> _failed = new List<BatchResultErrorEntry>();
-        private List<PublishBatchResultEntry> _successful = new List<PublishBatchResultEntry>();
+        private List<BatchResultErrorEntry> _failed = AWSConfigs.InitializeCollections ? new List<BatchResultErrorEntry>() : null;
+        private List<PublishBatchResultEntry> _successful = AWSConfigs.InitializeCollections ? new List<PublishBatchResultEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Failed. 
@@ -51,7 +51,7 @@ namespace Amazon.SimpleNotificationService.Model
         // Check to see if Failed property is set
         internal bool IsSetFailed()
         {
-            return this._failed != null && this._failed.Count > 0; 
+            return this._failed != null && (this._failed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.SimpleNotificationService.Model
         // Check to see if Successful property is set
         internal bool IsSetSuccessful()
         {
-            return this._successful != null && this._successful.Count > 0; 
+            return this._successful != null && (this._successful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

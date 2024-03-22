@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetBucketAccessKeysResponse : AmazonWebServiceResponse
     {
-        private List<AccessKey> _accessKeys = new List<AccessKey>();
+        private List<AccessKey> _accessKeys = AWSConfigs.InitializeCollections ? new List<AccessKey>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessKeys. 
@@ -50,7 +50,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if AccessKeys property is set
         internal bool IsSetAccessKeys()
         {
-            return this._accessKeys != null && this._accessKeys.Count > 0; 
+            return this._accessKeys != null && (this._accessKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
     public partial class FindMatchesMetrics
     {
         private double? _areaUnderPRCurve;
-        private List<ColumnImportance> _columnImportances = new List<ColumnImportance>();
+        private List<ColumnImportance> _columnImportances = AWSConfigs.InitializeCollections ? new List<ColumnImportance>() : null;
         private ConfusionMatrix _confusionMatrix;
         private double? _f1;
         private double? _precision;
@@ -87,7 +87,7 @@ namespace Amazon.Glue.Model
         // Check to see if ColumnImportances property is set
         internal bool IsSetColumnImportances()
         {
-            return this._columnImportances != null && this._columnImportances.Count > 0; 
+            return this._columnImportances != null && (this._columnImportances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

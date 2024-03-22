@@ -42,9 +42,9 @@ namespace Amazon.FraudDetector.Model
     public partial class CreateListRequest : AmazonFraudDetectorRequest
     {
         private string _description;
-        private List<string> _elements = new List<string>();
+        private List<string> _elements = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _variableType;
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Elements property is set
         internal bool IsSetElements()
         {
-            return this._elements != null && this._elements.Count > 0; 
+            return this._elements != null && (this._elements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

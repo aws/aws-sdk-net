@@ -35,7 +35,7 @@ namespace Amazon.Connect.Model
     {
         private long? _approximateTotalCount;
         private string _nextToken;
-        private List<SecurityProfileSearchSummary> _securityProfiles = new List<SecurityProfileSearchSummary>();
+        private List<SecurityProfileSearchSummary> _securityProfiles = AWSConfigs.InitializeCollections ? new List<SecurityProfileSearchSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property ApproximateTotalCount. 
@@ -89,7 +89,7 @@ namespace Amazon.Connect.Model
         // Check to see if SecurityProfiles property is set
         internal bool IsSetSecurityProfiles()
         {
-            return this._securityProfiles != null && this._securityProfiles.Count > 0; 
+            return this._securityProfiles != null && (this._securityProfiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model
     public partial class GetRelationalDatabaseParametersResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<RelationalDatabaseParameter> _parameters = new List<RelationalDatabaseParameter>();
+        private List<RelationalDatabaseParameter> _parameters = AWSConfigs.InitializeCollections ? new List<RelationalDatabaseParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -78,7 +78,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

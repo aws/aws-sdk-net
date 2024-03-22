@@ -45,13 +45,13 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the ProactiveInsights
         /// </summary>
         public IPaginatedEnumerable<ProactiveInsightSummary> ProactiveInsights => 
-            new PaginatedResultKeyResponse<ListInsightsResponse, ProactiveInsightSummary>(this, (i) => i.ProactiveInsights);
+            new PaginatedResultKeyResponse<ListInsightsResponse, ProactiveInsightSummary>(this, (i) => i.ProactiveInsights ?? new List<ProactiveInsightSummary>());
 
         /// <summary>
         /// Enumerable containing all of the ReactiveInsights
         /// </summary>
         public IPaginatedEnumerable<ReactiveInsightSummary> ReactiveInsights => 
-            new PaginatedResultKeyResponse<ListInsightsResponse, ReactiveInsightSummary>(this, (i) => i.ReactiveInsights);
+            new PaginatedResultKeyResponse<ListInsightsResponse, ReactiveInsightSummary>(this, (i) => i.ReactiveInsights ?? new List<ReactiveInsightSummary>());
 
         internal ListInsightsPaginator(IAmazonDevOpsGuru client, ListInsightsRequest request)
         {

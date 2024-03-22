@@ -45,7 +45,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// Enumerable containing all of the Messages
         /// </summary>
         public IPaginatedEnumerable<FlowExecutionMessage> Messages => 
-            new PaginatedResultKeyResponse<ListFlowExecutionMessagesResponse, FlowExecutionMessage>(this, (i) => i.Messages);
+            new PaginatedResultKeyResponse<ListFlowExecutionMessagesResponse, FlowExecutionMessage>(this, (i) => i.Messages ?? new List<FlowExecutionMessage>());
 
         internal ListFlowExecutionMessagesPaginator(IAmazonIoTThingsGraph client, ListFlowExecutionMessagesRequest request)
         {

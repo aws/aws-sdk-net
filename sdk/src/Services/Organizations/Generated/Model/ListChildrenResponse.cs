@@ -33,7 +33,7 @@ namespace Amazon.Organizations.Model
     /// </summary>
     public partial class ListChildrenResponse : AmazonWebServiceResponse
     {
-        private List<Child> _children = new List<Child>();
+        private List<Child> _children = AWSConfigs.InitializeCollections ? new List<Child>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Organizations.Model
         // Check to see if Children property is set
         internal bool IsSetChildren()
         {
-            return this._children != null && this._children.Count > 0; 
+            return this._children != null && (this._children.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Route53.Model
         /// Enumerable containing all of the CidrCollections
         /// </summary>
         public IPaginatedEnumerable<CollectionSummary> CidrCollections => 
-            new PaginatedResultKeyResponse<ListCidrCollectionsResponse, CollectionSummary>(this, (i) => i.CidrCollections);
+            new PaginatedResultKeyResponse<ListCidrCollectionsResponse, CollectionSummary>(this, (i) => i.CidrCollections ?? new List<CollectionSummary>());
 
         internal ListCidrCollectionsPaginator(IAmazonRoute53 client, ListCidrCollectionsRequest request)
         {

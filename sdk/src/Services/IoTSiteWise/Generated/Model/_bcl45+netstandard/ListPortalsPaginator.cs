@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the PortalSummaries
         /// </summary>
         public IPaginatedEnumerable<PortalSummary> PortalSummaries => 
-            new PaginatedResultKeyResponse<ListPortalsResponse, PortalSummary>(this, (i) => i.PortalSummaries);
+            new PaginatedResultKeyResponse<ListPortalsResponse, PortalSummary>(this, (i) => i.PortalSummaries ?? new List<PortalSummary>());
 
         internal ListPortalsPaginator(IAmazonIoTSiteWise client, ListPortalsRequest request)
         {

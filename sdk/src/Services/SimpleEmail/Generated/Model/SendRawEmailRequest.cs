@@ -149,13 +149,13 @@ namespace Amazon.SimpleEmail.Model
     public partial class SendRawEmailRequest : AmazonSimpleEmailServiceRequest
     {
         private string _configurationSetName;
-        private List<string> _destinations = new List<string>();
+        private List<string> _destinations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _fromArn;
         private RawMessage _rawMessage;
         private string _returnPathArn;
         private string _source;
         private string _sourceArn;
-        private List<MessageTag> _tags = new List<MessageTag>();
+        private List<MessageTag> _tags = AWSConfigs.InitializeCollections ? new List<MessageTag>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -204,7 +204,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -432,7 +432,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

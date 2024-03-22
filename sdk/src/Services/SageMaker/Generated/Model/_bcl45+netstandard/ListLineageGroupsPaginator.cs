@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the LineageGroupSummaries
         /// </summary>
         public IPaginatedEnumerable<LineageGroupSummary> LineageGroupSummaries => 
-            new PaginatedResultKeyResponse<ListLineageGroupsResponse, LineageGroupSummary>(this, (i) => i.LineageGroupSummaries);
+            new PaginatedResultKeyResponse<ListLineageGroupsResponse, LineageGroupSummary>(this, (i) => i.LineageGroupSummaries ?? new List<LineageGroupSummary>());
 
         internal ListLineageGroupsPaginator(IAmazonSageMaker client, ListLineageGroupsRequest request)
         {

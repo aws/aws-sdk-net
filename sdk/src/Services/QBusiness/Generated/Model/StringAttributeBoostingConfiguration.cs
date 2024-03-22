@@ -48,7 +48,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class StringAttributeBoostingConfiguration
     {
-        private Dictionary<string, string> _attributeValueBoosting = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributeValueBoosting = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DocumentAttributeBoostingLevel _boostingLevel;
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if AttributeValueBoosting property is set
         internal bool IsSetAttributeValueBoosting()
         {
-            return this._attributeValueBoosting != null && this._attributeValueBoosting.Count > 0; 
+            return this._attributeValueBoosting != null && (this._attributeValueBoosting.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

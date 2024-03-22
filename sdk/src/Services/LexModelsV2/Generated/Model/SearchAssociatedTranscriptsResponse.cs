@@ -33,7 +33,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class SearchAssociatedTranscriptsResponse : AmazonWebServiceResponse
     {
-        private List<AssociatedTranscript> _associatedTranscripts = new List<AssociatedTranscript>();
+        private List<AssociatedTranscript> _associatedTranscripts = AWSConfigs.InitializeCollections ? new List<AssociatedTranscript>() : null;
         private string _botId;
         private string _botRecommendationId;
         private string _botVersion;
@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if AssociatedTranscripts property is set
         internal bool IsSetAssociatedTranscripts()
         {
-            return this._associatedTranscripts != null && this._associatedTranscripts.Count > 0; 
+            return this._associatedTranscripts != null && (this._associatedTranscripts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

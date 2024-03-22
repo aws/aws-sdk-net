@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsMskClusterClusterInfoClientAuthenticationTlsDetails
     {
-        private List<string> _certificateAuthorityArnList = new List<string>();
+        private List<string> _certificateAuthorityArnList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enabled;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if CertificateAuthorityArnList property is set
         internal bool IsSetCertificateAuthorityArnList()
         {
-            return this._certificateAuthorityArnList != null && this._certificateAuthorityArnList.Count > 0; 
+            return this._certificateAuthorityArnList != null && (this._certificateAuthorityArnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

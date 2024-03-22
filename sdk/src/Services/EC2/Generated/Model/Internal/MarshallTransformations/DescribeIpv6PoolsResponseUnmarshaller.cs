@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipv6PoolSet/item", targetDepth))
                     {
                         var unmarshaller = Ipv6PoolUnmarshaller.Instance;
+                        if (response.Ipv6Pools == null)
+                        {
+                            response.Ipv6Pools = new List<Ipv6Pool>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Ipv6Pools.Add(item);
                         continue;

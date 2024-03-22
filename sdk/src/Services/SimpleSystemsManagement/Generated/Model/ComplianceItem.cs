@@ -36,7 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class ComplianceItem
     {
         private string _complianceType;
-        private Dictionary<string, string> _details = new Dictionary<string, string>();
+        private Dictionary<string, string> _details = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ComplianceExecutionSummary _executionSummary;
         private string _id;
         private string _resourceId;
@@ -80,7 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this._details != null && this._details.Count > 0; 
+            return this._details != null && (this._details.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

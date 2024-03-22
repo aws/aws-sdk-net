@@ -33,7 +33,7 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class RelatedObservations
     {
-        private List<Observation> _observationList = new List<Observation>();
+        private List<Observation> _observationList = AWSConfigs.InitializeCollections ? new List<Observation>() : null;
 
         /// <summary>
         /// Gets and sets the property ObservationList. 
@@ -50,7 +50,7 @@ namespace Amazon.ApplicationInsights.Model
         // Check to see if ObservationList property is set
         internal bool IsSetObservationList()
         {
-            return this._observationList != null && this._observationList.Count > 0; 
+            return this._observationList != null && (this._observationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

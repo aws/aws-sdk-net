@@ -45,7 +45,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Enumerable containing all of the AnalyzedResources
         /// </summary>
         public IPaginatedEnumerable<AnalyzedResourceSummary> AnalyzedResources => 
-            new PaginatedResultKeyResponse<ListAnalyzedResourcesResponse, AnalyzedResourceSummary>(this, (i) => i.AnalyzedResources);
+            new PaginatedResultKeyResponse<ListAnalyzedResourcesResponse, AnalyzedResourceSummary>(this, (i) => i.AnalyzedResources ?? new List<AnalyzedResourceSummary>());
 
         internal ListAnalyzedResourcesPaginator(IAmazonAccessAnalyzer client, ListAnalyzedResourcesRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeFpgaImagesResponse : AmazonWebServiceResponse
     {
-        private List<FpgaImage> _fpgaImages = new List<FpgaImage>();
+        private List<FpgaImage> _fpgaImages = AWSConfigs.InitializeCollections ? new List<FpgaImage>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if FpgaImages property is set
         internal bool IsSetFpgaImages()
         {
-            return this._fpgaImages != null && this._fpgaImages.Count > 0; 
+            return this._fpgaImages != null && (this._fpgaImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

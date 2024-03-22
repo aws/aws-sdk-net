@@ -33,7 +33,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class FindingStatistics
     {
-        private Dictionary<string, int> _countBySeverity = new Dictionary<string, int>();
+        private Dictionary<string, int> _countBySeverity = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
 
         /// <summary>
         /// Gets and sets the property CountBySeverity. 
@@ -50,7 +50,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if CountBySeverity property is set
         internal bool IsSetCountBySeverity()
         {
-            return this._countBySeverity != null && this._countBySeverity.Count > 0; 
+            return this._countBySeverity != null && (this._countBySeverity.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

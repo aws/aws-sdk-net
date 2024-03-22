@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeRouteTablesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RouteTable> _routeTables = new List<RouteTable>();
+        private List<RouteTable> _routeTables = AWSConfigs.InitializeCollections ? new List<RouteTable>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if RouteTables property is set
         internal bool IsSetRouteTables()
         {
-            return this._routeTables != null && this._routeTables.Count > 0; 
+            return this._routeTables != null && (this._routeTables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

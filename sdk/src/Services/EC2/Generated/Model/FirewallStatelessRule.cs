@@ -33,14 +33,14 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class FirewallStatelessRule
     {
-        private List<PortRange> _destinationPorts = new List<PortRange>();
-        private List<string> _destinations = new List<string>();
+        private List<PortRange> _destinationPorts = AWSConfigs.InitializeCollections ? new List<PortRange>() : null;
+        private List<string> _destinations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _priority;
-        private List<int> _protocols = new List<int>();
+        private List<int> _protocols = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private string _ruleAction;
         private string _ruleGroupArn;
-        private List<PortRange> _sourcePorts = new List<PortRange>();
-        private List<string> _sources = new List<string>();
+        private List<PortRange> _sourcePorts = AWSConfigs.InitializeCollections ? new List<PortRange>() : null;
+        private List<string> _sources = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DestinationPorts. 
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         // Check to see if DestinationPorts property is set
         internal bool IsSetDestinationPorts()
         {
-            return this._destinationPorts != null && this._destinationPorts.Count > 0; 
+            return this._destinationPorts != null && (this._destinationPorts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.EC2.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Amazon.EC2.Model
         // Check to see if SourcePorts property is set
         internal bool IsSetSourcePorts()
         {
-            return this._sourcePorts != null && this._sourcePorts.Count > 0; 
+            return this._sourcePorts != null && (this._sourcePorts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.EC2.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

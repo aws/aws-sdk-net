@@ -35,7 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     {
         private BillingMode _billingMode;
         private long? _itemCount;
-        private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
+        private List<KeySchemaElement> _keySchema = AWSConfigs.InitializeCollections ? new List<KeySchemaElement>() : null;
         private ProvisionedThroughput _provisionedThroughput;
         private string _tableArn;
         private DateTime? _tableCreationDateTime;
@@ -108,7 +108,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if KeySchema property is set
         internal bool IsSetKeySchema()
         {
-            return this._keySchema != null && this._keySchema.Count > 0; 
+            return this._keySchema != null && (this._keySchema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

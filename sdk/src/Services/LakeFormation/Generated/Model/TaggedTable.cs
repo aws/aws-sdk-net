@@ -33,9 +33,9 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class TaggedTable
     {
-        private List<LFTagPair> _lfTagOnDatabase = new List<LFTagPair>();
-        private List<ColumnLFTag> _lfTagsOnColumns = new List<ColumnLFTag>();
-        private List<LFTagPair> _lfTagsOnTable = new List<LFTagPair>();
+        private List<LFTagPair> _lfTagOnDatabase = AWSConfigs.InitializeCollections ? new List<LFTagPair>() : null;
+        private List<ColumnLFTag> _lfTagsOnColumns = AWSConfigs.InitializeCollections ? new List<ColumnLFTag>() : null;
+        private List<LFTagPair> _lfTagsOnTable = AWSConfigs.InitializeCollections ? new List<LFTagPair>() : null;
         private TableResource _table;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if LFTagOnDatabase property is set
         internal bool IsSetLFTagOnDatabase()
         {
-            return this._lfTagOnDatabase != null && this._lfTagOnDatabase.Count > 0; 
+            return this._lfTagOnDatabase != null && (this._lfTagOnDatabase.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if LFTagsOnColumns property is set
         internal bool IsSetLFTagsOnColumns()
         {
-            return this._lfTagsOnColumns != null && this._lfTagsOnColumns.Count > 0; 
+            return this._lfTagsOnColumns != null && (this._lfTagsOnColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if LFTagsOnTable property is set
         internal bool IsSetLFTagsOnTable()
         {
-            return this._lfTagsOnTable != null && this._lfTagsOnTable.Count > 0; 
+            return this._lfTagsOnTable != null && (this._lfTagsOnTable.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

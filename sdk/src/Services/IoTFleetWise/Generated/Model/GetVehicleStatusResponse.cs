@@ -33,7 +33,7 @@ namespace Amazon.IoTFleetWise.Model
     /// </summary>
     public partial class GetVehicleStatusResponse : AmazonWebServiceResponse
     {
-        private List<VehicleStatus> _campaigns = new List<VehicleStatus>();
+        private List<VehicleStatus> _campaigns = AWSConfigs.InitializeCollections ? new List<VehicleStatus>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Campaigns property is set
         internal bool IsSetCampaigns()
         {
-            return this._campaigns != null && this._campaigns.Count > 0; 
+            return this._campaigns != null && (this._campaigns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

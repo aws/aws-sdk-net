@@ -44,14 +44,14 @@ namespace Amazon.ConfigService.Model
         private ConfigurationItemStatus _configurationItemStatus;
         private string _configurationStateId;
         private RecordingFrequency _recordingFrequency;
-        private List<string> _relatedEvents = new List<string>();
-        private List<Relationship> _relationships = new List<Relationship>();
+        private List<string> _relatedEvents = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Relationship> _relationships = AWSConfigs.InitializeCollections ? new List<Relationship>() : null;
         private DateTime? _resourceCreationTime;
         private string _resourceId;
         private string _resourceName;
         private ResourceType _resourceType;
-        private Dictionary<string, string> _supplementaryConfiguration = new Dictionary<string, string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _supplementaryConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _version;
 
         /// <summary>
@@ -308,7 +308,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if RelatedEvents property is set
         internal bool IsSetRelatedEvents()
         {
-            return this._relatedEvents != null && this._relatedEvents.Count > 0; 
+            return this._relatedEvents != null && (this._relatedEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -326,7 +326,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if Relationships property is set
         internal bool IsSetRelationships()
         {
-            return this._relationships != null && this._relationships.Count > 0; 
+            return this._relationships != null && (this._relationships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -418,7 +418,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if SupplementaryConfiguration property is set
         internal bool IsSetSupplementaryConfiguration()
         {
-            return this._supplementaryConfiguration != null && this._supplementaryConfiguration.Count > 0; 
+            return this._supplementaryConfiguration != null && (this._supplementaryConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -436,7 +436,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Route53.Model
         /// Enumerable containing all of the HealthChecks
         /// </summary>
         public IPaginatedEnumerable<HealthCheck> HealthChecks => 
-            new PaginatedResultKeyResponse<ListHealthChecksResponse, HealthCheck>(this, (i) => i.HealthChecks);
+            new PaginatedResultKeyResponse<ListHealthChecksResponse, HealthCheck>(this, (i) => i.HealthChecks ?? new List<HealthCheck>());
 
         internal ListHealthChecksPaginator(IAmazonRoute53 client, ListHealthChecksRequest request)
         {

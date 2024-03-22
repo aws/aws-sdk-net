@@ -37,9 +37,9 @@ namespace Amazon.SecurityHub.Model
     {
         private int? _confidence;
         private int? _criticality;
-        private List<RelatedFinding> _relatedFindings = new List<RelatedFinding>();
+        private List<RelatedFinding> _relatedFindings = AWSConfigs.InitializeCollections ? new List<RelatedFinding>() : null;
         private FindingProviderSeverity _severity;
-        private List<string> _types = new List<string>();
+        private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Confidence. 
@@ -105,7 +105,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RelatedFindings property is set
         internal bool IsSetRelatedFindings()
         {
-            return this._relatedFindings != null && this._relatedFindings.Count > 0; 
+            return this._relatedFindings != null && (this._relatedFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Types property is set
         internal bool IsSetTypes()
         {
-            return this._types != null && this._types.Count > 0; 
+            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

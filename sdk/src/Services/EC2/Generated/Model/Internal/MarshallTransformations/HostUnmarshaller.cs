@@ -135,6 +135,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instances/item", targetDepth))
                     {
                         var unmarshaller = HostInstanceUnmarshaller.Instance;
+                        if (unmarshalledObject.Instances == null)
+                        {
+                            unmarshalledObject.Instances = new List<HostInstance>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Instances.Add(item);
                         continue;
@@ -172,6 +176,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

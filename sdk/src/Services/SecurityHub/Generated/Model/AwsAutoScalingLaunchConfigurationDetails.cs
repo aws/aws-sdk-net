@@ -34,9 +34,9 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsAutoScalingLaunchConfigurationDetails
     {
         private bool? _associatePublicIpAddress;
-        private List<AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails> _blockDeviceMappings = new List<AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>();
+        private List<AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>() : null;
         private string _classicLinkVpcId;
-        private List<string> _classicLinkVpcSecurityGroups = new List<string>();
+        private List<string> _classicLinkVpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _createdTime;
         private bool? _ebsOptimized;
         private string _iamInstanceProfile;
@@ -49,7 +49,7 @@ namespace Amazon.SecurityHub.Model
         private AwsAutoScalingLaunchConfigurationMetadataOptions _metadataOptions;
         private string _placementTenancy;
         private string _ramdiskId;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _spotPrice;
         private string _userData;
 
@@ -87,7 +87,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ClassicLinkVpcSecurityGroups property is set
         internal bool IsSetClassicLinkVpcSecurityGroups()
         {
-            return this._classicLinkVpcSecurityGroups != null && this._classicLinkVpcSecurityGroups.Count > 0; 
+            return this._classicLinkVpcSecurityGroups != null && (this._classicLinkVpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -366,7 +366,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class ListBranchesResponse : AmazonWebServiceResponse
     {
-        private List<string> _branches = new List<string>();
+        private List<string> _branches = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Branches property is set
         internal bool IsSetBranches()
         {
-            return this._branches != null && this._branches.Count > 0; 
+            return this._branches != null && (this._branches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

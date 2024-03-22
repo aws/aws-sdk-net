@@ -33,7 +33,7 @@ namespace Amazon.Panorama.Model
     /// </summary>
     public partial class DescribeDeviceResponse : AmazonWebServiceResponse
     {
-        private List<AlternateSoftwareMetadata> _alternateSoftwares = new List<AlternateSoftwareMetadata>();
+        private List<AlternateSoftwareMetadata> _alternateSoftwares = AWSConfigs.InitializeCollections ? new List<AlternateSoftwareMetadata>() : null;
         private string _arn;
         private DeviceBrand _brand;
         private DateTime? _createdTime;
@@ -51,7 +51,7 @@ namespace Amazon.Panorama.Model
         private NetworkPayload _networkingConfiguration;
         private DeviceStatus _provisioningStatus;
         private string _serialNumber;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DeviceType _type;
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.Panorama.Model
         // Check to see if AlternateSoftwares property is set
         internal bool IsSetAlternateSoftwares()
         {
-            return this._alternateSoftwares != null && this._alternateSoftwares.Count > 0; 
+            return this._alternateSoftwares != null && (this._alternateSoftwares.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -402,7 +402,7 @@ namespace Amazon.Panorama.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

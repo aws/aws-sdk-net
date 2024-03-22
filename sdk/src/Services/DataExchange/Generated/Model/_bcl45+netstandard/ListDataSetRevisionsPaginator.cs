@@ -45,7 +45,7 @@ namespace Amazon.DataExchange.Model
         /// Enumerable containing all of the Revisions
         /// </summary>
         public IPaginatedEnumerable<RevisionEntry> Revisions => 
-            new PaginatedResultKeyResponse<ListDataSetRevisionsResponse, RevisionEntry>(this, (i) => i.Revisions);
+            new PaginatedResultKeyResponse<ListDataSetRevisionsResponse, RevisionEntry>(this, (i) => i.Revisions ?? new List<RevisionEntry>());
 
         internal ListDataSetRevisionsPaginator(IAmazonDataExchange client, ListDataSetRevisionsRequest request)
         {

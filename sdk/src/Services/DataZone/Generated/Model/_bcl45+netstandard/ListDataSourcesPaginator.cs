@@ -45,7 +45,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<DataSourceSummary> Items => 
-            new PaginatedResultKeyResponse<ListDataSourcesResponse, DataSourceSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListDataSourcesResponse, DataSourceSummary>(this, (i) => i.Items ?? new List<DataSourceSummary>());
 
         internal ListDataSourcesPaginator(IAmazonDataZone client, ListDataSourcesRequest request)
         {

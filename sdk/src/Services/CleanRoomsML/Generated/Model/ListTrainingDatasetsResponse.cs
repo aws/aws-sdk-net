@@ -34,7 +34,7 @@ namespace Amazon.CleanRoomsML.Model
     public partial class ListTrainingDatasetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TrainingDatasetSummary> _trainingDatasets = new List<TrainingDatasetSummary>();
+        private List<TrainingDatasetSummary> _trainingDatasets = AWSConfigs.InitializeCollections ? new List<TrainingDatasetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if TrainingDatasets property is set
         internal bool IsSetTrainingDatasets()
         {
-            return this._trainingDatasets != null && this._trainingDatasets.Count > 0; 
+            return this._trainingDatasets != null && (this._trainingDatasets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

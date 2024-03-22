@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model
     public partial class ListSessionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SessionSummary> _sessions = new List<SessionSummary>();
+        private List<SessionSummary> _sessions = AWSConfigs.InitializeCollections ? new List<SessionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.Athena.Model
         // Check to see if Sessions property is set
         internal bool IsSetSessions()
         {
-            return this._sessions != null && this._sessions.Count > 0; 
+            return this._sessions != null && (this._sessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

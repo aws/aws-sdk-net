@@ -33,7 +33,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class DescribeDirectoryConfigsResponse : AmazonWebServiceResponse
     {
-        private List<DirectoryConfig> _directoryConfigs = new List<DirectoryConfig>();
+        private List<DirectoryConfig> _directoryConfigs = AWSConfigs.InitializeCollections ? new List<DirectoryConfig>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.AppStream.Model
         // Check to see if DirectoryConfigs property is set
         internal bool IsSetDirectoryConfigs()
         {
-            return this._directoryConfigs != null && this._directoryConfigs.Count > 0; 
+            return this._directoryConfigs != null && (this._directoryConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

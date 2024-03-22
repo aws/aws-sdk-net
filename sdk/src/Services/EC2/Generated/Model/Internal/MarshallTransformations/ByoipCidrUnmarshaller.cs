@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("asnAssociationSet/item", targetDepth))
                     {
                         var unmarshaller = AsnAssociationUnmarshaller.Instance;
+                        if (unmarshalledObject.AsnAssociations == null)
+                        {
+                            unmarshalledObject.AsnAssociations = new List<AsnAssociation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AsnAssociations.Add(item);
                         continue;

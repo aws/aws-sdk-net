@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("disks/item", targetDepth))
                     {
                         var unmarshaller = DiskInfoUnmarshaller.Instance;
+                        if (unmarshalledObject.Disks == null)
+                        {
+                            unmarshalledObject.Disks = new List<DiskInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Disks.Add(item);
                         continue;

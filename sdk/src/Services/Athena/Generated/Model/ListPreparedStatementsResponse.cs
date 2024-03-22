@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model
     public partial class ListPreparedStatementsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PreparedStatementSummary> _preparedStatements = new List<PreparedStatementSummary>();
+        private List<PreparedStatementSummary> _preparedStatements = AWSConfigs.InitializeCollections ? new List<PreparedStatementSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.Athena.Model
         // Check to see if PreparedStatements property is set
         internal bool IsSetPreparedStatements()
         {
-            return this._preparedStatements != null && this._preparedStatements.Count > 0; 
+            return this._preparedStatements != null && (this._preparedStatements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

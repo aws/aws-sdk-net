@@ -34,7 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     public partial class ListSubjectsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SubjectSummary> _subjects = new List<SubjectSummary>();
+        private List<SubjectSummary> _subjects = AWSConfigs.InitializeCollections ? new List<SubjectSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if Subjects property is set
         internal bool IsSetSubjects()
         {
-            return this._subjects != null && this._subjects.Count > 0; 
+            return this._subjects != null && (this._subjects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

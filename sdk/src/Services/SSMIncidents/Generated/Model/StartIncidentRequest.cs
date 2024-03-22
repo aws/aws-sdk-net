@@ -36,7 +36,7 @@ namespace Amazon.SSMIncidents.Model
     {
         private string _clientToken;
         private int? _impact;
-        private List<RelatedItem> _relatedItems = new List<RelatedItem>();
+        private List<RelatedItem> _relatedItems = AWSConfigs.InitializeCollections ? new List<RelatedItem>() : null;
         private string _responsePlanArn;
         private string _title;
         private TriggerDetails _triggerDetails;
@@ -123,7 +123,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if RelatedItems property is set
         internal bool IsSetRelatedItems()
         {
-            return this._relatedItems != null && this._relatedItems.Count > 0; 
+            return this._relatedItems != null && (this._relatedItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

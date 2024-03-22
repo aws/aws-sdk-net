@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class OperatingSystem
     {
-        private List<OperatingSystemConfigurationManager> _configurationManagers = new List<OperatingSystemConfigurationManager>();
+        private List<OperatingSystemConfigurationManager> _configurationManagers = AWSConfigs.InitializeCollections ? new List<OperatingSystemConfigurationManager>() : null;
         private string _id;
         private string _name;
         private string _reportedName;
@@ -57,7 +57,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if ConfigurationManagers property is set
         internal bool IsSetConfigurationManagers()
         {
-            return this._configurationManagers != null && this._configurationManagers.Count > 0; 
+            return this._configurationManagers != null && (this._configurationManagers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

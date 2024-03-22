@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the AccountAttributes
         /// </summary>
         public IPaginatedEnumerable<AccountAttribute> AccountAttributes => 
-            new PaginatedResultKeyResponse<DescribeAccountAttributesResponse, AccountAttribute>(this, (i) => i.AccountAttributes);
+            new PaginatedResultKeyResponse<DescribeAccountAttributesResponse, AccountAttribute>(this, (i) => i.AccountAttributes ?? new List<AccountAttribute>());
 
         internal DescribeAccountAttributesPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeAccountAttributesRequest request)
         {

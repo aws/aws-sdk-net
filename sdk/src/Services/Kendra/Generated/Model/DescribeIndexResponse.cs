@@ -36,7 +36,7 @@ namespace Amazon.Kendra.Model
         private CapacityUnitsConfiguration _capacityUnits;
         private DateTime? _createdAt;
         private string _description;
-        private List<DocumentMetadataConfiguration> _documentMetadataConfigurations = new List<DocumentMetadataConfiguration>();
+        private List<DocumentMetadataConfiguration> _documentMetadataConfigurations = AWSConfigs.InitializeCollections ? new List<DocumentMetadataConfiguration>() : null;
         private IndexEdition _edition;
         private string _errorMessage;
         private string _id;
@@ -48,7 +48,7 @@ namespace Amazon.Kendra.Model
         private DateTime? _updatedAt;
         private UserContextPolicy _userContextPolicy;
         private UserGroupResolutionConfiguration _userGroupResolutionConfiguration;
-        private List<UserTokenConfiguration> _userTokenConfigurations = new List<UserTokenConfiguration>();
+        private List<UserTokenConfiguration> _userTokenConfigurations = AWSConfigs.InitializeCollections ? new List<UserTokenConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property CapacityUnits. 
@@ -128,7 +128,7 @@ namespace Amazon.Kendra.Model
         // Check to see if DocumentMetadataConfigurations property is set
         internal bool IsSetDocumentMetadataConfigurations()
         {
-            return this._documentMetadataConfigurations != null && this._documentMetadataConfigurations.Count > 0; 
+            return this._documentMetadataConfigurations != null && (this._documentMetadataConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -357,7 +357,7 @@ namespace Amazon.Kendra.Model
         // Check to see if UserTokenConfigurations property is set
         internal bool IsSetUserTokenConfigurations()
         {
-            return this._userTokenConfigurations != null && this._userTokenConfigurations.Count > 0; 
+            return this._userTokenConfigurations != null && (this._userTokenConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

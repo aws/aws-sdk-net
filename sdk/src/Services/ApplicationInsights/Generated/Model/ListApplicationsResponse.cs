@@ -33,7 +33,7 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class ListApplicationsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationInfo> _applicationInfoList = new List<ApplicationInfo>();
+        private List<ApplicationInfo> _applicationInfoList = AWSConfigs.InitializeCollections ? new List<ApplicationInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ApplicationInsights.Model
         // Check to see if ApplicationInfoList property is set
         internal bool IsSetApplicationInfoList()
         {
-            return this._applicationInfoList != null && this._applicationInfoList.Count > 0; 
+            return this._applicationInfoList != null && (this._applicationInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

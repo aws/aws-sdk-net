@@ -57,8 +57,8 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class PriorityConfiguration
     {
-        private List<string> _locationOrder = new List<string>();
-        private List<string> _priorityOrder = new List<string>();
+        private List<string> _locationOrder = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _priorityOrder = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LocationOrder. 
@@ -78,7 +78,7 @@ namespace Amazon.GameLift.Model
         // Check to see if LocationOrder property is set
         internal bool IsSetLocationOrder()
         {
-            return this._locationOrder != null && this._locationOrder.Count > 0; 
+            return this._locationOrder != null && (this._locationOrder.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.GameLift.Model
         // Check to see if PriorityOrder property is set
         internal bool IsSetPriorityOrder()
         {
-            return this._priorityOrder != null && this._priorityOrder.Count > 0; 
+            return this._priorityOrder != null && (this._priorityOrder.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

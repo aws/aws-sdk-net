@@ -45,7 +45,7 @@ namespace Amazon.KinesisVideo.Model
         /// Enumerable containing all of the StreamInfoList
         /// </summary>
         public IPaginatedEnumerable<StreamInfo> StreamInfoList => 
-            new PaginatedResultKeyResponse<ListStreamsResponse, StreamInfo>(this, (i) => i.StreamInfoList);
+            new PaginatedResultKeyResponse<ListStreamsResponse, StreamInfo>(this, (i) => i.StreamInfoList ?? new List<StreamInfo>());
 
         internal ListStreamsPaginator(IAmazonKinesisVideo client, ListStreamsRequest request)
         {

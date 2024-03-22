@@ -37,7 +37,7 @@ namespace Amazon.SSMIncidents.Model
     /// </summary>
     public partial class BatchGetIncidentFindingsRequest : AmazonSSMIncidentsRequest
     {
-        private List<string> _findingIds = new List<string>();
+        private List<string> _findingIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _incidentRecordArn;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if FindingIds property is set
         internal bool IsSetFindingIds()
         {
-            return this._findingIds != null && this._findingIds.Count > 0; 
+            return this._findingIds != null && (this._findingIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

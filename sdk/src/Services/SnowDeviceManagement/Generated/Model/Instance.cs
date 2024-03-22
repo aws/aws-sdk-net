@@ -35,7 +35,7 @@ namespace Amazon.SnowDeviceManagement.Model
     public partial class Instance
     {
         private int? _amiLaunchIndex;
-        private List<InstanceBlockDeviceMapping> _blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
+        private List<InstanceBlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<InstanceBlockDeviceMapping>() : null;
         private CpuOptions _cpuOptions;
         private DateTime? _createdAt;
         private string _imageId;
@@ -44,7 +44,7 @@ namespace Amazon.SnowDeviceManagement.Model
         private string _privateIpAddress;
         private string _publicIpAddress;
         private string _rootDeviceName;
-        private List<SecurityGroupIdentifier> _securityGroups = new List<SecurityGroupIdentifier>();
+        private List<SecurityGroupIdentifier> _securityGroups = AWSConfigs.InitializeCollections ? new List<SecurityGroupIdentifier>() : null;
         private InstanceState _state;
         private DateTime? _updatedAt;
 
@@ -82,7 +82,7 @@ namespace Amazon.SnowDeviceManagement.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -244,7 +244,7 @@ namespace Amazon.SnowDeviceManagement.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,8 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchGetConfigurationPolicyAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<ConfigurationPolicyAssociationSummary> _configurationPolicyAssociations = new List<ConfigurationPolicyAssociationSummary>();
-        private List<UnprocessedConfigurationPolicyAssociation> _unprocessedConfigurationPolicyAssociations = new List<UnprocessedConfigurationPolicyAssociation>();
+        private List<ConfigurationPolicyAssociationSummary> _configurationPolicyAssociations = AWSConfigs.InitializeCollections ? new List<ConfigurationPolicyAssociationSummary>() : null;
+        private List<UnprocessedConfigurationPolicyAssociation> _unprocessedConfigurationPolicyAssociations = AWSConfigs.InitializeCollections ? new List<UnprocessedConfigurationPolicyAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationPolicyAssociations. 
@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ConfigurationPolicyAssociations property is set
         internal bool IsSetConfigurationPolicyAssociations()
         {
-            return this._configurationPolicyAssociations != null && this._configurationPolicyAssociations.Count > 0; 
+            return this._configurationPolicyAssociations != null && (this._configurationPolicyAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UnprocessedConfigurationPolicyAssociations property is set
         internal bool IsSetUnprocessedConfigurationPolicyAssociations()
         {
-            return this._unprocessedConfigurationPolicyAssociations != null && this._unprocessedConfigurationPolicyAssociations.Count > 0; 
+            return this._unprocessedConfigurationPolicyAssociations != null && (this._unprocessedConfigurationPolicyAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

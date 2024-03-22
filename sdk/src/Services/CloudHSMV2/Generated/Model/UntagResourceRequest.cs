@@ -35,7 +35,7 @@ namespace Amazon.CloudHSMV2.Model
     public partial class UntagResourceRequest : AmazonCloudHSMV2Request
     {
         private string _resourceId;
-        private List<string> _tagKeyList = new List<string>();
+        private List<string> _tagKeyList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceId. 
@@ -74,7 +74,7 @@ namespace Amazon.CloudHSMV2.Model
         // Check to see if TagKeyList property is set
         internal bool IsSetTagKeyList()
         {
-            return this._tagKeyList != null && this._tagKeyList.Count > 0; 
+            return this._tagKeyList != null && (this._tagKeyList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

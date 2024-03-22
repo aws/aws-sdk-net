@@ -48,7 +48,7 @@ namespace Amazon.Signer.Model
         private DateTime? _signatureExpiresAt;
         private SignedObject _signedObject;
         private SigningMaterial _signingMaterial;
-        private Dictionary<string, string> _signingParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _signingParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Source _source;
         private SigningStatus _status;
         private string _statusReason;
@@ -344,7 +344,7 @@ namespace Amazon.Signer.Model
         // Check to see if SigningParameters property is set
         internal bool IsSetSigningParameters()
         {
-            return this._signingParameters != null && this._signingParameters.Count > 0; 
+            return this._signingParameters != null && (this._signingParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

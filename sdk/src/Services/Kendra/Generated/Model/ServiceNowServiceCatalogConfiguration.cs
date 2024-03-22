@@ -37,9 +37,9 @@ namespace Amazon.Kendra.Model
         private bool? _crawlAttachments;
         private string _documentDataFieldName;
         private string _documentTitleFieldName;
-        private List<string> _excludeAttachmentFilePatterns = new List<string>();
-        private List<DataSourceToIndexFieldMapping> _fieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<string> _includeAttachmentFilePatterns = new List<string>();
+        private List<string> _excludeAttachmentFilePatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DataSourceToIndexFieldMapping> _fieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<string> _includeAttachmentFilePatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CrawlAttachments. 
@@ -122,7 +122,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ExcludeAttachmentFilePatterns property is set
         internal bool IsSetExcludeAttachmentFilePatterns()
         {
-            return this._excludeAttachmentFilePatterns != null && this._excludeAttachmentFilePatterns.Count > 0; 
+            return this._excludeAttachmentFilePatterns != null && (this._excludeAttachmentFilePatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FieldMappings property is set
         internal bool IsSetFieldMappings()
         {
-            return this._fieldMappings != null && this._fieldMappings.Count > 0; 
+            return this._fieldMappings != null && (this._fieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.Kendra.Model
         // Check to see if IncludeAttachmentFilePatterns property is set
         internal bool IsSetIncludeAttachmentFilePatterns()
         {
-            return this._includeAttachmentFilePatterns != null && this._includeAttachmentFilePatterns.Count > 0; 
+            return this._includeAttachmentFilePatterns != null && (this._includeAttachmentFilePatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

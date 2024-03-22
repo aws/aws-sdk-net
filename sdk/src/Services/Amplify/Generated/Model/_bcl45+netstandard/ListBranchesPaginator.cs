@@ -45,7 +45,7 @@ namespace Amazon.Amplify.Model
         /// Enumerable containing all of the Branches
         /// </summary>
         public IPaginatedEnumerable<Branch> Branches => 
-            new PaginatedResultKeyResponse<ListBranchesResponse, Branch>(this, (i) => i.Branches);
+            new PaginatedResultKeyResponse<ListBranchesResponse, Branch>(this, (i) => i.Branches ?? new List<Branch>());
 
         internal ListBranchesPaginator(IAmazonAmplify client, ListBranchesRequest request)
         {

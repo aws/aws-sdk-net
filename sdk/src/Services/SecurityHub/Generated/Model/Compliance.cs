@@ -34,12 +34,12 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class Compliance
     {
-        private List<AssociatedStandard> _associatedStandards = new List<AssociatedStandard>();
-        private List<string> _relatedRequirements = new List<string>();
+        private List<AssociatedStandard> _associatedStandards = AWSConfigs.InitializeCollections ? new List<AssociatedStandard>() : null;
+        private List<string> _relatedRequirements = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _securityControlId;
-        private List<SecurityControlParameter> _securityControlParameters = new List<SecurityControlParameter>();
+        private List<SecurityControlParameter> _securityControlParameters = AWSConfigs.InitializeCollections ? new List<SecurityControlParameter>() : null;
         private ComplianceStatus _status;
-        private List<StatusReason> _statusReasons = new List<StatusReason>();
+        private List<StatusReason> _statusReasons = AWSConfigs.InitializeCollections ? new List<StatusReason>() : null;
 
         /// <summary>
         /// Gets and sets the property AssociatedStandards. 
@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AssociatedStandards property is set
         internal bool IsSetAssociatedStandards()
         {
-            return this._associatedStandards != null && this._associatedStandards.Count > 0; 
+            return this._associatedStandards != null && (this._associatedStandards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RelatedRequirements property is set
         internal bool IsSetRelatedRequirements()
         {
-            return this._relatedRequirements != null && this._relatedRequirements.Count > 0; 
+            return this._relatedRequirements != null && (this._relatedRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecurityControlParameters property is set
         internal bool IsSetSecurityControlParameters()
         {
-            return this._securityControlParameters != null && this._securityControlParameters.Count > 0; 
+            return this._securityControlParameters != null && (this._securityControlParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StatusReasons property is set
         internal bool IsSetStatusReasons()
         {
-            return this._statusReasons != null && this._statusReasons.Count > 0; 
+            return this._statusReasons != null && (this._statusReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

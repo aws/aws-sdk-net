@@ -43,10 +43,10 @@ namespace Amazon.IoT.Model
         private AuthorizerConfig _authorizerConfig;
         private string _domainConfigurationName;
         private string _domainName;
-        private List<string> _serverCertificateArns = new List<string>();
+        private List<string> _serverCertificateArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ServerCertificateConfig _serverCertificateConfig;
         private ServiceType _serviceType;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TlsConfig _tlsConfig;
         private string _validationCertificateArn;
 
@@ -124,7 +124,7 @@ namespace Amazon.IoT.Model
         // Check to see if ServerCertificateArns property is set
         internal bool IsSetServerCertificateArns()
         {
-            return this._serverCertificateArns != null && this._serverCertificateArns.Count > 0; 
+            return this._serverCertificateArns != null && (this._serverCertificateArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Amazon.IoT.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

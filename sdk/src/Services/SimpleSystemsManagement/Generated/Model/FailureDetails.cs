@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class FailureDetails
     {
-        private Dictionary<string, List<string>> _details = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _details = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _failureStage;
         private string _failureType;
 
@@ -53,7 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this._details != null && this._details.Count > 0; 
+            return this._details != null && (this._details.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

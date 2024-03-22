@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model
     public partial class ListResolversResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Resolver> _resolvers = new List<Resolver>();
+        private List<Resolver> _resolvers = AWSConfigs.InitializeCollections ? new List<Resolver>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.AppSync.Model
         // Check to see if Resolvers property is set
         internal bool IsSetResolvers()
         {
-            return this._resolvers != null && this._resolvers.Count > 0; 
+            return this._resolvers != null && (this._resolvers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

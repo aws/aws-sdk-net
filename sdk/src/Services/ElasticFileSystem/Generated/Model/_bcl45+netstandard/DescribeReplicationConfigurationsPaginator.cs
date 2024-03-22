@@ -45,7 +45,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Enumerable containing all of the Replications
         /// </summary>
         public IPaginatedEnumerable<ReplicationConfigurationDescription> Replications => 
-            new PaginatedResultKeyResponse<DescribeReplicationConfigurationsResponse, ReplicationConfigurationDescription>(this, (i) => i.Replications);
+            new PaginatedResultKeyResponse<DescribeReplicationConfigurationsResponse, ReplicationConfigurationDescription>(this, (i) => i.Replications ?? new List<ReplicationConfigurationDescription>());
 
         internal DescribeReplicationConfigurationsPaginator(IAmazonElasticFileSystem client, DescribeReplicationConfigurationsRequest request)
         {

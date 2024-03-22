@@ -34,7 +34,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class UniqueProblem
     {
         private string _message;
-        private List<Problem> _problems = new List<Problem>();
+        private List<Problem> _problems = AWSConfigs.InitializeCollections ? new List<Problem>() : null;
 
         /// <summary>
         /// Gets and sets the property Message. 
@@ -70,7 +70,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Problems property is set
         internal bool IsSetProblems()
         {
-            return this._problems != null && this._problems.Count > 0; 
+            return this._problems != null && (this._problems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

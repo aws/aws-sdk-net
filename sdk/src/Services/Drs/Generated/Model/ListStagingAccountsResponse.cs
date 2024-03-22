@@ -33,7 +33,7 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class ListStagingAccountsResponse : AmazonWebServiceResponse
     {
-        private List<Account> _accounts = new List<Account>();
+        private List<Account> _accounts = AWSConfigs.InitializeCollections ? new List<Account>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Drs.Model
         // Check to see if Accounts property is set
         internal bool IsSetAccounts()
         {
-            return this._accounts != null && this._accounts.Count > 0; 
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

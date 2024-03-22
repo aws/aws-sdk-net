@@ -36,7 +36,7 @@ namespace Amazon.AppRegistry.Model
         private ApplicationTagStatus _applicationTagStatus;
         private string _errorMessage;
         private string _nextToken;
-        private List<ResourcesListItem> _resources = new List<ResourcesListItem>();
+        private List<ResourcesListItem> _resources = AWSConfigs.InitializeCollections ? new List<ResourcesListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationTagStatus. 
@@ -110,7 +110,7 @@ namespace Amazon.AppRegistry.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

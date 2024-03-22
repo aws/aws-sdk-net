@@ -36,11 +36,11 @@ namespace Amazon.QuickSight.Model
         private string _analysisId;
         private string _arn;
         private DateTime? _createdTime;
-        private List<string> _dataSetArns = new List<string>();
-        private List<AnalysisError> _errors = new List<AnalysisError>();
+        private List<string> _dataSetArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<AnalysisError> _errors = AWSConfigs.InitializeCollections ? new List<AnalysisError>() : null;
         private DateTime? _lastUpdatedTime;
         private string _name;
-        private List<Sheet> _sheets = new List<Sheet>();
+        private List<Sheet> _sheets = AWSConfigs.InitializeCollections ? new List<Sheet>() : null;
         private ResourceStatus _status;
         private string _themeArn;
 
@@ -115,7 +115,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataSetArns property is set
         internal bool IsSetDataSetArns()
         {
-            return this._dataSetArns != null && this._dataSetArns.Count > 0; 
+            return this._dataSetArns != null && (this._dataSetArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -190,7 +190,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Sheets property is set
         internal bool IsSetSheets()
         {
-            return this._sheets != null && this._sheets.Count > 0; 
+            return this._sheets != null && (this._sheets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

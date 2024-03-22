@@ -33,7 +33,7 @@ namespace Amazon.ConnectParticipant.Model
     /// </summary>
     public partial class UploadMetadata
     {
-        private Dictionary<string, string> _headersToInclude = new Dictionary<string, string>();
+        private Dictionary<string, string> _headersToInclude = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _url;
         private string _urlExpiry;
 
@@ -52,7 +52,7 @@ namespace Amazon.ConnectParticipant.Model
         // Check to see if HeadersToInclude property is set
         internal bool IsSetHeadersToInclude()
         {
-            return this._headersToInclude != null && this._headersToInclude.Count > 0; 
+            return this._headersToInclude != null && (this._headersToInclude.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.CodeCommit.Model
         /// Enumerable containing all of the Branches
         /// </summary>
         public IPaginatedEnumerable<string> Branches => 
-            new PaginatedResultKeyResponse<ListBranchesResponse, string>(this, (i) => i.Branches);
+            new PaginatedResultKeyResponse<ListBranchesResponse, string>(this, (i) => i.Branches ?? new List<string>());
 
         internal ListBranchesPaginator(IAmazonCodeCommit client, ListBranchesRequest request)
         {

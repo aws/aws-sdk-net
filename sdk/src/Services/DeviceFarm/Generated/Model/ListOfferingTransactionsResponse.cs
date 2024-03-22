@@ -34,7 +34,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListOfferingTransactionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OfferingTransaction> _offeringTransactions = new List<OfferingTransaction>();
+        private List<OfferingTransaction> _offeringTransactions = AWSConfigs.InitializeCollections ? new List<OfferingTransaction>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if OfferingTransactions property is set
         internal bool IsSetOfferingTransactions()
         {
-            return this._offeringTransactions != null && this._offeringTransactions.Count > 0; 
+            return this._offeringTransactions != null && (this._offeringTransactions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

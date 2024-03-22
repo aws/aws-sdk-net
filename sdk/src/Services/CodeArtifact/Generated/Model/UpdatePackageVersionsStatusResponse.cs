@@ -33,8 +33,8 @@ namespace Amazon.CodeArtifact.Model
     /// </summary>
     public partial class UpdatePackageVersionsStatusResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, PackageVersionError> _failedVersions = new Dictionary<string, PackageVersionError>();
-        private Dictionary<string, SuccessfulPackageVersionInfo> _successfulVersions = new Dictionary<string, SuccessfulPackageVersionInfo>();
+        private Dictionary<string, PackageVersionError> _failedVersions = AWSConfigs.InitializeCollections ? new Dictionary<string, PackageVersionError>() : null;
+        private Dictionary<string, SuccessfulPackageVersionInfo> _successfulVersions = AWSConfigs.InitializeCollections ? new Dictionary<string, SuccessfulPackageVersionInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedVersions. 
@@ -52,7 +52,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if FailedVersions property is set
         internal bool IsSetFailedVersions()
         {
-            return this._failedVersions != null && this._failedVersions.Count > 0; 
+            return this._failedVersions != null && (this._failedVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if SuccessfulVersions property is set
         internal bool IsSetSuccessfulVersions()
         {
-            return this._successfulVersions != null && this._successfulVersions.Count > 0; 
+            return this._successfulVersions != null && (this._successfulVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

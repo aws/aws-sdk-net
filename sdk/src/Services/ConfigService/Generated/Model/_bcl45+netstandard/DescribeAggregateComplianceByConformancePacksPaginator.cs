@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the AggregateComplianceByConformancePacks
         /// </summary>
         public IPaginatedEnumerable<AggregateComplianceByConformancePack> AggregateComplianceByConformancePacks => 
-            new PaginatedResultKeyResponse<DescribeAggregateComplianceByConformancePacksResponse, AggregateComplianceByConformancePack>(this, (i) => i.AggregateComplianceByConformancePacks);
+            new PaginatedResultKeyResponse<DescribeAggregateComplianceByConformancePacksResponse, AggregateComplianceByConformancePack>(this, (i) => i.AggregateComplianceByConformancePacks ?? new List<AggregateComplianceByConformancePack>());
 
         internal DescribeAggregateComplianceByConformancePacksPaginator(IAmazonConfigService client, DescribeAggregateComplianceByConformancePacksRequest request)
         {

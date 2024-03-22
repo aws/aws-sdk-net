@@ -34,7 +34,7 @@ namespace Amazon.IoTFleetWise.Model
     public partial class ListModelManifestsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ModelManifestSummary> _summaries = new List<ModelManifestSummary>();
+        private List<ModelManifestSummary> _summaries = AWSConfigs.InitializeCollections ? new List<ModelManifestSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Summaries property is set
         internal bool IsSetSummaries()
         {
-            return this._summaries != null && this._summaries.Count > 0; 
+            return this._summaries != null && (this._summaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

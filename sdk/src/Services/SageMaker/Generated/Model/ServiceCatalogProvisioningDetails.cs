@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         private string _pathId;
         private string _productId;
         private string _provisioningArtifactId;
-        private List<ProvisioningParameter> _provisioningParameters = new List<ProvisioningParameter>();
+        private List<ProvisioningParameter> _provisioningParameters = AWSConfigs.InitializeCollections ? new List<ProvisioningParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property PathId. 
@@ -113,7 +113,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProvisioningParameters property is set
         internal bool IsSetProvisioningParameters()
         {
-            return this._provisioningParameters != null && this._provisioningParameters.Count > 0; 
+            return this._provisioningParameters != null && (this._provisioningParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

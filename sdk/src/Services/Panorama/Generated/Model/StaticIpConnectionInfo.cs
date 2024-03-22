@@ -34,7 +34,7 @@ namespace Amazon.Panorama.Model
     public partial class StaticIpConnectionInfo
     {
         private string _defaultGateway;
-        private List<string> _dns = new List<string>();
+        private List<string> _dns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ipAddress;
         private string _mask;
 
@@ -73,7 +73,7 @@ namespace Amazon.Panorama.Model
         // Check to see if Dns property is set
         internal bool IsSetDns()
         {
-            return this._dns != null && this._dns.Count > 0; 
+            return this._dns != null && (this._dns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

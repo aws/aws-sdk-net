@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the BaselineIdentities
         /// </summary>
         public IPaginatedEnumerable<PatchBaselineIdentity> BaselineIdentities => 
-            new PaginatedResultKeyResponse<DescribePatchBaselinesResponse, PatchBaselineIdentity>(this, (i) => i.BaselineIdentities);
+            new PaginatedResultKeyResponse<DescribePatchBaselinesResponse, PatchBaselineIdentity>(this, (i) => i.BaselineIdentities ?? new List<PatchBaselineIdentity>());
 
         internal DescribePatchBaselinesPaginator(IAmazonSimpleSystemsManagement client, DescribePatchBaselinesRequest request)
         {

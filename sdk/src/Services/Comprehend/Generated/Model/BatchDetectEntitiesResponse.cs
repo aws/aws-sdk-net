@@ -33,8 +33,8 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class BatchDetectEntitiesResponse : AmazonWebServiceResponse
     {
-        private List<BatchItemError> _errorList = new List<BatchItemError>();
-        private List<BatchDetectEntitiesItemResult> _resultList = new List<BatchDetectEntitiesItemResult>();
+        private List<BatchItemError> _errorList = AWSConfigs.InitializeCollections ? new List<BatchItemError>() : null;
+        private List<BatchDetectEntitiesItemResult> _resultList = AWSConfigs.InitializeCollections ? new List<BatchDetectEntitiesItemResult>() : null;
 
         /// <summary>
         /// Gets and sets the property ErrorList. 
@@ -55,7 +55,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if ErrorList property is set
         internal bool IsSetErrorList()
         {
-            return this._errorList != null && this._errorList.Count > 0; 
+            return this._errorList != null && (this._errorList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if ResultList property is set
         internal bool IsSetResultList()
         {
-            return this._resultList != null && this._resultList.Count > 0; 
+            return this._resultList != null && (this._resultList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.Amplify.Model
         /// Enumerable containing all of the Apps
         /// </summary>
         public IPaginatedEnumerable<App> Apps => 
-            new PaginatedResultKeyResponse<ListAppsResponse, App>(this, (i) => i.Apps);
+            new PaginatedResultKeyResponse<ListAppsResponse, App>(this, (i) => i.Apps ?? new List<App>());
 
         internal ListAppsPaginator(IAmazonAmplify client, ListAppsRequest request)
         {

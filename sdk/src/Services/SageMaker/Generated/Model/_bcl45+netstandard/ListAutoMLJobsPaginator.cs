@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the AutoMLJobSummaries
         /// </summary>
         public IPaginatedEnumerable<AutoMLJobSummary> AutoMLJobSummaries => 
-            new PaginatedResultKeyResponse<ListAutoMLJobsResponse, AutoMLJobSummary>(this, (i) => i.AutoMLJobSummaries);
+            new PaginatedResultKeyResponse<ListAutoMLJobsResponse, AutoMLJobSummary>(this, (i) => i.AutoMLJobSummaries ?? new List<AutoMLJobSummary>());
 
         internal ListAutoMLJobsPaginator(IAmazonSageMaker client, ListAutoMLJobsRequest request)
         {

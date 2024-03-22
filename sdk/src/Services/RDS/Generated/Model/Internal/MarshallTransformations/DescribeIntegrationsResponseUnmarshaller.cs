@@ -84,6 +84,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Integrations/Integration", targetDepth))
                     {
                         var unmarshaller = IntegrationUnmarshaller.Instance;
+                        if (response.Integrations == null)
+                        {
+                            response.Integrations = new List<Integration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Integrations.Add(item);
                         continue;

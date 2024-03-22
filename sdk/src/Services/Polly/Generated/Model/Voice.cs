@@ -33,13 +33,13 @@ namespace Amazon.Polly.Model
     /// </summary>
     public partial class Voice
     {
-        private List<string> _additionalLanguageCodes = new List<string>();
+        private List<string> _additionalLanguageCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Gender _gender;
         private VoiceId _id;
         private LanguageCode _languageCode;
         private string _languageName;
         private string _name;
-        private List<string> _supportedEngines = new List<string>();
+        private List<string> _supportedEngines = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalLanguageCodes. 
@@ -63,7 +63,7 @@ namespace Amazon.Polly.Model
         // Check to see if AdditionalLanguageCodes property is set
         internal bool IsSetAdditionalLanguageCodes()
         {
-            return this._additionalLanguageCodes != null && this._additionalLanguageCodes.Count > 0; 
+            return this._additionalLanguageCodes != null && (this._additionalLanguageCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.Polly.Model
         // Check to see if SupportedEngines property is set
         internal bool IsSetSupportedEngines()
         {
-            return this._supportedEngines != null && this._supportedEngines.Count > 0; 
+            return this._supportedEngines != null && (this._supportedEngines.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

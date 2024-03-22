@@ -33,7 +33,7 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class ListExplainabilityExportsResponse : AmazonWebServiceResponse
     {
-        private List<ExplainabilityExportSummary> _explainabilityExports = new List<ExplainabilityExportSummary>();
+        private List<ExplainabilityExportSummary> _explainabilityExports = AWSConfigs.InitializeCollections ? new List<ExplainabilityExportSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if ExplainabilityExports property is set
         internal bool IsSetExplainabilityExports()
         {
-            return this._explainabilityExports != null && this._explainabilityExports.Count > 0; 
+            return this._explainabilityExports != null && (this._explainabilityExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

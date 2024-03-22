@@ -34,8 +34,8 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class WorkflowDetails
     {
-        private List<WorkflowDetail> _onPartialUpload = new List<WorkflowDetail>();
-        private List<WorkflowDetail> _onUpload = new List<WorkflowDetail>();
+        private List<WorkflowDetail> _onPartialUpload = AWSConfigs.InitializeCollections ? new List<WorkflowDetail>() : null;
+        private List<WorkflowDetail> _onUpload = AWSConfigs.InitializeCollections ? new List<WorkflowDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property OnPartialUpload. 
@@ -58,7 +58,7 @@ namespace Amazon.Transfer.Model
         // Check to see if OnPartialUpload property is set
         internal bool IsSetOnPartialUpload()
         {
-            return this._onPartialUpload != null && this._onPartialUpload.Count > 0; 
+            return this._onPartialUpload != null && (this._onPartialUpload.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.Transfer.Model
         // Check to see if OnUpload property is set
         internal bool IsSetOnUpload()
         {
-            return this._onUpload != null && this._onUpload.Count > 0; 
+            return this._onUpload != null && (this._onUpload.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.Outposts.Model
         /// Enumerable containing all of the Sites
         /// </summary>
         public IPaginatedEnumerable<Site> Sites => 
-            new PaginatedResultKeyResponse<ListSitesResponse, Site>(this, (i) => i.Sites);
+            new PaginatedResultKeyResponse<ListSitesResponse, Site>(this, (i) => i.Sites ?? new List<Site>());
 
         internal ListSitesPaginator(IAmazonOutposts client, ListSitesRequest request)
         {

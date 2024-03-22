@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("imageSet/item", targetDepth))
                     {
                         var unmarshaller = ImageRecycleBinInfoUnmarshaller.Instance;
+                        if (response.Images == null)
+                        {
+                            response.Images = new List<ImageRecycleBinInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Images.Add(item);
                         continue;

@@ -37,7 +37,7 @@ namespace Amazon.MediaTailor.Model
         private AvailSuppression _availSuppression;
         private Bumper _bumper;
         private CdnConfiguration _cdnConfiguration;
-        private Dictionary<string, Dictionary<string, string>> _configurationAliases = new Dictionary<string, Dictionary<string, string>>();
+        private Dictionary<string, Dictionary<string, string>> _configurationAliases = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
         private DashConfiguration _dashConfiguration;
         private HlsConfiguration _hlsConfiguration;
         private LivePreRollConfiguration _livePreRollConfiguration;
@@ -49,7 +49,7 @@ namespace Amazon.MediaTailor.Model
         private string _playbackEndpointPrefix;
         private string _sessionInitializationEndpointPrefix;
         private string _slateAdUrl;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _transcodeProfileName;
         private string _videoContentSourceUrl;
 
@@ -149,7 +149,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if ConfigurationAliases property is set
         internal bool IsSetConfigurationAliases()
         {
-            return this._configurationAliases != null && this._configurationAliases.Count > 0; 
+            return this._configurationAliases != null && (this._configurationAliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -381,7 +381,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

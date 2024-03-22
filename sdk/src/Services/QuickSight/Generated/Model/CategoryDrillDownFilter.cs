@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class CategoryDrillDownFilter
     {
-        private List<string> _categoryValues = new List<string>();
+        private List<string> _categoryValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ColumnIdentifier _column;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if CategoryValues property is set
         internal bool IsSetCategoryValues()
         {
-            return this._categoryValues != null && this._categoryValues.Count > 0; 
+            return this._categoryValues != null && (this._categoryValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

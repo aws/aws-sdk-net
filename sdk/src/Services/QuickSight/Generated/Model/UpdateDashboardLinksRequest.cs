@@ -36,7 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _awsAccountId;
         private string _dashboardId;
-        private List<string> _linkEntities = new List<string>();
+        private List<string> _linkEntities = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -93,7 +93,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if LinkEntities property is set
         internal bool IsSetLinkEntities()
         {
-            return this._linkEntities != null && this._linkEntities.Count > 0; 
+            return this._linkEntities != null && (this._linkEntities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.InternetMonitor.Model
     /// </summary>
     public partial class ListHealthEventsResponse : AmazonWebServiceResponse
     {
-        private List<HealthEvent> _healthEvents = new List<HealthEvent>();
+        private List<HealthEvent> _healthEvents = AWSConfigs.InitializeCollections ? new List<HealthEvent>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if HealthEvents property is set
         internal bool IsSetHealthEvents()
         {
-            return this._healthEvents != null && this._healthEvents.Count > 0; 
+            return this._healthEvents != null && (this._healthEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

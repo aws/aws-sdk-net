@@ -33,7 +33,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// </summary>
     public partial class ListInstancesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceSummary> _instances = new List<InstanceSummary>();
+        private List<InstanceSummary> _instances = AWSConfigs.InitializeCollections ? new List<InstanceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ServiceDiscovery.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

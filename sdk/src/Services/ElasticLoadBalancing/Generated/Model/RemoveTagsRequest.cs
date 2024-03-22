@@ -34,8 +34,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class RemoveTagsRequest : AmazonElasticLoadBalancingRequest
     {
-        private List<string> _loadBalancerNames = new List<string>();
-        private List<TagKeyOnly> _tags = new List<TagKeyOnly>();
+        private List<string> _loadBalancerNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<TagKeyOnly> _tags = AWSConfigs.InitializeCollections ? new List<TagKeyOnly>() : null;
 
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
@@ -53,7 +53,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerNames property is set
         internal bool IsSetLoadBalancerNames()
         {
-            return this._loadBalancerNames != null && this._loadBalancerNames.Count > 0; 
+            return this._loadBalancerNames != null && (this._loadBalancerNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

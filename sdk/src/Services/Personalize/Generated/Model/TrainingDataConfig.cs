@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class TrainingDataConfig
     {
-        private Dictionary<string, List<string>> _excludedDatasetColumns = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _excludedDatasetColumns = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property ExcludedDatasetColumns. 
@@ -56,7 +56,7 @@ namespace Amazon.Personalize.Model
         // Check to see if ExcludedDatasetColumns property is set
         internal bool IsSetExcludedDatasetColumns()
         {
-            return this._excludedDatasetColumns != null && this._excludedDatasetColumns.Count > 0; 
+            return this._excludedDatasetColumns != null && (this._excludedDatasetColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

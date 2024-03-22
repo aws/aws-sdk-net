@@ -57,6 +57,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MetricDataQueries/member", targetDepth))
                     {
                         var unmarshaller = MetricDataQueryUnmarshaller.Instance;
+                        if (unmarshalledObject.MetricDataQueries == null)
+                        {
+                            unmarshalledObject.MetricDataQueries = new List<MetricDataQuery>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MetricDataQueries.Add(item);
                         continue;

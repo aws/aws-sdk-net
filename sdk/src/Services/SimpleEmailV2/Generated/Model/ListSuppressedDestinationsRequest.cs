@@ -37,7 +37,7 @@ namespace Amazon.SimpleEmailV2.Model
         private DateTime? _endDate;
         private string _nextToken;
         private int? _pageSize;
-        private List<string> _reasons = new List<string>();
+        private List<string> _reasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _startDate;
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Reasons property is set
         internal bool IsSetReasons()
         {
-            return this._reasons != null && this._reasons.Count > 0; 
+            return this._reasons != null && (this._reasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

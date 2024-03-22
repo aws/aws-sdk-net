@@ -45,7 +45,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the DelegatedAdminAccounts
         /// </summary>
         public IPaginatedEnumerable<DelegatedAdminAccount> DelegatedAdminAccounts => 
-            new PaginatedResultKeyResponse<ListDelegatedAdminAccountsResponse, DelegatedAdminAccount>(this, (i) => i.DelegatedAdminAccounts);
+            new PaginatedResultKeyResponse<ListDelegatedAdminAccountsResponse, DelegatedAdminAccount>(this, (i) => i.DelegatedAdminAccounts ?? new List<DelegatedAdminAccount>());
 
         internal ListDelegatedAdminAccountsPaginator(IAmazonInspector2 client, ListDelegatedAdminAccountsRequest request)
         {

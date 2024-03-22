@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class AliasRoutingConfiguration
     {
-        private Dictionary<string, double> _additionalVersionWeights = new Dictionary<string, double>();
+        private Dictionary<string, double> _additionalVersionWeights = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalVersionWeights. 
@@ -51,7 +51,7 @@ namespace Amazon.Lambda.Model
         // Check to see if AdditionalVersionWeights property is set
         internal bool IsSetAdditionalVersionWeights()
         {
-            return this._additionalVersionWeights != null && this._additionalVersionWeights.Count > 0; 
+            return this._additionalVersionWeights != null && (this._additionalVersionWeights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

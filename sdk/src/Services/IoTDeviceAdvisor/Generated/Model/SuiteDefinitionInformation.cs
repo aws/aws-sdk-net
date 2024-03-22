@@ -34,7 +34,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
     public partial class SuiteDefinitionInformation
     {
         private DateTime? _createdAt;
-        private List<DeviceUnderTest> _defaultDevices = new List<DeviceUnderTest>();
+        private List<DeviceUnderTest> _defaultDevices = AWSConfigs.InitializeCollections ? new List<DeviceUnderTest>() : null;
         private bool? _intendedForQualification;
         private bool? _isLongDurationTest;
         private Protocol _protocol;
@@ -75,7 +75,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         // Check to see if DefaultDevices property is set
         internal bool IsSetDefaultDevices()
         {
-            return this._defaultDevices != null && this._defaultDevices.Count > 0; 
+            return this._defaultDevices != null && (this._defaultDevices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

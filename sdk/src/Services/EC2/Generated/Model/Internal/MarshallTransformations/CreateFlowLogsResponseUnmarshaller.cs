@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("flowLogIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.FlowLogIds == null)
+                        {
+                            response.FlowLogIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.FlowLogIds.Add(item);
                         continue;
@@ -71,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("unsuccessful/item", targetDepth))
                     {
                         var unmarshaller = UnsuccessfulItemUnmarshaller.Instance;
+                        if (response.Unsuccessful == null)
+                        {
+                            response.Unsuccessful = new List<UnsuccessfulItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Unsuccessful.Add(item);
                         continue;

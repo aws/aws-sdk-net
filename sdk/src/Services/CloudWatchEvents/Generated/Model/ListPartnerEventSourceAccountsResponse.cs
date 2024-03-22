@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model
     public partial class ListPartnerEventSourceAccountsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PartnerEventSourceAccount> _partnerEventSourceAccounts = new List<PartnerEventSourceAccount>();
+        private List<PartnerEventSourceAccount> _partnerEventSourceAccounts = AWSConfigs.InitializeCollections ? new List<PartnerEventSourceAccount>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.CloudWatchEvents.Model
         // Check to see if PartnerEventSourceAccounts property is set
         internal bool IsSetPartnerEventSourceAccounts()
         {
-            return this._partnerEventSourceAccounts != null && this._partnerEventSourceAccounts.Count > 0; 
+            return this._partnerEventSourceAccounts != null && (this._partnerEventSourceAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

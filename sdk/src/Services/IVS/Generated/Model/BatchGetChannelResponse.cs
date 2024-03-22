@@ -33,8 +33,8 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class BatchGetChannelResponse : AmazonWebServiceResponse
     {
-        private List<Channel> _channels = new List<Channel>();
-        private List<BatchError> _errors = new List<BatchError>();
+        private List<Channel> _channels = AWSConfigs.InitializeCollections ? new List<Channel>() : null;
+        private List<BatchError> _errors = AWSConfigs.InitializeCollections ? new List<BatchError>() : null;
 
         /// <summary>
         /// Gets and sets the property Channels.
@@ -48,7 +48,7 @@ namespace Amazon.IVS.Model
         // Check to see if Channels property is set
         internal bool IsSetChannels()
         {
-            return this._channels != null && this._channels.Count > 0; 
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.IVS.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

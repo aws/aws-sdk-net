@@ -34,7 +34,7 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class UpdateQuickResponseRequest : AmazonQConnectRequest
     {
-        private List<string> _channels = new List<string>();
+        private List<string> _channels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private QuickResponseDataProvider _content;
         private string _contentType;
         private string _description;
@@ -65,7 +65,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Channels property is set
         internal bool IsSetChannels()
         {
-            return this._channels != null && this._channels.Count > 0; 
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

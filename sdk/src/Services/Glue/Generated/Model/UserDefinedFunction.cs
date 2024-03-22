@@ -40,7 +40,7 @@ namespace Amazon.Glue.Model
         private string _functionName;
         private string _ownerName;
         private PrincipalType _ownerType;
-        private List<ResourceUri> _resourceUris = new List<ResourceUri>();
+        private List<ResourceUri> _resourceUris = AWSConfigs.InitializeCollections ? new List<ResourceUri>() : null;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -189,7 +189,7 @@ namespace Amazon.Glue.Model
         // Check to see if ResourceUris property is set
         internal bool IsSetResourceUris()
         {
-            return this._resourceUris != null && this._resourceUris.Count > 0; 
+            return this._resourceUris != null && (this._resourceUris.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

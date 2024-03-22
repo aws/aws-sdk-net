@@ -84,6 +84,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Certificates/member", targetDepth))
                     {
                         var unmarshaller = SigningCertificateUnmarshaller.Instance;
+                        if (response.Certificates == null)
+                        {
+                            response.Certificates = new List<SigningCertificate>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Certificates.Add(item);
                         continue;

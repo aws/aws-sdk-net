@@ -45,7 +45,7 @@ namespace Amazon.ElasticInference.Model
         /// Enumerable containing all of the AcceleratorSet
         /// </summary>
         public IPaginatedEnumerable<ElasticInferenceAccelerator> AcceleratorSet => 
-            new PaginatedResultKeyResponse<DescribeAcceleratorsResponse, ElasticInferenceAccelerator>(this, (i) => i.AcceleratorSet);
+            new PaginatedResultKeyResponse<DescribeAcceleratorsResponse, ElasticInferenceAccelerator>(this, (i) => i.AcceleratorSet ?? new List<ElasticInferenceAccelerator>());
 
         internal DescribeAcceleratorsPaginator(IAmazonElasticInference client, DescribeAcceleratorsRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.RedshiftServerless.Model
     public partial class ListScheduledActionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _scheduledActions = new List<string>();
+        private List<string> _scheduledActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if ScheduledActions property is set
         internal bool IsSetScheduledActions()
         {
-            return this._scheduledActions != null && this._scheduledActions.Count > 0; 
+            return this._scheduledActions != null && (this._scheduledActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListIntegrationAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<IntegrationAssociationSummary> _integrationAssociationSummaryList = new List<IntegrationAssociationSummary>();
+        private List<IntegrationAssociationSummary> _integrationAssociationSummaryList = AWSConfigs.InitializeCollections ? new List<IntegrationAssociationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if IntegrationAssociationSummaryList property is set
         internal bool IsSetIntegrationAssociationSummaryList()
         {
-            return this._integrationAssociationSummaryList != null && this._integrationAssociationSummaryList.Count > 0; 
+            return this._integrationAssociationSummaryList != null && (this._integrationAssociationSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

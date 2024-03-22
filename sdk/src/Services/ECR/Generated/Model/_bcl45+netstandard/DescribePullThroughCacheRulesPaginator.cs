@@ -45,7 +45,7 @@ namespace Amazon.ECR.Model
         /// Enumerable containing all of the PullThroughCacheRules
         /// </summary>
         public IPaginatedEnumerable<PullThroughCacheRule> PullThroughCacheRules => 
-            new PaginatedResultKeyResponse<DescribePullThroughCacheRulesResponse, PullThroughCacheRule>(this, (i) => i.PullThroughCacheRules);
+            new PaginatedResultKeyResponse<DescribePullThroughCacheRulesResponse, PullThroughCacheRule>(this, (i) => i.PullThroughCacheRules ?? new List<PullThroughCacheRule>());
 
         internal DescribePullThroughCacheRulesPaginator(IAmazonECR client, DescribePullThroughCacheRulesRequest request)
         {

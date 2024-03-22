@@ -46,10 +46,10 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeReservedInstancesRequest : AmazonEC2Request
     {
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private OfferingClassType _offeringClass;
         private OfferingTypeValues _offeringType;
-        private List<string> _reservedInstancesIds = new List<string>();
+        private List<string> _reservedInstancesIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -133,7 +133,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.EC2.Model
         // Check to see if ReservedInstancesIds property is set
         internal bool IsSetReservedInstancesIds()
         {
-            return this._reservedInstancesIds != null && this._reservedInstancesIds.Count > 0; 
+            return this._reservedInstancesIds != null && (this._reservedInstancesIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

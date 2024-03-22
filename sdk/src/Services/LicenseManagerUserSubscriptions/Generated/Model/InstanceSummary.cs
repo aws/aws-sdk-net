@@ -35,7 +35,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     {
         private string _instanceId;
         private string _lastStatusCheckDate;
-        private List<string> _products = new List<string>();
+        private List<string> _products = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _status;
         private string _statusMessage;
 
@@ -92,7 +92,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         // Check to see if Products property is set
         internal bool IsSetProducts()
         {
-            return this._products != null && this._products.Count > 0; 
+            return this._products != null && (this._products.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

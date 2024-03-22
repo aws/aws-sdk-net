@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListTrainingJobsForHyperParameterTuningJobResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<HyperParameterTrainingJobSummary> _trainingJobSummaries = new List<HyperParameterTrainingJobSummary>();
+        private List<HyperParameterTrainingJobSummary> _trainingJobSummaries = AWSConfigs.InitializeCollections ? new List<HyperParameterTrainingJobSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -75,7 +75,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if TrainingJobSummaries property is set
         internal bool IsSetTrainingJobSummaries()
         {
-            return this._trainingJobSummaries != null && this._trainingJobSummaries.Count > 0; 
+            return this._trainingJobSummaries != null && (this._trainingJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

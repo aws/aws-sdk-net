@@ -45,7 +45,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<AccountEnrollmentStatus> Items => 
-            new PaginatedResultKeyResponse<ListEnrollmentStatusesResponse, AccountEnrollmentStatus>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListEnrollmentStatusesResponse, AccountEnrollmentStatus>(this, (i) => i.Items ?? new List<AccountEnrollmentStatus>());
 
         internal ListEnrollmentStatusesPaginator(IAmazonCostOptimizationHub client, ListEnrollmentStatusesRequest request)
         {

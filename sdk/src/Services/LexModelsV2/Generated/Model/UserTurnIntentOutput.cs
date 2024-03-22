@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class UserTurnIntentOutput
     {
         private string _name;
-        private Dictionary<string, UserTurnSlotOutput> _slots = new Dictionary<string, UserTurnSlotOutput>();
+        private Dictionary<string, UserTurnSlotOutput> _slots = AWSConfigs.InitializeCollections ? new Dictionary<string, UserTurnSlotOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -70,7 +70,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Slots property is set
         internal bool IsSetSlots()
         {
-            return this._slots != null && this._slots.Count > 0; 
+            return this._slots != null && (this._slots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

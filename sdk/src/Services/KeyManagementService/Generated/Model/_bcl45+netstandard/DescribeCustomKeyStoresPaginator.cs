@@ -45,7 +45,7 @@ namespace Amazon.KeyManagementService.Model
         /// Enumerable containing all of the CustomKeyStores
         /// </summary>
         public IPaginatedEnumerable<CustomKeyStoresListEntry> CustomKeyStores => 
-            new PaginatedResultKeyResponse<DescribeCustomKeyStoresResponse, CustomKeyStoresListEntry>(this, (i) => i.CustomKeyStores);
+            new PaginatedResultKeyResponse<DescribeCustomKeyStoresResponse, CustomKeyStoresListEntry>(this, (i) => i.CustomKeyStores ?? new List<CustomKeyStoresListEntry>());
 
         internal DescribeCustomKeyStoresPaginator(IAmazonKeyManagementService client, DescribeCustomKeyStoresRequest request)
         {

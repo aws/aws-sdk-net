@@ -36,7 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _catalogId;
         private string _databaseName;
-        private List<PartitionInput> _partitionInputList = new List<PartitionInput>();
+        private List<PartitionInput> _partitionInputList = AWSConfigs.InitializeCollections ? new List<PartitionInput>() : null;
         private string _tableName;
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.Glue.Model
         // Check to see if PartitionInputList property is set
         internal bool IsSetPartitionInputList()
         {
-            return this._partitionInputList != null && this._partitionInputList.Count > 0; 
+            return this._partitionInputList != null && (this._partitionInputList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

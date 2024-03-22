@@ -45,7 +45,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class CreateCloudFormationStackRequest : AmazonLightsailRequest
     {
-        private List<InstanceEntry> _instances = new List<InstanceEntry>();
+        private List<InstanceEntry> _instances = AWSConfigs.InitializeCollections ? new List<InstanceEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Instances. 
@@ -65,7 +65,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

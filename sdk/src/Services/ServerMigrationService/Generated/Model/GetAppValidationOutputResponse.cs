@@ -33,7 +33,7 @@ namespace Amazon.ServerMigrationService.Model
     /// </summary>
     public partial class GetAppValidationOutputResponse : AmazonWebServiceResponse
     {
-        private List<ValidationOutput> _validationOutputList = new List<ValidationOutput>();
+        private List<ValidationOutput> _validationOutputList = AWSConfigs.InitializeCollections ? new List<ValidationOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property ValidationOutputList. 
@@ -50,7 +50,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ValidationOutputList property is set
         internal bool IsSetValidationOutputList()
         {
-            return this._validationOutputList != null && this._validationOutputList.Count > 0; 
+            return this._validationOutputList != null && (this._validationOutputList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

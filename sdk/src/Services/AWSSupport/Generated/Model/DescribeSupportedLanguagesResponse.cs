@@ -33,7 +33,7 @@ namespace Amazon.AWSSupport.Model
     /// </summary>
     public partial class DescribeSupportedLanguagesResponse : AmazonWebServiceResponse
     {
-        private List<SupportedLanguage> _supportedLanguages = new List<SupportedLanguage>();
+        private List<SupportedLanguage> _supportedLanguages = AWSConfigs.InitializeCollections ? new List<SupportedLanguage>() : null;
 
         /// <summary>
         /// Gets and sets the property SupportedLanguages. 
@@ -51,7 +51,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if SupportedLanguages property is set
         internal bool IsSetSupportedLanguages()
         {
-            return this._supportedLanguages != null && this._supportedLanguages.Count > 0; 
+            return this._supportedLanguages != null && (this._supportedLanguages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

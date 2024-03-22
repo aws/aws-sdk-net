@@ -68,7 +68,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class DeleteTaskDefinitionsRequest : AmazonECSRequest
     {
-        private List<string> _taskDefinitions = new List<string>();
+        private List<string> _taskDefinitions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TaskDefinitions. 
@@ -91,7 +91,7 @@ namespace Amazon.ECS.Model
         // Check to see if TaskDefinitions property is set
         internal bool IsSetTaskDefinitions()
         {
-            return this._taskDefinitions != null && this._taskDefinitions.Count > 0; 
+            return this._taskDefinitions != null && (this._taskDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

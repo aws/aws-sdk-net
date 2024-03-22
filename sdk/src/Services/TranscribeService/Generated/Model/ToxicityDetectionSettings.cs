@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class ToxicityDetectionSettings
     {
-        private List<string> _toxicityCategories = new List<string>();
+        private List<string> _toxicityCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ToxicityCategories. 
@@ -53,7 +53,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if ToxicityCategories property is set
         internal bool IsSetToxicityCategories()
         {
-            return this._toxicityCategories != null && this._toxicityCategories.Count > 0; 
+            return this._toxicityCategories != null && (this._toxicityCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.VPCLattice.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<RuleSummary> Items => 
-            new PaginatedResultKeyResponse<ListRulesResponse, RuleSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListRulesResponse, RuleSummary>(this, (i) => i.Items ?? new List<RuleSummary>());
 
         internal ListRulesPaginator(IAmazonVPCLattice client, ListRulesRequest request)
         {

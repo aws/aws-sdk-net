@@ -40,7 +40,7 @@ namespace Amazon.ResilienceHub.Model
         private string _nextToken;
         private string _recommendationTemplateArn;
         private bool? _reverseOrder;
-        private List<string> _status = new List<string>();
+        private List<string> _status = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssessmentArn. 
@@ -174,7 +174,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this._status != null && this._status.Count > 0; 
+            return this._status != null && (this._status.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

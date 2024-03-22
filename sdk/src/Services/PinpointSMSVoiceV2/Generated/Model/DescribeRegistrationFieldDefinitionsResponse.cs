@@ -34,7 +34,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class DescribeRegistrationFieldDefinitionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RegistrationFieldDefinition> _registrationFieldDefinitions = new List<RegistrationFieldDefinition>();
+        private List<RegistrationFieldDefinition> _registrationFieldDefinitions = AWSConfigs.InitializeCollections ? new List<RegistrationFieldDefinition>() : null;
         private string _registrationType;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if RegistrationFieldDefinitions property is set
         internal bool IsSetRegistrationFieldDefinitions()
         {
-            return this._registrationFieldDefinitions != null && this._registrationFieldDefinitions.Count > 0; 
+            return this._registrationFieldDefinitions != null && (this._registrationFieldDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

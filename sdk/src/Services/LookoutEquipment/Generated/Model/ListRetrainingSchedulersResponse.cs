@@ -34,7 +34,7 @@ namespace Amazon.LookoutEquipment.Model
     public partial class ListRetrainingSchedulersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RetrainingSchedulerSummary> _retrainingSchedulerSummaries = new List<RetrainingSchedulerSummary>();
+        private List<RetrainingSchedulerSummary> _retrainingSchedulerSummaries = AWSConfigs.InitializeCollections ? new List<RetrainingSchedulerSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if RetrainingSchedulerSummaries property is set
         internal bool IsSetRetrainingSchedulerSummaries()
         {
-            return this._retrainingSchedulerSummaries != null && this._retrainingSchedulerSummaries.Count > 0; 
+            return this._retrainingSchedulerSummaries != null && (this._retrainingSchedulerSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class ListGatewaysResponse : AmazonWebServiceResponse
     {
-        private List<GatewayInfo> _gateways = new List<GatewayInfo>();
+        private List<GatewayInfo> _gateways = AWSConfigs.InitializeCollections ? new List<GatewayInfo>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Gateways property is set
         internal bool IsSetGateways()
         {
-            return this._gateways != null && this._gateways.Count > 0; 
+            return this._gateways != null && (this._gateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

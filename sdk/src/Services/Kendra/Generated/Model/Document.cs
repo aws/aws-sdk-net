@@ -34,11 +34,11 @@ namespace Amazon.Kendra.Model
     public partial class Document
     {
         private string _accessControlConfigurationId;
-        private List<Principal> _accessControlList = new List<Principal>();
-        private List<DocumentAttribute> _attributes = new List<DocumentAttribute>();
+        private List<Principal> _accessControlList = AWSConfigs.InitializeCollections ? new List<Principal>() : null;
+        private List<DocumentAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<DocumentAttribute>() : null;
         private MemoryStream _blob;
         private ContentType _contentType;
-        private List<HierarchicalPrincipal> _hierarchicalAccessControlList = new List<HierarchicalPrincipal>();
+        private List<HierarchicalPrincipal> _hierarchicalAccessControlList = AWSConfigs.InitializeCollections ? new List<HierarchicalPrincipal>() : null;
         private string _id;
         private S3Path _s3Path;
         private string _title;
@@ -79,7 +79,7 @@ namespace Amazon.Kendra.Model
         // Check to see if AccessControlList property is set
         internal bool IsSetAccessControlList()
         {
-            return this._accessControlList != null && this._accessControlList.Count > 0; 
+            return this._accessControlList != null && (this._accessControlList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.Kendra.Model
         // Check to see if HierarchicalAccessControlList property is set
         internal bool IsSetHierarchicalAccessControlList()
         {
-            return this._hierarchicalAccessControlList != null && this._hierarchicalAccessControlList.Count > 0; 
+            return this._hierarchicalAccessControlList != null && (this._hierarchicalAccessControlList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

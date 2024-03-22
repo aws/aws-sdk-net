@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the Policies
         /// </summary>
         public IPaginatedEnumerable<GetResourcePoliciesResponseEntry> Policies => 
-            new PaginatedResultKeyResponse<GetResourcePoliciesResponse, GetResourcePoliciesResponseEntry>(this, (i) => i.Policies);
+            new PaginatedResultKeyResponse<GetResourcePoliciesResponse, GetResourcePoliciesResponseEntry>(this, (i) => i.Policies ?? new List<GetResourcePoliciesResponseEntry>());
 
         internal GetResourcePoliciesPaginator(IAmazonSimpleSystemsManagement client, GetResourcePoliciesRequest request)
         {

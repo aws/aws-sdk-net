@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeScalingProcessTypesResponse : AmazonWebServiceResponse
     {
-        private List<ProcessType> _processes = new List<ProcessType>();
+        private List<ProcessType> _processes = AWSConfigs.InitializeCollections ? new List<ProcessType>() : null;
 
         /// <summary>
         /// Gets and sets the property Processes. 
@@ -50,7 +50,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Processes property is set
         internal bool IsSetProcesses()
         {
-            return this._processes != null && this._processes.Count > 0; 
+            return this._processes != null && (this._processes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

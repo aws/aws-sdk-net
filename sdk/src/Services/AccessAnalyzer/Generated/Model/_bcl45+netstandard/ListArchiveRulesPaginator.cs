@@ -45,7 +45,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Enumerable containing all of the ArchiveRules
         /// </summary>
         public IPaginatedEnumerable<ArchiveRuleSummary> ArchiveRules => 
-            new PaginatedResultKeyResponse<ListArchiveRulesResponse, ArchiveRuleSummary>(this, (i) => i.ArchiveRules);
+            new PaginatedResultKeyResponse<ListArchiveRulesResponse, ArchiveRuleSummary>(this, (i) => i.ArchiveRules ?? new List<ArchiveRuleSummary>());
 
         internal ListArchiveRulesPaginator(IAmazonAccessAnalyzer client, ListArchiveRulesRequest request)
         {

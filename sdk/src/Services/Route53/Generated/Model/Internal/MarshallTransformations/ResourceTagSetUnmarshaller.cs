@@ -69,6 +69,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Tags/Tag", targetDepth))
                     {
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var unmarshaller = TagUnmarshaller.Instance;
                         unmarshalledObject.Tags.Add(unmarshaller.Unmarshall(context));
                         continue;

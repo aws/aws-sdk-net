@@ -53,8 +53,8 @@ namespace Amazon.Connect.Model
     {
         private DateTime? _endTime;
         private Filters _filters;
-        private List<string> _groupings = new List<string>();
-        private List<HistoricalMetric> _historicalMetrics = new List<HistoricalMetric>();
+        private List<string> _groupings = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<HistoricalMetric> _historicalMetrics = AWSConfigs.InitializeCollections ? new List<HistoricalMetric>() : null;
         private string _instanceId;
         private int? _maxResults;
         private string _nextToken;
@@ -144,7 +144,7 @@ namespace Amazon.Connect.Model
         // Check to see if Groupings property is set
         internal bool IsSetGroupings()
         {
-            return this._groupings != null && this._groupings.Count > 0; 
+            return this._groupings != null && (this._groupings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -381,7 +381,7 @@ namespace Amazon.Connect.Model
         // Check to see if HistoricalMetrics property is set
         internal bool IsSetHistoricalMetrics()
         {
-            return this._historicalMetrics != null && this._historicalMetrics.Count > 0; 
+            return this._historicalMetrics != null && (this._historicalMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

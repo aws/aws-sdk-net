@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the RuleSummaryList
         /// </summary>
         public IPaginatedEnumerable<RuleSummary> RuleSummaryList => 
-            new PaginatedResultKeyResponse<ListRulesResponse, RuleSummary>(this, (i) => i.RuleSummaryList);
+            new PaginatedResultKeyResponse<ListRulesResponse, RuleSummary>(this, (i) => i.RuleSummaryList ?? new List<RuleSummary>());
 
         internal ListRulesPaginator(IAmazonConnect client, ListRulesRequest request)
         {

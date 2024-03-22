@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("associationSet/item", targetDepth))
                     {
                         var unmarshaller = RouteTableAssociationUnmarshaller.Instance;
+                        if (unmarshalledObject.Associations == null)
+                        {
+                            unmarshalledObject.Associations = new List<RouteTableAssociation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Associations.Add(item);
                         continue;
@@ -70,6 +74,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("propagatingVgwSet/item", targetDepth))
                     {
                         var unmarshaller = PropagatingVgwUnmarshaller.Instance;
+                        if (unmarshalledObject.PropagatingVgws == null)
+                        {
+                            unmarshalledObject.PropagatingVgws = new List<PropagatingVgw>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PropagatingVgws.Add(item);
                         continue;
@@ -77,6 +85,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("routeSet/item", targetDepth))
                     {
                         var unmarshaller = RouteUnmarshaller.Instance;
+                        if (unmarshalledObject.Routes == null)
+                        {
+                            unmarshalledObject.Routes = new List<Route>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Routes.Add(item);
                         continue;
@@ -90,6 +102,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

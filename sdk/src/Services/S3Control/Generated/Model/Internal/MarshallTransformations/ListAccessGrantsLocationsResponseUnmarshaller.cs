@@ -63,6 +63,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AccessGrantsLocationsList/AccessGrantsLocation", targetDepth))
                     {
+                        if (response.AccessGrantsLocationsList == null)
+                        {
+                            response.AccessGrantsLocationsList = new List<ListAccessGrantsLocationsEntry>();
+                        }
                         var unmarshaller = ListAccessGrantsLocationsEntryUnmarshaller.Instance;
                         response.AccessGrantsLocationsList.Add(unmarshaller.Unmarshall(context));
                         continue;

@@ -38,7 +38,7 @@ namespace Amazon.QBusiness.Model
         private IndexCapacityConfiguration _capacityConfiguration;
         private string _description;
         private string _displayName;
-        private List<DocumentAttributeConfiguration> _documentAttributeConfigurations = new List<DocumentAttributeConfiguration>();
+        private List<DocumentAttributeConfiguration> _documentAttributeConfigurations = AWSConfigs.InitializeCollections ? new List<DocumentAttributeConfiguration>() : null;
         private string _indexId;
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if DocumentAttributeConfigurations property is set
         internal bool IsSetDocumentAttributeConfigurations()
         {
-            return this._documentAttributeConfigurations != null && this._documentAttributeConfigurations.Count > 0; 
+            return this._documentAttributeConfigurations != null && (this._documentAttributeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

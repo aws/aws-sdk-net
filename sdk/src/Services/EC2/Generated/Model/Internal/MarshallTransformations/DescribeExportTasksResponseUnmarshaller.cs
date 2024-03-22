@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("exportTaskSet/item", targetDepth))
                     {
                         var unmarshaller = ExportTaskUnmarshaller.Instance;
+                        if (response.ExportTasks == null)
+                        {
+                            response.ExportTasks = new List<ExportTask>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ExportTasks.Add(item);
                         continue;

@@ -33,7 +33,7 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class SyncBlocker
     {
-        private List<SyncBlockerContext> _contexts = new List<SyncBlockerContext>();
+        private List<SyncBlockerContext> _contexts = AWSConfigs.InitializeCollections ? new List<SyncBlockerContext>() : null;
         private DateTime? _createdAt;
         private string _createdReason;
         private string _id;
@@ -57,7 +57,7 @@ namespace Amazon.Proton.Model
         // Check to see if Contexts property is set
         internal bool IsSetContexts()
         {
-            return this._contexts != null && this._contexts.Count > 0; 
+            return this._contexts != null && (this._contexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

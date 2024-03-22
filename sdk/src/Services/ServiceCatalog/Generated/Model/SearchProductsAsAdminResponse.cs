@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class SearchProductsAsAdminResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<ProductViewDetail> _productViewDetails = new List<ProductViewDetail>();
+        private List<ProductViewDetail> _productViewDetails = AWSConfigs.InitializeCollections ? new List<ProductViewDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProductViewDetails property is set
         internal bool IsSetProductViewDetails()
         {
-            return this._productViewDetails != null && this._productViewDetails.Count > 0; 
+            return this._productViewDetails != null && (this._productViewDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class RelatedResource
     {
-        private Dictionary<string, string> _additionalInfo = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalInfo = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ResourceIdentifier _resourceIdentifier;
         private ResourceType _resourceType;
 
@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model
         // Check to see if AdditionalInfo property is set
         internal bool IsSetAdditionalInfo()
         {
-            return this._additionalInfo != null && this._additionalInfo.Count > 0; 
+            return this._additionalInfo != null && (this._additionalInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

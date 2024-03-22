@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipamPoolAllocationSet/item", targetDepth))
                     {
                         var unmarshaller = IpamPoolAllocationUnmarshaller.Instance;
+                        if (response.IpamPoolAllocations == null)
+                        {
+                            response.IpamPoolAllocations = new List<IpamPoolAllocation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.IpamPoolAllocations.Add(item);
                         continue;

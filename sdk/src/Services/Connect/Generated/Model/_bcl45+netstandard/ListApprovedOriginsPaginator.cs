@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the Origins
         /// </summary>
         public IPaginatedEnumerable<string> Origins => 
-            new PaginatedResultKeyResponse<ListApprovedOriginsResponse, string>(this, (i) => i.Origins);
+            new PaginatedResultKeyResponse<ListApprovedOriginsResponse, string>(this, (i) => i.Origins ?? new List<string>());
 
         internal ListApprovedOriginsPaginator(IAmazonConnect client, ListApprovedOriginsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Neptune.Model
     /// </summary>
     public partial class DescribeDBParameterGroupsResponse : AmazonWebServiceResponse
     {
-        private List<DBParameterGroup> _dbParameterGroups = new List<DBParameterGroup>();
+        private List<DBParameterGroup> _dbParameterGroups = AWSConfigs.InitializeCollections ? new List<DBParameterGroup>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Neptune.Model
         // Check to see if DBParameterGroups property is set
         internal bool IsSetDBParameterGroups()
         {
-            return this._dbParameterGroups != null && this._dbParameterGroups.Count > 0; 
+            return this._dbParameterGroups != null && (this._dbParameterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

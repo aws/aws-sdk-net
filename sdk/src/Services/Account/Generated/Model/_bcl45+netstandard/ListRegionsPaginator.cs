@@ -45,7 +45,7 @@ namespace Amazon.Account.Model
         /// Enumerable containing all of the Regions
         /// </summary>
         public IPaginatedEnumerable<Region> Regions => 
-            new PaginatedResultKeyResponse<ListRegionsResponse, Region>(this, (i) => i.Regions);
+            new PaginatedResultKeyResponse<ListRegionsResponse, Region>(this, (i) => i.Regions ?? new List<Region>());
 
         internal ListRegionsPaginator(IAmazonAccount client, ListRegionsRequest request)
         {

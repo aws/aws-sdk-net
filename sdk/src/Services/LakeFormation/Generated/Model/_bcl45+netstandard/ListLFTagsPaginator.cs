@@ -45,7 +45,7 @@ namespace Amazon.LakeFormation.Model
         /// Enumerable containing all of the LFTags
         /// </summary>
         public IPaginatedEnumerable<LFTagPair> LFTags => 
-            new PaginatedResultKeyResponse<ListLFTagsResponse, LFTagPair>(this, (i) => i.LFTags);
+            new PaginatedResultKeyResponse<ListLFTagsResponse, LFTagPair>(this, (i) => i.LFTags ?? new List<LFTagPair>());
 
         internal ListLFTagsPaginator(IAmazonLakeFormation client, ListLFTagsRequest request)
         {

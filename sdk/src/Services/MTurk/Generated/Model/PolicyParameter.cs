@@ -34,8 +34,8 @@ namespace Amazon.MTurk.Model
     public partial class PolicyParameter
     {
         private string _key;
-        private List<ParameterMapEntry> _mapEntries = new List<ParameterMapEntry>();
-        private List<string> _values = new List<string>();
+        private List<ParameterMapEntry> _mapEntries = AWSConfigs.InitializeCollections ? new List<ParameterMapEntry>() : null;
+        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Key. 
@@ -70,7 +70,7 @@ namespace Amazon.MTurk.Model
         // Check to see if MapEntries property is set
         internal bool IsSetMapEntries()
         {
-            return this._mapEntries != null && this._mapEntries.Count > 0; 
+            return this._mapEntries != null && (this._mapEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.MTurk.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

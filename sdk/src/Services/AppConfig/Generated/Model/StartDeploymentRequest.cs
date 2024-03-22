@@ -39,10 +39,10 @@ namespace Amazon.AppConfig.Model
         private string _configurationVersion;
         private string _deploymentStrategyId;
         private string _description;
-        private Dictionary<string, string> _dynamicExtensionParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _dynamicExtensionParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _environmentId;
         private string _kmsKeyIdentifier;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -158,7 +158,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if DynamicExtensionParameters property is set
         internal bool IsSetDynamicExtensionParameters()
         {
-            return this._dynamicExtensionParameters != null && this._dynamicExtensionParameters.Count > 0; 
+            return this._dynamicExtensionParameters != null && (this._dynamicExtensionParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

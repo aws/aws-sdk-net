@@ -45,7 +45,7 @@ namespace Amazon.RecycleBin.Model
         /// Enumerable containing all of the Rules
         /// </summary>
         public IPaginatedEnumerable<RuleSummary> Rules => 
-            new PaginatedResultKeyResponse<ListRulesResponse, RuleSummary>(this, (i) => i.Rules);
+            new PaginatedResultKeyResponse<ListRulesResponse, RuleSummary>(this, (i) => i.Rules ?? new List<RuleSummary>());
 
         internal ListRulesPaginator(IAmazonRecycleBin client, ListRulesRequest request)
         {

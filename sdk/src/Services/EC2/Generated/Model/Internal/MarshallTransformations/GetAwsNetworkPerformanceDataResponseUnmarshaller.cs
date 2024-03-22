@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("dataResponseSet/item", targetDepth))
                     {
                         var unmarshaller = DataResponseUnmarshaller.Instance;
+                        if (response.DataResponses == null)
+                        {
+                            response.DataResponses = new List<DataResponse>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DataResponses.Add(item);
                         continue;

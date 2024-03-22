@@ -48,7 +48,7 @@ namespace Amazon.InternetMonitor.Model
         private string _country;
         private string _countryCode;
         private InternetHealth _internetHealth;
-        private List<string> _ipv4Prefixes = new List<string>();
+        private List<string> _ipv4Prefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _latitude;
         private double? _longitude;
         private string _metro;
@@ -204,7 +204,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if Ipv4Prefixes property is set
         internal bool IsSetIpv4Prefixes()
         {
-            return this._ipv4Prefixes != null && this._ipv4Prefixes.Count > 0; 
+            return this._ipv4Prefixes != null && (this._ipv4Prefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

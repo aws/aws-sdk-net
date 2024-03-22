@@ -38,8 +38,8 @@ namespace Amazon.DirectConnect.Model
         private int? _asn;
         private string _authKey;
         private string _customerAddress;
-        private List<RouteFilterPrefix> _routeFilterPrefixes = new List<RouteFilterPrefix>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<RouteFilterPrefix> _routeFilterPrefixes = AWSConfigs.InitializeCollections ? new List<RouteFilterPrefix>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _virtualInterfaceName;
         private int? _vlan;
 
@@ -155,7 +155,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if RouteFilterPrefixes property is set
         internal bool IsSetRouteFilterPrefixes()
         {
-            return this._routeFilterPrefixes != null && this._routeFilterPrefixes.Count > 0; 
+            return this._routeFilterPrefixes != null && (this._routeFilterPrefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

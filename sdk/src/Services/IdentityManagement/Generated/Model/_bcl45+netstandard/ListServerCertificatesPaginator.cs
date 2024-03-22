@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the ServerCertificateMetadataList
         /// </summary>
         public IPaginatedEnumerable<ServerCertificateMetadata> ServerCertificateMetadataList => 
-            new PaginatedResultKeyResponse<ListServerCertificatesResponse, ServerCertificateMetadata>(this, (i) => i.ServerCertificateMetadataList);
+            new PaginatedResultKeyResponse<ListServerCertificatesResponse, ServerCertificateMetadata>(this, (i) => i.ServerCertificateMetadataList ?? new List<ServerCertificateMetadata>());
 
         internal ListServerCertificatesPaginator(IAmazonIdentityManagementService client, ListServerCertificatesRequest request)
         {

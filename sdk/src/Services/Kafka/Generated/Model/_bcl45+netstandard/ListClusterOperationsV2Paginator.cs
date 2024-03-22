@@ -45,7 +45,7 @@ namespace Amazon.Kafka.Model
         /// Enumerable containing all of the ClusterOperationInfoList
         /// </summary>
         public IPaginatedEnumerable<ClusterOperationV2Summary> ClusterOperationInfoList => 
-            new PaginatedResultKeyResponse<ListClusterOperationsV2Response, ClusterOperationV2Summary>(this, (i) => i.ClusterOperationInfoList);
+            new PaginatedResultKeyResponse<ListClusterOperationsV2Response, ClusterOperationV2Summary>(this, (i) => i.ClusterOperationInfoList ?? new List<ClusterOperationV2Summary>());
 
         internal ListClusterOperationsV2Paginator(IAmazonKafka client, ListClusterOperationsV2Request request)
         {

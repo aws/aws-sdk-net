@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the SpendLimits
         /// </summary>
         public IPaginatedEnumerable<SpendLimit> SpendLimits => 
-            new PaginatedResultKeyResponse<DescribeSpendLimitsResponse, SpendLimit>(this, (i) => i.SpendLimits);
+            new PaginatedResultKeyResponse<DescribeSpendLimitsResponse, SpendLimit>(this, (i) => i.SpendLimits ?? new List<SpendLimit>());
 
         internal DescribeSpendLimitsPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeSpendLimitsRequest request)
         {

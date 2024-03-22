@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ListTopicRulesResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<TopicRuleListItem> _rules = new List<TopicRuleListItem>();
+        private List<TopicRuleListItem> _rules = AWSConfigs.InitializeCollections ? new List<TopicRuleListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -70,7 +70,7 @@ namespace Amazon.IoT.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class VirtualInterfaceTestHistory
     {
-        private List<string> _bgpPeers = new List<string>();
+        private List<string> _bgpPeers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _endTime;
         private string _ownerAccount;
         private DateTime? _startTime;
@@ -58,7 +58,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if BgpPeers property is set
         internal bool IsSetBgpPeers()
         {
-            return this._bgpPeers != null && this._bgpPeers.Count > 0; 
+            return this._bgpPeers != null && (this._bgpPeers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<ScanSummary> Summaries => 
-            new PaginatedResultKeyResponse<ListScansResponse, ScanSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<ListScansResponse, ScanSummary>(this, (i) => i.Summaries ?? new List<ScanSummary>());
 
         internal ListScansPaginator(IAmazonCodeGuruSecurity client, ListScansRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the AssociatedAccessPolicies
         /// </summary>
         public IPaginatedEnumerable<AssociatedAccessPolicy> AssociatedAccessPolicies => 
-            new PaginatedResultKeyResponse<ListAssociatedAccessPoliciesResponse, AssociatedAccessPolicy>(this, (i) => i.AssociatedAccessPolicies);
+            new PaginatedResultKeyResponse<ListAssociatedAccessPoliciesResponse, AssociatedAccessPolicy>(this, (i) => i.AssociatedAccessPolicies ?? new List<AssociatedAccessPolicy>());
 
         internal ListAssociatedAccessPoliciesPaginator(IAmazonEKS client, ListAssociatedAccessPoliciesRequest request)
         {

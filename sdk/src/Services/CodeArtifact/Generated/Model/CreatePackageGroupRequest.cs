@@ -41,7 +41,7 @@ namespace Amazon.CodeArtifact.Model
         private string _domain;
         private string _domainOwner;
         private string _packageGroup;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactInfo. 
@@ -156,7 +156,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

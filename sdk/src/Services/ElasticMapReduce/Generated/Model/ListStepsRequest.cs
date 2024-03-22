@@ -40,8 +40,8 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _clusterId;
         private string _marker;
-        private List<string> _stepIds = new List<string>();
-        private List<string> _stepStates = new List<string>();
+        private List<string> _stepIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _stepStates = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterId. 
@@ -100,7 +100,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if StepIds property is set
         internal bool IsSetStepIds()
         {
-            return this._stepIds != null && this._stepIds.Count > 0; 
+            return this._stepIds != null && (this._stepIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if StepStates property is set
         internal bool IsSetStepStates()
         {
-            return this._stepStates != null && this._stepStates.Count > 0; 
+            return this._stepStates != null && (this._stepStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

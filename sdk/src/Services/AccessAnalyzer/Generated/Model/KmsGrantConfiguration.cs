@@ -36,7 +36,7 @@ namespace Amazon.AccessAnalyzer.Model
         private KmsGrantConstraints _constraints;
         private string _granteePrincipal;
         private string _issuingAccount;
-        private List<string> _operations = new List<string>();
+        private List<string> _operations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _retiringPrincipal;
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Operations property is set
         internal bool IsSetOperations()
         {
-            return this._operations != null && this._operations.Count > 0; 
+            return this._operations != null && (this._operations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

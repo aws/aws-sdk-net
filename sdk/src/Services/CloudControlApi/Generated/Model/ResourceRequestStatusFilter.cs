@@ -33,8 +33,8 @@ namespace Amazon.CloudControlApi.Model
     /// </summary>
     public partial class ResourceRequestStatusFilter
     {
-        private List<string> _operations = new List<string>();
-        private List<string> _operationStatuses = new List<string>();
+        private List<string> _operations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _operationStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Operations. 
@@ -51,7 +51,7 @@ namespace Amazon.CloudControlApi.Model
         // Check to see if Operations property is set
         internal bool IsSetOperations()
         {
-            return this._operations != null && this._operations.Count > 0; 
+            return this._operations != null && (this._operations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.CloudControlApi.Model
         // Check to see if OperationStatuses property is set
         internal bool IsSetOperationStatuses()
         {
-            return this._operationStatuses != null && this._operationStatuses.Count > 0; 
+            return this._operationStatuses != null && (this._operationStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListImageBuildVersionsResponse : AmazonWebServiceResponse
     {
-        private List<ImageSummary> _imageSummaryList = new List<ImageSummary>();
+        private List<ImageSummary> _imageSummaryList = AWSConfigs.InitializeCollections ? new List<ImageSummary>() : null;
         private string _nextToken;
         private string _requestId;
 
@@ -52,7 +52,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if ImageSummaryList property is set
         internal bool IsSetImageSummaryList()
         {
-            return this._imageSummaryList != null && this._imageSummaryList.Count > 0; 
+            return this._imageSummaryList != null && (this._imageSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

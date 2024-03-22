@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the CodeRepositorySummaryList
         /// </summary>
         public IPaginatedEnumerable<CodeRepositorySummary> CodeRepositorySummaryList => 
-            new PaginatedResultKeyResponse<ListCodeRepositoriesResponse, CodeRepositorySummary>(this, (i) => i.CodeRepositorySummaryList);
+            new PaginatedResultKeyResponse<ListCodeRepositoriesResponse, CodeRepositorySummary>(this, (i) => i.CodeRepositorySummaryList ?? new List<CodeRepositorySummary>());
 
         internal ListCodeRepositoriesPaginator(IAmazonSageMaker client, ListCodeRepositoriesRequest request)
         {

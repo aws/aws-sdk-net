@@ -45,7 +45,7 @@ namespace Amazon.CloudWatch.Model
         /// Enumerable containing all of the AlarmHistoryItems
         /// </summary>
         public IPaginatedEnumerable<AlarmHistoryItem> AlarmHistoryItems => 
-            new PaginatedResultKeyResponse<DescribeAlarmHistoryResponse, AlarmHistoryItem>(this, (i) => i.AlarmHistoryItems);
+            new PaginatedResultKeyResponse<DescribeAlarmHistoryResponse, AlarmHistoryItem>(this, (i) => i.AlarmHistoryItems ?? new List<AlarmHistoryItem>());
 
         internal DescribeAlarmHistoryPaginator(IAmazonCloudWatch client, DescribeAlarmHistoryRequest request)
         {

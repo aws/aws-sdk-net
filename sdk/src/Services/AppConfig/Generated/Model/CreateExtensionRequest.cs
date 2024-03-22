@@ -66,12 +66,12 @@ namespace Amazon.AppConfig.Model
     /// </summary>
     public partial class CreateExtensionRequest : AmazonAppConfigRequest
     {
-        private Dictionary<string, List<Action>> _actions = new Dictionary<string, List<Action>>();
+        private Dictionary<string, List<Action>> _actions = AWSConfigs.InitializeCollections ? new Dictionary<string, List<Action>>() : null;
         private string _description;
         private int? _latestVersionNumber;
         private string _name;
-        private Dictionary<string, Parameter> _parameters = new Dictionary<string, Parameter>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, Parameter> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, Parameter>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -89,7 +89,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

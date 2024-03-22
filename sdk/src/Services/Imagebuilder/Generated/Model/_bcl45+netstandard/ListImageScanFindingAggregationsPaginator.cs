@@ -45,7 +45,7 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all of the Aggregations
         /// </summary>
         public IPaginatedEnumerable<ImageScanFindingAggregation> Aggregations => 
-            new PaginatedResultKeyResponse<ListImageScanFindingAggregationsResponse, ImageScanFindingAggregation>(this, (i) => i.Aggregations);
+            new PaginatedResultKeyResponse<ListImageScanFindingAggregationsResponse, ImageScanFindingAggregation>(this, (i) => i.Aggregations ?? new List<ImageScanFindingAggregation>());
 
         internal ListImageScanFindingAggregationsPaginator(IAmazonImagebuilder client, ListImageScanFindingAggregationsRequest request)
         {

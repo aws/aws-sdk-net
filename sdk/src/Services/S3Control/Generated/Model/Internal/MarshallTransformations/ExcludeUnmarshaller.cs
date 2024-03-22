@@ -57,12 +57,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Buckets/Arn", targetDepth))
                     {
+                        if (unmarshalledObject.Buckets == null)
+                        {
+                            unmarshalledObject.Buckets = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Buckets.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("Regions/Region", targetDepth))
                     {
+                        if (unmarshalledObject.Regions == null)
+                        {
+                            unmarshalledObject.Regions = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Regions.Add(unmarshaller.Unmarshall(context));
                         continue;

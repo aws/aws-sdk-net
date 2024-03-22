@@ -45,7 +45,7 @@ namespace Amazon.Kafka.Model
         /// Enumerable containing all of the SecretArnList
         /// </summary>
         public IPaginatedEnumerable<string> SecretArnList => 
-            new PaginatedResultKeyResponse<ListScramSecretsResponse, string>(this, (i) => i.SecretArnList);
+            new PaginatedResultKeyResponse<ListScramSecretsResponse, string>(this, (i) => i.SecretArnList ?? new List<string>());
 
         internal ListScramSecretsPaginator(IAmazonKafka client, ListScramSecretsRequest request)
         {

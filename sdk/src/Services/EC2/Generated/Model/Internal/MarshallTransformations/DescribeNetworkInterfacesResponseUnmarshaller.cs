@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("networkInterfaceSet/item", targetDepth))
                     {
                         var unmarshaller = NetworkInterfaceUnmarshaller.Instance;
+                        if (response.NetworkInterfaces == null)
+                        {
+                            response.NetworkInterfaces = new List<NetworkInterface>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.NetworkInterfaces.Add(item);
                         continue;

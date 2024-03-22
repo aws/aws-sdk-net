@@ -45,7 +45,7 @@ namespace Amazon.Proton.Model
         /// Enumerable containing all of the SyncDefinitions
         /// </summary>
         public IPaginatedEnumerable<RepositorySyncDefinition> SyncDefinitions => 
-            new PaginatedResultKeyResponse<ListRepositorySyncDefinitionsResponse, RepositorySyncDefinition>(this, (i) => i.SyncDefinitions);
+            new PaginatedResultKeyResponse<ListRepositorySyncDefinitionsResponse, RepositorySyncDefinition>(this, (i) => i.SyncDefinitions ?? new List<RepositorySyncDefinition>());
 
         internal ListRepositorySyncDefinitionsPaginator(IAmazonProton client, ListRepositorySyncDefinitionsRequest request)
         {

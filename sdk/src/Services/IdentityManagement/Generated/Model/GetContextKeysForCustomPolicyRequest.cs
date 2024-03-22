@@ -46,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class GetContextKeysForCustomPolicyRequest : AmazonIdentityManagementServiceRequest
     {
-        private List<string> _policyInputList = new List<string>();
+        private List<string> _policyInputList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property PolicyInputList. 
@@ -87,7 +87,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyInputList property is set
         internal bool IsSetPolicyInputList()
         {
-            return this._policyInputList != null && this._policyInputList.Count > 0; 
+            return this._policyInputList != null && (this._policyInputList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

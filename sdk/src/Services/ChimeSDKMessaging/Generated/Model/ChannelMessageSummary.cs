@@ -38,13 +38,13 @@ namespace Amazon.ChimeSDKMessaging.Model
         private DateTime? _createdTimestamp;
         private DateTime? _lastEditedTimestamp;
         private DateTime? _lastUpdatedTimestamp;
-        private Dictionary<string, MessageAttributeValue> _messageAttributes = new Dictionary<string, MessageAttributeValue>();
+        private Dictionary<string, MessageAttributeValue> _messageAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, MessageAttributeValue>() : null;
         private string _messageId;
         private string _metadata;
         private bool? _redacted;
         private Identity _sender;
         private ChannelMessageStatusStructure _status;
-        private List<Target> _target = new List<Target>();
+        private List<Target> _target = AWSConfigs.InitializeCollections ? new List<Target>() : null;
         private ChannelMessageType _type;
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if MessageAttributes property is set
         internal bool IsSetMessageAttributes()
         {
-            return this._messageAttributes != null && this._messageAttributes.Count > 0; 
+            return this._messageAttributes != null && (this._messageAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -280,7 +280,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if Target property is set
         internal bool IsSetTarget()
         {
-            return this._target != null && this._target.Count > 0; 
+            return this._target != null && (this._target.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

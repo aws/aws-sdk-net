@@ -35,7 +35,7 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class DeviceSelectionConfiguration
     {
-        private List<DeviceFilter> _filters = new List<DeviceFilter>();
+        private List<DeviceFilter> _filters = AWSConfigs.InitializeCollections ? new List<DeviceFilter>() : null;
         private int? _maxDevices;
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

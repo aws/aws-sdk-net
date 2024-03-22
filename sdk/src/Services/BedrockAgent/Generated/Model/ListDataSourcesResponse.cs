@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class ListDataSourcesResponse : AmazonWebServiceResponse
     {
-        private List<DataSourceSummary> _dataSourceSummaries = new List<DataSourceSummary>();
+        private List<DataSourceSummary> _dataSourceSummaries = AWSConfigs.InitializeCollections ? new List<DataSourceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if DataSourceSummaries property is set
         internal bool IsSetDataSourceSummaries()
         {
-            return this._dataSourceSummaries != null && this._dataSourceSummaries.Count > 0; 
+            return this._dataSourceSummaries != null && (this._dataSourceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeClusterParameterGroupsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ClusterParameterGroup> _parameterGroups = new List<ClusterParameterGroup>();
+        private List<ClusterParameterGroup> _parameterGroups = AWSConfigs.InitializeCollections ? new List<ClusterParameterGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -75,7 +75,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ParameterGroups property is set
         internal bool IsSetParameterGroups()
         {
-            return this._parameterGroups != null && this._parameterGroups.Count > 0; 
+            return this._parameterGroups != null && (this._parameterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -41,7 +41,7 @@ namespace Amazon.IVS.Model
         private RecordingConfiguration _recordingConfiguration;
         private DateTime? _startTime;
         private string _streamId;
-        private List<StreamEvent> _truncatedEvents = new List<StreamEvent>();
+        private List<StreamEvent> _truncatedEvents = AWSConfigs.InitializeCollections ? new List<StreamEvent>() : null;
 
         /// <summary>
         /// Gets and sets the property Channel. 
@@ -172,7 +172,7 @@ namespace Amazon.IVS.Model
         // Check to see if TruncatedEvents property is set
         internal bool IsSetTruncatedEvents()
         {
-            return this._truncatedEvents != null && this._truncatedEvents.Count > 0; 
+            return this._truncatedEvents != null && (this._truncatedEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

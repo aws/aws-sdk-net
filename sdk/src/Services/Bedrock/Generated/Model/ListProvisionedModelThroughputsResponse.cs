@@ -34,7 +34,7 @@ namespace Amazon.Bedrock.Model
     public partial class ListProvisionedModelThroughputsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProvisionedModelSummary> _provisionedModelSummaries = new List<ProvisionedModelSummary>();
+        private List<ProvisionedModelSummary> _provisionedModelSummaries = AWSConfigs.InitializeCollections ? new List<ProvisionedModelSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Bedrock.Model
         // Check to see if ProvisionedModelSummaries property is set
         internal bool IsSetProvisionedModelSummaries()
         {
-            return this._provisionedModelSummaries != null && this._provisionedModelSummaries.Count > 0; 
+            return this._provisionedModelSummaries != null && (this._provisionedModelSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

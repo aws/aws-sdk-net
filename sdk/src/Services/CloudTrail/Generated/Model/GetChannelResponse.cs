@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model
     public partial class GetChannelResponse : AmazonWebServiceResponse
     {
         private string _channelArn;
-        private List<Destination> _destinations = new List<Destination>();
+        private List<Destination> _destinations = AWSConfigs.InitializeCollections ? new List<Destination>() : null;
         private IngestionStatus _ingestionStatus;
         private string _name;
         private string _source;
@@ -78,7 +78,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

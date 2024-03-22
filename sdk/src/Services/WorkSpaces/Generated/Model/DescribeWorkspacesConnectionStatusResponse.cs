@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class DescribeWorkspacesConnectionStatusResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkspaceConnectionStatus> _workspacesConnectionStatus = new List<WorkspaceConnectionStatus>();
+        private List<WorkspaceConnectionStatus> _workspacesConnectionStatus = AWSConfigs.InitializeCollections ? new List<WorkspaceConnectionStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if WorkspacesConnectionStatus property is set
         internal bool IsSetWorkspacesConnectionStatus()
         {
-            return this._workspacesConnectionStatus != null && this._workspacesConnectionStatus.Count > 0; 
+            return this._workspacesConnectionStatus != null && (this._workspacesConnectionStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

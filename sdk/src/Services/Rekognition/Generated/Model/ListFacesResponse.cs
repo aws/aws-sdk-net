@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model
     public partial class ListFacesResponse : AmazonWebServiceResponse
     {
         private string _faceModelVersion;
-        private List<Face> _faces = new List<Face>();
+        private List<Face> _faces = AWSConfigs.InitializeCollections ? new List<Face>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Faces property is set
         internal bool IsSetFaces()
         {
-            return this._faces != null && this._faces.Count > 0; 
+            return this._faces != null && (this._faces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Amazon.CognitoIdentity.Model
     {
         private string _identityPoolId;
         private string _identityProviderName;
-        private Dictionary<string, string> _principalTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _principalTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _useDefaults;
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if PrincipalTags property is set
         internal bool IsSetPrincipalTags()
         {
-            return this._principalTags != null && this._principalTags.Count > 0; 
+            return this._principalTags != null && (this._principalTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.SimpleNotificationService.Model
     public partial class ListPlatformApplicationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PlatformApplication> _platformApplications = new List<PlatformApplication>();
+        private List<PlatformApplication> _platformApplications = AWSConfigs.InitializeCollections ? new List<PlatformApplication>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SimpleNotificationService.Model
         // Check to see if PlatformApplications property is set
         internal bool IsSetPlatformApplications()
         {
-            return this._platformApplications != null && this._platformApplications.Count > 0; 
+            return this._platformApplications != null && (this._platformApplications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

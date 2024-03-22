@@ -33,7 +33,7 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class SourceServerActionsRequestFilters
     {
-        private List<string> _actioniDs = new List<string>();
+        private List<string> _actioniDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ActionIDs. 
@@ -51,7 +51,7 @@ namespace Amazon.Mgn.Model
         // Check to see if ActionIDs property is set
         internal bool IsSetActionIDs()
         {
-            return this._actioniDs != null && this._actioniDs.Count > 0; 
+            return this._actioniDs != null && (this._actioniDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

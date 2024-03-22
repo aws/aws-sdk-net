@@ -34,7 +34,7 @@ namespace Amazon.Synthetics.Model
     public partial class CanaryRunConfigInput
     {
         private bool? _activeTracing;
-        private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
+        private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _memoryInMB;
         private int? _timeoutInSeconds;
 
@@ -99,7 +99,7 @@ namespace Amazon.Synthetics.Model
         // Check to see if EnvironmentVariables property is set
         internal bool IsSetEnvironmentVariables()
         {
-            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
+            return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Enumerable containing all of the EnvironmentVpcList
         /// </summary>
         public IPaginatedEnumerable<EnvironmentVpc> EnvironmentVpcList => 
-            new PaginatedResultKeyResponse<ListEnvironmentVpcsResponse, EnvironmentVpc>(this, (i) => i.EnvironmentVpcList);
+            new PaginatedResultKeyResponse<ListEnvironmentVpcsResponse, EnvironmentVpc>(this, (i) => i.EnvironmentVpcList ?? new List<EnvironmentVpc>());
 
         internal ListEnvironmentVpcsPaginator(IAmazonMigrationHubRefactorSpaces client, ListEnvironmentVpcsRequest request)
         {

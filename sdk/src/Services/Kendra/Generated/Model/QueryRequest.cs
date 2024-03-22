@@ -77,16 +77,16 @@ namespace Amazon.Kendra.Model
     {
         private AttributeFilter _attributeFilter;
         private CollapseConfiguration _collapseConfiguration;
-        private List<DocumentRelevanceConfiguration> _documentRelevanceOverrideConfigurations = new List<DocumentRelevanceConfiguration>();
-        private List<Facet> _facets = new List<Facet>();
+        private List<DocumentRelevanceConfiguration> _documentRelevanceOverrideConfigurations = AWSConfigs.InitializeCollections ? new List<DocumentRelevanceConfiguration>() : null;
+        private List<Facet> _facets = AWSConfigs.InitializeCollections ? new List<Facet>() : null;
         private string _indexId;
         private int? _pageNumber;
         private int? _pageSize;
         private QueryResultType _queryResultTypeFilter;
         private string _queryText;
-        private List<string> _requestedDocumentAttributes = new List<string>();
+        private List<string> _requestedDocumentAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SortingConfiguration _sortingConfiguration;
-        private List<SortingConfiguration> _sortingConfigurations = new List<SortingConfiguration>();
+        private List<SortingConfiguration> _sortingConfigurations = AWSConfigs.InitializeCollections ? new List<SortingConfiguration>() : null;
         private SpellCorrectionConfiguration _spellCorrectionConfiguration;
         private UserContext _userContext;
         private string _visitorId;
@@ -164,7 +164,7 @@ namespace Amazon.Kendra.Model
         // Check to see if DocumentRelevanceOverrideConfigurations property is set
         internal bool IsSetDocumentRelevanceOverrideConfigurations()
         {
-            return this._documentRelevanceOverrideConfigurations != null && this._documentRelevanceOverrideConfigurations.Count > 0; 
+            return this._documentRelevanceOverrideConfigurations != null && (this._documentRelevanceOverrideConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Facets property is set
         internal bool IsSetFacets()
         {
-            return this._facets != null && this._facets.Count > 0; 
+            return this._facets != null && (this._facets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -302,7 +302,7 @@ namespace Amazon.Kendra.Model
         // Check to see if RequestedDocumentAttributes property is set
         internal bool IsSetRequestedDocumentAttributes()
         {
-            return this._requestedDocumentAttributes != null && this._requestedDocumentAttributes.Count > 0; 
+            return this._requestedDocumentAttributes != null && (this._requestedDocumentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -359,7 +359,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SortingConfigurations property is set
         internal bool IsSetSortingConfigurations()
         {
-            return this._sortingConfigurations != null && this._sortingConfigurations.Count > 0; 
+            return this._sortingConfigurations != null && (this._sortingConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

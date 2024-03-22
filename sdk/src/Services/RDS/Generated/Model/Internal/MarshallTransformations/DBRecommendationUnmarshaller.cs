@@ -99,6 +99,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Links/member", targetDepth))
                     {
                         var unmarshaller = DocLinkUnmarshaller.Instance;
+                        if (unmarshalledObject.Links == null)
+                        {
+                            unmarshalledObject.Links = new List<DocLink>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Links.Add(item);
                         continue;
@@ -124,6 +128,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RecommendedActions/member", targetDepth))
                     {
                         var unmarshaller = RecommendedActionUnmarshaller.Instance;
+                        if (unmarshalledObject.RecommendedActions == null)
+                        {
+                            unmarshalledObject.RecommendedActions = new List<RecommendedAction>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RecommendedActions.Add(item);
                         continue;

@@ -34,7 +34,7 @@ namespace Amazon.B2bi.Model
     public partial class ListProfilesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProfileSummary> _profiles = new List<ProfileSummary>();
+        private List<ProfileSummary> _profiles = AWSConfigs.InitializeCollections ? new List<ProfileSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.B2bi.Model
         // Check to see if Profiles property is set
         internal bool IsSetProfiles()
         {
-            return this._profiles != null && this._profiles.Count > 0; 
+            return this._profiles != null && (this._profiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

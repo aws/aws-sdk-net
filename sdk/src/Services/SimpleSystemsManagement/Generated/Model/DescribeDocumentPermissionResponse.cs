@@ -33,8 +33,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeDocumentPermissionResponse : AmazonWebServiceResponse
     {
-        private List<string> _accountIds = new List<string>();
-        private List<AccountSharingInfo> _accountSharingInfoList = new List<AccountSharingInfo>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<AccountSharingInfo> _accountSharingInfoList = AWSConfigs.InitializeCollections ? new List<AccountSharingInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AccountSharingInfoList property is set
         internal bool IsSetAccountSharingInfoList()
         {
-            return this._accountSharingInfoList != null && this._accountSharingInfoList.Count > 0; 
+            return this._accountSharingInfoList != null && (this._accountSharingInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

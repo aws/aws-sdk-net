@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model
     public partial class ListStudioComponentsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StudioComponent> _studioComponents = new List<StudioComponent>();
+        private List<StudioComponent> _studioComponents = AWSConfigs.InitializeCollections ? new List<StudioComponent>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if StudioComponents property is set
         internal bool IsSetStudioComponents()
         {
-            return this._studioComponents != null && this._studioComponents.Count > 0; 
+            return this._studioComponents != null && (this._studioComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

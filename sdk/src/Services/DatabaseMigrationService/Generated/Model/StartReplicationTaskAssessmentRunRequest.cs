@@ -45,8 +45,8 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class StartReplicationTaskAssessmentRunRequest : AmazonDatabaseMigrationServiceRequest
     {
         private string _assessmentRunName;
-        private List<string> _exclude = new List<string>();
-        private List<string> _includeOnly = new List<string>();
+        private List<string> _exclude = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _includeOnly = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicationTaskArn;
         private string _resultEncryptionMode;
         private string _resultKmsKeyArn;
@@ -102,7 +102,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Exclude property is set
         internal bool IsSetExclude()
         {
-            return this._exclude != null && this._exclude.Count > 0; 
+            return this._exclude != null && (this._exclude.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if IncludeOnly property is set
         internal bool IsSetIncludeOnly()
         {
-            return this._includeOnly != null && this._includeOnly.Count > 0; 
+            return this._includeOnly != null && (this._includeOnly.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

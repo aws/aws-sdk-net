@@ -33,7 +33,7 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class DescribeCanariesLastRunResponse : AmazonWebServiceResponse
     {
-        private List<CanaryLastRun> _canariesLastRun = new List<CanaryLastRun>();
+        private List<CanaryLastRun> _canariesLastRun = AWSConfigs.InitializeCollections ? new List<CanaryLastRun>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Synthetics.Model
         // Check to see if CanariesLastRun property is set
         internal bool IsSetCanariesLastRun()
         {
-            return this._canariesLastRun != null && this._canariesLastRun.Count > 0; 
+            return this._canariesLastRun != null && (this._canariesLastRun.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

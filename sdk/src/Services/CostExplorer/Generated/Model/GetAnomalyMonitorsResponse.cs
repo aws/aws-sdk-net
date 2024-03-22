@@ -33,7 +33,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetAnomalyMonitorsResponse : AmazonWebServiceResponse
     {
-        private List<AnomalyMonitor> _anomalyMonitors = new List<AnomalyMonitor>();
+        private List<AnomalyMonitor> _anomalyMonitors = AWSConfigs.InitializeCollections ? new List<AnomalyMonitor>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if AnomalyMonitors property is set
         internal bool IsSetAnomalyMonitors()
         {
-            return this._anomalyMonitors != null && this._anomalyMonitors.Count > 0; 
+            return this._anomalyMonitors != null && (this._anomalyMonitors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

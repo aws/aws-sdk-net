@@ -33,7 +33,7 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class ListGroupsResponse : AmazonWebServiceResponse
     {
-        private List<GroupInformation> _groups = new List<GroupInformation>();
+        private List<GroupInformation> _groups = AWSConfigs.InitializeCollections ? new List<GroupInformation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

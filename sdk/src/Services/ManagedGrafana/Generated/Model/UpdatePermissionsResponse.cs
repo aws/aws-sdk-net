@@ -33,7 +33,7 @@ namespace Amazon.ManagedGrafana.Model
     /// </summary>
     public partial class UpdatePermissionsResponse : AmazonWebServiceResponse
     {
-        private List<UpdateError> _errors = new List<UpdateError>();
+        private List<UpdateError> _errors = AWSConfigs.InitializeCollections ? new List<UpdateError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +51,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

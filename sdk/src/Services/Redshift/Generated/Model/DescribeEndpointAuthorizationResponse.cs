@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeEndpointAuthorizationResponse : AmazonWebServiceResponse
     {
-        private List<EndpointAuthorization> _endpointAuthorizationList = new List<EndpointAuthorization>();
+        private List<EndpointAuthorization> _endpointAuthorizationList = AWSConfigs.InitializeCollections ? new List<EndpointAuthorization>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model
         // Check to see if EndpointAuthorizationList property is set
         internal bool IsSetEndpointAuthorizationList()
         {
-            return this._endpointAuthorizationList != null && this._endpointAuthorizationList.Count > 0; 
+            return this._endpointAuthorizationList != null && (this._endpointAuthorizationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

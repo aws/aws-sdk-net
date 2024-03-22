@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeDhcpOptionsResponse : AmazonWebServiceResponse
     {
-        private List<DhcpOptions> _dhcpOptions = new List<DhcpOptions>();
+        private List<DhcpOptions> _dhcpOptions = AWSConfigs.InitializeCollections ? new List<DhcpOptions>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if DhcpOptions property is set
         internal bool IsSetDhcpOptions()
         {
-            return this._dhcpOptions != null && this._dhcpOptions.Count > 0; 
+            return this._dhcpOptions != null && (this._dhcpOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("securityGroupInfo/item", targetDepth))
                     {
                         var unmarshaller = SecurityGroupUnmarshaller.Instance;
+                        if (response.SecurityGroups == null)
+                        {
+                            response.SecurityGroups = new List<SecurityGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SecurityGroups.Add(item);
                         continue;

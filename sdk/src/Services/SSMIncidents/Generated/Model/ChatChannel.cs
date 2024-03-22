@@ -33,7 +33,7 @@ namespace Amazon.SSMIncidents.Model
     /// </summary>
     public partial class ChatChannel
     {
-        private List<string> _chatbotSns = new List<string>();
+        private List<string> _chatbotSns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EmptyChatChannel _empty;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if ChatbotSns property is set
         internal bool IsSetChatbotSns()
         {
-            return this._chatbotSns != null && this._chatbotSns.Count > 0; 
+            return this._chatbotSns != null && (this._chatbotSns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

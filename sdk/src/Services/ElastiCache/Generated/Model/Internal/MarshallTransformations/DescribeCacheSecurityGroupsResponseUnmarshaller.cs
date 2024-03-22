@@ -84,6 +84,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheSecurityGroups/CacheSecurityGroup", targetDepth))
                     {
                         var unmarshaller = CacheSecurityGroupUnmarshaller.Instance;
+                        if (response.CacheSecurityGroups == null)
+                        {
+                            response.CacheSecurityGroups = new List<CacheSecurityGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CacheSecurityGroups.Add(item);
                         continue;

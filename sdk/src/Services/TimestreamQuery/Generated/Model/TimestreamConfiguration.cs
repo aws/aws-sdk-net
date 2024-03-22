@@ -36,9 +36,9 @@ namespace Amazon.TimestreamQuery.Model
     public partial class TimestreamConfiguration
     {
         private string _databaseName;
-        private List<DimensionMapping> _dimensionMappings = new List<DimensionMapping>();
+        private List<DimensionMapping> _dimensionMappings = AWSConfigs.InitializeCollections ? new List<DimensionMapping>() : null;
         private string _measureNameColumn;
-        private List<MixedMeasureMapping> _mixedMeasureMappings = new List<MixedMeasureMapping>();
+        private List<MixedMeasureMapping> _mixedMeasureMappings = AWSConfigs.InitializeCollections ? new List<MixedMeasureMapping>() : null;
         private MultiMeasureMappings _multiMeasureMappings;
         private string _tableName;
         private string _timeColumn;
@@ -79,7 +79,7 @@ namespace Amazon.TimestreamQuery.Model
         // Check to see if DimensionMappings property is set
         internal bool IsSetDimensionMappings()
         {
-            return this._dimensionMappings != null && this._dimensionMappings.Count > 0; 
+            return this._dimensionMappings != null && (this._dimensionMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.TimestreamQuery.Model
         // Check to see if MixedMeasureMappings property is set
         internal bool IsSetMixedMeasureMappings()
         {
-            return this._mixedMeasureMappings != null && this._mixedMeasureMappings.Count > 0; 
+            return this._mixedMeasureMappings != null && (this._mixedMeasureMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

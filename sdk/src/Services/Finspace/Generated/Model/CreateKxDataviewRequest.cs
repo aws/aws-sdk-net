@@ -46,8 +46,8 @@ namespace Amazon.Finspace.Model
         private string _description;
         private string _environmentId;
         private bool? _readWrite;
-        private List<KxDataviewSegmentConfiguration> _segmentConfigurations = new List<KxDataviewSegmentConfiguration>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<KxDataviewSegmentConfiguration> _segmentConfigurations = AWSConfigs.InitializeCollections ? new List<KxDataviewSegmentConfiguration>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoUpdate. 
@@ -282,7 +282,7 @@ namespace Amazon.Finspace.Model
         // Check to see if SegmentConfigurations property is set
         internal bool IsSetSegmentConfigurations()
         {
-            return this._segmentConfigurations != null && this._segmentConfigurations.Count > 0; 
+            return this._segmentConfigurations != null && (this._segmentConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -302,7 +302,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

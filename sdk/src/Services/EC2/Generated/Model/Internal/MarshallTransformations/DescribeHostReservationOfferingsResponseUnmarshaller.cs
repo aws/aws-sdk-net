@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("offeringSet/item", targetDepth))
                     {
                         var unmarshaller = HostOfferingUnmarshaller.Instance;
+                        if (response.OfferingSet == null)
+                        {
+                            response.OfferingSet = new List<HostOffering>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.OfferingSet.Add(item);
                         continue;

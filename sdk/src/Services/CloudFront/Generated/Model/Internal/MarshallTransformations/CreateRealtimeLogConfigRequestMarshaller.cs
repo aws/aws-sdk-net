@@ -63,7 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateRealtimeLogConfigRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
                 var publicRequestEndPoints = publicRequest.EndPoints;
-                if (publicRequestEndPoints != null && publicRequestEndPoints.Count > 0) 
+                if (publicRequestEndPoints != null && (publicRequestEndPoints.Count > 0 || !AWSConfigs.InitializeCollections)) 
                 {                        
                     xmlWriter.WriteStartElement("EndPoints", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     foreach (var publicRequestEndPointsValue in publicRequestEndPoints) 
@@ -93,7 +93,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestFields = publicRequest.Fields;
-                if (publicRequestFields != null && publicRequestFields.Count > 0) 
+                if (publicRequestFields != null && (publicRequestFields.Count > 0 || !AWSConfigs.InitializeCollections)) 
                 {                        
                     xmlWriter.WriteStartElement("Fields", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     foreach (var publicRequestFieldsValue in publicRequestFields) 

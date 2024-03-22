@@ -33,7 +33,7 @@ namespace Amazon.SSMContacts.Model
     /// </summary>
     public partial class RotationShift
     {
-        private List<string> _contactIds = new List<string>();
+        private List<string> _contactIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _endTime;
         private ShiftDetails _shiftDetails;
         private DateTime? _startTime;
@@ -56,7 +56,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if ContactIds property is set
         internal bool IsSetContactIds()
         {
-            return this._contactIds != null && this._contactIds.Count > 0; 
+            return this._contactIds != null && (this._contactIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

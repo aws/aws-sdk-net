@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the AssetIds
         /// </summary>
         public IPaginatedEnumerable<string> AssetIds => 
-            new PaginatedResultKeyResponse<ListProjectAssetsResponse, string>(this, (i) => i.AssetIds);
+            new PaginatedResultKeyResponse<ListProjectAssetsResponse, string>(this, (i) => i.AssetIds ?? new List<string>());
 
         internal ListProjectAssetsPaginator(IAmazonIoTSiteWise client, ListProjectAssetsRequest request)
         {

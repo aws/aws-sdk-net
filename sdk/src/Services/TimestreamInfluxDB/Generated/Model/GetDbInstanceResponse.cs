@@ -48,8 +48,8 @@ namespace Amazon.TimestreamInfluxDB.Model
         private bool? _publiclyAccessible;
         private string _secondaryAvailabilityZone;
         private Status _status;
-        private List<string> _vpcSecurityGroupIds = new List<string>();
-        private List<string> _vpcSubnetIds = new List<string>();
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _vpcSubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
@@ -347,7 +347,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -366,7 +366,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         // Check to see if VpcSubnetIds property is set
         internal bool IsSetVpcSubnetIds()
         {
-            return this._vpcSubnetIds != null && this._vpcSubnetIds.Count > 0; 
+            return this._vpcSubnetIds != null && (this._vpcSubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -37,7 +37,7 @@ namespace Amazon.AppConfig.Model
     public partial class UpdateExtensionAssociationRequest : AmazonAppConfigRequest
     {
         private string _extensionAssociationId;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExtensionAssociationId. 
@@ -74,7 +74,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

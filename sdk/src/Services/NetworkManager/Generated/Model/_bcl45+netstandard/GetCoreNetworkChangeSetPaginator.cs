@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the CoreNetworkChanges
         /// </summary>
         public IPaginatedEnumerable<CoreNetworkChange> CoreNetworkChanges => 
-            new PaginatedResultKeyResponse<GetCoreNetworkChangeSetResponse, CoreNetworkChange>(this, (i) => i.CoreNetworkChanges);
+            new PaginatedResultKeyResponse<GetCoreNetworkChangeSetResponse, CoreNetworkChange>(this, (i) => i.CoreNetworkChanges ?? new List<CoreNetworkChange>());
 
         internal GetCoreNetworkChangeSetPaginator(IAmazonNetworkManager client, GetCoreNetworkChangeSetRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class JobScopingBlock
     {
-        private List<JobScopeTerm> _and = new List<JobScopeTerm>();
+        private List<JobScopeTerm> _and = AWSConfigs.InitializeCollections ? new List<JobScopeTerm>() : null;
 
         /// <summary>
         /// Gets and sets the property And. 
@@ -53,7 +53,7 @@ namespace Amazon.Macie2.Model
         // Check to see if And property is set
         internal bool IsSetAnd()
         {
-            return this._and != null && this._and.Count > 0; 
+            return this._and != null && (this._and.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

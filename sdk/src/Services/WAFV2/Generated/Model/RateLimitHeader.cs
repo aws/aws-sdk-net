@@ -36,7 +36,7 @@ namespace Amazon.WAFV2.Model
     public partial class RateLimitHeader
     {
         private string _name;
-        private List<TextTransformation> _textTransformations = new List<TextTransformation>();
+        private List<TextTransformation> _textTransformations = AWSConfigs.InitializeCollections ? new List<TextTransformation>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -79,7 +79,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if TextTransformations property is set
         internal bool IsSetTextTransformations()
         {
-            return this._textTransformations != null && this._textTransformations.Count > 0; 
+            return this._textTransformations != null && (this._textTransformations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ResourceExplorer2.Model
     public partial class ListViewsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _views = new List<string>();
+        private List<string> _views = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if Views property is set
         internal bool IsSetViews()
         {
-            return this._views != null && this._views.Count > 0; 
+            return this._views != null && (this._views.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

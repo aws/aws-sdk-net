@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the AdminAccounts
         /// </summary>
         public IPaginatedEnumerable<AdminAccount> AdminAccounts => 
-            new PaginatedResultKeyResponse<ListOrganizationAdminAccountsResponse, AdminAccount>(this, (i) => i.AdminAccounts);
+            new PaginatedResultKeyResponse<ListOrganizationAdminAccountsResponse, AdminAccount>(this, (i) => i.AdminAccounts ?? new List<AdminAccount>());
 
         internal ListOrganizationAdminAccountsPaginator(IAmazonMacie2 client, ListOrganizationAdminAccountsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class ListAssistantAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<AssistantAssociationSummary> _assistantAssociationSummaries = new List<AssistantAssociationSummary>();
+        private List<AssistantAssociationSummary> _assistantAssociationSummaries = AWSConfigs.InitializeCollections ? new List<AssistantAssociationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.QConnect.Model
         // Check to see if AssistantAssociationSummaries property is set
         internal bool IsSetAssistantAssociationSummaries()
         {
-            return this._assistantAssociationSummaries != null && this._assistantAssociationSummaries.Count > 0; 
+            return this._assistantAssociationSummaries != null && (this._assistantAssociationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

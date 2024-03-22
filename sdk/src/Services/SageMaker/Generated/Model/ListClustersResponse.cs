@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListClustersResponse : AmazonWebServiceResponse
     {
-        private List<ClusterSummary> _clusterSummaries = new List<ClusterSummary>();
+        private List<ClusterSummary> _clusterSummaries = AWSConfigs.InitializeCollections ? new List<ClusterSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ClusterSummaries property is set
         internal bool IsSetClusterSummaries()
         {
-            return this._clusterSummaries != null && this._clusterSummaries.Count > 0; 
+            return this._clusterSummaries != null && (this._clusterSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

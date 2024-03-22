@@ -69,6 +69,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MetricSpecifications/member", targetDepth))
                     {
                         var unmarshaller = PredictiveScalingMetricSpecificationUnmarshaller.Instance;
+                        if (unmarshalledObject.MetricSpecifications == null)
+                        {
+                            unmarshalledObject.MetricSpecifications = new List<PredictiveScalingMetricSpecification>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MetricSpecifications.Add(item);
                         continue;

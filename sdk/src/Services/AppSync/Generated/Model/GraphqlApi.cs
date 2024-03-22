@@ -33,12 +33,12 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class GraphqlApi
     {
-        private List<AdditionalAuthenticationProvider> _additionalAuthenticationProviders = new List<AdditionalAuthenticationProvider>();
+        private List<AdditionalAuthenticationProvider> _additionalAuthenticationProviders = AWSConfigs.InitializeCollections ? new List<AdditionalAuthenticationProvider>() : null;
         private string _apiId;
         private GraphQLApiType _apiType;
         private string _arn;
         private AuthenticationType _authenticationType;
-        private Dictionary<string, string> _dns = new Dictionary<string, string>();
+        private Dictionary<string, string> _dns = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private EnhancedMetricsConfig _enhancedMetricsConfig;
         private GraphQLApiIntrospectionConfig _introspectionConfig;
         private LambdaAuthorizerConfig _lambdaAuthorizerConfig;
@@ -50,8 +50,8 @@ namespace Amazon.AppSync.Model
         private string _ownerContact;
         private int? _queryDepthLimit;
         private int? _resolverCountLimit;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private Dictionary<string, string> _uris = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _uris = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private UserPoolConfig _userPoolConfig;
         private GraphQLApiVisibility _visibility;
         private string _wafWebAclArn;
@@ -72,7 +72,7 @@ namespace Amazon.AppSync.Model
         // Check to see if AdditionalAuthenticationProviders property is set
         internal bool IsSetAdditionalAuthenticationProviders()
         {
-            return this._additionalAuthenticationProviders != null && this._additionalAuthenticationProviders.Count > 0; 
+            return this._additionalAuthenticationProviders != null && (this._additionalAuthenticationProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Amazon.AppSync.Model
         // Check to see if Dns property is set
         internal bool IsSetDns()
         {
-            return this._dns != null && this._dns.Count > 0; 
+            return this._dns != null && (this._dns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -410,7 +410,7 @@ namespace Amazon.AppSync.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -428,7 +428,7 @@ namespace Amazon.AppSync.Model
         // Check to see if Uris property is set
         internal bool IsSetUris()
         {
-            return this._uris != null && this._uris.Count > 0; 
+            return this._uris != null && (this._uris.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

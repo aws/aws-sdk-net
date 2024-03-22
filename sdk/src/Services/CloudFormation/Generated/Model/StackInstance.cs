@@ -43,7 +43,7 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _lastDriftCheckTimestamp;
         private string _lastOperationId;
         private string _organizationalUnitId;
-        private List<Parameter> _parameterOverrides = new List<Parameter>();
+        private List<Parameter> _parameterOverrides = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
         private string _region;
         private string _stackId;
         private StackInstanceComprehensiveStatus _stackInstanceStatus;
@@ -184,7 +184,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ParameterOverrides property is set
         internal bool IsSetParameterOverrides()
         {
-            return this._parameterOverrides != null && this._parameterOverrides.Count > 0; 
+            return this._parameterOverrides != null && (this._parameterOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

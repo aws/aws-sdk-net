@@ -46,7 +46,7 @@ namespace Amazon.Honeycode.Model
     public partial class BatchCreateTableRowsRequest : AmazonHoneycodeRequest
     {
         private string _clientRequestToken;
-        private List<CreateRowData> _rowsToCreate = new List<CreateRowData>();
+        private List<CreateRowData> _rowsToCreate = AWSConfigs.InitializeCollections ? new List<CreateRowData>() : null;
         private string _tableId;
         private string _workbookId;
 
@@ -101,7 +101,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if RowsToCreate property is set
         internal bool IsSetRowsToCreate()
         {
-            return this._rowsToCreate != null && this._rowsToCreate.Count > 0; 
+            return this._rowsToCreate != null && (this._rowsToCreate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

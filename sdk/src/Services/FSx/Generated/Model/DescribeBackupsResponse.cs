@@ -33,7 +33,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DescribeBackupsResponse : AmazonWebServiceResponse
     {
-        private List<Backup> _backups = new List<Backup>();
+        private List<Backup> _backups = AWSConfigs.InitializeCollections ? new List<Backup>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.FSx.Model
         // Check to see if Backups property is set
         internal bool IsSetBackups()
         {
-            return this._backups != null && this._backups.Count > 0; 
+            return this._backups != null && (this._backups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

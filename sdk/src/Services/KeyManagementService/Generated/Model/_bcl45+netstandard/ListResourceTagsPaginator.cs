@@ -45,7 +45,7 @@ namespace Amazon.KeyManagementService.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<Tag> Tags => 
-            new PaginatedResultKeyResponse<ListResourceTagsResponse, Tag>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<ListResourceTagsResponse, Tag>(this, (i) => i.Tags ?? new List<Tag>());
 
         internal ListResourceTagsPaginator(IAmazonKeyManagementService client, ListResourceTagsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class KxDatabaseConfiguration
     {
-        private List<KxDatabaseCacheConfiguration> _cacheConfigurations = new List<KxDatabaseCacheConfiguration>();
+        private List<KxDatabaseCacheConfiguration> _cacheConfigurations = AWSConfigs.InitializeCollections ? new List<KxDatabaseCacheConfiguration>() : null;
         private string _changesetId;
         private string _databaseName;
         private KxDataviewConfiguration _dataviewConfiguration;
@@ -55,7 +55,7 @@ namespace Amazon.Finspace.Model
         // Check to see if CacheConfigurations property is set
         internal bool IsSetCacheConfigurations()
         {
-            return this._cacheConfigurations != null && this._cacheConfigurations.Count > 0; 
+            return this._cacheConfigurations != null && (this._cacheConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

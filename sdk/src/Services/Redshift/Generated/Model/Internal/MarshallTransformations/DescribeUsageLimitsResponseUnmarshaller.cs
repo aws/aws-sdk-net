@@ -90,6 +90,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UsageLimits/member", targetDepth))
                     {
                         var unmarshaller = UsageLimitUnmarshaller.Instance;
+                        if (response.UsageLimits == null)
+                        {
+                            response.UsageLimits = new List<UsageLimit>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.UsageLimits.Add(item);
                         continue;

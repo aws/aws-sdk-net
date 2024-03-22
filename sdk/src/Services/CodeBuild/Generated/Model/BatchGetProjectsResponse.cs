@@ -33,8 +33,8 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BatchGetProjectsResponse : AmazonWebServiceResponse
     {
-        private List<Project> _projects = new List<Project>();
-        private List<string> _projectsNotFound = new List<string>();
+        private List<Project> _projects = AWSConfigs.InitializeCollections ? new List<Project>() : null;
+        private List<string> _projectsNotFound = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Projects. 
@@ -51,7 +51,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Projects property is set
         internal bool IsSetProjects()
         {
-            return this._projects != null && this._projects.Count > 0; 
+            return this._projects != null && (this._projects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if ProjectsNotFound property is set
         internal bool IsSetProjectsNotFound()
         {
-            return this._projectsNotFound != null && this._projectsNotFound.Count > 0; 
+            return this._projectsNotFound != null && (this._projectsNotFound.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

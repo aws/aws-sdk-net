@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class AlternateMedia
     {
-        private List<AdBreak> _adBreaks = new List<AdBreak>();
+        private List<AdBreak> _adBreaks = AWSConfigs.InitializeCollections ? new List<AdBreak>() : null;
         private ClipRange _clipRange;
         private long? _durationMillis;
         private string _liveSourceName;
@@ -57,7 +57,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if AdBreaks property is set
         internal bool IsSetAdBreaks()
         {
-            return this._adBreaks != null && this._adBreaks.Count > 0; 
+            return this._adBreaks != null && (this._adBreaks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

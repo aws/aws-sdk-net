@@ -84,6 +84,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Identities/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.Identities == null)
+                        {
+                            response.Identities = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Identities.Add(item);
                         continue;

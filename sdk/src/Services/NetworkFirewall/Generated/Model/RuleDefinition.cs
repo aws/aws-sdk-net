@@ -35,7 +35,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class RuleDefinition
     {
-        private List<string> _actions = new List<string>();
+        private List<string> _actions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MatchAttributes _matchAttributes;
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

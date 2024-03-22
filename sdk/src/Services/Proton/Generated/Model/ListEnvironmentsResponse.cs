@@ -33,7 +33,7 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class ListEnvironmentsResponse : AmazonWebServiceResponse
     {
-        private List<EnvironmentSummary> _environments = new List<EnvironmentSummary>();
+        private List<EnvironmentSummary> _environments = AWSConfigs.InitializeCollections ? new List<EnvironmentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Proton.Model
         // Check to see if Environments property is set
         internal bool IsSetEnvironments()
         {
-            return this._environments != null && this._environments.Count > 0; 
+            return this._environments != null && (this._environments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

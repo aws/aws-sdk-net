@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the WindowIdentities
         /// </summary>
         public IPaginatedEnumerable<MaintenanceWindowIdentity> WindowIdentities => 
-            new PaginatedResultKeyResponse<DescribeMaintenanceWindowsResponse, MaintenanceWindowIdentity>(this, (i) => i.WindowIdentities);
+            new PaginatedResultKeyResponse<DescribeMaintenanceWindowsResponse, MaintenanceWindowIdentity>(this, (i) => i.WindowIdentities ?? new List<MaintenanceWindowIdentity>());
 
         internal DescribeMaintenanceWindowsPaginator(IAmazonSimpleSystemsManagement client, DescribeMaintenanceWindowsRequest request)
         {

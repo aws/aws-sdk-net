@@ -33,7 +33,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </summary>
     public partial class ListFragmentsResponse : AmazonWebServiceResponse
     {
-        private List<Fragment> _fragments = new List<Fragment>();
+        private List<Fragment> _fragments = AWSConfigs.InitializeCollections ? new List<Fragment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         // Check to see if Fragments property is set
         internal bool IsSetFragments()
         {
-            return this._fragments != null && this._fragments.Count > 0; 
+            return this._fragments != null && (this._fragments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

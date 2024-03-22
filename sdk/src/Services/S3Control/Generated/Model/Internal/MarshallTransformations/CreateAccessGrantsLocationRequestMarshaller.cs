@@ -74,7 +74,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("LocationScope", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.LocationScope));                    
 
                 var publicRequestTags = publicRequest.Tags;
-                if (publicRequestTags != null && publicRequestTags.Count > 0) 
+                if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
                 {                        
                     xmlWriter.WriteStartElement("Tags", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     foreach (var publicRequestTagsValue in publicRequestTags) 

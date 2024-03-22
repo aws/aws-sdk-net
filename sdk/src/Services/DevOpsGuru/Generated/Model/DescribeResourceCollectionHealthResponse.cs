@@ -33,10 +33,10 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class DescribeResourceCollectionHealthResponse : AmazonWebServiceResponse
     {
-        private List<CloudFormationHealth> _cloudFormation = new List<CloudFormationHealth>();
+        private List<CloudFormationHealth> _cloudFormation = AWSConfigs.InitializeCollections ? new List<CloudFormationHealth>() : null;
         private string _nextToken;
-        private List<ServiceHealth> _service = new List<ServiceHealth>();
-        private List<TagHealth> _tags = new List<TagHealth>();
+        private List<ServiceHealth> _service = AWSConfigs.InitializeCollections ? new List<ServiceHealth>() : null;
+        private List<TagHealth> _tags = AWSConfigs.InitializeCollections ? new List<TagHealth>() : null;
 
         /// <summary>
         /// Gets and sets the property CloudFormation. 
@@ -54,7 +54,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if CloudFormation property is set
         internal bool IsSetCloudFormation()
         {
-            return this._cloudFormation != null && this._cloudFormation.Count > 0; 
+            return this._cloudFormation != null && (this._cloudFormation.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Service property is set
         internal bool IsSetService()
         {
-            return this._service != null && this._service.Count > 0; 
+            return this._service != null && (this._service.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

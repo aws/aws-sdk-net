@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class DescribeContributorInsightsResponse : AmazonWebServiceResponse
     {
-        private List<string> _contributorInsightsRuleList = new List<string>();
+        private List<string> _contributorInsightsRuleList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ContributorInsightsStatus _contributorInsightsStatus;
         private FailureException _failureException;
         private string _indexName;
@@ -55,7 +55,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ContributorInsightsRuleList property is set
         internal bool IsSetContributorInsightsRuleList()
         {
-            return this._contributorInsightsRuleList != null && this._contributorInsightsRuleList.Count > 0; 
+            return this._contributorInsightsRuleList != null && (this._contributorInsightsRuleList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

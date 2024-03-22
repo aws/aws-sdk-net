@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the UserSummaryList
         /// </summary>
         public IPaginatedEnumerable<UserSummary> UserSummaryList => 
-            new PaginatedResultKeyResponse<ListUsersResponse, UserSummary>(this, (i) => i.UserSummaryList);
+            new PaginatedResultKeyResponse<ListUsersResponse, UserSummary>(this, (i) => i.UserSummaryList ?? new List<UserSummary>());
 
         internal ListUsersPaginator(IAmazonConnect client, ListUsersRequest request)
         {

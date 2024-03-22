@@ -33,7 +33,7 @@ namespace Amazon.LookoutforVision.Model
     /// </summary>
     public partial class ListModelPackagingJobsResponse : AmazonWebServiceResponse
     {
-        private List<ModelPackagingJobMetadata> _modelPackagingJobs = new List<ModelPackagingJobMetadata>();
+        private List<ModelPackagingJobMetadata> _modelPackagingJobs = AWSConfigs.InitializeCollections ? new List<ModelPackagingJobMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.LookoutforVision.Model
         // Check to see if ModelPackagingJobs property is set
         internal bool IsSetModelPackagingJobs()
         {
-            return this._modelPackagingJobs != null && this._modelPackagingJobs.Count > 0; 
+            return this._modelPackagingJobs != null && (this._modelPackagingJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

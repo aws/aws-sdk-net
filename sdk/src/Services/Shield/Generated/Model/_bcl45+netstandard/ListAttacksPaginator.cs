@@ -45,7 +45,7 @@ namespace Amazon.Shield.Model
         /// Enumerable containing all of the AttackSummaries
         /// </summary>
         public IPaginatedEnumerable<AttackSummary> AttackSummaries => 
-            new PaginatedResultKeyResponse<ListAttacksResponse, AttackSummary>(this, (i) => i.AttackSummaries);
+            new PaginatedResultKeyResponse<ListAttacksResponse, AttackSummary>(this, (i) => i.AttackSummaries ?? new List<AttackSummary>());
 
         internal ListAttacksPaginator(IAmazonShield client, ListAttacksRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class ThreatIntelligenceDetail
     {
         private string _threatListName;
-        private List<string> _threatNames = new List<string>();
+        private List<string> _threatNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ThreatListName. 
@@ -70,7 +70,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if ThreatNames property is set
         internal bool IsSetThreatNames()
         {
-            return this._threatNames != null && this._threatNames.Count > 0; 
+            return this._threatNames != null && (this._threatNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

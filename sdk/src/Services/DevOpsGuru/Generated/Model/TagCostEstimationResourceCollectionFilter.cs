@@ -40,7 +40,7 @@ namespace Amazon.DevOpsGuru.Model
     public partial class TagCostEstimationResourceCollectionFilter
     {
         private string _appBoundaryKey;
-        private List<string> _tagValues = new List<string>();
+        private List<string> _tagValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AppBoundaryKey. 
@@ -100,7 +100,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if TagValues property is set
         internal bool IsSetTagValues()
         {
-            return this._tagValues != null && this._tagValues.Count > 0; 
+            return this._tagValues != null && (this._tagValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

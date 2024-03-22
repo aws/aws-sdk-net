@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model
     public partial class DescribeProjectsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProjectDescription> _projectDescriptions = new List<ProjectDescription>();
+        private List<ProjectDescription> _projectDescriptions = AWSConfigs.InitializeCollections ? new List<ProjectDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if ProjectDescriptions property is set
         internal bool IsSetProjectDescriptions()
         {
-            return this._projectDescriptions != null && this._projectDescriptions.Count > 0; 
+            return this._projectDescriptions != null && (this._projectDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

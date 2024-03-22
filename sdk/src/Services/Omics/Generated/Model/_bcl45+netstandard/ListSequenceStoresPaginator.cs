@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the SequenceStores
         /// </summary>
         public IPaginatedEnumerable<SequenceStoreDetail> SequenceStores => 
-            new PaginatedResultKeyResponse<ListSequenceStoresResponse, SequenceStoreDetail>(this, (i) => i.SequenceStores);
+            new PaginatedResultKeyResponse<ListSequenceStoresResponse, SequenceStoreDetail>(this, (i) => i.SequenceStores ?? new List<SequenceStoreDetail>());
 
         internal ListSequenceStoresPaginator(IAmazonOmics client, ListSequenceStoresRequest request)
         {

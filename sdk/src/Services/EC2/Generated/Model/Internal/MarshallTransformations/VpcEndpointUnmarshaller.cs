@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("dnsEntrySet/item", targetDepth))
                     {
                         var unmarshaller = DnsEntryUnmarshaller.Instance;
+                        if (unmarshalledObject.DnsEntries == null)
+                        {
+                            unmarshalledObject.DnsEntries = new List<DnsEntry>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DnsEntries.Add(item);
                         continue;
@@ -76,6 +80,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("groupSet/item", targetDepth))
                     {
                         var unmarshaller = SecurityGroupIdentifierUnmarshaller.Instance;
+                        if (unmarshalledObject.Groups == null)
+                        {
+                            unmarshalledObject.Groups = new List<SecurityGroupIdentifier>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Groups.Add(item);
                         continue;
@@ -95,6 +103,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("networkInterfaceIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.NetworkInterfaceIds == null)
+                        {
+                            unmarshalledObject.NetworkInterfaceIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NetworkInterfaceIds.Add(item);
                         continue;
@@ -126,6 +138,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("routeTableIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.RouteTableIds == null)
+                        {
+                            unmarshalledObject.RouteTableIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RouteTableIds.Add(item);
                         continue;
@@ -145,6 +161,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("subnetIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SubnetIds == null)
+                        {
+                            unmarshalledObject.SubnetIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SubnetIds.Add(item);
                         continue;
@@ -152,6 +172,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

@@ -35,7 +35,7 @@ namespace Amazon.MediaConnect.Model
     public partial class AddBridgeOutputsRequest : AmazonMediaConnectRequest
     {
         private string _bridgeArn;
-        private List<AddBridgeOutputRequest> _outputs = new List<AddBridgeOutputRequest>();
+        private List<AddBridgeOutputRequest> _outputs = AWSConfigs.InitializeCollections ? new List<AddBridgeOutputRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property BridgeArn. The ARN of the bridge that you want to update.
@@ -66,7 +66,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

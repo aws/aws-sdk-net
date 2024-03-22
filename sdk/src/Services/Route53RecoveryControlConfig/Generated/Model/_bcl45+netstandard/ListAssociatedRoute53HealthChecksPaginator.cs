@@ -45,7 +45,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// Enumerable containing all of the HealthCheckIds
         /// </summary>
         public IPaginatedEnumerable<string> HealthCheckIds => 
-            new PaginatedResultKeyResponse<ListAssociatedRoute53HealthChecksResponse, string>(this, (i) => i.HealthCheckIds);
+            new PaginatedResultKeyResponse<ListAssociatedRoute53HealthChecksResponse, string>(this, (i) => i.HealthCheckIds ?? new List<string>());
 
         internal ListAssociatedRoute53HealthChecksPaginator(IAmazonRoute53RecoveryControlConfig client, ListAssociatedRoute53HealthChecksRequest request)
         {

@@ -39,9 +39,9 @@ namespace Amazon.MediaPackageV2.Model
         private DateTime? _createdAt;
         private string _description;
         private string _eTag;
-        private List<IngestEndpoint> _ingestEndpoints = new List<IngestEndpoint>();
+        private List<IngestEndpoint> _ingestEndpoints = AWSConfigs.InitializeCollections ? new List<IngestEndpoint>() : null;
         private DateTime? _modifiedAt;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -172,7 +172,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if IngestEndpoints property is set
         internal bool IsSetIngestEndpoints()
         {
-            return this._ingestEndpoints != null && this._ingestEndpoints.Count > 0; 
+            return this._ingestEndpoints != null && (this._ingestEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

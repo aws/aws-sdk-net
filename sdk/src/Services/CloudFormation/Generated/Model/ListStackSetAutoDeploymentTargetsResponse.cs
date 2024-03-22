@@ -34,7 +34,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ListStackSetAutoDeploymentTargetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StackSetAutoDeploymentTargetSummary> _summaries = new List<StackSetAutoDeploymentTargetSummary>();
+        private List<StackSetAutoDeploymentTargetSummary> _summaries = AWSConfigs.InitializeCollections ? new List<StackSetAutoDeploymentTargetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Summaries property is set
         internal bool IsSetSummaries()
         {
-            return this._summaries != null && this._summaries.Count > 0; 
+            return this._summaries != null && (this._summaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

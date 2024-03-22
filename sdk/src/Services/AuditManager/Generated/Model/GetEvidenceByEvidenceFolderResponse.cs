@@ -33,7 +33,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class GetEvidenceByEvidenceFolderResponse : AmazonWebServiceResponse
     {
-        private List<Evidence> _evidence = new List<Evidence>();
+        private List<Evidence> _evidence = AWSConfigs.InitializeCollections ? new List<Evidence>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Evidence property is set
         internal bool IsSetEvidence()
         {
-            return this._evidence != null && this._evidence.Count > 0; 
+            return this._evidence != null && (this._evidence.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

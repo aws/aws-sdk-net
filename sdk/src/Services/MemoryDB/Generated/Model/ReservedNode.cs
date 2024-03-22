@@ -39,7 +39,7 @@ namespace Amazon.MemoryDB.Model
         private int? _nodeCount;
         private string _nodeType;
         private string _offeringType;
-        private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
+        private List<RecurringCharge> _recurringCharges = AWSConfigs.InitializeCollections ? new List<RecurringCharge>() : null;
         private string _reservationId;
         private string _reservedNodesOfferingId;
         private DateTime? _startTime;
@@ -168,7 +168,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if RecurringCharges property is set
         internal bool IsSetRecurringCharges()
         {
-            return this._recurringCharges != null && this._recurringCharges.Count > 0; 
+            return this._recurringCharges != null && (this._recurringCharges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

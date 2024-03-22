@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class SegmentGroupList
     {
-        private List<SegmentGroup> _groups = new List<SegmentGroup>();
+        private List<SegmentGroup> _groups = AWSConfigs.InitializeCollections ? new List<SegmentGroup>() : null;
         private Include _include;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

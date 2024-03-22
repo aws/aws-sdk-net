@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class BatchDeleteConnectionRequest : AmazonGlueRequest
     {
         private string _catalogId;
-        private List<string> _connectionNameList = new List<string>();
+        private List<string> _connectionNameList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -73,7 +73,7 @@ namespace Amazon.Glue.Model
         // Check to see if ConnectionNameList property is set
         internal bool IsSetConnectionNameList()
         {
-            return this._connectionNameList != null && this._connectionNameList.Count > 0; 
+            return this._connectionNameList != null && (this._connectionNameList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -37,11 +37,11 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class UpdateGeneratedTemplateRequest : AmazonCloudFormationRequest
     {
-        private List<ResourceDefinition> _addResources = new List<ResourceDefinition>();
+        private List<ResourceDefinition> _addResources = AWSConfigs.InitializeCollections ? new List<ResourceDefinition>() : null;
         private string _generatedTemplateName;
         private string _newGeneratedTemplateName;
         private bool? _refreshAllResources;
-        private List<string> _removeResources = new List<string>();
+        private List<string> _removeResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TemplateConfiguration _templateConfiguration;
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if AddResources property is set
         internal bool IsSetAddResources()
         {
-            return this._addResources != null && this._addResources.Count > 0; 
+            return this._addResources != null && (this._addResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if RemoveResources property is set
         internal bool IsSetRemoveResources()
         {
-            return this._removeResources != null && this._removeResources.Count > 0; 
+            return this._removeResources != null && (this._removeResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

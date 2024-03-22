@@ -46,7 +46,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     public partial class BatchDeleteImportDataRequest : AmazonApplicationDiscoveryServiceRequest
     {
         private bool? _deleteHistory;
-        private List<string> _importTaskIds = new List<string>();
+        private List<string> _importTaskIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DeleteHistory. 
@@ -83,7 +83,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if ImportTaskIds property is set
         internal bool IsSetImportTaskIds()
         {
-            return this._importTaskIds != null && this._importTaskIds.Count > 0; 
+            return this._importTaskIds != null && (this._importTaskIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

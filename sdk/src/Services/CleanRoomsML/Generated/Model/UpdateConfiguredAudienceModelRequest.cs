@@ -42,7 +42,7 @@ namespace Amazon.CleanRoomsML.Model
         private string _description;
         private int? _minMatchingSeedSize;
         private ConfiguredAudienceModelOutputConfig _outputConfig;
-        private List<string> _sharedAudienceMetrics = new List<string>();
+        private List<string> _sharedAudienceMetrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AudienceModelArn. 
@@ -173,7 +173,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if SharedAudienceMetrics property is set
         internal bool IsSetSharedAudienceMetrics()
         {
-            return this._sharedAudienceMetrics != null && this._sharedAudienceMetrics.Count > 0; 
+            return this._sharedAudienceMetrics != null && (this._sharedAudienceMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

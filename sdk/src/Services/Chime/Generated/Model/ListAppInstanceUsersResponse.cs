@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model
     public partial class ListAppInstanceUsersResponse : AmazonWebServiceResponse
     {
         private string _appInstanceArn;
-        private List<AppInstanceUserSummary> _appInstanceUsers = new List<AppInstanceUserSummary>();
+        private List<AppInstanceUserSummary> _appInstanceUsers = AWSConfigs.InitializeCollections ? new List<AppInstanceUserSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Chime.Model
         // Check to see if AppInstanceUsers property is set
         internal bool IsSetAppInstanceUsers()
         {
-            return this._appInstanceUsers != null && this._appInstanceUsers.Count > 0; 
+            return this._appInstanceUsers != null && (this._appInstanceUsers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

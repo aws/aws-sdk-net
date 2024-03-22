@@ -34,12 +34,12 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AssetBundleImportJobOverrideTags
     {
-        private List<AssetBundleImportJobAnalysisOverrideTags> _analyses = new List<AssetBundleImportJobAnalysisOverrideTags>();
-        private List<AssetBundleImportJobDashboardOverrideTags> _dashboards = new List<AssetBundleImportJobDashboardOverrideTags>();
-        private List<AssetBundleImportJobDataSetOverrideTags> _dataSets = new List<AssetBundleImportJobDataSetOverrideTags>();
-        private List<AssetBundleImportJobDataSourceOverrideTags> _dataSources = new List<AssetBundleImportJobDataSourceOverrideTags>();
-        private List<AssetBundleImportJobThemeOverrideTags> _themes = new List<AssetBundleImportJobThemeOverrideTags>();
-        private List<AssetBundleImportJobVPCConnectionOverrideTags> _vpcConnections = new List<AssetBundleImportJobVPCConnectionOverrideTags>();
+        private List<AssetBundleImportJobAnalysisOverrideTags> _analyses = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobAnalysisOverrideTags>() : null;
+        private List<AssetBundleImportJobDashboardOverrideTags> _dashboards = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDashboardOverrideTags>() : null;
+        private List<AssetBundleImportJobDataSetOverrideTags> _dataSets = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDataSetOverrideTags>() : null;
+        private List<AssetBundleImportJobDataSourceOverrideTags> _dataSources = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDataSourceOverrideTags>() : null;
+        private List<AssetBundleImportJobThemeOverrideTags> _themes = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobThemeOverrideTags>() : null;
+        private List<AssetBundleImportJobVPCConnectionOverrideTags> _vpcConnections = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobVPCConnectionOverrideTags>() : null;
 
         /// <summary>
         /// Gets and sets the property Analyses. 
@@ -58,7 +58,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Analyses property is set
         internal bool IsSetAnalyses()
         {
-            return this._analyses != null && this._analyses.Count > 0; 
+            return this._analyses != null && (this._analyses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Dashboards property is set
         internal bool IsSetDashboards()
         {
-            return this._dashboards != null && this._dashboards.Count > 0; 
+            return this._dashboards != null && (this._dashboards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataSets property is set
         internal bool IsSetDataSets()
         {
-            return this._dataSets != null && this._dataSets.Count > 0; 
+            return this._dataSets != null && (this._dataSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataSources property is set
         internal bool IsSetDataSources()
         {
-            return this._dataSources != null && this._dataSources.Count > 0; 
+            return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Themes property is set
         internal bool IsSetThemes()
         {
-            return this._themes != null && this._themes.Count > 0; 
+            return this._themes != null && (this._themes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if VPCConnections property is set
         internal bool IsSetVPCConnections()
         {
-            return this._vpcConnections != null && this._vpcConnections.Count > 0; 
+            return this._vpcConnections != null && (this._vpcConnections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

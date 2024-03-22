@@ -45,7 +45,7 @@ namespace Amazon.Budgets.Model
         /// Enumerable containing all of the Actions
         /// </summary>
         public IPaginatedEnumerable<Action> Actions => 
-            new PaginatedResultKeyResponse<DescribeBudgetActionsForAccountResponse, Action>(this, (i) => i.Actions);
+            new PaginatedResultKeyResponse<DescribeBudgetActionsForAccountResponse, Action>(this, (i) => i.Actions ?? new List<Action>());
 
         internal DescribeBudgetActionsForAccountPaginator(IAmazonBudgets client, DescribeBudgetActionsForAccountRequest request)
         {

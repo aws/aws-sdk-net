@@ -75,6 +75,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("VPCs/VPC", targetDepth))
                     {
+                        if (response.VPCs == null)
+                        {
+                            response.VPCs = new List<VPC>();
+                        }
                         var unmarshaller = VPCUnmarshaller.Instance;
                         response.VPCs.Add(unmarshaller.Unmarshall(context));
                         continue;

@@ -33,7 +33,7 @@ namespace Amazon.SnowDeviceManagement.Model
     /// </summary>
     public partial class DescribeDeviceEc2InstancesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceSummary> _instances = new List<InstanceSummary>();
+        private List<InstanceSummary> _instances = AWSConfigs.InitializeCollections ? new List<InstanceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property Instances. 
@@ -50,7 +50,7 @@ namespace Amazon.SnowDeviceManagement.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

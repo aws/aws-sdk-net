@@ -66,7 +66,7 @@ namespace Amazon.WAFRegional.Model
     {
         private string _metricName;
         private string _name;
-        private List<Predicate> _predicates = new List<Predicate>();
+        private List<Predicate> _predicates = AWSConfigs.InitializeCollections ? new List<Predicate>() : null;
         private string _ruleId;
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if Predicates property is set
         internal bool IsSetPredicates()
         {
-            return this._predicates != null && this._predicates.Count > 0; 
+            return this._predicates != null && (this._predicates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

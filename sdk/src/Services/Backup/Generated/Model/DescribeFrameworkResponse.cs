@@ -36,7 +36,7 @@ namespace Amazon.Backup.Model
         private DateTime? _creationTime;
         private string _deploymentStatus;
         private string _frameworkArn;
-        private List<FrameworkControl> _frameworkControls = new List<FrameworkControl>();
+        private List<FrameworkControl> _frameworkControls = AWSConfigs.InitializeCollections ? new List<FrameworkControl>() : null;
         private string _frameworkDescription;
         private string _frameworkName;
         private string _frameworkStatus;
@@ -120,7 +120,7 @@ namespace Amazon.Backup.Model
         // Check to see if FrameworkControls property is set
         internal bool IsSetFrameworkControls()
         {
-            return this._frameworkControls != null && this._frameworkControls.Count > 0; 
+            return this._frameworkControls != null && (this._frameworkControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

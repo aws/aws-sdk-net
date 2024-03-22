@@ -33,7 +33,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetCostForecastResponse : AmazonWebServiceResponse
     {
-        private List<ForecastResult> _forecastResultsByTime = new List<ForecastResult>();
+        private List<ForecastResult> _forecastResultsByTime = AWSConfigs.InitializeCollections ? new List<ForecastResult>() : null;
         private MetricValue _total;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if ForecastResultsByTime property is set
         internal bool IsSetForecastResultsByTime()
         {
-            return this._forecastResultsByTime != null && this._forecastResultsByTime.Count > 0; 
+            return this._forecastResultsByTime != null && (this._forecastResultsByTime.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

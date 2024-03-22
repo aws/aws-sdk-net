@@ -45,7 +45,7 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the Costs
         /// </summary>
         public IPaginatedEnumerable<ServiceResourceCost> Costs => 
-            new PaginatedResultKeyResponse<GetCostEstimationResponse, ServiceResourceCost>(this, (i) => i.Costs);
+            new PaginatedResultKeyResponse<GetCostEstimationResponse, ServiceResourceCost>(this, (i) => i.Costs ?? new List<ServiceResourceCost>());
 
         internal GetCostEstimationPaginator(IAmazonDevOpsGuru client, GetCostEstimationRequest request)
         {

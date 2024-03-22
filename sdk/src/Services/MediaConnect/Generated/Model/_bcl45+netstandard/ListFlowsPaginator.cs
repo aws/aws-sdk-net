@@ -45,7 +45,7 @@ namespace Amazon.MediaConnect.Model
         /// Enumerable containing all of the Flows
         /// </summary>
         public IPaginatedEnumerable<ListedFlow> Flows => 
-            new PaginatedResultKeyResponse<ListFlowsResponse, ListedFlow>(this, (i) => i.Flows);
+            new PaginatedResultKeyResponse<ListFlowsResponse, ListedFlow>(this, (i) => i.Flows ?? new List<ListedFlow>());
 
         internal ListFlowsPaginator(IAmazonMediaConnect client, ListFlowsRequest request)
         {

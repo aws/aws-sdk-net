@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model
     public partial class ListTypesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Type> _types = new List<Type>();
+        private List<Type> _types = AWSConfigs.InitializeCollections ? new List<Type>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.AppSync.Model
         // Check to see if Types property is set
         internal bool IsSetTypes()
         {
-            return this._types != null && this._types.Count > 0; 
+            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

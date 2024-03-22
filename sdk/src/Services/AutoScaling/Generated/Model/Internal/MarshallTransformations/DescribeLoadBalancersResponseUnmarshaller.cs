@@ -84,6 +84,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LoadBalancers/member", targetDepth))
                     {
                         var unmarshaller = LoadBalancerStateUnmarshaller.Instance;
+                        if (response.LoadBalancers == null)
+                        {
+                            response.LoadBalancers = new List<LoadBalancerState>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.LoadBalancers.Add(item);
                         continue;

@@ -35,7 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     {
         private string _nextToken;
         private string _registrationArn;
-        private List<RegistrationFieldValueInformation> _registrationFieldValues = new List<RegistrationFieldValueInformation>();
+        private List<RegistrationFieldValueInformation> _registrationFieldValues = AWSConfigs.InitializeCollections ? new List<RegistrationFieldValueInformation>() : null;
         private string _registrationId;
         private long? _versionNumber;
 
@@ -95,7 +95,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if RegistrationFieldValues property is set
         internal bool IsSetRegistrationFieldValues()
         {
-            return this._registrationFieldValues != null && this._registrationFieldValues.Count > 0; 
+            return this._registrationFieldValues != null && (this._registrationFieldValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.GuardDuty.Model
         /// Enumerable containing all of the IpSetIds
         /// </summary>
         public IPaginatedEnumerable<string> IpSetIds => 
-            new PaginatedResultKeyResponse<ListIPSetsResponse, string>(this, (i) => i.IpSetIds);
+            new PaginatedResultKeyResponse<ListIPSetsResponse, string>(this, (i) => i.IpSetIds ?? new List<string>());
 
         internal ListIPSetsPaginator(IAmazonGuardDuty client, ListIPSetsRequest request)
         {

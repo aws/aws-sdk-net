@@ -44,13 +44,13 @@ namespace Amazon.MediaConvert.Model
         private M2tsAudioBufferModel _audioBufferModel;
         private M2tsAudioDuration _audioDuration;
         private int? _audioFramesPerPes;
-        private List<int> _audioPids = new List<int>();
+        private List<int> _audioPids = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _bitrate;
         private M2tsBufferModel _bufferModel;
         private M2tsDataPtsControl _dataPTSControl;
         private DvbNitSettings _dvbNitSettings;
         private DvbSdtSettings _dvbSdtSettings;
-        private List<int> _dvbSubPids = new List<int>();
+        private List<int> _dvbSubPids = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private DvbTdtSettings _dvbTdtSettings;
         private int? _dvbTeletextPid;
         private M2tsEbpAudioInterval _ebpAudioInterval;
@@ -156,7 +156,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AudioPids property is set
         internal bool IsSetAudioPids()
         {
-            return this._audioPids != null && this._audioPids.Count > 0; 
+            return this._audioPids != null && (this._audioPids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if DvbSubPids property is set
         internal bool IsSetDvbSubPids()
         {
-            return this._dvbSubPids != null && this._dvbSubPids.Count > 0; 
+            return this._dvbSubPids != null && (this._dvbSubPids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Proton.Model
         /// Enumerable containing all of the Environments
         /// </summary>
         public IPaginatedEnumerable<EnvironmentSummary> Environments => 
-            new PaginatedResultKeyResponse<ListEnvironmentsResponse, EnvironmentSummary>(this, (i) => i.Environments);
+            new PaginatedResultKeyResponse<ListEnvironmentsResponse, EnvironmentSummary>(this, (i) => i.Environments ?? new List<EnvironmentSummary>());
 
         internal ListEnvironmentsPaginator(IAmazonProton client, ListEnvironmentsRequest request)
         {

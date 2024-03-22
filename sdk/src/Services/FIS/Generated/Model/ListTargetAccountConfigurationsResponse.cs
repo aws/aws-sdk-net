@@ -34,7 +34,7 @@ namespace Amazon.FIS.Model
     public partial class ListTargetAccountConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TargetAccountConfigurationSummary> _targetAccountConfigurations = new List<TargetAccountConfigurationSummary>();
+        private List<TargetAccountConfigurationSummary> _targetAccountConfigurations = AWSConfigs.InitializeCollections ? new List<TargetAccountConfigurationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.FIS.Model
         // Check to see if TargetAccountConfigurations property is set
         internal bool IsSetTargetAccountConfigurations()
         {
-            return this._targetAccountConfigurations != null && this._targetAccountConfigurations.Count > 0; 
+            return this._targetAccountConfigurations != null && (this._targetAccountConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

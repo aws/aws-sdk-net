@@ -35,7 +35,7 @@ namespace Amazon.SageMakerGeospatial.Model
     public partial class BandMathConfigInput
     {
         private CustomIndicesInput _customIndices;
-        private List<string> _predefinedIndices = new List<string>();
+        private List<string> _predefinedIndices = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomIndices. 
@@ -72,7 +72,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if PredefinedIndices property is set
         internal bool IsSetPredefinedIndices()
         {
-            return this._predefinedIndices != null && this._predefinedIndices.Count > 0; 
+            return this._predefinedIndices != null && (this._predefinedIndices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

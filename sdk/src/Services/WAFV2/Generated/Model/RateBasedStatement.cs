@@ -173,7 +173,7 @@ namespace Amazon.WAFV2.Model
     public partial class RateBasedStatement
     {
         private RateBasedStatementAggregateKeyType _aggregateKeyType;
-        private List<RateBasedStatementCustomKey> _customKeys = new List<RateBasedStatementCustomKey>();
+        private List<RateBasedStatementCustomKey> _customKeys = AWSConfigs.InitializeCollections ? new List<RateBasedStatementCustomKey>() : null;
         private long? _evaluationWindowSec;
         private ForwardedIPConfig _forwardedIPConfig;
         private long? _limit;
@@ -271,7 +271,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if CustomKeys property is set
         internal bool IsSetCustomKeys()
         {
-            return this._customKeys != null && this._customKeys.Count > 0; 
+            return this._customKeys != null && (this._customKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

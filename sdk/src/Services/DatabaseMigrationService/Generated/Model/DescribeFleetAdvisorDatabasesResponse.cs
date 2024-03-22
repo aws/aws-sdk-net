@@ -33,7 +33,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DescribeFleetAdvisorDatabasesResponse : AmazonWebServiceResponse
     {
-        private List<DatabaseResponse> _databases = new List<DatabaseResponse>();
+        private List<DatabaseResponse> _databases = AWSConfigs.InitializeCollections ? new List<DatabaseResponse>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Databases property is set
         internal bool IsSetDatabases()
         {
-            return this._databases != null && this._databases.Count > 0; 
+            return this._databases != null && (this._databases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

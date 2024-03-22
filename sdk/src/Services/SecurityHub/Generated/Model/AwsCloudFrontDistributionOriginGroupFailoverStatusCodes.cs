@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsCloudFrontDistributionOriginGroupFailoverStatusCodes
     {
-        private List<int> _items = new List<int>();
+        private List<int> _items = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _quantity;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

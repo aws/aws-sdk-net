@@ -45,7 +45,7 @@ namespace Amazon.KeyManagementService.Model
         /// Enumerable containing all of the Keys
         /// </summary>
         public IPaginatedEnumerable<KeyListEntry> Keys => 
-            new PaginatedResultKeyResponse<ListKeysResponse, KeyListEntry>(this, (i) => i.Keys);
+            new PaginatedResultKeyResponse<ListKeysResponse, KeyListEntry>(this, (i) => i.Keys ?? new List<KeyListEntry>());
 
         internal ListKeysPaginator(IAmazonKeyManagementService client, ListKeysRequest request)
         {

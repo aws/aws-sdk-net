@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateFeatureGroupRequest : AmazonSageMakerRequest
     {
-        private List<FeatureDefinition> _featureAdditions = new List<FeatureDefinition>();
+        private List<FeatureDefinition> _featureAdditions = AWSConfigs.InitializeCollections ? new List<FeatureDefinition>() : null;
         private string _featureGroupName;
         private OnlineStoreConfigUpdate _onlineStoreConfig;
         private ThroughputConfigUpdate _throughputConfig;
@@ -75,7 +75,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if FeatureAdditions property is set
         internal bool IsSetFeatureAdditions()
         {
-            return this._featureAdditions != null && this._featureAdditions.Count > 0; 
+            return this._featureAdditions != null && (this._featureAdditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

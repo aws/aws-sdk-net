@@ -35,7 +35,7 @@ namespace Amazon.QBusiness.Model
     {
         private int? _citationNumber;
         private string _snippet;
-        private List<TextSegment> _textMessageSegments = new List<TextSegment>();
+        private List<TextSegment> _textMessageSegments = AWSConfigs.InitializeCollections ? new List<TextSegment>() : null;
         private string _title;
         private DateTime? _updatedAt;
         private string _url;
@@ -92,7 +92,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if TextMessageSegments property is set
         internal bool IsSetTextMessageSegments()
         {
-            return this._textMessageSegments != null && this._textMessageSegments.Count > 0; 
+            return this._textMessageSegments != null && (this._textMessageSegments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

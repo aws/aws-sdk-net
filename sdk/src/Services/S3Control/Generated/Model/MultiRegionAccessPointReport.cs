@@ -38,7 +38,7 @@ namespace Amazon.S3Control.Model
         private DateTime? _createdAt;
         private string _name;
         private PublicAccessBlockConfiguration _publicAccessBlock;
-        private List<RegionReport> _regions = new List<RegionReport>();
+        private List<RegionReport> _regions = AWSConfigs.InitializeCollections ? new List<RegionReport>() : null;
         private MultiRegionAccessPointStatus _status;
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

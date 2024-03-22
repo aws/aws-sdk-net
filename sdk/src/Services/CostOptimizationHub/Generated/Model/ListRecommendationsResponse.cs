@@ -33,7 +33,7 @@ namespace Amazon.CostOptimizationHub.Model
     /// </summary>
     public partial class ListRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<Recommendation> _items = new List<Recommendation>();
+        private List<Recommendation> _items = AWSConfigs.InitializeCollections ? new List<Recommendation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

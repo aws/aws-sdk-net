@@ -34,7 +34,7 @@ namespace Amazon.AppRunner.Model
     public partial class ListVpcIngressConnectionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VpcIngressConnectionSummary> _vpcIngressConnectionSummaryList = new List<VpcIngressConnectionSummary>();
+        private List<VpcIngressConnectionSummary> _vpcIngressConnectionSummaryList = AWSConfigs.InitializeCollections ? new List<VpcIngressConnectionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if VpcIngressConnectionSummaryList property is set
         internal bool IsSetVpcIngressConnectionSummaryList()
         {
-            return this._vpcIngressConnectionSummaryList != null && this._vpcIngressConnectionSummaryList.Count > 0; 
+            return this._vpcIngressConnectionSummaryList != null && (this._vpcIngressConnectionSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

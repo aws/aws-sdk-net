@@ -33,7 +33,7 @@ namespace Amazon.ManagedBlockchain.Model
     /// </summary>
     public partial class ListMembersResponse : AmazonWebServiceResponse
     {
-        private List<MemberSummary> _members = new List<MemberSummary>();
+        private List<MemberSummary> _members = AWSConfigs.InitializeCollections ? new List<MemberSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ManagedBlockchain.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("attachmentSet/item", targetDepth))
                     {
                         var unmarshaller = VolumeAttachmentUnmarshaller.Instance;
+                        if (unmarshalledObject.Attachments == null)
+                        {
+                            unmarshalledObject.Attachments = new List<VolumeAttachment>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Attachments.Add(item);
                         continue;
@@ -136,6 +140,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

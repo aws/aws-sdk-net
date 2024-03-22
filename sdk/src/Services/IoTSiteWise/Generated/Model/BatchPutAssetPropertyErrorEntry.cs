@@ -36,7 +36,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class BatchPutAssetPropertyErrorEntry
     {
         private string _entryId;
-        private List<BatchPutAssetPropertyError> _errors = new List<BatchPutAssetPropertyError>();
+        private List<BatchPutAssetPropertyError> _errors = AWSConfigs.InitializeCollections ? new List<BatchPutAssetPropertyError>() : null;
 
         /// <summary>
         /// Gets and sets the property EntryId. 
@@ -73,7 +73,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

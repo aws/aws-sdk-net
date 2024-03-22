@@ -40,14 +40,14 @@ namespace Amazon.Transfer.Model
     public partial class CreateUserRequest : AmazonTransferRequest
     {
         private string _homeDirectory;
-        private List<HomeDirectoryMapEntry> _homeDirectoryMappings = new List<HomeDirectoryMapEntry>();
+        private List<HomeDirectoryMapEntry> _homeDirectoryMappings = AWSConfigs.InitializeCollections ? new List<HomeDirectoryMapEntry>() : null;
         private HomeDirectoryType _homeDirectoryType;
         private string _policy;
         private PosixProfile _posixProfile;
         private string _role;
         private string _serverId;
         private string _sshPublicKeyBody;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _userName;
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.Transfer.Model
         // Check to see if HomeDirectoryMappings property is set
         internal bool IsSetHomeDirectoryMappings()
         {
-            return this._homeDirectoryMappings != null && this._homeDirectoryMappings.Count > 0; 
+            return this._homeDirectoryMappings != null && (this._homeDirectoryMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -330,7 +330,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

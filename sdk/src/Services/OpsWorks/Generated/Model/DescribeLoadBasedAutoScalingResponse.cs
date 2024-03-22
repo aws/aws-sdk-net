@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeLoadBasedAutoScalingResponse : AmazonWebServiceResponse
     {
-        private List<LoadBasedAutoScalingConfiguration> _loadBasedAutoScalingConfigurations = new List<LoadBasedAutoScalingConfiguration>();
+        private List<LoadBasedAutoScalingConfiguration> _loadBasedAutoScalingConfigurations = AWSConfigs.InitializeCollections ? new List<LoadBasedAutoScalingConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property LoadBasedAutoScalingConfigurations. 
@@ -51,7 +51,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if LoadBasedAutoScalingConfigurations property is set
         internal bool IsSetLoadBasedAutoScalingConfigurations()
         {
-            return this._loadBasedAutoScalingConfigurations != null && this._loadBasedAutoScalingConfigurations.Count > 0; 
+            return this._loadBasedAutoScalingConfigurations != null && (this._loadBasedAutoScalingConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

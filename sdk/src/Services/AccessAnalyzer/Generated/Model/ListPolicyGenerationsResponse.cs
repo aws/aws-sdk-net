@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model
     public partial class ListPolicyGenerationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PolicyGeneration> _policyGenerations = new List<PolicyGeneration>();
+        private List<PolicyGeneration> _policyGenerations = AWSConfigs.InitializeCollections ? new List<PolicyGeneration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if PolicyGenerations property is set
         internal bool IsSetPolicyGenerations()
         {
-            return this._policyGenerations != null && this._policyGenerations.Count > 0; 
+            return this._policyGenerations != null && (this._policyGenerations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

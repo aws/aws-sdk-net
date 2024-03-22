@@ -45,7 +45,7 @@ namespace Amazon.MigrationHub.Model
         /// Enumerable containing all of the ApplicationStateList
         /// </summary>
         public IPaginatedEnumerable<ApplicationState> ApplicationStateList => 
-            new PaginatedResultKeyResponse<ListApplicationStatesResponse, ApplicationState>(this, (i) => i.ApplicationStateList);
+            new PaginatedResultKeyResponse<ListApplicationStatesResponse, ApplicationState>(this, (i) => i.ApplicationStateList ?? new List<ApplicationState>());
 
         internal ListApplicationStatesPaginator(IAmazonMigrationHub client, ListApplicationStatesRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the ExecutionSummaries
         /// </summary>
         public IPaginatedEnumerable<JobExecutionSummaryForThing> ExecutionSummaries => 
-            new PaginatedResultKeyResponse<ListJobExecutionsForThingResponse, JobExecutionSummaryForThing>(this, (i) => i.ExecutionSummaries);
+            new PaginatedResultKeyResponse<ListJobExecutionsForThingResponse, JobExecutionSummaryForThing>(this, (i) => i.ExecutionSummaries ?? new List<JobExecutionSummaryForThing>());
 
         internal ListJobExecutionsForThingPaginator(IAmazonIoT client, ListJobExecutionsForThingRequest request)
         {

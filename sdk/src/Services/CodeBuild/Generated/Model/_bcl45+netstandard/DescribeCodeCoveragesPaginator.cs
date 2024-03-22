@@ -45,7 +45,7 @@ namespace Amazon.CodeBuild.Model
         /// Enumerable containing all of the CodeCoverages
         /// </summary>
         public IPaginatedEnumerable<CodeCoverage> CodeCoverages => 
-            new PaginatedResultKeyResponse<DescribeCodeCoveragesResponse, CodeCoverage>(this, (i) => i.CodeCoverages);
+            new PaginatedResultKeyResponse<DescribeCodeCoveragesResponse, CodeCoverage>(this, (i) => i.CodeCoverages ?? new List<CodeCoverage>());
 
         internal DescribeCodeCoveragesPaginator(IAmazonCodeBuild client, DescribeCodeCoveragesRequest request)
         {

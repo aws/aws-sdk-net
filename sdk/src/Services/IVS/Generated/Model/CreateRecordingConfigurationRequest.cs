@@ -54,7 +54,7 @@ namespace Amazon.IVS.Model
         private string _name;
         private int? _recordingReconnectWindowSeconds;
         private RenditionConfiguration _renditionConfiguration;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ThumbnailConfiguration _thumbnailConfiguration;
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.IVS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

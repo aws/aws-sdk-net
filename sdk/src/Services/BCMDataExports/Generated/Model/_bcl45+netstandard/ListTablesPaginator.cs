@@ -45,7 +45,7 @@ namespace Amazon.BCMDataExports.Model
         /// Enumerable containing all of the Tables
         /// </summary>
         public IPaginatedEnumerable<Table> Tables => 
-            new PaginatedResultKeyResponse<ListTablesResponse, Table>(this, (i) => i.Tables);
+            new PaginatedResultKeyResponse<ListTablesResponse, Table>(this, (i) => i.Tables ?? new List<Table>());
 
         internal ListTablesPaginator(IAmazonBCMDataExports client, ListTablesRequest request)
         {

@@ -34,13 +34,13 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class CreateEntityRequest : AmazonIoTTwinMakerRequest
     {
-        private Dictionary<string, ComponentRequest> _components = new Dictionary<string, ComponentRequest>();
-        private Dictionary<string, CompositeComponentRequest> _compositeComponents = new Dictionary<string, CompositeComponentRequest>();
+        private Dictionary<string, ComponentRequest> _components = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentRequest>() : null;
+        private Dictionary<string, CompositeComponentRequest> _compositeComponents = AWSConfigs.InitializeCollections ? new Dictionary<string, CompositeComponentRequest>() : null;
         private string _description;
         private string _entityId;
         private string _entityName;
         private string _parentEntityId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workspaceId;
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Components property is set
         internal bool IsSetComponents()
         {
-            return this._components != null && this._components.Count > 0; 
+            return this._components != null && (this._components.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if CompositeComponents property is set
         internal bool IsSetCompositeComponents()
         {
-            return this._compositeComponents != null && this._compositeComponents.Count > 0; 
+            return this._compositeComponents != null && (this._compositeComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

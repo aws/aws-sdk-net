@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("dnsEntrySet/item", targetDepth))
                     {
                         var unmarshaller = DnsEntryUnmarshaller.Instance;
+                        if (unmarshalledObject.DnsEntries == null)
+                        {
+                            unmarshalledObject.DnsEntries = new List<DnsEntry>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DnsEntries.Add(item);
                         continue;
@@ -70,6 +74,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("gatewayLoadBalancerArnSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.GatewayLoadBalancerArns == null)
+                        {
+                            unmarshalledObject.GatewayLoadBalancerArns = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.GatewayLoadBalancerArns.Add(item);
                         continue;
@@ -83,6 +91,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("networkLoadBalancerArnSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.NetworkLoadBalancerArns == null)
+                        {
+                            unmarshalledObject.NetworkLoadBalancerArns = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NetworkLoadBalancerArns.Add(item);
                         continue;
@@ -96,6 +108,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

@@ -45,7 +45,7 @@ namespace Amazon.LaunchWizard.Model
         /// Enumerable containing all of the DeploymentEvents
         /// </summary>
         public IPaginatedEnumerable<DeploymentEventDataSummary> DeploymentEvents => 
-            new PaginatedResultKeyResponse<ListDeploymentEventsResponse, DeploymentEventDataSummary>(this, (i) => i.DeploymentEvents);
+            new PaginatedResultKeyResponse<ListDeploymentEventsResponse, DeploymentEventDataSummary>(this, (i) => i.DeploymentEvents ?? new List<DeploymentEventDataSummary>());
 
         internal ListDeploymentEventsPaginator(IAmazonLaunchWizard client, ListDeploymentEventsRequest request)
         {

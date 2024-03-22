@@ -33,7 +33,7 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class ChannelMessages
     {
-        private List<string> _s3Paths = new List<string>();
+        private List<string> _s3Paths = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property S3Paths. 
@@ -61,7 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if S3Paths property is set
         internal bool IsSetS3Paths()
         {
-            return this._s3Paths != null && this._s3Paths.Count > 0; 
+            return this._s3Paths != null && (this._s3Paths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

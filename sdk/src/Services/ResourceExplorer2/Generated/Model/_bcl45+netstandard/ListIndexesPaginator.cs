@@ -45,7 +45,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// Enumerable containing all of the Indexes
         /// </summary>
         public IPaginatedEnumerable<Index> Indexes => 
-            new PaginatedResultKeyResponse<ListIndexesResponse, Index>(this, (i) => i.Indexes);
+            new PaginatedResultKeyResponse<ListIndexesResponse, Index>(this, (i) => i.Indexes ?? new List<Index>());
 
         internal ListIndexesPaginator(IAmazonResourceExplorer2 client, ListIndexesRequest request)
         {

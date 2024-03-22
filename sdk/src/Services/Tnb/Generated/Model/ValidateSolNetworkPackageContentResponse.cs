@@ -39,7 +39,7 @@ namespace Amazon.Tnb.Model
         private string _nsdId;
         private string _nsdName;
         private string _nsdVersion;
-        private List<string> _vnfPkgIds = new List<string>();
+        private List<string> _vnfPkgIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -171,7 +171,7 @@ namespace Amazon.Tnb.Model
         // Check to see if VnfPkgIds property is set
         internal bool IsSetVnfPkgIds()
         {
-            return this._vnfPkgIds != null && this._vnfPkgIds.Count > 0; 
+            return this._vnfPkgIds != null && (this._vnfPkgIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

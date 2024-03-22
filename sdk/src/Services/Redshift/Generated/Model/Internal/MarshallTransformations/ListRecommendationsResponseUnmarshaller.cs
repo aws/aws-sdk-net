@@ -90,6 +90,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Recommendations/Recommendation", targetDepth))
                     {
                         var unmarshaller = RecommendationUnmarshaller.Instance;
+                        if (response.Recommendations == null)
+                        {
+                            response.Recommendations = new List<Recommendation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Recommendations.Add(item);
                         continue;

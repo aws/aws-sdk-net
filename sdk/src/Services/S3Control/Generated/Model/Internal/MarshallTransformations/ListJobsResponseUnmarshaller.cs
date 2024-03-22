@@ -63,6 +63,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Jobs/member", targetDepth))
                     {
+                        if (response.Jobs == null)
+                        {
+                            response.Jobs = new List<JobListDescriptor>();
+                        }
                         var unmarshaller = JobListDescriptorUnmarshaller.Instance;
                         response.Jobs.Add(unmarshaller.Unmarshall(context));
                         continue;

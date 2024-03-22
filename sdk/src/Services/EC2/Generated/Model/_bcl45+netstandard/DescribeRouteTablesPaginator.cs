@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the RouteTables
         /// </summary>
         public IPaginatedEnumerable<RouteTable> RouteTables => 
-            new PaginatedResultKeyResponse<DescribeRouteTablesResponse, RouteTable>(this, (i) => i.RouteTables);
+            new PaginatedResultKeyResponse<DescribeRouteTablesResponse, RouteTable>(this, (i) => i.RouteTables ?? new List<RouteTable>());
 
         internal DescribeRouteTablesPaginator(IAmazonEC2 client, DescribeRouteTablesRequest request)
         {

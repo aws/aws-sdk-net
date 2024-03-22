@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class NotificationConfig
     {
         private string _notificationArn;
-        private List<string> _notificationEvents = new List<string>();
+        private List<string> _notificationEvents = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private NotificationType _notificationType;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if NotificationEvents property is set
         internal bool IsSetNotificationEvents()
         {
-            return this._notificationEvents != null && this._notificationEvents.Count > 0; 
+            return this._notificationEvents != null && (this._notificationEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

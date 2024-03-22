@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the ApplicationAssignments
         /// </summary>
         public IPaginatedEnumerable<ApplicationAssignment> ApplicationAssignments => 
-            new PaginatedResultKeyResponse<ListApplicationAssignmentsResponse, ApplicationAssignment>(this, (i) => i.ApplicationAssignments);
+            new PaginatedResultKeyResponse<ListApplicationAssignmentsResponse, ApplicationAssignment>(this, (i) => i.ApplicationAssignments ?? new List<ApplicationAssignment>());
 
         internal ListApplicationAssignmentsPaginator(IAmazonSSOAdmin client, ListApplicationAssignmentsRequest request)
         {

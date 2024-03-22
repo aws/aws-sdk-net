@@ -39,9 +39,9 @@ namespace Amazon.AlexaForBusiness.Model
         private string _firstName;
         private string _lastName;
         private string _phoneNumber;
-        private List<PhoneNumber> _phoneNumbers = new List<PhoneNumber>();
-        private List<SipAddress> _sipAddresses = new List<SipAddress>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<PhoneNumber> _phoneNumbers = AWSConfigs.InitializeCollections ? new List<PhoneNumber>() : null;
+        private List<SipAddress> _sipAddresses = AWSConfigs.InitializeCollections ? new List<SipAddress>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -156,7 +156,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if PhoneNumbers property is set
         internal bool IsSetPhoneNumbers()
         {
-            return this._phoneNumbers != null && this._phoneNumbers.Count > 0; 
+            return this._phoneNumbers != null && (this._phoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if SipAddresses property is set
         internal bool IsSetSipAddresses()
         {
-            return this._sipAddresses != null && this._sipAddresses.Count > 0; 
+            return this._sipAddresses != null && (this._sipAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

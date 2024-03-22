@@ -84,6 +84,10 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ArtifactList/member", targetDepth))
                     {
                         var unmarshaller = ArtifactUnmarshaller.Instance;
+                        if (response.ArtifactList == null)
+                        {
+                            response.ArtifactList = new List<Artifact>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ArtifactList.Add(item);
                         continue;

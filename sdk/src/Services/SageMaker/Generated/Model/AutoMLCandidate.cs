@@ -37,13 +37,13 @@ namespace Amazon.SageMaker.Model
         private string _candidateName;
         private CandidateProperties _candidateProperties;
         private CandidateStatus _candidateStatus;
-        private List<AutoMLCandidateStep> _candidateSteps = new List<AutoMLCandidateStep>();
+        private List<AutoMLCandidateStep> _candidateSteps = AWSConfigs.InitializeCollections ? new List<AutoMLCandidateStep>() : null;
         private DateTime? _creationTime;
         private DateTime? _endTime;
         private string _failureReason;
         private FinalAutoMLJobObjectiveMetric _finalAutoMLJobObjectiveMetric;
-        private Dictionary<string, List<AutoMLContainerDefinition>> _inferenceContainerDefinitions = new Dictionary<string, List<AutoMLContainerDefinition>>();
-        private List<AutoMLContainerDefinition> _inferenceContainers = new List<AutoMLContainerDefinition>();
+        private Dictionary<string, List<AutoMLContainerDefinition>> _inferenceContainerDefinitions = AWSConfigs.InitializeCollections ? new Dictionary<string, List<AutoMLContainerDefinition>>() : null;
+        private List<AutoMLContainerDefinition> _inferenceContainers = AWSConfigs.InitializeCollections ? new List<AutoMLContainerDefinition>() : null;
         private DateTime? _lastModifiedTime;
         private ObjectiveStatus _objectiveStatus;
 
@@ -119,7 +119,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CandidateSteps property is set
         internal bool IsSetCandidateSteps()
         {
-            return this._candidateSteps != null && this._candidateSteps.Count > 0; 
+            return this._candidateSteps != null && (this._candidateSteps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -212,7 +212,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InferenceContainerDefinitions property is set
         internal bool IsSetInferenceContainerDefinitions()
         {
-            return this._inferenceContainerDefinitions != null && this._inferenceContainerDefinitions.Count > 0; 
+            return this._inferenceContainerDefinitions != null && (this._inferenceContainerDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InferenceContainers property is set
         internal bool IsSetInferenceContainers()
         {
-            return this._inferenceContainers != null && this._inferenceContainers.Count > 0; 
+            return this._inferenceContainers != null && (this._inferenceContainers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

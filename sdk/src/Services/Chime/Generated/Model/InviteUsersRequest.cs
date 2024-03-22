@@ -37,7 +37,7 @@ namespace Amazon.Chime.Model
     public partial class InviteUsersRequest : AmazonChimeRequest
     {
         private string _accountId;
-        private List<string> _userEmailList = new List<string>();
+        private List<string> _userEmailList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private UserType _userType;
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.Chime.Model
         // Check to see if UserEmailList property is set
         internal bool IsSetUserEmailList()
         {
-            return this._userEmailList != null && this._userEmailList.Count > 0; 
+            return this._userEmailList != null && (this._userEmailList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.SSMIncidents.Model
         /// Enumerable containing all of the ResponsePlanSummaries
         /// </summary>
         public IPaginatedEnumerable<ResponsePlanSummary> ResponsePlanSummaries => 
-            new PaginatedResultKeyResponse<ListResponsePlansResponse, ResponsePlanSummary>(this, (i) => i.ResponsePlanSummaries);
+            new PaginatedResultKeyResponse<ListResponsePlansResponse, ResponsePlanSummary>(this, (i) => i.ResponsePlanSummaries ?? new List<ResponsePlanSummary>());
 
         internal ListResponsePlansPaginator(IAmazonSSMIncidents client, ListResponsePlansRequest request)
         {

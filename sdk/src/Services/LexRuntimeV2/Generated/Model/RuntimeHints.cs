@@ -47,7 +47,7 @@ namespace Amazon.LexRuntimeV2.Model
     /// </summary>
     public partial class RuntimeHints
     {
-        private Dictionary<string, Dictionary<string, RuntimeHintDetails>> _slotHints = new Dictionary<string, Dictionary<string, RuntimeHintDetails>>();
+        private Dictionary<string, Dictionary<string, RuntimeHintDetails>> _slotHints = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, RuntimeHintDetails>>() : null;
 
         /// <summary>
         /// Gets and sets the property SlotHints. 
@@ -75,7 +75,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if SlotHints property is set
         internal bool IsSetSlotHints()
         {
-            return this._slotHints != null && this._slotHints.Count > 0; 
+            return this._slotHints != null && (this._slotHints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

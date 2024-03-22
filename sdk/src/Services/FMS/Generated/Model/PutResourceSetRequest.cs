@@ -41,7 +41,7 @@ namespace Amazon.FMS.Model
     public partial class PutResourceSetRequest : AmazonFMSRequest
     {
         private ResourceSet _resourceSet;
-        private List<Tag> _tagList = new List<Tag>();
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceSet. 
@@ -82,7 +82,7 @@ namespace Amazon.FMS.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

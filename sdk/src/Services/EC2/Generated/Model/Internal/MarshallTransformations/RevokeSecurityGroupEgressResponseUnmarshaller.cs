@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("unknownIpPermissionSet/item", targetDepth))
                     {
                         var unmarshaller = IpPermissionUnmarshaller.Instance;
+                        if (response.UnknownIpPermissions == null)
+                        {
+                            response.UnknownIpPermissions = new List<IpPermission>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.UnknownIpPermissions.Add(item);
                         continue;

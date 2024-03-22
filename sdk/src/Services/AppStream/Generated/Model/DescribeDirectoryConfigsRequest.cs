@@ -44,7 +44,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class DescribeDirectoryConfigsRequest : AmazonAppStreamRequest
     {
-        private List<string> _directoryNames = new List<string>();
+        private List<string> _directoryNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -63,7 +63,7 @@ namespace Amazon.AppStream.Model
         // Check to see if DirectoryNames property is set
         internal bool IsSetDirectoryNames()
         {
-            return this._directoryNames != null && this._directoryNames.Count > 0; 
+            return this._directoryNames != null && (this._directoryNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

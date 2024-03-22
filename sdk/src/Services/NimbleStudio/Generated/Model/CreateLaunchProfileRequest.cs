@@ -36,13 +36,13 @@ namespace Amazon.NimbleStudio.Model
     {
         private string _clientToken;
         private string _description;
-        private List<string> _ec2SubnetIds = new List<string>();
-        private List<string> _launchProfileProtocolVersions = new List<string>();
+        private List<string> _ec2SubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _launchProfileProtocolVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private StreamConfigurationCreate _streamConfiguration;
-        private List<string> _studioComponentIds = new List<string>();
+        private List<string> _studioComponentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _studioId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -101,7 +101,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Ec2SubnetIds property is set
         internal bool IsSetEc2SubnetIds()
         {
-            return this._ec2SubnetIds != null && this._ec2SubnetIds.Count > 0; 
+            return this._ec2SubnetIds != null && (this._ec2SubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if LaunchProfileProtocolVersions property is set
         internal bool IsSetLaunchProfileProtocolVersions()
         {
-            return this._launchProfileProtocolVersions != null && this._launchProfileProtocolVersions.Count > 0; 
+            return this._launchProfileProtocolVersions != null && (this._launchProfileProtocolVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if StudioComponentIds property is set
         internal bool IsSetStudioComponentIds()
         {
-            return this._studioComponentIds != null && this._studioComponentIds.Count > 0; 
+            return this._studioComponentIds != null && (this._studioComponentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

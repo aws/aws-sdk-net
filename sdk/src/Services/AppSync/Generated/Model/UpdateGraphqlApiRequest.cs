@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class UpdateGraphqlApiRequest : AmazonAppSyncRequest
     {
-        private List<AdditionalAuthenticationProvider> _additionalAuthenticationProviders = new List<AdditionalAuthenticationProvider>();
+        private List<AdditionalAuthenticationProvider> _additionalAuthenticationProviders = AWSConfigs.InitializeCollections ? new List<AdditionalAuthenticationProvider>() : null;
         private string _apiId;
         private AuthenticationType _authenticationType;
         private EnhancedMetricsConfig _enhancedMetricsConfig;
@@ -65,7 +65,7 @@ namespace Amazon.AppSync.Model
         // Check to see if AdditionalAuthenticationProviders property is set
         internal bool IsSetAdditionalAuthenticationProviders()
         {
-            return this._additionalAuthenticationProviders != null && this._additionalAuthenticationProviders.Count > 0; 
+            return this._additionalAuthenticationProviders != null && (this._additionalAuthenticationProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

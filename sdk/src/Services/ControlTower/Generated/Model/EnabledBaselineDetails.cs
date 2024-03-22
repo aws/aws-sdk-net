@@ -36,7 +36,7 @@ namespace Amazon.ControlTower.Model
         private string _arn;
         private string _baselineIdentifier;
         private string _baselineVersion;
-        private List<EnabledBaselineParameterSummary> _parameters = new List<EnabledBaselineParameterSummary>();
+        private List<EnabledBaselineParameterSummary> _parameters = AWSConfigs.InitializeCollections ? new List<EnabledBaselineParameterSummary>() : null;
         private EnablementStatusSummary _statusSummary;
         private string _targetIdentifier;
 
@@ -111,7 +111,7 @@ namespace Amazon.ControlTower.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

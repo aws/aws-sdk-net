@@ -33,7 +33,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class AppflowIntegration
     {
-        private List<Batch> _batches = new List<Batch>();
+        private List<Batch> _batches = AWSConfigs.InitializeCollections ? new List<Batch>() : null;
         private FlowDefinition _flowDefinition;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if Batches property is set
         internal bool IsSetBatches()
         {
-            return this._batches != null && this._batches.Count > 0; 
+            return this._batches != null && (this._batches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

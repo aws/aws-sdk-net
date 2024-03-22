@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class Message
     {
         private Body _body;
-        private List<MessageHeader> _headers = new List<MessageHeader>();
+        private List<MessageHeader> _headers = AWSConfigs.InitializeCollections ? new List<MessageHeader>() : null;
         private Content _subject;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Headers property is set
         internal bool IsSetHeaders()
         {
-            return this._headers != null && this._headers.Count > 0; 
+            return this._headers != null && (this._headers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

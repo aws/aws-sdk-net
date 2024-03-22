@@ -34,8 +34,8 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class AnalysisRuleCustom
     {
-        private List<string> _allowedAnalyses = new List<string>();
-        private List<string> _allowedAnalysisProviders = new List<string>();
+        private List<string> _allowedAnalyses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allowedAnalysisProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DifferentialPrivacyConfiguration _differentialPrivacy;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if AllowedAnalyses property is set
         internal bool IsSetAllowedAnalyses()
         {
-            return this._allowedAnalyses != null && this._allowedAnalyses.Count > 0; 
+            return this._allowedAnalyses != null && (this._allowedAnalyses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if AllowedAnalysisProviders property is set
         internal bool IsSetAllowedAnalysisProviders()
         {
-            return this._allowedAnalysisProviders != null && this._allowedAnalysisProviders.Count > 0; 
+            return this._allowedAnalysisProviders != null && (this._allowedAnalysisProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

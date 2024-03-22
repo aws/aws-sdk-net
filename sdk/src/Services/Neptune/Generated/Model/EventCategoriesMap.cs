@@ -34,7 +34,7 @@ namespace Amazon.Neptune.Model
     /// </summary>
     public partial class EventCategoriesMap
     {
-        private List<string> _eventCategories = new List<string>();
+        private List<string> _eventCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sourceType;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Neptune.Model
         // Check to see if EventCategories property is set
         internal bool IsSetEventCategories()
         {
-            return this._eventCategories != null && this._eventCategories.Count > 0; 
+            return this._eventCategories != null && (this._eventCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

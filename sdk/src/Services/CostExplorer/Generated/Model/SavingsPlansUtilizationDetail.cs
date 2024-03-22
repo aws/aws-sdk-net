@@ -36,7 +36,7 @@ namespace Amazon.CostExplorer.Model
     public partial class SavingsPlansUtilizationDetail
     {
         private SavingsPlansAmortizedCommitment _amortizedCommitment;
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private SavingsPlansSavings _savings;
         private string _savingsPlanArn;
         private SavingsPlansUtilization _utilization;
@@ -75,7 +75,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

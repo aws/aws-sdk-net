@@ -33,7 +33,7 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class CvssScoreDetails
     {
-        private List<CvssScoreAdjustment> _adjustments = new List<CvssScoreAdjustment>();
+        private List<CvssScoreAdjustment> _adjustments = AWSConfigs.InitializeCollections ? new List<CvssScoreAdjustment>() : null;
         private double? _score;
         private string _scoreSource;
         private string _scoringVector;
@@ -55,7 +55,7 @@ namespace Amazon.ECR.Model
         // Check to see if Adjustments property is set
         internal bool IsSetAdjustments()
         {
-            return this._adjustments != null && this._adjustments.Count > 0; 
+            return this._adjustments != null && (this._adjustments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

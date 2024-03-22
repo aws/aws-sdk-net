@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Snapshots
         /// </summary>
         public IPaginatedEnumerable<Snapshot> Snapshots => 
-            new PaginatedResultKeyResponse<DescribeSnapshotsResponse, Snapshot>(this, (i) => i.Snapshots);
+            new PaginatedResultKeyResponse<DescribeSnapshotsResponse, Snapshot>(this, (i) => i.Snapshots ?? new List<Snapshot>());
 
         internal DescribeSnapshotsPaginator(IAmazonEC2 client, DescribeSnapshotsRequest request)
         {

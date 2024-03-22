@@ -33,11 +33,11 @@ namespace Amazon.Pipes.Model
     /// </summary>
     public partial class EcsTaskOverride
     {
-        private List<EcsContainerOverride> _containerOverrides = new List<EcsContainerOverride>();
+        private List<EcsContainerOverride> _containerOverrides = AWSConfigs.InitializeCollections ? new List<EcsContainerOverride>() : null;
         private string _cpu;
         private EcsEphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
-        private List<EcsInferenceAcceleratorOverride> _inferenceAcceleratorOverrides = new List<EcsInferenceAcceleratorOverride>();
+        private List<EcsInferenceAcceleratorOverride> _inferenceAcceleratorOverrides = AWSConfigs.InitializeCollections ? new List<EcsInferenceAcceleratorOverride>() : null;
         private string _memory;
         private string _taskRoleArn;
 
@@ -56,7 +56,7 @@ namespace Amazon.Pipes.Model
         // Check to see if ContainerOverrides property is set
         internal bool IsSetContainerOverrides()
         {
-            return this._containerOverrides != null && this._containerOverrides.Count > 0; 
+            return this._containerOverrides != null && (this._containerOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Amazon.Pipes.Model
         // Check to see if InferenceAcceleratorOverrides property is set
         internal bool IsSetInferenceAcceleratorOverrides()
         {
-            return this._inferenceAcceleratorOverrides != null && this._inferenceAcceleratorOverrides.Count > 0; 
+            return this._inferenceAcceleratorOverrides != null && (this._inferenceAcceleratorOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.RDSDataService.Model
     /// </summary>
     public partial class BatchExecuteStatementResponse : AmazonWebServiceResponse
     {
-        private List<UpdateResult> _updateResults = new List<UpdateResult>();
+        private List<UpdateResult> _updateResults = AWSConfigs.InitializeCollections ? new List<UpdateResult>() : null;
 
         /// <summary>
         /// Gets and sets the property UpdateResults. 
@@ -50,7 +50,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if UpdateResults property is set
         internal bool IsSetUpdateResults()
         {
-            return this._updateResults != null && this._updateResults.Count > 0; 
+            return this._updateResults != null && (this._updateResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

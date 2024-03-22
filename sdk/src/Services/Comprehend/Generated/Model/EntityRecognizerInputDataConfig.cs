@@ -34,11 +34,11 @@ namespace Amazon.Comprehend.Model
     public partial class EntityRecognizerInputDataConfig
     {
         private EntityRecognizerAnnotations _annotations;
-        private List<AugmentedManifestsListItem> _augmentedManifests = new List<AugmentedManifestsListItem>();
+        private List<AugmentedManifestsListItem> _augmentedManifests = AWSConfigs.InitializeCollections ? new List<AugmentedManifestsListItem>() : null;
         private EntityRecognizerDataFormat _dataFormat;
         private EntityRecognizerDocuments _documents;
         private EntityRecognizerEntityList _entityList;
-        private List<EntityTypesListItem> _entityTypes = new List<EntityTypesListItem>();
+        private List<EntityTypesListItem> _entityTypes = AWSConfigs.InitializeCollections ? new List<EntityTypesListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Annotations. 
@@ -79,7 +79,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if AugmentedManifests property is set
         internal bool IsSetAugmentedManifests()
         {
-            return this._augmentedManifests != null && this._augmentedManifests.Count > 0; 
+            return this._augmentedManifests != null && (this._augmentedManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if EntityTypes property is set
         internal bool IsSetEntityTypes()
         {
-            return this._entityTypes != null && this._entityTypes.Count > 0; 
+            return this._entityTypes != null && (this._entityTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

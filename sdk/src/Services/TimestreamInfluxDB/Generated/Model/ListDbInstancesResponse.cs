@@ -33,7 +33,7 @@ namespace Amazon.TimestreamInfluxDB.Model
     /// </summary>
     public partial class ListDbInstancesResponse : AmazonWebServiceResponse
     {
-        private List<DbInstanceSummary> _items = new List<DbInstanceSummary>();
+        private List<DbInstanceSummary> _items = AWSConfigs.InitializeCollections ? new List<DbInstanceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

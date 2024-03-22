@@ -35,7 +35,7 @@ namespace Amazon.Neptunedata.Model
     {
         private MlResourceDefinition _hpoJob;
         private string _id;
-        private List<MlConfigDefinition> _mlModels = new List<MlConfigDefinition>();
+        private List<MlConfigDefinition> _mlModels = AWSConfigs.InitializeCollections ? new List<MlConfigDefinition>() : null;
         private MlResourceDefinition _modelTransformJob;
         private MlResourceDefinition _processingJob;
         private string _status;
@@ -91,7 +91,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if MlModels property is set
         internal bool IsSetMlModels()
         {
-            return this._mlModels != null && this._mlModels.Count > 0; 
+            return this._mlModels != null && (this._mlModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Enumerable containing all of the Workgroups
         /// </summary>
         public IPaginatedEnumerable<Workgroup> Workgroups => 
-            new PaginatedResultKeyResponse<ListWorkgroupsResponse, Workgroup>(this, (i) => i.Workgroups);
+            new PaginatedResultKeyResponse<ListWorkgroupsResponse, Workgroup>(this, (i) => i.Workgroups ?? new List<Workgroup>());
 
         internal ListWorkgroupsPaginator(IAmazonRedshiftServerless client, ListWorkgroupsRequest request)
         {

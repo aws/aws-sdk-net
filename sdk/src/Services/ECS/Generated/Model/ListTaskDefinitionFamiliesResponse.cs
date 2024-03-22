@@ -33,7 +33,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class ListTaskDefinitionFamiliesResponse : AmazonWebServiceResponse
     {
-        private List<string> _families = new List<string>();
+        private List<string> _families = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ECS.Model
         // Check to see if Families property is set
         internal bool IsSetFamilies()
         {
-            return this._families != null && this._families.Count > 0; 
+            return this._families != null && (this._families.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

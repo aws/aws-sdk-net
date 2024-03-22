@@ -36,9 +36,9 @@ namespace Amazon.GlueDataBrew.Model
     public partial class CreateScheduleRequest : AmazonGlueDataBrewRequest
     {
         private string _cronExpression;
-        private List<string> _jobNames = new List<string>();
+        private List<string> _jobNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CronExpression. 
@@ -77,7 +77,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if JobNames property is set
         internal bool IsSetJobNames()
         {
-            return this._jobNames != null && this._jobNames.Count > 0; 
+            return this._jobNames != null && (this._jobNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

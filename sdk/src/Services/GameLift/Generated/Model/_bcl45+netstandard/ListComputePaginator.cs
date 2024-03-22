@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the ComputeList
         /// </summary>
         public IPaginatedEnumerable<Compute> ComputeList => 
-            new PaginatedResultKeyResponse<ListComputeResponse, Compute>(this, (i) => i.ComputeList);
+            new PaginatedResultKeyResponse<ListComputeResponse, Compute>(this, (i) => i.ComputeList ?? new List<Compute>());
 
         internal ListComputePaginator(IAmazonGameLift client, ListComputeRequest request)
         {

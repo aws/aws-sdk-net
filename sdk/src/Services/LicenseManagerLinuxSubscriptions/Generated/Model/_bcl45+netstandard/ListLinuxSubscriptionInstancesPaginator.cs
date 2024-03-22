@@ -45,7 +45,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         /// Enumerable containing all of the Instances
         /// </summary>
         public IPaginatedEnumerable<Instance> Instances => 
-            new PaginatedResultKeyResponse<ListLinuxSubscriptionInstancesResponse, Instance>(this, (i) => i.Instances);
+            new PaginatedResultKeyResponse<ListLinuxSubscriptionInstancesResponse, Instance>(this, (i) => i.Instances ?? new List<Instance>());
 
         internal ListLinuxSubscriptionInstancesPaginator(IAmazonLicenseManagerLinuxSubscriptions client, ListLinuxSubscriptionInstancesRequest request)
         {

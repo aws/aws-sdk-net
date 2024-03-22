@@ -90,6 +90,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tags/member", targetDepth))
                     {
                         var unmarshaller = TagDescriptionUnmarshaller.Instance;
+                        if (response.Tags == null)
+                        {
+                            response.Tags = new List<TagDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Tags.Add(item);
                         continue;

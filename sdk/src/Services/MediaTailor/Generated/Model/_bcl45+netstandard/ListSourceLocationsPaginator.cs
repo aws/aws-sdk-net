@@ -45,7 +45,7 @@ namespace Amazon.MediaTailor.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<SourceLocation> Items => 
-            new PaginatedResultKeyResponse<ListSourceLocationsResponse, SourceLocation>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListSourceLocationsResponse, SourceLocation>(this, (i) => i.Items ?? new List<SourceLocation>());
 
         internal ListSourceLocationsPaginator(IAmazonMediaTailor client, ListSourceLocationsRequest request)
         {

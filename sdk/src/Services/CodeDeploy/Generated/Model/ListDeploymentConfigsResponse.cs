@@ -33,7 +33,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class ListDeploymentConfigsResponse : AmazonWebServiceResponse
     {
-        private List<string> _deploymentConfigsList = new List<string>();
+        private List<string> _deploymentConfigsList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if DeploymentConfigsList property is set
         internal bool IsSetDeploymentConfigsList()
         {
-            return this._deploymentConfigsList != null && this._deploymentConfigsList.Count > 0; 
+            return this._deploymentConfigsList != null && (this._deploymentConfigsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,8 +36,8 @@ namespace Amazon.SSMIncidents.Model
     public partial class CreateReplicationSetRequest : AmazonSSMIncidentsRequest
     {
         private string _clientToken;
-        private Dictionary<string, RegionMapInputValue> _regions = new Dictionary<string, RegionMapInputValue>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, RegionMapInputValue> _regions = AWSConfigs.InitializeCollections ? new Dictionary<string, RegionMapInputValue>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -75,7 +75,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

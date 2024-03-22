@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class DatasetInputDataConfig
     {
-        private List<DatasetAugmentedManifestsListItem> _augmentedManifests = new List<DatasetAugmentedManifestsListItem>();
+        private List<DatasetAugmentedManifestsListItem> _augmentedManifests = AWSConfigs.InitializeCollections ? new List<DatasetAugmentedManifestsListItem>() : null;
         private DatasetDataFormat _dataFormat;
         private DatasetDocumentClassifierInputDataConfig _documentClassifierInputDataConfig;
         private DatasetEntityRecognizerInputDataConfig _entityRecognizerInputDataConfig;
@@ -55,7 +55,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if AugmentedManifests property is set
         internal bool IsSetAugmentedManifests()
         {
-            return this._augmentedManifests != null && this._augmentedManifests.Count > 0; 
+            return this._augmentedManifests != null && (this._augmentedManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

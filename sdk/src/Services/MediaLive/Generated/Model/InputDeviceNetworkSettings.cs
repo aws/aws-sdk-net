@@ -33,7 +33,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class InputDeviceNetworkSettings
     {
-        private List<string> _dnsAddresses = new List<string>();
+        private List<string> _dnsAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _gateway;
         private string _ipAddress;
         private InputDeviceIpScheme _ipScheme;
@@ -51,7 +51,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if DnsAddresses property is set
         internal bool IsSetDnsAddresses()
         {
-            return this._dnsAddresses != null && this._dnsAddresses.Count > 0; 
+            return this._dnsAddresses != null && (this._dnsAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

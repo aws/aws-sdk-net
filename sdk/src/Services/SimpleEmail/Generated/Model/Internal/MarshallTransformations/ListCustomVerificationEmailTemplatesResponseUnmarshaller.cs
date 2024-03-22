@@ -84,6 +84,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CustomVerificationEmailTemplates/member", targetDepth))
                     {
                         var unmarshaller = CustomVerificationEmailTemplateUnmarshaller.Instance;
+                        if (response.CustomVerificationEmailTemplates == null)
+                        {
+                            response.CustomVerificationEmailTemplates = new List<CustomVerificationEmailTemplate>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CustomVerificationEmailTemplates.Add(item);
                         continue;

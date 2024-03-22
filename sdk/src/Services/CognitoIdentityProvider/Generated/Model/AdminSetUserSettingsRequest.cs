@@ -59,7 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class AdminSetUserSettingsRequest : AmazonCognitoIdentityProviderRequest
     {
-        private List<MFAOptionType> _mfaOptions = new List<MFAOptionType>();
+        private List<MFAOptionType> _mfaOptions = AWSConfigs.InitializeCollections ? new List<MFAOptionType>() : null;
         private string _username;
         private string _userPoolId;
 
@@ -79,7 +79,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if MFAOptions property is set
         internal bool IsSetMFAOptions()
         {
-            return this._mfaOptions != null && this._mfaOptions.Count > 0; 
+            return this._mfaOptions != null && (this._mfaOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

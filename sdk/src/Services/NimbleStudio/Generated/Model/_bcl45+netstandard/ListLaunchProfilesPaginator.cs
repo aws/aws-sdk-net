@@ -45,7 +45,7 @@ namespace Amazon.NimbleStudio.Model
         /// Enumerable containing all of the LaunchProfiles
         /// </summary>
         public IPaginatedEnumerable<LaunchProfile> LaunchProfiles => 
-            new PaginatedResultKeyResponse<ListLaunchProfilesResponse, LaunchProfile>(this, (i) => i.LaunchProfiles);
+            new PaginatedResultKeyResponse<ListLaunchProfilesResponse, LaunchProfile>(this, (i) => i.LaunchProfiles ?? new List<LaunchProfile>());
 
         internal ListLaunchProfilesPaginator(IAmazonNimbleStudio client, ListLaunchProfilesRequest request)
         {

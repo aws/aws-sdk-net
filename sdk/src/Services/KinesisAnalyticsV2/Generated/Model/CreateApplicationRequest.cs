@@ -40,10 +40,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private string _applicationDescription;
         private ApplicationMode _applicationMode;
         private string _applicationName;
-        private List<CloudWatchLoggingOption> _cloudWatchLoggingOptions = new List<CloudWatchLoggingOption>();
+        private List<CloudWatchLoggingOption> _cloudWatchLoggingOptions = AWSConfigs.InitializeCollections ? new List<CloudWatchLoggingOption>() : null;
         private RuntimeEnvironment _runtimeEnvironment;
         private string _serviceExecutionRole;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationConfiguration. 
@@ -137,7 +137,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if CloudWatchLoggingOptions property is set
         internal bool IsSetCloudWatchLoggingOptions()
         {
-            return this._cloudWatchLoggingOptions != null && this._cloudWatchLoggingOptions.Count > 0; 
+            return this._cloudWatchLoggingOptions != null && (this._cloudWatchLoggingOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

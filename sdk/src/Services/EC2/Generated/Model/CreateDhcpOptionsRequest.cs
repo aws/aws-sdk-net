@@ -91,8 +91,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateDhcpOptionsRequest : AmazonEC2Request
     {
-        private List<DhcpConfiguration> _dhcpConfigurations = new List<DhcpConfiguration>();
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<DhcpConfiguration> _dhcpConfigurations = AWSConfigs.InitializeCollections ? new List<DhcpConfiguration>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -124,7 +124,7 @@ namespace Amazon.EC2.Model
         // Check to see if DhcpConfigurations property is set
         internal bool IsSetDhcpConfigurations()
         {
-            return this._dhcpConfigurations != null && this._dhcpConfigurations.Count > 0; 
+            return this._dhcpConfigurations != null && (this._dhcpConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

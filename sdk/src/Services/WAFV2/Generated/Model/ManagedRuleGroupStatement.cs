@@ -52,10 +52,10 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class ManagedRuleGroupStatement
     {
-        private List<ExcludedRule> _excludedRules = new List<ExcludedRule>();
-        private List<ManagedRuleGroupConfig> _managedRuleGroupConfigs = new List<ManagedRuleGroupConfig>();
+        private List<ExcludedRule> _excludedRules = AWSConfigs.InitializeCollections ? new List<ExcludedRule>() : null;
+        private List<ManagedRuleGroupConfig> _managedRuleGroupConfigs = AWSConfigs.InitializeCollections ? new List<ManagedRuleGroupConfig>() : null;
         private string _name;
-        private List<RuleActionOverride> _ruleActionOverrides = new List<RuleActionOverride>();
+        private List<RuleActionOverride> _ruleActionOverrides = AWSConfigs.InitializeCollections ? new List<RuleActionOverride>() : null;
         private Statement _scopeDownStatement;
         private string _vendorName;
         private string _version;
@@ -82,7 +82,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if ExcludedRules property is set
         internal bool IsSetExcludedRules()
         {
-            return this._excludedRules != null && this._excludedRules.Count > 0; 
+            return this._excludedRules != null && (this._excludedRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if ManagedRuleGroupConfigs property is set
         internal bool IsSetManagedRuleGroupConfigs()
         {
-            return this._managedRuleGroupConfigs != null && this._managedRuleGroupConfigs.Count > 0; 
+            return this._managedRuleGroupConfigs != null && (this._managedRuleGroupConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if RuleActionOverrides property is set
         internal bool IsSetRuleActionOverrides()
         {
-            return this._ruleActionOverrides != null && this._ruleActionOverrides.Count > 0; 
+            return this._ruleActionOverrides != null && (this._ruleActionOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

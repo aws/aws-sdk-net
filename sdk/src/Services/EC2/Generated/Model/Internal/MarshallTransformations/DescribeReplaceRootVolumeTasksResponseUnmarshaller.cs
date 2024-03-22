@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("replaceRootVolumeTaskSet/item", targetDepth))
                     {
                         var unmarshaller = ReplaceRootVolumeTaskUnmarshaller.Instance;
+                        if (response.ReplaceRootVolumeTasks == null)
+                        {
+                            response.ReplaceRootVolumeTasks = new List<ReplaceRootVolumeTask>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ReplaceRootVolumeTasks.Add(item);
                         continue;

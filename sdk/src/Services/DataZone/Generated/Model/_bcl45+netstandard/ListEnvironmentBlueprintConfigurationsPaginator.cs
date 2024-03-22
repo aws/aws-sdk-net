@@ -45,7 +45,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<EnvironmentBlueprintConfigurationItem> Items => 
-            new PaginatedResultKeyResponse<ListEnvironmentBlueprintConfigurationsResponse, EnvironmentBlueprintConfigurationItem>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListEnvironmentBlueprintConfigurationsResponse, EnvironmentBlueprintConfigurationItem>(this, (i) => i.Items ?? new List<EnvironmentBlueprintConfigurationItem>());
 
         internal ListEnvironmentBlueprintConfigurationsPaginator(IAmazonDataZone client, ListEnvironmentBlueprintConfigurationsRequest request)
         {

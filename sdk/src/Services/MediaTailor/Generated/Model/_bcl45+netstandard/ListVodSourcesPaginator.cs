@@ -45,7 +45,7 @@ namespace Amazon.MediaTailor.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<VodSource> Items => 
-            new PaginatedResultKeyResponse<ListVodSourcesResponse, VodSource>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListVodSourcesResponse, VodSource>(this, (i) => i.Items ?? new List<VodSource>());
 
         internal ListVodSourcesPaginator(IAmazonMediaTailor client, ListVodSourcesRequest request)
         {

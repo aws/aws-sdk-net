@@ -33,7 +33,7 @@ namespace Amazon.EventBridge.Model
     /// </summary>
     public partial class ListApiDestinationsResponse : AmazonWebServiceResponse
     {
-        private List<ApiDestination> _apiDestinations = new List<ApiDestination>();
+        private List<ApiDestination> _apiDestinations = AWSConfigs.InitializeCollections ? new List<ApiDestination>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EventBridge.Model
         // Check to see if ApiDestinations property is set
         internal bool IsSetApiDestinations()
         {
-            return this._apiDestinations != null && this._apiDestinations.Count > 0; 
+            return this._apiDestinations != null && (this._apiDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

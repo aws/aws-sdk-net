@@ -33,7 +33,7 @@ namespace Amazon.DAX.Model
     /// </summary>
     public partial class ParameterGroupStatus
     {
-        private List<string> _nodeIdsToReboot = new List<string>();
+        private List<string> _nodeIdsToReboot = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _parameterApplyStatus;
         private string _parameterGroupName;
 
@@ -52,7 +52,7 @@ namespace Amazon.DAX.Model
         // Check to see if NodeIdsToReboot property is set
         internal bool IsSetNodeIdsToReboot()
         {
-            return this._nodeIdsToReboot != null && this._nodeIdsToReboot.Count > 0; 
+            return this._nodeIdsToReboot != null && (this._nodeIdsToReboot.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

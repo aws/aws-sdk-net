@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ListComplianceSummariesResponse : AmazonWebServiceResponse
     {
-        private List<ComplianceSummaryItem> _complianceSummaryItems = new List<ComplianceSummaryItem>();
+        private List<ComplianceSummaryItem> _complianceSummaryItems = AWSConfigs.InitializeCollections ? new List<ComplianceSummaryItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ComplianceSummaryItems property is set
         internal bool IsSetComplianceSummaryItems()
         {
-            return this._complianceSummaryItems != null && this._complianceSummaryItems.Count > 0; 
+            return this._complianceSummaryItems != null && (this._complianceSummaryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

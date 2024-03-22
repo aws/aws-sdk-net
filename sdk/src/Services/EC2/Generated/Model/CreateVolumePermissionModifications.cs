@@ -33,8 +33,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateVolumePermissionModifications
     {
-        private List<CreateVolumePermission> _add = new List<CreateVolumePermission>();
-        private List<CreateVolumePermission> _remove = new List<CreateVolumePermission>();
+        private List<CreateVolumePermission> _add = AWSConfigs.InitializeCollections ? new List<CreateVolumePermission>() : null;
+        private List<CreateVolumePermission> _remove = AWSConfigs.InitializeCollections ? new List<CreateVolumePermission>() : null;
 
         /// <summary>
         /// Gets and sets the property Add. 
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Add property is set
         internal bool IsSetAdd()
         {
-            return this._add != null && this._add.Count > 0; 
+            return this._add != null && (this._add.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         // Check to see if Remove property is set
         internal bool IsSetRemove()
         {
-            return this._remove != null && this._remove.Count > 0; 
+            return this._remove != null && (this._remove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

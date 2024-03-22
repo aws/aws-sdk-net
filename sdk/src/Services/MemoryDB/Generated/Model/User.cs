@@ -36,7 +36,7 @@ namespace Amazon.MemoryDB.Model
     public partial class User
     {
         private string _accessString;
-        private List<string> _aclNames = new List<string>();
+        private List<string> _aclNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _arn;
         private Authentication _authentication;
         private string _minimumEngineVersion;
@@ -76,7 +76,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ACLNames property is set
         internal bool IsSetACLNames()
         {
-            return this._aclNames != null && this._aclNames.Count > 0; 
+            return this._aclNames != null && (this._aclNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

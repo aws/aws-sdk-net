@@ -33,7 +33,7 @@ namespace Amazon.EventBridge.Model
     /// </summary>
     public partial class ListArchivesResponse : AmazonWebServiceResponse
     {
-        private List<Archive> _archives = new List<Archive>();
+        private List<Archive> _archives = AWSConfigs.InitializeCollections ? new List<Archive>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EventBridge.Model
         // Check to see if Archives property is set
         internal bool IsSetArchives()
         {
-            return this._archives != null && this._archives.Count > 0; 
+            return this._archives != null && (this._archives.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

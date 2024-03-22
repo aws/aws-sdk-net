@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class BoxPlotSortConfiguration
     {
-        private List<FieldSortOptions> _categorySort = new List<FieldSortOptions>();
+        private List<FieldSortOptions> _categorySort = AWSConfigs.InitializeCollections ? new List<FieldSortOptions>() : null;
         private PaginationConfiguration _paginationConfiguration;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if CategorySort property is set
         internal bool IsSetCategorySort()
         {
-            return this._categorySort != null && this._categorySort.Count > 0; 
+            return this._categorySort != null && (this._categorySort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

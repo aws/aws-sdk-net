@@ -36,11 +36,11 @@ namespace Amazon.RoboMaker.Model
         private string _application;
         private string _applicationVersion;
         private LaunchConfig _launchConfig;
-        private List<Tool> _tools = new List<Tool>();
-        private List<UploadConfiguration> _uploadConfigurations = new List<UploadConfiguration>();
+        private List<Tool> _tools = AWSConfigs.InitializeCollections ? new List<Tool>() : null;
+        private List<UploadConfiguration> _uploadConfigurations = AWSConfigs.InitializeCollections ? new List<UploadConfiguration>() : null;
         private bool? _useDefaultTools;
         private bool? _useDefaultUploadConfigurations;
-        private List<WorldConfig> _worldConfigs = new List<WorldConfig>();
+        private List<WorldConfig> _worldConfigs = AWSConfigs.InitializeCollections ? new List<WorldConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property Application. 
@@ -115,7 +115,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Tools property is set
         internal bool IsSetTools()
         {
-            return this._tools != null && this._tools.Count > 0; 
+            return this._tools != null && (this._tools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if UploadConfigurations property is set
         internal bool IsSetUploadConfigurations()
         {
-            return this._uploadConfigurations != null && this._uploadConfigurations.Count > 0; 
+            return this._uploadConfigurations != null && (this._uploadConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if WorldConfigs property is set
         internal bool IsSetWorldConfigs()
         {
-            return this._worldConfigs != null && this._worldConfigs.Count > 0; 
+            return this._worldConfigs != null && (this._worldConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

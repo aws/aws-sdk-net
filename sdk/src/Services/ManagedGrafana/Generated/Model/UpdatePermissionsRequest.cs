@@ -35,7 +35,7 @@ namespace Amazon.ManagedGrafana.Model
     /// </summary>
     public partial class UpdatePermissionsRequest : AmazonManagedGrafanaRequest
     {
-        private List<UpdateInstruction> _updateInstructionBatch = new List<UpdateInstruction>();
+        private List<UpdateInstruction> _updateInstructionBatch = AWSConfigs.InitializeCollections ? new List<UpdateInstruction>() : null;
         private string _workspaceId;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if UpdateInstructionBatch property is set
         internal bool IsSetUpdateInstructionBatch()
         {
-            return this._updateInstructionBatch != null && this._updateInstructionBatch.Count > 0; 
+            return this._updateInstructionBatch != null && (this._updateInstructionBatch.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

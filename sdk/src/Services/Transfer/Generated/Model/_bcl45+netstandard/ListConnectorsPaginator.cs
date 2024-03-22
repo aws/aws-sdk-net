@@ -45,7 +45,7 @@ namespace Amazon.Transfer.Model
         /// Enumerable containing all of the Connectors
         /// </summary>
         public IPaginatedEnumerable<ListedConnector> Connectors => 
-            new PaginatedResultKeyResponse<ListConnectorsResponse, ListedConnector>(this, (i) => i.Connectors);
+            new PaginatedResultKeyResponse<ListConnectorsResponse, ListedConnector>(this, (i) => i.Connectors ?? new List<ListedConnector>());
 
         internal ListConnectorsPaginator(IAmazonTransfer client, ListConnectorsRequest request)
         {

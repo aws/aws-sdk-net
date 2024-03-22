@@ -33,8 +33,8 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class JobMessages
     {
-        private List<string> _info = new List<string>();
-        private List<string> _warning = new List<string>();
+        private List<string> _info = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _warning = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Info. List of messages that are informational only and
@@ -49,7 +49,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Info property is set
         internal bool IsSetInfo()
         {
-            return this._info != null && this._info.Count > 0; 
+            return this._info != null && (this._info.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Warning property is set
         internal bool IsSetWarning()
         {
-            return this._warning != null && this._warning.Count > 0; 
+            return this._warning != null && (this._warning.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

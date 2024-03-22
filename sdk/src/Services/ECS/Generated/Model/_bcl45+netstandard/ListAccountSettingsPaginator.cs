@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
         /// Enumerable containing all of the Settings
         /// </summary>
         public IPaginatedEnumerable<Setting> Settings => 
-            new PaginatedResultKeyResponse<ListAccountSettingsResponse, Setting>(this, (i) => i.Settings);
+            new PaginatedResultKeyResponse<ListAccountSettingsResponse, Setting>(this, (i) => i.Settings ?? new List<Setting>());
 
         internal ListAccountSettingsPaginator(IAmazonECS client, ListAccountSettingsRequest request)
         {

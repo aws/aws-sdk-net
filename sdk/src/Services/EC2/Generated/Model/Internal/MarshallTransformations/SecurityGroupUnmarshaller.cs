@@ -75,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipPermissions/item", targetDepth))
                     {
                         var unmarshaller = IpPermissionUnmarshaller.Instance;
+                        if (unmarshalledObject.IpPermissions == null)
+                        {
+                            unmarshalledObject.IpPermissions = new List<IpPermission>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.IpPermissions.Add(item);
                         continue;
@@ -82,6 +86,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipPermissionsEgress/item", targetDepth))
                     {
                         var unmarshaller = IpPermissionUnmarshaller.Instance;
+                        if (unmarshalledObject.IpPermissionsEgress == null)
+                        {
+                            unmarshalledObject.IpPermissionsEgress = new List<IpPermission>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.IpPermissionsEgress.Add(item);
                         continue;
@@ -95,6 +103,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

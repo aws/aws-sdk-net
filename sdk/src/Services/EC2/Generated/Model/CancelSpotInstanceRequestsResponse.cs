@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CancelSpotInstanceRequestsResponse : AmazonWebServiceResponse
     {
-        private List<CancelledSpotInstanceRequest> _cancelledSpotInstanceRequests = new List<CancelledSpotInstanceRequest>();
+        private List<CancelledSpotInstanceRequest> _cancelledSpotInstanceRequests = AWSConfigs.InitializeCollections ? new List<CancelledSpotInstanceRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property CancelledSpotInstanceRequests. 
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         // Check to see if CancelledSpotInstanceRequests property is set
         internal bool IsSetCancelledSpotInstanceRequests()
         {
-            return this._cancelledSpotInstanceRequests != null && this._cancelledSpotInstanceRequests.Count > 0; 
+            return this._cancelledSpotInstanceRequests != null && (this._cancelledSpotInstanceRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

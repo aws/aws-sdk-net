@@ -84,6 +84,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Capabilities/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.Capabilities == null)
+                        {
+                            response.Capabilities = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Capabilities.Add(item);
                         continue;
@@ -97,6 +101,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DeclaredTransforms/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.DeclaredTransforms == null)
+                        {
+                            response.DeclaredTransforms = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DeclaredTransforms.Add(item);
                         continue;
@@ -110,6 +118,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Parameters/member", targetDepth))
                     {
                         var unmarshaller = TemplateParameterUnmarshaller.Instance;
+                        if (response.Parameters == null)
+                        {
+                            response.Parameters = new List<TemplateParameter>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Parameters.Add(item);
                         continue;

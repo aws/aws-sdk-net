@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("associatedRoleSet/item", targetDepth))
                     {
                         var unmarshaller = AssociatedRoleUnmarshaller.Instance;
+                        if (response.AssociatedRoles == null)
+                        {
+                            response.AssociatedRoles = new List<AssociatedRole>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AssociatedRoles.Add(item);
                         continue;

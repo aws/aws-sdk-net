@@ -41,7 +41,7 @@ namespace Amazon.IoT.Model
     public partial class UpdateStreamRequest : AmazonIoTRequest
     {
         private string _description;
-        private List<StreamFile> _files = new List<StreamFile>();
+        private List<StreamFile> _files = AWSConfigs.InitializeCollections ? new List<StreamFile>() : null;
         private string _roleArn;
         private string _streamId;
 
@@ -80,7 +80,7 @@ namespace Amazon.IoT.Model
         // Check to see if Files property is set
         internal bool IsSetFiles()
         {
-            return this._files != null && this._files.Count > 0; 
+            return this._files != null && (this._files.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

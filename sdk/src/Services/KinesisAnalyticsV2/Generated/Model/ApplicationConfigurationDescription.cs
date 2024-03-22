@@ -40,7 +40,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private FlinkApplicationConfigurationDescription _flinkApplicationConfigurationDescription;
         private RunConfigurationDescription _runConfigurationDescription;
         private SqlApplicationConfigurationDescription _sqlApplicationConfigurationDescription;
-        private List<VpcConfigurationDescription> _vpcConfigurationDescriptions = new List<VpcConfigurationDescription>();
+        private List<VpcConfigurationDescription> _vpcConfigurationDescriptions = AWSConfigs.InitializeCollections ? new List<VpcConfigurationDescription>() : null;
         private ZeppelinApplicationConfigurationDescription _zeppelinApplicationConfigurationDescription;
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if VpcConfigurationDescriptions property is set
         internal bool IsSetVpcConfigurationDescriptions()
         {
-            return this._vpcConfigurationDescriptions != null && this._vpcConfigurationDescriptions.Count > 0; 
+            return this._vpcConfigurationDescriptions != null && (this._vpcConfigurationDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

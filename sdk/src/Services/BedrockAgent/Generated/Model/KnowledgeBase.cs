@@ -35,7 +35,7 @@ namespace Amazon.BedrockAgent.Model
     {
         private DateTime? _createdAt;
         private string _description;
-        private List<string> _failureReasons = new List<string>();
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _knowledgeBaseArn;
         private KnowledgeBaseConfiguration _knowledgeBaseConfiguration;
         private string _knowledgeBaseId;
@@ -90,7 +90,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

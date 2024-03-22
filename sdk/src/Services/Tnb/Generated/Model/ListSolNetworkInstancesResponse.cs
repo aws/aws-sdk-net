@@ -33,7 +33,7 @@ namespace Amazon.Tnb.Model
     /// </summary>
     public partial class ListSolNetworkInstancesResponse : AmazonWebServiceResponse
     {
-        private List<ListSolNetworkInstanceInfo> _networkInstances = new List<ListSolNetworkInstanceInfo>();
+        private List<ListSolNetworkInstanceInfo> _networkInstances = AWSConfigs.InitializeCollections ? new List<ListSolNetworkInstanceInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Tnb.Model
         // Check to see if NetworkInstances property is set
         internal bool IsSetNetworkInstances()
         {
-            return this._networkInstances != null && this._networkInstances.Count > 0; 
+            return this._networkInstances != null && (this._networkInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

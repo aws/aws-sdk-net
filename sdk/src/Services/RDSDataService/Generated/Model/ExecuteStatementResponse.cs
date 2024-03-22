@@ -34,11 +34,11 @@ namespace Amazon.RDSDataService.Model
     /// </summary>
     public partial class ExecuteStatementResponse : AmazonWebServiceResponse
     {
-        private List<ColumnMetadata> _columnMetadata = new List<ColumnMetadata>();
+        private List<ColumnMetadata> _columnMetadata = AWSConfigs.InitializeCollections ? new List<ColumnMetadata>() : null;
         private string _formattedRecords;
-        private List<Field> _generatedFields = new List<Field>();
+        private List<Field> _generatedFields = AWSConfigs.InitializeCollections ? new List<Field>() : null;
         private long? _numberOfRecordsUpdated;
-        private List<List<Field>> _records = new List<List<Field>>();
+        private List<List<Field>> _records = AWSConfigs.InitializeCollections ? new List<List<Field>>() : null;
 
         /// <summary>
         /// Gets and sets the property ColumnMetadata. 
@@ -56,7 +56,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if ColumnMetadata property is set
         internal bool IsSetColumnMetadata()
         {
-            return this._columnMetadata != null && this._columnMetadata.Count > 0; 
+            return this._columnMetadata != null && (this._columnMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if GeneratedFields property is set
         internal bool IsSetGeneratedFields()
         {
-            return this._generatedFields != null && this._generatedFields.Count > 0; 
+            return this._generatedFields != null && (this._generatedFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.ServerMigrationService.Model
         /// Enumerable containing all of the ReplicationRunList
         /// </summary>
         public IPaginatedEnumerable<ReplicationRun> ReplicationRunList => 
-            new PaginatedResultKeyResponse<GetReplicationRunsResponse, ReplicationRun>(this, (i) => i.ReplicationRunList);
+            new PaginatedResultKeyResponse<GetReplicationRunsResponse, ReplicationRun>(this, (i) => i.ReplicationRunList ?? new List<ReplicationRun>());
 
         internal GetReplicationRunsPaginator(IAmazonServerMigrationService client, GetReplicationRunsRequest request)
         {

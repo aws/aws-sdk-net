@@ -33,7 +33,7 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class QuickResponseSummary
     {
-        private List<string> _channels = new List<string>();
+        private List<string> _channels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _contentType;
         private DateTime? _createdTime;
         private string _description;
@@ -46,7 +46,7 @@ namespace Amazon.QConnect.Model
         private string _quickResponseArn;
         private string _quickResponseId;
         private QuickResponseStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Channels. 
@@ -64,7 +64,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Channels property is set
         internal bool IsSetChannels()
         {
-            return this._channels != null && this._channels.Count > 0; 
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

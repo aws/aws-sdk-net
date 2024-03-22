@@ -36,7 +36,7 @@ namespace Amazon.WorkSpaces.Model
         private DateTime? _created;
         private string _description;
         private string _errorCode;
-        private List<ErrorDetails> _errorDetails = new List<ErrorDetails>();
+        private List<ErrorDetails> _errorDetails = AWSConfigs.InitializeCollections ? new List<ErrorDetails>() : null;
         private string _errorMessage;
         private string _imageId;
         private string _name;
@@ -119,7 +119,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if ErrorDetails property is set
         internal bool IsSetErrorDetails()
         {
-            return this._errorDetails != null && this._errorDetails.Count > 0; 
+            return this._errorDetails != null && (this._errorDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

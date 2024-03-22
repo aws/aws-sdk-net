@@ -54,8 +54,8 @@ namespace Amazon.CognitoIdentity.Model
     {
         private string _identityId;
         private string _identityPoolId;
-        private Dictionary<string, string> _logins = new Dictionary<string, string>();
-        private Dictionary<string, string> _principalTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _logins = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _principalTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private long? _tokenDuration;
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if Logins property is set
         internal bool IsSetLogins()
         {
-            return this._logins != null && this._logins.Count > 0; 
+            return this._logins != null && (this._logins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if PrincipalTags property is set
         internal bool IsSetPrincipalTags()
         {
-            return this._principalTags != null && this._principalTags.Count > 0; 
+            return this._principalTags != null && (this._principalTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

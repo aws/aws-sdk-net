@@ -57,6 +57,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DimensionConfigurations/member", targetDepth))
                     {
                         var unmarshaller = CloudWatchDimensionConfigurationUnmarshaller.Instance;
+                        if (unmarshalledObject.DimensionConfigurations == null)
+                        {
+                            unmarshalledObject.DimensionConfigurations = new List<CloudWatchDimensionConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DimensionConfigurations.Add(item);
                         continue;

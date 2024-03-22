@@ -35,7 +35,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class PrefetchRetrieval
     {
-        private Dictionary<string, string> _dynamicVariables = new Dictionary<string, string>();
+        private Dictionary<string, string> _dynamicVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _endTime;
         private DateTime? _startTime;
 
@@ -62,7 +62,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if DynamicVariables property is set
         internal bool IsSetDynamicVariables()
         {
-            return this._dynamicVariables != null && this._dynamicVariables.Count > 0; 
+            return this._dynamicVariables != null && (this._dynamicVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

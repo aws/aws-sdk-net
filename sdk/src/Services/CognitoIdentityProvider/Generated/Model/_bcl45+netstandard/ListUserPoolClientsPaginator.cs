@@ -45,7 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Enumerable containing all of the UserPoolClients
         /// </summary>
         public IPaginatedEnumerable<UserPoolClientDescription> UserPoolClients => 
-            new PaginatedResultKeyResponse<ListUserPoolClientsResponse, UserPoolClientDescription>(this, (i) => i.UserPoolClients);
+            new PaginatedResultKeyResponse<ListUserPoolClientsResponse, UserPoolClientDescription>(this, (i) => i.UserPoolClients ?? new List<UserPoolClientDescription>());
 
         internal ListUserPoolClientsPaginator(IAmazonCognitoIdentityProvider client, ListUserPoolClientsRequest request)
         {

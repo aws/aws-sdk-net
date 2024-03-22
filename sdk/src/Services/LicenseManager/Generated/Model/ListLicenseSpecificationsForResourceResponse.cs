@@ -33,7 +33,7 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class ListLicenseSpecificationsForResourceResponse : AmazonWebServiceResponse
     {
-        private List<LicenseSpecification> _licenseSpecifications = new List<LicenseSpecification>();
+        private List<LicenseSpecification> _licenseSpecifications = AWSConfigs.InitializeCollections ? new List<LicenseSpecification>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if LicenseSpecifications property is set
         internal bool IsSetLicenseSpecifications()
         {
-            return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
+            return this._licenseSpecifications != null && (this._licenseSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

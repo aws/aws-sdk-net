@@ -33,7 +33,7 @@ namespace Amazon.Route53Resolver.Model
     /// </summary>
     public partial class ListFirewallRuleGroupsResponse : AmazonWebServiceResponse
     {
-        private List<FirewallRuleGroupMetadata> _firewallRuleGroups = new List<FirewallRuleGroupMetadata>();
+        private List<FirewallRuleGroupMetadata> _firewallRuleGroups = AWSConfigs.InitializeCollections ? new List<FirewallRuleGroupMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if FirewallRuleGroups property is set
         internal bool IsSetFirewallRuleGroups()
         {
-            return this._firewallRuleGroups != null && this._firewallRuleGroups.Count > 0; 
+            return this._firewallRuleGroups != null && (this._firewallRuleGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

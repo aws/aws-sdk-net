@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the RedshiftIdcApplications
         /// </summary>
         public IPaginatedEnumerable<RedshiftIdcApplication> RedshiftIdcApplications => 
-            new PaginatedResultKeyResponse<DescribeRedshiftIdcApplicationsResponse, RedshiftIdcApplication>(this, (i) => i.RedshiftIdcApplications);
+            new PaginatedResultKeyResponse<DescribeRedshiftIdcApplicationsResponse, RedshiftIdcApplication>(this, (i) => i.RedshiftIdcApplications ?? new List<RedshiftIdcApplication>());
 
         internal DescribeRedshiftIdcApplicationsPaginator(IAmazonRedshift client, DescribeRedshiftIdcApplicationsRequest request)
         {

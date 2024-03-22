@@ -33,8 +33,8 @@ namespace Amazon.IoTJobsDataPlane.Model
     /// </summary>
     public partial class GetPendingJobExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<JobExecutionSummary> _inProgressJobs = new List<JobExecutionSummary>();
-        private List<JobExecutionSummary> _queuedJobs = new List<JobExecutionSummary>();
+        private List<JobExecutionSummary> _inProgressJobs = AWSConfigs.InitializeCollections ? new List<JobExecutionSummary>() : null;
+        private List<JobExecutionSummary> _queuedJobs = AWSConfigs.InitializeCollections ? new List<JobExecutionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property InProgressJobs. 
@@ -51,7 +51,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         // Check to see if InProgressJobs property is set
         internal bool IsSetInProgressJobs()
         {
-            return this._inProgressJobs != null && this._inProgressJobs.Count > 0; 
+            return this._inProgressJobs != null && (this._inProgressJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         // Check to see if QueuedJobs property is set
         internal bool IsSetQueuedJobs()
         {
-            return this._queuedJobs != null && this._queuedJobs.Count > 0; 
+            return this._queuedJobs != null && (this._queuedJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

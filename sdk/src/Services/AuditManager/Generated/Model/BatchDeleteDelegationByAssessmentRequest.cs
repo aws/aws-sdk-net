@@ -35,7 +35,7 @@ namespace Amazon.AuditManager.Model
     public partial class BatchDeleteDelegationByAssessmentRequest : AmazonAuditManagerRequest
     {
         private string _assessmentId;
-        private List<string> _delegationIds = new List<string>();
+        private List<string> _delegationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssessmentId. 
@@ -72,7 +72,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if DelegationIds property is set
         internal bool IsSetDelegationIds()
         {
-            return this._delegationIds != null && this._delegationIds.Count > 0; 
+            return this._delegationIds != null && (this._delegationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

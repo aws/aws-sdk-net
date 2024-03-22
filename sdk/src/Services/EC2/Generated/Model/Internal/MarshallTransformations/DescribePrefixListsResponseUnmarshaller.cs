@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("prefixListSet/item", targetDepth))
                     {
                         var unmarshaller = PrefixListUnmarshaller.Instance;
+                        if (response.PrefixLists == null)
+                        {
+                            response.PrefixLists = new List<PrefixList>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.PrefixLists.Add(item);
                         continue;

@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ReportDeliveryChannel
     {
-        private List<string> _formats = new List<string>();
+        private List<string> _formats = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _s3BucketName;
         private string _s3KeyPrefix;
 
@@ -54,7 +54,7 @@ namespace Amazon.Backup.Model
         // Check to see if Formats property is set
         internal bool IsSetFormats()
         {
-            return this._formats != null && this._formats.Count > 0; 
+            return this._formats != null && (this._formats.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// Enumerable containing all of the Findings
         /// </summary>
         public IPaginatedEnumerable<Finding> Findings => 
-            new PaginatedResultKeyResponse<GetFindingsResponse, Finding>(this, (i) => i.Findings);
+            new PaginatedResultKeyResponse<GetFindingsResponse, Finding>(this, (i) => i.Findings ?? new List<Finding>());
 
         internal GetFindingsPaginator(IAmazonCodeGuruSecurity client, GetFindingsRequest request)
         {

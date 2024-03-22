@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("networkInsightsPathSet/item", targetDepth))
                     {
                         var unmarshaller = NetworkInsightsPathUnmarshaller.Instance;
+                        if (response.NetworkInsightsPaths == null)
+                        {
+                            response.NetworkInsightsPaths = new List<NetworkInsightsPath>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.NetworkInsightsPaths.Add(item);
                         continue;

@@ -35,7 +35,7 @@ namespace Amazon.DataPipeline.Model
     {
         private bool? _hasMoreResults;
         private string _marker;
-        private List<PipelineIdName> _pipelineIdList = new List<PipelineIdName>();
+        private List<PipelineIdName> _pipelineIdList = AWSConfigs.InitializeCollections ? new List<PipelineIdName>() : null;
 
         /// <summary>
         /// Gets and sets the property HasMoreResults. 
@@ -93,7 +93,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if PipelineIdList property is set
         internal bool IsSetPipelineIdList()
         {
-            return this._pipelineIdList != null && this._pipelineIdList.Count > 0; 
+            return this._pipelineIdList != null && (this._pipelineIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

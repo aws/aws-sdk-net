@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the RegistrationTypeDefinitions
         /// </summary>
         public IPaginatedEnumerable<RegistrationTypeDefinition> RegistrationTypeDefinitions => 
-            new PaginatedResultKeyResponse<DescribeRegistrationTypeDefinitionsResponse, RegistrationTypeDefinition>(this, (i) => i.RegistrationTypeDefinitions);
+            new PaginatedResultKeyResponse<DescribeRegistrationTypeDefinitionsResponse, RegistrationTypeDefinition>(this, (i) => i.RegistrationTypeDefinitions ?? new List<RegistrationTypeDefinition>());
 
         internal DescribeRegistrationTypeDefinitionsPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeRegistrationTypeDefinitionsRequest request)
         {

@@ -55,7 +55,7 @@ namespace Amazon.ControlTower.Model
     public partial class UpdateEnabledControlRequest : AmazonControlTowerRequest
     {
         private string _enabledControlIdentifier;
-        private List<EnabledControlParameter> _parameters = new List<EnabledControlParameter>();
+        private List<EnabledControlParameter> _parameters = AWSConfigs.InitializeCollections ? new List<EnabledControlParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property EnabledControlIdentifier. 
@@ -93,7 +93,7 @@ namespace Amazon.ControlTower.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

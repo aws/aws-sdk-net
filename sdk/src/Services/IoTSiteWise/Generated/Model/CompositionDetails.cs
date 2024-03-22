@@ -35,7 +35,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class CompositionDetails
     {
-        private List<CompositionRelationshipItem> _compositionRelationship = new List<CompositionRelationshipItem>();
+        private List<CompositionRelationshipItem> _compositionRelationship = AWSConfigs.InitializeCollections ? new List<CompositionRelationshipItem>() : null;
 
         /// <summary>
         /// Gets and sets the property CompositionRelationship. 
@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if CompositionRelationship property is set
         internal bool IsSetCompositionRelationship()
         {
-            return this._compositionRelationship != null && this._compositionRelationship.Count > 0; 
+            return this._compositionRelationship != null && (this._compositionRelationship.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.CodeArtifact.Model
     /// </summary>
     public partial class PackageGroupOriginConfiguration
     {
-        private Dictionary<string, PackageGroupOriginRestriction> _restrictions = new Dictionary<string, PackageGroupOriginRestriction>();
+        private Dictionary<string, PackageGroupOriginRestriction> _restrictions = AWSConfigs.InitializeCollections ? new Dictionary<string, PackageGroupOriginRestriction>() : null;
 
         /// <summary>
         /// Gets and sets the property Restrictions. 
@@ -51,7 +51,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Restrictions property is set
         internal bool IsSetRestrictions()
         {
-            return this._restrictions != null && this._restrictions.Count > 0; 
+            return this._restrictions != null && (this._restrictions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

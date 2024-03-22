@@ -37,12 +37,12 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class CreateGrantRequest : AmazonLicenseManagerRequest
     {
-        private List<string> _allowedOperations = new List<string>();
+        private List<string> _allowedOperations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientToken;
         private string _grantName;
         private string _homeRegion;
         private string _licenseArn;
-        private List<string> _principals = new List<string>();
+        private List<string> _principals = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowedOperations. 
@@ -60,7 +60,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if AllowedOperations property is set
         internal bool IsSetAllowedOperations()
         {
-            return this._allowedOperations != null && this._allowedOperations.Count > 0; 
+            return this._allowedOperations != null && (this._allowedOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

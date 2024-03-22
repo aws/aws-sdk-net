@@ -34,7 +34,7 @@ namespace Amazon.KeyManagementService.Model
     public partial class ListKeyPoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<string> _policyNames = new List<string>();
+        private List<string> _policyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _truncated;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this._policyNames != null && this._policyNames.Count > 0; 
+            return this._policyNames != null && (this._policyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

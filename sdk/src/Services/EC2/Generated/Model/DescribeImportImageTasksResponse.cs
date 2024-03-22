@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeImportImageTasksResponse : AmazonWebServiceResponse
     {
-        private List<ImportImageTask> _importImageTasks = new List<ImportImageTask>();
+        private List<ImportImageTask> _importImageTasks = AWSConfigs.InitializeCollections ? new List<ImportImageTask>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if ImportImageTasks property is set
         internal bool IsSetImportImageTasks()
         {
-            return this._importImageTasks != null && this._importImageTasks.Count > 0; 
+            return this._importImageTasks != null && (this._importImageTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

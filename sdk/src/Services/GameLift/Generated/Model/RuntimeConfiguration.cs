@@ -47,7 +47,7 @@ namespace Amazon.GameLift.Model
     {
         private int? _gameSessionActivationTimeoutSeconds;
         private int? _maxConcurrentGameSessionActivations;
-        private List<ServerProcess> _serverProcesses = new List<ServerProcess>();
+        private List<ServerProcess> _serverProcesses = AWSConfigs.InitializeCollections ? new List<ServerProcess>() : null;
 
         /// <summary>
         /// Gets and sets the property GameSessionActivationTimeoutSeconds. 
@@ -109,7 +109,7 @@ namespace Amazon.GameLift.Model
         // Check to see if ServerProcesses property is set
         internal bool IsSetServerProcesses()
         {
-            return this._serverProcesses != null && this._serverProcesses.Count > 0; 
+            return this._serverProcesses != null && (this._serverProcesses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

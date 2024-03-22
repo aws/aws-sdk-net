@@ -33,7 +33,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class ListApplicationComponentsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationComponentDetail> _applicationComponentInfos = new List<ApplicationComponentDetail>();
+        private List<ApplicationComponentDetail> _applicationComponentInfos = AWSConfigs.InitializeCollections ? new List<ApplicationComponentDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ApplicationComponentInfos property is set
         internal bool IsSetApplicationComponentInfos()
         {
-            return this._applicationComponentInfos != null && this._applicationComponentInfos.Count > 0; 
+            return this._applicationComponentInfos != null && (this._applicationComponentInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

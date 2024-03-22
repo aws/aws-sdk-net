@@ -34,9 +34,9 @@ namespace Amazon.Backup.Model
     public partial class RestoreTestingSelectionForUpdate
     {
         private string _iamRoleArn;
-        private List<string> _protectedResourceArns = new List<string>();
+        private List<string> _protectedResourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ProtectedResourceConditions _protectedResourceConditions;
-        private Dictionary<string, string> _restoreMetadataOverrides = new Dictionary<string, string>();
+        private Dictionary<string, string> _restoreMetadataOverrides = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _validationWindowHours;
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.Backup.Model
         // Check to see if ProtectedResourceArns property is set
         internal bool IsSetProtectedResourceArns()
         {
-            return this._protectedResourceArns != null && this._protectedResourceArns.Count > 0; 
+            return this._protectedResourceArns != null && (this._protectedResourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.Backup.Model
         // Check to see if RestoreMetadataOverrides property is set
         internal bool IsSetRestoreMetadataOverrides()
         {
-            return this._restoreMetadataOverrides != null && this._restoreMetadataOverrides.Count > 0; 
+            return this._restoreMetadataOverrides != null && (this._restoreMetadataOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

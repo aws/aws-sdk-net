@@ -56,7 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class AdminDeleteUserAttributesRequest : AmazonCognitoIdentityProviderRequest
     {
-        private List<string> _userAttributeNames = new List<string>();
+        private List<string> _userAttributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _username;
         private string _userPoolId;
 
@@ -81,7 +81,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if UserAttributeNames property is set
         internal bool IsSetUserAttributeNames()
         {
-            return this._userAttributeNames != null && this._userAttributeNames.Count > 0; 
+            return this._userAttributeNames != null && (this._userAttributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

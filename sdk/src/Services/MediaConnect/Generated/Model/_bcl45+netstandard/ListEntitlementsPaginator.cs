@@ -45,7 +45,7 @@ namespace Amazon.MediaConnect.Model
         /// Enumerable containing all of the Entitlements
         /// </summary>
         public IPaginatedEnumerable<ListedEntitlement> Entitlements => 
-            new PaginatedResultKeyResponse<ListEntitlementsResponse, ListedEntitlement>(this, (i) => i.Entitlements);
+            new PaginatedResultKeyResponse<ListEntitlementsResponse, ListedEntitlement>(this, (i) => i.Entitlements ?? new List<ListedEntitlement>());
 
         internal ListEntitlementsPaginator(IAmazonMediaConnect client, ListEntitlementsRequest request)
         {

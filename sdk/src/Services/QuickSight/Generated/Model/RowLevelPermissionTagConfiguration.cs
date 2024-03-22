@@ -34,8 +34,8 @@ namespace Amazon.QuickSight.Model
     public partial class RowLevelPermissionTagConfiguration
     {
         private Status _status;
-        private List<List<string>> _tagRuleConfigurations = new List<List<string>>();
-        private List<RowLevelPermissionTagRule> _tagRules = new List<RowLevelPermissionTagRule>();
+        private List<List<string>> _tagRuleConfigurations = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
+        private List<RowLevelPermissionTagRule> _tagRules = AWSConfigs.InitializeCollections ? new List<RowLevelPermissionTagRule>() : null;
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -75,7 +75,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TagRuleConfigurations property is set
         internal bool IsSetTagRuleConfigurations()
         {
-            return this._tagRuleConfigurations != null && this._tagRuleConfigurations.Count > 0; 
+            return this._tagRuleConfigurations != null && (this._tagRuleConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TagRules property is set
         internal bool IsSetTagRules()
         {
-            return this._tagRules != null && this._tagRules.Count > 0; 
+            return this._tagRules != null && (this._tagRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

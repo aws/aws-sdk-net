@@ -33,7 +33,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class GetTypedLinkFacetInformationResponse : AmazonWebServiceResponse
     {
-        private List<string> _identityAttributeOrder = new List<string>();
+        private List<string> _identityAttributeOrder = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IdentityAttributeOrder. 
@@ -57,7 +57,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if IdentityAttributeOrder property is set
         internal bool IsSetIdentityAttributeOrder()
         {
-            return this._identityAttributeOrder != null && this._identityAttributeOrder.Count > 0; 
+            return this._identityAttributeOrder != null && (this._identityAttributeOrder.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

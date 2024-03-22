@@ -35,7 +35,7 @@ namespace Amazon.ElasticFileSystem.Model
     public partial class ResourceIdPreference
     {
         private ResourceIdType _resourceIdType;
-        private List<string> _resources = new List<string>();
+        private List<string> _resources = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceIdType. 
@@ -72,7 +72,7 @@ namespace Amazon.ElasticFileSystem.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

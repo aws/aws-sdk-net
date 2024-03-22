@@ -40,7 +40,7 @@ namespace Amazon.SavingsPlans.Model
         private string _end;
         private string _offeringId;
         private SavingsPlanPaymentOption _paymentOption;
-        private List<string> _productTypes = new List<string>();
+        private List<string> _productTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _recurringPaymentAmount;
         private string _region;
         private string _returnableUntil;
@@ -49,7 +49,7 @@ namespace Amazon.SavingsPlans.Model
         private SavingsPlanType _savingsPlanType;
         private string _start;
         private SavingsPlanState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private long? _termDurationInSeconds;
         private string _upfrontPaymentAmount;
 
@@ -194,7 +194,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if ProductTypes property is set
         internal bool IsSetProductTypes()
         {
-            return this._productTypes != null && this._productTypes.Count > 0; 
+            return this._productTypes != null && (this._productTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -357,7 +357,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

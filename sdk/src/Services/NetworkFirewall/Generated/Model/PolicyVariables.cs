@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class PolicyVariables
     {
-        private Dictionary<string, IPSet> _ruleVariables = new Dictionary<string, IPSet>();
+        private Dictionary<string, IPSet> _ruleVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, IPSet>() : null;
 
         /// <summary>
         /// Gets and sets the property RuleVariables. 
@@ -55,7 +55,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if RuleVariables property is set
         internal bool IsSetRuleVariables()
         {
-            return this._ruleVariables != null && this._ruleVariables.Count > 0; 
+            return this._ruleVariables != null && (this._ruleVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

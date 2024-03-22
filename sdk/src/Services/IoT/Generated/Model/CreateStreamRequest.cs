@@ -43,10 +43,10 @@ namespace Amazon.IoT.Model
     public partial class CreateStreamRequest : AmazonIoTRequest
     {
         private string _description;
-        private List<StreamFile> _files = new List<StreamFile>();
+        private List<StreamFile> _files = AWSConfigs.InitializeCollections ? new List<StreamFile>() : null;
         private string _roleArn;
         private string _streamId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -83,7 +83,7 @@ namespace Amazon.IoT.Model
         // Check to see if Files property is set
         internal bool IsSetFiles()
         {
-            return this._files != null && this._files.Count > 0; 
+            return this._files != null && (this._files.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.IoT.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

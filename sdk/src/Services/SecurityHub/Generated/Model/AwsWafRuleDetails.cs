@@ -36,7 +36,7 @@ namespace Amazon.SecurityHub.Model
     {
         private string _metricName;
         private string _name;
-        private List<AwsWafRulePredicateListDetails> _predicateList = new List<AwsWafRulePredicateListDetails>();
+        private List<AwsWafRulePredicateListDetails> _predicateList = AWSConfigs.InitializeCollections ? new List<AwsWafRulePredicateListDetails>() : null;
         private string _ruleId;
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PredicateList property is set
         internal bool IsSetPredicateList()
         {
-            return this._predicateList != null && this._predicateList.Count > 0; 
+            return this._predicateList != null && (this._predicateList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

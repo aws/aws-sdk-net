@@ -49,7 +49,7 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayARN;
         private int? _limit;
         private string _marker;
-        private List<string> _tapeARNs = new List<string>();
+        private List<string> _tapeARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GatewayARN.
@@ -132,7 +132,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TapeARNs property is set
         internal bool IsSetTapeARNs()
         {
-            return this._tapeARNs != null && this._tapeARNs.Count > 0; 
+            return this._tapeARNs != null && (this._tapeARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

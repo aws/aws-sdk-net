@@ -33,7 +33,7 @@ namespace Amazon.AppConfig.Model
     /// </summary>
     public partial class ListDeploymentsResponse : AmazonWebServiceResponse
     {
-        private List<DeploymentSummary> _items = new List<DeploymentSummary>();
+        private List<DeploymentSummary> _items = AWSConfigs.InitializeCollections ? new List<DeploymentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

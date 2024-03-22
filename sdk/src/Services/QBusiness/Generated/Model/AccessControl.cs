@@ -35,7 +35,7 @@ namespace Amazon.QBusiness.Model
     public partial class AccessControl
     {
         private MemberRelation _memberRelation;
-        private List<Principal> _principals = new List<Principal>();
+        private List<Principal> _principals = AWSConfigs.InitializeCollections ? new List<Principal>() : null;
 
         /// <summary>
         /// Gets and sets the property MemberRelation. 
@@ -73,7 +73,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

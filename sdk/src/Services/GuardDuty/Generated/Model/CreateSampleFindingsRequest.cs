@@ -37,7 +37,7 @@ namespace Amazon.GuardDuty.Model
     public partial class CreateSampleFindingsRequest : AmazonGuardDutyRequest
     {
         private string _detectorId;
-        private List<string> _findingTypes = new List<string>();
+        private List<string> _findingTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
@@ -74,7 +74,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if FindingTypes property is set
         internal bool IsSetFindingTypes()
         {
-            return this._findingTypes != null && this._findingTypes.Count > 0; 
+            return this._findingTypes != null && (this._findingTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

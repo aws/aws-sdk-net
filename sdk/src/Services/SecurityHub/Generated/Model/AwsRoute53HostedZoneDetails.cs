@@ -36,9 +36,9 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsRoute53HostedZoneDetails
     {
         private AwsRoute53HostedZoneObjectDetails _hostedZone;
-        private List<string> _nameServers = new List<string>();
+        private List<string> _nameServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AwsRoute53QueryLoggingConfigDetails _queryLoggingConfig;
-        private List<AwsRoute53HostedZoneVpcDetails> _vpcs = new List<AwsRoute53HostedZoneVpcDetails>();
+        private List<AwsRoute53HostedZoneVpcDetails> _vpcs = AWSConfigs.InitializeCollections ? new List<AwsRoute53HostedZoneVpcDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property HostedZone. 
@@ -74,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if NameServers property is set
         internal bool IsSetNameServers()
         {
-            return this._nameServers != null && this._nameServers.Count > 0; 
+            return this._nameServers != null && (this._nameServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Vpcs property is set
         internal bool IsSetVpcs()
         {
-            return this._vpcs != null && this._vpcs.Count > 0; 
+            return this._vpcs != null && (this._vpcs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

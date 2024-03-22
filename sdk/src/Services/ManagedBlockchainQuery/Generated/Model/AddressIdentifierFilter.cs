@@ -33,7 +33,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// </summary>
     public partial class AddressIdentifierFilter
     {
-        private List<string> _transactionEventToAddress = new List<string>();
+        private List<string> _transactionEventToAddress = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TransactionEventToAddress. 
@@ -51,7 +51,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         // Check to see if TransactionEventToAddress property is set
         internal bool IsSetTransactionEventToAddress()
         {
-            return this._transactionEventToAddress != null && this._transactionEventToAddress.Count > 0; 
+            return this._transactionEventToAddress != null && (this._transactionEventToAddress.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

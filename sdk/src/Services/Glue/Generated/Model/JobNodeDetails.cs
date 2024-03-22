@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class JobNodeDetails
     {
-        private List<JobRun> _jobRuns = new List<JobRun>();
+        private List<JobRun> _jobRuns = AWSConfigs.InitializeCollections ? new List<JobRun>() : null;
 
         /// <summary>
         /// Gets and sets the property JobRuns. 
@@ -50,7 +50,7 @@ namespace Amazon.Glue.Model
         // Check to see if JobRuns property is set
         internal bool IsSetJobRuns()
         {
-            return this._jobRuns != null && this._jobRuns.Count > 0; 
+            return this._jobRuns != null && (this._jobRuns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

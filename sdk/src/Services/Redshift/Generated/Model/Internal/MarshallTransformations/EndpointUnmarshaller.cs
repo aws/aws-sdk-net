@@ -69,6 +69,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("VpcEndpoints/VpcEndpoint", targetDepth))
                     {
                         var unmarshaller = VpcEndpointUnmarshaller.Instance;
+                        if (unmarshalledObject.VpcEndpoints == null)
+                        {
+                            unmarshalledObject.VpcEndpoints = new List<VpcEndpoint>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.VpcEndpoints.Add(item);
                         continue;

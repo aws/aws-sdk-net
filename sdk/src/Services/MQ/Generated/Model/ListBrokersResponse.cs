@@ -33,7 +33,7 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class ListBrokersResponse : AmazonWebServiceResponse
     {
-        private List<BrokerSummary> _brokerSummaries = new List<BrokerSummary>();
+        private List<BrokerSummary> _brokerSummaries = AWSConfigs.InitializeCollections ? new List<BrokerSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.MQ.Model
         // Check to see if BrokerSummaries property is set
         internal bool IsSetBrokerSummaries()
         {
-            return this._brokerSummaries != null && this._brokerSummaries.Count > 0; 
+            return this._brokerSummaries != null && (this._brokerSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

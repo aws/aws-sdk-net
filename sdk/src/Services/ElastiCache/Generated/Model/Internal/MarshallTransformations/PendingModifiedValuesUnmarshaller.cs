@@ -63,6 +63,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheNodeIdsToRemove/CacheNodeId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.CacheNodeIdsToRemove == null)
+                        {
+                            unmarshalledObject.CacheNodeIdsToRemove = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CacheNodeIdsToRemove.Add(item);
                         continue;
@@ -82,6 +86,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LogDeliveryConfigurations/member", targetDepth))
                     {
                         var unmarshaller = PendingLogDeliveryConfigurationUnmarshaller.Instance;
+                        if (unmarshalledObject.LogDeliveryConfigurations == null)
+                        {
+                            unmarshalledObject.LogDeliveryConfigurations = new List<PendingLogDeliveryConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LogDeliveryConfigurations.Add(item);
                         continue;

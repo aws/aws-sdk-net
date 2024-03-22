@@ -45,7 +45,7 @@ namespace Amazon.AWSHealth.Model
         /// Enumerable containing all of the EventTypes
         /// </summary>
         public IPaginatedEnumerable<EventType> EventTypes => 
-            new PaginatedResultKeyResponse<DescribeEventTypesResponse, EventType>(this, (i) => i.EventTypes);
+            new PaginatedResultKeyResponse<DescribeEventTypesResponse, EventType>(this, (i) => i.EventTypes ?? new List<EventType>());
 
         internal DescribeEventTypesPaginator(IAmazonAWSHealth client, DescribeEventTypesRequest request)
         {

@@ -35,7 +35,7 @@ namespace Amazon.SavingsPlans.Model
     {
         private string _nextToken;
         private string _savingsPlanId;
-        private List<SavingsPlanRate> _searchResults = new List<SavingsPlanRate>();
+        private List<SavingsPlanRate> _searchResults = AWSConfigs.InitializeCollections ? new List<SavingsPlanRate>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -90,7 +90,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if SearchResults property is set
         internal bool IsSetSearchResults()
         {
-            return this._searchResults != null && this._searchResults.Count > 0; 
+            return this._searchResults != null && (this._searchResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

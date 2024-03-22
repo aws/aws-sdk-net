@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class RetrieveAndGenerateResponse : AmazonWebServiceResponse
     {
-        private List<Citation> _citations = new List<Citation>();
+        private List<Citation> _citations = AWSConfigs.InitializeCollections ? new List<Citation>() : null;
         private RetrieveAndGenerateOutput _output;
         private string _sessionId;
 
@@ -53,7 +53,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if Citations property is set
         internal bool IsSetCitations()
         {
-            return this._citations != null && this._citations.Count > 0; 
+            return this._citations != null && (this._citations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

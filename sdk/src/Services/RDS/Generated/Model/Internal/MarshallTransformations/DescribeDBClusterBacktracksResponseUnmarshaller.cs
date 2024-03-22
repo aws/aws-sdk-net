@@ -84,6 +84,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBClusterBacktracks/DBClusterBacktrack", targetDepth))
                     {
                         var unmarshaller = DBClusterBacktrackUnmarshaller.Instance;
+                        if (response.DBClusterBacktracks == null)
+                        {
+                            response.DBClusterBacktracks = new List<DBClusterBacktrack>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DBClusterBacktracks.Add(item);
                         continue;

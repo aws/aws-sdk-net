@@ -35,7 +35,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     public partial class EnvironmentVpc
     {
         private string _accountId;
-        private List<string> _cidrBlocks = new List<string>();
+        private List<string> _cidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createdTime;
         private string _environmentId;
         private DateTime? _lastUpdatedTime;
@@ -77,7 +77,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         // Check to see if CidrBlocks property is set
         internal bool IsSetCidrBlocks()
         {
-            return this._cidrBlocks != null && this._cidrBlocks.Count > 0; 
+            return this._cidrBlocks != null && (this._cidrBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

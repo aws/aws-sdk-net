@@ -75,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("staleIpPermissions/item", targetDepth))
                     {
                         var unmarshaller = StaleIpPermissionUnmarshaller.Instance;
+                        if (unmarshalledObject.StaleIpPermissions == null)
+                        {
+                            unmarshalledObject.StaleIpPermissions = new List<StaleIpPermission>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.StaleIpPermissions.Add(item);
                         continue;
@@ -82,6 +86,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("staleIpPermissionsEgress/item", targetDepth))
                     {
                         var unmarshaller = StaleIpPermissionUnmarshaller.Instance;
+                        if (unmarshalledObject.StaleIpPermissionsEgress == null)
+                        {
+                            unmarshalledObject.StaleIpPermissionsEgress = new List<StaleIpPermission>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.StaleIpPermissionsEgress.Add(item);
                         continue;

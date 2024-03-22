@@ -36,7 +36,7 @@ namespace Amazon.ElastiCache.Model
     public partial class ModifyCacheParameterGroupRequest : AmazonElastiCacheRequest
     {
         private string _cacheParameterGroupName;
-        private List<ParameterNameValue> _parameterNameValues = new List<ParameterNameValue>();
+        private List<ParameterNameValue> _parameterNameValues = AWSConfigs.InitializeCollections ? new List<ParameterNameValue>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -91,7 +91,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ParameterNameValues property is set
         internal bool IsSetParameterNameValues()
         {
-            return this._parameterNameValues != null && this._parameterNameValues.Count > 0; 
+            return this._parameterNameValues != null && (this._parameterNameValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

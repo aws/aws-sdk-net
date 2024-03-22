@@ -45,7 +45,7 @@ namespace Amazon.AppMesh.Model
         /// Enumerable containing all of the VirtualRouters
         /// </summary>
         public IPaginatedEnumerable<VirtualRouterRef> VirtualRouters => 
-            new PaginatedResultKeyResponse<ListVirtualRoutersResponse, VirtualRouterRef>(this, (i) => i.VirtualRouters);
+            new PaginatedResultKeyResponse<ListVirtualRoutersResponse, VirtualRouterRef>(this, (i) => i.VirtualRouters ?? new List<VirtualRouterRef>());
 
         internal ListVirtualRoutersPaginator(IAmazonAppMesh client, ListVirtualRoutersRequest request)
         {

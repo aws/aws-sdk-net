@@ -33,7 +33,7 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class ListArtifactsResponse : AmazonWebServiceResponse
     {
-        private List<Artifact> _artifacts = new List<Artifact>();
+        private List<Artifact> _artifacts = AWSConfigs.InitializeCollections ? new List<Artifact>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Artifacts property is set
         internal bool IsSetArtifacts()
         {
-            return this._artifacts != null && this._artifacts.Count > 0; 
+            return this._artifacts != null && (this._artifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

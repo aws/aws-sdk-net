@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchEnableStandardsResponse : AmazonWebServiceResponse
     {
-        private List<StandardsSubscription> _standardsSubscriptions = new List<StandardsSubscription>();
+        private List<StandardsSubscription> _standardsSubscriptions = AWSConfigs.InitializeCollections ? new List<StandardsSubscription>() : null;
 
         /// <summary>
         /// Gets and sets the property StandardsSubscriptions. 
@@ -50,7 +50,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StandardsSubscriptions property is set
         internal bool IsSetStandardsSubscriptions()
         {
-            return this._standardsSubscriptions != null && this._standardsSubscriptions.Count > 0; 
+            return this._standardsSubscriptions != null && (this._standardsSubscriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

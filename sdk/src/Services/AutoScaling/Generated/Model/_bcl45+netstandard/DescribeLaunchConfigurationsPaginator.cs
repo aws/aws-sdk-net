@@ -45,7 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// Enumerable containing all of the LaunchConfigurations
         /// </summary>
         public IPaginatedEnumerable<LaunchConfiguration> LaunchConfigurations => 
-            new PaginatedResultKeyResponse<DescribeLaunchConfigurationsResponse, LaunchConfiguration>(this, (i) => i.LaunchConfigurations);
+            new PaginatedResultKeyResponse<DescribeLaunchConfigurationsResponse, LaunchConfiguration>(this, (i) => i.LaunchConfigurations ?? new List<LaunchConfiguration>());
 
         internal DescribeLaunchConfigurationsPaginator(IAmazonAutoScaling client, DescribeLaunchConfigurationsRequest request)
         {

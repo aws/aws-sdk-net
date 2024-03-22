@@ -33,7 +33,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribeAccountAttributesResponse : AmazonWebServiceResponse
     {
-        private List<AccountAttribute> _accountAttributes = new List<AccountAttribute>();
+        private List<AccountAttribute> _accountAttributes = AWSConfigs.InitializeCollections ? new List<AccountAttribute>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if AccountAttributes property is set
         internal bool IsSetAccountAttributes()
         {
-            return this._accountAttributes != null && this._accountAttributes.Count > 0; 
+            return this._accountAttributes != null && (this._accountAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

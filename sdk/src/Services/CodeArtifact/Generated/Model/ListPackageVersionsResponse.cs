@@ -38,7 +38,7 @@ namespace Amazon.CodeArtifact.Model
         private string _awsNamespace;
         private string _nextToken;
         private string _package;
-        private List<PackageVersionSummary> _versions = new List<PackageVersionSummary>();
+        private List<PackageVersionSummary> _versions = AWSConfigs.InitializeCollections ? new List<PackageVersionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultDisplayVersion. 
@@ -179,7 +179,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

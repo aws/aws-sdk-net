@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchServerless.Model
     public partial class ListSecurityConfigsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SecurityConfigSummary> _securityConfigSummaries = new List<SecurityConfigSummary>();
+        private List<SecurityConfigSummary> _securityConfigSummaries = AWSConfigs.InitializeCollections ? new List<SecurityConfigSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if SecurityConfigSummaries property is set
         internal bool IsSetSecurityConfigSummaries()
         {
-            return this._securityConfigSummaries != null && this._securityConfigSummaries.Count > 0; 
+            return this._securityConfigSummaries != null && (this._securityConfigSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

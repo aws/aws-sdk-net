@@ -38,7 +38,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class InferenceConfiguration
     {
         private int? _maximumLength;
-        private List<string> _stopSequences = new List<string>();
+        private List<string> _stopSequences = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private float? _temperature;
         private int? _topk;
         private float? _topp;
@@ -79,7 +79,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if StopSequences property is set
         internal bool IsSetStopSequences()
         {
-            return this._stopSequences != null && this._stopSequences.Count > 0; 
+            return this._stopSequences != null && (this._stopSequences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

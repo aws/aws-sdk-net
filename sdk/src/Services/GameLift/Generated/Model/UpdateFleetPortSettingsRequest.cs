@@ -60,8 +60,8 @@ namespace Amazon.GameLift.Model
     public partial class UpdateFleetPortSettingsRequest : AmazonGameLiftRequest
     {
         private string _fleetId;
-        private List<IpPermission> _inboundPermissionAuthorizations = new List<IpPermission>();
-        private List<IpPermission> _inboundPermissionRevocations = new List<IpPermission>();
+        private List<IpPermission> _inboundPermissionAuthorizations = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
+        private List<IpPermission> _inboundPermissionRevocations = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
 
         /// <summary>
         /// Gets and sets the property FleetId. 
@@ -99,7 +99,7 @@ namespace Amazon.GameLift.Model
         // Check to see if InboundPermissionAuthorizations property is set
         internal bool IsSetInboundPermissionAuthorizations()
         {
-            return this._inboundPermissionAuthorizations != null && this._inboundPermissionAuthorizations.Count > 0; 
+            return this._inboundPermissionAuthorizations != null && (this._inboundPermissionAuthorizations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.GameLift.Model
         // Check to see if InboundPermissionRevocations property is set
         internal bool IsSetInboundPermissionRevocations()
         {
-            return this._inboundPermissionRevocations != null && this._inboundPermissionRevocations.Count > 0; 
+            return this._inboundPermissionRevocations != null && (this._inboundPermissionRevocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

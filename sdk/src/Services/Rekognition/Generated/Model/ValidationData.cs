@@ -53,7 +53,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class ValidationData
     {
-        private List<Asset> _assets = new List<Asset>();
+        private List<Asset> _assets = AWSConfigs.InitializeCollections ? new List<Asset>() : null;
 
         /// <summary>
         /// Gets and sets the property Assets. 
@@ -70,7 +70,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Assets property is set
         internal bool IsSetAssets()
         {
-            return this._assets != null && this._assets.Count > 0; 
+            return this._assets != null && (this._assets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

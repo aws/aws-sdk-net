@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         private bool? _defaultForAz;
         private bool? _enableDns64;
         private int? _enableLniAtDeviceIndex;
-        private List<SubnetIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<SubnetIpv6CidrBlockAssociation>();
+        private List<SubnetIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = AWSConfigs.InitializeCollections ? new List<SubnetIpv6CidrBlockAssociation>() : null;
         private bool? _ipv6Native;
         private bool? _mapCustomerOwnedIpOnLaunch;
         private bool? _mapPublicIpOnLaunch;
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         private SubnetState _state;
         private string _subnetArn;
         private string _subnetId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv6CidrBlockAssociationSet property is set
         internal bool IsSetIpv6CidrBlockAssociationSet()
         {
-            return this._ipv6CidrBlockAssociationSet != null && this._ipv6CidrBlockAssociationSet.Count > 0; 
+            return this._ipv6CidrBlockAssociationSet != null && (this._ipv6CidrBlockAssociationSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -426,7 +426,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

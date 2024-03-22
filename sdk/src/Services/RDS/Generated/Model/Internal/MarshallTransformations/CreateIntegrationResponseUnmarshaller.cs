@@ -84,6 +84,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AdditionalEncryptionContext/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        if (response.AdditionalEncryptionContext == null)
+                        {
+                            response.AdditionalEncryptionContext = new Dictionary<string, string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AdditionalEncryptionContext.Add(item);
                         continue;
@@ -109,6 +113,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Errors/IntegrationError", targetDepth))
                     {
                         var unmarshaller = IntegrationErrorUnmarshaller.Instance;
+                        if (response.Errors == null)
+                        {
+                            response.Errors = new List<IntegrationError>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Errors.Add(item);
                         continue;
@@ -146,6 +154,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tags/Tag", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (response.Tags == null)
+                        {
+                            response.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Tags.Add(item);
                         continue;

@@ -33,7 +33,7 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class ListBulkDeploymentDetailedReportsResponse : AmazonWebServiceResponse
     {
-        private List<BulkDeploymentResult> _deployments = new List<BulkDeploymentResult>();
+        private List<BulkDeploymentResult> _deployments = AWSConfigs.InitializeCollections ? new List<BulkDeploymentResult>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Deployments property is set
         internal bool IsSetDeployments()
         {
-            return this._deployments != null && this._deployments.Count > 0; 
+            return this._deployments != null && (this._deployments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.MarketplaceCatalog.Model
     /// </summary>
     public partial class ListChangeSetsResponse : AmazonWebServiceResponse
     {
-        private List<ChangeSetSummaryListItem> _changeSetSummaryList = new List<ChangeSetSummaryListItem>();
+        private List<ChangeSetSummaryListItem> _changeSetSummaryList = AWSConfigs.InitializeCollections ? new List<ChangeSetSummaryListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if ChangeSetSummaryList property is set
         internal bool IsSetChangeSetSummaryList()
         {
-            return this._changeSetSummaryList != null && this._changeSetSummaryList.Count > 0; 
+            return this._changeSetSummaryList != null && (this._changeSetSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

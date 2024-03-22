@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the AssociationSummaries
         /// </summary>
         public IPaginatedEnumerable<AssociationSummary> AssociationSummaries => 
-            new PaginatedResultKeyResponse<ListAssociationsResponse, AssociationSummary>(this, (i) => i.AssociationSummaries);
+            new PaginatedResultKeyResponse<ListAssociationsResponse, AssociationSummary>(this, (i) => i.AssociationSummaries ?? new List<AssociationSummary>());
 
         internal ListAssociationsPaginator(IAmazonSageMaker client, ListAssociationsRequest request)
         {

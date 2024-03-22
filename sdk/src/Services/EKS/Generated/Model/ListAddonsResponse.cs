@@ -33,7 +33,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class ListAddonsResponse : AmazonWebServiceResponse
     {
-        private List<string> _addons = new List<string>();
+        private List<string> _addons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EKS.Model
         // Check to see if Addons property is set
         internal bool IsSetAddons()
         {
-            return this._addons != null && this._addons.Count > 0; 
+            return this._addons != null && (this._addons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

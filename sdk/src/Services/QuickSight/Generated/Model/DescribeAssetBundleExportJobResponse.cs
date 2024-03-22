@@ -39,17 +39,17 @@ namespace Amazon.QuickSight.Model
         private AssetBundleCloudFormationOverridePropertyConfiguration _cloudFormationOverridePropertyConfiguration;
         private DateTime? _createdTime;
         private string _downloadUrl;
-        private List<AssetBundleExportJobError> _errors = new List<AssetBundleExportJobError>();
+        private List<AssetBundleExportJobError> _errors = AWSConfigs.InitializeCollections ? new List<AssetBundleExportJobError>() : null;
         private AssetBundleExportFormat _exportFormat;
         private bool? _includeAllDependencies;
         private bool? _includePermissions;
         private bool? _includeTags;
         private AssetBundleExportJobStatus _jobStatus;
         private string _requestId;
-        private List<string> _resourceArns = new List<string>();
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _status;
         private AssetBundleExportJobValidationStrategy _validationStrategy;
-        private List<AssetBundleExportJobWarning> _warnings = new List<AssetBundleExportJobWarning>();
+        private List<AssetBundleExportJobWarning> _warnings = AWSConfigs.InitializeCollections ? new List<AssetBundleExportJobWarning>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -200,7 +200,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -335,7 +335,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -395,7 +395,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ListTypeRegistrationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _registrationTokenList = new List<string>();
+        private List<string> _registrationTokenList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -78,7 +78,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if RegistrationTokenList property is set
         internal bool IsSetRegistrationTokenList()
         {
-            return this._registrationTokenList != null && this._registrationTokenList.Count > 0; 
+            return this._registrationTokenList != null && (this._registrationTokenList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

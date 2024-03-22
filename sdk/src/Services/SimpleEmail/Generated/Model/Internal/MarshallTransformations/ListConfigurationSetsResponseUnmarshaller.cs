@@ -84,6 +84,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ConfigurationSets/member", targetDepth))
                     {
                         var unmarshaller = ConfigurationSetUnmarshaller.Instance;
+                        if (response.ConfigurationSets == null)
+                        {
+                            response.ConfigurationSets = new List<ConfigurationSet>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ConfigurationSets.Add(item);
                         continue;

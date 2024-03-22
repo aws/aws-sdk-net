@@ -33,7 +33,7 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class DescribeDocumentVersionsResponse : AmazonWebServiceResponse
     {
-        private List<DocumentVersionMetadata> _documentVersions = new List<DocumentVersionMetadata>();
+        private List<DocumentVersionMetadata> _documentVersions = AWSConfigs.InitializeCollections ? new List<DocumentVersionMetadata>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if DocumentVersions property is set
         internal bool IsSetDocumentVersions()
         {
-            return this._documentVersions != null && this._documentVersions.Count > 0; 
+            return this._documentVersions != null && (this._documentVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

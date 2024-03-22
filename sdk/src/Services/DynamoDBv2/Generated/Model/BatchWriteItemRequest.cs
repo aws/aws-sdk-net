@@ -139,7 +139,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class BatchWriteItemRequest : AmazonDynamoDBRequest
     {
-        private Dictionary<string, List<WriteRequest>> _requestItems = new Dictionary<string, List<WriteRequest>>();
+        private Dictionary<string, List<WriteRequest>> _requestItems = AWSConfigs.InitializeCollections ? new Dictionary<string, List<WriteRequest>>() : null;
         private ReturnConsumedCapacity _returnConsumedCapacity;
         private ReturnItemCollectionMetrics _returnItemCollectionMetrics;
 
@@ -208,7 +208,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if RequestItems property is set
         internal bool IsSetRequestItems()
         {
-            return this._requestItems != null && this._requestItems.Count > 0; 
+            return this._requestItems != null && (this._requestItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

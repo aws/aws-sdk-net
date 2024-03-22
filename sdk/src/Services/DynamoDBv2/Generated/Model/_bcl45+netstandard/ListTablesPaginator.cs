@@ -45,7 +45,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Enumerable containing all of the TableNames
         /// </summary>
         public IPaginatedEnumerable<string> TableNames => 
-            new PaginatedResultKeyResponse<ListTablesResponse, string>(this, (i) => i.TableNames);
+            new PaginatedResultKeyResponse<ListTablesResponse, string>(this, (i) => i.TableNames ?? new List<string>());
 
         internal ListTablesPaginator(IAmazonDynamoDB client, ListTablesRequest request)
         {

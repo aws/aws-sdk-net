@@ -39,8 +39,8 @@ namespace Amazon.EC2.Model
     {
         private string _groupId;
         private string _groupName;
-        private List<IpPermission> _ipPermissions = new List<IpPermission>();
-        private List<SecurityGroupRuleDescription> _securityGroupRuleDescriptions = new List<SecurityGroupRuleDescription>();
+        private List<IpPermission> _ipPermissions = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
+        private List<SecurityGroupRuleDescription> _securityGroupRuleDescriptions = AWSConfigs.InitializeCollections ? new List<SecurityGroupRuleDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         // Check to see if IpPermissions property is set
         internal bool IsSetIpPermissions()
         {
-            return this._ipPermissions != null && this._ipPermissions.Count > 0; 
+            return this._ipPermissions != null && (this._ipPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupRuleDescriptions property is set
         internal bool IsSetSecurityGroupRuleDescriptions()
         {
-            return this._securityGroupRuleDescriptions != null && this._securityGroupRuleDescriptions.Count > 0; 
+            return this._securityGroupRuleDescriptions != null && (this._securityGroupRuleDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

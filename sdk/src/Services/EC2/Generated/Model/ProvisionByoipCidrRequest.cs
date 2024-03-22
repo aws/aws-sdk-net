@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private bool? _multiRegion;
         private string _networkBorderGroup;
-        private List<TagSpecification> _poolTagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _poolTagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private bool? _publiclyAdvertisable;
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace Amazon.EC2.Model
         // Check to see if PoolTagSpecifications property is set
         internal bool IsSetPoolTagSpecifications()
         {
-            return this._poolTagSpecifications != null && this._poolTagSpecifications.Count > 0; 
+            return this._poolTagSpecifications != null && (this._poolTagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

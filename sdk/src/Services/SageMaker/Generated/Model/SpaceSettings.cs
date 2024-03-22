@@ -35,7 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private AppType _appType;
         private SpaceCodeEditorAppSettings _codeEditorAppSettings;
-        private List<CustomFileSystem> _customFileSystems = new List<CustomFileSystem>();
+        private List<CustomFileSystem> _customFileSystems = AWSConfigs.InitializeCollections ? new List<CustomFileSystem>() : null;
         private SpaceJupyterLabAppSettings _jupyterLabAppSettings;
         private JupyterServerAppSettings _jupyterServerAppSettings;
         private KernelGatewayAppSettings _kernelGatewayAppSettings;
@@ -94,7 +94,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CustomFileSystems property is set
         internal bool IsSetCustomFileSystems()
         {
-            return this._customFileSystems != null && this._customFileSystems.Count > 0; 
+            return this._customFileSystems != null && (this._customFileSystems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

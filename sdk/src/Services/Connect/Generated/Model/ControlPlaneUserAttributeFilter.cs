@@ -55,7 +55,7 @@ namespace Amazon.Connect.Model
     {
         private AttributeAndCondition _andCondition;
         private HierarchyGroupCondition _hierarchyGroupCondition;
-        private List<AttributeAndCondition> _orConditions = new List<AttributeAndCondition>();
+        private List<AttributeAndCondition> _orConditions = AWSConfigs.InitializeCollections ? new List<AttributeAndCondition>() : null;
         private TagCondition _tagCondition;
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.Connect.Model
         // Check to see if OrConditions property is set
         internal bool IsSetOrConditions()
         {
-            return this._orConditions != null && this._orConditions.Count > 0; 
+            return this._orConditions != null && (this._orConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

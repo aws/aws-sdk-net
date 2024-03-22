@@ -34,7 +34,7 @@ namespace Amazon.Shield.Model
     public partial class Protection
     {
         private ApplicationLayerAutomaticResponseConfiguration _applicationLayerAutomaticResponseConfiguration;
-        private List<string> _healthCheckIds = new List<string>();
+        private List<string> _healthCheckIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private string _name;
         private string _protectionArn;
@@ -77,7 +77,7 @@ namespace Amazon.Shield.Model
         // Check to see if HealthCheckIds property is set
         internal bool IsSetHealthCheckIds()
         {
-            return this._healthCheckIds != null && this._healthCheckIds.Count > 0; 
+            return this._healthCheckIds != null && (this._healthCheckIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.QLDB.Model
     /// </summary>
     public partial class ListLedgersResponse : AmazonWebServiceResponse
     {
-        private List<LedgerSummary> _ledgers = new List<LedgerSummary>();
+        private List<LedgerSummary> _ledgers = AWSConfigs.InitializeCollections ? new List<LedgerSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.QLDB.Model
         // Check to see if Ledgers property is set
         internal bool IsSetLedgers()
         {
-            return this._ledgers != null && this._ledgers.Count > 0; 
+            return this._ledgers != null && (this._ledgers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

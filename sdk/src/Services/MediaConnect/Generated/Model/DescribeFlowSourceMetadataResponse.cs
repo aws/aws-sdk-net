@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model
     public partial class DescribeFlowSourceMetadataResponse : AmazonWebServiceResponse
     {
         private string _flowArn;
-        private List<MessageDetail> _messages = new List<MessageDetail>();
+        private List<MessageDetail> _messages = AWSConfigs.InitializeCollections ? new List<MessageDetail>() : null;
         private DateTime? _timestamp;
         private TransportMediaInfo _transportMediaInfo;
 
@@ -67,7 +67,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

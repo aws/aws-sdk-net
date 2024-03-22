@@ -35,14 +35,14 @@ namespace Amazon.Connect.Model
     public partial class UpdateSecurityProfileRequest : AmazonConnectRequest
     {
         private string _allowedAccessControlHierarchyGroupId;
-        private Dictionary<string, string> _allowedAccessControlTags = new Dictionary<string, string>();
-        private List<Application> _applications = new List<Application>();
+        private Dictionary<string, string> _allowedAccessControlTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Application> _applications = AWSConfigs.InitializeCollections ? new List<Application>() : null;
         private string _description;
-        private List<string> _hierarchyRestrictedResources = new List<string>();
+        private List<string> _hierarchyRestrictedResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _instanceId;
-        private List<string> _permissions = new List<string>();
+        private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _securityProfileId;
-        private List<string> _tagRestrictedResources = new List<string>();
+        private List<string> _tagRestrictedResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowedAccessControlHierarchyGroupId. 
@@ -80,7 +80,7 @@ namespace Amazon.Connect.Model
         // Check to see if AllowedAccessControlTags property is set
         internal bool IsSetAllowedAccessControlTags()
         {
-            return this._allowedAccessControlTags != null && this._allowedAccessControlTags.Count > 0; 
+            return this._allowedAccessControlTags != null && (this._allowedAccessControlTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.Connect.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.Connect.Model
         // Check to see if HierarchyRestrictedResources property is set
         internal bool IsSetHierarchyRestrictedResources()
         {
-            return this._hierarchyRestrictedResources != null && this._hierarchyRestrictedResources.Count > 0; 
+            return this._hierarchyRestrictedResources != null && (this._hierarchyRestrictedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace Amazon.Connect.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -221,7 +221,7 @@ namespace Amazon.Connect.Model
         // Check to see if TagRestrictedResources property is set
         internal bool IsSetTagRestrictedResources()
         {
-            return this._tagRestrictedResources != null && this._tagRestrictedResources.Count > 0; 
+            return this._tagRestrictedResources != null && (this._tagRestrictedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

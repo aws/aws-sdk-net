@@ -45,7 +45,7 @@ namespace Amazon.MediaPackage.Model
         /// Enumerable containing all of the HarvestJobs
         /// </summary>
         public IPaginatedEnumerable<HarvestJob> HarvestJobs => 
-            new PaginatedResultKeyResponse<ListHarvestJobsResponse, HarvestJob>(this, (i) => i.HarvestJobs);
+            new PaginatedResultKeyResponse<ListHarvestJobsResponse, HarvestJob>(this, (i) => i.HarvestJobs ?? new List<HarvestJob>());
 
         internal ListHarvestJobsPaginator(IAmazonMediaPackage client, ListHarvestJobsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the Recipes
         /// </summary>
         public IPaginatedEnumerable<RecipeSummary> Recipes => 
-            new PaginatedResultKeyResponse<ListRecipesResponse, RecipeSummary>(this, (i) => i.Recipes);
+            new PaginatedResultKeyResponse<ListRecipesResponse, RecipeSummary>(this, (i) => i.Recipes ?? new List<RecipeSummary>());
 
         internal ListRecipesPaginator(IAmazonPersonalize client, ListRecipesRequest request)
         {

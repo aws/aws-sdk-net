@@ -40,10 +40,10 @@ namespace Amazon.WorkSpaces.Model
         private string _errorCode;
         private string _errorMessage;
         private string _ipAddress;
-        private List<ModificationState> _modificationStates = new List<ModificationState>();
-        private List<RelatedWorkspaceProperties> _relatedWorkspaces = new List<RelatedWorkspaceProperties>();
+        private List<ModificationState> _modificationStates = AWSConfigs.InitializeCollections ? new List<ModificationState>() : null;
+        private List<RelatedWorkspaceProperties> _relatedWorkspaces = AWSConfigs.InitializeCollections ? new List<RelatedWorkspaceProperties>() : null;
         private bool? _rootVolumeEncryptionEnabled;
-        private List<StandbyWorkspacesProperties> _standbyWorkspacesProperties = new List<StandbyWorkspacesProperties>();
+        private List<StandbyWorkspacesProperties> _standbyWorkspacesProperties = AWSConfigs.InitializeCollections ? new List<StandbyWorkspacesProperties>() : null;
         private WorkspaceState _state;
         private string _subnetId;
         private string _userName;
@@ -197,7 +197,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if ModificationStates property is set
         internal bool IsSetModificationStates()
         {
-            return this._modificationStates != null && this._modificationStates.Count > 0; 
+            return this._modificationStates != null && (this._modificationStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if RelatedWorkspaces property is set
         internal bool IsSetRelatedWorkspaces()
         {
-            return this._relatedWorkspaces != null && this._relatedWorkspaces.Count > 0; 
+            return this._relatedWorkspaces != null && (this._relatedWorkspaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -251,7 +251,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if StandbyWorkspacesProperties property is set
         internal bool IsSetStandbyWorkspacesProperties()
         {
-            return this._standbyWorkspacesProperties != null && this._standbyWorkspacesProperties.Count > 0; 
+            return this._standbyWorkspacesProperties != null && (this._standbyWorkspacesProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

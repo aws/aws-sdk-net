@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the ServiceConfigurations
         /// </summary>
         public IPaginatedEnumerable<ServiceConfiguration> ServiceConfigurations => 
-            new PaginatedResultKeyResponse<DescribeVpcEndpointServiceConfigurationsResponse, ServiceConfiguration>(this, (i) => i.ServiceConfigurations);
+            new PaginatedResultKeyResponse<DescribeVpcEndpointServiceConfigurationsResponse, ServiceConfiguration>(this, (i) => i.ServiceConfigurations ?? new List<ServiceConfiguration>());
 
         internal DescribeVpcEndpointServiceConfigurationsPaginator(IAmazonEC2 client, DescribeVpcEndpointServiceConfigurationsRequest request)
         {

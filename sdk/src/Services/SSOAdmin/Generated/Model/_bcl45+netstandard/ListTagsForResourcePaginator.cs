@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<Tag> Tags => 
-            new PaginatedResultKeyResponse<ListTagsForResourceResponse, Tag>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<ListTagsForResourceResponse, Tag>(this, (i) => i.Tags ?? new List<Tag>());
 
         internal ListTagsForResourcePaginator(IAmazonSSOAdmin client, ListTagsForResourceRequest request)
         {

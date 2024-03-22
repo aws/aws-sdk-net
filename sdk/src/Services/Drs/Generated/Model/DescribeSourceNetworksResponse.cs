@@ -33,7 +33,7 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class DescribeSourceNetworksResponse : AmazonWebServiceResponse
     {
-        private List<SourceNetwork> _items = new List<SourceNetwork>();
+        private List<SourceNetwork> _items = AWSConfigs.InitializeCollections ? new List<SourceNetwork>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Drs.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

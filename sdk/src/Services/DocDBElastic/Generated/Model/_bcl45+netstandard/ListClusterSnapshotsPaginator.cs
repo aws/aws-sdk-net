@@ -45,7 +45,7 @@ namespace Amazon.DocDBElastic.Model
         /// Enumerable containing all of the Snapshots
         /// </summary>
         public IPaginatedEnumerable<ClusterSnapshotInList> Snapshots => 
-            new PaginatedResultKeyResponse<ListClusterSnapshotsResponse, ClusterSnapshotInList>(this, (i) => i.Snapshots);
+            new PaginatedResultKeyResponse<ListClusterSnapshotsResponse, ClusterSnapshotInList>(this, (i) => i.Snapshots ?? new List<ClusterSnapshotInList>());
 
         internal ListClusterSnapshotsPaginator(IAmazonDocDBElastic client, ListClusterSnapshotsRequest request)
         {

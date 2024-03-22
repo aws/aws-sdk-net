@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetDomainsResponse : AmazonWebServiceResponse
     {
-        private List<Domain> _domains = new List<Domain>();
+        private List<Domain> _domains = AWSConfigs.InitializeCollections ? new List<Domain>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Domains property is set
         internal bool IsSetDomains()
         {
-            return this._domains != null && this._domains.Count > 0; 
+            return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

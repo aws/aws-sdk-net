@@ -33,15 +33,15 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class Task
     {
-        private List<Attachment> _attachments = new List<Attachment>();
-        private List<Attribute> _attributes = new List<Attribute>();
+        private List<Attachment> _attachments = AWSConfigs.InitializeCollections ? new List<Attachment>() : null;
+        private List<Attribute> _attributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
         private string _availabilityZone;
         private string _capacityProviderName;
         private string _clusterArn;
         private Connectivity _connectivity;
         private DateTime? _connectivityAt;
         private string _containerInstanceArn;
-        private List<Container> _containers = new List<Container>();
+        private List<Container> _containers = AWSConfigs.InitializeCollections ? new List<Container>() : null;
         private string _cpu;
         private DateTime? _createdAt;
         private string _desiredStatus;
@@ -50,7 +50,7 @@ namespace Amazon.ECS.Model
         private DateTime? _executionStoppedAt;
         private string _group;
         private HealthStatus _healthStatus;
-        private List<InferenceAccelerator> _inferenceAccelerators = new List<InferenceAccelerator>();
+        private List<InferenceAccelerator> _inferenceAccelerators = AWSConfigs.InitializeCollections ? new List<InferenceAccelerator>() : null;
         private string _lastStatus;
         private LaunchType _launchType;
         private string _memory;
@@ -65,7 +65,7 @@ namespace Amazon.ECS.Model
         private DateTime? _stoppedAt;
         private string _stoppedReason;
         private DateTime? _stoppingAt;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _taskArn;
         private string _taskDefinitionArn;
         private long? _version;
@@ -86,7 +86,7 @@ namespace Amazon.ECS.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.ECS.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Amazon.ECS.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -469,7 +469,7 @@ namespace Amazon.ECS.Model
         // Check to see if InferenceAccelerators property is set
         internal bool IsSetInferenceAccelerators()
         {
-            return this._inferenceAccelerators != null && this._inferenceAccelerators.Count > 0; 
+            return this._inferenceAccelerators != null && (this._inferenceAccelerators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -860,7 +860,7 @@ namespace Amazon.ECS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

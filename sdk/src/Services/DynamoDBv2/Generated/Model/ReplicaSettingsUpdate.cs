@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class ReplicaSettingsUpdate
     {
         private string _regionName;
-        private List<ReplicaGlobalSecondaryIndexSettingsUpdate> _replicaGlobalSecondaryIndexSettingsUpdate = new List<ReplicaGlobalSecondaryIndexSettingsUpdate>();
+        private List<ReplicaGlobalSecondaryIndexSettingsUpdate> _replicaGlobalSecondaryIndexSettingsUpdate = AWSConfigs.InitializeCollections ? new List<ReplicaGlobalSecondaryIndexSettingsUpdate>() : null;
         private AutoScalingSettingsUpdate _replicaProvisionedReadCapacityAutoScalingSettingsUpdate;
         private long? _replicaProvisionedReadCapacityUnits;
         private TableClass _replicaTableClass;
@@ -75,7 +75,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ReplicaGlobalSecondaryIndexSettingsUpdate property is set
         internal bool IsSetReplicaGlobalSecondaryIndexSettingsUpdate()
         {
-            return this._replicaGlobalSecondaryIndexSettingsUpdate != null && this._replicaGlobalSecondaryIndexSettingsUpdate.Count > 0; 
+            return this._replicaGlobalSecondaryIndexSettingsUpdate != null && (this._replicaGlobalSecondaryIndexSettingsUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

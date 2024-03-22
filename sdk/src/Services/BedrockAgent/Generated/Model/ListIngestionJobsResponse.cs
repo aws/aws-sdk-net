@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class ListIngestionJobsResponse : AmazonWebServiceResponse
     {
-        private List<IngestionJobSummary> _ingestionJobSummaries = new List<IngestionJobSummary>();
+        private List<IngestionJobSummary> _ingestionJobSummaries = AWSConfigs.InitializeCollections ? new List<IngestionJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if IngestionJobSummaries property is set
         internal bool IsSetIngestionJobSummaries()
         {
-            return this._ingestionJobSummaries != null && this._ingestionJobSummaries.Count > 0; 
+            return this._ingestionJobSummaries != null && (this._ingestionJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

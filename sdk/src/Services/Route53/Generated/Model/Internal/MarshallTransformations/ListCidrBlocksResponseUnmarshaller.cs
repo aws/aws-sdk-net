@@ -69,6 +69,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CidrBlocks/member", targetDepth))
                     {
+                        if (response.CidrBlocks == null)
+                        {
+                            response.CidrBlocks = new List<CidrBlockSummary>();
+                        }
                         var unmarshaller = CidrBlockSummaryUnmarshaller.Instance;
                         response.CidrBlocks.Add(unmarshaller.Unmarshall(context));
                         continue;

@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// Enumerable containing all of the Offerings
         /// </summary>
         public IPaginatedEnumerable<Offering> Offerings => 
-            new PaginatedResultKeyResponse<ListOfferingsResponse, Offering>(this, (i) => i.Offerings);
+            new PaginatedResultKeyResponse<ListOfferingsResponse, Offering>(this, (i) => i.Offerings ?? new List<Offering>());
 
         internal ListOfferingsPaginator(IAmazonDeviceFarm client, ListOfferingsRequest request)
         {

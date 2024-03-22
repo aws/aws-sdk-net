@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the CapacityBlockOfferings
         /// </summary>
         public IPaginatedEnumerable<CapacityBlockOffering> CapacityBlockOfferings => 
-            new PaginatedResultKeyResponse<DescribeCapacityBlockOfferingsResponse, CapacityBlockOffering>(this, (i) => i.CapacityBlockOfferings);
+            new PaginatedResultKeyResponse<DescribeCapacityBlockOfferingsResponse, CapacityBlockOffering>(this, (i) => i.CapacityBlockOfferings ?? new List<CapacityBlockOffering>());
 
         internal DescribeCapacityBlockOfferingsPaginator(IAmazonEC2 client, DescribeCapacityBlockOfferingsRequest request)
         {

@@ -44,8 +44,8 @@ namespace Amazon.LicenseManager.Model
         private string _clientToken;
         private int? _expirationInDays;
         private string _licenseArn;
-        private List<string> _roleArns = new List<string>();
-        private List<string> _tokenProperties = new List<string>();
+        private List<string> _roleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _tokenProperties = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -120,7 +120,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if RoleArns property is set
         internal bool IsSetRoleArns()
         {
-            return this._roleArns != null && this._roleArns.Count > 0; 
+            return this._roleArns != null && (this._roleArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if TokenProperties property is set
         internal bool IsSetTokenProperties()
         {
-            return this._tokenProperties != null && this._tokenProperties.Count > 0; 
+            return this._tokenProperties != null && (this._tokenProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

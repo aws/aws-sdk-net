@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeActivationsResponse : AmazonWebServiceResponse
     {
-        private List<Activation> _activationList = new List<Activation>();
+        private List<Activation> _activationList = AWSConfigs.InitializeCollections ? new List<Activation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ActivationList property is set
         internal bool IsSetActivationList()
         {
-            return this._activationList != null && this._activationList.Count > 0; 
+            return this._activationList != null && (this._activationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

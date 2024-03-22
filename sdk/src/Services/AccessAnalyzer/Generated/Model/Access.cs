@@ -33,7 +33,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class Access
     {
-        private List<string> _actions = new List<string>();
+        private List<string> _actions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -52,7 +52,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

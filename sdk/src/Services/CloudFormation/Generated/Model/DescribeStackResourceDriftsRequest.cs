@@ -54,7 +54,7 @@ namespace Amazon.CloudFormation.Model
         private int? _maxResults;
         private string _nextToken;
         private string _stackName;
-        private List<string> _stackResourceDriftStatusFilters = new List<string>();
+        private List<string> _stackResourceDriftStatusFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -153,7 +153,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackResourceDriftStatusFilters property is set
         internal bool IsSetStackResourceDriftStatusFilters()
         {
-            return this._stackResourceDriftStatusFilters != null && this._stackResourceDriftStatusFilters.Count > 0; 
+            return this._stackResourceDriftStatusFilters != null && (this._stackResourceDriftStatusFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

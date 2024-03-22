@@ -68,10 +68,10 @@ namespace Amazon.LocationService.Model
     {
         private double? _distance;
         private double? _durationSeconds;
-        private List<double> _endPosition = new List<double>();
+        private List<double> _endPosition = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private LegGeometry _geometry;
-        private List<double> _startPosition = new List<double>();
-        private List<Step> _steps = new List<Step>();
+        private List<double> _startPosition = AWSConfigs.InitializeCollections ? new List<double>() : null;
+        private List<Step> _steps = AWSConfigs.InitializeCollections ? new List<Step>() : null;
 
         /// <summary>
         /// Gets and sets the property Distance. 
@@ -142,7 +142,7 @@ namespace Amazon.LocationService.Model
         // Check to see if EndPosition property is set
         internal bool IsSetEndPosition()
         {
-            return this._endPosition != null && this._endPosition.Count > 0; 
+            return this._endPosition != null && (this._endPosition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.LocationService.Model
         // Check to see if StartPosition property is set
         internal bool IsSetStartPosition()
         {
-            return this._startPosition != null && this._startPosition.Count > 0; 
+            return this._startPosition != null && (this._startPosition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -206,7 +206,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

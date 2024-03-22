@@ -45,7 +45,7 @@ namespace Amazon.CodeCatalyst.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<WorkflowSummary> Items => 
-            new PaginatedResultKeyResponse<ListWorkflowsResponse, WorkflowSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListWorkflowsResponse, WorkflowSummary>(this, (i) => i.Items ?? new List<WorkflowSummary>());
 
         internal ListWorkflowsPaginator(IAmazonCodeCatalyst client, ListWorkflowsRequest request)
         {

@@ -69,6 +69,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("StorageLensGroup", targetDepth))
                     {
+                        if (response.StorageLensGroupList == null)
+                        {
+                            response.StorageLensGroupList = new List<ListStorageLensGroupEntry>();
+                        }
                         var unmarshaller = ListStorageLensGroupEntryUnmarshaller.Instance;
                         response.StorageLensGroupList.Add(unmarshaller.Unmarshall(context));
                         continue;

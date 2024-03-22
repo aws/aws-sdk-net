@@ -37,7 +37,7 @@ namespace Amazon.QuickSight.Model
     public partial class LogicalTable
     {
         private string _alias;
-        private List<TransformOperation> _dataTransforms = new List<TransformOperation>();
+        private List<TransformOperation> _dataTransforms = AWSConfigs.InitializeCollections ? new List<TransformOperation>() : null;
         private LogicalTableSource _source;
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataTransforms property is set
         internal bool IsSetDataTransforms()
         {
-            return this._dataTransforms != null && this._dataTransforms.Count > 0; 
+            return this._dataTransforms != null && (this._dataTransforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

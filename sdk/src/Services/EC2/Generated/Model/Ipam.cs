@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         private string _ipamArn;
         private string _ipamId;
         private string _ipamRegion;
-        private List<IpamOperatingRegion> _operatingRegions = new List<IpamOperatingRegion>();
+        private List<IpamOperatingRegion> _operatingRegions = AWSConfigs.InitializeCollections ? new List<IpamOperatingRegion>() : null;
         private string _ownerId;
         private string _privateDefaultScopeId;
         private string _publicDefaultScopeId;
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         private int? _scopeCount;
         private IpamState _state;
         private string _stateMessage;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private IpamTier _tier;
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.EC2.Model
         // Check to see if OperatingRegions property is set
         internal bool IsSetOperatingRegions()
         {
-            return this._operatingRegions != null && this._operatingRegions.Count > 0; 
+            return this._operatingRegions != null && (this._operatingRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -334,7 +334,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

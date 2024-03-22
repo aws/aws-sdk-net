@@ -45,7 +45,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ListKeysResponseListItem> Items => 
-            new PaginatedResultKeyResponse<ListKeysResponse, ListKeysResponseListItem>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListKeysResponse, ListKeysResponseListItem>(this, (i) => i.Items ?? new List<ListKeysResponseListItem>());
 
         internal ListKeysPaginator(IAmazonCloudFrontKeyValueStore client, ListKeysRequest request)
         {

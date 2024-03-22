@@ -45,7 +45,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<ModelManifestSummary> Summaries => 
-            new PaginatedResultKeyResponse<ListModelManifestsResponse, ModelManifestSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<ListModelManifestsResponse, ModelManifestSummary>(this, (i) => i.Summaries ?? new List<ModelManifestSummary>());
 
         internal ListModelManifestsPaginator(IAmazonIoTFleetWise client, ListModelManifestsRequest request)
         {

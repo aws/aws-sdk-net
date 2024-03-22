@@ -75,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("metricPointSet/item", targetDepth))
                     {
                         var unmarshaller = MetricPointUnmarshaller.Instance;
+                        if (unmarshalledObject.MetricPoints == null)
+                        {
+                            unmarshalledObject.MetricPoints = new List<MetricPoint>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MetricPoints.Add(item);
                         continue;

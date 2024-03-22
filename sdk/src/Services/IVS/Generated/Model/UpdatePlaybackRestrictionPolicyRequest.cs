@@ -34,8 +34,8 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class UpdatePlaybackRestrictionPolicyRequest : AmazonIVSRequest
     {
-        private List<string> _allowedCountries = new List<string>();
-        private List<string> _allowedOrigins = new List<string>();
+        private List<string> _allowedCountries = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allowedOrigins = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _arn;
         private bool? _enableStrictOriginEnforcement;
         private string _name;
@@ -57,7 +57,7 @@ namespace Amazon.IVS.Model
         // Check to see if AllowedCountries property is set
         internal bool IsSetAllowedCountries()
         {
-            return this._allowedCountries != null && this._allowedCountries.Count > 0; 
+            return this._allowedCountries != null && (this._allowedCountries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.IVS.Model
         // Check to see if AllowedOrigins property is set
         internal bool IsSetAllowedOrigins()
         {
-            return this._allowedOrigins != null && this._allowedOrigins.Count > 0; 
+            return this._allowedOrigins != null && (this._allowedOrigins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

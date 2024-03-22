@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEc2VolumeDetails
     {
-        private List<AwsEc2VolumeAttachment> _attachments = new List<AwsEc2VolumeAttachment>();
+        private List<AwsEc2VolumeAttachment> _attachments = AWSConfigs.InitializeCollections ? new List<AwsEc2VolumeAttachment>() : null;
         private string _createTime;
         private string _deviceName;
         private bool? _encrypted;
@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,13 +45,13 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<FilteredLogEvent> Events => 
-            new PaginatedResultKeyResponse<FilterLogEventsResponse, FilteredLogEvent>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<FilterLogEventsResponse, FilteredLogEvent>(this, (i) => i.Events ?? new List<FilteredLogEvent>());
 
         /// <summary>
         /// Enumerable containing all of the SearchedLogStreams
         /// </summary>
         public IPaginatedEnumerable<SearchedLogStream> SearchedLogStreams => 
-            new PaginatedResultKeyResponse<FilterLogEventsResponse, SearchedLogStream>(this, (i) => i.SearchedLogStreams);
+            new PaginatedResultKeyResponse<FilterLogEventsResponse, SearchedLogStream>(this, (i) => i.SearchedLogStreams ?? new List<SearchedLogStream>());
 
         internal FilterLogEventsPaginator(IAmazonCloudWatchLogs client, FilterLogEventsRequest request)
         {

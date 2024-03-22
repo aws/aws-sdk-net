@@ -45,7 +45,7 @@ namespace Amazon.MemoryDB.Model
         /// Enumerable containing all of the ParameterGroups
         /// </summary>
         public IPaginatedEnumerable<ParameterGroup> ParameterGroups => 
-            new PaginatedResultKeyResponse<DescribeParameterGroupsResponse, ParameterGroup>(this, (i) => i.ParameterGroups);
+            new PaginatedResultKeyResponse<DescribeParameterGroupsResponse, ParameterGroup>(this, (i) => i.ParameterGroups ?? new List<ParameterGroup>());
 
         internal DescribeParameterGroupsPaginator(IAmazonMemoryDB client, DescribeParameterGroupsRequest request)
         {

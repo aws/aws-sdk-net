@@ -33,7 +33,7 @@ namespace Amazon.CodeArtifact.Model
     /// </summary>
     public partial class UpdatePackageGroupOriginConfigurationResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, Dictionary<string, List<string>>> _allowedRepositoryUpdates = new Dictionary<string, Dictionary<string, List<string>>>();
+        private Dictionary<string, Dictionary<string, List<string>>> _allowedRepositoryUpdates = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, List<string>>>() : null;
         private PackageGroupDescription _packageGroup;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if AllowedRepositoryUpdates property is set
         internal bool IsSetAllowedRepositoryUpdates()
         {
-            return this._allowedRepositoryUpdates != null && this._allowedRepositoryUpdates.Count > 0; 
+            return this._allowedRepositoryUpdates != null && (this._allowedRepositoryUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

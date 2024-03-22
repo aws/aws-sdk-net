@@ -61,15 +61,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _description;
         private string _lastModifiedBy;
         private DateTime? _lastModifiedTime;
-        private List<OpsItemNotification> _notifications = new List<OpsItemNotification>();
-        private Dictionary<string, OpsItemDataValue> _operationalData = new Dictionary<string, OpsItemDataValue>();
+        private List<OpsItemNotification> _notifications = AWSConfigs.InitializeCollections ? new List<OpsItemNotification>() : null;
+        private Dictionary<string, OpsItemDataValue> _operationalData = AWSConfigs.InitializeCollections ? new Dictionary<string, OpsItemDataValue>() : null;
         private string _opsItemArn;
         private string _opsItemId;
         private string _opsItemType;
         private DateTime? _plannedEndTime;
         private DateTime? _plannedStartTime;
         private int? _priority;
-        private List<RelatedOpsItem> _relatedOpsItems = new List<RelatedOpsItem>();
+        private List<RelatedOpsItem> _relatedOpsItems = AWSConfigs.InitializeCollections ? new List<RelatedOpsItem>() : null;
         private string _severity;
         private string _source;
         private OpsItemStatus _status;
@@ -240,7 +240,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Notifications property is set
         internal bool IsSetNotifications()
         {
-            return this._notifications != null && this._notifications.Count > 0; 
+            return this._notifications != null && (this._notifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -283,7 +283,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if OperationalData property is set
         internal bool IsSetOperationalData()
         {
-            return this._operationalData != null && this._operationalData.Count > 0; 
+            return this._operationalData != null && (this._operationalData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -442,7 +442,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if RelatedOpsItems property is set
         internal bool IsSetRelatedOpsItems()
         {
-            return this._relatedOpsItems != null && this._relatedOpsItems.Count > 0; 
+            return this._relatedOpsItems != null && (this._relatedOpsItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

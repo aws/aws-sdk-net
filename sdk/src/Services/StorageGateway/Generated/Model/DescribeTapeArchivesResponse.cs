@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     public partial class DescribeTapeArchivesResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<TapeArchive> _tapeArchives = new List<TapeArchive>();
+        private List<TapeArchive> _tapeArchives = AWSConfigs.InitializeCollections ? new List<TapeArchive>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -76,7 +76,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TapeArchives property is set
         internal bool IsSetTapeArchives()
         {
-            return this._tapeArchives != null && this._tapeArchives.Count > 0; 
+            return this._tapeArchives != null && (this._tapeArchives.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.MediaTailor.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<PrefetchSchedule> Items => 
-            new PaginatedResultKeyResponse<ListPrefetchSchedulesResponse, PrefetchSchedule>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListPrefetchSchedulesResponse, PrefetchSchedule>(this, (i) => i.Items ?? new List<PrefetchSchedule>());
 
         internal ListPrefetchSchedulesPaginator(IAmazonMediaTailor client, ListPrefetchSchedulesRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribeAutomationStepExecutionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StepExecution> _stepExecutions = new List<StepExecution>();
+        private List<StepExecution> _stepExecutions = AWSConfigs.InitializeCollections ? new List<StepExecution>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if StepExecutions property is set
         internal bool IsSetStepExecutions()
         {
-            return this._stepExecutions != null && this._stepExecutions.Count > 0; 
+            return this._stepExecutions != null && (this._stepExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

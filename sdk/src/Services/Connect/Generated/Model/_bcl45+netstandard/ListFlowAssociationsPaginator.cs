@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the FlowAssociationSummaryList
         /// </summary>
         public IPaginatedEnumerable<FlowAssociationSummary> FlowAssociationSummaryList => 
-            new PaginatedResultKeyResponse<ListFlowAssociationsResponse, FlowAssociationSummary>(this, (i) => i.FlowAssociationSummaryList);
+            new PaginatedResultKeyResponse<ListFlowAssociationsResponse, FlowAssociationSummary>(this, (i) => i.FlowAssociationSummaryList ?? new List<FlowAssociationSummary>());
 
         internal ListFlowAssociationsPaginator(IAmazonConnect client, ListFlowAssociationsRequest request)
         {

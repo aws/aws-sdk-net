@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("historyRecordSet/item", targetDepth))
                     {
                         var unmarshaller = HistoryRecordEntryUnmarshaller.Instance;
+                        if (response.HistoryRecords == null)
+                        {
+                            response.HistoryRecords = new List<HistoryRecordEntry>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.HistoryRecords.Add(item);
                         continue;

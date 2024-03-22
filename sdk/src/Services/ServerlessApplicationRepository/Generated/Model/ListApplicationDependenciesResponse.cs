@@ -33,7 +33,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
     /// </summary>
     public partial class ListApplicationDependenciesResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationDependencySummary> _dependencies = new List<ApplicationDependencySummary>();
+        private List<ApplicationDependencySummary> _dependencies = AWSConfigs.InitializeCollections ? new List<ApplicationDependencySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if Dependencies property is set
         internal bool IsSetDependencies()
         {
-            return this._dependencies != null && this._dependencies.Count > 0; 
+            return this._dependencies != null && (this._dependencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

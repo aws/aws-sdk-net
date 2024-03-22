@@ -34,8 +34,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     public partial class GetApplicationComponentDetailsResponse : AmazonWebServiceResponse
     {
         private ApplicationComponentDetail _applicationComponentDetail;
-        private List<AssociatedApplication> _associatedApplications = new List<AssociatedApplication>();
-        private List<string> _associatedServerIds = new List<string>();
+        private List<AssociatedApplication> _associatedApplications = AWSConfigs.InitializeCollections ? new List<AssociatedApplication>() : null;
+        private List<string> _associatedServerIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _moreApplicationResource;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if AssociatedApplications property is set
         internal bool IsSetAssociatedApplications()
         {
-            return this._associatedApplications != null && this._associatedApplications.Count > 0; 
+            return this._associatedApplications != null && (this._associatedApplications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if AssociatedServerIds property is set
         internal bool IsSetAssociatedServerIds()
         {
-            return this._associatedServerIds != null && this._associatedServerIds.Count > 0; 
+            return this._associatedServerIds != null && (this._associatedServerIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

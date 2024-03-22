@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class PlacementGroupInfo
     {
-        private List<string> _supportedStrategies = new List<string>();
+        private List<string> _supportedStrategies = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SupportedStrategies. 
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         // Check to see if SupportedStrategies property is set
         internal bool IsSetSupportedStrategies()
         {
-            return this._supportedStrategies != null && this._supportedStrategies.Count > 0; 
+            return this._supportedStrategies != null && (this._supportedStrategies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

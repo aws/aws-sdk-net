@@ -34,9 +34,9 @@ namespace Amazon.CodeCommit.Model
     public partial class CreateCommitResponse : AmazonWebServiceResponse
     {
         private string _commitId;
-        private List<FileMetadata> _filesAdded = new List<FileMetadata>();
-        private List<FileMetadata> _filesDeleted = new List<FileMetadata>();
-        private List<FileMetadata> _filesUpdated = new List<FileMetadata>();
+        private List<FileMetadata> _filesAdded = AWSConfigs.InitializeCollections ? new List<FileMetadata>() : null;
+        private List<FileMetadata> _filesDeleted = AWSConfigs.InitializeCollections ? new List<FileMetadata>() : null;
+        private List<FileMetadata> _filesUpdated = AWSConfigs.InitializeCollections ? new List<FileMetadata>() : null;
         private string _treeId;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if FilesAdded property is set
         internal bool IsSetFilesAdded()
         {
-            return this._filesAdded != null && this._filesAdded.Count > 0; 
+            return this._filesAdded != null && (this._filesAdded.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if FilesDeleted property is set
         internal bool IsSetFilesDeleted()
         {
-            return this._filesDeleted != null && this._filesDeleted.Count > 0; 
+            return this._filesDeleted != null && (this._filesDeleted.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if FilesUpdated property is set
         internal bool IsSetFilesUpdated()
         {
-            return this._filesUpdated != null && this._filesUpdated.Count > 0; 
+            return this._filesUpdated != null && (this._filesUpdated.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -57,6 +57,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Properties/member", targetDepth))
                     {
                         var unmarshaller = WarningPropertyUnmarshaller.Instance;
+                        if (unmarshalledObject.Properties == null)
+                        {
+                            unmarshalledObject.Properties = new List<WarningProperty>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Properties.Add(item);
                         continue;

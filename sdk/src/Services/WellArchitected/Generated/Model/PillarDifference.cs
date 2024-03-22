@@ -36,7 +36,7 @@ namespace Amazon.WellArchitected.Model
         private DifferenceStatus _differenceStatus;
         private string _pillarId;
         private string _pillarName;
-        private List<QuestionDifference> _questionDifferences = new List<QuestionDifference>();
+        private List<QuestionDifference> _questionDifferences = AWSConfigs.InitializeCollections ? new List<QuestionDifference>() : null;
 
         /// <summary>
         /// Gets and sets the property DifferenceStatus. 
@@ -103,7 +103,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if QuestionDifferences property is set
         internal bool IsSetQuestionDifferences()
         {
-            return this._questionDifferences != null && this._questionDifferences.Count > 0; 
+            return this._questionDifferences != null && (this._questionDifferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

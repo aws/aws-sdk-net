@@ -33,7 +33,7 @@ namespace Amazon.HealthLake.Model
     /// </summary>
     public partial class ListFHIRImportJobsResponse : AmazonWebServiceResponse
     {
-        private List<ImportJobProperties> _importJobPropertiesList = new List<ImportJobProperties>();
+        private List<ImportJobProperties> _importJobPropertiesList = AWSConfigs.InitializeCollections ? new List<ImportJobProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.HealthLake.Model
         // Check to see if ImportJobPropertiesList property is set
         internal bool IsSetImportJobPropertiesList()
         {
-            return this._importJobPropertiesList != null && this._importJobPropertiesList.Count > 0; 
+            return this._importJobPropertiesList != null && (this._importJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

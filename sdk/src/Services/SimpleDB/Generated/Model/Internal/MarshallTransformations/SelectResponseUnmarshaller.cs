@@ -84,6 +84,10 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Item", targetDepth))
                     {
                         var unmarshaller = ItemUnmarshaller.Instance;
+                        if (response.Items == null)
+                        {
+                            response.Items = new List<Item>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Items.Add(item);
                         continue;

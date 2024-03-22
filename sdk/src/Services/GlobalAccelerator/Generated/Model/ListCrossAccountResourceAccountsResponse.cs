@@ -33,7 +33,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class ListCrossAccountResourceAccountsResponse : AmazonWebServiceResponse
     {
-        private List<string> _resourceOwnerAwsAccountIds = new List<string>();
+        private List<string> _resourceOwnerAwsAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceOwnerAwsAccountIds. 
@@ -51,7 +51,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if ResourceOwnerAwsAccountIds property is set
         internal bool IsSetResourceOwnerAwsAccountIds()
         {
-            return this._resourceOwnerAwsAccountIds != null && this._resourceOwnerAwsAccountIds.Count > 0; 
+            return this._resourceOwnerAwsAccountIds != null && (this._resourceOwnerAwsAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

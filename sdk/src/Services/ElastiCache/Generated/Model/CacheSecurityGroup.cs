@@ -50,7 +50,7 @@ namespace Amazon.ElastiCache.Model
         private string _arn;
         private string _cacheSecurityGroupName;
         private string _description;
-        private List<EC2SecurityGroup> _ec2SecurityGroups = new List<EC2SecurityGroup>();
+        private List<EC2SecurityGroup> _ec2SecurityGroups = AWSConfigs.InitializeCollections ? new List<EC2SecurityGroup>() : null;
         private string _ownerId;
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if EC2SecurityGroups property is set
         internal bool IsSetEC2SecurityGroups()
         {
-            return this._ec2SecurityGroups != null && this._ec2SecurityGroups.Count > 0; 
+            return this._ec2SecurityGroups != null && (this._ec2SecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

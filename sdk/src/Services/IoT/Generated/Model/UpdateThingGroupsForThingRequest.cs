@@ -41,8 +41,8 @@ namespace Amazon.IoT.Model
     public partial class UpdateThingGroupsForThingRequest : AmazonIoTRequest
     {
         private bool? _overrideDynamicGroups;
-        private List<string> _thingGroupsToAdd = new List<string>();
-        private List<string> _thingGroupsToRemove = new List<string>();
+        private List<string> _thingGroupsToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _thingGroupsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _thingName;
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.IoT.Model
         // Check to see if ThingGroupsToAdd property is set
         internal bool IsSetThingGroupsToAdd()
         {
-            return this._thingGroupsToAdd != null && this._thingGroupsToAdd.Count > 0; 
+            return this._thingGroupsToAdd != null && (this._thingGroupsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.IoT.Model
         // Check to see if ThingGroupsToRemove property is set
         internal bool IsSetThingGroupsToRemove()
         {
-            return this._thingGroupsToRemove != null && this._thingGroupsToRemove.Count > 0; 
+            return this._thingGroupsToRemove != null && (this._thingGroupsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

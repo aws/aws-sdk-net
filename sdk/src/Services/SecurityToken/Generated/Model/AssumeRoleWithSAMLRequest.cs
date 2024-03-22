@@ -203,7 +203,7 @@ namespace Amazon.SecurityToken.Model
     {
         private int? _durationSeconds;
         private string _policy;
-        private List<PolicyDescriptorType> _policyArns = new List<PolicyDescriptorType>();
+        private List<PolicyDescriptorType> _policyArns = AWSConfigs.InitializeCollections ? new List<PolicyDescriptorType>() : null;
         private string _principalArn;
         private string _roleArn;
         private string _samlAssertion;
@@ -339,7 +339,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if PolicyArns property is set
         internal bool IsSetPolicyArns()
         {
-            return this._policyArns != null && this._policyArns.Count > 0; 
+            return this._policyArns != null && (this._policyArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListStudioLifecycleConfigsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StudioLifecycleConfigDetails> _studioLifecycleConfigs = new List<StudioLifecycleConfigDetails>();
+        private List<StudioLifecycleConfigDetails> _studioLifecycleConfigs = AWSConfigs.InitializeCollections ? new List<StudioLifecycleConfigDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if StudioLifecycleConfigs property is set
         internal bool IsSetStudioLifecycleConfigs()
         {
-            return this._studioLifecycleConfigs != null && this._studioLifecycleConfigs.Count > 0; 
+            return this._studioLifecycleConfigs != null && (this._studioLifecycleConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

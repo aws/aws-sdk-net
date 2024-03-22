@@ -90,6 +90,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Causes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.Causes == null)
+                        {
+                            response.Causes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Causes.Add(item);
                         continue;

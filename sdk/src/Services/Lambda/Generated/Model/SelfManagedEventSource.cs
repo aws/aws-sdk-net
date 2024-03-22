@@ -33,7 +33,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class SelfManagedEventSource
     {
-        private Dictionary<string, List<string>> _endpoints = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _endpoints = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property Endpoints. 
@@ -52,7 +52,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.ConnectCases.Model
         /// Enumerable containing all of the RelatedItems
         /// </summary>
         public IPaginatedEnumerable<SearchRelatedItemsResponseItem> RelatedItems => 
-            new PaginatedResultKeyResponse<SearchRelatedItemsResponse, SearchRelatedItemsResponseItem>(this, (i) => i.RelatedItems);
+            new PaginatedResultKeyResponse<SearchRelatedItemsResponse, SearchRelatedItemsResponseItem>(this, (i) => i.RelatedItems ?? new List<SearchRelatedItemsResponseItem>());
 
         internal SearchRelatedItemsPaginator(IAmazonConnectCases client, SearchRelatedItemsRequest request)
         {

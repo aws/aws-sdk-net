@@ -34,7 +34,7 @@ namespace Amazon.NeptuneGraph.Model
     public partial class ListPrivateGraphEndpointsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PrivateGraphEndpointSummary> _privateGraphEndpoints = new List<PrivateGraphEndpointSummary>();
+        private List<PrivateGraphEndpointSummary> _privateGraphEndpoints = AWSConfigs.InitializeCollections ? new List<PrivateGraphEndpointSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -77,7 +77,7 @@ namespace Amazon.NeptuneGraph.Model
         // Check to see if PrivateGraphEndpoints property is set
         internal bool IsSetPrivateGraphEndpoints()
         {
-            return this._privateGraphEndpoints != null && this._privateGraphEndpoints.Count > 0; 
+            return this._privateGraphEndpoints != null && (this._privateGraphEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

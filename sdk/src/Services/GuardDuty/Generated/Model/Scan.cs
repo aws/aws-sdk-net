@@ -35,7 +35,7 @@ namespace Amazon.GuardDuty.Model
     {
         private string _accountId;
         private string _adminDetectorId;
-        private List<VolumeDetail> _attachedVolumes = new List<VolumeDetail>();
+        private List<VolumeDetail> _attachedVolumes = AWSConfigs.InitializeCollections ? new List<VolumeDetail>() : null;
         private string _detectorId;
         private string _failureReason;
         private long? _fileCount;
@@ -104,7 +104,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if AttachedVolumes property is set
         internal bool IsSetAttachedVolumes()
         {
-            return this._attachedVolumes != null && this._attachedVolumes.Count > 0; 
+            return this._attachedVolumes != null && (this._attachedVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

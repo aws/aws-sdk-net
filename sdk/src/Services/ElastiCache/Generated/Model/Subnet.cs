@@ -37,7 +37,7 @@ namespace Amazon.ElastiCache.Model
         private AvailabilityZone _subnetAvailabilityZone;
         private string _subnetIdentifier;
         private SubnetOutpost _subnetOutpost;
-        private List<string> _supportedNetworkTypes = new List<string>();
+        private List<string> _supportedNetworkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SubnetAvailabilityZone. 
@@ -110,7 +110,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SupportedNetworkTypes property is set
         internal bool IsSetSupportedNetworkTypes()
         {
-            return this._supportedNetworkTypes != null && this._supportedNetworkTypes.Count > 0; 
+            return this._supportedNetworkTypes != null && (this._supportedNetworkTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

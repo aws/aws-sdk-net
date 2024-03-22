@@ -33,7 +33,7 @@ namespace Amazon.PcaConnectorAd.Model
     /// </summary>
     public partial class PrivateKeyAttributesV2
     {
-        private List<string> _cryptoProviders = new List<string>();
+        private List<string> _cryptoProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private KeySpec _keySpec;
         private int? _minimalKeyLength;
 
@@ -53,7 +53,7 @@ namespace Amazon.PcaConnectorAd.Model
         // Check to see if CryptoProviders property is set
         internal bool IsSetCryptoProviders()
         {
-            return this._cryptoProviders != null && this._cryptoProviders.Count > 0; 
+            return this._cryptoProviders != null && (this._cryptoProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

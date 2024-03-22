@@ -35,7 +35,7 @@ namespace Amazon.Textract.Model
     {
         private string _analyzeIDModelVersion;
         private DocumentMetadata _documentMetadata;
-        private List<IdentityDocument> _identityDocuments = new List<IdentityDocument>();
+        private List<IdentityDocument> _identityDocuments = AWSConfigs.InitializeCollections ? new List<IdentityDocument>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalyzeIDModelVersion. 
@@ -86,7 +86,7 @@ namespace Amazon.Textract.Model
         // Check to see if IdentityDocuments property is set
         internal bool IsSetIdentityDocuments()
         {
-            return this._identityDocuments != null && this._identityDocuments.Count > 0; 
+            return this._identityDocuments != null && (this._identityDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

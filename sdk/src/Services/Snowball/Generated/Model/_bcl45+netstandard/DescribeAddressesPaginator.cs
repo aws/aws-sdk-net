@@ -45,7 +45,7 @@ namespace Amazon.Snowball.Model
         /// Enumerable containing all of the Addresses
         /// </summary>
         public IPaginatedEnumerable<Address> Addresses => 
-            new PaginatedResultKeyResponse<DescribeAddressesResponse, Address>(this, (i) => i.Addresses);
+            new PaginatedResultKeyResponse<DescribeAddressesResponse, Address>(this, (i) => i.Addresses ?? new List<Address>());
 
         internal DescribeAddressesPaginator(IAmazonSnowball client, DescribeAddressesRequest request)
         {

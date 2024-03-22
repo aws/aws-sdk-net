@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetAwsNetworkPerformanceDataResponse : AmazonWebServiceResponse
     {
-        private List<DataResponse> _dataResponses = new List<DataResponse>();
+        private List<DataResponse> _dataResponses = AWSConfigs.InitializeCollections ? new List<DataResponse>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if DataResponses property is set
         internal bool IsSetDataResponses()
         {
-            return this._dataResponses != null && this._dataResponses.Count > 0; 
+            return this._dataResponses != null && (this._dataResponses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Enumerable containing all of the FleetSummaries
         /// </summary>
         public IPaginatedEnumerable<FleetSummary> FleetSummaries => 
-            new PaginatedResultKeyResponse<ListFleetsResponse, FleetSummary>(this, (i) => i.FleetSummaries);
+            new PaginatedResultKeyResponse<ListFleetsResponse, FleetSummary>(this, (i) => i.FleetSummaries ?? new List<FleetSummary>());
 
         internal ListFleetsPaginator(IAmazonIoTFleetWise client, ListFleetsRequest request)
         {

@@ -33,11 +33,11 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class S3DeltaSource
     {
-        private Dictionary<string, string> _additionalDeltaOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalDeltaOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private S3DirectSourceAdditionalOptions _additionalOptions;
         private string _name;
-        private List<GlueSchema> _outputSchemas = new List<GlueSchema>();
-        private List<string> _paths = new List<string>();
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
+        private List<string> _paths = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalDeltaOptions. 
@@ -54,7 +54,7 @@ namespace Amazon.Glue.Model
         // Check to see if AdditionalDeltaOptions property is set
         internal bool IsSetAdditionalDeltaOptions()
         {
-            return this._additionalDeltaOptions != null && this._additionalDeltaOptions.Count > 0; 
+            return this._additionalDeltaOptions != null && (this._additionalDeltaOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.Glue.Model
         // Check to see if OutputSchemas property is set
         internal bool IsSetOutputSchemas()
         {
-            return this._outputSchemas != null && this._outputSchemas.Count > 0; 
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.Glue.Model
         // Check to see if Paths property is set
         internal bool IsSetPaths()
         {
-            return this._paths != null && this._paths.Count > 0; 
+            return this._paths != null && (this._paths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

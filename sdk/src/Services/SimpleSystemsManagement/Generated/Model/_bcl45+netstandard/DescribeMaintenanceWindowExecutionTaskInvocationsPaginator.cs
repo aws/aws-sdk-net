@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the WindowExecutionTaskInvocationIdentities
         /// </summary>
         public IPaginatedEnumerable<MaintenanceWindowExecutionTaskInvocationIdentity> WindowExecutionTaskInvocationIdentities => 
-            new PaginatedResultKeyResponse<DescribeMaintenanceWindowExecutionTaskInvocationsResponse, MaintenanceWindowExecutionTaskInvocationIdentity>(this, (i) => i.WindowExecutionTaskInvocationIdentities);
+            new PaginatedResultKeyResponse<DescribeMaintenanceWindowExecutionTaskInvocationsResponse, MaintenanceWindowExecutionTaskInvocationIdentity>(this, (i) => i.WindowExecutionTaskInvocationIdentities ?? new List<MaintenanceWindowExecutionTaskInvocationIdentity>());
 
         internal DescribeMaintenanceWindowExecutionTaskInvocationsPaginator(IAmazonSimpleSystemsManagement client, DescribeMaintenanceWindowExecutionTaskInvocationsRequest request)
         {

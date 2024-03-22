@@ -52,7 +52,7 @@ namespace Amazon.NimbleStudio.Model
         private string _description;
         private string _ec2ImageId;
         private StreamingImageEncryptionConfiguration _encryptionConfiguration;
-        private List<string> _eulaIds = new List<string>();
+        private List<string> _eulaIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _owner;
         private string _platform;
@@ -60,7 +60,7 @@ namespace Amazon.NimbleStudio.Model
         private StreamingImageStatusCode _statusCode;
         private string _statusMessage;
         private string _streamingImageId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -152,7 +152,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if EulaIds property is set
         internal bool IsSetEulaIds()
         {
-            return this._eulaIds != null && this._eulaIds.Count > 0; 
+            return this._eulaIds != null && (this._eulaIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -299,7 +299,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

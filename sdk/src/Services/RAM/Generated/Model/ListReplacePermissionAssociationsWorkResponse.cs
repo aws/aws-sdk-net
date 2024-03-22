@@ -34,7 +34,7 @@ namespace Amazon.RAM.Model
     public partial class ListReplacePermissionAssociationsWorkResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReplacePermissionAssociationsWork> _replacePermissionAssociationsWorks = new List<ReplacePermissionAssociationsWork>();
+        private List<ReplacePermissionAssociationsWork> _replacePermissionAssociationsWorks = AWSConfigs.InitializeCollections ? new List<ReplacePermissionAssociationsWork>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.RAM.Model
         // Check to see if ReplacePermissionAssociationsWorks property is set
         internal bool IsSetReplacePermissionAssociationsWorks()
         {
-            return this._replacePermissionAssociationsWorks != null && this._replacePermissionAssociationsWorks.Count > 0; 
+            return this._replacePermissionAssociationsWorks != null && (this._replacePermissionAssociationsWorks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

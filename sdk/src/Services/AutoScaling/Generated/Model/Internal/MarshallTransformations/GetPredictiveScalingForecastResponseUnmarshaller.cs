@@ -90,6 +90,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LoadForecast/member", targetDepth))
                     {
                         var unmarshaller = LoadForecastUnmarshaller.Instance;
+                        if (response.LoadForecast == null)
+                        {
+                            response.LoadForecast = new List<LoadForecast>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.LoadForecast.Add(item);
                         continue;

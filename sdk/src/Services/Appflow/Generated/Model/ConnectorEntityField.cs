@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class ConnectorEntityField
     {
-        private Dictionary<string, string> _customProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _customProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _defaultValue;
         private string _description;
         private DestinationFieldProperties _destinationProperties;
@@ -62,7 +62,7 @@ namespace Amazon.Appflow.Model
         // Check to see if CustomProperties property is set
         internal bool IsSetCustomProperties()
         {
-            return this._customProperties != null && this._customProperties.Count > 0; 
+            return this._customProperties != null && (this._customProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

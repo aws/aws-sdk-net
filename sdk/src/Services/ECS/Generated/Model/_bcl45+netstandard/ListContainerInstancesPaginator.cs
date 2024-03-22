@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
         /// Enumerable containing all of the ContainerInstanceArns
         /// </summary>
         public IPaginatedEnumerable<string> ContainerInstanceArns => 
-            new PaginatedResultKeyResponse<ListContainerInstancesResponse, string>(this, (i) => i.ContainerInstanceArns);
+            new PaginatedResultKeyResponse<ListContainerInstancesResponse, string>(this, (i) => i.ContainerInstanceArns ?? new List<string>());
 
         internal ListContainerInstancesPaginator(IAmazonECS client, ListContainerInstancesRequest request)
         {

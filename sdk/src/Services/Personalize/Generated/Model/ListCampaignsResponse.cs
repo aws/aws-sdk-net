@@ -33,7 +33,7 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class ListCampaignsResponse : AmazonWebServiceResponse
     {
-        private List<CampaignSummary> _campaigns = new List<CampaignSummary>();
+        private List<CampaignSummary> _campaigns = AWSConfigs.InitializeCollections ? new List<CampaignSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Personalize.Model
         // Check to see if Campaigns property is set
         internal bool IsSetCampaigns()
         {
-            return this._campaigns != null && this._campaigns.Count > 0; 
+            return this._campaigns != null && (this._campaigns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -84,6 +84,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MetricAlarms/member", targetDepth))
                     {
                         var unmarshaller = MetricAlarmUnmarshaller.Instance;
+                        if (response.MetricAlarms == null)
+                        {
+                            response.MetricAlarms = new List<MetricAlarm>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.MetricAlarms.Add(item);
                         continue;

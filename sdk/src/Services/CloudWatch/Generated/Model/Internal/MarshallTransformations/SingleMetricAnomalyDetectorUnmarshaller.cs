@@ -57,6 +57,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Dimensions/member", targetDepth))
                     {
                         var unmarshaller = DimensionUnmarshaller.Instance;
+                        if (unmarshalledObject.Dimensions == null)
+                        {
+                            unmarshalledObject.Dimensions = new List<Dimension>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Dimensions.Add(item);
                         continue;

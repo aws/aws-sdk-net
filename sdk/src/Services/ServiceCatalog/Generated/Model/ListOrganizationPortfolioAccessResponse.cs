@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ListOrganizationPortfolioAccessResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<OrganizationNode> _organizationNodes = new List<OrganizationNode>();
+        private List<OrganizationNode> _organizationNodes = AWSConfigs.InitializeCollections ? new List<OrganizationNode>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if OrganizationNodes property is set
         internal bool IsSetOrganizationNodes()
         {
-            return this._organizationNodes != null && this._organizationNodes.Count > 0; 
+            return this._organizationNodes != null && (this._organizationNodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

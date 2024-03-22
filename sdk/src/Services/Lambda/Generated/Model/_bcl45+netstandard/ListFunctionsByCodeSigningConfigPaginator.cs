@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// Enumerable containing all of the FunctionArns
         /// </summary>
         public IPaginatedEnumerable<string> FunctionArns => 
-            new PaginatedResultKeyResponse<ListFunctionsByCodeSigningConfigResponse, string>(this, (i) => i.FunctionArns);
+            new PaginatedResultKeyResponse<ListFunctionsByCodeSigningConfigResponse, string>(this, (i) => i.FunctionArns ?? new List<string>());
 
         internal ListFunctionsByCodeSigningConfigPaginator(IAmazonLambda client, ListFunctionsByCodeSigningConfigRequest request)
         {

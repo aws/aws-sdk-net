@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsApiGatewayRestApiDetails
     {
         private string _apiKeySource;
-        private List<string> _binaryMediaTypes = new List<string>();
+        private List<string> _binaryMediaTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _createdDate;
         private string _description;
         private AwsApiGatewayEndpointConfiguration _endpointConfiguration;
@@ -86,7 +86,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if BinaryMediaTypes property is set
         internal bool IsSetBinaryMediaTypes()
         {
-            return this._binaryMediaTypes != null && this._binaryMediaTypes.Count > 0; 
+            return this._binaryMediaTypes != null && (this._binaryMediaTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

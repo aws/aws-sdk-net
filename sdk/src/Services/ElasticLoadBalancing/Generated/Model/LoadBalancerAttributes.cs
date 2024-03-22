@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     public partial class LoadBalancerAttributes
     {
         private AccessLog _accessLog;
-        private List<AdditionalAttribute> _additionalAttributes = new List<AdditionalAttribute>();
+        private List<AdditionalAttribute> _additionalAttributes = AWSConfigs.InitializeCollections ? new List<AdditionalAttribute>() : null;
         private ConnectionDraining _connectionDraining;
         private ConnectionSettings _connectionSettings;
         private CrossZoneLoadBalancing _crossZoneLoadBalancing;
@@ -79,7 +79,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AdditionalAttributes property is set
         internal bool IsSetAdditionalAttributes()
         {
-            return this._additionalAttributes != null && this._additionalAttributes.Count > 0; 
+            return this._additionalAttributes != null && (this._additionalAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

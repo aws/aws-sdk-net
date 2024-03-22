@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the UserHierarchyGroupSummaryList
         /// </summary>
         public IPaginatedEnumerable<HierarchyGroupSummary> UserHierarchyGroupSummaryList => 
-            new PaginatedResultKeyResponse<ListUserHierarchyGroupsResponse, HierarchyGroupSummary>(this, (i) => i.UserHierarchyGroupSummaryList);
+            new PaginatedResultKeyResponse<ListUserHierarchyGroupsResponse, HierarchyGroupSummary>(this, (i) => i.UserHierarchyGroupSummaryList ?? new List<HierarchyGroupSummary>());
 
         internal ListUserHierarchyGroupsPaginator(IAmazonConnect client, ListUserHierarchyGroupsRequest request)
         {

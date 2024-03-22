@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model
     public partial class ListQueriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Query> _queries = new List<Query>();
+        private List<Query> _queries = AWSConfigs.InitializeCollections ? new List<Query>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if Queries property is set
         internal bool IsSetQueries()
         {
-            return this._queries != null && this._queries.Count > 0; 
+            return this._queries != null && (this._queries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

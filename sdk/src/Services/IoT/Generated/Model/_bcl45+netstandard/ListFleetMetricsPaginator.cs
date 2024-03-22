@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the FleetMetrics
         /// </summary>
         public IPaginatedEnumerable<FleetMetricNameAndArn> FleetMetrics => 
-            new PaginatedResultKeyResponse<ListFleetMetricsResponse, FleetMetricNameAndArn>(this, (i) => i.FleetMetrics);
+            new PaginatedResultKeyResponse<ListFleetMetricsResponse, FleetMetricNameAndArn>(this, (i) => i.FleetMetrics ?? new List<FleetMetricNameAndArn>());
 
         internal ListFleetMetricsPaginator(IAmazonIoT client, ListFleetMetricsRequest request)
         {

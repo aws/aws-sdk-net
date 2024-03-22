@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsS3BucketNotificationConfigurationS3KeyFilter
     {
-        private List<AwsS3BucketNotificationConfigurationS3KeyFilterRule> _filterRules = new List<AwsS3BucketNotificationConfigurationS3KeyFilterRule>();
+        private List<AwsS3BucketNotificationConfigurationS3KeyFilterRule> _filterRules = AWSConfigs.InitializeCollections ? new List<AwsS3BucketNotificationConfigurationS3KeyFilterRule>() : null;
 
         /// <summary>
         /// Gets and sets the property FilterRules. 
@@ -50,7 +50,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if FilterRules property is set
         internal bool IsSetFilterRules()
         {
-            return this._filterRules != null && this._filterRules.Count > 0; 
+            return this._filterRules != null && (this._filterRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

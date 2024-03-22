@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         private MulticastSupportValue _multicastSupport;
         private string _propagationDefaultRouteTableId;
         private SecurityGroupReferencingSupportValue _securityGroupReferencingSupport;
-        private List<string> _transitGatewayCidrBlocks = new List<string>();
+        private List<string> _transitGatewayCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpnEcmpSupportValue _vpnEcmpSupport;
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Amazon.EC2.Model
         // Check to see if TransitGatewayCidrBlocks property is set
         internal bool IsSetTransitGatewayCidrBlocks()
         {
-            return this._transitGatewayCidrBlocks != null && this._transitGatewayCidrBlocks.Count > 0; 
+            return this._transitGatewayCidrBlocks != null && (this._transitGatewayCidrBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

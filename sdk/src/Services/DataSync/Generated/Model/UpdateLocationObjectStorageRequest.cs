@@ -38,7 +38,7 @@ namespace Amazon.DataSync.Model
     public partial class UpdateLocationObjectStorageRequest : AmazonDataSyncRequest
     {
         private string _accessKey;
-        private List<string> _agentArns = new List<string>();
+        private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _locationArn;
         private string _secretKey;
         private MemoryStream _serverCertificate;
@@ -83,7 +83,7 @@ namespace Amazon.DataSync.Model
         // Check to see if AgentArns property is set
         internal bool IsSetAgentArns()
         {
-            return this._agentArns != null && this._agentArns.Count > 0; 
+            return this._agentArns != null && (this._agentArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

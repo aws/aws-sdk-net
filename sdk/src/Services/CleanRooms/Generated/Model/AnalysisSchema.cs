@@ -33,7 +33,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class AnalysisSchema
     {
-        private List<string> _referencedTables = new List<string>();
+        private List<string> _referencedTables = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ReferencedTables. 
@@ -50,7 +50,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if ReferencedTables property is set
         internal bool IsSetReferencedTables()
         {
-            return this._referencedTables != null && this._referencedTables.Count > 0; 
+            return this._referencedTables != null && (this._referencedTables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.TimestreamQuery.Model
         private string _queryString;
         private ScheduleConfiguration _scheduleConfiguration;
         private string _scheduledQueryExecutionRoleArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TargetConfiguration _targetConfiguration;
 
         /// <summary>
@@ -251,7 +251,7 @@ namespace Amazon.TimestreamQuery.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

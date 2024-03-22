@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeInboundIntegrationsResponse : AmazonWebServiceResponse
     {
-        private List<InboundIntegration> _inboundIntegrations = new List<InboundIntegration>();
+        private List<InboundIntegration> _inboundIntegrations = AWSConfigs.InitializeCollections ? new List<InboundIntegration>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model
         // Check to see if InboundIntegrations property is set
         internal bool IsSetInboundIntegrations()
         {
-            return this._inboundIntegrations != null && this._inboundIntegrations.Count > 0; 
+            return this._inboundIntegrations != null && (this._inboundIntegrations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all of the Imports
         /// </summary>
         public IPaginatedEnumerable<string> Imports => 
-            new PaginatedResultKeyResponse<ListImportsResponse, string>(this, (i) => i.Imports);
+            new PaginatedResultKeyResponse<ListImportsResponse, string>(this, (i) => i.Imports ?? new List<string>());
 
         internal ListImportsPaginator(IAmazonCloudFormation client, ListImportsRequest request)
         {

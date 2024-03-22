@@ -35,7 +35,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class BatchGetCodeSnippetRequest : AmazonInspector2Request
     {
-        private List<string> _findingArns = new List<string>();
+        private List<string> _findingArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FindingArns. 
@@ -53,7 +53,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FindingArns property is set
         internal bool IsSetFindingArns()
         {
-            return this._findingArns != null && this._findingArns.Count > 0; 
+            return this._findingArns != null && (this._findingArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

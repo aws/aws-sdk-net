@@ -39,8 +39,8 @@ namespace Amazon.GlobalAccelerator.Model
         private DateTime? _createdTime;
         private DateTime? _lastModifiedTime;
         private string _name;
-        private List<string> _principals = new List<string>();
-        private List<Resource> _resources = new List<Resource>();
+        private List<string> _principals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Resource> _resources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
 
         /// <summary>
         /// Gets and sets the property AttachmentArn. 
@@ -131,7 +131,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

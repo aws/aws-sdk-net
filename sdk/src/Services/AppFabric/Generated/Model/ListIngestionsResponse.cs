@@ -33,7 +33,7 @@ namespace Amazon.AppFabric.Model
     /// </summary>
     public partial class ListIngestionsResponse : AmazonWebServiceResponse
     {
-        private List<IngestionSummary> _ingestions = new List<IngestionSummary>();
+        private List<IngestionSummary> _ingestions = AWSConfigs.InitializeCollections ? new List<IngestionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AppFabric.Model
         // Check to see if Ingestions property is set
         internal bool IsSetIngestions()
         {
-            return this._ingestions != null && this._ingestions.Count > 0; 
+            return this._ingestions != null && (this._ingestions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

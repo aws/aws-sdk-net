@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListAgentStatusesResponse : AmazonWebServiceResponse
     {
-        private List<AgentStatusSummary> _agentStatusSummaryList = new List<AgentStatusSummary>();
+        private List<AgentStatusSummary> _agentStatusSummaryList = AWSConfigs.InitializeCollections ? new List<AgentStatusSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if AgentStatusSummaryList property is set
         internal bool IsSetAgentStatusSummaryList()
         {
-            return this._agentStatusSummaryList != null && this._agentStatusSummaryList.Count > 0; 
+            return this._agentStatusSummaryList != null && (this._agentStatusSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

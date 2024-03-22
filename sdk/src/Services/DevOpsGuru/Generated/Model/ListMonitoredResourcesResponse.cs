@@ -33,7 +33,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class ListMonitoredResourcesResponse : AmazonWebServiceResponse
     {
-        private List<MonitoredResourceIdentifier> _monitoredResourceIdentifiers = new List<MonitoredResourceIdentifier>();
+        private List<MonitoredResourceIdentifier> _monitoredResourceIdentifiers = AWSConfigs.InitializeCollections ? new List<MonitoredResourceIdentifier>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if MonitoredResourceIdentifiers property is set
         internal bool IsSetMonitoredResourceIdentifiers()
         {
-            return this._monitoredResourceIdentifiers != null && this._monitoredResourceIdentifiers.Count > 0; 
+            return this._monitoredResourceIdentifiers != null && (this._monitoredResourceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

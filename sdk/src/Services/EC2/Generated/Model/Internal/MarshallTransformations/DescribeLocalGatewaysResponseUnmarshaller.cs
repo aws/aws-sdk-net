@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("localGatewaySet/item", targetDepth))
                     {
                         var unmarshaller = LocalGatewayUnmarshaller.Instance;
+                        if (response.LocalGateways == null)
+                        {
+                            response.LocalGateways = new List<LocalGateway>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.LocalGateways.Add(item);
                         continue;

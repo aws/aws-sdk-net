@@ -103,12 +103,12 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeSnapshotsRequest : AmazonEC2Request
     {
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _ownerIds = new List<string>();
-        private List<string> _restorableByUserIds = new List<string>();
-        private List<string> _snapshotIds = new List<string>();
+        private List<string> _ownerIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _restorableByUserIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _snapshotIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -185,7 +185,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -245,7 +245,7 @@ namespace Amazon.EC2.Model
         // Check to see if OwnerIds property is set
         internal bool IsSetOwnerIds()
         {
-            return this._ownerIds != null && this._ownerIds.Count > 0; 
+            return this._ownerIds != null && (this._ownerIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace Amazon.EC2.Model
         // Check to see if RestorableByUserIds property is set
         internal bool IsSetRestorableByUserIds()
         {
-            return this._restorableByUserIds != null && this._restorableByUserIds.Count > 0; 
+            return this._restorableByUserIds != null && (this._restorableByUserIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -285,7 +285,7 @@ namespace Amazon.EC2.Model
         // Check to see if SnapshotIds property is set
         internal bool IsSetSnapshotIds()
         {
-            return this._snapshotIds != null && this._snapshotIds.Count > 0; 
+            return this._snapshotIds != null && (this._snapshotIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

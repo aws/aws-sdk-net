@@ -73,7 +73,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GenerateEmbedUrlForRegisteredUserRequest : AmazonQuickSightRequest
     {
-        private List<string> _allowedDomains = new List<string>();
+        private List<string> _allowedDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _awsAccountId;
         private RegisteredUserEmbeddingExperienceConfiguration _experienceConfiguration;
         private long? _sessionLifetimeInMinutes;
@@ -103,7 +103,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AllowedDomains property is set
         internal bool IsSetAllowedDomains()
         {
-            return this._allowedDomains != null && this._allowedDomains.Count > 0; 
+            return this._allowedDomains != null && (this._allowedDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

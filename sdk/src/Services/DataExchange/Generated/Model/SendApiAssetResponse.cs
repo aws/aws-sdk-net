@@ -34,7 +34,7 @@ namespace Amazon.DataExchange.Model
     public partial class SendApiAssetResponse : AmazonWebServiceResponse
     {
         private string _body;
-        private Dictionary<string, string> _responseHeaders = new Dictionary<string, string>();
+        private Dictionary<string, string> _responseHeaders = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -69,7 +69,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if ResponseHeaders property is set
         internal bool IsSetResponseHeaders()
         {
-            return this._responseHeaders != null && this._responseHeaders.Count > 0; 
+            return this._responseHeaders != null && (this._responseHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

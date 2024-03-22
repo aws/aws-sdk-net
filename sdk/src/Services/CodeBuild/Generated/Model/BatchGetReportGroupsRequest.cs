@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BatchGetReportGroupsRequest : AmazonCodeBuildRequest
     {
-        private List<string> _reportGroupArns = new List<string>();
+        private List<string> _reportGroupArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ReportGroupArns. 
@@ -52,7 +52,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if ReportGroupArns property is set
         internal bool IsSetReportGroupArns()
         {
-            return this._reportGroupArns != null && this._reportGroupArns.Count > 0; 
+            return this._reportGroupArns != null && (this._reportGroupArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

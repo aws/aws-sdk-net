@@ -45,7 +45,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<DbParameterGroupSummary> Items => 
-            new PaginatedResultKeyResponse<ListDbParameterGroupsResponse, DbParameterGroupSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListDbParameterGroupsResponse, DbParameterGroupSummary>(this, (i) => i.Items ?? new List<DbParameterGroupSummary>());
 
         internal ListDbParameterGroupsPaginator(IAmazonTimestreamInfluxDB client, ListDbParameterGroupsRequest request)
         {

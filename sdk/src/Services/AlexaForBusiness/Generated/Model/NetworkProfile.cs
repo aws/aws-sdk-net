@@ -42,7 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         private string _nextPassword;
         private NetworkSecurityType _securityType;
         private string _ssid;
-        private List<string> _trustAnchors = new List<string>();
+        private List<string> _trustAnchors = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
@@ -233,7 +233,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if TrustAnchors property is set
         internal bool IsSetTrustAnchors()
         {
-            return this._trustAnchors != null && this._trustAnchors.Count > 0; 
+            return this._trustAnchors != null && (this._trustAnchors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

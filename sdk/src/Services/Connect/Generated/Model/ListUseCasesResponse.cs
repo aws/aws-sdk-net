@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListUseCasesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UseCase> _useCaseSummaryList = new List<UseCase>();
+        private List<UseCase> _useCaseSummaryList = AWSConfigs.InitializeCollections ? new List<UseCase>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         // Check to see if UseCaseSummaryList property is set
         internal bool IsSetUseCaseSummaryList()
         {
-            return this._useCaseSummaryList != null && this._useCaseSummaryList.Count > 0; 
+            return this._useCaseSummaryList != null && (this._useCaseSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

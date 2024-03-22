@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetRelationalDatabaseMetricDataResponse : AmazonWebServiceResponse
     {
-        private List<MetricDatapoint> _metricData = new List<MetricDatapoint>();
+        private List<MetricDatapoint> _metricData = AWSConfigs.InitializeCollections ? new List<MetricDatapoint>() : null;
         private RelationalDatabaseMetricName _metricName;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if MetricData property is set
         internal bool IsSetMetricData()
         {
-            return this._metricData != null && this._metricData.Count > 0; 
+            return this._metricData != null && (this._metricData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

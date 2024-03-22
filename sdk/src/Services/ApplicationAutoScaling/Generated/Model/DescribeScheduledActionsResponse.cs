@@ -34,7 +34,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     public partial class DescribeScheduledActionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScheduledAction> _scheduledActions = new List<ScheduledAction>();
+        private List<ScheduledAction> _scheduledActions = AWSConfigs.InitializeCollections ? new List<ScheduledAction>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if ScheduledActions property is set
         internal bool IsSetScheduledActions()
         {
-            return this._scheduledActions != null && this._scheduledActions.Count > 0; 
+            return this._scheduledActions != null && (this._scheduledActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

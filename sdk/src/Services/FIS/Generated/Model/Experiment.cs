@@ -33,7 +33,7 @@ namespace Amazon.FIS.Model
     /// </summary>
     public partial class Experiment
     {
-        private Dictionary<string, ExperimentAction> _actions = new Dictionary<string, ExperimentAction>();
+        private Dictionary<string, ExperimentAction> _actions = AWSConfigs.InitializeCollections ? new Dictionary<string, ExperimentAction>() : null;
         private string _arn;
         private DateTime? _creationTime;
         private DateTime? _endTime;
@@ -44,10 +44,10 @@ namespace Amazon.FIS.Model
         private string _roleArn;
         private DateTime? _startTime;
         private ExperimentState _state;
-        private List<ExperimentStopCondition> _stopConditions = new List<ExperimentStopCondition>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<ExperimentStopCondition> _stopConditions = AWSConfigs.InitializeCollections ? new List<ExperimentStopCondition>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private long? _targetAccountConfigurationsCount;
-        private Dictionary<string, ExperimentTarget> _targets = new Dictionary<string, ExperimentTarget>();
+        private Dictionary<string, ExperimentTarget> _targets = AWSConfigs.InitializeCollections ? new Dictionary<string, ExperimentTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -64,7 +64,7 @@ namespace Amazon.FIS.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -267,7 +267,7 @@ namespace Amazon.FIS.Model
         // Check to see if StopConditions property is set
         internal bool IsSetStopConditions()
         {
-            return this._stopConditions != null && this._stopConditions.Count > 0; 
+            return this._stopConditions != null && (this._stopConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -286,7 +286,7 @@ namespace Amazon.FIS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -323,7 +323,7 @@ namespace Amazon.FIS.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

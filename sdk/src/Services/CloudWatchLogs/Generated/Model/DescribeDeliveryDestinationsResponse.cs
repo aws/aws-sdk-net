@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class DescribeDeliveryDestinationsResponse : AmazonWebServiceResponse
     {
-        private List<DeliveryDestination> _deliveryDestinations = new List<DeliveryDestination>();
+        private List<DeliveryDestination> _deliveryDestinations = AWSConfigs.InitializeCollections ? new List<DeliveryDestination>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if DeliveryDestinations property is set
         internal bool IsSetDeliveryDestinations()
         {
-            return this._deliveryDestinations != null && this._deliveryDestinations.Count > 0; 
+            return this._deliveryDestinations != null && (this._deliveryDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

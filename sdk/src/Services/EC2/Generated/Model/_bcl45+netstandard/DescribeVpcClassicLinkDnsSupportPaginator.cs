@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Vpcs
         /// </summary>
         public IPaginatedEnumerable<ClassicLinkDnsSupport> Vpcs => 
-            new PaginatedResultKeyResponse<DescribeVpcClassicLinkDnsSupportResponse, ClassicLinkDnsSupport>(this, (i) => i.Vpcs);
+            new PaginatedResultKeyResponse<DescribeVpcClassicLinkDnsSupportResponse, ClassicLinkDnsSupport>(this, (i) => i.Vpcs ?? new List<ClassicLinkDnsSupport>());
 
         internal DescribeVpcClassicLinkDnsSupportPaginator(IAmazonEC2 client, DescribeVpcClassicLinkDnsSupportRequest request)
         {

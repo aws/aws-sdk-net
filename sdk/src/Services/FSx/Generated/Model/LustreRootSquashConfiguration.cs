@@ -43,7 +43,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class LustreRootSquashConfiguration
     {
-        private List<string> _noSquashNids = new List<string>();
+        private List<string> _noSquashNids = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _rootSquash;
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.FSx.Model
         // Check to see if NoSquashNids property is set
         internal bool IsSetNoSquashNids()
         {
-            return this._noSquashNids != null && this._noSquashNids.Count > 0; 
+            return this._noSquashNids != null && (this._noSquashNids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

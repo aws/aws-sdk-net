@@ -33,7 +33,7 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class NetworkInterface
     {
-        private List<string> _ips = new List<string>();
+        private List<string> _ips = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _isPrimary;
         private string _macAddress;
 
@@ -52,7 +52,7 @@ namespace Amazon.Drs.Model
         // Check to see if Ips property is set
         internal bool IsSetIps()
         {
-            return this._ips != null && this._ips.Count > 0; 
+            return this._ips != null && (this._ips.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetIpamPoolAllocationsResponse : AmazonWebServiceResponse
     {
-        private List<IpamPoolAllocation> _ipamPoolAllocations = new List<IpamPoolAllocation>();
+        private List<IpamPoolAllocation> _ipamPoolAllocations = AWSConfigs.InitializeCollections ? new List<IpamPoolAllocation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if IpamPoolAllocations property is set
         internal bool IsSetIpamPoolAllocations()
         {
-            return this._ipamPoolAllocations != null && this._ipamPoolAllocations.Count > 0; 
+            return this._ipamPoolAllocations != null && (this._ipamPoolAllocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

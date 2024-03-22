@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the Locations
         /// </summary>
         public IPaginatedEnumerable<LocationModel> Locations => 
-            new PaginatedResultKeyResponse<ListLocationsResponse, LocationModel>(this, (i) => i.Locations);
+            new PaginatedResultKeyResponse<ListLocationsResponse, LocationModel>(this, (i) => i.Locations ?? new List<LocationModel>());
 
         internal ListLocationsPaginator(IAmazonGameLift client, ListLocationsRequest request)
         {

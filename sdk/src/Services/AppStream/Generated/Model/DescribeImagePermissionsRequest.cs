@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         private int? _maxResults;
         private string _name;
         private string _nextToken;
-        private List<string> _sharedAwsAccountIds = new List<string>();
+        private List<string> _sharedAwsAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -115,7 +115,7 @@ namespace Amazon.AppStream.Model
         // Check to see if SharedAwsAccountIds property is set
         internal bool IsSetSharedAwsAccountIds()
         {
-            return this._sharedAwsAccountIds != null && this._sharedAwsAccountIds.Count > 0; 
+            return this._sharedAwsAccountIds != null && (this._sharedAwsAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

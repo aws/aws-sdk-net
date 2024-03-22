@@ -45,7 +45,7 @@ namespace Amazon.Kafka.Model
         /// Enumerable containing all of the VpcConnections
         /// </summary>
         public IPaginatedEnumerable<VpcConnection> VpcConnections => 
-            new PaginatedResultKeyResponse<ListVpcConnectionsResponse, VpcConnection>(this, (i) => i.VpcConnections);
+            new PaginatedResultKeyResponse<ListVpcConnectionsResponse, VpcConnection>(this, (i) => i.VpcConnections ?? new List<VpcConnection>());
 
         internal ListVpcConnectionsPaginator(IAmazonKafka client, ListVpcConnectionsRequest request)
         {

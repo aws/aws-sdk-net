@@ -45,7 +45,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Enumerable containing all of the PhoneNumbers
         /// </summary>
         public IPaginatedEnumerable<PhoneNumberInformation> PhoneNumbers => 
-            new PaginatedResultKeyResponse<ListOriginationNumbersResponse, PhoneNumberInformation>(this, (i) => i.PhoneNumbers);
+            new PaginatedResultKeyResponse<ListOriginationNumbersResponse, PhoneNumberInformation>(this, (i) => i.PhoneNumbers ?? new List<PhoneNumberInformation>());
 
         internal ListOriginationNumbersPaginator(IAmazonSimpleNotificationService client, ListOriginationNumbersRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.DocDB.Model
     /// </summary>
     public partial class DescribeDBClustersResponse : AmazonWebServiceResponse
     {
-        private List<DBCluster> _dbClusters = new List<DBCluster>();
+        private List<DBCluster> _dbClusters = AWSConfigs.InitializeCollections ? new List<DBCluster>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DocDB.Model
         // Check to see if DBClusters property is set
         internal bool IsSetDBClusters()
         {
-            return this._dbClusters != null && this._dbClusters.Count > 0; 
+            return this._dbClusters != null && (this._dbClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

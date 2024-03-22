@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
         /// Enumerable containing all of the DBInstances
         /// </summary>
         public IPaginatedEnumerable<DBInstance> DBInstances => 
-            new PaginatedResultKeyResponse<DescribeDBInstancesResponse, DBInstance>(this, (i) => i.DBInstances);
+            new PaginatedResultKeyResponse<DescribeDBInstancesResponse, DBInstance>(this, (i) => i.DBInstances ?? new List<DBInstance>());
 
         internal DescribeDBInstancesPaginator(IAmazonRDS client, DescribeDBInstancesRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the InterfaceAssociations
         /// </summary>
         public IPaginatedEnumerable<TrunkInterfaceAssociation> InterfaceAssociations => 
-            new PaginatedResultKeyResponse<DescribeTrunkInterfaceAssociationsResponse, TrunkInterfaceAssociation>(this, (i) => i.InterfaceAssociations);
+            new PaginatedResultKeyResponse<DescribeTrunkInterfaceAssociationsResponse, TrunkInterfaceAssociation>(this, (i) => i.InterfaceAssociations ?? new List<TrunkInterfaceAssociation>());
 
         internal DescribeTrunkInterfaceAssociationsPaginator(IAmazonEC2 client, DescribeTrunkInterfaceAssociationsRequest request)
         {

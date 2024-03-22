@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the InternetGateways
         /// </summary>
         public IPaginatedEnumerable<InternetGateway> InternetGateways => 
-            new PaginatedResultKeyResponse<DescribeInternetGatewaysResponse, InternetGateway>(this, (i) => i.InternetGateways);
+            new PaginatedResultKeyResponse<DescribeInternetGatewaysResponse, InternetGateway>(this, (i) => i.InternetGateways ?? new List<InternetGateway>());
 
         internal DescribeInternetGatewaysPaginator(IAmazonEC2 client, DescribeInternetGatewaysRequest request)
         {

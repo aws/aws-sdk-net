@@ -41,7 +41,7 @@ namespace Amazon.Personalize.Model
         private string _failureReason;
         private DateTime? _lastUpdatedDateTime;
         private RecommenderUpdateSummary _latestRecommenderUpdate;
-        private Dictionary<string, double> _modelMetrics = new Dictionary<string, double>();
+        private Dictionary<string, double> _modelMetrics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
         private string _name;
         private string _recipeArn;
         private string _recommenderArn;
@@ -157,7 +157,7 @@ namespace Amazon.Personalize.Model
         // Check to see if ModelMetrics property is set
         internal bool IsSetModelMetrics()
         {
-            return this._modelMetrics != null && this._modelMetrics.Count > 0; 
+            return this._modelMetrics != null && (this._modelMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

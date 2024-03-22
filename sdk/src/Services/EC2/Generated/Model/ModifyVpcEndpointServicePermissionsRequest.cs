@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyVpcEndpointServicePermissionsRequest : AmazonEC2Request
     {
-        private List<string> _addAllowedPrincipals = new List<string>();
-        private List<string> _removeAllowedPrincipals = new List<string>();
+        private List<string> _addAllowedPrincipals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _removeAllowedPrincipals = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceId;
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddAllowedPrincipals property is set
         internal bool IsSetAddAllowedPrincipals()
         {
-            return this._addAllowedPrincipals != null && this._addAllowedPrincipals.Count > 0; 
+            return this._addAllowedPrincipals != null && (this._addAllowedPrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveAllowedPrincipals property is set
         internal bool IsSetRemoveAllowedPrincipals()
         {
-            return this._removeAllowedPrincipals != null && this._removeAllowedPrincipals.Count > 0; 
+            return this._removeAllowedPrincipals != null && (this._removeAllowedPrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListUniqueProblemsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private Dictionary<string, List<UniqueProblem>> _uniqueProblems = new Dictionary<string, List<UniqueProblem>>();
+        private Dictionary<string, List<UniqueProblem>> _uniqueProblems = AWSConfigs.InitializeCollections ? new Dictionary<string, List<UniqueProblem>>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -105,7 +105,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if UniqueProblems property is set
         internal bool IsSetUniqueProblems()
         {
-            return this._uniqueProblems != null && this._uniqueProblems.Count > 0; 
+            return this._uniqueProblems != null && (this._uniqueProblems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the IamInstanceProfileAssociations
         /// </summary>
         public IPaginatedEnumerable<IamInstanceProfileAssociation> IamInstanceProfileAssociations => 
-            new PaginatedResultKeyResponse<DescribeIamInstanceProfileAssociationsResponse, IamInstanceProfileAssociation>(this, (i) => i.IamInstanceProfileAssociations);
+            new PaginatedResultKeyResponse<DescribeIamInstanceProfileAssociationsResponse, IamInstanceProfileAssociation>(this, (i) => i.IamInstanceProfileAssociations ?? new List<IamInstanceProfileAssociation>());
 
         internal DescribeIamInstanceProfileAssociationsPaginator(IAmazonEC2 client, DescribeIamInstanceProfileAssociationsRequest request)
         {

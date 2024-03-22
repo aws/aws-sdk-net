@@ -45,7 +45,7 @@ namespace Amazon.MediaLive.Model
         /// Enumerable containing all of the InputSecurityGroups
         /// </summary>
         public IPaginatedEnumerable<InputSecurityGroup> InputSecurityGroups => 
-            new PaginatedResultKeyResponse<ListInputSecurityGroupsResponse, InputSecurityGroup>(this, (i) => i.InputSecurityGroups);
+            new PaginatedResultKeyResponse<ListInputSecurityGroupsResponse, InputSecurityGroup>(this, (i) => i.InputSecurityGroups ?? new List<InputSecurityGroup>());
 
         internal ListInputSecurityGroupsPaginator(IAmazonMediaLive client, ListInputSecurityGroupsRequest request)
         {

@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("successfullyDeletedLaunchTemplateVersionSet/item", targetDepth))
                     {
                         var unmarshaller = DeleteLaunchTemplateVersionsResponseSuccessItemUnmarshaller.Instance;
+                        if (response.SuccessfullyDeletedLaunchTemplateVersions == null)
+                        {
+                            response.SuccessfullyDeletedLaunchTemplateVersions = new List<DeleteLaunchTemplateVersionsResponseSuccessItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SuccessfullyDeletedLaunchTemplateVersions.Add(item);
                         continue;
@@ -65,6 +69,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("unsuccessfullyDeletedLaunchTemplateVersionSet/item", targetDepth))
                     {
                         var unmarshaller = DeleteLaunchTemplateVersionsResponseErrorItemUnmarshaller.Instance;
+                        if (response.UnsuccessfullyDeletedLaunchTemplateVersions == null)
+                        {
+                            response.UnsuccessfullyDeletedLaunchTemplateVersions = new List<DeleteLaunchTemplateVersionsResponseErrorItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.UnsuccessfullyDeletedLaunchTemplateVersions.Add(item);
                         continue;

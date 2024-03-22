@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     public partial class GetWorkflowRunsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkflowRun> _runs = new List<WorkflowRun>();
+        private List<WorkflowRun> _runs = AWSConfigs.InitializeCollections ? new List<WorkflowRun>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if Runs property is set
         internal bool IsSetRuns()
         {
-            return this._runs != null && this._runs.Count > 0; 
+            return this._runs != null && (this._runs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

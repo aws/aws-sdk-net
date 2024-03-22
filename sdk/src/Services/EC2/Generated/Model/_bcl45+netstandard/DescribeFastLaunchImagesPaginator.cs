@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the FastLaunchImages
         /// </summary>
         public IPaginatedEnumerable<DescribeFastLaunchImagesSuccessItem> FastLaunchImages => 
-            new PaginatedResultKeyResponse<DescribeFastLaunchImagesResponse, DescribeFastLaunchImagesSuccessItem>(this, (i) => i.FastLaunchImages);
+            new PaginatedResultKeyResponse<DescribeFastLaunchImagesResponse, DescribeFastLaunchImagesSuccessItem>(this, (i) => i.FastLaunchImages ?? new List<DescribeFastLaunchImagesSuccessItem>());
 
         internal DescribeFastLaunchImagesPaginator(IAmazonEC2 client, DescribeFastLaunchImagesRequest request)
         {

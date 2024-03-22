@@ -34,12 +34,12 @@ namespace Amazon.Panorama.Model
     /// </summary>
     public partial class CreateNodeFromTemplateJobRequest : AmazonPanoramaRequest
     {
-        private List<JobResourceTags> _jobTags = new List<JobResourceTags>();
+        private List<JobResourceTags> _jobTags = AWSConfigs.InitializeCollections ? new List<JobResourceTags>() : null;
         private string _nodeDescription;
         private string _nodeName;
         private string _outputPackageName;
         private string _outputPackageVersion;
-        private Dictionary<string, string> _templateParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _templateParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TemplateType _templateType;
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Amazon.Panorama.Model
         // Check to see if JobTags property is set
         internal bool IsSetJobTags()
         {
-            return this._jobTags != null && this._jobTags.Count > 0; 
+            return this._jobTags != null && (this._jobTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Amazon.Panorama.Model
         // Check to see if TemplateParameters property is set
         internal bool IsSetTemplateParameters()
         {
-            return this._templateParameters != null && this._templateParameters.Count > 0; 
+            return this._templateParameters != null && (this._templateParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     public partial class ListChannelMembershipsResponse : AmazonWebServiceResponse
     {
         private string _channelArn;
-        private List<ChannelMembershipSummary> _channelMemberships = new List<ChannelMembershipSummary>();
+        private List<ChannelMembershipSummary> _channelMemberships = AWSConfigs.InitializeCollections ? new List<ChannelMembershipSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if ChannelMemberships property is set
         internal bool IsSetChannelMemberships()
         {
-            return this._channelMemberships != null && this._channelMemberships.Count > 0; 
+            return this._channelMemberships != null && (this._channelMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

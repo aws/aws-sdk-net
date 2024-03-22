@@ -129,6 +129,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("NodeSnapshots/NodeSnapshot", targetDepth))
                     {
                         var unmarshaller = NodeSnapshotUnmarshaller.Instance;
+                        if (unmarshalledObject.NodeSnapshots == null)
+                        {
+                            unmarshalledObject.NodeSnapshots = new List<NodeSnapshot>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NodeSnapshots.Add(item);
                         continue;

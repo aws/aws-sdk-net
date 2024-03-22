@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("neuronDevices/item", targetDepth))
                     {
                         var unmarshaller = NeuronDeviceInfoUnmarshaller.Instance;
+                        if (unmarshalledObject.NeuronDevices == null)
+                        {
+                            unmarshalledObject.NeuronDevices = new List<NeuronDeviceInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NeuronDevices.Add(item);
                         continue;

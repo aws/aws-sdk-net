@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class DeleteMembersResponse : AmazonWebServiceResponse
     {
-        private List<Result> _unprocessedAccounts = new List<Result>();
+        private List<Result> _unprocessedAccounts = AWSConfigs.InitializeCollections ? new List<Result>() : null;
 
         /// <summary>
         /// Gets and sets the property UnprocessedAccounts. 
@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UnprocessedAccounts property is set
         internal bool IsSetUnprocessedAccounts()
         {
-            return this._unprocessedAccounts != null && this._unprocessedAccounts.Count > 0; 
+            return this._unprocessedAccounts != null && (this._unprocessedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

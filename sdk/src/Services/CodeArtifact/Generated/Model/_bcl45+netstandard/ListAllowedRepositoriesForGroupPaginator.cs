@@ -45,7 +45,7 @@ namespace Amazon.CodeArtifact.Model
         /// Enumerable containing all of the AllowedRepositories
         /// </summary>
         public IPaginatedEnumerable<string> AllowedRepositories => 
-            new PaginatedResultKeyResponse<ListAllowedRepositoriesForGroupResponse, string>(this, (i) => i.AllowedRepositories);
+            new PaginatedResultKeyResponse<ListAllowedRepositoriesForGroupResponse, string>(this, (i) => i.AllowedRepositories ?? new List<string>());
 
         internal ListAllowedRepositoriesForGroupPaginator(IAmazonCodeArtifact client, ListAllowedRepositoriesForGroupRequest request)
         {

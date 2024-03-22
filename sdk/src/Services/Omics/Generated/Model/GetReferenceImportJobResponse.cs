@@ -38,7 +38,7 @@ namespace Amazon.Omics.Model
         private string _id;
         private string _referenceStoreId;
         private string _roleArn;
-        private List<ImportReferenceSourceItem> _sources = new List<ImportReferenceSourceItem>();
+        private List<ImportReferenceSourceItem> _sources = AWSConfigs.InitializeCollections ? new List<ImportReferenceSourceItem>() : null;
         private ReferenceImportJobStatus _status;
         private string _statusMessage;
 
@@ -152,7 +152,7 @@ namespace Amazon.Omics.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

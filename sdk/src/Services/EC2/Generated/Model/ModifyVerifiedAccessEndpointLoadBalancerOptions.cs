@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     {
         private int? _port;
         private VerifiedAccessEndpointProtocol _protocol;
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Port. 
@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -37,7 +37,7 @@ namespace Amazon.DocDBElastic.Model
         private bool? _copyTags;
         private string _kmsKeyId;
         private string _snapshotArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _targetSnapshotName;
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.DocDBElastic.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

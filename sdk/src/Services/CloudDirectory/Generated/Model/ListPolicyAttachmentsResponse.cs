@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model
     public partial class ListPolicyAttachmentsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _objectIdentifiers = new List<string>();
+        private List<string> _objectIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if ObjectIdentifiers property is set
         internal bool IsSetObjectIdentifiers()
         {
-            return this._objectIdentifiers != null && this._objectIdentifiers.Count > 0; 
+            return this._objectIdentifiers != null && (this._objectIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

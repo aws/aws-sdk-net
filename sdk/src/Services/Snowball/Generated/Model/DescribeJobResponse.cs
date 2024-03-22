@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model
     public partial class DescribeJobResponse : AmazonWebServiceResponse
     {
         private JobMetadata _jobMetadata;
-        private List<JobMetadata> _subJobMetadata = new List<JobMetadata>();
+        private List<JobMetadata> _subJobMetadata = AWSConfigs.InitializeCollections ? new List<JobMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property JobMetadata. 
@@ -71,7 +71,7 @@ namespace Amazon.Snowball.Model
         // Check to see if SubJobMetadata property is set
         internal bool IsSetSubJobMetadata()
         {
-            return this._subJobMetadata != null && this._subJobMetadata.Count > 0; 
+            return this._subJobMetadata != null && (this._subJobMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -39,7 +39,7 @@ namespace Amazon.ACMPCA.Model
     {
         private string _commonName;
         private string _country;
-        private List<CustomAttribute> _customAttributes = new List<CustomAttribute>();
+        private List<CustomAttribute> _customAttributes = AWSConfigs.InitializeCollections ? new List<CustomAttribute>() : null;
         private string _distinguishedNameQualifier;
         private string _generationQualifier;
         private string _givenName;
@@ -121,7 +121,7 @@ namespace Amazon.ACMPCA.Model
         // Check to see if CustomAttributes property is set
         internal bool IsSetCustomAttributes()
         {
-            return this._customAttributes != null && this._customAttributes.Count > 0; 
+            return this._customAttributes != null && (this._customAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.SnowDeviceManagement.Model
         /// Enumerable containing all of the Devices
         /// </summary>
         public IPaginatedEnumerable<DeviceSummary> Devices => 
-            new PaginatedResultKeyResponse<ListDevicesResponse, DeviceSummary>(this, (i) => i.Devices);
+            new PaginatedResultKeyResponse<ListDevicesResponse, DeviceSummary>(this, (i) => i.Devices ?? new List<DeviceSummary>());
 
         internal ListDevicesPaginator(IAmazonSnowDeviceManagement client, ListDevicesRequest request)
         {

@@ -33,8 +33,8 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class LifecyclePolicyResourceSelection
     {
-        private List<LifecyclePolicyResourceSelectionRecipe> _recipes = new List<LifecyclePolicyResourceSelectionRecipe>();
-        private Dictionary<string, string> _tagMap = new Dictionary<string, string>();
+        private List<LifecyclePolicyResourceSelectionRecipe> _recipes = AWSConfigs.InitializeCollections ? new List<LifecyclePolicyResourceSelectionRecipe>() : null;
+        private Dictionary<string, string> _tagMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Recipes. 
@@ -53,7 +53,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Recipes property is set
         internal bool IsSetRecipes()
         {
-            return this._recipes != null && this._recipes.Count > 0; 
+            return this._recipes != null && (this._recipes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if TagMap property is set
         internal bool IsSetTagMap()
         {
-            return this._tagMap != null && this._tagMap.Count > 0; 
+            return this._tagMap != null && (this._tagMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

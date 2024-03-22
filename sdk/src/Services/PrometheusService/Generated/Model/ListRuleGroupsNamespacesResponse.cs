@@ -34,7 +34,7 @@ namespace Amazon.PrometheusService.Model
     public partial class ListRuleGroupsNamespacesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RuleGroupsNamespaceSummary> _ruleGroupsNamespaces = new List<RuleGroupsNamespaceSummary>();
+        private List<RuleGroupsNamespaceSummary> _ruleGroupsNamespaces = AWSConfigs.InitializeCollections ? new List<RuleGroupsNamespaceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.PrometheusService.Model
         // Check to see if RuleGroupsNamespaces property is set
         internal bool IsSetRuleGroupsNamespaces()
         {
-            return this._ruleGroupsNamespaces != null && this._ruleGroupsNamespaces.Count > 0; 
+            return this._ruleGroupsNamespaces != null && (this._ruleGroupsNamespaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

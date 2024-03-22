@@ -36,7 +36,7 @@ namespace Amazon.CloudSearchDomain.Model
         private long? _adds;
         private long? _deletes;
         private string _status;
-        private List<DocumentServiceWarning> _warnings = new List<DocumentServiceWarning>();
+        private List<DocumentServiceWarning> _warnings = AWSConfigs.InitializeCollections ? new List<DocumentServiceWarning>() : null;
 
         /// <summary>
         /// Gets and sets the property Adds. 
@@ -107,7 +107,7 @@ namespace Amazon.CloudSearchDomain.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

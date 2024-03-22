@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class LineSeriesAxisDisplayOptions
     {
         private AxisDisplayOptions _axisOptions;
-        private List<MissingDataConfiguration> _missingDataConfigurations = new List<MissingDataConfiguration>();
+        private List<MissingDataConfiguration> _missingDataConfigurations = AWSConfigs.InitializeCollections ? new List<MissingDataConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AxisOptions. 
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if MissingDataConfigurations property is set
         internal bool IsSetMissingDataConfigurations()
         {
-            return this._missingDataConfigurations != null && this._missingDataConfigurations.Count > 0; 
+            return this._missingDataConfigurations != null && (this._missingDataConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

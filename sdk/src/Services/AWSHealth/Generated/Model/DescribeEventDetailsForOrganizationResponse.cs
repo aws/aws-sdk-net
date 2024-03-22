@@ -33,8 +33,8 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class DescribeEventDetailsForOrganizationResponse : AmazonWebServiceResponse
     {
-        private List<OrganizationEventDetailsErrorItem> _failedSet = new List<OrganizationEventDetailsErrorItem>();
-        private List<OrganizationEventDetails> _successfulSet = new List<OrganizationEventDetails>();
+        private List<OrganizationEventDetailsErrorItem> _failedSet = AWSConfigs.InitializeCollections ? new List<OrganizationEventDetailsErrorItem>() : null;
+        private List<OrganizationEventDetails> _successfulSet = AWSConfigs.InitializeCollections ? new List<OrganizationEventDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedSet. 
@@ -51,7 +51,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if FailedSet property is set
         internal bool IsSetFailedSet()
         {
-            return this._failedSet != null && this._failedSet.Count > 0; 
+            return this._failedSet != null && (this._failedSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if SuccessfulSet property is set
         internal bool IsSetSuccessfulSet()
         {
-            return this._successfulSet != null && this._successfulSet.Count > 0; 
+            return this._successfulSet != null && (this._successfulSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

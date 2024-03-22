@@ -33,7 +33,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class ListCustomRoutingListenersResponse : AmazonWebServiceResponse
     {
-        private List<CustomRoutingListener> _listeners = new List<CustomRoutingListener>();
+        private List<CustomRoutingListener> _listeners = AWSConfigs.InitializeCollections ? new List<CustomRoutingListener>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Listeners property is set
         internal bool IsSetListeners()
         {
-            return this._listeners != null && this._listeners.Count > 0; 
+            return this._listeners != null && (this._listeners.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

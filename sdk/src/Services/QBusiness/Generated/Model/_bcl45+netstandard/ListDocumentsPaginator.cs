@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the DocumentDetailList
         /// </summary>
         public IPaginatedEnumerable<DocumentDetails> DocumentDetailList => 
-            new PaginatedResultKeyResponse<ListDocumentsResponse, DocumentDetails>(this, (i) => i.DocumentDetailList);
+            new PaginatedResultKeyResponse<ListDocumentsResponse, DocumentDetails>(this, (i) => i.DocumentDetailList ?? new List<DocumentDetails>());
 
         internal ListDocumentsPaginator(IAmazonQBusiness client, ListDocumentsRequest request)
         {

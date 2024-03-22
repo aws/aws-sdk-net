@@ -34,7 +34,7 @@ namespace Amazon.DataExchange.Model
     public partial class ListDataSetRevisionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RevisionEntry> _revisions = new List<RevisionEntry>();
+        private List<RevisionEntry> _revisions = AWSConfigs.InitializeCollections ? new List<RevisionEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if Revisions property is set
         internal bool IsSetRevisions()
         {
-            return this._revisions != null && this._revisions.Count > 0; 
+            return this._revisions != null && (this._revisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

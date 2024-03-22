@@ -38,7 +38,7 @@ namespace Amazon.MediaConnect.Model
         private Encryption _encryption;
         private EntitlementStatus _entitlementStatus;
         private string _name;
-        private List<string> _subscribers = new List<string>();
+        private List<string> _subscribers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100
@@ -138,7 +138,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Subscribers property is set
         internal bool IsSetSubscribers()
         {
-            return this._subscribers != null && this._subscribers.Count > 0; 
+            return this._subscribers != null && (this._subscribers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

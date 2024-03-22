@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the ResourceLinks
         /// </summary>
         public IPaginatedEnumerable<string> ResourceLinks => 
-            new PaginatedResultKeyResponse<ListThingRegistrationTaskReportsResponse, string>(this, (i) => i.ResourceLinks);
+            new PaginatedResultKeyResponse<ListThingRegistrationTaskReportsResponse, string>(this, (i) => i.ResourceLinks ?? new List<string>());
 
         internal ListThingRegistrationTaskReportsPaginator(IAmazonIoT client, ListThingRegistrationTaskReportsRequest request)
         {

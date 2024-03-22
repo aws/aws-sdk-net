@@ -101,7 +101,7 @@ namespace Amazon.CloudWatchRUM.Model
         private string _appMonitorName;
         private MetricDestination _destination;
         private string _destinationArn;
-        private List<MetricDefinitionRequest> _metricDefinitions = new List<MetricDefinitionRequest>();
+        private List<MetricDefinitionRequest> _metricDefinitions = AWSConfigs.InitializeCollections ? new List<MetricDefinitionRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property AppMonitorName. 
@@ -186,7 +186,7 @@ namespace Amazon.CloudWatchRUM.Model
         // Check to see if MetricDefinitions property is set
         internal bool IsSetMetricDefinitions()
         {
-            return this._metricDefinitions != null && this._metricDefinitions.Count > 0; 
+            return this._metricDefinitions != null && (this._metricDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

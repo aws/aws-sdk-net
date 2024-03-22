@@ -157,19 +157,19 @@ namespace Amazon.Lambda.Model
         private string _eventSourceArn;
         private FilterCriteria _filterCriteria;
         private string _functionName;
-        private List<string> _functionResponseTypes = new List<string>();
+        private List<string> _functionResponseTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maximumBatchingWindowInSeconds;
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
         private int? _parallelizationFactor;
-        private List<string> _queues = new List<string>();
+        private List<string> _queues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ScalingConfig _scalingConfig;
         private SelfManagedEventSource _selfManagedEventSource;
         private SelfManagedKafkaEventSourceConfig _selfManagedKafkaEventSourceConfig;
-        private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
+        private List<SourceAccessConfiguration> _sourceAccessConfigurations = AWSConfigs.InitializeCollections ? new List<SourceAccessConfiguration>() : null;
         private EventSourcePosition _startingPosition;
         private DateTime? _startingPositionTimestamp;
-        private List<string> _topics = new List<string>();
+        private List<string> _topics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _tumblingWindowInSeconds;
 
         /// <summary>
@@ -448,7 +448,7 @@ namespace Amazon.Lambda.Model
         // Check to see if FunctionResponseTypes property is set
         internal bool IsSetFunctionResponseTypes()
         {
-            return this._functionResponseTypes != null && this._functionResponseTypes.Count > 0; 
+            return this._functionResponseTypes != null && (this._functionResponseTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -564,7 +564,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Queues property is set
         internal bool IsSetQueues()
         {
-            return this._queues != null && this._queues.Count > 0; 
+            return this._queues != null && (this._queues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -640,7 +640,7 @@ namespace Amazon.Lambda.Model
         // Check to see if SourceAccessConfigurations property is set
         internal bool IsSetSourceAccessConfigurations()
         {
-            return this._sourceAccessConfigurations != null && this._sourceAccessConfigurations.Count > 0; 
+            return this._sourceAccessConfigurations != null && (this._sourceAccessConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -698,7 +698,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Topics property is set
         internal bool IsSetTopics()
         {
-            return this._topics != null && this._topics.Count > 0; 
+            return this._topics != null && (this._topics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

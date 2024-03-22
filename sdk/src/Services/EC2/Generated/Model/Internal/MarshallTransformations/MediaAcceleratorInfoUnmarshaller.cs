@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("accelerators/item", targetDepth))
                     {
                         var unmarshaller = MediaDeviceInfoUnmarshaller.Instance;
+                        if (unmarshalledObject.Accelerators == null)
+                        {
+                            unmarshalledObject.Accelerators = new List<MediaDeviceInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Accelerators.Add(item);
                         continue;

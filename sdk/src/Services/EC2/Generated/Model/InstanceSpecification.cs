@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class InstanceSpecification
     {
         private bool? _excludeBootVolume;
-        private List<string> _excludeDataVolumeIds = new List<string>();
+        private List<string> _excludeDataVolumeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _instanceId;
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         // Check to see if ExcludeDataVolumeIds property is set
         internal bool IsSetExcludeDataVolumeIds()
         {
-            return this._excludeDataVolumeIds != null && this._excludeDataVolumeIds.Count > 0; 
+            return this._excludeDataVolumeIds != null && (this._excludeDataVolumeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

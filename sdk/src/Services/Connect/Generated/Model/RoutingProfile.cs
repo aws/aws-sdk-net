@@ -40,13 +40,13 @@ namespace Amazon.Connect.Model
         private bool? _isDefault;
         private string _lastModifiedRegion;
         private DateTime? _lastModifiedTime;
-        private List<MediaConcurrency> _mediaConcurrencies = new List<MediaConcurrency>();
+        private List<MediaConcurrency> _mediaConcurrencies = AWSConfigs.InitializeCollections ? new List<MediaConcurrency>() : null;
         private string _name;
         private long? _numberOfAssociatedQueues;
         private long? _numberOfAssociatedUsers;
         private string _routingProfileArn;
         private string _routingProfileId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentAvailabilityTimer. 
@@ -195,7 +195,7 @@ namespace Amazon.Connect.Model
         // Check to see if MediaConcurrencies property is set
         internal bool IsSetMediaConcurrencies()
         {
-            return this._mediaConcurrencies != null && this._mediaConcurrencies.Count > 0; 
+            return this._mediaConcurrencies != null && (this._mediaConcurrencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -306,7 +306,7 @@ namespace Amazon.Connect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

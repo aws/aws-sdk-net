@@ -45,7 +45,7 @@ namespace Amazon.XRay.Model
         /// Enumerable containing all of the TraceSummaries
         /// </summary>
         public IPaginatedEnumerable<TraceSummary> TraceSummaries => 
-            new PaginatedResultKeyResponse<GetTraceSummariesResponse, TraceSummary>(this, (i) => i.TraceSummaries);
+            new PaginatedResultKeyResponse<GetTraceSummariesResponse, TraceSummary>(this, (i) => i.TraceSummaries ?? new List<TraceSummary>());
 
         internal GetTraceSummariesPaginator(IAmazonXRay client, GetTraceSummariesRequest request)
         {

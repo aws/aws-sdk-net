@@ -41,10 +41,10 @@ namespace Amazon.SageMaker.Model
         private EndpointStatus _endpointStatus;
         private string _failureReason;
         private DateTime? _lastModifiedTime;
-        private List<MonitoringSchedule> _monitoringSchedules = new List<MonitoringSchedule>();
-        private List<ProductionVariantSummary> _productionVariants = new List<ProductionVariantSummary>();
-        private List<ProductionVariantSummary> _shadowProductionVariants = new List<ProductionVariantSummary>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<MonitoringSchedule> _monitoringSchedules = AWSConfigs.InitializeCollections ? new List<MonitoringSchedule>() : null;
+        private List<ProductionVariantSummary> _productionVariants = AWSConfigs.InitializeCollections ? new List<ProductionVariantSummary>() : null;
+        private List<ProductionVariantSummary> _shadowProductionVariants = AWSConfigs.InitializeCollections ? new List<ProductionVariantSummary>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -211,7 +211,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MonitoringSchedules property is set
         internal bool IsSetMonitoringSchedules()
         {
-            return this._monitoringSchedules != null && this._monitoringSchedules.Count > 0; 
+            return this._monitoringSchedules != null && (this._monitoringSchedules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProductionVariants property is set
         internal bool IsSetProductionVariants()
         {
-            return this._productionVariants != null && this._productionVariants.Count > 0; 
+            return this._productionVariants != null && (this._productionVariants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -251,7 +251,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ShadowProductionVariants property is set
         internal bool IsSetShadowProductionVariants()
         {
-            return this._shadowProductionVariants != null && this._shadowProductionVariants.Count > 0; 
+            return this._shadowProductionVariants != null && (this._shadowProductionVariants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -272,7 +272,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

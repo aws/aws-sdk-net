@@ -38,7 +38,7 @@ namespace Amazon.GlobalAccelerator.Model
     {
         private string _acceleratorArn;
         private string _idempotencyToken;
-        private List<PortRange> _portRanges = new List<PortRange>();
+        private List<PortRange> _portRanges = AWSConfigs.InitializeCollections ? new List<PortRange>() : null;
 
         /// <summary>
         /// Gets and sets the property AcceleratorArn. 
@@ -100,7 +100,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if PortRanges property is set
         internal bool IsSetPortRanges()
         {
-            return this._portRanges != null && this._portRanges.Count > 0; 
+            return this._portRanges != null && (this._portRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

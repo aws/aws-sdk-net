@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the DocumentVersions
         /// </summary>
         public IPaginatedEnumerable<DocumentVersionInfo> DocumentVersions => 
-            new PaginatedResultKeyResponse<ListDocumentVersionsResponse, DocumentVersionInfo>(this, (i) => i.DocumentVersions);
+            new PaginatedResultKeyResponse<ListDocumentVersionsResponse, DocumentVersionInfo>(this, (i) => i.DocumentVersions ?? new List<DocumentVersionInfo>());
 
         internal ListDocumentVersionsPaginator(IAmazonSimpleSystemsManagement client, ListDocumentVersionsRequest request)
         {

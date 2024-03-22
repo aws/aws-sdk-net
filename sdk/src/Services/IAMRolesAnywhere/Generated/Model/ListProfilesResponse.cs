@@ -34,7 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     public partial class ListProfilesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProfileDetail> _profiles = new List<ProfileDetail>();
+        private List<ProfileDetail> _profiles = AWSConfigs.InitializeCollections ? new List<ProfileDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if Profiles property is set
         internal bool IsSetProfiles()
         {
-            return this._profiles != null && this._profiles.Count > 0; 
+            return this._profiles != null && (this._profiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

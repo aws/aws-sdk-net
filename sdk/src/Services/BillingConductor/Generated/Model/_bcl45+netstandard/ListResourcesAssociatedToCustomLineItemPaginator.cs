@@ -45,7 +45,7 @@ namespace Amazon.BillingConductor.Model
         /// Enumerable containing all of the AssociatedResources
         /// </summary>
         public IPaginatedEnumerable<ListResourcesAssociatedToCustomLineItemResponseElement> AssociatedResources => 
-            new PaginatedResultKeyResponse<ListResourcesAssociatedToCustomLineItemResponse, ListResourcesAssociatedToCustomLineItemResponseElement>(this, (i) => i.AssociatedResources);
+            new PaginatedResultKeyResponse<ListResourcesAssociatedToCustomLineItemResponse, ListResourcesAssociatedToCustomLineItemResponseElement>(this, (i) => i.AssociatedResources ?? new List<ListResourcesAssociatedToCustomLineItemResponseElement>());
 
         internal ListResourcesAssociatedToCustomLineItemPaginator(IAmazonBillingConductor client, ListResourcesAssociatedToCustomLineItemRequest request)
         {

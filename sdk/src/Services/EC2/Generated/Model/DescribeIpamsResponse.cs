@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeIpamsResponse : AmazonWebServiceResponse
     {
-        private List<Ipam> _ipams = new List<Ipam>();
+        private List<Ipam> _ipams = AWSConfigs.InitializeCollections ? new List<Ipam>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipams property is set
         internal bool IsSetIpams()
         {
-            return this._ipams != null && this._ipams.Count > 0; 
+            return this._ipams != null && (this._ipams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

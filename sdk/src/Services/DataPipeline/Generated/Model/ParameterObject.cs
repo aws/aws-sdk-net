@@ -33,7 +33,7 @@ namespace Amazon.DataPipeline.Model
     /// </summary>
     public partial class ParameterObject
     {
-        private List<ParameterAttribute> _attributes = new List<ParameterAttribute>();
+        private List<ParameterAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<ParameterAttribute>() : null;
         private string _id;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class DescribeVirtualGatewaysResponse : AmazonWebServiceResponse
     {
-        private List<VirtualGateway> _virtualGateways = new List<VirtualGateway>();
+        private List<VirtualGateway> _virtualGateways = AWSConfigs.InitializeCollections ? new List<VirtualGateway>() : null;
 
         /// <summary>
         /// Gets and sets the property VirtualGateways. 
@@ -50,7 +50,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualGateways property is set
         internal bool IsSetVirtualGateways()
         {
-            return this._virtualGateways != null && this._virtualGateways.Count > 0; 
+            return this._virtualGateways != null && (this._virtualGateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

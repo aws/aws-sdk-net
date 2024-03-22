@@ -33,9 +33,9 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class MessageRequest
     {
-        private Dictionary<string, AddressConfiguration> _addresses = new Dictionary<string, AddressConfiguration>();
-        private Dictionary<string, string> _context = new Dictionary<string, string>();
-        private Dictionary<string, EndpointSendConfiguration> _endpoints = new Dictionary<string, EndpointSendConfiguration>();
+        private Dictionary<string, AddressConfiguration> _addresses = AWSConfigs.InitializeCollections ? new Dictionary<string, AddressConfiguration>() : null;
+        private Dictionary<string, string> _context = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, EndpointSendConfiguration> _endpoints = AWSConfigs.InitializeCollections ? new Dictionary<string, EndpointSendConfiguration>() : null;
         private DirectMessageConfiguration _messageConfiguration;
         private TemplateConfiguration _templateConfiguration;
         private string _traceId;
@@ -59,7 +59,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Addresses property is set
         internal bool IsSetAddresses()
         {
-            return this._addresses != null && this._addresses.Count > 0; 
+            return this._addresses != null && (this._addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Context property is set
         internal bool IsSetContext()
         {
-            return this._context != null && this._context.Count > 0; 
+            return this._context != null && (this._context.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

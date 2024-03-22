@@ -35,7 +35,7 @@ namespace Amazon.StorageGateway.Model
     {
         private string _gatewayARN;
         private string _marker;
-        private List<TapeRecoveryPointInfo> _tapeRecoveryPointInfos = new List<TapeRecoveryPointInfo>();
+        private List<TapeRecoveryPointInfo> _tapeRecoveryPointInfos = AWSConfigs.InitializeCollections ? new List<TapeRecoveryPointInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property GatewayARN.
@@ -94,7 +94,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TapeRecoveryPointInfos property is set
         internal bool IsSetTapeRecoveryPointInfos()
         {
-            return this._tapeRecoveryPointInfos != null && this._tapeRecoveryPointInfos.Count > 0; 
+            return this._tapeRecoveryPointInfos != null && (this._tapeRecoveryPointInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

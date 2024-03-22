@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("bundleInstanceTasksSet/item", targetDepth))
                     {
                         var unmarshaller = BundleTaskUnmarshaller.Instance;
+                        if (response.BundleTasks == null)
+                        {
+                            response.BundleTasks = new List<BundleTask>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.BundleTasks.Add(item);
                         continue;

@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _endTime;
         private string _failureReason;
         private DateTime? _lastModifiedTime;
-        private List<AutoMLPartialFailureReason> _partialFailureReasons = new List<AutoMLPartialFailureReason>();
+        private List<AutoMLPartialFailureReason> _partialFailureReasons = AWSConfigs.InitializeCollections ? new List<AutoMLPartialFailureReason>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoMLJobArn. 
@@ -210,7 +210,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if PartialFailureReasons property is set
         internal bool IsSetPartialFailureReasons()
         {
-            return this._partialFailureReasons != null && this._partialFailureReasons.Count > 0; 
+            return this._partialFailureReasons != null && (this._partialFailureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -35,7 +35,7 @@ namespace Amazon.Connect.Model
     {
         private string _description;
         private TaskTemplateFieldIdentifier _id;
-        private List<string> _singleSelectOptions = new List<string>();
+        private List<string> _singleSelectOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TaskTemplateFieldType _type;
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Connect.Model
         // Check to see if SingleSelectOptions property is set
         internal bool IsSetSingleSelectOptions()
         {
-            return this._singleSelectOptions != null && this._singleSelectOptions.Count > 0; 
+            return this._singleSelectOptions != null && (this._singleSelectOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

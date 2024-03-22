@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribePatchBaselinesResponse : AmazonWebServiceResponse
     {
-        private List<PatchBaselineIdentity> _baselineIdentities = new List<PatchBaselineIdentity>();
+        private List<PatchBaselineIdentity> _baselineIdentities = AWSConfigs.InitializeCollections ? new List<PatchBaselineIdentity>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if BaselineIdentities property is set
         internal bool IsSetBaselineIdentities()
         {
-            return this._baselineIdentities != null && this._baselineIdentities.Count > 0; 
+            return this._baselineIdentities != null && (this._baselineIdentities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

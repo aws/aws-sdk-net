@@ -38,7 +38,7 @@ namespace Amazon.PI.Model
         private string _identifier;
         private ServiceType _serviceType;
         private DateTime? _startTime;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property EndTime. 
@@ -139,7 +139,7 @@ namespace Amazon.PI.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

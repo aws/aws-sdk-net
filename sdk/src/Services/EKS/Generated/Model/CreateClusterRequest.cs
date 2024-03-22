@@ -89,14 +89,14 @@ namespace Amazon.EKS.Model
     {
         private CreateAccessConfigRequest _accessConfig;
         private string _clientRequestToken;
-        private List<EncryptionConfig> _encryptionConfig = new List<EncryptionConfig>();
+        private List<EncryptionConfig> _encryptionConfig = AWSConfigs.InitializeCollections ? new List<EncryptionConfig>() : null;
         private KubernetesNetworkConfigRequest _kubernetesNetworkConfig;
         private Logging _logging;
         private string _name;
         private OutpostConfigRequest _outpostConfig;
         private VpcConfigRequest _resourcesVpcConfig;
         private string _roleArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _version;
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Amazon.EKS.Model
         // Check to see if EncryptionConfig property is set
         internal bool IsSetEncryptionConfig()
         {
-            return this._encryptionConfig != null && this._encryptionConfig.Count > 0; 
+            return this._encryptionConfig != null && (this._encryptionConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -307,7 +307,7 @@ namespace Amazon.EKS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

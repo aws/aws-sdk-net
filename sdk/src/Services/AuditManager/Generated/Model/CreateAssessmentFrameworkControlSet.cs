@@ -34,7 +34,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class CreateAssessmentFrameworkControlSet
     {
-        private List<CreateAssessmentFrameworkControl> _controls = new List<CreateAssessmentFrameworkControl>();
+        private List<CreateAssessmentFrameworkControl> _controls = AWSConfigs.InitializeCollections ? new List<CreateAssessmentFrameworkControl>() : null;
         private string _name;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Controls property is set
         internal bool IsSetControls()
         {
-            return this._controls != null && this._controls.Count > 0; 
+            return this._controls != null && (this._controls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

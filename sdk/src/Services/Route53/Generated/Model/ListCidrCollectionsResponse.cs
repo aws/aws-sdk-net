@@ -34,7 +34,7 @@ namespace Amazon.Route53.Model
     public partial class ListCidrCollectionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<CollectionSummary> _cidrCollections = new List<CollectionSummary>();
+        private List<CollectionSummary> _cidrCollections = AWSConfigs.InitializeCollections ? new List<CollectionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.Route53.Model
         // Check to see if CidrCollections property is set
         internal bool IsSetCidrCollections()
         {
-            return this._cidrCollections != null && this._cidrCollections.Count > 0; 
+            return this._cidrCollections != null && (this._cidrCollections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

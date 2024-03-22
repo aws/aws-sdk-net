@@ -33,7 +33,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class CoverageByTime
     {
-        private List<ReservationCoverageGroup> _groups = new List<ReservationCoverageGroup>();
+        private List<ReservationCoverageGroup> _groups = AWSConfigs.InitializeCollections ? new List<ReservationCoverageGroup>() : null;
         private DateInterval _timePeriod;
         private Coverage _total;
 
@@ -52,7 +52,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

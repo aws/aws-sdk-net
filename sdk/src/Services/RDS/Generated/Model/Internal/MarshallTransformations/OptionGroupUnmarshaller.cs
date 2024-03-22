@@ -99,6 +99,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Options/Option", targetDepth))
                     {
                         var unmarshaller = OptionUnmarshaller.Instance;
+                        if (unmarshalledObject.Options == null)
+                        {
+                            unmarshalledObject.Options = new List<Option>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Options.Add(item);
                         continue;

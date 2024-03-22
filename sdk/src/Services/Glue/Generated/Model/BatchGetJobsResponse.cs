@@ -33,8 +33,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetJobsResponse : AmazonWebServiceResponse
     {
-        private List<Job> _jobs = new List<Job>();
-        private List<string> _jobsNotFound = new List<string>();
+        private List<Job> _jobs = AWSConfigs.InitializeCollections ? new List<Job>() : null;
+        private List<string> _jobsNotFound = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Jobs. 
@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.Glue.Model
         // Check to see if JobsNotFound property is set
         internal bool IsSetJobsNotFound()
         {
-            return this._jobsNotFound != null && this._jobsNotFound.Count > 0; 
+            return this._jobsNotFound != null && (this._jobsNotFound.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

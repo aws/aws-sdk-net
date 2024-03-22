@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class UpdateItemResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, AttributeValue> _attributes = new Dictionary<string, AttributeValue>();
+        private Dictionary<string, AttributeValue> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
         private ConsumedCapacity _consumedCapacity;
         private ItemCollectionMetrics _itemCollectionMetrics;
 
@@ -59,7 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ListProvisioningTemplatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProvisioningTemplateSummary> _templates = new List<ProvisioningTemplateSummary>();
+        private List<ProvisioningTemplateSummary> _templates = AWSConfigs.InitializeCollections ? new List<ProvisioningTemplateSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.IoT.Model
         // Check to see if Templates property is set
         internal bool IsSetTemplates()
         {
-            return this._templates != null && this._templates.Count > 0; 
+            return this._templates != null && (this._templates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

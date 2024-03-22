@@ -33,7 +33,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class ListCostAllocationTagsResponse : AmazonWebServiceResponse
     {
-        private List<CostAllocationTag> _costAllocationTags = new List<CostAllocationTag>();
+        private List<CostAllocationTag> _costAllocationTags = AWSConfigs.InitializeCollections ? new List<CostAllocationTag>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if CostAllocationTags property is set
         internal bool IsSetCostAllocationTags()
         {
-            return this._costAllocationTags != null && this._costAllocationTags.Count > 0; 
+            return this._costAllocationTags != null && (this._costAllocationTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

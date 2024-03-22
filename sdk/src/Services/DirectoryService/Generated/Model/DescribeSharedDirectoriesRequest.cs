@@ -37,7 +37,7 @@ namespace Amazon.DirectoryService.Model
         private int? _limit;
         private string _nextToken;
         private string _ownerDirectoryId;
-        private List<string> _sharedDirectoryIds = new List<string>();
+        private List<string> _sharedDirectoryIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -111,7 +111,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if SharedDirectoryIds property is set
         internal bool IsSetSharedDirectoryIds()
         {
-            return this._sharedDirectoryIds != null && this._sharedDirectoryIds.Count > 0; 
+            return this._sharedDirectoryIds != null && (this._sharedDirectoryIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

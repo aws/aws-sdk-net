@@ -69,6 +69,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Details/member", targetDepth))
                     {
                         var unmarshaller = ResourceChangeDetailUnmarshaller.Instance;
+                        if (unmarshalledObject.Details == null)
+                        {
+                            unmarshalledObject.Details = new List<ResourceChangeDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Details.Add(item);
                         continue;
@@ -106,6 +110,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Scope/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.Scope == null)
+                        {
+                            unmarshalledObject.Scope = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Scope.Add(item);
                         continue;

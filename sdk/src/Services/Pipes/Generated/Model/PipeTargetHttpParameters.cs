@@ -34,9 +34,9 @@ namespace Amazon.Pipes.Model
     /// </summary>
     public partial class PipeTargetHttpParameters
     {
-        private Dictionary<string, string> _headerParameters = new Dictionary<string, string>();
-        private List<string> _pathParameterValues = new List<string>();
-        private Dictionary<string, string> _queryStringParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _headerParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _pathParameterValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _queryStringParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property HeaderParameters. 
@@ -54,7 +54,7 @@ namespace Amazon.Pipes.Model
         // Check to see if HeaderParameters property is set
         internal bool IsSetHeaderParameters()
         {
-            return this._headerParameters != null && this._headerParameters.Count > 0; 
+            return this._headerParameters != null && (this._headerParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Pipes.Model
         // Check to see if PathParameterValues property is set
         internal bool IsSetPathParameterValues()
         {
-            return this._pathParameterValues != null && this._pathParameterValues.Count > 0; 
+            return this._pathParameterValues != null && (this._pathParameterValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.Pipes.Model
         // Check to see if QueryStringParameters property is set
         internal bool IsSetQueryStringParameters()
         {
-            return this._queryStringParameters != null && this._queryStringParameters.Count > 0; 
+            return this._queryStringParameters != null && (this._queryStringParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,14 +34,14 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CreateTriggerRequest : AmazonGlueRequest
     {
-        private List<Action> _actions = new List<Action>();
+        private List<Action> _actions = AWSConfigs.InitializeCollections ? new List<Action>() : null;
         private string _description;
         private EventBatchingCondition _eventBatchingCondition;
         private string _name;
         private Predicate _predicate;
         private string _schedule;
         private bool? _startOnCreation;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TriggerType _type;
         private string _workflowName;
 
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace Amazon.Glue.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

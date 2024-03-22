@@ -37,12 +37,12 @@ namespace Amazon.EC2.Model
         private bool? _deleteOnTermination;
         private string _description;
         private int? _deviceIndex;
-        private List<string> _groups = new List<string>();
+        private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _ipv6AddressCount;
-        private List<ScheduledInstancesIpv6Address> _ipv6Addresses = new List<ScheduledInstancesIpv6Address>();
+        private List<ScheduledInstancesIpv6Address> _ipv6Addresses = AWSConfigs.InitializeCollections ? new List<ScheduledInstancesIpv6Address>() : null;
         private string _networkInterfaceId;
         private string _privateIpAddress;
-        private List<ScheduledInstancesPrivateIpAddressConfig> _privateIpAddressConfigs = new List<ScheduledInstancesPrivateIpAddressConfig>();
+        private List<ScheduledInstancesPrivateIpAddressConfig> _privateIpAddressConfigs = AWSConfigs.InitializeCollections ? new List<ScheduledInstancesPrivateIpAddressConfig>() : null;
         private int? _secondaryPrivateIpAddressCount;
         private string _subnetId;
 
@@ -144,7 +144,7 @@ namespace Amazon.EC2.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv6Addresses property is set
         internal bool IsSetIpv6Addresses()
         {
-            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+            return this._ipv6Addresses != null && (this._ipv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace Amazon.EC2.Model
         // Check to see if PrivateIpAddressConfigs property is set
         internal bool IsSetPrivateIpAddressConfigs()
         {
-            return this._privateIpAddressConfigs != null && this._privateIpAddressConfigs.Count > 0; 
+            return this._privateIpAddressConfigs != null && (this._privateIpAddressConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

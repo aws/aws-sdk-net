@@ -36,7 +36,7 @@ namespace Amazon.WAFV2.Model
     public partial class JsonMatchPattern
     {
         private All _all;
-        private List<string> _includedPaths = new List<string>();
+        private List<string> _includedPaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property All. 
@@ -94,7 +94,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if IncludedPaths property is set
         internal bool IsSetIncludedPaths()
         {
-            return this._includedPaths != null && this._includedPaths.Count > 0; 
+            return this._includedPaths != null && (this._includedPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

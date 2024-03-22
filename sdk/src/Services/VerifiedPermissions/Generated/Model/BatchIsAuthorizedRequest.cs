@@ -63,7 +63,7 @@ namespace Amazon.VerifiedPermissions.Model
     {
         private EntitiesDefinition _entities;
         private string _policyStoreId;
-        private List<BatchIsAuthorizedInputItem> _requests = new List<BatchIsAuthorizedInputItem>();
+        private List<BatchIsAuthorizedInputItem> _requests = AWSConfigs.InitializeCollections ? new List<BatchIsAuthorizedInputItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Entities. 
@@ -126,7 +126,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if Requests property is set
         internal bool IsSetRequests()
         {
-            return this._requests != null && this._requests.Count > 0; 
+            return this._requests != null && (this._requests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

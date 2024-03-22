@@ -36,11 +36,11 @@ namespace Amazon.DeviceFarm.Model
         private string _awsAccountNumber;
         private int? _defaultJobTimeoutMinutes;
         private int? _maxJobTimeoutMinutes;
-        private Dictionary<string, int> _maxSlots = new Dictionary<string, int>();
+        private Dictionary<string, int> _maxSlots = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private bool? _skipAppResign;
         private TrialMinutes _trialMinutes;
-        private Dictionary<string, int> _unmeteredDevices = new Dictionary<string, int>();
-        private Dictionary<string, int> _unmeteredRemoteAccessDevices = new Dictionary<string, int>();
+        private Dictionary<string, int> _unmeteredDevices = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+        private Dictionary<string, int> _unmeteredRemoteAccessDevices = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccountNumber. 
@@ -115,7 +115,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if MaxSlots property is set
         internal bool IsSetMaxSlots()
         {
-            return this._maxSlots != null && this._maxSlots.Count > 0; 
+            return this._maxSlots != null && (this._maxSlots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if UnmeteredDevices property is set
         internal bool IsSetUnmeteredDevices()
         {
-            return this._unmeteredDevices != null && this._unmeteredDevices.Count > 0; 
+            return this._unmeteredDevices != null && (this._unmeteredDevices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if UnmeteredRemoteAccessDevices property is set
         internal bool IsSetUnmeteredRemoteAccessDevices()
         {
-            return this._unmeteredRemoteAccessDevices != null && this._unmeteredRemoteAccessDevices.Count > 0; 
+            return this._unmeteredRemoteAccessDevices != null && (this._unmeteredRemoteAccessDevices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

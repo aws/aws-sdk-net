@@ -63,7 +63,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class DescribeMatchmakingRequest : AmazonGameLiftRequest
     {
-        private List<string> _ticketIds = new List<string>();
+        private List<string> _ticketIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TicketIds. 
@@ -82,7 +82,7 @@ namespace Amazon.GameLift.Model
         // Check to see if TicketIds property is set
         internal bool IsSetTicketIds()
         {
-            return this._ticketIds != null && this._ticketIds.Count > 0; 
+            return this._ticketIds != null && (this._ticketIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

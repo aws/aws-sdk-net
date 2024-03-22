@@ -33,7 +33,7 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class DescribeRecoverySnapshotsResponse : AmazonWebServiceResponse
     {
-        private List<RecoverySnapshot> _items = new List<RecoverySnapshot>();
+        private List<RecoverySnapshot> _items = AWSConfigs.InitializeCollections ? new List<RecoverySnapshot>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Drs.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

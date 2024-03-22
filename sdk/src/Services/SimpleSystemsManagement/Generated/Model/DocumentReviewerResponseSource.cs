@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DocumentReviewerResponseSource
     {
-        private List<DocumentReviewCommentSource> _comment = new List<DocumentReviewCommentSource>();
+        private List<DocumentReviewCommentSource> _comment = AWSConfigs.InitializeCollections ? new List<DocumentReviewCommentSource>() : null;
         private DateTime? _createTime;
         private string _reviewer;
         private ReviewStatus _reviewStatus;
@@ -55,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this._comment != null && this._comment.Count > 0; 
+            return this._comment != null && (this._comment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

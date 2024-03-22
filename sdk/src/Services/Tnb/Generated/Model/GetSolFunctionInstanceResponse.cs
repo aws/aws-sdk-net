@@ -39,7 +39,7 @@ namespace Amazon.Tnb.Model
         private VnfInstantiationState _instantiationState;
         private GetSolFunctionInstanceMetadata _metadata;
         private string _nsInstanceId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _vnfdId;
         private string _vnfdVersion;
         private string _vnfPkgId;
@@ -171,7 +171,7 @@ namespace Amazon.Tnb.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

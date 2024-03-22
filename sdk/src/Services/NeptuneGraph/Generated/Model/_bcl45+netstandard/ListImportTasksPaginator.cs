@@ -45,7 +45,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Enumerable containing all of the Tasks
         /// </summary>
         public IPaginatedEnumerable<ImportTaskSummary> Tasks => 
-            new PaginatedResultKeyResponse<ListImportTasksResponse, ImportTaskSummary>(this, (i) => i.Tasks);
+            new PaginatedResultKeyResponse<ListImportTasksResponse, ImportTaskSummary>(this, (i) => i.Tasks ?? new List<ImportTaskSummary>());
 
         internal ListImportTasksPaginator(IAmazonNeptuneGraph client, ListImportTasksRequest request)
         {

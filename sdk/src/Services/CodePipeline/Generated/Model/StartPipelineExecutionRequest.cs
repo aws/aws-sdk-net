@@ -37,8 +37,8 @@ namespace Amazon.CodePipeline.Model
     {
         private string _clientRequestToken;
         private string _name;
-        private List<SourceRevisionOverride> _sourceRevisions = new List<SourceRevisionOverride>();
-        private List<PipelineVariable> _variables = new List<PipelineVariable>();
+        private List<SourceRevisionOverride> _sourceRevisions = AWSConfigs.InitializeCollections ? new List<SourceRevisionOverride>() : null;
+        private List<PipelineVariable> _variables = AWSConfigs.InitializeCollections ? new List<PipelineVariable>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -96,7 +96,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if SourceRevisions property is set
         internal bool IsSetSourceRevisions()
         {
-            return this._sourceRevisions != null && this._sourceRevisions.Count > 0; 
+            return this._sourceRevisions != null && (this._sourceRevisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

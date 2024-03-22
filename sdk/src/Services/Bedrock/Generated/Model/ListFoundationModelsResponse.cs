@@ -33,7 +33,7 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class ListFoundationModelsResponse : AmazonWebServiceResponse
     {
-        private List<FoundationModelSummary> _modelSummaries = new List<FoundationModelSummary>();
+        private List<FoundationModelSummary> _modelSummaries = AWSConfigs.InitializeCollections ? new List<FoundationModelSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property ModelSummaries. 
@@ -50,7 +50,7 @@ namespace Amazon.Bedrock.Model
         // Check to see if ModelSummaries property is set
         internal bool IsSetModelSummaries()
         {
-            return this._modelSummaries != null && this._modelSummaries.Count > 0; 
+            return this._modelSummaries != null && (this._modelSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

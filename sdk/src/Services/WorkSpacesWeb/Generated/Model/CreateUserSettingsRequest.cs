@@ -36,7 +36,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class CreateUserSettingsRequest : AmazonWorkSpacesWebRequest
     {
-        private Dictionary<string, string> _additionalEncryptionContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _clientToken;
         private CookieSynchronizationConfiguration _cookieSynchronizationConfiguration;
         private EnabledType _copyAllowed;
@@ -46,7 +46,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private int? _idleDisconnectTimeoutInMinutes;
         private EnabledType _pasteAllowed;
         private EnabledType _printAllowed;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private EnabledType _uploadAllowed;
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if AdditionalEncryptionContext property is set
         internal bool IsSetAdditionalEncryptionContext()
         {
-            return this._additionalEncryptionContext != null && this._additionalEncryptionContext.Count > 0; 
+            return this._additionalEncryptionContext != null && (this._additionalEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -265,7 +265,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

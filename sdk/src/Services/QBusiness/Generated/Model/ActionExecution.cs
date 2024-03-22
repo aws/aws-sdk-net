@@ -33,7 +33,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ActionExecution
     {
-        private Dictionary<string, ActionExecutionPayloadField> _payload = new Dictionary<string, ActionExecutionPayloadField>();
+        private Dictionary<string, ActionExecutionPayloadField> _payload = AWSConfigs.InitializeCollections ? new Dictionary<string, ActionExecutionPayloadField>() : null;
         private string _payloadFieldNameSeparator;
         private string _pluginId;
 
@@ -54,7 +54,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Payload property is set
         internal bool IsSetPayload()
         {
-            return this._payload != null && this._payload.Count > 0; 
+            return this._payload != null && (this._payload.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

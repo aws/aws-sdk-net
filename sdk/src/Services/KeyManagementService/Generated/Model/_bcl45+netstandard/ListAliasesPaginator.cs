@@ -45,7 +45,7 @@ namespace Amazon.KeyManagementService.Model
         /// Enumerable containing all of the Aliases
         /// </summary>
         public IPaginatedEnumerable<AliasListEntry> Aliases => 
-            new PaginatedResultKeyResponse<ListAliasesResponse, AliasListEntry>(this, (i) => i.Aliases);
+            new PaginatedResultKeyResponse<ListAliasesResponse, AliasListEntry>(this, (i) => i.Aliases ?? new List<AliasListEntry>());
 
         internal ListAliasesPaginator(IAmazonKeyManagementService client, ListAliasesRequest request)
         {

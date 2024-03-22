@@ -33,7 +33,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class ListEntitlementsResponse : AmazonWebServiceResponse
     {
-        private List<ListedEntitlement> _entitlements = new List<ListedEntitlement>();
+        private List<ListedEntitlement> _entitlements = AWSConfigs.InitializeCollections ? new List<ListedEntitlement>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Entitlements property is set
         internal bool IsSetEntitlements()
         {
-            return this._entitlements != null && this._entitlements.Count > 0; 
+            return this._entitlements != null && (this._entitlements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

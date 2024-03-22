@@ -34,7 +34,7 @@ namespace Amazon.FinSpaceData.Model
     public partial class ListUsersByPermissionGroupResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UserByPermissionGroup> _users = new List<UserByPermissionGroup>();
+        private List<UserByPermissionGroup> _users = AWSConfigs.InitializeCollections ? new List<UserByPermissionGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.FinSpaceData.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

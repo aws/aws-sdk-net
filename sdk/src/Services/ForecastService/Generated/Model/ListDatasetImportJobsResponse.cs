@@ -33,7 +33,7 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class ListDatasetImportJobsResponse : AmazonWebServiceResponse
     {
-        private List<DatasetImportJobSummary> _datasetImportJobs = new List<DatasetImportJobSummary>();
+        private List<DatasetImportJobSummary> _datasetImportJobs = AWSConfigs.InitializeCollections ? new List<DatasetImportJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if DatasetImportJobs property is set
         internal bool IsSetDatasetImportJobs()
         {
-            return this._datasetImportJobs != null && this._datasetImportJobs.Count > 0; 
+            return this._datasetImportJobs != null && (this._datasetImportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

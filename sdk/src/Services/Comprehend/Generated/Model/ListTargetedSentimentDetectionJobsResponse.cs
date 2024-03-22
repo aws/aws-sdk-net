@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model
     public partial class ListTargetedSentimentDetectionJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TargetedSentimentDetectionJobProperties> _targetedSentimentDetectionJobPropertiesList = new List<TargetedSentimentDetectionJobProperties>();
+        private List<TargetedSentimentDetectionJobProperties> _targetedSentimentDetectionJobPropertiesList = AWSConfigs.InitializeCollections ? new List<TargetedSentimentDetectionJobProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if TargetedSentimentDetectionJobPropertiesList property is set
         internal bool IsSetTargetedSentimentDetectionJobPropertiesList()
         {
-            return this._targetedSentimentDetectionJobPropertiesList != null && this._targetedSentimentDetectionJobPropertiesList.Count > 0; 
+            return this._targetedSentimentDetectionJobPropertiesList != null && (this._targetedSentimentDetectionJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

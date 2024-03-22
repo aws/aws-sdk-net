@@ -33,7 +33,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ListCollaborationPrivacyBudgetTemplatesResponse : AmazonWebServiceResponse
     {
-        private List<CollaborationPrivacyBudgetTemplateSummary> _collaborationPrivacyBudgetTemplateSummaries = new List<CollaborationPrivacyBudgetTemplateSummary>();
+        private List<CollaborationPrivacyBudgetTemplateSummary> _collaborationPrivacyBudgetTemplateSummaries = AWSConfigs.InitializeCollections ? new List<CollaborationPrivacyBudgetTemplateSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if CollaborationPrivacyBudgetTemplateSummaries property is set
         internal bool IsSetCollaborationPrivacyBudgetTemplateSummaries()
         {
-            return this._collaborationPrivacyBudgetTemplateSummaries != null && this._collaborationPrivacyBudgetTemplateSummaries.Count > 0; 
+            return this._collaborationPrivacyBudgetTemplateSummaries != null && (this._collaborationPrivacyBudgetTemplateSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

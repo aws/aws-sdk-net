@@ -98,7 +98,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     var publicRequestDetailsRegions = publicRequest.Details.Regions;
-                    if (publicRequestDetailsRegions != null && publicRequestDetailsRegions.Count > 0) 
+                    if (publicRequestDetailsRegions != null && (publicRequestDetailsRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {                        
                         xmlWriter.WriteStartElement("Regions", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                         foreach (var publicRequestDetailsRegionsValue in publicRequestDetailsRegions) 

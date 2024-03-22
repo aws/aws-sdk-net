@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("macOSLatestSupportedVersionSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.MacOSLatestSupportedVersions == null)
+                        {
+                            unmarshalledObject.MacOSLatestSupportedVersions = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MacOSLatestSupportedVersions.Add(item);
                         continue;

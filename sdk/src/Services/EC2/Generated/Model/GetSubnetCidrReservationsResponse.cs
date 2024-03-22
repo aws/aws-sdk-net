@@ -34,8 +34,8 @@ namespace Amazon.EC2.Model
     public partial class GetSubnetCidrReservationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SubnetCidrReservation> _subnetIpv4CidrReservations = new List<SubnetCidrReservation>();
-        private List<SubnetCidrReservation> _subnetIpv6CidrReservations = new List<SubnetCidrReservation>();
+        private List<SubnetCidrReservation> _subnetIpv4CidrReservations = AWSConfigs.InitializeCollections ? new List<SubnetCidrReservation>() : null;
+        private List<SubnetCidrReservation> _subnetIpv6CidrReservations = AWSConfigs.InitializeCollections ? new List<SubnetCidrReservation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if SubnetIpv4CidrReservations property is set
         internal bool IsSetSubnetIpv4CidrReservations()
         {
-            return this._subnetIpv4CidrReservations != null && this._subnetIpv4CidrReservations.Count > 0; 
+            return this._subnetIpv4CidrReservations != null && (this._subnetIpv4CidrReservations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.EC2.Model
         // Check to see if SubnetIpv6CidrReservations property is set
         internal bool IsSetSubnetIpv6CidrReservations()
         {
-            return this._subnetIpv6CidrReservations != null && this._subnetIpv6CidrReservations.Count > 0; 
+            return this._subnetIpv6CidrReservations != null && (this._subnetIpv6CidrReservations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the Instances
         /// </summary>
         public IPaginatedEnumerable<InstanceMetadata> Instances => 
-            new PaginatedResultKeyResponse<ListInstancesResponse, InstanceMetadata>(this, (i) => i.Instances);
+            new PaginatedResultKeyResponse<ListInstancesResponse, InstanceMetadata>(this, (i) => i.Instances ?? new List<InstanceMetadata>());
 
         internal ListInstancesPaginator(IAmazonSSOAdmin client, ListInstancesRequest request)
         {

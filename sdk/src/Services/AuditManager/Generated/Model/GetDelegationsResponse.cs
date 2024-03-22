@@ -33,7 +33,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class GetDelegationsResponse : AmazonWebServiceResponse
     {
-        private List<DelegationMetadata> _delegations = new List<DelegationMetadata>();
+        private List<DelegationMetadata> _delegations = AWSConfigs.InitializeCollections ? new List<DelegationMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Delegations property is set
         internal bool IsSetDelegations()
         {
-            return this._delegations != null && this._delegations.Count > 0; 
+            return this._delegations != null && (this._delegations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

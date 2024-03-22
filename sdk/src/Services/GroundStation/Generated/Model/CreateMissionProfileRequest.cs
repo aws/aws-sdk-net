@@ -42,12 +42,12 @@ namespace Amazon.GroundStation.Model
     {
         private int? _contactPostPassDurationSeconds;
         private int? _contactPrePassDurationSeconds;
-        private List<List<string>> _dataflowEdges = new List<List<string>>();
+        private List<List<string>> _dataflowEdges = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private int? _minimumViableContactDurationSeconds;
         private string _name;
         private KmsKey _streamsKmsKey;
         private string _streamsKmsRole;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _trackingConfigArn;
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if DataflowEdges property is set
         internal bool IsSetDataflowEdges()
         {
-            return this._dataflowEdges != null && this._dataflowEdges.Count > 0; 
+            return this._dataflowEdges != null && (this._dataflowEdges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

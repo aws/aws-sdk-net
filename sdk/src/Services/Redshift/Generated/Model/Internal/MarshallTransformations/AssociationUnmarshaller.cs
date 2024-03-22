@@ -57,6 +57,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CertificateAssociations/CertificateAssociation", targetDepth))
                     {
                         var unmarshaller = CertificateAssociationUnmarshaller.Instance;
+                        if (unmarshalledObject.CertificateAssociations == null)
+                        {
+                            unmarshalledObject.CertificateAssociations = new List<CertificateAssociation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CertificateAssociations.Add(item);
                         continue;

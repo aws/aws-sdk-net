@@ -37,14 +37,14 @@ namespace Amazon.LakeFormation.Model
     {
         private bool? _allowExternalDataFiltering;
         private bool? _allowFullTableExternalDataAccess;
-        private List<string> _authorizedSessionTagValueList = new List<string>();
-        private List<PrincipalPermissions> _createDatabaseDefaultPermissions = new List<PrincipalPermissions>();
-        private List<PrincipalPermissions> _createTableDefaultPermissions = new List<PrincipalPermissions>();
-        private List<DataLakePrincipal> _dataLakeAdmins = new List<DataLakePrincipal>();
-        private List<DataLakePrincipal> _externalDataFilteringAllowList = new List<DataLakePrincipal>();
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
-        private List<DataLakePrincipal> _readOnlyAdmins = new List<DataLakePrincipal>();
-        private List<string> _trustedResourceOwners = new List<string>();
+        private List<string> _authorizedSessionTagValueList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<PrincipalPermissions> _createDatabaseDefaultPermissions = AWSConfigs.InitializeCollections ? new List<PrincipalPermissions>() : null;
+        private List<PrincipalPermissions> _createTableDefaultPermissions = AWSConfigs.InitializeCollections ? new List<PrincipalPermissions>() : null;
+        private List<DataLakePrincipal> _dataLakeAdmins = AWSConfigs.InitializeCollections ? new List<DataLakePrincipal>() : null;
+        private List<DataLakePrincipal> _externalDataFilteringAllowList = AWSConfigs.InitializeCollections ? new List<DataLakePrincipal>() : null;
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<DataLakePrincipal> _readOnlyAdmins = AWSConfigs.InitializeCollections ? new List<DataLakePrincipal>() : null;
+        private List<string> _trustedResourceOwners = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowExternalDataFiltering. 
@@ -117,7 +117,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if AuthorizedSessionTagValueList property is set
         internal bool IsSetAuthorizedSessionTagValueList()
         {
-            return this._authorizedSessionTagValueList != null && this._authorizedSessionTagValueList.Count > 0; 
+            return this._authorizedSessionTagValueList != null && (this._authorizedSessionTagValueList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if CreateDatabaseDefaultPermissions property is set
         internal bool IsSetCreateDatabaseDefaultPermissions()
         {
-            return this._createDatabaseDefaultPermissions != null && this._createDatabaseDefaultPermissions.Count > 0; 
+            return this._createDatabaseDefaultPermissions != null && (this._createDatabaseDefaultPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if CreateTableDefaultPermissions property is set
         internal bool IsSetCreateTableDefaultPermissions()
         {
-            return this._createTableDefaultPermissions != null && this._createTableDefaultPermissions.Count > 0; 
+            return this._createTableDefaultPermissions != null && (this._createTableDefaultPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if DataLakeAdmins property is set
         internal bool IsSetDataLakeAdmins()
         {
-            return this._dataLakeAdmins != null && this._dataLakeAdmins.Count > 0; 
+            return this._dataLakeAdmins != null && (this._dataLakeAdmins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if ExternalDataFilteringAllowList property is set
         internal bool IsSetExternalDataFilteringAllowList()
         {
-            return this._externalDataFilteringAllowList != null && this._externalDataFilteringAllowList.Count > 0; 
+            return this._externalDataFilteringAllowList != null && (this._externalDataFilteringAllowList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if ReadOnlyAdmins property is set
         internal bool IsSetReadOnlyAdmins()
         {
-            return this._readOnlyAdmins != null && this._readOnlyAdmins.Count > 0; 
+            return this._readOnlyAdmins != null && (this._readOnlyAdmins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -293,7 +293,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if TrustedResourceOwners property is set
         internal bool IsSetTrustedResourceOwners()
         {
-            return this._trustedResourceOwners != null && this._trustedResourceOwners.Count > 0; 
+            return this._trustedResourceOwners != null && (this._trustedResourceOwners.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

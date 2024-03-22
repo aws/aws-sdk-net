@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the SnapshotCopyGrants
         /// </summary>
         public IPaginatedEnumerable<SnapshotCopyGrant> SnapshotCopyGrants => 
-            new PaginatedResultKeyResponse<DescribeSnapshotCopyGrantsResponse, SnapshotCopyGrant>(this, (i) => i.SnapshotCopyGrants);
+            new PaginatedResultKeyResponse<DescribeSnapshotCopyGrantsResponse, SnapshotCopyGrant>(this, (i) => i.SnapshotCopyGrants ?? new List<SnapshotCopyGrant>());
 
         internal DescribeSnapshotCopyGrantsPaginator(IAmazonRedshift client, DescribeSnapshotCopyGrantsRequest request)
         {

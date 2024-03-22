@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model
     public partial class FreeTrialAccountInfo
     {
         private string _accountId;
-        private List<FreeTrialInfo> _freeTrialInfo = new List<FreeTrialInfo>();
+        private List<FreeTrialInfo> _freeTrialInfo = AWSConfigs.InitializeCollections ? new List<FreeTrialInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -71,7 +71,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FreeTrialInfo property is set
         internal bool IsSetFreeTrialInfo()
         {
-            return this._freeTrialInfo != null && this._freeTrialInfo.Count > 0; 
+            return this._freeTrialInfo != null && (this._freeTrialInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

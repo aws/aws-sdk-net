@@ -52,7 +52,7 @@ namespace Amazon.CodeBuild.Model
         private bool? _debugSessionEnabled;
         private string _encryptionKeyOverride;
         private EnvironmentType _environmentTypeOverride;
-        private List<EnvironmentVariable> _environmentVariablesOverride = new List<EnvironmentVariable>();
+        private List<EnvironmentVariable> _environmentVariablesOverride = AWSConfigs.InitializeCollections ? new List<EnvironmentVariable>() : null;
         private ProjectFleet _fleetOverride;
         private int? _gitCloneDepthOverride;
         private GitSubmodulesConfig _gitSubmodulesConfigOverride;
@@ -66,9 +66,9 @@ namespace Amazon.CodeBuild.Model
         private int? _queuedTimeoutInMinutesOverride;
         private RegistryCredential _registryCredentialOverride;
         private bool? _reportBuildStatusOverride;
-        private List<ProjectArtifacts> _secondaryArtifactsOverride = new List<ProjectArtifacts>();
-        private List<ProjectSource> _secondarySourcesOverride = new List<ProjectSource>();
-        private List<ProjectSourceVersion> _secondarySourcesVersionOverride = new List<ProjectSourceVersion>();
+        private List<ProjectArtifacts> _secondaryArtifactsOverride = AWSConfigs.InitializeCollections ? new List<ProjectArtifacts>() : null;
+        private List<ProjectSource> _secondarySourcesOverride = AWSConfigs.InitializeCollections ? new List<ProjectSource>() : null;
+        private List<ProjectSourceVersion> _secondarySourcesVersionOverride = AWSConfigs.InitializeCollections ? new List<ProjectSourceVersion>() : null;
         private string _serviceRoleOverride;
         private SourceAuth _sourceAuthOverride;
         private string _sourceLocationOverride;
@@ -295,7 +295,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if EnvironmentVariablesOverride property is set
         internal bool IsSetEnvironmentVariablesOverride()
         {
-            return this._environmentVariablesOverride != null && this._environmentVariablesOverride.Count > 0; 
+            return this._environmentVariablesOverride != null && (this._environmentVariablesOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -595,7 +595,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondaryArtifactsOverride property is set
         internal bool IsSetSecondaryArtifactsOverride()
         {
-            return this._secondaryArtifactsOverride != null && this._secondaryArtifactsOverride.Count > 0; 
+            return this._secondaryArtifactsOverride != null && (this._secondaryArtifactsOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -614,7 +614,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondarySourcesOverride property is set
         internal bool IsSetSecondarySourcesOverride()
         {
-            return this._secondarySourcesOverride != null && this._secondarySourcesOverride.Count > 0; 
+            return this._secondarySourcesOverride != null && (this._secondarySourcesOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -634,7 +634,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondarySourcesVersionOverride property is set
         internal bool IsSetSecondarySourcesVersionOverride()
         {
-            return this._secondarySourcesVersionOverride != null && this._secondarySourcesVersionOverride.Count > 0; 
+            return this._secondarySourcesVersionOverride != null && (this._secondarySourcesVersionOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -77,9 +77,9 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private AnalyticsMetadataType _analyticsMetadata;
         private ChallengeNameType _challengeName;
-        private Dictionary<string, string> _challengeResponses = new Dictionary<string, string>();
+        private Dictionary<string, string> _challengeResponses = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _clientId;
-        private Dictionary<string, string> _clientMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _clientMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _session;
         private UserContextDataType _userContextData;
 
@@ -224,7 +224,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ChallengeResponses property is set
         internal bool IsSetChallengeResponses()
         {
-            return this._challengeResponses != null && this._challengeResponses.Count > 0; 
+            return this._challengeResponses != null && (this._challengeResponses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -300,7 +300,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ClientMetadata property is set
         internal bool IsSetClientMetadata()
         {
-            return this._clientMetadata != null && this._clientMetadata.Count > 0; 
+            return this._clientMetadata != null && (this._clientMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

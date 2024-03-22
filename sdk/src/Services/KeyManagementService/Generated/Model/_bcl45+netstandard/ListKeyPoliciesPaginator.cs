@@ -45,7 +45,7 @@ namespace Amazon.KeyManagementService.Model
         /// Enumerable containing all of the PolicyNames
         /// </summary>
         public IPaginatedEnumerable<string> PolicyNames => 
-            new PaginatedResultKeyResponse<ListKeyPoliciesResponse, string>(this, (i) => i.PolicyNames);
+            new PaginatedResultKeyResponse<ListKeyPoliciesResponse, string>(this, (i) => i.PolicyNames ?? new List<string>());
 
         internal ListKeyPoliciesPaginator(IAmazonKeyManagementService client, ListKeyPoliciesRequest request)
         {

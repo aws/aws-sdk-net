@@ -45,7 +45,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Enumerable containing all of the LambdaFunctionRecommendations
         /// </summary>
         public IPaginatedEnumerable<LambdaFunctionRecommendation> LambdaFunctionRecommendations => 
-            new PaginatedResultKeyResponse<GetLambdaFunctionRecommendationsResponse, LambdaFunctionRecommendation>(this, (i) => i.LambdaFunctionRecommendations);
+            new PaginatedResultKeyResponse<GetLambdaFunctionRecommendationsResponse, LambdaFunctionRecommendation>(this, (i) => i.LambdaFunctionRecommendations ?? new List<LambdaFunctionRecommendation>());
 
         internal GetLambdaFunctionRecommendationsPaginator(IAmazonComputeOptimizer client, GetLambdaFunctionRecommendationsRequest request)
         {

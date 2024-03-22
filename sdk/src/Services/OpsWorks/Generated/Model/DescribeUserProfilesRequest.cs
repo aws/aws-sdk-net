@@ -42,7 +42,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeUserProfilesRequest : AmazonOpsWorksRequest
     {
-        private List<string> _iamUserArns = new List<string>();
+        private List<string> _iamUserArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IamUserArns. 
@@ -59,7 +59,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if IamUserArns property is set
         internal bool IsSetIamUserArns()
         {
-            return this._iamUserArns != null && this._iamUserArns.Count > 0; 
+            return this._iamUserArns != null && (this._iamUserArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

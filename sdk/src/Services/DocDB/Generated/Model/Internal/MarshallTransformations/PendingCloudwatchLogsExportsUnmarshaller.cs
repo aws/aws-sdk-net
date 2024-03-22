@@ -57,6 +57,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LogTypesToDisable/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.LogTypesToDisable == null)
+                        {
+                            unmarshalledObject.LogTypesToDisable = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LogTypesToDisable.Add(item);
                         continue;
@@ -64,6 +68,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LogTypesToEnable/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.LogTypesToEnable == null)
+                        {
+                            unmarshalledObject.LogTypesToEnable = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LogTypesToEnable.Add(item);
                         continue;

@@ -45,7 +45,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the Permissions
         /// </summary>
         public IPaginatedEnumerable<Permission> Permissions => 
-            new PaginatedResultKeyResponse<ListAccountPermissionsResponse, Permission>(this, (i) => i.Permissions);
+            new PaginatedResultKeyResponse<ListAccountPermissionsResponse, Permission>(this, (i) => i.Permissions ?? new List<Permission>());
 
         internal ListAccountPermissionsPaginator(IAmazonInspector2 client, ListAccountPermissionsRequest request)
         {

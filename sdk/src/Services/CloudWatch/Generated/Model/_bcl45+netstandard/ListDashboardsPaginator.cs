@@ -45,7 +45,7 @@ namespace Amazon.CloudWatch.Model
         /// Enumerable containing all of the DashboardEntries
         /// </summary>
         public IPaginatedEnumerable<DashboardEntry> DashboardEntries => 
-            new PaginatedResultKeyResponse<ListDashboardsResponse, DashboardEntry>(this, (i) => i.DashboardEntries);
+            new PaginatedResultKeyResponse<ListDashboardsResponse, DashboardEntry>(this, (i) => i.DashboardEntries ?? new List<DashboardEntry>());
 
         internal ListDashboardsPaginator(IAmazonCloudWatch client, ListDashboardsRequest request)
         {

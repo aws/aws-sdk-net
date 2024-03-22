@@ -38,7 +38,7 @@ namespace Amazon.IoTTwinMaker.Model
         private string _componentTypeId;
         private string _definedIn;
         private string _description;
-        private Dictionary<string, ComponentPropertyGroupResponse> _propertyGroups = new Dictionary<string, ComponentPropertyGroupResponse>();
+        private Dictionary<string, ComponentPropertyGroupResponse> _propertyGroups = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentPropertyGroupResponse>() : null;
         private Status _status;
         private string _syncSource;
 
@@ -153,7 +153,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyGroups property is set
         internal bool IsSetPropertyGroups()
         {
-            return this._propertyGroups != null && this._propertyGroups.Count > 0; 
+            return this._propertyGroups != null && (this._propertyGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Enumerable containing all of the Presets
         /// </summary>
         public IPaginatedEnumerable<Preset> Presets => 
-            new PaginatedResultKeyResponse<ListPresetsResponse, Preset>(this, (i) => i.Presets);
+            new PaginatedResultKeyResponse<ListPresetsResponse, Preset>(this, (i) => i.Presets ?? new List<Preset>());
 
         internal ListPresetsPaginator(IAmazonElasticTranscoder client, ListPresetsRequest request)
         {

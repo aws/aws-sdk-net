@@ -52,10 +52,10 @@ namespace Amazon.EC2.Model
     {
         private SnapshotAttributeName _attribute;
         private CreateVolumePermissionModifications _createVolumePermission;
-        private List<string> _groupNames = new List<string>();
+        private List<string> _groupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OperationType _operationType;
         private string _snapshotId;
-        private List<string> _userIds = new List<string>();
+        private List<string> _userIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -126,7 +126,7 @@ namespace Amazon.EC2.Model
         // Check to see if GroupNames property is set
         internal bool IsSetGroupNames()
         {
-            return this._groupNames != null && this._groupNames.Count > 0; 
+            return this._groupNames != null && (this._groupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.EC2.Model
         // Check to see if UserIds property is set
         internal bool IsSetUserIds()
         {
-            return this._userIds != null && this._userIds.Count > 0; 
+            return this._userIds != null && (this._userIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

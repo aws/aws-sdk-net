@@ -45,7 +45,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// Enumerable containing all of the SessionSummaries
         /// </summary>
         public IPaginatedEnumerable<SessionSummary> SessionSummaries => 
-            new PaginatedResultKeyResponse<SearchSessionsResponse, SessionSummary>(this, (i) => i.SessionSummaries);
+            new PaginatedResultKeyResponse<SearchSessionsResponse, SessionSummary>(this, (i) => i.SessionSummaries ?? new List<SessionSummary>());
 
         internal SearchSessionsPaginator(IAmazonConnectWisdomService client, SearchSessionsRequest request)
         {

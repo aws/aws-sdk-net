@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the InferenceComponents
         /// </summary>
         public IPaginatedEnumerable<InferenceComponentSummary> InferenceComponents => 
-            new PaginatedResultKeyResponse<ListInferenceComponentsResponse, InferenceComponentSummary>(this, (i) => i.InferenceComponents);
+            new PaginatedResultKeyResponse<ListInferenceComponentsResponse, InferenceComponentSummary>(this, (i) => i.InferenceComponents ?? new List<InferenceComponentSummary>());
 
         internal ListInferenceComponentsPaginator(IAmazonSageMaker client, ListInferenceComponentsRequest request)
         {

@@ -37,7 +37,7 @@ namespace Amazon.ECRPublic.Model
         private int? _maxResults;
         private string _nextToken;
         private string _registryId;
-        private List<string> _repositoryNames = new List<string>();
+        private List<string> _repositoryNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -131,7 +131,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if RepositoryNames property is set
         internal bool IsSetRepositoryNames()
         {
-            return this._repositoryNames != null && this._repositoryNames.Count > 0; 
+            return this._repositoryNames != null && (this._repositoryNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

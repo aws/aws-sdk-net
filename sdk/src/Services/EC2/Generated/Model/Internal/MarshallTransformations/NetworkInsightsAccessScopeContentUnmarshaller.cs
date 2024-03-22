@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("excludePathSet/item", targetDepth))
                     {
                         var unmarshaller = AccessScopePathUnmarshaller.Instance;
+                        if (unmarshalledObject.ExcludePaths == null)
+                        {
+                            unmarshalledObject.ExcludePaths = new List<AccessScopePath>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ExcludePaths.Add(item);
                         continue;
@@ -64,6 +68,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("matchPathSet/item", targetDepth))
                     {
                         var unmarshaller = AccessScopePathUnmarshaller.Instance;
+                        if (unmarshalledObject.MatchPaths == null)
+                        {
+                            unmarshalledObject.MatchPaths = new List<AccessScopePath>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MatchPaths.Add(item);
                         continue;

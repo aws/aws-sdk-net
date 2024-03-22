@@ -35,7 +35,7 @@ namespace Amazon.Inspector.Model
     public partial class DescribeRulesPackagesRequest : AmazonInspectorRequest
     {
         private Locale _locale;
-        private List<string> _rulesPackageArns = new List<string>();
+        private List<string> _rulesPackageArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Locale. 
@@ -71,7 +71,7 @@ namespace Amazon.Inspector.Model
         // Check to see if RulesPackageArns property is set
         internal bool IsSetRulesPackageArns()
         {
-            return this._rulesPackageArns != null && this._rulesPackageArns.Count > 0; 
+            return this._rulesPackageArns != null && (this._rulesPackageArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

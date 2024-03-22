@@ -37,7 +37,7 @@ namespace Amazon.CostExplorer.Model
     {
         private ApproximationDimension _approximationDimension;
         private Granularity _granularity;
-        private List<string> _services = new List<string>();
+        private List<string> _services = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApproximationDimension. 
@@ -94,7 +94,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

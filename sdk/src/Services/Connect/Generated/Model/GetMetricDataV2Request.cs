@@ -50,11 +50,11 @@ namespace Amazon.Connect.Model
     public partial class GetMetricDataV2Request : AmazonConnectRequest
     {
         private DateTime? _endTime;
-        private List<FilterV2> _filters = new List<FilterV2>();
-        private List<string> _groupings = new List<string>();
+        private List<FilterV2> _filters = AWSConfigs.InitializeCollections ? new List<FilterV2>() : null;
+        private List<string> _groupings = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private IntervalDetails _interval;
         private int? _maxResults;
-        private List<MetricV2> _metrics = new List<MetricV2>();
+        private List<MetricV2> _metrics = AWSConfigs.InitializeCollections ? new List<MetricV2>() : null;
         private string _nextToken;
         private string _resourceArn;
         private DateTime? _startTime;
@@ -174,7 +174,7 @@ namespace Amazon.Connect.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Amazon.Connect.Model
         // Check to see if Groupings property is set
         internal bool IsSetGroupings()
         {
-            return this._groupings != null && this._groupings.Count > 0; 
+            return this._groupings != null && (this._groupings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1586,7 +1586,7 @@ namespace Amazon.Connect.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

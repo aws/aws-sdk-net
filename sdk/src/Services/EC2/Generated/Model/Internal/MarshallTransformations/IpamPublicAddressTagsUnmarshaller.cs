@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("eipTagSet/item", targetDepth))
                     {
                         var unmarshaller = IpamPublicAddressTagUnmarshaller.Instance;
+                        if (unmarshalledObject.EipTags == null)
+                        {
+                            unmarshalledObject.EipTags = new List<IpamPublicAddressTag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.EipTags.Add(item);
                         continue;

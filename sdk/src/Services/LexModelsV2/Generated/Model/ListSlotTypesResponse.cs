@@ -37,7 +37,7 @@ namespace Amazon.LexModelsV2.Model
         private string _botVersion;
         private string _localeId;
         private string _nextToken;
-        private List<SlotTypeSummary> _slotTypeSummaries = new List<SlotTypeSummary>();
+        private List<SlotTypeSummary> _slotTypeSummaries = AWSConfigs.InitializeCollections ? new List<SlotTypeSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property BotId. 
@@ -134,7 +134,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SlotTypeSummaries property is set
         internal bool IsSetSlotTypeSummaries()
         {
-            return this._slotTypeSummaries != null && this._slotTypeSummaries.Count > 0; 
+            return this._slotTypeSummaries != null && (this._slotTypeSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

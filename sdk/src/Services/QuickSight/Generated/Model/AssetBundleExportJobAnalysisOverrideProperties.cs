@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class AssetBundleExportJobAnalysisOverrideProperties
     {
         private string _arn;
-        private List<string> _properties = new List<string>();
+        private List<string> _properties = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -74,7 +74,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

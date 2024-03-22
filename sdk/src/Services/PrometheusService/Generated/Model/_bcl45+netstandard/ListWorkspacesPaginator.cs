@@ -45,7 +45,7 @@ namespace Amazon.PrometheusService.Model
         /// Enumerable containing all of the Workspaces
         /// </summary>
         public IPaginatedEnumerable<WorkspaceSummary> Workspaces => 
-            new PaginatedResultKeyResponse<ListWorkspacesResponse, WorkspaceSummary>(this, (i) => i.Workspaces);
+            new PaginatedResultKeyResponse<ListWorkspacesResponse, WorkspaceSummary>(this, (i) => i.Workspaces ?? new List<WorkspaceSummary>());
 
         internal ListWorkspacesPaginator(IAmazonPrometheusService client, ListWorkspacesRequest request)
         {

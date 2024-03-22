@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Hosts
         /// </summary>
         public IPaginatedEnumerable<Host> Hosts => 
-            new PaginatedResultKeyResponse<DescribeHostsResponse, Host>(this, (i) => i.Hosts);
+            new PaginatedResultKeyResponse<DescribeHostsResponse, Host>(this, (i) => i.Hosts ?? new List<Host>());
 
         internal DescribeHostsPaginator(IAmazonEC2 client, DescribeHostsRequest request)
         {

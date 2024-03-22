@@ -33,7 +33,7 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class DatabaseLFTagPolicy
     {
-        private List<LFTag> _expression = new List<LFTag>();
+        private List<LFTag> _expression = AWSConfigs.InitializeCollections ? new List<LFTag>() : null;
 
         /// <summary>
         /// Gets and sets the property Expression. 
@@ -51,7 +51,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if Expression property is set
         internal bool IsSetExpression()
         {
-            return this._expression != null && this._expression.Count > 0; 
+            return this._expression != null && (this._expression.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

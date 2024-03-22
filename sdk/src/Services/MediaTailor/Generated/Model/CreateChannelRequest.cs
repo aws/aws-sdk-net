@@ -35,12 +35,12 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class CreateChannelRequest : AmazonMediaTailorRequest
     {
-        private List<string> _audiences = new List<string>();
+        private List<string> _audiences = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _channelName;
         private SlateSource _fillerSlate;
-        private List<RequestOutputItem> _outputs = new List<RequestOutputItem>();
+        private List<RequestOutputItem> _outputs = AWSConfigs.InitializeCollections ? new List<RequestOutputItem>() : null;
         private PlaybackMode _playbackMode;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Tier _tier;
         private TimeShiftConfiguration _timeShiftConfiguration;
 
@@ -59,7 +59,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if Audiences property is set
         internal bool IsSetAudiences()
         {
-            return this._audiences != null && this._audiences.Count > 0; 
+            return this._audiences != null && (this._audiences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

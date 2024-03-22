@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the FpgaImages
         /// </summary>
         public IPaginatedEnumerable<FpgaImage> FpgaImages => 
-            new PaginatedResultKeyResponse<DescribeFpgaImagesResponse, FpgaImage>(this, (i) => i.FpgaImages);
+            new PaginatedResultKeyResponse<DescribeFpgaImagesResponse, FpgaImage>(this, (i) => i.FpgaImages ?? new List<FpgaImage>());
 
         internal DescribeFpgaImagesPaginator(IAmazonEC2 client, DescribeFpgaImagesRequest request)
         {

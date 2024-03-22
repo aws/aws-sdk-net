@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("hostReservationSet/item", targetDepth))
                     {
                         var unmarshaller = HostReservationUnmarshaller.Instance;
+                        if (response.HostReservationSet == null)
+                        {
+                            response.HostReservationSet = new List<HostReservation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.HostReservationSet.Add(item);
                         continue;

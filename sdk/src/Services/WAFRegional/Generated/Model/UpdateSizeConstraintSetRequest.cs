@@ -113,7 +113,7 @@ namespace Amazon.WAFRegional.Model
     {
         private string _changeToken;
         private string _sizeConstraintSetId;
-        private List<SizeConstraintSetUpdate> _updates = new List<SizeConstraintSetUpdate>();
+        private List<SizeConstraintSetUpdate> _updates = AWSConfigs.InitializeCollections ? new List<SizeConstraintSetUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property ChangeToken. 
@@ -187,7 +187,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if Updates property is set
         internal bool IsSetUpdates()
         {
-            return this._updates != null && this._updates.Count > 0; 
+            return this._updates != null && (this._updates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

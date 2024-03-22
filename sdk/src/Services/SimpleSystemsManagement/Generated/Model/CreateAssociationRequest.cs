@@ -48,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private bool? _applyOnlyAtCronInterval;
         private string _associationName;
         private string _automationTargetParameterName;
-        private List<string> _calendarNames = new List<string>();
+        private List<string> _calendarNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AssociationComplianceSeverity _complianceSeverity;
         private string _documentVersion;
         private int? _duration;
@@ -57,14 +57,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _maxErrors;
         private string _name;
         private InstanceAssociationOutputLocation _outputLocation;
-        private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _scheduleExpression;
         private int? _scheduleOffset;
         private AssociationSyncCompliance _syncCompliance;
-        private List<Tag> _tags = new List<Tag>();
-        private List<TargetLocation> _targetLocations = new List<TargetLocation>();
-        private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
-        private List<Target> _targets = new List<Target>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<TargetLocation> _targetLocations = AWSConfigs.InitializeCollections ? new List<TargetLocation>() : null;
+        private List<Dictionary<string, List<string>>> _targetMaps = AWSConfigs.InitializeCollections ? new List<Dictionary<string, List<string>>>() : null;
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -175,7 +175,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if CalendarNames property is set
         internal bool IsSetCalendarNames()
         {
-            return this._calendarNames != null && this._calendarNames.Count > 0; 
+            return this._calendarNames != null && (this._calendarNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -439,7 +439,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -545,7 +545,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -566,7 +566,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if TargetLocations property is set
         internal bool IsSetTargetLocations()
         {
-            return this._targetLocations != null && this._targetLocations.Count > 0; 
+            return this._targetLocations != null && (this._targetLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -586,7 +586,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if TargetMaps property is set
         internal bool IsSetTargetMaps()
         {
-            return this._targetMaps != null && this._targetMaps.Count > 0; 
+            return this._targetMaps != null && (this._targetMaps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -611,7 +611,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

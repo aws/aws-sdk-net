@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         private bool? _defaultOnly;
         private string _engine;
         private string _engineVersion;
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private bool? _includeAll;
         private bool? _listSupportedCharacterSets;
         private bool? _listSupportedTimezones;
@@ -280,7 +280,7 @@ namespace Amazon.RDS.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

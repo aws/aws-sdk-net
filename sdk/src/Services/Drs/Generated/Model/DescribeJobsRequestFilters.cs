@@ -34,7 +34,7 @@ namespace Amazon.Drs.Model
     public partial class DescribeJobsRequestFilters
     {
         private string _fromDate;
-        private List<string> _jobiDs = new List<string>();
+        private List<string> _jobiDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _toDate;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Drs.Model
         // Check to see if JobIDs property is set
         internal bool IsSetJobIDs()
         {
-            return this._jobiDs != null && this._jobiDs.Count > 0; 
+            return this._jobiDs != null && (this._jobiDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

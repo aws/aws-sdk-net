@@ -90,6 +90,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ServerlessCaches/member", targetDepth))
                     {
                         var unmarshaller = ServerlessCacheUnmarshaller.Instance;
+                        if (response.ServerlessCaches == null)
+                        {
+                            response.ServerlessCaches = new List<ServerlessCache>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ServerlessCaches.Add(item);
                         continue;

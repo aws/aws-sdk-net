@@ -36,12 +36,12 @@ namespace Amazon.QBusiness.Model
     {
         private ActionExecution _actionExecution;
         private string _applicationId;
-        private List<AttachmentInput> _attachments = new List<AttachmentInput>();
+        private List<AttachmentInput> _attachments = AWSConfigs.InitializeCollections ? new List<AttachmentInput>() : null;
         private AttributeFilter _attributeFilter;
         private string _clientToken;
         private string _conversationId;
         private string _parentMessageId;
-        private List<string> _userGroups = new List<string>();
+        private List<string> _userGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _userId;
         private string _userMessage;
 
@@ -99,7 +99,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if UserGroups property is set
         internal bool IsSetUserGroups()
         {
-            return this._userGroups != null && this._userGroups.Count > 0; 
+            return this._userGroups != null && (this._userGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

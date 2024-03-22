@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListLabelingJobsResponse : AmazonWebServiceResponse
     {
-        private List<LabelingJobSummary> _labelingJobSummaryList = new List<LabelingJobSummary>();
+        private List<LabelingJobSummary> _labelingJobSummaryList = AWSConfigs.InitializeCollections ? new List<LabelingJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if LabelingJobSummaryList property is set
         internal bool IsSetLabelingJobSummaryList()
         {
-            return this._labelingJobSummaryList != null && this._labelingJobSummaryList.Count > 0; 
+            return this._labelingJobSummaryList != null && (this._labelingJobSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

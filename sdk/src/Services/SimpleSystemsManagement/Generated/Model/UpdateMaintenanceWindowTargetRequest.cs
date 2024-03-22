@@ -69,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _name;
         private string _ownerInformation;
         private bool? _replace;
-        private List<Target> _targets = new List<Target>();
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
         private string _windowId;
         private string _windowTargetId;
 
@@ -167,7 +167,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

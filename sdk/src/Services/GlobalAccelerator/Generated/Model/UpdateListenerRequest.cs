@@ -36,7 +36,7 @@ namespace Amazon.GlobalAccelerator.Model
     {
         private ClientAffinity _clientAffinity;
         private string _listenerArn;
-        private List<PortRange> _portRanges = new List<PortRange>();
+        private List<PortRange> _portRanges = AWSConfigs.InitializeCollections ? new List<PortRange>() : null;
         private Protocol _protocol;
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if PortRanges property is set
         internal bool IsSetPortRanges()
         {
-            return this._portRanges != null && this._portRanges.Count > 0; 
+            return this._portRanges != null && (this._portRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the OpsMetadataList
         /// </summary>
         public IPaginatedEnumerable<OpsMetadata> OpsMetadataList => 
-            new PaginatedResultKeyResponse<ListOpsMetadataResponse, OpsMetadata>(this, (i) => i.OpsMetadataList);
+            new PaginatedResultKeyResponse<ListOpsMetadataResponse, OpsMetadata>(this, (i) => i.OpsMetadataList ?? new List<OpsMetadata>());
 
         internal ListOpsMetadataPaginator(IAmazonSimpleSystemsManagement client, ListOpsMetadataRequest request)
         {

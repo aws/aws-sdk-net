@@ -33,7 +33,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class DescribeEventTopicsResponse : AmazonWebServiceResponse
     {
-        private List<EventTopic> _eventTopics = new List<EventTopic>();
+        private List<EventTopic> _eventTopics = AWSConfigs.InitializeCollections ? new List<EventTopic>() : null;
 
         /// <summary>
         /// Gets and sets the property EventTopics. 
@@ -51,7 +51,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if EventTopics property is set
         internal bool IsSetEventTopics()
         {
-            return this._eventTopics != null && this._eventTopics.Count > 0; 
+            return this._eventTopics != null && (this._eventTopics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

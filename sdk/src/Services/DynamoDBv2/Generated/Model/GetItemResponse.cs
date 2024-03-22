@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class GetItemResponse : AmazonWebServiceResponse
     {
         private ConsumedCapacity _consumedCapacity;
-        private Dictionary<string, AttributeValue> _item = new Dictionary<string, AttributeValue>();
+        private Dictionary<string, AttributeValue> _item = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
 
         /// <summary>
         /// Gets and sets the property ConsumedCapacity. 

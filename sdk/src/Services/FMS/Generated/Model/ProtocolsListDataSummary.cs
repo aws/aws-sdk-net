@@ -36,7 +36,7 @@ namespace Amazon.FMS.Model
         private string _listArn;
         private string _listId;
         private string _listName;
-        private List<string> _protocolsList = new List<string>();
+        private List<string> _protocolsList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ListArn. 
@@ -110,7 +110,7 @@ namespace Amazon.FMS.Model
         // Check to see if ProtocolsList property is set
         internal bool IsSetProtocolsList()
         {
-            return this._protocolsList != null && this._protocolsList.Count > 0; 
+            return this._protocolsList != null && (this._protocolsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

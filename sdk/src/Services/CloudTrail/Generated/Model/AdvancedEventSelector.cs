@@ -89,7 +89,7 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class AdvancedEventSelector
     {
-        private List<AdvancedFieldSelector> _fieldSelectors = new List<AdvancedFieldSelector>();
+        private List<AdvancedFieldSelector> _fieldSelectors = AWSConfigs.InitializeCollections ? new List<AdvancedFieldSelector>() : null;
         private string _name;
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if FieldSelectors property is set
         internal bool IsSetFieldSelectors()
         {
-            return this._fieldSelectors != null && this._fieldSelectors.Count > 0; 
+            return this._fieldSelectors != null && (this._fieldSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

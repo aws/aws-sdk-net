@@ -59,13 +59,13 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class WeeklyAutoScalingSchedule
     {
-        private Dictionary<string, string> _friday = new Dictionary<string, string>();
-        private Dictionary<string, string> _monday = new Dictionary<string, string>();
-        private Dictionary<string, string> _saturday = new Dictionary<string, string>();
-        private Dictionary<string, string> _sunday = new Dictionary<string, string>();
-        private Dictionary<string, string> _thursday = new Dictionary<string, string>();
-        private Dictionary<string, string> _tuesday = new Dictionary<string, string>();
-        private Dictionary<string, string> _wednesday = new Dictionary<string, string>();
+        private Dictionary<string, string> _friday = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _monday = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _saturday = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _sunday = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _thursday = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _tuesday = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _wednesday = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Friday. 
@@ -82,7 +82,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Friday property is set
         internal bool IsSetFriday()
         {
-            return this._friday != null && this._friday.Count > 0; 
+            return this._friday != null && (this._friday.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Monday property is set
         internal bool IsSetMonday()
         {
-            return this._monday != null && this._monday.Count > 0; 
+            return this._monday != null && (this._monday.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Saturday property is set
         internal bool IsSetSaturday()
         {
-            return this._saturday != null && this._saturday.Count > 0; 
+            return this._saturday != null && (this._saturday.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Sunday property is set
         internal bool IsSetSunday()
         {
-            return this._sunday != null && this._sunday.Count > 0; 
+            return this._sunday != null && (this._sunday.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Thursday property is set
         internal bool IsSetThursday()
         {
-            return this._thursday != null && this._thursday.Count > 0; 
+            return this._thursday != null && (this._thursday.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Tuesday property is set
         internal bool IsSetTuesday()
         {
-            return this._tuesday != null && this._tuesday.Count > 0; 
+            return this._tuesday != null && (this._tuesday.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -190,7 +190,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Wednesday property is set
         internal bool IsSetWednesday()
         {
-            return this._wednesday != null && this._wednesday.Count > 0; 
+            return this._wednesday != null && (this._wednesday.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

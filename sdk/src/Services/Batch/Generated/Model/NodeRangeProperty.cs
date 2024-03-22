@@ -36,7 +36,7 @@ namespace Amazon.Batch.Model
     {
         private ContainerProperties _container;
         private EcsProperties _ecsProperties;
-        private List<string> _instanceTypes = new List<string>();
+        private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _targetNodes;
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.Batch.Model
         // Check to see if InstanceTypes property is set
         internal bool IsSetInstanceTypes()
         {
-            return this._instanceTypes != null && this._instanceTypes.Count > 0; 
+            return this._instanceTypes != null && (this._instanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

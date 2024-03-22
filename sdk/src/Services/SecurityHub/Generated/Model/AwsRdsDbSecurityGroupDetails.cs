@@ -36,8 +36,8 @@ namespace Amazon.SecurityHub.Model
         private string _dbSecurityGroupArn;
         private string _dbSecurityGroupDescription;
         private string _dbSecurityGroupName;
-        private List<AwsRdsDbSecurityGroupEc2SecurityGroup> _ec2SecurityGroups = new List<AwsRdsDbSecurityGroupEc2SecurityGroup>();
-        private List<AwsRdsDbSecurityGroupIpRange> _ipRanges = new List<AwsRdsDbSecurityGroupIpRange>();
+        private List<AwsRdsDbSecurityGroupEc2SecurityGroup> _ec2SecurityGroups = AWSConfigs.InitializeCollections ? new List<AwsRdsDbSecurityGroupEc2SecurityGroup>() : null;
+        private List<AwsRdsDbSecurityGroupIpRange> _ipRanges = AWSConfigs.InitializeCollections ? new List<AwsRdsDbSecurityGroupIpRange>() : null;
         private string _ownerId;
         private string _vpcId;
 
@@ -110,7 +110,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Ec2SecurityGroups property is set
         internal bool IsSetEc2SecurityGroups()
         {
-            return this._ec2SecurityGroups != null && this._ec2SecurityGroups.Count > 0; 
+            return this._ec2SecurityGroups != null && (this._ec2SecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if IpRanges property is set
         internal bool IsSetIpRanges()
         {
-            return this._ipRanges != null && this._ipRanges.Count > 0; 
+            return this._ipRanges != null && (this._ipRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ColumnGroupSchema
     {
-        private List<ColumnGroupColumnSchema> _columnGroupColumnSchemaList = new List<ColumnGroupColumnSchema>();
+        private List<ColumnGroupColumnSchema> _columnGroupColumnSchemaList = AWSConfigs.InitializeCollections ? new List<ColumnGroupColumnSchema>() : null;
         private string _name;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ColumnGroupColumnSchemaList property is set
         internal bool IsSetColumnGroupColumnSchemaList()
         {
-            return this._columnGroupColumnSchemaList != null && this._columnGroupColumnSchemaList.Count > 0; 
+            return this._columnGroupColumnSchemaList != null && (this._columnGroupColumnSchemaList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

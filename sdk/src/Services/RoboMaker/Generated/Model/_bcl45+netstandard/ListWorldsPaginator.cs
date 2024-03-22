@@ -45,7 +45,7 @@ namespace Amazon.RoboMaker.Model
         /// Enumerable containing all of the WorldSummaries
         /// </summary>
         public IPaginatedEnumerable<WorldSummary> WorldSummaries => 
-            new PaginatedResultKeyResponse<ListWorldsResponse, WorldSummary>(this, (i) => i.WorldSummaries);
+            new PaginatedResultKeyResponse<ListWorldsResponse, WorldSummary>(this, (i) => i.WorldSummaries ?? new List<WorldSummary>());
 
         internal ListWorldsPaginator(IAmazonRoboMaker client, ListWorldsRequest request)
         {

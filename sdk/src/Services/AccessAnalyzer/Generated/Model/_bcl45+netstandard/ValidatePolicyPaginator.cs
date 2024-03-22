@@ -45,7 +45,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Enumerable containing all of the Findings
         /// </summary>
         public IPaginatedEnumerable<ValidatePolicyFinding> Findings => 
-            new PaginatedResultKeyResponse<ValidatePolicyResponse, ValidatePolicyFinding>(this, (i) => i.Findings);
+            new PaginatedResultKeyResponse<ValidatePolicyResponse, ValidatePolicyFinding>(this, (i) => i.Findings ?? new List<ValidatePolicyFinding>());
 
         internal ValidatePolicyPaginator(IAmazonAccessAnalyzer client, ValidatePolicyRequest request)
         {

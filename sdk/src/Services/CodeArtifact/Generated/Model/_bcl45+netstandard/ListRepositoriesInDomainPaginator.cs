@@ -45,7 +45,7 @@ namespace Amazon.CodeArtifact.Model
         /// Enumerable containing all of the Repositories
         /// </summary>
         public IPaginatedEnumerable<RepositorySummary> Repositories => 
-            new PaginatedResultKeyResponse<ListRepositoriesInDomainResponse, RepositorySummary>(this, (i) => i.Repositories);
+            new PaginatedResultKeyResponse<ListRepositoriesInDomainResponse, RepositorySummary>(this, (i) => i.Repositories ?? new List<RepositorySummary>());
 
         internal ListRepositoriesInDomainPaginator(IAmazonCodeArtifact client, ListRepositoriesInDomainRequest request)
         {

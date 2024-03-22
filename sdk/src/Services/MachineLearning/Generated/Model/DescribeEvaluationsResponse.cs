@@ -35,7 +35,7 @@ namespace Amazon.MachineLearning.Model
     public partial class DescribeEvaluationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Evaluation> _results = new List<Evaluation>();
+        private List<Evaluation> _results = AWSConfigs.InitializeCollections ? new List<Evaluation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.MachineLearning.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

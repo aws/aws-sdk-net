@@ -36,7 +36,7 @@ namespace Amazon.CodeArtifact.Model
         private string _displayName;
         private PackageFormat _format;
         private string _homePage;
-        private List<LicenseInfo> _licenses = new List<LicenseInfo>();
+        private List<LicenseInfo> _licenses = AWSConfigs.InitializeCollections ? new List<LicenseInfo>() : null;
         private string _awsNamespace;
         private PackageVersionOrigin _origin;
         private string _packageName;
@@ -120,7 +120,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Licenses property is set
         internal bool IsSetLicenses()
         {
-            return this._licenses != null && this._licenses.Count > 0; 
+            return this._licenses != null && (this._licenses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

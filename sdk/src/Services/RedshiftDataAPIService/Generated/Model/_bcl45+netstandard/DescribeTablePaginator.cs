@@ -45,7 +45,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Enumerable containing all of the ColumnList
         /// </summary>
         public IPaginatedEnumerable<ColumnMetadata> ColumnList => 
-            new PaginatedResultKeyResponse<DescribeTableResponse, ColumnMetadata>(this, (i) => i.ColumnList);
+            new PaginatedResultKeyResponse<DescribeTableResponse, ColumnMetadata>(this, (i) => i.ColumnList ?? new List<ColumnMetadata>());
 
         internal DescribeTablePaginator(IAmazonRedshiftDataAPIService client, DescribeTableRequest request)
         {

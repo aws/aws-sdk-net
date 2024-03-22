@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the OrderableClusterOptions
         /// </summary>
         public IPaginatedEnumerable<OrderableClusterOption> OrderableClusterOptions => 
-            new PaginatedResultKeyResponse<DescribeOrderableClusterOptionsResponse, OrderableClusterOption>(this, (i) => i.OrderableClusterOptions);
+            new PaginatedResultKeyResponse<DescribeOrderableClusterOptionsResponse, OrderableClusterOption>(this, (i) => i.OrderableClusterOptions ?? new List<OrderableClusterOption>());
 
         internal DescribeOrderableClusterOptionsPaginator(IAmazonRedshift client, DescribeOrderableClusterOptionsRequest request)
         {

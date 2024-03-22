@@ -63,6 +63,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("NodeGroupMemberUpdateStatus/NodeGroupMemberUpdateStatus", targetDepth))
                     {
                         var unmarshaller = NodeGroupMemberUpdateStatusUnmarshaller.Instance;
+                        if (unmarshalledObject.NodeGroupMemberUpdateStatus == null)
+                        {
+                            unmarshalledObject.NodeGroupMemberUpdateStatus = new List<NodeGroupMemberUpdateStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NodeGroupMemberUpdateStatus.Add(item);
                         continue;

@@ -84,6 +84,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Status/member", targetDepth))
                     {
                         var unmarshaller = BulkEmailDestinationStatusUnmarshaller.Instance;
+                        if (response.Status == null)
+                        {
+                            response.Status = new List<BulkEmailDestinationStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Status.Add(item);
                         continue;

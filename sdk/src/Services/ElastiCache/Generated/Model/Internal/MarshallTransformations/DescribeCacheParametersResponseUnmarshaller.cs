@@ -84,6 +84,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheNodeTypeSpecificParameters/CacheNodeTypeSpecificParameter", targetDepth))
                     {
                         var unmarshaller = CacheNodeTypeSpecificParameterUnmarshaller.Instance;
+                        if (response.CacheNodeTypeSpecificParameters == null)
+                        {
+                            response.CacheNodeTypeSpecificParameters = new List<CacheNodeTypeSpecificParameter>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CacheNodeTypeSpecificParameters.Add(item);
                         continue;
@@ -97,6 +101,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Parameters/Parameter", targetDepth))
                     {
                         var unmarshaller = ParameterUnmarshaller.Instance;
+                        if (response.Parameters == null)
+                        {
+                            response.Parameters = new List<Parameter>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Parameters.Add(item);
                         continue;

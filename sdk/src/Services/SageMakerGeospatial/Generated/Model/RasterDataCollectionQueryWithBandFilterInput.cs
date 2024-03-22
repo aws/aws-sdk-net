@@ -35,7 +35,7 @@ namespace Amazon.SageMakerGeospatial.Model
     public partial class RasterDataCollectionQueryWithBandFilterInput
     {
         private AreaOfInterest _areaOfInterest;
-        private List<string> _bandFilter = new List<string>();
+        private List<string> _bandFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PropertyFilters _propertyFilters;
         private TimeRangeFilterInput _timeRangeFilter;
 
@@ -73,7 +73,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if BandFilter property is set
         internal bool IsSetBandFilter()
         {
-            return this._bandFilter != null && this._bandFilter.Count > 0; 
+            return this._bandFilter != null && (this._bandFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

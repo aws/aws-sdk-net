@@ -34,7 +34,7 @@ namespace Amazon.LaunchWizard.Model
     public partial class ListWorkloadsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkloadDataSummary> _workloads = new List<WorkloadDataSummary>();
+        private List<WorkloadDataSummary> _workloads = AWSConfigs.InitializeCollections ? new List<WorkloadDataSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.LaunchWizard.Model
         // Check to see if Workloads property is set
         internal bool IsSetWorkloads()
         {
-            return this._workloads != null && this._workloads.Count > 0; 
+            return this._workloads != null && (this._workloads.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

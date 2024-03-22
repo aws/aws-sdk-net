@@ -38,7 +38,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private EnvironmentPropertyUpdates _environmentPropertyUpdates;
         private FlinkApplicationConfigurationUpdate _flinkApplicationConfigurationUpdate;
         private SqlApplicationConfigurationUpdate _sqlApplicationConfigurationUpdate;
-        private List<VpcConfigurationUpdate> _vpcConfigurationUpdates = new List<VpcConfigurationUpdate>();
+        private List<VpcConfigurationUpdate> _vpcConfigurationUpdates = AWSConfigs.InitializeCollections ? new List<VpcConfigurationUpdate>() : null;
         private ZeppelinApplicationConfigurationUpdate _zeppelinApplicationConfigurationUpdate;
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if VpcConfigurationUpdates property is set
         internal bool IsSetVpcConfigurationUpdates()
         {
-            return this._vpcConfigurationUpdates != null && this._vpcConfigurationUpdates.Count > 0; 
+            return this._vpcConfigurationUpdates != null && (this._vpcConfigurationUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

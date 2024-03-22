@@ -35,7 +35,7 @@ namespace Amazon.Macie2.Model
     public partial class S3BucketDefinitionForJob
     {
         private string _accountId;
-        private List<string> _buckets = new List<string>();
+        private List<string> _buckets = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -72,7 +72,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Buckets property is set
         internal bool IsSetBuckets()
         {
-            return this._buckets != null && this._buckets.Count > 0; 
+            return this._buckets != null && (this._buckets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

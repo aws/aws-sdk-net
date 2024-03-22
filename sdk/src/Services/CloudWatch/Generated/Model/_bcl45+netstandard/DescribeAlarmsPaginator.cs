@@ -45,13 +45,13 @@ namespace Amazon.CloudWatch.Model
         /// Enumerable containing all of the MetricAlarms
         /// </summary>
         public IPaginatedEnumerable<MetricAlarm> MetricAlarms => 
-            new PaginatedResultKeyResponse<DescribeAlarmsResponse, MetricAlarm>(this, (i) => i.MetricAlarms);
+            new PaginatedResultKeyResponse<DescribeAlarmsResponse, MetricAlarm>(this, (i) => i.MetricAlarms ?? new List<MetricAlarm>());
 
         /// <summary>
         /// Enumerable containing all of the CompositeAlarms
         /// </summary>
         public IPaginatedEnumerable<CompositeAlarm> CompositeAlarms => 
-            new PaginatedResultKeyResponse<DescribeAlarmsResponse, CompositeAlarm>(this, (i) => i.CompositeAlarms);
+            new PaginatedResultKeyResponse<DescribeAlarmsResponse, CompositeAlarm>(this, (i) => i.CompositeAlarms ?? new List<CompositeAlarm>());
 
         internal DescribeAlarmsPaginator(IAmazonCloudWatch client, DescribeAlarmsRequest request)
         {

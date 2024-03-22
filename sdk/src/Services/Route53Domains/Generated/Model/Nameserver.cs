@@ -33,7 +33,7 @@ namespace Amazon.Route53Domains.Model
     /// </summary>
     public partial class Nameserver
     {
-        private List<string> _glueIps = new List<string>();
+        private List<string> _glueIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if GlueIps property is set
         internal bool IsSetGlueIps()
         {
-            return this._glueIps != null && this._glueIps.Count > 0; 
+            return this._glueIps != null && (this._glueIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

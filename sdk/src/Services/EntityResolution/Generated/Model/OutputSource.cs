@@ -37,7 +37,7 @@ namespace Amazon.EntityResolution.Model
     {
         private bool? _applyNormalization;
         private string _kmsArn;
-        private List<OutputAttribute> _output = new List<OutputAttribute>();
+        private List<OutputAttribute> _output = AWSConfigs.InitializeCollections ? new List<OutputAttribute>() : null;
         private string _outputs3Path;
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if Output property is set
         internal bool IsSetOutput()
         {
-            return this._output != null && this._output.Count > 0; 
+            return this._output != null && (this._output.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

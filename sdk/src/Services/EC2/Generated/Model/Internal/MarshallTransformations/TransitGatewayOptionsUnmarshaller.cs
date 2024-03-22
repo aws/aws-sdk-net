@@ -111,6 +111,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("transitGatewayCidrBlocks/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.TransitGatewayCidrBlocks == null)
+                        {
+                            unmarshalledObject.TransitGatewayCidrBlocks = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TransitGatewayCidrBlocks.Add(item);
                         continue;

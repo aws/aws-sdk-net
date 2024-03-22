@@ -46,13 +46,13 @@ namespace Amazon.EC2.Model
         private HostProperties _hostProperties;
         private HostRecovery _hostRecovery;
         private string _hostReservationId;
-        private List<HostInstance> _instances = new List<HostInstance>();
+        private List<HostInstance> _instances = AWSConfigs.InitializeCollections ? new List<HostInstance>() : null;
         private bool? _memberOfServiceLinkedResourceGroup;
         private string _outpostArn;
         private string _ownerId;
         private DateTime? _releaseTime;
         private AllocationState _state;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocationTime. 
@@ -309,7 +309,7 @@ namespace Amazon.EC2.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -419,7 +419,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

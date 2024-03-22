@@ -61,7 +61,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class ListMetricsRequest : AmazonCloudWatchRequest
     {
-        private List<DimensionFilter> _dimensions = new List<DimensionFilter>();
+        private List<DimensionFilter> _dimensions = AWSConfigs.InitializeCollections ? new List<DimensionFilter>() : null;
         private bool? _includeLinkedAccounts;
         private string _metricName;
         private string _awsNamespace;
@@ -85,7 +85,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

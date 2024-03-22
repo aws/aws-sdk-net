@@ -52,11 +52,11 @@ namespace Amazon.Translate.Model
         private InputDataConfig _inputDataConfig;
         private string _jobName;
         private OutputDataConfig _outputDataConfig;
-        private List<string> _parallelDataNames = new List<string>();
+        private List<string> _parallelDataNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TranslationSettings _settings;
         private string _sourceLanguageCode;
-        private List<string> _targetLanguageCodes = new List<string>();
-        private List<string> _terminologyNames = new List<string>();
+        private List<string> _targetLanguageCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _terminologyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -199,7 +199,7 @@ namespace Amazon.Translate.Model
         // Check to see if ParallelDataNames property is set
         internal bool IsSetParallelDataNames()
         {
-            return this._parallelDataNames != null && this._parallelDataNames.Count > 0; 
+            return this._parallelDataNames != null && (this._parallelDataNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -280,7 +280,7 @@ namespace Amazon.Translate.Model
         // Check to see if TargetLanguageCodes property is set
         internal bool IsSetTargetLanguageCodes()
         {
-            return this._targetLanguageCodes != null && this._targetLanguageCodes.Count > 0; 
+            return this._targetLanguageCodes != null && (this._targetLanguageCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace Amazon.Translate.Model
         // Check to see if TerminologyNames property is set
         internal bool IsSetTerminologyNames()
         {
-            return this._terminologyNames != null && this._terminologyNames.Count > 0; 
+            return this._terminologyNames != null && (this._terminologyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the Images
         /// </summary>
         public IPaginatedEnumerable<Image> Images => 
-            new PaginatedResultKeyResponse<ListImagesResponse, Image>(this, (i) => i.Images);
+            new PaginatedResultKeyResponse<ListImagesResponse, Image>(this, (i) => i.Images ?? new List<Image>());
 
         internal ListImagesPaginator(IAmazonSageMaker client, ListImagesRequest request)
         {

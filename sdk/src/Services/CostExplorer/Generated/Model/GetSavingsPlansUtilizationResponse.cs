@@ -33,7 +33,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetSavingsPlansUtilizationResponse : AmazonWebServiceResponse
     {
-        private List<SavingsPlansUtilizationByTime> _savingsPlansUtilizationsByTime = new List<SavingsPlansUtilizationByTime>();
+        private List<SavingsPlansUtilizationByTime> _savingsPlansUtilizationsByTime = AWSConfigs.InitializeCollections ? new List<SavingsPlansUtilizationByTime>() : null;
         private SavingsPlansUtilizationAggregates _total;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if SavingsPlansUtilizationsByTime property is set
         internal bool IsSetSavingsPlansUtilizationsByTime()
         {
-            return this._savingsPlansUtilizationsByTime != null && this._savingsPlansUtilizationsByTime.Count > 0; 
+            return this._savingsPlansUtilizationsByTime != null && (this._savingsPlansUtilizationsByTime.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

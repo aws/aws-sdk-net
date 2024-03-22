@@ -57,6 +57,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PermittedFileTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.PermittedFileTypes == null)
+                        {
+                            unmarshalledObject.PermittedFileTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PermittedFileTypes.Add(item);
                         continue;

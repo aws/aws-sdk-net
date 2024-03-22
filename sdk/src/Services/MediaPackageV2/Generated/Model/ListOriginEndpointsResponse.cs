@@ -33,7 +33,7 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class ListOriginEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<OriginEndpointListConfiguration> _items = new List<OriginEndpointListConfiguration>();
+        private List<OriginEndpointListConfiguration> _items = AWSConfigs.InitializeCollections ? new List<OriginEndpointListConfiguration>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

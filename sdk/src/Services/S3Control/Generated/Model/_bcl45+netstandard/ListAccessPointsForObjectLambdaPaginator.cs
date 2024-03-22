@@ -45,7 +45,7 @@ namespace Amazon.S3Control.Model
         /// Enumerable containing all of the ObjectLambdaAccessPointList
         /// </summary>
         public IPaginatedEnumerable<ObjectLambdaAccessPoint> ObjectLambdaAccessPointList => 
-            new PaginatedResultKeyResponse<ListAccessPointsForObjectLambdaResponse, ObjectLambdaAccessPoint>(this, (i) => i.ObjectLambdaAccessPointList);
+            new PaginatedResultKeyResponse<ListAccessPointsForObjectLambdaResponse, ObjectLambdaAccessPoint>(this, (i) => i.ObjectLambdaAccessPointList ?? new List<ObjectLambdaAccessPoint>());
 
         internal ListAccessPointsForObjectLambdaPaginator(IAmazonS3Control client, ListAccessPointsForObjectLambdaRequest request)
         {

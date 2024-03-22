@@ -45,7 +45,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// Enumerable containing all of the ProfileTimes
         /// </summary>
         public IPaginatedEnumerable<ProfileTime> ProfileTimes => 
-            new PaginatedResultKeyResponse<ListProfileTimesResponse, ProfileTime>(this, (i) => i.ProfileTimes);
+            new PaginatedResultKeyResponse<ListProfileTimesResponse, ProfileTime>(this, (i) => i.ProfileTimes ?? new List<ProfileTime>());
 
         internal ListProfileTimesPaginator(IAmazonCodeGuruProfiler client, ListProfileTimesRequest request)
         {

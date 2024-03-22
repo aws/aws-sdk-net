@@ -45,7 +45,7 @@ namespace Amazon.MedicalImaging.Model
         /// Enumerable containing all of the DatastoreSummaries
         /// </summary>
         public IPaginatedEnumerable<DatastoreSummary> DatastoreSummaries => 
-            new PaginatedResultKeyResponse<ListDatastoresResponse, DatastoreSummary>(this, (i) => i.DatastoreSummaries);
+            new PaginatedResultKeyResponse<ListDatastoresResponse, DatastoreSummary>(this, (i) => i.DatastoreSummaries ?? new List<DatastoreSummary>());
 
         internal ListDatastoresPaginator(IAmazonMedicalImaging client, ListDatastoresRequest request)
         {

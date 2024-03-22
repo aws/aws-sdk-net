@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ListThingsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<ThingAttribute> _things = new List<ThingAttribute>();
+        private List<ThingAttribute> _things = AWSConfigs.InitializeCollections ? new List<ThingAttribute>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -70,7 +70,7 @@ namespace Amazon.IoT.Model
         // Check to see if Things property is set
         internal bool IsSetThings()
         {
-            return this._things != null && this._things.Count > 0; 
+            return this._things != null && (this._things.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

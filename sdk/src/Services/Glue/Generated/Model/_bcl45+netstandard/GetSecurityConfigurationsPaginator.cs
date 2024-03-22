@@ -45,7 +45,7 @@ namespace Amazon.Glue.Model
         /// Enumerable containing all of the SecurityConfigurations
         /// </summary>
         public IPaginatedEnumerable<SecurityConfiguration> SecurityConfigurations => 
-            new PaginatedResultKeyResponse<GetSecurityConfigurationsResponse, SecurityConfiguration>(this, (i) => i.SecurityConfigurations);
+            new PaginatedResultKeyResponse<GetSecurityConfigurationsResponse, SecurityConfiguration>(this, (i) => i.SecurityConfigurations ?? new List<SecurityConfiguration>());
 
         internal GetSecurityConfigurationsPaginator(IAmazonGlue client, GetSecurityConfigurationsRequest request)
         {

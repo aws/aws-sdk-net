@@ -46,7 +46,7 @@ namespace Amazon.PI.Model
         private DateTime? _endTime;
         private string _identifier;
         private int? _maxResults;
-        private List<MetricQuery> _metricQueries = new List<MetricQuery>();
+        private List<MetricQuery> _metricQueries = AWSConfigs.InitializeCollections ? new List<MetricQuery>() : null;
         private string _nextToken;
         private PeriodAlignment _periodAlignment;
         private int? _periodInSeconds;
@@ -143,7 +143,7 @@ namespace Amazon.PI.Model
         // Check to see if MetricQueries property is set
         internal bool IsSetMetricQueries()
         {
-            return this._metricQueries != null && this._metricQueries.Count > 0; 
+            return this._metricQueries != null && (this._metricQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

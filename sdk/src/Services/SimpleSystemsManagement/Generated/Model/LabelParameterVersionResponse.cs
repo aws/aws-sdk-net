@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class LabelParameterVersionResponse : AmazonWebServiceResponse
     {
-        private List<string> _invalidLabels = new List<string>();
+        private List<string> _invalidLabels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _parameterVersion;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if InvalidLabels property is set
         internal bool IsSetInvalidLabels()
         {
-            return this._invalidLabels != null && this._invalidLabels.Count > 0; 
+            return this._invalidLabels != null && (this._invalidLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

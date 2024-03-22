@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Associations
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayPolicyTableAssociation> Associations => 
-            new PaginatedResultKeyResponse<GetTransitGatewayPolicyTableAssociationsResponse, TransitGatewayPolicyTableAssociation>(this, (i) => i.Associations);
+            new PaginatedResultKeyResponse<GetTransitGatewayPolicyTableAssociationsResponse, TransitGatewayPolicyTableAssociation>(this, (i) => i.Associations ?? new List<TransitGatewayPolicyTableAssociation>());
 
         internal GetTransitGatewayPolicyTableAssociationsPaginator(IAmazonEC2 client, GetTransitGatewayPolicyTableAssociationsRequest request)
         {

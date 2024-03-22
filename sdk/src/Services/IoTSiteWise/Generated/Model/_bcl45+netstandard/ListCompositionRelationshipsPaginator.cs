@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the CompositionRelationshipSummaries
         /// </summary>
         public IPaginatedEnumerable<CompositionRelationshipSummary> CompositionRelationshipSummaries => 
-            new PaginatedResultKeyResponse<ListCompositionRelationshipsResponse, CompositionRelationshipSummary>(this, (i) => i.CompositionRelationshipSummaries);
+            new PaginatedResultKeyResponse<ListCompositionRelationshipsResponse, CompositionRelationshipSummary>(this, (i) => i.CompositionRelationshipSummaries ?? new List<CompositionRelationshipSummary>());
 
         internal ListCompositionRelationshipsPaginator(IAmazonIoTSiteWise client, ListCompositionRelationshipsRequest request)
         {

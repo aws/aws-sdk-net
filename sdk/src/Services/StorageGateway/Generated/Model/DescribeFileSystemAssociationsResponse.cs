@@ -33,7 +33,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class DescribeFileSystemAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<FileSystemAssociationInfo> _fileSystemAssociationInfoList = new List<FileSystemAssociationInfo>();
+        private List<FileSystemAssociationInfo> _fileSystemAssociationInfoList = AWSConfigs.InitializeCollections ? new List<FileSystemAssociationInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property FileSystemAssociationInfoList. 
@@ -51,7 +51,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if FileSystemAssociationInfoList property is set
         internal bool IsSetFileSystemAssociationInfoList()
         {
-            return this._fileSystemAssociationInfoList != null && this._fileSystemAssociationInfoList.Count > 0; 
+            return this._fileSystemAssociationInfoList != null && (this._fileSystemAssociationInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

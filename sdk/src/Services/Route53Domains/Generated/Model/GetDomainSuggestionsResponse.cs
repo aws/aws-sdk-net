@@ -33,7 +33,7 @@ namespace Amazon.Route53Domains.Model
     /// </summary>
     public partial class GetDomainSuggestionsResponse : AmazonWebServiceResponse
     {
-        private List<DomainSuggestion> _suggestionsList = new List<DomainSuggestion>();
+        private List<DomainSuggestion> _suggestionsList = AWSConfigs.InitializeCollections ? new List<DomainSuggestion>() : null;
 
         /// <summary>
         /// Gets and sets the property SuggestionsList. 
@@ -51,7 +51,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if SuggestionsList property is set
         internal bool IsSetSuggestionsList()
         {
-            return this._suggestionsList != null && this._suggestionsList.Count > 0; 
+            return this._suggestionsList != null && (this._suggestionsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

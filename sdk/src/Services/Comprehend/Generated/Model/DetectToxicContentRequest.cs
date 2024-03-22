@@ -38,7 +38,7 @@ namespace Amazon.Comprehend.Model
     public partial class DetectToxicContentRequest : AmazonComprehendRequest
     {
         private LanguageCode _languageCode;
-        private List<TextSegment> _textSegments = new List<TextSegment>();
+        private List<TextSegment> _textSegments = AWSConfigs.InitializeCollections ? new List<TextSegment>() : null;
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 
@@ -76,7 +76,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if TextSegments property is set
         internal bool IsSetTextSegments()
         {
-            return this._textSegments != null && this._textSegments.Count > 0; 
+            return this._textSegments != null && (this._textSegments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

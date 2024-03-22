@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeVolumesModificationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VolumeModification> _volumesModifications = new List<VolumeModification>();
+        private List<VolumeModification> _volumesModifications = AWSConfigs.InitializeCollections ? new List<VolumeModification>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if VolumesModifications property is set
         internal bool IsSetVolumesModifications()
         {
-            return this._volumesModifications != null && this._volumesModifications.Count > 0; 
+            return this._volumesModifications != null && (this._volumesModifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

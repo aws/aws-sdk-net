@@ -45,7 +45,7 @@ namespace Amazon.AWSHealth.Model
         /// Enumerable containing all of the Entities
         /// </summary>
         public IPaginatedEnumerable<AffectedEntity> Entities => 
-            new PaginatedResultKeyResponse<DescribeAffectedEntitiesResponse, AffectedEntity>(this, (i) => i.Entities);
+            new PaginatedResultKeyResponse<DescribeAffectedEntitiesResponse, AffectedEntity>(this, (i) => i.Entities ?? new List<AffectedEntity>());
 
         internal DescribeAffectedEntitiesPaginator(IAmazonAWSHealth client, DescribeAffectedEntitiesRequest request)
         {

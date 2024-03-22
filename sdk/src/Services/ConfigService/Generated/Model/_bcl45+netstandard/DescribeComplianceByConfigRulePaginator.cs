@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the ComplianceByConfigRules
         /// </summary>
         public IPaginatedEnumerable<ComplianceByConfigRule> ComplianceByConfigRules => 
-            new PaginatedResultKeyResponse<DescribeComplianceByConfigRuleResponse, ComplianceByConfigRule>(this, (i) => i.ComplianceByConfigRules);
+            new PaginatedResultKeyResponse<DescribeComplianceByConfigRuleResponse, ComplianceByConfigRule>(this, (i) => i.ComplianceByConfigRules ?? new List<ComplianceByConfigRule>());
 
         internal DescribeComplianceByConfigRulePaginator(IAmazonConfigService client, DescribeComplianceByConfigRuleRequest request)
         {

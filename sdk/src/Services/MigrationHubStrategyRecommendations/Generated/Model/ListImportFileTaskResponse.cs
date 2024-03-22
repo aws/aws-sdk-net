@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     public partial class ListImportFileTaskResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ImportFileTaskInformation> _taskInfos = new List<ImportFileTaskInformation>();
+        private List<ImportFileTaskInformation> _taskInfos = AWSConfigs.InitializeCollections ? new List<ImportFileTaskInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if TaskInfos property is set
         internal bool IsSetTaskInfos()
         {
-            return this._taskInfos != null && this._taskInfos.Count > 0; 
+            return this._taskInfos != null && (this._taskInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

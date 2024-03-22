@@ -34,9 +34,9 @@ namespace Amazon.CodeCommit.Model
     public partial class BatchDescribeMergeConflictsResponse : AmazonWebServiceResponse
     {
         private string _baseCommitId;
-        private List<Conflict> _conflicts = new List<Conflict>();
+        private List<Conflict> _conflicts = AWSConfigs.InitializeCollections ? new List<Conflict>() : null;
         private string _destinationCommitId;
-        private List<BatchDescribeMergeConflictsError> _errors = new List<BatchDescribeMergeConflictsError>();
+        private List<BatchDescribeMergeConflictsError> _errors = AWSConfigs.InitializeCollections ? new List<BatchDescribeMergeConflictsError>() : null;
         private string _nextToken;
         private string _sourceCommitId;
 
@@ -75,7 +75,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Conflicts property is set
         internal bool IsSetConflicts()
         {
-            return this._conflicts != null && this._conflicts.Count > 0; 
+            return this._conflicts != null && (this._conflicts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

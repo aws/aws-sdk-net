@@ -37,7 +37,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _fieldPath;
         private string _registrationAttachmentId;
         private string _registrationId;
-        private List<string> _selectChoices = new List<string>();
+        private List<string> _selectChoices = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _textValue;
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if SelectChoices property is set
         internal bool IsSetSelectChoices()
         {
-            return this._selectChoices != null && this._selectChoices.Count > 0; 
+            return this._selectChoices != null && (this._selectChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

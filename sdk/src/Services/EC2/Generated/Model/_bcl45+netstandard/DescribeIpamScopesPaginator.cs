@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the IpamScopes
         /// </summary>
         public IPaginatedEnumerable<IpamScope> IpamScopes => 
-            new PaginatedResultKeyResponse<DescribeIpamScopesResponse, IpamScope>(this, (i) => i.IpamScopes);
+            new PaginatedResultKeyResponse<DescribeIpamScopesResponse, IpamScope>(this, (i) => i.IpamScopes ?? new List<IpamScope>());
 
         internal DescribeIpamScopesPaginator(IAmazonEC2 client, DescribeIpamScopesRequest request)
         {

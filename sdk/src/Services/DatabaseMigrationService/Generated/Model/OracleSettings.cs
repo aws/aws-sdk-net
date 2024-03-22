@@ -48,7 +48,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _directPathNoLog;
         private bool? _directPathParallelLoad;
         private bool? _enableHomogenousTablespace;
-        private List<int> _extraArchivedLogDestIds = new List<int>();
+        private List<int> _extraArchivedLogDestIds = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private bool? _failTasksOnLobTruncation;
         private int? _numberDatatypeScale;
         private int? _openTransactionWindow;
@@ -443,7 +443,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if ExtraArchivedLogDestIds property is set
         internal bool IsSetExtraArchivedLogDestIds()
         {
-            return this._extraArchivedLogDestIds != null && this._extraArchivedLogDestIds.Count > 0; 
+            return this._extraArchivedLogDestIds != null && (this._extraArchivedLogDestIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

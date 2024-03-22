@@ -34,7 +34,7 @@ namespace Amazon.MemoryDB.Model
     public partial class DescribeParameterGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ParameterGroup> _parameterGroups = new List<ParameterGroup>();
+        private List<ParameterGroup> _parameterGroups = AWSConfigs.InitializeCollections ? new List<ParameterGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ParameterGroups property is set
         internal bool IsSetParameterGroups()
         {
-            return this._parameterGroups != null && this._parameterGroups.Count > 0; 
+            return this._parameterGroups != null && (this._parameterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

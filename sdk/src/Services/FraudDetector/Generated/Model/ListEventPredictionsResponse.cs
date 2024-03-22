@@ -33,7 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class ListEventPredictionsResponse : AmazonWebServiceResponse
     {
-        private List<EventPredictionSummary> _eventPredictionSummaries = new List<EventPredictionSummary>();
+        private List<EventPredictionSummary> _eventPredictionSummaries = AWSConfigs.InitializeCollections ? new List<EventPredictionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if EventPredictionSummaries property is set
         internal bool IsSetEventPredictionSummaries()
         {
-            return this._eventPredictionSummaries != null && this._eventPredictionSummaries.Count > 0; 
+            return this._eventPredictionSummaries != null && (this._eventPredictionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

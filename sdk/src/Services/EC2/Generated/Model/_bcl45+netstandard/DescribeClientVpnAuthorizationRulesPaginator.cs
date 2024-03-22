@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the AuthorizationRules
         /// </summary>
         public IPaginatedEnumerable<AuthorizationRule> AuthorizationRules => 
-            new PaginatedResultKeyResponse<DescribeClientVpnAuthorizationRulesResponse, AuthorizationRule>(this, (i) => i.AuthorizationRules);
+            new PaginatedResultKeyResponse<DescribeClientVpnAuthorizationRulesResponse, AuthorizationRule>(this, (i) => i.AuthorizationRules ?? new List<AuthorizationRule>());
 
         internal DescribeClientVpnAuthorizationRulesPaginator(IAmazonEC2 client, DescribeClientVpnAuthorizationRulesRequest request)
         {

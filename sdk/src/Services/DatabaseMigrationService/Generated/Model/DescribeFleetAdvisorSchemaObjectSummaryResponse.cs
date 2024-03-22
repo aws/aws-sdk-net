@@ -33,7 +33,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DescribeFleetAdvisorSchemaObjectSummaryResponse : AmazonWebServiceResponse
     {
-        private List<FleetAdvisorSchemaObjectResponse> _fleetAdvisorSchemaObjects = new List<FleetAdvisorSchemaObjectResponse>();
+        private List<FleetAdvisorSchemaObjectResponse> _fleetAdvisorSchemaObjects = AWSConfigs.InitializeCollections ? new List<FleetAdvisorSchemaObjectResponse>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if FleetAdvisorSchemaObjects property is set
         internal bool IsSetFleetAdvisorSchemaObjects()
         {
-            return this._fleetAdvisorSchemaObjects != null && this._fleetAdvisorSchemaObjects.Count > 0; 
+            return this._fleetAdvisorSchemaObjects != null && (this._fleetAdvisorSchemaObjects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

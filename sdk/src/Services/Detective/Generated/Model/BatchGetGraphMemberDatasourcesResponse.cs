@@ -33,8 +33,8 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class BatchGetGraphMemberDatasourcesResponse : AmazonWebServiceResponse
     {
-        private List<MembershipDatasources> _memberDatasources = new List<MembershipDatasources>();
-        private List<UnprocessedAccount> _unprocessedAccounts = new List<UnprocessedAccount>();
+        private List<MembershipDatasources> _memberDatasources = AWSConfigs.InitializeCollections ? new List<MembershipDatasources>() : null;
+        private List<UnprocessedAccount> _unprocessedAccounts = AWSConfigs.InitializeCollections ? new List<UnprocessedAccount>() : null;
 
         /// <summary>
         /// Gets and sets the property MemberDatasources. 
@@ -51,7 +51,7 @@ namespace Amazon.Detective.Model
         // Check to see if MemberDatasources property is set
         internal bool IsSetMemberDatasources()
         {
-            return this._memberDatasources != null && this._memberDatasources.Count > 0; 
+            return this._memberDatasources != null && (this._memberDatasources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.Detective.Model
         // Check to see if UnprocessedAccounts property is set
         internal bool IsSetUnprocessedAccounts()
         {
-            return this._unprocessedAccounts != null && this._unprocessedAccounts.Count > 0; 
+            return this._unprocessedAccounts != null && (this._unprocessedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

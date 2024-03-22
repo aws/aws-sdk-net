@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class EntityRecognizerMetadata
     {
-        private List<EntityRecognizerMetadataEntityTypesListItem> _entityTypes = new List<EntityRecognizerMetadataEntityTypesListItem>();
+        private List<EntityRecognizerMetadataEntityTypesListItem> _entityTypes = AWSConfigs.InitializeCollections ? new List<EntityRecognizerMetadataEntityTypesListItem>() : null;
         private EntityRecognizerEvaluationMetrics _evaluationMetrics;
         private int? _numberOfTestDocuments;
         private int? _numberOfTrainedDocuments;
@@ -53,7 +53,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if EntityTypes property is set
         internal bool IsSetEntityTypes()
         {
-            return this._entityTypes != null && this._entityTypes.Count > 0; 
+            return this._entityTypes != null && (this._entityTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -49,7 +49,7 @@ namespace Amazon.WAFV2.Model
     public partial class CreateAPIKeyRequest : AmazonWAFV2Request
     {
         private Scope _scope;
-        private List<string> _tokenDomains = new List<string>();
+        private List<string> _tokenDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Scope. 
@@ -113,7 +113,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if TokenDomains property is set
         internal bool IsSetTokenDomains()
         {
-            return this._tokenDomains != null && this._tokenDomains.Count > 0; 
+            return this._tokenDomains != null && (this._tokenDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

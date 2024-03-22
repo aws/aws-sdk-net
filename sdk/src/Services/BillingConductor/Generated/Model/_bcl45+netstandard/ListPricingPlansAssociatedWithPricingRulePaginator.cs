@@ -45,7 +45,7 @@ namespace Amazon.BillingConductor.Model
         /// Enumerable containing all of the PricingPlanArns
         /// </summary>
         public IPaginatedEnumerable<string> PricingPlanArns => 
-            new PaginatedResultKeyResponse<ListPricingPlansAssociatedWithPricingRuleResponse, string>(this, (i) => i.PricingPlanArns);
+            new PaginatedResultKeyResponse<ListPricingPlansAssociatedWithPricingRuleResponse, string>(this, (i) => i.PricingPlanArns ?? new List<string>());
 
         internal ListPricingPlansAssociatedWithPricingRulePaginator(IAmazonBillingConductor client, ListPricingPlansAssociatedWithPricingRuleRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class BatchDeleteAgentsResponse : AmazonWebServiceResponse
     {
-        private List<BatchDeleteAgentError> _errors = new List<BatchDeleteAgentError>();
+        private List<BatchDeleteAgentError> _errors = AWSConfigs.InitializeCollections ? new List<BatchDeleteAgentError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +51,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

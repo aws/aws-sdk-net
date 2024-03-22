@@ -45,7 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// Enumerable containing all of the ActionTypes
         /// </summary>
         public IPaginatedEnumerable<ActionType> ActionTypes => 
-            new PaginatedResultKeyResponse<ListActionTypesResponse, ActionType>(this, (i) => i.ActionTypes);
+            new PaginatedResultKeyResponse<ListActionTypesResponse, ActionType>(this, (i) => i.ActionTypes ?? new List<ActionType>());
 
         internal ListActionTypesPaginator(IAmazonCodePipeline client, ListActionTypesRequest request)
         {

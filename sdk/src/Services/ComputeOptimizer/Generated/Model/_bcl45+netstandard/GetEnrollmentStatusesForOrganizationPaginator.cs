@@ -45,7 +45,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Enumerable containing all of the AccountEnrollmentStatuses
         /// </summary>
         public IPaginatedEnumerable<AccountEnrollmentStatus> AccountEnrollmentStatuses => 
-            new PaginatedResultKeyResponse<GetEnrollmentStatusesForOrganizationResponse, AccountEnrollmentStatus>(this, (i) => i.AccountEnrollmentStatuses);
+            new PaginatedResultKeyResponse<GetEnrollmentStatusesForOrganizationResponse, AccountEnrollmentStatus>(this, (i) => i.AccountEnrollmentStatuses ?? new List<AccountEnrollmentStatus>());
 
         internal GetEnrollmentStatusesForOrganizationPaginator(IAmazonComputeOptimizer client, GetEnrollmentStatusesForOrganizationRequest request)
         {

@@ -40,8 +40,8 @@ namespace Amazon.DatabaseMigrationService.Model
         private DateTime? _migrationProjectCreationTime;
         private string _migrationProjectName;
         private SCApplicationAttributes _schemaConversionApplicationAttributes;
-        private List<DataProviderDescriptor> _sourceDataProviderDescriptors = new List<DataProviderDescriptor>();
-        private List<DataProviderDescriptor> _targetDataProviderDescriptors = new List<DataProviderDescriptor>();
+        private List<DataProviderDescriptor> _sourceDataProviderDescriptors = AWSConfigs.InitializeCollections ? new List<DataProviderDescriptor>() : null;
+        private List<DataProviderDescriptor> _targetDataProviderDescriptors = AWSConfigs.InitializeCollections ? new List<DataProviderDescriptor>() : null;
         private string _transformationRules;
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if SourceDataProviderDescriptors property is set
         internal bool IsSetSourceDataProviderDescriptors()
         {
-            return this._sourceDataProviderDescriptors != null && this._sourceDataProviderDescriptors.Count > 0; 
+            return this._sourceDataProviderDescriptors != null && (this._sourceDataProviderDescriptors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -206,7 +206,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if TargetDataProviderDescriptors property is set
         internal bool IsSetTargetDataProviderDescriptors()
         {
-            return this._targetDataProviderDescriptors != null && this._targetDataProviderDescriptors.Count > 0; 
+            return this._targetDataProviderDescriptors != null && (this._targetDataProviderDescriptors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -84,6 +84,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ExportTasks/ExportTask", targetDepth))
                     {
                         var unmarshaller = ExportTaskUnmarshaller.Instance;
+                        if (response.ExportTasks == null)
+                        {
+                            response.ExportTasks = new List<ExportTask>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ExportTasks.Add(item);
                         continue;

@@ -42,7 +42,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// </summary>
     public partial class GetInstancesHealthStatusRequest : AmazonServiceDiscoveryRequest
     {
-        private List<string> _instances = new List<string>();
+        private List<string> _instances = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _serviceId;
@@ -76,7 +76,7 @@ namespace Amazon.ServiceDiscovery.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

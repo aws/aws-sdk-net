@@ -33,7 +33,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ListIndicesResponse : AmazonWebServiceResponse
     {
-        private List<Index> _indices = new List<Index>();
+        private List<Index> _indices = AWSConfigs.InitializeCollections ? new List<Index>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Indices property is set
         internal bool IsSetIndices()
         {
-            return this._indices != null && this._indices.Count > 0; 
+            return this._indices != null && (this._indices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

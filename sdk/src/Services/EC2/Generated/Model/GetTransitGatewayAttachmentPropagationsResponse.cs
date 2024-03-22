@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class GetTransitGatewayAttachmentPropagationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TransitGatewayAttachmentPropagation> _transitGatewayAttachmentPropagations = new List<TransitGatewayAttachmentPropagation>();
+        private List<TransitGatewayAttachmentPropagation> _transitGatewayAttachmentPropagations = AWSConfigs.InitializeCollections ? new List<TransitGatewayAttachmentPropagation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if TransitGatewayAttachmentPropagations property is set
         internal bool IsSetTransitGatewayAttachmentPropagations()
         {
-            return this._transitGatewayAttachmentPropagations != null && this._transitGatewayAttachmentPropagations.Count > 0; 
+            return this._transitGatewayAttachmentPropagations != null && (this._transitGatewayAttachmentPropagations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

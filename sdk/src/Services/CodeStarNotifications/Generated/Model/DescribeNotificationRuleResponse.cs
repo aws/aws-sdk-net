@@ -37,13 +37,13 @@ namespace Amazon.CodeStarNotifications.Model
         private string _createdBy;
         private DateTime? _createdTimestamp;
         private DetailType _detailType;
-        private List<EventTypeSummary> _eventTypes = new List<EventTypeSummary>();
+        private List<EventTypeSummary> _eventTypes = AWSConfigs.InitializeCollections ? new List<EventTypeSummary>() : null;
         private DateTime? _lastModifiedTimestamp;
         private string _name;
         private string _resource;
         private NotificationRuleStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<TargetSummary> _targets = new List<TargetSummary>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<TargetSummary> _targets = AWSConfigs.InitializeCollections ? new List<TargetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -137,7 +137,7 @@ namespace Amazon.CodeStarNotifications.Model
         // Check to see if EventTypes property is set
         internal bool IsSetEventTypes()
         {
-            return this._eventTypes != null && this._eventTypes.Count > 0; 
+            return this._eventTypes != null && (this._eventTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Amazon.CodeStarNotifications.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace Amazon.CodeStarNotifications.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

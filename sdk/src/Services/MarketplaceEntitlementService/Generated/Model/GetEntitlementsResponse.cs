@@ -33,7 +33,7 @@ namespace Amazon.MarketplaceEntitlementService.Model
     /// </summary>
     public partial class GetEntitlementsResponse : AmazonWebServiceResponse
     {
-        private List<Entitlement> _entitlements = new List<Entitlement>();
+        private List<Entitlement> _entitlements = AWSConfigs.InitializeCollections ? new List<Entitlement>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.MarketplaceEntitlementService.Model
         // Check to see if Entitlements property is set
         internal bool IsSetEntitlements()
         {
-            return this._entitlements != null && this._entitlements.Count > 0; 
+            return this._entitlements != null && (this._entitlements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

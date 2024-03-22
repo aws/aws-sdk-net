@@ -35,7 +35,7 @@ namespace Amazon.BillingConductor.Model
     {
         private string _billingPeriod;
         private string _nextToken;
-        private List<PricingPlanListElement> _pricingPlans = new List<PricingPlanListElement>();
+        private List<PricingPlanListElement> _pricingPlans = AWSConfigs.InitializeCollections ? new List<PricingPlanListElement>() : null;
 
         /// <summary>
         /// Gets and sets the property BillingPeriod. 
@@ -88,7 +88,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if PricingPlans property is set
         internal bool IsSetPricingPlans()
         {
-            return this._pricingPlans != null && this._pricingPlans.Count > 0; 
+            return this._pricingPlans != null && (this._pricingPlans.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

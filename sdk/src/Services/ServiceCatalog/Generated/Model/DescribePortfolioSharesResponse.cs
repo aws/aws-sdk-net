@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class DescribePortfolioSharesResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<PortfolioShareDetail> _portfolioShareDetails = new List<PortfolioShareDetail>();
+        private List<PortfolioShareDetail> _portfolioShareDetails = AWSConfigs.InitializeCollections ? new List<PortfolioShareDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if PortfolioShareDetails property is set
         internal bool IsSetPortfolioShareDetails()
         {
-            return this._portfolioShareDetails != null && this._portfolioShareDetails.Count > 0; 
+            return this._portfolioShareDetails != null && (this._portfolioShareDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

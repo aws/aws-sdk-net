@@ -34,7 +34,7 @@ namespace Amazon.FIS.Model
     public partial class ResolvedTarget
     {
         private string _resourceType;
-        private Dictionary<string, string> _targetInformation = new Dictionary<string, string>();
+        private Dictionary<string, string> _targetInformation = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _targetName;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.FIS.Model
         // Check to see if TargetInformation property is set
         internal bool IsSetTargetInformation()
         {
-            return this._targetInformation != null && this._targetInformation.Count > 0; 
+            return this._targetInformation != null && (this._targetInformation.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

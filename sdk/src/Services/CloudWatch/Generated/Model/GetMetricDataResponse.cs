@@ -33,8 +33,8 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class GetMetricDataResponse : AmazonWebServiceResponse
     {
-        private List<MessageData> _messages = new List<MessageData>();
-        private List<MetricDataResult> _metricDataResults = new List<MetricDataResult>();
+        private List<MessageData> _messages = AWSConfigs.InitializeCollections ? new List<MessageData>() : null;
+        private List<MetricDataResult> _metricDataResults = AWSConfigs.InitializeCollections ? new List<MetricDataResult>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if MetricDataResults property is set
         internal bool IsSetMetricDataResults()
         {
-            return this._metricDataResults != null && this._metricDataResults.Count > 0; 
+            return this._metricDataResults != null && (this._metricDataResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

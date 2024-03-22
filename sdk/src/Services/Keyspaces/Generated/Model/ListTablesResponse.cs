@@ -34,7 +34,7 @@ namespace Amazon.Keyspaces.Model
     public partial class ListTablesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TableSummary> _tables = new List<TableSummary>();
+        private List<TableSummary> _tables = AWSConfigs.InitializeCollections ? new List<TableSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if Tables property is set
         internal bool IsSetTables()
         {
-            return this._tables != null && this._tables.Count > 0; 
+            return this._tables != null && (this._tables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

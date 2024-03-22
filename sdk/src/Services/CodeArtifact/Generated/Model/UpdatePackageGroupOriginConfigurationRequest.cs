@@ -44,12 +44,12 @@ namespace Amazon.CodeArtifact.Model
     /// </summary>
     public partial class UpdatePackageGroupOriginConfigurationRequest : AmazonCodeArtifactRequest
     {
-        private List<PackageGroupAllowedRepository> _addAllowedRepositories = new List<PackageGroupAllowedRepository>();
+        private List<PackageGroupAllowedRepository> _addAllowedRepositories = AWSConfigs.InitializeCollections ? new List<PackageGroupAllowedRepository>() : null;
         private string _domain;
         private string _domainOwner;
         private string _packageGroup;
-        private List<PackageGroupAllowedRepository> _removeAllowedRepositories = new List<PackageGroupAllowedRepository>();
-        private Dictionary<string, string> _restrictions = new Dictionary<string, string>();
+        private List<PackageGroupAllowedRepository> _removeAllowedRepositories = AWSConfigs.InitializeCollections ? new List<PackageGroupAllowedRepository>() : null;
+        private Dictionary<string, string> _restrictions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AddAllowedRepositories. 
@@ -67,7 +67,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if AddAllowedRepositories property is set
         internal bool IsSetAddAllowedRepositories()
         {
-            return this._addAllowedRepositories != null && this._addAllowedRepositories.Count > 0; 
+            return this._addAllowedRepositories != null && (this._addAllowedRepositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if RemoveAllowedRepositories property is set
         internal bool IsSetRemoveAllowedRepositories()
         {
-            return this._removeAllowedRepositories != null && this._removeAllowedRepositories.Count > 0; 
+            return this._removeAllowedRepositories != null && (this._removeAllowedRepositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Restrictions property is set
         internal bool IsSetRestrictions()
         {
-            return this._restrictions != null && this._restrictions.Count > 0; 
+            return this._restrictions != null && (this._restrictions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

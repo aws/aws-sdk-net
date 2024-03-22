@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class ListCoverageResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<CoverageResource> _resources = new List<CoverageResource>();
+        private List<CoverageResource> _resources = AWSConfigs.InitializeCollections ? new List<CoverageResource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

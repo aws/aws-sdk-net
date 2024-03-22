@@ -33,7 +33,7 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class ServiceActionDetail
     {
-        private Dictionary<string, string> _definition = new Dictionary<string, string>();
+        private Dictionary<string, string> _definition = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ServiceActionSummary _serviceActionSummary;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Definition property is set
         internal bool IsSetDefinition()
         {
-            return this._definition != null && this._definition.Count > 0; 
+            return this._definition != null && (this._definition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

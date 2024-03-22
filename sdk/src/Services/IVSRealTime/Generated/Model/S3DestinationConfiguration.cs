@@ -33,7 +33,7 @@ namespace Amazon.IVSRealTime.Model
     /// </summary>
     public partial class S3DestinationConfiguration
     {
-        private List<string> _encoderConfigurationArns = new List<string>();
+        private List<string> _encoderConfigurationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RecordingConfiguration _recordingConfiguration;
         private string _storageConfigurationArn;
 
@@ -54,7 +54,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if EncoderConfigurationArns property is set
         internal bool IsSetEncoderConfigurationArns()
         {
-            return this._encoderConfigurationArns != null && this._encoderConfigurationArns.Count > 0; 
+            return this._encoderConfigurationArns != null && (this._encoderConfigurationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

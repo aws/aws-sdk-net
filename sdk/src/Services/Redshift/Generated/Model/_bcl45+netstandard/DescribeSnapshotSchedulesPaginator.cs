@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the SnapshotSchedules
         /// </summary>
         public IPaginatedEnumerable<SnapshotSchedule> SnapshotSchedules => 
-            new PaginatedResultKeyResponse<DescribeSnapshotSchedulesResponse, SnapshotSchedule>(this, (i) => i.SnapshotSchedules);
+            new PaginatedResultKeyResponse<DescribeSnapshotSchedulesResponse, SnapshotSchedule>(this, (i) => i.SnapshotSchedules ?? new List<SnapshotSchedule>());
 
         internal DescribeSnapshotSchedulesPaginator(IAmazonRedshift client, DescribeSnapshotSchedulesRequest request)
         {

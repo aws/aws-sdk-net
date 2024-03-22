@@ -34,7 +34,7 @@ namespace Amazon.RedshiftServerless.Model
     public partial class ListTableRestoreStatusResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TableRestoreStatus> _tableRestoreStatuses = new List<TableRestoreStatus>();
+        private List<TableRestoreStatus> _tableRestoreStatuses = AWSConfigs.InitializeCollections ? new List<TableRestoreStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if TableRestoreStatuses property is set
         internal bool IsSetTableRestoreStatuses()
         {
-            return this._tableRestoreStatuses != null && this._tableRestoreStatuses.Count > 0; 
+            return this._tableRestoreStatuses != null && (this._tableRestoreStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

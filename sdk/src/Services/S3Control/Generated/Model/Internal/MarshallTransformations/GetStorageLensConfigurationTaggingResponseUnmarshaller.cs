@@ -63,6 +63,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Tags/Tag", targetDepth))
                     {
+                        if (response.Tags == null)
+                        {
+                            response.Tags = new List<StorageLensTag>();
+                        }
                         var unmarshaller = StorageLensTagUnmarshaller.Instance;
                         response.Tags.Add(unmarshaller.Unmarshall(context));
                         continue;

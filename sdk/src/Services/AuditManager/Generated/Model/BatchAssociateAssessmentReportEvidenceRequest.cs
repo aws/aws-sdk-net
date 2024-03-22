@@ -36,7 +36,7 @@ namespace Amazon.AuditManager.Model
     {
         private string _assessmentId;
         private string _evidenceFolderId;
-        private List<string> _evidenceIds = new List<string>();
+        private List<string> _evidenceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssessmentId. 
@@ -92,7 +92,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if EvidenceIds property is set
         internal bool IsSetEvidenceIds()
         {
-            return this._evidenceIds != null && this._evidenceIds.Count > 0; 
+            return this._evidenceIds != null && (this._evidenceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

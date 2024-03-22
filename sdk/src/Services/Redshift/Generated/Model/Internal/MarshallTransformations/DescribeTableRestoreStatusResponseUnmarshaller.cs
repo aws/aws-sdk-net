@@ -90,6 +90,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TableRestoreStatusDetails/TableRestoreStatus", targetDepth))
                     {
                         var unmarshaller = TableRestoreStatusUnmarshaller.Instance;
+                        if (response.TableRestoreStatusDetails == null)
+                        {
+                            response.TableRestoreStatusDetails = new List<TableRestoreStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TableRestoreStatusDetails.Add(item);
                         continue;

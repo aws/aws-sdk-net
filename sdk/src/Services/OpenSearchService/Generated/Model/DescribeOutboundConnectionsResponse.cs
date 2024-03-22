@@ -33,7 +33,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class DescribeOutboundConnectionsResponse : AmazonWebServiceResponse
     {
-        private List<OutboundConnection> _connections = new List<OutboundConnection>();
+        private List<OutboundConnection> _connections = AWSConfigs.InitializeCollections ? new List<OutboundConnection>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if Connections property is set
         internal bool IsSetConnections()
         {
-            return this._connections != null && this._connections.Count > 0; 
+            return this._connections != null && (this._connections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the MatchingResources
         /// </summary>
         public IPaginatedEnumerable<MatchingResource> MatchingResources => 
-            new PaginatedResultKeyResponse<SearchResourcesResponse, MatchingResource>(this, (i) => i.MatchingResources);
+            new PaginatedResultKeyResponse<SearchResourcesResponse, MatchingResource>(this, (i) => i.MatchingResources ?? new List<MatchingResource>());
 
         internal SearchResourcesPaginator(IAmazonMacie2 client, SearchResourcesRequest request)
         {

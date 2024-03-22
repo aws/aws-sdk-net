@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the RoutingProfiles
         /// </summary>
         public IPaginatedEnumerable<RoutingProfile> RoutingProfiles => 
-            new PaginatedResultKeyResponse<SearchRoutingProfilesResponse, RoutingProfile>(this, (i) => i.RoutingProfiles);
+            new PaginatedResultKeyResponse<SearchRoutingProfilesResponse, RoutingProfile>(this, (i) => i.RoutingProfiles ?? new List<RoutingProfile>());
 
         internal SearchRoutingProfilesPaginator(IAmazonConnect client, SearchRoutingProfilesRequest request)
         {

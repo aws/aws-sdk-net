@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("subscriptionSet/item", targetDepth))
                     {
                         var unmarshaller = SubscriptionUnmarshaller.Instance;
+                        if (response.Subscriptions == null)
+                        {
+                            response.Subscriptions = new List<Subscription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Subscriptions.Add(item);
                         continue;

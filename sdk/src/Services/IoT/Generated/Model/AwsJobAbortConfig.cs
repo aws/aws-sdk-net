@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class AwsJobAbortConfig
     {
-        private List<AwsJobAbortCriteria> _abortCriteriaList = new List<AwsJobAbortCriteria>();
+        private List<AwsJobAbortCriteria> _abortCriteriaList = AWSConfigs.InitializeCollections ? new List<AwsJobAbortCriteria>() : null;
 
         /// <summary>
         /// Gets and sets the property AbortCriteriaList. 
@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model
         // Check to see if AbortCriteriaList property is set
         internal bool IsSetAbortCriteriaList()
         {
-            return this._abortCriteriaList != null && this._abortCriteriaList.Count > 0; 
+            return this._abortCriteriaList != null && (this._abortCriteriaList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

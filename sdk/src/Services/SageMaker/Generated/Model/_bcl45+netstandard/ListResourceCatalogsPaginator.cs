@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the ResourceCatalogs
         /// </summary>
         public IPaginatedEnumerable<ResourceCatalog> ResourceCatalogs => 
-            new PaginatedResultKeyResponse<ListResourceCatalogsResponse, ResourceCatalog>(this, (i) => i.ResourceCatalogs);
+            new PaginatedResultKeyResponse<ListResourceCatalogsResponse, ResourceCatalog>(this, (i) => i.ResourceCatalogs ?? new List<ResourceCatalog>());
 
         internal ListResourceCatalogsPaginator(IAmazonSageMaker client, ListResourceCatalogsRequest request)
         {

@@ -38,7 +38,7 @@ namespace Amazon.Organizations.Model
         private string _arn;
         private string _id;
         private string _name;
-        private List<PolicyTypeSummary> _policyTypes = new List<PolicyTypeSummary>();
+        private List<PolicyTypeSummary> _policyTypes = AWSConfigs.InitializeCollections ? new List<PolicyTypeSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -136,7 +136,7 @@ namespace Amazon.Organizations.Model
         // Check to see if PolicyTypes property is set
         internal bool IsSetPolicyTypes()
         {
-            return this._policyTypes != null && this._policyTypes.Count > 0; 
+            return this._policyTypes != null && (this._policyTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

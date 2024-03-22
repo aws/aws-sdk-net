@@ -33,7 +33,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class DescribeLocationsResponse : AmazonWebServiceResponse
     {
-        private List<Location> _locations = new List<Location>();
+        private List<Location> _locations = AWSConfigs.InitializeCollections ? new List<Location>() : null;
 
         /// <summary>
         /// Gets and sets the property Locations. 
@@ -50,7 +50,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Locations property is set
         internal bool IsSetLocations()
         {
-            return this._locations != null && this._locations.Count > 0; 
+            return this._locations != null && (this._locations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

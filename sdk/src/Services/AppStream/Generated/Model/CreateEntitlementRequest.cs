@@ -39,7 +39,7 @@ namespace Amazon.AppStream.Model
     public partial class CreateEntitlementRequest : AmazonAppStreamRequest
     {
         private AppVisibility _appVisibility;
-        private List<EntitlementAttribute> _attributes = new List<EntitlementAttribute>();
+        private List<EntitlementAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<EntitlementAttribute>() : null;
         private string _description;
         private string _name;
         private string _stackName;
@@ -79,7 +79,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

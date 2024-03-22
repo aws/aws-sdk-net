@@ -34,7 +34,7 @@ namespace Amazon.CleanRooms.Model
     public partial class ConfiguredTableSummary
     {
         private AnalysisMethod _analysisMethod;
-        private List<string> _analysisRuleTypes = new List<string>();
+        private List<string> _analysisRuleTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _arn;
         private DateTime? _createTime;
         private string _id;
@@ -76,7 +76,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if AnalysisRuleTypes property is set
         internal bool IsSetAnalysisRuleTypes()
         {
-            return this._analysisRuleTypes != null && this._analysisRuleTypes.Count > 0; 
+            return this._analysisRuleTypes != null && (this._analysisRuleTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class ListSnapshotsInRecycleBinResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SnapshotRecycleBinInfo> _snapshots = new List<SnapshotRecycleBinInfo>();
+        private List<SnapshotRecycleBinInfo> _snapshots = AWSConfigs.InitializeCollections ? new List<SnapshotRecycleBinInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if Snapshots property is set
         internal bool IsSetSnapshots()
         {
-            return this._snapshots != null && this._snapshots.Count > 0; 
+            return this._snapshots != null && (this._snapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -35,7 +35,7 @@ namespace Amazon.TranscribeService.Model
     {
         private string _nextToken;
         private VocabularyState _status;
-        private List<VocabularyInfo> _vocabularies = new List<VocabularyInfo>();
+        private List<VocabularyInfo> _vocabularies = AWSConfigs.InitializeCollections ? new List<VocabularyInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -95,7 +95,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Vocabularies property is set
         internal bool IsSetVocabularies()
         {
-            return this._vocabularies != null && this._vocabularies.Count > 0; 
+            return this._vocabularies != null && (this._vocabularies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// Enumerable containing all of the AnalyzableServers
         /// </summary>
         public IPaginatedEnumerable<AnalyzableServerSummary> AnalyzableServers => 
-            new PaginatedResultKeyResponse<ListAnalyzableServersResponse, AnalyzableServerSummary>(this, (i) => i.AnalyzableServers);
+            new PaginatedResultKeyResponse<ListAnalyzableServersResponse, AnalyzableServerSummary>(this, (i) => i.AnalyzableServers ?? new List<AnalyzableServerSummary>());
 
         internal ListAnalyzableServersPaginator(IAmazonMigrationHubStrategyRecommendations client, ListAnalyzableServersRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class CreateTrustRequest : AmazonDirectoryServiceRequest
     {
-        private List<string> _conditionalForwarderIpAddrs = new List<string>();
+        private List<string> _conditionalForwarderIpAddrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _directoryId;
         private string _remoteDomainName;
         private SelectiveAuth _selectiveAuth;
@@ -68,7 +68,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if ConditionalForwarderIpAddrs property is set
         internal bool IsSetConditionalForwarderIpAddrs()
         {
-            return this._conditionalForwarderIpAddrs != null && this._conditionalForwarderIpAddrs.Count > 0; 
+            return this._conditionalForwarderIpAddrs != null && (this._conditionalForwarderIpAddrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

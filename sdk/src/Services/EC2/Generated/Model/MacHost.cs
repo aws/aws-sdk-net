@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class MacHost
     {
         private string _hostId;
-        private List<string> _macOSLatestSupportedVersions = new List<string>();
+        private List<string> _macOSLatestSupportedVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property HostId. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if MacOSLatestSupportedVersions property is set
         internal bool IsSetMacOSLatestSupportedVersions()
         {
-            return this._macOSLatestSupportedVersions != null && this._macOSLatestSupportedVersions.Count > 0; 
+            return this._macOSLatestSupportedVersions != null && (this._macOSLatestSupportedVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

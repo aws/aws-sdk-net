@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetBlueprintsResponse : AmazonWebServiceResponse
     {
-        private List<Blueprint> _blueprints = new List<Blueprint>();
+        private List<Blueprint> _blueprints = AWSConfigs.InitializeCollections ? new List<Blueprint>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Blueprints property is set
         internal bool IsSetBlueprints()
         {
-            return this._blueprints != null && this._blueprints.Count > 0; 
+            return this._blueprints != null && (this._blueprints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

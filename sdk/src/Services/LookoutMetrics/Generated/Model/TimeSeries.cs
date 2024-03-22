@@ -34,8 +34,8 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class TimeSeries
     {
-        private List<DimensionNameValue> _dimensionList = new List<DimensionNameValue>();
-        private List<double> _metricValueList = new List<double>();
+        private List<DimensionNameValue> _dimensionList = AWSConfigs.InitializeCollections ? new List<DimensionNameValue>() : null;
+        private List<double> _metricValueList = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private string _timeSeriesId;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if DimensionList property is set
         internal bool IsSetDimensionList()
         {
-            return this._dimensionList != null && this._dimensionList.Count > 0; 
+            return this._dimensionList != null && (this._dimensionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if MetricValueList property is set
         internal bool IsSetMetricValueList()
         {
-            return this._metricValueList != null && this._metricValueList.Count > 0; 
+            return this._metricValueList != null && (this._metricValueList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -41,8 +41,8 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class KmsKeyConfiguration
     {
-        private List<KmsGrantConfiguration> _grants = new List<KmsGrantConfiguration>();
-        private Dictionary<string, string> _keyPolicies = new Dictionary<string, string>();
+        private List<KmsGrantConfiguration> _grants = AWSConfigs.InitializeCollections ? new List<KmsGrantConfiguration>() : null;
+        private Dictionary<string, string> _keyPolicies = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Grants. 
@@ -62,7 +62,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Grants property is set
         internal bool IsSetGrants()
         {
-            return this._grants != null && this._grants.Count > 0; 
+            return this._grants != null && (this._grants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if KeyPolicies property is set
         internal bool IsSetKeyPolicies()
         {
-            return this._keyPolicies != null && this._keyPolicies.Count > 0; 
+            return this._keyPolicies != null && (this._keyPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

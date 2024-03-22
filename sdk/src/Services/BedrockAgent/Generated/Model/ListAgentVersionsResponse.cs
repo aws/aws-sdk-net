@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class ListAgentVersionsResponse : AmazonWebServiceResponse
     {
-        private List<AgentVersionSummary> _agentVersionSummaries = new List<AgentVersionSummary>();
+        private List<AgentVersionSummary> _agentVersionSummaries = AWSConfigs.InitializeCollections ? new List<AgentVersionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if AgentVersionSummaries property is set
         internal bool IsSetAgentVersionSummaries()
         {
-            return this._agentVersionSummaries != null && this._agentVersionSummaries.Count > 0; 
+            return this._agentVersionSummaries != null && (this._agentVersionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

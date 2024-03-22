@@ -56,7 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class ListUsersRequest : AmazonCognitoIdentityProviderRequest
     {
-        private List<string> _attributesToGet = new List<string>();
+        private List<string> _attributesToGet = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _filter;
         private int? _limit;
         private string _paginationToken;
@@ -87,7 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if AttributesToGet property is set
         internal bool IsSetAttributesToGet()
         {
-            return this._attributesToGet != null && this._attributesToGet.Count > 0; 
+            return this._attributesToGet != null && (this._attributesToGet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

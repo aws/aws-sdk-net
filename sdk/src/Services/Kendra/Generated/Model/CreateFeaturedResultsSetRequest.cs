@@ -45,12 +45,12 @@ namespace Amazon.Kendra.Model
     {
         private string _clientToken;
         private string _description;
-        private List<FeaturedDocument> _featuredDocuments = new List<FeaturedDocument>();
+        private List<FeaturedDocument> _featuredDocuments = AWSConfigs.InitializeCollections ? new List<FeaturedDocument>() : null;
         private string _featuredResultsSetName;
         private string _indexId;
-        private List<string> _queryTexts = new List<string>();
+        private List<string> _queryTexts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FeaturedResultsSetStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -108,7 +108,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FeaturedDocuments property is set
         internal bool IsSetFeaturedDocuments()
         {
-            return this._featuredDocuments != null && this._featuredDocuments.Count > 0; 
+            return this._featuredDocuments != null && (this._featuredDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Amazon.Kendra.Model
         // Check to see if QueryTexts property is set
         internal bool IsSetQueryTexts()
         {
-            return this._queryTexts != null && this._queryTexts.Count > 0; 
+            return this._queryTexts != null && (this._queryTexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

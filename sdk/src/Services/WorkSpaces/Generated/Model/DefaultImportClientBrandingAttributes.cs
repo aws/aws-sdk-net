@@ -42,7 +42,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class DefaultImportClientBrandingAttributes
     {
         private string _forgotPasswordLink;
-        private Dictionary<string, string> _loginMessage = new Dictionary<string, string>();
+        private Dictionary<string, string> _loginMessage = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private MemoryStream _logo;
         private string _supportEmail;
         private string _supportLink;
@@ -86,7 +86,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if LoginMessage property is set
         internal bool IsSetLoginMessage()
         {
-            return this._loginMessage != null && this._loginMessage.Count > 0; 
+            return this._loginMessage != null && (this._loginMessage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

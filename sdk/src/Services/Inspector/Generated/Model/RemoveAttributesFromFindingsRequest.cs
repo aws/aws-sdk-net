@@ -35,8 +35,8 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class RemoveAttributesFromFindingsRequest : AmazonInspectorRequest
     {
-        private List<string> _attributeKeys = new List<string>();
-        private List<string> _findingArns = new List<string>();
+        private List<string> _attributeKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _findingArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeKeys. 
@@ -54,7 +54,7 @@ namespace Amazon.Inspector.Model
         // Check to see if AttributeKeys property is set
         internal bool IsSetAttributeKeys()
         {
-            return this._attributeKeys != null && this._attributeKeys.Count > 0; 
+            return this._attributeKeys != null && (this._attributeKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Inspector.Model
         // Check to see if FindingArns property is set
         internal bool IsSetFindingArns()
         {
-            return this._findingArns != null && this._findingArns.Count > 0; 
+            return this._findingArns != null && (this._findingArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
     {
         private int? _maxDrainDurationSeconds;
         private string _natGatewayId;
-        private List<string> _privateIpAddresses = new List<string>();
+        private List<string> _privateIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxDrainDurationSeconds. 
@@ -110,7 +110,7 @@ namespace Amazon.EC2.Model
         // Check to see if PrivateIpAddresses property is set
         internal bool IsSetPrivateIpAddresses()
         {
-            return this._privateIpAddresses != null && this._privateIpAddresses.Count > 0; 
+            return this._privateIpAddresses != null && (this._privateIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

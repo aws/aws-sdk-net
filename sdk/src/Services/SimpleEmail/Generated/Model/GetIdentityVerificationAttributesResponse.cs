@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class GetIdentityVerificationAttributesResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, IdentityVerificationAttributes> _verificationAttributes = new Dictionary<string, IdentityVerificationAttributes>();
+        private Dictionary<string, IdentityVerificationAttributes> _verificationAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, IdentityVerificationAttributes>() : null;
 
         /// <summary>
         /// Gets and sets the property VerificationAttributes. 
@@ -52,7 +52,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if VerificationAttributes property is set
         internal bool IsSetVerificationAttributes()
         {
-            return this._verificationAttributes != null && this._verificationAttributes.Count > 0; 
+            return this._verificationAttributes != null && (this._verificationAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

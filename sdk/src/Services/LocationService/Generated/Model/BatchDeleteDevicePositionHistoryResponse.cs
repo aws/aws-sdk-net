@@ -33,7 +33,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class BatchDeleteDevicePositionHistoryResponse : AmazonWebServiceResponse
     {
-        private List<BatchDeleteDevicePositionHistoryError> _errors = new List<BatchDeleteDevicePositionHistoryError>();
+        private List<BatchDeleteDevicePositionHistoryError> _errors = AWSConfigs.InitializeCollections ? new List<BatchDeleteDevicePositionHistoryError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +51,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

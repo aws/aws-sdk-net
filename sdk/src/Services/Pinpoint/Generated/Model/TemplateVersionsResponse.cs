@@ -33,7 +33,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class TemplateVersionsResponse
     {
-        private List<TemplateVersionResponse> _item = new List<TemplateVersionResponse>();
+        private List<TemplateVersionResponse> _item = AWSConfigs.InitializeCollections ? new List<TemplateVersionResponse>() : null;
         private string _message;
         private string _nextToken;
         private string _requestID;
@@ -54,7 +54,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Item property is set
         internal bool IsSetItem()
         {
-            return this._item != null && this._item.Count > 0; 
+            return this._item != null && (this._item.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

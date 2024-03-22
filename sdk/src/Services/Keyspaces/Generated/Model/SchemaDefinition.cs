@@ -33,10 +33,10 @@ namespace Amazon.Keyspaces.Model
     /// </summary>
     public partial class SchemaDefinition
     {
-        private List<ColumnDefinition> _allColumns = new List<ColumnDefinition>();
-        private List<ClusteringKey> _clusteringKeys = new List<ClusteringKey>();
-        private List<PartitionKey> _partitionKeys = new List<PartitionKey>();
-        private List<StaticColumn> _staticColumns = new List<StaticColumn>();
+        private List<ColumnDefinition> _allColumns = AWSConfigs.InitializeCollections ? new List<ColumnDefinition>() : null;
+        private List<ClusteringKey> _clusteringKeys = AWSConfigs.InitializeCollections ? new List<ClusteringKey>() : null;
+        private List<PartitionKey> _partitionKeys = AWSConfigs.InitializeCollections ? new List<PartitionKey>() : null;
+        private List<StaticColumn> _staticColumns = AWSConfigs.InitializeCollections ? new List<StaticColumn>() : null;
 
         /// <summary>
         /// Gets and sets the property AllColumns. 
@@ -54,7 +54,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if AllColumns property is set
         internal bool IsSetAllColumns()
         {
-            return this._allColumns != null && this._allColumns.Count > 0; 
+            return this._allColumns != null && (this._allColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if ClusteringKeys property is set
         internal bool IsSetClusteringKeys()
         {
-            return this._clusteringKeys != null && this._clusteringKeys.Count > 0; 
+            return this._clusteringKeys != null && (this._clusteringKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if PartitionKeys property is set
         internal bool IsSetPartitionKeys()
         {
-            return this._partitionKeys != null && this._partitionKeys.Count > 0; 
+            return this._partitionKeys != null && (this._partitionKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if StaticColumns property is set
         internal bool IsSetStaticColumns()
         {
-            return this._staticColumns != null && this._staticColumns.Count > 0; 
+            return this._staticColumns != null && (this._staticColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

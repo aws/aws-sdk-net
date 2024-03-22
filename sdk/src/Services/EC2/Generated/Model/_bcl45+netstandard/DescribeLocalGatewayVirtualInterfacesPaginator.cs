@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the LocalGatewayVirtualInterfaces
         /// </summary>
         public IPaginatedEnumerable<LocalGatewayVirtualInterface> LocalGatewayVirtualInterfaces => 
-            new PaginatedResultKeyResponse<DescribeLocalGatewayVirtualInterfacesResponse, LocalGatewayVirtualInterface>(this, (i) => i.LocalGatewayVirtualInterfaces);
+            new PaginatedResultKeyResponse<DescribeLocalGatewayVirtualInterfacesResponse, LocalGatewayVirtualInterface>(this, (i) => i.LocalGatewayVirtualInterfaces ?? new List<LocalGatewayVirtualInterface>());
 
         internal DescribeLocalGatewayVirtualInterfacesPaginator(IAmazonEC2 client, DescribeLocalGatewayVirtualInterfacesRequest request)
         {

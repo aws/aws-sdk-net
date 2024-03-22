@@ -45,7 +45,7 @@ namespace Amazon.Proton.Model
         /// Enumerable containing all of the ProvisionedResources
         /// </summary>
         public IPaginatedEnumerable<ProvisionedResource> ProvisionedResources => 
-            new PaginatedResultKeyResponse<ListServicePipelineProvisionedResourcesResponse, ProvisionedResource>(this, (i) => i.ProvisionedResources);
+            new PaginatedResultKeyResponse<ListServicePipelineProvisionedResourcesResponse, ProvisionedResource>(this, (i) => i.ProvisionedResources ?? new List<ProvisionedResource>());
 
         internal ListServicePipelineProvisionedResourcesPaginator(IAmazonProton client, ListServicePipelineProvisionedResourcesRequest request)
         {

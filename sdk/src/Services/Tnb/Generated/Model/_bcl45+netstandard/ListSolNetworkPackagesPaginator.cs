@@ -45,7 +45,7 @@ namespace Amazon.Tnb.Model
         /// Enumerable containing all of the NetworkPackages
         /// </summary>
         public IPaginatedEnumerable<ListSolNetworkPackageInfo> NetworkPackages => 
-            new PaginatedResultKeyResponse<ListSolNetworkPackagesResponse, ListSolNetworkPackageInfo>(this, (i) => i.NetworkPackages);
+            new PaginatedResultKeyResponse<ListSolNetworkPackagesResponse, ListSolNetworkPackageInfo>(this, (i) => i.NetworkPackages ?? new List<ListSolNetworkPackageInfo>());
 
         internal ListSolNetworkPackagesPaginator(IAmazonTnb client, ListSolNetworkPackagesRequest request)
         {

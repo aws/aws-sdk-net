@@ -45,7 +45,7 @@ namespace Amazon.CodeArtifact.Model
         /// Enumerable containing all of the PackageGroups
         /// </summary>
         public IPaginatedEnumerable<PackageGroupSummary> PackageGroups => 
-            new PaginatedResultKeyResponse<ListPackageGroupsResponse, PackageGroupSummary>(this, (i) => i.PackageGroups);
+            new PaginatedResultKeyResponse<ListPackageGroupsResponse, PackageGroupSummary>(this, (i) => i.PackageGroups ?? new List<PackageGroupSummary>());
 
         internal ListPackageGroupsPaginator(IAmazonCodeArtifact client, ListPackageGroupsRequest request)
         {

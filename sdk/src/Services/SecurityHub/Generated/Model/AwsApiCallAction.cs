@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsApiCallAction
     {
-        private Dictionary<string, string> _affectedResources = new Dictionary<string, string>();
+        private Dictionary<string, string> _affectedResources = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _api;
         private string _callerType;
         private AwsApiCallActionDomainDetails _domainDetails;
@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AffectedResources property is set
         internal bool IsSetAffectedResources()
         {
-            return this._affectedResources != null && this._affectedResources.Count > 0; 
+            return this._affectedResources != null && (this._affectedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

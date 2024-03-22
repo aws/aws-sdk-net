@@ -33,8 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchGetSecurityControlsResponse : AmazonWebServiceResponse
     {
-        private List<SecurityControl> _securityControls = new List<SecurityControl>();
-        private List<UnprocessedSecurityControl> _unprocessedIds = new List<UnprocessedSecurityControl>();
+        private List<SecurityControl> _securityControls = AWSConfigs.InitializeCollections ? new List<SecurityControl>() : null;
+        private List<UnprocessedSecurityControl> _unprocessedIds = AWSConfigs.InitializeCollections ? new List<UnprocessedSecurityControl>() : null;
 
         /// <summary>
         /// Gets and sets the property SecurityControls. 
@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecurityControls property is set
         internal bool IsSetSecurityControls()
         {
-            return this._securityControls != null && this._securityControls.Count > 0; 
+            return this._securityControls != null && (this._securityControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UnprocessedIds property is set
         internal bool IsSetUnprocessedIds()
         {
-            return this._unprocessedIds != null && this._unprocessedIds.Count > 0; 
+            return this._unprocessedIds != null && (this._unprocessedIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

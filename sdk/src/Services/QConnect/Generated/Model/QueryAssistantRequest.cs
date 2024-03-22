@@ -38,7 +38,7 @@ namespace Amazon.QConnect.Model
         private string _assistantId;
         private int? _maxResults;
         private string _nextToken;
-        private List<QueryCondition> _queryCondition = new List<QueryCondition>();
+        private List<QueryCondition> _queryCondition = AWSConfigs.InitializeCollections ? new List<QueryCondition>() : null;
         private string _queryText;
         private string _sessionId;
 
@@ -117,7 +117,7 @@ namespace Amazon.QConnect.Model
         // Check to see if QueryCondition property is set
         internal bool IsSetQueryCondition()
         {
-            return this._queryCondition != null && this._queryCondition.Count > 0; 
+            return this._queryCondition != null && (this._queryCondition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

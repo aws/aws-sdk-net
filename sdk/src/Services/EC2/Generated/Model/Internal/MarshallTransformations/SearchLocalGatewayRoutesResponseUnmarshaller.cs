@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("routeSet/item", targetDepth))
                     {
                         var unmarshaller = LocalGatewayRouteUnmarshaller.Instance;
+                        if (response.Routes == null)
+                        {
+                            response.Routes = new List<LocalGatewayRoute>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Routes.Add(item);
                         continue;

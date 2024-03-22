@@ -33,11 +33,11 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ScatterPlotCategoricallyAggregatedFieldWells
     {
-        private List<DimensionField> _category = new List<DimensionField>();
-        private List<DimensionField> _label = new List<DimensionField>();
-        private List<MeasureField> _size = new List<MeasureField>();
-        private List<MeasureField> _xAxis = new List<MeasureField>();
-        private List<MeasureField> _yAxis = new List<MeasureField>();
+        private List<DimensionField> _category = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<DimensionField> _label = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<MeasureField> _size = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
+        private List<MeasureField> _xAxis = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
+        private List<MeasureField> _yAxis = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
 
         /// <summary>
         /// Gets and sets the property Category. 
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Category property is set
         internal bool IsSetCategory()
         {
-            return this._category != null && this._category.Count > 0; 
+            return this._category != null && (this._category.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Label property is set
         internal bool IsSetLabel()
         {
-            return this._label != null && this._label.Count > 0; 
+            return this._label != null && (this._label.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Size property is set
         internal bool IsSetSize()
         {
-            return this._size != null && this._size.Count > 0; 
+            return this._size != null && (this._size.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if XAxis property is set
         internal bool IsSetXAxis()
         {
-            return this._xAxis != null && this._xAxis.Count > 0; 
+            return this._xAxis != null && (this._xAxis.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if YAxis property is set
         internal bool IsSetYAxis()
         {
-            return this._yAxis != null && this._yAxis.Count > 0; 
+            return this._yAxis != null && (this._yAxis.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

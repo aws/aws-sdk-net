@@ -45,7 +45,7 @@ namespace Amazon.Honeycode.Model
         /// Enumerable containing all of the Rows
         /// </summary>
         public IPaginatedEnumerable<TableRow> Rows => 
-            new PaginatedResultKeyResponse<QueryTableRowsResponse, TableRow>(this, (i) => i.Rows);
+            new PaginatedResultKeyResponse<QueryTableRowsResponse, TableRow>(this, (i) => i.Rows ?? new List<TableRow>());
 
         internal QueryTableRowsPaginator(IAmazonHoneycode client, QueryTableRowsRequest request)
         {

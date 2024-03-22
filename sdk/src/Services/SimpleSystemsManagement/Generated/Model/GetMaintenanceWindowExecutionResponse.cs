@@ -37,7 +37,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _startTime;
         private MaintenanceWindowExecutionStatus _status;
         private string _statusDetails;
-        private List<string> _taskIds = new List<string>();
+        private List<string> _taskIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _windowExecutionId;
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if TaskIds property is set
         internal bool IsSetTaskIds()
         {
-            return this._taskIds != null && this._taskIds.Count > 0; 
+            return this._taskIds != null && (this._taskIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

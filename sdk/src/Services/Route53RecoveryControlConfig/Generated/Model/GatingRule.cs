@@ -45,13 +45,13 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     public partial class GatingRule
     {
         private string _controlPanelArn;
-        private List<string> _gatingControls = new List<string>();
+        private List<string> _gatingControls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _owner;
         private RuleConfig _ruleConfig;
         private string _safetyRuleArn;
         private Status _status;
-        private List<string> _targetControls = new List<string>();
+        private List<string> _targetControls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _waitPeriodMs;
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         // Check to see if GatingControls property is set
         internal bool IsSetGatingControls()
         {
-            return this._gatingControls != null && this._gatingControls.Count > 0; 
+            return this._gatingControls != null && (this._gatingControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -212,7 +212,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         // Check to see if TargetControls property is set
         internal bool IsSetTargetControls()
         {
-            return this._targetControls != null && this._targetControls.Count > 0; 
+            return this._targetControls != null && (this._targetControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

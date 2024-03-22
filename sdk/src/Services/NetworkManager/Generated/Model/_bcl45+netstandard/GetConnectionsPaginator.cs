@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the Connections
         /// </summary>
         public IPaginatedEnumerable<Connection> Connections => 
-            new PaginatedResultKeyResponse<GetConnectionsResponse, Connection>(this, (i) => i.Connections);
+            new PaginatedResultKeyResponse<GetConnectionsResponse, Connection>(this, (i) => i.Connections ?? new List<Connection>());
 
         internal GetConnectionsPaginator(IAmazonNetworkManager client, GetConnectionsRequest request)
         {

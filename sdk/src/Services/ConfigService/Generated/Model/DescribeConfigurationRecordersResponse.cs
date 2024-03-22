@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeConfigurationRecordersResponse : AmazonWebServiceResponse
     {
-        private List<ConfigurationRecorder> _configurationRecorders = new List<ConfigurationRecorder>();
+        private List<ConfigurationRecorder> _configurationRecorders = AWSConfigs.InitializeCollections ? new List<ConfigurationRecorder>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationRecorders. 
@@ -50,7 +50,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConfigurationRecorders property is set
         internal bool IsSetConfigurationRecorders()
         {
-            return this._configurationRecorders != null && this._configurationRecorders.Count > 0; 
+            return this._configurationRecorders != null && (this._configurationRecorders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

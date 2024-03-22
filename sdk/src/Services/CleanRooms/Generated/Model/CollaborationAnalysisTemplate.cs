@@ -33,7 +33,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class CollaborationAnalysisTemplate
     {
-        private List<AnalysisParameter> _analysisParameters = new List<AnalysisParameter>();
+        private List<AnalysisParameter> _analysisParameters = AWSConfigs.InitializeCollections ? new List<AnalysisParameter>() : null;
         private string _arn;
         private string _collaborationArn;
         private string _collaborationId;
@@ -63,7 +63,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if AnalysisParameters property is set
         internal bool IsSetAnalysisParameters()
         {
-            return this._analysisParameters != null && this._analysisParameters.Count > 0; 
+            return this._analysisParameters != null && (this._analysisParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

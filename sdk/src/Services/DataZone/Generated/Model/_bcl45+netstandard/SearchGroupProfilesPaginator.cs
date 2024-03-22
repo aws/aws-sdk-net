@@ -45,7 +45,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<GroupProfileSummary> Items => 
-            new PaginatedResultKeyResponse<SearchGroupProfilesResponse, GroupProfileSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<SearchGroupProfilesResponse, GroupProfileSummary>(this, (i) => i.Items ?? new List<GroupProfileSummary>());
 
         internal SearchGroupProfilesPaginator(IAmazonDataZone client, SearchGroupProfilesRequest request)
         {

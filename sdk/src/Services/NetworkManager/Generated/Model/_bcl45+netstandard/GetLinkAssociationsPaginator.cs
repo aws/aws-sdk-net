@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the LinkAssociations
         /// </summary>
         public IPaginatedEnumerable<LinkAssociation> LinkAssociations => 
-            new PaginatedResultKeyResponse<GetLinkAssociationsResponse, LinkAssociation>(this, (i) => i.LinkAssociations);
+            new PaginatedResultKeyResponse<GetLinkAssociationsResponse, LinkAssociation>(this, (i) => i.LinkAssociations ?? new List<LinkAssociation>());
 
         internal GetLinkAssociationsPaginator(IAmazonNetworkManager client, GetLinkAssociationsRequest request)
         {

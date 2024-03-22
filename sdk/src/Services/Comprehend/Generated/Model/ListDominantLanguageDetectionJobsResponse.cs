@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ListDominantLanguageDetectionJobsResponse : AmazonWebServiceResponse
     {
-        private List<DominantLanguageDetectionJobProperties> _dominantLanguageDetectionJobPropertiesList = new List<DominantLanguageDetectionJobProperties>();
+        private List<DominantLanguageDetectionJobProperties> _dominantLanguageDetectionJobPropertiesList = AWSConfigs.InitializeCollections ? new List<DominantLanguageDetectionJobProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if DominantLanguageDetectionJobPropertiesList property is set
         internal bool IsSetDominantLanguageDetectionJobPropertiesList()
         {
-            return this._dominantLanguageDetectionJobPropertiesList != null && this._dominantLanguageDetectionJobPropertiesList.Count > 0; 
+            return this._dominantLanguageDetectionJobPropertiesList != null && (this._dominantLanguageDetectionJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

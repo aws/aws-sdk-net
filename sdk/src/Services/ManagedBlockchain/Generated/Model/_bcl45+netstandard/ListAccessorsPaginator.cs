@@ -45,7 +45,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// Enumerable containing all of the Accessors
         /// </summary>
         public IPaginatedEnumerable<AccessorSummary> Accessors => 
-            new PaginatedResultKeyResponse<ListAccessorsResponse, AccessorSummary>(this, (i) => i.Accessors);
+            new PaginatedResultKeyResponse<ListAccessorsResponse, AccessorSummary>(this, (i) => i.Accessors ?? new List<AccessorSummary>());
 
         internal ListAccessorsPaginator(IAmazonManagedBlockchain client, ListAccessorsRequest request)
         {

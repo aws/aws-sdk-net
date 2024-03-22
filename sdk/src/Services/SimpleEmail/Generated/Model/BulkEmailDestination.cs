@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model
     public partial class BulkEmailDestination
     {
         private Destination _destination;
-        private List<MessageTag> _replacementTags = new List<MessageTag>();
+        private List<MessageTag> _replacementTags = AWSConfigs.InitializeCollections ? new List<MessageTag>() : null;
         private string _replacementTemplateData;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if ReplacementTags property is set
         internal bool IsSetReplacementTags()
         {
-            return this._replacementTags != null && this._replacementTags.Count > 0; 
+            return this._replacementTags != null && (this._replacementTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

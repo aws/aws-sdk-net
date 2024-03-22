@@ -45,7 +45,7 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all of the ComponentVersionList
         /// </summary>
         public IPaginatedEnumerable<ComponentVersion> ComponentVersionList => 
-            new PaginatedResultKeyResponse<ListComponentsResponse, ComponentVersion>(this, (i) => i.ComponentVersionList);
+            new PaginatedResultKeyResponse<ListComponentsResponse, ComponentVersion>(this, (i) => i.ComponentVersionList ?? new List<ComponentVersion>());
 
         internal ListComponentsPaginator(IAmazonImagebuilder client, ListComponentsRequest request)
         {

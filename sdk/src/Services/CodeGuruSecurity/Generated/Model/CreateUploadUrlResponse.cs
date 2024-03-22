@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruSecurity.Model
     public partial class CreateUploadUrlResponse : AmazonWebServiceResponse
     {
         private string _codeArtifactId;
-        private Dictionary<string, string> _requestHeaders = new Dictionary<string, string>();
+        private Dictionary<string, string> _requestHeaders = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _s3Url;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if RequestHeaders property is set
         internal bool IsSetRequestHeaders()
         {
-            return this._requestHeaders != null && this._requestHeaders.Count > 0; 
+            return this._requestHeaders != null && (this._requestHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

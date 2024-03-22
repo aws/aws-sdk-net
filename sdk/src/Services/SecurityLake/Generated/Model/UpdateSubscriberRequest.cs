@@ -36,7 +36,7 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class UpdateSubscriberRequest : AmazonSecurityLakeRequest
     {
-        private List<LogSourceResource> _sources = new List<LogSourceResource>();
+        private List<LogSourceResource> _sources = AWSConfigs.InitializeCollections ? new List<LogSourceResource>() : null;
         private string _subscriberDescription;
         private string _subscriberId;
         private AwsIdentity _subscriberIdentity;
@@ -59,7 +59,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

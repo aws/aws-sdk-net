@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model
     public partial class AutomaticInputFailoverSettings
     {
         private int? _errorClearTimeMsec;
-        private List<FailoverCondition> _failoverConditions = new List<FailoverCondition>();
+        private List<FailoverCondition> _failoverConditions = AWSConfigs.InitializeCollections ? new List<FailoverCondition>() : null;
         private InputPreference _inputPreference;
         private string _secondaryInputId;
 
@@ -71,7 +71,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if FailoverConditions property is set
         internal bool IsSetFailoverConditions()
         {
-            return this._failoverConditions != null && this._failoverConditions.Count > 0; 
+            return this._failoverConditions != null && (this._failoverConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

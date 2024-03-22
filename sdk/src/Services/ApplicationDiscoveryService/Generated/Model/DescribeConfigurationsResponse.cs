@@ -33,7 +33,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class DescribeConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<Dictionary<string, string>> _configurations = new List<Dictionary<string, string>>();
+        private List<Dictionary<string, string>> _configurations = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
 
         /// <summary>
         /// Gets and sets the property Configurations. 
@@ -50,7 +50,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

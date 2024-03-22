@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class GetMappingRequest : AmazonGlueRequest
     {
         private Location _location;
-        private List<CatalogEntry> _sinks = new List<CatalogEntry>();
+        private List<CatalogEntry> _sinks = AWSConfigs.InitializeCollections ? new List<CatalogEntry>() : null;
         private CatalogEntry _source;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Glue.Model
         // Check to see if Sinks property is set
         internal bool IsSetSinks()
         {
-            return this._sinks != null && this._sinks.Count > 0; 
+            return this._sinks != null && (this._sinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

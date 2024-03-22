@@ -35,7 +35,7 @@ namespace Amazon.Connect.Model
     {
         private long? _approximateTotalCount;
         private string _nextToken;
-        private List<Prompt> _prompts = new List<Prompt>();
+        private List<Prompt> _prompts = AWSConfigs.InitializeCollections ? new List<Prompt>() : null;
 
         /// <summary>
         /// Gets and sets the property ApproximateTotalCount. 
@@ -89,7 +89,7 @@ namespace Amazon.Connect.Model
         // Check to see if Prompts property is set
         internal bool IsSetPrompts()
         {
-            return this._prompts != null && this._prompts.Count > 0; 
+            return this._prompts != null && (this._prompts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

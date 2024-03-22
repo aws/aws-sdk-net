@@ -33,7 +33,7 @@ namespace Amazon.PinpointEmail.Model
     /// </summary>
     public partial class GetBlacklistReportsResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, List<BlacklistEntry>> _blacklistReport = new Dictionary<string, List<BlacklistEntry>>();
+        private Dictionary<string, List<BlacklistEntry>> _blacklistReport = AWSConfigs.InitializeCollections ? new Dictionary<string, List<BlacklistEntry>>() : null;
 
         /// <summary>
         /// Gets and sets the property BlacklistReport. 
@@ -52,7 +52,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if BlacklistReport property is set
         internal bool IsSetBlacklistReport()
         {
-            return this._blacklistReport != null && this._blacklistReport.Count > 0; 
+            return this._blacklistReport != null && (this._blacklistReport.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,9 +34,9 @@ namespace Amazon.InternetMonitor.Model
     /// </summary>
     public partial class NetworkImpairment
     {
-        private List<Network> _asPath = new List<Network>();
+        private List<Network> _asPath = AWSConfigs.InitializeCollections ? new List<Network>() : null;
         private TriangulationEventType _networkEventType;
-        private List<Network> _networks = new List<Network>();
+        private List<Network> _networks = AWSConfigs.InitializeCollections ? new List<Network>() : null;
 
         /// <summary>
         /// Gets and sets the property AsPath. 
@@ -55,7 +55,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if AsPath property is set
         internal bool IsSetAsPath()
         {
-            return this._asPath != null && this._asPath.Count > 0; 
+            return this._asPath != null && (this._asPath.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if Networks property is set
         internal bool IsSetNetworks()
         {
-            return this._networks != null && this._networks.Count > 0; 
+            return this._networks != null && (this._networks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

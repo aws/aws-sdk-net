@@ -33,7 +33,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class BatchCreateRoomMembershipResponse : AmazonWebServiceResponse
     {
-        private List<MemberError> _errors = new List<MemberError>();
+        private List<MemberError> _errors = AWSConfigs.InitializeCollections ? new List<MemberError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +51,7 @@ namespace Amazon.Chime.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

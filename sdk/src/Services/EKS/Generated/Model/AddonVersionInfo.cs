@@ -34,8 +34,8 @@ namespace Amazon.EKS.Model
     public partial class AddonVersionInfo
     {
         private string _addonVersion;
-        private List<string> _architecture = new List<string>();
-        private List<Compatibility> _compatibilities = new List<Compatibility>();
+        private List<string> _architecture = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Compatibility> _compatibilities = AWSConfigs.InitializeCollections ? new List<Compatibility>() : null;
         private bool? _requiresConfiguration;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.EKS.Model
         // Check to see if Architecture property is set
         internal bool IsSetArchitecture()
         {
-            return this._architecture != null && this._architecture.Count > 0; 
+            return this._architecture != null && (this._architecture.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.EKS.Model
         // Check to see if Compatibilities property is set
         internal bool IsSetCompatibilities()
         {
-            return this._compatibilities != null && this._compatibilities.Count > 0; 
+            return this._compatibilities != null && (this._compatibilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

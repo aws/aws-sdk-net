@@ -33,7 +33,7 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class GetDocumentResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _customMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _customMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DocumentMetadata _metadata;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if CustomMetadata property is set
         internal bool IsSetCustomMetadata()
         {
-            return this._customMetadata != null && this._customMetadata.Count > 0; 
+            return this._customMetadata != null && (this._customMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

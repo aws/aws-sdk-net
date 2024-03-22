@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the TransitGatewayConnectPeers
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayConnectPeer> TransitGatewayConnectPeers => 
-            new PaginatedResultKeyResponse<DescribeTransitGatewayConnectPeersResponse, TransitGatewayConnectPeer>(this, (i) => i.TransitGatewayConnectPeers);
+            new PaginatedResultKeyResponse<DescribeTransitGatewayConnectPeersResponse, TransitGatewayConnectPeer>(this, (i) => i.TransitGatewayConnectPeers ?? new List<TransitGatewayConnectPeer>());
 
         internal DescribeTransitGatewayConnectPeersPaginator(IAmazonEC2 client, DescribeTransitGatewayConnectPeersRequest request)
         {

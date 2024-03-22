@@ -111,6 +111,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ResourceRecords/ResourceRecord", targetDepth))
                     {
+                        if (unmarshalledObject.ResourceRecords == null)
+                        {
+                            unmarshalledObject.ResourceRecords = new List<ResourceRecord>();
+                        }
                         var unmarshaller = ResourceRecordUnmarshaller.Instance;
                         unmarshalledObject.ResourceRecords.Add(unmarshaller.Unmarshall(context));
                         continue;

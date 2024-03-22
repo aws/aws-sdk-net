@@ -34,8 +34,8 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class MetricDataResult
     {
         private string _id;
-        private List<DateTime> _timestamps = new List<DateTime>();
-        private List<long> _values = new List<long>();
+        private List<DateTime> _timestamps = AWSConfigs.InitializeCollections ? new List<DateTime>() : null;
+        private List<long> _values = AWSConfigs.InitializeCollections ? new List<long>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -71,7 +71,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Timestamps property is set
         internal bool IsSetTimestamps()
         {
-            return this._timestamps != null && this._timestamps.Count > 0; 
+            return this._timestamps != null && (this._timestamps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

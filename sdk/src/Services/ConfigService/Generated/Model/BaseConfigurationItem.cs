@@ -47,7 +47,7 @@ namespace Amazon.ConfigService.Model
         private string _resourceId;
         private string _resourceName;
         private ResourceType _resourceType;
-        private Dictionary<string, string> _supplementaryConfiguration = new Dictionary<string, string>();
+        private Dictionary<string, string> _supplementaryConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _version;
 
         /// <summary>
@@ -343,7 +343,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if SupplementaryConfiguration property is set
         internal bool IsSetSupplementaryConfiguration()
         {
-            return this._supplementaryConfiguration != null && this._supplementaryConfiguration.Count > 0; 
+            return this._supplementaryConfiguration != null && (this._supplementaryConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

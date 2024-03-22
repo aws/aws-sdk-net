@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     public partial class GetSecurityConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SecurityConfiguration> _securityConfigurations = new List<SecurityConfiguration>();
+        private List<SecurityConfiguration> _securityConfigurations = AWSConfigs.InitializeCollections ? new List<SecurityConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Glue.Model
         // Check to see if SecurityConfigurations property is set
         internal bool IsSetSecurityConfigurations()
         {
-            return this._securityConfigurations != null && this._securityConfigurations.Count > 0; 
+            return this._securityConfigurations != null && (this._securityConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

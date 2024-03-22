@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the FolderMemberList
         /// </summary>
         public IPaginatedEnumerable<MemberIdArnPair> FolderMemberList => 
-            new PaginatedResultKeyResponse<ListFolderMembersResponse, MemberIdArnPair>(this, (i) => i.FolderMemberList);
+            new PaginatedResultKeyResponse<ListFolderMembersResponse, MemberIdArnPair>(this, (i) => i.FolderMemberList ?? new List<MemberIdArnPair>());
 
         internal ListFolderMembersPaginator(IAmazonQuickSight client, ListFolderMembersRequest request)
         {

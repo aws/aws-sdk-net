@@ -35,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class UpdateBotRequest : AmazonLexModelsV2Request
     {
         private string _botId;
-        private List<BotMember> _botMembers = new List<BotMember>();
+        private List<BotMember> _botMembers = AWSConfigs.InitializeCollections ? new List<BotMember>() : null;
         private string _botName;
         private BotType _botType;
         private DataPrivacy _dataPrivacy;
@@ -80,7 +80,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotMembers property is set
         internal bool IsSetBotMembers()
         {
-            return this._botMembers != null && this._botMembers.Count > 0; 
+            return this._botMembers != null && (this._botMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

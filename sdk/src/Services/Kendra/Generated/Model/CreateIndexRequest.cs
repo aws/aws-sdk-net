@@ -57,10 +57,10 @@ namespace Amazon.Kendra.Model
         private string _name;
         private string _roleArn;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private UserContextPolicy _userContextPolicy;
         private UserGroupResolutionConfiguration _userGroupResolutionConfiguration;
-        private List<UserTokenConfiguration> _userTokenConfigurations = new List<UserTokenConfiguration>();
+        private List<UserTokenConfiguration> _userTokenConfigurations = AWSConfigs.InitializeCollections ? new List<UserTokenConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -208,7 +208,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Amazon.Kendra.Model
         // Check to see if UserTokenConfigurations property is set
         internal bool IsSetUserTokenConfigurations()
         {
-            return this._userTokenConfigurations != null && this._userTokenConfigurations.Count > 0; 
+            return this._userTokenConfigurations != null && (this._userTokenConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

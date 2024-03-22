@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the TimeSeriesSummaries
         /// </summary>
         public IPaginatedEnumerable<TimeSeriesSummary> TimeSeriesSummaries => 
-            new PaginatedResultKeyResponse<ListTimeSeriesResponse, TimeSeriesSummary>(this, (i) => i.TimeSeriesSummaries);
+            new PaginatedResultKeyResponse<ListTimeSeriesResponse, TimeSeriesSummary>(this, (i) => i.TimeSeriesSummaries ?? new List<TimeSeriesSummary>());
 
         internal ListTimeSeriesPaginator(IAmazonIoTSiteWise client, ListTimeSeriesRequest request)
         {

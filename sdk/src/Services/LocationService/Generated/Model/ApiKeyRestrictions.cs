@@ -33,9 +33,9 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class ApiKeyRestrictions
     {
-        private List<string> _allowActions = new List<string>();
-        private List<string> _allowReferers = new List<string>();
-        private List<string> _allowResources = new List<string>();
+        private List<string> _allowActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allowReferers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allowResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowActions. 
@@ -107,7 +107,7 @@ namespace Amazon.LocationService.Model
         // Check to see if AllowActions property is set
         internal bool IsSetAllowActions()
         {
-            return this._allowActions != null && this._allowActions.Count > 0; 
+            return this._allowActions != null && (this._allowActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.LocationService.Model
         // Check to see if AllowReferers property is set
         internal bool IsSetAllowReferers()
         {
-            return this._allowReferers != null && this._allowReferers.Count > 0; 
+            return this._allowReferers != null && (this._allowReferers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Amazon.LocationService.Model
         // Check to see if AllowResources property is set
         internal bool IsSetAllowResources()
         {
-            return this._allowResources != null && this._allowResources.Count > 0; 
+            return this._allowResources != null && (this._allowResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

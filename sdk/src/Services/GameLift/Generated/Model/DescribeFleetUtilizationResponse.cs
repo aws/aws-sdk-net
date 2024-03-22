@@ -33,7 +33,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class DescribeFleetUtilizationResponse : AmazonWebServiceResponse
     {
-        private List<FleetUtilization> _fleetUtilization = new List<FleetUtilization>();
+        private List<FleetUtilization> _fleetUtilization = AWSConfigs.InitializeCollections ? new List<FleetUtilization>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.GameLift.Model
         // Check to see if FleetUtilization property is set
         internal bool IsSetFleetUtilization()
         {
-            return this._fleetUtilization != null && this._fleetUtilization.Count > 0; 
+            return this._fleetUtilization != null && (this._fleetUtilization.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.WorkMail.Model
     public partial class ListOrganizationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OrganizationSummary> _organizationSummaries = new List<OrganizationSummary>();
+        private List<OrganizationSummary> _organizationSummaries = AWSConfigs.InitializeCollections ? new List<OrganizationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if OrganizationSummaries property is set
         internal bool IsSetOrganizationSummaries()
         {
-            return this._organizationSummaries != null && this._organizationSummaries.Count > 0; 
+            return this._organizationSummaries != null && (this._organizationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

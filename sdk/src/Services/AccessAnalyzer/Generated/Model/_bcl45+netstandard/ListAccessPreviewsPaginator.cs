@@ -45,7 +45,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Enumerable containing all of the AccessPreviews
         /// </summary>
         public IPaginatedEnumerable<AccessPreviewSummary> AccessPreviews => 
-            new PaginatedResultKeyResponse<ListAccessPreviewsResponse, AccessPreviewSummary>(this, (i) => i.AccessPreviews);
+            new PaginatedResultKeyResponse<ListAccessPreviewsResponse, AccessPreviewSummary>(this, (i) => i.AccessPreviews ?? new List<AccessPreviewSummary>());
 
         internal ListAccessPreviewsPaginator(IAmazonAccessAnalyzer client, ListAccessPreviewsRequest request)
         {

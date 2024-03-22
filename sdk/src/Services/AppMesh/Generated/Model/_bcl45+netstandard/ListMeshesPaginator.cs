@@ -45,7 +45,7 @@ namespace Amazon.AppMesh.Model
         /// Enumerable containing all of the Meshes
         /// </summary>
         public IPaginatedEnumerable<MeshRef> Meshes => 
-            new PaginatedResultKeyResponse<ListMeshesResponse, MeshRef>(this, (i) => i.Meshes);
+            new PaginatedResultKeyResponse<ListMeshesResponse, MeshRef>(this, (i) => i.Meshes ?? new List<MeshRef>());
 
         internal ListMeshesPaginator(IAmazonAppMesh client, ListMeshesRequest request)
         {

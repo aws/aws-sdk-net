@@ -33,7 +33,7 @@ namespace Amazon.PI.Model
     /// </summary>
     public partial class MetricDimensionGroups
     {
-        private List<DimensionGroupDetail> _groups = new List<DimensionGroupDetail>();
+        private List<DimensionGroupDetail> _groups = AWSConfigs.InitializeCollections ? new List<DimensionGroupDetail>() : null;
         private string _metric;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.PI.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

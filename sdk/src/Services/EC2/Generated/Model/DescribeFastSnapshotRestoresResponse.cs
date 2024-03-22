@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeFastSnapshotRestoresResponse : AmazonWebServiceResponse
     {
-        private List<DescribeFastSnapshotRestoreSuccessItem> _fastSnapshotRestores = new List<DescribeFastSnapshotRestoreSuccessItem>();
+        private List<DescribeFastSnapshotRestoreSuccessItem> _fastSnapshotRestores = AWSConfigs.InitializeCollections ? new List<DescribeFastSnapshotRestoreSuccessItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if FastSnapshotRestores property is set
         internal bool IsSetFastSnapshotRestores()
         {
-            return this._fastSnapshotRestores != null && this._fastSnapshotRestores.Count > 0; 
+            return this._fastSnapshotRestores != null && (this._fastSnapshotRestores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

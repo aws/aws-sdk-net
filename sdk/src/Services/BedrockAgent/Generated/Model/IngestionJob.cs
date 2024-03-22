@@ -35,7 +35,7 @@ namespace Amazon.BedrockAgent.Model
     {
         private string _dataSourceId;
         private string _description;
-        private List<string> _failureReasons = new List<string>();
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ingestionJobId;
         private string _knowledgeBaseId;
         private DateTime? _startedAt;
@@ -88,7 +88,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

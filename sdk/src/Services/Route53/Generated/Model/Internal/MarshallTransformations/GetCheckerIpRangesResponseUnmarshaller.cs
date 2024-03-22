@@ -63,6 +63,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("CheckerIpRanges/member", targetDepth))
                     {
+                        if (response.CheckerIpRanges == null)
+                        {
+                            response.CheckerIpRanges = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.CheckerIpRanges.Add(unmarshaller.Unmarshall(context));
                         continue;

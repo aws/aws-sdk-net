@@ -37,7 +37,7 @@ namespace Amazon.GreengrassV2.Model
     public partial class BatchDisassociateClientDeviceFromCoreDeviceRequest : AmazonGreengrassV2Request
     {
         private string _coreDeviceThingName;
-        private List<DisassociateClientDeviceFromCoreDeviceEntry> _entries = new List<DisassociateClientDeviceFromCoreDeviceEntry>();
+        private List<DisassociateClientDeviceFromCoreDeviceEntry> _entries = AWSConfigs.InitializeCollections ? new List<DisassociateClientDeviceFromCoreDeviceEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property CoreDeviceThingName. 
@@ -74,7 +74,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

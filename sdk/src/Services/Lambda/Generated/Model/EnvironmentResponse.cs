@@ -36,7 +36,7 @@ namespace Amazon.Lambda.Model
     public partial class EnvironmentResponse
     {
         private EnvironmentError _error;
-        private Dictionary<string, string> _variables = new Dictionary<string, string>();
+        private Dictionary<string, string> _variables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Error. 
@@ -72,7 +72,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

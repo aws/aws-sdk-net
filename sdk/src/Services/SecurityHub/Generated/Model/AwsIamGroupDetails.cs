@@ -33,11 +33,11 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsIamGroupDetails
     {
-        private List<AwsIamAttachedManagedPolicy> _attachedManagedPolicies = new List<AwsIamAttachedManagedPolicy>();
+        private List<AwsIamAttachedManagedPolicy> _attachedManagedPolicies = AWSConfigs.InitializeCollections ? new List<AwsIamAttachedManagedPolicy>() : null;
         private string _createDate;
         private string _groupId;
         private string _groupName;
-        private List<AwsIamGroupPolicy> _groupPolicyList = new List<AwsIamGroupPolicy>();
+        private List<AwsIamGroupPolicy> _groupPolicyList = AWSConfigs.InitializeCollections ? new List<AwsIamGroupPolicy>() : null;
         private string _path;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AttachedManagedPolicies property is set
         internal bool IsSetAttachedManagedPolicies()
         {
-            return this._attachedManagedPolicies != null && this._attachedManagedPolicies.Count > 0; 
+            return this._attachedManagedPolicies != null && (this._attachedManagedPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if GroupPolicyList property is set
         internal bool IsSetGroupPolicyList()
         {
-            return this._groupPolicyList != null && this._groupPolicyList.Count > 0; 
+            return this._groupPolicyList != null && (this._groupPolicyList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("routeTableSet/item", targetDepth))
                     {
                         var unmarshaller = RouteTableUnmarshaller.Instance;
+                        if (response.RouteTables == null)
+                        {
+                            response.RouteTables = new List<RouteTable>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.RouteTables.Add(item);
                         continue;

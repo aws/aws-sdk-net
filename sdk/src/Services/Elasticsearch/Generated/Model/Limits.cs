@@ -35,9 +35,9 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class Limits
     {
-        private List<AdditionalLimit> _additionalLimits = new List<AdditionalLimit>();
+        private List<AdditionalLimit> _additionalLimits = AWSConfigs.InitializeCollections ? new List<AdditionalLimit>() : null;
         private InstanceLimits _instanceLimits;
-        private List<StorageType> _storageTypes = new List<StorageType>();
+        private List<StorageType> _storageTypes = AWSConfigs.InitializeCollections ? new List<StorageType>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalLimits. 
@@ -55,7 +55,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if AdditionalLimits property is set
         internal bool IsSetAdditionalLimits()
         {
-            return this._additionalLimits != null && this._additionalLimits.Count > 0; 
+            return this._additionalLimits != null && (this._additionalLimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if StorageTypes property is set
         internal bool IsSetStorageTypes()
         {
-            return this._storageTypes != null && this._storageTypes.Count > 0; 
+            return this._storageTypes != null && (this._storageTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

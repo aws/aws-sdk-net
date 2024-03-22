@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model
     public partial class ListRecipesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Recipe> _recipes = new List<Recipe>();
+        private List<Recipe> _recipes = AWSConfigs.InitializeCollections ? new List<Recipe>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Recipes property is set
         internal bool IsSetRecipes()
         {
-            return this._recipes != null && this._recipes.Count > 0; 
+            return this._recipes != null && (this._recipes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

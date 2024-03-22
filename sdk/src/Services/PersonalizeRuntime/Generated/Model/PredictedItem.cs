@@ -39,7 +39,7 @@ namespace Amazon.PersonalizeRuntime.Model
     public partial class PredictedItem
     {
         private string _itemId;
-        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _promotionName;
         private double? _score;
 
@@ -77,7 +77,7 @@ namespace Amazon.PersonalizeRuntime.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

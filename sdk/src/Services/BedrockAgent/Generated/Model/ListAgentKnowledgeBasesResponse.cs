@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class ListAgentKnowledgeBasesResponse : AmazonWebServiceResponse
     {
-        private List<AgentKnowledgeBaseSummary> _agentKnowledgeBaseSummaries = new List<AgentKnowledgeBaseSummary>();
+        private List<AgentKnowledgeBaseSummary> _agentKnowledgeBaseSummaries = AWSConfigs.InitializeCollections ? new List<AgentKnowledgeBaseSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if AgentKnowledgeBaseSummaries property is set
         internal bool IsSetAgentKnowledgeBaseSummaries()
         {
-            return this._agentKnowledgeBaseSummaries != null && this._agentKnowledgeBaseSummaries.Count > 0; 
+            return this._agentKnowledgeBaseSummaries != null && (this._agentKnowledgeBaseSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -84,6 +84,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TerminationPolicyTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.TerminationPolicyTypes == null)
+                        {
+                            response.TerminationPolicyTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TerminationPolicyTypes.Add(item);
                         continue;

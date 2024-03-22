@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the Permissions
         /// </summary>
         public IPaginatedEnumerable<ResourcePermission> Permissions => 
-            new PaginatedResultKeyResponse<DescribeFolderPermissionsResponse, ResourcePermission>(this, (i) => i.Permissions);
+            new PaginatedResultKeyResponse<DescribeFolderPermissionsResponse, ResourcePermission>(this, (i) => i.Permissions ?? new List<ResourcePermission>());
 
         internal DescribeFolderPermissionsPaginator(IAmazonQuickSight client, DescribeFolderPermissionsRequest request)
         {

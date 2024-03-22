@@ -33,12 +33,12 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ModelPackage
     {
-        private List<AdditionalInferenceSpecificationDefinition> _additionalInferenceSpecifications = new List<AdditionalInferenceSpecificationDefinition>();
+        private List<AdditionalInferenceSpecificationDefinition> _additionalInferenceSpecifications = AWSConfigs.InitializeCollections ? new List<AdditionalInferenceSpecificationDefinition>() : null;
         private string _approvalDescription;
         private bool? _certifyForMarketplace;
         private UserContext _createdBy;
         private DateTime? _creationTime;
-        private Dictionary<string, string> _customerMetadataProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _customerMetadataProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _domain;
         private DriftCheckBaselines _driftCheckBaselines;
         private InferenceSpecification _inferenceSpecification;
@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model
         private SkipModelValidation _skipModelValidation;
         private SourceAlgorithmSpecification _sourceAlgorithmSpecification;
         private string _sourceUri;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _task;
         private ModelPackageValidationSpecification _validationSpecification;
 
@@ -78,7 +78,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AdditionalInferenceSpecifications property is set
         internal bool IsSetAdditionalInferenceSpecifications()
         {
-            return this._additionalInferenceSpecifications != null && this._additionalInferenceSpecifications.Count > 0; 
+            return this._additionalInferenceSpecifications != null && (this._additionalInferenceSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CustomerMetadataProperties property is set
         internal bool IsSetCustomerMetadataProperties()
         {
-            return this._customerMetadataProperties != null && this._customerMetadataProperties.Count > 0; 
+            return this._customerMetadataProperties != null && (this._customerMetadataProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -581,7 +581,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

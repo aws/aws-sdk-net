@@ -34,7 +34,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class BatchDeleteReadSetRequest : AmazonOmicsRequest
     {
-        private List<string> _ids = new List<string>();
+        private List<string> _ids = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sequenceStoreId;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Omics.Model
         // Check to see if Ids property is set
         internal bool IsSetIds()
         {
-            return this._ids != null && this._ids.Count > 0; 
+            return this._ids != null && (this._ids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

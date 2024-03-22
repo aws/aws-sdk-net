@@ -35,7 +35,7 @@ namespace Amazon.MigrationHub.Model
     {
         private string _migrationTaskName;
         private string _progressUpdateStream;
-        private List<ResourceAttribute> _resourceAttributeList = new List<ResourceAttribute>();
+        private List<ResourceAttribute> _resourceAttributeList = AWSConfigs.InitializeCollections ? new List<ResourceAttribute>() : null;
         private Task _task;
         private DateTime? _updateDateTime;
 
@@ -95,7 +95,7 @@ namespace Amazon.MigrationHub.Model
         // Check to see if ResourceAttributeList property is set
         internal bool IsSetResourceAttributeList()
         {
-            return this._resourceAttributeList != null && this._resourceAttributeList.Count > 0; 
+            return this._resourceAttributeList != null && (this._resourceAttributeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

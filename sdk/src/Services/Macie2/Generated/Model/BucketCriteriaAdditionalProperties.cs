@@ -34,12 +34,12 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class BucketCriteriaAdditionalProperties
     {
-        private List<string> _eq = new List<string>();
+        private List<string> _eq = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _gt;
         private long? _gte;
         private long? _lt;
         private long? _lte;
-        private List<string> _neq = new List<string>();
+        private List<string> _neq = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _prefix;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Eq property is set
         internal bool IsSetEq()
         {
-            return this._eq != null && this._eq.Count > 0; 
+            return this._eq != null && (this._eq.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Neq property is set
         internal bool IsSetNeq()
         {
-            return this._neq != null && this._neq.Count > 0; 
+            return this._neq != null && (this._neq.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

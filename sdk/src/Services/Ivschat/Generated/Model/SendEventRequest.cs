@@ -36,7 +36,7 @@ namespace Amazon.Ivschat.Model
     /// </summary>
     public partial class SendEventRequest : AmazonIvschatRequest
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _eventName;
         private string _roomIdentifier;
 
@@ -56,7 +56,7 @@ namespace Amazon.Ivschat.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

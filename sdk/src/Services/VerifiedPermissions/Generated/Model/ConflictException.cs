@@ -36,7 +36,7 @@ namespace Amazon.VerifiedPermissions.Model
     #endif
     public partial class ConflictException : AmazonVerifiedPermissionsException
     {
-        private List<ResourceConflict> _resources = new List<ResourceConflict>();
+        private List<ResourceConflict> _resources = AWSConfigs.InitializeCollections ? new List<ResourceConflict>() : null;
 
         /// <summary>
         /// Constructs a new ConflictException with the specified error
@@ -139,7 +139,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

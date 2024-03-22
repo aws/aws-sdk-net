@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ListPortfoliosForProductResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<PortfolioDetail> _portfolioDetails = new List<PortfolioDetail>();
+        private List<PortfolioDetail> _portfolioDetails = AWSConfigs.InitializeCollections ? new List<PortfolioDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if PortfolioDetails property is set
         internal bool IsSetPortfolioDetails()
         {
-            return this._portfolioDetails != null && this._portfolioDetails.Count > 0; 
+            return this._portfolioDetails != null && (this._portfolioDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

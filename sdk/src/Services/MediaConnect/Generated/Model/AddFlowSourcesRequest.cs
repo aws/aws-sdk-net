@@ -35,7 +35,7 @@ namespace Amazon.MediaConnect.Model
     public partial class AddFlowSourcesRequest : AmazonMediaConnectRequest
     {
         private string _flowArn;
-        private List<SetSourceRequest> _sources = new List<SetSourceRequest>();
+        private List<SetSourceRequest> _sources = AWSConfigs.InitializeCollections ? new List<SetSourceRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property FlowArn. The flow that you want to mutate.
@@ -66,7 +66,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

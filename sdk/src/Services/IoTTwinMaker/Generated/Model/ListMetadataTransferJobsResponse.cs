@@ -33,7 +33,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class ListMetadataTransferJobsResponse : AmazonWebServiceResponse
     {
-        private List<MetadataTransferJobSummary> _metadataTransferJobSummaries = new List<MetadataTransferJobSummary>();
+        private List<MetadataTransferJobSummary> _metadataTransferJobSummaries = AWSConfigs.InitializeCollections ? new List<MetadataTransferJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if MetadataTransferJobSummaries property is set
         internal bool IsSetMetadataTransferJobSummaries()
         {
-            return this._metadataTransferJobSummaries != null && this._metadataTransferJobSummaries.Count > 0; 
+            return this._metadataTransferJobSummaries != null && (this._metadataTransferJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

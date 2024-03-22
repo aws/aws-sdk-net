@@ -34,7 +34,7 @@ namespace Amazon.StepFunctions.Model
     public partial class ListStateMachineVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StateMachineVersionListItem> _stateMachineVersions = new List<StateMachineVersionListItem>();
+        private List<StateMachineVersionListItem> _stateMachineVersions = AWSConfigs.InitializeCollections ? new List<StateMachineVersionListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -75,7 +75,7 @@ namespace Amazon.StepFunctions.Model
         // Check to see if StateMachineVersions property is set
         internal bool IsSetStateMachineVersions()
         {
-            return this._stateMachineVersions != null && this._stateMachineVersions.Count > 0; 
+            return this._stateMachineVersions != null && (this._stateMachineVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

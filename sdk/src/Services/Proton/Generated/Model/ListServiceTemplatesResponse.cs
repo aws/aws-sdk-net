@@ -34,7 +34,7 @@ namespace Amazon.Proton.Model
     public partial class ListServiceTemplatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServiceTemplateSummary> _templates = new List<ServiceTemplateSummary>();
+        private List<ServiceTemplateSummary> _templates = AWSConfigs.InitializeCollections ? new List<ServiceTemplateSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Proton.Model
         // Check to see if Templates property is set
         internal bool IsSetTemplates()
         {
-            return this._templates != null && this._templates.Count > 0; 
+            return this._templates != null && (this._templates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     public partial class DescribeLoadBalancerPoliciesRequest : AmazonElasticLoadBalancingRequest
     {
         private string _loadBalancerName;
-        private List<string> _policyNames = new List<string>();
+        private List<string> _policyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
@@ -80,7 +80,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this._policyNames != null && this._policyNames.Count > 0; 
+            return this._policyNames != null && (this._policyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

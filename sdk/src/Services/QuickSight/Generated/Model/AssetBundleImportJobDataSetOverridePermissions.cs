@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AssetBundleImportJobDataSetOverridePermissions
     {
-        private List<string> _dataSetIds = new List<string>();
+        private List<string> _dataSetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AssetBundleResourcePermissions _permissions;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataSetIds property is set
         internal bool IsSetDataSetIds()
         {
-            return this._dataSetIds != null && this._dataSetIds.Count > 0; 
+            return this._dataSetIds != null && (this._dataSetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

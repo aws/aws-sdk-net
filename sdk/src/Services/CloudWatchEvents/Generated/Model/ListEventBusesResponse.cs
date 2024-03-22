@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class ListEventBusesResponse : AmazonWebServiceResponse
     {
-        private List<EventBus> _eventBuses = new List<EventBus>();
+        private List<EventBus> _eventBuses = AWSConfigs.InitializeCollections ? new List<EventBus>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CloudWatchEvents.Model
         // Check to see if EventBuses property is set
         internal bool IsSetEventBuses()
         {
-            return this._eventBuses != null && this._eventBuses.Count > 0; 
+            return this._eventBuses != null && (this._eventBuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

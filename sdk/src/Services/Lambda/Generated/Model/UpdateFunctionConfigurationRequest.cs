@@ -61,12 +61,12 @@ namespace Amazon.Lambda.Model
         private string _description;
         private Environment _environment;
         private EphemeralStorage _ephemeralStorage;
-        private List<FileSystemConfig> _fileSystemConfigs = new List<FileSystemConfig>();
+        private List<FileSystemConfig> _fileSystemConfigs = AWSConfigs.InitializeCollections ? new List<FileSystemConfig>() : null;
         private string _functionName;
         private string _handler;
         private ImageConfig _imageConfig;
         private string _kmsKeyArn;
-        private List<string> _layers = new List<string>();
+        private List<string> _layers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LoggingConfig _loggingConfig;
         private int? _memorySize;
         private string _revisionId;

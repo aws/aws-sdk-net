@@ -40,7 +40,7 @@ namespace Amazon.LicenseManager.Model
     {
         private AutomatedDiscoveryInformation _automatedDiscoveryInformation;
         private long? _consumedLicenses;
-        private List<ConsumedLicenseSummary> _consumedLicenseSummaryList = new List<ConsumedLicenseSummary>();
+        private List<ConsumedLicenseSummary> _consumedLicenseSummaryList = AWSConfigs.InitializeCollections ? new List<ConsumedLicenseSummary>() : null;
         private string _description;
         private bool? _disassociateWhenNotFound;
         private string _licenseConfigurationArn;
@@ -48,11 +48,11 @@ namespace Amazon.LicenseManager.Model
         private long? _licenseCount;
         private bool? _licenseCountHardLimit;
         private LicenseCountingType _licenseCountingType;
-        private List<string> _licenseRules = new List<string>();
-        private List<ManagedResourceSummary> _managedResourceSummaryList = new List<ManagedResourceSummary>();
+        private List<string> _licenseRules = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ManagedResourceSummary> _managedResourceSummaryList = AWSConfigs.InitializeCollections ? new List<ManagedResourceSummary>() : null;
         private string _name;
         private string _ownerAccountId;
-        private List<ProductInformation> _productInformationList = new List<ProductInformation>();
+        private List<ProductInformation> _productInformationList = AWSConfigs.InitializeCollections ? new List<ProductInformation>() : null;
         private string _status;
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if ConsumedLicenseSummaryList property is set
         internal bool IsSetConsumedLicenseSummaryList()
         {
-            return this._consumedLicenseSummaryList != null && this._consumedLicenseSummaryList.Count > 0; 
+            return this._consumedLicenseSummaryList != null && (this._consumedLicenseSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if LicenseRules property is set
         internal bool IsSetLicenseRules()
         {
-            return this._licenseRules != null && this._licenseRules.Count > 0; 
+            return this._licenseRules != null && (this._licenseRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if ManagedResourceSummaryList property is set
         internal bool IsSetManagedResourceSummaryList()
         {
-            return this._managedResourceSummaryList != null && this._managedResourceSummaryList.Count > 0; 
+            return this._managedResourceSummaryList != null && (this._managedResourceSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -322,7 +322,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if ProductInformationList property is set
         internal bool IsSetProductInformationList()
         {
-            return this._productInformationList != null && this._productInformationList.Count > 0; 
+            return this._productInformationList != null && (this._productInformationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

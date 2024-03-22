@@ -33,7 +33,7 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class ListCollectionsResponse : AmazonWebServiceResponse
     {
-        private List<CollectionSummary> _collectionSummaries = new List<CollectionSummary>();
+        private List<CollectionSummary> _collectionSummaries = AWSConfigs.InitializeCollections ? new List<CollectionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if CollectionSummaries property is set
         internal bool IsSetCollectionSummaries()
         {
-            return this._collectionSummaries != null && this._collectionSummaries.Count > 0; 
+            return this._collectionSummaries != null && (this._collectionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Mgn.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ManagedAccount> Items => 
-            new PaginatedResultKeyResponse<ListManagedAccountsResponse, ManagedAccount>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListManagedAccountsResponse, ManagedAccount>(this, (i) => i.Items ?? new List<ManagedAccount>());
 
         internal ListManagedAccountsPaginator(IAmazonMgn client, ListManagedAccountsRequest request)
         {

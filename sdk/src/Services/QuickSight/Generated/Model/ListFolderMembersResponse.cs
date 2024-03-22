@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ListFolderMembersResponse : AmazonWebServiceResponse
     {
-        private List<MemberIdArnPair> _folderMemberList = new List<MemberIdArnPair>();
+        private List<MemberIdArnPair> _folderMemberList = AWSConfigs.InitializeCollections ? new List<MemberIdArnPair>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FolderMemberList property is set
         internal bool IsSetFolderMemberList()
         {
-            return this._folderMemberList != null && this._folderMemberList.Count > 0; 
+            return this._folderMemberList != null && (this._folderMemberList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

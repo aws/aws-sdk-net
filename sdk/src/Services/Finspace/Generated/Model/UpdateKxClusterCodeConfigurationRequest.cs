@@ -40,7 +40,7 @@ namespace Amazon.Finspace.Model
         private string _clientToken;
         private string _clusterName;
         private CodeConfiguration _code;
-        private List<KxCommandLineArgument> _commandLineArguments = new List<KxCommandLineArgument>();
+        private List<KxCommandLineArgument> _commandLineArguments = AWSConfigs.InitializeCollections ? new List<KxCommandLineArgument>() : null;
         private KxClusterCodeDeploymentConfiguration _deploymentConfiguration;
         private string _environmentId;
         private string _initializationScript;
@@ -118,7 +118,7 @@ namespace Amazon.Finspace.Model
         // Check to see if CommandLineArguments property is set
         internal bool IsSetCommandLineArguments()
         {
-            return this._commandLineArguments != null && this._commandLineArguments.Count > 0; 
+            return this._commandLineArguments != null && (this._commandLineArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

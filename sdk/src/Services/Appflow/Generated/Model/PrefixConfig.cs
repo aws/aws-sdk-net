@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class PrefixConfig
     {
-        private List<string> _pathPrefixHierarchy = new List<string>();
+        private List<string> _pathPrefixHierarchy = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PrefixFormat _prefixFormat;
         private PrefixType _prefixType;
 
@@ -77,7 +77,7 @@ namespace Amazon.Appflow.Model
         // Check to see if PathPrefixHierarchy property is set
         internal bool IsSetPathPrefixHierarchy()
         {
-            return this._pathPrefixHierarchy != null && this._pathPrefixHierarchy.Count > 0; 
+            return this._pathPrefixHierarchy != null && (this._pathPrefixHierarchy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

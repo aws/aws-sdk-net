@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("snapshotSet/item", targetDepth))
                     {
                         var unmarshaller = SnapshotRecycleBinInfoUnmarshaller.Instance;
+                        if (response.Snapshots == null)
+                        {
+                            response.Snapshots = new List<SnapshotRecycleBinInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Snapshots.Add(item);
                         continue;

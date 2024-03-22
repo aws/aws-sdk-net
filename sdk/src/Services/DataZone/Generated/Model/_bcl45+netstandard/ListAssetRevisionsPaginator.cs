@@ -45,7 +45,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<AssetRevision> Items => 
-            new PaginatedResultKeyResponse<ListAssetRevisionsResponse, AssetRevision>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListAssetRevisionsResponse, AssetRevision>(this, (i) => i.Items ?? new List<AssetRevision>());
 
         internal ListAssetRevisionsPaginator(IAmazonDataZone client, ListAssetRevisionsRequest request)
         {

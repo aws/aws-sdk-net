@@ -35,7 +35,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateImageVersionRequest : AmazonSageMakerRequest
     {
-        private List<string> _aliases = new List<string>();
+        private List<string> _aliases = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _baseImage;
         private string _clientToken;
         private bool? _horovod;
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this._aliases != null && this._aliases.Count > 0; 
+            return this._aliases != null && (this._aliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

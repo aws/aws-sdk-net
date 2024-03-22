@@ -45,7 +45,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// Enumerable containing all of the Targets
         /// </summary>
         public IPaginatedEnumerable<TargetSummary> Targets => 
-            new PaginatedResultKeyResponse<ListTargetsResponse, TargetSummary>(this, (i) => i.Targets);
+            new PaginatedResultKeyResponse<ListTargetsResponse, TargetSummary>(this, (i) => i.Targets ?? new List<TargetSummary>());
 
         internal ListTargetsPaginator(IAmazonCodeStarNotifications client, ListTargetsRequest request)
         {

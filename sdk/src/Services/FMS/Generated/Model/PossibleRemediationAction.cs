@@ -35,7 +35,7 @@ namespace Amazon.FMS.Model
     {
         private string _description;
         private bool? _isDefaultAction;
-        private List<RemediationActionWithOrder> _orderedRemediationActions = new List<RemediationActionWithOrder>();
+        private List<RemediationActionWithOrder> _orderedRemediationActions = AWSConfigs.InitializeCollections ? new List<RemediationActionWithOrder>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -90,7 +90,7 @@ namespace Amazon.FMS.Model
         // Check to see if OrderedRemediationActions property is set
         internal bool IsSetOrderedRemediationActions()
         {
-            return this._orderedRemediationActions != null && this._orderedRemediationActions.Count > 0; 
+            return this._orderedRemediationActions != null && (this._orderedRemediationActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

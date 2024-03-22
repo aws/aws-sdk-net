@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the Authorizers
         /// </summary>
         public IPaginatedEnumerable<AuthorizerSummary> Authorizers => 
-            new PaginatedResultKeyResponse<ListAuthorizersResponse, AuthorizerSummary>(this, (i) => i.Authorizers);
+            new PaginatedResultKeyResponse<ListAuthorizersResponse, AuthorizerSummary>(this, (i) => i.Authorizers ?? new List<AuthorizerSummary>());
 
         internal ListAuthorizersPaginator(IAmazonIoT client, ListAuthorizersRequest request)
         {

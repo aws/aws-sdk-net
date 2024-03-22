@@ -45,7 +45,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<SubscriptionGrantSummary> Items => 
-            new PaginatedResultKeyResponse<ListSubscriptionGrantsResponse, SubscriptionGrantSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListSubscriptionGrantsResponse, SubscriptionGrantSummary>(this, (i) => i.Items ?? new List<SubscriptionGrantSummary>());
 
         internal ListSubscriptionGrantsPaginator(IAmazonDataZone client, ListSubscriptionGrantsRequest request)
         {

@@ -72,7 +72,7 @@ namespace Amazon.LexRuntimeV2.Model
         private string _botAliasId;
         private string _botId;
         private string _localeId;
-        private Dictionary<string, string> _requestAttributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _requestAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _sessionId;
         private SessionState _sessionStateValue;
         private string _text;
@@ -155,7 +155,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if RequestAttributes property is set
         internal bool IsSetRequestAttributes()
         {
-            return this._requestAttributes != null && this._requestAttributes.Count > 0; 
+            return this._requestAttributes != null && (this._requestAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

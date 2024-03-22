@@ -35,7 +35,7 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </summary>
     public partial class ScheduledSplitsLaunchDefinition
     {
-        private List<ScheduledSplit> _steps = new List<ScheduledSplit>();
+        private List<ScheduledSplit> _steps = AWSConfigs.InitializeCollections ? new List<ScheduledSplit>() : null;
 
         /// <summary>
         /// Gets and sets the property Steps. 
@@ -55,7 +55,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

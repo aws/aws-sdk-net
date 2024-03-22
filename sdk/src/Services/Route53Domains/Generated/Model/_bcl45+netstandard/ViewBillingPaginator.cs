@@ -45,7 +45,7 @@ namespace Amazon.Route53Domains.Model
         /// Enumerable containing all of the BillingRecords
         /// </summary>
         public IPaginatedEnumerable<BillingRecord> BillingRecords => 
-            new PaginatedResultKeyResponse<ViewBillingResponse, BillingRecord>(this, (i) => i.BillingRecords);
+            new PaginatedResultKeyResponse<ViewBillingResponse, BillingRecord>(this, (i) => i.BillingRecords ?? new List<BillingRecord>());
 
         internal ViewBillingPaginator(IAmazonRoute53Domains client, ViewBillingRequest request)
         {

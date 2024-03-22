@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class GetProvisionedProductOutputsResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<RecordOutput> _outputs = new List<RecordOutput>();
+        private List<RecordOutput> _outputs = AWSConfigs.InitializeCollections ? new List<RecordOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -73,7 +73,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

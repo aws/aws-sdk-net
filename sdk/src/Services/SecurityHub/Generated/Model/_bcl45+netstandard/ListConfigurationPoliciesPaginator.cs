@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all of the ConfigurationPolicySummaries
         /// </summary>
         public IPaginatedEnumerable<ConfigurationPolicySummary> ConfigurationPolicySummaries => 
-            new PaginatedResultKeyResponse<ListConfigurationPoliciesResponse, ConfigurationPolicySummary>(this, (i) => i.ConfigurationPolicySummaries);
+            new PaginatedResultKeyResponse<ListConfigurationPoliciesResponse, ConfigurationPolicySummary>(this, (i) => i.ConfigurationPolicySummaries ?? new List<ConfigurationPolicySummary>());
 
         internal ListConfigurationPoliciesPaginator(IAmazonSecurityHub client, ListConfigurationPoliciesRequest request)
         {

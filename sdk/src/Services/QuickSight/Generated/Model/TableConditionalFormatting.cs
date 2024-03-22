@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class TableConditionalFormatting
     {
-        private List<TableConditionalFormattingOption> _conditionalFormattingOptions = new List<TableConditionalFormattingOption>();
+        private List<TableConditionalFormattingOption> _conditionalFormattingOptions = AWSConfigs.InitializeCollections ? new List<TableConditionalFormattingOption>() : null;
 
         /// <summary>
         /// Gets and sets the property ConditionalFormattingOptions. 
@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ConditionalFormattingOptions property is set
         internal bool IsSetConditionalFormattingOptions()
         {
-            return this._conditionalFormattingOptions != null && this._conditionalFormattingOptions.Count > 0; 
+            return this._conditionalFormattingOptions != null && (this._conditionalFormattingOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

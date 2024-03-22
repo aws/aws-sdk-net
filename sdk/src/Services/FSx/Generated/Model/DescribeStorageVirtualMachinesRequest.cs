@@ -34,10 +34,10 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DescribeStorageVirtualMachinesRequest : AmazonFSxRequest
     {
-        private List<StorageVirtualMachineFilter> _filters = new List<StorageVirtualMachineFilter>();
+        private List<StorageVirtualMachineFilter> _filters = AWSConfigs.InitializeCollections ? new List<StorageVirtualMachineFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _storageVirtualMachineIds = new List<string>();
+        private List<string> _storageVirtualMachineIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -55,7 +55,7 @@ namespace Amazon.FSx.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.FSx.Model
         // Check to see if StorageVirtualMachineIds property is set
         internal bool IsSetStorageVirtualMachineIds()
         {
-            return this._storageVirtualMachineIds != null && this._storageVirtualMachineIds.Count > 0; 
+            return this._storageVirtualMachineIds != null && (this._storageVirtualMachineIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

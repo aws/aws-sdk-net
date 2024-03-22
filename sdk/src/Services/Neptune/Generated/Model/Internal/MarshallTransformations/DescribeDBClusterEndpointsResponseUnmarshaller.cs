@@ -84,6 +84,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBClusterEndpoints/DBClusterEndpointList", targetDepth))
                     {
                         var unmarshaller = DBClusterEndpointUnmarshaller.Instance;
+                        if (response.DBClusterEndpoints == null)
+                        {
+                            response.DBClusterEndpoints = new List<DBClusterEndpoint>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DBClusterEndpoints.Add(item);
                         continue;

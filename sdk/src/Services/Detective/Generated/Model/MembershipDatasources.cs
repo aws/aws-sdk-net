@@ -34,7 +34,7 @@ namespace Amazon.Detective.Model
     public partial class MembershipDatasources
     {
         private string _accountId;
-        private Dictionary<string, Dictionary<string, TimestampForCollection>> _datasourcePackageIngestHistory = new Dictionary<string, Dictionary<string, TimestampForCollection>>();
+        private Dictionary<string, Dictionary<string, TimestampForCollection>> _datasourcePackageIngestHistory = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, TimestampForCollection>>() : null;
         private string _graphArn;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Detective.Model
         // Check to see if DatasourcePackageIngestHistory property is set
         internal bool IsSetDatasourcePackageIngestHistory()
         {
-            return this._datasourcePackageIngestHistory != null && this._datasourcePackageIngestHistory.Count > 0; 
+            return this._datasourcePackageIngestHistory != null && (this._datasourcePackageIngestHistory.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

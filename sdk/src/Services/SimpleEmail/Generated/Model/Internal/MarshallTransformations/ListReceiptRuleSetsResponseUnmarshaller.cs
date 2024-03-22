@@ -90,6 +90,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RuleSets/member", targetDepth))
                     {
                         var unmarshaller = ReceiptRuleSetMetadataUnmarshaller.Instance;
+                        if (response.RuleSets == null)
+                        {
+                            response.RuleSets = new List<ReceiptRuleSetMetadata>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.RuleSets.Add(item);
                         continue;

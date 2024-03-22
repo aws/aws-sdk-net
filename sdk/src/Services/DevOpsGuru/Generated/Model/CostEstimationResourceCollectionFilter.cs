@@ -38,7 +38,7 @@ namespace Amazon.DevOpsGuru.Model
     public partial class CostEstimationResourceCollectionFilter
     {
         private CloudFormationCostEstimationResourceCollectionFilter _cloudFormation;
-        private List<TagCostEstimationResourceCollectionFilter> _tags = new List<TagCostEstimationResourceCollectionFilter>();
+        private List<TagCostEstimationResourceCollectionFilter> _tags = AWSConfigs.InitializeCollections ? new List<TagCostEstimationResourceCollectionFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property CloudFormation. 
@@ -115,7 +115,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

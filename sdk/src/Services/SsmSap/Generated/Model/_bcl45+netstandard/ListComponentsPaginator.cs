@@ -45,7 +45,7 @@ namespace Amazon.SsmSap.Model
         /// Enumerable containing all of the Components
         /// </summary>
         public IPaginatedEnumerable<ComponentSummary> Components => 
-            new PaginatedResultKeyResponse<ListComponentsResponse, ComponentSummary>(this, (i) => i.Components);
+            new PaginatedResultKeyResponse<ListComponentsResponse, ComponentSummary>(this, (i) => i.Components ?? new List<ComponentSummary>());
 
         internal ListComponentsPaginator(IAmazonSsmSap client, ListComponentsRequest request)
         {

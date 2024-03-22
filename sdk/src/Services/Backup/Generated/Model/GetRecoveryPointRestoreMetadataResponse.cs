@@ -36,7 +36,7 @@ namespace Amazon.Backup.Model
         private string _backupVaultArn;
         private string _recoveryPointArn;
         private string _resourceType;
-        private Dictionary<string, string> _restoreMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _restoreMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property BackupVaultArn. 
@@ -109,7 +109,7 @@ namespace Amazon.Backup.Model
         // Check to see if RestoreMetadata property is set
         internal bool IsSetRestoreMetadata()
         {
-            return this._restoreMetadata != null && this._restoreMetadata.Count > 0; 
+            return this._restoreMetadata != null && (this._restoreMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

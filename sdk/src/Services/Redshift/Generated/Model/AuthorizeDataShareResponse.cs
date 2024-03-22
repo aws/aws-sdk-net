@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
     {
         private bool? _allowPubliclyAccessibleConsumers;
         private string _dataShareArn;
-        private List<DataShareAssociation> _dataShareAssociations = new List<DataShareAssociation>();
+        private List<DataShareAssociation> _dataShareAssociations = AWSConfigs.InitializeCollections ? new List<DataShareAssociation>() : null;
         private string _managedBy;
         private string _producerArn;
 
@@ -93,7 +93,7 @@ namespace Amazon.Redshift.Model
         // Check to see if DataShareAssociations property is set
         internal bool IsSetDataShareAssociations()
         {
-            return this._dataShareAssociations != null && this._dataShareAssociations.Count > 0; 
+            return this._dataShareAssociations != null && (this._dataShareAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

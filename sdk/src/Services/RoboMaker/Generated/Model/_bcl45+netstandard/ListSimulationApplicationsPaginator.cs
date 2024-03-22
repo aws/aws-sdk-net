@@ -45,7 +45,7 @@ namespace Amazon.RoboMaker.Model
         /// Enumerable containing all of the SimulationApplicationSummaries
         /// </summary>
         public IPaginatedEnumerable<SimulationApplicationSummary> SimulationApplicationSummaries => 
-            new PaginatedResultKeyResponse<ListSimulationApplicationsResponse, SimulationApplicationSummary>(this, (i) => i.SimulationApplicationSummaries);
+            new PaginatedResultKeyResponse<ListSimulationApplicationsResponse, SimulationApplicationSummary>(this, (i) => i.SimulationApplicationSummaries ?? new List<SimulationApplicationSummary>());
 
         internal ListSimulationApplicationsPaginator(IAmazonRoboMaker client, ListSimulationApplicationsRequest request)
         {

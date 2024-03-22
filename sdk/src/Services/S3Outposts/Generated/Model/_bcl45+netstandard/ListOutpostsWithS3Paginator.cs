@@ -45,7 +45,7 @@ namespace Amazon.S3Outposts.Model
         /// Enumerable containing all of the Outposts
         /// </summary>
         public IPaginatedEnumerable<Outpost> Outposts => 
-            new PaginatedResultKeyResponse<ListOutpostsWithS3Response, Outpost>(this, (i) => i.Outposts);
+            new PaginatedResultKeyResponse<ListOutpostsWithS3Response, Outpost>(this, (i) => i.Outposts ?? new List<Outpost>());
 
         internal ListOutpostsWithS3Paginator(IAmazonS3Outposts client, ListOutpostsWithS3Request request)
         {

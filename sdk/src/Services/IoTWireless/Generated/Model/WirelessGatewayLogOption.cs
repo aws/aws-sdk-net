@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class WirelessGatewayLogOption
     {
-        private List<WirelessGatewayEventLogOption> _events = new List<WirelessGatewayEventLogOption>();
+        private List<WirelessGatewayEventLogOption> _events = AWSConfigs.InitializeCollections ? new List<WirelessGatewayEventLogOption>() : null;
         private LogLevel _logLevel;
         private WirelessGatewayType _type;
 
@@ -50,7 +50,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

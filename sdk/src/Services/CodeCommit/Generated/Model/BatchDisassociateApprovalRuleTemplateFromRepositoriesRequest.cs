@@ -36,7 +36,7 @@ namespace Amazon.CodeCommit.Model
     public partial class BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest : AmazonCodeCommitRequest
     {
         private string _approvalRuleTemplateName;
-        private List<string> _repositoryNames = new List<string>();
+        private List<string> _repositoryNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApprovalRuleTemplateName. 
@@ -79,7 +79,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if RepositoryNames property is set
         internal bool IsSetRepositoryNames()
         {
-            return this._repositoryNames != null && this._repositoryNames.Count > 0; 
+            return this._repositoryNames != null && (this._repositoryNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

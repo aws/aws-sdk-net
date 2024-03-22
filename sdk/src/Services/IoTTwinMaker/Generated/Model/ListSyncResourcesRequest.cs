@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class ListSyncResourcesRequest : AmazonIoTTwinMakerRequest
     {
-        private List<SyncResourceFilter> _filters = new List<SyncResourceFilter>();
+        private List<SyncResourceFilter> _filters = AWSConfigs.InitializeCollections ? new List<SyncResourceFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _syncSource;
@@ -72,7 +72,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

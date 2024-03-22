@@ -37,7 +37,7 @@ namespace Amazon.DAX.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _parameterGroupNames = new List<string>();
+        private List<string> _parameterGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -98,7 +98,7 @@ namespace Amazon.DAX.Model
         // Check to see if ParameterGroupNames property is set
         internal bool IsSetParameterGroupNames()
         {
-            return this._parameterGroupNames != null && this._parameterGroupNames.Count > 0; 
+            return this._parameterGroupNames != null && (this._parameterGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

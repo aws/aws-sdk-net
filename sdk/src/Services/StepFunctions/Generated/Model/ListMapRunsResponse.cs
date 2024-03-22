@@ -33,7 +33,7 @@ namespace Amazon.StepFunctions.Model
     /// </summary>
     public partial class ListMapRunsResponse : AmazonWebServiceResponse
     {
-        private List<MapRunListItem> _mapRuns = new List<MapRunListItem>();
+        private List<MapRunListItem> _mapRuns = AWSConfigs.InitializeCollections ? new List<MapRunListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.StepFunctions.Model
         // Check to see if MapRuns property is set
         internal bool IsSetMapRuns()
         {
-            return this._mapRuns != null && this._mapRuns.Count > 0; 
+            return this._mapRuns != null && (this._mapRuns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

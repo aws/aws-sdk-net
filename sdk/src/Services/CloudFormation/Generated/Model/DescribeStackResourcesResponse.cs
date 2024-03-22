@@ -33,7 +33,7 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class DescribeStackResourcesResponse : AmazonWebServiceResponse
     {
-        private List<StackResource> _stackResources = new List<StackResource>();
+        private List<StackResource> _stackResources = AWSConfigs.InitializeCollections ? new List<StackResource>() : null;
 
         /// <summary>
         /// Gets and sets the property StackResources. 
@@ -50,7 +50,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackResources property is set
         internal bool IsSetStackResources()
         {
-            return this._stackResources != null && this._stackResources.Count > 0; 
+            return this._stackResources != null && (this._stackResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

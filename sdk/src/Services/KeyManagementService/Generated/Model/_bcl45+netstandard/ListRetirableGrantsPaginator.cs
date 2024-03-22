@@ -45,7 +45,7 @@ namespace Amazon.KeyManagementService.Model
         /// Enumerable containing all of the Grants
         /// </summary>
         public IPaginatedEnumerable<GrantListEntry> Grants => 
-            new PaginatedResultKeyResponse<ListRetirableGrantsResponse, GrantListEntry>(this, (i) => i.Grants);
+            new PaginatedResultKeyResponse<ListRetirableGrantsResponse, GrantListEntry>(this, (i) => i.Grants ?? new List<GrantListEntry>());
 
         internal ListRetirableGrantsPaginator(IAmazonKeyManagementService client, ListRetirableGrantsRequest request)
         {

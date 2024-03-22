@@ -45,7 +45,7 @@ namespace Amazon.CodeDeploy.Model
         /// Enumerable containing all of the Revisions
         /// </summary>
         public IPaginatedEnumerable<RevisionLocation> Revisions => 
-            new PaginatedResultKeyResponse<ListApplicationRevisionsResponse, RevisionLocation>(this, (i) => i.Revisions);
+            new PaginatedResultKeyResponse<ListApplicationRevisionsResponse, RevisionLocation>(this, (i) => i.Revisions ?? new List<RevisionLocation>());
 
         internal ListApplicationRevisionsPaginator(IAmazonCodeDeploy client, ListApplicationRevisionsRequest request)
         {

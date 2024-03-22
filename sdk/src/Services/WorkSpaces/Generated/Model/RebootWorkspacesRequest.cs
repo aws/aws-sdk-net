@@ -45,7 +45,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class RebootWorkspacesRequest : AmazonWorkSpacesRequest
     {
-        private List<RebootRequest> _rebootWorkspaceRequests = new List<RebootRequest>();
+        private List<RebootRequest> _rebootWorkspaceRequests = AWSConfigs.InitializeCollections ? new List<RebootRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property RebootWorkspaceRequests. 
@@ -63,7 +63,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if RebootWorkspaceRequests property is set
         internal bool IsSetRebootWorkspaceRequests()
         {
-            return this._rebootWorkspaceRequests != null && this._rebootWorkspaceRequests.Count > 0; 
+            return this._rebootWorkspaceRequests != null && (this._rebootWorkspaceRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

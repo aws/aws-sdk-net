@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the TransitGatewayConnectPeerAssociations
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayConnectPeerAssociation> TransitGatewayConnectPeerAssociations => 
-            new PaginatedResultKeyResponse<GetTransitGatewayConnectPeerAssociationsResponse, TransitGatewayConnectPeerAssociation>(this, (i) => i.TransitGatewayConnectPeerAssociations);
+            new PaginatedResultKeyResponse<GetTransitGatewayConnectPeerAssociationsResponse, TransitGatewayConnectPeerAssociation>(this, (i) => i.TransitGatewayConnectPeerAssociations ?? new List<TransitGatewayConnectPeerAssociation>());
 
         internal GetTransitGatewayConnectPeerAssociationsPaginator(IAmazonNetworkManager client, GetTransitGatewayConnectPeerAssociationsRequest request)
         {

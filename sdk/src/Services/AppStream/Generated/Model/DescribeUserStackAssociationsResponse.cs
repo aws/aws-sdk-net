@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model
     public partial class DescribeUserStackAssociationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UserStackAssociation> _userStackAssociations = new List<UserStackAssociation>();
+        private List<UserStackAssociation> _userStackAssociations = AWSConfigs.InitializeCollections ? new List<UserStackAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.AppStream.Model
         // Check to see if UserStackAssociations property is set
         internal bool IsSetUserStackAssociations()
         {
-            return this._userStackAssociations != null && this._userStackAssociations.Count > 0; 
+            return this._userStackAssociations != null && (this._userStackAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

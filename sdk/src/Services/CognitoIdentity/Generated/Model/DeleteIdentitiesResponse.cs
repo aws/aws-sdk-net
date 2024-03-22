@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentity.Model
     /// </summary>
     public partial class DeleteIdentitiesResponse : AmazonWebServiceResponse
     {
-        private List<UnprocessedIdentityId> _unprocessedIdentityIds = new List<UnprocessedIdentityId>();
+        private List<UnprocessedIdentityId> _unprocessedIdentityIds = AWSConfigs.InitializeCollections ? new List<UnprocessedIdentityId>() : null;
 
         /// <summary>
         /// Gets and sets the property UnprocessedIdentityIds. 
@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if UnprocessedIdentityIds property is set
         internal bool IsSetUnprocessedIdentityIds()
         {
-            return this._unprocessedIdentityIds != null && this._unprocessedIdentityIds.Count > 0; 
+            return this._unprocessedIdentityIds != null && (this._unprocessedIdentityIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

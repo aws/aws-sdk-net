@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class PivotTableVisual
     {
-        private List<VisualCustomAction> _actions = new List<VisualCustomAction>();
+        private List<VisualCustomAction> _actions = AWSConfigs.InitializeCollections ? new List<VisualCustomAction>() : null;
         private PivotTableConfiguration _chartConfiguration;
         private PivotTableConditionalFormatting _conditionalFormatting;
         private VisualSubtitleLabelOptions _subtitle;
@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

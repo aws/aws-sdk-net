@@ -38,7 +38,7 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class BatchGetQueryExecutionRequest : AmazonAthenaRequest
     {
-        private List<string> _queryExecutionIds = new List<string>();
+        private List<string> _queryExecutionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property QueryExecutionIds. 
@@ -56,7 +56,7 @@ namespace Amazon.Athena.Model
         // Check to see if QueryExecutionIds property is set
         internal bool IsSetQueryExecutionIds()
         {
-            return this._queryExecutionIds != null && this._queryExecutionIds.Count > 0; 
+            return this._queryExecutionIds != null && (this._queryExecutionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

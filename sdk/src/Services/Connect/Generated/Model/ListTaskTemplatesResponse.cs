@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListTaskTemplatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TaskTemplateMetadata> _taskTemplates = new List<TaskTemplateMetadata>();
+        private List<TaskTemplateMetadata> _taskTemplates = AWSConfigs.InitializeCollections ? new List<TaskTemplateMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.Connect.Model
         // Check to see if TaskTemplates property is set
         internal bool IsSetTaskTemplates()
         {
-            return this._taskTemplates != null && this._taskTemplates.Count > 0; 
+            return this._taskTemplates != null && (this._taskTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

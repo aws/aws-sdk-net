@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeClusterSubnetGroupsResponse : AmazonWebServiceResponse
     {
-        private List<ClusterSubnetGroup> _clusterSubnetGroups = new List<ClusterSubnetGroup>();
+        private List<ClusterSubnetGroup> _clusterSubnetGroups = AWSConfigs.InitializeCollections ? new List<ClusterSubnetGroup>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ClusterSubnetGroups property is set
         internal bool IsSetClusterSubnetGroups()
         {
-            return this._clusterSubnetGroups != null && this._clusterSubnetGroups.Count > 0; 
+            return this._clusterSubnetGroups != null && (this._clusterSubnetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

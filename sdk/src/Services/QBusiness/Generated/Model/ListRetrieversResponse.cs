@@ -34,7 +34,7 @@ namespace Amazon.QBusiness.Model
     public partial class ListRetrieversResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Retriever> _retrievers = new List<Retriever>();
+        private List<Retriever> _retrievers = AWSConfigs.InitializeCollections ? new List<Retriever>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Retrievers property is set
         internal bool IsSetRetrievers()
         {
-            return this._retrievers != null && this._retrievers.Count > 0; 
+            return this._retrievers != null && (this._retrievers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

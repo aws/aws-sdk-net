@@ -41,8 +41,8 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class ResponseInspectionBodyContains
     {
-        private List<string> _failureStrings = new List<string>();
-        private List<string> _successStrings = new List<string>();
+        private List<string> _failureStrings = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _successStrings = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FailureStrings. 
@@ -67,7 +67,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if FailureStrings property is set
         internal bool IsSetFailureStrings()
         {
-            return this._failureStrings != null && this._failureStrings.Count > 0; 
+            return this._failureStrings != null && (this._failureStrings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if SuccessStrings property is set
         internal bool IsSetSuccessStrings()
         {
-            return this._successStrings != null && this._successStrings.Count > 0; 
+            return this._successStrings != null && (this._successStrings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -39,7 +39,7 @@ namespace Amazon.Bedrock.Model
         private CustomizationType _customizationType;
         private DateTime? _endTime;
         private string _failureMessage;
-        private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _hyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _jobArn;
         private string _jobName;
         private DateTime? _lastModifiedTime;
@@ -52,7 +52,7 @@ namespace Amazon.Bedrock.Model
         private TrainingDataConfig _trainingDataConfig;
         private TrainingMetrics _trainingMetrics;
         private ValidationDataConfig _validationDataConfig;
-        private List<ValidatorMetric> _validationMetrics = new List<ValidatorMetric>();
+        private List<ValidatorMetric> _validationMetrics = AWSConfigs.InitializeCollections ? new List<ValidatorMetric>() : null;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.Bedrock.Model
         // Check to see if HyperParameters property is set
         internal bool IsSetHyperParameters()
         {
-            return this._hyperParameters != null && this._hyperParameters.Count > 0; 
+            return this._hyperParameters != null && (this._hyperParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -421,7 +421,7 @@ namespace Amazon.Bedrock.Model
         // Check to see if ValidationMetrics property is set
         internal bool IsSetValidationMetrics()
         {
-            return this._validationMetrics != null && this._validationMetrics.Count > 0; 
+            return this._validationMetrics != null && (this._validationMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

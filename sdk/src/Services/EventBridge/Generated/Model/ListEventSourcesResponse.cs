@@ -33,7 +33,7 @@ namespace Amazon.EventBridge.Model
     /// </summary>
     public partial class ListEventSourcesResponse : AmazonWebServiceResponse
     {
-        private List<EventSource> _eventSources = new List<EventSource>();
+        private List<EventSource> _eventSources = AWSConfigs.InitializeCollections ? new List<EventSource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EventBridge.Model
         // Check to see if EventSources property is set
         internal bool IsSetEventSources()
         {
-            return this._eventSources != null && this._eventSources.Count > 0; 
+            return this._eventSources != null && (this._eventSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

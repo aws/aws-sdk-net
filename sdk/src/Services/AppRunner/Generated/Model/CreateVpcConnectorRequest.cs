@@ -36,9 +36,9 @@ namespace Amazon.AppRunner.Model
     /// </summary>
     public partial class CreateVpcConnectorRequest : AmazonAppRunnerRequest
     {
-        private List<string> _securityGroups = new List<string>();
-        private List<string> _subnets = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcConnectorName;
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

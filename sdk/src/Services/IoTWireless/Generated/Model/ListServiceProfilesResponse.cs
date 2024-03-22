@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     public partial class ListServiceProfilesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServiceProfile> _serviceProfileList = new List<ServiceProfile>();
+        private List<ServiceProfile> _serviceProfileList = AWSConfigs.InitializeCollections ? new List<ServiceProfile>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if ServiceProfileList property is set
         internal bool IsSetServiceProfileList()
         {
-            return this._serviceProfileList != null && this._serviceProfileList.Count > 0; 
+            return this._serviceProfileList != null && (this._serviceProfileList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

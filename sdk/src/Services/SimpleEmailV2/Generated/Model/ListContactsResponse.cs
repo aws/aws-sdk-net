@@ -33,7 +33,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class ListContactsResponse : AmazonWebServiceResponse
     {
-        private List<Contact> _contacts = new List<Contact>();
+        private List<Contact> _contacts = AWSConfigs.InitializeCollections ? new List<Contact>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Contacts property is set
         internal bool IsSetContacts()
         {
-            return this._contacts != null && this._contacts.Count > 0; 
+            return this._contacts != null && (this._contacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

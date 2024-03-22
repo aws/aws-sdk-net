@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class ListWorkflowsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkflowVersion> _workflowVersionList = new List<WorkflowVersion>();
+        private List<WorkflowVersion> _workflowVersionList = AWSConfigs.InitializeCollections ? new List<WorkflowVersion>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if WorkflowVersionList property is set
         internal bool IsSetWorkflowVersionList()
         {
-            return this._workflowVersionList != null && this._workflowVersionList.Count > 0; 
+            return this._workflowVersionList != null && (this._workflowVersionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

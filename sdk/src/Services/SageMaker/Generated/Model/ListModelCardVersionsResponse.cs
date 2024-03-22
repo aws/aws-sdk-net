@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListModelCardVersionsResponse : AmazonWebServiceResponse
     {
-        private List<ModelCardVersionSummary> _modelCardVersionSummaryList = new List<ModelCardVersionSummary>();
+        private List<ModelCardVersionSummary> _modelCardVersionSummaryList = AWSConfigs.InitializeCollections ? new List<ModelCardVersionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelCardVersionSummaryList property is set
         internal bool IsSetModelCardVersionSummaryList()
         {
-            return this._modelCardVersionSummaryList != null && this._modelCardVersionSummaryList.Count > 0; 
+            return this._modelCardVersionSummaryList != null && (this._modelCardVersionSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

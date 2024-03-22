@@ -37,7 +37,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     public partial class Settings
     {
         private string _securityGroupId;
-        private List<string> _subnets = new List<string>();
+        private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SecurityGroupId. 
@@ -75,7 +75,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

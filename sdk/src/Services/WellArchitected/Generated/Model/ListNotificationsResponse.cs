@@ -34,7 +34,7 @@ namespace Amazon.WellArchitected.Model
     public partial class ListNotificationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<NotificationSummary> _notificationSummaries = new List<NotificationSummary>();
+        private List<NotificationSummary> _notificationSummaries = AWSConfigs.InitializeCollections ? new List<NotificationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -66,7 +66,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if NotificationSummaries property is set
         internal bool IsSetNotificationSummaries()
         {
-            return this._notificationSummaries != null && this._notificationSummaries.Count > 0; 
+            return this._notificationSummaries != null && (this._notificationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

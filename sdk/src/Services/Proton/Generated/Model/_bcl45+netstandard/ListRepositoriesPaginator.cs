@@ -45,7 +45,7 @@ namespace Amazon.Proton.Model
         /// Enumerable containing all of the Repositories
         /// </summary>
         public IPaginatedEnumerable<RepositorySummary> Repositories => 
-            new PaginatedResultKeyResponse<ListRepositoriesResponse, RepositorySummary>(this, (i) => i.Repositories);
+            new PaginatedResultKeyResponse<ListRepositoriesResponse, RepositorySummary>(this, (i) => i.Repositories ?? new List<RepositorySummary>());
 
         internal ListRepositoriesPaginator(IAmazonProton client, ListRepositoriesRequest request)
         {

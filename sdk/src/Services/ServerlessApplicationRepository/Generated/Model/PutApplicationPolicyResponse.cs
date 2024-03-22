@@ -33,7 +33,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
     /// </summary>
     public partial class PutApplicationPolicyResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationPolicyStatement> _statements = new List<ApplicationPolicyStatement>();
+        private List<ApplicationPolicyStatement> _statements = AWSConfigs.InitializeCollections ? new List<ApplicationPolicyStatement>() : null;
 
         /// <summary>
         /// Gets and sets the property Statements. 
@@ -50,7 +50,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if Statements property is set
         internal bool IsSetStatements()
         {
-            return this._statements != null && this._statements.Count > 0; 
+            return this._statements != null && (this._statements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

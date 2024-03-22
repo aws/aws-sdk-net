@@ -133,7 +133,7 @@ namespace Amazon.WAF.Model
     {
         private string _changeToken;
         private WafAction _defaultAction;
-        private List<WebACLUpdate> _updates = new List<WebACLUpdate>();
+        private List<WebACLUpdate> _updates = AWSConfigs.InitializeCollections ? new List<WebACLUpdate>() : null;
         private string _webACLId;
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Amazon.WAF.Model
         // Check to see if Updates property is set
         internal bool IsSetUpdates()
         {
-            return this._updates != null && this._updates.Count > 0; 
+            return this._updates != null && (this._updates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

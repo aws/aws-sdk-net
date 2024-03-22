@@ -34,13 +34,13 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class UpdateProvisioningPreferences
     {
-        private List<string> _stackSetAccounts = new List<string>();
+        private List<string> _stackSetAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _stackSetFailureToleranceCount;
         private int? _stackSetFailureTolerancePercentage;
         private int? _stackSetMaxConcurrencyCount;
         private int? _stackSetMaxConcurrencyPercentage;
         private StackSetOperationType _stackSetOperationType;
-        private List<string> _stackSetRegions = new List<string>();
+        private List<string> _stackSetRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property StackSetAccounts. 
@@ -73,7 +73,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if StackSetAccounts property is set
         internal bool IsSetStackSetAccounts()
         {
-            return this._stackSetAccounts != null && this._stackSetAccounts.Count > 0; 
+            return this._stackSetAccounts != null && (this._stackSetAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -291,7 +291,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if StackSetRegions property is set
         internal bool IsSetStackSetRegions()
         {
-            return this._stackSetRegions != null && this._stackSetRegions.Count > 0; 
+            return this._stackSetRegions != null && (this._stackSetRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

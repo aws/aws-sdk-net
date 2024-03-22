@@ -45,7 +45,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Enumerable containing all of the RecommendationPreferencesDetails
         /// </summary>
         public IPaginatedEnumerable<RecommendationPreferencesDetail> RecommendationPreferencesDetails => 
-            new PaginatedResultKeyResponse<GetRecommendationPreferencesResponse, RecommendationPreferencesDetail>(this, (i) => i.RecommendationPreferencesDetails);
+            new PaginatedResultKeyResponse<GetRecommendationPreferencesResponse, RecommendationPreferencesDetail>(this, (i) => i.RecommendationPreferencesDetails ?? new List<RecommendationPreferencesDetail>());
 
         internal GetRecommendationPreferencesPaginator(IAmazonComputeOptimizer client, GetRecommendationPreferencesRequest request)
         {

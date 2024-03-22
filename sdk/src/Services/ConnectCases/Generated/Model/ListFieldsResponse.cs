@@ -33,7 +33,7 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class ListFieldsResponse : AmazonWebServiceResponse
     {
-        private List<FieldSummary> _fields = new List<FieldSummary>();
+        private List<FieldSummary> _fields = AWSConfigs.InitializeCollections ? new List<FieldSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the AgentStatusSummaryList
         /// </summary>
         public IPaginatedEnumerable<AgentStatusSummary> AgentStatusSummaryList => 
-            new PaginatedResultKeyResponse<ListAgentStatusesResponse, AgentStatusSummary>(this, (i) => i.AgentStatusSummaryList);
+            new PaginatedResultKeyResponse<ListAgentStatusesResponse, AgentStatusSummary>(this, (i) => i.AgentStatusSummaryList ?? new List<AgentStatusSummary>());
 
         internal ListAgentStatusesPaginator(IAmazonConnect client, ListAgentStatusesRequest request)
         {

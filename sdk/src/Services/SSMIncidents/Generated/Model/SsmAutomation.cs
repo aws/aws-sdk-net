@@ -36,8 +36,8 @@ namespace Amazon.SSMIncidents.Model
     {
         private string _documentName;
         private string _documentVersion;
-        private Dictionary<string, DynamicSsmParameterValue> _dynamicParameters = new Dictionary<string, DynamicSsmParameterValue>();
-        private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private Dictionary<string, DynamicSsmParameterValue> _dynamicParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, DynamicSsmParameterValue>() : null;
+        private Dictionary<string, List<string>> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _roleArn;
         private SsmTargetAccount _targetAccount;
 
@@ -96,7 +96,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if DynamicParameters property is set
         internal bool IsSetDynamicParameters()
         {
-            return this._dynamicParameters != null && this._dynamicParameters.Count > 0; 
+            return this._dynamicParameters != null && (this._dynamicParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

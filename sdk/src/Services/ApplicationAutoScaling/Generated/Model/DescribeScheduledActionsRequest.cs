@@ -51,7 +51,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private string _nextToken;
         private string _resourceId;
         private ScalableDimension _scalableDimension;
-        private List<string> _scheduledActionNames = new List<string>();
+        private List<string> _scheduledActionNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ServiceNamespace _serviceNamespace;
 
         /// <summary>
@@ -358,7 +358,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if ScheduledActionNames property is set
         internal bool IsSetScheduledActionNames()
         {
-            return this._scheduledActionNames != null && this._scheduledActionNames.Count > 0; 
+            return this._scheduledActionNames != null && (this._scheduledActionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

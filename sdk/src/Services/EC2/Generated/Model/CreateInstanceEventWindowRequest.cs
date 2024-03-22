@@ -76,8 +76,8 @@ namespace Amazon.EC2.Model
     {
         private string _cronExpression;
         private string _name;
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
-        private List<InstanceEventWindowTimeRangeRequest> _timeRanges = new List<InstanceEventWindowTimeRangeRequest>();
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+        private List<InstanceEventWindowTimeRangeRequest> _timeRanges = AWSConfigs.InitializeCollections ? new List<InstanceEventWindowTimeRangeRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property CronExpression. 
@@ -166,7 +166,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.EC2.Model
         // Check to see if TimeRanges property is set
         internal bool IsSetTimeRanges()
         {
-            return this._timeRanges != null && this._timeRanges.Count > 0; 
+            return this._timeRanges != null && (this._timeRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

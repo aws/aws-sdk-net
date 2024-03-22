@@ -34,7 +34,7 @@ namespace Amazon.ServiceQuotas.Model
     public partial class ListServiceQuotasResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServiceQuota> _quotas = new List<ServiceQuota>();
+        private List<ServiceQuota> _quotas = AWSConfigs.InitializeCollections ? new List<ServiceQuota>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.ServiceQuotas.Model
         // Check to see if Quotas property is set
         internal bool IsSetQuotas()
         {
-            return this._quotas != null && this._quotas.Count > 0; 
+            return this._quotas != null && (this._quotas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

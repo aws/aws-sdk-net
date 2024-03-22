@@ -34,7 +34,7 @@ namespace Amazon.Finspace.Model
     public partial class KxScalingGroup
     {
         private string _availabilityZoneId;
-        private List<string> _clusters = new List<string>();
+        private List<string> _clusters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createdTimestamp;
         private string _hostType;
         private DateTime? _lastModifiedTimestamp;
@@ -76,7 +76,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Clusters property is set
         internal bool IsSetClusters()
         {
-            return this._clusters != null && this._clusters.Count > 0; 
+            return this._clusters != null && (this._clusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

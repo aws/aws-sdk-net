@@ -45,7 +45,7 @@ namespace Amazon.CodeBuild.Model
         /// Enumerable containing all of the TestCases
         /// </summary>
         public IPaginatedEnumerable<TestCase> TestCases => 
-            new PaginatedResultKeyResponse<DescribeTestCasesResponse, TestCase>(this, (i) => i.TestCases);
+            new PaginatedResultKeyResponse<DescribeTestCasesResponse, TestCase>(this, (i) => i.TestCases ?? new List<TestCase>());
 
         internal DescribeTestCasesPaginator(IAmazonCodeBuild client, DescribeTestCasesRequest request)
         {

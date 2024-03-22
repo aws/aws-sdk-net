@@ -36,7 +36,7 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class KxDataviewSegmentConfiguration
     {
-        private List<string> _dbPaths = new List<string>();
+        private List<string> _dbPaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _onDemand;
         private string _volumeName;
 
@@ -57,7 +57,7 @@ namespace Amazon.Finspace.Model
         // Check to see if DbPaths property is set
         internal bool IsSetDbPaths()
         {
-            return this._dbPaths != null && this._dbPaths.Count > 0; 
+            return this._dbPaths != null && (this._dbPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

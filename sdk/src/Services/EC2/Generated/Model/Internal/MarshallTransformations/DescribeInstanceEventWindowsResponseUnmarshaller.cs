@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instanceEventWindowSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceEventWindowUnmarshaller.Instance;
+                        if (response.InstanceEventWindows == null)
+                        {
+                            response.InstanceEventWindows = new List<InstanceEventWindow>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.InstanceEventWindows.Add(item);
                         continue;

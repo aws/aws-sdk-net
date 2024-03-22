@@ -36,7 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private bool? _disableProfiler;
         private long? _profilingIntervalInMilliseconds;
-        private Dictionary<string, string> _profilingParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _profilingParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _s3OutputPath;
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProfilingParameters property is set
         internal bool IsSetProfilingParameters()
         {
-            return this._profilingParameters != null && this._profilingParameters.Count > 0; 
+            return this._profilingParameters != null && (this._profilingParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

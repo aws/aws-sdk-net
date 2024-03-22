@@ -33,7 +33,7 @@ namespace Amazon.Braket.Model
     /// </summary>
     public partial class SearchDevicesResponse : AmazonWebServiceResponse
     {
-        private List<DeviceSummary> _devices = new List<DeviceSummary>();
+        private List<DeviceSummary> _devices = AWSConfigs.InitializeCollections ? new List<DeviceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Braket.Model
         // Check to see if Devices property is set
         internal bool IsSetDevices()
         {
-            return this._devices != null && this._devices.Count > 0; 
+            return this._devices != null && (this._devices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

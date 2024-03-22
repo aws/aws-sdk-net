@@ -57,7 +57,7 @@ namespace Amazon.Neptune.Model
     public partial class ModifyDBParameterGroupRequest : AmazonNeptuneRequest
     {
         private string _dbParameterGroupName;
-        private List<Parameter> _parameters = new List<Parameter>();
+        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
 
         /// <summary>
         /// Gets and sets the property DBParameterGroupName. 
@@ -116,7 +116,7 @@ namespace Amazon.Neptune.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

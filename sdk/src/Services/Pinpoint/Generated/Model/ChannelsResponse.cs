@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class ChannelsResponse
     {
-        private Dictionary<string, ChannelResponse> _channels = new Dictionary<string, ChannelResponse>();
+        private Dictionary<string, ChannelResponse> _channels = AWSConfigs.InitializeCollections ? new Dictionary<string, ChannelResponse>() : null;
 
         /// <summary>
         /// Gets and sets the property Channels. 
@@ -53,7 +53,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Channels property is set
         internal bool IsSetChannels()
         {
-            return this._channels != null && this._channels.Count > 0; 
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

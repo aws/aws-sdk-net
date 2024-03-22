@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("trafficMirrorTargetSet/item", targetDepth))
                     {
                         var unmarshaller = TrafficMirrorTargetUnmarshaller.Instance;
+                        if (response.TrafficMirrorTargets == null)
+                        {
+                            response.TrafficMirrorTargets = new List<TrafficMirrorTarget>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TrafficMirrorTargets.Add(item);
                         continue;

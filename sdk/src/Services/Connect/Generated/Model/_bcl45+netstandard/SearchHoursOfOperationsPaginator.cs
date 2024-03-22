@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the HoursOfOperations
         /// </summary>
         public IPaginatedEnumerable<HoursOfOperation> HoursOfOperations => 
-            new PaginatedResultKeyResponse<SearchHoursOfOperationsResponse, HoursOfOperation>(this, (i) => i.HoursOfOperations);
+            new PaginatedResultKeyResponse<SearchHoursOfOperationsResponse, HoursOfOperation>(this, (i) => i.HoursOfOperations ?? new List<HoursOfOperation>());
 
         internal SearchHoursOfOperationsPaginator(IAmazonConnect client, SearchHoursOfOperationsRequest request)
         {

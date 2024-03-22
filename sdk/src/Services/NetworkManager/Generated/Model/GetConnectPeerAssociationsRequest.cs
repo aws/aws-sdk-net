@@ -34,7 +34,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class GetConnectPeerAssociationsRequest : AmazonNetworkManagerRequest
     {
-        private List<string> _connectPeerIds = new List<string>();
+        private List<string> _connectPeerIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _globalNetworkId;
         private int? _maxResults;
         private string _nextToken;
@@ -54,7 +54,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if ConnectPeerIds property is set
         internal bool IsSetConnectPeerIds()
         {
-            return this._connectPeerIds != null && this._connectPeerIds.Count > 0; 
+            return this._connectPeerIds != null && (this._connectPeerIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

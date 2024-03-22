@@ -33,16 +33,16 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class GetSegmentDetectionResponse : AmazonWebServiceResponse
     {
-        private List<AudioMetadata> _audioMetadata = new List<AudioMetadata>();
+        private List<AudioMetadata> _audioMetadata = AWSConfigs.InitializeCollections ? new List<AudioMetadata>() : null;
         private string _jobId;
         private VideoJobStatus _jobStatus;
         private string _jobTag;
         private string _nextToken;
-        private List<SegmentDetection> _segments = new List<SegmentDetection>();
-        private List<SegmentTypeInfo> _selectedSegmentTypes = new List<SegmentTypeInfo>();
+        private List<SegmentDetection> _segments = AWSConfigs.InitializeCollections ? new List<SegmentDetection>() : null;
+        private List<SegmentTypeInfo> _selectedSegmentTypes = AWSConfigs.InitializeCollections ? new List<SegmentTypeInfo>() : null;
         private string _statusMessage;
         private Video _video;
-        private List<VideoMetadata> _videoMetadata = new List<VideoMetadata>();
+        private List<VideoMetadata> _videoMetadata = AWSConfigs.InitializeCollections ? new List<VideoMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property AudioMetadata. 
@@ -63,7 +63,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if AudioMetadata property is set
         internal bool IsSetAudioMetadata()
         {
-            return this._audioMetadata != null && this._audioMetadata.Count > 0; 
+            return this._audioMetadata != null && (this._audioMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Segments property is set
         internal bool IsSetSegments()
         {
-            return this._segments != null && this._segments.Count > 0; 
+            return this._segments != null && (this._segments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if SelectedSegmentTypes property is set
         internal bool IsSetSelectedSegmentTypes()
         {
-            return this._selectedSegmentTypes != null && this._selectedSegmentTypes.Count > 0; 
+            return this._selectedSegmentTypes != null && (this._selectedSegmentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -236,7 +236,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if VideoMetadata property is set
         internal bool IsSetVideoMetadata()
         {
-            return this._videoMetadata != null && this._videoMetadata.Count > 0; 
+            return this._videoMetadata != null && (this._videoMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

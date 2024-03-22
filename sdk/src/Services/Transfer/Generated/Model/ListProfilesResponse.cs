@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model
     public partial class ListProfilesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ListedProfile> _profiles = new List<ListedProfile>();
+        private List<ListedProfile> _profiles = AWSConfigs.InitializeCollections ? new List<ListedProfile>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Profiles property is set
         internal bool IsSetProfiles()
         {
-            return this._profiles != null && this._profiles.Count > 0; 
+            return this._profiles != null && (this._profiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

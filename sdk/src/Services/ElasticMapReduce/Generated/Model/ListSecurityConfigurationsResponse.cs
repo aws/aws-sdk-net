@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class ListSecurityConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<SecurityConfigurationSummary> _securityConfigurations = new List<SecurityConfigurationSummary>();
+        private List<SecurityConfigurationSummary> _securityConfigurations = AWSConfigs.InitializeCollections ? new List<SecurityConfigurationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +71,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if SecurityConfigurations property is set
         internal bool IsSetSecurityConfigurations()
         {
-            return this._securityConfigurations != null && this._securityConfigurations.Count > 0; 
+            return this._securityConfigurations != null && (this._securityConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

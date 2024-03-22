@@ -47,7 +47,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string _inputBucket;
         private string _outputBucket;
         private string _role;
-        private List<string> _topics = new List<string>();
+        private List<string> _topics = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property InputBucket. 
@@ -126,7 +126,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Topics property is set
         internal bool IsSetTopics()
         {
-            return this._topics != null && this._topics.Count > 0; 
+            return this._topics != null && (this._topics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

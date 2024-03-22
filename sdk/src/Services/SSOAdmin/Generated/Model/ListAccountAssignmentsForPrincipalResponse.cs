@@ -33,7 +33,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class ListAccountAssignmentsForPrincipalResponse : AmazonWebServiceResponse
     {
-        private List<AccountAssignmentForPrincipal> _accountAssignments = new List<AccountAssignmentForPrincipal>();
+        private List<AccountAssignmentForPrincipal> _accountAssignments = AWSConfigs.InitializeCollections ? new List<AccountAssignmentForPrincipal>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if AccountAssignments property is set
         internal bool IsSetAccountAssignments()
         {
-            return this._accountAssignments != null && this._accountAssignments.Count > 0; 
+            return this._accountAssignments != null && (this._accountAssignments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the Models
         /// </summary>
         public IPaginatedEnumerable<ModelSummary> Models => 
-            new PaginatedResultKeyResponse<ListModelsResponse, ModelSummary>(this, (i) => i.Models);
+            new PaginatedResultKeyResponse<ListModelsResponse, ModelSummary>(this, (i) => i.Models ?? new List<ModelSummary>());
 
         internal ListModelsPaginator(IAmazonSageMaker client, ListModelsRequest request)
         {

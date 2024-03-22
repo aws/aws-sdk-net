@@ -45,7 +45,7 @@ namespace Amazon.Braket.Model
         /// Enumerable containing all of the Jobs
         /// </summary>
         public IPaginatedEnumerable<JobSummary> Jobs => 
-            new PaginatedResultKeyResponse<SearchJobsResponse, JobSummary>(this, (i) => i.Jobs);
+            new PaginatedResultKeyResponse<SearchJobsResponse, JobSummary>(this, (i) => i.Jobs ?? new List<JobSummary>());
 
         internal SearchJobsPaginator(IAmazonBraket client, SearchJobsRequest request)
         {

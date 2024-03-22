@@ -57,6 +57,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Storage/ValidStorageOptions", targetDepth))
                     {
                         var unmarshaller = ValidStorageOptionsUnmarshaller.Instance;
+                        if (unmarshalledObject.Storage == null)
+                        {
+                            unmarshalledObject.Storage = new List<ValidStorageOptions>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Storage.Add(item);
                         continue;

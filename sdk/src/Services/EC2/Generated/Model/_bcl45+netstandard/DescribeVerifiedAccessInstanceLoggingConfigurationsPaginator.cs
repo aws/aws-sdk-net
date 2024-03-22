@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the LoggingConfigurations
         /// </summary>
         public IPaginatedEnumerable<VerifiedAccessInstanceLoggingConfiguration> LoggingConfigurations => 
-            new PaginatedResultKeyResponse<DescribeVerifiedAccessInstanceLoggingConfigurationsResponse, VerifiedAccessInstanceLoggingConfiguration>(this, (i) => i.LoggingConfigurations);
+            new PaginatedResultKeyResponse<DescribeVerifiedAccessInstanceLoggingConfigurationsResponse, VerifiedAccessInstanceLoggingConfiguration>(this, (i) => i.LoggingConfigurations ?? new List<VerifiedAccessInstanceLoggingConfiguration>());
 
         internal DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator(IAmazonEC2 client, DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request)
         {

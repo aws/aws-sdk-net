@@ -33,7 +33,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class GetIdentityNotificationAttributesResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, IdentityNotificationAttributes> _notificationAttributes = new Dictionary<string, IdentityNotificationAttributes>();
+        private Dictionary<string, IdentityNotificationAttributes> _notificationAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, IdentityNotificationAttributes>() : null;
 
         /// <summary>
         /// Gets and sets the property NotificationAttributes. 
@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if NotificationAttributes property is set
         internal bool IsSetNotificationAttributes()
         {
-            return this._notificationAttributes != null && this._notificationAttributes.Count > 0; 
+            return this._notificationAttributes != null && (this._notificationAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

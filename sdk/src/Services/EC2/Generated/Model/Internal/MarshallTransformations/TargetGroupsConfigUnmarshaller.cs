@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("targetGroups/item", targetDepth))
                     {
                         var unmarshaller = TargetGroupUnmarshaller.Instance;
+                        if (unmarshalledObject.TargetGroups == null)
+                        {
+                            unmarshalledObject.TargetGroups = new List<TargetGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TargetGroups.Add(item);
                         continue;

@@ -34,10 +34,10 @@ namespace Amazon.EC2.Model
     public partial class TrafficMirrorFilter
     {
         private string _description;
-        private List<TrafficMirrorFilterRule> _egressFilterRules = new List<TrafficMirrorFilterRule>();
-        private List<TrafficMirrorFilterRule> _ingressFilterRules = new List<TrafficMirrorFilterRule>();
-        private List<string> _networkServices = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<TrafficMirrorFilterRule> _egressFilterRules = AWSConfigs.InitializeCollections ? new List<TrafficMirrorFilterRule>() : null;
+        private List<TrafficMirrorFilterRule> _ingressFilterRules = AWSConfigs.InitializeCollections ? new List<TrafficMirrorFilterRule>() : null;
+        private List<string> _networkServices = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _trafficMirrorFilterId;
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         // Check to see if EgressFilterRules property is set
         internal bool IsSetEgressFilterRules()
         {
-            return this._egressFilterRules != null && this._egressFilterRules.Count > 0; 
+            return this._egressFilterRules != null && (this._egressFilterRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         // Check to see if IngressFilterRules property is set
         internal bool IsSetIngressFilterRules()
         {
-            return this._ingressFilterRules != null && this._ingressFilterRules.Count > 0; 
+            return this._ingressFilterRules != null && (this._ingressFilterRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.EC2.Model
         // Check to see if NetworkServices property is set
         internal bool IsSetNetworkServices()
         {
-            return this._networkServices != null && this._networkServices.Count > 0; 
+            return this._networkServices != null && (this._networkServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

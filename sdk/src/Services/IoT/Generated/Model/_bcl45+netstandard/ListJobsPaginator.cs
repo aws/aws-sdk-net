@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the Jobs
         /// </summary>
         public IPaginatedEnumerable<JobSummary> Jobs => 
-            new PaginatedResultKeyResponse<ListJobsResponse, JobSummary>(this, (i) => i.Jobs);
+            new PaginatedResultKeyResponse<ListJobsResponse, JobSummary>(this, (i) => i.Jobs ?? new List<JobSummary>());
 
         internal ListJobsPaginator(IAmazonIoT client, ListJobsRequest request)
         {

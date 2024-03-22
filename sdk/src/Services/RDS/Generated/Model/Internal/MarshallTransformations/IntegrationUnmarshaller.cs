@@ -57,6 +57,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AdditionalEncryptionContext/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        if (unmarshalledObject.AdditionalEncryptionContext == null)
+                        {
+                            unmarshalledObject.AdditionalEncryptionContext = new Dictionary<string, string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AdditionalEncryptionContext.Add(item);
                         continue;
@@ -82,6 +86,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Errors/IntegrationError", targetDepth))
                     {
                         var unmarshaller = IntegrationErrorUnmarshaller.Instance;
+                        if (unmarshalledObject.Errors == null)
+                        {
+                            unmarshalledObject.Errors = new List<IntegrationError>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Errors.Add(item);
                         continue;
@@ -119,6 +127,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tags/Tag", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

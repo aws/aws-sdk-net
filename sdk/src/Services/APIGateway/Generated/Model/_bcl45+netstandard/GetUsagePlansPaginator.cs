@@ -45,7 +45,7 @@ namespace Amazon.APIGateway.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<UsagePlan> Items => 
-            new PaginatedResultKeyResponse<GetUsagePlansResponse, UsagePlan>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<GetUsagePlansResponse, UsagePlan>(this, (i) => i.Items ?? new List<UsagePlan>());
 
         internal GetUsagePlansPaginator(IAmazonAPIGateway client, GetUsagePlansRequest request)
         {

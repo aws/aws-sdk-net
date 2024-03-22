@@ -33,9 +33,9 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// </summary>
     public partial class GetStatementResultResponse : AmazonWebServiceResponse
     {
-        private List<ColumnMetadata> _columnMetadata = new List<ColumnMetadata>();
+        private List<ColumnMetadata> _columnMetadata = AWSConfigs.InitializeCollections ? new List<ColumnMetadata>() : null;
         private string _nextToken;
-        private List<List<Field>> _records = new List<List<Field>>();
+        private List<List<Field>> _records = AWSConfigs.InitializeCollections ? new List<List<Field>>() : null;
         private long? _totalNumRows;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         // Check to see if ColumnMetadata property is set
         internal bool IsSetColumnMetadata()
         {
-            return this._columnMetadata != null && this._columnMetadata.Count > 0; 
+            return this._columnMetadata != null && (this._columnMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

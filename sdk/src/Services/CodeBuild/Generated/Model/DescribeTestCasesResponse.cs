@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model
     public partial class DescribeTestCasesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TestCase> _testCases = new List<TestCase>();
+        private List<TestCase> _testCases = AWSConfigs.InitializeCollections ? new List<TestCase>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if TestCases property is set
         internal bool IsSetTestCases()
         {
-            return this._testCases != null && this._testCases.Count > 0; 
+            return this._testCases != null && (this._testCases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

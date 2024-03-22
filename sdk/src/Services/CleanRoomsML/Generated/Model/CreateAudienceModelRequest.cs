@@ -40,7 +40,7 @@ namespace Amazon.CleanRoomsML.Model
         private string _description;
         private string _kmsKeyArn;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _trainingDataEndTime;
         private string _trainingDatasetArn;
         private DateTime? _trainingDataStartTime;
@@ -162,7 +162,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

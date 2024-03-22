@@ -247,7 +247,7 @@ namespace Amazon.CloudWatchEvents.Model
     {
         private string _eventBusName;
         private string _rule;
-        private List<Target> _targets = new List<Target>();
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
 
         /// <summary>
         /// Gets and sets the property EventBusName. 
@@ -304,7 +304,7 @@ namespace Amazon.CloudWatchEvents.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -37,7 +37,7 @@ namespace Amazon.Omics.Model
         private string _clientToken;
         private string _referenceStoreId;
         private string _roleArn;
-        private List<StartReferenceImportJobSourceItem> _sources = new List<StartReferenceImportJobSourceItem>();
+        private List<StartReferenceImportJobSourceItem> _sources = AWSConfigs.InitializeCollections ? new List<StartReferenceImportJobSourceItem>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -112,7 +112,7 @@ namespace Amazon.Omics.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

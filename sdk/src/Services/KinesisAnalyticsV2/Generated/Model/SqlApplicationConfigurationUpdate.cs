@@ -34,9 +34,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// </summary>
     public partial class SqlApplicationConfigurationUpdate
     {
-        private List<InputUpdate> _inputUpdates = new List<InputUpdate>();
-        private List<OutputUpdate> _outputUpdates = new List<OutputUpdate>();
-        private List<ReferenceDataSourceUpdate> _referenceDataSourceUpdates = new List<ReferenceDataSourceUpdate>();
+        private List<InputUpdate> _inputUpdates = AWSConfigs.InitializeCollections ? new List<InputUpdate>() : null;
+        private List<OutputUpdate> _outputUpdates = AWSConfigs.InitializeCollections ? new List<OutputUpdate>() : null;
+        private List<ReferenceDataSourceUpdate> _referenceDataSourceUpdates = AWSConfigs.InitializeCollections ? new List<ReferenceDataSourceUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property InputUpdates. 
@@ -54,7 +54,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if InputUpdates property is set
         internal bool IsSetInputUpdates()
         {
-            return this._inputUpdates != null && this._inputUpdates.Count > 0; 
+            return this._inputUpdates != null && (this._inputUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if OutputUpdates property is set
         internal bool IsSetOutputUpdates()
         {
-            return this._outputUpdates != null && this._outputUpdates.Count > 0; 
+            return this._outputUpdates != null && (this._outputUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if ReferenceDataSourceUpdates property is set
         internal bool IsSetReferenceDataSourceUpdates()
         {
-            return this._referenceDataSourceUpdates != null && this._referenceDataSourceUpdates.Count > 0; 
+            return this._referenceDataSourceUpdates != null && (this._referenceDataSourceUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

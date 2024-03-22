@@ -33,7 +33,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class CoverageFilterCriteria
     {
-        private List<CoverageFilterCriterion> _filterCriterion = new List<CoverageFilterCriterion>();
+        private List<CoverageFilterCriterion> _filterCriterion = AWSConfigs.InitializeCollections ? new List<CoverageFilterCriterion>() : null;
 
         /// <summary>
         /// Gets and sets the property FilterCriterion. 
@@ -51,7 +51,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if FilterCriterion property is set
         internal bool IsSetFilterCriterion()
         {
-            return this._filterCriterion != null && this._filterCriterion.Count > 0; 
+            return this._filterCriterion != null && (this._filterCriterion.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

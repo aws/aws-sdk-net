@@ -45,7 +45,7 @@ namespace Amazon.GreengrassV2.Model
         /// Enumerable containing all of the EffectiveDeployments
         /// </summary>
         public IPaginatedEnumerable<EffectiveDeployment> EffectiveDeployments => 
-            new PaginatedResultKeyResponse<ListEffectiveDeploymentsResponse, EffectiveDeployment>(this, (i) => i.EffectiveDeployments);
+            new PaginatedResultKeyResponse<ListEffectiveDeploymentsResponse, EffectiveDeployment>(this, (i) => i.EffectiveDeployments ?? new List<EffectiveDeployment>());
 
         internal ListEffectiveDeploymentsPaginator(IAmazonGreengrassV2 client, ListEffectiveDeploymentsRequest request)
         {

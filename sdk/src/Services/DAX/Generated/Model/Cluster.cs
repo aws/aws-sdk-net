@@ -40,13 +40,13 @@ namespace Amazon.DAX.Model
         private string _clusterName;
         private string _description;
         private string _iamRoleArn;
-        private List<string> _nodeIdsToRemove = new List<string>();
-        private List<Node> _nodes = new List<Node>();
+        private List<string> _nodeIdsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Node> _nodes = AWSConfigs.InitializeCollections ? new List<Node>() : null;
         private string _nodeType;
         private NotificationConfiguration _notificationConfiguration;
         private ParameterGroupStatus _parameterGroup;
         private string _preferredMaintenanceWindow;
-        private List<SecurityGroupMembership> _securityGroups = new List<SecurityGroupMembership>();
+        private List<SecurityGroupMembership> _securityGroups = AWSConfigs.InitializeCollections ? new List<SecurityGroupMembership>() : null;
         private SSEDescription _sseDescription;
         private string _status;
         private string _subnetGroup;
@@ -204,7 +204,7 @@ namespace Amazon.DAX.Model
         // Check to see if NodeIdsToRemove property is set
         internal bool IsSetNodeIdsToRemove()
         {
-            return this._nodeIdsToRemove != null && this._nodeIdsToRemove.Count > 0; 
+            return this._nodeIdsToRemove != null && (this._nodeIdsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace Amazon.DAX.Model
         // Check to see if Nodes property is set
         internal bool IsSetNodes()
         {
-            return this._nodes != null && this._nodes.Count > 0; 
+            return this._nodes != null && (this._nodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -316,7 +316,7 @@ namespace Amazon.DAX.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

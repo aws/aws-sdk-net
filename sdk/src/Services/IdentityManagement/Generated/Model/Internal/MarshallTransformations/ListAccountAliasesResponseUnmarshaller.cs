@@ -84,6 +84,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AccountAliases/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.AccountAliases == null)
+                        {
+                            response.AccountAliases = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AccountAliases.Add(item);
                         continue;

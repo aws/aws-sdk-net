@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListArtifactsResponse : AmazonWebServiceResponse
     {
-        private List<ArtifactSummary> _artifactSummaries = new List<ArtifactSummary>();
+        private List<ArtifactSummary> _artifactSummaries = AWSConfigs.InitializeCollections ? new List<ArtifactSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ArtifactSummaries property is set
         internal bool IsSetArtifactSummaries()
         {
-            return this._artifactSummaries != null && this._artifactSummaries.Count > 0; 
+            return this._artifactSummaries != null && (this._artifactSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

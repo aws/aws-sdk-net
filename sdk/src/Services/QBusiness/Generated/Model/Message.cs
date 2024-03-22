@@ -35,10 +35,10 @@ namespace Amazon.QBusiness.Model
     {
         private ActionExecution _actionExecution;
         private ActionReview _actionReview;
-        private List<AttachmentOutput> _attachments = new List<AttachmentOutput>();
+        private List<AttachmentOutput> _attachments = AWSConfigs.InitializeCollections ? new List<AttachmentOutput>() : null;
         private string _body;
         private string _messageId;
-        private List<SourceAttribution> _sourceAttribution = new List<SourceAttribution>();
+        private List<SourceAttribution> _sourceAttribution = AWSConfigs.InitializeCollections ? new List<SourceAttribution>() : null;
         private DateTime? _time;
         private MessageType _type;
 
@@ -87,7 +87,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if SourceAttribution property is set
         internal bool IsSetSourceAttribution()
         {
-            return this._sourceAttribution != null && this._sourceAttribution.Count > 0; 
+            return this._sourceAttribution != null && (this._sourceAttribution.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

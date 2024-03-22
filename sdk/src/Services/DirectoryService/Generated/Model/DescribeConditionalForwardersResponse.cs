@@ -33,7 +33,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class DescribeConditionalForwardersResponse : AmazonWebServiceResponse
     {
-        private List<ConditionalForwarder> _conditionalForwarders = new List<ConditionalForwarder>();
+        private List<ConditionalForwarder> _conditionalForwarders = AWSConfigs.InitializeCollections ? new List<ConditionalForwarder>() : null;
 
         /// <summary>
         /// Gets and sets the property ConditionalForwarders. 
@@ -50,7 +50,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if ConditionalForwarders property is set
         internal bool IsSetConditionalForwarders()
         {
-            return this._conditionalForwarders != null && this._conditionalForwarders.Count > 0; 
+            return this._conditionalForwarders != null && (this._conditionalForwarders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

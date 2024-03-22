@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the EgressOnlyInternetGateways
         /// </summary>
         public IPaginatedEnumerable<EgressOnlyInternetGateway> EgressOnlyInternetGateways => 
-            new PaginatedResultKeyResponse<DescribeEgressOnlyInternetGatewaysResponse, EgressOnlyInternetGateway>(this, (i) => i.EgressOnlyInternetGateways);
+            new PaginatedResultKeyResponse<DescribeEgressOnlyInternetGatewaysResponse, EgressOnlyInternetGateway>(this, (i) => i.EgressOnlyInternetGateways ?? new List<EgressOnlyInternetGateway>());
 
         internal DescribeEgressOnlyInternetGatewaysPaginator(IAmazonEC2 client, DescribeEgressOnlyInternetGatewaysRequest request)
         {

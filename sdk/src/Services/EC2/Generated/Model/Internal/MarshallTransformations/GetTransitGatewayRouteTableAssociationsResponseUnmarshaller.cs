@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("associations/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayRouteTableAssociationUnmarshaller.Instance;
+                        if (response.Associations == null)
+                        {
+                            response.Associations = new List<TransitGatewayRouteTableAssociation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Associations.Add(item);
                         continue;

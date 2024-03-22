@@ -84,6 +84,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("VerifiedEmailAddresses/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.VerifiedEmailAddresses == null)
+                        {
+                            response.VerifiedEmailAddresses = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.VerifiedEmailAddresses.Add(item);
                         continue;

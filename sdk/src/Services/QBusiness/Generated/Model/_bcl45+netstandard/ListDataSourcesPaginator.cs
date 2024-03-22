@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the DataSources
         /// </summary>
         public IPaginatedEnumerable<DataSource> DataSources => 
-            new PaginatedResultKeyResponse<ListDataSourcesResponse, DataSource>(this, (i) => i.DataSources);
+            new PaginatedResultKeyResponse<ListDataSourcesResponse, DataSource>(this, (i) => i.DataSources ?? new List<DataSource>());
 
         internal ListDataSourcesPaginator(IAmazonQBusiness client, ListDataSourcesRequest request)
         {

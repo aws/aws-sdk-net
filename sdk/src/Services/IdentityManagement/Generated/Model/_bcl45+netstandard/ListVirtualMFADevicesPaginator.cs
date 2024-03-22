@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the VirtualMFADevices
         /// </summary>
         public IPaginatedEnumerable<VirtualMFADevice> VirtualMFADevices => 
-            new PaginatedResultKeyResponse<ListVirtualMFADevicesResponse, VirtualMFADevice>(this, (i) => i.VirtualMFADevices);
+            new PaginatedResultKeyResponse<ListVirtualMFADevicesResponse, VirtualMFADevice>(this, (i) => i.VirtualMFADevices ?? new List<VirtualMFADevice>());
 
         internal ListVirtualMFADevicesPaginator(IAmazonIdentityManagementService client, ListVirtualMFADevicesRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// Enumerable containing all of the Views
         /// </summary>
         public IPaginatedEnumerable<string> Views => 
-            new PaginatedResultKeyResponse<ListViewsResponse, string>(this, (i) => i.Views);
+            new PaginatedResultKeyResponse<ListViewsResponse, string>(this, (i) => i.Views ?? new List<string>());
 
         internal ListViewsPaginator(IAmazonResourceExplorer2 client, ListViewsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the AccessPolicySummaries
         /// </summary>
         public IPaginatedEnumerable<AccessPolicySummary> AccessPolicySummaries => 
-            new PaginatedResultKeyResponse<ListAccessPoliciesResponse, AccessPolicySummary>(this, (i) => i.AccessPolicySummaries);
+            new PaginatedResultKeyResponse<ListAccessPoliciesResponse, AccessPolicySummary>(this, (i) => i.AccessPolicySummaries ?? new List<AccessPolicySummary>());
 
         internal ListAccessPoliciesPaginator(IAmazonIoTSiteWise client, ListAccessPoliciesRequest request)
         {

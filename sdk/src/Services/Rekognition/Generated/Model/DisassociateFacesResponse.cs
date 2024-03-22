@@ -33,8 +33,8 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DisassociateFacesResponse : AmazonWebServiceResponse
     {
-        private List<DisassociatedFace> _disassociatedFaces = new List<DisassociatedFace>();
-        private List<UnsuccessfulFaceDisassociation> _unsuccessfulFaceDisassociations = new List<UnsuccessfulFaceDisassociation>();
+        private List<DisassociatedFace> _disassociatedFaces = AWSConfigs.InitializeCollections ? new List<DisassociatedFace>() : null;
+        private List<UnsuccessfulFaceDisassociation> _unsuccessfulFaceDisassociations = AWSConfigs.InitializeCollections ? new List<UnsuccessfulFaceDisassociation>() : null;
         private UserStatus _userStatus;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if DisassociatedFaces property is set
         internal bool IsSetDisassociatedFaces()
         {
-            return this._disassociatedFaces != null && this._disassociatedFaces.Count > 0; 
+            return this._disassociatedFaces != null && (this._disassociatedFaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if UnsuccessfulFaceDisassociations property is set
         internal bool IsSetUnsuccessfulFaceDisassociations()
         {
-            return this._unsuccessfulFaceDisassociations != null && this._unsuccessfulFaceDisassociations.Count > 0; 
+            return this._unsuccessfulFaceDisassociations != null && (this._unsuccessfulFaceDisassociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

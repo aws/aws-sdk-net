@@ -36,9 +36,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
     {
         private string _description;
         private string _id;
-        private Dictionary<string, StepInput> _inputParameters = new Dictionary<string, StepInput>();
+        private Dictionary<string, StepInput> _inputParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, StepInput>() : null;
         private string _name;
-        private List<string> _stepTargets = new List<string>();
+        private List<string> _stepTargets = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -94,7 +94,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if InputParameters property is set
         internal bool IsSetInputParameters()
         {
-            return this._inputParameters != null && this._inputParameters.Count > 0; 
+            return this._inputParameters != null && (this._inputParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if StepTargets property is set
         internal bool IsSetStepTargets()
         {
-            return this._stepTargets != null && this._stepTargets.Count > 0; 
+            return this._stepTargets != null && (this._stepTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

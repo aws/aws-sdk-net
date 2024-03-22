@@ -33,14 +33,14 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class EnvironmentResourceDescription
     {
-        private List<AutoScalingGroup> _autoScalingGroups = new List<AutoScalingGroup>();
+        private List<AutoScalingGroup> _autoScalingGroups = AWSConfigs.InitializeCollections ? new List<AutoScalingGroup>() : null;
         private string _environmentName;
-        private List<Instance> _instances = new List<Instance>();
-        private List<LaunchConfiguration> _launchConfigurations = new List<LaunchConfiguration>();
-        private List<LaunchTemplate> _launchTemplates = new List<LaunchTemplate>();
-        private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
-        private List<Queue> _queues = new List<Queue>();
-        private List<Trigger> _triggers = new List<Trigger>();
+        private List<Instance> _instances = AWSConfigs.InitializeCollections ? new List<Instance>() : null;
+        private List<LaunchConfiguration> _launchConfigurations = AWSConfigs.InitializeCollections ? new List<LaunchConfiguration>() : null;
+        private List<LaunchTemplate> _launchTemplates = AWSConfigs.InitializeCollections ? new List<LaunchTemplate>() : null;
+        private List<LoadBalancer> _loadBalancers = AWSConfigs.InitializeCollections ? new List<LoadBalancer>() : null;
+        private List<Queue> _queues = AWSConfigs.InitializeCollections ? new List<Queue>() : null;
+        private List<Trigger> _triggers = AWSConfigs.InitializeCollections ? new List<Trigger>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -62,7 +62,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if AutoScalingGroups property is set
         internal bool IsSetAutoScalingGroups()
         {
-            return this._autoScalingGroups != null && this._autoScalingGroups.Count > 0; 
+            return this._autoScalingGroups != null && (this._autoScalingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if LaunchConfigurations property is set
         internal bool IsSetLaunchConfigurations()
         {
-            return this._launchConfigurations != null && this._launchConfigurations.Count > 0; 
+            return this._launchConfigurations != null && (this._launchConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if LaunchTemplates property is set
         internal bool IsSetLaunchTemplates()
         {
-            return this._launchTemplates != null && this._launchTemplates.Count > 0; 
+            return this._launchTemplates != null && (this._launchTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if LoadBalancers property is set
         internal bool IsSetLoadBalancers()
         {
-            return this._loadBalancers != null && this._loadBalancers.Count > 0; 
+            return this._loadBalancers != null && (this._loadBalancers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -171,7 +171,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Queues property is set
         internal bool IsSetQueues()
         {
-            return this._queues != null && this._queues.Count > 0; 
+            return this._queues != null && (this._queues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Triggers property is set
         internal bool IsSetTriggers()
         {
-            return this._triggers != null && this._triggers.Count > 0; 
+            return this._triggers != null && (this._triggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

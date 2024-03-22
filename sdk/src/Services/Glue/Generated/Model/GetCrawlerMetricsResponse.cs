@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetCrawlerMetricsResponse : AmazonWebServiceResponse
     {
-        private List<CrawlerMetrics> _crawlerMetricsList = new List<CrawlerMetrics>();
+        private List<CrawlerMetrics> _crawlerMetricsList = AWSConfigs.InitializeCollections ? new List<CrawlerMetrics>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model
         // Check to see if CrawlerMetricsList property is set
         internal bool IsSetCrawlerMetricsList()
         {
-            return this._crawlerMetricsList != null && this._crawlerMetricsList.Count > 0; 
+            return this._crawlerMetricsList != null && (this._crawlerMetricsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

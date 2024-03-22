@@ -36,7 +36,7 @@ namespace Amazon.Kafka.Model
     {
         private string _clusterArn;
         private string _currentVersion;
-        private List<BrokerEBSVolumeInfo> _targetBrokerEBSVolumeInfo = new List<BrokerEBSVolumeInfo>();
+        private List<BrokerEBSVolumeInfo> _targetBrokerEBSVolumeInfo = AWSConfigs.InitializeCollections ? new List<BrokerEBSVolumeInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterArn.             
@@ -93,7 +93,7 @@ namespace Amazon.Kafka.Model
         // Check to see if TargetBrokerEBSVolumeInfo property is set
         internal bool IsSetTargetBrokerEBSVolumeInfo()
         {
-            return this._targetBrokerEBSVolumeInfo != null && this._targetBrokerEBSVolumeInfo.Count > 0; 
+            return this._targetBrokerEBSVolumeInfo != null && (this._targetBrokerEBSVolumeInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

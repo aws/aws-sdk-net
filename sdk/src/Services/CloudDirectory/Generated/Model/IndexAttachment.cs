@@ -33,7 +33,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class IndexAttachment
     {
-        private List<AttributeKeyAndValue> _indexedAttributes = new List<AttributeKeyAndValue>();
+        private List<AttributeKeyAndValue> _indexedAttributes = AWSConfigs.InitializeCollections ? new List<AttributeKeyAndValue>() : null;
         private string _objectIdentifier;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if IndexedAttributes property is set
         internal bool IsSetIndexedAttributes()
         {
-            return this._indexedAttributes != null && this._indexedAttributes.Count > 0; 
+            return this._indexedAttributes != null && (this._indexedAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

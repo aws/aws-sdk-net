@@ -36,7 +36,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     public partial class Cluster
     {
         private string _clusterArn;
-        private List<ClusterEndpoint> _clusterEndpoints = new List<ClusterEndpoint>();
+        private List<ClusterEndpoint> _clusterEndpoints = AWSConfigs.InitializeCollections ? new List<ClusterEndpoint>() : null;
         private string _name;
         private string _owner;
         private Status _status;
@@ -81,7 +81,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         // Check to see if ClusterEndpoints property is set
         internal bool IsSetClusterEndpoints()
         {
-            return this._clusterEndpoints != null && this._clusterEndpoints.Count > 0; 
+            return this._clusterEndpoints != null && (this._clusterEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

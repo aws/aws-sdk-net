@@ -59,7 +59,7 @@ namespace Amazon.ECS.Model
     public partial class StartTaskRequest : AmazonECSRequest
     {
         private string _cluster;
-        private List<string> _containerInstances = new List<string>();
+        private List<string> _containerInstances = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableecsManagedTags;
         private bool? _enableExecuteCommand;
         private string _group;
@@ -68,9 +68,9 @@ namespace Amazon.ECS.Model
         private PropagateTags _propagateTags;
         private string _referenceId;
         private string _startedBy;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _taskDefinition;
-        private List<TaskVolumeConfiguration> _volumeConfigurations = new List<TaskVolumeConfiguration>();
+        private List<TaskVolumeConfiguration> _volumeConfigurations = AWSConfigs.InitializeCollections ? new List<TaskVolumeConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -108,7 +108,7 @@ namespace Amazon.ECS.Model
         // Check to see if ContainerInstances property is set
         internal bool IsSetContainerInstances()
         {
-            return this._containerInstances != null && this._containerInstances.Count > 0; 
+            return this._containerInstances != null && (this._containerInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -340,7 +340,7 @@ namespace Amazon.ECS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -381,7 +381,7 @@ namespace Amazon.ECS.Model
         // Check to see if VolumeConfigurations property is set
         internal bool IsSetVolumeConfigurations()
         {
-            return this._volumeConfigurations != null && this._volumeConfigurations.Count > 0; 
+            return this._volumeConfigurations != null && (this._volumeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

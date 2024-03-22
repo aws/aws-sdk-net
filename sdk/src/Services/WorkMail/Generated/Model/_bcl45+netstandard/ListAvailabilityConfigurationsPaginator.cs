@@ -45,7 +45,7 @@ namespace Amazon.WorkMail.Model
         /// Enumerable containing all of the AvailabilityConfigurations
         /// </summary>
         public IPaginatedEnumerable<AvailabilityConfiguration> AvailabilityConfigurations => 
-            new PaginatedResultKeyResponse<ListAvailabilityConfigurationsResponse, AvailabilityConfiguration>(this, (i) => i.AvailabilityConfigurations);
+            new PaginatedResultKeyResponse<ListAvailabilityConfigurationsResponse, AvailabilityConfiguration>(this, (i) => i.AvailabilityConfigurations ?? new List<AvailabilityConfiguration>());
 
         internal ListAvailabilityConfigurationsPaginator(IAmazonWorkMail client, ListAvailabilityConfigurationsRequest request)
         {

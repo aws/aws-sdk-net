@@ -64,7 +64,7 @@ namespace Amazon.ACMPCA.Model
         private string _idempotencyToken;
         private KeyStorageSecurityStandard _keyStorageSecurityStandard;
         private RevocationConfiguration _revocationConfiguration;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private CertificateAuthorityUsageMode _usageMode;
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Amazon.ACMPCA.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

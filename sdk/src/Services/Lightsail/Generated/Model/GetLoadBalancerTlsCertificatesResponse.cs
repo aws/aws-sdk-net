@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetLoadBalancerTlsCertificatesResponse : AmazonWebServiceResponse
     {
-        private List<LoadBalancerTlsCertificate> _tlsCertificates = new List<LoadBalancerTlsCertificate>();
+        private List<LoadBalancerTlsCertificate> _tlsCertificates = AWSConfigs.InitializeCollections ? new List<LoadBalancerTlsCertificate>() : null;
 
         /// <summary>
         /// Gets and sets the property TlsCertificates. 
@@ -50,7 +50,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if TlsCertificates property is set
         internal bool IsSetTlsCertificates()
         {
-            return this._tlsCertificates != null && this._tlsCertificates.Count > 0; 
+            return this._tlsCertificates != null && (this._tlsCertificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

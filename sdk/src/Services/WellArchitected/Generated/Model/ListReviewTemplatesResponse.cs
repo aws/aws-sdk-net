@@ -34,7 +34,7 @@ namespace Amazon.WellArchitected.Model
     public partial class ListReviewTemplatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReviewTemplateSummary> _reviewTemplates = new List<ReviewTemplateSummary>();
+        private List<ReviewTemplateSummary> _reviewTemplates = AWSConfigs.InitializeCollections ? new List<ReviewTemplateSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -66,7 +66,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ReviewTemplates property is set
         internal bool IsSetReviewTemplates()
         {
-            return this._reviewTemplates != null && this._reviewTemplates.Count > 0; 
+            return this._reviewTemplates != null && (this._reviewTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

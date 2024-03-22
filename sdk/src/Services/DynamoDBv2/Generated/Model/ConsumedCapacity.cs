@@ -38,8 +38,8 @@ namespace Amazon.DynamoDBv2.Model
     public partial class ConsumedCapacity
     {
         private double? _capacityUnits;
-        private Dictionary<string, Capacity> _globalSecondaryIndexes = new Dictionary<string, Capacity>();
-        private Dictionary<string, Capacity> _localSecondaryIndexes = new Dictionary<string, Capacity>();
+        private Dictionary<string, Capacity> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new Dictionary<string, Capacity>() : null;
+        private Dictionary<string, Capacity> _localSecondaryIndexes = AWSConfigs.InitializeCollections ? new Dictionary<string, Capacity>() : null;
         private double? _readCapacityUnits;
         private Capacity _table;
         private string _tableName;
@@ -78,7 +78,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if GlobalSecondaryIndexes property is set
         internal bool IsSetGlobalSecondaryIndexes()
         {
-            return this._globalSecondaryIndexes != null && this._globalSecondaryIndexes.Count > 0; 
+            return this._globalSecondaryIndexes != null && (this._globalSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if LocalSecondaryIndexes property is set
         internal bool IsSetLocalSecondaryIndexes()
         {
-            return this._localSecondaryIndexes != null && this._localSecondaryIndexes.Count > 0; 
+            return this._localSecondaryIndexes != null && (this._localSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

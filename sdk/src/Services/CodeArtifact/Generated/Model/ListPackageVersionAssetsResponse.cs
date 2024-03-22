@@ -33,7 +33,7 @@ namespace Amazon.CodeArtifact.Model
     /// </summary>
     public partial class ListPackageVersionAssetsResponse : AmazonWebServiceResponse
     {
-        private List<AssetSummary> _assets = new List<AssetSummary>();
+        private List<AssetSummary> _assets = AWSConfigs.InitializeCollections ? new List<AssetSummary>() : null;
         private PackageFormat _format;
         private string _awsNamespace;
         private string _nextToken;
@@ -57,7 +57,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Assets property is set
         internal bool IsSetAssets()
         {
-            return this._assets != null && this._assets.Count > 0; 
+            return this._assets != null && (this._assets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

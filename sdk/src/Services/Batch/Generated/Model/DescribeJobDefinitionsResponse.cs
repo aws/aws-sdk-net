@@ -33,7 +33,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class DescribeJobDefinitionsResponse : AmazonWebServiceResponse
     {
-        private List<JobDefinition> _jobDefinitions = new List<JobDefinition>();
+        private List<JobDefinition> _jobDefinitions = AWSConfigs.InitializeCollections ? new List<JobDefinition>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Batch.Model
         // Check to see if JobDefinitions property is set
         internal bool IsSetJobDefinitions()
         {
-            return this._jobDefinitions != null && this._jobDefinitions.Count > 0; 
+            return this._jobDefinitions != null && (this._jobDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

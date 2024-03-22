@@ -37,7 +37,7 @@ namespace Amazon.IoTWireless.Model
         private string _devEui;
         private int? _fPort;
         private int? _frequency;
-        private List<LoRaWANGatewayMetadata> _gateways = new List<LoRaWANGatewayMetadata>();
+        private List<LoRaWANGatewayMetadata> _gateways = AWSConfigs.InitializeCollections ? new List<LoRaWANGatewayMetadata>() : null;
         private string _timestamp;
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Gateways property is set
         internal bool IsSetGateways()
         {
-            return this._gateways != null && this._gateways.Count > 0; 
+            return this._gateways != null && (this._gateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

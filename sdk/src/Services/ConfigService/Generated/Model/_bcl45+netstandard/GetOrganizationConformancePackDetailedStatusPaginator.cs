@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the OrganizationConformancePackDetailedStatuses
         /// </summary>
         public IPaginatedEnumerable<OrganizationConformancePackDetailedStatus> OrganizationConformancePackDetailedStatuses => 
-            new PaginatedResultKeyResponse<GetOrganizationConformancePackDetailedStatusResponse, OrganizationConformancePackDetailedStatus>(this, (i) => i.OrganizationConformancePackDetailedStatuses);
+            new PaginatedResultKeyResponse<GetOrganizationConformancePackDetailedStatusResponse, OrganizationConformancePackDetailedStatus>(this, (i) => i.OrganizationConformancePackDetailedStatuses ?? new List<OrganizationConformancePackDetailedStatus>());
 
         internal GetOrganizationConformancePackDetailedStatusPaginator(IAmazonConfigService client, GetOrganizationConformancePackDetailedStatusRequest request)
         {

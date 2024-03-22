@@ -63,6 +63,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AttributeValues/AttributeValueTarget", targetDepth))
                     {
                         var unmarshaller = AttributeValueTargetUnmarshaller.Instance;
+                        if (unmarshalledObject.AttributeValues == null)
+                        {
+                            unmarshalledObject.AttributeValues = new List<AttributeValueTarget>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AttributeValues.Add(item);
                         continue;

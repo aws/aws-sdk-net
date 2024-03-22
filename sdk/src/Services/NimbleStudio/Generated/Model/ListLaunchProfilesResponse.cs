@@ -33,7 +33,7 @@ namespace Amazon.NimbleStudio.Model
     /// </summary>
     public partial class ListLaunchProfilesResponse : AmazonWebServiceResponse
     {
-        private List<LaunchProfile> _launchProfiles = new List<LaunchProfile>();
+        private List<LaunchProfile> _launchProfiles = AWSConfigs.InitializeCollections ? new List<LaunchProfile>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if LaunchProfiles property is set
         internal bool IsSetLaunchProfiles()
         {
-            return this._launchProfiles != null && this._launchProfiles.Count > 0; 
+            return this._launchProfiles != null && (this._launchProfiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

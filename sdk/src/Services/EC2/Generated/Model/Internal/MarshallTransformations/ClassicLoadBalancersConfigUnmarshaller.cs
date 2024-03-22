@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("classicLoadBalancers/item", targetDepth))
                     {
                         var unmarshaller = ClassicLoadBalancerUnmarshaller.Instance;
+                        if (unmarshalledObject.ClassicLoadBalancers == null)
+                        {
+                            unmarshalledObject.ClassicLoadBalancers = new List<ClassicLoadBalancer>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ClassicLoadBalancers.Add(item);
                         continue;

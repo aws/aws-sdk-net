@@ -34,8 +34,8 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class AgentFilter
     {
-        private List<string> _agentHealthCodes = new List<string>();
-        private List<string> _agentHealths = new List<string>();
+        private List<string> _agentHealthCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _agentHealths = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentHealthCodes. 
@@ -54,7 +54,7 @@ namespace Amazon.Inspector.Model
         // Check to see if AgentHealthCodes property is set
         internal bool IsSetAgentHealthCodes()
         {
-            return this._agentHealthCodes != null && this._agentHealthCodes.Count > 0; 
+            return this._agentHealthCodes != null && (this._agentHealthCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Inspector.Model
         // Check to see if AgentHealths property is set
         internal bool IsSetAgentHealths()
         {
-            return this._agentHealths != null && this._agentHealths.Count > 0; 
+            return this._agentHealths != null && (this._agentHealths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

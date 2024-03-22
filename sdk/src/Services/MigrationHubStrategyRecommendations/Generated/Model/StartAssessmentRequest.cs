@@ -35,7 +35,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     public partial class StartAssessmentRequest : AmazonMigrationHubStrategyRecommendationsRequest
     {
         private AssessmentDataSourceType _assessmentDataSourceType;
-        private List<AssessmentTarget> _assessmentTargets = new List<AssessmentTarget>();
+        private List<AssessmentTarget> _assessmentTargets = AWSConfigs.InitializeCollections ? new List<AssessmentTarget>() : null;
         private string _s3bucketForAnalysisData;
         private string _s3bucketForReportData;
 
@@ -73,7 +73,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if AssessmentTargets property is set
         internal bool IsSetAssessmentTargets()
         {
-            return this._assessmentTargets != null && this._assessmentTargets.Count > 0; 
+            return this._assessmentTargets != null && (this._assessmentTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

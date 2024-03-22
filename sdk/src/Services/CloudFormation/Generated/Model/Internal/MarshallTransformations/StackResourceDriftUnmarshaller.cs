@@ -87,6 +87,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PhysicalResourceIdContext/member", targetDepth))
                     {
                         var unmarshaller = PhysicalResourceIdContextKeyValuePairUnmarshaller.Instance;
+                        if (unmarshalledObject.PhysicalResourceIdContext == null)
+                        {
+                            unmarshalledObject.PhysicalResourceIdContext = new List<PhysicalResourceIdContextKeyValuePair>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PhysicalResourceIdContext.Add(item);
                         continue;
@@ -94,6 +98,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PropertyDifferences/member", targetDepth))
                     {
                         var unmarshaller = PropertyDifferenceUnmarshaller.Instance;
+                        if (unmarshalledObject.PropertyDifferences == null)
+                        {
+                            unmarshalledObject.PropertyDifferences = new List<PropertyDifference>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PropertyDifferences.Add(item);
                         continue;

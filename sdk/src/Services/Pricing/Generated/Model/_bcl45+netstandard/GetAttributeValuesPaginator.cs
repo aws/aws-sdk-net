@@ -45,7 +45,7 @@ namespace Amazon.Pricing.Model
         /// Enumerable containing all of the AttributeValues
         /// </summary>
         public IPaginatedEnumerable<AttributeValue> AttributeValues => 
-            new PaginatedResultKeyResponse<GetAttributeValuesResponse, AttributeValue>(this, (i) => i.AttributeValues);
+            new PaginatedResultKeyResponse<GetAttributeValuesResponse, AttributeValue>(this, (i) => i.AttributeValues ?? new List<AttributeValue>());
 
         internal GetAttributeValuesPaginator(IAmazonPricing client, GetAttributeValuesRequest request)
         {

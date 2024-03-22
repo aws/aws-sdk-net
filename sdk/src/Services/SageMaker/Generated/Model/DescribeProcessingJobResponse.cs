@@ -36,7 +36,7 @@ namespace Amazon.SageMaker.Model
         private AppSpecification _appSpecification;
         private string _autoMLJobArn;
         private DateTime? _creationTime;
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _exitMessage;
         private ExperimentConfig _experimentConfig;
         private string _failureReason;
@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         private string _monitoringScheduleArn;
         private NetworkConfig _networkConfig;
         private DateTime? _processingEndTime;
-        private List<ProcessingInput> _processingInputs = new List<ProcessingInput>();
+        private List<ProcessingInput> _processingInputs = AWSConfigs.InitializeCollections ? new List<ProcessingInput>() : null;
         private string _processingJobArn;
         private string _processingJobName;
         private ProcessingJobStatus _processingJobStatus;
@@ -128,7 +128,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProcessingInputs property is set
         internal bool IsSetProcessingInputs()
         {
-            return this._processingInputs != null && this._processingInputs.Count > 0; 
+            return this._processingInputs != null && (this._processingInputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

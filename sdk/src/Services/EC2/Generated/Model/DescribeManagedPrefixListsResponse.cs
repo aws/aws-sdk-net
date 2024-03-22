@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeManagedPrefixListsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ManagedPrefixList> _prefixLists = new List<ManagedPrefixList>();
+        private List<ManagedPrefixList> _prefixLists = AWSConfigs.InitializeCollections ? new List<ManagedPrefixList>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if PrefixLists property is set
         internal bool IsSetPrefixLists()
         {
-            return this._prefixLists != null && this._prefixLists.Count > 0; 
+            return this._prefixLists != null && (this._prefixLists.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

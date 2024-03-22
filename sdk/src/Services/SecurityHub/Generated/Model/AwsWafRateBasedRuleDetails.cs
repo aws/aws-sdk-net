@@ -35,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsWafRateBasedRuleDetails
     {
-        private List<AwsWafRateBasedRuleMatchPredicate> _matchPredicates = new List<AwsWafRateBasedRuleMatchPredicate>();
+        private List<AwsWafRateBasedRuleMatchPredicate> _matchPredicates = AWSConfigs.InitializeCollections ? new List<AwsWafRateBasedRuleMatchPredicate>() : null;
         private string _metricName;
         private string _name;
         private string _rateKey;
@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if MatchPredicates property is set
         internal bool IsSetMatchPredicates()
         {
-            return this._matchPredicates != null && this._matchPredicates.Count > 0; 
+            return this._matchPredicates != null && (this._matchPredicates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

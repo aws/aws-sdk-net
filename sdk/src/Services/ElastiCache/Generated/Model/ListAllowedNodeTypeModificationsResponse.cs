@@ -34,8 +34,8 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class ListAllowedNodeTypeModificationsResponse : AmazonWebServiceResponse
     {
-        private List<string> _scaleDownModifications = new List<string>();
-        private List<string> _scaleUpModifications = new List<string>();
+        private List<string> _scaleDownModifications = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _scaleUpModifications = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ScaleDownModifications. 
@@ -55,7 +55,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ScaleDownModifications property is set
         internal bool IsSetScaleDownModifications()
         {
-            return this._scaleDownModifications != null && this._scaleDownModifications.Count > 0; 
+            return this._scaleDownModifications != null && (this._scaleDownModifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ScaleUpModifications property is set
         internal bool IsSetScaleUpModifications()
         {
-            return this._scaleUpModifications != null && this._scaleUpModifications.Count > 0; 
+            return this._scaleUpModifications != null && (this._scaleUpModifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

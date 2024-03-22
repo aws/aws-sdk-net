@@ -42,7 +42,7 @@ namespace Amazon.CloudSearch.Model
     {
         private bool? _deployed;
         private string _domainName;
-        private List<string> _suggesterNames = new List<string>();
+        private List<string> _suggesterNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Deployed. 
@@ -97,7 +97,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if SuggesterNames property is set
         internal bool IsSetSuggesterNames()
         {
-            return this._suggesterNames != null && this._suggesterNames.Count > 0; 
+            return this._suggesterNames != null && (this._suggesterNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

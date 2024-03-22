@@ -33,7 +33,7 @@ namespace Amazon.CodeArtifact.Model
     /// </summary>
     public partial class ListDomainsResponse : AmazonWebServiceResponse
     {
-        private List<DomainSummary> _domains = new List<DomainSummary>();
+        private List<DomainSummary> _domains = AWSConfigs.InitializeCollections ? new List<DomainSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Domains property is set
         internal bool IsSetDomains()
         {
-            return this._domains != null && this._domains.Count > 0; 
+            return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

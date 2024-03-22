@@ -45,7 +45,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<TransactionEvent> Events => 
-            new PaginatedResultKeyResponse<ListFilteredTransactionEventsResponse, TransactionEvent>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<ListFilteredTransactionEventsResponse, TransactionEvent>(this, (i) => i.Events ?? new List<TransactionEvent>());
 
         internal ListFilteredTransactionEventsPaginator(IAmazonManagedBlockchainQuery client, ListFilteredTransactionEventsRequest request)
         {

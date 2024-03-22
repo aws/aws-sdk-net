@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
     {
         private string _instanceId;
         private string _queueId;
-        private List<string> _quickConnectIds = new List<string>();
+        private List<string> _quickConnectIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -98,7 +98,7 @@ namespace Amazon.Connect.Model
         // Check to see if QuickConnectIds property is set
         internal bool IsSetQuickConnectIds()
         {
-            return this._quickConnectIds != null && this._quickConnectIds.Count > 0; 
+            return this._quickConnectIds != null && (this._quickConnectIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

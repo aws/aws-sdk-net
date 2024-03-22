@@ -45,7 +45,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Enumerable containing all of the Entities
         /// </summary>
         public IPaginatedEnumerable<ThemeSummary> Entities => 
-            new PaginatedResultKeyResponse<ListThemesResponse, ThemeSummary>(this, (i) => i.Entities);
+            new PaginatedResultKeyResponse<ListThemesResponse, ThemeSummary>(this, (i) => i.Entities ?? new List<ThemeSummary>());
 
         internal ListThemesPaginator(IAmazonAmplifyUIBuilder client, ListThemesRequest request)
         {

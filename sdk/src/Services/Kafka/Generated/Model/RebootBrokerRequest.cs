@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class RebootBrokerRequest : AmazonKafkaRequest
     {
-        private List<string> _brokerIds = new List<string>();
+        private List<string> _brokerIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clusterArn;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.Kafka.Model
         // Check to see if BrokerIds property is set
         internal bool IsSetBrokerIds()
         {
-            return this._brokerIds != null && this._brokerIds.Count > 0; 
+            return this._brokerIds != null && (this._brokerIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

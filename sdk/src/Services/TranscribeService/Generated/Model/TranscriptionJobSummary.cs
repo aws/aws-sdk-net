@@ -41,11 +41,11 @@ namespace Amazon.TranscribeService.Model
         private bool? _identifyLanguage;
         private bool? _identifyMultipleLanguages;
         private LanguageCode _languageCode;
-        private List<LanguageCodeItem> _languageCodes = new List<LanguageCodeItem>();
+        private List<LanguageCodeItem> _languageCodes = AWSConfigs.InitializeCollections ? new List<LanguageCodeItem>() : null;
         private ModelSettings _modelSettings;
         private OutputLocationType _outputLocationType;
         private DateTime? _startTime;
-        private List<ToxicityDetectionSettings> _toxicityDetection = new List<ToxicityDetectionSettings>();
+        private List<ToxicityDetectionSettings> _toxicityDetection = AWSConfigs.InitializeCollections ? new List<ToxicityDetectionSettings>() : null;
         private string _transcriptionJobName;
         private TranscriptionJobStatus _transcriptionJobStatus;
 
@@ -231,7 +231,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if LanguageCodes property is set
         internal bool IsSetLanguageCodes()
         {
-            return this._languageCodes != null && this._languageCodes.Count > 0; 
+            return this._languageCodes != null && (this._languageCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -320,7 +320,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if ToxicityDetection property is set
         internal bool IsSetToxicityDetection()
         {
-            return this._toxicityDetection != null && this._toxicityDetection.Count > 0; 
+            return this._toxicityDetection != null && (this._toxicityDetection.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

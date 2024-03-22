@@ -45,7 +45,7 @@ namespace Amazon.ForecastService.Model
         /// Enumerable containing all of the Predictors
         /// </summary>
         public IPaginatedEnumerable<PredictorSummary> Predictors => 
-            new PaginatedResultKeyResponse<ListPredictorsResponse, PredictorSummary>(this, (i) => i.Predictors);
+            new PaginatedResultKeyResponse<ListPredictorsResponse, PredictorSummary>(this, (i) => i.Predictors ?? new List<PredictorSummary>());
 
         internal ListPredictorsPaginator(IAmazonForecastService client, ListPredictorsRequest request)
         {

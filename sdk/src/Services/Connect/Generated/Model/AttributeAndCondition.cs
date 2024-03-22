@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class AttributeAndCondition
     {
         private HierarchyGroupCondition _hierarchyGroupCondition;
-        private List<TagCondition> _tagConditions = new List<TagCondition>();
+        private List<TagCondition> _tagConditions = AWSConfigs.InitializeCollections ? new List<TagCondition>() : null;
 
         /// <summary>
         /// Gets and sets the property HierarchyGroupCondition.
@@ -66,7 +66,7 @@ namespace Amazon.Connect.Model
         // Check to see if TagConditions property is set
         internal bool IsSetTagConditions()
         {
-            return this._tagConditions != null && this._tagConditions.Count > 0; 
+            return this._tagConditions != null && (this._tagConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

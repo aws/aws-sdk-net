@@ -35,7 +35,7 @@ namespace Amazon.IVSRealTime.Model
     public partial class CreateEncoderConfigurationRequest : AmazonIVSRealTimeRequest
     {
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Video _video;
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

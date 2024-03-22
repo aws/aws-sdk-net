@@ -34,7 +34,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ResourceToImport
     {
         private string _logicalResourceId;
-        private Dictionary<string, string> _resourceIdentifier = new Dictionary<string, string>();
+        private Dictionary<string, string> _resourceIdentifier = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceType;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceIdentifier property is set
         internal bool IsSetResourceIdentifier()
         {
-            return this._resourceIdentifier != null && this._resourceIdentifier.Count > 0; 
+            return this._resourceIdentifier != null && (this._resourceIdentifier.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

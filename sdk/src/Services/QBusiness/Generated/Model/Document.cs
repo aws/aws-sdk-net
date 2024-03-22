@@ -34,7 +34,7 @@ namespace Amazon.QBusiness.Model
     public partial class Document
     {
         private AccessConfiguration _accessConfiguration;
-        private List<DocumentAttribute> _attributes = new List<DocumentAttribute>();
+        private List<DocumentAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<DocumentAttribute>() : null;
         private DocumentContent _content;
         private ContentType _contentType;
         private DocumentEnrichmentConfiguration _documentEnrichmentConfiguration;
@@ -75,7 +75,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

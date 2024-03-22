@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("statusSet/item", targetDepth))
                     {
                         var unmarshaller = IdFormatUnmarshaller.Instance;
+                        if (unmarshalledObject.Statuses == null)
+                        {
+                            unmarshalledObject.Statuses = new List<IdFormat>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Statuses.Add(item);
                         continue;

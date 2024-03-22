@@ -34,7 +34,7 @@ namespace Amazon.SageMakerGeospatial.Model
     public partial class ListRasterDataCollectionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RasterDataCollectionMetadata> _rasterDataCollectionSummaries = new List<RasterDataCollectionMetadata>();
+        private List<RasterDataCollectionMetadata> _rasterDataCollectionSummaries = AWSConfigs.InitializeCollections ? new List<RasterDataCollectionMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if RasterDataCollectionSummaries property is set
         internal bool IsSetRasterDataCollectionSummaries()
         {
-            return this._rasterDataCollectionSummaries != null && this._rasterDataCollectionSummaries.Count > 0; 
+            return this._rasterDataCollectionSummaries != null && (this._rasterDataCollectionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

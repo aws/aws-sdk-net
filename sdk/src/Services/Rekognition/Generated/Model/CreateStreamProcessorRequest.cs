@@ -82,10 +82,10 @@ namespace Amazon.Rekognition.Model
         private string _name;
         private StreamProcessorNotificationChannel _notificationChannel;
         private StreamProcessorOutput _output;
-        private List<RegionOfInterest> _regionsOfInterest = new List<RegionOfInterest>();
+        private List<RegionOfInterest> _regionsOfInterest = AWSConfigs.InitializeCollections ? new List<RegionOfInterest>() : null;
         private string _roleArn;
         private StreamProcessorSettings _settings;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property DataSharingPreference. 
@@ -236,7 +236,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if RegionsOfInterest property is set
         internal bool IsSetRegionsOfInterest()
         {
-            return this._regionsOfInterest != null && this._regionsOfInterest.Count > 0; 
+            return this._regionsOfInterest != null && (this._regionsOfInterest.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -300,7 +300,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

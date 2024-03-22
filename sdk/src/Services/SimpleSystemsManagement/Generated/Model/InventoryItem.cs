@@ -34,9 +34,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class InventoryItem
     {
         private string _captureTime;
-        private List<Dictionary<string, string>> _content = new List<Dictionary<string, string>>();
+        private List<Dictionary<string, string>> _content = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
         private string _contentHash;
-        private Dictionary<string, string> _context = new Dictionary<string, string>();
+        private Dictionary<string, string> _context = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _schemaVersion;
         private string _typeName;
 
@@ -75,7 +75,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Content property is set
         internal bool IsSetContent()
         {
-            return this._content != null && this._content.Count > 0; 
+            return this._content != null && (this._content.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Context property is set
         internal bool IsSetContext()
         {
-            return this._context != null && this._context.Count > 0; 
+            return this._context != null && (this._context.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

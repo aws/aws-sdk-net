@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class GetCSVHeaderResponse : AmazonWebServiceResponse
     {
-        private List<string> _csvHeader = new List<string>();
+        private List<string> _csvHeader = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _userPoolId;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if CSVHeader property is set
         internal bool IsSetCSVHeader()
         {
-            return this._csvHeader != null && this._csvHeader.Count > 0; 
+            return this._csvHeader != null && (this._csvHeader.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CancelCapacityReservationFleetsRequest : AmazonEC2Request
     {
-        private List<string> _capacityReservationFleetIds = new List<string>();
+        private List<string> _capacityReservationFleetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CapacityReservationFleetIds. 
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         // Check to see if CapacityReservationFleetIds property is set
         internal bool IsSetCapacityReservationFleetIds()
         {
-            return this._capacityReservationFleetIds != null && this._capacityReservationFleetIds.Count > 0; 
+            return this._capacityReservationFleetIds != null && (this._capacityReservationFleetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

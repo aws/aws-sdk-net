@@ -33,10 +33,10 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class GetRecordsResponse : AmazonWebServiceResponse
     {
-        private List<ChildShard> _childShards = new List<ChildShard>();
+        private List<ChildShard> _childShards = AWSConfigs.InitializeCollections ? new List<ChildShard>() : null;
         private long? _millisBehindLatest;
         private string _nextShardIterator;
-        private List<Record> _records = new List<Record>();
+        private List<Record> _records = AWSConfigs.InitializeCollections ? new List<Record>() : null;
 
         /// <summary>
         /// Gets and sets the property ChildShards. 
@@ -54,7 +54,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if ChildShards property is set
         internal bool IsSetChildShards()
         {
-            return this._childShards != null && this._childShards.Count > 0; 
+            return this._childShards != null && (this._childShards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

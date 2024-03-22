@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("deprovisionedAddressSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.DeprovisionedAddresses == null)
+                        {
+                            response.DeprovisionedAddresses = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DeprovisionedAddresses.Add(item);
                         continue;

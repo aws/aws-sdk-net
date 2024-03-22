@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the SpotFleetRequestConfigs
         /// </summary>
         public IPaginatedEnumerable<SpotFleetRequestConfig> SpotFleetRequestConfigs => 
-            new PaginatedResultKeyResponse<DescribeSpotFleetRequestsResponse, SpotFleetRequestConfig>(this, (i) => i.SpotFleetRequestConfigs);
+            new PaginatedResultKeyResponse<DescribeSpotFleetRequestsResponse, SpotFleetRequestConfig>(this, (i) => i.SpotFleetRequestConfigs ?? new List<SpotFleetRequestConfig>());
 
         internal DescribeSpotFleetRequestsPaginator(IAmazonEC2 client, DescribeSpotFleetRequestsRequest request)
         {
