@@ -52,10 +52,12 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
         /// <para>
-        ///  The number of seconds the vended session credentials are valid for. 
+        ///  Used to determine how long sessions vended using this profile are valid for. See
+        /// the <c>Expiration</c> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
+        /// API documentation</a> page for more details. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=900, Max=3600)]
+        [AWSProperty(Min=900, Max=43200)]
         public int DurationSeconds
         {
             get { return this._durationSeconds.GetValueOrDefault(); }
