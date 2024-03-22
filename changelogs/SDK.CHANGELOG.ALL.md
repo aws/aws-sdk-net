@@ -1,3 +1,19 @@
+### 3.7.774.0 (2024-03-22 18:19 UTC)
+* IAMRolesAnywhere (3.7.301.0)
+	* This release relaxes constraints on the durationSeconds request parameter for the *Profile APIs that support it. This parameter can now take on values that go up to 43200.
+* Kendra (3.7.301.0)
+	* Documentation update, March 2024. Corrects some docs for Amazon Kendra.
+* KinesisFirehose (3.7.304.8)
+	* Updates Amazon Firehose documentation for message regarding Enforcing Tags IAM Policy.
+* Pricing (3.7.302.0)
+	* Add ResourceNotFoundException to ListPriceLists and GetPriceListFileUrl APIs
+* SecurityHub (3.7.304.0)
+	* Added new resource detail object to ASFF, including resource for LastKnownExploitAt
+* Core 3.7.303.0
+	* Add InitializeCollections property to AWSConfigs. If true types used for request and responses for service calls initializes collection properties to empty collection. If false the collections will be initialized to null. The default value is true.
+	* Fixed issue overriding OS configured proxy for .NET Framework targets.
+	* All services packages updated to require new Core
+
 ### 3.7.773.0 (2024-03-21 18:14 UTC)
 * CodeArtifact (3.7.301.0)
 	* This release adds Package groups to CodeArtifact so you can more conveniently configure package origin controls for multiple packages.
