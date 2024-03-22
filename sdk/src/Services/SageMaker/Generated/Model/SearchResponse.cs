@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class SearchResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SearchRecord> _results = new List<SearchRecord>();
+        private List<SearchRecord> _results = AWSConfigs.InitializeCollections ? new List<SearchRecord>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

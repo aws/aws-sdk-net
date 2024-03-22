@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model
     public partial class ListSourceApiAssociationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SourceApiAssociationSummary> _sourceApiAssociationSummaries = new List<SourceApiAssociationSummary>();
+        private List<SourceApiAssociationSummary> _sourceApiAssociationSummaries = AWSConfigs.InitializeCollections ? new List<SourceApiAssociationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.AppSync.Model
         // Check to see if SourceApiAssociationSummaries property is set
         internal bool IsSetSourceApiAssociationSummaries()
         {
-            return this._sourceApiAssociationSummaries != null && this._sourceApiAssociationSummaries.Count > 0; 
+            return this._sourceApiAssociationSummaries != null && (this._sourceApiAssociationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

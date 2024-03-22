@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class DescribeMetadataModelExportsAsScriptResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<SchemaConversionRequest> _requests = new List<SchemaConversionRequest>();
+        private List<SchemaConversionRequest> _requests = AWSConfigs.InitializeCollections ? new List<SchemaConversionRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -78,7 +78,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Requests property is set
         internal bool IsSetRequests()
         {
-            return this._requests != null && this._requests.Count > 0; 
+            return this._requests != null && (this._requests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

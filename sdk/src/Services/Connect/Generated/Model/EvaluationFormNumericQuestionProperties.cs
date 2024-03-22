@@ -36,7 +36,7 @@ namespace Amazon.Connect.Model
         private EvaluationFormNumericQuestionAutomation _automation;
         private int? _maxValue;
         private int? _minValue;
-        private List<EvaluationFormNumericQuestionOption> _options = new List<EvaluationFormNumericQuestionOption>();
+        private List<EvaluationFormNumericQuestionOption> _options = AWSConfigs.InitializeCollections ? new List<EvaluationFormNumericQuestionOption>() : null;
 
         /// <summary>
         /// Gets and sets the property Automation. 
@@ -110,7 +110,7 @@ namespace Amazon.Connect.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

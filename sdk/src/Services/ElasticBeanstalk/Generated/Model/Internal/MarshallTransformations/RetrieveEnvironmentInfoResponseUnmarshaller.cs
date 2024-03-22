@@ -84,6 +84,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EnvironmentInfo/member", targetDepth))
                     {
                         var unmarshaller = EnvironmentInfoDescriptionUnmarshaller.Instance;
+                        if (response.EnvironmentInfo == null)
+                        {
+                            response.EnvironmentInfo = new List<EnvironmentInfoDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.EnvironmentInfo.Add(item);
                         continue;

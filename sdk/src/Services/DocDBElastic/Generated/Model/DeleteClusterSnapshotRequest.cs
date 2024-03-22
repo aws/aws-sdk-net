@@ -30,7 +30,7 @@ namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteClusterSnapshot operation.
-    /// Delete a Elastic DocumentDB snapshot.
+    /// Delete an elastic cluster snapshot.
     /// </summary>
     public partial class DeleteClusterSnapshotRequest : AmazonDocDBElasticRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property SnapshotArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB snapshot that is to be deleted.
+        /// The ARN identifier of the elastic cluster snapshot that is to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

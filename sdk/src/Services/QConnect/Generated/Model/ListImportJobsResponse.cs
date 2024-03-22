@@ -33,7 +33,7 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class ListImportJobsResponse : AmazonWebServiceResponse
     {
-        private List<ImportJobSummary> _importJobSummaries = new List<ImportJobSummary>();
+        private List<ImportJobSummary> _importJobSummaries = AWSConfigs.InitializeCollections ? new List<ImportJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.QConnect.Model
         // Check to see if ImportJobSummaries property is set
         internal bool IsSetImportJobSummaries()
         {
-            return this._importJobSummaries != null && this._importJobSummaries.Count > 0; 
+            return this._importJobSummaries != null && (this._importJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

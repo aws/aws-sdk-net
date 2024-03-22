@@ -33,7 +33,7 @@ namespace Amazon.FinSpaceData.Model
     /// </summary>
     public partial class ListDataViewsResponse : AmazonWebServiceResponse
     {
-        private List<DataViewSummary> _dataViews = new List<DataViewSummary>();
+        private List<DataViewSummary> _dataViews = AWSConfigs.InitializeCollections ? new List<DataViewSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FinSpaceData.Model
         // Check to see if DataViews property is set
         internal bool IsSetDataViews()
         {
-            return this._dataViews != null && this._dataViews.Count > 0; 
+            return this._dataViews != null && (this._dataViews.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

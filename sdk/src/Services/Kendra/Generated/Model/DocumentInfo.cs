@@ -33,7 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class DocumentInfo
     {
-        private List<DocumentAttribute> _attributes = new List<DocumentAttribute>();
+        private List<DocumentAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<DocumentAttribute>() : null;
         private string _documentId;
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

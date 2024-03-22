@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
-    /// A list of Elastic DocumentDB snapshots.
+    /// A list of elastic cluster snapshots.
     /// </summary>
     public partial class ClusterSnapshotInList
     {
@@ -42,7 +42,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB cluster.
+        /// The ARN identifier of the elastic cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property SnapshotArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB snapshot
+        /// The ARN identifier of the elastic cluster snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,8 +80,8 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property SnapshotCreationTime. 
         /// <para>
-        /// The time when the Elastic DocumentDB snapshot was created in Universal Coordinated
-        /// Time (UTC).
+        /// The time when the elastic cluster snapshot was created in Universal Coordinated Time
+        /// (UTC).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
-        /// The name of the Elastic DocumentDB snapshot.
+        /// The name of the elastic cluster snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +119,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Elastic DocumentDB snapshot.
+        /// The status of the elastic cluster snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

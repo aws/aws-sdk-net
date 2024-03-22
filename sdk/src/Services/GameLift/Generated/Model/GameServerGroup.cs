@@ -53,12 +53,12 @@ namespace Amazon.GameLift.Model
         private string _gameServerGroupArn;
         private string _gameServerGroupName;
         private GameServerProtectionPolicy _gameServerProtectionPolicy;
-        private List<InstanceDefinition> _instanceDefinitions = new List<InstanceDefinition>();
+        private List<InstanceDefinition> _instanceDefinitions = AWSConfigs.InitializeCollections ? new List<InstanceDefinition>() : null;
         private DateTime? _lastUpdatedTime;
         private string _roleArn;
         private GameServerGroupStatus _status;
         private string _statusReason;
-        private List<string> _suspendedActions = new List<string>();
+        private List<string> _suspendedActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupArn. 
@@ -221,7 +221,7 @@ namespace Amazon.GameLift.Model
         // Check to see if InstanceDefinitions property is set
         internal bool IsSetInstanceDefinitions()
         {
-            return this._instanceDefinitions != null && this._instanceDefinitions.Count > 0; 
+            return this._instanceDefinitions != null && (this._instanceDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -353,7 +353,7 @@ namespace Amazon.GameLift.Model
         // Check to see if SuspendedActions property is set
         internal bool IsSetSuspendedActions()
         {
-            return this._suspendedActions != null && this._suspendedActions.Count > 0; 
+            return this._suspendedActions != null && (this._suspendedActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

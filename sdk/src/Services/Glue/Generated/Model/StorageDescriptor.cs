@@ -33,19 +33,19 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class StorageDescriptor
     {
-        private List<string> _additionalLocations = new List<string>();
-        private List<string> _bucketColumns = new List<string>();
-        private List<Column> _columns = new List<Column>();
+        private List<string> _additionalLocations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _bucketColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Column> _columns = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private bool? _compressed;
         private string _inputFormat;
         private string _location;
         private int? _numberOfBuckets;
         private string _outputFormat;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private SchemaReference _schemaReference;
         private SerDeInfo _serdeInfo;
         private SkewedInfo _skewedInfo;
-        private List<Order> _sortColumns = new List<Order>();
+        private List<Order> _sortColumns = AWSConfigs.InitializeCollections ? new List<Order>() : null;
         private bool? _storedAsSubDirectories;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.Glue.Model
         // Check to see if AdditionalLocations property is set
         internal bool IsSetAdditionalLocations()
         {
-            return this._additionalLocations != null && this._additionalLocations.Count > 0; 
+            return this._additionalLocations != null && (this._additionalLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.Glue.Model
         // Check to see if BucketColumns property is set
         internal bool IsSetBucketColumns()
         {
-            return this._bucketColumns != null && this._bucketColumns.Count > 0; 
+            return this._bucketColumns != null && (this._bucketColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.Glue.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Amazon.Glue.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace Amazon.Glue.Model
         // Check to see if SortColumns property is set
         internal bool IsSetSortColumns()
         {
-            return this._sortColumns != null && this._sortColumns.Count > 0; 
+            return this._sortColumns != null && (this._sortColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -38,7 +38,7 @@ namespace Amazon.CodeBuild.Model
         private ProjectBuildBatchConfig _buildBatchConfig;
         private long? _buildBatchNumber;
         private StatusType _buildBatchStatus;
-        private List<BuildGroup> _buildGroups = new List<BuildGroup>();
+        private List<BuildGroup> _buildGroups = AWSConfigs.InitializeCollections ? new List<BuildGroup>() : null;
         private int? _buildTimeoutInMinutes;
         private ProjectCache _cache;
         private bool? _complete;
@@ -47,17 +47,17 @@ namespace Amazon.CodeBuild.Model
         private string _encryptionKey;
         private DateTime? _endTime;
         private ProjectEnvironment _environment;
-        private List<ProjectFileSystemLocation> _fileSystemLocations = new List<ProjectFileSystemLocation>();
+        private List<ProjectFileSystemLocation> _fileSystemLocations = AWSConfigs.InitializeCollections ? new List<ProjectFileSystemLocation>() : null;
         private string _id;
         private string _initiator;
         private LogsConfig _logConfig;
-        private List<BuildBatchPhase> _phases = new List<BuildBatchPhase>();
+        private List<BuildBatchPhase> _phases = AWSConfigs.InitializeCollections ? new List<BuildBatchPhase>() : null;
         private string _projectName;
         private int? _queuedTimeoutInMinutes;
         private string _resolvedSourceVersion;
-        private List<BuildArtifacts> _secondaryArtifacts = new List<BuildArtifacts>();
-        private List<ProjectSource> _secondarySources = new List<ProjectSource>();
-        private List<ProjectSourceVersion> _secondarySourceVersions = new List<ProjectSourceVersion>();
+        private List<BuildArtifacts> _secondaryArtifacts = AWSConfigs.InitializeCollections ? new List<BuildArtifacts>() : null;
+        private List<ProjectSource> _secondarySources = AWSConfigs.InitializeCollections ? new List<ProjectSource>() : null;
+        private List<ProjectSourceVersion> _secondarySourceVersions = AWSConfigs.InitializeCollections ? new List<ProjectSourceVersion>() : null;
         private string _serviceRole;
         private ProjectSource _source;
         private string _sourceVersion;
@@ -170,7 +170,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if BuildGroups property is set
         internal bool IsSetBuildGroups()
         {
-            return this._buildGroups != null && this._buildGroups.Count > 0; 
+            return this._buildGroups != null && (this._buildGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -345,7 +345,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if FileSystemLocations property is set
         internal bool IsSetFileSystemLocations()
         {
-            return this._fileSystemLocations != null && this._fileSystemLocations.Count > 0; 
+            return this._fileSystemLocations != null && (this._fileSystemLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -428,7 +428,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Phases property is set
         internal bool IsSetPhases()
         {
-            return this._phases != null && this._phases.Count > 0; 
+            return this._phases != null && (this._phases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -518,7 +518,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondaryArtifacts property is set
         internal bool IsSetSecondaryArtifacts()
         {
-            return this._secondaryArtifacts != null && this._secondaryArtifacts.Count > 0; 
+            return this._secondaryArtifacts != null && (this._secondaryArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -537,7 +537,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondarySources property is set
         internal bool IsSetSecondarySources()
         {
-            return this._secondarySources != null && this._secondarySources.Count > 0; 
+            return this._secondarySources != null && (this._secondarySources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -581,7 +581,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondarySourceVersions property is set
         internal bool IsSetSecondarySourceVersions()
         {
-            return this._secondarySourceVersions != null && this._secondarySourceVersions.Count > 0; 
+            return this._secondarySourceVersions != null && (this._secondarySourceVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

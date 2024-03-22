@@ -57,6 +57,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UnrecognizedResourceTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.UnrecognizedResourceTypes == null)
+                        {
+                            unmarshalledObject.UnrecognizedResourceTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.UnrecognizedResourceTypes.Add(item);
                         continue;

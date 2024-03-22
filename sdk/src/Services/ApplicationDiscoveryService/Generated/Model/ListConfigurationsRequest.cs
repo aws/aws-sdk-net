@@ -37,10 +37,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
     public partial class ListConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
     {
         private ConfigurationItemType _configurationType;
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<OrderByElement> _orderBy = new List<OrderByElement>();
+        private List<OrderByElement> _orderBy = AWSConfigs.InitializeCollections ? new List<OrderByElement>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationType. 
@@ -88,7 +88,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if OrderBy property is set
         internal bool IsSetOrderBy()
         {
-            return this._orderBy != null && this._orderBy.Count > 0; 
+            return this._orderBy != null && (this._orderBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -84,7 +84,7 @@ namespace Amazon.GameLift.Model
     public partial class AcceptMatchRequest : AmazonGameLiftRequest
     {
         private AcceptanceType _acceptanceType;
-        private List<string> _playerIds = new List<string>();
+        private List<string> _playerIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ticketId;
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace Amazon.GameLift.Model
         // Check to see if PlayerIds property is set
         internal bool IsSetPlayerIds()
         {
-            return this._playerIds != null && this._playerIds.Count > 0; 
+            return this._playerIds != null && (this._playerIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

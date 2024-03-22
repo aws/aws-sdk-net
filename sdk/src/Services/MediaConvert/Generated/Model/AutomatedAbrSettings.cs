@@ -38,7 +38,7 @@ namespace Amazon.MediaConvert.Model
         private int? _maxAbrBitrate;
         private int? _maxRenditions;
         private int? _minAbrBitrate;
-        private List<AutomatedAbrRule> _rules = new List<AutomatedAbrRule>();
+        private List<AutomatedAbrRule> _rules = AWSConfigs.InitializeCollections ? new List<AutomatedAbrRule>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxAbrBitrate. Specify the maximum average bitrate for
@@ -116,7 +116,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

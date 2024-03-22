@@ -45,7 +45,7 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all of the ImagePipelineList
         /// </summary>
         public IPaginatedEnumerable<ImagePipeline> ImagePipelineList => 
-            new PaginatedResultKeyResponse<ListImagePipelinesResponse, ImagePipeline>(this, (i) => i.ImagePipelineList);
+            new PaginatedResultKeyResponse<ListImagePipelinesResponse, ImagePipeline>(this, (i) => i.ImagePipelineList ?? new List<ImagePipeline>());
 
         internal ListImagePipelinesPaginator(IAmazonImagebuilder client, ListImagePipelinesRequest request)
         {

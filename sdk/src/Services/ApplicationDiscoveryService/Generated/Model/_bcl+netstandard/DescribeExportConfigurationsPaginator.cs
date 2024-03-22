@@ -45,7 +45,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Enumerable containing all of the ExportsInfo
         /// </summary>
         public IPaginatedEnumerable<ExportInfo> ExportsInfo => 
-            new PaginatedResultKeyResponse<DescribeExportConfigurationsResponse, ExportInfo>(this, (i) => i.ExportsInfo);
+            new PaginatedResultKeyResponse<DescribeExportConfigurationsResponse, ExportInfo>(this, (i) => i.ExportsInfo ?? new List<ExportInfo>());
 
         internal DescribeExportConfigurationsPaginator(IAmazonApplicationDiscoveryService client, DescribeExportConfigurationsRequest request)
         {

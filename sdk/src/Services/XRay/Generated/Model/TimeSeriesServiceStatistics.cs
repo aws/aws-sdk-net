@@ -34,7 +34,7 @@ namespace Amazon.XRay.Model
     public partial class TimeSeriesServiceStatistics
     {
         private EdgeStatistics _edgeSummaryStatistics;
-        private List<HistogramEntry> _responseTimeHistogram = new List<HistogramEntry>();
+        private List<HistogramEntry> _responseTimeHistogram = AWSConfigs.InitializeCollections ? new List<HistogramEntry>() : null;
         private ForecastStatistics _serviceForecastStatistics;
         private ServiceStatistics _serviceSummaryStatistics;
         private DateTime? _timestamp;
@@ -69,7 +69,7 @@ namespace Amazon.XRay.Model
         // Check to see if ResponseTimeHistogram property is set
         internal bool IsSetResponseTimeHistogram()
         {
-            return this._responseTimeHistogram != null && this._responseTimeHistogram.Count > 0; 
+            return this._responseTimeHistogram != null && (this._responseTimeHistogram.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

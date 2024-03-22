@@ -33,7 +33,7 @@ namespace Amazon.ConnectCampaignService.Model
     /// </summary>
     public partial class DialRequest
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _clientToken;
         private DateTime? _expirationTime;
         private string _phoneNumber;
@@ -51,7 +51,7 @@ namespace Amazon.ConnectCampaignService.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

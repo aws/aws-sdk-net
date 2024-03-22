@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// Enumerable containing all of the CertificatesInfo
         /// </summary>
         public IPaginatedEnumerable<CertificateInfo> CertificatesInfo => 
-            new PaginatedResultKeyResponse<ListCertificatesResponse, CertificateInfo>(this, (i) => i.CertificatesInfo);
+            new PaginatedResultKeyResponse<ListCertificatesResponse, CertificateInfo>(this, (i) => i.CertificatesInfo ?? new List<CertificateInfo>());
 
         internal ListCertificatesPaginator(IAmazonDirectoryService client, ListCertificatesRequest request)
         {

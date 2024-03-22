@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ListProvisionedProductPlansResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<ProvisionedProductPlanSummary> _provisionedProductPlans = new List<ProvisionedProductPlanSummary>();
+        private List<ProvisionedProductPlanSummary> _provisionedProductPlans = AWSConfigs.InitializeCollections ? new List<ProvisionedProductPlanSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisionedProductPlans property is set
         internal bool IsSetProvisionedProductPlans()
         {
-            return this._provisionedProductPlans != null && this._provisionedProductPlans.Count > 0; 
+            return this._provisionedProductPlans != null && (this._provisionedProductPlans.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

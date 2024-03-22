@@ -75,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("modificationResultSet/item", targetDepth))
                     {
                         var unmarshaller = ReservedInstancesModificationResultUnmarshaller.Instance;
+                        if (unmarshalledObject.ModificationResults == null)
+                        {
+                            unmarshalledObject.ModificationResults = new List<ReservedInstancesModificationResult>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ModificationResults.Add(item);
                         continue;
@@ -82,6 +86,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("reservedInstancesSet/item", targetDepth))
                     {
                         var unmarshaller = ReservedInstancesIdUnmarshaller.Instance;
+                        if (unmarshalledObject.ReservedInstancesIds == null)
+                        {
+                            unmarshalledObject.ReservedInstancesIds = new List<ReservedInstancesId>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ReservedInstancesIds.Add(item);
                         continue;

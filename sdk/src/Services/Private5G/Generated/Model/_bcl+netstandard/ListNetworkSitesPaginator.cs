@@ -45,7 +45,7 @@ namespace Amazon.Private5G.Model
         /// Enumerable containing all of the NetworkSites
         /// </summary>
         public IPaginatedEnumerable<NetworkSite> NetworkSites => 
-            new PaginatedResultKeyResponse<ListNetworkSitesResponse, NetworkSite>(this, (i) => i.NetworkSites);
+            new PaginatedResultKeyResponse<ListNetworkSitesResponse, NetworkSite>(this, (i) => i.NetworkSites ?? new List<NetworkSite>());
 
         internal ListNetworkSitesPaginator(IAmazonPrivate5G client, ListNetworkSitesRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Subscriptions
         /// </summary>
         public IPaginatedEnumerable<Subscription> Subscriptions => 
-            new PaginatedResultKeyResponse<DescribeAwsNetworkPerformanceMetricSubscriptionsResponse, Subscription>(this, (i) => i.Subscriptions);
+            new PaginatedResultKeyResponse<DescribeAwsNetworkPerformanceMetricSubscriptionsResponse, Subscription>(this, (i) => i.Subscriptions ?? new List<Subscription>());
 
         internal DescribeAwsNetworkPerformanceMetricSubscriptionsPaginator(IAmazonEC2 client, DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.CodeStarconnections.Model
     /// </summary>
     public partial class SyncBlockerSummary
     {
-        private List<SyncBlocker> _latestBlockers = new List<SyncBlocker>();
+        private List<SyncBlocker> _latestBlockers = AWSConfigs.InitializeCollections ? new List<SyncBlocker>() : null;
         private string _parentResourceName;
         private string _resourceName;
 
@@ -52,7 +52,7 @@ namespace Amazon.CodeStarconnections.Model
         // Check to see if LatestBlockers property is set
         internal bool IsSetLatestBlockers()
         {
-            return this._latestBlockers != null && this._latestBlockers.Count > 0; 
+            return this._latestBlockers != null && (this._latestBlockers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

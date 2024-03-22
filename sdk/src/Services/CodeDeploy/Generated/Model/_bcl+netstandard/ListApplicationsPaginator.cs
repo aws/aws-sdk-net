@@ -45,7 +45,7 @@ namespace Amazon.CodeDeploy.Model
         /// Enumerable containing all of the Applications
         /// </summary>
         public IPaginatedEnumerable<string> Applications => 
-            new PaginatedResultKeyResponse<ListApplicationsResponse, string>(this, (i) => i.Applications);
+            new PaginatedResultKeyResponse<ListApplicationsResponse, string>(this, (i) => i.Applications ?? new List<string>());
 
         internal ListApplicationsPaginator(IAmazonCodeDeploy client, ListApplicationsRequest request)
         {

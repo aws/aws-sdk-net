@@ -57,7 +57,7 @@ namespace Amazon.WAFRegional.Model
         private WafAction _defaultAction;
         private string _metricName;
         private string _name;
-        private List<ActivatedRule> _rules = new List<ActivatedRule>();
+        private List<ActivatedRule> _rules = AWSConfigs.InitializeCollections ? new List<ActivatedRule>() : null;
         private string _webACLArn;
         private string _webACLId;
 
@@ -141,7 +141,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

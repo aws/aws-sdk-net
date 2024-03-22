@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class DescribeApplicationsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationDescription> _applications = new List<ApplicationDescription>();
+        private List<ApplicationDescription> _applications = AWSConfigs.InitializeCollections ? new List<ApplicationDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property Applications. 
@@ -50,7 +50,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

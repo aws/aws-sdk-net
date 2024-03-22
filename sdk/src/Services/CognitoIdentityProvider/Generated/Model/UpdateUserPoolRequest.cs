@@ -87,7 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private AccountRecoverySettingType _accountRecoverySetting;
         private AdminCreateUserConfigType _adminCreateUserConfig;
-        private List<string> _autoVerifiedAttributes = new List<string>();
+        private List<string> _autoVerifiedAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DeletionProtectionType _deletionProtection;
         private DeviceConfigurationType _deviceConfiguration;
         private EmailConfigurationType _emailConfiguration;
@@ -102,7 +102,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private UserAttributeUpdateSettingsType _userAttributeUpdateSettings;
         private UserPoolAddOnsType _userPoolAddOns;
         private string _userPoolId;
-        private Dictionary<string, string> _userPoolTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _userPoolTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VerificationMessageTemplateType _verificationMessageTemplate;
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if AutoVerifiedAttributes property is set
         internal bool IsSetAutoVerifiedAttributes()
         {
-            return this._autoVerifiedAttributes != null && this._autoVerifiedAttributes.Count > 0; 
+            return this._autoVerifiedAttributes != null && (this._autoVerifiedAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -487,7 +487,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if UserPoolTags property is set
         internal bool IsSetUserPoolTags()
         {
-            return this._userPoolTags != null && this._userPoolTags.Count > 0; 
+            return this._userPoolTags != null && (this._userPoolTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

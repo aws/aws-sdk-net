@@ -35,7 +35,7 @@ namespace Amazon.GameLift.Model
     {
         private string _fleetArn;
         private string _fleetId;
-        private List<LocationAttributes> _locationAttributes = new List<LocationAttributes>();
+        private List<LocationAttributes> _locationAttributes = AWSConfigs.InitializeCollections ? new List<LocationAttributes>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.GameLift.Model
         // Check to see if LocationAttributes property is set
         internal bool IsSetLocationAttributes()
         {
-            return this._locationAttributes != null && this._locationAttributes.Count > 0; 
+            return this._locationAttributes != null && (this._locationAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class SdkType
     {
-        private List<SdkConfigurationProperty> _configurationProperties = new List<SdkConfigurationProperty>();
+        private List<SdkConfigurationProperty> _configurationProperties = AWSConfigs.InitializeCollections ? new List<SdkConfigurationProperty>() : null;
         private string _description;
         private string _friendlyName;
         private string _id;
@@ -53,7 +53,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if ConfigurationProperties property is set
         internal bool IsSetConfigurationProperties()
         {
-            return this._configurationProperties != null && this._configurationProperties.Count > 0; 
+            return this._configurationProperties != null && (this._configurationProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

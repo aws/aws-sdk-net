@@ -36,9 +36,9 @@ namespace Amazon.Panorama.Model
     #endif
     public partial class ValidationException : AmazonPanoramaException
     {
-        private List<ValidationExceptionErrorArgument> _errorArguments = new List<ValidationExceptionErrorArgument>();
+        private List<ValidationExceptionErrorArgument> _errorArguments = AWSConfigs.InitializeCollections ? new List<ValidationExceptionErrorArgument>() : null;
         private string _errorId;
-        private List<ValidationExceptionField> _fields = new List<ValidationExceptionField>();
+        private List<ValidationExceptionField> _fields = AWSConfigs.InitializeCollections ? new List<ValidationExceptionField>() : null;
         private ValidationExceptionReason _reason;
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Amazon.Panorama.Model
         // Check to see if ErrorArguments property is set
         internal bool IsSetErrorArguments()
         {
-            return this._errorArguments != null && this._errorArguments.Count > 0; 
+            return this._errorArguments != null && (this._errorArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -178,7 +178,7 @@ namespace Amazon.Panorama.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

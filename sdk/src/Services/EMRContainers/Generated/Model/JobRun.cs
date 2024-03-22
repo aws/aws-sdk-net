@@ -50,7 +50,7 @@ namespace Amazon.EMRContainers.Model
         private RetryPolicyExecution _retryPolicyExecution;
         private JobRunState _state;
         private string _stateDetails;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _virtualClusterId;
 
         /// <summary>
@@ -365,7 +365,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

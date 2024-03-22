@@ -38,10 +38,10 @@ namespace Amazon.Connect.Model
         private string _defaultOutboundQueueId;
         private string _description;
         private string _instanceId;
-        private List<MediaConcurrency> _mediaConcurrencies = new List<MediaConcurrency>();
+        private List<MediaConcurrency> _mediaConcurrencies = AWSConfigs.InitializeCollections ? new List<MediaConcurrency>() : null;
         private string _name;
-        private List<RoutingProfileQueueConfig> _queueConfigs = new List<RoutingProfileQueueConfig>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<RoutingProfileQueueConfig> _queueConfigs = AWSConfigs.InitializeCollections ? new List<RoutingProfileQueueConfig>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentAvailabilityTimer. 
@@ -138,7 +138,7 @@ namespace Amazon.Connect.Model
         // Check to see if MediaConcurrencies property is set
         internal bool IsSetMediaConcurrencies()
         {
-            return this._mediaConcurrencies != null && this._mediaConcurrencies.Count > 0; 
+            return this._mediaConcurrencies != null && (this._mediaConcurrencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.Connect.Model
         // Check to see if QueueConfigs property is set
         internal bool IsSetQueueConfigs()
         {
-            return this._queueConfigs != null && this._queueConfigs.Count > 0; 
+            return this._queueConfigs != null && (this._queueConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace Amazon.Connect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

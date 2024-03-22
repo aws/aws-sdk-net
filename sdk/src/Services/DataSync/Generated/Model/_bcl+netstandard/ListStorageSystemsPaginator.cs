@@ -45,7 +45,7 @@ namespace Amazon.DataSync.Model
         /// Enumerable containing all of the StorageSystems
         /// </summary>
         public IPaginatedEnumerable<StorageSystemListEntry> StorageSystems => 
-            new PaginatedResultKeyResponse<ListStorageSystemsResponse, StorageSystemListEntry>(this, (i) => i.StorageSystems);
+            new PaginatedResultKeyResponse<ListStorageSystemsResponse, StorageSystemListEntry>(this, (i) => i.StorageSystems ?? new List<StorageSystemListEntry>());
 
         internal ListStorageSystemsPaginator(IAmazonDataSync client, ListStorageSystemsRequest request)
         {

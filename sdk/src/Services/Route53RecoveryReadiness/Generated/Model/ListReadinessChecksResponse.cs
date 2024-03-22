@@ -34,7 +34,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     public partial class ListReadinessChecksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReadinessCheckOutput> _readinessChecks = new List<ReadinessCheckOutput>();
+        private List<ReadinessCheckOutput> _readinessChecks = AWSConfigs.InitializeCollections ? new List<ReadinessCheckOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         // Check to see if ReadinessChecks property is set
         internal bool IsSetReadinessChecks()
         {
-            return this._readinessChecks != null && this._readinessChecks.Count > 0; 
+            return this._readinessChecks != null && (this._readinessChecks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

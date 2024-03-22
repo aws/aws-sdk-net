@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetBucketBundlesResponse : AmazonWebServiceResponse
     {
-        private List<BucketBundle> _bundles = new List<BucketBundle>();
+        private List<BucketBundle> _bundles = AWSConfigs.InitializeCollections ? new List<BucketBundle>() : null;
 
         /// <summary>
         /// Gets and sets the property Bundles. 
@@ -50,7 +50,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Bundles property is set
         internal bool IsSetBundles()
         {
-            return this._bundles != null && this._bundles.Count > 0; 
+            return this._bundles != null && (this._bundles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     public partial class ListDataQualityRulesetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<DataQualityRulesetListDetails> _rulesets = new List<DataQualityRulesetListDetails>();
+        private List<DataQualityRulesetListDetails> _rulesets = AWSConfigs.InitializeCollections ? new List<DataQualityRulesetListDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Glue.Model
         // Check to see if Rulesets property is set
         internal bool IsSetRulesets()
         {
-            return this._rulesets != null && this._rulesets.Count > 0; 
+            return this._rulesets != null && (this._rulesets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

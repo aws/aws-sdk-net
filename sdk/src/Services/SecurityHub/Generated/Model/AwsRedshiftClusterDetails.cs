@@ -39,17 +39,17 @@ namespace Amazon.SecurityHub.Model
         private string _clusterAvailabilityStatus;
         private string _clusterCreateTime;
         private string _clusterIdentifier;
-        private List<AwsRedshiftClusterClusterNode> _clusterNodes = new List<AwsRedshiftClusterClusterNode>();
-        private List<AwsRedshiftClusterClusterParameterGroup> _clusterParameterGroups = new List<AwsRedshiftClusterClusterParameterGroup>();
+        private List<AwsRedshiftClusterClusterNode> _clusterNodes = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterClusterNode>() : null;
+        private List<AwsRedshiftClusterClusterParameterGroup> _clusterParameterGroups = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterClusterParameterGroup>() : null;
         private string _clusterPublicKey;
         private string _clusterRevisionNumber;
-        private List<AwsRedshiftClusterClusterSecurityGroup> _clusterSecurityGroups = new List<AwsRedshiftClusterClusterSecurityGroup>();
+        private List<AwsRedshiftClusterClusterSecurityGroup> _clusterSecurityGroups = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterClusterSecurityGroup>() : null;
         private AwsRedshiftClusterClusterSnapshotCopyStatus _clusterSnapshotCopyStatus;
         private string _clusterStatus;
         private string _clusterSubnetGroupName;
         private string _clusterVersion;
         private string _dbName;
-        private List<AwsRedshiftClusterDeferredMaintenanceWindow> _deferredMaintenanceWindows = new List<AwsRedshiftClusterDeferredMaintenanceWindow>();
+        private List<AwsRedshiftClusterDeferredMaintenanceWindow> _deferredMaintenanceWindows = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterDeferredMaintenanceWindow>() : null;
         private AwsRedshiftClusterElasticIpStatus _elasticIpStatus;
         private string _elasticResizeNumberOfNodeOptions;
         private bool? _encrypted;
@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         private string _expectedNextSnapshotScheduleTime;
         private string _expectedNextSnapshotScheduleTimeStatus;
         private AwsRedshiftClusterHsmStatus _hsmStatus;
-        private List<AwsRedshiftClusterIamRole> _iamRoles = new List<AwsRedshiftClusterIamRole>();
+        private List<AwsRedshiftClusterIamRole> _iamRoles = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterIamRole>() : null;
         private string _kmsKeyId;
         private AwsRedshiftClusterLoggingStatus _loggingStatus;
         private string _maintenanceTrackName;
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model
         private string _nextMaintenanceWindowStartTime;
         private string _nodeType;
         private int? _numberOfNodes;
-        private List<string> _pendingActions = new List<string>();
+        private List<string> _pendingActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AwsRedshiftClusterPendingModifiedValues _pendingModifiedValues;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
@@ -76,7 +76,7 @@ namespace Amazon.SecurityHub.Model
         private string _snapshotScheduleIdentifier;
         private string _snapshotScheduleState;
         private string _vpcId;
-        private List<AwsRedshiftClusterVpcSecurityGroup> _vpcSecurityGroups = new List<AwsRedshiftClusterVpcSecurityGroup>();
+        private List<AwsRedshiftClusterVpcSecurityGroup> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterVpcSecurityGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
@@ -231,7 +231,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ClusterNodes property is set
         internal bool IsSetClusterNodes()
         {
-            return this._clusterNodes != null && this._clusterNodes.Count > 0; 
+            return this._clusterNodes != null && (this._clusterNodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -249,7 +249,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ClusterParameterGroups property is set
         internal bool IsSetClusterParameterGroups()
         {
-            return this._clusterParameterGroups != null && this._clusterParameterGroups.Count > 0; 
+            return this._clusterParameterGroups != null && (this._clusterParameterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -303,7 +303,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ClusterSecurityGroups property is set
         internal bool IsSetClusterSecurityGroups()
         {
-            return this._clusterSecurityGroups != null && this._clusterSecurityGroups.Count > 0; 
+            return this._clusterSecurityGroups != null && (this._clusterSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -431,7 +431,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DeferredMaintenanceWindows property is set
         internal bool IsSetDeferredMaintenanceWindows()
         {
-            return this._deferredMaintenanceWindows != null && this._deferredMaintenanceWindows.Count > 0; 
+            return this._deferredMaintenanceWindows != null && (this._deferredMaintenanceWindows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -607,7 +607,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if IamRoles property is set
         internal bool IsSetIamRoles()
         {
-            return this._iamRoles != null && this._iamRoles.Count > 0; 
+            return this._iamRoles != null && (this._iamRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -788,7 +788,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PendingActions property is set
         internal bool IsSetPendingActions()
         {
-            return this._pendingActions != null && this._pendingActions.Count > 0; 
+            return this._pendingActions != null && (this._pendingActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -970,7 +970,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if VpcSecurityGroups property is set
         internal bool IsSetVpcSecurityGroups()
         {
-            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+            return this._vpcSecurityGroups != null && (this._vpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

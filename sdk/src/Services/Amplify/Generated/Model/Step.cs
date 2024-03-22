@@ -37,7 +37,7 @@ namespace Amazon.Amplify.Model
         private string _context;
         private DateTime? _endTime;
         private string _logUrl;
-        private Dictionary<string, string> _screenshots = new Dictionary<string, string>();
+        private Dictionary<string, string> _screenshots = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _startTime;
         private JobStatus _status;
         private string _statusReason;
@@ -135,7 +135,7 @@ namespace Amazon.Amplify.Model
         // Check to see if Screenshots property is set
         internal bool IsSetScreenshots()
         {
-            return this._screenshots != null && this._screenshots.Count > 0; 
+            return this._screenshots != null && (this._screenshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

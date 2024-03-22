@@ -33,9 +33,9 @@ namespace Amazon.MobileAnalytics.Model
     /// </summary>
     public partial class Event
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _eventType;
-        private Dictionary<string, double> _metrics = new Dictionary<string, double>();
+        private Dictionary<string, double> _metrics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
         private Session _session;
         private DateTime? _timestampUtc;
         private string _version;
@@ -61,7 +61,7 @@ namespace Amazon.MobileAnalytics.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.MobileAnalytics.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

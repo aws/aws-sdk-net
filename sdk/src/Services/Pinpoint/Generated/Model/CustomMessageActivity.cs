@@ -35,7 +35,7 @@ namespace Amazon.Pinpoint.Model
     public partial class CustomMessageActivity
     {
         private string _deliveryUri;
-        private List<string> _endpointTypes = new List<string>();
+        private List<string> _endpointTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private JourneyCustomMessage _messageConfig;
         private string _nextActivity;
         private string _templateName;
@@ -88,7 +88,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if EndpointTypes property is set
         internal bool IsSetEndpointTypes()
         {
-            return this._endpointTypes != null && this._endpointTypes.Count > 0; 
+            return this._endpointTypes != null && (this._endpointTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

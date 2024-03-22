@@ -34,7 +34,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     public partial class DescribeScalableTargetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScalableTarget> _scalableTargets = new List<ScalableTarget>();
+        private List<ScalableTarget> _scalableTargets = AWSConfigs.InitializeCollections ? new List<ScalableTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if ScalableTargets property is set
         internal bool IsSetScalableTargets()
         {
-            return this._scalableTargets != null && this._scalableTargets.Count > 0; 
+            return this._scalableTargets != null && (this._scalableTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

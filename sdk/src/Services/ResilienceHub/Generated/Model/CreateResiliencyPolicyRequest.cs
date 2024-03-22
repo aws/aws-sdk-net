@@ -47,10 +47,10 @@ namespace Amazon.ResilienceHub.Model
     {
         private string _clientToken;
         private DataLocationConstraint _dataLocationConstraint;
-        private Dictionary<string, FailurePolicy> _policy = new Dictionary<string, FailurePolicy>();
+        private Dictionary<string, FailurePolicy> _policy = AWSConfigs.InitializeCollections ? new Dictionary<string, FailurePolicy>() : null;
         private string _policyDescription;
         private string _policyName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ResiliencyPolicyTier _tier;
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if Policy property is set
         internal bool IsSetPolicy()
         {
-            return this._policy != null && this._policy.Count > 0; 
+            return this._policy != null && (this._policy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

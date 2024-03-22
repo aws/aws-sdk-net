@@ -33,7 +33,7 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class Tagging
     {
-        private List<S3Tag> _tagSet = new List<S3Tag>();
+        private List<S3Tag> _tagSet = AWSConfigs.InitializeCollections ? new List<S3Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property TagSet. 
@@ -51,7 +51,7 @@ namespace Amazon.S3Control.Model
         // Check to see if TagSet property is set
         internal bool IsSetTagSet()
         {
-            return this._tagSet != null && this._tagSet.Count > 0; 
+            return this._tagSet != null && (this._tagSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

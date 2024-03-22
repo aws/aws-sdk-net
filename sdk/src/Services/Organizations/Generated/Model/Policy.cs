@@ -43,7 +43,7 @@ namespace Amazon.Organizations.Model
         /// The text content of the policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000000)]
+        [AWSProperty(Min=1)]
         public string Content
         {
             get { return this._content; }

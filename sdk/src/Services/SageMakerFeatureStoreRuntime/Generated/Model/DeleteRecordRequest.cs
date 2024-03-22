@@ -72,7 +72,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         private string _eventTime;
         private string _featureGroupName;
         private string _recordIdentifierValueAsString;
-        private List<string> _targetStores = new List<string>();
+        private List<string> _targetStores = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DeletionMode. 
@@ -170,7 +170,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         // Check to see if TargetStores property is set
         internal bool IsSetTargetStores()
         {
-            return this._targetStores != null && this._targetStores.Count > 0; 
+            return this._targetStores != null && (this._targetStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

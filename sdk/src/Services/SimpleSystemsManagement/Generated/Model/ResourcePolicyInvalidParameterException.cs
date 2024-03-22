@@ -37,7 +37,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     #endif
     public partial class ResourcePolicyInvalidParameterException : AmazonSimpleSystemsManagementException
     {
-        private List<string> _parameterNames = new List<string>();
+        private List<string> _parameterNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Constructs a new ResourcePolicyInvalidParameterException with the specified error
@@ -131,7 +131,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ParameterNames property is set
         internal bool IsSetParameterNames()
         {
-            return this._parameterNames != null && this._parameterNames.Count > 0; 
+            return this._parameterNames != null && (this._parameterNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

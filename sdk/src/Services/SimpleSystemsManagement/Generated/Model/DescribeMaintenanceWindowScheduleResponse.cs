@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribeMaintenanceWindowScheduleResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScheduledWindowExecution> _scheduledWindowExecutions = new List<ScheduledWindowExecution>();
+        private List<ScheduledWindowExecution> _scheduledWindowExecutions = AWSConfigs.InitializeCollections ? new List<ScheduledWindowExecution>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ScheduledWindowExecutions property is set
         internal bool IsSetScheduledWindowExecutions()
         {
-            return this._scheduledWindowExecutions != null && this._scheduledWindowExecutions.Count > 0; 
+            return this._scheduledWindowExecutions != null && (this._scheduledWindowExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

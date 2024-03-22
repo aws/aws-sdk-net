@@ -45,7 +45,7 @@ namespace Amazon.SimpleEmail.Model
         /// Enumerable containing all of the Identities
         /// </summary>
         public IPaginatedEnumerable<string> Identities => 
-            new PaginatedResultKeyResponse<ListIdentitiesResponse, string>(this, (i) => i.Identities);
+            new PaginatedResultKeyResponse<ListIdentitiesResponse, string>(this, (i) => i.Identities ?? new List<string>());
 
         internal ListIdentitiesPaginator(IAmazonSimpleEmailService client, ListIdentitiesRequest request)
         {

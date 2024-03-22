@@ -62,7 +62,7 @@ namespace Amazon.MTurk.Model
     /// </summary>
     public partial class ListAssignmentsForHITRequest : AmazonMTurkRequest
     {
-        private List<string> _assignmentStatuses = new List<string>();
+        private List<string> _assignmentStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _hitId;
         private int? _maxResults;
         private string _nextToken;
@@ -82,7 +82,7 @@ namespace Amazon.MTurk.Model
         // Check to see if AssignmentStatuses property is set
         internal bool IsSetAssignmentStatuses()
         {
-            return this._assignmentStatuses != null && this._assignmentStatuses.Count > 0; 
+            return this._assignmentStatuses != null && (this._assignmentStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

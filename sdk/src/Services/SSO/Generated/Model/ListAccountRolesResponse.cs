@@ -34,7 +34,7 @@ namespace Amazon.SSO.Model
     public partial class ListAccountRolesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RoleInfo> _roleList = new List<RoleInfo>();
+        private List<RoleInfo> _roleList = AWSConfigs.InitializeCollections ? new List<RoleInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SSO.Model
         // Check to see if RoleList property is set
         internal bool IsSetRoleList()
         {
-            return this._roleList != null && this._roleList.Count > 0; 
+            return this._roleList != null && (this._roleList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     public partial class ListDataQualityResultsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<DataQualityResultDescription> _results = new List<DataQualityResultDescription>();
+        private List<DataQualityResultDescription> _results = AWSConfigs.InitializeCollections ? new List<DataQualityResultDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

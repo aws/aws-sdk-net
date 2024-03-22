@@ -57,6 +57,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Actions/Action", targetDepth))
                     {
+                        if (unmarshalledObject.Actions == null)
+                        {
+                            unmarshalledObject.Actions = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Actions.Add(unmarshaller.Unmarshall(context));
                         continue;

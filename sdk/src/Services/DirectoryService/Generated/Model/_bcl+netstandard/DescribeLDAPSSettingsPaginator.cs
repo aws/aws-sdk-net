@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// Enumerable containing all of the LDAPSSettingsInfo
         /// </summary>
         public IPaginatedEnumerable<LDAPSSettingInfo> LDAPSSettingsInfo => 
-            new PaginatedResultKeyResponse<DescribeLDAPSSettingsResponse, LDAPSSettingInfo>(this, (i) => i.LDAPSSettingsInfo);
+            new PaginatedResultKeyResponse<DescribeLDAPSSettingsResponse, LDAPSSettingInfo>(this, (i) => i.LDAPSSettingsInfo ?? new List<LDAPSSettingInfo>());
 
         internal DescribeLDAPSSettingsPaginator(IAmazonDirectoryService client, DescribeLDAPSSettingsRequest request)
         {

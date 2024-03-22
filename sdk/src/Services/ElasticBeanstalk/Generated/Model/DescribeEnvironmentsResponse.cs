@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class DescribeEnvironmentsResponse : AmazonWebServiceResponse
     {
-        private List<EnvironmentDescription> _environments = new List<EnvironmentDescription>();
+        private List<EnvironmentDescription> _environments = AWSConfigs.InitializeCollections ? new List<EnvironmentDescription>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Environments property is set
         internal bool IsSetEnvironments()
         {
-            return this._environments != null && this._environments.Count > 0; 
+            return this._environments != null && (this._environments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

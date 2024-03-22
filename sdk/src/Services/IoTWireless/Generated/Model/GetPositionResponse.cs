@@ -35,7 +35,7 @@ namespace Amazon.IoTWireless.Model
     public partial class GetPositionResponse : AmazonWebServiceResponse
     {
         private Accuracy _accuracy;
-        private List<float> _position = new List<float>();
+        private List<float> _position = AWSConfigs.InitializeCollections ? new List<float>() : null;
         private PositionSolverProvider _solverProvider;
         private PositionSolverType _solverType;
         private string _solverVersion;
@@ -77,7 +77,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Position property is set
         internal bool IsSetPosition()
         {
-            return this._position != null && this._position.Count > 0; 
+            return this._position != null && (this._position.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

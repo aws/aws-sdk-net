@@ -33,7 +33,7 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class SearchDatabasesByLFTagsResponse : AmazonWebServiceResponse
     {
-        private List<TaggedDatabase> _databaseList = new List<TaggedDatabase>();
+        private List<TaggedDatabase> _databaseList = AWSConfigs.InitializeCollections ? new List<TaggedDatabase>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if DatabaseList property is set
         internal bool IsSetDatabaseList()
         {
-            return this._databaseList != null && this._databaseList.Count > 0; 
+            return this._databaseList != null && (this._databaseList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

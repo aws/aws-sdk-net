@@ -76,7 +76,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.KeyGroupConfig.Comment));
 
                     var publicRequestKeyGroupConfigItems = publicRequest.KeyGroupConfig.Items;
-                    if (publicRequestKeyGroupConfigItems != null && publicRequestKeyGroupConfigItems.Count > 0) 
+                    if (publicRequestKeyGroupConfigItems != null && (publicRequestKeyGroupConfigItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {                        
                         xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                         foreach (var publicRequestKeyGroupConfigItemsValue in publicRequestKeyGroupConfigItems) 

@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// Enumerable containing all of the Tests
         /// </summary>
         public IPaginatedEnumerable<Test> Tests => 
-            new PaginatedResultKeyResponse<ListTestsResponse, Test>(this, (i) => i.Tests);
+            new PaginatedResultKeyResponse<ListTestsResponse, Test>(this, (i) => i.Tests ?? new List<Test>());
 
         internal ListTestsPaginator(IAmazonDeviceFarm client, ListTestsRequest request)
         {

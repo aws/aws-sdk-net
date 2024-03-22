@@ -33,7 +33,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class ListCrossAccountResourcesResponse : AmazonWebServiceResponse
     {
-        private List<CrossAccountResource> _crossAccountResources = new List<CrossAccountResource>();
+        private List<CrossAccountResource> _crossAccountResources = AWSConfigs.InitializeCollections ? new List<CrossAccountResource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if CrossAccountResources property is set
         internal bool IsSetCrossAccountResources()
         {
-            return this._crossAccountResources != null && this._crossAccountResources.Count > 0; 
+            return this._crossAccountResources != null && (this._crossAccountResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

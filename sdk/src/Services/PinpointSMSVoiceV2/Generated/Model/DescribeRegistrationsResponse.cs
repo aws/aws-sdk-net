@@ -34,7 +34,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class DescribeRegistrationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RegistrationInformation> _registrations = new List<RegistrationInformation>();
+        private List<RegistrationInformation> _registrations = AWSConfigs.InitializeCollections ? new List<RegistrationInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Registrations property is set
         internal bool IsSetRegistrations()
         {
-            return this._registrations != null && this._registrations.Count > 0; 
+            return this._registrations != null && (this._registrations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

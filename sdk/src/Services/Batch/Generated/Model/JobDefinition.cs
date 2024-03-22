@@ -35,18 +35,19 @@ namespace Amazon.Batch.Model
     {
         private OrchestrationType _containerOrchestrationType;
         private ContainerProperties _containerProperties;
+        private EcsProperties _ecsProperties;
         private EksProperties _eksProperties;
         private string _jobDefinitionArn;
         private string _jobDefinitionName;
         private NodeProperties _nodeProperties;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
-        private List<string> _platformCapabilities = new List<string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _platformCapabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
         private int? _revision;
         private int? _schedulingPriority;
         private string _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private JobTimeout _timeout;
         private string _type;
 
@@ -72,9 +73,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerProperties. 
         /// <para>
-        /// An object with various properties specific to Amazon ECS based jobs. Valid values
-        /// are <c>containerProperties</c>, <c>eksProperties</c>, and <c>nodeProperties</c>. Only
-        /// one can be specified.
+        /// An object with properties specific to Amazon ECS-based jobs. When <c>containerProperties</c>
+        /// is used in the job definition, it can't be used in addition to <c>eksProperties</c>,
+        /// <c>ecsProperties</c>, or <c>nodeProperties</c>.
         /// </para>
         /// </summary>
         public ContainerProperties ContainerProperties
@@ -90,11 +91,31 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EcsProperties. 
+        /// <para>
+        /// An object that contains the properties for the Amazon ECS resources of a job.When
+        /// <c>ecsProperties</c> is used in the job definition, it can't be used in addition to
+        /// <c>containerProperties</c>, <c>eksProperties</c>, or <c>nodeProperties</c>.
+        /// </para>
+        /// </summary>
+        public EcsProperties EcsProperties
+        {
+            get { return this._ecsProperties; }
+            set { this._ecsProperties = value; }
+        }
+
+        // Check to see if EcsProperties property is set
+        internal bool IsSetEcsProperties()
+        {
+            return this._ecsProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EksProperties. 
         /// <para>
-        /// An object with various properties that are specific to Amazon EKS based jobs. Valid
-        /// values are <c>containerProperties</c>, <c>eksProperties</c>, and <c>nodeProperties</c>.
-        /// Only one can be specified.
+        /// An object with properties that are specific to Amazon EKS-based jobs. When <c>eksProperties</c>
+        /// is used in the job definition, it can't be used in addition to <c>containerProperties</c>,
+        /// <c>ecsProperties</c>, or <c>nodeProperties</c>.
         /// </para>
         /// </summary>
         public EksProperties EksProperties
@@ -150,9 +171,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NodeProperties. 
         /// <para>
-        /// An object with various properties that are specific to multi-node parallel jobs. Valid
-        /// values are <c>containerProperties</c>, <c>eksProperties</c>, and <c>nodeProperties</c>.
-        /// Only one can be specified.
+        /// An object with properties that are specific to multi-node parallel jobs. When <c>nodeProperties</c>
+        /// is used in the job definition, it can't be used in addition to <c>containerProperties</c>,
+        /// <c>ecsProperties</c>, or <c>eksProperties</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -192,7 +213,7 @@ namespace Amazon.Batch.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,7 +232,7 @@ namespace Amazon.Batch.Model
         // Check to see if PlatformCapabilities property is set
         internal bool IsSetPlatformCapabilities()
         {
-            return this._platformCapabilities != null && this._platformCapabilities.Count > 0; 
+            return this._platformCapabilities != null && (this._platformCapabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -328,7 +349,7 @@ namespace Amazon.Batch.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

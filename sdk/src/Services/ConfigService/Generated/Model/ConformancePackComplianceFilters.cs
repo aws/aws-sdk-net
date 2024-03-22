@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model
     public partial class ConformancePackComplianceFilters
     {
         private ConformancePackComplianceType _complianceType;
-        private List<string> _configRuleNames = new List<string>();
+        private List<string> _configRuleNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ComplianceType. 
@@ -75,7 +75,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConfigRuleNames property is set
         internal bool IsSetConfigRuleNames()
         {
-            return this._configRuleNames != null && this._configRuleNames.Count > 0; 
+            return this._configRuleNames != null && (this._configRuleNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

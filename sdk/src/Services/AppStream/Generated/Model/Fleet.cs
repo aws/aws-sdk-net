@@ -41,7 +41,7 @@ namespace Amazon.AppStream.Model
         private string _displayName;
         private DomainJoinInfo _domainJoinInfo;
         private bool? _enableDefaultInternetAccess;
-        private List<FleetError> _fleetErrors = new List<FleetError>();
+        private List<FleetError> _fleetErrors = AWSConfigs.InitializeCollections ? new List<FleetError>() : null;
         private FleetType _fleetType;
         private string _iamRoleArn;
         private int? _idleDisconnectTimeoutInSeconds;
@@ -56,7 +56,7 @@ namespace Amazon.AppStream.Model
         private S3Location _sessionScriptS3Location;
         private FleetState _state;
         private StreamView _streamView;
-        private List<string> _usbDeviceFilterStrings = new List<string>();
+        private List<string> _usbDeviceFilterStrings = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Amazon.AppStream.Model
         // Check to see if FleetErrors property is set
         internal bool IsSetFleetErrors()
         {
-            return this._fleetErrors != null && this._fleetErrors.Count > 0; 
+            return this._fleetErrors != null && (this._fleetErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -701,7 +701,7 @@ namespace Amazon.AppStream.Model
         // Check to see if UsbDeviceFilterStrings property is set
         internal bool IsSetUsbDeviceFilterStrings()
         {
-            return this._usbDeviceFilterStrings != null && this._usbDeviceFilterStrings.Count > 0; 
+            return this._usbDeviceFilterStrings != null && (this._usbDeviceFilterStrings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

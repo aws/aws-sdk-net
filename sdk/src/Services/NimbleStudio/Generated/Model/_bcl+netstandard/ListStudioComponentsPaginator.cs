@@ -45,7 +45,7 @@ namespace Amazon.NimbleStudio.Model
         /// Enumerable containing all of the StudioComponents
         /// </summary>
         public IPaginatedEnumerable<StudioComponent> StudioComponents => 
-            new PaginatedResultKeyResponse<ListStudioComponentsResponse, StudioComponent>(this, (i) => i.StudioComponents);
+            new PaginatedResultKeyResponse<ListStudioComponentsResponse, StudioComponent>(this, (i) => i.StudioComponents ?? new List<StudioComponent>());
 
         internal ListStudioComponentsPaginator(IAmazonNimbleStudio client, ListStudioComponentsRequest request)
         {

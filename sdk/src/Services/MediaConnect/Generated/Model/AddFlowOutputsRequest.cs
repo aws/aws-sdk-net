@@ -35,7 +35,7 @@ namespace Amazon.MediaConnect.Model
     public partial class AddFlowOutputsRequest : AmazonMediaConnectRequest
     {
         private string _flowArn;
-        private List<AddOutputRequest> _outputs = new List<AddOutputRequest>();
+        private List<AddOutputRequest> _outputs = AWSConfigs.InitializeCollections ? new List<AddOutputRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property FlowArn. The flow that you want to add outputs to.
@@ -66,7 +66,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

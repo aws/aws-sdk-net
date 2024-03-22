@@ -38,7 +38,7 @@ namespace Amazon.ForecastService.Model
         private long? _estimatedTimeRemainingInMinutes;
         private string _forecastArn;
         private string _forecastName;
-        private List<string> _forecastTypes = new List<string>();
+        private List<string> _forecastTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastModificationTime;
         private string _message;
         private string _predictorArn;
@@ -154,7 +154,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if ForecastTypes property is set
         internal bool IsSetForecastTypes()
         {
-            return this._forecastTypes != null && this._forecastTypes.Count > 0; 
+            return this._forecastTypes != null && (this._forecastTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

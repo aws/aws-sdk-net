@@ -33,7 +33,7 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class ListDataLakesResponse : AmazonWebServiceResponse
     {
-        private List<DataLakeResource> _dataLakes = new List<DataLakeResource>();
+        private List<DataLakeResource> _dataLakes = AWSConfigs.InitializeCollections ? new List<DataLakeResource>() : null;
 
         /// <summary>
         /// Gets and sets the property DataLakes. 
@@ -50,7 +50,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if DataLakes property is set
         internal bool IsSetDataLakes()
         {
-            return this._dataLakes != null && this._dataLakes.Count > 0; 
+            return this._dataLakes != null && (this._dataLakes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

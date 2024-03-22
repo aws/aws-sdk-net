@@ -36,8 +36,8 @@ namespace Amazon.EC2.Model
         private string _description;
         private string _groupId;
         private string _groupName;
-        private List<StaleIpPermission> _staleIpPermissions = new List<StaleIpPermission>();
-        private List<StaleIpPermission> _staleIpPermissionsEgress = new List<StaleIpPermission>();
+        private List<StaleIpPermission> _staleIpPermissions = AWSConfigs.InitializeCollections ? new List<StaleIpPermission>() : null;
+        private List<StaleIpPermission> _staleIpPermissionsEgress = AWSConfigs.InitializeCollections ? new List<StaleIpPermission>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.EC2.Model
         // Check to see if StaleIpPermissions property is set
         internal bool IsSetStaleIpPermissions()
         {
-            return this._staleIpPermissions != null && this._staleIpPermissions.Count > 0; 
+            return this._staleIpPermissions != null && (this._staleIpPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         // Check to see if StaleIpPermissionsEgress property is set
         internal bool IsSetStaleIpPermissionsEgress()
         {
-            return this._staleIpPermissionsEgress != null && this._staleIpPermissionsEgress.Count > 0; 
+            return this._staleIpPermissionsEgress != null && (this._staleIpPermissionsEgress.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

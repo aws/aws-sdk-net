@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class RealTimeContactAnalysisTranscriptItemRedaction
     {
-        private List<RealTimeContactAnalysisCharacterInterval> _characterOffsets = new List<RealTimeContactAnalysisCharacterInterval>();
+        private List<RealTimeContactAnalysisCharacterInterval> _characterOffsets = AWSConfigs.InitializeCollections ? new List<RealTimeContactAnalysisCharacterInterval>() : null;
 
         /// <summary>
         /// Gets and sets the property CharacterOffsets. 
@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if CharacterOffsets property is set
         internal bool IsSetCharacterOffsets()
         {
-            return this._characterOffsets != null && this._characterOffsets.Count > 0; 
+            return this._characterOffsets != null && (this._characterOffsets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

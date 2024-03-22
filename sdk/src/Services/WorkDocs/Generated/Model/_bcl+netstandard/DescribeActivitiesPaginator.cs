@@ -45,7 +45,7 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the UserActivities
         /// </summary>
         public IPaginatedEnumerable<Activity> UserActivities => 
-            new PaginatedResultKeyResponse<DescribeActivitiesResponse, Activity>(this, (i) => i.UserActivities);
+            new PaginatedResultKeyResponse<DescribeActivitiesResponse, Activity>(this, (i) => i.UserActivities ?? new List<Activity>());
 
         internal DescribeActivitiesPaginator(IAmazonWorkDocs client, DescribeActivitiesRequest request)
         {

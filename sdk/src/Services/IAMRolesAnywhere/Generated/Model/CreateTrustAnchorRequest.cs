@@ -45,9 +45,9 @@ namespace Amazon.IAMRolesAnywhere.Model
     {
         private bool? _enabled;
         private string _name;
-        private List<NotificationSetting> _notificationSettings = new List<NotificationSetting>();
+        private List<NotificationSetting> _notificationSettings = AWSConfigs.InitializeCollections ? new List<NotificationSetting>() : null;
         private Source _source;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -102,7 +102,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if NotificationSettings property is set
         internal bool IsSetNotificationSettings()
         {
-            return this._notificationSettings != null && this._notificationSettings.Count > 0; 
+            return this._notificationSettings != null && (this._notificationSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

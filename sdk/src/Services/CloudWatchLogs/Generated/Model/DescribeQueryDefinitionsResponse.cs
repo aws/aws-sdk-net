@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class DescribeQueryDefinitionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<QueryDefinition> _queryDefinitions = new List<QueryDefinition>();
+        private List<QueryDefinition> _queryDefinitions = AWSConfigs.InitializeCollections ? new List<QueryDefinition>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -67,7 +67,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if QueryDefinitions property is set
         internal bool IsSetQueryDefinitions()
         {
-            return this._queryDefinitions != null && this._queryDefinitions.Count > 0; 
+            return this._queryDefinitions != null && (this._queryDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

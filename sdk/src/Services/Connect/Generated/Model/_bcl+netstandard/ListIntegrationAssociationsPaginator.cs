@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the IntegrationAssociationSummaryList
         /// </summary>
         public IPaginatedEnumerable<IntegrationAssociationSummary> IntegrationAssociationSummaryList => 
-            new PaginatedResultKeyResponse<ListIntegrationAssociationsResponse, IntegrationAssociationSummary>(this, (i) => i.IntegrationAssociationSummaryList);
+            new PaginatedResultKeyResponse<ListIntegrationAssociationsResponse, IntegrationAssociationSummary>(this, (i) => i.IntegrationAssociationSummaryList ?? new List<IntegrationAssociationSummary>());
 
         internal ListIntegrationAssociationsPaginator(IAmazonConnect client, ListIntegrationAssociationsRequest request)
         {

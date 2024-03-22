@@ -45,7 +45,7 @@ namespace Amazon.MainframeModernization.Model
         /// Enumerable containing all of the Deployments
         /// </summary>
         public IPaginatedEnumerable<DeploymentSummary> Deployments => 
-            new PaginatedResultKeyResponse<ListDeploymentsResponse, DeploymentSummary>(this, (i) => i.Deployments);
+            new PaginatedResultKeyResponse<ListDeploymentsResponse, DeploymentSummary>(this, (i) => i.Deployments ?? new List<DeploymentSummary>());
 
         internal ListDeploymentsPaginator(IAmazonMainframeModernization client, ListDeploymentsRequest request)
         {

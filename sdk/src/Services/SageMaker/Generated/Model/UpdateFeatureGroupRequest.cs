@@ -46,11 +46,13 @@ namespace Amazon.SageMaker.Model
     /// applies for all records added to the feature group <i>after the feature group is updated</i>.
     /// If a record level <c>TtlDuration</c> exists from using the <c>PutRecord</c> API, the
     /// record level <c>TtlDuration</c> applies to that record instead of the default <c>TtlDuration</c>.
+    /// To remove the default <c>TtlDuration</c> from an existing feature group, use the <c>UpdateFeatureGroup</c>
+    /// API and set the <c>TtlDuration</c> <c>Unit</c> and <c>Value</c> to <c>null</c>.
     /// </para>
     /// </summary>
     public partial class UpdateFeatureGroupRequest : AmazonSageMakerRequest
     {
-        private List<FeatureDefinition> _featureAdditions = new List<FeatureDefinition>();
+        private List<FeatureDefinition> _featureAdditions = AWSConfigs.InitializeCollections ? new List<FeatureDefinition>() : null;
         private string _featureGroupName;
         private OnlineStoreConfigUpdate _onlineStoreConfig;
         private ThroughputConfigUpdate _throughputConfig;
@@ -73,7 +75,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if FeatureAdditions property is set
         internal bool IsSetFeatureAdditions()
         {
-            return this._featureAdditions != null && this._featureAdditions.Count > 0; 
+            return this._featureAdditions != null && (this._featureAdditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

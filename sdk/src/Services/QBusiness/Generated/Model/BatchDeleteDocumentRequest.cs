@@ -43,7 +43,7 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private string _dataSourceSyncId;
-        private List<DeleteDocument> _documents = new List<DeleteDocument>();
+        private List<DeleteDocument> _documents = AWSConfigs.InitializeCollections ? new List<DeleteDocument>() : null;
         private string _indexId;
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Documents property is set
         internal bool IsSetDocuments()
         {
-            return this._documents != null && this._documents.Count > 0; 
+            return this._documents != null && (this._documents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

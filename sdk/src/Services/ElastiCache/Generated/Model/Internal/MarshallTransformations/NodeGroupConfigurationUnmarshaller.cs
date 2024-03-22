@@ -75,6 +75,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReplicaAvailabilityZones/AvailabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ReplicaAvailabilityZones == null)
+                        {
+                            unmarshalledObject.ReplicaAvailabilityZones = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ReplicaAvailabilityZones.Add(item);
                         continue;
@@ -88,6 +92,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReplicaOutpostArns/OutpostArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ReplicaOutpostArns == null)
+                        {
+                            unmarshalledObject.ReplicaOutpostArns = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ReplicaOutpostArns.Add(item);
                         continue;

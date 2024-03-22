@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListActionsResponse : AmazonWebServiceResponse
     {
-        private List<ActionSummary> _actionSummaries = new List<ActionSummary>();
+        private List<ActionSummary> _actionSummaries = AWSConfigs.InitializeCollections ? new List<ActionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ActionSummaries property is set
         internal bool IsSetActionSummaries()
         {
-            return this._actionSummaries != null && this._actionSummaries.Count > 0; 
+            return this._actionSummaries != null && (this._actionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,6 +35,10 @@ namespace Amazon.CodeArtifact.Model
     /// 
     ///  <ul> <li> 
     /// <para>
+    ///  <c>generic</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>maven</c> 
     /// </para>
     ///  </li> <li> 
@@ -48,6 +52,10 @@ namespace Amazon.CodeArtifact.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>pypi</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>swift</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

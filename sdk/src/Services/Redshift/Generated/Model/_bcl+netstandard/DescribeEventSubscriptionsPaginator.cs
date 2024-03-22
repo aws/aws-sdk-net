@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the EventSubscriptionsList
         /// </summary>
         public IPaginatedEnumerable<EventSubscription> EventSubscriptionsList => 
-            new PaginatedResultKeyResponse<DescribeEventSubscriptionsResponse, EventSubscription>(this, (i) => i.EventSubscriptionsList);
+            new PaginatedResultKeyResponse<DescribeEventSubscriptionsResponse, EventSubscription>(this, (i) => i.EventSubscriptionsList ?? new List<EventSubscription>());
 
         internal DescribeEventSubscriptionsPaginator(IAmazonRedshift client, DescribeEventSubscriptionsRequest request)
         {

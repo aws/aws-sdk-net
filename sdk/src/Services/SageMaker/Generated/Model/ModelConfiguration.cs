@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ModelConfiguration
     {
         private string _compilationJobName;
-        private List<EnvironmentParameter> _environmentParameters = new List<EnvironmentParameter>();
+        private List<EnvironmentParameter> _environmentParameters = AWSConfigs.InitializeCollections ? new List<EnvironmentParameter>() : null;
         private string _inferenceSpecificationName;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if EnvironmentParameters property is set
         internal bool IsSetEnvironmentParameters()
         {
-            return this._environmentParameters != null && this._environmentParameters.Count > 0; 
+            return this._environmentParameters != null && (this._environmentParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

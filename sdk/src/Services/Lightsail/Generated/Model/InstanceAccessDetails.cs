@@ -35,10 +35,10 @@ namespace Amazon.Lightsail.Model
     {
         private string _certKey;
         private DateTime? _expiresAt;
-        private List<HostKeyAttributes> _hostKeys = new List<HostKeyAttributes>();
+        private List<HostKeyAttributes> _hostKeys = AWSConfigs.InitializeCollections ? new List<HostKeyAttributes>() : null;
         private string _instanceName;
         private string _ipAddress;
-        private List<string> _ipv6Addresses = new List<string>();
+        private List<string> _ipv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _password;
         private PasswordData _passwordData;
         private string _privateKey;
@@ -97,7 +97,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if HostKeys property is set
         internal bool IsSetHostKeys()
         {
-            return this._hostKeys != null && this._hostKeys.Count > 0; 
+            return this._hostKeys != null && (this._hostKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Ipv6Addresses property is set
         internal bool IsSetIpv6Addresses()
         {
-            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+            return this._ipv6Addresses != null && (this._ipv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

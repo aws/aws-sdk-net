@@ -37,10 +37,10 @@ namespace Amazon.EC2.Model
     {
         private string _addressFamily;
         private string _clientToken;
-        private List<AddPrefixListEntry> _entries = new List<AddPrefixListEntry>();
+        private List<AddPrefixListEntry> _entries = AWSConfigs.InitializeCollections ? new List<AddPrefixListEntry>() : null;
         private int? _maxEntries;
         private string _prefixListName;
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property AddressFamily. 
@@ -105,7 +105,7 @@ namespace Amazon.EC2.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the TrafficMirrorFilters
         /// </summary>
         public IPaginatedEnumerable<TrafficMirrorFilter> TrafficMirrorFilters => 
-            new PaginatedResultKeyResponse<DescribeTrafficMirrorFiltersResponse, TrafficMirrorFilter>(this, (i) => i.TrafficMirrorFilters);
+            new PaginatedResultKeyResponse<DescribeTrafficMirrorFiltersResponse, TrafficMirrorFilter>(this, (i) => i.TrafficMirrorFilters ?? new List<TrafficMirrorFilter>());
 
         internal DescribeTrafficMirrorFiltersPaginator(IAmazonEC2 client, DescribeTrafficMirrorFiltersRequest request)
         {

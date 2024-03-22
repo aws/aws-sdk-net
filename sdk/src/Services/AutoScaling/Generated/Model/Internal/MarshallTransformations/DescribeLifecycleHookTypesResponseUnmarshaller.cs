@@ -84,6 +84,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LifecycleHookTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.LifecycleHookTypes == null)
+                        {
+                            response.LifecycleHookTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.LifecycleHookTypes.Add(item);
                         continue;

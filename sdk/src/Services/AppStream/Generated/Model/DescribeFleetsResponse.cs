@@ -33,7 +33,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class DescribeFleetsResponse : AmazonWebServiceResponse
     {
-        private List<Fleet> _fleets = new List<Fleet>();
+        private List<Fleet> _fleets = AWSConfigs.InitializeCollections ? new List<Fleet>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Fleets property is set
         internal bool IsSetFleets()
         {
-            return this._fleets != null && this._fleets.Count > 0; 
+            return this._fleets != null && (this._fleets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,13 +35,13 @@ namespace Amazon.NimbleStudio.Model
     {
         private AutomaticTerminationMode _automaticTerminationMode;
         private StreamingClipboardMode _clipboardMode;
-        private List<string> _ec2InstanceTypes = new List<string>();
+        private List<string> _ec2InstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxSessionLengthInMinutes;
         private int? _maxStoppedSessionLengthInMinutes;
         private StreamConfigurationSessionBackup _sessionBackup;
         private SessionPersistenceMode _sessionPersistenceMode;
         private StreamConfigurationSessionStorage _sessionStorage;
-        private List<string> _streamingImageIds = new List<string>();
+        private List<string> _streamingImageIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VolumeConfiguration _volumeConfiguration;
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Ec2InstanceTypes property is set
         internal bool IsSetEc2InstanceTypes()
         {
-            return this._ec2InstanceTypes != null && this._ec2InstanceTypes.Count > 0; 
+            return this._ec2InstanceTypes != null && (this._ec2InstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -253,7 +253,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if StreamingImageIds property is set
         internal bool IsSetStreamingImageIds()
         {
-            return this._streamingImageIds != null && this._streamingImageIds.Count > 0; 
+            return this._streamingImageIds != null && (this._streamingImageIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the Plugins
         /// </summary>
         public IPaginatedEnumerable<Plugin> Plugins => 
-            new PaginatedResultKeyResponse<ListPluginsResponse, Plugin>(this, (i) => i.Plugins);
+            new PaginatedResultKeyResponse<ListPluginsResponse, Plugin>(this, (i) => i.Plugins ?? new List<Plugin>());
 
         internal ListPluginsPaginator(IAmazonQBusiness client, ListPluginsRequest request)
         {

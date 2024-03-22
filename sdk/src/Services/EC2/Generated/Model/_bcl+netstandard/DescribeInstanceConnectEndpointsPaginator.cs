@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the InstanceConnectEndpoints
         /// </summary>
         public IPaginatedEnumerable<Ec2InstanceConnectEndpoint> InstanceConnectEndpoints => 
-            new PaginatedResultKeyResponse<DescribeInstanceConnectEndpointsResponse, Ec2InstanceConnectEndpoint>(this, (i) => i.InstanceConnectEndpoints);
+            new PaginatedResultKeyResponse<DescribeInstanceConnectEndpointsResponse, Ec2InstanceConnectEndpoint>(this, (i) => i.InstanceConnectEndpoints ?? new List<Ec2InstanceConnectEndpoint>());
 
         internal DescribeInstanceConnectEndpointsPaginator(IAmazonEC2 client, DescribeInstanceConnectEndpointsRequest request)
         {

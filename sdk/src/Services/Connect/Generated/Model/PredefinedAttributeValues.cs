@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class PredefinedAttributeValues
     {
-        private List<string> _stringList = new List<string>();
+        private List<string> _stringList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property StringList. 
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if StringList property is set
         internal bool IsSetStringList()
         {
-            return this._stringList != null && this._stringList.Count > 0; 
+            return this._stringList != null && (this._stringList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

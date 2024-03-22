@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _subTypeName;
         private string _typeName;
-        private Dictionary<string, string> _typeParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _typeParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property SubTypeName. 
@@ -90,7 +90,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TypeParameters property is set
         internal bool IsSetTypeParameters()
         {
-            return this._typeParameters != null && this._typeParameters.Count > 0; 
+            return this._typeParameters != null && (this._typeParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

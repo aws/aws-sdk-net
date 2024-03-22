@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model
     public partial class NodeGroupUpdateStatus
     {
         private string _nodeGroupId;
-        private List<NodeGroupMemberUpdateStatus> _nodeGroupMemberUpdateStatus = new List<NodeGroupMemberUpdateStatus>();
+        private List<NodeGroupMemberUpdateStatus> _nodeGroupMemberUpdateStatus = AWSConfigs.InitializeCollections ? new List<NodeGroupMemberUpdateStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property NodeGroupId. 
@@ -69,7 +69,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NodeGroupMemberUpdateStatus property is set
         internal bool IsSetNodeGroupMemberUpdateStatus()
         {
-            return this._nodeGroupMemberUpdateStatus != null && this._nodeGroupMemberUpdateStatus.Count > 0; 
+            return this._nodeGroupMemberUpdateStatus != null && (this._nodeGroupMemberUpdateStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

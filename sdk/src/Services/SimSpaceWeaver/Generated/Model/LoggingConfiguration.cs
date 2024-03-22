@@ -33,7 +33,7 @@ namespace Amazon.SimSpaceWeaver.Model
     /// </summary>
     public partial class LoggingConfiguration
     {
-        private List<LogDestination> _destinations = new List<LogDestination>();
+        private List<LogDestination> _destinations = AWSConfigs.InitializeCollections ? new List<LogDestination>() : null;
 
         /// <summary>
         /// Gets and sets the property Destinations. 
@@ -50,7 +50,7 @@ namespace Amazon.SimSpaceWeaver.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

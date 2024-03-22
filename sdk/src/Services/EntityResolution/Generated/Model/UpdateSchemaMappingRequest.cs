@@ -42,7 +42,7 @@ namespace Amazon.EntityResolution.Model
     public partial class UpdateSchemaMappingRequest : AmazonEntityResolutionRequest
     {
         private string _description;
-        private List<SchemaInputAttribute> _mappedInputFields = new List<SchemaInputAttribute>();
+        private List<SchemaInputAttribute> _mappedInputFields = AWSConfigs.InitializeCollections ? new List<SchemaInputAttribute>() : null;
         private string _schemaName;
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if MappedInputFields property is set
         internal bool IsSetMappedInputFields()
         {
-            return this._mappedInputFields != null && this._mappedInputFields.Count > 0; 
+            return this._mappedInputFields != null && (this._mappedInputFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

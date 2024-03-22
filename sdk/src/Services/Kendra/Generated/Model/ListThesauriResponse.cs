@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model
     public partial class ListThesauriResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ThesaurusSummary> _thesaurusSummaryItems = new List<ThesaurusSummary>();
+        private List<ThesaurusSummary> _thesaurusSummaryItems = AWSConfigs.InitializeCollections ? new List<ThesaurusSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ThesaurusSummaryItems property is set
         internal bool IsSetThesaurusSummaryItems()
         {
-            return this._thesaurusSummaryItems != null && this._thesaurusSummaryItems.Count > 0; 
+            return this._thesaurusSummaryItems != null && (this._thesaurusSummaryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

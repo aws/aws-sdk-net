@@ -43,7 +43,7 @@ namespace Amazon.DirectoryService.Model
         private string _directoryId;
         private int? _limit;
         private string _nextToken;
-        private List<string> _trustIds = new List<string>();
+        private List<string> _trustIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
@@ -123,7 +123,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if TrustIds property is set
         internal bool IsSetTrustIds()
         {
-            return this._trustIds != null && this._trustIds.Count > 0; 
+            return this._trustIds != null && (this._trustIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

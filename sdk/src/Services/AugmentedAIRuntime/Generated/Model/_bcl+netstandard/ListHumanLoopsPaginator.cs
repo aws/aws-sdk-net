@@ -45,7 +45,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// Enumerable containing all of the HumanLoopSummaries
         /// </summary>
         public IPaginatedEnumerable<HumanLoopSummary> HumanLoopSummaries => 
-            new PaginatedResultKeyResponse<ListHumanLoopsResponse, HumanLoopSummary>(this, (i) => i.HumanLoopSummaries);
+            new PaginatedResultKeyResponse<ListHumanLoopsResponse, HumanLoopSummary>(this, (i) => i.HumanLoopSummaries ?? new List<HumanLoopSummary>());
 
         internal ListHumanLoopsPaginator(IAmazonAugmentedAIRuntime client, ListHumanLoopsRequest request)
         {

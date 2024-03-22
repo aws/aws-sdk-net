@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class QuerySchemaVersionMetadataResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, MetadataInfo> _metadataInfoMap = new Dictionary<string, MetadataInfo>();
+        private Dictionary<string, MetadataInfo> _metadataInfoMap = AWSConfigs.InitializeCollections ? new Dictionary<string, MetadataInfo>() : null;
         private string _nextToken;
         private string _schemaVersionId;
 
@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if MetadataInfoMap property is set
         internal bool IsSetMetadataInfoMap()
         {
-            return this._metadataInfoMap != null && this._metadataInfoMap.Count > 0; 
+            return this._metadataInfoMap != null && (this._metadataInfoMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

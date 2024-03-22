@@ -44,12 +44,12 @@ namespace Amazon.OpsWorks.Model
     {
         private string _appId;
         private Source _appSource;
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
-        private List<DataSource> _dataSources = new List<DataSource>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<DataSource> _dataSources = AWSConfigs.InitializeCollections ? new List<DataSource>() : null;
         private string _description;
-        private List<string> _domains = new List<string>();
+        private List<string> _domains = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableSsl;
-        private List<EnvironmentVariable> _environment = new List<EnvironmentVariable>();
+        private List<EnvironmentVariable> _environment = AWSConfigs.InitializeCollections ? new List<EnvironmentVariable>() : null;
         private string _name;
         private SslConfiguration _sslConfiguration;
         private AppType _type;
@@ -106,7 +106,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if DataSources property is set
         internal bool IsSetDataSources()
         {
-            return this._dataSources != null && this._dataSources.Count > 0; 
+            return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Domains property is set
         internal bool IsSetDomains()
         {
-            return this._domains != null && this._domains.Count > 0; 
+            return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -214,7 +214,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

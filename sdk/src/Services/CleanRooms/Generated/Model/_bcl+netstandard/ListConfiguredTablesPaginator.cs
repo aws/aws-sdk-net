@@ -45,7 +45,7 @@ namespace Amazon.CleanRooms.Model
         /// Enumerable containing all of the ConfiguredTableSummaries
         /// </summary>
         public IPaginatedEnumerable<ConfiguredTableSummary> ConfiguredTableSummaries => 
-            new PaginatedResultKeyResponse<ListConfiguredTablesResponse, ConfiguredTableSummary>(this, (i) => i.ConfiguredTableSummaries);
+            new PaginatedResultKeyResponse<ListConfiguredTablesResponse, ConfiguredTableSummary>(this, (i) => i.ConfiguredTableSummaries ?? new List<ConfiguredTableSummary>());
 
         internal ListConfiguredTablesPaginator(IAmazonCleanRooms client, ListConfiguredTablesRequest request)
         {

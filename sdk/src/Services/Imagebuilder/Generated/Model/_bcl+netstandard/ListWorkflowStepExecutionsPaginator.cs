@@ -45,7 +45,7 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all of the Steps
         /// </summary>
         public IPaginatedEnumerable<WorkflowStepMetadata> Steps => 
-            new PaginatedResultKeyResponse<ListWorkflowStepExecutionsResponse, WorkflowStepMetadata>(this, (i) => i.Steps);
+            new PaginatedResultKeyResponse<ListWorkflowStepExecutionsResponse, WorkflowStepMetadata>(this, (i) => i.Steps ?? new List<WorkflowStepMetadata>());
 
         internal ListWorkflowStepExecutionsPaginator(IAmazonImagebuilder client, ListWorkflowStepExecutionsRequest request)
         {

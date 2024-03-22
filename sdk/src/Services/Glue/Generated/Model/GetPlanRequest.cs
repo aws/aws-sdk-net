@@ -34,11 +34,11 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetPlanRequest : AmazonGlueRequest
     {
-        private Dictionary<string, string> _additionalPlanOptionsMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalPlanOptionsMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Language _language;
         private Location _location;
-        private List<MappingEntry> _mapping = new List<MappingEntry>();
-        private List<CatalogEntry> _sinks = new List<CatalogEntry>();
+        private List<MappingEntry> _mapping = AWSConfigs.InitializeCollections ? new List<MappingEntry>() : null;
+        private List<CatalogEntry> _sinks = AWSConfigs.InitializeCollections ? new List<CatalogEntry>() : null;
         private CatalogEntry _source;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Glue.Model
         // Check to see if AdditionalPlanOptionsMap property is set
         internal bool IsSetAdditionalPlanOptionsMap()
         {
-            return this._additionalPlanOptionsMap != null && this._additionalPlanOptionsMap.Count > 0; 
+            return this._additionalPlanOptionsMap != null && (this._additionalPlanOptionsMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.Glue.Model
         // Check to see if Mapping property is set
         internal bool IsSetMapping()
         {
-            return this._mapping != null && this._mapping.Count > 0; 
+            return this._mapping != null && (this._mapping.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.Glue.Model
         // Check to see if Sinks property is set
         internal bool IsSetSinks()
         {
-            return this._sinks != null && this._sinks.Count > 0; 
+            return this._sinks != null && (this._sinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

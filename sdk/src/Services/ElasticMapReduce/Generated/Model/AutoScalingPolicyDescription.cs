@@ -37,7 +37,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class AutoScalingPolicyDescription
     {
         private ScalingConstraints _constraints;
-        private List<ScalingRule> _rules = new List<ScalingRule>();
+        private List<ScalingRule> _rules = AWSConfigs.InitializeCollections ? new List<ScalingRule>() : null;
         private AutoScalingPolicyStatus _status;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

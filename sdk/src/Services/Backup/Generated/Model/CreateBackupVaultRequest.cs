@@ -43,7 +43,7 @@ namespace Amazon.Backup.Model
     public partial class CreateBackupVaultRequest : AmazonBackupRequest
     {
         private string _backupVaultName;
-        private Dictionary<string, string> _backupVaultTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _backupVaultTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _creatorRequestId;
         private string _encryptionKeyArn;
 
@@ -85,7 +85,7 @@ namespace Amazon.Backup.Model
         // Check to see if BackupVaultTags property is set
         internal bool IsSetBackupVaultTags()
         {
-            return this._backupVaultTags != null && this._backupVaultTags.Count > 0; 
+            return this._backupVaultTags != null && (this._backupVaultTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

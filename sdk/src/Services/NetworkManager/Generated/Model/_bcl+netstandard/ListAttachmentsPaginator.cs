@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the Attachments
         /// </summary>
         public IPaginatedEnumerable<Attachment> Attachments => 
-            new PaginatedResultKeyResponse<ListAttachmentsResponse, Attachment>(this, (i) => i.Attachments);
+            new PaginatedResultKeyResponse<ListAttachmentsResponse, Attachment>(this, (i) => i.Attachments ?? new List<Attachment>());
 
         internal ListAttachmentsPaginator(IAmazonNetworkManager client, ListAttachmentsRequest request)
         {

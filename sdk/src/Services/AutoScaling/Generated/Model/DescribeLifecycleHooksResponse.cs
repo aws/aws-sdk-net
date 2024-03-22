@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeLifecycleHooksResponse : AmazonWebServiceResponse
     {
-        private List<LifecycleHook> _lifecycleHooks = new List<LifecycleHook>();
+        private List<LifecycleHook> _lifecycleHooks = AWSConfigs.InitializeCollections ? new List<LifecycleHook>() : null;
 
         /// <summary>
         /// Gets and sets the property LifecycleHooks. 
@@ -50,7 +50,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LifecycleHooks property is set
         internal bool IsSetLifecycleHooks()
         {
-            return this._lifecycleHooks != null && this._lifecycleHooks.Count > 0; 
+            return this._lifecycleHooks != null && (this._lifecycleHooks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -37,7 +37,7 @@ namespace Amazon.SecurityHub.Model
         private bool? _findingCreated;
         private AwsSecurityFindingIdentifier _findingIdentifier;
         private string _nextToken;
-        private List<FindingHistoryUpdate> _updates = new List<FindingHistoryUpdate>();
+        private List<FindingHistoryUpdate> _updates = AWSConfigs.InitializeCollections ? new List<FindingHistoryUpdate>() : null;
         private FindingHistoryUpdateSource _updateSource;
         private DateTime? _updateTime;
 
@@ -114,7 +114,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Updates property is set
         internal bool IsSetUpdates()
         {
-            return this._updates != null && this._updates.Count > 0; 
+            return this._updates != null && (this._updates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

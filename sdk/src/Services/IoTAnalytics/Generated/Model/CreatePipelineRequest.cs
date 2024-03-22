@@ -37,9 +37,9 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class CreatePipelineRequest : AmazonIoTAnalyticsRequest
     {
-        private List<PipelineActivity> _pipelineActivities = new List<PipelineActivity>();
+        private List<PipelineActivity> _pipelineActivities = AWSConfigs.InitializeCollections ? new List<PipelineActivity>() : null;
         private string _pipelineName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property PipelineActivities. 
@@ -71,7 +71,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if PipelineActivities property is set
         internal bool IsSetPipelineActivities()
         {
-            return this._pipelineActivities != null && this._pipelineActivities.Count > 0; 
+            return this._pipelineActivities != null && (this._pipelineActivities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

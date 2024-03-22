@@ -37,7 +37,7 @@ namespace Amazon.Omics.Model
         private DateTime? _creationTime;
         private string _id;
         private string _sequenceStoreId;
-        private List<ActivateReadSetSourceItem> _sources = new List<ActivateReadSetSourceItem>();
+        private List<ActivateReadSetSourceItem> _sources = AWSConfigs.InitializeCollections ? new List<ActivateReadSetSourceItem>() : null;
         private ReadSetActivationJobStatus _status;
         private string _statusMessage;
 
@@ -131,7 +131,7 @@ namespace Amazon.Omics.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

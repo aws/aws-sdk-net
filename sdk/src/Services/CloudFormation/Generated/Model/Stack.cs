@@ -33,18 +33,19 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class Stack
     {
-        private List<string> _capabilities = new List<string>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _changeSetId;
         private DateTime? _creationTime;
         private DateTime? _deletionTime;
         private string _description;
+        private DetailedStatus _detailedStatus;
         private bool? _disableRollback;
         private StackDriftInformation _driftInformation;
         private bool? _enableTerminationProtection;
         private DateTime? _lastUpdatedTime;
-        private List<string> _notificationARNs = new List<string>();
-        private List<Output> _outputs = new List<Output>();
-        private List<Parameter> _parameters = new List<Parameter>();
+        private List<string> _notificationARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Output> _outputs = AWSConfigs.InitializeCollections ? new List<Output>() : null;
+        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
         private string _parentId;
         private bool? _retainExceptOnCreate;
         private string _roleARN;
@@ -54,7 +55,7 @@ namespace Amazon.CloudFormation.Model
         private string _stackName;
         private StackStatus _stackStatus;
         private string _stackStatusReason;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _timeoutInMinutes;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,6 +149,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetailedStatus. 
+        /// <para>
+        /// The detailed status of the resource or stack. If <c>CONFIGURATION_COMPLETE</c> is
+        /// present, the resource or resource configuration phase has completed and the stabilization
+        /// of the resources is in progress. The stack sets <c>CONFIGURATION_COMPLETE</c> when
+        /// all of the resources in the stack have reached that event. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack deployment</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public DetailedStatus DetailedStatus
+        {
+            get { return this._detailedStatus; }
+            set { this._detailedStatus = value; }
+        }
+
+        // Check to see if DetailedStatus property is set
+        internal bool IsSetDetailedStatus()
+        {
+            return this._detailedStatus != null;
         }
 
         /// <summary>
@@ -258,7 +282,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NotificationARNs property is set
         internal bool IsSetNotificationARNs()
         {
-            return this._notificationARNs != null && this._notificationARNs.Count > 0; 
+            return this._notificationARNs != null && (this._notificationARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -276,7 +300,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -294,7 +318,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -499,7 +523,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

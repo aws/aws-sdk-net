@@ -34,7 +34,7 @@ namespace Amazon.RestJsonTest.Model
     /// </summary>
     public partial class QueryBooleanListRequest : AmazonRestJsonTestRequest
     {
-        private List<bool> _queryBooleanList = new List<bool>();
+        private List<bool> _queryBooleanList = AWSConfigs.InitializeCollections ? new List<bool>() : null;
 
         /// <summary>
         /// Gets and sets the property QueryBooleanList.
@@ -48,7 +48,7 @@ namespace Amazon.RestJsonTest.Model
         // Check to see if QueryBooleanList property is set
         internal bool IsSetQueryBooleanList()
         {
-            return this._queryBooleanList != null && this._queryBooleanList.Count > 0; 
+            return this._queryBooleanList != null && (this._queryBooleanList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

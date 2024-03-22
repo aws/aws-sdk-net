@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ListNamespacesResponse : AmazonWebServiceResponse
     {
-        private List<NamespaceInfoV2> _namespaces = new List<NamespaceInfoV2>();
+        private List<NamespaceInfoV2> _namespaces = AWSConfigs.InitializeCollections ? new List<NamespaceInfoV2>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Namespaces property is set
         internal bool IsSetNamespaces()
         {
-            return this._namespaces != null && this._namespaces.Count > 0; 
+            return this._namespaces != null && (this._namespaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

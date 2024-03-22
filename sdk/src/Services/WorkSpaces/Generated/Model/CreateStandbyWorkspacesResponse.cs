@@ -33,8 +33,8 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class CreateStandbyWorkspacesResponse : AmazonWebServiceResponse
     {
-        private List<FailedCreateStandbyWorkspacesRequest> _failedStandbyRequests = new List<FailedCreateStandbyWorkspacesRequest>();
-        private List<PendingCreateStandbyWorkspacesRequest> _pendingStandbyRequests = new List<PendingCreateStandbyWorkspacesRequest>();
+        private List<FailedCreateStandbyWorkspacesRequest> _failedStandbyRequests = AWSConfigs.InitializeCollections ? new List<FailedCreateStandbyWorkspacesRequest>() : null;
+        private List<PendingCreateStandbyWorkspacesRequest> _pendingStandbyRequests = AWSConfigs.InitializeCollections ? new List<PendingCreateStandbyWorkspacesRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedStandbyRequests. 
@@ -51,7 +51,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if FailedStandbyRequests property is set
         internal bool IsSetFailedStandbyRequests()
         {
-            return this._failedStandbyRequests != null && this._failedStandbyRequests.Count > 0; 
+            return this._failedStandbyRequests != null && (this._failedStandbyRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if PendingStandbyRequests property is set
         internal bool IsSetPendingStandbyRequests()
         {
-            return this._pendingStandbyRequests != null && this._pendingStandbyRequests.Count > 0; 
+            return this._pendingStandbyRequests != null && (this._pendingStandbyRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

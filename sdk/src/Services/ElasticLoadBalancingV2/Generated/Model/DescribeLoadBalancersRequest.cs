@@ -34,9 +34,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<string> _loadBalancerArns = new List<string>();
+        private List<string> _loadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _marker;
-        private List<string> _names = new List<string>();
+        private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _pageSize;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if LoadBalancerArns property is set
         internal bool IsSetLoadBalancerArns()
         {
-            return this._loadBalancerArns != null && this._loadBalancerArns.Count > 0; 
+            return this._loadBalancerArns != null && (this._loadBalancerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Names property is set
         internal bool IsSetNames()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

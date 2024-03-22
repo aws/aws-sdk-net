@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         private AssetBundleImportSourceDescription _assetBundleImportSource;
         private string _awsAccountId;
         private DateTime? _createdTime;
-        private List<AssetBundleImportJobError> _errors = new List<AssetBundleImportJobError>();
+        private List<AssetBundleImportJobError> _errors = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobError>() : null;
         private AssetBundleImportFailureAction _failureAction;
         private AssetBundleImportJobStatus _jobStatus;
         private AssetBundleImportJobOverrideParameters _overrideParameters;
@@ -46,7 +46,7 @@ namespace Amazon.QuickSight.Model
         private AssetBundleImportJobOverrideTags _overrideTags;
         private AssetBundleImportJobOverrideValidationStrategy _overrideValidationStrategy;
         private string _requestId;
-        private List<AssetBundleImportJobError> _rollbackErrors = new List<AssetBundleImportJobError>();
+        private List<AssetBundleImportJobError> _rollbackErrors = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobError>() : null;
         private int? _status;
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -338,7 +338,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if RollbackErrors property is set
         internal bool IsSetRollbackErrors()
         {
-            return this._rollbackErrors != null && this._rollbackErrors.Count > 0; 
+            return this._rollbackErrors != null && (this._rollbackErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

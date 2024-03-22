@@ -33,7 +33,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class CustomAuthConfig
     {
-        private List<AuthParameter> _authParameters = new List<AuthParameter>();
+        private List<AuthParameter> _authParameters = AWSConfigs.InitializeCollections ? new List<AuthParameter>() : null;
         private string _customAuthenticationType;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Appflow.Model
         // Check to see if AuthParameters property is set
         internal bool IsSetAuthParameters()
         {
-            return this._authParameters != null && this._authParameters.Count > 0; 
+            return this._authParameters != null && (this._authParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

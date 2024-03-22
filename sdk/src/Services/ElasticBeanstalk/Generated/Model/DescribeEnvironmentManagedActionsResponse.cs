@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class DescribeEnvironmentManagedActionsResponse : AmazonWebServiceResponse
     {
-        private List<ManagedAction> _managedActions = new List<ManagedAction>();
+        private List<ManagedAction> _managedActions = AWSConfigs.InitializeCollections ? new List<ManagedAction>() : null;
 
         /// <summary>
         /// Gets and sets the property ManagedActions. 
@@ -51,7 +51,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ManagedActions property is set
         internal bool IsSetManagedActions()
         {
-            return this._managedActions != null && this._managedActions.Count > 0; 
+            return this._managedActions != null && (this._managedActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

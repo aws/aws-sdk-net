@@ -89,6 +89,12 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TransactionHash);
                 }
 
+                if(publicRequest.IsSetTransactionId())
+                {
+                    context.Writer.WritePropertyName("transactionId");
+                    context.Writer.Write(publicRequest.TransactionId);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

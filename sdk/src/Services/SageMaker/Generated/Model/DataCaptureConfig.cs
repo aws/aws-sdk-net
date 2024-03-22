@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class DataCaptureConfig
     {
         private CaptureContentTypeHeader _captureContentTypeHeader;
-        private List<CaptureOption> _captureOptions = new List<CaptureOption>();
+        private List<CaptureOption> _captureOptions = AWSConfigs.InitializeCollections ? new List<CaptureOption>() : null;
         private string _destinationS3Uri;
         private bool? _enableCapture;
         private int? _initialSamplingPercentage;
@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CaptureOptions property is set
         internal bool IsSetCaptureOptions()
         {
-            return this._captureOptions != null && this._captureOptions.Count > 0; 
+            return this._captureOptions != null && (this._captureOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

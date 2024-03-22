@@ -135,6 +135,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EnabledCloudwatchLogsExports/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.EnabledCloudwatchLogsExports == null)
+                        {
+                            unmarshalledObject.EnabledCloudwatchLogsExports = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.EnabledCloudwatchLogsExports.Add(item);
                         continue;
@@ -220,6 +224,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("StatusInfos/DBInstanceStatusInfo", targetDepth))
                     {
                         var unmarshaller = DBInstanceStatusInfoUnmarshaller.Instance;
+                        if (unmarshalledObject.StatusInfos == null)
+                        {
+                            unmarshalledObject.StatusInfos = new List<DBInstanceStatusInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.StatusInfos.Add(item);
                         continue;
@@ -233,6 +241,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth))
                     {
                         var unmarshaller = VpcSecurityGroupMembershipUnmarshaller.Instance;
+                        if (unmarshalledObject.VpcSecurityGroups == null)
+                        {
+                            unmarshalledObject.VpcSecurityGroups = new List<VpcSecurityGroupMembership>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.VpcSecurityGroups.Add(item);
                         continue;

@@ -39,9 +39,9 @@ namespace Amazon.ResilienceHub.Model
         private string _clientToken;
         private TemplateFormat _format;
         private string _name;
-        private List<string> _recommendationIds = new List<string>();
-        private List<string> _recommendationTypes = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _recommendationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _recommendationTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssessmentArn. 
@@ -166,7 +166,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if RecommendationIds property is set
         internal bool IsSetRecommendationIds()
         {
-            return this._recommendationIds != null && this._recommendationIds.Count > 0; 
+            return this._recommendationIds != null && (this._recommendationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if RecommendationTypes property is set
         internal bool IsSetRecommendationTypes()
         {
-            return this._recommendationTypes != null && this._recommendationTypes.Count > 0; 
+            return this._recommendationTypes != null && (this._recommendationTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

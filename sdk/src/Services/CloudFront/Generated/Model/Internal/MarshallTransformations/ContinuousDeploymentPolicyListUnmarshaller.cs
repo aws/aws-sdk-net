@@ -57,6 +57,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Items/ContinuousDeploymentPolicySummary", targetDepth))
                     {
+                        if (unmarshalledObject.Items == null)
+                        {
+                            unmarshalledObject.Items = new List<ContinuousDeploymentPolicySummary>();
+                        }
                         var unmarshaller = ContinuousDeploymentPolicySummaryUnmarshaller.Instance;
                         unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
                         continue;

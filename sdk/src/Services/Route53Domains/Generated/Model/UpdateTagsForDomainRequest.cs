@@ -41,7 +41,7 @@ namespace Amazon.Route53Domains.Model
     public partial class UpdateTagsForDomainRequest : AmazonRoute53DomainsRequest
     {
         private string _domainName;
-        private List<Tag> _tagsToUpdate = new List<Tag>();
+        private List<Tag> _tagsToUpdate = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -78,7 +78,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if TagsToUpdate property is set
         internal bool IsSetTagsToUpdate()
         {
-            return this._tagsToUpdate != null && this._tagsToUpdate.Count > 0; 
+            return this._tagsToUpdate != null && (this._tagsToUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

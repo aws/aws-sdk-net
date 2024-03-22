@@ -44,9 +44,9 @@ namespace Amazon.OpsWorks.Model
     public partial class CloneStackRequest : AmazonOpsWorksRequest
     {
         private string _agentVersion;
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ChefConfiguration _chefConfiguration;
-        private List<string> _cloneAppIds = new List<string>();
+        private List<string> _cloneAppIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _clonePermissions;
         private StackConfigurationManager _configurationManager;
         private Source _customCookbooksSource;
@@ -124,7 +124,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if CloneAppIds property is set
         internal bool IsSetCloneAppIds()
         {
-            return this._cloneAppIds != null && this._cloneAppIds.Count > 0; 
+            return this._cloneAppIds != null && (this._cloneAppIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

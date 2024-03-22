@@ -33,7 +33,7 @@ namespace Amazon.Budgets.Model
     /// </summary>
     public partial class DescribeBudgetNotificationsForAccountResponse : AmazonWebServiceResponse
     {
-        private List<BudgetNotificationsForAccount> _budgetNotificationsForAccount = new List<BudgetNotificationsForAccount>();
+        private List<BudgetNotificationsForAccount> _budgetNotificationsForAccount = AWSConfigs.InitializeCollections ? new List<BudgetNotificationsForAccount>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Budgets.Model
         // Check to see if BudgetNotificationsForAccount property is set
         internal bool IsSetBudgetNotificationsForAccount()
         {
-            return this._budgetNotificationsForAccount != null && this._budgetNotificationsForAccount.Count > 0; 
+            return this._budgetNotificationsForAccount != null && (this._budgetNotificationsForAccount.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

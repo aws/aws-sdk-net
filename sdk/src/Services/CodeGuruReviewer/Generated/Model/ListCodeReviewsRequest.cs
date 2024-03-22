@@ -36,9 +36,9 @@ namespace Amazon.CodeGuruReviewer.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _providerTypes = new List<string>();
-        private List<string> _repositoryNames = new List<string>();
-        private List<string> _states = new List<string>();
+        private List<string> _providerTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _repositoryNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _states = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Type _type;
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if ProviderTypes property is set
         internal bool IsSetProviderTypes()
         {
-            return this._providerTypes != null && this._providerTypes.Count > 0; 
+            return this._providerTypes != null && (this._providerTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if RepositoryNames property is set
         internal bool IsSetRepositoryNames()
         {
-            return this._repositoryNames != null && this._repositoryNames.Count > 0; 
+            return this._repositoryNames != null && (this._repositoryNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if States property is set
         internal bool IsSetStates()
         {
-            return this._states != null && this._states.Count > 0; 
+            return this._states != null && (this._states.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

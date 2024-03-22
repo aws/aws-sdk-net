@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeSnapshotSchedulesResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<SnapshotSchedule> _snapshotSchedules = new List<SnapshotSchedule>();
+        private List<SnapshotSchedule> _snapshotSchedules = AWSConfigs.InitializeCollections ? new List<SnapshotSchedule>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -74,7 +74,7 @@ namespace Amazon.Redshift.Model
         // Check to see if SnapshotSchedules property is set
         internal bool IsSetSnapshotSchedules()
         {
-            return this._snapshotSchedules != null && this._snapshotSchedules.Count > 0; 
+            return this._snapshotSchedules != null && (this._snapshotSchedules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

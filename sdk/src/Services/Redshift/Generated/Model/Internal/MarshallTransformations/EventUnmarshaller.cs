@@ -63,6 +63,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EventCategories/EventCategory", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.EventCategories == null)
+                        {
+                            unmarshalledObject.EventCategories = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.EventCategories.Add(item);
                         continue;

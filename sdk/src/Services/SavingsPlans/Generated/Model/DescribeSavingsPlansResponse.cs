@@ -34,7 +34,7 @@ namespace Amazon.SavingsPlans.Model
     public partial class DescribeSavingsPlansResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SavingsPlan> _savingsPlans = new List<SavingsPlan>();
+        private List<SavingsPlan> _savingsPlans = AWSConfigs.InitializeCollections ? new List<SavingsPlan>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if SavingsPlans property is set
         internal bool IsSetSavingsPlans()
         {
-            return this._savingsPlans != null && this._savingsPlans.Count > 0; 
+            return this._savingsPlans != null && (this._savingsPlans.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

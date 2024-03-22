@@ -90,6 +90,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("StackEvents/member", targetDepth))
                     {
                         var unmarshaller = StackEventUnmarshaller.Instance;
+                        if (response.StackEvents == null)
+                        {
+                            response.StackEvents = new List<StackEvent>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.StackEvents.Add(item);
                         continue;

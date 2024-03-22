@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListDomainConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<DomainConfigurationSummary> _domainConfigurations = new List<DomainConfigurationSummary>();
+        private List<DomainConfigurationSummary> _domainConfigurations = AWSConfigs.InitializeCollections ? new List<DomainConfigurationSummary>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model
         // Check to see if DomainConfigurations property is set
         internal bool IsSetDomainConfigurations()
         {
-            return this._domainConfigurations != null && this._domainConfigurations.Count > 0; 
+            return this._domainConfigurations != null && (this._domainConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

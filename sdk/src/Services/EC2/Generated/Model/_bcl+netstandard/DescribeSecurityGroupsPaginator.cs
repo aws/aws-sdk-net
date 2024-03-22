@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the SecurityGroups
         /// </summary>
         public IPaginatedEnumerable<SecurityGroup> SecurityGroups => 
-            new PaginatedResultKeyResponse<DescribeSecurityGroupsResponse, SecurityGroup>(this, (i) => i.SecurityGroups);
+            new PaginatedResultKeyResponse<DescribeSecurityGroupsResponse, SecurityGroup>(this, (i) => i.SecurityGroups ?? new List<SecurityGroup>());
 
         internal DescribeSecurityGroupsPaginator(IAmazonEC2 client, DescribeSecurityGroupsRequest request)
         {

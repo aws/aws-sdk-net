@@ -84,6 +84,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SAMLProviderList/member", targetDepth))
                     {
                         var unmarshaller = SAMLProviderListEntryUnmarshaller.Instance;
+                        if (response.SAMLProviderList == null)
+                        {
+                            response.SAMLProviderList = new List<SAMLProviderListEntry>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SAMLProviderList.Add(item);
                         continue;

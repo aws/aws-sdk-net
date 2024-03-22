@@ -40,14 +40,14 @@ namespace Amazon.FSx.Model
         private string _name;
         private StorageVirtualMachineRootVolumeSecurityStyle _rootVolumeSecurityStyle;
         private string _svmAdminPassword;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ActiveDirectoryConfiguration. 
         /// <para>
         /// Describes the self-managed Microsoft Active Directory to which you want to join the
         /// SVM. Joining an Active Directory provides user authentication and access control for
-        /// SMB clients, including Microsoft Windows and macOS client accessing the file system.
+        /// SMB clients, including Microsoft Windows and macOS clients accessing the file system.
         /// </para>
         /// </summary>
         public CreateSvmActiveDirectoryConfiguration ActiveDirectoryConfiguration
@@ -126,14 +126,14 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>NTFS</c> if the file system is managed by a Windows administrator, the majority
-        /// of users are SMB clients, and an application accessing the data uses a Windows user
-        /// as the service account.
+        ///  <c>NTFS</c> if the file system is managed by a Microsoft Windows administrator, the
+        /// majority of users are SMB clients, and an application accessing the data uses a Microsoft
+        /// Windows user as the service account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>MIXED</c> if the file system is managed by both UNIX and Windows administrators
-        /// and users consist of both NFS and SMB clients.
+        ///  <c>MIXED</c> This is an advanced setting. For more information, see <a href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+        /// security style</a> in the Amazon FSx for NetApp ONTAP User Guide.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -183,7 +183,7 @@ namespace Amazon.FSx.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

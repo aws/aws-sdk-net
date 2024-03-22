@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class ConnectionsList
     {
-        private List<string> _connections = new List<string>();
+        private List<string> _connections = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Connections. 
@@ -50,7 +50,7 @@ namespace Amazon.Glue.Model
         // Check to see if Connections property is set
         internal bool IsSetConnections()
         {
-            return this._connections != null && this._connections.Count > 0; 
+            return this._connections != null && (this._connections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

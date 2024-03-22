@@ -142,10 +142,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The backups from the table specified by <c>TableName</c> are listed. 
+        /// Lists the backups from the table specified in <c>TableName</c>. You can also provide
+        /// the Amazon Resource Name (ARN) of the table in this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=255)]
+        [AWSProperty(Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

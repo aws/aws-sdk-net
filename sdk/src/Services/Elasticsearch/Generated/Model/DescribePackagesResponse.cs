@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model
     public partial class DescribePackagesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PackageDetails> _packageDetailsList = new List<PackageDetails>();
+        private List<PackageDetails> _packageDetailsList = AWSConfigs.InitializeCollections ? new List<PackageDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -66,7 +66,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if PackageDetailsList property is set
         internal bool IsSetPackageDetailsList()
         {
-            return this._packageDetailsList != null && this._packageDetailsList.Count > 0; 
+            return this._packageDetailsList != null && (this._packageDetailsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

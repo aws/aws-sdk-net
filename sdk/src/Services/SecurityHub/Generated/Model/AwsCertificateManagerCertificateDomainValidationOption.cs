@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model
         private string _domainName;
         private AwsCertificateManagerCertificateResourceRecord _resourceRecord;
         private string _validationDomain;
-        private List<string> _validationEmails = new List<string>();
+        private List<string> _validationEmails = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _validationMethod;
         private string _validationStatus;
 
@@ -122,7 +122,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ValidationEmails property is set
         internal bool IsSetValidationEmails()
         {
-            return this._validationEmails != null && this._validationEmails.Count > 0; 
+            return this._validationEmails != null && (this._validationEmails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

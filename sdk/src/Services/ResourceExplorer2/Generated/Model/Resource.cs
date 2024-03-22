@@ -38,7 +38,7 @@ namespace Amazon.ResourceExplorer2.Model
         private string _arn;
         private DateTime? _lastReportedAt;
         private string _owningAccountId;
-        private List<ResourceProperty> _properties = new List<ResourceProperty>();
+        private List<ResourceProperty> _properties = AWSConfigs.InitializeCollections ? new List<ResourceProperty>() : null;
         private string _region;
         private string _resourceType;
         private string _service;
@@ -116,7 +116,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

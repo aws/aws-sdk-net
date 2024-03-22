@@ -40,7 +40,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class SourceIpConditionConfig
     {
-        private List<string> _values = new List<string>();
+        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Values. 
@@ -69,7 +69,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

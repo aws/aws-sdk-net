@@ -39,7 +39,7 @@ namespace Amazon.ElastiCache.Model
     {
         private bool? _applyImmediately;
         private int? _newReplicaCount;
-        private List<ConfigureShard> _replicaConfiguration = new List<ConfigureShard>();
+        private List<ConfigureShard> _replicaConfiguration = AWSConfigs.InitializeCollections ? new List<ConfigureShard>() : null;
         private string _replicationGroupId;
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReplicaConfiguration property is set
         internal bool IsSetReplicaConfiguration()
         {
-            return this._replicaConfiguration != null && this._replicaConfiguration.Count > 0; 
+            return this._replicaConfiguration != null && (this._replicaConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

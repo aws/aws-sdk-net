@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeExportImageTasksResponse : AmazonWebServiceResponse
     {
-        private List<ExportImageTask> _exportImageTasks = new List<ExportImageTask>();
+        private List<ExportImageTask> _exportImageTasks = AWSConfigs.InitializeCollections ? new List<ExportImageTask>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if ExportImageTasks property is set
         internal bool IsSetExportImageTasks()
         {
-            return this._exportImageTasks != null && this._exportImageTasks.Count > 0; 
+            return this._exportImageTasks != null && (this._exportImageTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

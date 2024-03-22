@@ -34,7 +34,7 @@ namespace Amazon.Proton.Model
     public partial class ServiceTemplateVersion
     {
         private string _arn;
-        private List<CompatibleEnvironmentTemplate> _compatibleEnvironmentTemplates = new List<CompatibleEnvironmentTemplate>();
+        private List<CompatibleEnvironmentTemplate> _compatibleEnvironmentTemplates = AWSConfigs.InitializeCollections ? new List<CompatibleEnvironmentTemplate>() : null;
         private DateTime? _createdAt;
         private string _description;
         private DateTime? _lastModifiedAt;
@@ -44,7 +44,7 @@ namespace Amazon.Proton.Model
         private string _schema;
         private TemplateVersionStatus _status;
         private string _statusMessage;
-        private List<string> _supportedComponentSources = new List<string>();
+        private List<string> _supportedComponentSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _templateName;
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.Proton.Model
         // Check to see if CompatibleEnvironmentTemplates property is set
         internal bool IsSetCompatibleEnvironmentTemplates()
         {
-            return this._compatibleEnvironmentTemplates != null && this._compatibleEnvironmentTemplates.Count > 0; 
+            return this._compatibleEnvironmentTemplates != null && (this._compatibleEnvironmentTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Amazon.Proton.Model
         // Check to see if SupportedComponentSources property is set
         internal bool IsSetSupportedComponentSources()
         {
-            return this._supportedComponentSources != null && this._supportedComponentSources.Count > 0; 
+            return this._supportedComponentSources != null && (this._supportedComponentSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

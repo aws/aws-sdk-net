@@ -33,7 +33,7 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class ListEventDataStoresResponse : AmazonWebServiceResponse
     {
-        private List<EventDataStore> _eventDataStores = new List<EventDataStore>();
+        private List<EventDataStore> _eventDataStores = AWSConfigs.InitializeCollections ? new List<EventDataStore>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if EventDataStores property is set
         internal bool IsSetEventDataStores()
         {
-            return this._eventDataStores != null && this._eventDataStores.Count > 0; 
+            return this._eventDataStores != null && (this._eventDataStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

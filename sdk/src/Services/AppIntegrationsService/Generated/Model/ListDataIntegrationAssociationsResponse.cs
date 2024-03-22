@@ -33,7 +33,7 @@ namespace Amazon.AppIntegrationsService.Model
     /// </summary>
     public partial class ListDataIntegrationAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<DataIntegrationAssociationSummary> _dataIntegrationAssociations = new List<DataIntegrationAssociationSummary>();
+        private List<DataIntegrationAssociationSummary> _dataIntegrationAssociations = AWSConfigs.InitializeCollections ? new List<DataIntegrationAssociationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if DataIntegrationAssociations property is set
         internal bool IsSetDataIntegrationAssociations()
         {
-            return this._dataIntegrationAssociations != null && this._dataIntegrationAssociations.Count > 0; 
+            return this._dataIntegrationAssociations != null && (this._dataIntegrationAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

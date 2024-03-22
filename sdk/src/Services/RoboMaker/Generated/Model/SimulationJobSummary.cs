@@ -35,11 +35,11 @@ namespace Amazon.RoboMaker.Model
     {
         private string _arn;
         private ComputeType _computeType;
-        private List<string> _dataSourceNames = new List<string>();
+        private List<string> _dataSourceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastUpdatedAt;
         private string _name;
-        private List<string> _robotApplicationNames = new List<string>();
-        private List<string> _simulationApplicationNames = new List<string>();
+        private List<string> _robotApplicationNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _simulationApplicationNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SimulationJobStatus _status;
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if DataSourceNames property is set
         internal bool IsSetDataSourceNames()
         {
-            return this._dataSourceNames != null && this._dataSourceNames.Count > 0; 
+            return this._dataSourceNames != null && (this._dataSourceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if RobotApplicationNames property is set
         internal bool IsSetRobotApplicationNames()
         {
-            return this._robotApplicationNames != null && this._robotApplicationNames.Count > 0; 
+            return this._robotApplicationNames != null && (this._robotApplicationNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if SimulationApplicationNames property is set
         internal bool IsSetSimulationApplicationNames()
         {
-            return this._simulationApplicationNames != null && this._simulationApplicationNames.Count > 0; 
+            return this._simulationApplicationNames != null && (this._simulationApplicationNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

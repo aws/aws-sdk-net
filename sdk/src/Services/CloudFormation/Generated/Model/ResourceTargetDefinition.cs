@@ -83,7 +83,7 @@ namespace Amazon.CloudFormation.Model
         /// this property causes the resource to be recreated. The value can be <c>Never</c>,
         /// <c>Always</c>, or <c>Conditionally</c>. To determine the conditions for a <c>Conditionally</c>
         /// recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-        /// in the CloudFormation User Guide.
+        /// in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public RequiresRecreation RequiresRecreation

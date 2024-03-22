@@ -181,7 +181,7 @@ namespace Amazon.Rekognition.Model
     public partial class IndexFacesRequest : AmazonRekognitionRequest
     {
         private string _collectionId;
-        private List<string> _detectionAttributes = new List<string>();
+        private List<string> _detectionAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _externalImageId;
         private Image _image;
         private int? _maxFaces;
@@ -232,7 +232,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if DetectionAttributes property is set
         internal bool IsSetDetectionAttributes()
         {
-            return this._detectionAttributes != null && this._detectionAttributes.Count > 0; 
+            return this._detectionAttributes != null && (this._detectionAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

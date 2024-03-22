@@ -45,7 +45,7 @@ namespace Amazon.LaunchWizard.Model
         /// Enumerable containing all of the Deployments
         /// </summary>
         public IPaginatedEnumerable<DeploymentDataSummary> Deployments => 
-            new PaginatedResultKeyResponse<ListDeploymentsResponse, DeploymentDataSummary>(this, (i) => i.Deployments);
+            new PaginatedResultKeyResponse<ListDeploymentsResponse, DeploymentDataSummary>(this, (i) => i.Deployments ?? new List<DeploymentDataSummary>());
 
         internal ListDeploymentsPaginator(IAmazonLaunchWizard client, ListDeploymentsRequest request)
         {

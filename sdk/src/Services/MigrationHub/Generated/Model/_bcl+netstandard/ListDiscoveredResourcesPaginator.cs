@@ -45,7 +45,7 @@ namespace Amazon.MigrationHub.Model
         /// Enumerable containing all of the DiscoveredResourceList
         /// </summary>
         public IPaginatedEnumerable<DiscoveredResource> DiscoveredResourceList => 
-            new PaginatedResultKeyResponse<ListDiscoveredResourcesResponse, DiscoveredResource>(this, (i) => i.DiscoveredResourceList);
+            new PaginatedResultKeyResponse<ListDiscoveredResourcesResponse, DiscoveredResource>(this, (i) => i.DiscoveredResourceList ?? new List<DiscoveredResource>());
 
         internal ListDiscoveredResourcesPaginator(IAmazonMigrationHub client, ListDiscoveredResourcesRequest request)
         {

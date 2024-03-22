@@ -45,7 +45,7 @@ namespace Amazon.ForecastService.Model
         /// Enumerable containing all of the PredictorMonitorEvaluations
         /// </summary>
         public IPaginatedEnumerable<PredictorMonitorEvaluation> PredictorMonitorEvaluations => 
-            new PaginatedResultKeyResponse<ListMonitorEvaluationsResponse, PredictorMonitorEvaluation>(this, (i) => i.PredictorMonitorEvaluations);
+            new PaginatedResultKeyResponse<ListMonitorEvaluationsResponse, PredictorMonitorEvaluation>(this, (i) => i.PredictorMonitorEvaluations ?? new List<PredictorMonitorEvaluation>());
 
         internal ListMonitorEvaluationsPaginator(IAmazonForecastService client, ListMonitorEvaluationsRequest request)
         {

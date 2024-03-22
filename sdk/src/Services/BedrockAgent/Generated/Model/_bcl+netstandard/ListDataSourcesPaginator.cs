@@ -45,7 +45,7 @@ namespace Amazon.BedrockAgent.Model
         /// Enumerable containing all of the DataSourceSummaries
         /// </summary>
         public IPaginatedEnumerable<DataSourceSummary> DataSourceSummaries => 
-            new PaginatedResultKeyResponse<ListDataSourcesResponse, DataSourceSummary>(this, (i) => i.DataSourceSummaries);
+            new PaginatedResultKeyResponse<ListDataSourcesResponse, DataSourceSummary>(this, (i) => i.DataSourceSummaries ?? new List<DataSourceSummary>());
 
         internal ListDataSourcesPaginator(IAmazonBedrockAgent client, ListDataSourcesRequest request)
         {

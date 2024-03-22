@@ -50,14 +50,14 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class GetAssetPropertyAggregatesRequest : AmazonIoTSiteWiseRequest
     {
-        private List<string> _aggregateTypes = new List<string>();
+        private List<string> _aggregateTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _assetId;
         private DateTime? _endDate;
         private int? _maxResults;
         private string _nextToken;
         private string _propertyAlias;
         private string _propertyId;
-        private List<string> _qualities = new List<string>();
+        private List<string> _qualities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resolution;
         private DateTime? _startDate;
         private TimeOrdering _timeOrdering;
@@ -78,7 +78,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AggregateTypes property is set
         internal bool IsSetAggregateTypes()
         {
-            return this._aggregateTypes != null && this._aggregateTypes.Count > 0; 
+            return this._aggregateTypes != null && (this._aggregateTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -226,7 +226,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Qualities property is set
         internal bool IsSetQualities()
         {
-            return this._qualities != null && this._qualities.Count > 0; 
+            return this._qualities != null && (this._qualities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

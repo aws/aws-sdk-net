@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
         private string _databaseName;
         private string _nextToken;
         private string _tableName;
-        private List<TableOptimizerRun> _tableOptimizerRuns = new List<TableOptimizerRun>();
+        private List<TableOptimizerRun> _tableOptimizerRuns = AWSConfigs.InitializeCollections ? new List<TableOptimizerRun>() : null;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -130,7 +130,7 @@ namespace Amazon.Glue.Model
         // Check to see if TableOptimizerRuns property is set
         internal bool IsSetTableOptimizerRuns()
         {
-            return this._tableOptimizerRuns != null && this._tableOptimizerRuns.Count > 0; 
+            return this._tableOptimizerRuns != null && (this._tableOptimizerRuns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

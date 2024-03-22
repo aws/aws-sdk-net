@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CancelSpotFleetRequestsRequest : AmazonEC2Request
     {
-        private List<string> _spotFleetRequestIds = new List<string>();
+        private List<string> _spotFleetRequestIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _terminateInstances;
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         // Check to see if SpotFleetRequestIds property is set
         internal bool IsSetSpotFleetRequestIds()
         {
-            return this._spotFleetRequestIds != null && this._spotFleetRequestIds.Count > 0; 
+            return this._spotFleetRequestIds != null && (this._spotFleetRequestIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

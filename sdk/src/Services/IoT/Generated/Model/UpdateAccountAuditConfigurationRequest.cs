@@ -41,8 +41,8 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class UpdateAccountAuditConfigurationRequest : AmazonIoTRequest
     {
-        private Dictionary<string, AuditCheckConfiguration> _auditCheckConfigurations = new Dictionary<string, AuditCheckConfiguration>();
-        private Dictionary<string, AuditNotificationTarget> _auditNotificationTargetConfigurations = new Dictionary<string, AuditNotificationTarget>();
+        private Dictionary<string, AuditCheckConfiguration> _auditCheckConfigurations = AWSConfigs.InitializeCollections ? new Dictionary<string, AuditCheckConfiguration>() : null;
+        private Dictionary<string, AuditNotificationTarget> _auditNotificationTargetConfigurations = AWSConfigs.InitializeCollections ? new Dictionary<string, AuditNotificationTarget>() : null;
         private string _roleArn;
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.IoT.Model
         // Check to see if AuditCheckConfigurations property is set
         internal bool IsSetAuditCheckConfigurations()
         {
-            return this._auditCheckConfigurations != null && this._auditCheckConfigurations.Count > 0; 
+            return this._auditCheckConfigurations != null && (this._auditCheckConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.IoT.Model
         // Check to see if AuditNotificationTargetConfigurations property is set
         internal bool IsSetAuditNotificationTargetConfigurations()
         {
-            return this._auditNotificationTargetConfigurations != null && this._auditNotificationTargetConfigurations.Count > 0; 
+            return this._auditNotificationTargetConfigurations != null && (this._auditNotificationTargetConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

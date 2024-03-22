@@ -63,6 +63,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheNodeUpdateStatus/CacheNodeUpdateStatus", targetDepth))
                     {
                         var unmarshaller = CacheNodeUpdateStatusUnmarshaller.Instance;
+                        if (unmarshalledObject.CacheNodeUpdateStatus == null)
+                        {
+                            unmarshalledObject.CacheNodeUpdateStatus = new List<CacheNodeUpdateStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CacheNodeUpdateStatus.Add(item);
                         continue;
@@ -82,6 +86,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("NodeGroupUpdateStatus/NodeGroupUpdateStatus", targetDepth))
                     {
                         var unmarshaller = NodeGroupUpdateStatusUnmarshaller.Instance;
+                        if (unmarshalledObject.NodeGroupUpdateStatus == null)
+                        {
+                            unmarshalledObject.NodeGroupUpdateStatus = new List<NodeGroupUpdateStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NodeGroupUpdateStatus.Add(item);
                         continue;

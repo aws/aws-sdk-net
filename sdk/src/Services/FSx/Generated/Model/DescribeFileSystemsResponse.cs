@@ -33,7 +33,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DescribeFileSystemsResponse : AmazonWebServiceResponse
     {
-        private List<FileSystem> _fileSystems = new List<FileSystem>();
+        private List<FileSystem> _fileSystems = AWSConfigs.InitializeCollections ? new List<FileSystem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.FSx.Model
         // Check to see if FileSystems property is set
         internal bool IsSetFileSystems()
         {
-            return this._fileSystems != null && this._fileSystems.Count > 0; 
+            return this._fileSystems != null && (this._fileSystems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class ListMulticastGroupsResponse : AmazonWebServiceResponse
     {
-        private List<MulticastGroup> _multicastGroupList = new List<MulticastGroup>();
+        private List<MulticastGroup> _multicastGroupList = AWSConfigs.InitializeCollections ? new List<MulticastGroup>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if MulticastGroupList property is set
         internal bool IsSetMulticastGroupList()
         {
-            return this._multicastGroupList != null && this._multicastGroupList.Count > 0; 
+            return this._multicastGroupList != null && (this._multicastGroupList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the SecurityGroupForVpcs
         /// </summary>
         public IPaginatedEnumerable<SecurityGroupForVpc> SecurityGroupForVpcs => 
-            new PaginatedResultKeyResponse<GetSecurityGroupsForVpcResponse, SecurityGroupForVpc>(this, (i) => i.SecurityGroupForVpcs);
+            new PaginatedResultKeyResponse<GetSecurityGroupsForVpcResponse, SecurityGroupForVpc>(this, (i) => i.SecurityGroupForVpcs ?? new List<SecurityGroupForVpc>());
 
         internal GetSecurityGroupsForVpcPaginator(IAmazonEC2 client, GetSecurityGroupsForVpcRequest request)
         {

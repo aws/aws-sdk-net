@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     public partial class ListEnabledProductsForImportResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _productSubscriptions = new List<string>();
+        private List<string> _productSubscriptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ProductSubscriptions property is set
         internal bool IsSetProductSubscriptions()
         {
-            return this._productSubscriptions != null && this._productSubscriptions.Count > 0; 
+            return this._productSubscriptions != null && (this._productSubscriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

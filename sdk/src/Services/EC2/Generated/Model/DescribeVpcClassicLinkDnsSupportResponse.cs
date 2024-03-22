@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeVpcClassicLinkDnsSupportResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ClassicLinkDnsSupport> _vpcs = new List<ClassicLinkDnsSupport>();
+        private List<ClassicLinkDnsSupport> _vpcs = AWSConfigs.InitializeCollections ? new List<ClassicLinkDnsSupport>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if Vpcs property is set
         internal bool IsSetVpcs()
         {
-            return this._vpcs != null && this._vpcs.Count > 0; 
+            return this._vpcs != null && (this._vpcs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

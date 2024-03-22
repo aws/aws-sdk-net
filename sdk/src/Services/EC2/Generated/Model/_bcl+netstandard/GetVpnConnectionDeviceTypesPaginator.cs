@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the VpnConnectionDeviceTypes
         /// </summary>
         public IPaginatedEnumerable<VpnConnectionDeviceType> VpnConnectionDeviceTypes => 
-            new PaginatedResultKeyResponse<GetVpnConnectionDeviceTypesResponse, VpnConnectionDeviceType>(this, (i) => i.VpnConnectionDeviceTypes);
+            new PaginatedResultKeyResponse<GetVpnConnectionDeviceTypesResponse, VpnConnectionDeviceType>(this, (i) => i.VpnConnectionDeviceTypes ?? new List<VpnConnectionDeviceType>());
 
         internal GetVpnConnectionDeviceTypesPaginator(IAmazonEC2 client, GetVpnConnectionDeviceTypesRequest request)
         {

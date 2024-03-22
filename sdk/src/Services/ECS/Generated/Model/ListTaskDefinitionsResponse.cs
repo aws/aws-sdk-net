@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model
     public partial class ListTaskDefinitionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _taskDefinitionArns = new List<string>();
+        private List<string> _taskDefinitionArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.ECS.Model
         // Check to see if TaskDefinitionArns property is set
         internal bool IsSetTaskDefinitionArns()
         {
-            return this._taskDefinitionArns != null && this._taskDefinitionArns.Count > 0; 
+            return this._taskDefinitionArns != null && (this._taskDefinitionArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

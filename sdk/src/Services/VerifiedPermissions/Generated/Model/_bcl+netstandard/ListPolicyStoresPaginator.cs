@@ -45,7 +45,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// Enumerable containing all of the PolicyStores
         /// </summary>
         public IPaginatedEnumerable<PolicyStoreItem> PolicyStores => 
-            new PaginatedResultKeyResponse<ListPolicyStoresResponse, PolicyStoreItem>(this, (i) => i.PolicyStores);
+            new PaginatedResultKeyResponse<ListPolicyStoresResponse, PolicyStoreItem>(this, (i) => i.PolicyStores ?? new List<PolicyStoreItem>());
 
         internal ListPolicyStoresPaginator(IAmazonVerifiedPermissions client, ListPolicyStoresRequest request)
         {

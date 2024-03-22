@@ -36,7 +36,7 @@ namespace Amazon.GlueDataBrew.Model
     {
         private string _description;
         private string _name;
-        private List<RecipeStep> _steps = new List<RecipeStep>();
+        private List<RecipeStep> _steps = AWSConfigs.InitializeCollections ? new List<RecipeStep>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -92,7 +92,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

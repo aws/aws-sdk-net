@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ListImagesInRecycleBinRequest : AmazonEC2Request
     {
-        private List<string> _imageIds = new List<string>();
+        private List<string> _imageIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         // Check to see if ImageIds property is set
         internal bool IsSetImageIds()
         {
-            return this._imageIds != null && this._imageIds.Count > 0; 
+            return this._imageIds != null && (this._imageIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

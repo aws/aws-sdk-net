@@ -40,11 +40,11 @@ namespace Amazon.EKS.Model
         private DateTime? _effectiveDate;
         private DateTime? _expirationDate;
         private string _id;
-        private List<string> _licenseArns = new List<string>();
+        private List<string> _licenseArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _licenseQuantity;
         private EksAnywhereSubscriptionLicenseType _licenseType;
         private string _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private EksAnywhereSubscriptionTerm _term;
 
         /// <summary>
@@ -171,7 +171,7 @@ namespace Amazon.EKS.Model
         // Check to see if LicenseArns property is set
         internal bool IsSetLicenseArns()
         {
-            return this._licenseArns != null && this._licenseArns.Count > 0; 
+            return this._licenseArns != null && (this._licenseArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace Amazon.EKS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

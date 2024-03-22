@@ -45,7 +45,7 @@ namespace Amazon.CloudTrail.Model
         /// Enumerable containing all of the ResourceTagList
         /// </summary>
         public IPaginatedEnumerable<ResourceTag> ResourceTagList => 
-            new PaginatedResultKeyResponse<ListTagsResponse, ResourceTag>(this, (i) => i.ResourceTagList);
+            new PaginatedResultKeyResponse<ListTagsResponse, ResourceTag>(this, (i) => i.ResourceTagList ?? new List<ResourceTag>());
 
         internal ListTagsPaginator(IAmazonCloudTrail client, ListTagsRequest request)
         {

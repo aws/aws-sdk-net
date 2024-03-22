@@ -37,7 +37,7 @@ namespace Amazon.ConnectCases.Model
         private RelatedItemContent _content;
         private UserUnion _performedBy;
         private string _relatedItemId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private RelatedItemType _type;
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

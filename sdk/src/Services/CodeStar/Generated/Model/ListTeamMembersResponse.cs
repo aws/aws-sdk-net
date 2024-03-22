@@ -34,7 +34,7 @@ namespace Amazon.CodeStar.Model
     public partial class ListTeamMembersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TeamMember> _teamMembers = new List<TeamMember>();
+        private List<TeamMember> _teamMembers = AWSConfigs.InitializeCollections ? new List<TeamMember>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.CodeStar.Model
         // Check to see if TeamMembers property is set
         internal bool IsSetTeamMembers()
         {
-            return this._teamMembers != null && this._teamMembers.Count > 0; 
+            return this._teamMembers != null && (this._teamMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

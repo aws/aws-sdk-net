@@ -45,7 +45,7 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all of the WorkflowSummaryList
         /// </summary>
         public IPaginatedEnumerable<WorkflowSummary> WorkflowSummaryList => 
-            new PaginatedResultKeyResponse<ListWorkflowBuildVersionsResponse, WorkflowSummary>(this, (i) => i.WorkflowSummaryList);
+            new PaginatedResultKeyResponse<ListWorkflowBuildVersionsResponse, WorkflowSummary>(this, (i) => i.WorkflowSummaryList ?? new List<WorkflowSummary>());
 
         internal ListWorkflowBuildVersionsPaginator(IAmazonImagebuilder client, ListWorkflowBuildVersionsRequest request)
         {

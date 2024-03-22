@@ -36,7 +36,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private DateTime? _createdTimestamp;
         private string _destinationPhoneNumber;
         private VerificationStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _verifiedDestinationNumberArn;
         private string _verifiedDestinationNumberId;
 
@@ -123,7 +123,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("blockDeviceMappingSet/item", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateBlockDeviceMappingUnmarshaller.Instance;
+                        if (unmarshalledObject.BlockDeviceMappings == null)
+                        {
+                            unmarshalledObject.BlockDeviceMappings = new List<LaunchTemplateBlockDeviceMapping>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
@@ -100,6 +104,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("elasticGpuSpecificationSet/item", targetDepth))
                     {
                         var unmarshaller = ElasticGpuSpecificationResponseUnmarshaller.Instance;
+                        if (unmarshalledObject.ElasticGpuSpecifications == null)
+                        {
+                            unmarshalledObject.ElasticGpuSpecifications = new List<ElasticGpuSpecificationResponse>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ElasticGpuSpecifications.Add(item);
                         continue;
@@ -107,6 +115,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("elasticInferenceAcceleratorSet/item", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateElasticInferenceAcceleratorResponseUnmarshaller.Instance;
+                        if (unmarshalledObject.ElasticInferenceAccelerators == null)
+                        {
+                            unmarshalledObject.ElasticInferenceAccelerators = new List<LaunchTemplateElasticInferenceAcceleratorResponse>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ElasticInferenceAccelerators.Add(item);
                         continue;
@@ -174,6 +186,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("licenseSet/item", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateLicenseConfigurationUnmarshaller.Instance;
+                        if (unmarshalledObject.LicenseSpecifications == null)
+                        {
+                            unmarshalledObject.LicenseSpecifications = new List<LaunchTemplateLicenseConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LicenseSpecifications.Add(item);
                         continue;
@@ -199,6 +215,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("networkInterfaceSet/item", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateInstanceNetworkInterfaceSpecificationUnmarshaller.Instance;
+                        if (unmarshalledObject.NetworkInterfaces == null)
+                        {
+                            unmarshalledObject.NetworkInterfaces = new List<LaunchTemplateInstanceNetworkInterfaceSpecification>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NetworkInterfaces.Add(item);
                         continue;
@@ -224,6 +244,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("securityGroupIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SecurityGroupIds == null)
+                        {
+                            unmarshalledObject.SecurityGroupIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SecurityGroupIds.Add(item);
                         continue;
@@ -231,6 +255,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("securityGroupSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SecurityGroups == null)
+                        {
+                            unmarshalledObject.SecurityGroups = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SecurityGroups.Add(item);
                         continue;
@@ -238,6 +266,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSpecificationSet/item", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateTagSpecificationUnmarshaller.Instance;
+                        if (unmarshalledObject.TagSpecifications == null)
+                        {
+                            unmarshalledObject.TagSpecifications = new List<LaunchTemplateTagSpecification>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TagSpecifications.Add(item);
                         continue;

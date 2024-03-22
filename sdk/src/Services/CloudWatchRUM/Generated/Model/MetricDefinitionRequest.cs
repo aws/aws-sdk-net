@@ -30,8 +30,9 @@ namespace Amazon.CloudWatchRUM.Model
 {
     /// <summary>
     /// Use this structure to define one extended metric or custom metric that RUM will send
-    /// to CloudWatch or CloudWatch Evidently. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
-    /// Additional metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
+    /// to CloudWatch or CloudWatch Evidently. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-and-extended-metrics.html">
+    /// Custom metrics and extended metrics that you can send to CloudWatch and CloudWatch
+    /// Evidently</a>.
     /// 
     ///  
     /// <para>
@@ -46,7 +47,7 @@ namespace Amazon.CloudWatchRUM.Model
     ///  </li> <li> 
     /// <para>
     /// Only certain combinations of values for <c>Name</c>, <c>ValueKey</c>, and <c>EventPattern</c>
-    /// are valid. In addition to what is displayed in the list below, the <c>EventPattern</c>
+    /// are valid. In addition to what is displayed in the following list, the <c>EventPattern</c>
     /// can also include information used by the <c>DimensionKeys</c> field.
     /// </para>
     ///  <ul> <li> 
@@ -113,6 +114,23 @@ namespace Amazon.CloudWatchRUM.Model
     /// <para>
     /// If <c>Name</c> is <c>SessionCount</c>, then <c>ValueKey</c>must be null and the <c>EventPattern</c>
     /// must include <c>{"event_type":["com.amazon.rum.session_start_event"]}</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <c>Name</c> is <c>PageViewCount</c>, then <c>ValueKey</c>must be null and the <c>EventPattern</c>
+    /// must include <c>{"event_type":["com.amazon.rum.page_view_event"]}</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <c>Name</c> is <c>Http4xxCount</c>, then <c>ValueKey</c>must be null and the <c>EventPattern</c>
+    /// must include <c>{"event_type": ["com.amazon.rum.http_event"],"event_details":{"response":{"status":[{"numeric":["&gt;=",400,"&lt;",500]}]}}}
+    /// }</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <c>Name</c> is <c>Http5xxCount</c>, then <c>ValueKey</c>must be null and the <c>EventPattern</c>
+    /// must include <c>{"event_type": ["com.amazon.rum.http_event"],"event_details":{"response":{"status":[{"numeric":["&gt;=",500,"&lt;=",599]}]}}}
+    /// }</c> 
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
@@ -227,7 +245,7 @@ namespace Amazon.CloudWatchRUM.Model
     /// </summary>
     public partial class MetricDefinitionRequest
     {
-        private Dictionary<string, string> _dimensionKeys = new Dictionary<string, string>();
+        private Dictionary<string, string> _dimensionKeys = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _eventPattern;
         private string _name;
         private string _awsNamespace;
@@ -285,7 +303,7 @@ namespace Amazon.CloudWatchRUM.Model
         // Check to see if DimensionKeys property is set
         internal bool IsSetDimensionKeys()
         {
-            return this._dimensionKeys != null && this._dimensionKeys.Count > 0; 
+            return this._dimensionKeys != null && (this._dimensionKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -323,7 +341,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the metrics destination' is <c>CloudWatch</c> and the event also matches a value
+        /// If the metrics destination is <c>CloudWatch</c> and the event also matches a value
         /// in <c>DimensionKeys</c>, then the metric is published with the specified dimensions.
         /// 
         /// </para>
@@ -459,13 +477,12 @@ namespace Amazon.CloudWatchRUM.Model
         ///  
         /// <para>
         /// If you omit this field, a hardcoded value of 1 is pushed as the metric value. This
-        /// is useful if you just want to count the number of events that the filter catches.
-        /// 
+        /// is useful if you want to count the number of events that the filter catches. 
         /// </para>
         ///  
         /// <para>
         /// If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently
-        /// raw and Evidently will handle data extraction from the event.
+        /// raw. Evidently will handle data extraction from the event.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=280)]

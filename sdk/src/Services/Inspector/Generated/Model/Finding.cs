@@ -37,7 +37,7 @@ namespace Amazon.Inspector.Model
         private string _arn;
         private AssetAttributes _assetAttributes;
         private AssetType _assetType;
-        private List<Attribute> _attributes = new List<Attribute>();
+        private List<Attribute> _attributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
         private int? _confidence;
         private DateTime? _createdAt;
         private string _description;
@@ -51,7 +51,7 @@ namespace Amazon.Inspector.Model
         private Severity _severity;
         private string _title;
         private DateTime? _updatedAt;
-        private List<Attribute> _userAttributes = new List<Attribute>();
+        private List<Attribute> _userAttributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -124,7 +124,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -387,7 +387,7 @@ namespace Amazon.Inspector.Model
         // Check to see if UserAttributes property is set
         internal bool IsSetUserAttributes()
         {
-            return this._userAttributes != null && this._userAttributes.Count > 0; 
+            return this._userAttributes != null && (this._userAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

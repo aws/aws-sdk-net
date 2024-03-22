@@ -38,21 +38,21 @@ namespace Amazon.SageMaker.Model
         private DateTime? _creationTime;
         private string _displayName;
         private DateTime? _endTime;
-        private Dictionary<string, TrialComponentArtifact> _inputArtifacts = new Dictionary<string, TrialComponentArtifact>();
+        private Dictionary<string, TrialComponentArtifact> _inputArtifacts = AWSConfigs.InitializeCollections ? new Dictionary<string, TrialComponentArtifact>() : null;
         private UserContext _lastModifiedBy;
         private DateTime? _lastModifiedTime;
         private string _lineageGroupArn;
         private MetadataProperties _metadataProperties;
-        private List<TrialComponentMetricSummary> _metrics = new List<TrialComponentMetricSummary>();
-        private Dictionary<string, TrialComponentArtifact> _outputArtifacts = new Dictionary<string, TrialComponentArtifact>();
-        private Dictionary<string, TrialComponentParameterValue> _parameters = new Dictionary<string, TrialComponentParameterValue>();
-        private List<Parent> _parents = new List<Parent>();
+        private List<TrialComponentMetricSummary> _metrics = AWSConfigs.InitializeCollections ? new List<TrialComponentMetricSummary>() : null;
+        private Dictionary<string, TrialComponentArtifact> _outputArtifacts = AWSConfigs.InitializeCollections ? new Dictionary<string, TrialComponentArtifact>() : null;
+        private Dictionary<string, TrialComponentParameterValue> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, TrialComponentParameterValue>() : null;
+        private List<Parent> _parents = AWSConfigs.InitializeCollections ? new List<Parent>() : null;
         private string _runName;
         private TrialComponentSource _source;
         private TrialComponentSourceDetail _sourceDetail;
         private DateTime? _startTime;
         private TrialComponentStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _trialComponentArn;
         private string _trialComponentName;
 
@@ -146,7 +146,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InputArtifacts property is set
         internal bool IsSetInputArtifacts()
         {
-            return this._inputArtifacts != null && this._inputArtifacts.Count > 0; 
+            return this._inputArtifacts != null && (this._inputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if OutputArtifacts property is set
         internal bool IsSetOutputArtifacts()
         {
-            return this._outputArtifacts != null && this._outputArtifacts.Count > 0; 
+            return this._outputArtifacts != null && (this._outputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +269,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -288,7 +288,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Parents property is set
         internal bool IsSetParents()
         {
-            return this._parents != null && this._parents.Count > 0; 
+            return this._parents != null && (this._parents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -396,7 +396,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

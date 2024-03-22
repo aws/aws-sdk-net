@@ -34,7 +34,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class CreateRemoteAccessSessionConfiguration
     {
         private BillingMethod _billingMethod;
-        private List<string> _vpceConfigurationArns = new List<string>();
+        private List<string> _vpceConfigurationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BillingMethod. 
@@ -69,7 +69,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if VpceConfigurationArns property is set
         internal bool IsSetVpceConfigurationArns()
         {
-            return this._vpceConfigurationArns != null && this._vpceConfigurationArns.Count > 0; 
+            return this._vpceConfigurationArns != null && (this._vpceConfigurationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

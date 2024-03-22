@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the ConfigurationSets
         /// </summary>
         public IPaginatedEnumerable<ConfigurationSetInformation> ConfigurationSets => 
-            new PaginatedResultKeyResponse<DescribeConfigurationSetsResponse, ConfigurationSetInformation>(this, (i) => i.ConfigurationSets);
+            new PaginatedResultKeyResponse<DescribeConfigurationSetsResponse, ConfigurationSetInformation>(this, (i) => i.ConfigurationSets ?? new List<ConfigurationSetInformation>());
 
         internal DescribeConfigurationSetsPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeConfigurationSetsRequest request)
         {

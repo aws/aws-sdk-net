@@ -35,7 +35,7 @@ namespace Amazon.NimbleStudio.Model
     public partial class AcceptEulasRequest : AmazonNimbleStudioRequest
     {
         private string _clientToken;
-        private List<string> _eulaIds = new List<string>();
+        private List<string> _eulaIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _studioId;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if EulaIds property is set
         internal bool IsSetEulaIds()
         {
-            return this._eulaIds != null && this._eulaIds.Count > 0; 
+            return this._eulaIds != null && (this._eulaIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

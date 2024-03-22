@@ -45,7 +45,7 @@ namespace Amazon.ManagedGrafana.Model
         /// Enumerable containing all of the Workspaces
         /// </summary>
         public IPaginatedEnumerable<WorkspaceSummary> Workspaces => 
-            new PaginatedResultKeyResponse<ListWorkspacesResponse, WorkspaceSummary>(this, (i) => i.Workspaces);
+            new PaginatedResultKeyResponse<ListWorkspacesResponse, WorkspaceSummary>(this, (i) => i.Workspaces ?? new List<WorkspaceSummary>());
 
         internal ListWorkspacesPaginator(IAmazonManagedGrafana client, ListWorkspacesRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.DataPipeline.Model
         /// Enumerable containing all of the PipelineIdList
         /// </summary>
         public IPaginatedEnumerable<PipelineIdName> PipelineIdList => 
-            new PaginatedResultKeyResponse<ListPipelinesResponse, PipelineIdName>(this, (i) => i.PipelineIdList);
+            new PaginatedResultKeyResponse<ListPipelinesResponse, PipelineIdName>(this, (i) => i.PipelineIdList ?? new List<PipelineIdName>());
 
         internal ListPipelinesPaginator(IAmazonDataPipeline client, ListPipelinesRequest request)
         {

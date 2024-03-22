@@ -36,7 +36,7 @@ namespace Amazon.CodePipeline.Model
         private ExecutionMode _executionMode;
         private DateTime? _lastUpdateTime;
         private string _pipelineExecutionId;
-        private List<SourceRevision> _sourceRevisions = new List<SourceRevision>();
+        private List<SourceRevision> _sourceRevisions = AWSConfigs.InitializeCollections ? new List<SourceRevision>() : null;
         private DateTime? _startTime;
         private PipelineExecutionStatus _status;
         private StopExecutionTrigger _stopTrigger;
@@ -112,7 +112,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if SourceRevisions property is set
         internal bool IsSetSourceRevisions()
         {
-            return this._sourceRevisions != null && this._sourceRevisions.Count > 0; 
+            return this._sourceRevisions != null && (this._sourceRevisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

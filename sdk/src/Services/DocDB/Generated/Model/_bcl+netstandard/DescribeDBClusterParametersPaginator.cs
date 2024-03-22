@@ -45,7 +45,7 @@ namespace Amazon.DocDB.Model
         /// Enumerable containing all of the Parameters
         /// </summary>
         public IPaginatedEnumerable<Parameter> Parameters => 
-            new PaginatedResultKeyResponse<DescribeDBClusterParametersResponse, Parameter>(this, (i) => i.Parameters);
+            new PaginatedResultKeyResponse<DescribeDBClusterParametersResponse, Parameter>(this, (i) => i.Parameters ?? new List<Parameter>());
 
         internal DescribeDBClusterParametersPaginator(IAmazonDocDB client, DescribeDBClusterParametersRequest request)
         {

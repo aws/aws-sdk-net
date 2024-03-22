@@ -81,6 +81,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobQueueName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jobStateTimeLimitActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<JobStateTimeLimitAction, JobStateTimeLimitActionUnmarshaller>(JobStateTimeLimitActionUnmarshaller.Instance);
+                    unmarshalledObject.JobStateTimeLimitActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("priority", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

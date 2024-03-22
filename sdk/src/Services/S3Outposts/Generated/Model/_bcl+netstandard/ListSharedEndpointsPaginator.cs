@@ -45,7 +45,7 @@ namespace Amazon.S3Outposts.Model
         /// Enumerable containing all of the Endpoints
         /// </summary>
         public IPaginatedEnumerable<Endpoint> Endpoints => 
-            new PaginatedResultKeyResponse<ListSharedEndpointsResponse, Endpoint>(this, (i) => i.Endpoints);
+            new PaginatedResultKeyResponse<ListSharedEndpointsResponse, Endpoint>(this, (i) => i.Endpoints ?? new List<Endpoint>());
 
         internal ListSharedEndpointsPaginator(IAmazonS3Outposts client, ListSharedEndpointsRequest request)
         {

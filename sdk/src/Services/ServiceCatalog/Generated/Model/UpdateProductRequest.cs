@@ -35,13 +35,13 @@ namespace Amazon.ServiceCatalog.Model
     public partial class UpdateProductRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
-        private List<Tag> _addTags = new List<Tag>();
+        private List<Tag> _addTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _description;
         private string _distributor;
         private string _id;
         private string _name;
         private string _owner;
-        private List<string> _removeTags = new List<string>();
+        private List<string> _removeTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SourceConnection _sourceConnection;
         private string _supportDescription;
         private string _supportEmail;
@@ -91,7 +91,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if AddTags property is set
         internal bool IsSetAddTags()
         {
-            return this._addTags != null && this._addTags.Count > 0; 
+            return this._addTags != null && (this._addTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if RemoveTags property is set
         internal bool IsSetRemoveTags()
         {
-            return this._removeTags != null && this._removeTags.Count > 0; 
+            return this._removeTags != null && (this._removeTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

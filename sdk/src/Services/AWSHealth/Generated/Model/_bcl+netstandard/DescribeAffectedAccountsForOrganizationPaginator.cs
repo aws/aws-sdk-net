@@ -45,7 +45,7 @@ namespace Amazon.AWSHealth.Model
         /// Enumerable containing all of the AffectedAccounts
         /// </summary>
         public IPaginatedEnumerable<string> AffectedAccounts => 
-            new PaginatedResultKeyResponse<DescribeAffectedAccountsForOrganizationResponse, string>(this, (i) => i.AffectedAccounts);
+            new PaginatedResultKeyResponse<DescribeAffectedAccountsForOrganizationResponse, string>(this, (i) => i.AffectedAccounts ?? new List<string>());
 
         internal DescribeAffectedAccountsForOrganizationPaginator(IAmazonAWSHealth client, DescribeAffectedAccountsForOrganizationRequest request)
         {

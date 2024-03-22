@@ -37,8 +37,8 @@ namespace Amazon.IoTFleetWise.Model
     {
         private string _description;
         private string _name;
-        private List<Node> _nodes = new List<Node>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<Node> _nodes = AWSConfigs.InitializeCollections ? new List<Node>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -95,7 +95,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Nodes property is set
         internal bool IsSetNodes()
         {
-            return this._nodes != null && this._nodes.Count > 0; 
+            return this._nodes != null && (this._nodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

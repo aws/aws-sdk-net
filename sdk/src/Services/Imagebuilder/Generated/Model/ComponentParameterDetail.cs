@@ -33,7 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ComponentParameterDetail
     {
-        private List<string> _defaultValue = new List<string>();
+        private List<string> _defaultValue = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _name;
         private string _type;
@@ -53,7 +53,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this._defaultValue != null && this._defaultValue.Count > 0; 
+            return this._defaultValue != null && (this._defaultValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

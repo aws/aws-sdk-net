@@ -34,7 +34,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class JwtBearerGrant
     {
-        private List<AuthorizedTokenIssuer> _authorizedTokenIssuers = new List<AuthorizedTokenIssuer>();
+        private List<AuthorizedTokenIssuer> _authorizedTokenIssuers = AWSConfigs.InitializeCollections ? new List<AuthorizedTokenIssuer>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthorizedTokenIssuers. 
@@ -53,7 +53,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if AuthorizedTokenIssuers property is set
         internal bool IsSetAuthorizedTokenIssuers()
         {
-            return this._authorizedTokenIssuers != null && this._authorizedTokenIssuers.Count > 0; 
+            return this._authorizedTokenIssuers != null && (this._authorizedTokenIssuers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

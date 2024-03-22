@@ -33,10 +33,10 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SectionBasedLayoutConfiguration
     {
-        private List<BodySectionConfiguration> _bodySections = new List<BodySectionConfiguration>();
+        private List<BodySectionConfiguration> _bodySections = AWSConfigs.InitializeCollections ? new List<BodySectionConfiguration>() : null;
         private SectionBasedLayoutCanvasSizeOptions _canvasSizeOptions;
-        private List<HeaderFooterSectionConfiguration> _footerSections = new List<HeaderFooterSectionConfiguration>();
-        private List<HeaderFooterSectionConfiguration> _headerSections = new List<HeaderFooterSectionConfiguration>();
+        private List<HeaderFooterSectionConfiguration> _footerSections = AWSConfigs.InitializeCollections ? new List<HeaderFooterSectionConfiguration>() : null;
+        private List<HeaderFooterSectionConfiguration> _headerSections = AWSConfigs.InitializeCollections ? new List<HeaderFooterSectionConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property BodySections. 
@@ -54,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if BodySections property is set
         internal bool IsSetBodySections()
         {
-            return this._bodySections != null && this._bodySections.Count > 0; 
+            return this._bodySections != null && (this._bodySections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FooterSections property is set
         internal bool IsSetFooterSections()
         {
-            return this._footerSections != null && this._footerSections.Count > 0; 
+            return this._footerSections != null && (this._footerSections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if HeaderSections property is set
         internal bool IsSetHeaderSections()
         {
-            return this._headerSections != null && this._headerSections.Count > 0; 
+            return this._headerSections != null && (this._headerSections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

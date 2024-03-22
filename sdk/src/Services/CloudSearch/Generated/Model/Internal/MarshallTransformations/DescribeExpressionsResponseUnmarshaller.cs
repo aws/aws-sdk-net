@@ -84,6 +84,10 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Expressions/member", targetDepth))
                     {
                         var unmarshaller = ExpressionStatusUnmarshaller.Instance;
+                        if (response.Expressions == null)
+                        {
+                            response.Expressions = new List<ExpressionStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Expressions.Add(item);
                         continue;

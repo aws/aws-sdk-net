@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeVerifiedAccessInstancesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VerifiedAccessInstance> _verifiedAccessInstances = new List<VerifiedAccessInstance>();
+        private List<VerifiedAccessInstance> _verifiedAccessInstances = AWSConfigs.InitializeCollections ? new List<VerifiedAccessInstance>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if VerifiedAccessInstances property is set
         internal bool IsSetVerifiedAccessInstances()
         {
-            return this._verifiedAccessInstances != null && this._verifiedAccessInstances.Count > 0; 
+            return this._verifiedAccessInstances != null && (this._verifiedAccessInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

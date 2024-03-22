@@ -34,12 +34,12 @@ namespace Amazon.MarketplaceCatalog.Model
     public partial class OfferSummary
     {
         private string _availabilityEndDate;
-        private List<string> _buyerAccounts = new List<string>();
+        private List<string> _buyerAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _productId;
         private string _releaseDate;
         private OfferStateString _state;
-        private List<string> _targeting = new List<string>();
+        private List<string> _targeting = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityEndDate. 
@@ -76,7 +76,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if BuyerAccounts property is set
         internal bool IsSetBuyerAccounts()
         {
-            return this._buyerAccounts != null && this._buyerAccounts.Count > 0; 
+            return this._buyerAccounts != null && (this._buyerAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if Targeting property is set
         internal bool IsSetTargeting()
         {
-            return this._targeting != null && this._targeting.Count > 0; 
+            return this._targeting != null && (this._targeting.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

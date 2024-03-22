@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeClientVpnConnectionsResponse : AmazonWebServiceResponse
     {
-        private List<ClientVpnConnection> _connections = new List<ClientVpnConnection>();
+        private List<ClientVpnConnection> _connections = AWSConfigs.InitializeCollections ? new List<ClientVpnConnection>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Connections property is set
         internal bool IsSetConnections()
         {
-            return this._connections != null && this._connections.Count > 0; 
+            return this._connections != null && (this._connections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

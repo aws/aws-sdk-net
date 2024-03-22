@@ -36,7 +36,7 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class PutSkillAuthorizationRequest : AmazonAlexaForBusinessRequest
     {
-        private Dictionary<string, string> _authorizationResult = new Dictionary<string, string>();
+        private Dictionary<string, string> _authorizationResult = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _roomArn;
         private string _skillId;
 
@@ -57,7 +57,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if AuthorizationResult property is set
         internal bool IsSetAuthorizationResult()
         {
-            return this._authorizationResult != null && this._authorizationResult.Count > 0; 
+            return this._authorizationResult != null && (this._authorizationResult.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

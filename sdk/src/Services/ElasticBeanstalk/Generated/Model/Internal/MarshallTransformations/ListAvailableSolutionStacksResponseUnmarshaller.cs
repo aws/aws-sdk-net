@@ -84,6 +84,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SolutionStackDetails/member", targetDepth))
                     {
                         var unmarshaller = SolutionStackDescriptionUnmarshaller.Instance;
+                        if (response.SolutionStackDetails == null)
+                        {
+                            response.SolutionStackDetails = new List<SolutionStackDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SolutionStackDetails.Add(item);
                         continue;
@@ -91,6 +95,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SolutionStacks/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.SolutionStacks == null)
+                        {
+                            response.SolutionStacks = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SolutionStacks.Add(item);
                         continue;

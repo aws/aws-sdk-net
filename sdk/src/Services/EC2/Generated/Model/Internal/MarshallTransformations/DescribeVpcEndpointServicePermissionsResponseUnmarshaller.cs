@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("allowedPrincipals/item", targetDepth))
                     {
                         var unmarshaller = AllowedPrincipalUnmarshaller.Instance;
+                        if (response.AllowedPrincipals == null)
+                        {
+                            response.AllowedPrincipals = new List<AllowedPrincipal>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AllowedPrincipals.Add(item);
                         continue;

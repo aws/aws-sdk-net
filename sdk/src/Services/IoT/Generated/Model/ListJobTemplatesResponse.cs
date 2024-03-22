@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListJobTemplatesResponse : AmazonWebServiceResponse
     {
-        private List<JobTemplateSummary> _jobTemplates = new List<JobTemplateSummary>();
+        private List<JobTemplateSummary> _jobTemplates = AWSConfigs.InitializeCollections ? new List<JobTemplateSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model
         // Check to see if JobTemplates property is set
         internal bool IsSetJobTemplates()
         {
-            return this._jobTemplates != null && this._jobTemplates.Count > 0; 
+            return this._jobTemplates != null && (this._jobTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

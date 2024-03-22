@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         private ObjectiveStatusCounters _objectiveStatusCounters;
         private HyperParameterTrainingJobSummary _overallBestTrainingJob;
         private HyperParameterTrainingJobDefinition _trainingJobDefinition;
-        private List<HyperParameterTrainingJobDefinition> _trainingJobDefinitions = new List<HyperParameterTrainingJobDefinition>();
+        private List<HyperParameterTrainingJobDefinition> _trainingJobDefinitions = AWSConfigs.InitializeCollections ? new List<HyperParameterTrainingJobDefinition>() : null;
         private TrainingJobStatusCounters _trainingJobStatusCounters;
         private HyperParameterTuningJobCompletionDetails _tuningJobCompletionDetails;
         private HyperParameterTuningJobWarmStartConfig _warmStartConfig;
@@ -333,7 +333,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if TrainingJobDefinitions property is set
         internal bool IsSetTrainingJobDefinitions()
         {
-            return this._trainingJobDefinitions != null && this._trainingJobDefinitions.Count > 0; 
+            return this._trainingJobDefinitions != null && (this._trainingJobDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

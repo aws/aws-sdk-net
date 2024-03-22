@@ -35,8 +35,8 @@ namespace Amazon.Greengrass.Model
     {
         private bool? _accessSysfs;
         private FunctionExecutionConfig _execution;
-        private List<ResourceAccessPolicy> _resourceAccessPolicies = new List<ResourceAccessPolicy>();
-        private Dictionary<string, string> _variables = new Dictionary<string, string>();
+        private List<ResourceAccessPolicy> _resourceAccessPolicies = AWSConfigs.InitializeCollections ? new List<ResourceAccessPolicy>() : null;
+        private Dictionary<string, string> _variables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessSysfs. If true, the Lambda function is allowed to
@@ -87,7 +87,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if ResourceAccessPolicies property is set
         internal bool IsSetResourceAccessPolicies()
         {
-            return this._resourceAccessPolicies != null && this._resourceAccessPolicies.Count > 0; 
+            return this._resourceAccessPolicies != null && (this._resourceAccessPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -39,7 +39,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class CreateBotVersionRequest : AmazonLexModelsV2Request
     {
         private string _botId;
-        private Dictionary<string, BotVersionLocaleDetails> _botVersionLocaleSpecification = new Dictionary<string, BotVersionLocaleDetails>();
+        private Dictionary<string, BotVersionLocaleDetails> _botVersionLocaleSpecification = AWSConfigs.InitializeCollections ? new Dictionary<string, BotVersionLocaleDetails>() : null;
         private string _description;
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotVersionLocaleSpecification property is set
         internal bool IsSetBotVersionLocaleSpecification()
         {
-            return this._botVersionLocaleSpecification != null && this._botVersionLocaleSpecification.Count > 0; 
+            return this._botVersionLocaleSpecification != null && (this._botVersionLocaleSpecification.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

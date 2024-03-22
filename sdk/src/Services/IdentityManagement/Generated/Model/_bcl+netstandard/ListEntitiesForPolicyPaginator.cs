@@ -45,19 +45,19 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the PolicyGroups
         /// </summary>
         public IPaginatedEnumerable<PolicyGroup> PolicyGroups => 
-            new PaginatedResultKeyResponse<ListEntitiesForPolicyResponse, PolicyGroup>(this, (i) => i.PolicyGroups);
+            new PaginatedResultKeyResponse<ListEntitiesForPolicyResponse, PolicyGroup>(this, (i) => i.PolicyGroups ?? new List<PolicyGroup>());
 
         /// <summary>
         /// Enumerable containing all of the PolicyUsers
         /// </summary>
         public IPaginatedEnumerable<PolicyUser> PolicyUsers => 
-            new PaginatedResultKeyResponse<ListEntitiesForPolicyResponse, PolicyUser>(this, (i) => i.PolicyUsers);
+            new PaginatedResultKeyResponse<ListEntitiesForPolicyResponse, PolicyUser>(this, (i) => i.PolicyUsers ?? new List<PolicyUser>());
 
         /// <summary>
         /// Enumerable containing all of the PolicyRoles
         /// </summary>
         public IPaginatedEnumerable<PolicyRole> PolicyRoles => 
-            new PaginatedResultKeyResponse<ListEntitiesForPolicyResponse, PolicyRole>(this, (i) => i.PolicyRoles);
+            new PaginatedResultKeyResponse<ListEntitiesForPolicyResponse, PolicyRole>(this, (i) => i.PolicyRoles ?? new List<PolicyRole>());
 
         internal ListEntitiesForPolicyPaginator(IAmazonIdentityManagementService client, ListEntitiesForPolicyRequest request)
         {

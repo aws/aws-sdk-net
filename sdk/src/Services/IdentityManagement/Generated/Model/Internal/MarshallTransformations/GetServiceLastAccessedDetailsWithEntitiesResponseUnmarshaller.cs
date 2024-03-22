@@ -84,6 +84,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EntityDetailsList/member", targetDepth))
                     {
                         var unmarshaller = EntityDetailsUnmarshaller.Instance;
+                        if (response.EntityDetailsList == null)
+                        {
+                            response.EntityDetailsList = new List<EntityDetails>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.EntityDetailsList.Add(item);
                         continue;

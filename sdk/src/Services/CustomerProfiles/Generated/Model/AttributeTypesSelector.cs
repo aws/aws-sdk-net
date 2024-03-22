@@ -73,10 +73,10 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class AttributeTypesSelector
     {
-        private List<string> _address = new List<string>();
+        private List<string> _address = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AttributeMatchingModel _attributeMatchingModel;
-        private List<string> _emailAddress = new List<string>();
-        private List<string> _phoneNumber = new List<string>();
+        private List<string> _emailAddress = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _phoneNumber = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Address. 
@@ -102,7 +102,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if Address property is set
         internal bool IsSetAddress()
         {
-            return this._address != null && this._address.Count > 0; 
+            return this._address != null && (this._address.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if EmailAddress property is set
         internal bool IsSetEmailAddress()
         {
-            return this._emailAddress != null && this._emailAddress.Count > 0; 
+            return this._emailAddress != null && (this._emailAddress.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if PhoneNumber property is set
         internal bool IsSetPhoneNumber()
         {
-            return this._phoneNumber != null && this._phoneNumber.Count > 0; 
+            return this._phoneNumber != null && (this._phoneNumber.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -35,7 +35,7 @@ namespace Amazon.IoTSiteWise.Model
     {
         private string _hierarchyId;
         private string _propertyId;
-        private List<AssetModelPropertyPathSegment> _propertyPath = new List<AssetModelPropertyPathSegment>();
+        private List<AssetModelPropertyPathSegment> _propertyPath = AWSConfigs.InitializeCollections ? new List<AssetModelPropertyPathSegment>() : null;
 
         /// <summary>
         /// Gets and sets the property HierarchyId. 
@@ -104,7 +104,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if PropertyPath property is set
         internal bool IsSetPropertyPath()
         {
-            return this._propertyPath != null && this._propertyPath.Count > 0; 
+            return this._propertyPath != null && (this._propertyPath.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -39,7 +39,7 @@ namespace Amazon.Tnb.Model
     /// </summary>
     public partial class GetSolNetworkOperationTaskDetails
     {
-        private Dictionary<string, string> _taskContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _taskContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _taskEndTime;
         private ErrorInfo _taskErrorDetails;
         private string _taskName;
@@ -61,7 +61,7 @@ namespace Amazon.Tnb.Model
         // Check to see if TaskContext property is set
         internal bool IsSetTaskContext()
         {
-            return this._taskContext != null && this._taskContext.Count > 0; 
+            return this._taskContext != null && (this._taskContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

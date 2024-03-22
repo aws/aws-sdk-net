@@ -35,7 +35,7 @@ namespace Amazon.MediaPackage.Model
     {
         private AdMarkers _adMarkers;
         private AdsOnDeliveryRestrictions _adsOnDeliveryRestrictions;
-        private List<string> _adTriggers = new List<string>();
+        private List<string> _adTriggers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private bool? _includeIframeOnlyStream;
         private string _manifestName;
@@ -92,7 +92,7 @@ namespace Amazon.MediaPackage.Model
         // Check to see if AdTriggers property is set
         internal bool IsSetAdTriggers()
         {
-            return this._adTriggers != null && this._adTriggers.Count > 0; 
+            return this._adTriggers != null && (this._adTriggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

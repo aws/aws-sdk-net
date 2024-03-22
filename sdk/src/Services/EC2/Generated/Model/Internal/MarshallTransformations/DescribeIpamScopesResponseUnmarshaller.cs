@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipamScopeSet/item", targetDepth))
                     {
                         var unmarshaller = IpamScopeUnmarshaller.Instance;
+                        if (response.IpamScopes == null)
+                        {
+                            response.IpamScopes = new List<IpamScope>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.IpamScopes.Add(item);
                         continue;

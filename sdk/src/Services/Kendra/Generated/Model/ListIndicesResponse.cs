@@ -33,7 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class ListIndicesResponse : AmazonWebServiceResponse
     {
-        private List<IndexConfigurationSummary> _indexConfigurationSummaryItems = new List<IndexConfigurationSummary>();
+        private List<IndexConfigurationSummary> _indexConfigurationSummaryItems = AWSConfigs.InitializeCollections ? new List<IndexConfigurationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Kendra.Model
         // Check to see if IndexConfigurationSummaryItems property is set
         internal bool IsSetIndexConfigurationSummaryItems()
         {
-            return this._indexConfigurationSummaryItems != null && this._indexConfigurationSummaryItems.Count > 0; 
+            return this._indexConfigurationSummaryItems != null && (this._indexConfigurationSummaryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

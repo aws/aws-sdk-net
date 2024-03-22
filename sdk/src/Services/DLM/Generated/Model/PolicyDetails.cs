@@ -33,22 +33,22 @@ namespace Amazon.DLM.Model
     /// </summary>
     public partial class PolicyDetails
     {
-        private List<Action> _actions = new List<Action>();
+        private List<Action> _actions = AWSConfigs.InitializeCollections ? new List<Action>() : null;
         private bool? _copyTags;
         private int? _createInterval;
-        private List<CrossRegionCopyTarget> _crossRegionCopyTargets = new List<CrossRegionCopyTarget>();
+        private List<CrossRegionCopyTarget> _crossRegionCopyTargets = AWSConfigs.InitializeCollections ? new List<CrossRegionCopyTarget>() : null;
         private EventSource _eventSource;
         private Exclusions _exclusions;
         private bool? _extendDeletion;
         private Parameters _parameters;
         private PolicyLanguageValues _policyLanguage;
         private PolicyTypeValues _policyType;
-        private List<string> _resourceLocations = new List<string>();
+        private List<string> _resourceLocations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ResourceTypeValues _resourceType;
-        private List<string> _resourceTypes = new List<string>();
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _retainInterval;
-        private List<Schedule> _schedules = new List<Schedule>();
-        private List<Tag> _targetTags = new List<Tag>();
+        private List<Schedule> _schedules = AWSConfigs.InitializeCollections ? new List<Schedule>() : null;
+        private List<Tag> _targetTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -67,7 +67,7 @@ namespace Amazon.DLM.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.DLM.Model
         // Check to see if CrossRegionCopyTargets property is set
         internal bool IsSetCrossRegionCopyTargets()
         {
-            return this._crossRegionCopyTargets != null && this._crossRegionCopyTargets.Count > 0; 
+            return this._crossRegionCopyTargets != null && (this._crossRegionCopyTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -334,7 +334,7 @@ namespace Amazon.DLM.Model
         // Check to see if ResourceLocations property is set
         internal bool IsSetResourceLocations()
         {
-            return this._resourceLocations != null && this._resourceLocations.Count > 0; 
+            return this._resourceLocations != null && (this._resourceLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -384,7 +384,7 @@ namespace Amazon.DLM.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -432,7 +432,7 @@ namespace Amazon.DLM.Model
         // Check to see if Schedules property is set
         internal bool IsSetSchedules()
         {
-            return this._schedules != null && this._schedules.Count > 0; 
+            return this._schedules != null && (this._schedules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -452,7 +452,7 @@ namespace Amazon.DLM.Model
         // Check to see if TargetTags property is set
         internal bool IsSetTargetTags()
         {
-            return this._targetTags != null && this._targetTags.Count > 0; 
+            return this._targetTags != null && (this._targetTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

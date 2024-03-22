@@ -45,7 +45,7 @@ namespace Amazon.ECRPublic.Model
         /// Enumerable containing all of the ImageTagDetails
         /// </summary>
         public IPaginatedEnumerable<ImageTagDetail> ImageTagDetails => 
-            new PaginatedResultKeyResponse<DescribeImageTagsResponse, ImageTagDetail>(this, (i) => i.ImageTagDetails);
+            new PaginatedResultKeyResponse<DescribeImageTagsResponse, ImageTagDetail>(this, (i) => i.ImageTagDetails ?? new List<ImageTagDetail>());
 
         internal DescribeImageTagsPaginator(IAmazonECRPublic client, DescribeImageTagsRequest request)
         {

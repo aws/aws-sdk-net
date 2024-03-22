@@ -45,7 +45,7 @@ namespace Amazon.ForecastService.Model
         /// Enumerable containing all of the WhatIfForecasts
         /// </summary>
         public IPaginatedEnumerable<WhatIfForecastSummary> WhatIfForecasts => 
-            new PaginatedResultKeyResponse<ListWhatIfForecastsResponse, WhatIfForecastSummary>(this, (i) => i.WhatIfForecasts);
+            new PaginatedResultKeyResponse<ListWhatIfForecastsResponse, WhatIfForecastSummary>(this, (i) => i.WhatIfForecasts ?? new List<WhatIfForecastSummary>());
 
         internal ListWhatIfForecastsPaginator(IAmazonForecastService client, ListWhatIfForecastsRequest request)
         {

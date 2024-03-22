@@ -66,7 +66,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class StartFleetActionsRequest : AmazonGameLiftRequest
     {
-        private List<string> _actions = new List<string>();
+        private List<string> _actions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _fleetId;
         private string _location;
 
@@ -86,7 +86,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

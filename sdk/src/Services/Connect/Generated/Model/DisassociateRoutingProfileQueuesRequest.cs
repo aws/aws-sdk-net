@@ -35,7 +35,7 @@ namespace Amazon.Connect.Model
     public partial class DisassociateRoutingProfileQueuesRequest : AmazonConnectRequest
     {
         private string _instanceId;
-        private List<RoutingProfileQueueReference> _queueReferences = new List<RoutingProfileQueueReference>();
+        private List<RoutingProfileQueueReference> _queueReferences = AWSConfigs.InitializeCollections ? new List<RoutingProfileQueueReference>() : null;
         private string _routingProfileId;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.Connect.Model
         // Check to see if QueueReferences property is set
         internal bool IsSetQueueReferences()
         {
-            return this._queueReferences != null && this._queueReferences.Count > 0; 
+            return this._queueReferences != null && (this._queueReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

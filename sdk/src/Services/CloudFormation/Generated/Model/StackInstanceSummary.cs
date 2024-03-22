@@ -246,7 +246,11 @@ namespace Amazon.CloudFormation.Model
         /// stack in an unstable state. Stacks in this state are excluded from further <c>UpdateStackSet</c>
         /// operations. You might need to perform a <c>DeleteStackInstances</c> operation, with
         /// <c>RetainStacks</c> set to <c>true</c>, to delete the stack instance, and then delete
-        /// the stack manually.
+        /// the stack manually. <c>INOPERABLE</c> can be returned here when the cause is a failed
+        /// import. If it's due to a failed import, the operation can be retried once the failures
+        /// are fixed. To see if this is due to a failed import, call the <a>DescribeStackInstance</a>
+        /// API operation, look at the <c>DetailedStatus</c> member returned in the <c>StackInstanceSummary</c>
+        /// member.
         /// </para>
         ///  </li> <li> 
         /// <para>

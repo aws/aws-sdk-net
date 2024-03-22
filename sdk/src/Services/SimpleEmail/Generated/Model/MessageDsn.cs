@@ -41,7 +41,7 @@ namespace Amazon.SimpleEmail.Model
     public partial class MessageDsn
     {
         private DateTime? _arrivalDateUtc;
-        private List<ExtensionField> _extensionFields = new List<ExtensionField>();
+        private List<ExtensionField> _extensionFields = AWSConfigs.InitializeCollections ? new List<ExtensionField>() : null;
         private string _reportingMta;
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if ExtensionFields property is set
         internal bool IsSetExtensionFields()
         {
-            return this._extensionFields != null && this._extensionFields.Count > 0; 
+            return this._extensionFields != null && (this._extensionFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

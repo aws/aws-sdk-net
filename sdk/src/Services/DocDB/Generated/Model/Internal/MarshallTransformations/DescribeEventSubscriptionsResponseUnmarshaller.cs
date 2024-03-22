@@ -84,6 +84,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EventSubscriptionsList/EventSubscription", targetDepth))
                     {
                         var unmarshaller = EventSubscriptionUnmarshaller.Instance;
+                        if (response.EventSubscriptionsList == null)
+                        {
+                            response.EventSubscriptionsList = new List<EventSubscription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.EventSubscriptionsList.Add(item);
                         continue;

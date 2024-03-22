@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class DomainStatus
     {
         private string _accessPolicies;
-        private Dictionary<string, string> _advancedOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _advancedOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AdvancedSecurityOptions _advancedSecurityOptions;
         private string _arn;
         private AutoTuneOptionsOutput _autoTuneOptions;
@@ -50,12 +50,12 @@ namespace Amazon.OpenSearchService.Model
         private EBSOptions _ebsOptions;
         private EncryptionAtRestOptions _encryptionAtRestOptions;
         private string _endpoint;
-        private Dictionary<string, string> _endpoints = new Dictionary<string, string>();
+        private Dictionary<string, string> _endpoints = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _endpointV2;
         private string _engineVersion;
         private IPAddressType _ipAddressType;
-        private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
-        private List<ModifyingProperties> _modifyingProperties = new List<ModifyingProperties>();
+        private Dictionary<string, LogPublishingOption> _logPublishingOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, LogPublishingOption>() : null;
+        private List<ModifyingProperties> _modifyingProperties = AWSConfigs.InitializeCollections ? new List<ModifyingProperties>() : null;
         private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
         private OffPeakWindowOptions _offPeakWindowOptions;
         private bool? _processing;
@@ -100,7 +100,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if AdvancedOptions property is set
         internal bool IsSetAdvancedOptions()
         {
-            return this._advancedOptions != null && this._advancedOptions.Count > 0; 
+            return this._advancedOptions != null && (this._advancedOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -400,7 +400,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -477,7 +477,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if LogPublishingOptions property is set
         internal bool IsSetLogPublishingOptions()
         {
-            return this._logPublishingOptions != null && this._logPublishingOptions.Count > 0; 
+            return this._logPublishingOptions != null && (this._logPublishingOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -495,7 +495,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if ModifyingProperties property is set
         internal bool IsSetModifyingProperties()
         {
-            return this._modifyingProperties != null && this._modifyingProperties.Count > 0; 
+            return this._modifyingProperties != null && (this._modifyingProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

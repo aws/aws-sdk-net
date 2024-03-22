@@ -69,6 +69,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Routes/Route", targetDepth))
                     {
+                        if (response.Routes == null)
+                        {
+                            response.Routes = new List<MultiRegionAccessPointRoute>();
+                        }
                         var unmarshaller = MultiRegionAccessPointRouteUnmarshaller.Instance;
                         response.Routes.Add(unmarshaller.Unmarshall(context));
                         continue;

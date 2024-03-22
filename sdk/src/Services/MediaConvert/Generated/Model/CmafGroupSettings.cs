@@ -33,7 +33,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class CmafGroupSettings
     {
-        private List<CmafAdditionalManifest> _additionalManifests = new List<CmafAdditionalManifest>();
+        private List<CmafAdditionalManifest> _additionalManifests = AWSConfigs.InitializeCollections ? new List<CmafAdditionalManifest>() : null;
         private string _baseUrl;
         private CmafClientCache _clientCache;
         private CmafCodecSpecification _codecSpecification;
@@ -78,7 +78,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AdditionalManifests property is set
         internal bool IsSetAdditionalManifests()
         {
-            return this._additionalManifests != null && this._additionalManifests.Count > 0; 
+            return this._additionalManifests != null && (this._additionalManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

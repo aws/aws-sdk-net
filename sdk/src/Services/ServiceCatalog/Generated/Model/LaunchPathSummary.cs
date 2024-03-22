@@ -33,10 +33,10 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class LaunchPathSummary
     {
-        private List<ConstraintSummary> _constraintSummaries = new List<ConstraintSummary>();
+        private List<ConstraintSummary> _constraintSummaries = AWSConfigs.InitializeCollections ? new List<ConstraintSummary>() : null;
         private string _id;
         private string _name;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ConstraintSummaries. 
@@ -53,7 +53,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ConstraintSummaries property is set
         internal bool IsSetConstraintSummaries()
         {
-            return this._constraintSummaries != null && this._constraintSummaries.Count > 0; 
+            return this._constraintSummaries != null && (this._constraintSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

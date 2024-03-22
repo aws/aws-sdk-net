@@ -45,7 +45,7 @@ namespace Amazon.CleanRooms.Model
         /// Enumerable containing all of the CollaborationAnalysisTemplateSummaries
         /// </summary>
         public IPaginatedEnumerable<CollaborationAnalysisTemplateSummary> CollaborationAnalysisTemplateSummaries => 
-            new PaginatedResultKeyResponse<ListCollaborationAnalysisTemplatesResponse, CollaborationAnalysisTemplateSummary>(this, (i) => i.CollaborationAnalysisTemplateSummaries);
+            new PaginatedResultKeyResponse<ListCollaborationAnalysisTemplatesResponse, CollaborationAnalysisTemplateSummary>(this, (i) => i.CollaborationAnalysisTemplateSummaries ?? new List<CollaborationAnalysisTemplateSummary>());
 
         internal ListCollaborationAnalysisTemplatesPaginator(IAmazonCleanRooms client, ListCollaborationAnalysisTemplatesRequest request)
         {

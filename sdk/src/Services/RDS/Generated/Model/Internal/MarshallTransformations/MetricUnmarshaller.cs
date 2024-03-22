@@ -69,6 +69,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("References/member", targetDepth))
                     {
                         var unmarshaller = MetricReferenceUnmarshaller.Instance;
+                        if (unmarshalledObject.References == null)
+                        {
+                            unmarshalledObject.References = new List<MetricReference>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.References.Add(item);
                         continue;

@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class FpgaInfo
     {
-        private List<FpgaDeviceInfo> _fpgas = new List<FpgaDeviceInfo>();
+        private List<FpgaDeviceInfo> _fpgas = AWSConfigs.InitializeCollections ? new List<FpgaDeviceInfo>() : null;
         private int? _totalFpgaMemoryInMiB;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Fpgas property is set
         internal bool IsSetFpgas()
         {
-            return this._fpgas != null && this._fpgas.Count > 0; 
+            return this._fpgas != null && (this._fpgas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class BatchDisassociateServiceActionFromProvisioningArtifactResponse : AmazonWebServiceResponse
     {
-        private List<FailedServiceActionAssociation> _failedServiceActionAssociations = new List<FailedServiceActionAssociation>();
+        private List<FailedServiceActionAssociation> _failedServiceActionAssociations = AWSConfigs.InitializeCollections ? new List<FailedServiceActionAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedServiceActionAssociations. 
@@ -52,7 +52,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if FailedServiceActionAssociations property is set
         internal bool IsSetFailedServiceActionAssociations()
         {
-            return this._failedServiceActionAssociations != null && this._failedServiceActionAssociations.Count > 0; 
+            return this._failedServiceActionAssociations != null && (this._failedServiceActionAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

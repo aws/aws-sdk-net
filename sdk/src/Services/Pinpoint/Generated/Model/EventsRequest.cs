@@ -33,7 +33,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class EventsRequest
     {
-        private Dictionary<string, EventsBatch> _batchItem = new Dictionary<string, EventsBatch>();
+        private Dictionary<string, EventsBatch> _batchItem = AWSConfigs.InitializeCollections ? new Dictionary<string, EventsBatch>() : null;
 
         /// <summary>
         /// Gets and sets the property BatchItem. 
@@ -52,7 +52,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if BatchItem property is set
         internal bool IsSetBatchItem()
         {
-            return this._batchItem != null && this._batchItem.Count > 0; 
+            return this._batchItem != null && (this._batchItem.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

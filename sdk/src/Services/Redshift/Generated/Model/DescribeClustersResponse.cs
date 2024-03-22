@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeClustersResponse : AmazonWebServiceResponse
     {
-        private List<Cluster> _clusters = new List<Cluster>();
+        private List<Cluster> _clusters = AWSConfigs.InitializeCollections ? new List<Cluster>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Clusters property is set
         internal bool IsSetClusters()
         {
-            return this._clusters != null && this._clusters.Count > 0; 
+            return this._clusters != null && (this._clusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

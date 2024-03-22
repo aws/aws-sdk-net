@@ -57,6 +57,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Regions/Region", targetDepth))
                     {
+                        if (unmarshalledObject.Regions == null)
+                        {
+                            unmarshalledObject.Regions = new List<MultiRegionAccessPointRegionalResponse>();
+                        }
                         var unmarshaller = MultiRegionAccessPointRegionalResponseUnmarshaller.Instance;
                         unmarshalledObject.Regions.Add(unmarshaller.Unmarshall(context));
                         continue;

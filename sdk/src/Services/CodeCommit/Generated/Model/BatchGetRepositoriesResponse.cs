@@ -33,9 +33,9 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class BatchGetRepositoriesResponse : AmazonWebServiceResponse
     {
-        private List<BatchGetRepositoriesError> _errors = new List<BatchGetRepositoriesError>();
-        private List<RepositoryMetadata> _repositories = new List<RepositoryMetadata>();
-        private List<string> _repositoriesNotFound = new List<string>();
+        private List<BatchGetRepositoriesError> _errors = AWSConfigs.InitializeCollections ? new List<BatchGetRepositoriesError>() : null;
+        private List<RepositoryMetadata> _repositories = AWSConfigs.InitializeCollections ? new List<RepositoryMetadata>() : null;
+        private List<string> _repositoriesNotFound = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -53,7 +53,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Repositories property is set
         internal bool IsSetRepositories()
         {
-            return this._repositories != null && this._repositories.Count > 0; 
+            return this._repositories != null && (this._repositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if RepositoriesNotFound property is set
         internal bool IsSetRepositoriesNotFound()
         {
-            return this._repositoriesNotFound != null && this._repositoriesNotFound.Count > 0; 
+            return this._repositoriesNotFound != null && (this._repositoriesNotFound.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

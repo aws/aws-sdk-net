@@ -34,7 +34,7 @@ namespace Amazon.Finspace.Model
     public partial class ListKxScalingGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<KxScalingGroup> _scalingGroups = new List<KxScalingGroup>();
+        private List<KxScalingGroup> _scalingGroups = AWSConfigs.InitializeCollections ? new List<KxScalingGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Finspace.Model
         // Check to see if ScalingGroups property is set
         internal bool IsSetScalingGroups()
         {
-            return this._scalingGroups != null && this._scalingGroups.Count > 0; 
+            return this._scalingGroups != null && (this._scalingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -51,7 +51,7 @@ namespace Amazon.Chime.Model
         private bool? _disabled;
         private string _name;
         private string _sipRuleId;
-        private List<SipRuleTargetApplication> _targetApplications = new List<SipRuleTargetApplication>();
+        private List<SipRuleTargetApplication> _targetApplications = AWSConfigs.InitializeCollections ? new List<SipRuleTargetApplication>() : null;
 
         /// <summary>
         /// Gets and sets the property Disabled. 
@@ -125,7 +125,7 @@ namespace Amazon.Chime.Model
         // Check to see if TargetApplications property is set
         internal bool IsSetTargetApplications()
         {
-            return this._targetApplications != null && this._targetApplications.Count > 0; 
+            return this._targetApplications != null && (this._targetApplications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

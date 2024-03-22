@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the InstanceInformationList
         /// </summary>
         public IPaginatedEnumerable<InstanceInformation> InstanceInformationList => 
-            new PaginatedResultKeyResponse<DescribeInstanceInformationResponse, InstanceInformation>(this, (i) => i.InstanceInformationList);
+            new PaginatedResultKeyResponse<DescribeInstanceInformationResponse, InstanceInformation>(this, (i) => i.InstanceInformationList ?? new List<InstanceInformation>());
 
         internal DescribeInstanceInformationPaginator(IAmazonSimpleSystemsManagement client, DescribeInstanceInformationRequest request)
         {

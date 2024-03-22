@@ -41,7 +41,7 @@ namespace Amazon.IoTFleetWise.Model
     /// </summary>
     public partial class Actuator
     {
-        private List<string> _allowedValues = new List<string>();
+        private List<string> _allowedValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _assignedValue;
         private string _comment;
         private NodeDataType _dataType;
@@ -68,7 +68,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this._allowedValues != null && this._allowedValues.Count > 0; 
+            return this._allowedValues != null && (this._allowedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

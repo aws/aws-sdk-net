@@ -29,6 +29,7 @@ using AWSSDK_DotNet.IntegrationTests.Tests;
 using AWSSDK_DotNet.IntegrationTests.Tests.S3;
 using Amazon.S3.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using Amazon;
 
 namespace S3UnitTest
 {
@@ -84,8 +85,11 @@ namespace S3UnitTest
         {
             var s3Configuration = Client.GetLifecycleConfiguration(bucketName).Configuration;
             Assert.IsNotNull(s3Configuration);
-            Assert.IsNotNull(s3Configuration.Rules);
-            Assert.AreEqual(0, s3Configuration.Rules.Count);
+
+            if (AWSConfigs.InitializeCollections)
+                Assert.AreEqual(0, s3Configuration.Rules.Count);
+            else
+                Assert.IsNull(s3Configuration.Rules);
 
             var configuration = new LifecycleConfiguration
             {
@@ -248,8 +252,11 @@ namespace S3UnitTest
         {
             var s3Configuration = Client.GetLifecycleConfiguration(bucketName).Configuration;
             Assert.IsNotNull(s3Configuration);
-            Assert.IsNotNull(s3Configuration.Rules);
-            Assert.AreEqual(0, s3Configuration.Rules.Count);
+
+            if (AWSConfigs.InitializeCollections)
+                Assert.AreEqual(0, s3Configuration.Rules.Count);
+            else
+                Assert.IsNull(s3Configuration.Rules);
 
             var configuration = new LifecycleConfiguration
             {
@@ -429,7 +436,16 @@ namespace S3UnitTest
             AssertFiltersAreEqual(expected.Filter, actual.Filter);
 
             Assert.AreEqual(expected.Transitions.Count, actual.Transitions.Count);
-            Assert.AreEqual(expected.NoncurrentVersionTransitions.Count, actual.NoncurrentVersionTransitions.Count);
+
+            if (expected.NoncurrentVersionTransitions == null)
+            {
+                Assert.IsNull(actual.NoncurrentVersionTransitions);
+            }
+            else
+            {
+                Assert.AreEqual(expected.NoncurrentVersionTransitions.Count, actual.NoncurrentVersionTransitions.Count);
+            }
+
             if (expected.AbortIncompleteMultipartUpload == null)
             {
                 Assert.IsNull(actual.AbortIncompleteMultipartUpload);

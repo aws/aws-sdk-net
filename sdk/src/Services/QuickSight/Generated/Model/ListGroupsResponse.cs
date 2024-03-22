@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ListGroupsResponse : AmazonWebServiceResponse
     {
-        private List<Group> _groupList = new List<Group>();
+        private List<Group> _groupList = AWSConfigs.InitializeCollections ? new List<Group>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -53,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if GroupList property is set
         internal bool IsSetGroupList()
         {
-            return this._groupList != null && this._groupList.Count > 0; 
+            return this._groupList != null && (this._groupList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

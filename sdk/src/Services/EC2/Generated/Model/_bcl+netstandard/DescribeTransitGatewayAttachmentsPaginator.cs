@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the TransitGatewayAttachments
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayAttachment> TransitGatewayAttachments => 
-            new PaginatedResultKeyResponse<DescribeTransitGatewayAttachmentsResponse, TransitGatewayAttachment>(this, (i) => i.TransitGatewayAttachments);
+            new PaginatedResultKeyResponse<DescribeTransitGatewayAttachmentsResponse, TransitGatewayAttachment>(this, (i) => i.TransitGatewayAttachments ?? new List<TransitGatewayAttachment>());
 
         internal DescribeTransitGatewayAttachmentsPaginator(IAmazonEC2 client, DescribeTransitGatewayAttachmentsRequest request)
         {

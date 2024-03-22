@@ -45,7 +45,7 @@ namespace Amazon.RoboMaker.Model
         /// Enumerable containing all of the Robots
         /// </summary>
         public IPaginatedEnumerable<Robot> Robots => 
-            new PaginatedResultKeyResponse<ListRobotsResponse, Robot>(this, (i) => i.Robots);
+            new PaginatedResultKeyResponse<ListRobotsResponse, Robot>(this, (i) => i.Robots ?? new List<Robot>());
 
         internal ListRobotsPaginator(IAmazonRoboMaker client, ListRobotsRequest request)
         {

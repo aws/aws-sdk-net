@@ -52,7 +52,7 @@ namespace Amazon.AutoScaling.Model
     public partial class DescribeInstanceRefreshesRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _instanceRefreshIds = new List<string>();
+        private List<string> _instanceRefreshIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxRecords;
         private string _nextToken;
 
@@ -90,7 +90,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceRefreshIds property is set
         internal bool IsSetInstanceRefreshIds()
         {
-            return this._instanceRefreshIds != null && this._instanceRefreshIds.Count > 0; 
+            return this._instanceRefreshIds != null && (this._instanceRefreshIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

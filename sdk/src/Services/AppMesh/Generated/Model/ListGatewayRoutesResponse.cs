@@ -33,7 +33,7 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class ListGatewayRoutesResponse : AmazonWebServiceResponse
     {
-        private List<GatewayRouteRef> _gatewayRoutes = new List<GatewayRouteRef>();
+        private List<GatewayRouteRef> _gatewayRoutes = AWSConfigs.InitializeCollections ? new List<GatewayRouteRef>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if GatewayRoutes property is set
         internal bool IsSetGatewayRoutes()
         {
-            return this._gatewayRoutes != null && this._gatewayRoutes.Count > 0; 
+            return this._gatewayRoutes != null && (this._gatewayRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

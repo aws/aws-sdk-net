@@ -751,6 +751,56 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type DetailedStatus.
+    /// </summary>
+    public class DetailedStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONFIGURATION_COMPLETE for DetailedStatus
+        /// </summary>
+        public static readonly DetailedStatus CONFIGURATION_COMPLETE = new DetailedStatus("CONFIGURATION_COMPLETE");
+        /// <summary>
+        /// Constant VALIDATION_FAILED for DetailedStatus
+        /// </summary>
+        public static readonly DetailedStatus VALIDATION_FAILED = new DetailedStatus("VALIDATION_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DetailedStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetailedStatus FindValue(string value)
+        {
+            return FindValue<DetailedStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetailedStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DifferenceType.
     /// </summary>
     public class DifferenceType : ConstantClass
@@ -2644,6 +2694,10 @@ namespace Amazon.CloudFormation
         /// Constant FAILED for StackInstanceDetailedStatus
         /// </summary>
         public static readonly StackInstanceDetailedStatus FAILED = new StackInstanceDetailedStatus("FAILED");
+        /// <summary>
+        /// Constant FAILED_IMPORT for StackInstanceDetailedStatus
+        /// </summary>
+        public static readonly StackInstanceDetailedStatus FAILED_IMPORT = new StackInstanceDetailedStatus("FAILED_IMPORT");
         /// <summary>
         /// Constant INOPERABLE for StackInstanceDetailedStatus
         /// </summary>

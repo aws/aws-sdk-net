@@ -95,6 +95,20 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetDynamicExtensionParameters())
+                {
+                    context.Writer.WritePropertyName("DynamicExtensionParameters");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestDynamicExtensionParametersKvp in publicRequest.DynamicExtensionParameters)
+                    {
+                        context.Writer.WritePropertyName(publicRequestDynamicExtensionParametersKvp.Key);
+                        var publicRequestDynamicExtensionParametersValue = publicRequestDynamicExtensionParametersKvp.Value;
+
+                            context.Writer.Write(publicRequestDynamicExtensionParametersValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKmsKeyIdentifier())
                 {
                     context.Writer.WritePropertyName("KmsKeyIdentifier");

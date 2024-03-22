@@ -48,7 +48,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _provisioningArtifactName;
         private ProvisionedProductStatus _status;
         private string _statusMessage;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _type;
         private string _userArn;
         private string _userArnSession;
@@ -418,7 +418,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

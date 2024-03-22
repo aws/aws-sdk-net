@@ -34,7 +34,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// </summary>
     public partial class ConfirmationStatusFilter
     {
-        private List<string> _include = new List<string>();
+        private List<string> _include = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Include. 
@@ -54,7 +54,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         // Check to see if Include property is set
         internal bool IsSetInclude()
         {
-            return this._include != null && this._include.Count > 0; 
+            return this._include != null && (this._include.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

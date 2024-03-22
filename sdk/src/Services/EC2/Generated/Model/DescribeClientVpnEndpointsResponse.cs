@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeClientVpnEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<ClientVpnEndpoint> _clientVpnEndpoints = new List<ClientVpnEndpoint>();
+        private List<ClientVpnEndpoint> _clientVpnEndpoints = AWSConfigs.InitializeCollections ? new List<ClientVpnEndpoint>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if ClientVpnEndpoints property is set
         internal bool IsSetClientVpnEndpoints()
         {
-            return this._clientVpnEndpoints != null && this._clientVpnEndpoints.Count > 0; 
+            return this._clientVpnEndpoints != null && (this._clientVpnEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

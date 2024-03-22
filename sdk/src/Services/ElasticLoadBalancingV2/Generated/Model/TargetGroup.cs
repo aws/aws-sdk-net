@@ -41,7 +41,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private int? _healthCheckTimeoutSeconds;
         private int? _healthyThresholdCount;
         private TargetGroupIpAddressTypeEnum _ipAddressType;
-        private List<string> _loadBalancerArns = new List<string>();
+        private List<string> _loadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Matcher _matcher;
         private int? _port;
         private ProtocolEnum _protocol;
@@ -221,7 +221,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if LoadBalancerArns property is set
         internal bool IsSetLoadBalancerArns()
         {
-            return this._loadBalancerArns != null && this._loadBalancerArns.Count > 0; 
+            return this._loadBalancerArns != null && (this._loadBalancerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

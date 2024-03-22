@@ -45,7 +45,7 @@ namespace Amazon.OpsWorks.Model
         /// Enumerable containing all of the EcsClusters
         /// </summary>
         public IPaginatedEnumerable<EcsCluster> EcsClusters => 
-            new PaginatedResultKeyResponse<DescribeEcsClustersResponse, EcsCluster>(this, (i) => i.EcsClusters);
+            new PaginatedResultKeyResponse<DescribeEcsClustersResponse, EcsCluster>(this, (i) => i.EcsClusters ?? new List<EcsCluster>());
 
         internal DescribeEcsClustersPaginator(IAmazonOpsWorks client, DescribeEcsClustersRequest request)
         {

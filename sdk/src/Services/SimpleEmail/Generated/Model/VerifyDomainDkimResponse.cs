@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class VerifyDomainDkimResponse : AmazonWebServiceResponse
     {
-        private List<string> _dkimTokens = new List<string>();
+        private List<string> _dkimTokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DkimTokens. 
@@ -66,7 +66,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if DkimTokens property is set
         internal bool IsSetDkimTokens()
         {
-            return this._dkimTokens != null && this._dkimTokens.Count > 0; 
+            return this._dkimTokens != null && (this._dkimTokens.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

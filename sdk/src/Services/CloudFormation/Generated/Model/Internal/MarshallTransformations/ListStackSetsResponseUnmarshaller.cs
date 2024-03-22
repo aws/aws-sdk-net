@@ -90,6 +90,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Summaries/member", targetDepth))
                     {
                         var unmarshaller = StackSetSummaryUnmarshaller.Instance;
+                        if (response.Summaries == null)
+                        {
+                            response.Summaries = new List<StackSetSummary>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Summaries.Add(item);
                         continue;

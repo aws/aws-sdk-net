@@ -57,6 +57,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AlpnPolicy/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AlpnPolicy == null)
+                        {
+                            unmarshalledObject.AlpnPolicy = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AlpnPolicy.Add(item);
                         continue;
@@ -64,6 +68,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Certificates/member", targetDepth))
                     {
                         var unmarshaller = CertificateUnmarshaller.Instance;
+                        if (unmarshalledObject.Certificates == null)
+                        {
+                            unmarshalledObject.Certificates = new List<Certificate>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Certificates.Add(item);
                         continue;
@@ -71,6 +79,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DefaultActions/member", targetDepth))
                     {
                         var unmarshaller = ActionUnmarshaller.Instance;
+                        if (unmarshalledObject.DefaultActions == null)
+                        {
+                            unmarshalledObject.DefaultActions = new List<Action>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DefaultActions.Add(item);
                         continue;

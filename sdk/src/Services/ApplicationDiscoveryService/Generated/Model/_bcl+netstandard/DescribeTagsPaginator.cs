@@ -45,7 +45,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<ConfigurationTag> Tags => 
-            new PaginatedResultKeyResponse<DescribeTagsResponse, ConfigurationTag>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<DescribeTagsResponse, ConfigurationTag>(this, (i) => i.Tags ?? new List<ConfigurationTag>());
 
         internal DescribeTagsPaginator(IAmazonApplicationDiscoveryService client, DescribeTagsRequest request)
         {

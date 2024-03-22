@@ -70,8 +70,8 @@ namespace Amazon.Connect.Model
         private int? _maxContacts;
         private string _name;
         private OutboundCallerConfig _outboundCallerConfig;
-        private List<string> _quickConnectIds = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _quickConnectIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -203,7 +203,7 @@ namespace Amazon.Connect.Model
         // Check to see if QuickConnectIds property is set
         internal bool IsSetQuickConnectIds()
         {
-            return this._quickConnectIds != null && this._quickConnectIds.Count > 0; 
+            return this._quickConnectIds != null && (this._quickConnectIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace Amazon.Connect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

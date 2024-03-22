@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Knowledge base input query.
+    /// Contains the query made to the knowledge base.
     /// </summary>
     public partial class KnowledgeBaseQuery
     {
@@ -38,7 +38,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// Knowledge base input query in text
+        /// The text of the query made to the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]

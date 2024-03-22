@@ -76,6 +76,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instanceUsageSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceUsageUnmarshaller.Instance;
+                        if (response.InstanceUsages == null)
+                        {
+                            response.InstanceUsages = new List<InstanceUsage>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.InstanceUsages.Add(item);
                         continue;

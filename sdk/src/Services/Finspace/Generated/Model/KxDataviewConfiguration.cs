@@ -36,7 +36,7 @@ namespace Amazon.Finspace.Model
         private string _changesetId;
         private string _dataviewName;
         private string _dataviewVersionId;
-        private List<KxDataviewSegmentConfiguration> _segmentConfigurations = new List<KxDataviewSegmentConfiguration>();
+        private List<KxDataviewSegmentConfiguration> _segmentConfigurations = AWSConfigs.InitializeCollections ? new List<KxDataviewSegmentConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ChangesetId. 
@@ -111,7 +111,7 @@ namespace Amazon.Finspace.Model
         // Check to see if SegmentConfigurations property is set
         internal bool IsSetSegmentConfigurations()
         {
-            return this._segmentConfigurations != null && this._segmentConfigurations.Count > 0; 
+            return this._segmentConfigurations != null && (this._segmentConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

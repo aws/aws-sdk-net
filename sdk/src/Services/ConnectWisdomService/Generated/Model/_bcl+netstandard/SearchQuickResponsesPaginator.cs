@@ -45,7 +45,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// Enumerable containing all of the Results
         /// </summary>
         public IPaginatedEnumerable<QuickResponseSearchResultData> Results => 
-            new PaginatedResultKeyResponse<SearchQuickResponsesResponse, QuickResponseSearchResultData>(this, (i) => i.Results);
+            new PaginatedResultKeyResponse<SearchQuickResponsesResponse, QuickResponseSearchResultData>(this, (i) => i.Results ?? new List<QuickResponseSearchResultData>());
 
         internal SearchQuickResponsesPaginator(IAmazonConnectWisdomService client, SearchQuickResponsesRequest request)
         {

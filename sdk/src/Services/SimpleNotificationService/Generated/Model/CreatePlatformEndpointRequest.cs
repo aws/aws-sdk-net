@@ -50,7 +50,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// </summary>
     public partial class CreatePlatformEndpointRequest : AmazonSimpleNotificationServiceRequest
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _customUserData;
         private string _platformApplicationArn;
         private string _token;
@@ -71,7 +71,7 @@ namespace Amazon.SimpleNotificationService.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

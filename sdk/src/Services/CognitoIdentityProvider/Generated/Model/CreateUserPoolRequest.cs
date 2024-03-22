@@ -86,8 +86,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private AccountRecoverySettingType _accountRecoverySetting;
         private AdminCreateUserConfigType _adminCreateUserConfig;
-        private List<string> _aliasAttributes = new List<string>();
-        private List<string> _autoVerifiedAttributes = new List<string>();
+        private List<string> _aliasAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _autoVerifiedAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DeletionProtectionType _deletionProtection;
         private DeviceConfigurationType _deviceConfiguration;
         private EmailConfigurationType _emailConfiguration;
@@ -97,15 +97,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         private UserPoolMfaType _mfaConfiguration;
         private UserPoolPolicyType _policies;
         private string _poolName;
-        private List<SchemaAttributeType> _schema = new List<SchemaAttributeType>();
+        private List<SchemaAttributeType> _schema = AWSConfigs.InitializeCollections ? new List<SchemaAttributeType>() : null;
         private string _smsAuthenticationMessage;
         private SmsConfigurationType _smsConfiguration;
         private string _smsVerificationMessage;
         private UserAttributeUpdateSettingsType _userAttributeUpdateSettings;
-        private List<string> _usernameAttributes = new List<string>();
+        private List<string> _usernameAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private UsernameConfigurationType _usernameConfiguration;
         private UserPoolAddOnsType _userPoolAddOns;
-        private Dictionary<string, string> _userPoolTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _userPoolTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VerificationMessageTemplateType _verificationMessageTemplate;
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if AliasAttributes property is set
         internal bool IsSetAliasAttributes()
         {
-            return this._aliasAttributes != null && this._aliasAttributes.Count > 0; 
+            return this._aliasAttributes != null && (this._aliasAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if AutoVerifiedAttributes property is set
         internal bool IsSetAutoVerifiedAttributes()
         {
-            return this._autoVerifiedAttributes != null && this._autoVerifiedAttributes.Count > 0; 
+            return this._autoVerifiedAttributes != null && (this._autoVerifiedAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -403,7 +403,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if Schema property is set
         internal bool IsSetSchema()
         {
-            return this._schema != null && this._schema.Count > 0; 
+            return this._schema != null && (this._schema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -504,7 +504,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if UsernameAttributes property is set
         internal bool IsSetUsernameAttributes()
         {
-            return this._usernameAttributes != null && this._usernameAttributes.Count > 0; 
+            return this._usernameAttributes != null && (this._usernameAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -578,7 +578,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if UserPoolTags property is set
         internal bool IsSetUserPoolTags()
         {
-            return this._userPoolTags != null && this._userPoolTags.Count > 0; 
+            return this._userPoolTags != null && (this._userPoolTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

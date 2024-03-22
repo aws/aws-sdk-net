@@ -39,7 +39,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class UpdateDistributionRequest : AmazonLightsailRequest
     {
-        private List<CacheBehaviorPerPath> _cacheBehaviors = new List<CacheBehaviorPerPath>();
+        private List<CacheBehaviorPerPath> _cacheBehaviors = AWSConfigs.InitializeCollections ? new List<CacheBehaviorPerPath>() : null;
         private CacheSettings _cacheBehaviorSettings;
         private CacheBehavior _defaultCacheBehavior;
         private string _distributionName;
@@ -61,7 +61,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if CacheBehaviors property is set
         internal bool IsSetCacheBehaviors()
         {
-            return this._cacheBehaviors != null && this._cacheBehaviors.Count > 0; 
+            return this._cacheBehaviors != null && (this._cacheBehaviors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

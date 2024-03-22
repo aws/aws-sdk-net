@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("accelerators/member", targetDepth))
                     {
                         var unmarshaller = InferenceDeviceInfoUnmarshaller.Instance;
+                        if (unmarshalledObject.Accelerators == null)
+                        {
+                            unmarshalledObject.Accelerators = new List<InferenceDeviceInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Accelerators.Add(item);
                         continue;

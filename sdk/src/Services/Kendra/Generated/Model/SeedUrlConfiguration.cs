@@ -41,7 +41,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class SeedUrlConfiguration
     {
-        private List<string> _seedUrls = new List<string>();
+        private List<string> _seedUrls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WebCrawlerMode _webCrawlerMode;
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SeedUrls property is set
         internal bool IsSetSeedUrls()
         {
-            return this._seedUrls != null && this._seedUrls.Count > 0; 
+            return this._seedUrls != null && (this._seedUrls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

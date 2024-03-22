@@ -33,9 +33,9 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Location
     {
-        private List<CodeGenNodeArg> _dynamoDB = new List<CodeGenNodeArg>();
-        private List<CodeGenNodeArg> _jdbc = new List<CodeGenNodeArg>();
-        private List<CodeGenNodeArg> _s3 = new List<CodeGenNodeArg>();
+        private List<CodeGenNodeArg> _dynamoDB = AWSConfigs.InitializeCollections ? new List<CodeGenNodeArg>() : null;
+        private List<CodeGenNodeArg> _jdbc = AWSConfigs.InitializeCollections ? new List<CodeGenNodeArg>() : null;
+        private List<CodeGenNodeArg> _s3 = AWSConfigs.InitializeCollections ? new List<CodeGenNodeArg>() : null;
 
         /// <summary>
         /// Gets and sets the property DynamoDB. 
@@ -53,7 +53,7 @@ namespace Amazon.Glue.Model
         // Check to see if DynamoDB property is set
         internal bool IsSetDynamoDB()
         {
-            return this._dynamoDB != null && this._dynamoDB.Count > 0; 
+            return this._dynamoDB != null && (this._dynamoDB.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Glue.Model
         // Check to see if Jdbc property is set
         internal bool IsSetJdbc()
         {
-            return this._jdbc != null && this._jdbc.Count > 0; 
+            return this._jdbc != null && (this._jdbc.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Glue.Model
         // Check to see if S3 property is set
         internal bool IsSetS3()
         {
-            return this._s3 != null && this._s3.Count > 0; 
+            return this._s3 != null && (this._s3.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

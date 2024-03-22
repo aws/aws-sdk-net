@@ -45,7 +45,7 @@ namespace Amazon.AppConfig.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<Environment> Items => 
-            new PaginatedResultKeyResponse<ListEnvironmentsResponse, Environment>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListEnvironmentsResponse, Environment>(this, (i) => i.Items ?? new List<Environment>());
 
         internal ListEnvironmentsPaginator(IAmazonAppConfig client, ListEnvironmentsRequest request)
         {

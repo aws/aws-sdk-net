@@ -51,7 +51,7 @@ namespace Amazon.CloudFormation.Model
         private ProvisioningType _provisioningType;
         private string _publicVersionNumber;
         private string _publisherId;
-        private List<RequiredActivatedType> _requiredActivatedTypes = new List<RequiredActivatedType>();
+        private List<RequiredActivatedType> _requiredActivatedTypes = AWSConfigs.InitializeCollections ? new List<RequiredActivatedType>() : null;
         private string _schema;
         private string _sourceUrl;
         private DateTime? _timeCreated;
@@ -546,7 +546,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if RequiredActivatedTypes property is set
         internal bool IsSetRequiredActivatedTypes()
         {
-            return this._requiredActivatedTypes != null && this._requiredActivatedTypes.Count > 0; 
+            return this._requiredActivatedTypes != null && (this._requiredActivatedTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

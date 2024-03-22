@@ -33,7 +33,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class ListReferenceImportJobsResponse : AmazonWebServiceResponse
     {
-        private List<ImportReferenceJobItem> _importJobs = new List<ImportReferenceJobItem>();
+        private List<ImportReferenceJobItem> _importJobs = AWSConfigs.InitializeCollections ? new List<ImportReferenceJobItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Omics.Model
         // Check to see if ImportJobs property is set
         internal bool IsSetImportJobs()
         {
-            return this._importJobs != null && this._importJobs.Count > 0; 
+            return this._importJobs != null && (this._importJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

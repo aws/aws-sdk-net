@@ -34,17 +34,17 @@ namespace Amazon.IoTSiteWise.Model
     public partial class DescribeAssetResponse : AmazonWebServiceResponse
     {
         private string _assetArn;
-        private List<AssetCompositeModel> _assetCompositeModels = new List<AssetCompositeModel>();
-        private List<AssetCompositeModelSummary> _assetCompositeModelSummaries = new List<AssetCompositeModelSummary>();
+        private List<AssetCompositeModel> _assetCompositeModels = AWSConfigs.InitializeCollections ? new List<AssetCompositeModel>() : null;
+        private List<AssetCompositeModelSummary> _assetCompositeModelSummaries = AWSConfigs.InitializeCollections ? new List<AssetCompositeModelSummary>() : null;
         private DateTime? _assetCreationDate;
         private string _assetDescription;
         private string _assetExternalId;
-        private List<AssetHierarchy> _assetHierarchies = new List<AssetHierarchy>();
+        private List<AssetHierarchy> _assetHierarchies = AWSConfigs.InitializeCollections ? new List<AssetHierarchy>() : null;
         private string _assetId;
         private DateTime? _assetLastUpdateDate;
         private string _assetModelId;
         private string _assetName;
-        private List<AssetProperty> _assetProperties = new List<AssetProperty>();
+        private List<AssetProperty> _assetProperties = AWSConfigs.InitializeCollections ? new List<AssetProperty>() : null;
         private AssetStatus _assetStatus;
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AssetCompositeModels property is set
         internal bool IsSetAssetCompositeModels()
         {
-            return this._assetCompositeModels != null && this._assetCompositeModels.Count > 0; 
+            return this._assetCompositeModels != null && (this._assetCompositeModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AssetCompositeModelSummaries property is set
         internal bool IsSetAssetCompositeModelSummaries()
         {
-            return this._assetCompositeModelSummaries != null && this._assetCompositeModelSummaries.Count > 0; 
+            return this._assetCompositeModelSummaries != null && (this._assetCompositeModelSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AssetHierarchies property is set
         internal bool IsSetAssetHierarchies()
         {
-            return this._assetHierarchies != null && this._assetHierarchies.Count > 0; 
+            return this._assetHierarchies != null && (this._assetHierarchies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -281,7 +281,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AssetProperties property is set
         internal bool IsSetAssetProperties()
         {
-            return this._assetProperties != null && this._assetProperties.Count > 0; 
+            return this._assetProperties != null && (this._assetProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Transfer.Model
         /// Enumerable containing all of the Executions
         /// </summary>
         public IPaginatedEnumerable<ListedExecution> Executions => 
-            new PaginatedResultKeyResponse<ListExecutionsResponse, ListedExecution>(this, (i) => i.Executions);
+            new PaginatedResultKeyResponse<ListExecutionsResponse, ListedExecution>(this, (i) => i.Executions ?? new List<ListedExecution>());
 
         internal ListExecutionsPaginator(IAmazonTransfer client, ListExecutionsRequest request)
         {

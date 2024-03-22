@@ -45,8 +45,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Grant", targetDepth + 1))
                     {
+                        if (loggingEnabled.Grants == null)
+                        {
+                            loggingEnabled.Grants = new List<S3Grant>();
+                        }
                         loggingEnabled.Grants.Add(GrantUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                     if (context.TestExpression("TargetObjectKeyFormat", targetDepth))

@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         private string _estimatedMonthlyCost;
         private string _estimatedMonthlySavings;
         private ResourceUtilization _expectedResourceUtilization;
-        private List<string> _platformDifferences = new List<string>();
+        private List<string> _platformDifferences = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ResourceDetails _resourceDetails;
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if PlatformDifferences property is set
         internal bool IsSetPlatformDifferences()
         {
-            return this._platformDifferences != null && this._platformDifferences.Count > 0; 
+            return this._platformDifferences != null && (this._platformDifferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

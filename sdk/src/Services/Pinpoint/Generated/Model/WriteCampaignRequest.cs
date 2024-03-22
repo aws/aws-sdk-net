@@ -33,7 +33,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class WriteCampaignRequest
     {
-        private List<WriteTreatmentResource> _additionalTreatments = new List<WriteTreatmentResource>();
+        private List<WriteTreatmentResource> _additionalTreatments = AWSConfigs.InitializeCollections ? new List<WriteTreatmentResource>() : null;
         private CustomDeliveryConfiguration _customDeliveryConfiguration;
         private string _description;
         private int? _holdoutPercent;
@@ -46,7 +46,7 @@ namespace Amazon.Pinpoint.Model
         private Schedule _schedule;
         private string _segmentId;
         private int? _segmentVersion;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TemplateConfiguration _templateConfiguration;
         private string _treatmentDescription;
         private string _treatmentName;
@@ -67,7 +67,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if AdditionalTreatments property is set
         internal bool IsSetAdditionalTreatments()
         {
-            return this._additionalTreatments != null && this._additionalTreatments.Count > 0; 
+            return this._additionalTreatments != null && (this._additionalTreatments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -317,7 +317,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

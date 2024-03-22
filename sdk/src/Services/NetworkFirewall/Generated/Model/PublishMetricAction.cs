@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class PublishMetricAction
     {
-        private List<Dimension> _dimensions = new List<Dimension>();
+        private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
 
         /// <summary>
         /// Gets and sets the property Dimensions.
@@ -49,7 +49,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

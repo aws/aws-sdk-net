@@ -33,7 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class OFITrainingMetricsValue
     {
-        private List<OFIMetricDataPoint> _metricDataPoints = new List<OFIMetricDataPoint>();
+        private List<OFIMetricDataPoint> _metricDataPoints = AWSConfigs.InitializeCollections ? new List<OFIMetricDataPoint>() : null;
         private OFIModelPerformance _modelPerformance;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if MetricDataPoints property is set
         internal bool IsSetMetricDataPoints()
         {
-            return this._metricDataPoints != null && this._metricDataPoints.Count > 0; 
+            return this._metricDataPoints != null && (this._metricDataPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

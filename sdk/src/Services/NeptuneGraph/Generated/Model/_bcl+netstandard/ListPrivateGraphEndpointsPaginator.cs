@@ -45,7 +45,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Enumerable containing all of the PrivateGraphEndpoints
         /// </summary>
         public IPaginatedEnumerable<PrivateGraphEndpointSummary> PrivateGraphEndpoints => 
-            new PaginatedResultKeyResponse<ListPrivateGraphEndpointsResponse, PrivateGraphEndpointSummary>(this, (i) => i.PrivateGraphEndpoints);
+            new PaginatedResultKeyResponse<ListPrivateGraphEndpointsResponse, PrivateGraphEndpointSummary>(this, (i) => i.PrivateGraphEndpoints ?? new List<PrivateGraphEndpointSummary>());
 
         internal ListPrivateGraphEndpointsPaginator(IAmazonNeptuneGraph client, ListPrivateGraphEndpointsRequest request)
         {

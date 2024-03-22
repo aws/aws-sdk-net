@@ -45,7 +45,7 @@ namespace Amazon.LookoutforVision.Model
         /// Enumerable containing all of the DatasetEntries
         /// </summary>
         public IPaginatedEnumerable<string> DatasetEntries => 
-            new PaginatedResultKeyResponse<ListDatasetEntriesResponse, string>(this, (i) => i.DatasetEntries);
+            new PaginatedResultKeyResponse<ListDatasetEntriesResponse, string>(this, (i) => i.DatasetEntries ?? new List<string>());
 
         internal ListDatasetEntriesPaginator(IAmazonLookoutforVision client, ListDatasetEntriesRequest request)
         {

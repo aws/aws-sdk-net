@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribeInstancePatchesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PatchComplianceData> _patches = new List<PatchComplianceData>();
+        private List<PatchComplianceData> _patches = AWSConfigs.InitializeCollections ? new List<PatchComplianceData>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -99,7 +99,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Patches property is set
         internal bool IsSetPatches()
         {
-            return this._patches != null && this._patches.Count > 0; 
+            return this._patches != null && (this._patches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class RebuildWorkspacesResponse : AmazonWebServiceResponse
     {
-        private List<FailedWorkspaceChangeRequest> _failedRequests = new List<FailedWorkspaceChangeRequest>();
+        private List<FailedWorkspaceChangeRequest> _failedRequests = AWSConfigs.InitializeCollections ? new List<FailedWorkspaceChangeRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedRequests. 
@@ -50,7 +50,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if FailedRequests property is set
         internal bool IsSetFailedRequests()
         {
-            return this._failedRequests != null && this._failedRequests.Count > 0; 
+            return this._failedRequests != null && (this._failedRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

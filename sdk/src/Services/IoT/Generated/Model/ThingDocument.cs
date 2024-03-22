@@ -33,11 +33,11 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ThingDocument
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ThingConnectivity _connectivity;
         private string _deviceDefender;
         private string _shadow;
-        private List<string> _thingGroupNames = new List<string>();
+        private List<string> _thingGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _thingId;
         private string _thingName;
         private string _thingTypeName;
@@ -57,7 +57,7 @@ namespace Amazon.IoT.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.IoT.Model
         // Check to see if ThingGroupNames property is set
         internal bool IsSetThingGroupNames()
         {
-            return this._thingGroupNames != null && this._thingGroupNames.Count > 0; 
+            return this._thingGroupNames != null && (this._thingGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

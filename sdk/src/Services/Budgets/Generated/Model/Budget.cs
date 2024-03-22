@@ -49,10 +49,10 @@ namespace Amazon.Budgets.Model
         private string _budgetName;
         private BudgetType _budgetType;
         private CalculatedSpend _calculatedSpend;
-        private Dictionary<string, List<string>> _costFilters = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _costFilters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private CostTypes _costTypes;
         private DateTime? _lastUpdatedTime;
-        private Dictionary<string, Spend> _plannedBudgetLimits = new Dictionary<string, Spend>();
+        private Dictionary<string, Spend> _plannedBudgetLimits = AWSConfigs.InitializeCollections ? new Dictionary<string, Spend>() : null;
         private TimePeriod _timePeriod;
         private TimeUnit _timeUnit;
 
@@ -201,7 +201,7 @@ namespace Amazon.Budgets.Model
         // Check to see if CostFilters property is set
         internal bool IsSetCostFilters()
         {
-            return this._costFilters != null && this._costFilters.Count > 0; 
+            return this._costFilters != null && (this._costFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -302,7 +302,7 @@ namespace Amazon.Budgets.Model
         // Check to see if PlannedBudgetLimits property is set
         internal bool IsSetPlannedBudgetLimits()
         {
-            return this._plannedBudgetLimits != null && this._plannedBudgetLimits.Count > 0; 
+            return this._plannedBudgetLimits != null && (this._plannedBudgetLimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

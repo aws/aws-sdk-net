@@ -51,6 +51,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.NumberOfResults.Value);
             }
 
+            if(requestObject.IsSetOverrideSearchType())
+            {
+                context.Writer.WritePropertyName("overrideSearchType");
+                context.Writer.Write(requestObject.OverrideSearchType);
+            }
+
         }
 
         /// <summary>

@@ -61,10 +61,10 @@ namespace Amazon.SecretsManager.Model
     /// </summary>
     public partial class BatchGetSecretValueRequest : AmazonSecretsManagerRequest
     {
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _secretIdList = new List<string>();
+        private List<string> _secretIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -83,7 +83,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// If there are more results available, in the response, Secrets Manager includes <c>NextToken</c>.
         /// To get the next results, call <c>BatchGetSecretValue</c> again with the value from
-        /// <c>NextToken</c>.
+        /// <c>NextToken</c>. To use this parameter, you must also use the <c>Filters</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -149,7 +149,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if SecretIdList property is set
         internal bool IsSetSecretIdList()
         {
-            return this._secretIdList != null && this._secretIdList.Count > 0; 
+            return this._secretIdList != null && (this._secretIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -38,12 +38,12 @@ namespace Amazon.QuickSight.Model
         private string _analysisId;
         private string _awsAccountId;
         private AnalysisDefinition _definition;
-        private List<string> _folderArns = new List<string>();
+        private List<string> _folderArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private Parameters _parameters;
-        private List<ResourcePermission> _permissions = new List<ResourcePermission>();
+        private List<ResourcePermission> _permissions = AWSConfigs.InitializeCollections ? new List<ResourcePermission>() : null;
         private AnalysisSourceEntity _sourceEntity;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _themeArn;
         private ValidationStrategy _validationStrategy;
 
@@ -128,7 +128,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FolderArns property is set
         internal bool IsSetFolderArns()
         {
-            return this._folderArns != null && this._folderArns.Count > 0; 
+            return this._folderArns != null && (this._folderArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

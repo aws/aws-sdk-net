@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the AddressTransfers
         /// </summary>
         public IPaginatedEnumerable<AddressTransfer> AddressTransfers => 
-            new PaginatedResultKeyResponse<DescribeAddressTransfersResponse, AddressTransfer>(this, (i) => i.AddressTransfers);
+            new PaginatedResultKeyResponse<DescribeAddressTransfersResponse, AddressTransfer>(this, (i) => i.AddressTransfers ?? new List<AddressTransfer>());
 
         internal DescribeAddressTransfersPaginator(IAmazonEC2 client, DescribeAddressTransfersRequest request)
         {

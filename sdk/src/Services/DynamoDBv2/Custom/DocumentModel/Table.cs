@@ -169,22 +169,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 logger.InfoFormat("Description for table [{0}] loaded from SDK Cache", TableName);
             }
 
-            foreach (var key in table.KeySchema)
+            if (table.KeySchema != null)
             {
-                string keyName = key.AttributeName;
-                AttributeDefinition attributeDefinition = table.AttributeDefinitions
-                    .FirstOrDefault(a => string.Equals(a.AttributeName, keyName, StringComparison.Ordinal));
-                if (attributeDefinition == null) throw new InvalidOperationException("No attribute definition found for key " + key.AttributeName);
-                KeyDescription keyDescription = new KeyDescription
+                foreach (var key in table.KeySchema)
                 {
-                    IsHash = string.Equals(key.KeyType, "HASH", StringComparison.OrdinalIgnoreCase),
-                    Type = GetType(attributeDefinition.AttributeType)
-                };
-                if (keyDescription.IsHash)
-                    HashKeys.Add(keyName);
-                else
-                    RangeKeys.Add(keyName);
-                Keys[keyName] = keyDescription;
+                    string keyName = key.AttributeName;
+                    AttributeDefinition attributeDefinition = table.AttributeDefinitions
+                        .FirstOrDefault(a => string.Equals(a.AttributeName, keyName, StringComparison.Ordinal));
+                    if (attributeDefinition == null) throw new InvalidOperationException("No attribute definition found for key " + key.AttributeName);
+                    KeyDescription keyDescription = new KeyDescription
+                    {
+                        IsHash = string.Equals(key.KeyType, "HASH", StringComparison.OrdinalIgnoreCase),
+                        Type = GetType(attributeDefinition.AttributeType)
+                    };
+                    if (keyDescription.IsHash)
+                        HashKeys.Add(keyName);
+                    else
+                        RangeKeys.Add(keyName);
+                    Keys[keyName] = keyDescription;
+                }
             }
 
             if (table.LocalSecondaryIndexes != null)
@@ -205,9 +208,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
 
-            foreach (var attribute in table.AttributeDefinitions)
+            if (table.AttributeDefinitions != null)
             {
-                Attributes.Add(attribute);
+                foreach (var attribute in table.AttributeDefinitions)
+                {
+                    Attributes.Add(attribute);
+                }
             }
         }
 
@@ -577,6 +583,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     IndexName = gsiIndexName
                 };
+
+                if (indexDescription.KeySchema == null)
+                {
+                    indexDescription.KeySchema = new List<KeySchemaElement>();
+                }
 
                 var hashKeyProperty = itemStorageConfig.GetPropertyStorage(gsi.HashKeyPropertyName);
                 indexDescription.KeySchema.Add(new KeySchemaElement()

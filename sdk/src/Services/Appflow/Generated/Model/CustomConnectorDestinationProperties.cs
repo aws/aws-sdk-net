@@ -33,10 +33,10 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class CustomConnectorDestinationProperties
     {
-        private Dictionary<string, string> _customProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _customProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _entityName;
         private ErrorHandlingConfig _errorHandlingConfig;
-        private List<string> _idFieldNames = new List<string>();
+        private List<string> _idFieldNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WriteOperationType _writeOperationType;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.Appflow.Model
         // Check to see if CustomProperties property is set
         internal bool IsSetCustomProperties()
         {
-            return this._customProperties != null && this._customProperties.Count > 0; 
+            return this._customProperties != null && (this._customProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.Appflow.Model
         // Check to see if IdFieldNames property is set
         internal bool IsSetIdFieldNames()
         {
-            return this._idFieldNames != null && this._idFieldNames.Count > 0; 
+            return this._idFieldNames != null && (this._idFieldNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

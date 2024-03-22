@@ -45,7 +45,7 @@ namespace Amazon.LaunchWizard.Model
         /// Enumerable containing all of the Workloads
         /// </summary>
         public IPaginatedEnumerable<WorkloadDataSummary> Workloads => 
-            new PaginatedResultKeyResponse<ListWorkloadsResponse, WorkloadDataSummary>(this, (i) => i.Workloads);
+            new PaginatedResultKeyResponse<ListWorkloadsResponse, WorkloadDataSummary>(this, (i) => i.Workloads ?? new List<WorkloadDataSummary>());
 
         internal ListWorkloadsPaginator(IAmazonLaunchWizard client, ListWorkloadsRequest request)
         {

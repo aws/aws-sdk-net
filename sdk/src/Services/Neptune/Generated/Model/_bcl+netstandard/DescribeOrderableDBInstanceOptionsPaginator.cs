@@ -45,7 +45,7 @@ namespace Amazon.Neptune.Model
         /// Enumerable containing all of the OrderableDBInstanceOptions
         /// </summary>
         public IPaginatedEnumerable<OrderableDBInstanceOption> OrderableDBInstanceOptions => 
-            new PaginatedResultKeyResponse<DescribeOrderableDBInstanceOptionsResponse, OrderableDBInstanceOption>(this, (i) => i.OrderableDBInstanceOptions);
+            new PaginatedResultKeyResponse<DescribeOrderableDBInstanceOptionsResponse, OrderableDBInstanceOption>(this, (i) => i.OrderableDBInstanceOptions ?? new List<OrderableDBInstanceOption>());
 
         internal DescribeOrderableDBInstanceOptionsPaginator(IAmazonNeptune client, DescribeOrderableDBInstanceOptionsRequest request)
         {

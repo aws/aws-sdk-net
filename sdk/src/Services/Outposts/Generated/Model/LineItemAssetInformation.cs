@@ -34,7 +34,7 @@ namespace Amazon.Outposts.Model
     public partial class LineItemAssetInformation
     {
         private string _assetId;
-        private List<string> _macAddressList = new List<string>();
+        private List<string> _macAddressList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssetId. 
@@ -70,7 +70,7 @@ namespace Amazon.Outposts.Model
         // Check to see if MacAddressList property is set
         internal bool IsSetMacAddressList()
         {
-            return this._macAddressList != null && this._macAddressList.Count > 0; 
+            return this._macAddressList != null && (this._macAddressList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

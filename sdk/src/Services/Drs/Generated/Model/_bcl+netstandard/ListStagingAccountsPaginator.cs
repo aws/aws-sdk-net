@@ -45,7 +45,7 @@ namespace Amazon.Drs.Model
         /// Enumerable containing all of the Accounts
         /// </summary>
         public IPaginatedEnumerable<Account> Accounts => 
-            new PaginatedResultKeyResponse<ListStagingAccountsResponse, Account>(this, (i) => i.Accounts);
+            new PaginatedResultKeyResponse<ListStagingAccountsResponse, Account>(this, (i) => i.Accounts ?? new List<Account>());
 
         internal ListStagingAccountsPaginator(IAmazonDrs client, ListStagingAccountsRequest request)
         {

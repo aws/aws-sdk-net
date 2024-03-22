@@ -35,7 +35,7 @@ namespace Amazon.BillingConductor.Model
     {
         private string _billingPeriod;
         private string _nextToken;
-        private List<string> _pricingPlanArns = new List<string>();
+        private List<string> _pricingPlanArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _pricingRuleArn;
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if PricingPlanArns property is set
         internal bool IsSetPricingPlanArns()
         {
-            return this._pricingPlanArns != null && this._pricingPlanArns.Count > 0; 
+            return this._pricingPlanArns != null && (this._pricingPlanArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

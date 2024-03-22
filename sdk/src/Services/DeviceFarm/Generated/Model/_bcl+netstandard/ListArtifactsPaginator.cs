@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// Enumerable containing all of the Artifacts
         /// </summary>
         public IPaginatedEnumerable<Artifact> Artifacts => 
-            new PaginatedResultKeyResponse<ListArtifactsResponse, Artifact>(this, (i) => i.Artifacts);
+            new PaginatedResultKeyResponse<ListArtifactsResponse, Artifact>(this, (i) => i.Artifacts ?? new List<Artifact>());
 
         internal ListArtifactsPaginator(IAmazonDeviceFarm client, ListArtifactsRequest request)
         {

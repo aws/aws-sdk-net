@@ -43,6 +43,7 @@ namespace Amazon.Finspace.Model
         /// The identifier of the availability zones where subnets for the environment are created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=12)]
         public string AvailabilityZoneId
         {
             get { return this._availabilityZoneId; }

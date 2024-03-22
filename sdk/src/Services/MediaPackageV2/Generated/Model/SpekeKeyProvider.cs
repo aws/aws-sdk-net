@@ -33,7 +33,7 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class SpekeKeyProvider
     {
-        private List<string> _drmSystems = new List<string>();
+        private List<string> _drmSystems = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EncryptionContractConfiguration _encryptionContractConfiguration;
         private string _resourceId;
         private string _roleArn;
@@ -55,7 +55,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if DrmSystems property is set
         internal bool IsSetDrmSystems()
         {
-            return this._drmSystems != null && this._drmSystems.Count > 0; 
+            return this._drmSystems != null && (this._drmSystems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

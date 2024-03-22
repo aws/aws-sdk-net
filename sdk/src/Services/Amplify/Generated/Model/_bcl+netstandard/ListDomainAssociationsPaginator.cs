@@ -45,7 +45,7 @@ namespace Amazon.Amplify.Model
         /// Enumerable containing all of the DomainAssociations
         /// </summary>
         public IPaginatedEnumerable<DomainAssociation> DomainAssociations => 
-            new PaginatedResultKeyResponse<ListDomainAssociationsResponse, DomainAssociation>(this, (i) => i.DomainAssociations);
+            new PaginatedResultKeyResponse<ListDomainAssociationsResponse, DomainAssociation>(this, (i) => i.DomainAssociations ?? new List<DomainAssociation>());
 
         internal ListDomainAssociationsPaginator(IAmazonAmplify client, ListDomainAssociationsRequest request)
         {

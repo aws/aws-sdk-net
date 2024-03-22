@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the FindingsFilterListItems
         /// </summary>
         public IPaginatedEnumerable<FindingsFilterListItem> FindingsFilterListItems => 
-            new PaginatedResultKeyResponse<ListFindingsFiltersResponse, FindingsFilterListItem>(this, (i) => i.FindingsFilterListItems);
+            new PaginatedResultKeyResponse<ListFindingsFiltersResponse, FindingsFilterListItem>(this, (i) => i.FindingsFilterListItems ?? new List<FindingsFilterListItem>());
 
         internal ListFindingsFiltersPaginator(IAmazonMacie2 client, ListFindingsFiltersRequest request)
         {

@@ -36,16 +36,16 @@ namespace Amazon.MediaConvert.Model
     {
         private int? _adAvailOffset;
         private AvailBlanking _availBlanking;
-        private List<ColorConversion3DLUTSetting> _colorConversion3DLUTSettings = new List<ColorConversion3DLUTSetting>();
+        private List<ColorConversion3DLUTSetting> _colorConversion3DLUTSettings = AWSConfigs.InitializeCollections ? new List<ColorConversion3DLUTSetting>() : null;
         private EsamSettings _esam;
         private ExtendedDataServices _extendedDataServices;
         private int? _followSource;
-        private List<InputTemplate> _inputs = new List<InputTemplate>();
+        private List<InputTemplate> _inputs = AWSConfigs.InitializeCollections ? new List<InputTemplate>() : null;
         private KantarWatermarkSettings _kantarWatermark;
         private MotionImageInserter _motionImageInserter;
         private NielsenConfiguration _nielsenConfiguration;
         private NielsenNonLinearWatermarkSettings _nielsenNonLinearWatermark;
-        private List<OutputGroup> _outputGroups = new List<OutputGroup>();
+        private List<OutputGroup> _outputGroups = AWSConfigs.InitializeCollections ? new List<OutputGroup>() : null;
         private TimecodeConfig _timecodeConfig;
         private TimedMetadataInsertion _timedMetadataInsertion;
 
@@ -97,7 +97,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if ColorConversion3DLUTSettings property is set
         internal bool IsSetColorConversion3DLUTSettings()
         {
-            return this._colorConversion3DLUTSettings != null && this._colorConversion3DLUTSettings.Count > 0; 
+            return this._colorConversion3DLUTSettings != null && (this._colorConversion3DLUTSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +269,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if OutputGroups property is set
         internal bool IsSetOutputGroups()
         {
-            return this._outputGroups != null && this._outputGroups.Count > 0; 
+            return this._outputGroups != null && (this._outputGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

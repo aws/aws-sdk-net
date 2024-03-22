@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         private string _launchedAt;
         private string _name;
         private bool? _privileged;
-        private List<VolumeMount> _volumeMounts = new List<VolumeMount>();
+        private List<VolumeMount> _volumeMounts = AWSConfigs.InitializeCollections ? new List<VolumeMount>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerRuntime. 
@@ -171,7 +171,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if VolumeMounts property is set
         internal bool IsSetVolumeMounts()
         {
-            return this._volumeMounts != null && this._volumeMounts.Count > 0; 
+            return this._volumeMounts != null && (this._volumeMounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

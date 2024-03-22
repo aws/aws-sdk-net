@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<Event> Events => 
-            new PaginatedResultKeyResponse<DescribeFleetEventsResponse, Event>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<DescribeFleetEventsResponse, Event>(this, (i) => i.Events ?? new List<Event>());
 
         internal DescribeFleetEventsPaginator(IAmazonGameLift client, DescribeFleetEventsRequest request)
         {

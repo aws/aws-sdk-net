@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model
     public partial class ProjectCache
     {
         private string _location;
-        private List<string> _modes = new List<string>();
+        private List<string> _modes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CacheType _type;
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Modes property is set
         internal bool IsSetModes()
         {
-            return this._modes != null && this._modes.Count > 0; 
+            return this._modes != null && (this._modes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

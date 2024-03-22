@@ -34,7 +34,7 @@ namespace Amazon.QLDBSession.Model
     public partial class Page
     {
         private string _nextPageToken;
-        private List<ValueHolder> _values = new List<ValueHolder>();
+        private List<ValueHolder> _values = AWSConfigs.InitializeCollections ? new List<ValueHolder>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -70,7 +70,7 @@ namespace Amazon.QLDBSession.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

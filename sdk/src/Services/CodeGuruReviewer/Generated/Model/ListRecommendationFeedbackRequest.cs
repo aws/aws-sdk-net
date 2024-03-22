@@ -38,8 +38,8 @@ namespace Amazon.CodeGuruReviewer.Model
         private string _codeReviewArn;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _recommendationIds = new List<string>();
-        private List<string> _userIds = new List<string>();
+        private List<string> _recommendationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _userIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CodeReviewArn. 
@@ -117,7 +117,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if RecommendationIds property is set
         internal bool IsSetRecommendationIds()
         {
-            return this._recommendationIds != null && this._recommendationIds.Count > 0; 
+            return this._recommendationIds != null && (this._recommendationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if UserIds property is set
         internal bool IsSetUserIds()
         {
-            return this._userIds != null && this._userIds.Count > 0; 
+            return this._userIds != null && (this._userIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

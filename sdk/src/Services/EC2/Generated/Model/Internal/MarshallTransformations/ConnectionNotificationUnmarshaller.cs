@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("connectionEvents/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ConnectionEvents == null)
+                        {
+                            unmarshalledObject.ConnectionEvents = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ConnectionEvents.Add(item);
                         continue;

@@ -33,7 +33,7 @@ namespace Amazon.PcaConnectorAd.Model
     /// </summary>
     public partial class ListConnectorsResponse : AmazonWebServiceResponse
     {
-        private List<ConnectorSummary> _connectors = new List<ConnectorSummary>();
+        private List<ConnectorSummary> _connectors = AWSConfigs.InitializeCollections ? new List<ConnectorSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.PcaConnectorAd.Model
         // Check to see if Connectors property is set
         internal bool IsSetConnectors()
         {
-            return this._connectors != null && this._connectors.Count > 0; 
+            return this._connectors != null && (this._connectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

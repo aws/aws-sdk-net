@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class UpdatePricingPlanRequest : AmazonIoTTwinMakerRequest
     {
-        private List<string> _bundleNames = new List<string>();
+        private List<string> _bundleNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PricingMode _pricingMode;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if BundleNames property is set
         internal bool IsSetBundleNames()
         {
-            return this._bundleNames != null && this._bundleNames.Count > 0; 
+            return this._bundleNames != null && (this._bundleNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

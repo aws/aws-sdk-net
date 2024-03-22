@@ -432,6 +432,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             tableDocumentMap.Add(key, item.Document);
                         }
                     }
+
+                    if (request.RequestItems == null)
+                    {
+                        request.RequestItems = new Dictionary<string, List<WriteRequest>>();
+                    }
                     request.RequestItems[tableName] = requestList;
                 }
             }

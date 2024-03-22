@@ -81,7 +81,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ConsumerArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.
+        /// The Amazon Resource Name (ARN) of the consumer namespace associated with the datashare.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -120,8 +120,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DataShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the
-        /// account or the namespace.
+        /// The Amazon Resource Name (ARN) of the datashare that the consumer is to use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

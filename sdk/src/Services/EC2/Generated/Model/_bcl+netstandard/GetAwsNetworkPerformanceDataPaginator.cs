@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the DataResponses
         /// </summary>
         public IPaginatedEnumerable<DataResponse> DataResponses => 
-            new PaginatedResultKeyResponse<GetAwsNetworkPerformanceDataResponse, DataResponse>(this, (i) => i.DataResponses);
+            new PaginatedResultKeyResponse<GetAwsNetworkPerformanceDataResponse, DataResponse>(this, (i) => i.DataResponses ?? new List<DataResponse>());
 
         internal GetAwsNetworkPerformanceDataPaginator(IAmazonEC2 client, GetAwsNetworkPerformanceDataRequest request)
         {

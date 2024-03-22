@@ -84,6 +84,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBClusterParameterGroups/DBClusterParameterGroup", targetDepth))
                     {
                         var unmarshaller = DBClusterParameterGroupUnmarshaller.Instance;
+                        if (response.DBClusterParameterGroups == null)
+                        {
+                            response.DBClusterParameterGroups = new List<DBClusterParameterGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DBClusterParameterGroups.Add(item);
                         continue;

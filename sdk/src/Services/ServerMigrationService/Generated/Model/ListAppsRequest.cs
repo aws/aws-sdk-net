@@ -34,7 +34,7 @@ namespace Amazon.ServerMigrationService.Model
     /// </summary>
     public partial class ListAppsRequest : AmazonServerMigrationServiceRequest
     {
-        private List<string> _appIds = new List<string>();
+        private List<string> _appIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -53,7 +53,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if AppIds property is set
         internal bool IsSetAppIds()
         {
-            return this._appIds != null && this._appIds.Count > 0; 
+            return this._appIds != null && (this._appIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

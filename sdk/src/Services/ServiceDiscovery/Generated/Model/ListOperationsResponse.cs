@@ -34,7 +34,7 @@ namespace Amazon.ServiceDiscovery.Model
     public partial class ListOperationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OperationSummary> _operations = new List<OperationSummary>();
+        private List<OperationSummary> _operations = AWSConfigs.InitializeCollections ? new List<OperationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -80,7 +80,7 @@ namespace Amazon.ServiceDiscovery.Model
         // Check to see if Operations property is set
         internal bool IsSetOperations()
         {
-            return this._operations != null && this._operations.Count > 0; 
+            return this._operations != null && (this._operations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

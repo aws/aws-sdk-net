@@ -35,7 +35,7 @@ namespace Amazon.ResilienceHub.Model
     {
         private string _appArn;
         private string _appVersion;
-        private List<ResourceMapping> _resourceMappings = new List<ResourceMapping>();
+        private List<ResourceMapping> _resourceMappings = AWSConfigs.InitializeCollections ? new List<ResourceMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
@@ -97,7 +97,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if ResourceMappings property is set
         internal bool IsSetResourceMappings()
         {
-            return this._resourceMappings != null && this._resourceMappings.Count > 0; 
+            return this._resourceMappings != null && (this._resourceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

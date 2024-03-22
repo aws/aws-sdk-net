@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("successful/item", targetDepth))
                     {
                         var unmarshaller = EnableFastSnapshotRestoreSuccessItemUnmarshaller.Instance;
+                        if (response.Successful == null)
+                        {
+                            response.Successful = new List<EnableFastSnapshotRestoreSuccessItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Successful.Add(item);
                         continue;
@@ -65,6 +69,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("unsuccessful/item", targetDepth))
                     {
                         var unmarshaller = EnableFastSnapshotRestoreErrorItemUnmarshaller.Instance;
+                        if (response.Unsuccessful == null)
+                        {
+                            response.Unsuccessful = new List<EnableFastSnapshotRestoreErrorItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Unsuccessful.Add(item);
                         continue;

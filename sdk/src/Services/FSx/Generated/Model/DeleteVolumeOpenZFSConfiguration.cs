@@ -33,7 +33,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DeleteVolumeOpenZFSConfiguration
     {
-        private List<string> _options = new List<string>();
+        private List<string> _options = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Options. 
@@ -51,7 +51,7 @@ namespace Amazon.FSx.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

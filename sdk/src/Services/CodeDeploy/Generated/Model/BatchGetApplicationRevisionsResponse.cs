@@ -35,7 +35,7 @@ namespace Amazon.CodeDeploy.Model
     {
         private string _applicationName;
         private string _errorMessage;
-        private List<RevisionInfo> _revisions = new List<RevisionInfo>();
+        private List<RevisionInfo> _revisions = AWSConfigs.InitializeCollections ? new List<RevisionInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -89,7 +89,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if Revisions property is set
         internal bool IsSetRevisions()
         {
-            return this._revisions != null && this._revisions.Count > 0; 
+            return this._revisions != null && (this._revisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Enumerable containing all of the LoadBalancerDescriptions
         /// </summary>
         public IPaginatedEnumerable<LoadBalancerDescription> LoadBalancerDescriptions => 
-            new PaginatedResultKeyResponse<DescribeLoadBalancersResponse, LoadBalancerDescription>(this, (i) => i.LoadBalancerDescriptions);
+            new PaginatedResultKeyResponse<DescribeLoadBalancersResponse, LoadBalancerDescription>(this, (i) => i.LoadBalancerDescriptions ?? new List<LoadBalancerDescription>());
 
         internal DescribeLoadBalancersPaginator(IAmazonElasticLoadBalancing client, DescribeLoadBalancersRequest request)
         {

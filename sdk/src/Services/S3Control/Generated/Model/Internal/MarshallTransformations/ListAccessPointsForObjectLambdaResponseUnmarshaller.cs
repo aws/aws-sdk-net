@@ -69,6 +69,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ObjectLambdaAccessPointList/ObjectLambdaAccessPoint", targetDepth))
                     {
+                        if (response.ObjectLambdaAccessPointList == null)
+                        {
+                            response.ObjectLambdaAccessPointList = new List<ObjectLambdaAccessPoint>();
+                        }
                         var unmarshaller = ObjectLambdaAccessPointUnmarshaller.Instance;
                         response.ObjectLambdaAccessPointList.Add(unmarshaller.Unmarshall(context));
                         continue;

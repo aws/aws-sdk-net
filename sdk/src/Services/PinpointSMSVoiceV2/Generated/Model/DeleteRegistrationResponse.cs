@@ -33,7 +33,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DeleteRegistrationResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _additionalAttributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private long? _approvedVersionNumber;
         private DateTime? _createdTimestamp;
         private long? _currentVersionNumber;
@@ -58,7 +58,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if AdditionalAttributes property is set
         internal bool IsSetAdditionalAttributes()
         {
-            return this._additionalAttributes != null && this._additionalAttributes.Count > 0; 
+            return this._additionalAttributes != null && (this._additionalAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

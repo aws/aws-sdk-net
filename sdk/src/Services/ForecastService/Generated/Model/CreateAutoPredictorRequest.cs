@@ -95,15 +95,15 @@ namespace Amazon.ForecastService.Model
         private DataConfig _dataConfig;
         private EncryptionConfig _encryptionConfig;
         private bool? _explainPredictor;
-        private List<string> _forecastDimensions = new List<string>();
+        private List<string> _forecastDimensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _forecastFrequency;
         private int? _forecastHorizon;
-        private List<string> _forecastTypes = new List<string>();
+        private List<string> _forecastTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MonitorConfig _monitorConfig;
         private OptimizationMetric _optimizationMetric;
         private string _predictorName;
         private string _referencePredictorArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TimeAlignmentBoundary _timeAlignmentBoundary;
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if ForecastDimensions property is set
         internal bool IsSetForecastDimensions()
         {
-            return this._forecastDimensions != null && this._forecastDimensions.Count > 0; 
+            return this._forecastDimensions != null && (this._forecastDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if ForecastTypes property is set
         internal bool IsSetForecastTypes()
         {
-            return this._forecastTypes != null && this._forecastTypes.Count > 0; 
+            return this._forecastTypes != null && (this._forecastTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -443,7 +443,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.AWSSupport.Model
     /// </summary>
     public partial class DescribeCasesResponse : AmazonWebServiceResponse
     {
-        private List<CaseDetails> _cases = new List<CaseDetails>();
+        private List<CaseDetails> _cases = AWSConfigs.InitializeCollections ? new List<CaseDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if Cases property is set
         internal bool IsSetCases()
         {
-            return this._cases != null && this._cases.Count > 0; 
+            return this._cases != null && (this._cases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

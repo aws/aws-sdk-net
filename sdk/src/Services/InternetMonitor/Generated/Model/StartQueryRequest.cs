@@ -45,7 +45,7 @@ namespace Amazon.InternetMonitor.Model
     public partial class StartQueryRequest : AmazonInternetMonitorRequest
     {
         private DateTime? _endTime;
-        private List<FilterParameter> _filterParameters = new List<FilterParameter>();
+        private List<FilterParameter> _filterParameters = AWSConfigs.InitializeCollections ? new List<FilterParameter>() : null;
         private string _monitorName;
         private QueryType _queryType;
         private DateTime? _startTime;
@@ -94,7 +94,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if FilterParameters property is set
         internal bool IsSetFilterParameters()
         {
-            return this._filterParameters != null && this._filterParameters.Count > 0; 
+            return this._filterParameters != null && (this._filterParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -124,15 +124,19 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>MEASUREMENTS</c>: TBD definition
+        ///  <c>MEASUREMENTS</c>: Provides availability score, performance score, total traffic,
+        /// and round-trip times, at 5 minute intervals.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TOP_LOCATIONS</c>: TBD definition
+        ///  <c>TOP_LOCATIONS</c>: Provides availability score, performance score, total traffic,
+        /// and time to first byte (TTFB) information, for the top location and ASN combinations
+        /// that you're monitoring, by traffic volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TOP_LOCATION_DETAILS</c>: TBD definition
+        ///  <c>TOP_LOCATION_DETAILS</c>: Provides TTFB for Amazon CloudFront, your current configuration,
+        /// and the best performing EC2 configuration, at 1 hour intervals.
         /// </para>
         ///  </li> </ul> 
         /// <para>

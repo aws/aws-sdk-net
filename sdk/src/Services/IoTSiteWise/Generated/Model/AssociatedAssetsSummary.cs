@@ -38,7 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         private DateTime? _creationDate;
         private string _description;
         private string _externalId;
-        private List<AssetHierarchy> _hierarchies = new List<AssetHierarchy>();
+        private List<AssetHierarchy> _hierarchies = AWSConfigs.InitializeCollections ? new List<AssetHierarchy>() : null;
         private string _id;
         private DateTime? _lastUpdateDate;
         private string _name;
@@ -162,7 +162,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Hierarchies property is set
         internal bool IsSetHierarchies()
         {
-            return this._hierarchies != null && this._hierarchies.Count > 0; 
+            return this._hierarchies != null && (this._hierarchies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

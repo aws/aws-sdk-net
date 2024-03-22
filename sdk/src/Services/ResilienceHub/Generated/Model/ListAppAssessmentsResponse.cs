@@ -33,7 +33,7 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class ListAppAssessmentsResponse : AmazonWebServiceResponse
     {
-        private List<AppAssessmentSummary> _assessmentSummaries = new List<AppAssessmentSummary>();
+        private List<AppAssessmentSummary> _assessmentSummaries = AWSConfigs.InitializeCollections ? new List<AppAssessmentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if AssessmentSummaries property is set
         internal bool IsSetAssessmentSummaries()
         {
-            return this._assessmentSummaries != null && this._assessmentSummaries.Count > 0; 
+            return this._assessmentSummaries != null && (this._assessmentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

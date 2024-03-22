@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class UpdateWorkflowRequest : AmazonGlueRequest
     {
-        private Dictionary<string, string> _defaultRunProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _defaultRunProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _description;
         private int? _maxConcurrentRuns;
         private string _name;
@@ -54,7 +54,7 @@ namespace Amazon.Glue.Model
         // Check to see if DefaultRunProperties property is set
         internal bool IsSetDefaultRunProperties()
         {
-            return this._defaultRunProperties != null && this._defaultRunProperties.Count > 0; 
+            return this._defaultRunProperties != null && (this._defaultRunProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

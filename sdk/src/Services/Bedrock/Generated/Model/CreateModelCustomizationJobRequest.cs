@@ -60,10 +60,10 @@ namespace Amazon.Bedrock.Model
         private CustomizationType _customizationType;
         private string _customModelKmsKeyId;
         private string _customModelName;
-        private List<Tag> _customModelTags = new List<Tag>();
-        private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
+        private List<Tag> _customModelTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private Dictionary<string, string> _hyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _jobName;
-        private List<Tag> _jobTags = new List<Tag>();
+        private List<Tag> _jobTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private OutputDataConfig _outputDataConfig;
         private string _roleArn;
         private TrainingDataConfig _trainingDataConfig;
@@ -181,7 +181,7 @@ namespace Amazon.Bedrock.Model
         // Check to see if CustomModelTags property is set
         internal bool IsSetCustomModelTags()
         {
-            return this._customModelTags != null && this._customModelTags.Count > 0; 
+            return this._customModelTags != null && (this._customModelTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Amazon.Bedrock.Model
         // Check to see if HyperParameters property is set
         internal bool IsSetHyperParameters()
         {
-            return this._hyperParameters != null && this._hyperParameters.Count > 0; 
+            return this._hyperParameters != null && (this._hyperParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace Amazon.Bedrock.Model
         // Check to see if JobTags property is set
         internal bool IsSetJobTags()
         {
-            return this._jobTags != null && this._jobTags.Count > 0; 
+            return this._jobTags != null && (this._jobTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

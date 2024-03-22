@@ -38,7 +38,7 @@ namespace Amazon.CloudWatchEvidently.Model
         private string _description;
         private ExperimentExecution _execution;
         private DateTime? _lastUpdatedTime;
-        private List<MetricGoal> _metricGoals = new List<MetricGoal>();
+        private List<MetricGoal> _metricGoals = AWSConfigs.InitializeCollections ? new List<MetricGoal>() : null;
         private string _name;
         private OnlineAbDefinition _onlineAbDefinition;
         private string _project;
@@ -48,8 +48,8 @@ namespace Amazon.CloudWatchEvidently.Model
         private string _segment;
         private ExperimentStatus _status;
         private string _statusReason;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<Treatment> _treatments = new List<Treatment>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Treatment> _treatments = AWSConfigs.InitializeCollections ? new List<Treatment>() : null;
         private ExperimentType _type;
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if MetricGoals property is set
         internal bool IsSetMetricGoals()
         {
-            return this._metricGoals != null && this._metricGoals.Count > 0; 
+            return this._metricGoals != null && (this._metricGoals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -363,7 +363,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -383,7 +383,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Treatments property is set
         internal bool IsSetTreatments()
         {
-            return this._treatments != null && this._treatments.Count > 0; 
+            return this._treatments != null && (this._treatments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

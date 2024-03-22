@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class GetEffectivePoliciesResponse : AmazonWebServiceResponse
     {
-        private List<EffectivePolicy> _effectivePolicies = new List<EffectivePolicy>();
+        private List<EffectivePolicy> _effectivePolicies = AWSConfigs.InitializeCollections ? new List<EffectivePolicy>() : null;
 
         /// <summary>
         /// Gets and sets the property EffectivePolicies. 
@@ -50,7 +50,7 @@ namespace Amazon.IoT.Model
         // Check to see if EffectivePolicies property is set
         internal bool IsSetEffectivePolicies()
         {
-            return this._effectivePolicies != null && this._effectivePolicies.Count > 0; 
+            return this._effectivePolicies != null && (this._effectivePolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

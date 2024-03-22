@@ -45,7 +45,7 @@ namespace Amazon.CleanRooms.Model
         /// Enumerable containing all of the SchemaSummaries
         /// </summary>
         public IPaginatedEnumerable<SchemaSummary> SchemaSummaries => 
-            new PaginatedResultKeyResponse<ListSchemasResponse, SchemaSummary>(this, (i) => i.SchemaSummaries);
+            new PaginatedResultKeyResponse<ListSchemasResponse, SchemaSummary>(this, (i) => i.SchemaSummaries ?? new List<SchemaSummary>());
 
         internal ListSchemasPaginator(IAmazonCleanRooms client, ListSchemasRequest request)
         {

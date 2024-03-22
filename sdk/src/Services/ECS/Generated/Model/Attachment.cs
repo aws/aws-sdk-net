@@ -33,7 +33,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class Attachment
     {
-        private List<KeyValuePair> _details = new List<KeyValuePair>();
+        private List<KeyValuePair> _details = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
         private string _id;
         private string _status;
         private string _type;
@@ -69,7 +69,7 @@ namespace Amazon.ECS.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this._details != null && this._details.Count > 0; 
+            return this._details != null && (this._details.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

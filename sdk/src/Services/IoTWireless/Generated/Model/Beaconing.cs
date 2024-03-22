@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     public partial class Beaconing
     {
         private int? _dataRate;
-        private List<int> _frequencies = new List<int>();
+        private List<int> _frequencies = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
         /// Gets and sets the property DataRate. 
@@ -71,7 +71,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Frequencies property is set
         internal bool IsSetFrequencies()
         {
-            return this._frequencies != null && this._frequencies.Count > 0; 
+            return this._frequencies != null && (this._frequencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

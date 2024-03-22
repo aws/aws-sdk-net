@@ -63,6 +63,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AvailabilityZones/AvailabilityZone", targetDepth))
                     {
                         var unmarshaller = AvailabilityZoneUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailabilityZones == null)
+                        {
+                            unmarshalledObject.AvailabilityZones = new List<AvailabilityZone>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
@@ -70,6 +74,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AvailableProcessorFeatures/AvailableProcessorFeature", targetDepth))
                     {
                         var unmarshaller = AvailableProcessorFeatureUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailableProcessorFeatures == null)
+                        {
+                            unmarshalledObject.AvailableProcessorFeatures = new List<AvailableProcessorFeature>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AvailableProcessorFeatures.Add(item);
                         continue;
@@ -185,6 +193,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SupportedActivityStreamModes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedActivityStreamModes == null)
+                        {
+                            unmarshalledObject.SupportedActivityStreamModes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedActivityStreamModes.Add(item);
                         continue;
@@ -192,6 +204,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SupportedEngineModes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedEngineModes == null)
+                        {
+                            unmarshalledObject.SupportedEngineModes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedEngineModes.Add(item);
                         continue;
@@ -199,6 +215,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SupportedNetworkTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedNetworkTypes == null)
+                        {
+                            unmarshalledObject.SupportedNetworkTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedNetworkTypes.Add(item);
                         continue;

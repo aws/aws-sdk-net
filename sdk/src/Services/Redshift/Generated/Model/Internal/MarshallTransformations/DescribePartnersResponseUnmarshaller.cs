@@ -84,6 +84,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PartnerIntegrationInfoList/PartnerIntegrationInfo", targetDepth))
                     {
                         var unmarshaller = PartnerIntegrationInfoUnmarshaller.Instance;
+                        if (response.PartnerIntegrationInfoList == null)
+                        {
+                            response.PartnerIntegrationInfoList = new List<PartnerIntegrationInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.PartnerIntegrationInfoList.Add(item);
                         continue;

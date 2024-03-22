@@ -36,7 +36,7 @@ namespace Amazon.Schemas.Model
         private string _registryName;
         private string _schemaArn;
         private string _schemaName;
-        private List<SearchSchemaVersionSummary> _schemaVersions = new List<SearchSchemaVersionSummary>();
+        private List<SearchSchemaVersionSummary> _schemaVersions = AWSConfigs.InitializeCollections ? new List<SearchSchemaVersionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property RegistryName. 
@@ -107,7 +107,7 @@ namespace Amazon.Schemas.Model
         // Check to see if SchemaVersions property is set
         internal bool IsSetSchemaVersions()
         {
-            return this._schemaVersions != null && this._schemaVersions.Count > 0; 
+            return this._schemaVersions != null && (this._schemaVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

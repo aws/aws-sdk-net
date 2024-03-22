@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the QuickConnectSummaryList
         /// </summary>
         public IPaginatedEnumerable<QuickConnectSummary> QuickConnectSummaryList => 
-            new PaginatedResultKeyResponse<ListQuickConnectsResponse, QuickConnectSummary>(this, (i) => i.QuickConnectSummaryList);
+            new PaginatedResultKeyResponse<ListQuickConnectsResponse, QuickConnectSummary>(this, (i) => i.QuickConnectSummaryList ?? new List<QuickConnectSummary>());
 
         internal ListQuickConnectsPaginator(IAmazonConnect client, ListQuickConnectsRequest request)
         {

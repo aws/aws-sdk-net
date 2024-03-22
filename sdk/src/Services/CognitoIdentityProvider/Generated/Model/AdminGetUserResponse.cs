@@ -35,12 +35,12 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class AdminGetUserResponse : AmazonWebServiceResponse
     {
         private bool? _enabled;
-        private List<MFAOptionType> _mfaOptions = new List<MFAOptionType>();
+        private List<MFAOptionType> _mfaOptions = AWSConfigs.InitializeCollections ? new List<MFAOptionType>() : null;
         private string _preferredMfaSetting;
-        private List<AttributeType> _userAttributes = new List<AttributeType>();
+        private List<AttributeType> _userAttributes = AWSConfigs.InitializeCollections ? new List<AttributeType>() : null;
         private DateTime? _userCreateDate;
         private DateTime? _userLastModifiedDate;
-        private List<string> _userMFASettingList = new List<string>();
+        private List<string> _userMFASettingList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _username;
         private UserStatusType _userStatus;
 
@@ -80,7 +80,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if MFAOptions property is set
         internal bool IsSetMFAOptions()
         {
-            return this._mfaOptions != null && this._mfaOptions.Count > 0; 
+            return this._mfaOptions != null && (this._mfaOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if UserAttributes property is set
         internal bool IsSetUserAttributes()
         {
-            return this._userAttributes != null && this._userAttributes.Count > 0; 
+            return this._userAttributes != null && (this._userAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if UserMFASettingList property is set
         internal bool IsSetUserMFASettingList()
         {
-            return this._userMFASettingList != null && this._userMFASettingList.Count > 0; 
+            return this._userMFASettingList != null && (this._userMFASettingList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

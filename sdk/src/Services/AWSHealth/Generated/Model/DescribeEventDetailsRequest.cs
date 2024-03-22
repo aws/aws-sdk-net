@@ -52,7 +52,7 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class DescribeEventDetailsRequest : AmazonAWSHealthRequest
     {
-        private List<string> _eventArns = new List<string>();
+        private List<string> _eventArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _locale;
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EventArns property is set
         internal bool IsSetEventArns()
         {
-            return this._eventArns != null && this._eventArns.Count > 0; 
+            return this._eventArns != null && (this._eventArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

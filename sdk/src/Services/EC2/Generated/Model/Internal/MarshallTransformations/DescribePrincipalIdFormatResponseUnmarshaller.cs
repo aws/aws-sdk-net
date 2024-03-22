@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("principalSet/item", targetDepth))
                     {
                         var unmarshaller = PrincipalIdFormatUnmarshaller.Instance;
+                        if (response.Principals == null)
+                        {
+                            response.Principals = new List<PrincipalIdFormat>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Principals.Add(item);
                         continue;

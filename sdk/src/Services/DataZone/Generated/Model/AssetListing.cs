@@ -38,7 +38,7 @@ namespace Amazon.DataZone.Model
         private string _assetType;
         private DateTime? _createdAt;
         private string _forms;
-        private List<DetailedGlossaryTerm> _glossaryTerms = new List<DetailedGlossaryTerm>();
+        private List<DetailedGlossaryTerm> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<DetailedGlossaryTerm>() : null;
         private string _owningProjectId;
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.DataZone.Model
         // Check to see if GlossaryTerms property is set
         internal bool IsSetGlossaryTerms()
         {
-            return this._glossaryTerms != null && this._glossaryTerms.Count > 0; 
+            return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

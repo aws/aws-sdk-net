@@ -33,7 +33,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class OverallVolume
     {
-        private List<DomainIspPlacement> _domainIspPlacements = new List<DomainIspPlacement>();
+        private List<DomainIspPlacement> _domainIspPlacements = AWSConfigs.InitializeCollections ? new List<DomainIspPlacement>() : null;
         private double? _readRatePercent;
         private VolumeStatistics _volumeStatistics;
 
@@ -53,7 +53,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if DomainIspPlacements property is set
         internal bool IsSetDomainIspPlacements()
         {
-            return this._domainIspPlacements != null && this._domainIspPlacements.Count > 0; 
+            return this._domainIspPlacements != null && (this._domainIspPlacements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

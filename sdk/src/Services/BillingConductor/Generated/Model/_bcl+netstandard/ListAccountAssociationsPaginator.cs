@@ -45,7 +45,7 @@ namespace Amazon.BillingConductor.Model
         /// Enumerable containing all of the LinkedAccounts
         /// </summary>
         public IPaginatedEnumerable<AccountAssociationsListElement> LinkedAccounts => 
-            new PaginatedResultKeyResponse<ListAccountAssociationsResponse, AccountAssociationsListElement>(this, (i) => i.LinkedAccounts);
+            new PaginatedResultKeyResponse<ListAccountAssociationsResponse, AccountAssociationsListElement>(this, (i) => i.LinkedAccounts ?? new List<AccountAssociationsListElement>());
 
         internal ListAccountAssociationsPaginator(IAmazonBillingConductor client, ListAccountAssociationsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.WorkLink.Model
     /// </summary>
     public partial class ListFleetsResponse : AmazonWebServiceResponse
     {
-        private List<FleetSummary> _fleetSummaryList = new List<FleetSummary>();
+        private List<FleetSummary> _fleetSummaryList = AWSConfigs.InitializeCollections ? new List<FleetSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkLink.Model
         // Check to see if FleetSummaryList property is set
         internal bool IsSetFleetSummaryList()
         {
-            return this._fleetSummaryList != null && this._fleetSummaryList.Count > 0; 
+            return this._fleetSummaryList != null && (this._fleetSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

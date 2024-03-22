@@ -45,7 +45,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Enumerable containing all of the TLSInspectionConfigurations
         /// </summary>
         public IPaginatedEnumerable<TLSInspectionConfigurationMetadata> TLSInspectionConfigurations => 
-            new PaginatedResultKeyResponse<ListTLSInspectionConfigurationsResponse, TLSInspectionConfigurationMetadata>(this, (i) => i.TLSInspectionConfigurations);
+            new PaginatedResultKeyResponse<ListTLSInspectionConfigurationsResponse, TLSInspectionConfigurationMetadata>(this, (i) => i.TLSInspectionConfigurations ?? new List<TLSInspectionConfigurationMetadata>());
 
         internal ListTLSInspectionConfigurationsPaginator(IAmazonNetworkFirewall client, ListTLSInspectionConfigurationsRequest request)
         {

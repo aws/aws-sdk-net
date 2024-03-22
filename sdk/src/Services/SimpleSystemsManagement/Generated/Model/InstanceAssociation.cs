@@ -77,7 +77,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the association document for the managed node(s).
+        /// The content of the association document for the managed nodes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

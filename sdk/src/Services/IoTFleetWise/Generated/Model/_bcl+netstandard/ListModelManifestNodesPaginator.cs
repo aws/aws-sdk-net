@@ -45,7 +45,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Enumerable containing all of the Nodes
         /// </summary>
         public IPaginatedEnumerable<Node> Nodes => 
-            new PaginatedResultKeyResponse<ListModelManifestNodesResponse, Node>(this, (i) => i.Nodes);
+            new PaginatedResultKeyResponse<ListModelManifestNodesResponse, Node>(this, (i) => i.Nodes ?? new List<Node>());
 
         internal ListModelManifestNodesPaginator(IAmazonIoTFleetWise client, ListModelManifestNodesRequest request)
         {

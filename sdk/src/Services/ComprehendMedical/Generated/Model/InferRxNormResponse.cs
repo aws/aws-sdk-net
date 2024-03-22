@@ -33,7 +33,7 @@ namespace Amazon.ComprehendMedical.Model
     /// </summary>
     public partial class InferRxNormResponse : AmazonWebServiceResponse
     {
-        private List<RxNormEntity> _entities = new List<RxNormEntity>();
+        private List<RxNormEntity> _entities = AWSConfigs.InitializeCollections ? new List<RxNormEntity>() : null;
         private string _modelVersion;
         private string _paginationToken;
 
@@ -55,7 +55,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Entities property is set
         internal bool IsSetEntities()
         {
-            return this._entities != null && this._entities.Count > 0; 
+            return this._entities != null && (this._entities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -42,11 +42,11 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class TestAuthorizationRequest : AmazonIoTRequest
     {
-        private List<AuthInfo> _authInfos = new List<AuthInfo>();
+        private List<AuthInfo> _authInfos = AWSConfigs.InitializeCollections ? new List<AuthInfo>() : null;
         private string _clientId;
         private string _cognitoIdentityPoolId;
-        private List<string> _policyNamesToAdd = new List<string>();
-        private List<string> _policyNamesToSkip = new List<string>();
+        private List<string> _policyNamesToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _policyNamesToSkip = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _principal;
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.IoT.Model
         // Check to see if AuthInfos property is set
         internal bool IsSetAuthInfos()
         {
-            return this._authInfos != null && this._authInfos.Count > 0; 
+            return this._authInfos != null && (this._authInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.IoT.Model
         // Check to see if PolicyNamesToAdd property is set
         internal bool IsSetPolicyNamesToAdd()
         {
-            return this._policyNamesToAdd != null && this._policyNamesToAdd.Count > 0; 
+            return this._policyNamesToAdd != null && (this._policyNamesToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.IoT.Model
         // Check to see if PolicyNamesToSkip property is set
         internal bool IsSetPolicyNamesToSkip()
         {
-            return this._policyNamesToSkip != null && this._policyNamesToSkip.Count > 0; 
+            return this._policyNamesToSkip != null && (this._policyNamesToSkip.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

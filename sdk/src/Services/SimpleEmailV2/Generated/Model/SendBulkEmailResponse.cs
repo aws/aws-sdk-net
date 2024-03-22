@@ -33,7 +33,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class SendBulkEmailResponse : AmazonWebServiceResponse
     {
-        private List<BulkEmailEntryResult> _bulkEmailEntryResults = new List<BulkEmailEntryResult>();
+        private List<BulkEmailEntryResult> _bulkEmailEntryResults = AWSConfigs.InitializeCollections ? new List<BulkEmailEntryResult>() : null;
 
         /// <summary>
         /// Gets and sets the property BulkEmailEntryResults. 
@@ -52,7 +52,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if BulkEmailEntryResults property is set
         internal bool IsSetBulkEmailEntryResults()
         {
-            return this._bulkEmailEntryResults != null && this._bulkEmailEntryResults.Count > 0; 
+            return this._bulkEmailEntryResults != null && (this._bulkEmailEntryResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the RetentionConfigurations
         /// </summary>
         public IPaginatedEnumerable<RetentionConfiguration> RetentionConfigurations => 
-            new PaginatedResultKeyResponse<DescribeRetentionConfigurationsResponse, RetentionConfiguration>(this, (i) => i.RetentionConfigurations);
+            new PaginatedResultKeyResponse<DescribeRetentionConfigurationsResponse, RetentionConfiguration>(this, (i) => i.RetentionConfigurations ?? new List<RetentionConfiguration>());
 
         internal DescribeRetentionConfigurationsPaginator(IAmazonConfigService client, DescribeRetentionConfigurationsRequest request)
         {

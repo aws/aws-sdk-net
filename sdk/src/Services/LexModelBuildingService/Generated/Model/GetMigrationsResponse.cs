@@ -33,7 +33,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// </summary>
     public partial class GetMigrationsResponse : AmazonWebServiceResponse
     {
-        private List<MigrationSummary> _migrationSummaries = new List<MigrationSummary>();
+        private List<MigrationSummary> _migrationSummaries = AWSConfigs.InitializeCollections ? new List<MigrationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if MigrationSummaries property is set
         internal bool IsSetMigrationSummaries()
         {
-            return this._migrationSummaries != null && this._migrationSummaries.Count > 0; 
+            return this._migrationSummaries != null && (this._migrationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

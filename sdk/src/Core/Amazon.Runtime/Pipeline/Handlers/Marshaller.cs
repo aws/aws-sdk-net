@@ -117,8 +117,13 @@ namespace Amazon.Runtime.Internal
 
             sb.AppendFormat(" md/{0}", requestContext.IsAsync ? "ClientAsync" : "ClientSync");
 
+            sb.AppendFormat(" cfg/init-coll#{0}", AWSConfigs.InitializeCollections ? "1" : "0");
+
             var userAgentAddition = requestContext.OriginalRequest.UserAgentAddition;
-            sb.AppendFormat(" {0}", userAgentAddition);
+            if (!string.IsNullOrEmpty(userAgentAddition))
+            {
+                sb.AppendFormat(" {0}", userAgentAddition);
+            }
 
             var userAgent = sb.ToString();
 

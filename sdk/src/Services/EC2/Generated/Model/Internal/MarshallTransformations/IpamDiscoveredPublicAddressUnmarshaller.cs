@@ -135,6 +135,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("securityGroupSet/item", targetDepth))
                     {
                         var unmarshaller = IpamPublicAddressSecurityGroupUnmarshaller.Instance;
+                        if (unmarshalledObject.SecurityGroups == null)
+                        {
+                            unmarshalledObject.SecurityGroups = new List<IpamPublicAddressSecurityGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SecurityGroups.Add(item);
                         continue;

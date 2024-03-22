@@ -34,7 +34,7 @@ namespace Amazon.SSMContacts.Model
     public partial class ListRotationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Rotation> _rotations = new List<Rotation>();
+        private List<Rotation> _rotations = AWSConfigs.InitializeCollections ? new List<Rotation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if Rotations property is set
         internal bool IsSetRotations()
         {
-            return this._rotations != null && this._rotations.Count > 0; 
+            return this._rotations != null && (this._rotations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

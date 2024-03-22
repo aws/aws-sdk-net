@@ -81,6 +81,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SessionPinningFilters/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SessionPinningFilters == null)
+                        {
+                            unmarshalledObject.SessionPinningFilters = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SessionPinningFilters.Add(item);
                         continue;

@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the RuleSets
         /// </summary>
         public IPaginatedEnumerable<MatchmakingRuleSet> RuleSets => 
-            new PaginatedResultKeyResponse<DescribeMatchmakingRuleSetsResponse, MatchmakingRuleSet>(this, (i) => i.RuleSets);
+            new PaginatedResultKeyResponse<DescribeMatchmakingRuleSetsResponse, MatchmakingRuleSet>(this, (i) => i.RuleSets ?? new List<MatchmakingRuleSet>());
 
         internal DescribeMatchmakingRuleSetsPaginator(IAmazonGameLift client, DescribeMatchmakingRuleSetsRequest request)
         {

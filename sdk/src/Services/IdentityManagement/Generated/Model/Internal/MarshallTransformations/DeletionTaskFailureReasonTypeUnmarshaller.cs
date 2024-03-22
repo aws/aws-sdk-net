@@ -63,6 +63,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RoleUsageList/member", targetDepth))
                     {
                         var unmarshaller = RoleUsageTypeUnmarshaller.Instance;
+                        if (unmarshalledObject.RoleUsageList == null)
+                        {
+                            unmarshalledObject.RoleUsageList = new List<RoleUsageType>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RoleUsageList.Add(item);
                         continue;

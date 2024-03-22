@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBSnapshotsResponse : AmazonWebServiceResponse
     {
-        private List<DBSnapshot> _dbSnapshots = new List<DBSnapshot>();
+        private List<DBSnapshot> _dbSnapshots = AWSConfigs.InitializeCollections ? new List<DBSnapshot>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSnapshots property is set
         internal bool IsSetDBSnapshots()
         {
-            return this._dbSnapshots != null && this._dbSnapshots.Count > 0; 
+            return this._dbSnapshots != null && (this._dbSnapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

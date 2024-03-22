@@ -37,10 +37,10 @@ namespace Amazon.Redshift.Model
     {
         private bool? _dryRun;
         private int? _nextInvocations;
-        private List<string> _scheduleDefinitions = new List<string>();
+        private List<string> _scheduleDefinitions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _scheduleDescription;
         private string _scheduleIdentifier;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DryRun.
@@ -88,7 +88,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ScheduleDefinitions property is set
         internal bool IsSetScheduleDefinitions()
         {
-            return this._scheduleDefinitions != null && this._scheduleDefinitions.Count > 0; 
+            return this._scheduleDefinitions != null && (this._scheduleDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

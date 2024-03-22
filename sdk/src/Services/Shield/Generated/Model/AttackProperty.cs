@@ -35,7 +35,7 @@ namespace Amazon.Shield.Model
     {
         private AttackLayer _attackLayer;
         private AttackPropertyIdentifier _attackPropertyIdentifier;
-        private List<Contributor> _topContributors = new List<Contributor>();
+        private List<Contributor> _topContributors = AWSConfigs.InitializeCollections ? new List<Contributor>() : null;
         private long? _total;
         private Unit _unit;
 
@@ -101,7 +101,7 @@ namespace Amazon.Shield.Model
         // Check to see if TopContributors property is set
         internal bool IsSetTopContributors()
         {
-            return this._topContributors != null && this._topContributors.Count > 0; 
+            return this._topContributors != null && (this._topContributors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

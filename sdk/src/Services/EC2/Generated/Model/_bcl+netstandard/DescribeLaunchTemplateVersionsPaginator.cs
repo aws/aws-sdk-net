@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the LaunchTemplateVersions
         /// </summary>
         public IPaginatedEnumerable<LaunchTemplateVersion> LaunchTemplateVersions => 
-            new PaginatedResultKeyResponse<DescribeLaunchTemplateVersionsResponse, LaunchTemplateVersion>(this, (i) => i.LaunchTemplateVersions);
+            new PaginatedResultKeyResponse<DescribeLaunchTemplateVersionsResponse, LaunchTemplateVersion>(this, (i) => i.LaunchTemplateVersions ?? new List<LaunchTemplateVersion>());
 
         internal DescribeLaunchTemplateVersionsPaginator(IAmazonEC2 client, DescribeLaunchTemplateVersionsRequest request)
         {

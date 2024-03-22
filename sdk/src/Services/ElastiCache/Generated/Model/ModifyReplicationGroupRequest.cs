@@ -58,11 +58,11 @@ namespace Amazon.ElastiCache.Model
         private bool? _autoMinorVersionUpgrade;
         private string _cacheNodeType;
         private string _cacheParameterGroupName;
-        private List<string> _cacheSecurityGroupNames = new List<string>();
+        private List<string> _cacheSecurityGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ClusterMode _clusterMode;
         private string _engineVersion;
         private IpDiscovery _ipDiscovery;
-        private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = new List<LogDeliveryConfigurationRequest>();
+        private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = AWSConfigs.InitializeCollections ? new List<LogDeliveryConfigurationRequest>() : null;
         private bool? _multiAZEnabled;
         private string _nodeGroupId;
         private string _notificationTopicArn;
@@ -72,14 +72,14 @@ namespace Amazon.ElastiCache.Model
         private bool? _removeUserGroups;
         private string _replicationGroupDescription;
         private string _replicationGroupId;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _snapshotRetentionLimit;
         private string _snapshottingClusterId;
         private string _snapshotWindow;
         private bool? _transitEncryptionEnabled;
         private TransitEncryptionMode _transitEncryptionMode;
-        private List<string> _userGroupIdsToAdd = new List<string>();
-        private List<string> _userGroupIdsToRemove = new List<string>();
+        private List<string> _userGroupIdsToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _userGroupIdsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
@@ -288,7 +288,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheSecurityGroupNames property is set
         internal bool IsSetCacheSecurityGroupNames()
         {
-            return this._cacheSecurityGroupNames != null && this._cacheSecurityGroupNames.Count > 0; 
+            return this._cacheSecurityGroupNames != null && (this._cacheSecurityGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -375,7 +375,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if LogDeliveryConfigurations property is set
         internal bool IsSetLogDeliveryConfigurations()
         {
-            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+            return this._logDeliveryConfigurations != null && (this._logDeliveryConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -614,7 +614,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -757,7 +757,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UserGroupIdsToAdd property is set
         internal bool IsSetUserGroupIdsToAdd()
         {
-            return this._userGroupIdsToAdd != null && this._userGroupIdsToAdd.Count > 0; 
+            return this._userGroupIdsToAdd != null && (this._userGroupIdsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -776,7 +776,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UserGroupIdsToRemove property is set
         internal bool IsSetUserGroupIdsToRemove()
         {
-            return this._userGroupIdsToRemove != null && this._userGroupIdsToRemove.Count > 0; 
+            return this._userGroupIdsToRemove != null && (this._userGroupIdsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

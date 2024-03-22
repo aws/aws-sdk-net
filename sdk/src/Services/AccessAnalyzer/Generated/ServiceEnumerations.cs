@@ -1141,6 +1141,14 @@ namespace Amazon.AccessAnalyzer
     {
 
         /// <summary>
+        /// Constant AWSDynamoDBStream for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSDynamoDBStream = new ResourceType("AWS::DynamoDB::Stream");
+        /// <summary>
+        /// Constant AWSDynamoDBTable for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSDynamoDBTable = new ResourceType("AWS::DynamoDB::Table");
+        /// <summary>
         /// Constant AWSEC2Snapshot for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2Snapshot = new ResourceType("AWS::EC2::Snapshot");
@@ -1354,6 +1362,10 @@ namespace Amazon.AccessAnalyzer
     public class ValidatePolicyResourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AWSDynamoDBTable for ValidatePolicyResourceType
+        /// </summary>
+        public static readonly ValidatePolicyResourceType AWSDynamoDBTable = new ValidatePolicyResourceType("AWS::DynamoDB::Table");
         /// <summary>
         /// Constant AWSIAMAssumeRolePolicyDocument for ValidatePolicyResourceType
         /// </summary>

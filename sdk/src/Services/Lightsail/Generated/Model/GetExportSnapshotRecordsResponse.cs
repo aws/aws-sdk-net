@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetExportSnapshotRecordsResponse : AmazonWebServiceResponse
     {
-        private List<ExportSnapshotRecord> _exportSnapshotRecords = new List<ExportSnapshotRecord>();
+        private List<ExportSnapshotRecord> _exportSnapshotRecords = AWSConfigs.InitializeCollections ? new List<ExportSnapshotRecord>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ExportSnapshotRecords property is set
         internal bool IsSetExportSnapshotRecords()
         {
-            return this._exportSnapshotRecords != null && this._exportSnapshotRecords.Count > 0; 
+            return this._exportSnapshotRecords != null && (this._exportSnapshotRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

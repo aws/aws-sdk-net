@@ -165,15 +165,15 @@ namespace Amazon.SecurityToken.Model
         private int? _durationSeconds;
         private string _externalId;
         private string _policy;
-        private List<PolicyDescriptorType> _policyArns = new List<PolicyDescriptorType>();
-        private List<ProvidedContext> _providedContexts = new List<ProvidedContext>();
+        private List<PolicyDescriptorType> _policyArns = AWSConfigs.InitializeCollections ? new List<PolicyDescriptorType>() : null;
+        private List<ProvidedContext> _providedContexts = AWSConfigs.InitializeCollections ? new List<ProvidedContext>() : null;
         private string _roleArn;
         private string _roleSessionName;
         private string _serialNumber;
         private string _sourceIdentity;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tokenCode;
-        private List<string> _transitiveTagKeys = new List<string>();
+        private List<string> _transitiveTagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
@@ -349,7 +349,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if PolicyArns property is set
         internal bool IsSetPolicyArns()
         {
-            return this._policyArns != null && this._policyArns.Count > 0; 
+            return this._policyArns != null && (this._policyArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -380,7 +380,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if ProvidedContexts property is set
         internal bool IsSetProvidedContexts()
         {
-            return this._providedContexts != null && this._providedContexts.Count > 0; 
+            return this._providedContexts != null && (this._providedContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -558,7 +558,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -617,7 +617,7 @@ namespace Amazon.SecurityToken.Model
         // Check to see if TransitiveTagKeys property is set
         internal bool IsSetTransitiveTagKeys()
         {
-            return this._transitiveTagKeys != null && this._transitiveTagKeys.Count > 0; 
+            return this._transitiveTagKeys != null && (this._transitiveTagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

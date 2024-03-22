@@ -34,10 +34,10 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class SearchSkillGroupsRequest : AmazonAlexaForBusinessRequest
     {
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<Sort> _sortCriteria = new List<Sort>();
+        private List<Sort> _sortCriteria = AWSConfigs.InitializeCollections ? new List<Sort>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -56,7 +56,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if SortCriteria property is set
         internal bool IsSetSortCriteria()
         {
-            return this._sortCriteria != null && this._sortCriteria.Count > 0; 
+            return this._sortCriteria != null && (this._sortCriteria.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

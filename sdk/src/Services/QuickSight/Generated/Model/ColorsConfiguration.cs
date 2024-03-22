@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ColorsConfiguration
     {
-        private List<CustomColor> _customColors = new List<CustomColor>();
+        private List<CustomColor> _customColors = AWSConfigs.InitializeCollections ? new List<CustomColor>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomColors. 
@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if CustomColors property is set
         internal bool IsSetCustomColors()
         {
-            return this._customColors != null && this._customColors.Count > 0; 
+            return this._customColors != null && (this._customColors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

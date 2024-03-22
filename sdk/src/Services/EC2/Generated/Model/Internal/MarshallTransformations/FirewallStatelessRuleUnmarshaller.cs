@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("destinationPortSet/item", targetDepth))
                     {
                         var unmarshaller = PortRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.DestinationPorts == null)
+                        {
+                            unmarshalledObject.DestinationPorts = new List<PortRange>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DestinationPorts.Add(item);
                         continue;
@@ -64,6 +68,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("destinationSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.Destinations == null)
+                        {
+                            unmarshalledObject.Destinations = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Destinations.Add(item);
                         continue;
@@ -77,6 +85,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("protocolSet/item", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
+                        if (unmarshalledObject.Protocols == null)
+                        {
+                            unmarshalledObject.Protocols = new List<int>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Protocols.Add(item);
                         continue;
@@ -96,6 +108,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("sourcePortSet/item", targetDepth))
                     {
                         var unmarshaller = PortRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.SourcePorts == null)
+                        {
+                            unmarshalledObject.SourcePorts = new List<PortRange>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SourcePorts.Add(item);
                         continue;
@@ -103,6 +119,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("sourceSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.Sources == null)
+                        {
+                            unmarshalledObject.Sources = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Sources.Add(item);
                         continue;

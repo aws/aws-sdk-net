@@ -90,6 +90,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Parameters/Parameter", targetDepth))
                     {
                         var unmarshaller = ParameterUnmarshaller.Instance;
+                        if (response.Parameters == null)
+                        {
+                            response.Parameters = new List<Parameter>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Parameters.Add(item);
                         continue;

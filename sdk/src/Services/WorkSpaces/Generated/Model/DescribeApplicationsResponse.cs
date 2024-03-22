@@ -33,7 +33,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeApplicationsResponse : AmazonWebServiceResponse
     {
-        private List<WorkSpaceApplication> _applications = new List<WorkSpaceApplication>();
+        private List<WorkSpaceApplication> _applications = AWSConfigs.InitializeCollections ? new List<WorkSpaceApplication>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,16 +36,16 @@ namespace Amazon.QuickSight.Model
     public partial class UpdateDataSetRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
-        private List<ColumnGroup> _columnGroups = new List<ColumnGroup>();
-        private List<ColumnLevelPermissionRule> _columnLevelPermissionRules = new List<ColumnLevelPermissionRule>();
+        private List<ColumnGroup> _columnGroups = AWSConfigs.InitializeCollections ? new List<ColumnGroup>() : null;
+        private List<ColumnLevelPermissionRule> _columnLevelPermissionRules = AWSConfigs.InitializeCollections ? new List<ColumnLevelPermissionRule>() : null;
         private string _dataSetId;
-        private List<DatasetParameter> _datasetParameters = new List<DatasetParameter>();
+        private List<DatasetParameter> _datasetParameters = AWSConfigs.InitializeCollections ? new List<DatasetParameter>() : null;
         private DataSetUsageConfiguration _dataSetUsageConfiguration;
-        private Dictionary<string, FieldFolder> _fieldFolders = new Dictionary<string, FieldFolder>();
+        private Dictionary<string, FieldFolder> _fieldFolders = AWSConfigs.InitializeCollections ? new Dictionary<string, FieldFolder>() : null;
         private DataSetImportMode _importMode;
-        private Dictionary<string, LogicalTable> _logicalTableMap = new Dictionary<string, LogicalTable>();
+        private Dictionary<string, LogicalTable> _logicalTableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, LogicalTable>() : null;
         private string _name;
-        private Dictionary<string, PhysicalTable> _physicalTableMap = new Dictionary<string, PhysicalTable>();
+        private Dictionary<string, PhysicalTable> _physicalTableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, PhysicalTable>() : null;
         private RowLevelPermissionDataSet _rowLevelPermissionDataSet;
         private RowLevelPermissionTagConfiguration _rowLevelPermissionTagConfiguration;
 
@@ -85,7 +85,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ColumnGroups property is set
         internal bool IsSetColumnGroups()
         {
-            return this._columnGroups != null && this._columnGroups.Count > 0; 
+            return this._columnGroups != null && (this._columnGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ColumnLevelPermissionRules property is set
         internal bool IsSetColumnLevelPermissionRules()
         {
-            return this._columnLevelPermissionRules != null && this._columnLevelPermissionRules.Count > 0; 
+            return this._columnLevelPermissionRules != null && (this._columnLevelPermissionRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DatasetParameters property is set
         internal bool IsSetDatasetParameters()
         {
-            return this._datasetParameters != null && this._datasetParameters.Count > 0; 
+            return this._datasetParameters != null && (this._datasetParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FieldFolders property is set
         internal bool IsSetFieldFolders()
         {
-            return this._fieldFolders != null && this._fieldFolders.Count > 0; 
+            return this._fieldFolders != null && (this._fieldFolders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if LogicalTableMap property is set
         internal bool IsSetLogicalTableMap()
         {
-            return this._logicalTableMap != null && this._logicalTableMap.Count > 0; 
+            return this._logicalTableMap != null && (this._logicalTableMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -253,7 +253,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if PhysicalTableMap property is set
         internal bool IsSetPhysicalTableMap()
         {
-            return this._physicalTableMap != null && this._physicalTableMap.Count > 0; 
+            return this._physicalTableMap != null && (this._physicalTableMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

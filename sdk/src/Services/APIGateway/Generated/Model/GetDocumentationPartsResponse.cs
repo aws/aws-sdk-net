@@ -33,7 +33,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class GetDocumentationPartsResponse : AmazonWebServiceResponse
     {
-        private List<DocumentationPart> _items = new List<DocumentationPart>();
+        private List<DocumentationPart> _items = AWSConfigs.InitializeCollections ? new List<DocumentationPart>() : null;
         private string _position;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

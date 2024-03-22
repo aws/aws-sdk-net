@@ -34,7 +34,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ContentRetrievalRule
     {
-        private List<EligibleDataSource> _eligibleDataSources = new List<EligibleDataSource>();
+        private List<EligibleDataSource> _eligibleDataSources = AWSConfigs.InitializeCollections ? new List<EligibleDataSource>() : null;
 
         /// <summary>
         /// Gets and sets the property EligibleDataSources. 
@@ -52,7 +52,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if EligibleDataSources property is set
         internal bool IsSetEligibleDataSources()
         {
-            return this._eligibleDataSources != null && this._eligibleDataSources.Count > 0; 
+            return this._eligibleDataSources != null && (this._eligibleDataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

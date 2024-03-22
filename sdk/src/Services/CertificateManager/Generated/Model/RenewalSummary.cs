@@ -35,7 +35,7 @@ namespace Amazon.CertificateManager.Model
     /// </summary>
     public partial class RenewalSummary
     {
-        private List<DomainValidation> _domainValidationOptions = new List<DomainValidation>();
+        private List<DomainValidation> _domainValidationOptions = AWSConfigs.InitializeCollections ? new List<DomainValidation>() : null;
         private RenewalStatus _renewalStatus;
         private FailureReason _renewalStatusReason;
         private DateTime? _updatedAt;
@@ -60,7 +60,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if DomainValidationOptions property is set
         internal bool IsSetDomainValidationOptions()
         {
-            return this._domainValidationOptions != null && this._domainValidationOptions.Count > 0; 
+            return this._domainValidationOptions != null && (this._domainValidationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

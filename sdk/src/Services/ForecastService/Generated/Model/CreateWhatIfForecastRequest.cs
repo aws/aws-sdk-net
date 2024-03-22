@@ -36,9 +36,9 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class CreateWhatIfForecastRequest : AmazonForecastServiceRequest
     {
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TimeSeriesReplacementsDataSource _timeSeriesReplacementsDataSource;
-        private List<TimeSeriesTransformation> _timeSeriesTransformations = new List<TimeSeriesTransformation>();
+        private List<TimeSeriesTransformation> _timeSeriesTransformations = AWSConfigs.InitializeCollections ? new List<TimeSeriesTransformation>() : null;
         private string _whatIfAnalysisArn;
         private string _whatIfForecastName;
 
@@ -59,7 +59,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if TimeSeriesTransformations property is set
         internal bool IsSetTimeSeriesTransformations()
         {
-            return this._timeSeriesTransformations != null && this._timeSeriesTransformations.Count > 0; 
+            return this._timeSeriesTransformations != null && (this._timeSeriesTransformations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

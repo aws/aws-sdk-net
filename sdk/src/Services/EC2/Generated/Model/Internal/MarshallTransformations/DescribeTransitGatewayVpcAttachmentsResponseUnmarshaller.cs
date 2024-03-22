@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("transitGatewayVpcAttachments/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayVpcAttachmentUnmarshaller.Instance;
+                        if (response.TransitGatewayVpcAttachments == null)
+                        {
+                            response.TransitGatewayVpcAttachments = new List<TransitGatewayVpcAttachment>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TransitGatewayVpcAttachments.Add(item);
                         continue;

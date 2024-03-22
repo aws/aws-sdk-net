@@ -35,7 +35,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class BatchDisassociateServiceActionFromProvisioningArtifactRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
-        private List<ServiceActionAssociation> _serviceActionAssociations = new List<ServiceActionAssociation>();
+        private List<ServiceActionAssociation> _serviceActionAssociations = AWSConfigs.InitializeCollections ? new List<ServiceActionAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -82,7 +82,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ServiceActionAssociations property is set
         internal bool IsSetServiceActionAssociations()
         {
-            return this._serviceActionAssociations != null && this._serviceActionAssociations.Count > 0; 
+            return this._serviceActionAssociations != null && (this._serviceActionAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

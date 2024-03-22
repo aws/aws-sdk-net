@@ -45,7 +45,7 @@ namespace Amazon.AmplifyBackend.Model
         /// Enumerable containing all of the Jobs
         /// </summary>
         public IPaginatedEnumerable<BackendJobRespObj> Jobs => 
-            new PaginatedResultKeyResponse<ListBackendJobsResponse, BackendJobRespObj>(this, (i) => i.Jobs);
+            new PaginatedResultKeyResponse<ListBackendJobsResponse, BackendJobRespObj>(this, (i) => i.Jobs ?? new List<BackendJobRespObj>());
 
         internal ListBackendJobsPaginator(IAmazonAmplifyBackend client, ListBackendJobsRequest request)
         {

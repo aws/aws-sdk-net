@@ -45,7 +45,7 @@ namespace Amazon.KafkaConnect.Model
         /// Enumerable containing all of the Connectors
         /// </summary>
         public IPaginatedEnumerable<ConnectorSummary> Connectors => 
-            new PaginatedResultKeyResponse<ListConnectorsResponse, ConnectorSummary>(this, (i) => i.Connectors);
+            new PaginatedResultKeyResponse<ListConnectorsResponse, ConnectorSummary>(this, (i) => i.Connectors ?? new List<ConnectorSummary>());
 
         internal ListConnectorsPaginator(IAmazonKafkaConnect client, ListConnectorsRequest request)
         {

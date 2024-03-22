@@ -81,6 +81,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("allocationResourceTagSet/item", targetDepth))
                     {
                         var unmarshaller = IpamResourceTagUnmarshaller.Instance;
+                        if (unmarshalledObject.AllocationResourceTags == null)
+                        {
+                            unmarshalledObject.AllocationResourceTags = new List<IpamResourceTag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AllocationResourceTags.Add(item);
                         continue;
@@ -196,6 +200,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

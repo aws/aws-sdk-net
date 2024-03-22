@@ -34,6 +34,8 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class Configuration
     {
+        private DynamodbStreamConfiguration _dynamodbStream;
+        private DynamodbTableConfiguration _dynamodbTable;
         private EbsSnapshotConfiguration _ebsSnapshot;
         private EcrRepositoryConfiguration _ecrRepository;
         private EfsFileSystemConfiguration _efsFileSystem;
@@ -46,6 +48,42 @@ namespace Amazon.AccessAnalyzer.Model
         private SecretsManagerSecretConfiguration _secretsManagerSecret;
         private SnsTopicConfiguration _snsTopic;
         private SqsQueueConfiguration _sqsQueue;
+
+        /// <summary>
+        /// Gets and sets the property DynamodbStream. 
+        /// <para>
+        /// The access control configuration is for a DynamoDB stream.
+        /// </para>
+        /// </summary>
+        public DynamodbStreamConfiguration DynamodbStream
+        {
+            get { return this._dynamodbStream; }
+            set { this._dynamodbStream = value; }
+        }
+
+        // Check to see if DynamodbStream property is set
+        internal bool IsSetDynamodbStream()
+        {
+            return this._dynamodbStream != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamodbTable. 
+        /// <para>
+        /// The access control configuration is for a DynamoDB table or index.
+        /// </para>
+        /// </summary>
+        public DynamodbTableConfiguration DynamodbTable
+        {
+            get { return this._dynamodbTable; }
+            set { this._dynamodbTable = value; }
+        }
+
+        // Check to see if DynamodbTable property is set
+        internal bool IsSetDynamodbTable()
+        {
+            return this._dynamodbTable != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EbsSnapshot. 

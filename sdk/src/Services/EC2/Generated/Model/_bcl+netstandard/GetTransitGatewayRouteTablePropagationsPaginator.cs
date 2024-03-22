@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the TransitGatewayRouteTablePropagations
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayRouteTablePropagation> TransitGatewayRouteTablePropagations => 
-            new PaginatedResultKeyResponse<GetTransitGatewayRouteTablePropagationsResponse, TransitGatewayRouteTablePropagation>(this, (i) => i.TransitGatewayRouteTablePropagations);
+            new PaginatedResultKeyResponse<GetTransitGatewayRouteTablePropagationsResponse, TransitGatewayRouteTablePropagation>(this, (i) => i.TransitGatewayRouteTablePropagations ?? new List<TransitGatewayRouteTablePropagation>());
 
         internal GetTransitGatewayRouteTablePropagationsPaginator(IAmazonEC2 client, GetTransitGatewayRouteTablePropagationsRequest request)
         {

@@ -35,7 +35,7 @@ namespace Amazon.Imagebuilder.Model
     {
         private OnWorkflowFailure _onFailure;
         private string _parallelGroup;
-        private List<WorkflowParameter> _parameters = new List<WorkflowParameter>();
+        private List<WorkflowParameter> _parameters = AWSConfigs.InitializeCollections ? new List<WorkflowParameter>() : null;
         private string _workflowArn;
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

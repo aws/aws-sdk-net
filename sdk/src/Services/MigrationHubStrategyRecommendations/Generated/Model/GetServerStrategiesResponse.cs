@@ -33,7 +33,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class GetServerStrategiesResponse : AmazonWebServiceResponse
     {
-        private List<ServerStrategy> _serverStrategies = new List<ServerStrategy>();
+        private List<ServerStrategy> _serverStrategies = AWSConfigs.InitializeCollections ? new List<ServerStrategy>() : null;
 
         /// <summary>
         /// Gets and sets the property ServerStrategies. 
@@ -50,7 +50,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ServerStrategies property is set
         internal bool IsSetServerStrategies()
         {
-            return this._serverStrategies != null && this._serverStrategies.Count > 0; 
+            return this._serverStrategies != null && (this._serverStrategies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

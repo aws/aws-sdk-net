@@ -47,7 +47,7 @@ namespace Amazon.GameLift.Model
     {
         private string _dnsName;
         private DateTime? _endTime;
-        private List<GameProperty> _gameProperties = new List<GameProperty>();
+        private List<GameProperty> _gameProperties = AWSConfigs.InitializeCollections ? new List<GameProperty>() : null;
         private string _gameSessionArn;
         private string _gameSessionData;
         private string _gameSessionId;
@@ -57,9 +57,9 @@ namespace Amazon.GameLift.Model
         private string _ipAddress;
         private string _matchmakerData;
         private int? _maximumPlayerSessionCount;
-        private List<PlacedPlayerSession> _placedPlayerSessions = new List<PlacedPlayerSession>();
+        private List<PlacedPlayerSession> _placedPlayerSessions = AWSConfigs.InitializeCollections ? new List<PlacedPlayerSession>() : null;
         private string _placementId;
-        private List<PlayerLatency> _playerLatencies = new List<PlayerLatency>();
+        private List<PlayerLatency> _playerLatencies = AWSConfigs.InitializeCollections ? new List<PlayerLatency>() : null;
         private int? _port;
         private DateTime? _startTime;
         private GameSessionPlacementState _status;
@@ -133,7 +133,7 @@ namespace Amazon.GameLift.Model
         // Check to see if GameProperties property is set
         internal bool IsSetGameProperties()
         {
-            return this._gameProperties != null && this._gameProperties.Count > 0; 
+            return this._gameProperties != null && (this._gameProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -340,7 +340,7 @@ namespace Amazon.GameLift.Model
         // Check to see if PlacedPlayerSessions property is set
         internal bool IsSetPlacedPlayerSessions()
         {
-            return this._placedPlayerSessions != null && this._placedPlayerSessions.Count > 0; 
+            return this._placedPlayerSessions != null && (this._placedPlayerSessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -378,7 +378,7 @@ namespace Amazon.GameLift.Model
         // Check to see if PlayerLatencies property is set
         internal bool IsSetPlayerLatencies()
         {
-            return this._playerLatencies != null && this._playerLatencies.Count > 0; 
+            return this._playerLatencies != null && (this._playerLatencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

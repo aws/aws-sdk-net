@@ -35,7 +35,7 @@ namespace Amazon.CloudSearchDomain.Model
     {
         private long? _found;
         private string _query;
-        private List<SuggestionMatch> _suggestions = new List<SuggestionMatch>();
+        private List<SuggestionMatch> _suggestions = AWSConfigs.InitializeCollections ? new List<SuggestionMatch>() : null;
 
         /// <summary>
         /// Gets and sets the property Found. 
@@ -88,7 +88,7 @@ namespace Amazon.CloudSearchDomain.Model
         // Check to see if Suggestions property is set
         internal bool IsSetSuggestions()
         {
-            return this._suggestions != null && this._suggestions.Count > 0; 
+            return this._suggestions != null && (this._suggestions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

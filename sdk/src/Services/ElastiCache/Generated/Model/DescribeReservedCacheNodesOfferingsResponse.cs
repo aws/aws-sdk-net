@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model
     public partial class DescribeReservedCacheNodesOfferingsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ReservedCacheNodesOffering> _reservedCacheNodesOfferings = new List<ReservedCacheNodesOffering>();
+        private List<ReservedCacheNodesOffering> _reservedCacheNodesOfferings = AWSConfigs.InitializeCollections ? new List<ReservedCacheNodesOffering>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -70,7 +70,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReservedCacheNodesOfferings property is set
         internal bool IsSetReservedCacheNodesOfferings()
         {
-            return this._reservedCacheNodesOfferings != null && this._reservedCacheNodesOfferings.Count > 0; 
+            return this._reservedCacheNodesOfferings != null && (this._reservedCacheNodesOfferings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

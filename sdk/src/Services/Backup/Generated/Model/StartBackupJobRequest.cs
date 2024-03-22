@@ -34,13 +34,13 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class StartBackupJobRequest : AmazonBackupRequest
     {
-        private Dictionary<string, string> _backupOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _backupOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _backupVaultName;
         private long? _completeWindowMinutes;
         private string _iamRoleArn;
         private string _idempotencyToken;
         private Lifecycle _lifecycle;
-        private Dictionary<string, string> _recoveryPointTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _recoveryPointTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceArn;
         private long? _startWindowMinutes;
 
@@ -66,7 +66,7 @@ namespace Amazon.Backup.Model
         // Check to see if BackupOptions property is set
         internal bool IsSetBackupOptions()
         {
-            return this._backupOptions != null && this._backupOptions.Count > 0; 
+            return this._backupOptions != null && (this._backupOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Amazon.Backup.Model
         // Check to see if RecoveryPointTags property is set
         internal bool IsSetRecoveryPointTags()
         {
-            return this._recoveryPointTags != null && this._recoveryPointTags.Count > 0; 
+            return this._recoveryPointTags != null && (this._recoveryPointTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

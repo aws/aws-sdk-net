@@ -33,7 +33,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class ListClassificationScopesResponse : AmazonWebServiceResponse
     {
-        private List<ClassificationScopeSummary> _classificationScopes = new List<ClassificationScopeSummary>();
+        private List<ClassificationScopeSummary> _classificationScopes = AWSConfigs.InitializeCollections ? new List<ClassificationScopeSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Macie2.Model
         // Check to see if ClassificationScopes property is set
         internal bool IsSetClassificationScopes()
         {
-            return this._classificationScopes != null && this._classificationScopes.Count > 0; 
+            return this._classificationScopes != null && (this._classificationScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

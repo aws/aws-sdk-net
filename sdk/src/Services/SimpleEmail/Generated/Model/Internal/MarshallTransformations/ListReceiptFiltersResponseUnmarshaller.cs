@@ -84,6 +84,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Filters/member", targetDepth))
                     {
                         var unmarshaller = ReceiptFilterUnmarshaller.Instance;
+                        if (response.Filters == null)
+                        {
+                            response.Filters = new List<ReceiptFilter>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Filters.Add(item);
                         continue;

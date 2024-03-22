@@ -45,7 +45,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Enumerable containing all of the Tables
         /// </summary>
         public IPaginatedEnumerable<TableMember> Tables => 
-            new PaginatedResultKeyResponse<ListTablesResponse, TableMember>(this, (i) => i.Tables);
+            new PaginatedResultKeyResponse<ListTablesResponse, TableMember>(this, (i) => i.Tables ?? new List<TableMember>());
 
         internal ListTablesPaginator(IAmazonRedshiftDataAPIService client, ListTablesRequest request)
         {

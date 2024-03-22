@@ -45,7 +45,7 @@ namespace Amazon.CleanRooms.Model
         /// Enumerable containing all of the CollaborationList
         /// </summary>
         public IPaginatedEnumerable<CollaborationSummary> CollaborationList => 
-            new PaginatedResultKeyResponse<ListCollaborationsResponse, CollaborationSummary>(this, (i) => i.CollaborationList);
+            new PaginatedResultKeyResponse<ListCollaborationsResponse, CollaborationSummary>(this, (i) => i.CollaborationList ?? new List<CollaborationSummary>());
 
         internal ListCollaborationsPaginator(IAmazonCleanRooms client, ListCollaborationsRequest request)
         {

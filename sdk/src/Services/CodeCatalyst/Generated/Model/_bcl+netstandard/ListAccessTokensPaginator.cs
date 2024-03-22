@@ -45,7 +45,7 @@ namespace Amazon.CodeCatalyst.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<AccessTokenSummary> Items => 
-            new PaginatedResultKeyResponse<ListAccessTokensResponse, AccessTokenSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListAccessTokensResponse, AccessTokenSummary>(this, (i) => i.Items ?? new List<AccessTokenSummary>());
 
         internal ListAccessTokensPaginator(IAmazonCodeCatalyst client, ListAccessTokensRequest request)
         {

@@ -75,6 +75,12 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                     response.WorkerConfigurationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("workerConfigurationState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkerConfigurationState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

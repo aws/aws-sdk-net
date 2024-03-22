@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the Relationships
         /// </summary>
         public IPaginatedEnumerable<Relationship> Relationships => 
-            new PaginatedResultKeyResponse<GetNetworkResourceRelationshipsResponse, Relationship>(this, (i) => i.Relationships);
+            new PaginatedResultKeyResponse<GetNetworkResourceRelationshipsResponse, Relationship>(this, (i) => i.Relationships ?? new List<Relationship>());
 
         internal GetNetworkResourceRelationshipsPaginator(IAmazonNetworkManager client, GetNetworkResourceRelationshipsRequest request)
         {

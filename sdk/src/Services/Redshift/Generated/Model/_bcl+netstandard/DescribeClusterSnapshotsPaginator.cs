@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the Snapshots
         /// </summary>
         public IPaginatedEnumerable<Snapshot> Snapshots => 
-            new PaginatedResultKeyResponse<DescribeClusterSnapshotsResponse, Snapshot>(this, (i) => i.Snapshots);
+            new PaginatedResultKeyResponse<DescribeClusterSnapshotsResponse, Snapshot>(this, (i) => i.Snapshots ?? new List<Snapshot>());
 
         internal DescribeClusterSnapshotsPaginator(IAmazonRedshift client, DescribeClusterSnapshotsRequest request)
         {

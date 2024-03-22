@@ -40,11 +40,11 @@ namespace Amazon.Imagebuilder.Model
         private string _infrastructureConfigurationArn;
         private InstanceMetadataOptions _instanceMetadataOptions;
         private string _instanceProfileName;
-        private List<string> _instanceTypes = new List<string>();
+        private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyPair;
         private Logging _logging;
-        private Dictionary<string, string> _resourceTags = new Dictionary<string, string>();
-        private List<string> _securityGroupIds = new List<string>();
+        private Dictionary<string, string> _resourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _snsTopicArn;
         private string _subnetId;
         private bool? _terminateInstanceOnFailure;
@@ -179,7 +179,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if InstanceTypes property is set
         internal bool IsSetInstanceTypes()
         {
-            return this._instanceTypes != null && this._instanceTypes.Count > 0; 
+            return this._instanceTypes != null && (this._instanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -236,7 +236,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if ResourceTags property is set
         internal bool IsSetResourceTags()
         {
-            return this._resourceTags != null && this._resourceTags.Count > 0; 
+            return this._resourceTags != null && (this._resourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -255,7 +255,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

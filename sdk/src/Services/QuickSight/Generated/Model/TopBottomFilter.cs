@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class TopBottomFilter
     {
-        private List<AggregationSortConfiguration> _aggregationSortConfigurations = new List<AggregationSortConfiguration>();
+        private List<AggregationSortConfiguration> _aggregationSortConfigurations = AWSConfigs.InitializeCollections ? new List<AggregationSortConfiguration>() : null;
         private ColumnIdentifier _column;
         private string _filterId;
         private int? _limit;
@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AggregationSortConfigurations property is set
         internal bool IsSetAggregationSortConfigurations()
         {
-            return this._aggregationSortConfigurations != null && this._aggregationSortConfigurations.Count > 0; 
+            return this._aggregationSortConfigurations != null && (this._aggregationSortConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

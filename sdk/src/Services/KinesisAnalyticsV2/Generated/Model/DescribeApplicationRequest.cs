@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeApplication operation.
-    /// Returns information about a specific Kinesis Data Analytics application.
+    /// Returns information about a specific Managed Service for Apache Flink application.
     /// 
     ///  
     /// <para>
@@ -65,8 +65,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property IncludeAdditionalDetails. 
         /// <para>
-        /// Displays verbose information about a Kinesis Data Analytics application, including
-        /// the application's job plan.
+        /// Displays verbose information about a Managed Service for Apache Flink application,
+        /// including the application's job plan.
         /// </para>
         /// </summary>
         public bool? IncludeAdditionalDetails

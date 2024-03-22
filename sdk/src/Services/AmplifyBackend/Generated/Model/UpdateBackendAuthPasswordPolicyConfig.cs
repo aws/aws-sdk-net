@@ -34,7 +34,7 @@ namespace Amazon.AmplifyBackend.Model
     /// </summary>
     public partial class UpdateBackendAuthPasswordPolicyConfig
     {
-        private List<string> _additionalConstraints = new List<string>();
+        private List<string> _additionalConstraints = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _minimumLength;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.AmplifyBackend.Model
         // Check to see if AdditionalConstraints property is set
         internal bool IsSetAdditionalConstraints()
         {
-            return this._additionalConstraints != null && this._additionalConstraints.Count > 0; 
+            return this._additionalConstraints != null && (this._additionalConstraints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

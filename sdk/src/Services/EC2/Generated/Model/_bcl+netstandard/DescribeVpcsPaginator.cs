@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Vpcs
         /// </summary>
         public IPaginatedEnumerable<Vpc> Vpcs => 
-            new PaginatedResultKeyResponse<DescribeVpcsResponse, Vpc>(this, (i) => i.Vpcs);
+            new PaginatedResultKeyResponse<DescribeVpcsResponse, Vpc>(this, (i) => i.Vpcs ?? new List<Vpc>());
 
         internal DescribeVpcsPaginator(IAmazonEC2 client, DescribeVpcsRequest request)
         {

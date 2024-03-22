@@ -38,9 +38,9 @@ namespace Amazon.ECS.Model
     public partial class DescribeTaskSetsRequest : AmazonECSRequest
     {
         private string _cluster;
-        private List<string> _include = new List<string>();
+        private List<string> _include = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _service;
-        private List<string> _taskSets = new List<string>();
+        private List<string> _taskSets = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -79,7 +79,7 @@ namespace Amazon.ECS.Model
         // Check to see if Include property is set
         internal bool IsSetInclude()
         {
-            return this._include != null && this._include.Count > 0; 
+            return this._include != null && (this._include.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.ECS.Model
         // Check to see if TaskSets property is set
         internal bool IsSetTaskSets()
         {
-            return this._taskSets != null && this._taskSets.Count > 0; 
+            return this._taskSets != null && (this._taskSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

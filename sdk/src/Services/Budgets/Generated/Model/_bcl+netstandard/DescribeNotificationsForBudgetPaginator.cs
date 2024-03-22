@@ -45,7 +45,7 @@ namespace Amazon.Budgets.Model
         /// Enumerable containing all of the Notifications
         /// </summary>
         public IPaginatedEnumerable<Notification> Notifications => 
-            new PaginatedResultKeyResponse<DescribeNotificationsForBudgetResponse, Notification>(this, (i) => i.Notifications);
+            new PaginatedResultKeyResponse<DescribeNotificationsForBudgetResponse, Notification>(this, (i) => i.Notifications ?? new List<Notification>());
 
         internal DescribeNotificationsForBudgetPaginator(IAmazonBudgets client, DescribeNotificationsForBudgetRequest request)
         {

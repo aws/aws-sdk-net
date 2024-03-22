@@ -45,7 +45,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// Enumerable containing all of the ApplicationAssociations
         /// </summary>
         public IPaginatedEnumerable<ApplicationAssociationSummary> ApplicationAssociations => 
-            new PaginatedResultKeyResponse<ListApplicationAssociationsResponse, ApplicationAssociationSummary>(this, (i) => i.ApplicationAssociations);
+            new PaginatedResultKeyResponse<ListApplicationAssociationsResponse, ApplicationAssociationSummary>(this, (i) => i.ApplicationAssociations ?? new List<ApplicationAssociationSummary>());
 
         internal ListApplicationAssociationsPaginator(IAmazonAppIntegrationsService client, ListApplicationAssociationsRequest request)
         {

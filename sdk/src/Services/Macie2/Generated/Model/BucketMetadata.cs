@@ -68,7 +68,7 @@ namespace Amazon.Macie2.Model
         private SharedAccess _sharedAccess;
         private long? _sizeInBytes;
         private long? _sizeInBytesCompressed;
-        private List<KeyValuePair> _tags = new List<KeyValuePair>();
+        private List<KeyValuePair> _tags = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
         private ObjectLevelStatistics _unclassifiableObjectCount;
         private ObjectLevelStatistics _unclassifiableObjectSizeInBytes;
         private bool? _versioning;
@@ -579,7 +579,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

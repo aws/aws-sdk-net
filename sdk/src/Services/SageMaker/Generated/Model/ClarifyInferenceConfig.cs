@@ -34,11 +34,11 @@ namespace Amazon.SageMaker.Model
     public partial class ClarifyInferenceConfig
     {
         private string _contentTemplate;
-        private List<string> _featureHeaders = new List<string>();
+        private List<string> _featureHeaders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _featuresAttribute;
-        private List<string> _featureTypes = new List<string>();
+        private List<string> _featureTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _labelAttribute;
-        private List<string> _labelHeaders = new List<string>();
+        private List<string> _labelHeaders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _labelIndex;
         private int? _maxPayloadInMB;
         private int? _maxRecordCount;
@@ -85,7 +85,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if FeatureHeaders property is set
         internal bool IsSetFeatureHeaders()
         {
-            return this._featureHeaders != null && this._featureHeaders.Count > 0; 
+            return this._featureHeaders != null && (this._featureHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if FeatureTypes property is set
         internal bool IsSetFeatureTypes()
         {
-            return this._featureTypes != null && this._featureTypes.Count > 0; 
+            return this._featureTypes != null && (this._featureTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if LabelHeaders property is set
         internal bool IsSetLabelHeaders()
         {
-            return this._labelHeaders != null && this._labelHeaders.Count > 0; 
+            return this._labelHeaders != null && (this._labelHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

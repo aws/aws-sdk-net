@@ -35,7 +35,7 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </summary>
     public partial class PutProjectEventsRequest : AmazonCloudWatchEvidentlyRequest
     {
-        private List<Event> _events = new List<Event>();
+        private List<Event> _events = AWSConfigs.InitializeCollections ? new List<Event>() : null;
         private string _project;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

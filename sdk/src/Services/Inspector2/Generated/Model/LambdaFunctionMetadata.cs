@@ -34,8 +34,8 @@ namespace Amazon.Inspector2.Model
     public partial class LambdaFunctionMetadata
     {
         private string _functionName;
-        private Dictionary<string, string> _functionTags = new Dictionary<string, string>();
-        private List<string> _layers = new List<string>();
+        private Dictionary<string, string> _functionTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _layers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Runtime _runtime;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FunctionTags property is set
         internal bool IsSetFunctionTags()
         {
-            return this._functionTags != null && this._functionTags.Count > 0; 
+            return this._functionTags != null && (this._functionTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Layers property is set
         internal bool IsSetLayers()
         {
-            return this._layers != null && this._layers.Count > 0; 
+            return this._layers != null && (this._layers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

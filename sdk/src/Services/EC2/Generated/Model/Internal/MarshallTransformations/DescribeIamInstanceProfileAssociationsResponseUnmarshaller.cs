@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("iamInstanceProfileAssociationSet/item", targetDepth))
                     {
                         var unmarshaller = IamInstanceProfileAssociationUnmarshaller.Instance;
+                        if (response.IamInstanceProfileAssociations == null)
+                        {
+                            response.IamInstanceProfileAssociations = new List<IamInstanceProfileAssociation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.IamInstanceProfileAssociations.Add(item);
                         continue;

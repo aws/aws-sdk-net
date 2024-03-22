@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeAddressesAttributeResponse : AmazonWebServiceResponse
     {
-        private List<AddressAttribute> _addresses = new List<AddressAttribute>();
+        private List<AddressAttribute> _addresses = AWSConfigs.InitializeCollections ? new List<AddressAttribute>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Addresses property is set
         internal bool IsSetAddresses()
         {
-            return this._addresses != null && this._addresses.Count > 0; 
+            return this._addresses != null && (this._addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

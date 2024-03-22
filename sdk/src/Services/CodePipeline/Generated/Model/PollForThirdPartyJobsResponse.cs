@@ -33,7 +33,7 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class PollForThirdPartyJobsResponse : AmazonWebServiceResponse
     {
-        private List<ThirdPartyJob> _jobs = new List<ThirdPartyJob>();
+        private List<ThirdPartyJob> _jobs = AWSConfigs.InitializeCollections ? new List<ThirdPartyJob>() : null;
 
         /// <summary>
         /// Gets and sets the property Jobs. 
@@ -50,7 +50,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

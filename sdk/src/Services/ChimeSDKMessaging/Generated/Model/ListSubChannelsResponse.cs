@@ -35,7 +35,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     {
         private string _channelArn;
         private string _nextToken;
-        private List<SubChannelSummary> _subChannels = new List<SubChannelSummary>();
+        private List<SubChannelSummary> _subChannels = AWSConfigs.InitializeCollections ? new List<SubChannelSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
@@ -90,7 +90,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if SubChannels property is set
         internal bool IsSetSubChannels()
         {
-            return this._subChannels != null && this._subChannels.Count > 0; 
+            return this._subChannels != null && (this._subChannels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

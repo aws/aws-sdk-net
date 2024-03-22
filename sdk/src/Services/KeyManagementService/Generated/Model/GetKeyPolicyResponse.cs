@@ -34,6 +34,7 @@ namespace Amazon.KeyManagementService.Model
     public partial class GetKeyPolicyResponse : AmazonWebServiceResponse
     {
         private string _policy;
+        private string _policyName;
 
         /// <summary>
         /// Gets and sets the property Policy. 
@@ -52,6 +53,25 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetPolicy()
         {
             return this._policy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// The name of the key policy. The only valid value is <c>default</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string PolicyName
+        {
+            get { return this._policyName; }
+            set { this._policyName = value; }
+        }
+
+        // Check to see if PolicyName property is set
+        internal bool IsSetPolicyName()
+        {
+            return this._policyName != null;
         }
 
     }

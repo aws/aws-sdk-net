@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class SnapshotConfiguration
     {
         private SnapshotDestinationConfiguration _destinationConfiguration;
-        private List<SnapshotFileGroup> _fileGroups = new List<SnapshotFileGroup>();
+        private List<SnapshotFileGroup> _fileGroups = AWSConfigs.InitializeCollections ? new List<SnapshotFileGroup>() : null;
         private Parameters _parameters;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FileGroups property is set
         internal bool IsSetFileGroups()
         {
-            return this._fileGroups != null && this._fileGroups.Count > 0; 
+            return this._fileGroups != null && (this._fileGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// Enumerable containing all of the Projects
         /// </summary>
         public IPaginatedEnumerable<Project> Projects => 
-            new PaginatedResultKeyResponse<ListProjectsResponse, Project>(this, (i) => i.Projects);
+            new PaginatedResultKeyResponse<ListProjectsResponse, Project>(this, (i) => i.Projects ?? new List<Project>());
 
         internal ListProjectsPaginator(IAmazonDeviceFarm client, ListProjectsRequest request)
         {

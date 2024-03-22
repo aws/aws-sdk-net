@@ -84,6 +84,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DescribeDBLogFiles/DescribeDBLogFilesDetails", targetDepth))
                     {
                         var unmarshaller = DescribeDBLogFilesDetailsUnmarshaller.Instance;
+                        if (response.DescribeDBLogFiles == null)
+                        {
+                            response.DescribeDBLogFiles = new List<DescribeDBLogFilesDetails>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DescribeDBLogFiles.Add(item);
                         continue;

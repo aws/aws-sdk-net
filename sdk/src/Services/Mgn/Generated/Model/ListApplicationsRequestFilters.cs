@@ -33,9 +33,9 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class ListApplicationsRequestFilters
     {
-        private List<string> _applicationiDs = new List<string>();
+        private List<string> _applicationiDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _isArchived;
-        private List<string> _waveiDs = new List<string>();
+        private List<string> _waveiDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationIDs. 
@@ -53,7 +53,7 @@ namespace Amazon.Mgn.Model
         // Check to see if ApplicationIDs property is set
         internal bool IsSetApplicationIDs()
         {
-            return this._applicationiDs != null && this._applicationiDs.Count > 0; 
+            return this._applicationiDs != null && (this._applicationiDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.Mgn.Model
         // Check to see if WaveIDs property is set
         internal bool IsSetWaveIDs()
         {
-            return this._waveiDs != null && this._waveiDs.Count > 0; 
+            return this._waveiDs != null && (this._waveiDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

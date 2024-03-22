@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("associationSet/item", targetDepth))
                     {
                         var unmarshaller = NetworkAclAssociationUnmarshaller.Instance;
+                        if (unmarshalledObject.Associations == null)
+                        {
+                            unmarshalledObject.Associations = new List<NetworkAclAssociation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Associations.Add(item);
                         continue;
@@ -64,6 +68,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("entrySet/item", targetDepth))
                     {
                         var unmarshaller = NetworkAclEntryUnmarshaller.Instance;
+                        if (unmarshalledObject.Entries == null)
+                        {
+                            unmarshalledObject.Entries = new List<NetworkAclEntry>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Entries.Add(item);
                         continue;
@@ -89,6 +97,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

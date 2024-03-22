@@ -87,6 +87,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("natGatewayAddressSet/item", targetDepth))
                     {
                         var unmarshaller = NatGatewayAddressUnmarshaller.Instance;
+                        if (unmarshalledObject.NatGatewayAddresses == null)
+                        {
+                            unmarshalledObject.NatGatewayAddresses = new List<NatGatewayAddress>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NatGatewayAddresses.Add(item);
                         continue;
@@ -118,6 +122,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

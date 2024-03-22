@@ -43,7 +43,7 @@ namespace Amazon.TimestreamQuery.Model
         private NotificationConfiguration _notificationConfiguration;
         private DateTime? _previousInvocationTime;
         private string _queryString;
-        private List<ScheduledQueryRunSummary> _recentlyFailedRuns = new List<ScheduledQueryRunSummary>();
+        private List<ScheduledQueryRunSummary> _recentlyFailedRuns = AWSConfigs.InitializeCollections ? new List<ScheduledQueryRunSummary>() : null;
         private ScheduleConfiguration _scheduleConfiguration;
         private string _scheduledQueryExecutionRoleArn;
         private ScheduledQueryState _state;
@@ -249,7 +249,7 @@ namespace Amazon.TimestreamQuery.Model
         // Check to see if RecentlyFailedRuns property is set
         internal bool IsSetRecentlyFailedRuns()
         {
-            return this._recentlyFailedRuns != null && this._recentlyFailedRuns.Count > 0; 
+            return this._recentlyFailedRuns != null && (this._recentlyFailedRuns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         private TransitGatewayMulticastDomainOptions _options;
         private string _ownerId;
         private TransitGatewayMulticastDomainState _state;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _transitGatewayId;
         private string _transitGatewayMulticastDomainArn;
         private string _transitGatewayMulticastDomainId;
@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.SSO.Model
     /// </summary>
     public partial class ListAccountsResponse : AmazonWebServiceResponse
     {
-        private List<AccountInfo> _accountList = new List<AccountInfo>();
+        private List<AccountInfo> _accountList = AWSConfigs.InitializeCollections ? new List<AccountInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SSO.Model
         // Check to see if AccountList property is set
         internal bool IsSetAccountList()
         {
-            return this._accountList != null && this._accountList.Count > 0; 
+            return this._accountList != null && (this._accountList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

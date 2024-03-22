@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("spotPlacementScoreSet/item", targetDepth))
                     {
                         var unmarshaller = SpotPlacementScoreUnmarshaller.Instance;
+                        if (response.SpotPlacementScores == null)
+                        {
+                            response.SpotPlacementScores = new List<SpotPlacementScore>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SpotPlacementScores.Add(item);
                         continue;

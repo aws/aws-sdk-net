@@ -29,14 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Search parameters for retrieving from knowledge base.
+    /// Contains details about how the results should be returned.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+    /// request body</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+    /// request body</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class KnowledgeBaseRetrievalConfiguration
     {
         private KnowledgeBaseVectorSearchConfiguration _vectorSearchConfiguration;
 
         /// <summary>
-        /// Gets and sets the property VectorSearchConfiguration.
+        /// Gets and sets the property VectorSearchConfiguration. 
+        /// <para>
+        /// Contains details about how the results from the vector search should be returned.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public KnowledgeBaseVectorSearchConfiguration VectorSearchConfiguration

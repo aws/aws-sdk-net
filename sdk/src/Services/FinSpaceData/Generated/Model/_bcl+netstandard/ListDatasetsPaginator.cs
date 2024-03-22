@@ -45,7 +45,7 @@ namespace Amazon.FinSpaceData.Model
         /// Enumerable containing all of the Datasets
         /// </summary>
         public IPaginatedEnumerable<Dataset> Datasets => 
-            new PaginatedResultKeyResponse<ListDatasetsResponse, Dataset>(this, (i) => i.Datasets);
+            new PaginatedResultKeyResponse<ListDatasetsResponse, Dataset>(this, (i) => i.Datasets ?? new List<Dataset>());
 
         internal ListDatasetsPaginator(IAmazonFinSpaceData client, ListDatasetsRequest request)
         {

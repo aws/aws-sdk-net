@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("capacityReservationSet/item", targetDepth))
                     {
                         var unmarshaller = CapacityReservationUnmarshaller.Instance;
+                        if (response.CapacityReservations == null)
+                        {
+                            response.CapacityReservations = new List<CapacityReservation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CapacityReservations.Add(item);
                         continue;

@@ -34,7 +34,7 @@ namespace Amazon.ECR.Model
     public partial class DescribePullThroughCacheRulesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PullThroughCacheRule> _pullThroughCacheRules = new List<PullThroughCacheRule>();
+        private List<PullThroughCacheRule> _pullThroughCacheRules = AWSConfigs.InitializeCollections ? new List<PullThroughCacheRule>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.ECR.Model
         // Check to see if PullThroughCacheRules property is set
         internal bool IsSetPullThroughCacheRules()
         {
-            return this._pullThroughCacheRules != null && this._pullThroughCacheRules.Count > 0; 
+            return this._pullThroughCacheRules != null && (this._pullThroughCacheRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

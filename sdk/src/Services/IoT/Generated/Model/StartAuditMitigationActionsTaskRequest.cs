@@ -40,7 +40,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class StartAuditMitigationActionsTaskRequest : AmazonIoTRequest
     {
-        private Dictionary<string, List<string>> _auditCheckToActionsMapping = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _auditCheckToActionsMapping = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _clientRequestToken;
         private AuditMitigationActionsTaskTarget _target;
         private string _taskId;
@@ -62,7 +62,7 @@ namespace Amazon.IoT.Model
         // Check to see if AuditCheckToActionsMapping property is set
         internal bool IsSetAuditCheckToActionsMapping()
         {
-            return this._auditCheckToActionsMapping != null && this._auditCheckToActionsMapping.Count > 0; 
+            return this._auditCheckToActionsMapping != null && (this._auditCheckToActionsMapping.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -46,7 +46,7 @@ namespace Amazon.MQ.Model
         private WeeklyStartTime _maintenanceWindowStartTime;
         private DataReplicationMetadataOutput _pendingDataReplicationMetadata;
         private DataReplicationMode _pendingDataReplicationMode;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthenticationStrategy. 
@@ -306,7 +306,7 @@ namespace Amazon.MQ.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

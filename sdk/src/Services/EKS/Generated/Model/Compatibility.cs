@@ -35,7 +35,7 @@ namespace Amazon.EKS.Model
     {
         private string _clusterVersion;
         private bool? _defaultVersion;
-        private List<string> _platformVersions = new List<string>();
+        private List<string> _platformVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterVersion. 
@@ -88,7 +88,7 @@ namespace Amazon.EKS.Model
         // Check to see if PlatformVersions property is set
         internal bool IsSetPlatformVersions()
         {
-            return this._platformVersions != null && this._platformVersions.Count > 0; 
+            return this._platformVersions != null && (this._platformVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the IdentityProviderConfigs
         /// </summary>
         public IPaginatedEnumerable<IdentityProviderConfig> IdentityProviderConfigs => 
-            new PaginatedResultKeyResponse<ListIdentityProviderConfigsResponse, IdentityProviderConfig>(this, (i) => i.IdentityProviderConfigs);
+            new PaginatedResultKeyResponse<ListIdentityProviderConfigsResponse, IdentityProviderConfig>(this, (i) => i.IdentityProviderConfigs ?? new List<IdentityProviderConfig>());
 
         internal ListIdentityProviderConfigsPaginator(IAmazonEKS client, ListIdentityProviderConfigsRequest request)
         {

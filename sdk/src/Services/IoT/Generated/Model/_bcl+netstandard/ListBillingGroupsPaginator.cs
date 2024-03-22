@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the BillingGroups
         /// </summary>
         public IPaginatedEnumerable<GroupNameAndArn> BillingGroups => 
-            new PaginatedResultKeyResponse<ListBillingGroupsResponse, GroupNameAndArn>(this, (i) => i.BillingGroups);
+            new PaginatedResultKeyResponse<ListBillingGroupsResponse, GroupNameAndArn>(this, (i) => i.BillingGroups ?? new List<GroupNameAndArn>());
 
         internal ListBillingGroupsPaginator(IAmazonIoT client, ListBillingGroupsRequest request)
         {

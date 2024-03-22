@@ -38,7 +38,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class DescribeConnectorsRequest : AmazonAppflowRequest
     {
-        private List<string> _connectorTypes = new List<string>();
+        private List<string> _connectorTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -58,7 +58,7 @@ namespace Amazon.Appflow.Model
         // Check to see if ConnectorTypes property is set
         internal bool IsSetConnectorTypes()
         {
-            return this._connectorTypes != null && this._connectorTypes.Count > 0; 
+            return this._connectorTypes != null && (this._connectorTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

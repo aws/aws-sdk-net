@@ -34,7 +34,7 @@ namespace Amazon.Signer.Model
     public partial class ListSigningPlatformsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SigningPlatform> _platforms = new List<SigningPlatform>();
+        private List<SigningPlatform> _platforms = AWSConfigs.InitializeCollections ? new List<SigningPlatform>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Signer.Model
         // Check to see if Platforms property is set
         internal bool IsSetPlatforms()
         {
-            return this._platforms != null && this._platforms.Count > 0; 
+            return this._platforms != null && (this._platforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

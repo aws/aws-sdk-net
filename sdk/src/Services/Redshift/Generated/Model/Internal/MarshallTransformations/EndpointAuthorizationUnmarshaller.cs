@@ -63,6 +63,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AllowedVPCs/VpcIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AllowedVPCs == null)
+                        {
+                            unmarshalledObject.AllowedVPCs = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AllowedVPCs.Add(item);
                         continue;

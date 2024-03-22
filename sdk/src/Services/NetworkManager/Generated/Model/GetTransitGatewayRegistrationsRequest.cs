@@ -37,7 +37,7 @@ namespace Amazon.NetworkManager.Model
         private string _globalNetworkId;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _transitGatewayArns = new List<string>();
+        private List<string> _transitGatewayArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GlobalNetworkId. 
@@ -111,7 +111,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if TransitGatewayArns property is set
         internal bool IsSetTransitGatewayArns()
         {
-            return this._transitGatewayArns != null && this._transitGatewayArns.Count > 0; 
+            return this._transitGatewayArns != null && (this._transitGatewayArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

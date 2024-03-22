@@ -69,6 +69,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UpdateTargets/UpdateTarget", targetDepth))
                     {
                         var unmarshaller = UpdateTargetUnmarshaller.Instance;
+                        if (unmarshalledObject.UpdateTargets == null)
+                        {
+                            unmarshalledObject.UpdateTargets = new List<UpdateTarget>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.UpdateTargets.Add(item);
                         continue;

@@ -36,7 +36,7 @@ namespace Amazon.Connect.Model
         private string _lastModifiedRegion;
         private DateTime? _lastModifiedTime;
         private string _nextToken;
-        private List<string> _permissions = new List<string>();
+        private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LastModifiedRegion. 
@@ -110,7 +110,7 @@ namespace Amazon.Connect.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.BillingConductor.Model
         private string _billingPeriod;
         private string _nextToken;
         private string _pricingPlanArn;
-        private List<string> _pricingRuleArns = new List<string>();
+        private List<string> _pricingRuleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BillingPeriod. 
@@ -109,7 +109,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if PricingRuleArns property is set
         internal bool IsSetPricingRuleArns()
         {
-            return this._pricingRuleArns != null && this._pricingRuleArns.Count > 0; 
+            return this._pricingRuleArns != null && (this._pricingRuleArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

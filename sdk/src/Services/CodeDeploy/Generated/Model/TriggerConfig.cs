@@ -33,7 +33,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class TriggerConfig
     {
-        private List<string> _triggerEvents = new List<string>();
+        private List<string> _triggerEvents = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _triggerName;
         private string _triggerTargetArn;
 
@@ -52,7 +52,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if TriggerEvents property is set
         internal bool IsSetTriggerEvents()
         {
-            return this._triggerEvents != null && this._triggerEvents.Count > 0; 
+            return this._triggerEvents != null && (this._triggerEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

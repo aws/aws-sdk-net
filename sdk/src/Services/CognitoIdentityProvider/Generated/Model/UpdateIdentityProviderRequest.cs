@@ -56,9 +56,9 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class UpdateIdentityProviderRequest : AmazonCognitoIdentityProviderRequest
     {
-        private Dictionary<string, string> _attributeMapping = new Dictionary<string, string>();
-        private List<string> _idpIdentifiers = new List<string>();
-        private Dictionary<string, string> _providerDetails = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributeMapping = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _idpIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _providerDetails = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _providerName;
         private string _userPoolId;
 
@@ -77,7 +77,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if AttributeMapping property is set
         internal bool IsSetAttributeMapping()
         {
-            return this._attributeMapping != null && this._attributeMapping.Count > 0; 
+            return this._attributeMapping != null && (this._attributeMapping.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if IdpIdentifiers property is set
         internal bool IsSetIdpIdentifiers()
         {
-            return this._idpIdentifiers != null && this._idpIdentifiers.Count > 0; 
+            return this._idpIdentifiers != null && (this._idpIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ProviderDetails property is set
         internal bool IsSetProviderDetails()
         {
-            return this._providerDetails != null && this._providerDetails.Count > 0; 
+            return this._providerDetails != null && (this._providerDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

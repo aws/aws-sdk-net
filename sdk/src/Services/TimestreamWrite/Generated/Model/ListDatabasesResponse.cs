@@ -33,7 +33,7 @@ namespace Amazon.TimestreamWrite.Model
     /// </summary>
     public partial class ListDatabasesResponse : AmazonWebServiceResponse
     {
-        private List<Database> _databases = new List<Database>();
+        private List<Database> _databases = AWSConfigs.InitializeCollections ? new List<Database>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.TimestreamWrite.Model
         // Check to see if Databases property is set
         internal bool IsSetDatabases()
         {
-            return this._databases != null && this._databases.Count > 0; 
+            return this._databases != null && (this._databases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

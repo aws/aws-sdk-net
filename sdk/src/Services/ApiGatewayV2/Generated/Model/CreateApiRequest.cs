@@ -44,7 +44,7 @@ namespace Amazon.ApiGatewayV2.Model
         private ProtocolType _protocolType;
         private string _routeKey;
         private string _routeSelectionExpression;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _target;
         private string _version;
 
@@ -262,7 +262,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

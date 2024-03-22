@@ -75,7 +75,7 @@ namespace Amazon.AppMesh.Model
         private string _meshName;
         private string _meshOwner;
         private VirtualNodeSpec _spec;
-        private List<TagRef> _tags = new List<TagRef>();
+        private List<TagRef> _tags = AWSConfigs.InitializeCollections ? new List<TagRef>() : null;
         private string _virtualNodeName;
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

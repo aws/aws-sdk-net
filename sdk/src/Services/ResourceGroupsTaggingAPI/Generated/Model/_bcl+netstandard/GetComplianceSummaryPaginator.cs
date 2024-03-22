@@ -45,7 +45,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Enumerable containing all of the SummaryList
         /// </summary>
         public IPaginatedEnumerable<Summary> SummaryList => 
-            new PaginatedResultKeyResponse<GetComplianceSummaryResponse, Summary>(this, (i) => i.SummaryList);
+            new PaginatedResultKeyResponse<GetComplianceSummaryResponse, Summary>(this, (i) => i.SummaryList ?? new List<Summary>());
 
         internal GetComplianceSummaryPaginator(IAmazonResourceGroupsTaggingAPI client, GetComplianceSummaryRequest request)
         {

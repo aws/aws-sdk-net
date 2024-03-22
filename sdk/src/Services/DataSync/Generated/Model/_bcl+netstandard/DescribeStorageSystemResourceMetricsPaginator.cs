@@ -45,7 +45,7 @@ namespace Amazon.DataSync.Model
         /// Enumerable containing all of the Metrics
         /// </summary>
         public IPaginatedEnumerable<ResourceMetrics> Metrics => 
-            new PaginatedResultKeyResponse<DescribeStorageSystemResourceMetricsResponse, ResourceMetrics>(this, (i) => i.Metrics);
+            new PaginatedResultKeyResponse<DescribeStorageSystemResourceMetricsResponse, ResourceMetrics>(this, (i) => i.Metrics ?? new List<ResourceMetrics>());
 
         internal DescribeStorageSystemResourceMetricsPaginator(IAmazonDataSync client, DescribeStorageSystemResourceMetricsRequest request)
         {

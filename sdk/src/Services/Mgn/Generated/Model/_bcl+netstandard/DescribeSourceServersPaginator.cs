@@ -45,7 +45,7 @@ namespace Amazon.Mgn.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<SourceServer> Items => 
-            new PaginatedResultKeyResponse<DescribeSourceServersResponse, SourceServer>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<DescribeSourceServersResponse, SourceServer>(this, (i) => i.Items ?? new List<SourceServer>());
 
         internal DescribeSourceServersPaginator(IAmazonMgn client, DescribeSourceServersRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the CacheEngineVersions
         /// </summary>
         public IPaginatedEnumerable<CacheEngineVersion> CacheEngineVersions => 
-            new PaginatedResultKeyResponse<DescribeCacheEngineVersionsResponse, CacheEngineVersion>(this, (i) => i.CacheEngineVersions);
+            new PaginatedResultKeyResponse<DescribeCacheEngineVersionsResponse, CacheEngineVersion>(this, (i) => i.CacheEngineVersions ?? new List<CacheEngineVersion>());
 
         internal DescribeCacheEngineVersionsPaginator(IAmazonElastiCache client, DescribeCacheEngineVersionsRequest request)
         {

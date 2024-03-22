@@ -33,15 +33,15 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class CisScanResultsAggregatedByTargetResourceFilterCriteria
     {
-        private List<CisStringFilter> _accountIdFilters = new List<CisStringFilter>();
-        private List<CisStringFilter> _checkIdFilters = new List<CisStringFilter>();
-        private List<CisNumberFilter> _failedChecksFilters = new List<CisNumberFilter>();
-        private List<CisStringFilter> _platformFilters = new List<CisStringFilter>();
-        private List<CisResultStatusFilter> _statusFilters = new List<CisResultStatusFilter>();
-        private List<CisStringFilter> _targetResourceIdFilters = new List<CisStringFilter>();
-        private List<TagFilter> _targetResourceTagFilters = new List<TagFilter>();
-        private List<CisTargetStatusFilter> _targetStatusFilters = new List<CisTargetStatusFilter>();
-        private List<CisTargetStatusReasonFilter> _targetStatusReasonFilters = new List<CisTargetStatusReasonFilter>();
+        private List<CisStringFilter> _accountIdFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisStringFilter> _checkIdFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisNumberFilter> _failedChecksFilters = AWSConfigs.InitializeCollections ? new List<CisNumberFilter>() : null;
+        private List<CisStringFilter> _platformFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisResultStatusFilter> _statusFilters = AWSConfigs.InitializeCollections ? new List<CisResultStatusFilter>() : null;
+        private List<CisStringFilter> _targetResourceIdFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<TagFilter> _targetResourceTagFilters = AWSConfigs.InitializeCollections ? new List<TagFilter>() : null;
+        private List<CisTargetStatusFilter> _targetStatusFilters = AWSConfigs.InitializeCollections ? new List<CisTargetStatusFilter>() : null;
+        private List<CisTargetStatusReasonFilter> _targetStatusReasonFilters = AWSConfigs.InitializeCollections ? new List<CisTargetStatusReasonFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountIdFilters. 
@@ -59,7 +59,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if AccountIdFilters property is set
         internal bool IsSetAccountIdFilters()
         {
-            return this._accountIdFilters != null && this._accountIdFilters.Count > 0; 
+            return this._accountIdFilters != null && (this._accountIdFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if CheckIdFilters property is set
         internal bool IsSetCheckIdFilters()
         {
-            return this._checkIdFilters != null && this._checkIdFilters.Count > 0; 
+            return this._checkIdFilters != null && (this._checkIdFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FailedChecksFilters property is set
         internal bool IsSetFailedChecksFilters()
         {
-            return this._failedChecksFilters != null && this._failedChecksFilters.Count > 0; 
+            return this._failedChecksFilters != null && (this._failedChecksFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if PlatformFilters property is set
         internal bool IsSetPlatformFilters()
         {
-            return this._platformFilters != null && this._platformFilters.Count > 0; 
+            return this._platformFilters != null && (this._platformFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if StatusFilters property is set
         internal bool IsSetStatusFilters()
         {
-            return this._statusFilters != null && this._statusFilters.Count > 0; 
+            return this._statusFilters != null && (this._statusFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TargetResourceIdFilters property is set
         internal bool IsSetTargetResourceIdFilters()
         {
-            return this._targetResourceIdFilters != null && this._targetResourceIdFilters.Count > 0; 
+            return this._targetResourceIdFilters != null && (this._targetResourceIdFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TargetResourceTagFilters property is set
         internal bool IsSetTargetResourceTagFilters()
         {
-            return this._targetResourceTagFilters != null && this._targetResourceTagFilters.Count > 0; 
+            return this._targetResourceTagFilters != null && (this._targetResourceTagFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TargetStatusFilters property is set
         internal bool IsSetTargetStatusFilters()
         {
-            return this._targetStatusFilters != null && this._targetStatusFilters.Count > 0; 
+            return this._targetStatusFilters != null && (this._targetStatusFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TargetStatusReasonFilters property is set
         internal bool IsSetTargetStatusReasonFilters()
         {
-            return this._targetStatusReasonFilters != null && this._targetStatusReasonFilters.Count > 0; 
+            return this._targetStatusReasonFilters != null && (this._targetStatusReasonFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

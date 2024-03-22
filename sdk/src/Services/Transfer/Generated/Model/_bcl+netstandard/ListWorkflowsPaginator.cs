@@ -45,7 +45,7 @@ namespace Amazon.Transfer.Model
         /// Enumerable containing all of the Workflows
         /// </summary>
         public IPaginatedEnumerable<ListedWorkflow> Workflows => 
-            new PaginatedResultKeyResponse<ListWorkflowsResponse, ListedWorkflow>(this, (i) => i.Workflows);
+            new PaginatedResultKeyResponse<ListWorkflowsResponse, ListedWorkflow>(this, (i) => i.Workflows ?? new List<ListedWorkflow>());
 
         internal ListWorkflowsPaginator(IAmazonTransfer client, ListWorkflowsRequest request)
         {

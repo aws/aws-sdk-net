@@ -35,7 +35,7 @@ namespace Amazon.KinesisFirehose.Model
     public partial class OrcSerDe
     {
         private int? _blockSizeBytes;
-        private List<string> _bloomFilterColumns = new List<string>();
+        private List<string> _bloomFilterColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _bloomFilterFalsePositiveProbability;
         private OrcCompression _compression;
         private double? _dictionaryKeyThreshold;
@@ -82,7 +82,7 @@ namespace Amazon.KinesisFirehose.Model
         // Check to see if BloomFilterColumns property is set
         internal bool IsSetBloomFilterColumns()
         {
-            return this._bloomFilterColumns != null && this._bloomFilterColumns.Count > 0; 
+            return this._bloomFilterColumns != null && (this._bloomFilterColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

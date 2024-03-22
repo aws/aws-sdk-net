@@ -35,9 +35,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class DescribeTrustStoresRequest : AmazonElasticLoadBalancingV2Request
     {
         private string _marker;
-        private List<string> _names = new List<string>();
+        private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _pageSize;
-        private List<string> _trustStoreArns = new List<string>();
+        private List<string> _trustStoreArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -73,7 +73,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Names property is set
         internal bool IsSetNames()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if TrustStoreArns property is set
         internal bool IsSetTrustStoreArns()
         {
-            return this._trustStoreArns != null && this._trustStoreArns.Count > 0; 
+            return this._trustStoreArns != null && (this._trustStoreArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

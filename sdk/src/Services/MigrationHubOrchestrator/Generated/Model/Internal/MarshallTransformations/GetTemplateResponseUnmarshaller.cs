@@ -81,10 +81,40 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("owner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Owner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("templateArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TemplateArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("templateClass", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TemplateClass = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tools", targetDepth))

@@ -37,7 +37,7 @@ namespace Amazon.CloudFormation.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<ScannedResourceIdentifier> _resources = new List<ScannedResourceIdentifier>();
+        private List<ScannedResourceIdentifier> _resources = AWSConfigs.InitializeCollections ? new List<ScannedResourceIdentifier>() : null;
         private string _resourceScanId;
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

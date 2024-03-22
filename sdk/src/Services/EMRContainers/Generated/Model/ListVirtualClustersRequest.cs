@@ -44,7 +44,7 @@ namespace Amazon.EMRContainers.Model
         private DateTime? _createdBefore;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _states = new List<string>();
+        private List<string> _states = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerProviderId. 
@@ -173,7 +173,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if States property is set
         internal bool IsSetStates()
         {
-            return this._states != null && this._states.Count > 0; 
+            return this._states != null && (this._states.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

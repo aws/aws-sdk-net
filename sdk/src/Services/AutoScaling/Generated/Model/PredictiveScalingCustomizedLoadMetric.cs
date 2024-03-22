@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class PredictiveScalingCustomizedLoadMetric
     {
-        private List<MetricDataQuery> _metricDataQueries = new List<MetricDataQuery>();
+        private List<MetricDataQuery> _metricDataQueries = AWSConfigs.InitializeCollections ? new List<MetricDataQuery>() : null;
 
         /// <summary>
         /// Gets and sets the property MetricDataQueries. 
@@ -53,7 +53,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MetricDataQueries property is set
         internal bool IsSetMetricDataQueries()
         {
-            return this._metricDataQueries != null && this._metricDataQueries.Count > 0; 
+            return this._metricDataQueries != null && (this._metricDataQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

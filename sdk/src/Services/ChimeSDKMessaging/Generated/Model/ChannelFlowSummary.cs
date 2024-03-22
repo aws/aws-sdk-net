@@ -35,7 +35,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     {
         private string _channelFlowArn;
         private string _name;
-        private List<Processor> _processors = new List<Processor>();
+        private List<Processor> _processors = AWSConfigs.InitializeCollections ? new List<Processor>() : null;
 
         /// <summary>
         /// Gets and sets the property ChannelFlowArn. 
@@ -91,7 +91,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if Processors property is set
         internal bool IsSetProcessors()
         {
-            return this._processors != null && this._processors.Count > 0; 
+            return this._processors != null && (this._processors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

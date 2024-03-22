@@ -42,7 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private ReloadOptionValue _reloadOption;
         private string _replicationTaskArn;
-        private List<TableToReload> _tablesToReload = new List<TableToReload>();
+        private List<TableToReload> _tablesToReload = AWSConfigs.InitializeCollections ? new List<TableToReload>() : null;
 
         /// <summary>
         /// Gets and sets the property ReloadOption. 
@@ -107,7 +107,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if TablesToReload property is set
         internal bool IsSetTablesToReload()
         {
-            return this._tablesToReload != null && this._tablesToReload.Count > 0; 
+            return this._tablesToReload != null && (this._tablesToReload.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

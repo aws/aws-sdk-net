@@ -34,7 +34,7 @@ namespace Amazon.Amplify.Model
     public partial class ListWebhooksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Webhook> _webhooks = new List<Webhook>();
+        private List<Webhook> _webhooks = AWSConfigs.InitializeCollections ? new List<Webhook>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.Amplify.Model
         // Check to see if Webhooks property is set
         internal bool IsSetWebhooks()
         {
-            return this._webhooks != null && this._webhooks.Count > 0; 
+            return this._webhooks != null && (this._webhooks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

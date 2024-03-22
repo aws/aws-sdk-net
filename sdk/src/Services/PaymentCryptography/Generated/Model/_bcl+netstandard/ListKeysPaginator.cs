@@ -45,7 +45,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Enumerable containing all of the Keys
         /// </summary>
         public IPaginatedEnumerable<KeySummary> Keys => 
-            new PaginatedResultKeyResponse<ListKeysResponse, KeySummary>(this, (i) => i.Keys);
+            new PaginatedResultKeyResponse<ListKeysResponse, KeySummary>(this, (i) => i.Keys ?? new List<KeySummary>());
 
         internal ListKeysPaginator(IAmazonPaymentCryptography client, ListKeysRequest request)
         {

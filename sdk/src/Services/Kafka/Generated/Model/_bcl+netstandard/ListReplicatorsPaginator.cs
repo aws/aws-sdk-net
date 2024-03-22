@@ -45,7 +45,7 @@ namespace Amazon.Kafka.Model
         /// Enumerable containing all of the Replicators
         /// </summary>
         public IPaginatedEnumerable<ReplicatorSummary> Replicators => 
-            new PaginatedResultKeyResponse<ListReplicatorsResponse, ReplicatorSummary>(this, (i) => i.Replicators);
+            new PaginatedResultKeyResponse<ListReplicatorsResponse, ReplicatorSummary>(this, (i) => i.Replicators ?? new List<ReplicatorSummary>());
 
         internal ListReplicatorsPaginator(IAmazonKafka client, ListReplicatorsRequest request)
         {

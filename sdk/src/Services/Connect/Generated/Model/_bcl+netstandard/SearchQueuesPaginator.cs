@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the Queues
         /// </summary>
         public IPaginatedEnumerable<Queue> Queues => 
-            new PaginatedResultKeyResponse<SearchQueuesResponse, Queue>(this, (i) => i.Queues);
+            new PaginatedResultKeyResponse<SearchQueuesResponse, Queue>(this, (i) => i.Queues ?? new List<Queue>());
 
         internal SearchQueuesPaginator(IAmazonConnect client, SearchQueuesRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Enumerable containing all of the ResourceTagMappingList
         /// </summary>
         public IPaginatedEnumerable<ResourceTagMapping> ResourceTagMappingList => 
-            new PaginatedResultKeyResponse<GetResourcesResponse, ResourceTagMapping>(this, (i) => i.ResourceTagMappingList);
+            new PaginatedResultKeyResponse<GetResourcesResponse, ResourceTagMapping>(this, (i) => i.ResourceTagMappingList ?? new List<ResourceTagMapping>());
 
         internal GetResourcesPaginator(IAmazonResourceGroupsTaggingAPI client, GetResourcesRequest request)
         {

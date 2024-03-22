@@ -35,7 +35,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ActionReview
     {
-        private Dictionary<string, ActionReviewPayloadField> _payload = new Dictionary<string, ActionReviewPayloadField>();
+        private Dictionary<string, ActionReviewPayloadField> _payload = AWSConfigs.InitializeCollections ? new Dictionary<string, ActionReviewPayloadField>() : null;
         private string _payloadFieldNameSeparator;
         private string _pluginId;
         private PluginType _pluginType;
@@ -56,7 +56,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Payload property is set
         internal bool IsSetPayload()
         {
-            return this._payload != null && this._payload.Count > 0; 
+            return this._payload != null && (this._payload.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

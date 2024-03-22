@@ -45,7 +45,7 @@ namespace Amazon.SecurityLake.Model
         /// Enumerable containing all of the Exceptions
         /// </summary>
         public IPaginatedEnumerable<DataLakeException> Exceptions => 
-            new PaginatedResultKeyResponse<ListDataLakeExceptionsResponse, DataLakeException>(this, (i) => i.Exceptions);
+            new PaginatedResultKeyResponse<ListDataLakeExceptionsResponse, DataLakeException>(this, (i) => i.Exceptions ?? new List<DataLakeException>());
 
         internal ListDataLakeExceptionsPaginator(IAmazonSecurityLake client, ListDataLakeExceptionsRequest request)
         {

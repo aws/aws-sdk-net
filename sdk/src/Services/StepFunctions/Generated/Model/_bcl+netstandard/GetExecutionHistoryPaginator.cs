@@ -45,7 +45,7 @@ namespace Amazon.StepFunctions.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<HistoryEvent> Events => 
-            new PaginatedResultKeyResponse<GetExecutionHistoryResponse, HistoryEvent>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<GetExecutionHistoryResponse, HistoryEvent>(this, (i) => i.Events ?? new List<HistoryEvent>());
 
         internal GetExecutionHistoryPaginator(IAmazonStepFunctions client, GetExecutionHistoryRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.S3.Model
         private int? _maxParts;
         private int? _nextPartNumberMarker;
         private int? _partNumberMarker;
-        private List<ObjectPart> _parts = new List<ObjectPart>();
+        private List<ObjectPart> _parts = AWSConfigs.InitializeCollections ? new List<ObjectPart>() : null;
         private int? _totalPartsCount;
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Amazon.S3.Model
         // Check to see if Parts property is set
         internal bool IsSetParts()
         {
-            return this._parts != null && this._parts.Count > 0;
+            return this._parts != null && (this._parts.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

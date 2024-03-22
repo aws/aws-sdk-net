@@ -33,14 +33,14 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsIamUserDetails
     {
-        private List<AwsIamAttachedManagedPolicy> _attachedManagedPolicies = new List<AwsIamAttachedManagedPolicy>();
+        private List<AwsIamAttachedManagedPolicy> _attachedManagedPolicies = AWSConfigs.InitializeCollections ? new List<AwsIamAttachedManagedPolicy>() : null;
         private string _createDate;
-        private List<string> _groupList = new List<string>();
+        private List<string> _groupList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _path;
         private AwsIamPermissionsBoundary _permissionsBoundary;
         private string _userId;
         private string _userName;
-        private List<AwsIamUserPolicy> _userPolicyList = new List<AwsIamUserPolicy>();
+        private List<AwsIamUserPolicy> _userPolicyList = AWSConfigs.InitializeCollections ? new List<AwsIamUserPolicy>() : null;
 
         /// <summary>
         /// Gets and sets the property AttachedManagedPolicies. 
@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AttachedManagedPolicies property is set
         internal bool IsSetAttachedManagedPolicies()
         {
-            return this._attachedManagedPolicies != null && this._attachedManagedPolicies.Count > 0; 
+            return this._attachedManagedPolicies != null && (this._attachedManagedPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if GroupList property is set
         internal bool IsSetGroupList()
         {
-            return this._groupList != null && this._groupList.Count > 0; 
+            return this._groupList != null && (this._groupList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UserPolicyList property is set
         internal bool IsSetUserPolicyList()
         {
-            return this._userPolicyList != null && this._userPolicyList.Count > 0; 
+            return this._userPolicyList != null && (this._userPolicyList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model
     public partial class RecommenderConfig
     {
         private bool? _enableMetadataWithRecommendations;
-        private Dictionary<string, string> _itemExplorationConfig = new Dictionary<string, string>();
+        private Dictionary<string, string> _itemExplorationConfig = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _minRecommendationRequestsPerSecond;
         private TrainingDataConfig _trainingDataConfig;
 
@@ -86,7 +86,7 @@ namespace Amazon.Personalize.Model
         // Check to see if ItemExplorationConfig property is set
         internal bool IsSetItemExplorationConfig()
         {
-            return this._itemExplorationConfig != null && this._itemExplorationConfig.Count > 0; 
+            return this._itemExplorationConfig != null && (this._itemExplorationConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

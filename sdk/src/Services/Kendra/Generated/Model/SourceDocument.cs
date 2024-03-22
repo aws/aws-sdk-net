@@ -34,9 +34,9 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class SourceDocument
     {
-        private List<DocumentAttribute> _additionalAttributes = new List<DocumentAttribute>();
+        private List<DocumentAttribute> _additionalAttributes = AWSConfigs.InitializeCollections ? new List<DocumentAttribute>() : null;
         private string _documentId;
-        private List<string> _suggestionAttributes = new List<string>();
+        private List<string> _suggestionAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalAttributes. 
@@ -55,7 +55,7 @@ namespace Amazon.Kendra.Model
         // Check to see if AdditionalAttributes property is set
         internal bool IsSetAdditionalAttributes()
         {
-            return this._additionalAttributes != null && this._additionalAttributes.Count > 0; 
+            return this._additionalAttributes != null && (this._additionalAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SuggestionAttributes property is set
         internal bool IsSetSuggestionAttributes()
         {
-            return this._suggestionAttributes != null && this._suggestionAttributes.Count > 0; 
+            return this._suggestionAttributes != null && (this._suggestionAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

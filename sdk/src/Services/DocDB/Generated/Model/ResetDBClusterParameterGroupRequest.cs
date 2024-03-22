@@ -45,7 +45,7 @@ namespace Amazon.DocDB.Model
     public partial class ResetDBClusterParameterGroupRequest : AmazonDocDBRequest
     {
         private string _dbClusterParameterGroupName;
-        private List<Parameter> _parameters = new List<Parameter>();
+        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
         private bool? _resetAllParameters;
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.DocDB.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

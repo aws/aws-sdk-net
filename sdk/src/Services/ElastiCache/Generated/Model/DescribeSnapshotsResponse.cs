@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model
     public partial class DescribeSnapshotsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<Snapshot> _snapshots = new List<Snapshot>();
+        private List<Snapshot> _snapshots = AWSConfigs.InitializeCollections ? new List<Snapshot>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -72,7 +72,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Snapshots property is set
         internal bool IsSetSnapshots()
         {
-            return this._snapshots != null && this._snapshots.Count > 0; 
+            return this._snapshots != null && (this._snapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

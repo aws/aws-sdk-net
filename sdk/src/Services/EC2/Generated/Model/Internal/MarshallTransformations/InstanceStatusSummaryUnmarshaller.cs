@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("details/item", targetDepth))
                     {
                         var unmarshaller = InstanceStatusDetailsUnmarshaller.Instance;
+                        if (unmarshalledObject.Details == null)
+                        {
+                            unmarshalledObject.Details = new List<InstanceStatusDetails>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Details.Add(item);
                         continue;

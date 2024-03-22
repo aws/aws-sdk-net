@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Agent finish output
+    /// Contains details about the response to the user.
     /// </summary>
     public partial class FinalResponse
     {
         private string _text;
 
         /// <summary>
-        /// Gets and sets the property Text.
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The text in the response to the user.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string Text

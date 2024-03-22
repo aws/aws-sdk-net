@@ -44,7 +44,7 @@ namespace Amazon.OpsWorks.Model
     public partial class CreateStackRequest : AmazonOpsWorksRequest
     {
         private string _agentVersion;
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ChefConfiguration _chefConfiguration;
         private StackConfigurationManager _configurationManager;
         private Source _customCookbooksSource;
@@ -120,7 +120,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

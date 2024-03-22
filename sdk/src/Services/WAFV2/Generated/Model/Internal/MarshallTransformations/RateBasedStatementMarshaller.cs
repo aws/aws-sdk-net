@@ -67,6 +67,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEvaluationWindowSec())
+            {
+                context.Writer.WritePropertyName("EvaluationWindowSec");
+                context.Writer.Write(requestObject.EvaluationWindowSec.Value);
+            }
+
             if(requestObject.IsSetForwardedIPConfig())
             {
                 context.Writer.WritePropertyName("ForwardedIPConfig");

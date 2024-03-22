@@ -41,7 +41,7 @@ namespace Amazon.SSMIncidents.Model
         private ChatChannel _chatChannel;
         private string _clientToken;
         private int? _impact;
-        private List<NotificationTargetItem> _notificationTargets = new List<NotificationTargetItem>();
+        private List<NotificationTargetItem> _notificationTargets = AWSConfigs.InitializeCollections ? new List<NotificationTargetItem>() : null;
         private IncidentRecordStatus _status;
         private string _summary;
         private string _title;
@@ -169,7 +169,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if NotificationTargets property is set
         internal bool IsSetNotificationTargets()
         {
-            return this._notificationTargets != null && this._notificationTargets.Count > 0; 
+            return this._notificationTargets != null && (this._notificationTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

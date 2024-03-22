@@ -126,6 +126,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ServicesLastAccessed/member", targetDepth))
                     {
                         var unmarshaller = ServiceLastAccessedUnmarshaller.Instance;
+                        if (response.ServicesLastAccessed == null)
+                        {
+                            response.ServicesLastAccessed = new List<ServiceLastAccessed>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ServicesLastAccessed.Add(item);
                         continue;

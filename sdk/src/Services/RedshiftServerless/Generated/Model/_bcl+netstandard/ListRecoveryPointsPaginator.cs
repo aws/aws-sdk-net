@@ -45,7 +45,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Enumerable containing all of the RecoveryPoints
         /// </summary>
         public IPaginatedEnumerable<RecoveryPoint> RecoveryPoints => 
-            new PaginatedResultKeyResponse<ListRecoveryPointsResponse, RecoveryPoint>(this, (i) => i.RecoveryPoints);
+            new PaginatedResultKeyResponse<ListRecoveryPointsResponse, RecoveryPoint>(this, (i) => i.RecoveryPoints ?? new List<RecoveryPoint>());
 
         internal ListRecoveryPointsPaginator(IAmazonRedshiftServerless client, ListRecoveryPointsRequest request)
         {

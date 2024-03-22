@@ -33,7 +33,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class ListCustomLineItemsResponse : AmazonWebServiceResponse
     {
-        private List<CustomLineItemListElement> _customLineItems = new List<CustomLineItemListElement>();
+        private List<CustomLineItemListElement> _customLineItems = AWSConfigs.InitializeCollections ? new List<CustomLineItemListElement>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if CustomLineItems property is set
         internal bool IsSetCustomLineItems()
         {
-            return this._customLineItems != null && this._customLineItems.Count > 0; 
+            return this._customLineItems != null && (this._customLineItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

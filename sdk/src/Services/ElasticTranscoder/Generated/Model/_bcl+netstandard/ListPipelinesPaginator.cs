@@ -45,7 +45,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Enumerable containing all of the Pipelines
         /// </summary>
         public IPaginatedEnumerable<Pipeline> Pipelines => 
-            new PaginatedResultKeyResponse<ListPipelinesResponse, Pipeline>(this, (i) => i.Pipelines);
+            new PaginatedResultKeyResponse<ListPipelinesResponse, Pipeline>(this, (i) => i.Pipelines ?? new List<Pipeline>());
 
         internal ListPipelinesPaginator(IAmazonElasticTranscoder client, ListPipelinesRequest request)
         {

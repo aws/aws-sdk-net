@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the InboundIntegrations
         /// </summary>
         public IPaginatedEnumerable<InboundIntegration> InboundIntegrations => 
-            new PaginatedResultKeyResponse<DescribeInboundIntegrationsResponse, InboundIntegration>(this, (i) => i.InboundIntegrations);
+            new PaginatedResultKeyResponse<DescribeInboundIntegrationsResponse, InboundIntegration>(this, (i) => i.InboundIntegrations ?? new List<InboundIntegration>());
 
         internal DescribeInboundIntegrationsPaginator(IAmazonRedshift client, DescribeInboundIntegrationsRequest request)
         {

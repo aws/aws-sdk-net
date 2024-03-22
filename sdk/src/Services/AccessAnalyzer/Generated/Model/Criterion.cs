@@ -35,10 +35,10 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class Criterion
     {
-        private List<string> _contains = new List<string>();
-        private List<string> _eq = new List<string>();
+        private List<string> _contains = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _eq = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _exists;
-        private List<string> _neq = new List<string>();
+        private List<string> _neq = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Contains. 
@@ -56,7 +56,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Contains property is set
         internal bool IsSetContains()
         {
-            return this._contains != null && this._contains.Count > 0; 
+            return this._contains != null && (this._contains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Eq property is set
         internal bool IsSetEq()
         {
-            return this._eq != null && this._eq.Count > 0; 
+            return this._eq != null && (this._eq.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Neq property is set
         internal bool IsSetNeq()
         {
-            return this._neq != null && this._neq.Count > 0; 
+            return this._neq != null && (this._neq.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

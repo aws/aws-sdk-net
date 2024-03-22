@@ -34,7 +34,7 @@ namespace Amazon.AWSSupport.Model
     public partial class TrustedAdvisorResourceDetail
     {
         private bool? _isSuppressed;
-        private List<string> _metadata = new List<string>();
+        private List<string> _metadata = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _region;
         private string _resourceId;
         private string _status;
@@ -78,7 +78,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

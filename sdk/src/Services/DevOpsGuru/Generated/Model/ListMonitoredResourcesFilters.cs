@@ -35,7 +35,7 @@ namespace Amazon.DevOpsGuru.Model
     public partial class ListMonitoredResourcesFilters
     {
         private ResourcePermission _resourcePermission;
-        private List<string> _resourceTypeFilters = new List<string>();
+        private List<string> _resourceTypeFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourcePermission. 
@@ -72,7 +72,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if ResourceTypeFilters property is set
         internal bool IsSetResourceTypeFilters()
         {
-            return this._resourceTypeFilters != null && this._resourceTypeFilters.Count > 0; 
+            return this._resourceTypeFilters != null && (this._resourceTypeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

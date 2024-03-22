@@ -45,7 +45,7 @@ namespace Amazon.Organizations.Model
         /// Enumerable containing all of the DelegatedServices
         /// </summary>
         public IPaginatedEnumerable<DelegatedService> DelegatedServices => 
-            new PaginatedResultKeyResponse<ListDelegatedServicesForAccountResponse, DelegatedService>(this, (i) => i.DelegatedServices);
+            new PaginatedResultKeyResponse<ListDelegatedServicesForAccountResponse, DelegatedService>(this, (i) => i.DelegatedServices ?? new List<DelegatedService>());
 
         internal ListDelegatedServicesForAccountPaginator(IAmazonOrganizations client, ListDelegatedServicesForAccountRequest request)
         {

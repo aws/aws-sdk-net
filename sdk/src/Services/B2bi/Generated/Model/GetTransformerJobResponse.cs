@@ -34,7 +34,7 @@ namespace Amazon.B2bi.Model
     public partial class GetTransformerJobResponse : AmazonWebServiceResponse
     {
         private string _message;
-        private List<S3Location> _outputFiles = new List<S3Location>();
+        private List<S3Location> _outputFiles = AWSConfigs.InitializeCollections ? new List<S3Location>() : null;
         private TransformerJobStatus _status;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.B2bi.Model
         // Check to see if OutputFiles property is set
         internal bool IsSetOutputFiles()
         {
-            return this._outputFiles != null && this._outputFiles.Count > 0; 
+            return this._outputFiles != null && (this._outputFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

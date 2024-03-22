@@ -33,7 +33,7 @@ namespace Amazon.CodeGuruSecurity.Model
     /// </summary>
     public partial class ListFindingsMetricsResponse : AmazonWebServiceResponse
     {
-        private List<AccountFindingsMetric> _findingsMetrics = new List<AccountFindingsMetric>();
+        private List<AccountFindingsMetric> _findingsMetrics = AWSConfigs.InitializeCollections ? new List<AccountFindingsMetric>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if FindingsMetrics property is set
         internal bool IsSetFindingsMetrics()
         {
-            return this._findingsMetrics != null && this._findingsMetrics.Count > 0; 
+            return this._findingsMetrics != null && (this._findingsMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

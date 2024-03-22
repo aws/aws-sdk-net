@@ -34,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeLaunchConfigurationsRequest : AmazonAutoScalingRequest
     {
-        private List<string> _launchConfigurationNames = new List<string>();
+        private List<string> _launchConfigurationNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxRecords;
         private string _nextToken;
 
@@ -58,7 +58,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationNames property is set
         internal bool IsSetLaunchConfigurationNames()
         {
-            return this._launchConfigurationNames != null && this._launchConfigurationNames.Count > 0; 
+            return this._launchConfigurationNames != null && (this._launchConfigurationNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -38,16 +38,16 @@ namespace Amazon.AppConfig.Model
     /// Defining which extension to associate with an AppConfig resource is called an <i>extension
     /// association</i>. An extension association is a specified relationship between an extension
     /// and an AppConfig resource, such as an application or a configuration profile. For
-    /// more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
-    /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+    /// more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+    /// workflows</a> in the <i>AppConfig User Guide</i>.
     /// </summary>
     public partial class CreateExtensionAssociationRequest : AmazonAppConfigRequest
     {
         private string _extensionIdentifier;
         private int? _extensionVersionNumber;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceIdentifier;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExtensionIdentifier. 
@@ -94,7 +94,7 @@ namespace Amazon.AppConfig.Model
         /// <c>Required</c> must be entered for this field.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Min=0, Max=10)]
         public Dictionary<string, string> Parameters
         {
             get { return this._parameters; }
@@ -104,7 +104,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

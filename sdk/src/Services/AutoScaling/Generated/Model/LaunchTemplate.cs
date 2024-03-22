@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model
     public partial class LaunchTemplate
     {
         private LaunchTemplateSpecification _launchTemplateSpecification;
-        private List<LaunchTemplateOverrides> _overrides = new List<LaunchTemplateOverrides>();
+        private List<LaunchTemplateOverrides> _overrides = AWSConfigs.InitializeCollections ? new List<LaunchTemplateOverrides>() : null;
 
         /// <summary>
         /// Gets and sets the property LaunchTemplateSpecification. 
@@ -70,7 +70,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Overrides property is set
         internal bool IsSetOverrides()
         {
-            return this._overrides != null && this._overrides.Count > 0; 
+            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

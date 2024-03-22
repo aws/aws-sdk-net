@@ -36,8 +36,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         private DateTime? _createdTimestamp;
         private string _mediaPipelineArn;
         private string _mediaPipelineId;
-        private List<LiveConnectorSinkConfiguration> _sinks = new List<LiveConnectorSinkConfiguration>();
-        private List<LiveConnectorSourceConfiguration> _sources = new List<LiveConnectorSourceConfiguration>();
+        private List<LiveConnectorSinkConfiguration> _sinks = AWSConfigs.InitializeCollections ? new List<LiveConnectorSinkConfiguration>() : null;
+        private List<LiveConnectorSourceConfiguration> _sources = AWSConfigs.InitializeCollections ? new List<LiveConnectorSourceConfiguration>() : null;
         private MediaPipelineStatus _status;
         private DateTime? _updatedTimestamp;
 
@@ -113,7 +113,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Sinks property is set
         internal bool IsSetSinks()
         {
-            return this._sinks != null && this._sinks.Count > 0; 
+            return this._sinks != null && (this._sinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

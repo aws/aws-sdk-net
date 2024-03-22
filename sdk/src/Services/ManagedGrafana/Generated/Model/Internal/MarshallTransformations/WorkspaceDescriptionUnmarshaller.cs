@@ -111,6 +111,12 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     unmarshalledObject.FreeTrialExpiration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("grafanaToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GrafanaToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("grafanaVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -33,7 +33,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class GetAssetPropertyValueHistoryResponse : AmazonWebServiceResponse
     {
-        private List<AssetPropertyValue> _assetPropertyValueHistory = new List<AssetPropertyValue>();
+        private List<AssetPropertyValue> _assetPropertyValueHistory = AWSConfigs.InitializeCollections ? new List<AssetPropertyValue>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AssetPropertyValueHistory property is set
         internal bool IsSetAssetPropertyValueHistory()
         {
-            return this._assetPropertyValueHistory != null && this._assetPropertyValueHistory.Count > 0; 
+            return this._assetPropertyValueHistory != null && (this._assetPropertyValueHistory.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

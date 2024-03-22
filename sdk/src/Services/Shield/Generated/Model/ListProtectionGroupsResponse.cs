@@ -34,7 +34,7 @@ namespace Amazon.Shield.Model
     public partial class ListProtectionGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProtectionGroup> _protectionGroups = new List<ProtectionGroup>();
+        private List<ProtectionGroup> _protectionGroups = AWSConfigs.InitializeCollections ? new List<ProtectionGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -84,7 +84,7 @@ namespace Amazon.Shield.Model
         // Check to see if ProtectionGroups property is set
         internal bool IsSetProtectionGroups()
         {
-            return this._protectionGroups != null && this._protectionGroups.Count > 0; 
+            return this._protectionGroups != null && (this._protectionGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

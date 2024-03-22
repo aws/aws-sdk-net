@@ -39,13 +39,14 @@ namespace Amazon.MediaPackageV2.Model
         private ContainerType _containerType;
         private DateTime? _createdAt;
         private string _description;
-        private List<GetHlsManifestConfiguration> _hlsManifests = new List<GetHlsManifestConfiguration>();
-        private List<GetLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = new List<GetLowLatencyHlsManifestConfiguration>();
+        private string _eTag;
+        private List<GetHlsManifestConfiguration> _hlsManifests = AWSConfigs.InitializeCollections ? new List<GetHlsManifestConfiguration>() : null;
+        private List<GetLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = AWSConfigs.InitializeCollections ? new List<GetLowLatencyHlsManifestConfiguration>() : null;
         private DateTime? _modifiedAt;
         private string _originEndpointName;
         private Segment _segment;
         private int? _startoverWindowSeconds;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -164,6 +165,26 @@ namespace Amazon.MediaPackageV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The current Entity Tag (ETag) associated with this resource. The entity tag can be
+        /// used to safely make concurrent updates to the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ETag
+        {
+            get { return this._eTag; }
+            set { this._eTag = value; }
+        }
+
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
+        {
+            return this._eTag != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HlsManifests. 
         /// <para>
         /// An HTTP live streaming (HLS) manifest configuration.
@@ -178,7 +199,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if HlsManifests property is set
         internal bool IsSetHlsManifests()
         {
-            return this._hlsManifests != null && this._hlsManifests.Count > 0; 
+            return this._hlsManifests != null && (this._hlsManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -196,7 +217,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if LowLatencyHlsManifests property is set
         internal bool IsSetLowLatencyHlsManifests()
         {
-            return this._lowLatencyHlsManifests != null && this._lowLatencyHlsManifests.Count > 0; 
+            return this._lowLatencyHlsManifests != null && (this._lowLatencyHlsManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -294,7 +315,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

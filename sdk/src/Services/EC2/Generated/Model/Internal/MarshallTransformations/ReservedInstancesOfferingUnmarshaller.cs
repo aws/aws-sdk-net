@@ -111,6 +111,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("pricingDetailsSet/item", targetDepth))
                     {
                         var unmarshaller = PricingDetailUnmarshaller.Instance;
+                        if (unmarshalledObject.PricingDetails == null)
+                        {
+                            unmarshalledObject.PricingDetails = new List<PricingDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PricingDetails.Add(item);
                         continue;
@@ -124,6 +128,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("recurringCharges/item", targetDepth))
                     {
                         var unmarshaller = RecurringChargeUnmarshaller.Instance;
+                        if (unmarshalledObject.RecurringCharges == null)
+                        {
+                            unmarshalledObject.RecurringCharges = new List<RecurringCharge>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RecurringCharges.Add(item);
                         continue;

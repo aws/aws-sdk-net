@@ -45,7 +45,7 @@ namespace Amazon.XRay.Model
         /// Enumerable containing all of the Groups
         /// </summary>
         public IPaginatedEnumerable<GroupSummary> Groups => 
-            new PaginatedResultKeyResponse<GetGroupsResponse, GroupSummary>(this, (i) => i.Groups);
+            new PaginatedResultKeyResponse<GetGroupsResponse, GroupSummary>(this, (i) => i.Groups ?? new List<GroupSummary>());
 
         internal GetGroupsPaginator(IAmazonXRay client, GetGroupsRequest request)
         {

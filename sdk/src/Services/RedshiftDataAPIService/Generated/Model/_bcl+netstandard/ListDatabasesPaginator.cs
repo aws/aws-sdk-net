@@ -45,7 +45,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Enumerable containing all of the Databases
         /// </summary>
         public IPaginatedEnumerable<string> Databases => 
-            new PaginatedResultKeyResponse<ListDatabasesResponse, string>(this, (i) => i.Databases);
+            new PaginatedResultKeyResponse<ListDatabasesResponse, string>(this, (i) => i.Databases ?? new List<string>());
 
         internal ListDatabasesPaginator(IAmazonRedshiftDataAPIService client, ListDatabasesRequest request)
         {

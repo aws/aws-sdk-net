@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("fleetSet/item", targetDepth))
                     {
                         var unmarshaller = FleetDataUnmarshaller.Instance;
+                        if (response.Fleets == null)
+                        {
+                            response.Fleets = new List<FleetData>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Fleets.Add(item);
                         continue;

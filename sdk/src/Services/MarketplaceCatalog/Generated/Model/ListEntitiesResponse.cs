@@ -33,7 +33,7 @@ namespace Amazon.MarketplaceCatalog.Model
     /// </summary>
     public partial class ListEntitiesResponse : AmazonWebServiceResponse
     {
-        private List<EntitySummary> _entitySummaryList = new List<EntitySummary>();
+        private List<EntitySummary> _entitySummaryList = AWSConfigs.InitializeCollections ? new List<EntitySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if EntitySummaryList property is set
         internal bool IsSetEntitySummaryList()
         {
-            return this._entitySummaryList != null && this._entitySummaryList.Count > 0; 
+            return this._entitySummaryList != null && (this._entitySummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

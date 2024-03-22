@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the ReservedCacheNodesOfferings
         /// </summary>
         public IPaginatedEnumerable<ReservedCacheNodesOffering> ReservedCacheNodesOfferings => 
-            new PaginatedResultKeyResponse<DescribeReservedCacheNodesOfferingsResponse, ReservedCacheNodesOffering>(this, (i) => i.ReservedCacheNodesOfferings);
+            new PaginatedResultKeyResponse<DescribeReservedCacheNodesOfferingsResponse, ReservedCacheNodesOffering>(this, (i) => i.ReservedCacheNodesOfferings ?? new List<ReservedCacheNodesOffering>());
 
         internal DescribeReservedCacheNodesOfferingsPaginator(IAmazonElastiCache client, DescribeReservedCacheNodesOfferingsRequest request)
         {

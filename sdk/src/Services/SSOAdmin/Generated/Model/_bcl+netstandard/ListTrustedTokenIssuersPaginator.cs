@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the TrustedTokenIssuers
         /// </summary>
         public IPaginatedEnumerable<TrustedTokenIssuerMetadata> TrustedTokenIssuers => 
-            new PaginatedResultKeyResponse<ListTrustedTokenIssuersResponse, TrustedTokenIssuerMetadata>(this, (i) => i.TrustedTokenIssuers);
+            new PaginatedResultKeyResponse<ListTrustedTokenIssuersResponse, TrustedTokenIssuerMetadata>(this, (i) => i.TrustedTokenIssuers ?? new List<TrustedTokenIssuerMetadata>());
 
         internal ListTrustedTokenIssuersPaginator(IAmazonSSOAdmin client, ListTrustedTokenIssuersRequest request)
         {

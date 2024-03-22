@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetInstanceTypesFromInstanceRequirementsResponse : AmazonWebServiceResponse
     {
-        private List<InstanceTypeInfoFromInstanceRequirements> _instanceTypes = new List<InstanceTypeInfoFromInstanceRequirements>();
+        private List<InstanceTypeInfoFromInstanceRequirements> _instanceTypes = AWSConfigs.InitializeCollections ? new List<InstanceTypeInfoFromInstanceRequirements>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceTypes property is set
         internal bool IsSetInstanceTypes()
         {
-            return this._instanceTypes != null && this._instanceTypes.Count > 0; 
+            return this._instanceTypes != null && (this._instanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

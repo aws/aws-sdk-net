@@ -33,8 +33,8 @@ namespace Amazon.EntityResolution.Model
     /// </summary>
     public partial class ProviderIntermediateDataAccessConfiguration
     {
-        private List<string> _awsAccountIds = new List<string>();
-        private List<string> _requiredBucketActions = new List<string>();
+        private List<string> _awsAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _requiredBucketActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccountIds. 
@@ -52,7 +52,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if AwsAccountIds property is set
         internal bool IsSetAwsAccountIds()
         {
-            return this._awsAccountIds != null && this._awsAccountIds.Count > 0; 
+            return this._awsAccountIds != null && (this._awsAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if RequiredBucketActions property is set
         internal bool IsSetRequiredBucketActions()
         {
-            return this._requiredBucketActions != null && this._requiredBucketActions.Count > 0; 
+            return this._requiredBucketActions != null && (this._requiredBucketActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

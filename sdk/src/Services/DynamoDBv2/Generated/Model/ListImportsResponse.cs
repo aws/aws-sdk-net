@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ListImportsResponse : AmazonWebServiceResponse
     {
-        private List<ImportSummary> _importSummaryList = new List<ImportSummary>();
+        private List<ImportSummary> _importSummaryList = AWSConfigs.InitializeCollections ? new List<ImportSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ImportSummaryList property is set
         internal bool IsSetImportSummaryList()
         {
-            return this._importSummaryList != null && this._importSummaryList.Count > 0; 
+            return this._importSummaryList != null && (this._importSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

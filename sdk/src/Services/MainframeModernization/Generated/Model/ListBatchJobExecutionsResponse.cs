@@ -33,7 +33,7 @@ namespace Amazon.MainframeModernization.Model
     /// </summary>
     public partial class ListBatchJobExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<BatchJobExecutionSummary> _batchJobExecutions = new List<BatchJobExecutionSummary>();
+        private List<BatchJobExecutionSummary> _batchJobExecutions = AWSConfigs.InitializeCollections ? new List<BatchJobExecutionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if BatchJobExecutions property is set
         internal bool IsSetBatchJobExecutions()
         {
-            return this._batchJobExecutions != null && this._batchJobExecutions.Count > 0; 
+            return this._batchJobExecutions != null && (this._batchJobExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

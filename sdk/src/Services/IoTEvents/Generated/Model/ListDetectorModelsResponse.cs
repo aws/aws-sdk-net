@@ -33,7 +33,7 @@ namespace Amazon.IoTEvents.Model
     /// </summary>
     public partial class ListDetectorModelsResponse : AmazonWebServiceResponse
     {
-        private List<DetectorModelSummary> _detectorModelSummaries = new List<DetectorModelSummary>();
+        private List<DetectorModelSummary> _detectorModelSummaries = AWSConfigs.InitializeCollections ? new List<DetectorModelSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if DetectorModelSummaries property is set
         internal bool IsSetDetectorModelSummaries()
         {
-            return this._detectorModelSummaries != null && this._detectorModelSummaries.Count > 0; 
+            return this._detectorModelSummaries != null && (this._detectorModelSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

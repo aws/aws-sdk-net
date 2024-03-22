@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class FunctionRequest
     {
         private DataConnector _implementedBy;
-        private List<string> _requiredProperties = new List<string>();
+        private List<string> _requiredProperties = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Scope _scope;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if RequiredProperties property is set
         internal bool IsSetRequiredProperties()
         {
-            return this._requiredProperties != null && this._requiredProperties.Count > 0; 
+            return this._requiredProperties != null && (this._requiredProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

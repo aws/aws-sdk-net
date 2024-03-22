@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the OrganizationConfigRules
         /// </summary>
         public IPaginatedEnumerable<OrganizationConfigRule> OrganizationConfigRules => 
-            new PaginatedResultKeyResponse<DescribeOrganizationConfigRulesResponse, OrganizationConfigRule>(this, (i) => i.OrganizationConfigRules);
+            new PaginatedResultKeyResponse<DescribeOrganizationConfigRulesResponse, OrganizationConfigRule>(this, (i) => i.OrganizationConfigRules ?? new List<OrganizationConfigRule>());
 
         internal DescribeOrganizationConfigRulesPaginator(IAmazonConfigService client, DescribeOrganizationConfigRulesRequest request)
         {

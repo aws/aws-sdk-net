@@ -35,7 +35,7 @@ namespace Amazon.APIGateway.Model
     public partial class UpdateMethodRequest : AmazonAPIGatewayRequest
     {
         private string _httpMethod;
-        private List<PatchOperation> _patchOperations = new List<PatchOperation>();
+        private List<PatchOperation> _patchOperations = AWSConfigs.InitializeCollections ? new List<PatchOperation>() : null;
         private string _resourceId;
         private string _restApiId;
 
@@ -74,7 +74,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if PatchOperations property is set
         internal bool IsSetPatchOperations()
         {
-            return this._patchOperations != null && this._patchOperations.Count > 0; 
+            return this._patchOperations != null && (this._patchOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

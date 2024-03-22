@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class ListEksAnywhereSubscriptionsRequest : AmazonEKSRequest
     {
-        private List<string> _includeStatus = new List<string>();
+        private List<string> _includeStatus = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -53,7 +53,7 @@ namespace Amazon.EKS.Model
         // Check to see if IncludeStatus property is set
         internal bool IsSetIncludeStatus()
         {
-            return this._includeStatus != null && this._includeStatus.Count > 0; 
+            return this._includeStatus != null && (this._includeStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

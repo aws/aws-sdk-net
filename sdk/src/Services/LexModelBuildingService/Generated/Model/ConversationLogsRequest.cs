@@ -34,7 +34,7 @@ namespace Amazon.LexModelBuildingService.Model
     public partial class ConversationLogsRequest
     {
         private string _iamRoleArn;
-        private List<LogSettingsRequest> _logSettings = new List<LogSettingsRequest>();
+        private List<LogSettingsRequest> _logSettings = AWSConfigs.InitializeCollections ? new List<LogSettingsRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
@@ -76,7 +76,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if LogSettings property is set
         internal bool IsSetLogSettings()
         {
-            return this._logSettings != null && this._logSettings.Count > 0; 
+            return this._logSettings != null && (this._logSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.SsmSap.Model
         /// Enumerable containing all of the Operations
         /// </summary>
         public IPaginatedEnumerable<Operation> Operations => 
-            new PaginatedResultKeyResponse<ListOperationsResponse, Operation>(this, (i) => i.Operations);
+            new PaginatedResultKeyResponse<ListOperationsResponse, Operation>(this, (i) => i.Operations ?? new List<Operation>());
 
         internal ListOperationsPaginator(IAmazonSsmSap client, ListOperationsRequest request)
         {

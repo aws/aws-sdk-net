@@ -39,7 +39,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private ConfigurationDeploymentStatus _deploymentStatus;
         private string _description;
         private string _environmentName;
-        private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
+        private List<ConfigurationOptionSetting> _optionSettings = AWSConfigs.InitializeCollections ? new List<ConfigurationOptionSetting>() : null;
         private string _platformArn;
         private string _solutionStackName;
         private string _templateName;
@@ -190,7 +190,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionSettings property is set
         internal bool IsSetOptionSettings()
         {
-            return this._optionSettings != null && this._optionSettings.Count > 0; 
+            return this._optionSettings != null && (this._optionSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

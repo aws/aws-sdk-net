@@ -106,7 +106,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("HealthThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthCheckConfig.HealthThreshold.Value));                 
 
                     var publicRequestHealthCheckConfigChildHealthChecks = publicRequest.HealthCheckConfig.ChildHealthChecks;
-                    if (publicRequestHealthCheckConfigChildHealthChecks != null && publicRequestHealthCheckConfigChildHealthChecks.Count > 0) 
+                    if (publicRequestHealthCheckConfigChildHealthChecks != null && (publicRequestHealthCheckConfigChildHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {                        
                         xmlWriter.WriteStartElement("ChildHealthChecks", "https://route53.amazonaws.com/doc/2013-04-01/");
                         foreach (var publicRequestHealthCheckConfigChildHealthChecksValue in publicRequestHealthCheckConfigChildHealthChecks) 
@@ -121,7 +121,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("EnableSNI", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.EnableSNI.Value));                 
 
                     var publicRequestHealthCheckConfigRegions = publicRequest.HealthCheckConfig.Regions;
-                    if (publicRequestHealthCheckConfigRegions != null && publicRequestHealthCheckConfigRegions.Count > 0) 
+                    if (publicRequestHealthCheckConfigRegions != null && (publicRequestHealthCheckConfigRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {                        
                         xmlWriter.WriteStartElement("Regions", "https://route53.amazonaws.com/doc/2013-04-01/");
                         foreach (var publicRequestHealthCheckConfigRegionsValue in publicRequestHealthCheckConfigRegions) 

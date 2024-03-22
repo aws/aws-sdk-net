@@ -34,7 +34,7 @@ namespace Amazon.FMS.Model
     public partial class PolicyTypeScope
     {
         private bool? _allPolicyTypesEnabled;
-        private List<string> _policyTypes = new List<string>();
+        private List<string> _policyTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllPolicyTypesEnabled. 
@@ -72,7 +72,7 @@ namespace Amazon.FMS.Model
         // Check to see if PolicyTypes property is set
         internal bool IsSetPolicyTypes()
         {
-            return this._policyTypes != null && this._policyTypes.Count > 0; 
+            return this._policyTypes != null && (this._policyTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

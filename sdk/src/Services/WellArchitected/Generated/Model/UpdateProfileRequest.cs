@@ -36,7 +36,7 @@ namespace Amazon.WellArchitected.Model
     {
         private string _profileArn;
         private string _profileDescription;
-        private List<ProfileQuestionUpdate> _profileQuestions = new List<ProfileQuestionUpdate>();
+        private List<ProfileQuestionUpdate> _profileQuestions = AWSConfigs.InitializeCollections ? new List<ProfileQuestionUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property ProfileArn. 
@@ -91,7 +91,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ProfileQuestions property is set
         internal bool IsSetProfileQuestions()
         {
-            return this._profileQuestions != null && this._profileQuestions.Count > 0; 
+            return this._profileQuestions != null && (this._profileQuestions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

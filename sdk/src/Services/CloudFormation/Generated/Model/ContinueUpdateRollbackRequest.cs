@@ -50,7 +50,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ContinueUpdateRollbackRequest : AmazonCloudFormationRequest
     {
         private string _clientRequestToken;
-        private List<string> _resourcesToSkip = new List<string>();
+        private List<string> _resourcesToSkip = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleARN;
         private string _stackName;
 
@@ -129,7 +129,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourcesToSkip property is set
         internal bool IsSetResourcesToSkip()
         {
-            return this._resourcesToSkip != null && this._resourcesToSkip.Count > 0; 
+            return this._resourcesToSkip != null && (this._resourcesToSkip.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

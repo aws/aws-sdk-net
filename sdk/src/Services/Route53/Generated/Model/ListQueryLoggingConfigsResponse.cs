@@ -33,7 +33,7 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class ListQueryLoggingConfigsResponse : AmazonWebServiceResponse
     {
-        private List<QueryLoggingConfig> _queryLoggingConfigs = new List<QueryLoggingConfig>();
+        private List<QueryLoggingConfig> _queryLoggingConfigs = AWSConfigs.InitializeCollections ? new List<QueryLoggingConfig>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.Route53.Model
         // Check to see if QueryLoggingConfigs property is set
         internal bool IsSetQueryLoggingConfigs()
         {
-            return this._queryLoggingConfigs != null && this._queryLoggingConfigs.Count > 0; 
+            return this._queryLoggingConfigs != null && (this._queryLoggingConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

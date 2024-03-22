@@ -34,7 +34,13 @@ namespace Amazon.WAFV2.Model
     /// criteria, collects them into aggregation instances, and counts and rate limits the
     /// requests for each instance. 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// If you change any of these settings in a rule that's currently in use, the change
+    /// resets the rule's rate limiting counts. This can pause the rule's rate limiting activities
+    /// for up to a minute. 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can specify individual aggregation keys, like IP address or HTTP method. You can
     /// also specify aggregation key combinations, like IP address and HTTP method, or HTTP
@@ -167,7 +173,8 @@ namespace Amazon.WAFV2.Model
     public partial class RateBasedStatement
     {
         private RateBasedStatementAggregateKeyType _aggregateKeyType;
-        private List<RateBasedStatementCustomKey> _customKeys = new List<RateBasedStatementCustomKey>();
+        private List<RateBasedStatementCustomKey> _customKeys = AWSConfigs.InitializeCollections ? new List<RateBasedStatementCustomKey>() : null;
+        private long? _evaluationWindowSec;
         private ForwardedIPConfig _forwardedIPConfig;
         private long? _limit;
         private Statement _scopeDownStatement;
@@ -254,7 +261,7 @@ namespace Amazon.WAFV2.Model
         /// Specifies the aggregate keys to use in a rate-base rule. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Max=5)]
         public List<RateBasedStatementCustomKey> CustomKeys
         {
             get { return this._customKeys; }
@@ -264,7 +271,37 @@ namespace Amazon.WAFV2.Model
         // Check to see if CustomKeys property is set
         internal bool IsSetCustomKeys()
         {
-            return this._customKeys != null && this._customKeys.Count > 0; 
+            return this._customKeys != null && (this._customKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationWindowSec. 
+        /// <para>
+        /// The amount of time, in seconds, that WAF should include in its request counts, looking
+        /// back from the current time. For example, for a setting of 120, when WAF checks the
+        /// rate, it counts the requests for the 2 minutes immediately preceding the current time.
+        /// Valid settings are 60, 120, 300, and 600. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't determine how often WAF checks the rate, but how far back it
+        /// looks each time it checks. WAF checks the rate about every 10 seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>300</c> (5 minutes)
+        /// </para>
+        /// </summary>
+        public long? EvaluationWindowSec
+        {
+            get { return this._evaluationWindowSec; }
+            set { this._evaluationWindowSec = value; }
+        }
+
+        // Check to see if EvaluationWindowSec property is set
+        internal bool IsSetEvaluationWindowSec()
+        {
+            return this._evaluationWindowSec.HasValue; 
         }
 
         /// <summary>

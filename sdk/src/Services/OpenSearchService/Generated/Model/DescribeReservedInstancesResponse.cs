@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class DescribeReservedInstancesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReservedInstance> _reservedInstances = new List<ReservedInstance>();
+        private List<ReservedInstance> _reservedInstances = AWSConfigs.InitializeCollections ? new List<ReservedInstance>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if ReservedInstances property is set
         internal bool IsSetReservedInstances()
         {
-            return this._reservedInstances != null && this._reservedInstances.Count > 0; 
+            return this._reservedInstances != null && (this._reservedInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

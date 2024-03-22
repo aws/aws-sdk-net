@@ -33,7 +33,7 @@ namespace Amazon.WAFRegional.Model
     /// </summary>
     public partial class ListByteMatchSetsResponse : AmazonWebServiceResponse
     {
-        private List<ByteMatchSetSummary> _byteMatchSets = new List<ByteMatchSetSummary>();
+        private List<ByteMatchSetSummary> _byteMatchSets = AWSConfigs.InitializeCollections ? new List<ByteMatchSetSummary>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if ByteMatchSets property is set
         internal bool IsSetByteMatchSets()
         {
-            return this._byteMatchSets != null && this._byteMatchSets.Count > 0; 
+            return this._byteMatchSets != null && (this._byteMatchSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

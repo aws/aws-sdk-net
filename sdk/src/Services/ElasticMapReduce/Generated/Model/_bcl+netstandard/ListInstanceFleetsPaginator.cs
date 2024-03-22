@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Enumerable containing all of the InstanceFleets
         /// </summary>
         public IPaginatedEnumerable<InstanceFleet> InstanceFleets => 
-            new PaginatedResultKeyResponse<ListInstanceFleetsResponse, InstanceFleet>(this, (i) => i.InstanceFleets);
+            new PaginatedResultKeyResponse<ListInstanceFleetsResponse, InstanceFleet>(this, (i) => i.InstanceFleets ?? new List<InstanceFleet>());
 
         internal ListInstanceFleetsPaginator(IAmazonElasticMapReduce client, ListInstanceFleetsRequest request)
         {

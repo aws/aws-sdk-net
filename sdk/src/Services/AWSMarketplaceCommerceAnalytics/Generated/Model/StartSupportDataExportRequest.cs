@@ -43,7 +43,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
     [Obsolete("This target has been deprecated. As of December 2022 Product Support Connection is no longer supported.")]
     public partial class StartSupportDataExportRequest : AmazonAWSMarketplaceCommerceAnalyticsRequest
     {
-        private Dictionary<string, string> _customerDefinedValues = new Dictionary<string, string>();
+        private Dictionary<string, string> _customerDefinedValues = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private SupportDataSetType _dataSetType;
         private string _destinations3BucketName;
         private string _destinations3Prefix;
@@ -66,7 +66,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         // Check to see if CustomerDefinedValues property is set
         internal bool IsSetCustomerDefinedValues()
         {
-            return this._customerDefinedValues != null && this._customerDefinedValues.Count > 0; 
+            return this._customerDefinedValues != null && (this._customerDefinedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

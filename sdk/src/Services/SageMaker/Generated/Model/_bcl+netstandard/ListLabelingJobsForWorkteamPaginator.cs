@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the LabelingJobSummaryList
         /// </summary>
         public IPaginatedEnumerable<LabelingJobForWorkteamSummary> LabelingJobSummaryList => 
-            new PaginatedResultKeyResponse<ListLabelingJobsForWorkteamResponse, LabelingJobForWorkteamSummary>(this, (i) => i.LabelingJobSummaryList);
+            new PaginatedResultKeyResponse<ListLabelingJobsForWorkteamResponse, LabelingJobForWorkteamSummary>(this, (i) => i.LabelingJobSummaryList ?? new List<LabelingJobForWorkteamSummary>());
 
         internal ListLabelingJobsForWorkteamPaginator(IAmazonSageMaker client, ListLabelingJobsForWorkteamRequest request)
         {

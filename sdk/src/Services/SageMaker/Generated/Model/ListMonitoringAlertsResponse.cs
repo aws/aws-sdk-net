@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListMonitoringAlertsResponse : AmazonWebServiceResponse
     {
-        private List<MonitoringAlertSummary> _monitoringAlertSummaries = new List<MonitoringAlertSummary>();
+        private List<MonitoringAlertSummary> _monitoringAlertSummaries = AWSConfigs.InitializeCollections ? new List<MonitoringAlertSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MonitoringAlertSummaries property is set
         internal bool IsSetMonitoringAlertSummaries()
         {
-            return this._monitoringAlertSummaries != null && this._monitoringAlertSummaries.Count > 0; 
+            return this._monitoringAlertSummaries != null && (this._monitoringAlertSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

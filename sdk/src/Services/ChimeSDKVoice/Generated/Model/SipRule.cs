@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKVoice.Model
         private bool? _disabled;
         private string _name;
         private string _sipRuleId;
-        private List<SipRuleTargetApplication> _targetApplications = new List<SipRuleTargetApplication>();
+        private List<SipRuleTargetApplication> _targetApplications = AWSConfigs.InitializeCollections ? new List<SipRuleTargetApplication>() : null;
         private SipRuleTriggerType _triggerType;
         private string _triggerValue;
         private DateTime? _updatedTimestamp;
@@ -134,7 +134,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if TargetApplications property is set
         internal bool IsSetTargetApplications()
         {
-            return this._targetApplications != null && this._targetApplications.Count > 0; 
+            return this._targetApplications != null && (this._targetApplications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

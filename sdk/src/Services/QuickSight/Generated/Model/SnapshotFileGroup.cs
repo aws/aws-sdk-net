@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SnapshotFileGroup
     {
-        private List<SnapshotFile> _files = new List<SnapshotFile>();
+        private List<SnapshotFile> _files = AWSConfigs.InitializeCollections ? new List<SnapshotFile>() : null;
 
         /// <summary>
         /// Gets and sets the property Files. 
@@ -52,7 +52,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Files property is set
         internal bool IsSetFiles()
         {
-            return this._files != null && this._files.Count > 0; 
+            return this._files != null && (this._files.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -37,7 +37,7 @@ namespace Amazon.PI.Model
         private DateTime? _createTime;
         private DateTime? _endTime;
         private string _identifier;
-        private List<Insight> _insights = new List<Insight>();
+        private List<Insight> _insights = AWSConfigs.InitializeCollections ? new List<Insight>() : null;
         private ServiceType _serviceType;
         private DateTime? _startTime;
         private AnalysisStatus _status;
@@ -131,7 +131,7 @@ namespace Amazon.PI.Model
         // Check to see if Insights property is set
         internal bool IsSetInsights()
         {
-            return this._insights != null && this._insights.Count > 0; 
+            return this._insights != null && (this._insights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

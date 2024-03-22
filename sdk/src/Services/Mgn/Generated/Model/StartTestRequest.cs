@@ -37,8 +37,8 @@ namespace Amazon.Mgn.Model
     public partial class StartTestRequest : AmazonMgnRequest
     {
         private string _accountid;
-        private List<string> _sourceServerIDs = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _sourceServerIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountID. 
@@ -75,7 +75,7 @@ namespace Amazon.Mgn.Model
         // Check to see if SourceServerIDs property is set
         internal bool IsSetSourceServerIDs()
         {
-            return this._sourceServerIDs != null && this._sourceServerIDs.Count > 0; 
+            return this._sourceServerIDs != null && (this._sourceServerIDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.Mgn.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

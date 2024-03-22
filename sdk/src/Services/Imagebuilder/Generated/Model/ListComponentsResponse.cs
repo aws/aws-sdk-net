@@ -33,7 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListComponentsResponse : AmazonWebServiceResponse
     {
-        private List<ComponentVersion> _componentVersionList = new List<ComponentVersion>();
+        private List<ComponentVersion> _componentVersionList = AWSConfigs.InitializeCollections ? new List<ComponentVersion>() : null;
         private string _nextToken;
         private string _requestId;
 
@@ -58,7 +58,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if ComponentVersionList property is set
         internal bool IsSetComponentVersionList()
         {
-            return this._componentVersionList != null && this._componentVersionList.Count > 0; 
+            return this._componentVersionList != null && (this._componentVersionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

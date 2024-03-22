@@ -84,6 +84,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     if (context.TestExpression("Endpoints/member", targetDepth))
                     {
                         var unmarshaller = EndpointUnmarshaller.Instance;
+                        if (response.Endpoints == null)
+                        {
+                            response.Endpoints = new List<Endpoint>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Endpoints.Add(item);
                         continue;

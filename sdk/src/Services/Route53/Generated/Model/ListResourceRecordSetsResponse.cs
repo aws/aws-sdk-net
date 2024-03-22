@@ -33,7 +33,7 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class ListResourceRecordSetsResponse : AmazonWebServiceResponse
     {
-        private List<ResourceRecordSet> _resourceRecordSets = new List<ResourceRecordSet>();
+        private List<ResourceRecordSet> _resourceRecordSets = AWSConfigs.InitializeCollections ? new List<ResourceRecordSet>() : null;
         private bool? _isTruncated;
         private string _nextRecordName;
         private RRType _nextRecordType;
@@ -56,7 +56,7 @@ namespace Amazon.Route53.Model
         // Check to see if ResourceRecordSets property is set
         internal bool IsSetResourceRecordSets()
         {
-            return this._resourceRecordSets != null && this._resourceRecordSets.Count > 0; 
+            return this._resourceRecordSets != null && (this._resourceRecordSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

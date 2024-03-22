@@ -45,7 +45,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Enumerable containing all of the Entities
         /// </summary>
         public IPaginatedEnumerable<CodegenJobSummary> Entities => 
-            new PaginatedResultKeyResponse<ListCodegenJobsResponse, CodegenJobSummary>(this, (i) => i.Entities);
+            new PaginatedResultKeyResponse<ListCodegenJobsResponse, CodegenJobSummary>(this, (i) => i.Entities ?? new List<CodegenJobSummary>());
 
         internal ListCodegenJobsPaginator(IAmazonAmplifyUIBuilder client, ListCodegenJobsRequest request)
         {

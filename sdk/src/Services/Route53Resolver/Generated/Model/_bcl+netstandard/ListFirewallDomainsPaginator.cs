@@ -45,7 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// Enumerable containing all of the Domains
         /// </summary>
         public IPaginatedEnumerable<string> Domains => 
-            new PaginatedResultKeyResponse<ListFirewallDomainsResponse, string>(this, (i) => i.Domains);
+            new PaginatedResultKeyResponse<ListFirewallDomainsResponse, string>(this, (i) => i.Domains ?? new List<string>());
 
         internal ListFirewallDomainsPaginator(IAmazonRoute53Resolver client, ListFirewallDomainsRequest request)
         {

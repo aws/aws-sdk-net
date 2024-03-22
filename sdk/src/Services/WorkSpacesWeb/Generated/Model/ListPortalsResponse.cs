@@ -34,7 +34,7 @@ namespace Amazon.WorkSpacesWeb.Model
     public partial class ListPortalsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PortalSummary> _portals = new List<PortalSummary>();
+        private List<PortalSummary> _portals = AWSConfigs.InitializeCollections ? new List<PortalSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if Portals property is set
         internal bool IsSetPortals()
         {
-            return this._portals != null && this._portals.Count > 0; 
+            return this._portals != null && (this._portals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

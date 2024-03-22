@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the UseCaseSummaryList
         /// </summary>
         public IPaginatedEnumerable<UseCase> UseCaseSummaryList => 
-            new PaginatedResultKeyResponse<ListUseCasesResponse, UseCase>(this, (i) => i.UseCaseSummaryList);
+            new PaginatedResultKeyResponse<ListUseCasesResponse, UseCase>(this, (i) => i.UseCaseSummaryList ?? new List<UseCase>());
 
         internal ListUseCasesPaginator(IAmazonConnect client, ListUseCasesRequest request)
         {

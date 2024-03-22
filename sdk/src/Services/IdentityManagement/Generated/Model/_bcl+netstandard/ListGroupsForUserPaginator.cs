@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the Groups
         /// </summary>
         public IPaginatedEnumerable<Group> Groups => 
-            new PaginatedResultKeyResponse<ListGroupsForUserResponse, Group>(this, (i) => i.Groups);
+            new PaginatedResultKeyResponse<ListGroupsForUserResponse, Group>(this, (i) => i.Groups ?? new List<Group>());
 
         internal ListGroupsForUserPaginator(IAmazonIdentityManagementService client, ListGroupsForUserRequest request)
         {

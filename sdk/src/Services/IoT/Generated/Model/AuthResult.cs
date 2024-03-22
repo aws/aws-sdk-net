@@ -37,7 +37,7 @@ namespace Amazon.IoT.Model
         private AuthDecision _authDecision;
         private AuthInfo _authInfo;
         private Denied _denied;
-        private List<string> _missingContextValues = new List<string>();
+        private List<string> _missingContextValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Allowed. 
@@ -128,7 +128,7 @@ namespace Amazon.IoT.Model
         // Check to see if MissingContextValues property is set
         internal bool IsSetMissingContextValues()
         {
-            return this._missingContextValues != null && this._missingContextValues.Count > 0; 
+            return this._missingContextValues != null && (this._missingContextValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

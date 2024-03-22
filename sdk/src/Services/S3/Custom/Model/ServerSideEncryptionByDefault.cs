@@ -26,7 +26,11 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Describes the default server-side encryption to apply to new objects in the bucket.
     /// If a PUT Object request doesn't specify any server-side encryption, this default encryption
-    /// will be applied. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html">PUT
+    /// will be applied. If you don't specify a customer managed key at configuration, Amazon
+    /// S3 automatically creates an Amazon Web Services KMS key in your Amazon Web Services
+    /// account the first time that you add an object encrypted with SSE-KMS to a bucket.
+    /// By default, Amazon S3 uses this KMS key for SSE-KMS. For more information, see <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html">PUT
     /// Bucket encryption</a> in the <i>Amazon S3 API Reference</i>.
     /// </summary>
     public class ServerSideEncryptionByDefault
@@ -35,35 +39,42 @@ namespace Amazon.S3.Model
         private ServerSideEncryptionMethod serverSideEncryptionAlgorithm;
 
         /// <summary>
-        /// KMS master key ID to use for the default encryption. 
-        /// This parameter is allowed if SSEAlgorithm is aws:kms.
+        /// Gets and sets the property ServerSideEncryptionKeyManagementServiceKeyId. 
         /// <para>
         /// Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS
         /// key ID to use for the default encryption. This parameter is allowed if and only if
-        /// <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.
+        /// <c>SSEAlgorithm</c> is set to <c>aws:kms</c> or <c>aws:kms:dsse</c>.
         /// </para>
         ///  
         /// <para>
-        /// You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. If you
-        /// use a key ID, you can run into a LogDestination undeliverable error when creating
+        /// You can specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS
+        /// key.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key Alias: <c>alias/alias-name</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you use a key ID, you can run into a LogDestination undeliverable error when creating
         /// a VPC flow log. 
         /// </para>
         ///  
         /// <para>
         /// If you are using encryption with cross-account or Amazon Web Services service operations
         /// you must use a fully qualified KMS key ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using
-        /// encryption for cross-account operations</a>. 
+        /// encryption for cross-account operations</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// 
-        /// </para>
-        ///  </li> </ul> <important> 
+        ///  <important> 
         /// <para>
         /// Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a
         /// href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric

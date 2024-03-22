@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class BatchUpdatePhoneNumberRequest : AmazonChimeSDKVoiceRequest
     {
-        private List<UpdatePhoneNumberRequestItem> _updatePhoneNumberRequestItems = new List<UpdatePhoneNumberRequestItem>();
+        private List<UpdatePhoneNumberRequestItem> _updatePhoneNumberRequestItems = AWSConfigs.InitializeCollections ? new List<UpdatePhoneNumberRequestItem>() : null;
 
         /// <summary>
         /// Gets and sets the property UpdatePhoneNumberRequestItems. 
@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if UpdatePhoneNumberRequestItems property is set
         internal bool IsSetUpdatePhoneNumberRequestItems()
         {
-            return this._updatePhoneNumberRequestItems != null && this._updatePhoneNumberRequestItems.Count > 0; 
+            return this._updatePhoneNumberRequestItems != null && (this._updatePhoneNumberRequestItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetInstancePortStatesResponse : AmazonWebServiceResponse
     {
-        private List<InstancePortState> _portStates = new List<InstancePortState>();
+        private List<InstancePortState> _portStates = AWSConfigs.InitializeCollections ? new List<InstancePortState>() : null;
 
         /// <summary>
         /// Gets and sets the property PortStates. 
@@ -50,7 +50,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if PortStates property is set
         internal bool IsSetPortStates()
         {
-            return this._portStates != null && this._portStates.Count > 0; 
+            return this._portStates != null && (this._portStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model
     public partial class ListSizeConstraintSetsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<SizeConstraintSetSummary> _sizeConstraintSets = new List<SizeConstraintSetSummary>();
+        private List<SizeConstraintSetSummary> _sizeConstraintSets = AWSConfigs.InitializeCollections ? new List<SizeConstraintSetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -74,7 +74,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if SizeConstraintSets property is set
         internal bool IsSetSizeConstraintSets()
         {
-            return this._sizeConstraintSets != null && this._sizeConstraintSets.Count > 0; 
+            return this._sizeConstraintSets != null && (this._sizeConstraintSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

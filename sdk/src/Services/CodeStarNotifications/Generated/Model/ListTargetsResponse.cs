@@ -34,7 +34,7 @@ namespace Amazon.CodeStarNotifications.Model
     public partial class ListTargetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TargetSummary> _targets = new List<TargetSummary>();
+        private List<TargetSummary> _targets = AWSConfigs.InitializeCollections ? new List<TargetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.CodeStarNotifications.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

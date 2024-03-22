@@ -33,12 +33,12 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class HlsGroupSettings
     {
-        private List<string> _adMarkers = new List<string>();
+        private List<string> _adMarkers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _baseUrlContent;
         private string _baseUrlContent1;
         private string _baseUrlManifest;
         private string _baseUrlManifest1;
-        private List<CaptionLanguageMapping> _captionLanguageMappings = new List<CaptionLanguageMapping>();
+        private List<CaptionLanguageMapping> _captionLanguageMappings = AWSConfigs.InitializeCollections ? new List<CaptionLanguageMapping>() : null;
         private HlsCaptionLanguageSetting _captionLanguageSetting;
         private HlsClientCache _clientCache;
         private HlsCodecSpecification _codecSpecification;
@@ -90,7 +90,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if AdMarkers property is set
         internal bool IsSetAdMarkers()
         {
-            return this._adMarkers != null && this._adMarkers.Count > 0; 
+            return this._adMarkers != null && (this._adMarkers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if CaptionLanguageMappings property is set
         internal bool IsSetCaptionLanguageMappings()
         {
-            return this._captionLanguageMappings != null && this._captionLanguageMappings.Count > 0; 
+            return this._captionLanguageMappings != null && (this._captionLanguageMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class ListResourceDataSyncResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceDataSyncItem> _resourceDataSyncItems = new List<ResourceDataSyncItem>();
+        private List<ResourceDataSyncItem> _resourceDataSyncItems = AWSConfigs.InitializeCollections ? new List<ResourceDataSyncItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ResourceDataSyncItems property is set
         internal bool IsSetResourceDataSyncItems()
         {
-            return this._resourceDataSyncItems != null && this._resourceDataSyncItems.Count > 0; 
+            return this._resourceDataSyncItems != null && (this._resourceDataSyncItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

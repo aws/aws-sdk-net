@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("connectionStatuses/item", targetDepth))
                     {
                         var unmarshaller = TerminateConnectionStatusUnmarshaller.Instance;
+                        if (response.ConnectionStatuses == null)
+                        {
+                            response.ConnectionStatuses = new List<TerminateConnectionStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ConnectionStatuses.Add(item);
                         continue;

@@ -33,7 +33,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class ListWorkflowsResponse : AmazonWebServiceResponse
     {
-        private List<WorkflowListItem> _items = new List<WorkflowListItem>();
+        private List<WorkflowListItem> _items = AWSConfigs.InitializeCollections ? new List<WorkflowListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Omics.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

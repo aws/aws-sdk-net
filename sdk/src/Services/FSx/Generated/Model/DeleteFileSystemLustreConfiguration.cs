@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DeleteFileSystemLustreConfiguration
     {
-        private List<Tag> _finalBackupTags = new List<Tag>();
+        private List<Tag> _finalBackupTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _skipFinalBackup;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.FSx.Model
         // Check to see if FinalBackupTags property is set
         internal bool IsSetFinalBackupTags()
         {
-            return this._finalBackupTags != null && this._finalBackupTags.Count > 0; 
+            return this._finalBackupTags != null && (this._finalBackupTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

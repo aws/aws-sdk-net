@@ -45,7 +45,7 @@ namespace Amazon.TrustedAdvisor.Model
         /// Enumerable containing all of the RecommendationSummaries
         /// </summary>
         public IPaginatedEnumerable<RecommendationSummary> RecommendationSummaries => 
-            new PaginatedResultKeyResponse<ListRecommendationsResponse, RecommendationSummary>(this, (i) => i.RecommendationSummaries);
+            new PaginatedResultKeyResponse<ListRecommendationsResponse, RecommendationSummary>(this, (i) => i.RecommendationSummaries ?? new List<RecommendationSummary>());
 
         internal ListRecommendationsPaginator(IAmazonTrustedAdvisor client, ListRecommendationsRequest request)
         {

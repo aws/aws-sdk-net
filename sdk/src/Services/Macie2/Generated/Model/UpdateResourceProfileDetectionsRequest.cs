@@ -35,7 +35,7 @@ namespace Amazon.Macie2.Model
     public partial class UpdateResourceProfileDetectionsRequest : AmazonMacie2Request
     {
         private string _resourceArn;
-        private List<SuppressDataIdentifier> _suppressDataIdentifiers = new List<SuppressDataIdentifier>();
+        private List<SuppressDataIdentifier> _suppressDataIdentifiers = AWSConfigs.InitializeCollections ? new List<SuppressDataIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -74,7 +74,7 @@ namespace Amazon.Macie2.Model
         // Check to see if SuppressDataIdentifiers property is set
         internal bool IsSetSuppressDataIdentifiers()
         {
-            return this._suppressDataIdentifiers != null && this._suppressDataIdentifiers.Count > 0; 
+            return this._suppressDataIdentifiers != null && (this._suppressDataIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

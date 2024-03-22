@@ -46,11 +46,11 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class CreateLoadBalancerTlsCertificateRequest : AmazonLightsailRequest
     {
-        private List<string> _certificateAlternativeNames = new List<string>();
+        private List<string> _certificateAlternativeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _certificateDomainName;
         private string _certificateName;
         private string _loadBalancerName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CertificateAlternativeNames. 
@@ -69,7 +69,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if CertificateAlternativeNames property is set
         internal bool IsSetCertificateAlternativeNames()
         {
-            return this._certificateAlternativeNames != null && this._certificateAlternativeNames.Count > 0; 
+            return this._certificateAlternativeNames != null && (this._certificateAlternativeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

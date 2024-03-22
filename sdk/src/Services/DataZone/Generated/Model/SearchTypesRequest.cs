@@ -39,7 +39,7 @@ namespace Amazon.DataZone.Model
         private bool? _managed;
         private int? _maxResults;
         private string _nextToken;
-        private List<SearchInItem> _searchIn = new List<SearchInItem>();
+        private List<SearchInItem> _searchIn = AWSConfigs.InitializeCollections ? new List<SearchInItem>() : null;
         private TypesSearchScope _searchScope;
         private string _searchText;
         private SearchSort _sort;
@@ -156,7 +156,7 @@ namespace Amazon.DataZone.Model
         // Check to see if SearchIn property is set
         internal bool IsSetSearchIn()
         {
-            return this._searchIn != null && this._searchIn.Count > 0; 
+            return this._searchIn != null && (this._searchIn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

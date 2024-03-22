@@ -38,7 +38,7 @@ namespace Amazon.MemoryDB.Model
     {
         private bool? _allParameters;
         private string _parameterGroupName;
-        private List<string> _parameterNames = new List<string>();
+        private List<string> _parameterNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllParameters. 
@@ -96,7 +96,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ParameterNames property is set
         internal bool IsSetParameterNames()
         {
-            return this._parameterNames != null && this._parameterNames.Count > 0; 
+            return this._parameterNames != null && (this._parameterNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

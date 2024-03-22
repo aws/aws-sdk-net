@@ -33,7 +33,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class UserTurnOutputSpecification
     {
-        private List<ActiveContext> _activeContexts = new List<ActiveContext>();
+        private List<ActiveContext> _activeContexts = AWSConfigs.InitializeCollections ? new List<ActiveContext>() : null;
         private UserTurnIntentOutput _intent;
         private string _transcript;
 
@@ -53,7 +53,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if ActiveContexts property is set
         internal bool IsSetActiveContexts()
         {
-            return this._activeContexts != null && this._activeContexts.Count > 0; 
+            return this._activeContexts != null && (this._activeContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

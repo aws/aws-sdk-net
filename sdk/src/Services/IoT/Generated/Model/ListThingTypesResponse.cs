@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ListThingTypesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ThingTypeDefinition> _thingTypes = new List<ThingTypeDefinition>();
+        private List<ThingTypeDefinition> _thingTypes = AWSConfigs.InitializeCollections ? new List<ThingTypeDefinition>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.IoT.Model
         // Check to see if ThingTypes property is set
         internal bool IsSetThingTypes()
         {
-            return this._thingTypes != null && this._thingTypes.Count > 0; 
+            return this._thingTypes != null && (this._thingTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

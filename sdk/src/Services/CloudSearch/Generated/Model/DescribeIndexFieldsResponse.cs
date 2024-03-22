@@ -34,7 +34,7 @@ namespace Amazon.CloudSearch.Model
     /// </summary>
     public partial class DescribeIndexFieldsResponse : AmazonWebServiceResponse
     {
-        private List<IndexFieldStatus> _indexFields = new List<IndexFieldStatus>();
+        private List<IndexFieldStatus> _indexFields = AWSConfigs.InitializeCollections ? new List<IndexFieldStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property IndexFields. 
@@ -52,7 +52,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if IndexFields property is set
         internal bool IsSetIndexFields()
         {
-            return this._indexFields != null && this._indexFields.Count > 0; 
+            return this._indexFields != null && (this._indexFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class DescribeTrustStoreAssociationsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<TrustStoreAssociation> _trustStoreAssociations = new List<TrustStoreAssociation>();
+        private List<TrustStoreAssociation> _trustStoreAssociations = AWSConfigs.InitializeCollections ? new List<TrustStoreAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -70,7 +70,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if TrustStoreAssociations property is set
         internal bool IsSetTrustStoreAssociations()
         {
-            return this._trustStoreAssociations != null && this._trustStoreAssociations.Count > 0; 
+            return this._trustStoreAssociations != null && (this._trustStoreAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

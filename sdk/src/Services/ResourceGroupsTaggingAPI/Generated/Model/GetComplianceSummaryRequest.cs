@@ -55,13 +55,13 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </summary>
     public partial class GetComplianceSummaryRequest : AmazonResourceGroupsTaggingAPIRequest
     {
-        private List<string> _groupBy = new List<string>();
+        private List<string> _groupBy = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _paginationToken;
-        private List<string> _regionFilters = new List<string>();
-        private List<string> _resourceTypeFilters = new List<string>();
-        private List<string> _tagKeyFilters = new List<string>();
-        private List<string> _targetIdFilters = new List<string>();
+        private List<string> _regionFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceTypeFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _tagKeyFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _targetIdFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupBy. 
@@ -79,7 +79,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if GroupBy property is set
         internal bool IsSetGroupBy()
         {
-            return this._groupBy != null && this._groupBy.Count > 0; 
+            return this._groupBy != null && (this._groupBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if RegionFilters property is set
         internal bool IsSetRegionFilters()
         {
-            return this._regionFilters != null && this._regionFilters.Count > 0; 
+            return this._regionFilters != null && (this._regionFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if ResourceTypeFilters property is set
         internal bool IsSetResourceTypeFilters()
         {
-            return this._resourceTypeFilters != null && this._resourceTypeFilters.Count > 0; 
+            return this._resourceTypeFilters != null && (this._resourceTypeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if TagKeyFilters property is set
         internal bool IsSetTagKeyFilters()
         {
-            return this._tagKeyFilters != null && this._tagKeyFilters.Count > 0; 
+            return this._tagKeyFilters != null && (this._tagKeyFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if TargetIdFilters property is set
         internal bool IsSetTargetIdFilters()
         {
-            return this._targetIdFilters != null && this._targetIdFilters.Count > 0; 
+            return this._targetIdFilters != null && (this._targetIdFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

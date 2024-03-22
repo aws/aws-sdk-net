@@ -34,7 +34,7 @@ namespace Amazon.PinpointEmail.Model
     /// </summary>
     public partial class GetDedicatedIpsResponse : AmazonWebServiceResponse
     {
-        private List<DedicatedIp> _dedicatedIps = new List<DedicatedIp>();
+        private List<DedicatedIp> _dedicatedIps = AWSConfigs.InitializeCollections ? new List<DedicatedIp>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if DedicatedIps property is set
         internal bool IsSetDedicatedIps()
         {
-            return this._dedicatedIps != null && this._dedicatedIps.Count > 0; 
+            return this._dedicatedIps != null && (this._dedicatedIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

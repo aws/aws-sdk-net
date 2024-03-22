@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model
     public partial class DescribeServiceUpdatesResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ServiceUpdate> _serviceUpdates = new List<ServiceUpdate>();
+        private List<ServiceUpdate> _serviceUpdates = AWSConfigs.InitializeCollections ? new List<ServiceUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +71,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ServiceUpdates property is set
         internal bool IsSetServiceUpdates()
         {
-            return this._serviceUpdates != null && this._serviceUpdates.Count > 0; 
+            return this._serviceUpdates != null && (this._serviceUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

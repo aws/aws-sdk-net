@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the IpamPools
         /// </summary>
         public IPaginatedEnumerable<IpamPool> IpamPools => 
-            new PaginatedResultKeyResponse<DescribeIpamPoolsResponse, IpamPool>(this, (i) => i.IpamPools);
+            new PaginatedResultKeyResponse<DescribeIpamPoolsResponse, IpamPool>(this, (i) => i.IpamPools ?? new List<IpamPool>());
 
         internal DescribeIpamPoolsPaginator(IAmazonEC2 client, DescribeIpamPoolsRequest request)
         {

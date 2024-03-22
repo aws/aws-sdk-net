@@ -44,8 +44,8 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ControlPlaneTagFilter
     {
-        private List<TagCondition> _andConditions = new List<TagCondition>();
-        private List<List<TagCondition>> _orConditions = new List<List<TagCondition>>();
+        private List<TagCondition> _andConditions = AWSConfigs.InitializeCollections ? new List<TagCondition>() : null;
+        private List<List<TagCondition>> _orConditions = AWSConfigs.InitializeCollections ? new List<List<TagCondition>>() : null;
         private TagCondition _tagCondition;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.Connect.Model
         // Check to see if AndConditions property is set
         internal bool IsSetAndConditions()
         {
-            return this._andConditions != null && this._andConditions.Count > 0; 
+            return this._andConditions != null && (this._andConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.Connect.Model
         // Check to see if OrConditions property is set
         internal bool IsSetOrConditions()
         {
-            return this._orConditions != null && this._orConditions.Count > 0; 
+            return this._orConditions != null && (this._orConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

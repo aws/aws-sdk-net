@@ -33,7 +33,7 @@ namespace Amazon.OSIS.Model
     /// </summary>
     public partial class GetPipelineChangeProgressResponse : AmazonWebServiceResponse
     {
-        private List<ChangeProgressStatus> _changeProgressStatuses = new List<ChangeProgressStatus>();
+        private List<ChangeProgressStatus> _changeProgressStatuses = AWSConfigs.InitializeCollections ? new List<ChangeProgressStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property ChangeProgressStatuses. 
@@ -50,7 +50,7 @@ namespace Amazon.OSIS.Model
         // Check to see if ChangeProgressStatuses property is set
         internal bool IsSetChangeProgressStatuses()
         {
-            return this._changeProgressStatuses != null && this._changeProgressStatuses.Count > 0; 
+            return this._changeProgressStatuses != null && (this._changeProgressStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

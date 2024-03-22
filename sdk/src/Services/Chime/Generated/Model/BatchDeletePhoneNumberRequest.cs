@@ -41,7 +41,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class BatchDeletePhoneNumberRequest : AmazonChimeRequest
     {
-        private List<string> _phoneNumberIds = new List<string>();
+        private List<string> _phoneNumberIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property PhoneNumberIds. 
@@ -59,7 +59,7 @@ namespace Amazon.Chime.Model
         // Check to see if PhoneNumberIds property is set
         internal bool IsSetPhoneNumberIds()
         {
-            return this._phoneNumberIds != null && this._phoneNumberIds.Count > 0; 
+            return this._phoneNumberIds != null && (this._phoneNumberIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

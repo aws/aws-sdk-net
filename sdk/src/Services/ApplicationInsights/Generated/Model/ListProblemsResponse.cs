@@ -35,7 +35,7 @@ namespace Amazon.ApplicationInsights.Model
     {
         private string _accountId;
         private string _nextToken;
-        private List<Problem> _problemList = new List<Problem>();
+        private List<Problem> _problemList = AWSConfigs.InitializeCollections ? new List<Problem>() : null;
         private string _resourceGroupName;
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.ApplicationInsights.Model
         // Check to see if ProblemList property is set
         internal bool IsSetProblemList()
         {
-            return this._problemList != null && this._problemList.Count > 0; 
+            return this._problemList != null && (this._problemList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

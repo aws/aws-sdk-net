@@ -45,7 +45,7 @@ namespace Amazon.SSMContacts.Model
         /// Enumerable containing all of the Pages
         /// </summary>
         public IPaginatedEnumerable<Page> Pages => 
-            new PaginatedResultKeyResponse<ListPagesByEngagementResponse, Page>(this, (i) => i.Pages);
+            new PaginatedResultKeyResponse<ListPagesByEngagementResponse, Page>(this, (i) => i.Pages ?? new List<Page>());
 
         internal ListPagesByEngagementPaginator(IAmazonSSMContacts client, ListPagesByEngagementRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the SSHPublicKeys
         /// </summary>
         public IPaginatedEnumerable<SSHPublicKeyMetadata> SSHPublicKeys => 
-            new PaginatedResultKeyResponse<ListSSHPublicKeysResponse, SSHPublicKeyMetadata>(this, (i) => i.SSHPublicKeys);
+            new PaginatedResultKeyResponse<ListSSHPublicKeysResponse, SSHPublicKeyMetadata>(this, (i) => i.SSHPublicKeys ?? new List<SSHPublicKeyMetadata>());
 
         internal ListSSHPublicKeysPaginator(IAmazonIdentityManagementService client, ListSSHPublicKeysRequest request)
         {

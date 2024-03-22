@@ -33,7 +33,7 @@ namespace Amazon.Pipes.Model
     /// </summary>
     public partial class PipeSourceSelfManagedKafkaParameters
     {
-        private List<string> _additionalBootstrapServers = new List<string>();
+        private List<string> _additionalBootstrapServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _batchSize;
         private string _consumerGroupID;
         private SelfManagedKafkaAccessConfigurationCredentials _credentials;
@@ -59,7 +59,7 @@ namespace Amazon.Pipes.Model
         // Check to see if AdditionalBootstrapServers property is set
         internal bool IsSetAdditionalBootstrapServers()
         {
-            return this._additionalBootstrapServers != null && this._additionalBootstrapServers.Count > 0; 
+            return this._additionalBootstrapServers != null && (this._additionalBootstrapServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

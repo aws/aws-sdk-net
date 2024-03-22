@@ -34,7 +34,7 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class ListEnvironmentsRequest : AmazonProtonRequest
     {
-        private List<EnvironmentTemplateFilter> _environmentTemplates = new List<EnvironmentTemplateFilter>();
+        private List<EnvironmentTemplateFilter> _environmentTemplates = AWSConfigs.InitializeCollections ? new List<EnvironmentTemplateFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -53,7 +53,7 @@ namespace Amazon.Proton.Model
         // Check to see if EnvironmentTemplates property is set
         internal bool IsSetEnvironmentTemplates()
         {
-            return this._environmentTemplates != null && this._environmentTemplates.Count > 0; 
+            return this._environmentTemplates != null && (this._environmentTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

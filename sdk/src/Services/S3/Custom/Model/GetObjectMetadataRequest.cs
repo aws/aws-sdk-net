@@ -25,19 +25,17 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetObjectMetadata operation.
-    /// The <code>HEAD</code> operation retrieves metadata from an object without returning
-    /// the object itself. This operation is useful if you're interested only in an object's
-    /// metadata.
+    /// The <c>HEAD</c> operation retrieves metadata from an object without returning the
+    /// object itself. This operation is useful if you're interested only in an object's metadata.
     /// 
     ///  
     /// <para>
-    /// A <code>HEAD</code> request has the same options as a <code>GET</code> operation on
-    /// an object. The response is identical to the <code>GET</code> response except that
-    /// there is no response body. Because of this, if the <code>HEAD</code> request generates
-    /// an error, it returns a generic code, such as <code>400 Bad Request</code>, <code>403
-    /// Forbidden</code>, <code>404 Not Found</code>, <code>405 Method Not Allowed</code>,
-    /// <code>412 Precondition Failed</code>, or <code>304 Not Modified</code>. It's not possible
-    /// to retrieve the exact exception of these error codes.
+    /// A <c>HEAD</c> request has the same options as a <c>GET</c> operation on an object.
+    /// The response is identical to the <c>GET</c> response except that there is no response
+    /// body. Because of this, if the <c>HEAD</c> request generates an error, it returns a
+    /// generic code, such as <c>400 Bad Request</c>, <c>403 Forbidden</c>, <c>404 Not Found</c>,
+    /// <c>405 Method Not Allowed</c>, <c>412 Precondition Failed</c>, or <c>304 Not Modified</c>.
+    /// It's not possible to retrieve the exact exception of these error codes.
     /// </para>
     ///  
     /// <para>
@@ -48,58 +46,58 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
     /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-    /// requests in the format <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-    /// </code>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+    /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+    /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
     /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </note> <dl> <dt>Permissions</dt> <dd>  <ul> <li> 
     /// <para>
-    ///  <b>General purpose bucket permissions</b> - To use <code>HEAD</code>, you must have
-    /// the <code>s3:GetObject</code> permission. You need the relevant read object (or version)
-    /// permission for this operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+    ///  <b>General purpose bucket permissions</b> - To use <c>HEAD</c>, you must have the
+    /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
+    /// for this operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
     /// resources, and condition keys for Amazon S3</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// If the object you request doesn't exist, the error that Amazon S3 returns depends
-    /// on whether you also have the <code>s3:ListBucket</code> permission.
+    /// on whether you also have the <c>s3:ListBucket</c> permission.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns
-    /// an HTTP status code <code>404 Not Found</code> error.
+    /// If you have the <c>s3:ListBucket</c> permission on the bucket, Amazon S3 returns an
+    /// HTTP status code <c>404 Not Found</c> error.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
-    /// HTTP status code <code>403 Forbidden</code> error.
+    /// If you don’t have the <c>s3:ListBucket</c> permission, Amazon S3 returns an HTTP status
+    /// code <c>403 Forbidden</c> error.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
     /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-    /// <code>CreateSession</code> </a> API operation for session-based authorization. Specifically,
-    /// you grant the <code>s3express:CreateSession</code> permission to the directory bucket
-    /// in a bucket policy or an IAM identity-based policy. Then, you make the <code>CreateSession</code>
+    /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+    /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+    /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
     /// API call on the bucket to obtain a session token. With the session token in your request
     /// header, you can make API requests to this operation. After the session token expires,
-    /// you make another <code>CreateSession</code> API call to generate a new session token
-    /// for use. Amazon Web Services CLI or SDKs create session and refresh the session token
+    /// you make another <c>CreateSession</c> API call to generate a new session token for
+    /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
     /// automatically to avoid service interruptions when a session expires. For more information
     /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-    /// <code>CreateSession</code> </a>.
+    /// <c>CreateSession</c> </a>.
     /// </para>
     ///  </li> </ul> </dd> <dt>Encryption</dt> <dd> <note> 
     /// <para>
-    /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
-    /// not be sent for <code>HEAD</code> requests if your object uses server-side encryption
-    /// with Key Management Service (KMS) keys (SSE-KMS), dual-layer server-side encryption
-    /// with Amazon Web Services KMS keys (DSSE-KMS), or server-side encryption with Amazon
-    /// S3 managed encryption keys (SSE-S3). The <code>x-amz-server-side-encryption</code>
-    /// header is used when you <code>PUT</code> an object to S3 and want to specify the encryption
-    /// method. If you include this header in a <code>HEAD</code> request for an object that
-    /// uses these types of keys, you’ll get an HTTP <code>400 Bad Request</code> error. It's
-    /// because the encryption method can't be changed when you retrieve the object.
+    /// Encryption request headers, like <c>x-amz-server-side-encryption</c>, should not be
+    /// sent for <c>HEAD</c> requests if your object uses server-side encryption with Key
+    /// Management Service (KMS) keys (SSE-KMS), dual-layer server-side encryption with Amazon
+    /// Web Services KMS keys (DSSE-KMS), or server-side encryption with Amazon S3 managed
+    /// encryption keys (SSE-S3). The <c>x-amz-server-side-encryption</c> header is used when
+    /// you <c>PUT</c> an object to S3 and want to specify the encryption method. If you include
+    /// this header in a <c>HEAD</c> request for an object that uses these types of keys,
+    /// you’ll get an HTTP <c>400 Bad Request</c> error. It's because the encryption method
+    /// can't be changed when you retrieve the object.
     /// </para>
     ///  </note> 
     /// <para>
@@ -110,15 +108,15 @@ namespace Amazon.S3.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>x-amz-server-side-encryption-customer-algorithm</code> 
+    ///  <c>x-amz-server-side-encryption-customer-algorithm</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-server-side-encryption-customer-key</code> 
+    ///  <c>x-amz-server-side-encryption-customer-key</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-server-side-encryption-customer-key-MD5</code> 
+    ///  <c>x-amz-server-side-encryption-customer-key-MD5</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -129,17 +127,17 @@ namespace Amazon.S3.Model
     ///  <note> 
     /// <para>
     ///  <b>Directory bucket permissions</b> - For directory buckets, only server-side encryption
-    /// with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.
+    /// with Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) is supported.
     /// </para>
     ///  </note> </dd> <dt>Versioning</dt> <dd> <ul> <li> 
     /// <para>
     /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
-    /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+    /// object was deleted and includes <c>x-amz-delete-marker: true</c> in the response.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If the specified version is a delete marker, the response returns a <code>405 Method
-    /// Not Allowed</code> error and the <code>Last-Modified: timestamp</code> response header.
+    /// If the specified version is a delete marker, the response returns a <c>405 Method
+    /// Not Allowed</c> error and the <c>Last-Modified: timestamp</c> response header.
     /// </para>
     ///  </li> </ul> <note> <ul> <li> 
     /// <para>
@@ -148,17 +146,17 @@ namespace Amazon.S3.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory
-    /// buckets. For this API operation, only the <code>null</code> value of the version ID
-    /// is supported by directory buckets. You can only specify <code>null</code> to the <code>versionId</code>
-    /// query parameter in the request.
+    /// buckets. For this API operation, only the <c>null</c> value of the version ID is supported
+    /// by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query
+    /// parameter in the request.
     /// </para>
     ///  </li> </ul> </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
-    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
-    /// The following actions are related to <code>HeadObject</code>:
+    /// The following actions are related to <c>HeadObject</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -201,11 +199,11 @@ namespace Amazon.S3.Model
         ///  
         /// <para>
         ///  <b>Directory buckets</b> - When you use this operation with a directory bucket, you
-        /// must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+        /// must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// Path-style requests are not supported. Directory bucket names must be unique in the
-        /// chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code>
-        /// (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
-        /// information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+        /// chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c>
+        /// (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information
+        /// about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
         /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -227,7 +225,7 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you
         /// must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes
-        /// the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>.
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
@@ -253,8 +251,8 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// In addition, if you enable <code>ChecksumMode</code> and the object is KMS encrypted,
-        /// you must have permission to the <code>kms:Decrypt</code> action for the request to
+        /// In addition, if you enable <c>ChecksumMode</c> and the object is KMS encrypted,
+        /// you must have permission to the <c>kms:Decrypt</c> action for the request to
         /// succeed.
         /// </para>
         /// </summary>
@@ -465,7 +463,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For directory buckets in this API operation, only the <code>null</code> value of the
+        /// For directory buckets in this API operation, only the <c>null</c> value of the
         /// version ID is supported.
         /// </para>
         ///  </note>
@@ -618,7 +616,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner

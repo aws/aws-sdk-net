@@ -33,7 +33,7 @@ namespace Amazon.Signer.Model
     /// </summary>
     public partial class ListSigningJobsResponse : AmazonWebServiceResponse
     {
-        private List<SigningJob> _jobs = new List<SigningJob>();
+        private List<SigningJob> _jobs = AWSConfigs.InitializeCollections ? new List<SigningJob>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Signer.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

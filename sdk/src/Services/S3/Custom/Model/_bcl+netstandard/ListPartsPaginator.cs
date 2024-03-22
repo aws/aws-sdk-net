@@ -41,7 +41,7 @@ namespace Amazon.S3.Model
         /// Enumerable containing all of the Parts
         /// </summary>
         public IPaginatedEnumerable<PartDetail> Parts => 
-            new PaginatedResultKeyResponse<ListPartsResponse, PartDetail>(this, (i) => i.Parts);
+            new PaginatedResultKeyResponse<ListPartsResponse, PartDetail>(this, (i) => i.Parts ?? new List<PartDetail>());
 
         internal ListPartsPaginator(IAmazonS3 client, ListPartsRequest request)
         {

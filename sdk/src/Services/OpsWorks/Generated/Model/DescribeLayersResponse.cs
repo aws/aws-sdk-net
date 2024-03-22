@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeLayersResponse : AmazonWebServiceResponse
     {
-        private List<Layer> _layers = new List<Layer>();
+        private List<Layer> _layers = AWSConfigs.InitializeCollections ? new List<Layer>() : null;
 
         /// <summary>
         /// Gets and sets the property Layers. 
@@ -50,7 +50,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Layers property is set
         internal bool IsSetLayers()
         {
-            return this._layers != null && this._layers.Count > 0; 
+            return this._layers != null && (this._layers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

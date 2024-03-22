@@ -33,10 +33,10 @@ namespace Amazon.Honeycode.Model
     /// </summary>
     public partial class ListTableRowsResponse : AmazonWebServiceResponse
     {
-        private List<string> _columnIds = new List<string>();
+        private List<string> _columnIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
-        private List<string> _rowIdsNotFound = new List<string>();
-        private List<TableRow> _rows = new List<TableRow>();
+        private List<string> _rowIdsNotFound = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<TableRow> _rows = AWSConfigs.InitializeCollections ? new List<TableRow>() : null;
         private long? _workbookCursor;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if ColumnIds property is set
         internal bool IsSetColumnIds()
         {
-            return this._columnIds != null && this._columnIds.Count > 0; 
+            return this._columnIds != null && (this._columnIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if RowIdsNotFound property is set
         internal bool IsSetRowIdsNotFound()
         {
-            return this._rowIdsNotFound != null && this._rowIdsNotFound.Count > 0; 
+            return this._rowIdsNotFound != null && (this._rowIdsNotFound.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if Rows property is set
         internal bool IsSetRows()
         {
-            return this._rows != null && this._rows.Count > 0; 
+            return this._rows != null && (this._rows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -38,7 +38,7 @@ namespace Amazon.B2bi.Model
     {
         private string _capabilityId;
         private CapabilityConfiguration _configuration;
-        private List<S3Location> _instructionsDocuments = new List<S3Location>();
+        private List<S3Location> _instructionsDocuments = AWSConfigs.InitializeCollections ? new List<S3Location>() : null;
         private string _name;
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.B2bi.Model
         // Check to see if InstructionsDocuments property is set
         internal bool IsSetInstructionsDocuments()
         {
-            return this._instructionsDocuments != null && this._instructionsDocuments.Count > 0; 
+            return this._instructionsDocuments != null && (this._instructionsDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

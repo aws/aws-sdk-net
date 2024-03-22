@@ -35,7 +35,7 @@ namespace Amazon.IoTEventsData.Model
     /// </summary>
     public partial class BatchUpdateDetectorRequest : AmazonIoTEventsDataRequest
     {
-        private List<UpdateDetectorRequest> _detectors = new List<UpdateDetectorRequest>();
+        private List<UpdateDetectorRequest> _detectors = AWSConfigs.InitializeCollections ? new List<UpdateDetectorRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property Detectors. 
@@ -53,7 +53,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if Detectors property is set
         internal bool IsSetDetectors()
         {
-            return this._detectors != null && this._detectors.Count > 0; 
+            return this._detectors != null && (this._detectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

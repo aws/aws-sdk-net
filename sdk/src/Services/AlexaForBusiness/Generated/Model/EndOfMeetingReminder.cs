@@ -35,7 +35,7 @@ namespace Amazon.AlexaForBusiness.Model
     public partial class EndOfMeetingReminder
     {
         private bool? _enabled;
-        private List<int> _reminderAtMinutes = new List<int>();
+        private List<int> _reminderAtMinutes = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private EndOfMeetingReminderType _reminderType;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if ReminderAtMinutes property is set
         internal bool IsSetReminderAtMinutes()
         {
-            return this._reminderAtMinutes != null && this._reminderAtMinutes.Count > 0; 
+            return this._reminderAtMinutes != null && (this._reminderAtMinutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

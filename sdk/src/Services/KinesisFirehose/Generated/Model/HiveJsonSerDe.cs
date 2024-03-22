@@ -36,7 +36,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class HiveJsonSerDe
     {
-        private List<string> _timestampFormats = new List<string>();
+        private List<string> _timestampFormats = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TimestampFormats. 
@@ -58,7 +58,7 @@ namespace Amazon.KinesisFirehose.Model
         // Check to see if TimestampFormats property is set
         internal bool IsSetTimestampFormats()
         {
-            return this._timestampFormats != null && this._timestampFormats.Count > 0; 
+            return this._timestampFormats != null && (this._timestampFormats.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

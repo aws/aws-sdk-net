@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeElasticIpsResponse : AmazonWebServiceResponse
     {
-        private List<ElasticIp> _elasticIps = new List<ElasticIp>();
+        private List<ElasticIp> _elasticIps = AWSConfigs.InitializeCollections ? new List<ElasticIp>() : null;
 
         /// <summary>
         /// Gets and sets the property ElasticIps. 
@@ -50,7 +50,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if ElasticIps property is set
         internal bool IsSetElasticIps()
         {
-            return this._elasticIps != null && this._elasticIps.Count > 0; 
+            return this._elasticIps != null && (this._elasticIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

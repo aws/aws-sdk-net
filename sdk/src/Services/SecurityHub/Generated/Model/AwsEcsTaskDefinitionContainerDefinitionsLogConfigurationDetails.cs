@@ -34,8 +34,8 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails
     {
         private string _logDriver;
-        private Dictionary<string, string> _options = new Dictionary<string, string>();
-        private List<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails> _secretOptions = new List<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>();
+        private Dictionary<string, string> _options = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails> _secretOptions = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property LogDriver. 
@@ -128,7 +128,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecretOptions property is set
         internal bool IsSetSecretOptions()
         {
-            return this._secretOptions != null && this._secretOptions.Count > 0; 
+            return this._secretOptions != null && (this._secretOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

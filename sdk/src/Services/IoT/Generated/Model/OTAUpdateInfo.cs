@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class OTAUpdateInfo
     {
-        private Dictionary<string, string> _additionalParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _awsIotJobArn;
         private string _awsIotJobId;
         private AwsJobExecutionsRolloutConfig _awsJobExecutionsRolloutConfig;
@@ -43,11 +43,11 @@ namespace Amazon.IoT.Model
         private ErrorInfo _errorInfo;
         private DateTime? _lastModifiedDate;
         private string _otaUpdateArn;
-        private List<OTAUpdateFile> _otaUpdateFiles = new List<OTAUpdateFile>();
+        private List<OTAUpdateFile> _otaUpdateFiles = AWSConfigs.InitializeCollections ? new List<OTAUpdateFile>() : null;
         private string _otaUpdateId;
         private OTAUpdateStatus _otaUpdateStatus;
-        private List<string> _protocols = new List<string>();
-        private List<string> _targets = new List<string>();
+        private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _targets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TargetSelection _targetSelection;
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.IoT.Model
         // Check to see if AdditionalParameters property is set
         internal bool IsSetAdditionalParameters()
         {
-            return this._additionalParameters != null && this._additionalParameters.Count > 0; 
+            return this._additionalParameters != null && (this._additionalParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace Amazon.IoT.Model
         // Check to see if OtaUpdateFiles property is set
         internal bool IsSetOtaUpdateFiles()
         {
-            return this._otaUpdateFiles != null && this._otaUpdateFiles.Count > 0; 
+            return this._otaUpdateFiles != null && (this._otaUpdateFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -306,7 +306,7 @@ namespace Amazon.IoT.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -325,7 +325,7 @@ namespace Amazon.IoT.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

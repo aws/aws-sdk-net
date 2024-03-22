@@ -33,7 +33,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class ListPackagesForDomainResponse : AmazonWebServiceResponse
     {
-        private List<DomainPackageDetails> _domainPackageDetailsList = new List<DomainPackageDetails>();
+        private List<DomainPackageDetails> _domainPackageDetailsList = AWSConfigs.InitializeCollections ? new List<DomainPackageDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if DomainPackageDetailsList property is set
         internal bool IsSetDomainPackageDetailsList()
         {
-            return this._domainPackageDetailsList != null && this._domainPackageDetailsList.Count > 0; 
+            return this._domainPackageDetailsList != null && (this._domainPackageDetailsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

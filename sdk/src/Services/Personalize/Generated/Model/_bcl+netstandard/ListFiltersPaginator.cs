@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the Filters
         /// </summary>
         public IPaginatedEnumerable<FilterSummary> Filters => 
-            new PaginatedResultKeyResponse<ListFiltersResponse, FilterSummary>(this, (i) => i.Filters);
+            new PaginatedResultKeyResponse<ListFiltersResponse, FilterSummary>(this, (i) => i.Filters ?? new List<FilterSummary>());
 
         internal ListFiltersPaginator(IAmazonPersonalize client, ListFiltersRequest request)
         {

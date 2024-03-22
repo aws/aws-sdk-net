@@ -33,7 +33,8 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EksPodPropertiesOverride
     {
-        private List<EksContainerOverride> _containers = new List<EksContainerOverride>();
+        private List<EksContainerOverride> _containers = AWSConfigs.InitializeCollections ? new List<EksContainerOverride>() : null;
+        private List<EksContainerOverride> _initContainers = AWSConfigs.InitializeCollections ? new List<EksContainerOverride>() : null;
         private EksMetadata _metadata;
 
         /// <summary>
@@ -51,7 +52,35 @@ namespace Amazon.Batch.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitContainers. 
+        /// <para>
+        /// The overrides for the conatainers defined in the Amazon EKS pod. These containers
+        /// run before application containers, always runs to completion, and must complete successfully
+        /// before the next container starts. These containers are registered with the Amazon
+        /// EKS Connector agent and persists the registration information in the Kubernetes backend
+        /// data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+        /// Containers</a> in the <i>Kubernetes documentation</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This object is limited to 10 elements
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<EksContainerOverride> InitContainers
+        {
+            get { return this._initContainers; }
+            set { this._initContainers = value; }
+        }
+
+        // Check to see if InitContainers property is set
+        internal bool IsSetInitContainers()
+        {
+            return this._initContainers != null && (this._initContainers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

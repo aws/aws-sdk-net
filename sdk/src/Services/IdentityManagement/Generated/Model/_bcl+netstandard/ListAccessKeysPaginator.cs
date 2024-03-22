@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the AccessKeyMetadata
         /// </summary>
         public IPaginatedEnumerable<AccessKeyMetadata> AccessKeyMetadata => 
-            new PaginatedResultKeyResponse<ListAccessKeysResponse, AccessKeyMetadata>(this, (i) => i.AccessKeyMetadata);
+            new PaginatedResultKeyResponse<ListAccessKeysResponse, AccessKeyMetadata>(this, (i) => i.AccessKeyMetadata ?? new List<AccessKeyMetadata>());
 
         internal ListAccessKeysPaginator(IAmazonIdentityManagementService client, ListAccessKeysRequest request)
         {

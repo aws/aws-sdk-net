@@ -45,7 +45,7 @@ namespace Amazon.DocDB.Model
         /// Enumerable containing all of the DBClusterSnapshots
         /// </summary>
         public IPaginatedEnumerable<DBClusterSnapshot> DBClusterSnapshots => 
-            new PaginatedResultKeyResponse<DescribeDBClusterSnapshotsResponse, DBClusterSnapshot>(this, (i) => i.DBClusterSnapshots);
+            new PaginatedResultKeyResponse<DescribeDBClusterSnapshotsResponse, DBClusterSnapshot>(this, (i) => i.DBClusterSnapshots ?? new List<DBClusterSnapshot>());
 
         internal DescribeDBClusterSnapshotsPaginator(IAmazonDocDB client, DescribeDBClusterSnapshotsRequest request)
         {

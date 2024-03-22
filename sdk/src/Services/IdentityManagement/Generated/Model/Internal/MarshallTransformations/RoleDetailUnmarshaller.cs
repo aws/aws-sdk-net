@@ -69,6 +69,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AttachedManagedPolicies/member", targetDepth))
                     {
                         var unmarshaller = AttachedPolicyTypeUnmarshaller.Instance;
+                        if (unmarshalledObject.AttachedManagedPolicies == null)
+                        {
+                            unmarshalledObject.AttachedManagedPolicies = new List<AttachedPolicyType>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AttachedManagedPolicies.Add(item);
                         continue;
@@ -82,6 +86,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("InstanceProfileList/member", targetDepth))
                     {
                         var unmarshaller = InstanceProfileUnmarshaller.Instance;
+                        if (unmarshalledObject.InstanceProfileList == null)
+                        {
+                            unmarshalledObject.InstanceProfileList = new List<InstanceProfile>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.InstanceProfileList.Add(item);
                         continue;
@@ -119,6 +127,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RolePolicyList/member", targetDepth))
                     {
                         var unmarshaller = PolicyDetailUnmarshaller.Instance;
+                        if (unmarshalledObject.RolePolicyList == null)
+                        {
+                            unmarshalledObject.RolePolicyList = new List<PolicyDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RolePolicyList.Add(item);
                         continue;
@@ -126,6 +138,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tags/member", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

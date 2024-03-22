@@ -63,6 +63,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("HealthChecks/HealthCheck", targetDepth))
                     {
+                        if (response.HealthChecks == null)
+                        {
+                            response.HealthChecks = new List<HealthCheck>();
+                        }
                         var unmarshaller = HealthCheckUnmarshaller.Instance;
                         response.HealthChecks.Add(unmarshaller.Unmarshall(context));
                         continue;

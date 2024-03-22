@@ -34,6 +34,7 @@ namespace Amazon.FIS.Model
     public partial class ExperimentOptions
     {
         private AccountTargeting _accountTargeting;
+        private ActionsMode _actionsMode;
         private EmptyTargetResolutionMode _emptyTargetResolutionMode;
 
         /// <summary>
@@ -52,6 +53,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetAccountTargeting()
         {
             return this._accountTargeting != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActionsMode. 
+        /// <para>
+        /// The actions mode of the experiment that is set from the StartExperiment API command.
+        /// </para>
+        /// </summary>
+        public ActionsMode ActionsMode
+        {
+            get { return this._actionsMode; }
+            set { this._actionsMode = value; }
+        }
+
+        // Check to see if ActionsMode property is set
+        internal bool IsSetActionsMode()
+        {
+            return this._actionsMode != null;
         }
 
         /// <summary>

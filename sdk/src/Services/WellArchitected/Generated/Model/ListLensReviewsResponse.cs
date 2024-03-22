@@ -33,7 +33,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ListLensReviewsResponse : AmazonWebServiceResponse
     {
-        private List<LensReviewSummary> _lensReviewSummaries = new List<LensReviewSummary>();
+        private List<LensReviewSummary> _lensReviewSummaries = AWSConfigs.InitializeCollections ? new List<LensReviewSummary>() : null;
         private int? _milestoneNumber;
         private string _nextToken;
         private string _workloadId;
@@ -50,7 +50,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if LensReviewSummaries property is set
         internal bool IsSetLensReviewSummaries()
         {
-            return this._lensReviewSummaries != null && this._lensReviewSummaries.Count > 0; 
+            return this._lensReviewSummaries != null && (this._lensReviewSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

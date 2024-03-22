@@ -57,10 +57,10 @@ namespace Amazon.LexModelBuildingService.Model
         private string _checksum;
         private bool? _createVersion;
         private string _description;
-        private List<EnumerationValue> _enumerationValues = new List<EnumerationValue>();
+        private List<EnumerationValue> _enumerationValues = AWSConfigs.InitializeCollections ? new List<EnumerationValue>() : null;
         private string _name;
         private string _parentSlotTypeSignature;
-        private List<SlotTypeConfiguration> _slotTypeConfigurations = new List<SlotTypeConfiguration>();
+        private List<SlotTypeConfiguration> _slotTypeConfigurations = AWSConfigs.InitializeCollections ? new List<SlotTypeConfiguration>() : null;
         private SlotValueSelectionStrategy _valueSelectionStrategy;
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if EnumerationValues property is set
         internal bool IsSetEnumerationValues()
         {
-            return this._enumerationValues != null && this._enumerationValues.Count > 0; 
+            return this._enumerationValues != null && (this._enumerationValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if SlotTypeConfigurations property is set
         internal bool IsSetSlotTypeConfigurations()
         {
-            return this._slotTypeConfigurations != null && this._slotTypeConfigurations.Count > 0; 
+            return this._slotTypeConfigurations != null && (this._slotTypeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

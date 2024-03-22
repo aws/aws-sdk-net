@@ -45,7 +45,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Enumerable containing all of the Subscriptions
         /// </summary>
         public IPaginatedEnumerable<Subscription> Subscriptions => 
-            new PaginatedResultKeyResponse<ListSubscriptionsByTopicResponse, Subscription>(this, (i) => i.Subscriptions);
+            new PaginatedResultKeyResponse<ListSubscriptionsByTopicResponse, Subscription>(this, (i) => i.Subscriptions ?? new List<Subscription>());
 
         internal ListSubscriptionsByTopicPaginator(IAmazonSimpleNotificationService client, ListSubscriptionsByTopicRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class ListManagedDataIdentifiersResponse : AmazonWebServiceResponse
     {
-        private List<ManagedDataIdentifierSummary> _items = new List<ManagedDataIdentifierSummary>();
+        private List<ManagedDataIdentifierSummary> _items = AWSConfigs.InitializeCollections ? new List<ManagedDataIdentifierSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

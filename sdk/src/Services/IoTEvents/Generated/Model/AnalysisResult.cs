@@ -34,7 +34,7 @@ namespace Amazon.IoTEvents.Model
     public partial class AnalysisResult
     {
         private AnalysisResultLevel _level;
-        private List<AnalysisResultLocation> _locations = new List<AnalysisResultLocation>();
+        private List<AnalysisResultLocation> _locations = AWSConfigs.InitializeCollections ? new List<AnalysisResultLocation>() : null;
         private string _message;
         private string _type;
 
@@ -91,7 +91,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if Locations property is set
         internal bool IsSetLocations()
         {
-            return this._locations != null && this._locations.Count > 0; 
+            return this._locations != null && (this._locations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

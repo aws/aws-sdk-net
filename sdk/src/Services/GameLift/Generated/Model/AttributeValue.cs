@@ -37,8 +37,8 @@ namespace Amazon.GameLift.Model
     {
         private double? _n;
         private string _s;
-        private Dictionary<string, double> _sdm = new Dictionary<string, double>();
-        private List<string> _sl = new List<string>();
+        private Dictionary<string, double> _sdm = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
+        private List<string> _sl = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property N. 
@@ -93,7 +93,7 @@ namespace Amazon.GameLift.Model
         // Check to see if SDM property is set
         internal bool IsSetSDM()
         {
-            return this._sdm != null && this._sdm.Count > 0; 
+            return this._sdm != null && (this._sdm.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.GameLift.Model
         // Check to see if SL property is set
         internal bool IsSetSL()
         {
-            return this._sl != null && this._sl.Count > 0; 
+            return this._sl != null && (this._sl.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

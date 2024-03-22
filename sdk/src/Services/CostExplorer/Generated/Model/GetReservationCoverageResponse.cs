@@ -33,7 +33,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetReservationCoverageResponse : AmazonWebServiceResponse
     {
-        private List<CoverageByTime> _coveragesByTime = new List<CoverageByTime>();
+        private List<CoverageByTime> _coveragesByTime = AWSConfigs.InitializeCollections ? new List<CoverageByTime>() : null;
         private string _nextPageToken;
         private Coverage _total;
 
@@ -53,7 +53,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if CoveragesByTime property is set
         internal bool IsSetCoveragesByTime()
         {
-            return this._coveragesByTime != null && this._coveragesByTime.Count > 0; 
+            return this._coveragesByTime != null && (this._coveragesByTime.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

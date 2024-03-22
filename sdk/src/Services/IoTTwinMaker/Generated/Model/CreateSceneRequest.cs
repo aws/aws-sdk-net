@@ -34,12 +34,12 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class CreateSceneRequest : AmazonIoTTwinMakerRequest
     {
-        private List<string> _capabilities = new List<string>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _contentLocation;
         private string _description;
         private string _sceneId;
-        private Dictionary<string, string> _sceneMetadata = new Dictionary<string, string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _sceneMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workspaceId;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if SceneMetadata property is set
         internal bool IsSetSceneMetadata()
         {
-            return this._sceneMetadata != null && this._sceneMetadata.Count > 0; 
+            return this._sceneMetadata != null && (this._sceneMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

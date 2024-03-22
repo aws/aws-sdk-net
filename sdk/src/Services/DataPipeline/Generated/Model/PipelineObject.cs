@@ -35,7 +35,7 @@ namespace Amazon.DataPipeline.Model
     /// </summary>
     public partial class PipelineObject
     {
-        private List<Field> _fields = new List<Field>();
+        private List<Field> _fields = AWSConfigs.InitializeCollections ? new List<Field>() : null;
         private string _id;
         private string _name;
 
@@ -55,7 +55,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

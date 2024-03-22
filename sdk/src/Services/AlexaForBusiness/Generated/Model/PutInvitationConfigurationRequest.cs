@@ -37,7 +37,7 @@ namespace Amazon.AlexaForBusiness.Model
     {
         private string _contactEmail;
         private string _organizationName;
-        private List<string> _privateSkillIds = new List<string>();
+        private List<string> _privateSkillIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactEmail. 
@@ -95,7 +95,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if PrivateSkillIds property is set
         internal bool IsSetPrivateSkillIds()
         {
-            return this._privateSkillIds != null && this._privateSkillIds.Count > 0; 
+            return this._privateSkillIds != null && (this._privateSkillIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

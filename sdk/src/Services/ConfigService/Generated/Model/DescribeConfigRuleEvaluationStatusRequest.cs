@@ -36,7 +36,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeConfigRuleEvaluationStatusRequest : AmazonConfigServiceRequest
     {
-        private List<string> _configRuleNames = new List<string>();
+        private List<string> _configRuleNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _limit;
         private string _nextToken;
 
@@ -58,7 +58,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConfigRuleNames property is set
         internal bool IsSetConfigRuleNames()
         {
-            return this._configRuleNames != null && this._configRuleNames.Count > 0; 
+            return this._configRuleNames != null && (this._configRuleNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

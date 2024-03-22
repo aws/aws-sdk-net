@@ -38,7 +38,7 @@ namespace Amazon.LexModelsV2.Model
         private long? _audioVoiceDurationMillis;
         private string _botAliasId;
         private string _botResponseAudioVoiceId;
-        private List<UtteranceBotResponse> _botResponses = new List<UtteranceBotResponse>();
+        private List<UtteranceBotResponse> _botResponses = AWSConfigs.InitializeCollections ? new List<UtteranceBotResponse>() : null;
         private string _botVersion;
         private string _channel;
         private DateTime? _conversationEndTime;
@@ -164,7 +164,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotResponses property is set
         internal bool IsSetBotResponses()
         {
-            return this._botResponses != null && this._botResponses.Count > 0; 
+            return this._botResponses != null && (this._botResponses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

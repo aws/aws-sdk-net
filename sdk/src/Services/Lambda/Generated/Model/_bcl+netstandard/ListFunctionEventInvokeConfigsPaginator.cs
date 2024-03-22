@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// Enumerable containing all of the FunctionEventInvokeConfigs
         /// </summary>
         public IPaginatedEnumerable<FunctionEventInvokeConfig> FunctionEventInvokeConfigs => 
-            new PaginatedResultKeyResponse<ListFunctionEventInvokeConfigsResponse, FunctionEventInvokeConfig>(this, (i) => i.FunctionEventInvokeConfigs);
+            new PaginatedResultKeyResponse<ListFunctionEventInvokeConfigsResponse, FunctionEventInvokeConfig>(this, (i) => i.FunctionEventInvokeConfigs ?? new List<FunctionEventInvokeConfig>());
 
         internal ListFunctionEventInvokeConfigsPaginator(IAmazonLambda client, ListFunctionEventInvokeConfigsRequest request)
         {

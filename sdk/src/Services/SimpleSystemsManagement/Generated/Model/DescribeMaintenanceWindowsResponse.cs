@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribeMaintenanceWindowsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<MaintenanceWindowIdentity> _windowIdentities = new List<MaintenanceWindowIdentity>();
+        private List<MaintenanceWindowIdentity> _windowIdentities = AWSConfigs.InitializeCollections ? new List<MaintenanceWindowIdentity>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if WindowIdentities property is set
         internal bool IsSetWindowIdentities()
         {
-            return this._windowIdentities != null && this._windowIdentities.Count > 0; 
+            return this._windowIdentities != null && (this._windowIdentities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

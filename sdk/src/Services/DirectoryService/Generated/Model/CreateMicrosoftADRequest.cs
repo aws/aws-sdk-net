@@ -49,7 +49,7 @@ namespace Amazon.DirectoryService.Model
         private string _name;
         private string _password;
         private string _shortName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private DirectoryVpcSettings _vpcSettings;
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

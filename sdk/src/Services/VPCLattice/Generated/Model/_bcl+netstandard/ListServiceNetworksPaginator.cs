@@ -45,7 +45,7 @@ namespace Amazon.VPCLattice.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ServiceNetworkSummary> Items => 
-            new PaginatedResultKeyResponse<ListServiceNetworksResponse, ServiceNetworkSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListServiceNetworksResponse, ServiceNetworkSummary>(this, (i) => i.Items ?? new List<ServiceNetworkSummary>());
 
         internal ListServiceNetworksPaginator(IAmazonVPCLattice client, ListServiceNetworksRequest request)
         {

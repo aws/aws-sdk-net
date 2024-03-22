@@ -36,7 +36,7 @@ namespace Amazon.ServiceCatalog.Model
     {
         private string _failureReason;
         private string _idempotencyToken;
-        private List<RecordOutput> _outputs = new List<RecordOutput>();
+        private List<RecordOutput> _outputs = AWSConfigs.InitializeCollections ? new List<RecordOutput>() : null;
         private string _recordId;
         private EngineWorkflowStatus _status;
         private string _workflowToken;
@@ -94,7 +94,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

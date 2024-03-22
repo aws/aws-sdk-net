@@ -37,7 +37,7 @@ namespace Amazon.ConnectContactLens.Model
         private string _content;
         private int? _endOffsetMillis;
         private string _id;
-        private List<IssueDetected> _issuesDetected = new List<IssueDetected>();
+        private List<IssueDetected> _issuesDetected = AWSConfigs.InitializeCollections ? new List<IssueDetected>() : null;
         private string _participantId;
         private string _participantRole;
         private SentimentValue _sentiment;
@@ -134,7 +134,7 @@ namespace Amazon.ConnectContactLens.Model
         // Check to see if IssuesDetected property is set
         internal bool IsSetIssuesDetected()
         {
-            return this._issuesDetected != null && this._issuesDetected.Count > 0; 
+            return this._issuesDetected != null && (this._issuesDetected.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

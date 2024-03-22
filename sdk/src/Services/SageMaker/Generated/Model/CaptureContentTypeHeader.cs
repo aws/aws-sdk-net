@@ -34,8 +34,8 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CaptureContentTypeHeader
     {
-        private List<string> _csvContentTypes = new List<string>();
-        private List<string> _jsonContentTypes = new List<string>();
+        private List<string> _csvContentTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _jsonContentTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CsvContentTypes. 
@@ -54,7 +54,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CsvContentTypes property is set
         internal bool IsSetCsvContentTypes()
         {
-            return this._csvContentTypes != null && this._csvContentTypes.Count > 0; 
+            return this._csvContentTypes != null && (this._csvContentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if JsonContentTypes property is set
         internal bool IsSetJsonContentTypes()
         {
-            return this._jsonContentTypes != null && this._jsonContentTypes.Count > 0; 
+            return this._jsonContentTypes != null && (this._jsonContentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

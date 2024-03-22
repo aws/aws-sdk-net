@@ -33,7 +33,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class GetFindingStatisticsResponse : AmazonWebServiceResponse
     {
-        private List<GroupCount> _countsByGroup = new List<GroupCount>();
+        private List<GroupCount> _countsByGroup = AWSConfigs.InitializeCollections ? new List<GroupCount>() : null;
 
         /// <summary>
         /// Gets and sets the property CountsByGroup. 
@@ -51,7 +51,7 @@ namespace Amazon.Macie2.Model
         // Check to see if CountsByGroup property is set
         internal bool IsSetCountsByGroup()
         {
-            return this._countsByGroup != null && this._countsByGroup.Count > 0; 
+            return this._countsByGroup != null && (this._countsByGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

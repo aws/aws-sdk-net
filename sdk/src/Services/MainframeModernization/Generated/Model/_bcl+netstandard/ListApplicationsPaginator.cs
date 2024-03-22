@@ -45,7 +45,7 @@ namespace Amazon.MainframeModernization.Model
         /// Enumerable containing all of the Applications
         /// </summary>
         public IPaginatedEnumerable<ApplicationSummary> Applications => 
-            new PaginatedResultKeyResponse<ListApplicationsResponse, ApplicationSummary>(this, (i) => i.Applications);
+            new PaginatedResultKeyResponse<ListApplicationsResponse, ApplicationSummary>(this, (i) => i.Applications ?? new List<ApplicationSummary>());
 
         internal ListApplicationsPaginator(IAmazonMainframeModernization client, ListApplicationsRequest request)
         {

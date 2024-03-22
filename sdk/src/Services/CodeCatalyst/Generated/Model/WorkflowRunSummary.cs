@@ -38,7 +38,7 @@ namespace Amazon.CodeCatalyst.Model
         private DateTime? _lastUpdatedTime;
         private DateTime? _startTime;
         private WorkflowRunStatus _status;
-        private List<WorkflowRunStatusReason> _statusReasons = new List<WorkflowRunStatusReason>();
+        private List<WorkflowRunStatusReason> _statusReasons = AWSConfigs.InitializeCollections ? new List<WorkflowRunStatusReason>() : null;
         private string _workflowId;
         private string _workflowName;
 
@@ -157,7 +157,7 @@ namespace Amazon.CodeCatalyst.Model
         // Check to see if StatusReasons property is set
         internal bool IsSetStatusReasons()
         {
-            return this._statusReasons != null && this._statusReasons.Count > 0; 
+            return this._statusReasons != null && (this._statusReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

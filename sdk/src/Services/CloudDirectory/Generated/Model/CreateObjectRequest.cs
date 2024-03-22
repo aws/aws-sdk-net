@@ -39,9 +39,9 @@ namespace Amazon.CloudDirectory.Model
     {
         private string _directoryArn;
         private string _linkName;
-        private List<AttributeKeyAndValue> _objectAttributeList = new List<AttributeKeyAndValue>();
+        private List<AttributeKeyAndValue> _objectAttributeList = AWSConfigs.InitializeCollections ? new List<AttributeKeyAndValue>() : null;
         private ObjectReference _parentReference;
-        private List<SchemaFacet> _schemaFacets = new List<SchemaFacet>();
+        private List<SchemaFacet> _schemaFacets = AWSConfigs.InitializeCollections ? new List<SchemaFacet>() : null;
 
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
@@ -98,7 +98,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if ObjectAttributeList property is set
         internal bool IsSetObjectAttributeList()
         {
-            return this._objectAttributeList != null && this._objectAttributeList.Count > 0; 
+            return this._objectAttributeList != null && (this._objectAttributeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if SchemaFacets property is set
         internal bool IsSetSchemaFacets()
         {
-            return this._schemaFacets != null && this._schemaFacets.Count > 0; 
+            return this._schemaFacets != null && (this._schemaFacets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

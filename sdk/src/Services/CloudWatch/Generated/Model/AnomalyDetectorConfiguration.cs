@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class AnomalyDetectorConfiguration
     {
-        private List<Range> _excludedTimeRanges = new List<Range>();
+        private List<Range> _excludedTimeRanges = AWSConfigs.InitializeCollections ? new List<Range>() : null;
         private string _metricTimezone;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if ExcludedTimeRanges property is set
         internal bool IsSetExcludedTimeRanges()
         {
-            return this._excludedTimeRanges != null && this._excludedTimeRanges.Count > 0; 
+            return this._excludedTimeRanges != null && (this._excludedTimeRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

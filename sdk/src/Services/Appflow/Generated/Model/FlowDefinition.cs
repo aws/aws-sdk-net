@@ -47,7 +47,7 @@ namespace Amazon.Appflow.Model
         private string _lastUpdatedBy;
         private string _sourceConnectorLabel;
         private ConnectorType _sourceConnectorType;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TriggerType _triggerType;
 
         /// <summary>
@@ -310,7 +310,7 @@ namespace Amazon.Appflow.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

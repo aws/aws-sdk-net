@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ListAssociationVersionsResponse : AmazonWebServiceResponse
     {
-        private List<AssociationVersionInfo> _associationVersions = new List<AssociationVersionInfo>();
+        private List<AssociationVersionInfo> _associationVersions = AWSConfigs.InitializeCollections ? new List<AssociationVersionInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AssociationVersions property is set
         internal bool IsSetAssociationVersions()
         {
-            return this._associationVersions != null && this._associationVersions.Count > 0; 
+            return this._associationVersions != null && (this._associationVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

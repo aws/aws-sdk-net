@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class PutAccountDetailsRequest : AmazonSimpleEmailServiceV2Request
     {
-        private List<string> _additionalContactEmailAddresses = new List<string>();
+        private List<string> _additionalContactEmailAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ContactLanguage _contactLanguage;
         private MailType _mailType;
         private bool? _productionAccessEnabled;
@@ -58,7 +58,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if AdditionalContactEmailAddresses property is set
         internal bool IsSetAdditionalContactEmailAddresses()
         {
-            return this._additionalContactEmailAddresses != null && this._additionalContactEmailAddresses.Count > 0; 
+            return this._additionalContactEmailAddresses != null && (this._additionalContactEmailAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,10 +107,7 @@ namespace Amazon.SimpleEmailV2.Model
         ///  
         /// <para>
         /// If the value is <c>false</c>, then your account is in the <i>sandbox</i>. When your
-        /// account is in the sandbox, you can only send email to verified identities. Additionally,
-        /// the maximum number of emails you can send in a 24-hour period (your sending quota)
-        /// is 200, and the maximum number of emails you can send per second (your maximum sending
-        /// rate) is 1.
+        /// account is in the sandbox, you can only send email to verified identities. 
         /// </para>
         ///  
         /// <para>

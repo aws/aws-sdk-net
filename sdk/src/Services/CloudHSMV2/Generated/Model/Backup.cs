@@ -48,7 +48,7 @@ namespace Amazon.CloudHSMV2.Model
         private string _sourceBackup;
         private string _sourceCluster;
         private string _sourceRegion;
-        private List<Tag> _tagList = new List<Tag>();
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property BackupId. 
@@ -250,7 +250,7 @@ namespace Amazon.CloudHSMV2.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

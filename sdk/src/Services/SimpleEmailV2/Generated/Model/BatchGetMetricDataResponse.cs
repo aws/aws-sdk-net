@@ -33,8 +33,8 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class BatchGetMetricDataResponse : AmazonWebServiceResponse
     {
-        private List<MetricDataError> _errors = new List<MetricDataError>();
-        private List<MetricDataResult> _results = new List<MetricDataResult>();
+        private List<MetricDataError> _errors = AWSConfigs.InitializeCollections ? new List<MetricDataError>() : null;
+        private List<MetricDataResult> _results = AWSConfigs.InitializeCollections ? new List<MetricDataResult>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -52,7 +52,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

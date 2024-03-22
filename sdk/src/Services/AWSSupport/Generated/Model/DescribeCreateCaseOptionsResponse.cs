@@ -33,7 +33,7 @@ namespace Amazon.AWSSupport.Model
     /// </summary>
     public partial class DescribeCreateCaseOptionsResponse : AmazonWebServiceResponse
     {
-        private List<CommunicationTypeOptions> _communicationTypes = new List<CommunicationTypeOptions>();
+        private List<CommunicationTypeOptions> _communicationTypes = AWSConfigs.InitializeCollections ? new List<CommunicationTypeOptions>() : null;
         private string _languageAvailability;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if CommunicationTypes property is set
         internal bool IsSetCommunicationTypes()
         {
-            return this._communicationTypes != null && this._communicationTypes.Count > 0; 
+            return this._communicationTypes != null && (this._communicationTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

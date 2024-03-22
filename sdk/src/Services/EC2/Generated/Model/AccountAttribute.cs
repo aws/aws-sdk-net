@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class AccountAttribute
     {
         private string _attributeName;
-        private List<AccountAttributeValue> _attributeValues = new List<AccountAttributeValue>();
+        private List<AccountAttributeValue> _attributeValues = AWSConfigs.InitializeCollections ? new List<AccountAttributeValue>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeName. 
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         // Check to see if AttributeValues property is set
         internal bool IsSetAttributeValues()
         {
-            return this._attributeValues != null && this._attributeValues.Count > 0; 
+            return this._attributeValues != null && (this._attributeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

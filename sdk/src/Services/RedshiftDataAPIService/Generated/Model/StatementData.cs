@@ -36,9 +36,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         private DateTime? _createdAt;
         private string _id;
         private bool? _isBatchStatement;
-        private List<SqlParameter> _queryParameters = new List<SqlParameter>();
+        private List<SqlParameter> _queryParameters = AWSConfigs.InitializeCollections ? new List<SqlParameter>() : null;
         private string _queryString;
-        private List<string> _queryStrings = new List<string>();
+        private List<string> _queryStrings = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _secretArn;
         private string _statementName;
         private StatusString _status;
@@ -116,7 +116,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         // Check to see if QueryParameters property is set
         internal bool IsSetQueryParameters()
         {
-            return this._queryParameters != null && this._queryParameters.Count > 0; 
+            return this._queryParameters != null && (this._queryParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         // Check to see if QueryStrings property is set
         internal bool IsSetQueryStrings()
         {
-            return this._queryStrings != null && this._queryStrings.Count > 0; 
+            return this._queryStrings != null && (this._queryStrings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

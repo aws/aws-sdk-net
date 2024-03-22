@@ -41,7 +41,7 @@ namespace Amazon.GreengrassV2.Model
         private DateTime? _lastStatusChangeTimestamp;
         private InstalledComponentLifecycleState _lifecycleState;
         private string _lifecycleStateDetails;
-        private List<string> _lifecycleStatusCodes = new List<string>();
+        private List<string> _lifecycleStatusCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ComponentName. 
@@ -233,7 +233,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if LifecycleStatusCodes property is set
         internal bool IsSetLifecycleStatusCodes()
         {
-            return this._lifecycleStatusCodes != null && this._lifecycleStatusCodes.Count > 0; 
+            return this._lifecycleStatusCodes != null && (this._lifecycleStatusCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

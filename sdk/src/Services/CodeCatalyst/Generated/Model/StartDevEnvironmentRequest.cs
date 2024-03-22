@@ -35,7 +35,7 @@ namespace Amazon.CodeCatalyst.Model
     public partial class StartDevEnvironmentRequest : AmazonCodeCatalystRequest
     {
         private string _id;
-        private List<IdeConfiguration> _ides = new List<IdeConfiguration>();
+        private List<IdeConfiguration> _ides = AWSConfigs.InitializeCollections ? new List<IdeConfiguration>() : null;
         private int? _inactivityTimeoutMinutes;
         private InstanceType _instanceType;
         private string _projectName;
@@ -77,7 +77,7 @@ namespace Amazon.CodeCatalyst.Model
         // Check to see if Ides property is set
         internal bool IsSetIdes()
         {
-            return this._ides != null && this._ides.Count > 0; 
+            return this._ides != null && (this._ides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

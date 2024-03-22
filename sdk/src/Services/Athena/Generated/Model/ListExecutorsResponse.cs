@@ -33,7 +33,7 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class ListExecutorsResponse : AmazonWebServiceResponse
     {
-        private List<ExecutorsSummary> _executorsSummary = new List<ExecutorsSummary>();
+        private List<ExecutorsSummary> _executorsSummary = AWSConfigs.InitializeCollections ? new List<ExecutorsSummary>() : null;
         private string _nextToken;
         private string _sessionId;
 
@@ -52,7 +52,7 @@ namespace Amazon.Athena.Model
         // Check to see if ExecutorsSummary property is set
         internal bool IsSetExecutorsSummary()
         {
-            return this._executorsSummary != null && this._executorsSummary.Count > 0; 
+            return this._executorsSummary != null && (this._executorsSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

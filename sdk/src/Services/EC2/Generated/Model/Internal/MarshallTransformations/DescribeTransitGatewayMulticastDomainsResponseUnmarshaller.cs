@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("transitGatewayMulticastDomains/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayMulticastDomainUnmarshaller.Instance;
+                        if (response.TransitGatewayMulticastDomains == null)
+                        {
+                            response.TransitGatewayMulticastDomains = new List<TransitGatewayMulticastDomain>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TransitGatewayMulticastDomains.Add(item);
                         continue;

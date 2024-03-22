@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class SourceAlgorithmSpecification
     {
-        private List<SourceAlgorithm> _sourceAlgorithms = new List<SourceAlgorithm>();
+        private List<SourceAlgorithm> _sourceAlgorithms = AWSConfigs.InitializeCollections ? new List<SourceAlgorithm>() : null;
 
         /// <summary>
         /// Gets and sets the property SourceAlgorithms. 
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SourceAlgorithms property is set
         internal bool IsSetSourceAlgorithms()
         {
-            return this._sourceAlgorithms != null && this._sourceAlgorithms.Count > 0; 
+            return this._sourceAlgorithms != null && (this._sourceAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

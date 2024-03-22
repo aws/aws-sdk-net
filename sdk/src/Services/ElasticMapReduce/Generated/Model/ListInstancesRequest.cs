@@ -41,8 +41,8 @@ namespace Amazon.ElasticMapReduce.Model
         private string _instanceFleetId;
         private InstanceFleetType _instanceFleetType;
         private string _instanceGroupId;
-        private List<string> _instanceGroupTypes = new List<string>();
-        private List<string> _instanceStates = new List<string>();
+        private List<string> _instanceGroupTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _instanceStates = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _marker;
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceGroupTypes property is set
         internal bool IsSetInstanceGroupTypes()
         {
-            return this._instanceGroupTypes != null && this._instanceGroupTypes.Count > 0; 
+            return this._instanceGroupTypes != null && (this._instanceGroupTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceStates property is set
         internal bool IsSetInstanceStates()
         {
-            return this._instanceStates != null && this._instanceStates.Count > 0; 
+            return this._instanceStates != null && (this._instanceStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

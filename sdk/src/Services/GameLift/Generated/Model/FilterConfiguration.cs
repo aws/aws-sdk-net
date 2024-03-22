@@ -36,7 +36,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class FilterConfiguration
     {
-        private List<string> _allowedLocations = new List<string>();
+        private List<string> _allowedLocations = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowedLocations. 
@@ -55,7 +55,7 @@ namespace Amazon.GameLift.Model
         // Check to see if AllowedLocations property is set
         internal bool IsSetAllowedLocations()
         {
-            return this._allowedLocations != null && this._allowedLocations.Count > 0; 
+            return this._allowedLocations != null && (this._allowedLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

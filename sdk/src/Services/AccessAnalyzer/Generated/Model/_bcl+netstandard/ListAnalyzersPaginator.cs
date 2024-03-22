@@ -45,7 +45,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Enumerable containing all of the Analyzers
         /// </summary>
         public IPaginatedEnumerable<AnalyzerSummary> Analyzers => 
-            new PaginatedResultKeyResponse<ListAnalyzersResponse, AnalyzerSummary>(this, (i) => i.Analyzers);
+            new PaginatedResultKeyResponse<ListAnalyzersResponse, AnalyzerSummary>(this, (i) => i.Analyzers ?? new List<AnalyzerSummary>());
 
         internal ListAnalyzersPaginator(IAmazonAccessAnalyzer client, ListAnalyzersRequest request)
         {

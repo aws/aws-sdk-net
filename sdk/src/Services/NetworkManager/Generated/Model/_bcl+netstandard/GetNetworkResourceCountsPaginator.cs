@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the NetworkResourceCounts
         /// </summary>
         public IPaginatedEnumerable<NetworkResourceCount> NetworkResourceCounts => 
-            new PaginatedResultKeyResponse<GetNetworkResourceCountsResponse, NetworkResourceCount>(this, (i) => i.NetworkResourceCounts);
+            new PaginatedResultKeyResponse<GetNetworkResourceCountsResponse, NetworkResourceCount>(this, (i) => i.NetworkResourceCounts ?? new List<NetworkResourceCount>());
 
         internal GetNetworkResourceCountsPaginator(IAmazonNetworkManager client, GetNetworkResourceCountsRequest request)
         {

@@ -36,7 +36,7 @@ namespace Amazon.FMS.Model
     public partial class ListDiscoveredResourcesRequest : AmazonFMSRequest
     {
         private int? _maxResults;
-        private List<string> _memberAccountIds = new List<string>();
+        private List<string> _memberAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
         private string _resourceType;
 
@@ -78,7 +78,7 @@ namespace Amazon.FMS.Model
         // Check to see if MemberAccountIds property is set
         internal bool IsSetMemberAccountIds()
         {
-            return this._memberAccountIds != null && this._memberAccountIds.Count > 0; 
+            return this._memberAccountIds != null && (this._memberAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class DetectDocumentTextResponse : AmazonWebServiceResponse
     {
-        private List<Block> _blocks = new List<Block>();
+        private List<Block> _blocks = AWSConfigs.InitializeCollections ? new List<Block>() : null;
         private string _detectDocumentTextModelVersion;
         private DocumentMetadata _documentMetadata;
 
@@ -52,7 +52,7 @@ namespace Amazon.Textract.Model
         // Check to see if Blocks property is set
         internal bool IsSetBlocks()
         {
-            return this._blocks != null && this._blocks.Count > 0; 
+            return this._blocks != null && (this._blocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

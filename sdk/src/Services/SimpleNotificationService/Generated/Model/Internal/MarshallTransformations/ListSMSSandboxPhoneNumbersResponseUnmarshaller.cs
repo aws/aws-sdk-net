@@ -90,6 +90,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     if (context.TestExpression("PhoneNumbers/member", targetDepth))
                     {
                         var unmarshaller = SMSSandboxPhoneNumberUnmarshaller.Instance;
+                        if (response.PhoneNumbers == null)
+                        {
+                            response.PhoneNumbers = new List<SMSSandboxPhoneNumber>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.PhoneNumbers.Add(item);
                         continue;

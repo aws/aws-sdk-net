@@ -33,7 +33,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class RtmpGroupSettings
     {
-        private List<string> _adMarkers = new List<string>();
+        private List<string> _adMarkers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AuthenticationScheme _authenticationScheme;
         private RtmpCacheFullBehavior _cacheFullBehavior;
         private int? _cacheLength;
@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if AdMarkers property is set
         internal bool IsSetAdMarkers()
         {
-            return this._adMarkers != null && this._adMarkers.Count > 0; 
+            return this._adMarkers != null && (this._adMarkers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

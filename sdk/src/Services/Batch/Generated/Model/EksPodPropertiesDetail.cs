@@ -33,14 +33,16 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EksPodPropertiesDetail
     {
-        private List<EksContainerDetail> _containers = new List<EksContainerDetail>();
+        private List<EksContainerDetail> _containers = AWSConfigs.InitializeCollections ? new List<EksContainerDetail>() : null;
         private string _dnsPolicy;
         private bool? _hostNetwork;
+        private List<EksContainerDetail> _initContainers = AWSConfigs.InitializeCollections ? new List<EksContainerDetail>() : null;
         private EksMetadata _metadata;
         private string _nodeName;
         private string _podName;
         private string _serviceAccountName;
-        private List<EksVolume> _volumes = new List<EksVolume>();
+        private bool? _shareProcessNamespace;
+        private List<EksVolume> _volumes = AWSConfigs.InitializeCollections ? new List<EksVolume>() : null;
 
         /// <summary>
         /// Gets and sets the property Containers. 
@@ -57,7 +59,7 @@ namespace Amazon.Batch.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,6 +117,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetHostNetwork()
         {
             return this._hostNetwork.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitContainers. 
+        /// <para>
+        /// The container registered with the Amazon EKS Connector agent and persists the registration
+        /// information in the Kubernetes backend data store.
+        /// </para>
+        /// </summary>
+        public List<EksContainerDetail> InitContainers
+        {
+            get { return this._initContainers; }
+            set { this._initContainers = value; }
+        }
+
+        // Check to see if InitContainers property is set
+        internal bool IsSetInitContainers()
+        {
+            return this._initContainers != null && (this._initContainers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -198,6 +219,26 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareProcessNamespace. 
+        /// <para>
+        /// Indicates if the processes in a container are shared, or visible, to other containers
+        /// in the same pod. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share
+        /// Process Namespace between Containers in a Pod</a>.
+        /// </para>
+        /// </summary>
+        public bool? ShareProcessNamespace
+        {
+            get { return this._shareProcessNamespace; }
+            set { this._shareProcessNamespace = value; }
+        }
+
+        // Check to see if ShareProcessNamespace property is set
+        internal bool IsSetShareProcessNamespace()
+        {
+            return this._shareProcessNamespace.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Volumes. 
         /// <para>
         /// Specifies the volumes for a job definition using Amazon EKS resources.
@@ -212,7 +253,7 @@ namespace Amazon.Batch.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

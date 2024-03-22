@@ -75,16 +75,16 @@ namespace Amazon.LocationService.Model
         private string _calculatorName;
         private CalculateRouteCarModeOptions _carModeOptions;
         private bool? _departNow;
-        private List<double> _departurePosition = new List<double>();
+        private List<double> _departurePosition = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private DateTime? _departureTime;
-        private List<double> _destinationPosition = new List<double>();
+        private List<double> _destinationPosition = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private DistanceUnit _distanceUnit;
         private bool? _includeLegGeometry;
         private string _key;
         private OptimizationMode _optimizeFor;
         private TravelMode _travelMode;
         private CalculateRouteTruckModeOptions _truckModeOptions;
-        private List<List<double>> _waypointPositions = new List<List<double>>();
+        private List<List<double>> _waypointPositions = AWSConfigs.InitializeCollections ? new List<List<double>>() : null;
 
         /// <summary>
         /// Gets and sets the property ArrivalTime. 
@@ -214,7 +214,7 @@ namespace Amazon.LocationService.Model
         // Check to see if DeparturePosition property is set
         internal bool IsSetDeparturePosition()
         {
-            return this._departurePosition != null && this._departurePosition.Count > 0; 
+            return this._departurePosition != null && (this._departurePosition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -274,7 +274,7 @@ namespace Amazon.LocationService.Model
         // Check to see if DestinationPosition property is set
         internal bool IsSetDestinationPosition()
         {
-            return this._destinationPosition != null && this._destinationPosition.Count > 0; 
+            return this._destinationPosition != null && (this._destinationPosition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -482,7 +482,7 @@ namespace Amazon.LocationService.Model
         // Check to see if WaypointPositions property is set
         internal bool IsSetWaypointPositions()
         {
-            return this._waypointPositions != null && this._waypointPositions.Count > 0; 
+            return this._waypointPositions != null && (this._waypointPositions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -38,14 +38,14 @@ namespace Amazon.SageMaker.Model
         private int? _currentInstanceCount;
         private ProductionVariantServerlessConfig _currentServerlessConfig;
         private float? _currentWeight;
-        private List<DeployedImage> _deployedImages = new List<DeployedImage>();
+        private List<DeployedImage> _deployedImages = AWSConfigs.InitializeCollections ? new List<DeployedImage>() : null;
         private int? _desiredInstanceCount;
         private ProductionVariantServerlessConfig _desiredServerlessConfig;
         private float? _desiredWeight;
         private ProductionVariantManagedInstanceScaling _managedInstanceScaling;
         private ProductionVariantRoutingConfig _routingConfig;
         private string _variantName;
-        private List<ProductionVariantStatus> _variantStatus = new List<ProductionVariantStatus>();
+        private List<ProductionVariantStatus> _variantStatus = AWSConfigs.InitializeCollections ? new List<ProductionVariantStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property CurrentInstanceCount. 
@@ -119,7 +119,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if DeployedImages property is set
         internal bool IsSetDeployedImages()
         {
-            return this._deployedImages != null && this._deployedImages.Count > 0; 
+            return this._deployedImages != null && (this._deployedImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if VariantStatus property is set
         internal bool IsSetVariantStatus()
         {
-            return this._variantStatus != null && this._variantStatus.Count > 0; 
+            return this._variantStatus != null && (this._variantStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

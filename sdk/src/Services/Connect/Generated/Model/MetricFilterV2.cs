@@ -36,7 +36,7 @@ namespace Amazon.Connect.Model
     public partial class MetricFilterV2
     {
         private string _metricFilterKey;
-        private List<string> _metricFilterValues = new List<string>();
+        private List<string> _metricFilterValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _negate;
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.Connect.Model
         // Check to see if MetricFilterValues property is set
         internal bool IsSetMetricFilterValues()
         {
-            return this._metricFilterValues != null && this._metricFilterValues.Count > 0; 
+            return this._metricFilterValues != null && (this._metricFilterValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class PrefetchConsumption
     {
-        private List<AvailMatchingCriteria> _availMatchingCriteria = new List<AvailMatchingCriteria>();
+        private List<AvailMatchingCriteria> _availMatchingCriteria = AWSConfigs.InitializeCollections ? new List<AvailMatchingCriteria>() : null;
         private DateTime? _endTime;
         private DateTime? _startTime;
 
@@ -55,7 +55,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if AvailMatchingCriteria property is set
         internal bool IsSetAvailMatchingCriteria()
         {
-            return this._availMatchingCriteria != null && this._availMatchingCriteria.Count > 0; 
+            return this._availMatchingCriteria != null && (this._availMatchingCriteria.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

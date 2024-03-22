@@ -36,8 +36,8 @@ namespace Amazon.ManagedGrafana.Model
     /// </summary>
     public partial class RoleValues
     {
-        private List<string> _admin = new List<string>();
-        private List<string> _editor = new List<string>();
+        private List<string> _admin = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _editor = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Admin. 
@@ -56,7 +56,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if Admin property is set
         internal bool IsSetAdmin()
         {
-            return this._admin != null && this._admin.Count > 0; 
+            return this._admin != null && (this._admin.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if Editor property is set
         internal bool IsSetEditor()
         {
-            return this._editor != null && this._editor.Count > 0; 
+            return this._editor != null && (this._editor.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

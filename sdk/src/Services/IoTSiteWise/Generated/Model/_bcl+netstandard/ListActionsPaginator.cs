@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the ActionSummaries
         /// </summary>
         public IPaginatedEnumerable<ActionSummary> ActionSummaries => 
-            new PaginatedResultKeyResponse<ListActionsResponse, ActionSummary>(this, (i) => i.ActionSummaries);
+            new PaginatedResultKeyResponse<ListActionsResponse, ActionSummary>(this, (i) => i.ActionSummaries ?? new List<ActionSummary>());
 
         internal ListActionsPaginator(IAmazonIoTSiteWise client, ListActionsRequest request)
         {

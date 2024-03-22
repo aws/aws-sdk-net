@@ -34,8 +34,8 @@ namespace Amazon.SageMaker.Model
     public partial class RecommendationJobInputConfig
     {
         private RecommendationJobContainerConfig _containerConfig;
-        private List<EndpointInputConfiguration> _endpointConfigurations = new List<EndpointInputConfiguration>();
-        private List<EndpointInfo> _endpoints = new List<EndpointInfo>();
+        private List<EndpointInputConfiguration> _endpointConfigurations = AWSConfigs.InitializeCollections ? new List<EndpointInputConfiguration>() : null;
+        private List<EndpointInfo> _endpoints = AWSConfigs.InitializeCollections ? new List<EndpointInfo>() : null;
         private int? _jobDurationInSeconds;
         private string _modelName;
         private string _modelPackageVersionArn;
@@ -79,7 +79,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if EndpointConfigurations property is set
         internal bool IsSetEndpointConfigurations()
         {
-            return this._endpointConfigurations != null && this._endpointConfigurations.Count > 0; 
+            return this._endpointConfigurations != null && (this._endpointConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,6 +37,8 @@ namespace Amazon.Util.Internal
         }
         public bool UseSdkCache { get; set; }
 
+        public bool InitializeCollections { get; set; }
+
         public bool CorrectForClockSkew { get; set; }
 
         public bool UseAlternateUserAgentHeader { get; set; }
@@ -59,6 +61,7 @@ namespace Amazon.Util.Internal
             ProfileName = AWSConfigs._awsProfileName;
             ProfilesLocation = AWSConfigs._awsAccountsLocation;
             UseSdkCache = AWSConfigs._useSdkCache;
+            InitializeCollections = AWSConfigs._initializeCollections;
             CorrectForClockSkew = true;
 
 #if !NETSTANDARD

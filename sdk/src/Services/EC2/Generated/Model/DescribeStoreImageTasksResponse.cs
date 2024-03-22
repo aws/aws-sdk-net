@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeStoreImageTasksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StoreImageTaskResult> _storeImageTaskResults = new List<StoreImageTaskResult>();
+        private List<StoreImageTaskResult> _storeImageTaskResults = AWSConfigs.InitializeCollections ? new List<StoreImageTaskResult>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if StoreImageTaskResults property is set
         internal bool IsSetStoreImageTaskResults()
         {
-            return this._storeImageTaskResults != null && this._storeImageTaskResults.Count > 0; 
+            return this._storeImageTaskResults != null && (this._storeImageTaskResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

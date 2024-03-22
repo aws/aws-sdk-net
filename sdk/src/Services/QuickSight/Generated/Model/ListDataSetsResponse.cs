@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ListDataSetsResponse : AmazonWebServiceResponse
     {
-        private List<DataSetSummary> _dataSetSummaries = new List<DataSetSummary>();
+        private List<DataSetSummary> _dataSetSummaries = AWSConfigs.InitializeCollections ? new List<DataSetSummary>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -53,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataSetSummaries property is set
         internal bool IsSetDataSetSummaries()
         {
-            return this._dataSetSummaries != null && this._dataSetSummaries.Count > 0; 
+            return this._dataSetSummaries != null && (this._dataSetSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

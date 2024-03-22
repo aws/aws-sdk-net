@@ -56,6 +56,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetUserAttributeFilter())
+            {
+                context.Writer.WritePropertyName("UserAttributeFilter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ControlPlaneUserAttributeFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.UserAttributeFilter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

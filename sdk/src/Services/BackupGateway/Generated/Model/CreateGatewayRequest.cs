@@ -38,7 +38,7 @@ namespace Amazon.BackupGateway.Model
         private string _activationKey;
         private string _gatewayDisplayName;
         private GatewayType _gatewayType;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ActivationKey. 
@@ -112,7 +112,7 @@ namespace Amazon.BackupGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

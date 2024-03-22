@@ -45,7 +45,7 @@ namespace Amazon.BackupGateway.Model
         /// Enumerable containing all of the Hypervisors
         /// </summary>
         public IPaginatedEnumerable<Hypervisor> Hypervisors => 
-            new PaginatedResultKeyResponse<ListHypervisorsResponse, Hypervisor>(this, (i) => i.Hypervisors);
+            new PaginatedResultKeyResponse<ListHypervisorsResponse, Hypervisor>(this, (i) => i.Hypervisors ?? new List<Hypervisor>());
 
         internal ListHypervisorsPaginator(IAmazonBackupGateway client, ListHypervisorsRequest request)
         {

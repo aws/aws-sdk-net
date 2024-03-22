@@ -45,7 +45,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Enumerable containing all of the Entities
         /// </summary>
         public IPaginatedEnumerable<Theme> Entities => 
-            new PaginatedResultKeyResponse<ExportThemesResponse, Theme>(this, (i) => i.Entities);
+            new PaginatedResultKeyResponse<ExportThemesResponse, Theme>(this, (i) => i.Entities ?? new List<Theme>());
 
         internal ExportThemesPaginator(IAmazonAmplifyUIBuilder client, ExportThemesRequest request)
         {

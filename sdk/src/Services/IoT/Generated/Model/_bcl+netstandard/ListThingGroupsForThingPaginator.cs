@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the ThingGroups
         /// </summary>
         public IPaginatedEnumerable<GroupNameAndArn> ThingGroups => 
-            new PaginatedResultKeyResponse<ListThingGroupsForThingResponse, GroupNameAndArn>(this, (i) => i.ThingGroups);
+            new PaginatedResultKeyResponse<ListThingGroupsForThingResponse, GroupNameAndArn>(this, (i) => i.ThingGroups ?? new List<GroupNameAndArn>());
 
         internal ListThingGroupsForThingPaginator(IAmazonIoT client, ListThingGroupsForThingRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     /// </summary>
     public partial class ListCrossAccountAuthorizationsResponse : AmazonWebServiceResponse
     {
-        private List<string> _crossAccountAuthorizations = new List<string>();
+        private List<string> _crossAccountAuthorizations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         // Check to see if CrossAccountAuthorizations property is set
         internal bool IsSetCrossAccountAuthorizations()
         {
-            return this._crossAccountAuthorizations != null && this._crossAccountAuthorizations.Count > 0; 
+            return this._crossAccountAuthorizations != null && (this._crossAccountAuthorizations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

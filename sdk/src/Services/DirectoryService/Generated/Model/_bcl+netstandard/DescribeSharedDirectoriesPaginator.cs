@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// Enumerable containing all of the SharedDirectories
         /// </summary>
         public IPaginatedEnumerable<SharedDirectory> SharedDirectories => 
-            new PaginatedResultKeyResponse<DescribeSharedDirectoriesResponse, SharedDirectory>(this, (i) => i.SharedDirectories);
+            new PaginatedResultKeyResponse<DescribeSharedDirectoriesResponse, SharedDirectory>(this, (i) => i.SharedDirectories ?? new List<SharedDirectory>());
 
         internal DescribeSharedDirectoriesPaginator(IAmazonDirectoryService client, DescribeSharedDirectoriesRequest request)
         {

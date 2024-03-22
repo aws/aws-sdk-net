@@ -46,7 +46,7 @@ namespace Amazon.Drs.Model
         private SourceProperties _sourceProperties;
         private string _sourceServerID;
         private StagingArea _stagingArea;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentVersion. 
@@ -304,7 +304,7 @@ namespace Amazon.Drs.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

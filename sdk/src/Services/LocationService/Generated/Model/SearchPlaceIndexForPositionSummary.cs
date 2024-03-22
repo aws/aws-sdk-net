@@ -36,7 +36,7 @@ namespace Amazon.LocationService.Model
         private string _dataSource;
         private string _language;
         private int? _maxResults;
-        private List<double> _position = new List<double>();
+        private List<double> _position = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property DataSource. 
@@ -135,7 +135,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Position property is set
         internal bool IsSetPosition()
         {
-            return this._position != null && this._position.Count > 0; 
+            return this._position != null && (this._position.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

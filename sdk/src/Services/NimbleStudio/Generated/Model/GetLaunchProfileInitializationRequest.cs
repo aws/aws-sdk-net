@@ -35,7 +35,7 @@ namespace Amazon.NimbleStudio.Model
     public partial class GetLaunchProfileInitializationRequest : AmazonNimbleStudioRequest
     {
         private string _launchProfileId;
-        private List<string> _launchProfileProtocolVersions = new List<string>();
+        private List<string> _launchProfileProtocolVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _launchPurpose;
         private string _platform;
         private string _studioId;
@@ -75,7 +75,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if LaunchProfileProtocolVersions property is set
         internal bool IsSetLaunchProfileProtocolVersions()
         {
-            return this._launchProfileProtocolVersions != null && this._launchProfileProtocolVersions.Count > 0; 
+            return this._launchProfileProtocolVersions != null && (this._launchProfileProtocolVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

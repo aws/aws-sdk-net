@@ -33,7 +33,7 @@ namespace Amazon.Pricing.Model
     /// </summary>
     public partial class Service
     {
-        private List<string> _attributeNames = new List<string>();
+        private List<string> _attributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceCode;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Pricing.Model
         // Check to see if AttributeNames property is set
         internal bool IsSetAttributeNames()
         {
-            return this._attributeNames != null && this._attributeNames.Count > 0; 
+            return this._attributeNames != null && (this._attributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -39,7 +39,7 @@ namespace Amazon.CloudDirectory.Model
     {
         private ConsistencyLevel _consistencyLevel;
         private string _directoryArn;
-        private List<TypedLinkAttributeRange> _filterAttributeRanges = new List<TypedLinkAttributeRange>();
+        private List<TypedLinkAttributeRange> _filterAttributeRanges = AWSConfigs.InitializeCollections ? new List<TypedLinkAttributeRange>() : null;
         private TypedLinkSchemaAndFacetName _filterTypedLink;
         private int? _maxResults;
         private string _nextToken;
@@ -99,7 +99,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if FilterAttributeRanges property is set
         internal bool IsSetFilterAttributeRanges()
         {
-            return this._filterAttributeRanges != null && this._filterAttributeRanges.Count > 0; 
+            return this._filterAttributeRanges != null && (this._filterAttributeRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     public partial class ChangeMessageVisibilityBatchRequest : AmazonSQSRequest
     {
-        private List<ChangeMessageVisibilityBatchRequestEntry> _entries = new List<ChangeMessageVisibilityBatchRequestEntry>();
+        private List<ChangeMessageVisibilityBatchRequestEntry> _entries = AWSConfigs.InitializeCollections ? new List<ChangeMessageVisibilityBatchRequestEntry>() : null;
         private string _queueUrl;
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.SQS.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

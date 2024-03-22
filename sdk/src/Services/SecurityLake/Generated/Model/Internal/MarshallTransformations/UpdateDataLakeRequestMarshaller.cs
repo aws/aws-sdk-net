@@ -81,6 +81,12 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMetaStoreManagerRoleArn())
+                {
+                    context.Writer.WritePropertyName("metaStoreManagerRoleArn");
+                    context.Writer.Write(publicRequest.MetaStoreManagerRoleArn);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

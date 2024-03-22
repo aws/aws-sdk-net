@@ -34,7 +34,7 @@ namespace Amazon.IVSRealTime.Model
     public partial class ListStageSessionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StageSessionSummary> _stageSessions = new List<StageSessionSummary>();
+        private List<StageSessionSummary> _stageSessions = AWSConfigs.InitializeCollections ? new List<StageSessionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if StageSessions property is set
         internal bool IsSetStageSessions()
         {
-            return this._stageSessions != null && this._stageSessions.Count > 0; 
+            return this._stageSessions != null && (this._stageSessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -57,6 +57,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ExcludedTimeRanges/member", targetDepth))
                     {
                         var unmarshaller = RangeUnmarshaller.Instance;
+                        if (unmarshalledObject.ExcludedTimeRanges == null)
+                        {
+                            unmarshalledObject.ExcludedTimeRanges = new List<Range>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ExcludedTimeRanges.Add(item);
                         continue;

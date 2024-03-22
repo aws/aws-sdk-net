@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private bool? _isTruncated;
         private string _marker;
-        private List<ListPoliciesGrantingServiceAccessEntry> _policiesGrantingServiceAccess = new List<ListPoliciesGrantingServiceAccessEntry>();
+        private List<ListPoliciesGrantingServiceAccessEntry> _policiesGrantingServiceAccess = AWSConfigs.InitializeCollections ? new List<ListPoliciesGrantingServiceAccessEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property IsTruncated. 
@@ -94,7 +94,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PoliciesGrantingServiceAccess property is set
         internal bool IsSetPoliciesGrantingServiceAccess()
         {
-            return this._policiesGrantingServiceAccess != null && this._policiesGrantingServiceAccess.Count > 0; 
+            return this._policiesGrantingServiceAccess != null && (this._policiesGrantingServiceAccess.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

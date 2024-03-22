@@ -45,7 +45,7 @@ namespace Amazon.XRay.Model
         /// Enumerable containing all of the Services
         /// </summary>
         public IPaginatedEnumerable<Service> Services => 
-            new PaginatedResultKeyResponse<GetTraceGraphResponse, Service>(this, (i) => i.Services);
+            new PaginatedResultKeyResponse<GetTraceGraphResponse, Service>(this, (i) => i.Services ?? new List<Service>());
 
         internal GetTraceGraphPaginator(IAmazonXRay client, GetTraceGraphRequest request)
         {

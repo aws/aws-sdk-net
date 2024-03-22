@@ -33,7 +33,7 @@ namespace Amazon.KinesisVideo.Model
     /// </summary>
     public partial class ListEdgeAgentConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<ListEdgeAgentConfigurationsEdgeConfig> _edgeConfigs = new List<ListEdgeAgentConfigurationsEdgeConfig>();
+        private List<ListEdgeAgentConfigurationsEdgeConfig> _edgeConfigs = AWSConfigs.InitializeCollections ? new List<ListEdgeAgentConfigurationsEdgeConfig>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.KinesisVideo.Model
         // Check to see if EdgeConfigs property is set
         internal bool IsSetEdgeConfigs()
         {
-            return this._edgeConfigs != null && this._edgeConfigs.Count > 0; 
+            return this._edgeConfigs != null && (this._edgeConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.KinesisVideo.Model
         /// get the next batch of edge configurations, use this token in your next request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

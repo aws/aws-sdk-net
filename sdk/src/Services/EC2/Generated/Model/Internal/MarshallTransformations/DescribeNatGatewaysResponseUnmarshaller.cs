@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("natGatewaySet/item", targetDepth))
                     {
                         var unmarshaller = NatGatewayUnmarshaller.Instance;
+                        if (response.NatGateways == null)
+                        {
+                            response.NatGateways = new List<NatGateway>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.NatGateways.Add(item);
                         continue;

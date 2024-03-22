@@ -47,7 +47,7 @@ namespace Amazon.AppStream.Model
         private string _newImageDescription;
         private string _newImageDisplayName;
         private string _newImageName;
-        private Dictionary<string, string> _newImageTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _newImageTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property DryRun. 
@@ -183,7 +183,7 @@ namespace Amazon.AppStream.Model
         // Check to see if NewImageTags property is set
         internal bool IsSetNewImageTags()
         {
-            return this._newImageTags != null && this._newImageTags.Count > 0; 
+            return this._newImageTags != null && (this._newImageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

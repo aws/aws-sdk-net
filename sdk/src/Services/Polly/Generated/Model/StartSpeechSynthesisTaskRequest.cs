@@ -43,13 +43,13 @@ namespace Amazon.Polly.Model
     {
         private Engine _engine;
         private LanguageCode _languageCode;
-        private List<string> _lexiconNames = new List<string>();
+        private List<string> _lexiconNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OutputFormat _outputFormat;
         private string _outputS3BucketName;
         private string _outputS3KeyPrefix;
         private string _sampleRate;
         private string _snsTopicArn;
-        private List<string> _speechMarkTypes = new List<string>();
+        private List<string> _speechMarkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _text;
         private TextType _textType;
         private VoiceId _voiceId;
@@ -120,7 +120,7 @@ namespace Amazon.Polly.Model
         // Check to see if LexiconNames property is set
         internal bool IsSetLexiconNames()
         {
-            return this._lexiconNames != null && this._lexiconNames.Count > 0; 
+            return this._lexiconNames != null && (this._lexiconNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -243,7 +243,7 @@ namespace Amazon.Polly.Model
         // Check to see if SpeechMarkTypes property is set
         internal bool IsSetSpeechMarkTypes()
         {
-            return this._speechMarkTypes != null && this._speechMarkTypes.Count > 0; 
+            return this._speechMarkTypes != null && (this._speechMarkTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

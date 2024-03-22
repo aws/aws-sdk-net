@@ -34,7 +34,7 @@ namespace Amazon.SSMContacts.Model
     /// </summary>
     public partial class UpdateRotationRequest : AmazonSSMContactsRequest
     {
-        private List<string> _contactIds = new List<string>();
+        private List<string> _contactIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RecurrenceSettings _recurrence;
         private string _rotationId;
         private DateTime? _startTime;
@@ -61,7 +61,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if ContactIds property is set
         internal bool IsSetContactIds()
         {
-            return this._contactIds != null && this._contactIds.Count > 0; 
+            return this._contactIds != null && (this._contactIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

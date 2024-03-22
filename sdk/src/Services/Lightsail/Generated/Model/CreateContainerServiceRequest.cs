@@ -44,10 +44,10 @@ namespace Amazon.Lightsail.Model
         private ContainerServiceDeploymentRequest _deployment;
         private ContainerServicePowerName _power;
         private PrivateRegistryAccessRequest _privateRegistryAccess;
-        private Dictionary<string, List<string>> _publicDomainNames = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _publicDomainNames = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private int? _scale;
         private string _serviceName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Deployment. 
@@ -171,7 +171,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if PublicDomainNames property is set
         internal bool IsSetPublicDomainNames()
         {
-            return this._publicDomainNames != null && this._publicDomainNames.Count > 0; 
+            return this._publicDomainNames != null && (this._publicDomainNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

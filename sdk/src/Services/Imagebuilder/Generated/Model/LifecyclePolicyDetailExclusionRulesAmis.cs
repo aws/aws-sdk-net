@@ -35,9 +35,9 @@ namespace Amazon.Imagebuilder.Model
     {
         private bool? _isPublic;
         private LifecyclePolicyDetailExclusionRulesAmisLastLaunched _lastLaunched;
-        private List<string> _regions = new List<string>();
-        private List<string> _sharedAccounts = new List<string>();
-        private Dictionary<string, string> _tagMap = new Dictionary<string, string>();
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _sharedAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tagMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property IsPublic. 
@@ -91,7 +91,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if SharedAccounts property is set
         internal bool IsSetSharedAccounts()
         {
-            return this._sharedAccounts != null && this._sharedAccounts.Count > 0; 
+            return this._sharedAccounts != null && (this._sharedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if TagMap property is set
         internal bool IsSetTagMap()
         {
-            return this._tagMap != null && this._tagMap.Count > 0; 
+            return this._tagMap != null && (this._tagMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

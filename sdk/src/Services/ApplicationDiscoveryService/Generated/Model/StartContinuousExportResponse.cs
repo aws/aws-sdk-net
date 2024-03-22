@@ -36,7 +36,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         private DataSource _dataSource;
         private string _exportId;
         private string _s3Bucket;
-        private Dictionary<string, string> _schemaStorageConfig = new Dictionary<string, string>();
+        private Dictionary<string, string> _schemaStorageConfig = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _startTime;
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if SchemaStorageConfig property is set
         internal bool IsSetSchemaStorageConfig()
         {
-            return this._schemaStorageConfig != null && this._schemaStorageConfig.Count > 0; 
+            return this._schemaStorageConfig != null && (this._schemaStorageConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

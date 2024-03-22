@@ -45,7 +45,7 @@ namespace Amazon.MediaTailor.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<PlaybackConfiguration> Items => 
-            new PaginatedResultKeyResponse<ListPlaybackConfigurationsResponse, PlaybackConfiguration>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListPlaybackConfigurationsResponse, PlaybackConfiguration>(this, (i) => i.Items ?? new List<PlaybackConfiguration>());
 
         internal ListPlaybackConfigurationsPaginator(IAmazonMediaTailor client, ListPlaybackConfigurationsRequest request)
         {

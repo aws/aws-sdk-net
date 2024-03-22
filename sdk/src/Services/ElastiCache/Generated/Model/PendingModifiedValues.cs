@@ -35,10 +35,10 @@ namespace Amazon.ElastiCache.Model
     public partial class PendingModifiedValues
     {
         private AuthTokenUpdateStatus _authTokenStatus;
-        private List<string> _cacheNodeIdsToRemove = new List<string>();
+        private List<string> _cacheNodeIdsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _cacheNodeType;
         private string _engineVersion;
-        private List<PendingLogDeliveryConfiguration> _logDeliveryConfigurations = new List<PendingLogDeliveryConfiguration>();
+        private List<PendingLogDeliveryConfiguration> _logDeliveryConfigurations = AWSConfigs.InitializeCollections ? new List<PendingLogDeliveryConfiguration>() : null;
         private int? _numCacheNodes;
         private bool? _transitEncryptionEnabled;
         private TransitEncryptionMode _transitEncryptionMode;
@@ -82,7 +82,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeIdsToRemove property is set
         internal bool IsSetCacheNodeIdsToRemove()
         {
-            return this._cacheNodeIdsToRemove != null && this._cacheNodeIdsToRemove.Count > 0; 
+            return this._cacheNodeIdsToRemove != null && (this._cacheNodeIdsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if LogDeliveryConfigurations property is set
         internal bool IsSetLogDeliveryConfigurations()
         {
-            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+            return this._logDeliveryConfigurations != null && (this._logDeliveryConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

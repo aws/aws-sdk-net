@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Content of a retrieval result.
+    /// Contains the cited text from the data source.
     /// </summary>
     public partial class RetrievalResultContent
     {
@@ -38,7 +38,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// Content of a retrieval result in text
+        /// The cited text from the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

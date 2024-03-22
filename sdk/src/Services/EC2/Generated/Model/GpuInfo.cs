@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GpuInfo
     {
-        private List<GpuDeviceInfo> _gpus = new List<GpuDeviceInfo>();
+        private List<GpuDeviceInfo> _gpus = AWSConfigs.InitializeCollections ? new List<GpuDeviceInfo>() : null;
         private int? _totalGpuMemoryInMiB;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Gpus property is set
         internal bool IsSetGpus()
         {
-            return this._gpus != null && this._gpus.Count > 0; 
+            return this._gpus != null && (this._gpus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

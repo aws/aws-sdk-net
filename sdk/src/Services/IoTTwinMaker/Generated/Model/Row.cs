@@ -33,7 +33,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class Row
     {
-        private List<Amazon.Runtime.Documents.Document> _rowData = new List<Amazon.Runtime.Documents.Document>();
+        private List<Amazon.Runtime.Documents.Document> _rowData = AWSConfigs.InitializeCollections ? new List<Amazon.Runtime.Documents.Document>() : null;
 
         /// <summary>
         /// Gets and sets the property RowData. 
@@ -50,7 +50,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if RowData property is set
         internal bool IsSetRowData()
         {
-            return this._rowData != null && this._rowData.Count > 0; 
+            return this._rowData != null && (this._rowData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

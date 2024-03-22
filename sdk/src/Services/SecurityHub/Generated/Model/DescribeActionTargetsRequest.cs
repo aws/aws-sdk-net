@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class DescribeActionTargetsRequest : AmazonSecurityHubRequest
     {
-        private List<string> _actionTargetArns = new List<string>();
+        private List<string> _actionTargetArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -53,7 +53,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ActionTargetArns property is set
         internal bool IsSetActionTargetArns()
         {
-            return this._actionTargetArns != null && this._actionTargetArns.Count > 0; 
+            return this._actionTargetArns != null && (this._actionTargetArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

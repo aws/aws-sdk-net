@@ -90,6 +90,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ScheduledActions/ScheduledAction", targetDepth))
                     {
                         var unmarshaller = ScheduledActionUnmarshaller.Instance;
+                        if (response.ScheduledActions == null)
+                        {
+                            response.ScheduledActions = new List<ScheduledAction>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ScheduledActions.Add(item);
                         continue;

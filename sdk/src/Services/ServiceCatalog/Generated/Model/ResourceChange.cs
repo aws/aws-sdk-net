@@ -34,12 +34,12 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ResourceChange
     {
         private ChangeAction _action;
-        private List<ResourceChangeDetail> _details = new List<ResourceChangeDetail>();
+        private List<ResourceChangeDetail> _details = AWSConfigs.InitializeCollections ? new List<ResourceChangeDetail>() : null;
         private string _logicalResourceId;
         private string _physicalResourceId;
         private Replacement _replacement;
         private string _resourceType;
-        private List<string> _scope = new List<string>();
+        private List<string> _scope = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -74,7 +74,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this._details != null && this._details.Count > 0; 
+            return this._details != null && (this._details.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Scope property is set
         internal bool IsSetScope()
         {
-            return this._scope != null && this._scope.Count > 0; 
+            return this._scope != null && (this._scope.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

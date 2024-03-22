@@ -36,7 +36,7 @@ namespace Amazon.WellArchitected.Model
         private string _notes;
         private string _pillarId;
         private string _pillarName;
-        private Dictionary<string, int> _questionCounts = new Dictionary<string, int>();
+        private Dictionary<string, int> _questionCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
 
         /// <summary>
         /// Gets and sets the property Notes.
@@ -102,7 +102,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if QuestionCounts property is set
         internal bool IsSetQuestionCounts()
         {
-            return this._questionCounts != null && this._questionCounts.Count > 0; 
+            return this._questionCounts != null && (this._questionCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

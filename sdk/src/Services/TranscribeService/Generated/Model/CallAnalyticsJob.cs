@@ -53,7 +53,7 @@ namespace Amazon.TranscribeService.Model
     {
         private string _callAnalyticsJobName;
         private CallAnalyticsJobStatus _callAnalyticsJobStatus;
-        private List<ChannelDefinition> _channelDefinitions = new List<ChannelDefinition>();
+        private List<ChannelDefinition> _channelDefinitions = AWSConfigs.InitializeCollections ? new List<ChannelDefinition>() : null;
         private DateTime? _completionTime;
         private DateTime? _creationTime;
         private string _dataAccessRoleArn;
@@ -128,7 +128,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if ChannelDefinitions property is set
         internal bool IsSetChannelDefinitions()
         {
-            return this._channelDefinitions != null && this._channelDefinitions.Count > 0; 
+            return this._channelDefinitions != null && (this._channelDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

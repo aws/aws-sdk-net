@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("serviceConfigurationSet/item", targetDepth))
                     {
                         var unmarshaller = ServiceConfigurationUnmarshaller.Instance;
+                        if (response.ServiceConfigurations == null)
+                        {
+                            response.ServiceConfigurations = new List<ServiceConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ServiceConfigurations.Add(item);
                         continue;

@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         private string _context;
         private FleetExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
         private string _fleetId;
-        private List<FleetLaunchTemplateConfigRequest> _launchTemplateConfigs = new List<FleetLaunchTemplateConfigRequest>();
+        private List<FleetLaunchTemplateConfigRequest> _launchTemplateConfigs = AWSConfigs.InitializeCollections ? new List<FleetLaunchTemplateConfigRequest>() : null;
         private TargetCapacitySpecificationRequest _targetCapacitySpecification;
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.EC2.Model
         // Check to see if LaunchTemplateConfigs property is set
         internal bool IsSetLaunchTemplateConfigs()
         {
-            return this._launchTemplateConfigs != null && this._launchTemplateConfigs.Count > 0; 
+            return this._launchTemplateConfigs != null && (this._launchTemplateConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.SageMakerGeospatial.Model
         /// Enumerable containing all of the RasterDataCollectionSummaries
         /// </summary>
         public IPaginatedEnumerable<RasterDataCollectionMetadata> RasterDataCollectionSummaries => 
-            new PaginatedResultKeyResponse<ListRasterDataCollectionsResponse, RasterDataCollectionMetadata>(this, (i) => i.RasterDataCollectionSummaries);
+            new PaginatedResultKeyResponse<ListRasterDataCollectionsResponse, RasterDataCollectionMetadata>(this, (i) => i.RasterDataCollectionSummaries ?? new List<RasterDataCollectionMetadata>());
 
         internal ListRasterDataCollectionsPaginator(IAmazonSageMakerGeospatial client, ListRasterDataCollectionsRequest request)
         {

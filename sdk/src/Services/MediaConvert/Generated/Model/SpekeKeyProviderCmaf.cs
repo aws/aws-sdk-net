@@ -36,8 +36,8 @@ namespace Amazon.MediaConvert.Model
     public partial class SpekeKeyProviderCmaf
     {
         private string _certificateArn;
-        private List<string> _dashSignaledSystemIds = new List<string>();
-        private List<string> _hlsSignaledSystemIds = new List<string>();
+        private List<string> _dashSignaledSystemIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _hlsSignaledSystemIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceId;
         private string _url;
 
@@ -74,7 +74,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if DashSignaledSystemIds property is set
         internal bool IsSetDashSignaledSystemIds()
         {
-            return this._dashSignaledSystemIds != null && this._dashSignaledSystemIds.Count > 0; 
+            return this._dashSignaledSystemIds != null && (this._dashSignaledSystemIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if HlsSignaledSystemIds property is set
         internal bool IsSetHlsSignaledSystemIds()
         {
-            return this._hlsSignaledSystemIds != null && this._hlsSignaledSystemIds.Count > 0; 
+            return this._hlsSignaledSystemIds != null && (this._hlsSignaledSystemIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

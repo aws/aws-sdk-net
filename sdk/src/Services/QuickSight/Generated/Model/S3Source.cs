@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class S3Source
     {
         private string _dataSourceArn;
-        private List<InputColumn> _inputColumns = new List<InputColumn>();
+        private List<InputColumn> _inputColumns = AWSConfigs.InitializeCollections ? new List<InputColumn>() : null;
         private UploadSettings _uploadSettings;
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if InputColumns property is set
         internal bool IsSetInputColumns()
         {
-            return this._inputColumns != null && this._inputColumns.Count > 0; 
+            return this._inputColumns != null && (this._inputColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

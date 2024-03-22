@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchRUM.Model
     /// </summary>
     public partial class BatchGetRumMetricDefinitionsResponse : AmazonWebServiceResponse
     {
-        private List<MetricDefinition> _metricDefinitions = new List<MetricDefinition>();
+        private List<MetricDefinition> _metricDefinitions = AWSConfigs.InitializeCollections ? new List<MetricDefinition>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudWatchRUM.Model
         // Check to see if MetricDefinitions property is set
         internal bool IsSetMetricDefinitions()
         {
-            return this._metricDefinitions != null && this._metricDefinitions.Count > 0; 
+            return this._metricDefinitions != null && (this._metricDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

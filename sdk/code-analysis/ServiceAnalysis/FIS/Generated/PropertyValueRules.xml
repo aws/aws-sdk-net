@@ -148,6 +148,11 @@
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FIS.Model.ListExperimentsRequest.ExperimentTemplateId</property>
+    <max>64</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FIS.Model.ListExperimentsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -310,6 +315,12 @@
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FIS.Model.Action.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FIS.Model.Action.Description</property>
     <max>512</max>
     <pattern>[\s\S]+</pattern>
@@ -323,6 +334,12 @@
     <property>Amazon.FIS.Model.ActionParameter.Description</property>
     <max>512</max>
     <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ActionSummary.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ActionSummary.Description</property>
@@ -368,6 +385,12 @@
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateTargetInput.SelectionMode</property>
     <max>64</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.Experiment.Arn</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -440,6 +463,12 @@
     <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentSummary.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentSummary.ExperimentTemplateId</property>
     <max>64</max>
     <pattern>[\S]+</pattern>
@@ -496,6 +525,12 @@
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTargetFilter.Path</property>
     <max>256</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentTemplate.Arn</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -574,6 +609,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentTemplateSummary.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateSummary.Description</property>

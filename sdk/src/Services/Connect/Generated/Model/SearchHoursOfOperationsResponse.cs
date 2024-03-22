@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class SearchHoursOfOperationsResponse : AmazonWebServiceResponse
     {
         private long? _approximateTotalCount;
-        private List<HoursOfOperation> _hoursOfOperations = new List<HoursOfOperation>();
+        private List<HoursOfOperation> _hoursOfOperations = AWSConfigs.InitializeCollections ? new List<HoursOfOperation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.Connect.Model
         // Check to see if HoursOfOperations property is set
         internal bool IsSetHoursOfOperations()
         {
-            return this._hoursOfOperations != null && this._hoursOfOperations.Count > 0; 
+            return this._hoursOfOperations != null && (this._hoursOfOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

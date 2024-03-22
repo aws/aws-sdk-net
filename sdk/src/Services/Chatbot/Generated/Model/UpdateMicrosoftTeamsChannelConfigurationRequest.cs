@@ -37,10 +37,10 @@ namespace Amazon.Chatbot.Model
         private string _channelId;
         private string _channelName;
         private string _chatConfigurationArn;
-        private List<string> _guardrailPolicyArns = new List<string>();
+        private List<string> _guardrailPolicyArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _iamRoleArn;
         private string _loggingLevel;
-        private List<string> _snsTopicArns = new List<string>();
+        private List<string> _snsTopicArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _userAuthorizationRequired;
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.Chatbot.Model
         // Check to see if GuardrailPolicyArns property is set
         internal bool IsSetGuardrailPolicyArns()
         {
-            return this._guardrailPolicyArns != null && this._guardrailPolicyArns.Count > 0; 
+            return this._guardrailPolicyArns != null && (this._guardrailPolicyArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Amazon.Chatbot.Model
         // Check to see if SnsTopicArns property is set
         internal bool IsSetSnsTopicArns()
         {
-            return this._snsTopicArns != null && this._snsTopicArns.Count > 0; 
+            return this._snsTopicArns != null && (this._snsTopicArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

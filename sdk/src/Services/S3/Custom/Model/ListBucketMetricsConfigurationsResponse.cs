@@ -27,7 +27,7 @@ namespace Amazon.S3.Model
     public partial class ListBucketMetricsConfigurationsResponse : AmazonWebServiceResponse
     {
         private string token;
-        private List<MetricsConfiguration> metricsConfigurationList = new List<MetricsConfiguration>();
+        private List<MetricsConfiguration> metricsConfigurationList = AWSConfigs.InitializeCollections ? new List<MetricsConfiguration>() : null;
         private bool? isTruncated;
         private string nextToken;
 
@@ -62,7 +62,7 @@ namespace Amazon.S3.Model
         // Check to see if MetricsConfigurationList property is set
         public bool IsSetMetricsConfigurationList()
         {
-            return this.metricsConfigurationList.Count > 0;
+            return this.metricsConfigurationList != null && (this.metricsConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

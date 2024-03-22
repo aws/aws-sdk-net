@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class GetUsageStatisticsRequest : AmazonMacie2Request
     {
-        private List<UsageStatisticsFilter> _filterBy = new List<UsageStatisticsFilter>();
+        private List<UsageStatisticsFilter> _filterBy = AWSConfigs.InitializeCollections ? new List<UsageStatisticsFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private UsageStatisticsSortBy _sortBy;
@@ -57,7 +57,7 @@ namespace Amazon.Macie2.Model
         // Check to see if FilterBy property is set
         internal bool IsSetFilterBy()
         {
-            return this._filterBy != null && this._filterBy.Count > 0; 
+            return this._filterBy != null && (this._filterBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.SimpleDB.Model
     /// </summary>
     public partial class DeletableItem
     {
-        private List<Attribute> _attributes = new List<Attribute>();
+        private List<Attribute> _attributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
         private string _name;
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.SimpleDB.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

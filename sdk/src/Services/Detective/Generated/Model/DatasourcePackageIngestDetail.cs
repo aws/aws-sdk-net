@@ -34,7 +34,7 @@ namespace Amazon.Detective.Model
     public partial class DatasourcePackageIngestDetail
     {
         private DatasourcePackageIngestState _datasourcePackageIngestState;
-        private Dictionary<string, TimestampForCollection> _lastIngestStateChange = new Dictionary<string, TimestampForCollection>();
+        private Dictionary<string, TimestampForCollection> _lastIngestStateChange = AWSConfigs.InitializeCollections ? new Dictionary<string, TimestampForCollection>() : null;
 
         /// <summary>
         /// Gets and sets the property DatasourcePackageIngestState. 
@@ -69,7 +69,7 @@ namespace Amazon.Detective.Model
         // Check to see if LastIngestStateChange property is set
         internal bool IsSetLastIngestStateChange()
         {
-            return this._lastIngestStateChange != null && this._lastIngestStateChange.Count > 0; 
+            return this._lastIngestStateChange != null && (this._lastIngestStateChange.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

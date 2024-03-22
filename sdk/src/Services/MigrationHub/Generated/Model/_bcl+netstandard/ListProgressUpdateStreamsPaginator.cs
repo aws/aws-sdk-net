@@ -45,7 +45,7 @@ namespace Amazon.MigrationHub.Model
         /// Enumerable containing all of the ProgressUpdateStreamSummaryList
         /// </summary>
         public IPaginatedEnumerable<ProgressUpdateStreamSummary> ProgressUpdateStreamSummaryList => 
-            new PaginatedResultKeyResponse<ListProgressUpdateStreamsResponse, ProgressUpdateStreamSummary>(this, (i) => i.ProgressUpdateStreamSummaryList);
+            new PaginatedResultKeyResponse<ListProgressUpdateStreamsResponse, ProgressUpdateStreamSummary>(this, (i) => i.ProgressUpdateStreamSummaryList ?? new List<ProgressUpdateStreamSummary>());
 
         internal ListProgressUpdateStreamsPaginator(IAmazonMigrationHub client, ListProgressUpdateStreamsRequest request)
         {

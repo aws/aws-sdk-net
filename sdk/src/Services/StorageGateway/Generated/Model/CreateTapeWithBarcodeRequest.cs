@@ -48,7 +48,7 @@ namespace Amazon.StorageGateway.Model
         private bool? _kmsEncrypted;
         private string _kmsKey;
         private string _poolId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tapeBarcode;
         private long? _tapeSizeInBytes;
         private bool? _worm;
@@ -164,7 +164,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

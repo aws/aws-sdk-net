@@ -45,7 +45,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Enumerable containing all of the Snapshots
         /// </summary>
         public IPaginatedEnumerable<Snapshot> Snapshots => 
-            new PaginatedResultKeyResponse<ListSnapshotsResponse, Snapshot>(this, (i) => i.Snapshots);
+            new PaginatedResultKeyResponse<ListSnapshotsResponse, Snapshot>(this, (i) => i.Snapshots ?? new List<Snapshot>());
 
         internal ListSnapshotsPaginator(IAmazonRedshiftServerless client, ListSnapshotsRequest request)
         {

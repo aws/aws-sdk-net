@@ -33,7 +33,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class DescribeSchedulingPoliciesResponse : AmazonWebServiceResponse
     {
-        private List<SchedulingPolicyDetail> _schedulingPolicies = new List<SchedulingPolicyDetail>();
+        private List<SchedulingPolicyDetail> _schedulingPolicies = AWSConfigs.InitializeCollections ? new List<SchedulingPolicyDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property SchedulingPolicies. 
@@ -50,7 +50,7 @@ namespace Amazon.Batch.Model
         // Check to see if SchedulingPolicies property is set
         internal bool IsSetSchedulingPolicies()
         {
-            return this._schedulingPolicies != null && this._schedulingPolicies.Count > 0; 
+            return this._schedulingPolicies != null && (this._schedulingPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

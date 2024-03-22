@@ -86,7 +86,7 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't set a minimum traffic impact threshold, the default value is 0.01%.
+        /// If you don't set a minimum traffic impact threshold, the default value is 0.1%.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

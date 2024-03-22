@@ -73,7 +73,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("Tagging", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     var publicRequestTaggingTagSet = publicRequest.Tagging.TagSet;
-                    if (publicRequestTaggingTagSet != null && publicRequestTaggingTagSet.Count > 0) 
+                    if (publicRequestTaggingTagSet != null && (publicRequestTaggingTagSet.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {                        
                         xmlWriter.WriteStartElement("TagSet", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                         foreach (var publicRequestTaggingTagSetValue in publicRequestTaggingTagSet) 

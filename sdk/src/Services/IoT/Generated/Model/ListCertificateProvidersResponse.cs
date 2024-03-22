@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListCertificateProvidersResponse : AmazonWebServiceResponse
     {
-        private List<CertificateProviderSummary> _certificateProviders = new List<CertificateProviderSummary>();
+        private List<CertificateProviderSummary> _certificateProviders = AWSConfigs.InitializeCollections ? new List<CertificateProviderSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model
         // Check to see if CertificateProviders property is set
         internal bool IsSetCertificateProviders()
         {
-            return this._certificateProviders != null && this._certificateProviders.Count > 0; 
+            return this._certificateProviders != null && (this._certificateProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

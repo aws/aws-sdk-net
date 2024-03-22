@@ -35,7 +35,7 @@ namespace Amazon.Honeycode.Model
     {
         private Format _format;
         private string _formattedValue;
-        private List<string> _formattedValues = new List<string>();
+        private List<string> _formattedValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _formula;
         private string _rawValue;
 
@@ -105,7 +105,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if FormattedValues property is set
         internal bool IsSetFormattedValues()
         {
-            return this._formattedValues != null && this._formattedValues.Count > 0; 
+            return this._formattedValues != null && (this._formattedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -69,6 +69,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EC2SecurityGroups/EC2SecurityGroup", targetDepth))
                     {
                         var unmarshaller = EC2SecurityGroupUnmarshaller.Instance;
+                        if (unmarshalledObject.EC2SecurityGroups == null)
+                        {
+                            unmarshalledObject.EC2SecurityGroups = new List<EC2SecurityGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.EC2SecurityGroups.Add(item);
                         continue;
@@ -76,6 +80,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("IPRanges/IPRange", targetDepth))
                     {
                         var unmarshaller = IPRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.IPRanges == null)
+                        {
+                            unmarshalledObject.IPRanges = new List<IPRange>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.IPRanges.Add(item);
                         continue;
@@ -83,6 +91,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tags/Tag", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

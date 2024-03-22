@@ -33,7 +33,7 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class KeyValueStoreList
     {
-        private List<KeyValueStore> _items = new List<KeyValueStore>();
+        private List<KeyValueStore> _items = AWSConfigs.InitializeCollections ? new List<KeyValueStore>() : null;
         private int? _maxItems;
         private string _nextMarker;
         private int? _quantity;
@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

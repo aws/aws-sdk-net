@@ -33,12 +33,12 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class DescribeBrokerResponse : AmazonWebServiceResponse
     {
-        private List<ActionRequired> _actionsRequired = new List<ActionRequired>();
+        private List<ActionRequired> _actionsRequired = AWSConfigs.InitializeCollections ? new List<ActionRequired>() : null;
         private AuthenticationStrategy _authenticationStrategy;
         private bool? _autoMinorVersionUpgrade;
         private string _brokerArn;
         private string _brokerId;
-        private List<BrokerInstance> _brokerInstances = new List<BrokerInstance>();
+        private List<BrokerInstance> _brokerInstances = AWSConfigs.InitializeCollections ? new List<BrokerInstance>() : null;
         private string _brokerName;
         private BrokerState _brokerState;
         private Configurations _configurations;
@@ -59,13 +59,13 @@ namespace Amazon.MQ.Model
         private string _pendingEngineVersion;
         private string _pendingHostInstanceType;
         private LdapServerMetadataOutput _pendingLdapServerMetadata;
-        private List<string> _pendingSecurityGroups = new List<string>();
+        private List<string> _pendingSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _publiclyAccessible;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private BrokerStorageType _storageType;
-        private List<string> _subnetIds = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<UserSummary> _users = new List<UserSummary>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<UserSummary> _users = AWSConfigs.InitializeCollections ? new List<UserSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property ActionsRequired. 
@@ -82,7 +82,7 @@ namespace Amazon.MQ.Model
         // Check to see if ActionsRequired property is set
         internal bool IsSetActionsRequired()
         {
-            return this._actionsRequired != null && this._actionsRequired.Count > 0; 
+            return this._actionsRequired != null && (this._actionsRequired.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.MQ.Model
         // Check to see if BrokerInstances property is set
         internal bool IsSetBrokerInstances()
         {
-            return this._brokerInstances != null && this._brokerInstances.Count > 0; 
+            return this._brokerInstances != null && (this._brokerInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -565,7 +565,7 @@ namespace Amazon.MQ.Model
         // Check to see if PendingSecurityGroups property is set
         internal bool IsSetPendingSecurityGroups()
         {
-            return this._pendingSecurityGroups != null && this._pendingSecurityGroups.Count > 0; 
+            return this._pendingSecurityGroups != null && (this._pendingSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -601,7 +601,7 @@ namespace Amazon.MQ.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -638,7 +638,7 @@ namespace Amazon.MQ.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -656,7 +656,7 @@ namespace Amazon.MQ.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -674,7 +674,7 @@ namespace Amazon.MQ.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

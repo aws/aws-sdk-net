@@ -126,7 +126,7 @@ namespace Amazon.Organizations.Model
         private string _email;
         private IAMUserAccessToBilling _iamUserAccessToBilling;
         private string _roleName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountName. 
@@ -318,7 +318,7 @@ namespace Amazon.Organizations.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

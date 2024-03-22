@@ -45,7 +45,7 @@ namespace Amazon.Outposts.Model
         /// Enumerable containing all of the Orders
         /// </summary>
         public IPaginatedEnumerable<OrderSummary> Orders => 
-            new PaginatedResultKeyResponse<ListOrdersResponse, OrderSummary>(this, (i) => i.Orders);
+            new PaginatedResultKeyResponse<ListOrdersResponse, OrderSummary>(this, (i) => i.Orders ?? new List<OrderSummary>());
 
         internal ListOrdersPaginator(IAmazonOutposts client, ListOrdersRequest request)
         {

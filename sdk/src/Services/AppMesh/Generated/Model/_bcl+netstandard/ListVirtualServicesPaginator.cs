@@ -45,7 +45,7 @@ namespace Amazon.AppMesh.Model
         /// Enumerable containing all of the VirtualServices
         /// </summary>
         public IPaginatedEnumerable<VirtualServiceRef> VirtualServices => 
-            new PaginatedResultKeyResponse<ListVirtualServicesResponse, VirtualServiceRef>(this, (i) => i.VirtualServices);
+            new PaginatedResultKeyResponse<ListVirtualServicesResponse, VirtualServiceRef>(this, (i) => i.VirtualServices ?? new List<VirtualServiceRef>());
 
         internal ListVirtualServicesPaginator(IAmazonAppMesh client, ListVirtualServicesRequest request)
         {

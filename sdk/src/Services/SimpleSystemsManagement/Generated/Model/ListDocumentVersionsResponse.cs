@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ListDocumentVersionsResponse : AmazonWebServiceResponse
     {
-        private List<DocumentVersionInfo> _documentVersions = new List<DocumentVersionInfo>();
+        private List<DocumentVersionInfo> _documentVersions = AWSConfigs.InitializeCollections ? new List<DocumentVersionInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if DocumentVersions property is set
         internal bool IsSetDocumentVersions()
         {
-            return this._documentVersions != null && this._documentVersions.Count > 0; 
+            return this._documentVersions != null && (this._documentVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

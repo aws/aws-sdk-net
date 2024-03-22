@@ -33,7 +33,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ActionReviewPayloadField
     {
-        private List<ActionReviewPayloadFieldAllowedValue> _allowedValues = new List<ActionReviewPayloadFieldAllowedValue>();
+        private List<ActionReviewPayloadFieldAllowedValue> _allowedValues = AWSConfigs.InitializeCollections ? new List<ActionReviewPayloadFieldAllowedValue>() : null;
         private string _displayName;
         private int? _displayOrder;
         private bool? _required;
@@ -56,7 +56,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this._allowedValues != null && this._allowedValues.Count > 0; 
+            return this._allowedValues != null && (this._allowedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

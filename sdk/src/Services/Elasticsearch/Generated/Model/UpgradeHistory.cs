@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model
     public partial class UpgradeHistory
     {
         private DateTime? _startTimestamp;
-        private List<UpgradeStepItem> _stepsList = new List<UpgradeStepItem>();
+        private List<UpgradeStepItem> _stepsList = AWSConfigs.InitializeCollections ? new List<UpgradeStepItem>() : null;
         private string _upgradeName;
         private UpgradeStatus _upgradeStatus;
 
@@ -72,7 +72,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if StepsList property is set
         internal bool IsSetStepsList()
         {
-            return this._stepsList != null && this._stepsList.Count > 0; 
+            return this._stepsList != null && (this._stepsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

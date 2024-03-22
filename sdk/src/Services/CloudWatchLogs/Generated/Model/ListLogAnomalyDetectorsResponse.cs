@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class ListLogAnomalyDetectorsResponse : AmazonWebServiceResponse
     {
-        private List<AnomalyDetector> _anomalyDetectors = new List<AnomalyDetector>();
+        private List<AnomalyDetector> _anomalyDetectors = AWSConfigs.InitializeCollections ? new List<AnomalyDetector>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if AnomalyDetectors property is set
         internal bool IsSetAnomalyDetectors()
         {
-            return this._anomalyDetectors != null && this._anomalyDetectors.Count > 0; 
+            return this._anomalyDetectors != null && (this._anomalyDetectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

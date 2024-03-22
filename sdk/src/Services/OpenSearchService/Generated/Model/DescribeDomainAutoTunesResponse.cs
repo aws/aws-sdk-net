@@ -33,7 +33,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class DescribeDomainAutoTunesResponse : AmazonWebServiceResponse
     {
-        private List<AutoTune> _autoTunes = new List<AutoTune>();
+        private List<AutoTune> _autoTunes = AWSConfigs.InitializeCollections ? new List<AutoTune>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if AutoTunes property is set
         internal bool IsSetAutoTunes()
         {
-            return this._autoTunes != null && this._autoTunes.Count > 0; 
+            return this._autoTunes != null && (this._autoTunes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -41,7 +41,7 @@ namespace Amazon.Greengrass.Model
         private string _s3UrlSignerRole;
         private SoftwareToUpdate _softwareToUpdate;
         private UpdateAgentLogLevel _updateAgentLogLevel;
-        private List<string> _updateTargets = new List<string>();
+        private List<string> _updateTargets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private UpdateTargetsArchitecture _updateTargetsArchitecture;
         private UpdateTargetsOperatingSystem _updateTargetsOperatingSystem;
 
@@ -121,7 +121,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if UpdateTargets property is set
         internal bool IsSetUpdateTargets()
         {
-            return this._updateTargets != null && this._updateTargets.Count > 0; 
+            return this._updateTargets != null && (this._updateTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Amazon.MQ.Model
     public partial class User
     {
         private bool? _consoleAccess;
-        private List<string> _groups = new List<string>();
+        private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _password;
         private bool? _replicationUser;
         private string _username;
@@ -78,7 +78,7 @@ namespace Amazon.MQ.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

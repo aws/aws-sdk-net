@@ -33,7 +33,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DescribeEngineVersionsResponse : AmazonWebServiceResponse
     {
-        private List<EngineVersion> _engineVersions = new List<EngineVersion>();
+        private List<EngineVersion> _engineVersions = AWSConfigs.InitializeCollections ? new List<EngineVersion>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if EngineVersions property is set
         internal bool IsSetEngineVersions()
         {
-            return this._engineVersions != null && this._engineVersions.Count > 0; 
+            return this._engineVersions != null && (this._engineVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

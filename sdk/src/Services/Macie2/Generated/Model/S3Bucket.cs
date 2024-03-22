@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         private string _name;
         private S3BucketOwner _owner;
         private BucketPublicAccess _publicAccess;
-        private List<KeyValuePair> _tags = new List<KeyValuePair>();
+        private List<KeyValuePair> _tags = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowsUnencryptedObjectUploads. 
@@ -210,7 +210,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

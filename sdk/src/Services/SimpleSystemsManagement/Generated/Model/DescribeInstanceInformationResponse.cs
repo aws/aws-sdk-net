@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeInstanceInformationResponse : AmazonWebServiceResponse
     {
-        private List<InstanceInformation> _instanceInformationList = new List<InstanceInformation>();
+        private List<InstanceInformation> _instanceInformationList = AWSConfigs.InitializeCollections ? new List<InstanceInformation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if InstanceInformationList property is set
         internal bool IsSetInstanceInformationList()
         {
-            return this._instanceInformationList != null && this._instanceInformationList.Count > 0; 
+            return this._instanceInformationList != null && (this._instanceInformationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

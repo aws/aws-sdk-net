@@ -33,7 +33,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class ListManagedRuleSetsResponse : AmazonWebServiceResponse
     {
-        private List<ManagedRuleSetSummary> _managedRuleSets = new List<ManagedRuleSetSummary>();
+        private List<ManagedRuleSetSummary> _managedRuleSets = AWSConfigs.InitializeCollections ? new List<ManagedRuleSetSummary>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if ManagedRuleSets property is set
         internal bool IsSetManagedRuleSets()
         {
-            return this._managedRuleSets != null && this._managedRuleSets.Count > 0; 
+            return this._managedRuleSets != null && (this._managedRuleSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

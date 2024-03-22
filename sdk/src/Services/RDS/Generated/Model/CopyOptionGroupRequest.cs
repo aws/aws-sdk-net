@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model
     public partial class CopyOptionGroupRequest : AmazonRDSRequest
     {
         private string _sourceOptionGroupIdentifier;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _targetOptionGroupDescription;
         private string _targetOptionGroupIdentifier;
 
@@ -79,7 +79,7 @@ namespace Amazon.RDS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

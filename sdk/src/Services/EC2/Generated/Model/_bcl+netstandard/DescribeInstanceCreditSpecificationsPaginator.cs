@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the InstanceCreditSpecifications
         /// </summary>
         public IPaginatedEnumerable<InstanceCreditSpecification> InstanceCreditSpecifications => 
-            new PaginatedResultKeyResponse<DescribeInstanceCreditSpecificationsResponse, InstanceCreditSpecification>(this, (i) => i.InstanceCreditSpecifications);
+            new PaginatedResultKeyResponse<DescribeInstanceCreditSpecificationsResponse, InstanceCreditSpecification>(this, (i) => i.InstanceCreditSpecifications ?? new List<InstanceCreditSpecification>());
 
         internal DescribeInstanceCreditSpecificationsPaginator(IAmazonEC2 client, DescribeInstanceCreditSpecificationsRequest request)
         {

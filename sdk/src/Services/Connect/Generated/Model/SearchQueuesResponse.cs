@@ -35,7 +35,7 @@ namespace Amazon.Connect.Model
     {
         private long? _approximateTotalCount;
         private string _nextToken;
-        private List<Queue> _queues = new List<Queue>();
+        private List<Queue> _queues = AWSConfigs.InitializeCollections ? new List<Queue>() : null;
 
         /// <summary>
         /// Gets and sets the property ApproximateTotalCount. 
@@ -89,7 +89,7 @@ namespace Amazon.Connect.Model
         // Check to see if Queues property is set
         internal bool IsSetQueues()
         {
-            return this._queues != null && this._queues.Count > 0; 
+            return this._queues != null && (this._queues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

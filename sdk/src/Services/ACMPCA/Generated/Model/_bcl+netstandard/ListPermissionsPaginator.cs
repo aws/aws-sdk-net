@@ -45,7 +45,7 @@ namespace Amazon.ACMPCA.Model
         /// Enumerable containing all of the Permissions
         /// </summary>
         public IPaginatedEnumerable<Permission> Permissions => 
-            new PaginatedResultKeyResponse<ListPermissionsResponse, Permission>(this, (i) => i.Permissions);
+            new PaginatedResultKeyResponse<ListPermissionsResponse, Permission>(this, (i) => i.Permissions ?? new List<Permission>());
 
         internal ListPermissionsPaginator(IAmazonACMPCA client, ListPermissionsRequest request)
         {

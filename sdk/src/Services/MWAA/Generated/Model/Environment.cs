@@ -33,7 +33,7 @@ namespace Amazon.MWAA.Model
     /// </summary>
     public partial class Environment
     {
-        private Dictionary<string, string> _airflowConfigurationOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _airflowConfigurationOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _airflowVersion;
         private string _arn;
         private string _celeryExecutorQueue;
@@ -60,7 +60,7 @@ namespace Amazon.MWAA.Model
         private string _startupScriptS3ObjectVersion;
         private string _startupScriptS3Path;
         private EnvironmentStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private WebserverAccessMode _webserverAccessMode;
         private string _webserverUrl;
         private string _webserverVpcEndpointService;
@@ -84,7 +84,7 @@ namespace Amazon.MWAA.Model
         // Check to see if AirflowConfigurationOptions property is set
         internal bool IsSetAirflowConfigurationOptions()
         {
-            return this._airflowConfigurationOptions != null && this._airflowConfigurationOptions.Count > 0; 
+            return this._airflowConfigurationOptions != null && (this._airflowConfigurationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -754,7 +754,7 @@ namespace Amazon.MWAA.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

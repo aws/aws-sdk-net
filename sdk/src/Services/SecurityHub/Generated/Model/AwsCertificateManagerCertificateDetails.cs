@@ -36,15 +36,15 @@ namespace Amazon.SecurityHub.Model
         private string _certificateAuthorityArn;
         private string _createdAt;
         private string _domainName;
-        private List<AwsCertificateManagerCertificateDomainValidationOption> _domainValidationOptions = new List<AwsCertificateManagerCertificateDomainValidationOption>();
-        private List<AwsCertificateManagerCertificateExtendedKeyUsage> _extendedKeyUsages = new List<AwsCertificateManagerCertificateExtendedKeyUsage>();
+        private List<AwsCertificateManagerCertificateDomainValidationOption> _domainValidationOptions = AWSConfigs.InitializeCollections ? new List<AwsCertificateManagerCertificateDomainValidationOption>() : null;
+        private List<AwsCertificateManagerCertificateExtendedKeyUsage> _extendedKeyUsages = AWSConfigs.InitializeCollections ? new List<AwsCertificateManagerCertificateExtendedKeyUsage>() : null;
         private string _failureReason;
         private string _importedAt;
-        private List<string> _inUseBy = new List<string>();
+        private List<string> _inUseBy = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _issuedAt;
         private string _issuer;
         private string _keyAlgorithm;
-        private List<AwsCertificateManagerCertificateKeyUsage> _keyUsages = new List<AwsCertificateManagerCertificateKeyUsage>();
+        private List<AwsCertificateManagerCertificateKeyUsage> _keyUsages = AWSConfigs.InitializeCollections ? new List<AwsCertificateManagerCertificateKeyUsage>() : null;
         private string _notAfter;
         private string _notBefore;
         private AwsCertificateManagerCertificateOptions _options;
@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model
         private string _signatureAlgorithm;
         private string _status;
         private string _subject;
-        private List<string> _subjectAlternativeNames = new List<string>();
+        private List<string> _subjectAlternativeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _type;
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DomainValidationOptions property is set
         internal bool IsSetDomainValidationOptions()
         {
-            return this._domainValidationOptions != null && this._domainValidationOptions.Count > 0; 
+            return this._domainValidationOptions != null && (this._domainValidationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ExtendedKeyUsages property is set
         internal bool IsSetExtendedKeyUsages()
         {
-            return this._extendedKeyUsages != null && this._extendedKeyUsages.Count > 0; 
+            return this._extendedKeyUsages != null && (this._extendedKeyUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if InUseBy property is set
         internal bool IsSetInUseBy()
         {
-            return this._inUseBy != null && this._inUseBy.Count > 0; 
+            return this._inUseBy != null && (this._inUseBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -310,7 +310,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if KeyUsages property is set
         internal bool IsSetKeyUsages()
         {
-            return this._keyUsages != null && this._keyUsages.Count > 0; 
+            return this._keyUsages != null && (this._keyUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -519,7 +519,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SubjectAlternativeNames property is set
         internal bool IsSetSubjectAlternativeNames()
         {
-            return this._subjectAlternativeNames != null && this._subjectAlternativeNames.Count > 0; 
+            return this._subjectAlternativeNames != null && (this._subjectAlternativeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

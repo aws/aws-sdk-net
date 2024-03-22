@@ -64,8 +64,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _appInstanceArn;
         private string _clientRequestToken;
         private string _name;
-        private List<Processor> _processors = new List<Processor>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<Processor> _processors = AWSConfigs.InitializeCollections ? new List<Processor>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
@@ -140,7 +140,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if Processors property is set
         internal bool IsSetProcessors()
         {
-            return this._processors != null && this._processors.Count > 0; 
+            return this._processors != null && (this._processors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

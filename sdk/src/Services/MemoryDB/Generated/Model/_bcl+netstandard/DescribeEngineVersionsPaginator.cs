@@ -45,7 +45,7 @@ namespace Amazon.MemoryDB.Model
         /// Enumerable containing all of the EngineVersions
         /// </summary>
         public IPaginatedEnumerable<EngineVersionInfo> EngineVersions => 
-            new PaginatedResultKeyResponse<DescribeEngineVersionsResponse, EngineVersionInfo>(this, (i) => i.EngineVersions);
+            new PaginatedResultKeyResponse<DescribeEngineVersionsResponse, EngineVersionInfo>(this, (i) => i.EngineVersions ?? new List<EngineVersionInfo>());
 
         internal DescribeEngineVersionsPaginator(IAmazonMemoryDB client, DescribeEngineVersionsRequest request)
         {

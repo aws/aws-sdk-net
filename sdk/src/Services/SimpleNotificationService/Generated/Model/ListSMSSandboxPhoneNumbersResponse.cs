@@ -34,7 +34,7 @@ namespace Amazon.SimpleNotificationService.Model
     public partial class ListSMSSandboxPhoneNumbersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SMSSandboxPhoneNumber> _phoneNumbers = new List<SMSSandboxPhoneNumber>();
+        private List<SMSSandboxPhoneNumber> _phoneNumbers = AWSConfigs.InitializeCollections ? new List<SMSSandboxPhoneNumber>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.SimpleNotificationService.Model
         // Check to see if PhoneNumbers property is set
         internal bool IsSetPhoneNumbers()
         {
-            return this._phoneNumbers != null && this._phoneNumbers.Count > 0; 
+            return this._phoneNumbers != null && (this._phoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

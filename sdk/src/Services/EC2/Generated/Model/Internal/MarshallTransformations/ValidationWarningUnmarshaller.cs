@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("errorSet/item", targetDepth))
                     {
                         var unmarshaller = ValidationErrorUnmarshaller.Instance;
+                        if (unmarshalledObject.Errors == null)
+                        {
+                            unmarshalledObject.Errors = new List<ValidationError>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Errors.Add(item);
                         continue;

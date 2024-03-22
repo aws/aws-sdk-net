@@ -34,7 +34,7 @@ namespace Amazon.WAF.Model
     public partial class ListRegexPatternSetsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<RegexPatternSetSummary> _regexPatternSets = new List<RegexPatternSetSummary>();
+        private List<RegexPatternSetSummary> _regexPatternSets = AWSConfigs.InitializeCollections ? new List<RegexPatternSetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -74,7 +74,7 @@ namespace Amazon.WAF.Model
         // Check to see if RegexPatternSets property is set
         internal bool IsSetRegexPatternSets()
         {
-            return this._regexPatternSets != null && this._regexPatternSets.Count > 0; 
+            return this._regexPatternSets != null && (this._regexPatternSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

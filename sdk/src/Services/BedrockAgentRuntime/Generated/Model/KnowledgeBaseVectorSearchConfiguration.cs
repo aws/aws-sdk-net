@@ -29,19 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Knowledge base vector search configuration
+    /// Configurations for how to carry out the search.
     /// </summary>
     public partial class KnowledgeBaseVectorSearchConfiguration
     {
         private int? _numberOfResults;
+        private SearchType _overrideSearchType;
 
         /// <summary>
         /// Gets and sets the property NumberOfResults. 
         /// <para>
-        /// Top-K results to retrieve from knowledge base.
+        /// The number of results to return.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>numberOfResults</c> field is currently unsupported for <c>RetrieveAndGenerate</c>.
+        /// Don't include it in this field if you are sending a <c>RetrieveAndGenerate</c> request.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=25)]
         public int? NumberOfResults
         {
             get { return this._numberOfResults; }
@@ -52,6 +59,30 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetNumberOfResults()
         {
             return this._numberOfResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideSearchType. 
+        /// <para>
+        /// By default, Amazon Bedrock decides a search strategy for you. If you're using an Amazon
+        /// OpenSearch Serverless vector store that contains a filterable text field, you can
+        /// specify whether to query the knowledge base with a <c>HYBRID</c> search using both
+        /// vector embeddings and raw text, or <c>SEMANTIC</c> search using only vector embeddings.
+        /// For other vector store configurations, only <c>SEMANTIC</c> search is available. For
+        /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-test.html">Test
+        /// a knowledge base</a>.
+        /// </para>
+        /// </summary>
+        public SearchType OverrideSearchType
+        {
+            get { return this._overrideSearchType; }
+            set { this._overrideSearchType = value; }
+        }
+
+        // Check to see if OverrideSearchType property is set
+        internal bool IsSetOverrideSearchType()
+        {
+            return this._overrideSearchType != null;
         }
 
     }

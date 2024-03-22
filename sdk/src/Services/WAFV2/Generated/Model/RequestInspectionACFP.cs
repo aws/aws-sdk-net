@@ -46,11 +46,11 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class RequestInspectionACFP
     {
-        private List<AddressField> _addressFields = new List<AddressField>();
+        private List<AddressField> _addressFields = AWSConfigs.InitializeCollections ? new List<AddressField>() : null;
         private EmailField _emailField;
         private PasswordField _passwordField;
         private PayloadType _payloadType;
-        private List<PhoneNumberField> _phoneNumberFields = new List<PhoneNumberField>();
+        private List<PhoneNumberField> _phoneNumberFields = AWSConfigs.InitializeCollections ? new List<PhoneNumberField>() : null;
         private UsernameField _usernameField;
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if AddressFields property is set
         internal bool IsSetAddressFields()
         {
-            return this._addressFields != null && this._addressFields.Count > 0; 
+            return this._addressFields != null && (this._addressFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if PhoneNumberFields property is set
         internal bool IsSetPhoneNumberFields()
         {
-            return this._phoneNumberFields != null && this._phoneNumberFields.Count > 0; 
+            return this._phoneNumberFields != null && (this._phoneNumberFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

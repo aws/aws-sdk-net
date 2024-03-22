@@ -37,18 +37,18 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private string _context;
         private DateTime? _createTime;
-        private List<DescribeFleetError> _errors = new List<DescribeFleetError>();
+        private List<DescribeFleetError> _errors = AWSConfigs.InitializeCollections ? new List<DescribeFleetError>() : null;
         private FleetExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
         private string _fleetId;
         private FleetStateCode _fleetState;
         private double? _fulfilledCapacity;
         private double? _fulfilledOnDemandCapacity;
-        private List<DescribeFleetsInstances> _instances = new List<DescribeFleetsInstances>();
-        private List<FleetLaunchTemplateConfig> _launchTemplateConfigs = new List<FleetLaunchTemplateConfig>();
+        private List<DescribeFleetsInstances> _instances = AWSConfigs.InitializeCollections ? new List<DescribeFleetsInstances>() : null;
+        private List<FleetLaunchTemplateConfig> _launchTemplateConfigs = AWSConfigs.InitializeCollections ? new List<FleetLaunchTemplateConfig>() : null;
         private OnDemandOptions _onDemandOptions;
         private bool? _replaceUnhealthyInstances;
         private SpotOptions _spotOptions;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TargetCapacitySpecification _targetCapacitySpecification;
         private bool? _terminateInstancesWithExpiration;
         private FleetType _type;
@@ -153,7 +153,7 @@ namespace Amazon.EC2.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Amazon.EC2.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -286,7 +286,7 @@ namespace Amazon.EC2.Model
         // Check to see if LaunchTemplateConfigs property is set
         internal bool IsSetLaunchTemplateConfigs()
         {
-            return this._launchTemplateConfigs != null && this._launchTemplateConfigs.Count > 0; 
+            return this._launchTemplateConfigs != null && (this._launchTemplateConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -360,7 +360,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

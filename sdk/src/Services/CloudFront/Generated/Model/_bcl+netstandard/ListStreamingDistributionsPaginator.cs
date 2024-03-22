@@ -45,7 +45,7 @@ namespace Amazon.CloudFront.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<StreamingDistributionSummary> Items => 
-            new PaginatedResultKeyResponse<ListStreamingDistributionsResponse, StreamingDistributionSummary>(this, (i) => i.StreamingDistributionList.Items);
+            new PaginatedResultKeyResponse<ListStreamingDistributionsResponse, StreamingDistributionSummary>(this, (i) => i.StreamingDistributionList.Items ?? new List<StreamingDistributionSummary>());
 
         internal ListStreamingDistributionsPaginator(IAmazonCloudFront client, ListStreamingDistributionsRequest request)
         {

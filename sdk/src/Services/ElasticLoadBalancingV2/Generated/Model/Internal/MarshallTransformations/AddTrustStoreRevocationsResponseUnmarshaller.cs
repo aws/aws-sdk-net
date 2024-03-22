@@ -84,6 +84,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TrustStoreRevocations/member", targetDepth))
                     {
                         var unmarshaller = TrustStoreRevocationUnmarshaller.Instance;
+                        if (response.TrustStoreRevocations == null)
+                        {
+                            response.TrustStoreRevocations = new List<TrustStoreRevocation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TrustStoreRevocations.Add(item);
                         continue;

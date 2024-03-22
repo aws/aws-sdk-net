@@ -45,7 +45,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// Enumerable containing all of the SipMediaApplications
         /// </summary>
         public IPaginatedEnumerable<SipMediaApplication> SipMediaApplications => 
-            new PaginatedResultKeyResponse<ListSipMediaApplicationsResponse, SipMediaApplication>(this, (i) => i.SipMediaApplications);
+            new PaginatedResultKeyResponse<ListSipMediaApplicationsResponse, SipMediaApplication>(this, (i) => i.SipMediaApplications ?? new List<SipMediaApplication>());
 
         internal ListSipMediaApplicationsPaginator(IAmazonChimeSDKVoice client, ListSipMediaApplicationsRequest request)
         {

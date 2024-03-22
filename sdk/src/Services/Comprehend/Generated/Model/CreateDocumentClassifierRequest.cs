@@ -46,7 +46,7 @@ namespace Amazon.Comprehend.Model
         private string _modelKmsKeyId;
         private string _modelPolicy;
         private DocumentClassifierOutputDataConfig _outputDataConfig;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _versionName;
         private string _volumeKmsKeyId;
         private VpcConfig _vpcConfig;
@@ -279,7 +279,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Enumerable containing all of the NetworkInterfaces
         /// </summary>
         public IPaginatedEnumerable<NetworkInterface> NetworkInterfaces => 
-            new PaginatedResultKeyResponse<ListDecoderManifestNetworkInterfacesResponse, NetworkInterface>(this, (i) => i.NetworkInterfaces);
+            new PaginatedResultKeyResponse<ListDecoderManifestNetworkInterfacesResponse, NetworkInterface>(this, (i) => i.NetworkInterfaces ?? new List<NetworkInterface>());
 
         internal ListDecoderManifestNetworkInterfacesPaginator(IAmazonIoTFleetWise client, ListDecoderManifestNetworkInterfacesRequest request)
         {

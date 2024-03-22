@@ -35,8 +35,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class ApplyMapping
     {
-        private List<string> _inputs = new List<string>();
-        private List<Mapping> _mapping = new List<Mapping>();
+        private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Mapping> _mapping = AWSConfigs.InitializeCollections ? new List<Mapping>() : null;
         private string _name;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Glue.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.Glue.Model
         // Check to see if Mapping property is set
         internal bool IsSetMapping()
         {
-            return this._mapping != null && this._mapping.Count > 0; 
+            return this._mapping != null && (this._mapping.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

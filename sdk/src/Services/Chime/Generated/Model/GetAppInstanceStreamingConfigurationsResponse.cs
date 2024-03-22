@@ -33,7 +33,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class GetAppInstanceStreamingConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<AppInstanceStreamingConfiguration> _appInstanceStreamingConfigurations = new List<AppInstanceStreamingConfiguration>();
+        private List<AppInstanceStreamingConfiguration> _appInstanceStreamingConfigurations = AWSConfigs.InitializeCollections ? new List<AppInstanceStreamingConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AppInstanceStreamingConfigurations. 
@@ -51,7 +51,7 @@ namespace Amazon.Chime.Model
         // Check to see if AppInstanceStreamingConfigurations property is set
         internal bool IsSetAppInstanceStreamingConfigurations()
         {
-            return this._appInstanceStreamingConfigurations != null && this._appInstanceStreamingConfigurations.Count > 0; 
+            return this._appInstanceStreamingConfigurations != null && (this._appInstanceStreamingConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

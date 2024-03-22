@@ -35,14 +35,14 @@ namespace Amazon.ForecastService.Model
     {
         private DateTime? _creationTime;
         private DataConfig _dataConfig;
-        private List<string> _datasetImportJobArns = new List<string>();
+        private List<string> _datasetImportJobArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EncryptionConfig _encryptionConfig;
         private long? _estimatedTimeRemainingInMinutes;
         private ExplainabilityInfo _explainabilityInfo;
-        private List<string> _forecastDimensions = new List<string>();
+        private List<string> _forecastDimensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _forecastFrequency;
         private int? _forecastHorizon;
-        private List<string> _forecastTypes = new List<string>();
+        private List<string> _forecastTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastModificationTime;
         private string _message;
         private MonitorInfo _monitorInfo;
@@ -105,7 +105,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if DatasetImportJobArns property is set
         internal bool IsSetDatasetImportJobArns()
         {
-            return this._datasetImportJobArns != null && this._datasetImportJobArns.Count > 0; 
+            return this._datasetImportJobArns != null && (this._datasetImportJobArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if ForecastDimensions property is set
         internal bool IsSetForecastDimensions()
         {
-            return this._forecastDimensions != null && this._forecastDimensions.Count > 0; 
+            return this._forecastDimensions != null && (this._forecastDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if ForecastTypes property is set
         internal bool IsSetForecastTypes()
         {
-            return this._forecastTypes != null && this._forecastTypes.Count > 0; 
+            return this._forecastTypes != null && (this._forecastTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

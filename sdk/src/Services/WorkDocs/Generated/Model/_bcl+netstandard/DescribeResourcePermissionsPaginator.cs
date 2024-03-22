@@ -45,7 +45,7 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the Principals
         /// </summary>
         public IPaginatedEnumerable<Principal> Principals => 
-            new PaginatedResultKeyResponse<DescribeResourcePermissionsResponse, Principal>(this, (i) => i.Principals);
+            new PaginatedResultKeyResponse<DescribeResourcePermissionsResponse, Principal>(this, (i) => i.Principals ?? new List<Principal>());
 
         internal DescribeResourcePermissionsPaginator(IAmazonWorkDocs client, DescribeResourcePermissionsRequest request)
         {

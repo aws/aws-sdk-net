@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// Enumerable containing all of the Devices
         /// </summary>
         public IPaginatedEnumerable<Device> Devices => 
-            new PaginatedResultKeyResponse<ListDevicesResponse, Device>(this, (i) => i.Devices);
+            new PaginatedResultKeyResponse<ListDevicesResponse, Device>(this, (i) => i.Devices ?? new List<Device>());
 
         internal ListDevicesPaginator(IAmazonDeviceFarm client, ListDevicesRequest request)
         {

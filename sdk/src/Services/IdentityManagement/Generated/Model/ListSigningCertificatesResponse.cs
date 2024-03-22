@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class ListSigningCertificatesResponse : AmazonWebServiceResponse
     {
-        private List<SigningCertificate> _certificates = new List<SigningCertificate>();
+        private List<SigningCertificate> _certificates = AWSConfigs.InitializeCollections ? new List<SigningCertificate>() : null;
         private bool? _isTruncated;
         private string _marker;
 
@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Certificates property is set
         internal bool IsSetCertificates()
         {
-            return this._certificates != null && this._certificates.Count > 0; 
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

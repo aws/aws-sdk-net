@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the LambdaFunctions
         /// </summary>
         public IPaginatedEnumerable<string> LambdaFunctions => 
-            new PaginatedResultKeyResponse<ListLambdaFunctionsResponse, string>(this, (i) => i.LambdaFunctions);
+            new PaginatedResultKeyResponse<ListLambdaFunctionsResponse, string>(this, (i) => i.LambdaFunctions ?? new List<string>());
 
         internal ListLambdaFunctionsPaginator(IAmazonConnect client, ListLambdaFunctionsRequest request)
         {

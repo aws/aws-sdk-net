@@ -39,7 +39,7 @@ namespace Amazon.StorageGateway.Model
         private int? _retentionLockTimeInDays;
         private RetentionLockType _retentionLockType;
         private TapeStorageClass _storageClass;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property PoolName. 
@@ -147,7 +147,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

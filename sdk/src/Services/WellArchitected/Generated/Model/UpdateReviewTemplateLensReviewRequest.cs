@@ -36,7 +36,7 @@ namespace Amazon.WellArchitected.Model
     {
         private string _lensAlias;
         private string _lensNotes;
-        private Dictionary<string, string> _pillarNotes = new Dictionary<string, string>();
+        private Dictionary<string, string> _pillarNotes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _templateArn;
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if PillarNotes property is set
         internal bool IsSetPillarNotes()
         {
-            return this._pillarNotes != null && this._pillarNotes.Count > 0; 
+            return this._pillarNotes != null && (this._pillarNotes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

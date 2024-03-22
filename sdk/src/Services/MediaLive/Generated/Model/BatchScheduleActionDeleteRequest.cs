@@ -33,7 +33,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class BatchScheduleActionDeleteRequest
     {
-        private List<string> _actionNames = new List<string>();
+        private List<string> _actionNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ActionNames. A list of schedule actions to delete.
@@ -48,7 +48,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if ActionNames property is set
         internal bool IsSetActionNames()
         {
-            return this._actionNames != null && this._actionNames.Count > 0; 
+            return this._actionNames != null && (this._actionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

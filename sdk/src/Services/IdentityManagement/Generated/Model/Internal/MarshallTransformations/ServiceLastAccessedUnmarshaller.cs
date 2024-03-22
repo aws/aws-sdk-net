@@ -93,6 +93,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TrackedActionsLastAccessed/member", targetDepth))
                     {
                         var unmarshaller = TrackedActionLastAccessedUnmarshaller.Instance;
+                        if (unmarshalledObject.TrackedActionsLastAccessed == null)
+                        {
+                            unmarshalledObject.TrackedActionsLastAccessed = new List<TrackedActionLastAccessed>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TrackedActionsLastAccessed.Add(item);
                         continue;

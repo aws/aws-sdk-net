@@ -37,7 +37,7 @@ namespace Amazon.OAM.Model
         private string _arn;
         private string _id;
         private string _label;
-        private List<string> _resourceTypes = new List<string>();
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sinkArn;
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.OAM.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

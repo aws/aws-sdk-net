@@ -33,7 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class ATITrainingMetricsValue
     {
-        private List<ATIMetricDataPoint> _metricDataPoints = new List<ATIMetricDataPoint>();
+        private List<ATIMetricDataPoint> _metricDataPoints = AWSConfigs.InitializeCollections ? new List<ATIMetricDataPoint>() : null;
         private ATIModelPerformance _modelPerformance;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if MetricDataPoints property is set
         internal bool IsSetMetricDataPoints()
         {
-            return this._metricDataPoints != null && this._metricDataPoints.Count > 0; 
+            return this._metricDataPoints != null && (this._metricDataPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

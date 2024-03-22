@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the Detections
         /// </summary>
         public IPaginatedEnumerable<Detection> Detections => 
-            new PaginatedResultKeyResponse<ListResourceProfileDetectionsResponse, Detection>(this, (i) => i.Detections);
+            new PaginatedResultKeyResponse<ListResourceProfileDetectionsResponse, Detection>(this, (i) => i.Detections ?? new List<Detection>());
 
         internal ListResourceProfileDetectionsPaginator(IAmazonMacie2 client, ListResourceProfileDetectionsRequest request)
         {

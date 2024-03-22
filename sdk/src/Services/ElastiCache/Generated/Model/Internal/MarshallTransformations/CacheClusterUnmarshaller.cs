@@ -105,6 +105,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheNodes/CacheNode", targetDepth))
                     {
                         var unmarshaller = CacheNodeUnmarshaller.Instance;
+                        if (unmarshalledObject.CacheNodes == null)
+                        {
+                            unmarshalledObject.CacheNodes = new List<CacheNode>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CacheNodes.Add(item);
                         continue;
@@ -124,6 +128,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheSecurityGroups/CacheSecurityGroup", targetDepth))
                     {
                         var unmarshaller = CacheSecurityGroupMembershipUnmarshaller.Instance;
+                        if (unmarshalledObject.CacheSecurityGroups == null)
+                        {
+                            unmarshalledObject.CacheSecurityGroups = new List<CacheSecurityGroupMembership>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CacheSecurityGroups.Add(item);
                         continue;
@@ -167,6 +175,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LogDeliveryConfigurations/LogDeliveryConfiguration", targetDepth))
                     {
                         var unmarshaller = LogDeliveryConfigurationUnmarshaller.Instance;
+                        if (unmarshalledObject.LogDeliveryConfigurations == null)
+                        {
+                            unmarshalledObject.LogDeliveryConfigurations = new List<LogDeliveryConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LogDeliveryConfigurations.Add(item);
                         continue;
@@ -228,6 +240,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SecurityGroups/member", targetDepth))
                     {
                         var unmarshaller = SecurityGroupMembershipUnmarshaller.Instance;
+                        if (unmarshalledObject.SecurityGroups == null)
+                        {
+                            unmarshalledObject.SecurityGroups = new List<SecurityGroupMembership>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SecurityGroups.Add(item);
                         continue;

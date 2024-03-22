@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeVpcEndpointConnectionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VpcEndpointConnection> _vpcEndpointConnections = new List<VpcEndpointConnection>();
+        private List<VpcEndpointConnection> _vpcEndpointConnections = AWSConfigs.InitializeCollections ? new List<VpcEndpointConnection>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if VpcEndpointConnections property is set
         internal bool IsSetVpcEndpointConnections()
         {
-            return this._vpcEndpointConnections != null && this._vpcEndpointConnections.Count > 0; 
+            return this._vpcEndpointConnections != null && (this._vpcEndpointConnections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

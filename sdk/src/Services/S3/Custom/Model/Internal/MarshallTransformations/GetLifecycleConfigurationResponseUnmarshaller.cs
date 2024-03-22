@@ -59,8 +59,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Rule", targetDepth))
                     {
+                        if (response.Configuration.Rules == null)
+                        {
+                            response.Configuration.Rules = new List<LifecycleRule>();
+                        }
                         response.Configuration.Rules.Add(RulesItemUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                 }

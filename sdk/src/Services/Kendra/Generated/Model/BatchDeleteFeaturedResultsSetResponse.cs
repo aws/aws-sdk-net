@@ -33,7 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class BatchDeleteFeaturedResultsSetResponse : AmazonWebServiceResponse
     {
-        private List<BatchDeleteFeaturedResultsSetError> _errors = new List<BatchDeleteFeaturedResultsSetError>();
+        private List<BatchDeleteFeaturedResultsSetError> _errors = AWSConfigs.InitializeCollections ? new List<BatchDeleteFeaturedResultsSetError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -52,7 +52,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

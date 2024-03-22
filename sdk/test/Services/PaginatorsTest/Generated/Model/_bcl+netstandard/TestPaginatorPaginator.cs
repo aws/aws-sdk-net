@@ -45,7 +45,7 @@ namespace Amazon.PaginatorsTest.Model
         /// Enumerable containing all of the List
         /// </summary>
         public IPaginatedEnumerable<string> List => 
-            new PaginatedResultKeyResponse<TestPaginatorResponse, string>(this, (i) => i.List);
+            new PaginatedResultKeyResponse<TestPaginatorResponse, string>(this, (i) => i.List ?? new List<string>());
 
         internal TestPaginatorPaginator(IAmazonPaginatorsTest client, TestPaginatorRequest request)
         {

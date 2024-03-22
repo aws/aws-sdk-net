@@ -33,8 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class EnumListConfigurationOptions
     {
-        private List<string> _allowedValues = new List<string>();
-        private List<string> _defaultValue = new List<string>();
+        private List<string> _allowedValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _defaultValue = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxItems;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this._allowedValues != null && this._allowedValues.Count > 0; 
+            return this._allowedValues != null && (this._allowedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this._defaultValue != null && this._defaultValue.Count > 0; 
+            return this._defaultValue != null && (this._defaultValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

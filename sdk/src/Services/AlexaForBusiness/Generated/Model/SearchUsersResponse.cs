@@ -35,7 +35,7 @@ namespace Amazon.AlexaForBusiness.Model
     {
         private string _nextToken;
         private int? _totalCount;
-        private List<UserData> _users = new List<UserData>();
+        private List<UserData> _users = AWSConfigs.InitializeCollections ? new List<UserData>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -89,7 +89,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

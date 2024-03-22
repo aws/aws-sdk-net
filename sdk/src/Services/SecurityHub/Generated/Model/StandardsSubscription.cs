@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     public partial class StandardsSubscription
     {
         private string _standardsArn;
-        private Dictionary<string, string> _standardsInput = new Dictionary<string, string>();
+        private Dictionary<string, string> _standardsInput = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private StandardsStatus _standardsStatus;
         private StandardsStatusReason _standardsStatusReason;
         private string _standardsSubscriptionArn;
@@ -74,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StandardsInput property is set
         internal bool IsSetStandardsInput()
         {
-            return this._standardsInput != null && this._standardsInput.Count > 0; 
+            return this._standardsInput != null && (this._standardsInput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

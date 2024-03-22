@@ -35,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private DialogAction _dialogAction;
         private IntentOverride _intent;
-        private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _sessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property DialogAction.
@@ -83,7 +83,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SessionAttributes property is set
         internal bool IsSetSessionAttributes()
         {
-            return this._sessionAttributes != null && this._sessionAttributes.Count > 0; 
+            return this._sessionAttributes != null && (this._sessionAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

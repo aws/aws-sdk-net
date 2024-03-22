@@ -45,7 +45,7 @@ namespace Amazon.Tnb.Model
         /// Enumerable containing all of the FunctionInstances
         /// </summary>
         public IPaginatedEnumerable<ListSolFunctionInstanceInfo> FunctionInstances => 
-            new PaginatedResultKeyResponse<ListSolFunctionInstancesResponse, ListSolFunctionInstanceInfo>(this, (i) => i.FunctionInstances);
+            new PaginatedResultKeyResponse<ListSolFunctionInstancesResponse, ListSolFunctionInstanceInfo>(this, (i) => i.FunctionInstances ?? new List<ListSolFunctionInstanceInfo>());
 
         internal ListSolFunctionInstancesPaginator(IAmazonTnb client, ListSolFunctionInstancesRequest request)
         {

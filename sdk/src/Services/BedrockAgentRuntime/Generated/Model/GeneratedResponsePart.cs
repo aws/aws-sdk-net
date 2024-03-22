@@ -29,15 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Generate response part
+    /// Contains metadata about a part of the generated response that is accompanied by a
+    /// citation.
     /// </summary>
     public partial class GeneratedResponsePart
     {
         private TextResponsePart _textResponsePart;
 
         /// <summary>
-        /// Gets and sets the property TextResponsePart.
+        /// Gets and sets the property TextResponsePart. 
+        /// <para>
+        /// Contains metadata about a textual part of the generated response that is accompanied
+        /// by a citation.
+        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public TextResponsePart TextResponsePart
         {
             get { return this._textResponsePart; }

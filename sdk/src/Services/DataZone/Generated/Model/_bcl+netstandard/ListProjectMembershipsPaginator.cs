@@ -45,7 +45,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Members
         /// </summary>
         public IPaginatedEnumerable<ProjectMember> Members => 
-            new PaginatedResultKeyResponse<ListProjectMembershipsResponse, ProjectMember>(this, (i) => i.Members);
+            new PaginatedResultKeyResponse<ListProjectMembershipsResponse, ProjectMember>(this, (i) => i.Members ?? new List<ProjectMember>());
 
         internal ListProjectMembershipsPaginator(IAmazonDataZone client, ListProjectMembershipsRequest request)
         {

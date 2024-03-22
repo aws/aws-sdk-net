@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("fastSnapshotRestoreStateErrorSet/item", targetDepth))
                     {
                         var unmarshaller = DisableFastSnapshotRestoreStateErrorItemUnmarshaller.Instance;
+                        if (unmarshalledObject.FastSnapshotRestoreStateErrors == null)
+                        {
+                            unmarshalledObject.FastSnapshotRestoreStateErrors = new List<DisableFastSnapshotRestoreStateErrorItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.FastSnapshotRestoreStateErrors.Add(item);
                         continue;

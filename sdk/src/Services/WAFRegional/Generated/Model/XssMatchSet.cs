@@ -54,7 +54,7 @@ namespace Amazon.WAFRegional.Model
     {
         private string _name;
         private string _xssMatchSetId;
-        private List<XssMatchTuple> _xssMatchTuples = new List<XssMatchTuple>();
+        private List<XssMatchTuple> _xssMatchTuples = AWSConfigs.InitializeCollections ? new List<XssMatchTuple>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -119,7 +119,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if XssMatchTuples property is set
         internal bool IsSetXssMatchTuples()
         {
-            return this._xssMatchTuples != null && this._xssMatchTuples.Count > 0; 
+            return this._xssMatchTuples != null && (this._xssMatchTuples.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

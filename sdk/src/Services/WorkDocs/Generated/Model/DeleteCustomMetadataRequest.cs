@@ -36,7 +36,7 @@ namespace Amazon.WorkDocs.Model
     {
         private string _authenticationToken;
         private bool? _deleteAll;
-        private List<string> _keys = new List<string>();
+        private List<string> _keys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceId;
         private string _versionId;
 
@@ -94,7 +94,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

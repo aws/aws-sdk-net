@@ -34,10 +34,10 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class UpdateMetricAttributionRequest : AmazonPersonalizeRequest
     {
-        private List<MetricAttribute> _addMetrics = new List<MetricAttribute>();
+        private List<MetricAttribute> _addMetrics = AWSConfigs.InitializeCollections ? new List<MetricAttribute>() : null;
         private string _metricAttributionArn;
         private MetricAttributionOutput _metricsOutputConfig;
-        private List<string> _removeMetrics = new List<string>();
+        private List<string> _removeMetrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AddMetrics. 
@@ -55,7 +55,7 @@ namespace Amazon.Personalize.Model
         // Check to see if AddMetrics property is set
         internal bool IsSetAddMetrics()
         {
-            return this._addMetrics != null && this._addMetrics.Count > 0; 
+            return this._addMetrics != null && (this._addMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.Personalize.Model
         // Check to see if RemoveMetrics property is set
         internal bool IsSetRemoveMetrics()
         {
-            return this._removeMetrics != null && this._removeMetrics.Count > 0; 
+            return this._removeMetrics != null && (this._removeMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

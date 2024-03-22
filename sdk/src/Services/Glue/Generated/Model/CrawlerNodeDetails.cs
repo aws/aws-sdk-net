@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CrawlerNodeDetails
     {
-        private List<Crawl> _crawls = new List<Crawl>();
+        private List<Crawl> _crawls = AWSConfigs.InitializeCollections ? new List<Crawl>() : null;
 
         /// <summary>
         /// Gets and sets the property Crawls. 
@@ -50,7 +50,7 @@ namespace Amazon.Glue.Model
         // Check to see if Crawls property is set
         internal bool IsSetCrawls()
         {
-            return this._crawls != null && this._crawls.Count > 0; 
+            return this._crawls != null && (this._crawls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

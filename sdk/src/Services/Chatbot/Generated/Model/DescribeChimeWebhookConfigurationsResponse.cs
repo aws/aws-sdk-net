@@ -34,7 +34,7 @@ namespace Amazon.Chatbot.Model
     public partial class DescribeChimeWebhookConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ChimeWebhookConfiguration> _webhookConfigurations = new List<ChimeWebhookConfiguration>();
+        private List<ChimeWebhookConfiguration> _webhookConfigurations = AWSConfigs.InitializeCollections ? new List<ChimeWebhookConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. An optional token returned from a prior request.
@@ -68,7 +68,7 @@ namespace Amazon.Chatbot.Model
         // Check to see if WebhookConfigurations property is set
         internal bool IsSetWebhookConfigurations()
         {
-            return this._webhookConfigurations != null && this._webhookConfigurations.Count > 0; 
+            return this._webhookConfigurations != null && (this._webhookConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

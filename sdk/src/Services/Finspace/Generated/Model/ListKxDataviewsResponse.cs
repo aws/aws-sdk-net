@@ -33,7 +33,7 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class ListKxDataviewsResponse : AmazonWebServiceResponse
     {
-        private List<KxDataviewListEntry> _kxDataviews = new List<KxDataviewListEntry>();
+        private List<KxDataviewListEntry> _kxDataviews = AWSConfigs.InitializeCollections ? new List<KxDataviewListEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Finspace.Model
         // Check to see if KxDataviews property is set
         internal bool IsSetKxDataviews()
         {
-            return this._kxDataviews != null && this._kxDataviews.Count > 0; 
+            return this._kxDataviews != null && (this._kxDataviews.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

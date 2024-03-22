@@ -665,6 +665,98 @@ namespace Amazon.Batch
 
 
     /// <summary>
+    /// Constants used for properties of type JobStateTimeLimitActionsAction.
+    /// </summary>
+    public class JobStateTimeLimitActionsAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCEL for JobStateTimeLimitActionsAction
+        /// </summary>
+        public static readonly JobStateTimeLimitActionsAction CANCEL = new JobStateTimeLimitActionsAction("CANCEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobStateTimeLimitActionsAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobStateTimeLimitActionsAction FindValue(string value)
+        {
+            return FindValue<JobStateTimeLimitActionsAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobStateTimeLimitActionsAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobStateTimeLimitActionsState.
+    /// </summary>
+    public class JobStateTimeLimitActionsState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RUNNABLE for JobStateTimeLimitActionsState
+        /// </summary>
+        public static readonly JobStateTimeLimitActionsState RUNNABLE = new JobStateTimeLimitActionsState("RUNNABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobStateTimeLimitActionsState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobStateTimeLimitActionsState FindValue(string value)
+        {
+            return FindValue<JobStateTimeLimitActionsState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobStateTimeLimitActionsState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobStatus.
     /// </summary>
     public class JobStatus : ConstantClass

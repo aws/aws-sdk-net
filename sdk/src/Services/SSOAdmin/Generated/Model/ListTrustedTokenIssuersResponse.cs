@@ -34,7 +34,7 @@ namespace Amazon.SSOAdmin.Model
     public partial class ListTrustedTokenIssuersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TrustedTokenIssuerMetadata> _trustedTokenIssuers = new List<TrustedTokenIssuerMetadata>();
+        private List<TrustedTokenIssuerMetadata> _trustedTokenIssuers = AWSConfigs.InitializeCollections ? new List<TrustedTokenIssuerMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if TrustedTokenIssuers property is set
         internal bool IsSetTrustedTokenIssuers()
         {
-            return this._trustedTokenIssuers != null && this._trustedTokenIssuers.Count > 0; 
+            return this._trustedTokenIssuers != null && (this._trustedTokenIssuers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

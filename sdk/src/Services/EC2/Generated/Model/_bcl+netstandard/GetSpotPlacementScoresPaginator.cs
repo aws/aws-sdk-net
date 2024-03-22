@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the SpotPlacementScores
         /// </summary>
         public IPaginatedEnumerable<SpotPlacementScore> SpotPlacementScores => 
-            new PaginatedResultKeyResponse<GetSpotPlacementScoresResponse, SpotPlacementScore>(this, (i) => i.SpotPlacementScores);
+            new PaginatedResultKeyResponse<GetSpotPlacementScoresResponse, SpotPlacementScore>(this, (i) => i.SpotPlacementScores ?? new List<SpotPlacementScore>());
 
         internal GetSpotPlacementScoresPaginator(IAmazonEC2 client, GetSpotPlacementScoresRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.CloudFront.Model
     public partial class DistributionSummary
     {
         private Aliases _aliases;
-        private List<AliasICPRecordal> _aliasICPRecordals = new List<AliasICPRecordal>();
+        private List<AliasICPRecordal> _aliasICPRecordals = AWSConfigs.InitializeCollections ? new List<AliasICPRecordal>() : null;
         private string _arn;
         private CacheBehaviors _cacheBehaviors;
         private string _comment;
@@ -104,7 +104,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if AliasICPRecordals property is set
         internal bool IsSetAliasICPRecordals()
         {
-            return this._aliasICPRecordals != null && this._aliasICPRecordals.Count > 0; 
+            return this._aliasICPRecordals != null && (this._aliasICPRecordals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

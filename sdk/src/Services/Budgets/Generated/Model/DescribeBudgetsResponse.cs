@@ -33,7 +33,7 @@ namespace Amazon.Budgets.Model
     /// </summary>
     public partial class DescribeBudgetsResponse : AmazonWebServiceResponse
     {
-        private List<Budget> _budgets = new List<Budget>();
+        private List<Budget> _budgets = AWSConfigs.InitializeCollections ? new List<Budget>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Budgets.Model
         // Check to see if Budgets property is set
         internal bool IsSetBudgets()
         {
-            return this._budgets != null && this._budgets.Count > 0; 
+            return this._budgets != null && (this._budgets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

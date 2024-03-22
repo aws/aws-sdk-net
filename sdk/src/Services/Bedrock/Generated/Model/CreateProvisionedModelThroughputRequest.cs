@@ -46,7 +46,7 @@ namespace Amazon.Bedrock.Model
         private string _modelId;
         private int? _modelUnits;
         private string _provisionedModelName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -159,7 +159,7 @@ namespace Amazon.Bedrock.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

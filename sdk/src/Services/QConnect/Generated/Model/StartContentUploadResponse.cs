@@ -33,7 +33,7 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class StartContentUploadResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _headersToInclude = new Dictionary<string, string>();
+        private Dictionary<string, string> _headersToInclude = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uploadId;
         private string _url;
         private DateTime? _urlExpiry;
@@ -54,7 +54,7 @@ namespace Amazon.QConnect.Model
         // Check to see if HeadersToInclude property is set
         internal bool IsSetHeadersToInclude()
         {
-            return this._headersToInclude != null && this._headersToInclude.Count > 0; 
+            return this._headersToInclude != null && (this._headersToInclude.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

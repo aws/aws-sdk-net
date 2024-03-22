@@ -54,7 +54,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private DateTime? _endDateTime;
-        private List<AnalyticsPathFilter> _filters = new List<AnalyticsPathFilter>();
+        private List<AnalyticsPathFilter> _filters = AWSConfigs.InitializeCollections ? new List<AnalyticsPathFilter>() : null;
         private string _intentPath;
         private DateTime? _startDateTime;
 
@@ -113,7 +113,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

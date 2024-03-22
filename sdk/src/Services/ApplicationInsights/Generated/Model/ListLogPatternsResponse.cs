@@ -34,7 +34,7 @@ namespace Amazon.ApplicationInsights.Model
     public partial class ListLogPatternsResponse : AmazonWebServiceResponse
     {
         private string _accountId;
-        private List<LogPattern> _logPatterns = new List<LogPattern>();
+        private List<LogPattern> _logPatterns = AWSConfigs.InitializeCollections ? new List<LogPattern>() : null;
         private string _nextToken;
         private string _resourceGroupName;
 
@@ -72,7 +72,7 @@ namespace Amazon.ApplicationInsights.Model
         // Check to see if LogPatterns property is set
         internal bool IsSetLogPatterns()
         {
-            return this._logPatterns != null && this._logPatterns.Count > 0; 
+            return this._logPatterns != null && (this._logPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

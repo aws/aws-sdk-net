@@ -34,9 +34,9 @@ namespace Amazon.CloudSearchDomain.Model
     /// </summary>
     public partial class SearchResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, BucketInfo> _facets = new Dictionary<string, BucketInfo>();
+        private Dictionary<string, BucketInfo> _facets = AWSConfigs.InitializeCollections ? new Dictionary<string, BucketInfo>() : null;
         private Hits _hits;
-        private Dictionary<string, FieldStats> _stats = new Dictionary<string, FieldStats>();
+        private Dictionary<string, FieldStats> _stats = AWSConfigs.InitializeCollections ? new Dictionary<string, FieldStats>() : null;
         private SearchStatus _status;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.CloudSearchDomain.Model
         // Check to see if Facets property is set
         internal bool IsSetFacets()
         {
-            return this._facets != null && this._facets.Count > 0; 
+            return this._facets != null && (this._facets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.CloudSearchDomain.Model
         // Check to see if Stats property is set
         internal bool IsSetStats()
         {
-            return this._stats != null && this._stats.Count > 0; 
+            return this._stats != null && (this._stats.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

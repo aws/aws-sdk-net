@@ -33,7 +33,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class ListGatewaysResponse : AmazonWebServiceResponse
     {
-        private List<GatewaySummary> _gatewaySummaries = new List<GatewaySummary>();
+        private List<GatewaySummary> _gatewaySummaries = AWSConfigs.InitializeCollections ? new List<GatewaySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if GatewaySummaries property is set
         internal bool IsSetGatewaySummaries()
         {
-            return this._gatewaySummaries != null && this._gatewaySummaries.Count > 0; 
+            return this._gatewaySummaries != null && (this._gatewaySummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Proton.Model
         /// Enumerable containing all of the Templates
         /// </summary>
         public IPaginatedEnumerable<EnvironmentTemplateSummary> Templates => 
-            new PaginatedResultKeyResponse<ListEnvironmentTemplatesResponse, EnvironmentTemplateSummary>(this, (i) => i.Templates);
+            new PaginatedResultKeyResponse<ListEnvironmentTemplatesResponse, EnvironmentTemplateSummary>(this, (i) => i.Templates ?? new List<EnvironmentTemplateSummary>());
 
         internal ListEnvironmentTemplatesPaginator(IAmazonProton client, ListEnvironmentTemplatesRequest request)
         {

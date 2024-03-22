@@ -34,7 +34,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class ListPoolOriginationIdentitiesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OriginationIdentityMetadata> _originationIdentities = new List<OriginationIdentityMetadata>();
+        private List<OriginationIdentityMetadata> _originationIdentities = AWSConfigs.InitializeCollections ? new List<OriginationIdentityMetadata>() : null;
         private string _poolArn;
         private string _poolId;
 
@@ -73,7 +73,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if OriginationIdentities property is set
         internal bool IsSetOriginationIdentities()
         {
-            return this._originationIdentities != null && this._originationIdentities.Count > 0; 
+            return this._originationIdentities != null && (this._originationIdentities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

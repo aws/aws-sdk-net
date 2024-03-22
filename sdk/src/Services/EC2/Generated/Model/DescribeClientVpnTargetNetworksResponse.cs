@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeClientVpnTargetNetworksResponse : AmazonWebServiceResponse
     {
-        private List<TargetNetwork> _clientVpnTargetNetworks = new List<TargetNetwork>();
+        private List<TargetNetwork> _clientVpnTargetNetworks = AWSConfigs.InitializeCollections ? new List<TargetNetwork>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if ClientVpnTargetNetworks property is set
         internal bool IsSetClientVpnTargetNetworks()
         {
-            return this._clientVpnTargetNetworks != null && this._clientVpnTargetNetworks.Count > 0; 
+            return this._clientVpnTargetNetworks != null && (this._clientVpnTargetNetworks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

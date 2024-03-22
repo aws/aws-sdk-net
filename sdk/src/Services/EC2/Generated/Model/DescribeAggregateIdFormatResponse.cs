@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeAggregateIdFormatResponse : AmazonWebServiceResponse
     {
-        private List<IdFormat> _statuses = new List<IdFormat>();
+        private List<IdFormat> _statuses = AWSConfigs.InitializeCollections ? new List<IdFormat>() : null;
         private bool? _useLongIdsAggregated;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Statuses property is set
         internal bool IsSetStatuses()
         {
-            return this._statuses != null && this._statuses.Count > 0; 
+            return this._statuses != null && (this._statuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model
     public partial class ListSipRulesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SipRule> _sipRules = new List<SipRule>();
+        private List<SipRule> _sipRules = AWSConfigs.InitializeCollections ? new List<SipRule>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Chime.Model
         // Check to see if SipRules property is set
         internal bool IsSetSipRules()
         {
-            return this._sipRules != null && this._sipRules.Count > 0; 
+            return this._sipRules != null && (this._sipRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

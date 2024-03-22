@@ -34,14 +34,14 @@ namespace Amazon.AppRegistry.Model
     /// </summary>
     public partial class Application
     {
-        private Dictionary<string, string> _applicationTag = new Dictionary<string, string>();
+        private Dictionary<string, string> _applicationTag = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _arn;
         private DateTime? _creationTime;
         private string _description;
         private string _id;
         private DateTime? _lastUpdateTime;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationTag. 
@@ -58,7 +58,7 @@ namespace Amazon.AppRegistry.Model
         // Check to see if ApplicationTag property is set
         internal bool IsSetApplicationTag()
         {
-            return this._applicationTag != null && this._applicationTag.Count > 0; 
+            return this._applicationTag != null && (this._applicationTag.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.AppRegistry.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

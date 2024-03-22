@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<CustomDataIdentifierSummary> Items => 
-            new PaginatedResultKeyResponse<ListCustomDataIdentifiersResponse, CustomDataIdentifierSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListCustomDataIdentifiersResponse, CustomDataIdentifierSummary>(this, (i) => i.Items ?? new List<CustomDataIdentifierSummary>());
 
         internal ListCustomDataIdentifiersPaginator(IAmazonMacie2 client, ListCustomDataIdentifiersRequest request)
         {

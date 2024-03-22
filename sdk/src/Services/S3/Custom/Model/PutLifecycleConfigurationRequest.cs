@@ -40,10 +40,10 @@ namespace Amazon.S3.Model
     ///  <note> 
     /// <para>
     /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-    /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
-    /// section describes the latest API. The previous version of the API supported filtering
-    /// based only on an object key name prefix, which is supported for backward compatibility.
-    /// For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+    /// key name prefix, one or more object tags, object size, or any combination of these.
+    /// Accordingly, this section describes the latest API. The previous version of the API
+    /// supported filtering based only on an object key name prefix, which is supported for
+    /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
     /// </para>
     ///  </note> <dl> <dt>Rules</dt> <dd> 
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.S3.Model
     ///  <ul> <li> 
     /// <para>
     /// A filter identifying a subset of objects to which the rule applies. The filter can
-    /// be based on a key name prefix, object tags, or a combination of both.
+    /// be based on a key name prefix, object tags, object size, or any combination of these.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,7 +81,7 @@ namespace Amazon.S3.Model
     /// subresources (for example, lifecycle configuration and website configuration). Only
     /// the resource owner (that is, the Amazon Web Services account that created it) can
     /// access the resource. The resource owner can optionally grant access permissions to
-    /// others by writing an access policy. For this operation, a user must get the <code>s3:PutLifecycleConfiguration</code>
+    /// others by writing an access policy. For this operation, a user must get the <c>s3:PutLifecycleConfiguration</c>
     /// permission.
     /// </para>
     ///  
@@ -92,15 +92,15 @@ namespace Amazon.S3.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>s3:DeleteObject</code> 
+    ///  <c>s3:DeleteObject</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>s3:DeleteObjectVersion</code> 
+    ///  <c>s3:DeleteObjectVersion</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>s3:PutLifecycleConfiguration</code> 
+    ///  <c>s3:PutLifecycleConfiguration</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -109,7 +109,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </dd> </dl> 
     /// <para>
-    /// The following operations are related to <code>PutBucketLifecycleConfiguration</code>:
+    /// The following operations are related to <c>PutBucketLifecycleConfiguration</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -188,7 +188,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner

@@ -48,8 +48,8 @@ namespace Amazon.Imagebuilder.Model
         private string _name;
         private Schedule _schedule;
         private PipelineStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<WorkflowConfiguration> _workflows = new List<WorkflowConfiguration>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<WorkflowConfiguration> _workflows = AWSConfigs.InitializeCollections ? new List<WorkflowConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -315,7 +315,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -333,7 +333,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Workflows property is set
         internal bool IsSetWorkflows()
         {
-            return this._workflows != null && this._workflows.Count > 0; 
+            return this._workflows != null && (this._workflows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,11 +36,11 @@ namespace Amazon.Appflow.Model
     {
         private string _clientToken;
         private string _description;
-        private List<DestinationFlowConfig> _destinationFlowConfigList = new List<DestinationFlowConfig>();
+        private List<DestinationFlowConfig> _destinationFlowConfigList = AWSConfigs.InitializeCollections ? new List<DestinationFlowConfig>() : null;
         private string _flowName;
         private MetadataCatalogConfig _metadataCatalogConfig;
         private SourceFlowConfig _sourceFlowConfig;
-        private List<Task> _tasks = new List<Task>();
+        private List<Task> _tasks = AWSConfigs.InitializeCollections ? new List<Task>() : null;
         private TriggerConfig _triggerConfig;
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.Appflow.Model
         // Check to see if DestinationFlowConfigList property is set
         internal bool IsSetDestinationFlowConfigList()
         {
-            return this._destinationFlowConfigList != null && this._destinationFlowConfigList.Count > 0; 
+            return this._destinationFlowConfigList != null && (this._destinationFlowConfigList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.Appflow.Model
         // Check to see if Tasks property is set
         internal bool IsSetTasks()
         {
-            return this._tasks != null && this._tasks.Count > 0; 
+            return this._tasks != null && (this._tasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

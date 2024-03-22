@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class PropertyValueHistory
     {
         private EntityPropertyReference _entityPropertyReference;
-        private List<PropertyValue> _values = new List<PropertyValue>();
+        private List<PropertyValue> _values = AWSConfigs.InitializeCollections ? new List<PropertyValue>() : null;
 
         /// <summary>
         /// Gets and sets the property EntityPropertyReference. 
@@ -71,7 +71,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

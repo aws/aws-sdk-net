@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the ClusterNodeSummaries
         /// </summary>
         public IPaginatedEnumerable<ClusterNodeSummary> ClusterNodeSummaries => 
-            new PaginatedResultKeyResponse<ListClusterNodesResponse, ClusterNodeSummary>(this, (i) => i.ClusterNodeSummaries);
+            new PaginatedResultKeyResponse<ListClusterNodesResponse, ClusterNodeSummary>(this, (i) => i.ClusterNodeSummaries ?? new List<ClusterNodeSummary>());
 
         internal ListClusterNodesPaginator(IAmazonSageMaker client, ListClusterNodesRequest request)
         {

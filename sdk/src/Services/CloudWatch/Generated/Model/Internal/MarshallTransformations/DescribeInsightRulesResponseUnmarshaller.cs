@@ -84,6 +84,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("InsightRules/member", targetDepth))
                     {
                         var unmarshaller = InsightRuleUnmarshaller.Instance;
+                        if (response.InsightRules == null)
+                        {
+                            response.InsightRules = new List<InsightRule>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.InsightRules.Add(item);
                         continue;

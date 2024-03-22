@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("transitGatewayPeeringAttachments/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayPeeringAttachmentUnmarshaller.Instance;
+                        if (response.TransitGatewayPeeringAttachments == null)
+                        {
+                            response.TransitGatewayPeeringAttachments = new List<TransitGatewayPeeringAttachment>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TransitGatewayPeeringAttachments.Add(item);
                         continue;

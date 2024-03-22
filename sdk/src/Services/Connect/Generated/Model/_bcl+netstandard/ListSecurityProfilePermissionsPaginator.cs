@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the Permissions
         /// </summary>
         public IPaginatedEnumerable<string> Permissions => 
-            new PaginatedResultKeyResponse<ListSecurityProfilePermissionsResponse, string>(this, (i) => i.Permissions);
+            new PaginatedResultKeyResponse<ListSecurityProfilePermissionsResponse, string>(this, (i) => i.Permissions ?? new List<string>());
 
         internal ListSecurityProfilePermissionsPaginator(IAmazonConnect client, ListSecurityProfilePermissionsRequest request)
         {

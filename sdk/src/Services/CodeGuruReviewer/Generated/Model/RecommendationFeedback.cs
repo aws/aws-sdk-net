@@ -36,7 +36,7 @@ namespace Amazon.CodeGuruReviewer.Model
         private string _codeReviewArn;
         private DateTime? _createdTimeStamp;
         private DateTime? _lastUpdatedTimeStamp;
-        private List<string> _reactions = new List<string>();
+        private List<string> _reactions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _recommendationId;
         private string _userId;
 
@@ -113,7 +113,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if Reactions property is set
         internal bool IsSetReactions()
         {
-            return this._reactions != null && this._reactions.Count > 0; 
+            return this._reactions != null && (this._reactions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

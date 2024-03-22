@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// Enumerable containing all of the ApplicationComponentInfos
         /// </summary>
         public IPaginatedEnumerable<ApplicationComponentDetail> ApplicationComponentInfos => 
-            new PaginatedResultKeyResponse<ListApplicationComponentsResponse, ApplicationComponentDetail>(this, (i) => i.ApplicationComponentInfos);
+            new PaginatedResultKeyResponse<ListApplicationComponentsResponse, ApplicationComponentDetail>(this, (i) => i.ApplicationComponentInfos ?? new List<ApplicationComponentDetail>());
 
         internal ListApplicationComponentsPaginator(IAmazonMigrationHubStrategyRecommendations client, ListApplicationComponentsRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeSnapshotTierStatusResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SnapshotTierStatus> _snapshotTierStatuses = new List<SnapshotTierStatus>();
+        private List<SnapshotTierStatus> _snapshotTierStatuses = AWSConfigs.InitializeCollections ? new List<SnapshotTierStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if SnapshotTierStatuses property is set
         internal bool IsSetSnapshotTierStatuses()
         {
-            return this._snapshotTierStatuses != null && this._snapshotTierStatuses.Count > 0; 
+            return this._snapshotTierStatuses != null && (this._snapshotTierStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

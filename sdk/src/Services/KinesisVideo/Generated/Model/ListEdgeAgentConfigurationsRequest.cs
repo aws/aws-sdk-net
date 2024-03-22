@@ -91,7 +91,7 @@ namespace Amazon.KinesisVideo.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

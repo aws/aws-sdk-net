@@ -33,7 +33,7 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class ShareError
     {
-        private List<string> _accounts = new List<string>();
+        private List<string> _accounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _error;
         private string _message;
 
@@ -52,7 +52,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Accounts property is set
         internal bool IsSetAccounts()
         {
-            return this._accounts != null && this._accounts.Count > 0; 
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

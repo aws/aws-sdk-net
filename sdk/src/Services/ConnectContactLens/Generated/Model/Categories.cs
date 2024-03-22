@@ -34,8 +34,8 @@ namespace Amazon.ConnectContactLens.Model
     /// </summary>
     public partial class Categories
     {
-        private List<string> _matchedCategories = new List<string>();
-        private Dictionary<string, CategoryDetails> _matchedDetails = new Dictionary<string, CategoryDetails>();
+        private List<string> _matchedCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, CategoryDetails> _matchedDetails = AWSConfigs.InitializeCollections ? new Dictionary<string, CategoryDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property MatchedCategories. 
@@ -53,7 +53,7 @@ namespace Amazon.ConnectContactLens.Model
         // Check to see if MatchedCategories property is set
         internal bool IsSetMatchedCategories()
         {
-            return this._matchedCategories != null && this._matchedCategories.Count > 0; 
+            return this._matchedCategories != null && (this._matchedCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ConnectContactLens.Model
         // Check to see if MatchedDetails property is set
         internal bool IsSetMatchedDetails()
         {
-            return this._matchedDetails != null && this._matchedDetails.Count > 0; 
+            return this._matchedDetails != null && (this._matchedDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

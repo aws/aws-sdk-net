@@ -33,14 +33,14 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class DescribeAssetModelCompositeModelResponse : AmazonWebServiceResponse
     {
-        private List<ActionDefinition> _actionDefinitions = new List<ActionDefinition>();
+        private List<ActionDefinition> _actionDefinitions = AWSConfigs.InitializeCollections ? new List<ActionDefinition>() : null;
         private string _assetModelCompositeModelDescription;
         private string _assetModelCompositeModelExternalId;
         private string _assetModelCompositeModelId;
         private string _assetModelCompositeModelName;
-        private List<AssetModelCompositeModelPathSegment> _assetModelCompositeModelPath = new List<AssetModelCompositeModelPathSegment>();
-        private List<AssetModelProperty> _assetModelCompositeModelProperties = new List<AssetModelProperty>();
-        private List<AssetModelCompositeModelSummary> _assetModelCompositeModelSummaries = new List<AssetModelCompositeModelSummary>();
+        private List<AssetModelCompositeModelPathSegment> _assetModelCompositeModelPath = AWSConfigs.InitializeCollections ? new List<AssetModelCompositeModelPathSegment>() : null;
+        private List<AssetModelProperty> _assetModelCompositeModelProperties = AWSConfigs.InitializeCollections ? new List<AssetModelProperty>() : null;
+        private List<AssetModelCompositeModelSummary> _assetModelCompositeModelSummaries = AWSConfigs.InitializeCollections ? new List<AssetModelCompositeModelSummary>() : null;
         private string _assetModelCompositeModelType;
         private string _assetModelId;
         private CompositionDetails _compositionDetails;
@@ -60,7 +60,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if ActionDefinitions property is set
         internal bool IsSetActionDefinitions()
         {
-            return this._actionDefinitions != null && this._actionDefinitions.Count > 0; 
+            return this._actionDefinitions != null && (this._actionDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AssetModelCompositeModelPath property is set
         internal bool IsSetAssetModelCompositeModelPath()
         {
-            return this._assetModelCompositeModelPath != null && this._assetModelCompositeModelPath.Count > 0; 
+            return this._assetModelCompositeModelPath != null && (this._assetModelCompositeModelPath.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AssetModelCompositeModelProperties property is set
         internal bool IsSetAssetModelCompositeModelProperties()
         {
-            return this._assetModelCompositeModelProperties != null && this._assetModelCompositeModelProperties.Count > 0; 
+            return this._assetModelCompositeModelProperties != null && (this._assetModelCompositeModelProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AssetModelCompositeModelSummaries property is set
         internal bool IsSetAssetModelCompositeModelSummaries()
         {
-            return this._assetModelCompositeModelSummaries != null && this._assetModelCompositeModelSummaries.Count > 0; 
+            return this._assetModelCompositeModelSummaries != null && (this._assetModelCompositeModelSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

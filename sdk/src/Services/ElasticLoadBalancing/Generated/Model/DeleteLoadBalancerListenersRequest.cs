@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     public partial class DeleteLoadBalancerListenersRequest : AmazonElasticLoadBalancingRequest
     {
         private string _loadBalancerName;
-        private List<int> _loadBalancerPorts = new List<int>();
+        private List<int> _loadBalancerPorts = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -88,7 +88,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerPorts property is set
         internal bool IsSetLoadBalancerPorts()
         {
-            return this._loadBalancerPorts != null && this._loadBalancerPorts.Count > 0; 
+            return this._loadBalancerPorts != null && (this._loadBalancerPorts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

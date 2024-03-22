@@ -69,6 +69,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("KeySigningKeys/member", targetDepth))
                     {
+                        if (response.KeySigningKeys == null)
+                        {
+                            response.KeySigningKeys = new List<KeySigningKey>();
+                        }
                         var unmarshaller = KeySigningKeyUnmarshaller.Instance;
                         response.KeySigningKeys.Add(unmarshaller.Unmarshall(context));
                         continue;

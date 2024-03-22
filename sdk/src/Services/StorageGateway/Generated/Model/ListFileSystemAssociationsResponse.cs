@@ -33,7 +33,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class ListFileSystemAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<FileSystemAssociationSummary> _fileSystemAssociationSummaryList = new List<FileSystemAssociationSummary>();
+        private List<FileSystemAssociationSummary> _fileSystemAssociationSummaryList = AWSConfigs.InitializeCollections ? new List<FileSystemAssociationSummary>() : null;
         private string _marker;
         private string _nextMarker;
 
@@ -52,7 +52,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if FileSystemAssociationSummaryList property is set
         internal bool IsSetFileSystemAssociationSummaryList()
         {
-            return this._fileSystemAssociationSummaryList != null && this._fileSystemAssociationSummaryList.Count > 0; 
+            return this._fileSystemAssociationSummaryList != null && (this._fileSystemAssociationSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

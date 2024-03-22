@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the JobDefinitionSummaries
         /// </summary>
         public IPaginatedEnumerable<MonitoringJobDefinitionSummary> JobDefinitionSummaries => 
-            new PaginatedResultKeyResponse<ListModelQualityJobDefinitionsResponse, MonitoringJobDefinitionSummary>(this, (i) => i.JobDefinitionSummaries);
+            new PaginatedResultKeyResponse<ListModelQualityJobDefinitionsResponse, MonitoringJobDefinitionSummary>(this, (i) => i.JobDefinitionSummaries ?? new List<MonitoringJobDefinitionSummary>());
 
         internal ListModelQualityJobDefinitionsPaginator(IAmazonSageMaker client, ListModelQualityJobDefinitionsRequest request)
         {

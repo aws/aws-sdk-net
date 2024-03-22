@@ -63,6 +63,18 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("dynamodbStream", targetDepth))
+                {
+                    var unmarshaller = DynamodbStreamConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DynamodbStream = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dynamodbTable", targetDepth))
+                {
+                    var unmarshaller = DynamodbTableConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DynamodbTable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ebsSnapshot", targetDepth))
                 {
                     var unmarshaller = EbsSnapshotConfigurationUnmarshaller.Instance;

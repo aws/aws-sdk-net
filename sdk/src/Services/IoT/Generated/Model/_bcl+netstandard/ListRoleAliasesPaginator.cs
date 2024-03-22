@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the RoleAliases
         /// </summary>
         public IPaginatedEnumerable<string> RoleAliases => 
-            new PaginatedResultKeyResponse<ListRoleAliasesResponse, string>(this, (i) => i.RoleAliases);
+            new PaginatedResultKeyResponse<ListRoleAliasesResponse, string>(this, (i) => i.RoleAliases ?? new List<string>());
 
         internal ListRoleAliasesPaginator(IAmazonIoT client, ListRoleAliasesRequest request)
         {

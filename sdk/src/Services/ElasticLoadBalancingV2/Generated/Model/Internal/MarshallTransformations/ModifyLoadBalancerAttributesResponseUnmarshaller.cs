@@ -84,6 +84,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Attributes/member", targetDepth))
                     {
                         var unmarshaller = LoadBalancerAttributeUnmarshaller.Instance;
+                        if (response.Attributes == null)
+                        {
+                            response.Attributes = new List<LoadBalancerAttribute>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Attributes.Add(item);
                         continue;

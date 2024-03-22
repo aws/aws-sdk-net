@@ -35,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private DateTime? _creationDateTime;
         private string _description;
-        private List<string> _failureReasons = new List<string>();
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TestSetGenerationDataSource _generationDataSource;
         private DateTime? _lastUpdatedDateTime;
         private string _roleArn;
@@ -97,7 +97,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

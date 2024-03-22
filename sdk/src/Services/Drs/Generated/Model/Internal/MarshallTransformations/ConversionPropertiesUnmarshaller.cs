@@ -87,6 +87,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.VolumeToConversionMap = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("volumeToProductCodes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<ProductCode>, StringUnmarshaller, ListUnmarshaller<ProductCode, ProductCodeUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<ProductCode, ProductCodeUnmarshaller>(ProductCodeUnmarshaller.Instance));
+                    unmarshalledObject.VolumeToProductCodes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("volumeToVolumeSize", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance);

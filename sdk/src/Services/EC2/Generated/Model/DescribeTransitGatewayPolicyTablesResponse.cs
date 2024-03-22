@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeTransitGatewayPolicyTablesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TransitGatewayPolicyTable> _transitGatewayPolicyTables = new List<TransitGatewayPolicyTable>();
+        private List<TransitGatewayPolicyTable> _transitGatewayPolicyTables = AWSConfigs.InitializeCollections ? new List<TransitGatewayPolicyTable>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         // Check to see if TransitGatewayPolicyTables property is set
         internal bool IsSetTransitGatewayPolicyTables()
         {
-            return this._transitGatewayPolicyTables != null && this._transitGatewayPolicyTables.Count > 0; 
+            return this._transitGatewayPolicyTables != null && (this._transitGatewayPolicyTables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

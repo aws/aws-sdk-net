@@ -33,7 +33,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class ListDirectoriesResponse : AmazonWebServiceResponse
     {
-        private List<Directory> _directories = new List<Directory>();
+        private List<Directory> _directories = AWSConfigs.InitializeCollections ? new List<Directory>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if Directories property is set
         internal bool IsSetDirectories()
         {
-            return this._directories != null && this._directories.Count > 0; 
+            return this._directories != null && (this._directories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

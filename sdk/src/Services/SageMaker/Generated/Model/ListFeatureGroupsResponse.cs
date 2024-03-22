@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListFeatureGroupsResponse : AmazonWebServiceResponse
     {
-        private List<FeatureGroupSummary> _featureGroupSummaries = new List<FeatureGroupSummary>();
+        private List<FeatureGroupSummary> _featureGroupSummaries = AWSConfigs.InitializeCollections ? new List<FeatureGroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if FeatureGroupSummaries property is set
         internal bool IsSetFeatureGroupSummaries()
         {
-            return this._featureGroupSummaries != null && this._featureGroupSummaries.Count > 0; 
+            return this._featureGroupSummaries != null && (this._featureGroupSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

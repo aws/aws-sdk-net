@@ -45,7 +45,7 @@ namespace Amazon.XRay.Model
         /// Enumerable containing all of the Traces
         /// </summary>
         public IPaginatedEnumerable<Trace> Traces => 
-            new PaginatedResultKeyResponse<BatchGetTracesResponse, Trace>(this, (i) => i.Traces);
+            new PaginatedResultKeyResponse<BatchGetTracesResponse, Trace>(this, (i) => i.Traces ?? new List<Trace>());
 
         internal BatchGetTracesPaginator(IAmazonXRay client, BatchGetTracesRequest request)
         {

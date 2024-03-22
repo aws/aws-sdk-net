@@ -36,7 +36,7 @@ namespace Amazon.Batch.Model
     public partial class DescribeJobDefinitionsRequest : AmazonBatchRequest
     {
         private string _jobDefinitionName;
-        private List<string> _jobDefinitions = new List<string>();
+        private List<string> _jobDefinitions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _status;
@@ -77,7 +77,7 @@ namespace Amazon.Batch.Model
         // Check to see if JobDefinitions property is set
         internal bool IsSetJobDefinitions()
         {
-            return this._jobDefinitions != null && this._jobDefinitions.Count > 0; 
+            return this._jobDefinitions != null && (this._jobDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

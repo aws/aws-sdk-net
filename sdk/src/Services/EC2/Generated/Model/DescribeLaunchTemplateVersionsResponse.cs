@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeLaunchTemplateVersionsResponse : AmazonWebServiceResponse
     {
-        private List<LaunchTemplateVersion> _launchTemplateVersions = new List<LaunchTemplateVersion>();
+        private List<LaunchTemplateVersion> _launchTemplateVersions = AWSConfigs.InitializeCollections ? new List<LaunchTemplateVersion>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if LaunchTemplateVersions property is set
         internal bool IsSetLaunchTemplateVersions()
         {
-            return this._launchTemplateVersions != null && this._launchTemplateVersions.Count > 0; 
+            return this._launchTemplateVersions != null && (this._launchTemplateVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<BehaviorModelTrainingSummary> Summaries => 
-            new PaginatedResultKeyResponse<GetBehaviorModelTrainingSummariesResponse, BehaviorModelTrainingSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<GetBehaviorModelTrainingSummariesResponse, BehaviorModelTrainingSummary>(this, (i) => i.Summaries ?? new List<BehaviorModelTrainingSummary>());
 
         internal GetBehaviorModelTrainingSummariesPaginator(IAmazonIoT client, GetBehaviorModelTrainingSummariesRequest request)
         {

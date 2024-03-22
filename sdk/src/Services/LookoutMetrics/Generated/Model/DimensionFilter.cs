@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model
     public partial class DimensionFilter
     {
         private string _dimensionName;
-        private List<string> _dimensionValueList = new List<string>();
+        private List<string> _dimensionValueList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DimensionName. 
@@ -72,7 +72,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if DimensionValueList property is set
         internal bool IsSetDimensionValueList()
         {
-            return this._dimensionValueList != null && this._dimensionValueList.Count > 0; 
+            return this._dimensionValueList != null && (this._dimensionValueList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

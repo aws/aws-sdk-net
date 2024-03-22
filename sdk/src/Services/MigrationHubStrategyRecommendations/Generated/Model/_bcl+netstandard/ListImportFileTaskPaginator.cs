@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// Enumerable containing all of the TaskInfos
         /// </summary>
         public IPaginatedEnumerable<ImportFileTaskInformation> TaskInfos => 
-            new PaginatedResultKeyResponse<ListImportFileTaskResponse, ImportFileTaskInformation>(this, (i) => i.TaskInfos);
+            new PaginatedResultKeyResponse<ListImportFileTaskResponse, ImportFileTaskInformation>(this, (i) => i.TaskInfos ?? new List<ImportFileTaskInformation>());
 
         internal ListImportFileTaskPaginator(IAmazonMigrationHubStrategyRecommendations client, ListImportFileTaskRequest request)
         {

@@ -68,7 +68,7 @@ namespace Amazon.Redshift.Model
         private bool? _autoCreate;
         private string _clusterIdentifier;
         private string _customDomainName;
-        private List<string> _dbGroups = new List<string>();
+        private List<string> _dbGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _dbName;
         private string _dbUser;
         private int? _durationSeconds;
@@ -175,7 +175,7 @@ namespace Amazon.Redshift.Model
         // Check to see if DbGroups property is set
         internal bool IsSetDbGroups()
         {
-            return this._dbGroups != null && this._dbGroups.Count > 0; 
+            return this._dbGroups != null && (this._dbGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

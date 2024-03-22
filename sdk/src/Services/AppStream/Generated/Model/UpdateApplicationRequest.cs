@@ -35,7 +35,7 @@ namespace Amazon.AppStream.Model
     public partial class UpdateApplicationRequest : AmazonAppStreamRequest
     {
         private string _appBlockArn;
-        private List<string> _attributesToDelete = new List<string>();
+        private List<string> _attributesToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _displayName;
         private S3Location _iconS3Location;
@@ -78,7 +78,7 @@ namespace Amazon.AppStream.Model
         // Check to see if AttributesToDelete property is set
         internal bool IsSetAttributesToDelete()
         {
-            return this._attributesToDelete != null && this._attributesToDelete.Count > 0; 
+            return this._attributesToDelete != null && (this._attributesToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

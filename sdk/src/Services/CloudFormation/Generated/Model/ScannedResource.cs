@@ -34,7 +34,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ScannedResource
     {
         private bool? _managedByStack;
-        private Dictionary<string, string> _resourceIdentifier = new Dictionary<string, string>();
+        private Dictionary<string, string> _resourceIdentifier = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceType;
 
         /// <summary>
@@ -76,15 +76,15 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceIdentifier property is set
         internal bool IsSetResourceIdentifier()
         {
-            return this._resourceIdentifier != null && this._resourceIdentifier.Count > 0; 
+            return this._resourceIdentifier != null && (this._resourceIdentifier.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of the resource, such as <c>AWS::DynamoDB::Table</c>. For the list of supported
-        /// resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC
-        /// generator supported resource types</a> In the <i>CloudFormation User Guide</i> 
+        /// resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+        /// type support</a> In the <i>CloudFormation User Guide</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

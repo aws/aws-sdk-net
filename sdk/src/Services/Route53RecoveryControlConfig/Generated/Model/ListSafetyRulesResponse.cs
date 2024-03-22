@@ -34,7 +34,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     public partial class ListSafetyRulesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Rule> _safetyRules = new List<Rule>();
+        private List<Rule> _safetyRules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         // Check to see if SafetyRules property is set
         internal bool IsSetSafetyRules()
         {
-            return this._safetyRules != null && this._safetyRules.Count > 0; 
+            return this._safetyRules != null && (this._safetyRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

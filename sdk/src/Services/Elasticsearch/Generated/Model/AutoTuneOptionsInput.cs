@@ -35,7 +35,7 @@ namespace Amazon.Elasticsearch.Model
     public partial class AutoTuneOptionsInput
     {
         private AutoTuneDesiredState _desiredState;
-        private List<AutoTuneMaintenanceSchedule> _maintenanceSchedules = new List<AutoTuneMaintenanceSchedule>();
+        private List<AutoTuneMaintenanceSchedule> _maintenanceSchedules = AWSConfigs.InitializeCollections ? new List<AutoTuneMaintenanceSchedule>() : null;
 
         /// <summary>
         /// Gets and sets the property DesiredState. 
@@ -72,7 +72,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if MaintenanceSchedules property is set
         internal bool IsSetMaintenanceSchedules()
         {
-            return this._maintenanceSchedules != null && this._maintenanceSchedules.Count > 0; 
+            return this._maintenanceSchedules != null && (this._maintenanceSchedules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

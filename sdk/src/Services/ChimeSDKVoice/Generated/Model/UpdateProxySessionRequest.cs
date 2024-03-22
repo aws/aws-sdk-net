@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class UpdateProxySessionRequest : AmazonChimeSDKVoiceRequest
     {
-        private List<string> _capabilities = new List<string>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _expiryMinutes;
         private string _proxySessionId;
         private string _voiceConnectorId;
@@ -55,7 +55,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,8 +33,8 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class PresetSettings
     {
-        private List<AudioDescription> _audioDescriptions = new List<AudioDescription>();
-        private List<CaptionDescriptionPreset> _captionDescriptions = new List<CaptionDescriptionPreset>();
+        private List<AudioDescription> _audioDescriptions = AWSConfigs.InitializeCollections ? new List<AudioDescription>() : null;
+        private List<CaptionDescriptionPreset> _captionDescriptions = AWSConfigs.InitializeCollections ? new List<CaptionDescriptionPreset>() : null;
         private ContainerSettings _containerSettings;
         private VideoDescription _videoDescription;
 
@@ -52,7 +52,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AudioDescriptions property is set
         internal bool IsSetAudioDescriptions()
         {
-            return this._audioDescriptions != null && this._audioDescriptions.Count > 0; 
+            return this._audioDescriptions != null && (this._audioDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if CaptionDescriptions property is set
         internal bool IsSetCaptionDescriptions()
         {
-            return this._captionDescriptions != null && this._captionDescriptions.Count > 0; 
+            return this._captionDescriptions != null && (this._captionDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,8 +34,8 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DeleteFileSystemOpenZFSConfiguration
     {
-        private List<Tag> _finalBackupTags = new List<Tag>();
-        private List<string> _options = new List<string>();
+        private List<Tag> _finalBackupTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _options = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _skipFinalBackup;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.FSx.Model
         // Check to see if FinalBackupTags property is set
         internal bool IsSetFinalBackupTags()
         {
-            return this._finalBackupTags != null && this._finalBackupTags.Count > 0; 
+            return this._finalBackupTags != null && (this._finalBackupTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.FSx.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

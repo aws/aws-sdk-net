@@ -34,11 +34,11 @@ namespace Amazon.CodeCommit.Model
     public partial class GetFolderResponse : AmazonWebServiceResponse
     {
         private string _commitId;
-        private List<File> _files = new List<File>();
+        private List<File> _files = AWSConfigs.InitializeCollections ? new List<File>() : null;
         private string _folderPath;
-        private List<Folder> _subFolders = new List<Folder>();
-        private List<SubModule> _subModules = new List<SubModule>();
-        private List<SymbolicLink> _symbolicLinks = new List<SymbolicLink>();
+        private List<Folder> _subFolders = AWSConfigs.InitializeCollections ? new List<Folder>() : null;
+        private List<SubModule> _subModules = AWSConfigs.InitializeCollections ? new List<SubModule>() : null;
+        private List<SymbolicLink> _symbolicLinks = AWSConfigs.InitializeCollections ? new List<SymbolicLink>() : null;
         private string _treeId;
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Files property is set
         internal bool IsSetFiles()
         {
-            return this._files != null && this._files.Count > 0; 
+            return this._files != null && (this._files.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if SubFolders property is set
         internal bool IsSetSubFolders()
         {
-            return this._subFolders != null && this._subFolders.Count > 0; 
+            return this._subFolders != null && (this._subFolders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if SubModules property is set
         internal bool IsSetSubModules()
         {
-            return this._subModules != null && this._subModules.Count > 0; 
+            return this._subModules != null && (this._subModules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if SymbolicLinks property is set
         internal bool IsSetSymbolicLinks()
         {
-            return this._symbolicLinks != null && this._symbolicLinks.Count > 0; 
+            return this._symbolicLinks != null && (this._symbolicLinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

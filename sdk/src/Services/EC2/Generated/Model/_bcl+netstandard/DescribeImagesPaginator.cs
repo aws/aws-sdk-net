@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Images
         /// </summary>
         public IPaginatedEnumerable<Image> Images => 
-            new PaginatedResultKeyResponse<DescribeImagesResponse, Image>(this, (i) => i.Images);
+            new PaginatedResultKeyResponse<DescribeImagesResponse, Image>(this, (i) => i.Images ?? new List<Image>());
 
         internal DescribeImagesPaginator(IAmazonEC2 client, DescribeImagesRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the Vulnerabilities
         /// </summary>
         public IPaginatedEnumerable<Vulnerability> Vulnerabilities => 
-            new PaginatedResultKeyResponse<SearchVulnerabilitiesResponse, Vulnerability>(this, (i) => i.Vulnerabilities);
+            new PaginatedResultKeyResponse<SearchVulnerabilitiesResponse, Vulnerability>(this, (i) => i.Vulnerabilities ?? new List<Vulnerability>());
 
         internal SearchVulnerabilitiesPaginator(IAmazonInspector2 client, SearchVulnerabilitiesRequest request)
         {

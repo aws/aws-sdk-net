@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the Entities
         /// </summary>
         public IPaginatedEnumerable<InventoryResultEntity> Entities => 
-            new PaginatedResultKeyResponse<GetInventoryResponse, InventoryResultEntity>(this, (i) => i.Entities);
+            new PaginatedResultKeyResponse<GetInventoryResponse, InventoryResultEntity>(this, (i) => i.Entities ?? new List<InventoryResultEntity>());
 
         internal GetInventoryPaginator(IAmazonSimpleSystemsManagement client, GetInventoryRequest request)
         {

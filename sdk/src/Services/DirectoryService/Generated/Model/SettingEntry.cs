@@ -39,7 +39,7 @@ namespace Amazon.DirectoryService.Model
         private DateTime? _lastRequestedDateTime;
         private DateTime? _lastUpdatedDateTime;
         private string _name;
-        private Dictionary<string, string> _requestDetailedStatus = new Dictionary<string, string>();
+        private Dictionary<string, string> _requestDetailedStatus = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _requestedValue;
         private DirectoryConfigurationStatus _requestStatus;
         private string _requestStatusMessage;
@@ -179,7 +179,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if RequestDetailedStatus property is set
         internal bool IsSetRequestDetailedStatus()
         {
-            return this._requestDetailedStatus != null && this._requestDetailedStatus.Count > 0; 
+            return this._requestDetailedStatus != null && (this._requestDetailedStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

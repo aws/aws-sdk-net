@@ -82,7 +82,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _clusterIdentifier;
         private string _database;
         private string _dbUser;
-        private List<SqlParameter> _parameters = new List<SqlParameter>();
+        private List<SqlParameter> _parameters = AWSConfigs.InitializeCollections ? new List<SqlParameter>() : null;
         private string _secretArn;
         private string _sql;
         private string _statementName;
@@ -183,7 +183,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

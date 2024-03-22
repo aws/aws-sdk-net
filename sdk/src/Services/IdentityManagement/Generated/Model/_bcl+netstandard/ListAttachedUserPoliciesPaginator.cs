@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the AttachedPolicies
         /// </summary>
         public IPaginatedEnumerable<AttachedPolicyType> AttachedPolicies => 
-            new PaginatedResultKeyResponse<ListAttachedUserPoliciesResponse, AttachedPolicyType>(this, (i) => i.AttachedPolicies);
+            new PaginatedResultKeyResponse<ListAttachedUserPoliciesResponse, AttachedPolicyType>(this, (i) => i.AttachedPolicies ?? new List<AttachedPolicyType>());
 
         internal ListAttachedUserPoliciesPaginator(IAmazonIdentityManagementService client, ListAttachedUserPoliciesRequest request)
         {

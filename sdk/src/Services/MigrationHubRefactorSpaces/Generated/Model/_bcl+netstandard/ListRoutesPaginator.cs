@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Enumerable containing all of the RouteSummaryList
         /// </summary>
         public IPaginatedEnumerable<RouteSummary> RouteSummaryList => 
-            new PaginatedResultKeyResponse<ListRoutesResponse, RouteSummary>(this, (i) => i.RouteSummaryList);
+            new PaginatedResultKeyResponse<ListRoutesResponse, RouteSummary>(this, (i) => i.RouteSummaryList ?? new List<RouteSummary>());
 
         internal ListRoutesPaginator(IAmazonMigrationHubRefactorSpaces client, ListRoutesRequest request)
         {

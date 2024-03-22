@@ -33,7 +33,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class ListCoreNetworksResponse : AmazonWebServiceResponse
     {
-        private List<CoreNetworkSummary> _coreNetworks = new List<CoreNetworkSummary>();
+        private List<CoreNetworkSummary> _coreNetworks = AWSConfigs.InitializeCollections ? new List<CoreNetworkSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if CoreNetworks property is set
         internal bool IsSetCoreNetworks()
         {
-            return this._coreNetworks != null && this._coreNetworks.Count > 0; 
+            return this._coreNetworks != null && (this._coreNetworks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

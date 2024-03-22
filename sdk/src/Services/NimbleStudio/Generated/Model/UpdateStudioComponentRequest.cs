@@ -37,11 +37,11 @@ namespace Amazon.NimbleStudio.Model
         private string _clientToken;
         private StudioComponentConfiguration _configuration;
         private string _description;
-        private List<string> _ec2SecurityGroupIds = new List<string>();
-        private List<StudioComponentInitializationScript> _initializationScripts = new List<StudioComponentInitializationScript>();
+        private List<string> _ec2SecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<StudioComponentInitializationScript> _initializationScripts = AWSConfigs.InitializeCollections ? new List<StudioComponentInitializationScript>() : null;
         private string _name;
         private string _runtimeRoleArn;
-        private List<ScriptParameterKeyValue> _scriptParameters = new List<ScriptParameterKeyValue>();
+        private List<ScriptParameterKeyValue> _scriptParameters = AWSConfigs.InitializeCollections ? new List<ScriptParameterKeyValue>() : null;
         private string _secureInitializationRoleArn;
         private string _studioComponentId;
         private string _studioId;
@@ -122,7 +122,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Ec2SecurityGroupIds property is set
         internal bool IsSetEc2SecurityGroupIds()
         {
-            return this._ec2SecurityGroupIds != null && this._ec2SecurityGroupIds.Count > 0; 
+            return this._ec2SecurityGroupIds != null && (this._ec2SecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if InitializationScripts property is set
         internal bool IsSetInitializationScripts()
         {
-            return this._initializationScripts != null && this._initializationScripts.Count > 0; 
+            return this._initializationScripts != null && (this._initializationScripts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if ScriptParameters property is set
         internal bool IsSetScriptParameters()
         {
-            return this._scriptParameters != null && this._scriptParameters.Count > 0; 
+            return this._scriptParameters != null && (this._scriptParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

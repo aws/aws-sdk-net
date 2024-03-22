@@ -41,8 +41,8 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class QueueSearchCriteria
     {
-        private List<QueueSearchCriteria> _andConditions = new List<QueueSearchCriteria>();
-        private List<QueueSearchCriteria> _orConditions = new List<QueueSearchCriteria>();
+        private List<QueueSearchCriteria> _andConditions = AWSConfigs.InitializeCollections ? new List<QueueSearchCriteria>() : null;
+        private List<QueueSearchCriteria> _orConditions = AWSConfigs.InitializeCollections ? new List<QueueSearchCriteria>() : null;
         private SearchableQueueType _queueTypeCondition;
         private StringCondition _stringCondition;
 
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model
         // Check to see if AndConditions property is set
         internal bool IsSetAndConditions()
         {
-            return this._andConditions != null && this._andConditions.Count > 0; 
+            return this._andConditions != null && (this._andConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.Connect.Model
         // Check to see if OrConditions property is set
         internal bool IsSetOrConditions()
         {
-            return this._orConditions != null && this._orConditions.Count > 0; 
+            return this._orConditions != null && (this._orConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

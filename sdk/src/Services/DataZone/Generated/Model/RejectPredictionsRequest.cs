@@ -38,7 +38,7 @@ namespace Amazon.DataZone.Model
         private string _clientToken;
         private string _domainIdentifier;
         private string _identifier;
-        private List<RejectChoice> _rejectChoices = new List<RejectChoice>();
+        private List<RejectChoice> _rejectChoices = AWSConfigs.InitializeCollections ? new List<RejectChoice>() : null;
         private RejectRule _rejectRule;
         private string _revision;
 
@@ -112,7 +112,7 @@ namespace Amazon.DataZone.Model
         // Check to see if RejectChoices property is set
         internal bool IsSetRejectChoices()
         {
-            return this._rejectChoices != null && this._rejectChoices.Count > 0; 
+            return this._rejectChoices != null && (this._rejectChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

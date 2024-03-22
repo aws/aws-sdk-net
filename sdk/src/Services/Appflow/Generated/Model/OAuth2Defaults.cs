@@ -33,11 +33,11 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class OAuth2Defaults
     {
-        private List<string> _authCodeUrls = new List<string>();
-        private List<OAuth2CustomParameter> _oauth2CustomProperties = new List<OAuth2CustomParameter>();
-        private List<string> _oauth2GrantTypesSupported = new List<string>();
-        private List<string> _oauthScopes = new List<string>();
-        private List<string> _tokenUrls = new List<string>();
+        private List<string> _authCodeUrls = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<OAuth2CustomParameter> _oauth2CustomProperties = AWSConfigs.InitializeCollections ? new List<OAuth2CustomParameter>() : null;
+        private List<string> _oauth2GrantTypesSupported = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _oauthScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _tokenUrls = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthCodeUrls. 
@@ -54,7 +54,7 @@ namespace Amazon.Appflow.Model
         // Check to see if AuthCodeUrls property is set
         internal bool IsSetAuthCodeUrls()
         {
-            return this._authCodeUrls != null && this._authCodeUrls.Count > 0; 
+            return this._authCodeUrls != null && (this._authCodeUrls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Appflow.Model
         // Check to see if Oauth2CustomProperties property is set
         internal bool IsSetOauth2CustomProperties()
         {
-            return this._oauth2CustomProperties != null && this._oauth2CustomProperties.Count > 0; 
+            return this._oauth2CustomProperties != null && (this._oauth2CustomProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.Appflow.Model
         // Check to see if Oauth2GrantTypesSupported property is set
         internal bool IsSetOauth2GrantTypesSupported()
         {
-            return this._oauth2GrantTypesSupported != null && this._oauth2GrantTypesSupported.Count > 0; 
+            return this._oauth2GrantTypesSupported != null && (this._oauth2GrantTypesSupported.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.Appflow.Model
         // Check to see if OauthScopes property is set
         internal bool IsSetOauthScopes()
         {
-            return this._oauthScopes != null && this._oauthScopes.Count > 0; 
+            return this._oauthScopes != null && (this._oauthScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.Appflow.Model
         // Check to see if TokenUrls property is set
         internal bool IsSetTokenUrls()
         {
-            return this._tokenUrls != null && this._tokenUrls.Count > 0; 
+            return this._tokenUrls != null && (this._tokenUrls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

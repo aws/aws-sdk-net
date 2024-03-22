@@ -33,7 +33,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class ListCustomVerificationEmailTemplatesResponse : AmazonWebServiceResponse
     {
-        private List<CustomVerificationEmailTemplate> _customVerificationEmailTemplates = new List<CustomVerificationEmailTemplate>();
+        private List<CustomVerificationEmailTemplate> _customVerificationEmailTemplates = AWSConfigs.InitializeCollections ? new List<CustomVerificationEmailTemplate>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if CustomVerificationEmailTemplates property is set
         internal bool IsSetCustomVerificationEmailTemplates()
         {
-            return this._customVerificationEmailTemplates != null && this._customVerificationEmailTemplates.Count > 0; 
+            return this._customVerificationEmailTemplates != null && (this._customVerificationEmailTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class BatchGetApplicationsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationInfo> _applicationsInfo = new List<ApplicationInfo>();
+        private List<ApplicationInfo> _applicationsInfo = AWSConfigs.InitializeCollections ? new List<ApplicationInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationsInfo. 
@@ -50,7 +50,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if ApplicationsInfo property is set
         internal bool IsSetApplicationsInfo()
         {
-            return this._applicationsInfo != null && this._applicationsInfo.Count > 0; 
+            return this._applicationsInfo != null && (this._applicationsInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

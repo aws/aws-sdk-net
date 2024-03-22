@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListNotebookInstancesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<NotebookInstanceSummary> _notebookInstances = new List<NotebookInstanceSummary>();
+        private List<NotebookInstanceSummary> _notebookInstances = AWSConfigs.InitializeCollections ? new List<NotebookInstanceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if NotebookInstances property is set
         internal bool IsSetNotebookInstances()
         {
-            return this._notebookInstances != null && this._notebookInstances.Count > 0; 
+            return this._notebookInstances != null && (this._notebookInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

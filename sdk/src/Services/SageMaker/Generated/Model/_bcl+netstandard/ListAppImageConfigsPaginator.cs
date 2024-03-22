@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the AppImageConfigs
         /// </summary>
         public IPaginatedEnumerable<AppImageConfigDetails> AppImageConfigs => 
-            new PaginatedResultKeyResponse<ListAppImageConfigsResponse, AppImageConfigDetails>(this, (i) => i.AppImageConfigs);
+            new PaginatedResultKeyResponse<ListAppImageConfigsResponse, AppImageConfigDetails>(this, (i) => i.AppImageConfigs ?? new List<AppImageConfigDetails>());
 
         internal ListAppImageConfigsPaginator(IAmazonSageMaker client, ListAppImageConfigsRequest request)
         {

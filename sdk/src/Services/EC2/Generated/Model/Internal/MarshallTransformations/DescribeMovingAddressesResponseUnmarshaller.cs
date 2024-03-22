@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("movingAddressStatusSet/item", targetDepth))
                     {
                         var unmarshaller = MovingAddressStatusUnmarshaller.Instance;
+                        if (response.MovingAddressStatuses == null)
+                        {
+                            response.MovingAddressStatuses = new List<MovingAddressStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.MovingAddressStatuses.Add(item);
                         continue;

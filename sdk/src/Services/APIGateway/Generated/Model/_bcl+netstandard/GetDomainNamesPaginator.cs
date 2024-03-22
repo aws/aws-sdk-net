@@ -45,7 +45,7 @@ namespace Amazon.APIGateway.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<DomainName> Items => 
-            new PaginatedResultKeyResponse<GetDomainNamesResponse, DomainName>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<GetDomainNamesResponse, DomainName>(this, (i) => i.Items ?? new List<DomainName>());
 
         internal GetDomainNamesPaginator(IAmazonAPIGateway client, GetDomainNamesRequest request)
         {

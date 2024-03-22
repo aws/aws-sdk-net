@@ -84,6 +84,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     if (context.TestExpression("Tags/member", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (response.Tags == null)
+                        {
+                            response.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Tags.Add(item);
                         continue;

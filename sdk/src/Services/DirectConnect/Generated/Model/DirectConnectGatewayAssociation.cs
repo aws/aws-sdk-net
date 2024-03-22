@@ -34,7 +34,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class DirectConnectGatewayAssociation
     {
-        private List<RouteFilterPrefix> _allowedPrefixesToDirectConnectGateway = new List<RouteFilterPrefix>();
+        private List<RouteFilterPrefix> _allowedPrefixesToDirectConnectGateway = AWSConfigs.InitializeCollections ? new List<RouteFilterPrefix>() : null;
         private AssociatedGateway _associatedGateway;
         private string _associationId;
         private DirectConnectGatewayAssociationState _associationState;
@@ -60,7 +60,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if AllowedPrefixesToDirectConnectGateway property is set
         internal bool IsSetAllowedPrefixesToDirectConnectGateway()
         {
-            return this._allowedPrefixesToDirectConnectGateway != null && this._allowedPrefixesToDirectConnectGateway.Count > 0; 
+            return this._allowedPrefixesToDirectConnectGateway != null && (this._allowedPrefixesToDirectConnectGateway.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

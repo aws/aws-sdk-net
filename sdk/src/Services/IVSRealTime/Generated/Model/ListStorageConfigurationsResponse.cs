@@ -34,7 +34,7 @@ namespace Amazon.IVSRealTime.Model
     public partial class ListStorageConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StorageConfigurationSummary> _storageConfigurations = new List<StorageConfigurationSummary>();
+        private List<StorageConfigurationSummary> _storageConfigurations = AWSConfigs.InitializeCollections ? new List<StorageConfigurationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if StorageConfigurations property is set
         internal bool IsSetStorageConfigurations()
         {
-            return this._storageConfigurations != null && this._storageConfigurations.Count > 0; 
+            return this._storageConfigurations != null && (this._storageConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

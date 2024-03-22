@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ListDashboardsResponse : AmazonWebServiceResponse
     {
-        private List<DashboardSummary> _dashboardSummaryList = new List<DashboardSummary>();
+        private List<DashboardSummary> _dashboardSummaryList = AWSConfigs.InitializeCollections ? new List<DashboardSummary>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DashboardSummaryList property is set
         internal bool IsSetDashboardSummaryList()
         {
-            return this._dashboardSummaryList != null && this._dashboardSummaryList.Count > 0; 
+            return this._dashboardSummaryList != null && (this._dashboardSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

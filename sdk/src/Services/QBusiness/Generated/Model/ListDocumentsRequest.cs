@@ -35,7 +35,7 @@ namespace Amazon.QBusiness.Model
     public partial class ListDocumentsRequest : AmazonQBusinessRequest
     {
         private string _applicationId;
-        private List<string> _dataSourceIds = new List<string>();
+        private List<string> _dataSourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _indexId;
         private int? _maxResults;
         private string _nextToken;
@@ -75,7 +75,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if DataSourceIds property is set
         internal bool IsSetDataSourceIds()
         {
-            return this._dataSourceIds != null && this._dataSourceIds.Count > 0; 
+            return this._dataSourceIds != null && (this._dataSourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

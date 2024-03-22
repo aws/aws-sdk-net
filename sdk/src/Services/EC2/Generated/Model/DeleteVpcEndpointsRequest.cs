@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteVpcEndpointsRequest : AmazonEC2Request
     {
-        private List<string> _vpcEndpointIds = new List<string>();
+        private List<string> _vpcEndpointIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property VpcEndpointIds. 
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         // Check to see if VpcEndpointIds property is set
         internal bool IsSetVpcEndpointIds()
         {
-            return this._vpcEndpointIds != null && this._vpcEndpointIds.Count > 0; 
+            return this._vpcEndpointIds != null && (this._vpcEndpointIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

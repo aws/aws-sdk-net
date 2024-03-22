@@ -36,8 +36,8 @@ namespace Amazon.ApiGatewayV2.Model
     {
         private string _apiId;
         private string _modelSelectionExpression;
-        private Dictionary<string, string> _responseModels = new Dictionary<string, string>();
-        private Dictionary<string, ParameterConstraints> _responseParameters = new Dictionary<string, ParameterConstraints>();
+        private Dictionary<string, string> _responseModels = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, ParameterConstraints> _responseParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, ParameterConstraints>() : null;
         private string _routeId;
         private string _routeResponseKey;
 
@@ -94,7 +94,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if ResponseModels property is set
         internal bool IsSetResponseModels()
         {
-            return this._responseModels != null && this._responseModels.Count > 0; 
+            return this._responseModels != null && (this._responseModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if ResponseParameters property is set
         internal bool IsSetResponseParameters()
         {
-            return this._responseParameters != null && this._responseParameters.Count > 0; 
+            return this._responseParameters != null && (this._responseParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

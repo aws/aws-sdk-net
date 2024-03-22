@@ -56,7 +56,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// </summary>
     public partial class RespondDecisionTaskCompletedRequest : AmazonSimpleWorkflowRequest
     {
-        private List<Decision> _decisions = new List<Decision>();
+        private List<Decision> _decisions = AWSConfigs.InitializeCollections ? new List<Decision>() : null;
         private string _executionContext;
         private TaskList _taskList;
         private string _taskListScheduleToStartTimeout;
@@ -78,7 +78,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Decisions property is set
         internal bool IsSetDecisions()
         {
-            return this._decisions != null && this._decisions.Count > 0; 
+            return this._decisions != null && (this._decisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

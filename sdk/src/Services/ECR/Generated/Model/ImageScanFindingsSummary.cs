@@ -33,7 +33,7 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class ImageScanFindingsSummary
     {
-        private Dictionary<string, int> _findingSeverityCounts = new Dictionary<string, int>();
+        private Dictionary<string, int> _findingSeverityCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private DateTime? _imageScanCompletedAt;
         private DateTime? _vulnerabilitySourceUpdatedAt;
 
@@ -52,7 +52,7 @@ namespace Amazon.ECR.Model
         // Check to see if FindingSeverityCounts property is set
         internal bool IsSetFindingSeverityCounts()
         {
-            return this._findingSeverityCounts != null && this._findingSeverityCounts.Count > 0; 
+            return this._findingSeverityCounts != null && (this._findingSeverityCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

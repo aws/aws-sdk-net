@@ -33,7 +33,7 @@ namespace Amazon.CodeStarconnections.Model
     /// </summary>
     public partial class ResourceSyncAttempt
     {
-        private List<ResourceSyncEvent> _events = new List<ResourceSyncEvent>();
+        private List<ResourceSyncEvent> _events = AWSConfigs.InitializeCollections ? new List<ResourceSyncEvent>() : null;
         private Revision _initialRevision;
         private DateTime? _startedAt;
         private ResourceSyncStatus _status;
@@ -56,7 +56,7 @@ namespace Amazon.CodeStarconnections.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

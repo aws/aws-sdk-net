@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the ScheduledInstanceSet
         /// </summary>
         public IPaginatedEnumerable<ScheduledInstance> ScheduledInstanceSet => 
-            new PaginatedResultKeyResponse<DescribeScheduledInstancesResponse, ScheduledInstance>(this, (i) => i.ScheduledInstanceSet);
+            new PaginatedResultKeyResponse<DescribeScheduledInstancesResponse, ScheduledInstance>(this, (i) => i.ScheduledInstanceSet ?? new List<ScheduledInstance>());
 
         internal DescribeScheduledInstancesPaginator(IAmazonEC2 client, DescribeScheduledInstancesRequest request)
         {

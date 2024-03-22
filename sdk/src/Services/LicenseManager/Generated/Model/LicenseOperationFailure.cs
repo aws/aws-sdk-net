@@ -35,7 +35,7 @@ namespace Amazon.LicenseManager.Model
     {
         private string _errorMessage;
         private DateTime? _failureTime;
-        private List<Metadata> _metadataList = new List<Metadata>();
+        private List<Metadata> _metadataList = AWSConfigs.InitializeCollections ? new List<Metadata>() : null;
         private string _operationName;
         private string _operationRequestedBy;
         private string _resourceArn;
@@ -93,7 +93,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if MetadataList property is set
         internal bool IsSetMetadataList()
         {
-            return this._metadataList != null && this._metadataList.Count > 0; 
+            return this._metadataList != null && (this._metadataList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

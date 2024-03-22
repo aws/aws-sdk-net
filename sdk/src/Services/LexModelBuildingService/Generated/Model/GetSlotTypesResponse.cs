@@ -34,7 +34,7 @@ namespace Amazon.LexModelBuildingService.Model
     public partial class GetSlotTypesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SlotTypeMetadata> _slotTypes = new List<SlotTypeMetadata>();
+        private List<SlotTypeMetadata> _slotTypes = AWSConfigs.InitializeCollections ? new List<SlotTypeMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if SlotTypes property is set
         internal bool IsSetSlotTypes()
         {
-            return this._slotTypes != null && this._slotTypes.Count > 0; 
+            return this._slotTypes != null && (this._slotTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class DescribeCacheEngineVersionsResponse : AmazonWebServiceResponse
     {
-        private List<CacheEngineVersion> _cacheEngineVersions = new List<CacheEngineVersion>();
+        private List<CacheEngineVersion> _cacheEngineVersions = AWSConfigs.InitializeCollections ? new List<CacheEngineVersion>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheEngineVersions property is set
         internal bool IsSetCacheEngineVersions()
         {
-            return this._cacheEngineVersions != null && this._cacheEngineVersions.Count > 0; 
+            return this._cacheEngineVersions != null && (this._cacheEngineVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

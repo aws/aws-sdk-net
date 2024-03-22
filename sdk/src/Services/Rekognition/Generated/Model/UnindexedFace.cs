@@ -35,7 +35,7 @@ namespace Amazon.Rekognition.Model
     public partial class UnindexedFace
     {
         private FaceDetail _faceDetail;
-        private List<string> _reasons = new List<string>();
+        private List<string> _reasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FaceDetail. 
@@ -98,7 +98,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Reasons property is set
         internal bool IsSetReasons()
         {
-            return this._reasons != null && this._reasons.Count > 0; 
+            return this._reasons != null && (this._reasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

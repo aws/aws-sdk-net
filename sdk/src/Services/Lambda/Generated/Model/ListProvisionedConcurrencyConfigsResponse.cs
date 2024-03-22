@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model
     public partial class ListProvisionedConcurrencyConfigsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<ProvisionedConcurrencyConfigListItem> _provisionedConcurrencyConfigs = new List<ProvisionedConcurrencyConfigListItem>();
+        private List<ProvisionedConcurrencyConfigListItem> _provisionedConcurrencyConfigs = AWSConfigs.InitializeCollections ? new List<ProvisionedConcurrencyConfigListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -69,7 +69,7 @@ namespace Amazon.Lambda.Model
         // Check to see if ProvisionedConcurrencyConfigs property is set
         internal bool IsSetProvisionedConcurrencyConfigs()
         {
-            return this._provisionedConcurrencyConfigs != null && this._provisionedConcurrencyConfigs.Count > 0; 
+            return this._provisionedConcurrencyConfigs != null && (this._provisionedConcurrencyConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

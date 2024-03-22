@@ -42,7 +42,7 @@ namespace Amazon.FSx.Model
     public partial class FileCacheDataRepositoryAssociation
     {
         private string _dataRepositoryPath;
-        private List<string> _dataRepositorySubdirectories = new List<string>();
+        private List<string> _dataRepositorySubdirectories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _fileCachePath;
         private FileCacheNFSConfiguration _nfs;
 
@@ -109,7 +109,7 @@ namespace Amazon.FSx.Model
         // Check to see if DataRepositorySubdirectories property is set
         internal bool IsSetDataRepositorySubdirectories()
         {
-            return this._dataRepositorySubdirectories != null && this._dataRepositorySubdirectories.Count > 0; 
+            return this._dataRepositorySubdirectories != null && (this._dataRepositorySubdirectories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         private string _iotThingName;
         private DateTime? _latestHeartbeat;
         private int? _maxModels;
-        private List<EdgeModel> _models = new List<EdgeModel>();
+        private List<EdgeModel> _models = AWSConfigs.InitializeCollections ? new List<EdgeModel>() : null;
         private string _nextToken;
         private DateTime? _registrationTime;
 
@@ -211,7 +211,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Models property is set
         internal bool IsSetModels()
         {
-            return this._models != null && this._models.Count > 0; 
+            return this._models != null && (this._models.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

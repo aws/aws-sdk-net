@@ -33,7 +33,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class CalculateRouteResponse : AmazonWebServiceResponse
     {
-        private List<Leg> _legs = new List<Leg>();
+        private List<Leg> _legs = AWSConfigs.InitializeCollections ? new List<Leg>() : null;
         private CalculateRouteSummary _summary;
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Legs property is set
         internal bool IsSetLegs()
         {
-            return this._legs != null && this._legs.Count > 0; 
+            return this._legs != null && (this._legs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

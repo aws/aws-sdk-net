@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the ArtifactSummaries
         /// </summary>
         public IPaginatedEnumerable<ArtifactSummary> ArtifactSummaries => 
-            new PaginatedResultKeyResponse<ListArtifactsResponse, ArtifactSummary>(this, (i) => i.ArtifactSummaries);
+            new PaginatedResultKeyResponse<ListArtifactsResponse, ArtifactSummary>(this, (i) => i.ArtifactSummaries ?? new List<ArtifactSummary>());
 
         internal ListArtifactsPaginator(IAmazonSageMaker client, ListArtifactsRequest request)
         {

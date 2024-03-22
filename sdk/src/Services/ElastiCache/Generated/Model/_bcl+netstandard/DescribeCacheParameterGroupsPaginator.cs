@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the CacheParameterGroups
         /// </summary>
         public IPaginatedEnumerable<CacheParameterGroup> CacheParameterGroups => 
-            new PaginatedResultKeyResponse<DescribeCacheParameterGroupsResponse, CacheParameterGroup>(this, (i) => i.CacheParameterGroups);
+            new PaginatedResultKeyResponse<DescribeCacheParameterGroupsResponse, CacheParameterGroup>(this, (i) => i.CacheParameterGroups ?? new List<CacheParameterGroup>());
 
         internal DescribeCacheParameterGroupsPaginator(IAmazonElastiCache client, DescribeCacheParameterGroupsRequest request)
         {

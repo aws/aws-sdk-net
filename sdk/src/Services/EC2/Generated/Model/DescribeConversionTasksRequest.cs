@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeConversionTasksRequest : AmazonEC2Request
     {
-        private List<string> _conversionTaskIds = new List<string>();
+        private List<string> _conversionTaskIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConversionTaskIds. 
@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         // Check to see if ConversionTaskIds property is set
         internal bool IsSetConversionTaskIds()
         {
-            return this._conversionTaskIds != null && this._conversionTaskIds.Count > 0; 
+            return this._conversionTaskIds != null && (this._conversionTaskIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

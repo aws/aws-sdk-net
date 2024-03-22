@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the ByoipCidrs
         /// </summary>
         public IPaginatedEnumerable<ByoipCidr> ByoipCidrs => 
-            new PaginatedResultKeyResponse<DescribeByoipCidrsResponse, ByoipCidr>(this, (i) => i.ByoipCidrs);
+            new PaginatedResultKeyResponse<DescribeByoipCidrsResponse, ByoipCidr>(this, (i) => i.ByoipCidrs ?? new List<ByoipCidr>());
 
         internal DescribeByoipCidrsPaginator(IAmazonEC2 client, DescribeByoipCidrsRequest request)
         {

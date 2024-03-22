@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
     {
         private string _launchTemplateId;
         private string _launchTemplateName;
-        private List<string> _versions = new List<string>();
+        private List<string> _versions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
@@ -120,7 +120,7 @@ namespace Amazon.EC2.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

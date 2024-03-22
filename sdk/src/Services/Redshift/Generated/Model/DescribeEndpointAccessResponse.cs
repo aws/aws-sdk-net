@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeEndpointAccessResponse : AmazonWebServiceResponse
     {
-        private List<EndpointAccess> _endpointAccessList = new List<EndpointAccess>();
+        private List<EndpointAccess> _endpointAccessList = AWSConfigs.InitializeCollections ? new List<EndpointAccess>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model
         // Check to see if EndpointAccessList property is set
         internal bool IsSetEndpointAccessList()
         {
-            return this._endpointAccessList != null && this._endpointAccessList.Count > 0; 
+            return this._endpointAccessList != null && (this._endpointAccessList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

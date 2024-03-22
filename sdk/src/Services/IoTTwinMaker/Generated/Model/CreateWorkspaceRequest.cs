@@ -37,7 +37,7 @@ namespace Amazon.IoTTwinMaker.Model
         private string _description;
         private string _role;
         private string _s3Location;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workspaceId;
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

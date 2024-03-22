@@ -45,7 +45,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Enumerable containing all of the MountTargets
         /// </summary>
         public IPaginatedEnumerable<MountTargetDescription> MountTargets => 
-            new PaginatedResultKeyResponse<DescribeMountTargetsResponse, MountTargetDescription>(this, (i) => i.MountTargets);
+            new PaginatedResultKeyResponse<DescribeMountTargetsResponse, MountTargetDescription>(this, (i) => i.MountTargets ?? new List<MountTargetDescription>());
 
         internal DescribeMountTargetsPaginator(IAmazonElasticFileSystem client, DescribeMountTargetsRequest request)
         {

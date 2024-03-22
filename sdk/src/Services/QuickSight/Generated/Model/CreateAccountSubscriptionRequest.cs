@@ -72,9 +72,9 @@ namespace Amazon.QuickSight.Model
     {
         private string _accountName;
         private string _activeDirectoryName;
-        private List<string> _adminGroup = new List<string>();
+        private List<string> _adminGroup = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AuthenticationMethodOption _authenticationMethod;
-        private List<string> _authorGroup = new List<string>();
+        private List<string> _authorGroup = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _awsAccountId;
         private string _contactNumber;
         private string _directoryId;
@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model
         private string _firstName;
         private string _lastName;
         private string _notificationEmail;
-        private List<string> _readerGroup = new List<string>();
+        private List<string> _readerGroup = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _realm;
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AdminGroup property is set
         internal bool IsSetAdminGroup()
         {
-            return this._adminGroup != null && this._adminGroup.Count > 0; 
+            return this._adminGroup != null && (this._adminGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AuthorGroup property is set
         internal bool IsSetAuthorGroup()
         {
-            return this._authorGroup != null && this._authorGroup.Count > 0; 
+            return this._authorGroup != null && (this._authorGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -417,7 +417,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ReaderGroup property is set
         internal bool IsSetReaderGroup()
         {
-            return this._readerGroup != null && this._readerGroup.Count > 0; 
+            return this._readerGroup != null && (this._readerGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

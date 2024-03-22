@@ -36,7 +36,7 @@ namespace Amazon.Pinpoint.Model
     public partial class CustomDeliveryConfiguration
     {
         private string _deliveryUri;
-        private List<string> _endpointTypes = new List<string>();
+        private List<string> _endpointTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DeliveryUri. 
@@ -86,7 +86,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if EndpointTypes property is set
         internal bool IsSetEndpointTypes()
         {
-            return this._endpointTypes != null && this._endpointTypes.Count > 0; 
+            return this._endpointTypes != null && (this._endpointTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

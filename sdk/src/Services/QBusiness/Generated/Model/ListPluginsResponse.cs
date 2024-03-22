@@ -34,7 +34,7 @@ namespace Amazon.QBusiness.Model
     public partial class ListPluginsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Plugin> _plugins = new List<Plugin>();
+        private List<Plugin> _plugins = AWSConfigs.InitializeCollections ? new List<Plugin>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Plugins property is set
         internal bool IsSetPlugins()
         {
-            return this._plugins != null && this._plugins.Count > 0; 
+            return this._plugins != null && (this._plugins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -41,10 +41,10 @@ namespace Amazon.AppIntegrationsService.Model
         private DateTime? _lastModifiedTime;
         private string _name;
         private string _awsNamespace;
-        private List<string> _permissions = new List<string>();
-        private List<Publication> _publications = new List<Publication>();
-        private List<Subscription> _subscriptions = new List<Subscription>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Publication> _publications = AWSConfigs.InitializeCollections ? new List<Publication>() : null;
+        private List<Subscription> _subscriptions = AWSConfigs.InitializeCollections ? new List<Subscription>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationSourceConfig. 
@@ -210,7 +210,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if Publications property is set
         internal bool IsSetPublications()
         {
-            return this._publications != null && this._publications.Count > 0; 
+            return this._publications != null && (this._publications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if Subscriptions property is set
         internal bool IsSetSubscriptions()
         {
-            return this._subscriptions != null && this._subscriptions.Count > 0; 
+            return this._subscriptions != null && (this._subscriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -270,7 +270,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

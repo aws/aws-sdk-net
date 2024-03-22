@@ -49,7 +49,7 @@ namespace Amazon.RDS.Model
         private ActivityStreamPolicyStatus _activityStreamPolicyStatus;
         private ActivityStreamStatus _activityStreamStatus;
         private int? _allocatedStorage;
-        private List<DBInstanceRole> _associatedRoles = new List<DBInstanceRole>();
+        private List<DBInstanceRole> _associatedRoles = AWSConfigs.InitializeCollections ? new List<DBInstanceRole>() : null;
         private DateTime? _automaticRestartTime;
         private AutomationMode _automationMode;
         private bool? _autoMinorVersionUpgrade;
@@ -65,21 +65,21 @@ namespace Amazon.RDS.Model
         private string _customIamInstanceProfile;
         private string _dbClusterIdentifier;
         private string _dbInstanceArn;
-        private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = new List<DBInstanceAutomatedBackupsReplication>();
+        private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = AWSConfigs.InitializeCollections ? new List<DBInstanceAutomatedBackupsReplication>() : null;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private int? _dbInstancePort;
         private string _dbInstanceStatus;
         private string _dbiResourceId;
         private string _dbName;
-        private List<DBParameterGroupStatus> _dbParameterGroups = new List<DBParameterGroupStatus>();
-        private List<DBSecurityGroupMembership> _dbSecurityGroups = new List<DBSecurityGroupMembership>();
+        private List<DBParameterGroupStatus> _dbParameterGroups = AWSConfigs.InitializeCollections ? new List<DBParameterGroupStatus>() : null;
+        private List<DBSecurityGroupMembership> _dbSecurityGroups = AWSConfigs.InitializeCollections ? new List<DBSecurityGroupMembership>() : null;
         private DBSubnetGroup _dbSubnetGroup;
         private string _dbSystemId;
         private bool? _dedicatedLogVolume;
         private bool? _deletionProtection;
-        private List<DomainMembership> _domainMemberships = new List<DomainMembership>();
-        private List<string> _enabledCloudwatchLogsExports = new List<string>();
+        private List<DomainMembership> _domainMemberships = AWSConfigs.InitializeCollections ? new List<DomainMembership>() : null;
+        private List<string> _enabledCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Endpoint _endpoint;
         private string _engine;
         private string _engineVersion;
@@ -101,7 +101,7 @@ namespace Amazon.RDS.Model
         private bool? _multiTenant;
         private string _ncharCharacterSetName;
         private string _networkType;
-        private List<OptionGroupMembership> _optionGroupMemberships = new List<OptionGroupMembership>();
+        private List<OptionGroupMembership> _optionGroupMemberships = AWSConfigs.InitializeCollections ? new List<OptionGroupMembership>() : null;
         private PendingModifiedValues _pendingModifiedValues;
         private string _percentProgress;
         private bool? _performanceInsightsEnabled;
@@ -109,24 +109,24 @@ namespace Amazon.RDS.Model
         private int? _performanceInsightsRetentionPeriod;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
-        private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
+        private List<ProcessorFeature> _processorFeatures = AWSConfigs.InitializeCollections ? new List<ProcessorFeature>() : null;
         private int? _promotionTier;
         private bool? _publiclyAccessible;
-        private List<string> _readReplicaDBClusterIdentifiers = new List<string>();
-        private List<string> _readReplicaDBInstanceIdentifiers = new List<string>();
+        private List<string> _readReplicaDBClusterIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _readReplicaDBInstanceIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _readReplicaSourceDBClusterIdentifier;
         private string _readReplicaSourceDBInstanceIdentifier;
         private ReplicaMode _replicaMode;
         private DateTime? _resumeFullAutomationModeTime;
         private string _secondaryAvailabilityZone;
-        private List<DBInstanceStatusInfo> _statusInfos = new List<DBInstanceStatusInfo>();
+        private List<DBInstanceStatusInfo> _statusInfos = AWSConfigs.InitializeCollections ? new List<DBInstanceStatusInfo>() : null;
         private bool? _storageEncrypted;
         private int? _storageThroughput;
         private string _storageType;
-        private List<Tag> _tagList = new List<Tag>();
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tdeCredentialArn;
         private string _timezone;
-        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
+        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<VpcSecurityGroupMembership>() : null;
 
         /// <summary>
         /// Gets and sets the property ActivityStreamEngineNativeAuditFieldsIncluded. 
@@ -274,7 +274,7 @@ namespace Amazon.RDS.Model
         // Check to see if AssociatedRoles property is set
         internal bool IsSetAssociatedRoles()
         {
-            return this._associatedRoles != null && this._associatedRoles.Count > 0; 
+            return this._associatedRoles != null && (this._associatedRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -618,7 +618,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceAutomatedBackupsReplications property is set
         internal bool IsSetDBInstanceAutomatedBackupsReplications()
         {
-            return this._dbInstanceAutomatedBackupsReplications != null && this._dbInstanceAutomatedBackupsReplications.Count > 0; 
+            return this._dbInstanceAutomatedBackupsReplications != null && (this._dbInstanceAutomatedBackupsReplications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -755,7 +755,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBParameterGroups property is set
         internal bool IsSetDBParameterGroups()
         {
-            return this._dbParameterGroups != null && this._dbParameterGroups.Count > 0; 
+            return this._dbParameterGroups != null && (this._dbParameterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -774,7 +774,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
+            return this._dbSecurityGroups != null && (this._dbSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -868,7 +868,7 @@ namespace Amazon.RDS.Model
         // Check to see if DomainMemberships property is set
         internal bool IsSetDomainMemberships()
         {
-            return this._domainMemberships != null && this._domainMemberships.Count > 0; 
+            return this._domainMemberships != null && (this._domainMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -892,7 +892,7 @@ namespace Amazon.RDS.Model
         // Check to see if EnabledCloudwatchLogsExports property is set
         internal bool IsSetEnabledCloudwatchLogsExports()
         {
-            return this._enabledCloudwatchLogsExports != null && this._enabledCloudwatchLogsExports.Count > 0; 
+            return this._enabledCloudwatchLogsExports != null && (this._enabledCloudwatchLogsExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1344,7 +1344,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupMemberships property is set
         internal bool IsSetOptionGroupMemberships()
         {
-            return this._optionGroupMemberships != null && this._optionGroupMemberships.Count > 0; 
+            return this._optionGroupMemberships != null && (this._optionGroupMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1519,7 +1519,7 @@ namespace Amazon.RDS.Model
         // Check to see if ProcessorFeatures property is set
         internal bool IsSetProcessorFeatures()
         {
-            return this._processorFeatures != null && this._processorFeatures.Count > 0; 
+            return this._processorFeatures != null && (this._processorFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1601,7 +1601,7 @@ namespace Amazon.RDS.Model
         // Check to see if ReadReplicaDBClusterIdentifiers property is set
         internal bool IsSetReadReplicaDBClusterIdentifiers()
         {
-            return this._readReplicaDBClusterIdentifiers != null && this._readReplicaDBClusterIdentifiers.Count > 0; 
+            return this._readReplicaDBClusterIdentifiers != null && (this._readReplicaDBClusterIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1619,7 +1619,7 @@ namespace Amazon.RDS.Model
         // Check to see if ReadReplicaDBInstanceIdentifiers property is set
         internal bool IsSetReadReplicaDBInstanceIdentifiers()
         {
-            return this._readReplicaDBInstanceIdentifiers != null && this._readReplicaDBInstanceIdentifiers.Count > 0; 
+            return this._readReplicaDBInstanceIdentifiers != null && (this._readReplicaDBInstanceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1737,7 +1737,7 @@ namespace Amazon.RDS.Model
         // Check to see if StatusInfos property is set
         internal bool IsSetStatusInfos()
         {
-            return this._statusInfos != null && this._statusInfos.Count > 0; 
+            return this._statusInfos != null && (this._statusInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1810,7 +1810,7 @@ namespace Amazon.RDS.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1866,7 +1866,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcSecurityGroups property is set
         internal bool IsSetVpcSecurityGroups()
         {
-            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+            return this._vpcSecurityGroups != null && (this._vpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

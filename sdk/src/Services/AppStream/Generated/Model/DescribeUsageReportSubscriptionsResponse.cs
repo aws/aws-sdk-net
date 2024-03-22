@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model
     public partial class DescribeUsageReportSubscriptionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UsageReportSubscription> _usageReportSubscriptions = new List<UsageReportSubscription>();
+        private List<UsageReportSubscription> _usageReportSubscriptions = AWSConfigs.InitializeCollections ? new List<UsageReportSubscription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.AppStream.Model
         // Check to see if UsageReportSubscriptions property is set
         internal bool IsSetUsageReportSubscriptions()
         {
-            return this._usageReportSubscriptions != null && this._usageReportSubscriptions.Count > 0; 
+            return this._usageReportSubscriptions != null && (this._usageReportSubscriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

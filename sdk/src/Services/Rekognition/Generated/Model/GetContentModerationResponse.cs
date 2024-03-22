@@ -37,7 +37,7 @@ namespace Amazon.Rekognition.Model
         private string _jobId;
         private VideoJobStatus _jobStatus;
         private string _jobTag;
-        private List<ContentModerationDetection> _moderationLabels = new List<ContentModerationDetection>();
+        private List<ContentModerationDetection> _moderationLabels = AWSConfigs.InitializeCollections ? new List<ContentModerationDetection>() : null;
         private string _moderationModelVersion;
         private string _nextToken;
         private string _statusMessage;
@@ -137,7 +137,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if ModerationLabels property is set
         internal bool IsSetModerationLabels()
         {
-            return this._moderationLabels != null && this._moderationLabels.Count > 0; 
+            return this._moderationLabels != null && (this._moderationLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

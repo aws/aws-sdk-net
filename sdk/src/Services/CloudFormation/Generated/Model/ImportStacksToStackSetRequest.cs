@@ -40,8 +40,8 @@ namespace Amazon.CloudFormation.Model
         private CallAs _callAs;
         private string _operationId;
         private StackSetOperationPreferences _operationPreferences;
-        private List<string> _organizationalUnitIds = new List<string>();
-        private List<string> _stackIds = new List<string>();
+        private List<string> _organizationalUnitIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _stackIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stackIdsUrl;
         private string _stackSetName;
 
@@ -132,7 +132,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if OrganizationalUnitIds property is set
         internal bool IsSetOrganizationalUnitIds()
         {
-            return this._organizationalUnitIds != null && this._organizationalUnitIds.Count > 0; 
+            return this._organizationalUnitIds != null && (this._organizationalUnitIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackIds property is set
         internal bool IsSetStackIds()
         {
-            return this._stackIds != null && this._stackIds.Count > 0; 
+            return this._stackIds != null && (this._stackIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipamResourceCidrSet/item", targetDepth))
                     {
                         var unmarshaller = IpamResourceCidrUnmarshaller.Instance;
+                        if (response.IpamResourceCidrs == null)
+                        {
+                            response.IpamResourceCidrs = new List<IpamResourceCidr>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.IpamResourceCidrs.Add(item);
                         continue;

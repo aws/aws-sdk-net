@@ -61,7 +61,7 @@ namespace Amazon.GameLift.Model
         private BalancingStrategy _balancingStrategy;
         private string _gameServerGroupName;
         private GameServerProtectionPolicy _gameServerProtectionPolicy;
-        private List<InstanceDefinition> _instanceDefinitions = new List<InstanceDefinition>();
+        private List<InstanceDefinition> _instanceDefinitions = AWSConfigs.InitializeCollections ? new List<InstanceDefinition>() : null;
         private string _roleArn;
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.GameLift.Model
         // Check to see if InstanceDefinitions property is set
         internal bool IsSetInstanceDefinitions()
         {
-            return this._instanceDefinitions != null && this._instanceDefinitions.Count > 0; 
+            return this._instanceDefinitions != null && (this._instanceDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

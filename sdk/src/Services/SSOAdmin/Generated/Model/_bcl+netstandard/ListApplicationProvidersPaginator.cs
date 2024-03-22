@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the ApplicationProviders
         /// </summary>
         public IPaginatedEnumerable<ApplicationProvider> ApplicationProviders => 
-            new PaginatedResultKeyResponse<ListApplicationProvidersResponse, ApplicationProvider>(this, (i) => i.ApplicationProviders);
+            new PaginatedResultKeyResponse<ListApplicationProvidersResponse, ApplicationProvider>(this, (i) => i.ApplicationProviders ?? new List<ApplicationProvider>());
 
         internal ListApplicationProvidersPaginator(IAmazonSSOAdmin client, ListApplicationProvidersRequest request)
         {

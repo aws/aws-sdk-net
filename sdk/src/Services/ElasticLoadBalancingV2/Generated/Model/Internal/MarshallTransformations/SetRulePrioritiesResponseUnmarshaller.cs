@@ -84,6 +84,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Rules/member", targetDepth))
                     {
                         var unmarshaller = RuleUnmarshaller.Instance;
+                        if (response.Rules == null)
+                        {
+                            response.Rules = new List<Rule>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Rules.Add(item);
                         continue;

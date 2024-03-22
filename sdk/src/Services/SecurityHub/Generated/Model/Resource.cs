@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         private Partition _partition;
         private string _region;
         private string _resourceRole;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _type;
 
         /// <summary>
@@ -206,7 +206,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

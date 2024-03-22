@@ -35,25 +35,26 @@ namespace Amazon.Batch.Model
     public partial class RegisterJobDefinitionRequest : AmazonBatchRequest
     {
         private ContainerProperties _containerProperties;
+        private EcsProperties _ecsProperties;
         private EksProperties _eksProperties;
         private string _jobDefinitionName;
         private NodeProperties _nodeProperties;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
-        private List<string> _platformCapabilities = new List<string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _platformCapabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
         private int? _schedulingPriority;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private JobTimeout _timeout;
         private JobDefinitionType _type;
 
         /// <summary>
         /// Gets and sets the property ContainerProperties. 
         /// <para>
-        /// An object with various properties specific to Amazon ECS based single-node container-based
+        /// An object with properties specific to Amazon ECS-based single-node container-based
         /// jobs. If the job definition's <c>type</c> parameter is <c>container</c>, then you
         /// must specify either <c>containerProperties</c> or <c>nodeProperties</c>. This must
-        /// not be specified for Amazon EKS based job definitions.
+        /// not be specified for Amazon EKS-based job definitions.
         /// </para>
         ///  <note> 
         /// <para>
@@ -75,10 +76,29 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EcsProperties. 
+        /// <para>
+        /// An object with properties that are specific to Amazon ECS-based jobs. This must not
+        /// be specified for Amazon EKS-based job definitions.
+        /// </para>
+        /// </summary>
+        public EcsProperties EcsProperties
+        {
+            get { return this._ecsProperties; }
+            set { this._ecsProperties = value; }
+        }
+
+        // Check to see if EcsProperties property is set
+        internal bool IsSetEcsProperties()
+        {
+            return this._ecsProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EksProperties. 
         /// <para>
-        /// An object with various properties that are specific to Amazon EKS based jobs. This
-        /// must not be specified for Amazon ECS based job definitions.
+        /// An object with properties that are specific to Amazon EKS-based jobs. This must not
+        /// be specified for Amazon ECS based job definitions.
         /// </para>
         /// </summary>
         public EksProperties EksProperties
@@ -116,12 +136,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NodeProperties. 
         /// <para>
-        /// An object with various properties specific to multi-node parallel jobs. If you specify
-        /// node properties for a job, it becomes a multi-node parallel job. For more information,
+        /// An object with properties specific to multi-node parallel jobs. If you specify node
+        /// properties for a job, it becomes a multi-node parallel job. For more information,
         /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-        /// Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <c>type</c>
-        /// parameter is <c>container</c>, then you must specify either <c>containerProperties</c>
-        /// or <c>nodeProperties</c>.
+        /// Parallel Jobs</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -163,7 +181,7 @@ namespace Amazon.Batch.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -187,7 +205,7 @@ namespace Amazon.Batch.Model
         // Check to see if PlatformCapabilities property is set
         internal bool IsSetPlatformCapabilities()
         {
-            return this._platformCapabilities != null && this._platformCapabilities.Count > 0; 
+            return this._platformCapabilities != null && (this._platformCapabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -282,7 +300,7 @@ namespace Amazon.Batch.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -315,7 +333,16 @@ namespace Amazon.Batch.Model
         /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
         /// a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
+        /// <para>
+        /// If the value is <c>container</c>, then one of the following is required: <c>containerProperties</c>,
+        /// <c>ecsProperties</c>, or <c>eksProperties</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value is <c>multinode</c>, then <c>nodeProperties</c> is required.
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// If the job is run on Fargate resources, then <c>multinode</c> isn't supported.
         /// </para>

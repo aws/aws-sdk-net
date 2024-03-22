@@ -45,7 +45,7 @@ namespace Amazon.GuardDuty.Model
         /// Enumerable containing all of the FilterNames
         /// </summary>
         public IPaginatedEnumerable<string> FilterNames => 
-            new PaginatedResultKeyResponse<ListFiltersResponse, string>(this, (i) => i.FilterNames);
+            new PaginatedResultKeyResponse<ListFiltersResponse, string>(this, (i) => i.FilterNames ?? new List<string>());
 
         internal ListFiltersPaginator(IAmazonGuardDuty client, ListFiltersRequest request)
         {

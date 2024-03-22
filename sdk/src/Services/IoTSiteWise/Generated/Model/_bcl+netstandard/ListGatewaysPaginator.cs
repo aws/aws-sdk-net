@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the GatewaySummaries
         /// </summary>
         public IPaginatedEnumerable<GatewaySummary> GatewaySummaries => 
-            new PaginatedResultKeyResponse<ListGatewaysResponse, GatewaySummary>(this, (i) => i.GatewaySummaries);
+            new PaginatedResultKeyResponse<ListGatewaysResponse, GatewaySummary>(this, (i) => i.GatewaySummaries ?? new List<GatewaySummary>());
 
         internal ListGatewaysPaginator(IAmazonIoTSiteWise client, ListGatewaysRequest request)
         {

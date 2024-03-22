@@ -120,7 +120,7 @@ namespace Amazon.CloudWatch.Model
         private DateTime? _endTimeUtc;
         private LabelOptions _labelOptions;
         private int? _maxDatapoints;
-        private List<MetricDataQuery> _metricDataQueries = new List<MetricDataQuery>();
+        private List<MetricDataQuery> _metricDataQueries = AWSConfigs.InitializeCollections ? new List<MetricDataQuery>() : null;
         private string _nextToken;
         private ScanBy _scanBy;
         private DateTime? _startTimeUtc;
@@ -215,7 +215,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if MetricDataQueries property is set
         internal bool IsSetMetricDataQueries()
         {
-            return this._metricDataQueries != null && this._metricDataQueries.Count > 0; 
+            return this._metricDataQueries != null && (this._metricDataQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ListLegalHoldsResponse : AmazonWebServiceResponse
     {
-        private List<LegalHold> _legalHolds = new List<LegalHold>();
+        private List<LegalHold> _legalHolds = AWSConfigs.InitializeCollections ? new List<LegalHold>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Backup.Model
         // Check to see if LegalHolds property is set
         internal bool IsSetLegalHolds()
         {
-            return this._legalHolds != null && this._legalHolds.Count > 0; 
+            return this._legalHolds != null && (this._legalHolds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

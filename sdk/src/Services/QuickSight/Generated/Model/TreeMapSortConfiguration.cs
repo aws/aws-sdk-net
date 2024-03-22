@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class TreeMapSortConfiguration
     {
         private ItemsLimitConfiguration _treeMapGroupItemsLimitConfiguration;
-        private List<FieldSortOptions> _treeMapSort = new List<FieldSortOptions>();
+        private List<FieldSortOptions> _treeMapSort = AWSConfigs.InitializeCollections ? new List<FieldSortOptions>() : null;
 
         /// <summary>
         /// Gets and sets the property TreeMapGroupItemsLimitConfiguration. 
@@ -70,7 +70,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TreeMapSort property is set
         internal bool IsSetTreeMapSort()
         {
-            return this._treeMapSort != null && this._treeMapSort.Count > 0; 
+            return this._treeMapSort != null && (this._treeMapSort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

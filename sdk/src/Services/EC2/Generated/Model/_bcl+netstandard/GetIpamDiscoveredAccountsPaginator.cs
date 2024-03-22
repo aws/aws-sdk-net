@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the IpamDiscoveredAccounts
         /// </summary>
         public IPaginatedEnumerable<IpamDiscoveredAccount> IpamDiscoveredAccounts => 
-            new PaginatedResultKeyResponse<GetIpamDiscoveredAccountsResponse, IpamDiscoveredAccount>(this, (i) => i.IpamDiscoveredAccounts);
+            new PaginatedResultKeyResponse<GetIpamDiscoveredAccountsResponse, IpamDiscoveredAccount>(this, (i) => i.IpamDiscoveredAccounts ?? new List<IpamDiscoveredAccount>());
 
         internal GetIpamDiscoveredAccountsPaginator(IAmazonEC2 client, GetIpamDiscoveredAccountsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ListCopyJobsResponse : AmazonWebServiceResponse
     {
-        private List<CopyJob> _copyJobs = new List<CopyJob>();
+        private List<CopyJob> _copyJobs = AWSConfigs.InitializeCollections ? new List<CopyJob>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Backup.Model
         // Check to see if CopyJobs property is set
         internal bool IsSetCopyJobs()
         {
-            return this._copyJobs != null && this._copyJobs.Count > 0; 
+            return this._copyJobs != null && (this._copyJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

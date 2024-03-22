@@ -45,7 +45,7 @@ namespace Amazon.VoiceID.Model
         /// Enumerable containing all of the WatchlistSummaries
         /// </summary>
         public IPaginatedEnumerable<WatchlistSummary> WatchlistSummaries => 
-            new PaginatedResultKeyResponse<ListWatchlistsResponse, WatchlistSummary>(this, (i) => i.WatchlistSummaries);
+            new PaginatedResultKeyResponse<ListWatchlistsResponse, WatchlistSummary>(this, (i) => i.WatchlistSummaries ?? new List<WatchlistSummary>());
 
         internal ListWatchlistsPaginator(IAmazonVoiceID client, ListWatchlistsRequest request)
         {

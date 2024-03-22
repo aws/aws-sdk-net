@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         private MemoryStream _body;
         private bool? _failOnWarnings;
         private PutMode _mode;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _restApiId;
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

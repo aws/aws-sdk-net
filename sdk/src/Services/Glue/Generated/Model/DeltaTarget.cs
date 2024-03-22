@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     {
         private string _connectionName;
         private bool? _createNativeDeltaTable;
-        private List<string> _deltaTables = new List<string>();
+        private List<string> _deltaTables = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _writeManifest;
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.Glue.Model
         // Check to see if DeltaTables property is set
         internal bool IsSetDeltaTables()
         {
-            return this._deltaTables != null && this._deltaTables.Count > 0; 
+            return this._deltaTables != null && (this._deltaTables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

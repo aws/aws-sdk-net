@@ -33,7 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class GetBatchImportJobsResponse : AmazonWebServiceResponse
     {
-        private List<BatchImport> _batchImports = new List<BatchImport>();
+        private List<BatchImport> _batchImports = AWSConfigs.InitializeCollections ? new List<BatchImport>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if BatchImports property is set
         internal bool IsSetBatchImports()
         {
-            return this._batchImports != null && this._batchImports.Count > 0; 
+            return this._batchImports != null && (this._batchImports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

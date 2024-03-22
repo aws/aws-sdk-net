@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the CarrierGateways
         /// </summary>
         public IPaginatedEnumerable<CarrierGateway> CarrierGateways => 
-            new PaginatedResultKeyResponse<DescribeCarrierGatewaysResponse, CarrierGateway>(this, (i) => i.CarrierGateways);
+            new PaginatedResultKeyResponse<DescribeCarrierGatewaysResponse, CarrierGateway>(this, (i) => i.CarrierGateways ?? new List<CarrierGateway>());
 
         internal DescribeCarrierGatewaysPaginator(IAmazonEC2 client, DescribeCarrierGatewaysRequest request)
         {

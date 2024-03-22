@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListCACertificatesResponse : AmazonWebServiceResponse
     {
-        private List<CACertificate> _certificates = new List<CACertificate>();
+        private List<CACertificate> _certificates = AWSConfigs.InitializeCollections ? new List<CACertificate>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model
         // Check to see if Certificates property is set
         internal bool IsSetCertificates()
         {
-            return this._certificates != null && this._certificates.Count > 0; 
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

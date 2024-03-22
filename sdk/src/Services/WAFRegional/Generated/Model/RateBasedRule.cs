@@ -68,7 +68,7 @@ namespace Amazon.WAFRegional.Model
     /// </summary>
     public partial class RateBasedRule
     {
-        private List<Predicate> _matchPredicates = new List<Predicate>();
+        private List<Predicate> _matchPredicates = AWSConfigs.InitializeCollections ? new List<Predicate>() : null;
         private string _metricName;
         private string _name;
         private RateKey _rateKey;
@@ -93,7 +93,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if MatchPredicates property is set
         internal bool IsSetMatchPredicates()
         {
-            return this._matchPredicates != null && this._matchPredicates.Count > 0; 
+            return this._matchPredicates != null && (this._matchPredicates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

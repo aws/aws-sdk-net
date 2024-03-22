@@ -33,7 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class TextWithHighlights
     {
-        private List<Highlight> _highlights = new List<Highlight>();
+        private List<Highlight> _highlights = AWSConfigs.InitializeCollections ? new List<Highlight>() : null;
         private string _text;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Highlights property is set
         internal bool IsSetHighlights()
         {
-            return this._highlights != null && this._highlights.Count > 0; 
+            return this._highlights != null && (this._highlights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

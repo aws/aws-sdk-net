@@ -33,7 +33,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DetectCustomLabelsResponse : AmazonWebServiceResponse
     {
-        private List<CustomLabel> _customLabels = new List<CustomLabel>();
+        private List<CustomLabel> _customLabels = AWSConfigs.InitializeCollections ? new List<CustomLabel>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomLabels. 
@@ -50,7 +50,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if CustomLabels property is set
         internal bool IsSetCustomLabels()
         {
-            return this._customLabels != null && this._customLabels.Count > 0; 
+            return this._customLabels != null && (this._customLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

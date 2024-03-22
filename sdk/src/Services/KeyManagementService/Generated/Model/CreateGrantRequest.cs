@@ -122,10 +122,10 @@ namespace Amazon.KeyManagementService.Model
         private GrantConstraints _constraints;
         private bool? _dryRun;
         private string _granteePrincipal;
-        private List<string> _grantTokens = new List<string>();
+        private List<string> _grantTokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyId;
         private string _name;
-        private List<string> _operations = new List<string>();
+        private List<string> _operations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _retiringPrincipal;
 
         /// <summary>
@@ -257,7 +257,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if GrantTokens property is set
         internal bool IsSetGrantTokens()
         {
-            return this._grantTokens != null && this._grantTokens.Count > 0; 
+            return this._grantTokens != null && (this._grantTokens.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -366,7 +366,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if Operations property is set
         internal bool IsSetOperations()
         {
-            return this._operations != null && this._operations.Count > 0; 
+            return this._operations != null && (this._operations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

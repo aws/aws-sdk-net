@@ -63,6 +63,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ResourceTagSets/ResourceTagSet", targetDepth))
                     {
+                        if (response.ResourceTagSets == null)
+                        {
+                            response.ResourceTagSets = new List<ResourceTagSet>();
+                        }
                         var unmarshaller = ResourceTagSetUnmarshaller.Instance;
                         response.ResourceTagSets.Add(unmarshaller.Unmarshall(context));
                         continue;

@@ -45,7 +45,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// Enumerable containing all of the SipRules
         /// </summary>
         public IPaginatedEnumerable<SipRule> SipRules => 
-            new PaginatedResultKeyResponse<ListSipRulesResponse, SipRule>(this, (i) => i.SipRules);
+            new PaginatedResultKeyResponse<ListSipRulesResponse, SipRule>(this, (i) => i.SipRules ?? new List<SipRule>());
 
         internal ListSipRulesPaginator(IAmazonChimeSDKVoice client, ListSipRulesRequest request)
         {

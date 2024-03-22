@@ -45,7 +45,7 @@ namespace Amazon.Braket.Model
         /// Enumerable containing all of the Devices
         /// </summary>
         public IPaginatedEnumerable<DeviceSummary> Devices => 
-            new PaginatedResultKeyResponse<SearchDevicesResponse, DeviceSummary>(this, (i) => i.Devices);
+            new PaginatedResultKeyResponse<SearchDevicesResponse, DeviceSummary>(this, (i) => i.Devices ?? new List<DeviceSummary>());
 
         internal SearchDevicesPaginator(IAmazonBraket client, SearchDevicesRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class CreateSubscriptionGrantRequest : AmazonDataZoneRequest
     {
-        private List<AssetTargetNameMap> _assetTargetNames = new List<AssetTargetNameMap>();
+        private List<AssetTargetNameMap> _assetTargetNames = AWSConfigs.InitializeCollections ? new List<AssetTargetNameMap>() : null;
         private string _clientToken;
         private string _domainIdentifier;
         private string _environmentIdentifier;
@@ -56,7 +56,7 @@ namespace Amazon.DataZone.Model
         // Check to see if AssetTargetNames property is set
         internal bool IsSetAssetTargetNames()
         {
-            return this._assetTargetNames != null && this._assetTargetNames.Count > 0; 
+            return this._assetTargetNames != null && (this._assetTargetNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

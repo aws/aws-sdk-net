@@ -33,7 +33,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class GetInterpolatedAssetPropertyValuesResponse : AmazonWebServiceResponse
     {
-        private List<InterpolatedAssetPropertyValue> _interpolatedAssetPropertyValues = new List<InterpolatedAssetPropertyValue>();
+        private List<InterpolatedAssetPropertyValue> _interpolatedAssetPropertyValues = AWSConfigs.InitializeCollections ? new List<InterpolatedAssetPropertyValue>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if InterpolatedAssetPropertyValues property is set
         internal bool IsSetInterpolatedAssetPropertyValues()
         {
-            return this._interpolatedAssetPropertyValues != null && this._interpolatedAssetPropertyValues.Count > 0; 
+            return this._interpolatedAssetPropertyValues != null && (this._interpolatedAssetPropertyValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

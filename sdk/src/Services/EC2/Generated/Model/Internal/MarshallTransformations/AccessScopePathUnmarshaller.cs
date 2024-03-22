@@ -69,6 +69,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("throughResourceSet/item", targetDepth))
                     {
                         var unmarshaller = ThroughResourcesStatementUnmarshaller.Instance;
+                        if (unmarshalledObject.ThroughResources == null)
+                        {
+                            unmarshalledObject.ThroughResources = new List<ThroughResourcesStatement>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ThroughResources.Add(item);
                         continue;

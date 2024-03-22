@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class AdminListDevicesResponse : AmazonWebServiceResponse
     {
-        private List<DeviceType> _devices = new List<DeviceType>();
+        private List<DeviceType> _devices = AWSConfigs.InitializeCollections ? new List<DeviceType>() : null;
         private string _paginationToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if Devices property is set
         internal bool IsSetDevices()
         {
-            return this._devices != null && this._devices.Count > 0; 
+            return this._devices != null && (this._devices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

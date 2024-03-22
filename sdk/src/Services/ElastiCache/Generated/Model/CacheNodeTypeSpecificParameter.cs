@@ -36,7 +36,7 @@ namespace Amazon.ElastiCache.Model
     public partial class CacheNodeTypeSpecificParameter
     {
         private string _allowedValues;
-        private List<CacheNodeTypeSpecificValue> _cacheNodeTypeSpecificValues = new List<CacheNodeTypeSpecificValue>();
+        private List<CacheNodeTypeSpecificValue> _cacheNodeTypeSpecificValues = AWSConfigs.InitializeCollections ? new List<CacheNodeTypeSpecificValue>() : null;
         private ChangeType _changeType;
         private string _dataType;
         private string _description;
@@ -83,7 +83,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeTypeSpecificValues property is set
         internal bool IsSetCacheNodeTypeSpecificValues()
         {
-            return this._cacheNodeTypeSpecificValues != null && this._cacheNodeTypeSpecificValues.Count > 0; 
+            return this._cacheNodeTypeSpecificValues != null && (this._cacheNodeTypeSpecificValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

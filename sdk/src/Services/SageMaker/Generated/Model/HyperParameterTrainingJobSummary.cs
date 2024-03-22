@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         private string _trainingJobName;
         private TrainingJobStatus _trainingJobStatus;
         private DateTime? _trainingStartTime;
-        private Dictionary<string, string> _tunedHyperParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _tunedHyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _tuningJobName;
 
         /// <summary>
@@ -270,7 +270,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if TunedHyperParameters property is set
         internal bool IsSetTunedHyperParameters()
         {
-            return this._tunedHyperParameters != null && this._tunedHyperParameters.Count > 0; 
+            return this._tunedHyperParameters != null && (this._tunedHyperParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

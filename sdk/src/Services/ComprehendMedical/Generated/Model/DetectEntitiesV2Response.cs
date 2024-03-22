@@ -33,10 +33,10 @@ namespace Amazon.ComprehendMedical.Model
     /// </summary>
     public partial class DetectEntitiesV2Response : AmazonWebServiceResponse
     {
-        private List<Entity> _entities = new List<Entity>();
+        private List<Entity> _entities = AWSConfigs.InitializeCollections ? new List<Entity>() : null;
         private string _modelVersion;
         private string _paginationToken;
-        private List<UnmappedAttribute> _unmappedAttributes = new List<UnmappedAttribute>();
+        private List<UnmappedAttribute> _unmappedAttributes = AWSConfigs.InitializeCollections ? new List<UnmappedAttribute>() : null;
 
         /// <summary>
         /// Gets and sets the property Entities. 
@@ -57,7 +57,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Entities property is set
         internal bool IsSetEntities()
         {
-            return this._entities != null && this._entities.Count > 0; 
+            return this._entities != null && (this._entities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if UnmappedAttributes property is set
         internal bool IsSetUnmappedAttributes()
         {
-            return this._unmappedAttributes != null && this._unmappedAttributes.Count > 0; 
+            return this._unmappedAttributes != null && (this._unmappedAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.Backup.Model
         /// Enumerable containing all of the CopyJobs
         /// </summary>
         public IPaginatedEnumerable<CopyJob> CopyJobs => 
-            new PaginatedResultKeyResponse<ListCopyJobsResponse, CopyJob>(this, (i) => i.CopyJobs);
+            new PaginatedResultKeyResponse<ListCopyJobsResponse, CopyJob>(this, (i) => i.CopyJobs ?? new List<CopyJob>());
 
         internal ListCopyJobsPaginator(IAmazonBackup client, ListCopyJobsRequest request)
         {

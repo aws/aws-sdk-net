@@ -33,13 +33,13 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class HttpGatewayRouteMatch
     {
-        private List<HttpGatewayRouteHeader> _headers = new List<HttpGatewayRouteHeader>();
+        private List<HttpGatewayRouteHeader> _headers = AWSConfigs.InitializeCollections ? new List<HttpGatewayRouteHeader>() : null;
         private GatewayRouteHostnameMatch _hostname;
         private HttpMethod _method;
         private HttpPathMatch _path;
         private int? _port;
         private string _prefix;
-        private List<HttpQueryParameter> _queryParameters = new List<HttpQueryParameter>();
+        private List<HttpQueryParameter> _queryParameters = AWSConfigs.InitializeCollections ? new List<HttpQueryParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property Headers. 
@@ -57,7 +57,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if Headers property is set
         internal bool IsSetHeaders()
         {
-            return this._headers != null && this._headers.Count > 0; 
+            return this._headers != null && (this._headers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -171,7 +171,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if QueryParameters property is set
         internal bool IsSetQueryParameters()
         {
-            return this._queryParameters != null && this._queryParameters.Count > 0; 
+            return this._queryParameters != null && (this._queryParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

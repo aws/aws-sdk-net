@@ -37,17 +37,17 @@ namespace Amazon.DataSync.Model
         private DateTime? _creationTime;
         private string _currentTaskExecutionArn;
         private string _destinationLocationArn;
-        private List<string> _destinationNetworkInterfaceArns = new List<string>();
+        private List<string> _destinationNetworkInterfaceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _errorCode;
         private string _errorDetail;
-        private List<FilterRule> _excludes = new List<FilterRule>();
-        private List<FilterRule> _includes = new List<FilterRule>();
+        private List<FilterRule> _excludes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
+        private List<FilterRule> _includes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
         private ManifestConfig _manifestConfig;
         private string _name;
         private Options _options;
         private TaskSchedule _schedule;
         private string _sourceLocationArn;
-        private List<string> _sourceNetworkInterfaceArns = new List<string>();
+        private List<string> _sourceNetworkInterfaceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TaskStatus _status;
         private string _taskArn;
         private TaskReportConfig _taskReportConfig;
@@ -150,7 +150,7 @@ namespace Amazon.DataSync.Model
         // Check to see if DestinationNetworkInterfaceArns property is set
         internal bool IsSetDestinationNetworkInterfaceArns()
         {
-            return this._destinationNetworkInterfaceArns != null && this._destinationNetworkInterfaceArns.Count > 0; 
+            return this._destinationNetworkInterfaceArns != null && (this._destinationNetworkInterfaceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Excludes property is set
         internal bool IsSetExcludes()
         {
-            return this._excludes != null && this._excludes.Count > 0; 
+            return this._excludes != null && (this._excludes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Includes property is set
         internal bool IsSetIncludes()
         {
-            return this._includes != null && this._includes.Count > 0; 
+            return this._includes != null && (this._includes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -351,7 +351,7 @@ namespace Amazon.DataSync.Model
         // Check to see if SourceNetworkInterfaceArns property is set
         internal bool IsSetSourceNetworkInterfaceArns()
         {
-            return this._sourceNetworkInterfaceArns != null && this._sourceNetworkInterfaceArns.Count > 0; 
+            return this._sourceNetworkInterfaceArns != null && (this._sourceNetworkInterfaceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

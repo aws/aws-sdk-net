@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<TaskListItem> Items => 
-            new PaginatedResultKeyResponse<ListRunTasksResponse, TaskListItem>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListRunTasksResponse, TaskListItem>(this, (i) => i.Items ?? new List<TaskListItem>());
 
         internal ListRunTasksPaginator(IAmazonOmics client, ListRunTasksRequest request)
         {

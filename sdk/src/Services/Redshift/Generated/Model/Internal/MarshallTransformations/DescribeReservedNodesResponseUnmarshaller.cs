@@ -90,6 +90,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReservedNodes/ReservedNode", targetDepth))
                     {
                         var unmarshaller = ReservedNodeUnmarshaller.Instance;
+                        if (response.ReservedNodes == null)
+                        {
+                            response.ReservedNodes = new List<ReservedNode>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ReservedNodes.Add(item);
                         continue;

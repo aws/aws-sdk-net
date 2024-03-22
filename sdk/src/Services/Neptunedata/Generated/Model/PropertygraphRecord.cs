@@ -35,7 +35,7 @@ namespace Amazon.Neptunedata.Model
     {
         private long? _commitTimestampInMillis;
         private PropertygraphData _data;
-        private Dictionary<string, string> _eventId = new Dictionary<string, string>();
+        private Dictionary<string, string> _eventId = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _isLastOp;
         private string _op;
 
@@ -94,7 +94,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if EventId property is set
         internal bool IsSetEventId()
         {
-            return this._eventId != null && this._eventId.Count > 0; 
+            return this._eventId != null && (this._eventId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,8 +33,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetPartitionResponse : AmazonWebServiceResponse
     {
-        private List<Partition> _partitions = new List<Partition>();
-        private List<PartitionValueList> _unprocessedKeys = new List<PartitionValueList>();
+        private List<Partition> _partitions = AWSConfigs.InitializeCollections ? new List<Partition>() : null;
+        private List<PartitionValueList> _unprocessedKeys = AWSConfigs.InitializeCollections ? new List<PartitionValueList>() : null;
 
         /// <summary>
         /// Gets and sets the property Partitions. 
@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model
         // Check to see if Partitions property is set
         internal bool IsSetPartitions()
         {
-            return this._partitions != null && this._partitions.Count > 0; 
+            return this._partitions != null && (this._partitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if UnprocessedKeys property is set
         internal bool IsSetUnprocessedKeys()
         {
-            return this._unprocessedKeys != null && this._unprocessedKeys.Count > 0; 
+            return this._unprocessedKeys != null && (this._unprocessedKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

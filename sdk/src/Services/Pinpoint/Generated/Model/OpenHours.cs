@@ -33,11 +33,11 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class OpenHours
     {
-        private Dictionary<string, List<OpenHoursRule>> _custom = new Dictionary<string, List<OpenHoursRule>>();
-        private Dictionary<string, List<OpenHoursRule>> _email = new Dictionary<string, List<OpenHoursRule>>();
-        private Dictionary<string, List<OpenHoursRule>> _push = new Dictionary<string, List<OpenHoursRule>>();
-        private Dictionary<string, List<OpenHoursRule>> _sms = new Dictionary<string, List<OpenHoursRule>>();
-        private Dictionary<string, List<OpenHoursRule>> _voice = new Dictionary<string, List<OpenHoursRule>>();
+        private Dictionary<string, List<OpenHoursRule>> _custom = AWSConfigs.InitializeCollections ? new Dictionary<string, List<OpenHoursRule>>() : null;
+        private Dictionary<string, List<OpenHoursRule>> _email = AWSConfigs.InitializeCollections ? new Dictionary<string, List<OpenHoursRule>>() : null;
+        private Dictionary<string, List<OpenHoursRule>> _push = AWSConfigs.InitializeCollections ? new Dictionary<string, List<OpenHoursRule>>() : null;
+        private Dictionary<string, List<OpenHoursRule>> _sms = AWSConfigs.InitializeCollections ? new Dictionary<string, List<OpenHoursRule>>() : null;
+        private Dictionary<string, List<OpenHoursRule>> _voice = AWSConfigs.InitializeCollections ? new Dictionary<string, List<OpenHoursRule>>() : null;
 
         /// <summary>
         /// Gets and sets the property CUSTOM. 
@@ -54,7 +54,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if CUSTOM property is set
         internal bool IsSetCUSTOM()
         {
-            return this._custom != null && this._custom.Count > 0; 
+            return this._custom != null && (this._custom.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if EMAIL property is set
         internal bool IsSetEMAIL()
         {
-            return this._email != null && this._email.Count > 0; 
+            return this._email != null && (this._email.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if PUSH property is set
         internal bool IsSetPUSH()
         {
-            return this._push != null && this._push.Count > 0; 
+            return this._push != null && (this._push.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if SMS property is set
         internal bool IsSetSMS()
         {
-            return this._sms != null && this._sms.Count > 0; 
+            return this._sms != null && (this._sms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if VOICE property is set
         internal bool IsSetVOICE()
         {
-            return this._voice != null && this._voice.Count > 0; 
+            return this._voice != null && (this._voice.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

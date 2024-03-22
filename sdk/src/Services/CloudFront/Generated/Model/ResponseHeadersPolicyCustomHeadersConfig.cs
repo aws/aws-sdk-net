@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class ResponseHeadersPolicyCustomHeadersConfig
     {
-        private List<ResponseHeadersPolicyCustomHeader> _items = new List<ResponseHeadersPolicyCustomHeader>();
+        private List<ResponseHeadersPolicyCustomHeader> _items = AWSConfigs.InitializeCollections ? new List<ResponseHeadersPolicyCustomHeader>() : null;
         private int? _quantity;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

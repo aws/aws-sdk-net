@@ -36,7 +36,7 @@ namespace Amazon.ServerMigrationService.Model
         private string _appId;
         private bool? _autoLaunch;
         private string _roleName;
-        private List<ServerGroupLaunchConfiguration> _serverGroupLaunchConfigurations = new List<ServerGroupLaunchConfiguration>();
+        private List<ServerGroupLaunchConfiguration> _serverGroupLaunchConfigurations = AWSConfigs.InitializeCollections ? new List<ServerGroupLaunchConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AppId. 
@@ -109,7 +109,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ServerGroupLaunchConfigurations property is set
         internal bool IsSetServerGroupLaunchConfigurations()
         {
-            return this._serverGroupLaunchConfigurations != null && this._serverGroupLaunchConfigurations.Count > 0; 
+            return this._serverGroupLaunchConfigurations != null && (this._serverGroupLaunchConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -47,10 +47,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribeSenderIdsRequest : AmazonPinpointSMSVoiceV2Request
     {
-        private List<SenderIdFilter> _filters = new List<SenderIdFilter>();
+        private List<SenderIdFilter> _filters = AWSConfigs.InitializeCollections ? new List<SenderIdFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<SenderIdAndCountry> _senderIds = new List<SenderIdAndCountry>();
+        private List<SenderIdAndCountry> _senderIds = AWSConfigs.InitializeCollections ? new List<SenderIdAndCountry>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -68,7 +68,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if SenderIds property is set
         internal bool IsSetSenderIds()
         {
-            return this._senderIds != null && this._senderIds.Count > 0; 
+            return this._senderIds != null && (this._senderIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

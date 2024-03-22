@@ -33,7 +33,7 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class ListModelVersionsResponse : AmazonWebServiceResponse
     {
-        private List<ModelVersionSummary> _modelVersionSummaries = new List<ModelVersionSummary>();
+        private List<ModelVersionSummary> _modelVersionSummaries = AWSConfigs.InitializeCollections ? new List<ModelVersionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if ModelVersionSummaries property is set
         internal bool IsSetModelVersionSummaries()
         {
-            return this._modelVersionSummaries != null && this._modelVersionSummaries.Count > 0; 
+            return this._modelVersionSummaries != null && (this._modelVersionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

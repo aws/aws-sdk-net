@@ -45,7 +45,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Enumerable containing all of the Profiles
         /// </summary>
         public IPaginatedEnumerable<ProfileDetail> Profiles => 
-            new PaginatedResultKeyResponse<ListProfilesResponse, ProfileDetail>(this, (i) => i.Profiles);
+            new PaginatedResultKeyResponse<ListProfilesResponse, ProfileDetail>(this, (i) => i.Profiles ?? new List<ProfileDetail>());
 
         internal ListProfilesPaginator(IAmazonIAMRolesAnywhere client, ListProfilesRequest request)
         {

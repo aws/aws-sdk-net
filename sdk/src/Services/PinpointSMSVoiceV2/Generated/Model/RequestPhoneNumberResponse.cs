@@ -38,7 +38,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _isoCountryCode;
         private MessageType _messageType;
         private string _monthlyLeasingPrice;
-        private List<string> _numberCapabilities = new List<string>();
+        private List<string> _numberCapabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RequestableNumberType _numberType;
         private string _optOutListName;
         private string _phoneNumber;
@@ -48,7 +48,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _registrationId;
         private bool? _selfManagedOptOutsEnabled;
         private NumberStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _twoWayChannelArn;
         private string _twoWayChannelRole;
         private bool? _twoWayEnabled;
@@ -164,7 +164,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if NumberCapabilities property is set
         internal bool IsSetNumberCapabilities()
         {
-            return this._numberCapabilities != null && this._numberCapabilities.Count > 0; 
+            return this._numberCapabilities != null && (this._numberCapabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -351,7 +351,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

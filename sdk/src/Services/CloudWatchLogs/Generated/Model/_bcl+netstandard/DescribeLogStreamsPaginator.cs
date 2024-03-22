@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all of the LogStreams
         /// </summary>
         public IPaginatedEnumerable<LogStream> LogStreams => 
-            new PaginatedResultKeyResponse<DescribeLogStreamsResponse, LogStream>(this, (i) => i.LogStreams);
+            new PaginatedResultKeyResponse<DescribeLogStreamsResponse, LogStream>(this, (i) => i.LogStreams ?? new List<LogStream>());
 
         internal DescribeLogStreamsPaginator(IAmazonCloudWatchLogs client, DescribeLogStreamsRequest request)
         {

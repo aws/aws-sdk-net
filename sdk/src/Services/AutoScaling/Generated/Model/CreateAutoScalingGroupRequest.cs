@@ -46,11 +46,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For introductory exercises for creating an Auto Scaling group, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html">Getting
-    /// started with Amazon EC2 Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-register-lbs-with-asg.html">Tutorial:
-    /// Set up a scaled and load-balanced application</a> in the <i>Amazon EC2 Auto Scaling
-    /// User Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
-    /// Scaling groups</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// If you're new to Amazon EC2 Auto Scaling, see the introductory tutorials in <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/get-started-with-ec2-auto-scaling.html">Get
+    /// started with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -64,7 +61,7 @@ namespace Amazon.AutoScaling.Model
     public partial class CreateAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _capacityRebalance;
         private string _context;
         private int? _defaultCooldown;
@@ -77,8 +74,8 @@ namespace Amazon.AutoScaling.Model
         private InstanceMaintenancePolicy _instanceMaintenancePolicy;
         private string _launchConfigurationName;
         private LaunchTemplateSpecification _launchTemplate;
-        private List<LifecycleHookSpecification> _lifecycleHookSpecificationList = new List<LifecycleHookSpecification>();
-        private List<string> _loadBalancerNames = new List<string>();
+        private List<LifecycleHookSpecification> _lifecycleHookSpecificationList = AWSConfigs.InitializeCollections ? new List<LifecycleHookSpecification>() : null;
+        private List<string> _loadBalancerNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxInstanceLifetime;
         private int? _maxSize;
         private int? _minSize;
@@ -86,10 +83,10 @@ namespace Amazon.AutoScaling.Model
         private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
         private string _serviceLinkedRoleARN;
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _targetGroupARNs = new List<string>();
-        private List<string> _terminationPolicies = new List<string>();
-        private List<TrafficSourceIdentifier> _trafficSources = new List<TrafficSourceIdentifier>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _targetGroupARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _terminationPolicies = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<TrafficSourceIdentifier> _trafficSources = AWSConfigs.InitializeCollections ? new List<TrafficSourceIdentifier>() : null;
         private string _vpcZoneIdentifier;
 
         /// <summary>
@@ -139,7 +136,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -482,7 +479,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LifecycleHookSpecificationList property is set
         internal bool IsSetLifecycleHookSpecificationList()
         {
-            return this._lifecycleHookSpecificationList != null && this._lifecycleHookSpecificationList.Count > 0; 
+            return this._lifecycleHookSpecificationList != null && (this._lifecycleHookSpecificationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -502,7 +499,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LoadBalancerNames property is set
         internal bool IsSetLoadBalancerNames()
         {
-            return this._loadBalancerNames != null && this._loadBalancerNames.Count > 0; 
+            return this._loadBalancerNames != null && (this._loadBalancerNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -688,7 +685,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -711,7 +708,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TargetGroupARNs property is set
         internal bool IsSetTargetGroupARNs()
         {
-            return this._targetGroupARNs != null && this._targetGroupARNs.Count > 0; 
+            return this._targetGroupARNs != null && (this._targetGroupARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -740,7 +737,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TerminationPolicies property is set
         internal bool IsSetTerminationPolicies()
         {
-            return this._terminationPolicies != null && this._terminationPolicies.Count > 0; 
+            return this._terminationPolicies != null && (this._terminationPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -760,7 +757,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TrafficSources property is set
         internal bool IsSetTrafficSources()
         {
-            return this._trafficSources != null && this._trafficSources.Count > 0; 
+            return this._trafficSources != null && (this._trafficSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

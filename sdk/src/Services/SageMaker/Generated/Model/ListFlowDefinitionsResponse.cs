@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListFlowDefinitionsResponse : AmazonWebServiceResponse
     {
-        private List<FlowDefinitionSummary> _flowDefinitionSummaries = new List<FlowDefinitionSummary>();
+        private List<FlowDefinitionSummary> _flowDefinitionSummaries = AWSConfigs.InitializeCollections ? new List<FlowDefinitionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if FlowDefinitionSummaries property is set
         internal bool IsSetFlowDefinitionSummaries()
         {
-            return this._flowDefinitionSummaries != null && this._flowDefinitionSummaries.Count > 0; 
+            return this._flowDefinitionSummaries != null && (this._flowDefinitionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

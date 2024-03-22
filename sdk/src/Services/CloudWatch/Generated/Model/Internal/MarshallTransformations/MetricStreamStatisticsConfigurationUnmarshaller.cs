@@ -57,6 +57,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AdditionalStatistics/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AdditionalStatistics == null)
+                        {
+                            unmarshalledObject.AdditionalStatistics = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AdditionalStatistics.Add(item);
                         continue;
@@ -64,6 +68,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("IncludeMetrics/member", targetDepth))
                     {
                         var unmarshaller = MetricStreamStatisticsMetricUnmarshaller.Instance;
+                        if (unmarshalledObject.IncludeMetrics == null)
+                        {
+                            unmarshalledObject.IncludeMetrics = new List<MetricStreamStatisticsMetric>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.IncludeMetrics.Add(item);
                         continue;

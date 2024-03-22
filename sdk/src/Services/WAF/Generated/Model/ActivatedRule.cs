@@ -56,7 +56,7 @@ namespace Amazon.WAF.Model
     public partial class ActivatedRule
     {
         private WafAction _action;
-        private List<ExcludedRule> _excludedRules = new List<ExcludedRule>();
+        private List<ExcludedRule> _excludedRules = AWSConfigs.InitializeCollections ? new List<ExcludedRule>() : null;
         private WafOverrideAction _overrideAction;
         private int? _priority;
         private string _ruleId;
@@ -162,7 +162,7 @@ namespace Amazon.WAF.Model
         // Check to see if ExcludedRules property is set
         internal bool IsSetExcludedRules()
         {
-            return this._excludedRules != null && this._excludedRules.Count > 0; 
+            return this._excludedRules != null && (this._excludedRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

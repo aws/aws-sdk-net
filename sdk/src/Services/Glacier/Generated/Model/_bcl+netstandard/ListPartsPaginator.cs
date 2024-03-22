@@ -45,7 +45,7 @@ namespace Amazon.Glacier.Model
         /// Enumerable containing all of the Parts
         /// </summary>
         public IPaginatedEnumerable<PartListElement> Parts => 
-            new PaginatedResultKeyResponse<ListPartsResponse, PartListElement>(this, (i) => i.Parts);
+            new PaginatedResultKeyResponse<ListPartsResponse, PartListElement>(this, (i) => i.Parts ?? new List<PartListElement>());
 
         internal ListPartsPaginator(IAmazonGlacier client, ListPartsRequest request)
         {

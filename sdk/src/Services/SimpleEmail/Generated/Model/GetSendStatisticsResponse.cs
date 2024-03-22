@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class GetSendStatisticsResponse : AmazonWebServiceResponse
     {
-        private List<SendDataPoint> _sendDataPoints = new List<SendDataPoint>();
+        private List<SendDataPoint> _sendDataPoints = AWSConfigs.InitializeCollections ? new List<SendDataPoint>() : null;
 
         /// <summary>
         /// Gets and sets the property SendDataPoints. 
@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if SendDataPoints property is set
         internal bool IsSetSendDataPoints()
         {
-            return this._sendDataPoints != null && this._sendDataPoints.Count > 0; 
+            return this._sendDataPoints != null && (this._sendDataPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

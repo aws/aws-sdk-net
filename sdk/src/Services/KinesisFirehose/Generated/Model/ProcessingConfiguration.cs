@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model
     public partial class ProcessingConfiguration
     {
         private bool? _enabled;
-        private List<Processor> _processors = new List<Processor>();
+        private List<Processor> _processors = AWSConfigs.InitializeCollections ? new List<Processor>() : null;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -69,7 +69,7 @@ namespace Amazon.KinesisFirehose.Model
         // Check to see if Processors property is set
         internal bool IsSetProcessors()
         {
-            return this._processors != null && this._processors.Count > 0; 
+            return this._processors != null && (this._processors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

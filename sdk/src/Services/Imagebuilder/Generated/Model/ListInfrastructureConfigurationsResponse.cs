@@ -33,7 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListInfrastructureConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<InfrastructureConfigurationSummary> _infrastructureConfigurationSummaryList = new List<InfrastructureConfigurationSummary>();
+        private List<InfrastructureConfigurationSummary> _infrastructureConfigurationSummaryList = AWSConfigs.InitializeCollections ? new List<InfrastructureConfigurationSummary>() : null;
         private string _nextToken;
         private string _requestId;
 
@@ -52,7 +52,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if InfrastructureConfigurationSummaryList property is set
         internal bool IsSetInfrastructureConfigurationSummaryList()
         {
-            return this._infrastructureConfigurationSummaryList != null && this._infrastructureConfigurationSummaryList.Count > 0; 
+            return this._infrastructureConfigurationSummaryList != null && (this._infrastructureConfigurationSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

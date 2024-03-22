@@ -33,7 +33,7 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class ListComponentsResponse : AmazonWebServiceResponse
     {
-        private List<ComponentSummary> _components = new List<ComponentSummary>();
+        private List<ComponentSummary> _components = AWSConfigs.InitializeCollections ? new List<ComponentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Proton.Model
         // Check to see if Components property is set
         internal bool IsSetComponents()
         {
-            return this._components != null && this._components.Count > 0; 
+            return this._components != null && (this._components.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

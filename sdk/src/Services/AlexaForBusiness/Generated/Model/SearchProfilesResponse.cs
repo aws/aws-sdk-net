@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model
     public partial class SearchProfilesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProfileData> _profiles = new List<ProfileData>();
+        private List<ProfileData> _profiles = AWSConfigs.InitializeCollections ? new List<ProfileData>() : null;
         private int? _totalCount;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if Profiles property is set
         internal bool IsSetProfiles()
         {
-            return this._profiles != null && this._profiles.Count > 0; 
+            return this._profiles != null && (this._profiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

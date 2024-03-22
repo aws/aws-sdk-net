@@ -68,12 +68,12 @@ namespace Amazon.RDS.Model
     public partial class CreateEventSubscriptionRequest : AmazonRDSRequest
     {
         private bool? _enabled;
-        private List<string> _eventCategories = new List<string>();
+        private List<string> _eventCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _snsTopicArn;
-        private List<string> _sourceIds = new List<string>();
+        private List<string> _sourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sourceType;
         private string _subscriptionName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -114,7 +114,7 @@ namespace Amazon.RDS.Model
         // Check to see if EventCategories property is set
         internal bool IsSetEventCategories()
         {
-            return this._eventCategories != null && this._eventCategories.Count > 0; 
+            return this._eventCategories != null && (this._eventCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Amazon.RDS.Model
         // Check to see if SourceIds property is set
         internal bool IsSetSourceIds()
         {
-            return this._sourceIds != null && this._sourceIds.Count > 0; 
+            return this._sourceIds != null && (this._sourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Amazon.RDS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

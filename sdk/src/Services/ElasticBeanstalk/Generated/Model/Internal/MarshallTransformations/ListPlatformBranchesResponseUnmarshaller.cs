@@ -90,6 +90,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PlatformBranchSummaryList/member", targetDepth))
                     {
                         var unmarshaller = PlatformBranchSummaryUnmarshaller.Instance;
+                        if (response.PlatformBranchSummaryList == null)
+                        {
+                            response.PlatformBranchSummaryList = new List<PlatformBranchSummary>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.PlatformBranchSummaryList.Add(item);
                         continue;

@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("keySet/item", targetDepth))
                     {
                         var unmarshaller = KeyPairInfoUnmarshaller.Instance;
+                        if (response.KeyPairs == null)
+                        {
+                            response.KeyPairs = new List<KeyPairInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.KeyPairs.Add(item);
                         continue;

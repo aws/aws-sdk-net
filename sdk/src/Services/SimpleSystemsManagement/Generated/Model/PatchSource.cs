@@ -36,7 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private string _configuration;
         private string _name;
-        private List<string> _products = new List<string>();
+        private List<string> _products = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -116,7 +116,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Products property is set
         internal bool IsSetProducts()
         {
-            return this._products != null && this._products.Count > 0; 
+            return this._products != null && (this._products.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

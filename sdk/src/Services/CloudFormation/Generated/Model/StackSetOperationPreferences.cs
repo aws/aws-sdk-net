@@ -46,7 +46,7 @@ namespace Amazon.CloudFormation.Model
         private int? _maxConcurrentCount;
         private int? _maxConcurrentPercentage;
         private RegionConcurrencyType _regionConcurrencyType;
-        private List<string> _regionOrder = new List<string>();
+        private List<string> _regionOrder = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConcurrencyMode. 
@@ -269,7 +269,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if RegionOrder property is set
         internal bool IsSetRegionOrder()
         {
-            return this._regionOrder != null && this._regionOrder.Count > 0; 
+            return this._regionOrder != null && (this._regionOrder.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

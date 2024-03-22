@@ -37,7 +37,7 @@ namespace Amazon.LakeFormation.Model
         private DateTime? _expiration;
         private string _secretAccessKey;
         private string _sessionToken;
-        private List<string> _vendedS3Path = new List<string>();
+        private List<string> _vendedS3Path = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessKeyId. 
@@ -126,7 +126,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if VendedS3Path property is set
         internal bool IsSetVendedS3Path()
         {
-            return this._vendedS3Path != null && this._vendedS3Path.Count > 0; 
+            return this._vendedS3Path != null && (this._vendedS3Path.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class NetworkFirewallMissingExpectedRoutesViolation
     {
-        private List<ExpectedRoute> _expectedRoutes = new List<ExpectedRoute>();
+        private List<ExpectedRoute> _expectedRoutes = AWSConfigs.InitializeCollections ? new List<ExpectedRoute>() : null;
         private string _violationTarget;
         private string _vpcId;
 
@@ -52,7 +52,7 @@ namespace Amazon.FMS.Model
         // Check to see if ExpectedRoutes property is set
         internal bool IsSetExpectedRoutes()
         {
-            return this._expectedRoutes != null && this._expectedRoutes.Count > 0; 
+            return this._expectedRoutes != null && (this._expectedRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

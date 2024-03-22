@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model
     public partial class BatchCreateChannelMembershipResponse : AmazonWebServiceResponse
     {
         private BatchChannelMemberships _batchChannelMemberships;
-        private List<BatchCreateChannelMembershipError> _errors = new List<BatchCreateChannelMembershipError>();
+        private List<BatchCreateChannelMembershipError> _errors = AWSConfigs.InitializeCollections ? new List<BatchCreateChannelMembershipError>() : null;
 
         /// <summary>
         /// Gets and sets the property BatchChannelMemberships. 
@@ -70,7 +70,7 @@ namespace Amazon.Chime.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

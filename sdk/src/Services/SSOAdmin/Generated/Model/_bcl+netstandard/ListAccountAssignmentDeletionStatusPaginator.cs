@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the AccountAssignmentsDeletionStatus
         /// </summary>
         public IPaginatedEnumerable<AccountAssignmentOperationStatusMetadata> AccountAssignmentsDeletionStatus => 
-            new PaginatedResultKeyResponse<ListAccountAssignmentDeletionStatusResponse, AccountAssignmentOperationStatusMetadata>(this, (i) => i.AccountAssignmentsDeletionStatus);
+            new PaginatedResultKeyResponse<ListAccountAssignmentDeletionStatusResponse, AccountAssignmentOperationStatusMetadata>(this, (i) => i.AccountAssignmentsDeletionStatus ?? new List<AccountAssignmentOperationStatusMetadata>());
 
         internal ListAccountAssignmentDeletionStatusPaginator(IAmazonSSOAdmin client, ListAccountAssignmentDeletionStatusRequest request)
         {

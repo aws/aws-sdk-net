@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the InterpolatedAssetPropertyValues
         /// </summary>
         public IPaginatedEnumerable<InterpolatedAssetPropertyValue> InterpolatedAssetPropertyValues => 
-            new PaginatedResultKeyResponse<GetInterpolatedAssetPropertyValuesResponse, InterpolatedAssetPropertyValue>(this, (i) => i.InterpolatedAssetPropertyValues);
+            new PaginatedResultKeyResponse<GetInterpolatedAssetPropertyValuesResponse, InterpolatedAssetPropertyValue>(this, (i) => i.InterpolatedAssetPropertyValues ?? new List<InterpolatedAssetPropertyValue>());
 
         internal GetInterpolatedAssetPropertyValuesPaginator(IAmazonIoTSiteWise client, GetInterpolatedAssetPropertyValuesRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.PrometheusService.Model
     public partial class ListScrapersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScraperSummary> _scrapers = new List<ScraperSummary>();
+        private List<ScraperSummary> _scrapers = AWSConfigs.InitializeCollections ? new List<ScraperSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.PrometheusService.Model
         // Check to see if Scrapers property is set
         internal bool IsSetScrapers()
         {
-            return this._scrapers != null && this._scrapers.Count > 0; 
+            return this._scrapers != null && (this._scrapers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

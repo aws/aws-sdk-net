@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the StoreImageTaskResults
         /// </summary>
         public IPaginatedEnumerable<StoreImageTaskResult> StoreImageTaskResults => 
-            new PaginatedResultKeyResponse<DescribeStoreImageTasksResponse, StoreImageTaskResult>(this, (i) => i.StoreImageTaskResults);
+            new PaginatedResultKeyResponse<DescribeStoreImageTasksResponse, StoreImageTaskResult>(this, (i) => i.StoreImageTaskResults ?? new List<StoreImageTaskResult>());
 
         internal DescribeStoreImageTasksPaginator(IAmazonEC2 client, DescribeStoreImageTasksRequest request)
         {

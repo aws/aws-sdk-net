@@ -33,7 +33,7 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class StorageOptimizer
     {
-        private Dictionary<string, string> _config = new Dictionary<string, string>();
+        private Dictionary<string, string> _config = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _errorMessage;
         private string _lastRunDetails;
         private OptimizerType _storageOptimizerType;
@@ -55,7 +55,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if Config property is set
         internal bool IsSetConfig()
         {
-            return this._config != null && this._config.Count > 0; 
+            return this._config != null && (this._config.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

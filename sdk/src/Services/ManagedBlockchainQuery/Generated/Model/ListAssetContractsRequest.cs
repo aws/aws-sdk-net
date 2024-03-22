@@ -70,7 +70,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// </para>
         ///  
         /// <para>
-        /// Default:<c>100</c> 
+        /// Default: <c>100</c> 
         /// </para>
         ///  <note> 
         /// <para>

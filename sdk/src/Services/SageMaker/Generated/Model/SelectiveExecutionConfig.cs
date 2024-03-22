@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class SelectiveExecutionConfig
     {
-        private List<SelectedStep> _selectedSteps = new List<SelectedStep>();
+        private List<SelectedStep> _selectedSteps = AWSConfigs.InitializeCollections ? new List<SelectedStep>() : null;
         private string _sourcePipelineExecutionArn;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SelectedSteps property is set
         internal bool IsSetSelectedSteps()
         {
-            return this._selectedSteps != null && this._selectedSteps.Count > 0; 
+            return this._selectedSteps != null && (this._selectedSteps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

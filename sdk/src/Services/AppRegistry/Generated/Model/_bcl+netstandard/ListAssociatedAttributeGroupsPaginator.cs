@@ -45,7 +45,7 @@ namespace Amazon.AppRegistry.Model
         /// Enumerable containing all of the AttributeGroups
         /// </summary>
         public IPaginatedEnumerable<string> AttributeGroups => 
-            new PaginatedResultKeyResponse<ListAssociatedAttributeGroupsResponse, string>(this, (i) => i.AttributeGroups);
+            new PaginatedResultKeyResponse<ListAssociatedAttributeGroupsResponse, string>(this, (i) => i.AttributeGroups ?? new List<string>());
 
         internal ListAssociatedAttributeGroupsPaginator(IAmazonAppRegistry client, ListAssociatedAttributeGroupsRequest request)
         {

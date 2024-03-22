@@ -81,6 +81,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Subnets/Subnet", targetDepth))
                     {
                         var unmarshaller = SubnetUnmarshaller.Instance;
+                        if (unmarshalledObject.Subnets == null)
+                        {
+                            unmarshalledObject.Subnets = new List<Subnet>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Subnets.Add(item);
                         continue;

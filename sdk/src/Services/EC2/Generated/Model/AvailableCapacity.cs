@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AvailableCapacity
     {
-        private List<InstanceCapacity> _availableInstanceCapacity = new List<InstanceCapacity>();
+        private List<InstanceCapacity> _availableInstanceCapacity = AWSConfigs.InitializeCollections ? new List<InstanceCapacity>() : null;
         private int? _availableVCpus;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         // Check to see if AvailableInstanceCapacity property is set
         internal bool IsSetAvailableInstanceCapacity()
         {
-            return this._availableInstanceCapacity != null && this._availableInstanceCapacity.Count > 0; 
+            return this._availableInstanceCapacity != null && (this._availableInstanceCapacity.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

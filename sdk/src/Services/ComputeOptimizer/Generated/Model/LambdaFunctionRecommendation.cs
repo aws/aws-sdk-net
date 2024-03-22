@@ -38,15 +38,15 @@ namespace Amazon.ComputeOptimizer.Model
         private CurrentPerformanceRisk _currentPerformanceRisk;
         private LambdaEffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private LambdaFunctionRecommendationFinding _finding;
-        private List<string> _findingReasonCodes = new List<string>();
+        private List<string> _findingReasonCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _functionArn;
         private string _functionVersion;
         private DateTime? _lastRefreshTimestamp;
         private double? _lookbackPeriodInDays;
-        private List<LambdaFunctionMemoryRecommendationOption> _memorySizeRecommendationOptions = new List<LambdaFunctionMemoryRecommendationOption>();
+        private List<LambdaFunctionMemoryRecommendationOption> _memorySizeRecommendationOptions = AWSConfigs.InitializeCollections ? new List<LambdaFunctionMemoryRecommendationOption>() : null;
         private long? _numberOfInvocations;
-        private List<Tag> _tags = new List<Tag>();
-        private List<LambdaFunctionUtilizationMetric> _utilizationMetrics = new List<LambdaFunctionUtilizationMetric>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<LambdaFunctionUtilizationMetric> _utilizationMetrics = AWSConfigs.InitializeCollections ? new List<LambdaFunctionUtilizationMetric>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -225,7 +225,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if FindingReasonCodes property is set
         internal bool IsSetFindingReasonCodes()
         {
-            return this._findingReasonCodes != null && this._findingReasonCodes.Count > 0; 
+            return this._findingReasonCodes != null && (this._findingReasonCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -316,7 +316,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if MemorySizeRecommendationOptions property is set
         internal bool IsSetMemorySizeRecommendationOptions()
         {
-            return this._memorySizeRecommendationOptions != null && this._memorySizeRecommendationOptions.Count > 0; 
+            return this._memorySizeRecommendationOptions != null && (this._memorySizeRecommendationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -352,7 +352,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -370,7 +370,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if UtilizationMetrics property is set
         internal bool IsSetUtilizationMetrics()
         {
-            return this._utilizationMetrics != null && this._utilizationMetrics.Count > 0; 
+            return this._utilizationMetrics != null && (this._utilizationMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

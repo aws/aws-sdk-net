@@ -96,6 +96,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("VirtualMFADevices/member", targetDepth))
                     {
                         var unmarshaller = VirtualMFADeviceUnmarshaller.Instance;
+                        if (response.VirtualMFADevices == null)
+                        {
+                            response.VirtualMFADevices = new List<VirtualMFADevice>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.VirtualMFADevices.Add(item);
                         continue;

@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the Keywords
         /// </summary>
         public IPaginatedEnumerable<KeywordInformation> Keywords => 
-            new PaginatedResultKeyResponse<DescribeKeywordsResponse, KeywordInformation>(this, (i) => i.Keywords);
+            new PaginatedResultKeyResponse<DescribeKeywordsResponse, KeywordInformation>(this, (i) => i.Keywords ?? new List<KeywordInformation>());
 
         internal DescribeKeywordsPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeKeywordsRequest request)
         {

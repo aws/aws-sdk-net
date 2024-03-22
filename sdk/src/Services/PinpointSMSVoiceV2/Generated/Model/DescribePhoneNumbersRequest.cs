@@ -47,10 +47,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribePhoneNumbersRequest : AmazonPinpointSMSVoiceV2Request
     {
-        private List<PhoneNumberFilter> _filters = new List<PhoneNumberFilter>();
+        private List<PhoneNumberFilter> _filters = AWSConfigs.InitializeCollections ? new List<PhoneNumberFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _phoneNumberIds = new List<string>();
+        private List<string> _phoneNumberIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -68,7 +68,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if PhoneNumberIds property is set
         internal bool IsSetPhoneNumberIds()
         {
-            return this._phoneNumberIds != null && this._phoneNumberIds.Count > 0; 
+            return this._phoneNumberIds != null && (this._phoneNumberIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.EMRContainers.Model
         /// Enumerable containing all of the VirtualClusters
         /// </summary>
         public IPaginatedEnumerable<VirtualCluster> VirtualClusters => 
-            new PaginatedResultKeyResponse<ListVirtualClustersResponse, VirtualCluster>(this, (i) => i.VirtualClusters);
+            new PaginatedResultKeyResponse<ListVirtualClustersResponse, VirtualCluster>(this, (i) => i.VirtualClusters ?? new List<VirtualCluster>());
 
         internal ListVirtualClustersPaginator(IAmazonEMRContainers client, ListVirtualClustersRequest request)
         {

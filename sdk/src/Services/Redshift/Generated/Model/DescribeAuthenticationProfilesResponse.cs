@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeAuthenticationProfilesResponse : AmazonWebServiceResponse
     {
-        private List<AuthenticationProfile> _authenticationProfiles = new List<AuthenticationProfile>();
+        private List<AuthenticationProfile> _authenticationProfiles = AWSConfigs.InitializeCollections ? new List<AuthenticationProfile>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthenticationProfiles. 
@@ -50,7 +50,7 @@ namespace Amazon.Redshift.Model
         // Check to see if AuthenticationProfiles property is set
         internal bool IsSetAuthenticationProfiles()
         {
-            return this._authenticationProfiles != null && this._authenticationProfiles.Count > 0; 
+            return this._authenticationProfiles != null && (this._authenticationProfiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

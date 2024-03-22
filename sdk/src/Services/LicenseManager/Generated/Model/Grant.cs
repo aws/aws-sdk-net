@@ -34,7 +34,7 @@ namespace Amazon.LicenseManager.Model
     public partial class Grant
     {
         private string _grantArn;
-        private List<string> _grantedOperations = new List<string>();
+        private List<string> _grantedOperations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _granteePrincipalArn;
         private string _grantName;
         private GrantStatus _grantStatus;
@@ -80,7 +80,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if GrantedOperations property is set
         internal bool IsSetGrantedOperations()
         {
-            return this._grantedOperations != null && this._grantedOperations.Count > 0; 
+            return this._grantedOperations != null && (this._grantedOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

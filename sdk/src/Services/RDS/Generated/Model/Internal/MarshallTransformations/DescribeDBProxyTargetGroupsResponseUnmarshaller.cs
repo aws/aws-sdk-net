@@ -90,6 +90,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TargetGroups/member", targetDepth))
                     {
                         var unmarshaller = DBProxyTargetGroupUnmarshaller.Instance;
+                        if (response.TargetGroups == null)
+                        {
+                            response.TargetGroups = new List<DBProxyTargetGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TargetGroups.Add(item);
                         continue;

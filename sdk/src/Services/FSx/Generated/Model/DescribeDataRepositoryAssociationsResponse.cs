@@ -33,7 +33,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DescribeDataRepositoryAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<DataRepositoryAssociation> _associations = new List<DataRepositoryAssociation>();
+        private List<DataRepositoryAssociation> _associations = AWSConfigs.InitializeCollections ? new List<DataRepositoryAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.FSx.Model
         // Check to see if Associations property is set
         internal bool IsSetAssociations()
         {
-            return this._associations != null && this._associations.Count > 0; 
+            return this._associations != null && (this._associations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

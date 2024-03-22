@@ -58,7 +58,7 @@ namespace Amazon.MTurk.Model
     {
         private ReviewPolicy _assignmentReviewPolicy;
         private string _hitLayoutId;
-        private List<HITLayoutParameter> _hitLayoutParameters = new List<HITLayoutParameter>();
+        private List<HITLayoutParameter> _hitLayoutParameters = AWSConfigs.InitializeCollections ? new List<HITLayoutParameter>() : null;
         private ReviewPolicy _hitReviewPolicy;
         private string _hitTypeId;
         private long? _lifetimeInSeconds;
@@ -127,7 +127,7 @@ namespace Amazon.MTurk.Model
         // Check to see if HITLayoutParameters property is set
         internal bool IsSetHITLayoutParameters()
         {
-            return this._hitLayoutParameters != null && this._hitLayoutParameters.Count > 0; 
+            return this._hitLayoutParameters != null && (this._hitLayoutParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

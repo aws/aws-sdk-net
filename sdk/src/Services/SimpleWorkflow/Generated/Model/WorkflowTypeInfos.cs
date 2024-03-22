@@ -34,7 +34,7 @@ namespace Amazon.SimpleWorkflow.Model
     public partial class WorkflowTypeInfos
     {
         private string _nextPageToken;
-        private List<WorkflowTypeInfo> _typeInfos = new List<WorkflowTypeInfo>();
+        private List<WorkflowTypeInfo> _typeInfos = AWSConfigs.InitializeCollections ? new List<WorkflowTypeInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -78,7 +78,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TypeInfos property is set
         internal bool IsSetTypeInfos()
         {
-            return this._typeInfos != null && this._typeInfos.Count > 0; 
+            return this._typeInfos != null && (this._typeInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

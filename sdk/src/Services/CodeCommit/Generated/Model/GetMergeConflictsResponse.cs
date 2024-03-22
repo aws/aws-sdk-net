@@ -34,7 +34,7 @@ namespace Amazon.CodeCommit.Model
     public partial class GetMergeConflictsResponse : AmazonWebServiceResponse
     {
         private string _baseCommitId;
-        private List<ConflictMetadata> _conflictMetadataList = new List<ConflictMetadata>();
+        private List<ConflictMetadata> _conflictMetadataList = AWSConfigs.InitializeCollections ? new List<ConflictMetadata>() : null;
         private string _destinationCommitId;
         private bool? _mergeable;
         private string _nextToken;
@@ -75,7 +75,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if ConflictMetadataList property is set
         internal bool IsSetConflictMetadataList()
         {
-            return this._conflictMetadataList != null && this._conflictMetadataList.Count > 0; 
+            return this._conflictMetadataList != null && (this._conflictMetadataList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

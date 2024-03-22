@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the Namespaces
         /// </summary>
         public IPaginatedEnumerable<NamespaceInfoV2> Namespaces => 
-            new PaginatedResultKeyResponse<ListNamespacesResponse, NamespaceInfoV2>(this, (i) => i.Namespaces);
+            new PaginatedResultKeyResponse<ListNamespacesResponse, NamespaceInfoV2>(this, (i) => i.Namespaces ?? new List<NamespaceInfoV2>());
 
         internal ListNamespacesPaginator(IAmazonQuickSight client, ListNamespacesRequest request)
         {

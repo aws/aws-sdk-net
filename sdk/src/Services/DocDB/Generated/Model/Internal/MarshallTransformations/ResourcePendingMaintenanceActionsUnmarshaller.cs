@@ -57,6 +57,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PendingMaintenanceActionDetails/PendingMaintenanceAction", targetDepth))
                     {
                         var unmarshaller = PendingMaintenanceActionUnmarshaller.Instance;
+                        if (unmarshalledObject.PendingMaintenanceActionDetails == null)
+                        {
+                            unmarshalledObject.PendingMaintenanceActionDetails = new List<PendingMaintenanceAction>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PendingMaintenanceActionDetails.Add(item);
                         continue;

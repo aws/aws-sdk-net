@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private CloudWatchOutputConfig _cloudWatchOutputConfig;
         private string _commandId;
-        private List<CommandPlugin> _commandPlugins = new List<CommandPlugin>();
+        private List<CommandPlugin> _commandPlugins = AWSConfigs.InitializeCollections ? new List<CommandPlugin>() : null;
         private string _comment;
         private string _documentName;
         private string _documentVersion;
@@ -107,7 +107,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if CommandPlugins property is set
         internal bool IsSetCommandPlugins()
         {
-            return this._commandPlugins != null && this._commandPlugins.Count > 0; 
+            return this._commandPlugins != null && (this._commandPlugins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the GroupList
         /// </summary>
         public IPaginatedEnumerable<Group> GroupList => 
-            new PaginatedResultKeyResponse<ListUserGroupsResponse, Group>(this, (i) => i.GroupList);
+            new PaginatedResultKeyResponse<ListUserGroupsResponse, Group>(this, (i) => i.GroupList ?? new List<Group>());
 
         internal ListUserGroupsPaginator(IAmazonQuickSight client, ListUserGroupsRequest request)
         {

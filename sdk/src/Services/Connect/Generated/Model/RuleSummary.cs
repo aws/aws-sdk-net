@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class RuleSummary
     {
-        private List<ActionSummary> _actionSummaries = new List<ActionSummary>();
+        private List<ActionSummary> _actionSummaries = AWSConfigs.InitializeCollections ? new List<ActionSummary>() : null;
         private DateTime? _createdTime;
         private EventSourceName _eventSourceName;
         private DateTime? _lastUpdatedTime;
@@ -58,7 +58,7 @@ namespace Amazon.Connect.Model
         // Check to see if ActionSummaries property is set
         internal bool IsSetActionSummaries()
         {
-            return this._actionSummaries != null && this._actionSummaries.Count > 0; 
+            return this._actionSummaries != null && (this._actionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

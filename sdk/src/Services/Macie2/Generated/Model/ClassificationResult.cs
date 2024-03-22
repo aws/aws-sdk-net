@@ -37,7 +37,7 @@ namespace Amazon.Macie2.Model
         private bool? _additionalOccurrences;
         private CustomDataIdentifiers _customDataIdentifiers;
         private string _mimeType;
-        private List<SensitiveDataItem> _sensitiveData = new List<SensitiveDataItem>();
+        private List<SensitiveDataItem> _sensitiveData = AWSConfigs.InitializeCollections ? new List<SensitiveDataItem>() : null;
         private long? _sizeClassified;
         private ClassificationResultStatus _status;
 
@@ -122,7 +122,7 @@ namespace Amazon.Macie2.Model
         // Check to see if SensitiveData property is set
         internal bool IsSetSensitiveData()
         {
-            return this._sensitiveData != null && this._sensitiveData.Count > 0; 
+            return this._sensitiveData != null && (this._sensitiveData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

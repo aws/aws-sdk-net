@@ -105,6 +105,12 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                     unmarshalledObject.InternetHealth = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Ipv4Prefixes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Ipv4Prefixes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Latitude", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;

@@ -33,7 +33,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// </summary>
     public partial class InputCaptions
     {
-        private List<CaptionSource> _captionSources = new List<CaptionSource>();
+        private List<CaptionSource> _captionSources = AWSConfigs.InitializeCollections ? new List<CaptionSource>() : null;
         private string _mergePolicy;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if CaptionSources property is set
         internal bool IsSetCaptionSources()
         {
-            return this._captionSources != null && this._captionSources.Count > 0; 
+            return this._captionSources != null && (this._captionSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

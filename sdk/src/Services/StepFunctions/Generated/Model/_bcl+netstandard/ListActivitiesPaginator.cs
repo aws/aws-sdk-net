@@ -45,7 +45,7 @@ namespace Amazon.StepFunctions.Model
         /// Enumerable containing all of the Activities
         /// </summary>
         public IPaginatedEnumerable<ActivityListItem> Activities => 
-            new PaginatedResultKeyResponse<ListActivitiesResponse, ActivityListItem>(this, (i) => i.Activities);
+            new PaginatedResultKeyResponse<ListActivitiesResponse, ActivityListItem>(this, (i) => i.Activities ?? new List<ActivityListItem>());
 
         internal ListActivitiesPaginator(IAmazonStepFunctions client, ListActivitiesRequest request)
         {

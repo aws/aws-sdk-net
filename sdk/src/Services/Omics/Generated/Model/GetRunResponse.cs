@@ -46,7 +46,7 @@ namespace Amazon.Omics.Model
         private string _outputUri;
         private Amazon.Runtime.Documents.Document _parameters;
         private int? _priority;
-        private Dictionary<string, string> _resourceDigests = new Dictionary<string, string>();
+        private Dictionary<string, string> _resourceDigests = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private RunRetentionMode _retentionMode;
         private string _roleArn;
         private string _runGroupId;
@@ -58,7 +58,7 @@ namespace Amazon.Omics.Model
         private string _statusMessage;
         private DateTime? _stopTime;
         private int? _storageCapacity;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uuid;
         private string _workflowId;
         private WorkflowType _workflowType;
@@ -322,7 +322,7 @@ namespace Amazon.Omics.Model
         // Check to see if ResourceDigests property is set
         internal bool IsSetResourceDigests()
         {
-            return this._resourceDigests != null && this._resourceDigests.Count > 0; 
+            return this._resourceDigests != null && (this._resourceDigests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -546,7 +546,7 @@ namespace Amazon.Omics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

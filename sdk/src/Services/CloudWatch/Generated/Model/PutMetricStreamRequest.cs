@@ -86,15 +86,15 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class PutMetricStreamRequest : AmazonCloudWatchRequest
     {
-        private List<MetricStreamFilter> _excludeFilters = new List<MetricStreamFilter>();
+        private List<MetricStreamFilter> _excludeFilters = AWSConfigs.InitializeCollections ? new List<MetricStreamFilter>() : null;
         private string _firehoseArn;
-        private List<MetricStreamFilter> _includeFilters = new List<MetricStreamFilter>();
+        private List<MetricStreamFilter> _includeFilters = AWSConfigs.InitializeCollections ? new List<MetricStreamFilter>() : null;
         private bool? _includeLinkedAccountsMetrics;
         private string _name;
         private MetricStreamOutputFormat _outputFormat;
         private string _roleArn;
-        private List<MetricStreamStatisticsConfiguration> _statisticsConfigurations = new List<MetricStreamStatisticsConfiguration>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<MetricStreamStatisticsConfiguration> _statisticsConfigurations = AWSConfigs.InitializeCollections ? new List<MetricStreamStatisticsConfiguration>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ExcludeFilters. 
@@ -116,7 +116,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if ExcludeFilters property is set
         internal bool IsSetExcludeFilters()
         {
-            return this._excludeFilters != null && this._excludeFilters.Count > 0; 
+            return this._excludeFilters != null && (this._excludeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if IncludeFilters property is set
         internal bool IsSetIncludeFilters()
         {
-            return this._includeFilters != null && this._includeFilters.Count > 0; 
+            return this._includeFilters != null && (this._includeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if StatisticsConfigurations property is set
         internal bool IsSetStatisticsConfigurations()
         {
-            return this._statisticsConfigurations != null && this._statisticsConfigurations.Count > 0; 
+            return this._statisticsConfigurations != null && (this._statisticsConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -325,7 +325,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
     public partial class ProxyConfiguration
     {
         private string _containerName;
-        private List<KeyValuePair> _properties = new List<KeyValuePair>();
+        private List<KeyValuePair> _properties = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
         private ProxyConfigurationType _type;
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.ECS.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

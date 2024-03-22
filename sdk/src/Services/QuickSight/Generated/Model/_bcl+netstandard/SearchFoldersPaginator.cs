@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the FolderSummaryList
         /// </summary>
         public IPaginatedEnumerable<FolderSummary> FolderSummaryList => 
-            new PaginatedResultKeyResponse<SearchFoldersResponse, FolderSummary>(this, (i) => i.FolderSummaryList);
+            new PaginatedResultKeyResponse<SearchFoldersResponse, FolderSummary>(this, (i) => i.FolderSummaryList ?? new List<FolderSummary>());
 
         internal SearchFoldersPaginator(IAmazonQuickSight client, SearchFoldersRequest request)
         {

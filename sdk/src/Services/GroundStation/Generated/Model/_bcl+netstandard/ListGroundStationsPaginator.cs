@@ -45,7 +45,7 @@ namespace Amazon.GroundStation.Model
         /// Enumerable containing all of the GroundStationList
         /// </summary>
         public IPaginatedEnumerable<GroundStationData> GroundStationList => 
-            new PaginatedResultKeyResponse<ListGroundStationsResponse, GroundStationData>(this, (i) => i.GroundStationList);
+            new PaginatedResultKeyResponse<ListGroundStationsResponse, GroundStationData>(this, (i) => i.GroundStationList ?? new List<GroundStationData>());
 
         internal ListGroundStationsPaginator(IAmazonGroundStation client, ListGroundStationsRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.SimSpaceWeaver.Model
     public partial class ListSimulationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SimulationMetadata> _simulations = new List<SimulationMetadata>();
+        private List<SimulationMetadata> _simulations = AWSConfigs.InitializeCollections ? new List<SimulationMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.SimSpaceWeaver.Model
         // Check to see if Simulations property is set
         internal bool IsSetSimulations()
         {
-            return this._simulations != null && this._simulations.Count > 0; 
+            return this._simulations != null && (this._simulations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class DescribeTrustStoresResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<TrustStore> _trustStores = new List<TrustStore>();
+        private List<TrustStore> _trustStores = AWSConfigs.InitializeCollections ? new List<TrustStore>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -70,7 +70,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if TrustStores property is set
         internal bool IsSetTrustStores()
         {
-            return this._trustStores != null && this._trustStores.Count > 0; 
+            return this._trustStores != null && (this._trustStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

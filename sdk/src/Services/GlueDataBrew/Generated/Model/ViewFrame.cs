@@ -35,7 +35,7 @@ namespace Amazon.GlueDataBrew.Model
     {
         private AnalyticsMode _analytics;
         private int? _columnRange;
-        private List<string> _hiddenColumns = new List<string>();
+        private List<string> _hiddenColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _rowRange;
         private int? _startColumnIndex;
         private int? _startRowIndex;
@@ -93,7 +93,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if HiddenColumns property is set
         internal bool IsSetHiddenColumns()
         {
-            return this._hiddenColumns != null && this._hiddenColumns.Count > 0; 
+            return this._hiddenColumns != null && (this._hiddenColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

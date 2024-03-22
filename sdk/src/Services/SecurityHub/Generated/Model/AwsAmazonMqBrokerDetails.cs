@@ -49,10 +49,10 @@ namespace Amazon.SecurityHub.Model
         private AwsAmazonMqBrokerLogsDetails _logs;
         private AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails _maintenanceWindowStartTime;
         private bool? _publiclyAccessible;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _storageType;
-        private List<string> _subnetIds = new List<string>();
-        private List<AwsAmazonMqBrokerUsersDetails> _users = new List<AwsAmazonMqBrokerUsersDetails>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<AwsAmazonMqBrokerUsersDetails> _users = AWSConfigs.InitializeCollections ? new List<AwsAmazonMqBrokerUsersDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthenticationStrategy. 
@@ -328,7 +328,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -365,7 +365,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -384,7 +384,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

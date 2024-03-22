@@ -41,7 +41,7 @@ namespace Amazon.DataZone.Model
         private string _environmentBlueprintIdentifier;
         private string _name;
         private string _projectIdentifier;
-        private List<EnvironmentParameter> _userParameters = new List<EnvironmentParameter>();
+        private List<EnvironmentParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<EnvironmentParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -189,7 +189,7 @@ namespace Amazon.DataZone.Model
         // Check to see if UserParameters property is set
         internal bool IsSetUserParameters()
         {
-            return this._userParameters != null && this._userParameters.Count > 0; 
+            return this._userParameters != null && (this._userParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

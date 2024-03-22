@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
     {
         private string _id;
         private string _indexId;
-        private List<EntityPersonaConfiguration> _personas = new List<EntityPersonaConfiguration>();
+        private List<EntityPersonaConfiguration> _personas = AWSConfigs.InitializeCollections ? new List<EntityPersonaConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -99,7 +99,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Personas property is set
         internal bool IsSetPersonas()
         {
-            return this._personas != null && this._personas.Count > 0; 
+            return this._personas != null && (this._personas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

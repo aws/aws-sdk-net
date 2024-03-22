@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the ResourceComplianceSummaryItems
         /// </summary>
         public IPaginatedEnumerable<ResourceComplianceSummaryItem> ResourceComplianceSummaryItems => 
-            new PaginatedResultKeyResponse<ListResourceComplianceSummariesResponse, ResourceComplianceSummaryItem>(this, (i) => i.ResourceComplianceSummaryItems);
+            new PaginatedResultKeyResponse<ListResourceComplianceSummariesResponse, ResourceComplianceSummaryItem>(this, (i) => i.ResourceComplianceSummaryItems ?? new List<ResourceComplianceSummaryItem>());
 
         internal ListResourceComplianceSummariesPaginator(IAmazonSimpleSystemsManagement client, ListResourceComplianceSummariesRequest request)
         {

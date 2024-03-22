@@ -35,7 +35,7 @@ namespace Amazon.LexModelBuildingService.Model
     public partial class UtteranceList
     {
         private string _botVersion;
-        private List<UtteranceData> _utterances = new List<UtteranceData>();
+        private List<UtteranceData> _utterances = AWSConfigs.InitializeCollections ? new List<UtteranceData>() : null;
 
         /// <summary>
         /// Gets and sets the property BotVersion. 
@@ -72,7 +72,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if Utterances property is set
         internal bool IsSetUtterances()
         {
-            return this._utterances != null && this._utterances.Count > 0; 
+            return this._utterances != null && (this._utterances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

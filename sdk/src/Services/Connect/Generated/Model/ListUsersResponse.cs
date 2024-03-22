@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListUsersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UserSummary> _userSummaryList = new List<UserSummary>();
+        private List<UserSummary> _userSummaryList = AWSConfigs.InitializeCollections ? new List<UserSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         // Check to see if UserSummaryList property is set
         internal bool IsSetUserSummaryList()
         {
-            return this._userSummaryList != null && this._userSummaryList.Count > 0; 
+            return this._userSummaryList != null && (this._userSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

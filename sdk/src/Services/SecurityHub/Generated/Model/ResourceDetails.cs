@@ -148,7 +148,7 @@ namespace Amazon.SecurityHub.Model
         private AwsWafWebAclDetails _awsWafWebAcl;
         private AwsXrayEncryptionConfigDetails _awsXrayEncryptionConfig;
         private ContainerDetails _container;
-        private Dictionary<string, string> _other = new Dictionary<string, string>();
+        private Dictionary<string, string> _other = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAmazonMqBroker. 
@@ -1966,7 +1966,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Other property is set
         internal bool IsSetOther()
         {
-            return this._other != null && this._other.Count > 0; 
+            return this._other != null && (this._other.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

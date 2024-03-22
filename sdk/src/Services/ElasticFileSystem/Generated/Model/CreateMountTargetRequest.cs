@@ -201,7 +201,7 @@ namespace Amazon.ElasticFileSystem.Model
     {
         private string _fileSystemId;
         private string _ipAddress;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subnetId;
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace Amazon.ElasticFileSystem.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

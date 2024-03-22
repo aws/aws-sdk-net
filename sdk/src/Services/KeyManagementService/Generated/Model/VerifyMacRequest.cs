@@ -79,7 +79,7 @@ namespace Amazon.KeyManagementService.Model
     public partial class VerifyMacRequest : AmazonKeyManagementServiceRequest
     {
         private bool? _dryRun;
-        private List<string> _grantTokens = new List<string>();
+        private List<string> _grantTokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyId;
         private MemoryStream _mac;
         private MacAlgorithmSpec _macAlgorithm;
@@ -132,7 +132,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if GrantTokens property is set
         internal bool IsSetGrantTokens()
         {
-            return this._grantTokens != null && this._grantTokens.Count > 0; 
+            return this._grantTokens != null && (this._grantTokens.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

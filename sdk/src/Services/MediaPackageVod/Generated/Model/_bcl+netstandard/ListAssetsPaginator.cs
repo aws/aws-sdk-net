@@ -45,7 +45,7 @@ namespace Amazon.MediaPackageVod.Model
         /// Enumerable containing all of the Assets
         /// </summary>
         public IPaginatedEnumerable<AssetShallow> Assets => 
-            new PaginatedResultKeyResponse<ListAssetsResponse, AssetShallow>(this, (i) => i.Assets);
+            new PaginatedResultKeyResponse<ListAssetsResponse, AssetShallow>(this, (i) => i.Assets ?? new List<AssetShallow>());
 
         internal ListAssetsPaginator(IAmazonMediaPackageVod client, ListAssetsRequest request)
         {

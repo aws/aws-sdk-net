@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model
     public partial class ListAccountSettingsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Setting> _settings = new List<Setting>();
+        private List<Setting> _settings = AWSConfigs.InitializeCollections ? new List<Setting>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.ECS.Model
         // Check to see if Settings property is set
         internal bool IsSetSettings()
         {
-            return this._settings != null && this._settings.Count > 0; 
+            return this._settings != null && (this._settings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

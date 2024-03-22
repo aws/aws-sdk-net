@@ -35,7 +35,7 @@ namespace Amazon.Panorama.Model
     public partial class SignalApplicationInstanceNodeInstancesRequest : AmazonPanoramaRequest
     {
         private string _applicationInstanceId;
-        private List<NodeSignal> _nodeSignals = new List<NodeSignal>();
+        private List<NodeSignal> _nodeSignals = AWSConfigs.InitializeCollections ? new List<NodeSignal>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationInstanceId. 
@@ -72,7 +72,7 @@ namespace Amazon.Panorama.Model
         // Check to see if NodeSignals property is set
         internal bool IsSetNodeSignals()
         {
-            return this._nodeSignals != null && this._nodeSignals.Count > 0; 
+            return this._nodeSignals != null && (this._nodeSignals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

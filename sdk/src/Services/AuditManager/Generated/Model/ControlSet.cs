@@ -33,7 +33,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class ControlSet
     {
-        private List<Control> _controls = new List<Control>();
+        private List<Control> _controls = AWSConfigs.InitializeCollections ? new List<Control>() : null;
         private string _id;
         private string _name;
 
@@ -53,7 +53,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Controls property is set
         internal bool IsSetControls()
         {
-            return this._controls != null && this._controls.Count > 0; 
+            return this._controls != null && (this._controls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

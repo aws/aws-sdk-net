@@ -33,7 +33,7 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class ListMedicalScribeJobsResponse : AmazonWebServiceResponse
     {
-        private List<MedicalScribeJobSummary> _medicalScribeJobSummaries = new List<MedicalScribeJobSummary>();
+        private List<MedicalScribeJobSummary> _medicalScribeJobSummaries = AWSConfigs.InitializeCollections ? new List<MedicalScribeJobSummary>() : null;
         private string _nextToken;
         private MedicalScribeJobStatus _status;
 
@@ -52,7 +52,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if MedicalScribeJobSummaries property is set
         internal bool IsSetMedicalScribeJobSummaries()
         {
-            return this._medicalScribeJobSummaries != null && this._medicalScribeJobSummaries.Count > 0; 
+            return this._medicalScribeJobSummaries != null && (this._medicalScribeJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

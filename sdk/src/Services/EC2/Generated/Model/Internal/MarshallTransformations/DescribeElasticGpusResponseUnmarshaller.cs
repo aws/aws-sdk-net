@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("elasticGpuSet/item", targetDepth))
                     {
                         var unmarshaller = ElasticGpusUnmarshaller.Instance;
+                        if (response.ElasticGpuSet == null)
+                        {
+                            response.ElasticGpuSet = new List<ElasticGpus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ElasticGpuSet.Add(item);
                         continue;

@@ -34,7 +34,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class AssociateProfilesRequest : AmazonWellArchitectedRequest
     {
-        private List<string> _profileArns = new List<string>();
+        private List<string> _profileArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workloadId;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ProfileArns property is set
         internal bool IsSetProfileArns()
         {
-            return this._profileArns != null && this._profileArns.Count > 0; 
+            return this._profileArns != null && (this._profileArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class ApplySecurityGroupsToLoadBalancerResponse : AmazonWebServiceResponse
     {
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
@@ -50,7 +50,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

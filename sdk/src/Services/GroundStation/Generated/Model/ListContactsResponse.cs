@@ -33,7 +33,7 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class ListContactsResponse : AmazonWebServiceResponse
     {
-        private List<ContactData> _contactList = new List<ContactData>();
+        private List<ContactData> _contactList = AWSConfigs.InitializeCollections ? new List<ContactData>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if ContactList property is set
         internal bool IsSetContactList()
         {
-            return this._contactList != null && this._contactList.Count > 0; 
+            return this._contactList != null && (this._contactList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

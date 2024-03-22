@@ -33,8 +33,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteFleetsResponse : AmazonWebServiceResponse
     {
-        private List<DeleteFleetSuccessItem> _successfulFleetDeletions = new List<DeleteFleetSuccessItem>();
-        private List<DeleteFleetErrorItem> _unsuccessfulFleetDeletions = new List<DeleteFleetErrorItem>();
+        private List<DeleteFleetSuccessItem> _successfulFleetDeletions = AWSConfigs.InitializeCollections ? new List<DeleteFleetSuccessItem>() : null;
+        private List<DeleteFleetErrorItem> _unsuccessfulFleetDeletions = AWSConfigs.InitializeCollections ? new List<DeleteFleetErrorItem>() : null;
 
         /// <summary>
         /// Gets and sets the property SuccessfulFleetDeletions. 
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if SuccessfulFleetDeletions property is set
         internal bool IsSetSuccessfulFleetDeletions()
         {
-            return this._successfulFleetDeletions != null && this._successfulFleetDeletions.Count > 0; 
+            return this._successfulFleetDeletions != null && (this._successfulFleetDeletions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         // Check to see if UnsuccessfulFleetDeletions property is set
         internal bool IsSetUnsuccessfulFleetDeletions()
         {
-            return this._unsuccessfulFleetDeletions != null && this._unsuccessfulFleetDeletions.Count > 0; 
+            return this._unsuccessfulFleetDeletions != null && (this._unsuccessfulFleetDeletions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

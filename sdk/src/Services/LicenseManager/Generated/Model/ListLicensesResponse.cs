@@ -33,7 +33,7 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class ListLicensesResponse : AmazonWebServiceResponse
     {
-        private List<License> _licenses = new List<License>();
+        private List<License> _licenses = AWSConfigs.InitializeCollections ? new List<License>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if Licenses property is set
         internal bool IsSetLicenses()
         {
-            return this._licenses != null && this._licenses.Count > 0; 
+            return this._licenses != null && (this._licenses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

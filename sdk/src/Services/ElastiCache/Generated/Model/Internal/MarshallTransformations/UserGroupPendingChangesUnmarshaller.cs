@@ -57,6 +57,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UserIdsToAdd/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.UserIdsToAdd == null)
+                        {
+                            unmarshalledObject.UserIdsToAdd = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.UserIdsToAdd.Add(item);
                         continue;
@@ -64,6 +68,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UserIdsToRemove/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.UserIdsToRemove == null)
+                        {
+                            unmarshalledObject.UserIdsToRemove = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.UserIdsToRemove.Add(item);
                         continue;

@@ -51,6 +51,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EndOffsetMillis.Value);
             }
 
+            if(requestObject.IsSetStartOffsetMillis())
+            {
+                context.Writer.WritePropertyName("StartOffsetMillis");
+                context.Writer.Write(requestObject.StartOffsetMillis.Value);
+            }
+
         }
 
         /// <summary>

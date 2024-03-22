@@ -45,7 +45,7 @@ namespace Amazon.ACMPCA.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<Tag> Tags => 
-            new PaginatedResultKeyResponse<ListTagsResponse, Tag>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<ListTagsResponse, Tag>(this, (i) => i.Tags ?? new List<Tag>());
 
         internal ListTagsPaginator(IAmazonACMPCA client, ListTagsRequest request)
         {

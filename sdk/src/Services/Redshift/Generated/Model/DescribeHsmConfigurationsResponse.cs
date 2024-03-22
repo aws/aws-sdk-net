@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeHsmConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<HsmConfiguration> _hsmConfigurations = new List<HsmConfiguration>();
+        private List<HsmConfiguration> _hsmConfigurations = AWSConfigs.InitializeCollections ? new List<HsmConfiguration>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model
         // Check to see if HsmConfigurations property is set
         internal bool IsSetHsmConfigurations()
         {
-            return this._hsmConfigurations != null && this._hsmConfigurations.Count > 0; 
+            return this._hsmConfigurations != null && (this._hsmConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("productCodes/item", targetDepth))
                     {
                         var unmarshaller = ProductCodeUnmarshaller.Instance;
+                        if (response.ProductCodes == null)
+                        {
+                            response.ProductCodes = new List<ProductCode>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ProductCodes.Add(item);
                         continue;

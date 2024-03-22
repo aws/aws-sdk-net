@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeSnapshotCopyGrantsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<SnapshotCopyGrant> _snapshotCopyGrants = new List<SnapshotCopyGrant>();
+        private List<SnapshotCopyGrant> _snapshotCopyGrants = AWSConfigs.InitializeCollections ? new List<SnapshotCopyGrant>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -80,7 +80,7 @@ namespace Amazon.Redshift.Model
         // Check to see if SnapshotCopyGrants property is set
         internal bool IsSetSnapshotCopyGrants()
         {
-            return this._snapshotCopyGrants != null && this._snapshotCopyGrants.Count > 0; 
+            return this._snapshotCopyGrants != null && (this._snapshotCopyGrants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

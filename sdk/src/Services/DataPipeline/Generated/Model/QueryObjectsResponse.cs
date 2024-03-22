@@ -34,7 +34,7 @@ namespace Amazon.DataPipeline.Model
     public partial class QueryObjectsResponse : AmazonWebServiceResponse
     {
         private bool? _hasMoreResults;
-        private List<string> _ids = new List<string>();
+        private List<string> _ids = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _marker;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if Ids property is set
         internal bool IsSetIds()
         {
-            return this._ids != null && this._ids.Count > 0; 
+            return this._ids != null && (this._ids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

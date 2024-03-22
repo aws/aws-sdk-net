@@ -63,7 +63,7 @@ namespace Amazon.CloudWatchEvidently.Model
     public partial class BatchEvaluateFeatureRequest : AmazonCloudWatchEvidentlyRequest
     {
         private string _project;
-        private List<EvaluationRequest> _requests = new List<EvaluationRequest>();
+        private List<EvaluationRequest> _requests = AWSConfigs.InitializeCollections ? new List<EvaluationRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property Project. 
@@ -101,7 +101,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Requests property is set
         internal bool IsSetRequests()
         {
-            return this._requests != null && this._requests.Count > 0; 
+            return this._requests != null && (this._requests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

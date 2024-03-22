@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     public partial class ListWirelessDeviceImportTasksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WirelessDeviceImportTask> _wirelessDeviceImportTaskList = new List<WirelessDeviceImportTask>();
+        private List<WirelessDeviceImportTask> _wirelessDeviceImportTaskList = AWSConfigs.InitializeCollections ? new List<WirelessDeviceImportTask>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if WirelessDeviceImportTaskList property is set
         internal bool IsSetWirelessDeviceImportTaskList()
         {
-            return this._wirelessDeviceImportTaskList != null && this._wirelessDeviceImportTaskList.Count > 0; 
+            return this._wirelessDeviceImportTaskList != null && (this._wirelessDeviceImportTaskList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

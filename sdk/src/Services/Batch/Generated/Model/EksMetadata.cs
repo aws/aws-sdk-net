@@ -36,7 +36,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EksMetadata
     {
-        private Dictionary<string, string> _labels = new Dictionary<string, string>();
+        private Dictionary<string, string> _labels = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Labels. 
@@ -56,7 +56,7 @@ namespace Amazon.Batch.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -2136,6 +2136,23 @@
         {"shape":"InvalidDBInstanceStateFault"}
       ]
     },
+    "ModifyIntegration":{
+      "name":"ModifyIntegration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyIntegrationMessage"},
+      "output":{
+        "shape":"Integration",
+        "resultWrapper":"ModifyIntegrationResult"
+      },
+      "errors":[
+        {"shape":"IntegrationNotFoundFault"},
+        {"shape":"InvalidIntegrationStateFault"},
+        {"shape":"IntegrationConflictOperationFault"}
+      ]
+    },
     "ModifyOptionGroup":{
       "name":"ModifyOptionGroup",
       "http":{
@@ -3300,7 +3317,8 @@
         "AllocatedStorage":{"shape":"IntegerOptional"},
         "RdsCustomClusterConfiguration":{"shape":"RdsCustomClusterConfiguration"},
         "Iops":{"shape":"IntegerOptional"},
-        "StorageType":{"shape":"String"}
+        "StorageType":{"shape":"String"},
+        "CertificateDetails":{"shape":"CertificateDetails"}
       }
     },
     "ConnectionPoolConfiguration":{
@@ -3567,7 +3585,8 @@
         "DBSystemId":{"shape":"String"},
         "ManageMasterUserPassword":{"shape":"BooleanOptional"},
         "MasterUserSecretKmsKeyId":{"shape":"String"},
-        "EnableLocalWriteForwarding":{"shape":"BooleanOptional"}
+        "EnableLocalWriteForwarding":{"shape":"BooleanOptional"},
+        "CACertificateIdentifier":{"shape":"String"}
       }
     },
     "CreateDBClusterParameterGroupMessage":{
@@ -3942,7 +3961,9 @@
         "IntegrationName":{"shape":"IntegrationName"},
         "KMSKeyId":{"shape":"String"},
         "AdditionalEncryptionContext":{"shape":"EncryptionContextMap"},
-        "Tags":{"shape":"TagList"}
+        "Tags":{"shape":"TagList"},
+        "DataFilter":{"shape":"DataFilter"},
+        "Description":{"shape":"IntegrationDescription"}
       }
     },
     "CreateOptionGroupMessage":{
@@ -4147,7 +4168,9 @@
         "IOOptimizedNextAllowedModificationTime":{"shape":"TStamp"},
         "LocalWriteForwardingStatus":{"shape":"LocalWriteForwardingStatus"},
         "AwsBackupRecoveryPointArn":{"shape":"String"},
-        "LimitlessDatabase":{"shape":"LimitlessDatabase"}
+        "LimitlessDatabase":{"shape":"LimitlessDatabase"},
+        "StorageThroughput":{"shape":"IntegerOptional"},
+        "CertificateDetails":{"shape":"CertificateDetails"}
       },
       "wrapper":true
     },
@@ -4188,7 +4211,8 @@
         "KmsKeyId":{"shape":"String"},
         "StorageType":{"shape":"String"},
         "Iops":{"shape":"IntegerOptional"},
-        "AwsBackupRecoveryPointArn":{"shape":"String"}
+        "AwsBackupRecoveryPointArn":{"shape":"String"},
+        "StorageThroughput":{"shape":"IntegerOptional"}
       },
       "wrapper":true
     },
@@ -4532,7 +4556,8 @@
         "TagList":{"shape":"TagList"},
         "DBSystemId":{"shape":"String"},
         "StorageType":{"shape":"String"},
-        "DbClusterResourceId":{"shape":"String"}
+        "DbClusterResourceId":{"shape":"String"},
+        "StorageThroughput":{"shape":"IntegerOptional"}
       },
       "wrapper":true
     },
@@ -5385,7 +5410,7 @@
       "type":"structure",
       "members":{
         "DBShardGroupResourceId":{"shape":"String"},
-        "DBShardGroupIdentifier":{"shape":"String"},
+        "DBShardGroupIdentifier":{"shape":"DBShardGroupIdentifier"},
         "DBClusterIdentifier":{"shape":"String"},
         "MaxACU":{"shape":"DoubleOptional"},
         "ComputeRedundancy":{"shape":"IntegerOptional"},
@@ -5404,6 +5429,12 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "DBShardGroupIdentifier":{
+      "type":"string",
+      "max":63,
+      "min":1,
+      "pattern":"[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*"
     },
     "DBShardGroupNotFoundFault":{
       "type":"structure",
@@ -5672,6 +5703,12 @@
       },
       "exception":true
     },
+    "DataFilter":{
+      "type":"string",
+      "max":25600,
+      "min":1,
+      "pattern":"[a-zA-Z0-9_ \"\\\\\\-$,*.:?+\\/]*"
+    },
     "DatabaseArn":{
       "type":"string",
       "max":2048,
@@ -5832,7 +5869,7 @@
       "type":"structure",
       "required":["DBShardGroupIdentifier"],
       "members":{
-        "DBShardGroupIdentifier":{"shape":"String"}
+        "DBShardGroupIdentifier":{"shape":"DBShardGroupIdentifier"}
       }
     },
     "DeleteDBSnapshotMessage":{
@@ -6229,7 +6266,7 @@
     "DescribeDBShardGroupsMessage":{
       "type":"structure",
       "members":{
-        "DBShardGroupIdentifier":{"shape":"String"},
+        "DBShardGroupIdentifier":{"shape":"DBShardGroupIdentifier"},
         "Filters":{"shape":"FilterList"},
         "Marker":{"shape":"String"},
         "MaxRecords":{"shape":"MaxRecords"}
@@ -7115,7 +7152,9 @@
         "Status":{"shape":"IntegrationStatus"},
         "Tags":{"shape":"TagList"},
         "CreateTime":{"shape":"TStamp"},
-        "Errors":{"shape":"IntegrationErrorList"}
+        "Errors":{"shape":"IntegrationErrorList"},
+        "DataFilter":{"shape":"DataFilter"},
+        "Description":{"shape":"IntegrationDescription"}
       }
     },
     "IntegrationAlreadyExistsFault":{
@@ -7133,7 +7172,7 @@
       "type":"string",
       "max":255,
       "min":1,
-      "pattern":"arn:aws[a-z\\-]*:rds(-[a-z]*)?:[a-z0-9\\-]*:[0-9]*:integration:[a-z][a-z0-9]*(-[a-zA-Z0-9]+)*\\/[a-zA-Z0-9_:\\-\\/]+"
+      "pattern":"arn:aws[a-z\\-]*:rds(-[a-z]*)?:[a-z0-9\\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
     },
     "IntegrationConflictOperationFault":{
       "type":"structure",
@@ -7145,6 +7184,12 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "IntegrationDescription":{
+      "type":"string",
+      "max":1000,
+      "min":0,
+      "pattern":".*"
     },
     "IntegrationError":{
       "type":"structure",
@@ -7810,7 +7855,8 @@
         "AllowEngineModeChange":{"shape":"Boolean"},
         "EnableLocalWriteForwarding":{"shape":"BooleanOptional"},
         "AwsBackupRecoveryPointArn":{"shape":"AwsBackupRecoveryPointArn"},
-        "EnableLimitlessDatabase":{"shape":"BooleanOptional"}
+        "EnableLimitlessDatabase":{"shape":"BooleanOptional"},
+        "CACertificateIdentifier":{"shape":"String"}
       }
     },
     "ModifyDBClusterParameterGroupMessage":{
@@ -8000,7 +8046,7 @@
       "type":"structure",
       "required":["DBShardGroupIdentifier"],
       "members":{
-        "DBShardGroupIdentifier":{"shape":"String"},
+        "DBShardGroupIdentifier":{"shape":"DBShardGroupIdentifier"},
         "MaxACU":{"shape":"DoubleOptional"}
       }
     },
@@ -8087,6 +8133,16 @@
       "type":"structure",
       "members":{
         "GlobalCluster":{"shape":"GlobalCluster"}
+      }
+    },
+    "ModifyIntegrationMessage":{
+      "type":"structure",
+      "required":["IntegrationIdentifier"],
+      "members":{
+        "IntegrationIdentifier":{"shape":"IntegrationIdentifier"},
+        "IntegrationName":{"shape":"IntegrationName"},
+        "DataFilter":{"shape":"DataFilter"},
+        "Description":{"shape":"IntegrationDescription"}
       }
     },
     "ModifyOptionGroupMessage":{
@@ -8703,7 +8759,7 @@
       "type":"structure",
       "required":["DBShardGroupIdentifier"],
       "members":{
-        "DBShardGroupIdentifier":{"shape":"String"}
+        "DBShardGroupIdentifier":{"shape":"DBShardGroupIdentifier"}
       }
     },
     "RecommendedAction":{

@@ -36,7 +36,7 @@ namespace Amazon.Panorama.Model
     {
         private string _clientToken;
         private PackageImportJobInputConfig _inputConfig;
-        private List<JobResourceTags> _jobTags = new List<JobResourceTags>();
+        private List<JobResourceTags> _jobTags = AWSConfigs.InitializeCollections ? new List<JobResourceTags>() : null;
         private PackageImportJobType _jobType;
         private PackageImportJobOutputConfig _outputConfig;
 
@@ -93,7 +93,7 @@ namespace Amazon.Panorama.Model
         // Check to see if JobTags property is set
         internal bool IsSetJobTags()
         {
-            return this._jobTags != null && this._jobTags.Count > 0; 
+            return this._jobTags != null && (this._jobTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

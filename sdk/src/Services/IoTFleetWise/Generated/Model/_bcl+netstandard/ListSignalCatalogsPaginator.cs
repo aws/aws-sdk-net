@@ -45,7 +45,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<SignalCatalogSummary> Summaries => 
-            new PaginatedResultKeyResponse<ListSignalCatalogsResponse, SignalCatalogSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<ListSignalCatalogsResponse, SignalCatalogSummary>(this, (i) => i.Summaries ?? new List<SignalCatalogSummary>());
 
         internal ListSignalCatalogsPaginator(IAmazonIoTFleetWise client, ListSignalCatalogsRequest request)
         {

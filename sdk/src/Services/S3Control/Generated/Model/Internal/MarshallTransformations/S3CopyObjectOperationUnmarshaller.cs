@@ -57,6 +57,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AccessControlGrants/member", targetDepth))
                     {
+                        if (unmarshalledObject.AccessControlGrants == null)
+                        {
+                            unmarshalledObject.AccessControlGrants = new List<S3Grant>();
+                        }
                         var unmarshaller = S3GrantUnmarshaller.Instance;
                         unmarshalledObject.AccessControlGrants.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -99,6 +103,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NewObjectTagging/member", targetDepth))
                     {
+                        if (unmarshalledObject.NewObjectTagging == null)
+                        {
+                            unmarshalledObject.NewObjectTagging = new List<S3Tag>();
+                        }
                         var unmarshaller = S3TagUnmarshaller.Instance;
                         unmarshalledObject.NewObjectTagging.Add(unmarshaller.Unmarshall(context));
                         continue;

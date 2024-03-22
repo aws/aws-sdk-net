@@ -72,6 +72,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 					if (member.IsList)
 					{
 #>
+                        if (response.<#=MemberAccessorFor(member.PropertyName)#> == null)
+                        {
+                            response.<#=MemberAccessorFor(member.PropertyName)#> = new <#=member.DetermineType()#>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.<#=MemberAccessorFor(member.PropertyName)#>.Add(item);
 <#

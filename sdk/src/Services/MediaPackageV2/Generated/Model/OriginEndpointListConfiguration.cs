@@ -39,8 +39,8 @@ namespace Amazon.MediaPackageV2.Model
         private ContainerType _containerType;
         private DateTime? _createdAt;
         private string _description;
-        private List<ListHlsManifestConfiguration> _hlsManifests = new List<ListHlsManifestConfiguration>();
-        private List<ListLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = new List<ListLowLatencyHlsManifestConfiguration>();
+        private List<ListHlsManifestConfiguration> _hlsManifests = AWSConfigs.InitializeCollections ? new List<ListHlsManifestConfiguration>() : null;
+        private List<ListLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = AWSConfigs.InitializeCollections ? new List<ListLowLatencyHlsManifestConfiguration>() : null;
         private DateTime? _modifiedAt;
         private string _originEndpointName;
 
@@ -177,7 +177,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if HlsManifests property is set
         internal bool IsSetHlsManifests()
         {
-            return this._hlsManifests != null && this._hlsManifests.Count > 0; 
+            return this._hlsManifests != null && (this._hlsManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if LowLatencyHlsManifests property is set
         internal bool IsSetLowLatencyHlsManifests()
         {
-            return this._lowLatencyHlsManifests != null && this._lowLatencyHlsManifests.Count > 0; 
+            return this._lowLatencyHlsManifests != null && (this._lowLatencyHlsManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

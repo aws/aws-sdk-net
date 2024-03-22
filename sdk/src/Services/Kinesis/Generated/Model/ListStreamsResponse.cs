@@ -35,8 +35,8 @@ namespace Amazon.Kinesis.Model
     {
         private bool? _hasMoreStreams;
         private string _nextToken;
-        private List<string> _streamNames = new List<string>();
-        private List<StreamSummary> _streamSummaries = new List<StreamSummary>();
+        private List<string> _streamNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<StreamSummary> _streamSummaries = AWSConfigs.InitializeCollections ? new List<StreamSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property HasMoreStreams. 
@@ -90,7 +90,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if StreamNames property is set
         internal bool IsSetStreamNames()
         {
-            return this._streamNames != null && this._streamNames.Count > 0; 
+            return this._streamNames != null && (this._streamNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if StreamSummaries property is set
         internal bool IsSetStreamSummaries()
         {
-            return this._streamSummaries != null && this._streamSummaries.Count > 0; 
+            return this._streamSummaries != null && (this._streamSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

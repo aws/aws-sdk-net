@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class SearchAvailablePhoneNumbersResponse : AmazonWebServiceResponse
     {
-        private List<AvailableNumberSummary> _availableNumbersList = new List<AvailableNumberSummary>();
+        private List<AvailableNumberSummary> _availableNumbersList = AWSConfigs.InitializeCollections ? new List<AvailableNumberSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if AvailableNumbersList property is set
         internal bool IsSetAvailableNumbersList()
         {
-            return this._availableNumbersList != null && this._availableNumbersList.Count > 0; 
+            return this._availableNumbersList != null && (this._availableNumbersList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

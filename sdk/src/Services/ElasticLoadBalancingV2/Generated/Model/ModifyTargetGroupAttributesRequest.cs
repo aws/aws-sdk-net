@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class ModifyTargetGroupAttributesRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<TargetGroupAttribute> _attributes = new List<TargetGroupAttribute>();
+        private List<TargetGroupAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<TargetGroupAttribute>() : null;
         private string _targetGroupArn;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

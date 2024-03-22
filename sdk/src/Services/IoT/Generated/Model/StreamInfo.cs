@@ -35,7 +35,7 @@ namespace Amazon.IoT.Model
     {
         private DateTime? _createdAt;
         private string _description;
-        private List<StreamFile> _files = new List<StreamFile>();
+        private List<StreamFile> _files = AWSConfigs.InitializeCollections ? new List<StreamFile>() : null;
         private DateTime? _lastUpdatedAt;
         private string _roleArn;
         private string _streamArn;
@@ -95,7 +95,7 @@ namespace Amazon.IoT.Model
         // Check to see if Files property is set
         internal bool IsSetFiles()
         {
-            return this._files != null && this._files.Count > 0; 
+            return this._files != null && (this._files.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

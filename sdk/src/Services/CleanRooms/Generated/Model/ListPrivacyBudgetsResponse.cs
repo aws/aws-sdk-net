@@ -34,7 +34,7 @@ namespace Amazon.CleanRooms.Model
     public partial class ListPrivacyBudgetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PrivacyBudgetSummary> _privacyBudgetSummaries = new List<PrivacyBudgetSummary>();
+        private List<PrivacyBudgetSummary> _privacyBudgetSummaries = AWSConfigs.InitializeCollections ? new List<PrivacyBudgetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if PrivacyBudgetSummaries property is set
         internal bool IsSetPrivacyBudgetSummaries()
         {
-            return this._privacyBudgetSummaries != null && this._privacyBudgetSummaries.Count > 0; 
+            return this._privacyBudgetSummaries != null && (this._privacyBudgetSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

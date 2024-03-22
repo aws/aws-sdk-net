@@ -50,8 +50,8 @@ namespace Amazon.MemoryDB.Model
         private string _parameterGroupName;
         private string _parameterGroupStatus;
         private ClusterPendingUpdates _pendingUpdates;
-        private List<SecurityGroupMembership> _securityGroups = new List<SecurityGroupMembership>();
-        private List<Shard> _shards = new List<Shard>();
+        private List<SecurityGroupMembership> _securityGroups = AWSConfigs.InitializeCollections ? new List<SecurityGroupMembership>() : null;
+        private List<Shard> _shards = AWSConfigs.InitializeCollections ? new List<Shard>() : null;
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
         private string _snsTopicArn;
@@ -389,7 +389,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -407,7 +407,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if Shards property is set
         internal bool IsSetShards()
         {
-            return this._shards != null && this._shards.Count > 0; 
+            return this._shards != null && (this._shards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

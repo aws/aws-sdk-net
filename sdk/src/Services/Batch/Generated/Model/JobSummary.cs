@@ -88,8 +88,9 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs
         /// and parent array jobs, this is when the job entered the <c>SUBMITTED</c> state (at
-        /// the time <a>SubmitJob</a> was called). For array child jobs, this is when the child
-        /// job was spawned by its parent and entered the <c>PENDING</c> state.
+        /// the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
+        /// was called). For array child jobs, this is when the child job was spawned by its parent
+        /// and entered the <c>PENDING</c> state.
         /// </para>
         /// </summary>
         public long? CreatedAt

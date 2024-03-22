@@ -45,7 +45,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Enumerable containing all of the ChangeSetSummaryList
         /// </summary>
         public IPaginatedEnumerable<ChangeSetSummaryListItem> ChangeSetSummaryList => 
-            new PaginatedResultKeyResponse<ListChangeSetsResponse, ChangeSetSummaryListItem>(this, (i) => i.ChangeSetSummaryList);
+            new PaginatedResultKeyResponse<ListChangeSetsResponse, ChangeSetSummaryListItem>(this, (i) => i.ChangeSetSummaryList ?? new List<ChangeSetSummaryListItem>());
 
         internal ListChangeSetsPaginator(IAmazonMarketplaceCatalog client, ListChangeSetsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.Backup.Model
         /// Enumerable containing all of the LegalHolds
         /// </summary>
         public IPaginatedEnumerable<LegalHold> LegalHolds => 
-            new PaginatedResultKeyResponse<ListLegalHoldsResponse, LegalHold>(this, (i) => i.LegalHolds);
+            new PaginatedResultKeyResponse<ListLegalHoldsResponse, LegalHold>(this, (i) => i.LegalHolds ?? new List<LegalHold>());
 
         internal ListLegalHoldsPaginator(IAmazonBackup client, ListLegalHoldsRequest request)
         {

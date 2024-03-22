@@ -35,14 +35,14 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class S3CopyObjectOperation
     {
-        private List<S3Grant> _accessControlGrants = new List<S3Grant>();
+        private List<S3Grant> _accessControlGrants = AWSConfigs.InitializeCollections ? new List<S3Grant>() : null;
         private bool? _bucketKeyEnabled;
         private S3CannedAccessControlList _cannedAccessControlList;
         private S3ChecksumAlgorithm _checksumAlgorithm;
         private S3MetadataDirective _metadataDirective;
         private DateTime? _modifiedSinceConstraint;
         private S3ObjectMetadata _newObjectMetadata;
-        private List<S3Tag> _newObjectTagging = new List<S3Tag>();
+        private List<S3Tag> _newObjectTagging = AWSConfigs.InitializeCollections ? new List<S3Tag>() : null;
         private S3ObjectLockLegalHoldStatus _objectLockLegalHoldStatus;
         private S3ObjectLockMode _objectLockMode;
         private DateTime? _objectLockRetainUntilDate;
@@ -70,7 +70,7 @@ namespace Amazon.S3Control.Model
         // Check to see if AccessControlGrants property is set
         internal bool IsSetAccessControlGrants()
         {
-            return this._accessControlGrants != null && this._accessControlGrants.Count > 0; 
+            return this._accessControlGrants != null && (this._accessControlGrants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace Amazon.S3Control.Model
         // Check to see if NewObjectTagging property is set
         internal bool IsSetNewObjectTagging()
         {
-            return this._newObjectTagging != null && this._newObjectTagging.Count > 0; 
+            return this._newObjectTagging != null && (this._newObjectTagging.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

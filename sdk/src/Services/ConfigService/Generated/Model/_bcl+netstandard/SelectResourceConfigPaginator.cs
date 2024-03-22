@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the Results
         /// </summary>
         public IPaginatedEnumerable<string> Results => 
-            new PaginatedResultKeyResponse<SelectResourceConfigResponse, string>(this, (i) => i.Results);
+            new PaginatedResultKeyResponse<SelectResourceConfigResponse, string>(this, (i) => i.Results ?? new List<string>());
 
         internal SelectResourceConfigPaginator(IAmazonConfigService client, SelectResourceConfigRequest request)
         {

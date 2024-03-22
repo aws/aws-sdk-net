@@ -36,7 +36,7 @@ namespace Amazon.DevOpsGuru.Model
     {
         private DateTime? _impactEndTime;
         private DateTime? _impactStartTime;
-        private List<LogAnomalyShowcase> _logAnomalyShowcases = new List<LogAnomalyShowcase>();
+        private List<LogAnomalyShowcase> _logAnomalyShowcases = AWSConfigs.InitializeCollections ? new List<LogAnomalyShowcase>() : null;
         private string _logGroupName;
         private int? _numberOfLogLinesScanned;
 
@@ -94,7 +94,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if LogAnomalyShowcases property is set
         internal bool IsSetLogAnomalyShowcases()
         {
-            return this._logAnomalyShowcases != null && this._logAnomalyShowcases.Count > 0; 
+            return this._logAnomalyShowcases != null && (this._logAnomalyShowcases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

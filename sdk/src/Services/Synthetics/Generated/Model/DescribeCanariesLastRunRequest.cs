@@ -52,7 +52,7 @@ namespace Amazon.Synthetics.Model
     public partial class DescribeCanariesLastRunRequest : AmazonSyntheticsRequest
     {
         private int? _maxResults;
-        private List<string> _names = new List<string>();
+        private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.Synthetics.Model
         // Check to see if Names property is set
         internal bool IsSetNames()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

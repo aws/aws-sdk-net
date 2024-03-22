@@ -41,7 +41,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property StreamArn. 
         /// <para>
-        /// The ARN for the Kinesis stream input.
+        /// The Amazon Resource Name (ARN) for the Kinesis stream input.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=37, Max=1024)]
@@ -60,10 +60,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The table name for the Kinesis streaming destination input.
+        /// The table name for the Kinesis streaming destination input. You can also provide the
+        /// ARN of the table in this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

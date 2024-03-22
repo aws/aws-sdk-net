@@ -69,6 +69,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SupportedOperations/SupportedOperation", targetDepth))
                     {
                         var unmarshaller = SupportedOperationUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedOperations == null)
+                        {
+                            unmarshalledObject.SupportedOperations = new List<SupportedOperation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedOperations.Add(item);
                         continue;

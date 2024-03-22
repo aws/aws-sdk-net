@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the ConfigurationAggregators
         /// </summary>
         public IPaginatedEnumerable<ConfigurationAggregator> ConfigurationAggregators => 
-            new PaginatedResultKeyResponse<DescribeConfigurationAggregatorsResponse, ConfigurationAggregator>(this, (i) => i.ConfigurationAggregators);
+            new PaginatedResultKeyResponse<DescribeConfigurationAggregatorsResponse, ConfigurationAggregator>(this, (i) => i.ConfigurationAggregators ?? new List<ConfigurationAggregator>());
 
         internal DescribeConfigurationAggregatorsPaginator(IAmazonConfigService client, DescribeConfigurationAggregatorsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.VoiceID.Model
         /// Enumerable containing all of the SpeakerSummaries
         /// </summary>
         public IPaginatedEnumerable<SpeakerSummary> SpeakerSummaries => 
-            new PaginatedResultKeyResponse<ListSpeakersResponse, SpeakerSummary>(this, (i) => i.SpeakerSummaries);
+            new PaginatedResultKeyResponse<ListSpeakersResponse, SpeakerSummary>(this, (i) => i.SpeakerSummaries ?? new List<SpeakerSummary>());
 
         internal ListSpeakersPaginator(IAmazonVoiceID client, ListSpeakersRequest request)
         {

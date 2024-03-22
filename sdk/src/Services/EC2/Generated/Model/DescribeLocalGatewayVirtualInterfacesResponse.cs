@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeLocalGatewayVirtualInterfacesResponse : AmazonWebServiceResponse
     {
-        private List<LocalGatewayVirtualInterface> _localGatewayVirtualInterfaces = new List<LocalGatewayVirtualInterface>();
+        private List<LocalGatewayVirtualInterface> _localGatewayVirtualInterfaces = AWSConfigs.InitializeCollections ? new List<LocalGatewayVirtualInterface>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if LocalGatewayVirtualInterfaces property is set
         internal bool IsSetLocalGatewayVirtualInterfaces()
         {
-            return this._localGatewayVirtualInterfaces != null && this._localGatewayVirtualInterfaces.Count > 0; 
+            return this._localGatewayVirtualInterfaces != null && (this._localGatewayVirtualInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

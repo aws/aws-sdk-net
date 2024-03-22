@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class OpsEntity
     {
-        private Dictionary<string, OpsEntityItem> _data = new Dictionary<string, OpsEntityItem>();
+        private Dictionary<string, OpsEntityItem> _data = AWSConfigs.InitializeCollections ? new Dictionary<string, OpsEntityItem>() : null;
         private string _id;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Data property is set
         internal bool IsSetData()
         {
-            return this._data != null && this._data.Count > 0; 
+            return this._data != null && (this._data.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

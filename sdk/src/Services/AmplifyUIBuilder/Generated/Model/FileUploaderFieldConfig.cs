@@ -33,7 +33,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class FileUploaderFieldConfig
     {
-        private List<string> _acceptedFileTypes = new List<string>();
+        private List<string> _acceptedFileTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private StorageAccessLevel _accessLevel;
         private bool? _isResumable;
         private int? _maxFileCount;
@@ -57,7 +57,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if AcceptedFileTypes property is set
         internal bool IsSetAcceptedFileTypes()
         {
-            return this._acceptedFileTypes != null && this._acceptedFileTypes.Count > 0; 
+            return this._acceptedFileTypes != null && (this._acceptedFileTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,8 +36,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ListDocumentsRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<DocumentFilter> _documentFilterList = new List<DocumentFilter>();
-        private List<DocumentKeyValuesFilter> _filters = new List<DocumentKeyValuesFilter>();
+        private List<DocumentFilter> _documentFilterList = AWSConfigs.InitializeCollections ? new List<DocumentFilter>() : null;
+        private List<DocumentKeyValuesFilter> _filters = AWSConfigs.InitializeCollections ? new List<DocumentKeyValuesFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -71,7 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if DocumentFilterList property is set
         internal bool IsSetDocumentFilterList()
         {
-            return this._documentFilterList != null && this._documentFilterList.Count > 0; 
+            return this._documentFilterList != null && (this._documentFilterList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

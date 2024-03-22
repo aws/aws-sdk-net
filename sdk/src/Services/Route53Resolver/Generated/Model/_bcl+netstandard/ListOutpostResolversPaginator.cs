@@ -45,7 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// Enumerable containing all of the OutpostResolvers
         /// </summary>
         public IPaginatedEnumerable<OutpostResolver> OutpostResolvers => 
-            new PaginatedResultKeyResponse<ListOutpostResolversResponse, OutpostResolver>(this, (i) => i.OutpostResolvers);
+            new PaginatedResultKeyResponse<ListOutpostResolversResponse, OutpostResolver>(this, (i) => i.OutpostResolvers ?? new List<OutpostResolver>());
 
         internal ListOutpostResolversPaginator(IAmazonRoute53Resolver client, ListOutpostResolversRequest request)
         {

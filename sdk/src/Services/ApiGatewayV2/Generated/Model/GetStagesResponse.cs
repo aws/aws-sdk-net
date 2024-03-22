@@ -33,7 +33,7 @@ namespace Amazon.ApiGatewayV2.Model
     /// </summary>
     public partial class GetStagesResponse : AmazonWebServiceResponse
     {
-        private List<Stage> _items = new List<Stage>();
+        private List<Stage> _items = AWSConfigs.InitializeCollections ? new List<Stage>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

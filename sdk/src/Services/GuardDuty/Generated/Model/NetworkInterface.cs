@@ -33,14 +33,14 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class NetworkInterface
     {
-        private List<string> _ipv6Addresses = new List<string>();
+        private List<string> _ipv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _networkInterfaceId;
         private string _privateDnsName;
         private string _privateIpAddress;
-        private List<PrivateIpAddressDetails> _privateIpAddresses = new List<PrivateIpAddressDetails>();
+        private List<PrivateIpAddressDetails> _privateIpAddresses = AWSConfigs.InitializeCollections ? new List<PrivateIpAddressDetails>() : null;
         private string _publicDnsName;
         private string _publicIp;
-        private List<SecurityGroup> _securityGroups = new List<SecurityGroup>();
+        private List<SecurityGroup> _securityGroups = AWSConfigs.InitializeCollections ? new List<SecurityGroup>() : null;
         private string _subnetId;
         private string _vpcId;
 
@@ -59,7 +59,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Ipv6Addresses property is set
         internal bool IsSetIpv6Addresses()
         {
-            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+            return this._ipv6Addresses != null && (this._ipv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if PrivateIpAddresses property is set
         internal bool IsSetPrivateIpAddresses()
         {
-            return this._privateIpAddresses != null && this._privateIpAddresses.Count > 0; 
+            return this._privateIpAddresses != null && (this._privateIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

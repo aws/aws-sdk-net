@@ -33,7 +33,7 @@ namespace Amazon.IoTEventsData.Model
     /// </summary>
     public partial class BatchUpdateDetectorResponse : AmazonWebServiceResponse
     {
-        private List<BatchUpdateDetectorErrorEntry> _batchUpdateDetectorErrorEntries = new List<BatchUpdateDetectorErrorEntry>();
+        private List<BatchUpdateDetectorErrorEntry> _batchUpdateDetectorErrorEntries = AWSConfigs.InitializeCollections ? new List<BatchUpdateDetectorErrorEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property BatchUpdateDetectorErrorEntries. 
@@ -51,7 +51,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if BatchUpdateDetectorErrorEntries property is set
         internal bool IsSetBatchUpdateDetectorErrorEntries()
         {
-            return this._batchUpdateDetectorErrorEntries != null && this._batchUpdateDetectorErrorEntries.Count > 0; 
+            return this._batchUpdateDetectorErrorEntries != null && (this._batchUpdateDetectorErrorEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

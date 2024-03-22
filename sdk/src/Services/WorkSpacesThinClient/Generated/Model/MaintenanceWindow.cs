@@ -34,7 +34,7 @@ namespace Amazon.WorkSpacesThinClient.Model
     public partial class MaintenanceWindow
     {
         private ApplyTimeOf _applyTimeOf;
-        private List<string> _daysOfTheWeek = new List<string>();
+        private List<string> _daysOfTheWeek = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _endTimeHour;
         private int? _endTimeMinute;
         private int? _startTimeHour;
@@ -76,7 +76,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         // Check to see if DaysOfTheWeek property is set
         internal bool IsSetDaysOfTheWeek()
         {
-            return this._daysOfTheWeek != null && this._daysOfTheWeek.Count > 0; 
+            return this._daysOfTheWeek != null && (this._daysOfTheWeek.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

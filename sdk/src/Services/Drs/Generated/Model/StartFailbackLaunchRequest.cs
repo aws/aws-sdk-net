@@ -36,8 +36,8 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class StartFailbackLaunchRequest : AmazonDrsRequest
     {
-        private List<string> _recoveryInstanceIDs = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _recoveryInstanceIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property RecoveryInstanceIDs. 
@@ -55,7 +55,7 @@ namespace Amazon.Drs.Model
         // Check to see if RecoveryInstanceIDs property is set
         internal bool IsSetRecoveryInstanceIDs()
         {
-            return this._recoveryInstanceIDs != null && this._recoveryInstanceIDs.Count > 0; 
+            return this._recoveryInstanceIDs != null && (this._recoveryInstanceIDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.Drs.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

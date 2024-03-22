@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         private DateTime? _expirationTime;
         private VpcPeeringConnectionVpcInfo _requesterVpcInfo;
         private VpcPeeringConnectionStateReason _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcPeeringConnectionId;
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class PhoneNumber
     {
-        private List<PhoneNumberAssociation> _associations = new List<PhoneNumberAssociation>();
+        private List<PhoneNumberAssociation> _associations = AWSConfigs.InitializeCollections ? new List<PhoneNumberAssociation>() : null;
         private string _callingName;
         private CallingNameStatus _callingNameStatus;
         private PhoneNumberCapabilities _capabilities;
@@ -62,7 +62,7 @@ namespace Amazon.Chime.Model
         // Check to see if Associations property is set
         internal bool IsSetAssociations()
         {
-            return this._associations != null && this._associations.Count > 0; 
+            return this._associations != null && (this._associations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

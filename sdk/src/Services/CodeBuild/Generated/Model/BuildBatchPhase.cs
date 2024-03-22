@@ -33,7 +33,7 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BuildBatchPhase
     {
-        private List<PhaseContext> _contexts = new List<PhaseContext>();
+        private List<PhaseContext> _contexts = AWSConfigs.InitializeCollections ? new List<PhaseContext>() : null;
         private long? _durationInSeconds;
         private DateTime? _endTime;
         private StatusType _phaseStatus;
@@ -56,7 +56,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Contexts property is set
         internal bool IsSetContexts()
         {
-            return this._contexts != null && this._contexts.Count > 0; 
+            return this._contexts != null && (this._contexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

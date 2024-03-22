@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the MonitoringExecutionSummaries
         /// </summary>
         public IPaginatedEnumerable<MonitoringExecutionSummary> MonitoringExecutionSummaries => 
-            new PaginatedResultKeyResponse<ListMonitoringExecutionsResponse, MonitoringExecutionSummary>(this, (i) => i.MonitoringExecutionSummaries);
+            new PaginatedResultKeyResponse<ListMonitoringExecutionsResponse, MonitoringExecutionSummary>(this, (i) => i.MonitoringExecutionSummaries ?? new List<MonitoringExecutionSummary>());
 
         internal ListMonitoringExecutionsPaginator(IAmazonSageMaker client, ListMonitoringExecutionsRequest request)
         {

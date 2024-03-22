@@ -45,7 +45,7 @@ namespace Amazon.Keyspaces.Model
         /// Enumerable containing all of the Keyspaces
         /// </summary>
         public IPaginatedEnumerable<KeyspaceSummary> Keyspaces => 
-            new PaginatedResultKeyResponse<ListKeyspacesResponse, KeyspaceSummary>(this, (i) => i.Keyspaces);
+            new PaginatedResultKeyResponse<ListKeyspacesResponse, KeyspaceSummary>(this, (i) => i.Keyspaces ?? new List<KeyspaceSummary>());
 
         internal ListKeyspacesPaginator(IAmazonKeyspaces client, ListKeyspacesRequest request)
         {

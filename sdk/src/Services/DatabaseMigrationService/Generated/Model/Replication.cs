@@ -37,7 +37,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _cdcStartPosition;
         private DateTime? _cdcStartTime;
         private string _cdcStopPosition;
-        private List<string> _failureMessages = new List<string>();
+        private List<string> _failureMessages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ProvisionData _provisionData;
         private string _recoveryCheckpoint;
         private string _replicationConfigArn;
@@ -128,7 +128,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if FailureMessages property is set
         internal bool IsSetFailureMessages()
         {
-            return this._failureMessages != null && this._failureMessages.Count > 0; 
+            return this._failureMessages != null && (this._failureMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

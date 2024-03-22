@@ -45,7 +45,7 @@ namespace Amazon.ECRPublic.Model
         /// Enumerable containing all of the Registries
         /// </summary>
         public IPaginatedEnumerable<Registry> Registries => 
-            new PaginatedResultKeyResponse<DescribeRegistriesResponse, Registry>(this, (i) => i.Registries);
+            new PaginatedResultKeyResponse<DescribeRegistriesResponse, Registry>(this, (i) => i.Registries ?? new List<Registry>());
 
         internal DescribeRegistriesPaginator(IAmazonECRPublic client, DescribeRegistriesRequest request)
         {

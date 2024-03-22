@@ -33,7 +33,7 @@ namespace Amazon.KeyManagementService.Model
     /// </summary>
     public partial class DescribeCustomKeyStoresResponse : AmazonWebServiceResponse
     {
-        private List<CustomKeyStoresListEntry> _customKeyStores = new List<CustomKeyStoresListEntry>();
+        private List<CustomKeyStoresListEntry> _customKeyStores = AWSConfigs.InitializeCollections ? new List<CustomKeyStoresListEntry>() : null;
         private string _nextMarker;
         private bool? _truncated;
 
@@ -52,7 +52,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if CustomKeyStores property is set
         internal bool IsSetCustomKeyStores()
         {
-            return this._customKeyStores != null && this._customKeyStores.Count > 0; 
+            return this._customKeyStores != null && (this._customKeyStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

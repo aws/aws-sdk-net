@@ -34,7 +34,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     public partial class DescribeTagsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ConfigurationTag> _tags = new List<ConfigurationTag>();
+        private List<ConfigurationTag> _tags = AWSConfigs.InitializeCollections ? new List<ConfigurationTag>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

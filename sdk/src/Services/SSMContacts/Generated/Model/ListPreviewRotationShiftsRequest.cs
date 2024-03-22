@@ -43,9 +43,9 @@ namespace Amazon.SSMContacts.Model
     {
         private DateTime? _endTime;
         private int? _maxResults;
-        private List<string> _members = new List<string>();
+        private List<string> _members = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
-        private List<PreviewOverride> _overrides = new List<PreviewOverride>();
+        private List<PreviewOverride> _overrides = AWSConfigs.InitializeCollections ? new List<PreviewOverride>() : null;
         private RecurrenceSettings _recurrence;
         private DateTime? _rotationStartTime;
         private DateTime? _startTime;
@@ -106,7 +106,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if Overrides property is set
         internal bool IsSetOverrides()
         {
-            return this._overrides != null && this._overrides.Count > 0; 
+            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

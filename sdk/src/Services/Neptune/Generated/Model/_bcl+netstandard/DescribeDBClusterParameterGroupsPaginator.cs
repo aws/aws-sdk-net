@@ -45,7 +45,7 @@ namespace Amazon.Neptune.Model
         /// Enumerable containing all of the DBClusterParameterGroups
         /// </summary>
         public IPaginatedEnumerable<DBClusterParameterGroup> DBClusterParameterGroups => 
-            new PaginatedResultKeyResponse<DescribeDBClusterParameterGroupsResponse, DBClusterParameterGroup>(this, (i) => i.DBClusterParameterGroups);
+            new PaginatedResultKeyResponse<DescribeDBClusterParameterGroupsResponse, DBClusterParameterGroup>(this, (i) => i.DBClusterParameterGroups ?? new List<DBClusterParameterGroup>());
 
         internal DescribeDBClusterParameterGroupsPaginator(IAmazonNeptune client, DescribeDBClusterParameterGroupsRequest request)
         {

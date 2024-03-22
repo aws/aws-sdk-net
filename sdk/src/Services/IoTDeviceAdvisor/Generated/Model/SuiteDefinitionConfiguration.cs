@@ -34,7 +34,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
     public partial class SuiteDefinitionConfiguration
     {
         private string _devicePermissionRoleArn;
-        private List<DeviceUnderTest> _devices = new List<DeviceUnderTest>();
+        private List<DeviceUnderTest> _devices = AWSConfigs.InitializeCollections ? new List<DeviceUnderTest>() : null;
         private bool? _intendedForQualification;
         private bool? _isLongDurationTest;
         private Protocol _protocol;
@@ -76,7 +76,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         // Check to see if Devices property is set
         internal bool IsSetDevices()
         {
-            return this._devices != null && this._devices.Count > 0; 
+            return this._devices != null && (this._devices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

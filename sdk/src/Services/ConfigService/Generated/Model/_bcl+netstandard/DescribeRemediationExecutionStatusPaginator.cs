@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the RemediationExecutionStatuses
         /// </summary>
         public IPaginatedEnumerable<RemediationExecutionStatus> RemediationExecutionStatuses => 
-            new PaginatedResultKeyResponse<DescribeRemediationExecutionStatusResponse, RemediationExecutionStatus>(this, (i) => i.RemediationExecutionStatuses);
+            new PaginatedResultKeyResponse<DescribeRemediationExecutionStatusResponse, RemediationExecutionStatus>(this, (i) => i.RemediationExecutionStatuses ?? new List<RemediationExecutionStatus>());
 
         internal DescribeRemediationExecutionStatusPaginator(IAmazonConfigService client, DescribeRemediationExecutionStatusRequest request)
         {

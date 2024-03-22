@@ -41,9 +41,9 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class UpdateTableReplicaAutoScalingRequest : AmazonDynamoDBRequest
     {
-        private List<GlobalSecondaryIndexAutoScalingUpdate> _globalSecondaryIndexUpdates = new List<GlobalSecondaryIndexAutoScalingUpdate>();
+        private List<GlobalSecondaryIndexAutoScalingUpdate> _globalSecondaryIndexUpdates = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndexAutoScalingUpdate>() : null;
         private AutoScalingSettingsUpdate _provisionedWriteCapacityAutoScalingUpdate;
-        private List<ReplicaAutoScalingUpdate> _replicaUpdates = new List<ReplicaAutoScalingUpdate>();
+        private List<ReplicaAutoScalingUpdate> _replicaUpdates = AWSConfigs.InitializeCollections ? new List<ReplicaAutoScalingUpdate>() : null;
         private string _tableName;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if GlobalSecondaryIndexUpdates property is set
         internal bool IsSetGlobalSecondaryIndexUpdates()
         {
-            return this._globalSecondaryIndexUpdates != null && this._globalSecondaryIndexUpdates.Count > 0; 
+            return this._globalSecondaryIndexUpdates != null && (this._globalSecondaryIndexUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,16 +97,17 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ReplicaUpdates property is set
         internal bool IsSetReplicaUpdates()
         {
-            return this._replicaUpdates != null && this._replicaUpdates.Count > 0; 
+            return this._replicaUpdates != null && (this._replicaUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the global table to be updated.
+        /// The name of the global table to be updated. You can also provide the Amazon Resource
+        /// Name (ARN) of the table in this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class SearchResourceTagsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TagSet> _tags = new List<TagSet>();
+        private List<TagSet> _tags = AWSConfigs.InitializeCollections ? new List<TagSet>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Connect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

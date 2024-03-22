@@ -64,7 +64,7 @@ namespace Amazon.ConfigService.Model
     {
         private int? _limit;
         private string _nextToken;
-        private List<string> _organizationConformancePackNames = new List<string>();
+        private List<string> _organizationConformancePackNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -121,7 +121,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if OrganizationConformancePackNames property is set
         internal bool IsSetOrganizationConformancePackNames()
         {
-            return this._organizationConformancePackNames != null && this._organizationConformancePackNames.Count > 0; 
+            return this._organizationConformancePackNames != null && (this._organizationConformancePackNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

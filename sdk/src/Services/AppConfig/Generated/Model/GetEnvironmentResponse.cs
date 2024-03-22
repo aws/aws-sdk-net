@@ -36,7 +36,7 @@ namespace Amazon.AppConfig.Model
         private string _applicationId;
         private string _description;
         private string _id;
-        private List<Monitor> _monitors = new List<Monitor>();
+        private List<Monitor> _monitors = AWSConfigs.InitializeCollections ? new List<Monitor>() : null;
         private string _name;
         private EnvironmentState _state;
 
@@ -111,7 +111,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Monitors property is set
         internal bool IsSetMonitors()
         {
-            return this._monitors != null && this._monitors.Count > 0; 
+            return this._monitors != null && (this._monitors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

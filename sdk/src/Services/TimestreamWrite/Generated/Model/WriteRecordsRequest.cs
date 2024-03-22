@@ -91,7 +91,7 @@ namespace Amazon.TimestreamWrite.Model
     {
         private Record _commonAttributes;
         private string _databaseName;
-        private List<Record> _records = new List<Record>();
+        private List<Record> _records = AWSConfigs.InitializeCollections ? new List<Record>() : null;
         private string _tableName;
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.TimestreamWrite.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

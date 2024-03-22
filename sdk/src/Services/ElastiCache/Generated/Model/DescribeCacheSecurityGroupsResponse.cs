@@ -33,7 +33,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class DescribeCacheSecurityGroupsResponse : AmazonWebServiceResponse
     {
-        private List<CacheSecurityGroup> _cacheSecurityGroups = new List<CacheSecurityGroup>();
+        private List<CacheSecurityGroup> _cacheSecurityGroups = AWSConfigs.InitializeCollections ? new List<CacheSecurityGroup>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheSecurityGroups property is set
         internal bool IsSetCacheSecurityGroups()
         {
-            return this._cacheSecurityGroups != null && this._cacheSecurityGroups.Count > 0; 
+            return this._cacheSecurityGroups != null && (this._cacheSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

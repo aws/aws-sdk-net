@@ -45,7 +45,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Enumerable containing all of the Findings
         /// </summary>
         public IPaginatedEnumerable<AccessPreviewFinding> Findings => 
-            new PaginatedResultKeyResponse<ListAccessPreviewFindingsResponse, AccessPreviewFinding>(this, (i) => i.Findings);
+            new PaginatedResultKeyResponse<ListAccessPreviewFindingsResponse, AccessPreviewFinding>(this, (i) => i.Findings ?? new List<AccessPreviewFinding>());
 
         internal ListAccessPreviewFindingsPaginator(IAmazonAccessAnalyzer client, ListAccessPreviewFindingsRequest request)
         {

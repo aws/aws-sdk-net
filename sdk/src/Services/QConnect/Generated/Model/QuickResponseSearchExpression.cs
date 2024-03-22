@@ -33,9 +33,9 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class QuickResponseSearchExpression
     {
-        private List<QuickResponseFilterField> _filters = new List<QuickResponseFilterField>();
+        private List<QuickResponseFilterField> _filters = AWSConfigs.InitializeCollections ? new List<QuickResponseFilterField>() : null;
         private QuickResponseOrderField _orderOnField;
-        private List<QuickResponseQueryField> _queries = new List<QuickResponseQueryField>();
+        private List<QuickResponseQueryField> _queries = AWSConfigs.InitializeCollections ? new List<QuickResponseQueryField>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -53,7 +53,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Queries property is set
         internal bool IsSetQueries()
         {
-            return this._queries != null && this._queries.Count > 0; 
+            return this._queries != null && (this._queries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the Addons
         /// </summary>
         public IPaginatedEnumerable<AddonInfo> Addons => 
-            new PaginatedResultKeyResponse<DescribeAddonVersionsResponse, AddonInfo>(this, (i) => i.Addons);
+            new PaginatedResultKeyResponse<DescribeAddonVersionsResponse, AddonInfo>(this, (i) => i.Addons ?? new List<AddonInfo>());
 
         internal DescribeAddonVersionsPaginator(IAmazonEKS client, DescribeAddonVersionsRequest request)
         {

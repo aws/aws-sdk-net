@@ -44,10 +44,10 @@ namespace Amazon.SecurityHub.Model
         private string _description;
         private string _documentationVersion;
         private string _lastUpdatedDate;
-        private List<AwsApiGatewayMethodSettings> _methodSettings = new List<AwsApiGatewayMethodSettings>();
+        private List<AwsApiGatewayMethodSettings> _methodSettings = AWSConfigs.InitializeCollections ? new List<AwsApiGatewayMethodSettings>() : null;
         private string _stageName;
         private bool? _tracingEnabled;
-        private Dictionary<string, string> _variables = new Dictionary<string, string>();
+        private Dictionary<string, string> _variables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _webAclArn;
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if MethodSettings property is set
         internal bool IsSetMethodSettings()
         {
-            return this._methodSettings != null && this._methodSettings.Count > 0; 
+            return this._methodSettings != null && (this._methodSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -350,7 +350,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

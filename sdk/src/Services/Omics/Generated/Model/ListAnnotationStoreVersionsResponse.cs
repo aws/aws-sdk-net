@@ -33,7 +33,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class ListAnnotationStoreVersionsResponse : AmazonWebServiceResponse
     {
-        private List<AnnotationStoreVersionItem> _annotationStoreVersions = new List<AnnotationStoreVersionItem>();
+        private List<AnnotationStoreVersionItem> _annotationStoreVersions = AWSConfigs.InitializeCollections ? new List<AnnotationStoreVersionItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Omics.Model
         // Check to see if AnnotationStoreVersions property is set
         internal bool IsSetAnnotationStoreVersions()
         {
-            return this._annotationStoreVersions != null && this._annotationStoreVersions.Count > 0; 
+            return this._annotationStoreVersions != null && (this._annotationStoreVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

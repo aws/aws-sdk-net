@@ -33,7 +33,7 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class ListDatasourcePackagesResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, DatasourcePackageIngestDetail> _datasourcePackages = new Dictionary<string, DatasourcePackageIngestDetail>();
+        private Dictionary<string, DatasourcePackageIngestDetail> _datasourcePackages = AWSConfigs.InitializeCollections ? new Dictionary<string, DatasourcePackageIngestDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Detective.Model
         // Check to see if DatasourcePackages property is set
         internal bool IsSetDatasourcePackages()
         {
-            return this._datasourcePackages != null && this._datasourcePackages.Count > 0; 
+            return this._datasourcePackages != null && (this._datasourcePackages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

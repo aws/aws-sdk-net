@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
         private string _description;
         private EvaluationMetrics _evaluationMetrics;
         private string _glueVersion;
-        private List<GlueTable> _inputRecordTables = new List<GlueTable>();
+        private List<GlueTable> _inputRecordTables = AWSConfigs.InitializeCollections ? new List<GlueTable>() : null;
         private int? _labelCount;
         private DateTime? _lastModifiedOn;
         private double? _maxCapacity;
@@ -46,7 +46,7 @@ namespace Amazon.Glue.Model
         private int? _numberOfWorkers;
         private TransformParameters _parameters;
         private string _role;
-        private List<SchemaColumn> _schema = new List<SchemaColumn>();
+        private List<SchemaColumn> _schema = AWSConfigs.InitializeCollections ? new List<SchemaColumn>() : null;
         private TransformStatusType _status;
         private int? _timeout;
         private TransformEncryption _transformEncryption;
@@ -146,7 +146,7 @@ namespace Amazon.Glue.Model
         // Check to see if InputRecordTables property is set
         internal bool IsSetInputRecordTables()
         {
-            return this._inputRecordTables != null && this._inputRecordTables.Count > 0; 
+            return this._inputRecordTables != null && (this._inputRecordTables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace Amazon.Glue.Model
         // Check to see if Schema property is set
         internal bool IsSetSchema()
         {
-            return this._schema != null && this._schema.Count > 0; 
+            return this._schema != null && (this._schema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

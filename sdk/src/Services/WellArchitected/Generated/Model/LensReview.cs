@@ -40,10 +40,10 @@ namespace Amazon.WellArchitected.Model
         private string _lensVersion;
         private string _nextToken;
         private string _notes;
-        private List<PillarReviewSummary> _pillarReviewSummaries = new List<PillarReviewSummary>();
-        private Dictionary<string, int> _prioritizedRiskCounts = new Dictionary<string, int>();
-        private List<WorkloadProfile> _profiles = new List<WorkloadProfile>();
-        private Dictionary<string, int> _riskCounts = new Dictionary<string, int>();
+        private List<PillarReviewSummary> _pillarReviewSummaries = AWSConfigs.InitializeCollections ? new List<PillarReviewSummary>() : null;
+        private Dictionary<string, int> _prioritizedRiskCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+        private List<WorkloadProfile> _profiles = AWSConfigs.InitializeCollections ? new List<WorkloadProfile>() : null;
+        private Dictionary<string, int> _riskCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if PillarReviewSummaries property is set
         internal bool IsSetPillarReviewSummaries()
         {
-            return this._pillarReviewSummaries != null && this._pillarReviewSummaries.Count > 0; 
+            return this._pillarReviewSummaries != null && (this._pillarReviewSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if PrioritizedRiskCounts property is set
         internal bool IsSetPrioritizedRiskCounts()
         {
-            return this._prioritizedRiskCounts != null && this._prioritizedRiskCounts.Count > 0; 
+            return this._prioritizedRiskCounts != null && (this._prioritizedRiskCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Profiles property is set
         internal bool IsSetProfiles()
         {
-            return this._profiles != null && this._profiles.Count > 0; 
+            return this._profiles != null && (this._profiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -225,7 +225,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if RiskCounts property is set
         internal bool IsSetRiskCounts()
         {
-            return this._riskCounts != null && this._riskCounts.Count > 0; 
+            return this._riskCounts != null && (this._riskCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

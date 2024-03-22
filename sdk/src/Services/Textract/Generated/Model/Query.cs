@@ -35,7 +35,7 @@ namespace Amazon.Textract.Model
     public partial class Query
     {
         private string _alias;
-        private List<string> _pages = new List<string>();
+        private List<string> _pages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _text;
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.Textract.Model
         // Check to see if Pages property is set
         internal bool IsSetPages()
         {
-            return this._pages != null && this._pages.Count > 0; 
+            return this._pages != null && (this._pages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DescribeFleetAdvisorLsaAnalysisResponse : AmazonWebServiceResponse
     {
-        private List<FleetAdvisorLsaAnalysisResponse> _analysis = new List<FleetAdvisorLsaAnalysisResponse>();
+        private List<FleetAdvisorLsaAnalysisResponse> _analysis = AWSConfigs.InitializeCollections ? new List<FleetAdvisorLsaAnalysisResponse>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Analysis property is set
         internal bool IsSetAnalysis()
         {
-            return this._analysis != null && this._analysis.Count > 0; 
+            return this._analysis != null && (this._analysis.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

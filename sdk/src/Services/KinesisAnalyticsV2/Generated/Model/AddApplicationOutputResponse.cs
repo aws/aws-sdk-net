@@ -35,7 +35,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     {
         private string _applicationARN;
         private long? _applicationVersionId;
-        private List<OutputDescription> _outputDescriptions = new List<OutputDescription>();
+        private List<OutputDescription> _outputDescriptions = AWSConfigs.InitializeCollections ? new List<OutputDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationARN. 
@@ -92,7 +92,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if OutputDescriptions property is set
         internal bool IsSetOutputDescriptions()
         {
-            return this._outputDescriptions != null && this._outputDescriptions.Count > 0; 
+            return this._outputDescriptions != null && (this._outputDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

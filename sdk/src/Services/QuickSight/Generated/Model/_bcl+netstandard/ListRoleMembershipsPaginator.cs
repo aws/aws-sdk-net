@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the MembersList
         /// </summary>
         public IPaginatedEnumerable<string> MembersList => 
-            new PaginatedResultKeyResponse<ListRoleMembershipsResponse, string>(this, (i) => i.MembersList);
+            new PaginatedResultKeyResponse<ListRoleMembershipsResponse, string>(this, (i) => i.MembersList ?? new List<string>());
 
         internal ListRoleMembershipsPaginator(IAmazonQuickSight client, ListRoleMembershipsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.EMRContainers.Model
         /// Enumerable containing all of the Endpoints
         /// </summary>
         public IPaginatedEnumerable<Endpoint> Endpoints => 
-            new PaginatedResultKeyResponse<ListManagedEndpointsResponse, Endpoint>(this, (i) => i.Endpoints);
+            new PaginatedResultKeyResponse<ListManagedEndpointsResponse, Endpoint>(this, (i) => i.Endpoints ?? new List<Endpoint>());
 
         internal ListManagedEndpointsPaginator(IAmazonEMRContainers client, ListManagedEndpointsRequest request)
         {

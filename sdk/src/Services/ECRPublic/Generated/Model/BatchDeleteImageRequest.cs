@@ -46,7 +46,7 @@ namespace Amazon.ECRPublic.Model
     /// </summary>
     public partial class BatchDeleteImageRequest : AmazonECRPublicRequest
     {
-        private List<ImageIdentifier> _imageIds = new List<ImageIdentifier>();
+        private List<ImageIdentifier> _imageIds = AWSConfigs.InitializeCollections ? new List<ImageIdentifier>() : null;
         private string _registryId;
         private string _repositoryName;
 
@@ -67,7 +67,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if ImageIds property is set
         internal bool IsSetImageIds()
         {
-            return this._imageIds != null && this._imageIds.Count > 0; 
+            return this._imageIds != null && (this._imageIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

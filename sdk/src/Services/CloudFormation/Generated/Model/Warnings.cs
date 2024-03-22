@@ -33,7 +33,7 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class Warnings
     {
-        private List<string> _unrecognizedResourceTypes = new List<string>();
+        private List<string> _unrecognizedResourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property UnrecognizedResourceTypes. 
@@ -52,7 +52,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if UnrecognizedResourceTypes property is set
         internal bool IsSetUnrecognizedResourceTypes()
         {
-            return this._unrecognizedResourceTypes != null && this._unrecognizedResourceTypes.Count > 0; 
+            return this._unrecognizedResourceTypes != null && (this._unrecognizedResourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

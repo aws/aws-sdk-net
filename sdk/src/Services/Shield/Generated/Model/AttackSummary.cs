@@ -34,7 +34,7 @@ namespace Amazon.Shield.Model
     public partial class AttackSummary
     {
         private string _attackId;
-        private List<AttackVectorDescription> _attackVectors = new List<AttackVectorDescription>();
+        private List<AttackVectorDescription> _attackVectors = AWSConfigs.InitializeCollections ? new List<AttackVectorDescription>() : null;
         private DateTime? _endTime;
         private string _resourceArn;
         private DateTime? _startTime;
@@ -72,7 +72,7 @@ namespace Amazon.Shield.Model
         // Check to see if AttackVectors property is set
         internal bool IsSetAttackVectors()
         {
-            return this._attackVectors != null && this._attackVectors.Count > 0; 
+            return this._attackVectors != null && (this._attackVectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

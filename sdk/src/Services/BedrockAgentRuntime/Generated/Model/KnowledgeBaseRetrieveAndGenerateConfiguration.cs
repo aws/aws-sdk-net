@@ -29,15 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Configurations for retrieval and generation for knowledge base.
+    /// Contains details about the resource being queried.
     /// </summary>
     public partial class KnowledgeBaseRetrieveAndGenerateConfiguration
     {
         private string _knowledgeBaseId;
         private string _modelArn;
+        private KnowledgeBaseRetrievalConfiguration _retrievalConfiguration;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base that is queried and the foundation model
+        /// used for generation.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
         public string KnowledgeBaseId
@@ -53,7 +58,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ModelArn.
+        /// Gets and sets the property ModelArn. 
+        /// <para>
+        /// The ARN of the foundation model used to generate a response.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]
         public string ModelArn
@@ -66,6 +74,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetModelArn()
         {
             return this._modelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetrievalConfiguration. 
+        /// <para>
+        /// Contains configurations for how to retrieve and return the knowledge base query.
+        /// </para>
+        /// </summary>
+        public KnowledgeBaseRetrievalConfiguration RetrievalConfiguration
+        {
+            get { return this._retrievalConfiguration; }
+            set { this._retrievalConfiguration = value; }
+        }
+
+        // Check to see if RetrievalConfiguration property is set
+        internal bool IsSetRetrievalConfiguration()
+        {
+            return this._retrievalConfiguration != null;
         }
 
     }

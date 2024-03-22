@@ -43,12 +43,12 @@ namespace Amazon.EC2.Model
         private IpAddressType _ipAddressType;
         private string _policyDocument;
         private bool? _privateDnsEnabled;
-        private List<string> _routeTableIds = new List<string>();
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _routeTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceName;
-        private List<SubnetConfiguration> _subnetConfigurations = new List<SubnetConfiguration>();
-        private List<string> _subnetIds = new List<string>();
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<SubnetConfiguration> _subnetConfigurations = AWSConfigs.InitializeCollections ? new List<SubnetConfiguration>() : null;
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private VpcEndpointType _vpcEndpointType;
         private string _vpcId;
 
@@ -177,7 +177,7 @@ namespace Amazon.EC2.Model
         // Check to see if RouteTableIds property is set
         internal bool IsSetRouteTableIds()
         {
-            return this._routeTableIds != null && this._routeTableIds.Count > 0; 
+            return this._routeTableIds != null && (this._routeTableIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Amazon.EC2.Model
         // Check to see if SubnetConfigurations property is set
         internal bool IsSetSubnetConfigurations()
         {
-            return this._subnetConfigurations != null && this._subnetConfigurations.Count > 0; 
+            return this._subnetConfigurations != null && (this._subnetConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace Amazon.EC2.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -272,7 +272,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

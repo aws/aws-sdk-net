@@ -33,7 +33,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class MemberFeaturesConfigurationResult
     {
-        private List<MemberAdditionalConfigurationResult> _additionalConfiguration = new List<MemberAdditionalConfigurationResult>();
+        private List<MemberAdditionalConfigurationResult> _additionalConfiguration = AWSConfigs.InitializeCollections ? new List<MemberAdditionalConfigurationResult>() : null;
         private OrgFeature _name;
         private FeatureStatus _status;
         private DateTime? _updatedAt;
@@ -54,7 +54,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if AdditionalConfiguration property is set
         internal bool IsSetAdditionalConfiguration()
         {
-            return this._additionalConfiguration != null && this._additionalConfiguration.Count > 0; 
+            return this._additionalConfiguration != null && (this._additionalConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

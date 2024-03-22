@@ -36,10 +36,12 @@ namespace Amazon.Imagebuilder.Model
     {
         private string _accountId;
         private LifecycleExecutionResourceAction _action;
-        private List<string> _imageUris = new List<string>();
+        private DateTime? _endTime;
+        private List<string> _imageUris = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _region;
         private string _resourceId;
-        private List<LifecycleExecutionSnapshotResource> _snapshots = new List<LifecycleExecutionSnapshotResource>();
+        private List<LifecycleExecutionSnapshotResource> _snapshots = AWSConfigs.InitializeCollections ? new List<LifecycleExecutionSnapshotResource>() : null;
+        private DateTime? _startTime;
         private LifecycleExecutionResourceState _state;
 
         /// <summary>
@@ -80,6 +82,24 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The ending timestamp from the lifecycle action that was applied to the resource.
+        /// </para>
+        /// </summary>
+        public DateTime? EndTime
+        {
+            get { return this._endTime; }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ImageUris. 
         /// <para>
         /// For an impacted container image, this identifies a list of URIs for associated container
@@ -95,7 +115,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if ImageUris property is set
         internal bool IsSetImageUris()
         {
-            return this._imageUris != null && this._imageUris.Count > 0; 
+            return this._imageUris != null && (this._imageUris.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +185,25 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Snapshots property is set
         internal bool IsSetSnapshots()
         {
-            return this._snapshots != null && this._snapshots.Count > 0; 
+            return this._snapshots != null && (this._snapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The starting timestamp from the lifecycle action that was applied to the resource.
+        /// </para>
+        /// </summary>
+        public DateTime? StartTime
+        {
+            get { return this._startTime; }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ListBackupVaultsResponse : AmazonWebServiceResponse
     {
-        private List<BackupVaultListMember> _backupVaultList = new List<BackupVaultListMember>();
+        private List<BackupVaultListMember> _backupVaultList = AWSConfigs.InitializeCollections ? new List<BackupVaultListMember>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Backup.Model
         // Check to see if BackupVaultList property is set
         internal bool IsSetBackupVaultList()
         {
-            return this._backupVaultList != null && this._backupVaultList.Count > 0; 
+            return this._backupVaultList != null && (this._backupVaultList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Amazon.Keyspaces.Model
     {
         private AutoScalingSpecification _autoScalingSpecification;
         private string _keyspaceName;
-        private List<ReplicaAutoScalingSpecification> _replicaSpecifications = new List<ReplicaAutoScalingSpecification>();
+        private List<ReplicaAutoScalingSpecification> _replicaSpecifications = AWSConfigs.InitializeCollections ? new List<ReplicaAutoScalingSpecification>() : null;
         private string _resourceArn;
         private string _tableName;
 
@@ -93,7 +93,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if ReplicaSpecifications property is set
         internal bool IsSetReplicaSpecifications()
         {
-            return this._replicaSpecifications != null && this._replicaSpecifications.Count > 0; 
+            return this._replicaSpecifications != null && (this._replicaSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

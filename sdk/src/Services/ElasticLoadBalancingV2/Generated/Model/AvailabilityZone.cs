@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class AvailabilityZone
     {
-        private List<LoadBalancerAddress> _loadBalancerAddresses = new List<LoadBalancerAddress>();
+        private List<LoadBalancerAddress> _loadBalancerAddresses = AWSConfigs.InitializeCollections ? new List<LoadBalancerAddress>() : null;
         private string _outpostId;
         private string _subnetId;
         private string _zoneName;
@@ -56,7 +56,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if LoadBalancerAddresses property is set
         internal bool IsSetLoadBalancerAddresses()
         {
-            return this._loadBalancerAddresses != null && this._loadBalancerAddresses.Count > 0; 
+            return this._loadBalancerAddresses != null && (this._loadBalancerAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

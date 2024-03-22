@@ -45,7 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// Enumerable containing all of the ScheduledUpdateGroupActions
         /// </summary>
         public IPaginatedEnumerable<ScheduledUpdateGroupAction> ScheduledUpdateGroupActions => 
-            new PaginatedResultKeyResponse<DescribeScheduledActionsResponse, ScheduledUpdateGroupAction>(this, (i) => i.ScheduledUpdateGroupActions);
+            new PaginatedResultKeyResponse<DescribeScheduledActionsResponse, ScheduledUpdateGroupAction>(this, (i) => i.ScheduledUpdateGroupActions ?? new List<ScheduledUpdateGroupAction>());
 
         internal DescribeScheduledActionsPaginator(IAmazonAutoScaling client, DescribeScheduledActionsRequest request)
         {

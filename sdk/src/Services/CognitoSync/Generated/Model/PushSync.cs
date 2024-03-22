@@ -33,7 +33,7 @@ namespace Amazon.CognitoSync.Model
     /// </summary>
     public partial class PushSync
     {
-        private List<string> _applicationArns = new List<string>();
+        private List<string> _applicationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CognitoSync.Model
         // Check to see if ApplicationArns property is set
         internal bool IsSetApplicationArns()
         {
-            return this._applicationArns != null && this._applicationArns.Count > 0; 
+            return this._applicationArns != null && (this._applicationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

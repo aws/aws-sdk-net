@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the AllowedPrincipals
         /// </summary>
         public IPaginatedEnumerable<AllowedPrincipal> AllowedPrincipals => 
-            new PaginatedResultKeyResponse<DescribeVpcEndpointServicePermissionsResponse, AllowedPrincipal>(this, (i) => i.AllowedPrincipals);
+            new PaginatedResultKeyResponse<DescribeVpcEndpointServicePermissionsResponse, AllowedPrincipal>(this, (i) => i.AllowedPrincipals ?? new List<AllowedPrincipal>());
 
         internal DescribeVpcEndpointServicePermissionsPaginator(IAmazonEC2 client, DescribeVpcEndpointServicePermissionsRequest request)
         {

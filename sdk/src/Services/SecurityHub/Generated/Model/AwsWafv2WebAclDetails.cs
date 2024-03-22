@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         private string _id;
         private bool? _managedbyFirewallManager;
         private string _name;
-        private List<AwsWafv2RulesDetails> _rules = new List<AwsWafv2RulesDetails>();
+        private List<AwsWafv2RulesDetails> _rules = AWSConfigs.InitializeCollections ? new List<AwsWafv2RulesDetails>() : null;
         private AwsWafv2VisibilityConfigDetails _visibilityConfig;
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

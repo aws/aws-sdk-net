@@ -45,7 +45,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Enumerable containing all of the TargetGroups
         /// </summary>
         public IPaginatedEnumerable<TargetGroup> TargetGroups => 
-            new PaginatedResultKeyResponse<DescribeTargetGroupsResponse, TargetGroup>(this, (i) => i.TargetGroups);
+            new PaginatedResultKeyResponse<DescribeTargetGroupsResponse, TargetGroup>(this, (i) => i.TargetGroups ?? new List<TargetGroup>());
 
         internal DescribeTargetGroupsPaginator(IAmazonElasticLoadBalancingV2 client, DescribeTargetGroupsRequest request)
         {

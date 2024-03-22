@@ -45,7 +45,7 @@ namespace Amazon.SnowDeviceManagement.Model
         /// Enumerable containing all of the Executions
         /// </summary>
         public IPaginatedEnumerable<ExecutionSummary> Executions => 
-            new PaginatedResultKeyResponse<ListExecutionsResponse, ExecutionSummary>(this, (i) => i.Executions);
+            new PaginatedResultKeyResponse<ListExecutionsResponse, ExecutionSummary>(this, (i) => i.Executions ?? new List<ExecutionSummary>());
 
         internal ListExecutionsPaginator(IAmazonSnowDeviceManagement client, ListExecutionsRequest request)
         {

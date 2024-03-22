@@ -35,14 +35,14 @@ namespace Amazon.FSx.Model
     {
         private bool? _copyTagsToSnapshots;
         private OpenZFSDataCompressionType _dataCompressionType;
-        private List<OpenZFSNfsExport> _nfsExports = new List<OpenZFSNfsExport>();
+        private List<OpenZFSNfsExport> _nfsExports = AWSConfigs.InitializeCollections ? new List<OpenZFSNfsExport>() : null;
         private CreateOpenZFSOriginSnapshotConfiguration _originSnapshot;
         private string _parentVolumeId;
         private bool? _readOnly;
         private int? _recordSizeKiB;
         private int? _storageCapacityQuotaGiB;
         private int? _storageCapacityReservationGiB;
-        private List<OpenZFSUserOrGroupQuota> _userAndGroupQuotas = new List<OpenZFSUserOrGroupQuota>();
+        private List<OpenZFSUserOrGroupQuota> _userAndGroupQuotas = AWSConfigs.InitializeCollections ? new List<OpenZFSUserOrGroupQuota>() : null;
 
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshots. 
@@ -125,7 +125,7 @@ namespace Amazon.FSx.Model
         // Check to see if NfsExports property is set
         internal bool IsSetNfsExports()
         {
-            return this._nfsExports != null && this._nfsExports.Count > 0; 
+            return this._nfsExports != null && (this._nfsExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -267,7 +267,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property UserAndGroupQuotas. 
         /// <para>
-        /// An object specifying how much storage users or groups can use on the volume.
+        /// Configures how much storage users and groups can use on the volume.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -280,7 +280,7 @@ namespace Amazon.FSx.Model
         // Check to see if UserAndGroupQuotas property is set
         internal bool IsSetUserAndGroupQuotas()
         {
-            return this._userAndGroupQuotas != null && this._userAndGroupQuotas.Count > 0; 
+            return this._userAndGroupQuotas != null && (this._userAndGroupQuotas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

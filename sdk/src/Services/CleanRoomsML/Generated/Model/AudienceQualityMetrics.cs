@@ -33,7 +33,7 @@ namespace Amazon.CleanRoomsML.Model
     /// </summary>
     public partial class AudienceQualityMetrics
     {
-        private List<RelevanceMetric> _relevanceMetrics = new List<RelevanceMetric>();
+        private List<RelevanceMetric> _relevanceMetrics = AWSConfigs.InitializeCollections ? new List<RelevanceMetric>() : null;
 
         /// <summary>
         /// Gets and sets the property RelevanceMetrics. 
@@ -51,7 +51,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if RelevanceMetrics property is set
         internal bool IsSetRelevanceMetrics()
         {
-            return this._relevanceMetrics != null && this._relevanceMetrics.Count > 0; 
+            return this._relevanceMetrics != null && (this._relevanceMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

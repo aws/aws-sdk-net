@@ -34,7 +34,7 @@ namespace Amazon.Cloud9.Model
     /// </summary>
     public partial class DescribeEnvironmentsRequest : AmazonCloud9Request
     {
-        private List<string> _environmentIds = new List<string>();
+        private List<string> _environmentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EnvironmentIds. 
@@ -52,7 +52,7 @@ namespace Amazon.Cloud9.Model
         // Check to see if EnvironmentIds property is set
         internal bool IsSetEnvironmentIds()
         {
-            return this._environmentIds != null && this._environmentIds.Count > 0; 
+            return this._environmentIds != null && (this._environmentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetClassifiersResponse : AmazonWebServiceResponse
     {
-        private List<Classifier> _classifiers = new List<Classifier>();
+        private List<Classifier> _classifiers = AWSConfigs.InitializeCollections ? new List<Classifier>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model
         // Check to see if Classifiers property is set
         internal bool IsSetClassifiers()
         {
-            return this._classifiers != null && this._classifiers.Count > 0; 
+            return this._classifiers != null && (this._classifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

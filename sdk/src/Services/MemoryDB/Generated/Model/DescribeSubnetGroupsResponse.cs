@@ -34,7 +34,7 @@ namespace Amazon.MemoryDB.Model
     public partial class DescribeSubnetGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SubnetGroup> _subnetGroups = new List<SubnetGroup>();
+        private List<SubnetGroup> _subnetGroups = AWSConfigs.InitializeCollections ? new List<SubnetGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if SubnetGroups property is set
         internal bool IsSetSubnetGroups()
         {
-            return this._subnetGroups != null && this._subnetGroups.Count > 0; 
+            return this._subnetGroups != null && (this._subnetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

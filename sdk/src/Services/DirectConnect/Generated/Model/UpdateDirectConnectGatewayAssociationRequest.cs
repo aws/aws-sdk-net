@@ -39,9 +39,9 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class UpdateDirectConnectGatewayAssociationRequest : AmazonDirectConnectRequest
     {
-        private List<RouteFilterPrefix> _addAllowedPrefixesToDirectConnectGateway = new List<RouteFilterPrefix>();
+        private List<RouteFilterPrefix> _addAllowedPrefixesToDirectConnectGateway = AWSConfigs.InitializeCollections ? new List<RouteFilterPrefix>() : null;
         private string _associationId;
-        private List<RouteFilterPrefix> _removeAllowedPrefixesToDirectConnectGateway = new List<RouteFilterPrefix>();
+        private List<RouteFilterPrefix> _removeAllowedPrefixesToDirectConnectGateway = AWSConfigs.InitializeCollections ? new List<RouteFilterPrefix>() : null;
 
         /// <summary>
         /// Gets and sets the property AddAllowedPrefixesToDirectConnectGateway. 
@@ -58,7 +58,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if AddAllowedPrefixesToDirectConnectGateway property is set
         internal bool IsSetAddAllowedPrefixesToDirectConnectGateway()
         {
-            return this._addAllowedPrefixesToDirectConnectGateway != null && this._addAllowedPrefixesToDirectConnectGateway.Count > 0; 
+            return this._addAllowedPrefixesToDirectConnectGateway != null && (this._addAllowedPrefixesToDirectConnectGateway.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if RemoveAllowedPrefixesToDirectConnectGateway property is set
         internal bool IsSetRemoveAllowedPrefixesToDirectConnectGateway()
         {
-            return this._removeAllowedPrefixesToDirectConnectGateway != null && this._removeAllowedPrefixesToDirectConnectGateway.Count > 0; 
+            return this._removeAllowedPrefixesToDirectConnectGateway != null && (this._removeAllowedPrefixesToDirectConnectGateway.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

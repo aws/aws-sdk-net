@@ -33,7 +33,7 @@ namespace Amazon.CleanRoomsML.Model
     /// </summary>
     public partial class ListAudienceModelsResponse : AmazonWebServiceResponse
     {
-        private List<AudienceModelSummary> _audienceModels = new List<AudienceModelSummary>();
+        private List<AudienceModelSummary> _audienceModels = AWSConfigs.InitializeCollections ? new List<AudienceModelSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if AudienceModels property is set
         internal bool IsSetAudienceModels()
         {
-            return this._audienceModels != null && this._audienceModels.Count > 0; 
+            return this._audienceModels != null && (this._audienceModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

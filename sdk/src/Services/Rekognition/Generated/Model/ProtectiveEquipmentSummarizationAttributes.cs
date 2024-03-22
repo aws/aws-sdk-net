@@ -40,7 +40,7 @@ namespace Amazon.Rekognition.Model
     public partial class ProtectiveEquipmentSummarizationAttributes
     {
         private float? _minConfidence;
-        private List<string> _requiredEquipmentTypes = new List<string>();
+        private List<string> _requiredEquipmentTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MinConfidence. 
@@ -94,7 +94,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if RequiredEquipmentTypes property is set
         internal bool IsSetRequiredEquipmentTypes()
         {
-            return this._requiredEquipmentTypes != null && this._requiredEquipmentTypes.Count > 0; 
+            return this._requiredEquipmentTypes != null && (this._requiredEquipmentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

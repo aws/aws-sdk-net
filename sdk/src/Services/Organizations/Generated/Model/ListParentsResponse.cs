@@ -34,7 +34,7 @@ namespace Amazon.Organizations.Model
     public partial class ListParentsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Parent> _parents = new List<Parent>();
+        private List<Parent> _parents = AWSConfigs.InitializeCollections ? new List<Parent>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.Organizations.Model
         // Check to see if Parents property is set
         internal bool IsSetParents()
         {
-            return this._parents != null && this._parents.Count > 0; 
+            return this._parents != null && (this._parents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

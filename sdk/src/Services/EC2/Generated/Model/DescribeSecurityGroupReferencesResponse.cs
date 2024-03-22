@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeSecurityGroupReferencesResponse : AmazonWebServiceResponse
     {
-        private List<SecurityGroupReference> _securityGroupReferenceSet = new List<SecurityGroupReference>();
+        private List<SecurityGroupReference> _securityGroupReferenceSet = AWSConfigs.InitializeCollections ? new List<SecurityGroupReference>() : null;
 
         /// <summary>
         /// Gets and sets the property SecurityGroupReferenceSet. 
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupReferenceSet property is set
         internal bool IsSetSecurityGroupReferenceSet()
         {
-            return this._securityGroupReferenceSet != null && this._securityGroupReferenceSet.Count > 0; 
+            return this._securityGroupReferenceSet != null && (this._securityGroupReferenceSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

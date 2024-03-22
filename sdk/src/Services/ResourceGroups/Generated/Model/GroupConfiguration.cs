@@ -38,9 +38,9 @@ namespace Amazon.ResourceGroups.Model
     /// </summary>
     public partial class GroupConfiguration
     {
-        private List<GroupConfigurationItem> _configuration = new List<GroupConfigurationItem>();
+        private List<GroupConfigurationItem> _configuration = AWSConfigs.InitializeCollections ? new List<GroupConfigurationItem>() : null;
         private string _failureReason;
-        private List<GroupConfigurationItem> _proposedConfiguration = new List<GroupConfigurationItem>();
+        private List<GroupConfigurationItem> _proposedConfiguration = AWSConfigs.InitializeCollections ? new List<GroupConfigurationItem>() : null;
         private GroupConfigurationStatus _status;
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if Configuration property is set
         internal bool IsSetConfiguration()
         {
-            return this._configuration != null && this._configuration.Count > 0; 
+            return this._configuration != null && (this._configuration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if ProposedConfiguration property is set
         internal bool IsSetProposedConfiguration()
         {
-            return this._proposedConfiguration != null && this._proposedConfiguration.Count > 0; 
+            return this._proposedConfiguration != null && (this._proposedConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

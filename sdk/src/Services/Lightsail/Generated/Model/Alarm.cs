@@ -42,7 +42,7 @@ namespace Amazon.Lightsail.Model
     {
         private string _arn;
         private ComparisonOperator _comparisonOperator;
-        private List<string> _contactProtocols = new List<string>();
+        private List<string> _contactProtocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createdAt;
         private int? _datapointsToAlarm;
         private int? _evaluationPeriods;
@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         private MonitoredResourceInfo _monitoredResourceInfo;
         private string _name;
         private bool? _notificationEnabled;
-        private List<string> _notificationTriggers = new List<string>();
+        private List<string> _notificationTriggers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _period;
         private ResourceType _resourceType;
         private AlarmState _state;
@@ -113,7 +113,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ContactProtocols property is set
         internal bool IsSetContactProtocols()
         {
-            return this._contactProtocols != null && this._contactProtocols.Count > 0; 
+            return this._contactProtocols != null && (this._contactProtocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -276,7 +276,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if NotificationTriggers property is set
         internal bool IsSetNotificationTriggers()
         {
-            return this._notificationTriggers != null && this._notificationTriggers.Count > 0; 
+            return this._notificationTriggers != null && (this._notificationTriggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

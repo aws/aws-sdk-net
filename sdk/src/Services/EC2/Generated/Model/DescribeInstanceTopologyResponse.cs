@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeInstanceTopologyResponse : AmazonWebServiceResponse
     {
-        private List<InstanceTopology> _instances = new List<InstanceTopology>();
+        private List<InstanceTopology> _instances = AWSConfigs.InitializeCollections ? new List<InstanceTopology>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

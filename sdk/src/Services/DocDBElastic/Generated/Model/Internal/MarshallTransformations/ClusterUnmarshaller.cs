@@ -75,6 +75,12 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                     unmarshalledObject.AuthType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("backupRetentionPeriod", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clusterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -105,6 +111,12 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("preferredBackupWindow", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreferredBackupWindow = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("preferredMaintenanceWindow", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -121,6 +133,18 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShardCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("shardInstanceCount", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.ShardInstanceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("shards", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Shard, ShardUnmarshaller>(ShardUnmarshaller.Instance);
+                    unmarshalledObject.Shards = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

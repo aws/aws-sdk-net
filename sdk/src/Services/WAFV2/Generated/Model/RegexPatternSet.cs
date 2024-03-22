@@ -44,7 +44,7 @@ namespace Amazon.WAFV2.Model
         private string _description;
         private string _id;
         private string _name;
-        private List<Regex> _regularExpressionList = new List<Regex>();
+        private List<Regex> _regularExpressionList = AWSConfigs.InitializeCollections ? new List<Regex>() : null;
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -138,7 +138,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if RegularExpressionList property is set
         internal bool IsSetRegularExpressionList()
         {
-            return this._regularExpressionList != null && this._regularExpressionList.Count > 0; 
+            return this._regularExpressionList != null && (this._regularExpressionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

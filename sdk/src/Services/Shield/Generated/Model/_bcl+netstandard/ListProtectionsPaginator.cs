@@ -45,7 +45,7 @@ namespace Amazon.Shield.Model
         /// Enumerable containing all of the Protections
         /// </summary>
         public IPaginatedEnumerable<Protection> Protections => 
-            new PaginatedResultKeyResponse<ListProtectionsResponse, Protection>(this, (i) => i.Protections);
+            new PaginatedResultKeyResponse<ListProtectionsResponse, Protection>(this, (i) => i.Protections ?? new List<Protection>());
 
         internal ListProtectionsPaginator(IAmazonShield client, ListProtectionsRequest request)
         {

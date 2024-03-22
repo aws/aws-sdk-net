@@ -33,7 +33,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class ValidatePolicyResponse : AmazonWebServiceResponse
     {
-        private List<ValidatePolicyFinding> _findings = new List<ValidatePolicyFinding>();
+        private List<ValidatePolicyFinding> _findings = AWSConfigs.InitializeCollections ? new List<ValidatePolicyFinding>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the DatasetImportJobs
         /// </summary>
         public IPaginatedEnumerable<DatasetImportJobSummary> DatasetImportJobs => 
-            new PaginatedResultKeyResponse<ListDatasetImportJobsResponse, DatasetImportJobSummary>(this, (i) => i.DatasetImportJobs);
+            new PaginatedResultKeyResponse<ListDatasetImportJobsResponse, DatasetImportJobSummary>(this, (i) => i.DatasetImportJobs ?? new List<DatasetImportJobSummary>());
 
         internal ListDatasetImportJobsPaginator(IAmazonPersonalize client, ListDatasetImportJobsRequest request)
         {

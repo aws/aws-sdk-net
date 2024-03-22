@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class ForwardActionConfig
     {
-        private List<TargetGroupTuple> _targetGroups = new List<TargetGroupTuple>();
+        private List<TargetGroupTuple> _targetGroups = AWSConfigs.InitializeCollections ? new List<TargetGroupTuple>() : null;
         private TargetGroupStickinessConfig _targetGroupStickinessConfig;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if TargetGroups property is set
         internal bool IsSetTargetGroups()
         {
-            return this._targetGroups != null && this._targetGroups.Count > 0; 
+            return this._targetGroups != null && (this._targetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

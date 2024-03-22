@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ListEntitiesDetectionJobsResponse : AmazonWebServiceResponse
     {
-        private List<EntitiesDetectionJobProperties> _entitiesDetectionJobPropertiesList = new List<EntitiesDetectionJobProperties>();
+        private List<EntitiesDetectionJobProperties> _entitiesDetectionJobPropertiesList = AWSConfigs.InitializeCollections ? new List<EntitiesDetectionJobProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if EntitiesDetectionJobPropertiesList property is set
         internal bool IsSetEntitiesDetectionJobPropertiesList()
         {
-            return this._entitiesDetectionJobPropertiesList != null && this._entitiesDetectionJobPropertiesList.Count > 0; 
+            return this._entitiesDetectionJobPropertiesList != null && (this._entitiesDetectionJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

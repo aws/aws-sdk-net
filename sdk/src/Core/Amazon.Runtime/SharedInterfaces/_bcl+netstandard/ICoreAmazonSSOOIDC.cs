@@ -138,6 +138,9 @@ namespace Amazon.Runtime.SharedInterfaces
         /// </summary>
         public IDictionary<string, object> AdditionalProperties { get; set; }
 
+        /// <summary>
+        /// The SSO scopes that are provided for authorization when using AWS SSO.
+        /// </summary>
         public IList<string> Scopes { get; set; }
     }
 

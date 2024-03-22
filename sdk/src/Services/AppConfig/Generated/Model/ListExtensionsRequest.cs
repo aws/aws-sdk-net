@@ -31,8 +31,8 @@ namespace Amazon.AppConfig.Model
     /// <summary>
     /// Container for the parameters to the ListExtensions operation.
     /// Lists all custom and Amazon Web Services authored AppConfig extensions in the account.
-    /// For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
-    /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+    /// For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+    /// workflows</a> in the <i>AppConfig User Guide</i>.
     /// </summary>
     public partial class ListExtensionsRequest : AmazonAppConfigRequest
     {

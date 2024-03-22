@@ -36,7 +36,7 @@ namespace Amazon.IoTAnalytics.Model
         private DateTime? _creationTime;
         private DateTime? _lastUpdateTime;
         private string _pipelineName;
-        private List<ReprocessingSummary> _reprocessingSummaries = new List<ReprocessingSummary>();
+        private List<ReprocessingSummary> _reprocessingSummaries = AWSConfigs.InitializeCollections ? new List<ReprocessingSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -108,7 +108,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if ReprocessingSummaries property is set
         internal bool IsSetReprocessingSummaries()
         {
-            return this._reprocessingSummaries != null && this._reprocessingSummaries.Count > 0; 
+            return this._reprocessingSummaries != null && (this._reprocessingSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

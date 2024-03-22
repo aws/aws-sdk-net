@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     public partial class JobRun
     {
         private int? _allocatedCapacity;
-        private Dictionary<string, string> _arguments = new Dictionary<string, string>();
+        private Dictionary<string, string> _arguments = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _attempt;
         private DateTime? _completedOn;
         private double? _dpuSeconds;
@@ -50,7 +50,7 @@ namespace Amazon.Glue.Model
         private double? _maxCapacity;
         private NotificationProperty _notificationProperty;
         private int? _numberOfWorkers;
-        private List<Predecessor> _predecessorRuns = new List<Predecessor>();
+        private List<Predecessor> _predecessorRuns = AWSConfigs.InitializeCollections ? new List<Predecessor>() : null;
         private string _previousRunId;
         private string _securityConfiguration;
         private DateTime? _startedOn;
@@ -129,7 +129,7 @@ namespace Amazon.Glue.Model
         // Check to see if Arguments property is set
         internal bool IsSetArguments()
         {
-            return this._arguments != null && this._arguments.Count > 0; 
+            return this._arguments != null && (this._arguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -497,7 +497,7 @@ namespace Amazon.Glue.Model
         // Check to see if PredecessorRuns property is set
         internal bool IsSetPredecessorRuns()
         {
-            return this._predecessorRuns != null && this._predecessorRuns.Count > 0; 
+            return this._predecessorRuns != null && (this._predecessorRuns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

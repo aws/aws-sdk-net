@@ -35,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     {
         private string _action;
         private RuleGroupSourceStatefulRulesHeaderDetails _header;
-        private List<RuleGroupSourceStatefulRulesOptionsDetails> _ruleOptions = new List<RuleGroupSourceStatefulRulesOptionsDetails>();
+        private List<RuleGroupSourceStatefulRulesOptionsDetails> _ruleOptions = AWSConfigs.InitializeCollections ? new List<RuleGroupSourceStatefulRulesOptionsDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -89,7 +89,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RuleOptions property is set
         internal bool IsSetRuleOptions()
         {
-            return this._ruleOptions != null && this._ruleOptions.Count > 0; 
+            return this._ruleOptions != null && (this._ruleOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

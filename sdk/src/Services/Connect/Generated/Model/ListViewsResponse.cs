@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListViewsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ViewSummary> _viewsSummaryList = new List<ViewSummary>();
+        private List<ViewSummary> _viewsSummaryList = AWSConfigs.InitializeCollections ? new List<ViewSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Connect.Model
         // Check to see if ViewsSummaryList property is set
         internal bool IsSetViewsSummaryList()
         {
-            return this._viewsSummaryList != null && this._viewsSummaryList.Count > 0; 
+            return this._viewsSummaryList != null && (this._viewsSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

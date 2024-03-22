@@ -45,7 +45,7 @@ namespace Amazon.Mgn.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<Job> Items => 
-            new PaginatedResultKeyResponse<DescribeJobsResponse, Job>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<DescribeJobsResponse, Job>(this, (i) => i.Items ?? new List<Job>());
 
         internal DescribeJobsPaginator(IAmazonMgn client, DescribeJobsRequest request)
         {

@@ -328,9 +328,8 @@ namespace Amazon.VerifiedPermissions
         ///  </note> <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -493,9 +492,8 @@ namespace Amazon.VerifiedPermissions
         ///  </note> <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -646,9 +644,8 @@ namespace Amazon.VerifiedPermissions
         ///  </note> <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -795,9 +792,8 @@ namespace Amazon.VerifiedPermissions
         ///  <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2993,9 +2989,8 @@ namespace Amazon.VerifiedPermissions
         ///  <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3142,9 +3137,8 @@ namespace Amazon.VerifiedPermissions
         ///  <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3295,7 +3289,7 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you edit a static policy, You can change only certain elements of a static policy:
+        /// When you edit a static policy, you can change only certain elements of a static policy:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3332,9 +3326,8 @@ namespace Amazon.VerifiedPermissions
         ///  </li> </ul> </note> <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3479,9 +3472,8 @@ namespace Amazon.VerifiedPermissions
         ///  <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3631,9 +3623,8 @@ namespace Amazon.VerifiedPermissions
         ///  </important> <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>

@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class CustomSql
     {
-        private List<InputColumn> _columns = new List<InputColumn>();
+        private List<InputColumn> _columns = AWSConfigs.InitializeCollections ? new List<InputColumn>() : null;
         private string _dataSourceArn;
         private string _name;
         private string _sqlQuery;
@@ -54,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

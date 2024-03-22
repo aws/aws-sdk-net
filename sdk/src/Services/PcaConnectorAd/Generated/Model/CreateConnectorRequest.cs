@@ -38,7 +38,7 @@ namespace Amazon.PcaConnectorAd.Model
         private string _certificateAuthorityArn;
         private string _clientToken;
         private string _directoryId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VpcInformation _vpcInformation;
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.PcaConnectorAd.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

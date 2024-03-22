@@ -33,8 +33,8 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class IntentClassificationTestResultItemCounts
     {
-        private Dictionary<string, int> _intentMatchResultCounts = new Dictionary<string, int>();
-        private Dictionary<string, int> _speechTranscriptionResultCounts = new Dictionary<string, int>();
+        private Dictionary<string, int> _intentMatchResultCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+        private Dictionary<string, int> _speechTranscriptionResultCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private int? _totalResultCount;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if IntentMatchResultCounts property is set
         internal bool IsSetIntentMatchResultCounts()
         {
-            return this._intentMatchResultCounts != null && this._intentMatchResultCounts.Count > 0; 
+            return this._intentMatchResultCounts != null && (this._intentMatchResultCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SpeechTranscriptionResultCounts property is set
         internal bool IsSetSpeechTranscriptionResultCounts()
         {
-            return this._speechTranscriptionResultCounts != null && this._speechTranscriptionResultCounts.Count > 0; 
+            return this._speechTranscriptionResultCounts != null && (this._speechTranscriptionResultCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

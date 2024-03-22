@@ -34,8 +34,8 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class RuntimeHintDetails
     {
-        private List<RuntimeHintValue> _runtimeHintValues = new List<RuntimeHintValue>();
-        private Dictionary<string, RuntimeHintDetails> _subSlotHints = new Dictionary<string, RuntimeHintDetails>();
+        private List<RuntimeHintValue> _runtimeHintValues = AWSConfigs.InitializeCollections ? new List<RuntimeHintValue>() : null;
+        private Dictionary<string, RuntimeHintDetails> _subSlotHints = AWSConfigs.InitializeCollections ? new Dictionary<string, RuntimeHintDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property RuntimeHintValues. 
@@ -54,7 +54,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if RuntimeHintValues property is set
         internal bool IsSetRuntimeHintValues()
         {
-            return this._runtimeHintValues != null && this._runtimeHintValues.Count > 0; 
+            return this._runtimeHintValues != null && (this._runtimeHintValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SubSlotHints property is set
         internal bool IsSetSubSlotHints()
         {
-            return this._subSlotHints != null && this._subSlotHints.Count > 0; 
+            return this._subSlotHints != null && (this._subSlotHints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

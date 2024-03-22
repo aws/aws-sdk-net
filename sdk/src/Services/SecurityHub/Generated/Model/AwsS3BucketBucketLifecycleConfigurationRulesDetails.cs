@@ -40,10 +40,10 @@ namespace Amazon.SecurityHub.Model
         private AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails _filter;
         private string _id;
         private int? _noncurrentVersionExpirationInDays;
-        private List<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails> _noncurrentVersionTransitions = new List<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails>();
+        private List<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails> _noncurrentVersionTransitions = AWSConfigs.InitializeCollections ? new List<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails>() : null;
         private string _prefix;
         private string _status;
-        private List<AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails> _transitions = new List<AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails>();
+        private List<AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails> _transitions = AWSConfigs.InitializeCollections ? new List<AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property AbortIncompleteMultipartUpload. 
@@ -202,7 +202,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if NoncurrentVersionTransitions property is set
         internal bool IsSetNoncurrentVersionTransitions()
         {
-            return this._noncurrentVersionTransitions != null && this._noncurrentVersionTransitions.Count > 0; 
+            return this._noncurrentVersionTransitions != null && (this._noncurrentVersionTransitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Transitions property is set
         internal bool IsSetTransitions()
         {
-            return this._transitions != null && this._transitions.Count > 0; 
+            return this._transitions != null && (this._transitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

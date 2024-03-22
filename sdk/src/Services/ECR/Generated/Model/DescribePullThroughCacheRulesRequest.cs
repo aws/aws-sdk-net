@@ -34,7 +34,7 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class DescribePullThroughCacheRulesRequest : AmazonECRRequest
     {
-        private List<string> _ecrRepositoryPrefixes = new List<string>();
+        private List<string> _ecrRepositoryPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _registryId;
@@ -57,7 +57,7 @@ namespace Amazon.ECR.Model
         // Check to see if EcrRepositoryPrefixes property is set
         internal bool IsSetEcrRepositoryPrefixes()
         {
-            return this._ecrRepositoryPrefixes != null && this._ecrRepositoryPrefixes.Count > 0; 
+            return this._ecrRepositoryPrefixes != null && (this._ecrRepositoryPrefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

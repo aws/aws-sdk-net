@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     public partial class GetIpamDiscoveredAccountsRequest : AmazonEC2Request
     {
         private string _discoveryRegion;
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private string _ipamResourceDiscoveryId;
         private int? _maxResults;
         private string _nextToken;
@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

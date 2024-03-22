@@ -45,8 +45,8 @@ namespace Amazon.WAFV2.Model
     public partial class HeaderMatchPattern
     {
         private All _all;
-        private List<string> _excludedHeaders = new List<string>();
-        private List<string> _includedHeaders = new List<string>();
+        private List<string> _excludedHeaders = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _includedHeaders = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property All. 
@@ -83,7 +83,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if ExcludedHeaders property is set
         internal bool IsSetExcludedHeaders()
         {
-            return this._excludedHeaders != null && this._excludedHeaders.Count > 0; 
+            return this._excludedHeaders != null && (this._excludedHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if IncludedHeaders property is set
         internal bool IsSetIncludedHeaders()
         {
-            return this._includedHeaders != null && this._includedHeaders.Count > 0; 
+            return this._includedHeaders != null && (this._includedHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

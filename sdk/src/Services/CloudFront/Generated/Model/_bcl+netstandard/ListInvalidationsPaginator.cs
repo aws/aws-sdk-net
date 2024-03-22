@@ -45,7 +45,7 @@ namespace Amazon.CloudFront.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<InvalidationSummary> Items => 
-            new PaginatedResultKeyResponse<ListInvalidationsResponse, InvalidationSummary>(this, (i) => i.InvalidationList.Items);
+            new PaginatedResultKeyResponse<ListInvalidationsResponse, InvalidationSummary>(this, (i) => i.InvalidationList.Items ?? new List<InvalidationSummary>());
 
         internal ListInvalidationsPaginator(IAmazonCloudFront client, ListInvalidationsRequest request)
         {

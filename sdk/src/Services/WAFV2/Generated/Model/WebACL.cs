@@ -47,17 +47,17 @@ namespace Amazon.WAFV2.Model
         private long? _capacity;
         private CaptchaConfig _captchaConfig;
         private ChallengeConfig _challengeConfig;
-        private Dictionary<string, CustomResponseBody> _customResponseBodies = new Dictionary<string, CustomResponseBody>();
+        private Dictionary<string, CustomResponseBody> _customResponseBodies = AWSConfigs.InitializeCollections ? new Dictionary<string, CustomResponseBody>() : null;
         private DefaultAction _defaultAction;
         private string _description;
         private string _id;
         private string _labelNamespace;
         private bool? _managedByFirewallManager;
         private string _name;
-        private List<FirewallManagerRuleGroup> _postProcessFirewallManagerRuleGroups = new List<FirewallManagerRuleGroup>();
-        private List<FirewallManagerRuleGroup> _preProcessFirewallManagerRuleGroups = new List<FirewallManagerRuleGroup>();
-        private List<Rule> _rules = new List<Rule>();
-        private List<string> _tokenDomains = new List<string>();
+        private List<FirewallManagerRuleGroup> _postProcessFirewallManagerRuleGroups = AWSConfigs.InitializeCollections ? new List<FirewallManagerRuleGroup>() : null;
+        private List<FirewallManagerRuleGroup> _preProcessFirewallManagerRuleGroups = AWSConfigs.InitializeCollections ? new List<FirewallManagerRuleGroup>() : null;
+        private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
+        private List<string> _tokenDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VisibilityConfig _visibilityConfig;
 
         /// <summary>
@@ -88,9 +88,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Use this to customize the maximum size of the request body that your protected CloudFront
-        /// distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).
-        /// 
+        /// Use this to customize the maximum size of the request body that your protected resources
+        /// forward to WAF for inspection. You can customize this setting for CloudFront, API
+        /// Gateway, Amazon Cognito, App Runner, or Verified Access resources. The default setting
+        /// is 16 KB (16,384 bytes). 
         /// </para>
         ///  <note> 
         /// <para>
@@ -98,7 +99,10 @@ namespace Amazon.WAFV2.Model
         /// are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
         /// Pricing</a>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+        /// </para>
         /// </summary>
         public AssociationConfig AssociationConfig
         {
@@ -211,7 +215,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if CustomResponseBodies property is set
         internal bool IsSetCustomResponseBodies()
         {
-            return this._customResponseBodies != null && this._customResponseBodies.Count > 0; 
+            return this._customResponseBodies != null && (this._customResponseBodies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -379,7 +383,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if PostProcessFirewallManagerRuleGroups property is set
         internal bool IsSetPostProcessFirewallManagerRuleGroups()
         {
-            return this._postProcessFirewallManagerRuleGroups != null && this._postProcessFirewallManagerRuleGroups.Count > 0; 
+            return this._postProcessFirewallManagerRuleGroups != null && (this._postProcessFirewallManagerRuleGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -407,7 +411,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if PreProcessFirewallManagerRuleGroups property is set
         internal bool IsSetPreProcessFirewallManagerRuleGroups()
         {
-            return this._preProcessFirewallManagerRuleGroups != null && this._preProcessFirewallManagerRuleGroups.Count > 0; 
+            return this._preProcessFirewallManagerRuleGroups != null && (this._preProcessFirewallManagerRuleGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -427,7 +431,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -450,7 +454,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if TokenDomains property is set
         internal bool IsSetTokenDomains()
         {
-            return this._tokenDomains != null && this._tokenDomains.Count > 0; 
+            return this._tokenDomains != null && (this._tokenDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,13 +35,13 @@ namespace Amazon.Lightsail.Model
     {
         private string _arn;
         private DateTime? _createdAt;
-        private List<DomainEntry> _domainEntries = new List<DomainEntry>();
+        private List<DomainEntry> _domainEntries = AWSConfigs.InitializeCollections ? new List<DomainEntry>() : null;
         private ResourceLocation _location;
         private string _name;
         private RegisteredDomainDelegationInfo _registeredDomainDelegationInfo;
         private ResourceType _resourceType;
         private string _supportCode;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -94,7 +94,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if DomainEntries property is set
         internal bool IsSetDomainEntries()
         {
-            return this._domainEntries != null && this._domainEntries.Count > 0; 
+            return this._domainEntries != null && (this._domainEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

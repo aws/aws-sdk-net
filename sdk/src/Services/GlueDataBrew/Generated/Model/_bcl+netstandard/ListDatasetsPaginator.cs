@@ -45,7 +45,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Enumerable containing all of the Datasets
         /// </summary>
         public IPaginatedEnumerable<Dataset> Datasets => 
-            new PaginatedResultKeyResponse<ListDatasetsResponse, Dataset>(this, (i) => i.Datasets);
+            new PaginatedResultKeyResponse<ListDatasetsResponse, Dataset>(this, (i) => i.Datasets ?? new List<Dataset>());
 
         internal ListDatasetsPaginator(IAmazonGlueDataBrew client, ListDatasetsRequest request)
         {

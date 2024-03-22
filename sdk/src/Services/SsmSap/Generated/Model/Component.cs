@@ -36,13 +36,13 @@ namespace Amazon.SsmSap.Model
         private string _applicationId;
         private string _arn;
         private AssociatedHost _associatedHost;
-        private List<string> _childComponents = new List<string>();
+        private List<string> _childComponents = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _componentId;
         private ComponentType _componentType;
         private DatabaseConnection _databaseConnection;
-        private List<string> _databases = new List<string>();
+        private List<string> _databases = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _hdbVersion;
-        private List<Host> _hosts = new List<Host>();
+        private List<Host> _hosts = AWSConfigs.InitializeCollections ? new List<Host>() : null;
         private DateTime? _lastUpdated;
         private string _parentComponent;
         private string _primaryHost;
@@ -124,7 +124,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if ChildComponents property is set
         internal bool IsSetChildComponents()
         {
-            return this._childComponents != null && this._childComponents.Count > 0; 
+            return this._childComponents != null && (this._childComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if Databases property is set
         internal bool IsSetDatabases()
         {
-            return this._databases != null && this._databases.Count > 0; 
+            return this._databases != null && (this._databases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if Hosts property is set
         internal bool IsSetHosts()
         {
-            return this._hosts != null && this._hosts.Count > 0; 
+            return this._hosts != null && (this._hosts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

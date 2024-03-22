@@ -36,10 +36,10 @@ namespace Amazon.EntityResolution.Model
         private DateTime? _createdAt;
         private string _description;
         private bool? _hasWorkflows;
-        private List<SchemaInputAttribute> _mappedInputFields = new List<SchemaInputAttribute>();
+        private List<SchemaInputAttribute> _mappedInputFields = AWSConfigs.InitializeCollections ? new List<SchemaInputAttribute>() : null;
         private string _schemaArn;
         private string _schemaName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if MappedInputFields property is set
         internal bool IsSetMappedInputFields()
         {
-            return this._mappedInputFields != null && this._mappedInputFields.Count > 0; 
+            return this._mappedInputFields != null && (this._mappedInputFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

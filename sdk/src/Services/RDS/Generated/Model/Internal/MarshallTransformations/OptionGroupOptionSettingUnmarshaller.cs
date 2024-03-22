@@ -87,6 +87,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MinimumEngineVersionPerAllowedValue/MinimumEngineVersionPerAllowedValue", targetDepth))
                     {
                         var unmarshaller = MinimumEngineVersionPerAllowedValueUnmarshaller.Instance;
+                        if (unmarshalledObject.MinimumEngineVersionPerAllowedValue == null)
+                        {
+                            unmarshalledObject.MinimumEngineVersionPerAllowedValue = new List<MinimumEngineVersionPerAllowedValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MinimumEngineVersionPerAllowedValue.Add(item);
                         continue;

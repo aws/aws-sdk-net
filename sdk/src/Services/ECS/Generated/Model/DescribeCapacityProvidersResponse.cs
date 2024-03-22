@@ -33,8 +33,8 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class DescribeCapacityProvidersResponse : AmazonWebServiceResponse
     {
-        private List<CapacityProvider> _capacityProviders = new List<CapacityProvider>();
-        private List<Failure> _failures = new List<Failure>();
+        private List<CapacityProvider> _capacityProviders = AWSConfigs.InitializeCollections ? new List<CapacityProvider>() : null;
+        private List<Failure> _failures = AWSConfigs.InitializeCollections ? new List<Failure>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ECS.Model
         // Check to see if CapacityProviders property is set
         internal bool IsSetCapacityProviders()
         {
-            return this._capacityProviders != null && this._capacityProviders.Count > 0; 
+            return this._capacityProviders != null && (this._capacityProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.ECS.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

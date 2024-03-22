@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ChartAxisLabelOptions
     {
-        private List<AxisLabelOptions> _axisLabelOptions = new List<AxisLabelOptions>();
+        private List<AxisLabelOptions> _axisLabelOptions = AWSConfigs.InitializeCollections ? new List<AxisLabelOptions>() : null;
         private Visibility _sortIconVisibility;
         private Visibility _visibility;
 
@@ -53,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AxisLabelOptions property is set
         internal bool IsSetAxisLabelOptions()
         {
-            return this._axisLabelOptions != null && this._axisLabelOptions.Count > 0; 
+            return this._axisLabelOptions != null && (this._axisLabelOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

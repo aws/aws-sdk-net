@@ -35,9 +35,9 @@ namespace Amazon.S3.Model
         private RequestCharged _requestCharged;
         private bool? isTruncated;
 
-        private List<MultipartUpload> multipartUploads;
+        private List<MultipartUpload> multipartUploads = AWSConfigs.InitializeCollections ? new List<MultipartUpload>() : null;
         private string delimiter;
-        private List<string> commonPrefixes;
+        private List<string> commonPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string prefix;
 
         /// <summary>
@@ -78,7 +78,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property UploadIdMarker. 
         /// <para>
-        /// Upload ID after which listing began.
+        /// Together with key-marker, specifies the multipart upload after which listing should
+        /// begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
+        /// Otherwise, any multipart uploads for a key equal to the key-marker might be included
+        /// in the list only if they have an upload ID lexicographically greater than the specified
+        /// <c>upload-id-marker</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -118,7 +122,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the property NextUploadIdMarker. 
         /// <para>
         /// When a list is truncated, this element specifies the value that should be used for
-        /// the <code>upload-id-marker</code> request parameter in a subsequent request.
+        /// the <c>upload-id-marker</c> request parameter in a subsequent request.
         /// </para>
         ///  <note> 
         /// <para>
@@ -180,13 +184,7 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<MultipartUpload> MultipartUploads
         {
-            get 
-            {
-                if (this.multipartUploads == null)
-                    this.multipartUploads = new List<MultipartUpload>();
-
-                return this.multipartUploads; 
-            }
+            get { return this.multipartUploads; }
             set { this.multipartUploads = value; }
         }
 
@@ -199,7 +197,7 @@ namespace Amazon.S3.Model
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter
-        /// (<code>/</code>) are supported.
+        /// (<c>/</c>) are supported.
         /// </para>
         ///  </note>
         /// </summary>
@@ -232,7 +230,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported
+        ///  <b>Directory buckets</b> - For directory buckets, <c>/</c> is the only supported
         /// delimiter.
         /// </para>
         ///  </note>
@@ -247,26 +245,20 @@ namespace Amazon.S3.Model
         /// Gets and sets the property CommonPrefixes. 
         /// <para>
         /// If you specify a delimiter in the request, then the result returns each distinct key
-        /// prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct
-        /// key prefixes are returned in the <code>Prefix</code> child element.
+        /// prefix containing the delimiter in a <c>CommonPrefixes</c> element. The distinct
+        /// key prefixes are returned in the <c>Prefix</c> child element.
         /// </para>
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter
-        /// (<code>/</code>) are supported.
+        /// (<c>/</c>) are supported.
         /// </para>
         ///  </note>
         /// </summary>
         public List<string> CommonPrefixes
         {
-            get
-            {
-                if (this.commonPrefixes == null)
-                {
-                    this.commonPrefixes = new List<string>();
-                }
-                return this.commonPrefixes;
-            }
+            get { return this.commonPrefixes; }
+            set { this.commonPrefixes = value; }
         }
     }
 }

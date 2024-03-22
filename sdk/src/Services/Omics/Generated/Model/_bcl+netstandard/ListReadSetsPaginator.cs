@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the ReadSets
         /// </summary>
         public IPaginatedEnumerable<ReadSetListItem> ReadSets => 
-            new PaginatedResultKeyResponse<ListReadSetsResponse, ReadSetListItem>(this, (i) => i.ReadSets);
+            new PaginatedResultKeyResponse<ListReadSetsResponse, ReadSetListItem>(this, (i) => i.ReadSets ?? new List<ReadSetListItem>());
 
         internal ListReadSetsPaginator(IAmazonOmics client, ListReadSetsRequest request)
         {

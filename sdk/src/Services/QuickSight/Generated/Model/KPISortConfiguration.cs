@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class KPISortConfiguration
     {
-        private List<FieldSortOptions> _trendGroupSort = new List<FieldSortOptions>();
+        private List<FieldSortOptions> _trendGroupSort = AWSConfigs.InitializeCollections ? new List<FieldSortOptions>() : null;
 
         /// <summary>
         /// Gets and sets the property TrendGroupSort. 
@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TrendGroupSort property is set
         internal bool IsSetTrendGroupSort()
         {
-            return this._trendGroupSort != null && this._trendGroupSort.Count > 0; 
+            return this._trendGroupSort != null && (this._trendGroupSort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

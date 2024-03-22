@@ -44,16 +44,16 @@ namespace Amazon.ManagedGrafana.Model
     /// </summary>
     public partial class UpdateWorkspaceAuthenticationRequest : AmazonManagedGrafanaRequest
     {
-        private List<string> _authenticationProviders = new List<string>();
+        private List<string> _authenticationProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SamlConfiguration _samlConfiguration;
         private string _workspaceId;
 
         /// <summary>
         /// Gets and sets the property AuthenticationProviders. 
         /// <para>
-        /// Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to
-        /// Single Sign-On), or both to authenticate users for using the Grafana console within
-        /// a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
+        /// Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate
+        /// users for using the Grafana console within a workspace. For more information, see
+        /// <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
         /// authentication in Amazon Managed Grafana</a>.
         /// </para>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if AuthenticationProviders property is set
         internal bool IsSetAuthenticationProviders()
         {
-            return this._authenticationProviders != null && this._authenticationProviders.Count > 0; 
+            return this._authenticationProviders != null && (this._authenticationProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

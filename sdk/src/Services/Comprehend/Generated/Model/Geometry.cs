@@ -40,7 +40,7 @@ namespace Amazon.Comprehend.Model
     public partial class Geometry
     {
         private BoundingBox _boundingBox;
-        private List<Point> _polygon = new List<Point>();
+        private List<Point> _polygon = AWSConfigs.InitializeCollections ? new List<Point>() : null;
 
         /// <summary>
         /// Gets and sets the property BoundingBox. 
@@ -76,7 +76,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Polygon property is set
         internal bool IsSetPolygon()
         {
-            return this._polygon != null && this._polygon.Count > 0; 
+            return this._polygon != null && (this._polygon.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.AppMesh.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<TagRef> Tags => 
-            new PaginatedResultKeyResponse<ListTagsForResourceResponse, TagRef>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<ListTagsForResourceResponse, TagRef>(this, (i) => i.Tags ?? new List<TagRef>());
 
         internal ListTagsForResourcePaginator(IAmazonAppMesh client, ListTagsForResourceRequest request)
         {

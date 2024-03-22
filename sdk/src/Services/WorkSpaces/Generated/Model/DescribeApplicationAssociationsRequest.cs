@@ -35,7 +35,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class DescribeApplicationAssociationsRequest : AmazonWorkSpacesRequest
     {
         private string _applicationId;
-        private List<string> _associatedResourceTypes = new List<string>();
+        private List<string> _associatedResourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -74,7 +74,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if AssociatedResourceTypes property is set
         internal bool IsSetAssociatedResourceTypes()
         {
-            return this._associatedResourceTypes != null && this._associatedResourceTypes.Count > 0; 
+            return this._associatedResourceTypes != null && (this._associatedResourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

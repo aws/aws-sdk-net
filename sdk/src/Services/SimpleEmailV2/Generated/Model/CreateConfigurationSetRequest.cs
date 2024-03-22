@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmailV2.Model
         private ReputationOptions _reputationOptions;
         private SendingOptions _sendingOptions;
         private SuppressionOptions _suppressionOptions;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TrackingOptions _trackingOptions;
         private VdmOptions _vdmOptions;
 
@@ -155,7 +155,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

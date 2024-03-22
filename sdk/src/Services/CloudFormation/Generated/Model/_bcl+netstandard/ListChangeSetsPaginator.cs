@@ -45,7 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<ChangeSetSummary> Summaries => 
-            new PaginatedResultKeyResponse<ListChangeSetsResponse, ChangeSetSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<ListChangeSetsResponse, ChangeSetSummary>(this, (i) => i.Summaries ?? new List<ChangeSetSummary>());
 
         internal ListChangeSetsPaginator(IAmazonCloudFormation client, ListChangeSetsRequest request)
         {

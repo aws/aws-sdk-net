@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the LexBots
         /// </summary>
         public IPaginatedEnumerable<LexBot> LexBots => 
-            new PaginatedResultKeyResponse<ListLexBotsResponse, LexBot>(this, (i) => i.LexBots);
+            new PaginatedResultKeyResponse<ListLexBotsResponse, LexBot>(this, (i) => i.LexBots ?? new List<LexBot>());
 
         internal ListLexBotsPaginator(IAmazonConnect client, ListLexBotsRequest request)
         {

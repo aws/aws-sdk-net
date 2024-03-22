@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         private DeploymentConfig _deploymentConfig;
         private string _endpointConfigName;
         private string _endpointName;
-        private List<VariantProperty> _excludeRetainedVariantProperties = new List<VariantProperty>();
+        private List<VariantProperty> _excludeRetainedVariantProperties = AWSConfigs.InitializeCollections ? new List<VariantProperty>() : null;
         private bool? _retainAllVariantProperties;
         private bool? _retainDeploymentConfig;
 
@@ -145,7 +145,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ExcludeRetainedVariantProperties property is set
         internal bool IsSetExcludeRetainedVariantProperties()
         {
-            return this._excludeRetainedVariantProperties != null && this._excludeRetainedVariantProperties.Count > 0; 
+            return this._excludeRetainedVariantProperties != null && (this._excludeRetainedVariantProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

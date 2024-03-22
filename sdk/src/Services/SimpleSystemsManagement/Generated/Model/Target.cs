@@ -128,13 +128,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     /// For more information about how to send commands that target managed nodes using <c>Key,Value</c>
     /// parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
-    /// multiple instances</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+    /// multiple managed nodes</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </para>
     /// </summary>
     public partial class Target
     {
         private string _key;
-        private List<string> _values = new List<string>();
+        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Key. 
@@ -179,7 +179,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

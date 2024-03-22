@@ -63,6 +63,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AccessGrantsInstancesList/AccessGrantsInstance", targetDepth))
                     {
+                        if (response.AccessGrantsInstancesList == null)
+                        {
+                            response.AccessGrantsInstancesList = new List<ListAccessGrantsInstanceEntry>();
+                        }
                         var unmarshaller = ListAccessGrantsInstanceEntryUnmarshaller.Instance;
                         response.AccessGrantsInstancesList.Add(unmarshaller.Unmarshall(context));
                         continue;

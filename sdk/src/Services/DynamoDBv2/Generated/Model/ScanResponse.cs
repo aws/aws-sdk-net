@@ -35,8 +35,8 @@ namespace Amazon.DynamoDBv2.Model
     {
         private ConsumedCapacity _consumedCapacity;
         private int? _count;
-        private List<Dictionary<string, AttributeValue>> _items = new List<Dictionary<string, AttributeValue>>();
-        private Dictionary<string, AttributeValue> _lastEvaluatedKey = new Dictionary<string, AttributeValue>();
+        private List<Dictionary<string, AttributeValue>> _items = AWSConfigs.InitializeCollections ? new List<Dictionary<string, AttributeValue>>() : null;
+        private Dictionary<string, AttributeValue> _lastEvaluatedKey = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
         private int? _scannedCount;
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if LastEvaluatedKey property is set
         internal bool IsSetLastEvaluatedKey()
         {
-            return this._lastEvaluatedKey != null && this._lastEvaluatedKey.Count > 0; 
+            return this._lastEvaluatedKey != null && (this._lastEvaluatedKey.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

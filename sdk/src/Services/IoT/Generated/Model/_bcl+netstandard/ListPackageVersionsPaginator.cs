@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the PackageVersionSummaries
         /// </summary>
         public IPaginatedEnumerable<PackageVersionSummary> PackageVersionSummaries => 
-            new PaginatedResultKeyResponse<ListPackageVersionsResponse, PackageVersionSummary>(this, (i) => i.PackageVersionSummaries);
+            new PaginatedResultKeyResponse<ListPackageVersionsResponse, PackageVersionSummary>(this, (i) => i.PackageVersionSummaries ?? new List<PackageVersionSummary>());
 
         internal ListPackageVersionsPaginator(IAmazonIoT client, ListPackageVersionsRequest request)
         {

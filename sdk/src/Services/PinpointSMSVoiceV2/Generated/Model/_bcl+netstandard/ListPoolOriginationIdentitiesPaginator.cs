@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the OriginationIdentities
         /// </summary>
         public IPaginatedEnumerable<OriginationIdentityMetadata> OriginationIdentities => 
-            new PaginatedResultKeyResponse<ListPoolOriginationIdentitiesResponse, OriginationIdentityMetadata>(this, (i) => i.OriginationIdentities);
+            new PaginatedResultKeyResponse<ListPoolOriginationIdentitiesResponse, OriginationIdentityMetadata>(this, (i) => i.OriginationIdentities ?? new List<OriginationIdentityMetadata>());
 
         internal ListPoolOriginationIdentitiesPaginator(IAmazonPinpointSMSVoiceV2 client, ListPoolOriginationIdentitiesRequest request)
         {

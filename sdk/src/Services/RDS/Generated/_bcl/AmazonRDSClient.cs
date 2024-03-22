@@ -11225,6 +11225,85 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ModifyIntegration
+
+
+        /// <summary>
+        /// Modifies a zero-ETL integration with Amazon Redshift.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Currently, you can only modify integrations that have Aurora MySQL source DB clusters.
+        /// Integrations with Aurora PostgreSQL and RDS sources currently don't support modifying
+        /// the integration.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIntegration service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// Typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidIntegrationStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
+        public virtual ModifyIntegrationResponse ModifyIntegration(ModifyIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIntegrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies a zero-ETL integration with Amazon Redshift.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Currently, you can only modify integrations that have Aurora MySQL source DB clusters.
+        /// Integrations with Aurora PostgreSQL and RDS sources currently don't support modifying
+        /// the integration.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIntegration service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// Typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidIntegrationStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
+        public virtual Task<ModifyIntegrationResponse> ModifyIntegrationAsync(ModifyIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyIntegrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyOptionGroup
 
 

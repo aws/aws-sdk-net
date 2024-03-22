@@ -33,8 +33,8 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class AnomalySourceDetails
     {
-        private List<CloudWatchMetricsDetail> _cloudWatchMetrics = new List<CloudWatchMetricsDetail>();
-        private List<PerformanceInsightsMetricsDetail> _performanceInsightsMetrics = new List<PerformanceInsightsMetricsDetail>();
+        private List<CloudWatchMetricsDetail> _cloudWatchMetrics = AWSConfigs.InitializeCollections ? new List<CloudWatchMetricsDetail>() : null;
+        private List<PerformanceInsightsMetricsDetail> _performanceInsightsMetrics = AWSConfigs.InitializeCollections ? new List<PerformanceInsightsMetricsDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property CloudWatchMetrics. 
@@ -52,7 +52,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if CloudWatchMetrics property is set
         internal bool IsSetCloudWatchMetrics()
         {
-            return this._cloudWatchMetrics != null && this._cloudWatchMetrics.Count > 0; 
+            return this._cloudWatchMetrics != null && (this._cloudWatchMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if PerformanceInsightsMetrics property is set
         internal bool IsSetPerformanceInsightsMetrics()
         {
-            return this._performanceInsightsMetrics != null && this._performanceInsightsMetrics.Count > 0; 
+            return this._performanceInsightsMetrics != null && (this._performanceInsightsMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

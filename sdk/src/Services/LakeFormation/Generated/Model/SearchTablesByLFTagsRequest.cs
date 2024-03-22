@@ -39,7 +39,7 @@ namespace Amazon.LakeFormation.Model
     public partial class SearchTablesByLFTagsRequest : AmazonLakeFormationRequest
     {
         private string _catalogId;
-        private List<LFTag> _expression = new List<LFTag>();
+        private List<LFTag> _expression = AWSConfigs.InitializeCollections ? new List<LFTag>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -80,7 +80,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if Expression property is set
         internal bool IsSetExpression()
         {
-            return this._expression != null && this._expression.Count > 0; 
+            return this._expression != null && (this._expression.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

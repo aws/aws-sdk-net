@@ -45,7 +45,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// Enumerable containing all of the EventIntegrations
         /// </summary>
         public IPaginatedEnumerable<EventIntegration> EventIntegrations => 
-            new PaginatedResultKeyResponse<ListEventIntegrationsResponse, EventIntegration>(this, (i) => i.EventIntegrations);
+            new PaginatedResultKeyResponse<ListEventIntegrationsResponse, EventIntegration>(this, (i) => i.EventIntegrations ?? new List<EventIntegration>());
 
         internal ListEventIntegrationsPaginator(IAmazonAppIntegrationsService client, ListEventIntegrationsRequest request)
         {

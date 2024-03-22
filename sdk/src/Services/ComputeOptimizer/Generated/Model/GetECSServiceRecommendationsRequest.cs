@@ -41,11 +41,11 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetECSServiceRecommendationsRequest : AmazonComputeOptimizerRequest
     {
-        private List<string> _accountIds = new List<string>();
-        private List<ECSServiceRecommendationFilter> _filters = new List<ECSServiceRecommendationFilter>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ECSServiceRecommendationFilter> _filters = AWSConfigs.InitializeCollections ? new List<ECSServiceRecommendationFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _serviceArns = new List<string>();
+        private List<string> _serviceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountIds. 
@@ -73,7 +73,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if ServiceArns property is set
         internal bool IsSetServiceArns()
         {
-            return this._serviceArns != null && this._serviceArns.Count > 0; 
+            return this._serviceArns != null && (this._serviceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

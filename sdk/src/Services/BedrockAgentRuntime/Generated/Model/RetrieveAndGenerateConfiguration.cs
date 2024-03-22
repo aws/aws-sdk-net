@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Configures the retrieval and generation for the session.
+    /// Contains details about the resource being queried.
     /// </summary>
     public partial class RetrieveAndGenerateConfiguration
     {
@@ -37,7 +37,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private RetrieveAndGenerateType _type;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseConfiguration.
+        /// Gets and sets the property KnowledgeBaseConfiguration. 
+        /// <para>
+        /// Contains details about the resource being queried.
+        /// </para>
         /// </summary>
         public KnowledgeBaseRetrieveAndGenerateConfiguration KnowledgeBaseConfiguration
         {
@@ -52,7 +55,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of resource that is queried by the request.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public RetrieveAndGenerateType Type

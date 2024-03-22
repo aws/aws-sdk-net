@@ -36,7 +36,7 @@ namespace Amazon.Glue.Model
         private S3DirectSourceAdditionalOptions _additionalOptions;
         private CompressionType _compressionType;
         private string _escaper;
-        private List<string> _exclusions = new List<string>();
+        private List<string> _exclusions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _groupFiles;
         private string _groupSize;
         private int? _maxBand;
@@ -44,8 +44,8 @@ namespace Amazon.Glue.Model
         private bool? _multiline;
         private string _name;
         private bool? _optimizePerformance;
-        private List<GlueSchema> _outputSchemas = new List<GlueSchema>();
-        private List<string> _paths = new List<string>();
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
+        private List<string> _paths = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private QuoteChar _quoteChar;
         private bool? _recurse;
         private Separator _separator;
@@ -127,7 +127,7 @@ namespace Amazon.Glue.Model
         // Check to see if Exclusions property is set
         internal bool IsSetExclusions()
         {
-            return this._exclusions != null && this._exclusions.Count > 0; 
+            return this._exclusions != null && (this._exclusions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -288,7 +288,7 @@ namespace Amazon.Glue.Model
         // Check to see if OutputSchemas property is set
         internal bool IsSetOutputSchemas()
         {
-            return this._outputSchemas != null && this._outputSchemas.Count > 0; 
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -307,7 +307,7 @@ namespace Amazon.Glue.Model
         // Check to see if Paths property is set
         internal bool IsSetPaths()
         {
-            return this._paths != null && this._paths.Count > 0; 
+            return this._paths != null && (this._paths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

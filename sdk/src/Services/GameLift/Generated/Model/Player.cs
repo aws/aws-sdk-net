@@ -35,8 +35,8 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class Player
     {
-        private Dictionary<string, int> _latencyInMs = new Dictionary<string, int>();
-        private Dictionary<string, AttributeValue> _playerAttributes = new Dictionary<string, AttributeValue>();
+        private Dictionary<string, int> _latencyInMs = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+        private Dictionary<string, AttributeValue> _playerAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
         private string _playerId;
         private string _team;
 
@@ -64,7 +64,7 @@ namespace Amazon.GameLift.Model
         // Check to see if LatencyInMs property is set
         internal bool IsSetLatencyInMs()
         {
-            return this._latencyInMs != null && this._latencyInMs.Count > 0; 
+            return this._latencyInMs != null && (this._latencyInMs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.GameLift.Model
         // Check to see if PlayerAttributes property is set
         internal bool IsSetPlayerAttributes()
         {
-            return this._playerAttributes != null && this._playerAttributes.Count > 0; 
+            return this._playerAttributes != null && (this._playerAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

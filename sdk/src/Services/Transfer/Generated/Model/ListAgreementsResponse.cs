@@ -33,7 +33,7 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class ListAgreementsResponse : AmazonWebServiceResponse
     {
-        private List<ListedAgreement> _agreements = new List<ListedAgreement>();
+        private List<ListedAgreement> _agreements = AWSConfigs.InitializeCollections ? new List<ListedAgreement>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Agreements property is set
         internal bool IsSetAgreements()
         {
-            return this._agreements != null && this._agreements.Count > 0; 
+            return this._agreements != null && (this._agreements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

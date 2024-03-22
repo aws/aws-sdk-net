@@ -45,7 +45,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         /// Enumerable containing all of the Resources
         /// </summary>
         public IPaginatedEnumerable<ResourceResult> Resources => 
-            new PaginatedResultKeyResponse<GetReadinessCheckStatusResponse, ResourceResult>(this, (i) => i.Resources);
+            new PaginatedResultKeyResponse<GetReadinessCheckStatusResponse, ResourceResult>(this, (i) => i.Resources ?? new List<ResourceResult>());
 
         internal GetReadinessCheckStatusPaginator(IAmazonRoute53RecoveryReadiness client, GetReadinessCheckStatusRequest request)
         {

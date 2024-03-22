@@ -34,7 +34,7 @@ namespace Amazon.AutoScalingPlans.Model
     public partial class DescribeScalingPlansResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScalingPlan> _scalingPlans = new List<ScalingPlan>();
+        private List<ScalingPlan> _scalingPlans = AWSConfigs.InitializeCollections ? new List<ScalingPlan>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.AutoScalingPlans.Model
         // Check to see if ScalingPlans property is set
         internal bool IsSetScalingPlans()
         {
-            return this._scalingPlans != null && this._scalingPlans.Count > 0; 
+            return this._scalingPlans != null && (this._scalingPlans.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the AggregatedSourceStatusList
         /// </summary>
         public IPaginatedEnumerable<AggregatedSourceStatus> AggregatedSourceStatusList => 
-            new PaginatedResultKeyResponse<DescribeConfigurationAggregatorSourcesStatusResponse, AggregatedSourceStatus>(this, (i) => i.AggregatedSourceStatusList);
+            new PaginatedResultKeyResponse<DescribeConfigurationAggregatorSourcesStatusResponse, AggregatedSourceStatus>(this, (i) => i.AggregatedSourceStatusList ?? new List<AggregatedSourceStatus>());
 
         internal DescribeConfigurationAggregatorSourcesStatusPaginator(IAmazonConfigService client, DescribeConfigurationAggregatorSourcesStatusRequest request)
         {

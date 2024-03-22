@@ -35,7 +35,7 @@ namespace Amazon.CodeBuild.Model
     {
         private string _certificate;
         private ComputeType _computeType;
-        private List<EnvironmentVariable> _environmentVariables = new List<EnvironmentVariable>();
+        private List<EnvironmentVariable> _environmentVariables = AWSConfigs.InitializeCollections ? new List<EnvironmentVariable>() : null;
         private ProjectFleet _fleet;
         private string _image;
         private ImagePullCredentialsType _imagePullCredentialsType;
@@ -193,7 +193,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if EnvironmentVariables property is set
         internal bool IsSetEnvironmentVariables()
         {
-            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
+            return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

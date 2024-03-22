@@ -33,7 +33,7 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class GetCompatibleKafkaVersionsResponse : AmazonWebServiceResponse
     {
-        private List<CompatibleKafkaVersion> _compatibleKafkaVersions = new List<CompatibleKafkaVersion>();
+        private List<CompatibleKafkaVersion> _compatibleKafkaVersions = AWSConfigs.InitializeCollections ? new List<CompatibleKafkaVersion>() : null;
 
         /// <summary>
         /// Gets and sets the property CompatibleKafkaVersions.             
@@ -50,7 +50,7 @@ namespace Amazon.Kafka.Model
         // Check to see if CompatibleKafkaVersions property is set
         internal bool IsSetCompatibleKafkaVersions()
         {
-            return this._compatibleKafkaVersions != null && this._compatibleKafkaVersions.Count > 0; 
+            return this._compatibleKafkaVersions != null && (this._compatibleKafkaVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

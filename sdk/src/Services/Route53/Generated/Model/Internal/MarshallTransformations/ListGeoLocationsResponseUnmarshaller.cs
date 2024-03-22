@@ -63,6 +63,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("GeoLocationDetailsList/GeoLocationDetails", targetDepth))
                     {
+                        if (response.GeoLocationDetailsList == null)
+                        {
+                            response.GeoLocationDetailsList = new List<GeoLocationDetails>();
+                        }
                         var unmarshaller = GeoLocationDetailsUnmarshaller.Instance;
                         response.GeoLocationDetailsList.Add(unmarshaller.Unmarshall(context));
                         continue;

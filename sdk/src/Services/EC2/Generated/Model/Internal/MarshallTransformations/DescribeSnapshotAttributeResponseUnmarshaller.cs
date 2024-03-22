@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("createVolumePermission/item", targetDepth))
                     {
                         var unmarshaller = CreateVolumePermissionUnmarshaller.Instance;
+                        if (response.CreateVolumePermissions == null)
+                        {
+                            response.CreateVolumePermissions = new List<CreateVolumePermission>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CreateVolumePermissions.Add(item);
                         continue;
@@ -65,6 +69,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("productCodes/item", targetDepth))
                     {
                         var unmarshaller = ProductCodeUnmarshaller.Instance;
+                        if (response.ProductCodes == null)
+                        {
+                            response.ProductCodes = new List<ProductCode>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ProductCodes.Add(item);
                         continue;

@@ -33,7 +33,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class GetFaceLivenessSessionResultsResponse : AmazonWebServiceResponse
     {
-        private List<AuditImage> _auditImages = new List<AuditImage>();
+        private List<AuditImage> _auditImages = AWSConfigs.InitializeCollections ? new List<AuditImage>() : null;
         private float? _confidence;
         private AuditImage _referenceImage;
         private string _sessionId;
@@ -58,7 +58,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if AuditImages property is set
         internal bool IsSetAuditImages()
         {
-            return this._auditImages != null && this._auditImages.Count > 0; 
+            return this._auditImages != null && (this._auditImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the ContactFlowModulesSummaryList
         /// </summary>
         public IPaginatedEnumerable<ContactFlowModuleSummary> ContactFlowModulesSummaryList => 
-            new PaginatedResultKeyResponse<ListContactFlowModulesResponse, ContactFlowModuleSummary>(this, (i) => i.ContactFlowModulesSummaryList);
+            new PaginatedResultKeyResponse<ListContactFlowModulesResponse, ContactFlowModuleSummary>(this, (i) => i.ContactFlowModulesSummaryList ?? new List<ContactFlowModuleSummary>());
 
         internal ListContactFlowModulesPaginator(IAmazonConnect client, ListContactFlowModulesRequest request)
         {

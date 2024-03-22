@@ -35,7 +35,7 @@ namespace Amazon.CodePipeline.Model
     {
         private WebhookAuthenticationType _authentication;
         private WebhookAuthConfiguration _authenticationConfiguration;
-        private List<WebhookFilterRule> _filters = new List<WebhookFilterRule>();
+        private List<WebhookFilterRule> _filters = AWSConfigs.InitializeCollections ? new List<WebhookFilterRule>() : null;
         private string _name;
         private string _targetAction;
         private string _targetPipeline;
@@ -114,7 +114,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

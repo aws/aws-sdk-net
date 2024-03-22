@@ -84,6 +84,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("StackResources/member", targetDepth))
                     {
                         var unmarshaller = StackResourceUnmarshaller.Instance;
+                        if (response.StackResources == null)
+                        {
+                            response.StackResources = new List<StackResource>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.StackResources.Add(item);
                         continue;

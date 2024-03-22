@@ -33,7 +33,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class MemberSummary
     {
-        private List<string> _abilities = new List<string>();
+        private List<string> _abilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _accountId;
         private DateTime? _createTime;
         private string _displayName;
@@ -59,7 +59,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Abilities property is set
         internal bool IsSetAbilities()
         {
-            return this._abilities != null && this._abilities.Count > 0; 
+            return this._abilities != null && (this._abilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

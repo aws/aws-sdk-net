@@ -41,7 +41,7 @@ namespace Amazon.GuardDuty.Model
     public partial class OrganizationStatistics
     {
         private int? _activeAccountsCount;
-        private List<OrganizationFeatureStatistics> _countByFeature = new List<OrganizationFeatureStatistics>();
+        private List<OrganizationFeatureStatistics> _countByFeature = AWSConfigs.InitializeCollections ? new List<OrganizationFeatureStatistics>() : null;
         private int? _enabledAccountsCount;
         private int? _memberAccountsCount;
         private int? _totalAccountsCount;
@@ -80,7 +80,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if CountByFeature property is set
         internal bool IsSetCountByFeature()
         {
-            return this._countByFeature != null && this._countByFeature.Count > 0; 
+            return this._countByFeature != null && (this._countByFeature.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

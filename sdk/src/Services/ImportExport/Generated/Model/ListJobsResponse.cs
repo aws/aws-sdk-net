@@ -34,7 +34,7 @@ namespace Amazon.ImportExport.Model
     public partial class ListJobsResponse : AmazonWebServiceResponse
     {
         private bool? _isTruncated;
-        private List<Job> _jobs = new List<Job>();
+        private List<Job> _jobs = AWSConfigs.InitializeCollections ? new List<Job>() : null;
 
         /// <summary>
         /// Gets and sets the property IsTruncated.
@@ -63,7 +63,7 @@ namespace Amazon.ImportExport.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

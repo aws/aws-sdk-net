@@ -33,8 +33,8 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class PredefinedAttributeSearchCriteria
     {
-        private List<PredefinedAttributeSearchCriteria> _andConditions = new List<PredefinedAttributeSearchCriteria>();
-        private List<PredefinedAttributeSearchCriteria> _orConditions = new List<PredefinedAttributeSearchCriteria>();
+        private List<PredefinedAttributeSearchCriteria> _andConditions = AWSConfigs.InitializeCollections ? new List<PredefinedAttributeSearchCriteria>() : null;
+        private List<PredefinedAttributeSearchCriteria> _orConditions = AWSConfigs.InitializeCollections ? new List<PredefinedAttributeSearchCriteria>() : null;
         private StringCondition _stringCondition;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if AndConditions property is set
         internal bool IsSetAndConditions()
         {
-            return this._andConditions != null && this._andConditions.Count > 0; 
+            return this._andConditions != null && (this._andConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.Connect.Model
         // Check to see if OrConditions property is set
         internal bool IsSetOrConditions()
         {
-            return this._orConditions != null && this._orConditions.Count > 0; 
+            return this._orConditions != null && (this._orConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

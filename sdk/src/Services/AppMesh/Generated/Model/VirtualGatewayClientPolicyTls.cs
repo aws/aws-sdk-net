@@ -35,7 +35,7 @@ namespace Amazon.AppMesh.Model
     {
         private VirtualGatewayClientTlsCertificate _certificate;
         private bool? _enforce;
-        private List<int> _ports = new List<int>();
+        private List<int> _ports = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private VirtualGatewayTlsValidationContext _validation;
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if Ports property is set
         internal bool IsSetPorts()
         {
-            return this._ports != null && this._ports.Count > 0; 
+            return this._ports != null && (this._ports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

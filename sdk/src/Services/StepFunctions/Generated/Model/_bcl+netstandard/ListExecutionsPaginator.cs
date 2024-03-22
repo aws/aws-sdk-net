@@ -45,7 +45,7 @@ namespace Amazon.StepFunctions.Model
         /// Enumerable containing all of the Executions
         /// </summary>
         public IPaginatedEnumerable<ExecutionListItem> Executions => 
-            new PaginatedResultKeyResponse<ListExecutionsResponse, ExecutionListItem>(this, (i) => i.Executions);
+            new PaginatedResultKeyResponse<ListExecutionsResponse, ExecutionListItem>(this, (i) => i.Executions ?? new List<ExecutionListItem>());
 
         internal ListExecutionsPaginator(IAmazonStepFunctions client, ListExecutionsRequest request)
         {

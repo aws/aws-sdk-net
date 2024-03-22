@@ -34,12 +34,14 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateModelPackageRequest : AmazonSageMakerRequest
     {
-        private List<AdditionalInferenceSpecificationDefinition> _additionalInferenceSpecificationsToAdd = new List<AdditionalInferenceSpecificationDefinition>();
+        private List<AdditionalInferenceSpecificationDefinition> _additionalInferenceSpecificationsToAdd = AWSConfigs.InitializeCollections ? new List<AdditionalInferenceSpecificationDefinition>() : null;
         private string _approvalDescription;
-        private Dictionary<string, string> _customerMetadataProperties = new Dictionary<string, string>();
-        private List<string> _customerMetadataPropertiesToRemove = new List<string>();
+        private Dictionary<string, string> _customerMetadataProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _customerMetadataPropertiesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private InferenceSpecification _inferenceSpecification;
         private ModelApprovalStatus _modelApprovalStatus;
         private string _modelPackageArn;
+        private string _sourceUri;
 
         /// <summary>
         /// Gets and sets the property AdditionalInferenceSpecificationsToAdd. 
@@ -61,7 +63,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AdditionalInferenceSpecificationsToAdd property is set
         internal bool IsSetAdditionalInferenceSpecificationsToAdd()
         {
-            return this._additionalInferenceSpecificationsToAdd != null && this._additionalInferenceSpecificationsToAdd.Count > 0; 
+            return this._additionalInferenceSpecificationsToAdd != null && (this._additionalInferenceSpecificationsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +101,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CustomerMetadataProperties property is set
         internal bool IsSetCustomerMetadataProperties()
         {
-            return this._customerMetadataProperties != null && this._customerMetadataProperties.Count > 0; 
+            return this._customerMetadataProperties != null && (this._customerMetadataProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +119,40 @@ namespace Amazon.SageMaker.Model
         // Check to see if CustomerMetadataPropertiesToRemove property is set
         internal bool IsSetCustomerMetadataPropertiesToRemove()
         {
-            return this._customerMetadataPropertiesToRemove != null && this._customerMetadataPropertiesToRemove.Count > 0; 
+            return this._customerMetadataPropertiesToRemove != null && (this._customerMetadataPropertiesToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceSpecification. 
+        /// <para>
+        /// Specifies details about inference jobs that you can run with models based on this
+        /// model package, including the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The Amazon ECR paths of containers that contain the inference code and model artifacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The instance types that the model package supports for transform jobs and real-time
+        /// endpoints used for inference.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The input and output content formats that the model package supports for inference.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public InferenceSpecification InferenceSpecification
+        {
+            get { return this._inferenceSpecification; }
+            set { this._inferenceSpecification = value; }
+        }
+
+        // Check to see if InferenceSpecification property is set
+        internal bool IsSetInferenceSpecification()
+        {
+            return this._inferenceSpecification != null;
         }
 
         /// <summary>
@@ -155,6 +190,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelPackageArn()
         {
             return this._modelPackageArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceUri. 
+        /// <para>
+        /// The URI of the source for the model package.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string SourceUri
+        {
+            get { return this._sourceUri; }
+            set { this._sourceUri = value; }
+        }
+
+        // Check to see if SourceUri property is set
+        internal bool IsSetSourceUri()
+        {
+            return this._sourceUri != null;
         }
 
     }

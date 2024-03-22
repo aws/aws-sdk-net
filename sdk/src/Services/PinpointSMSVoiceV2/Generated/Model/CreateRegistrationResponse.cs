@@ -33,14 +33,14 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class CreateRegistrationResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _additionalAttributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _createdTimestamp;
         private long? _currentVersionNumber;
         private string _registrationArn;
         private string _registrationId;
         private RegistrationStatus _registrationStatus;
         private string _registrationType;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalAttributes. 
@@ -57,7 +57,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if AdditionalAttributes property is set
         internal bool IsSetAdditionalAttributes()
         {
-            return this._additionalAttributes != null && this._additionalAttributes.Count > 0; 
+            return this._additionalAttributes != null && (this._additionalAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -51,7 +51,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class BatchExecuteStatementRequest : AmazonDynamoDBRequest
     {
         private ReturnConsumedCapacity _returnConsumedCapacity;
-        private List<BatchStatementRequest> _statements = new List<BatchStatementRequest>();
+        private List<BatchStatementRequest> _statements = AWSConfigs.InitializeCollections ? new List<BatchStatementRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property ReturnConsumedCapacity.
@@ -84,7 +84,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Statements property is set
         internal bool IsSetStatements()
         {
-            return this._statements != null && this._statements.Count > 0; 
+            return this._statements != null && (this._statements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

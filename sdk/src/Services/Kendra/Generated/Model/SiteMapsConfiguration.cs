@@ -41,7 +41,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class SiteMapsConfiguration
     {
-        private List<string> _siteMaps = new List<string>();
+        private List<string> _siteMaps = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SiteMaps. 
@@ -63,7 +63,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SiteMaps property is set
         internal bool IsSetSiteMaps()
         {
-            return this._siteMaps != null && this._siteMaps.Count > 0; 
+            return this._siteMaps != null && (this._siteMaps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

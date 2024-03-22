@@ -33,7 +33,7 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class CachingConfig
     {
-        private List<string> _cachingKeys = new List<string>();
+        private List<string> _cachingKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _ttl;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.AppSync.Model
         // Check to see if CachingKeys property is set
         internal bool IsSetCachingKeys()
         {
-            return this._cachingKeys != null && this._cachingKeys.Count > 0; 
+            return this._cachingKeys != null && (this._cachingKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

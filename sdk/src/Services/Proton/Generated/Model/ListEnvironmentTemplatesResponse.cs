@@ -34,7 +34,7 @@ namespace Amazon.Proton.Model
     public partial class ListEnvironmentTemplatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<EnvironmentTemplateSummary> _templates = new List<EnvironmentTemplateSummary>();
+        private List<EnvironmentTemplateSummary> _templates = AWSConfigs.InitializeCollections ? new List<EnvironmentTemplateSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Proton.Model
         // Check to see if Templates property is set
         internal bool IsSetTemplates()
         {
-            return this._templates != null && this._templates.Count > 0; 
+            return this._templates != null && (this._templates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

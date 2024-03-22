@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class ListDevEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<string> _devEndpointNames = new List<string>();
+        private List<string> _devEndpointNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if DevEndpointNames property is set
         internal bool IsSetDevEndpointNames()
         {
-            return this._devEndpointNames != null && this._devEndpointNames.Count > 0; 
+            return this._devEndpointNames != null && (this._devEndpointNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

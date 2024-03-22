@@ -39,7 +39,7 @@ namespace Amazon.MediaConvert.Model
         private string _category;
         private DateTime? _createdAt;
         private string _description;
-        private List<HopDestination> _hopDestinations = new List<HopDestination>();
+        private List<HopDestination> _hopDestinations = AWSConfigs.InitializeCollections ? new List<HopDestination>() : null;
         private DateTime? _lastUpdated;
         private string _name;
         private int? _priority;
@@ -140,7 +140,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if HopDestinations property is set
         internal bool IsSetHopDestinations()
         {
-            return this._hopDestinations != null && this._hopDestinations.Count > 0; 
+            return this._hopDestinations != null && (this._hopDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

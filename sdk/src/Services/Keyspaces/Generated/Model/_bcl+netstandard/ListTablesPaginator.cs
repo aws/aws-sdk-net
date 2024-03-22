@@ -45,7 +45,7 @@ namespace Amazon.Keyspaces.Model
         /// Enumerable containing all of the Tables
         /// </summary>
         public IPaginatedEnumerable<TableSummary> Tables => 
-            new PaginatedResultKeyResponse<ListTablesResponse, TableSummary>(this, (i) => i.Tables);
+            new PaginatedResultKeyResponse<ListTablesResponse, TableSummary>(this, (i) => i.Tables ?? new List<TableSummary>());
 
         internal ListTablesPaginator(IAmazonKeyspaces client, ListTablesRequest request)
         {

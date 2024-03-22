@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// Enumerable containing all of the IpRoutesInfo
         /// </summary>
         public IPaginatedEnumerable<IpRouteInfo> IpRoutesInfo => 
-            new PaginatedResultKeyResponse<ListIpRoutesResponse, IpRouteInfo>(this, (i) => i.IpRoutesInfo);
+            new PaginatedResultKeyResponse<ListIpRoutesResponse, IpRouteInfo>(this, (i) => i.IpRoutesInfo ?? new List<IpRouteInfo>());
 
         internal ListIpRoutesPaginator(IAmazonDirectoryService client, ListIpRoutesRequest request)
         {

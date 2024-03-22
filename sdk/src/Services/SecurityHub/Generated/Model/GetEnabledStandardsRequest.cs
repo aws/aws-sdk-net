@@ -36,7 +36,7 @@ namespace Amazon.SecurityHub.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _standardsSubscriptionArns = new List<string>();
+        private List<string> _standardsSubscriptionArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -97,7 +97,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StandardsSubscriptionArns property is set
         internal bool IsSetStandardsSubscriptionArns()
         {
-            return this._standardsSubscriptionArns != null && this._standardsSubscriptionArns.Count > 0; 
+            return this._standardsSubscriptionArns != null && (this._standardsSubscriptionArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the NetworkAcls
         /// </summary>
         public IPaginatedEnumerable<NetworkAcl> NetworkAcls => 
-            new PaginatedResultKeyResponse<DescribeNetworkAclsResponse, NetworkAcl>(this, (i) => i.NetworkAcls);
+            new PaginatedResultKeyResponse<DescribeNetworkAclsResponse, NetworkAcl>(this, (i) => i.NetworkAcls ?? new List<NetworkAcl>());
 
         internal DescribeNetworkAclsPaginator(IAmazonEC2 client, DescribeNetworkAclsRequest request)
         {

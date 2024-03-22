@@ -84,6 +84,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AlarmHistoryItems/member", targetDepth))
                     {
                         var unmarshaller = AlarmHistoryItemUnmarshaller.Instance;
+                        if (response.AlarmHistoryItems == null)
+                        {
+                            response.AlarmHistoryItems = new List<AlarmHistoryItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AlarmHistoryItems.Add(item);
                         continue;

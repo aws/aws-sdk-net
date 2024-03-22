@@ -33,7 +33,7 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class GetEventDataStoreResponse : AmazonWebServiceResponse
     {
-        private List<AdvancedEventSelector> _advancedEventSelectors = new List<AdvancedEventSelector>();
+        private List<AdvancedEventSelector> _advancedEventSelectors = AWSConfigs.InitializeCollections ? new List<AdvancedEventSelector>() : null;
         private BillingMode _billingMode;
         private DateTime? _createdTimestamp;
         private string _eventDataStoreArn;
@@ -63,7 +63,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if AdvancedEventSelectors property is set
         internal bool IsSetAdvancedEventSelectors()
         {
-            return this._advancedEventSelectors != null && this._advancedEventSelectors.Count > 0; 
+            return this._advancedEventSelectors != null && (this._advancedEventSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -237,6 +237,15 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The number of units provided by the specified instance type.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When specifying weights, the price used in the <c>lowest-price</c> and <c>price-capacity-optimized</c>
+        /// allocation strategies is per <i>unit</i> hour (where the instance price is divided
+        /// by the specified weight). However, if all the specified weights are above the requested
+        /// <c>TargetCapacity</c>, resulting in only 1 instance being launched, the price used
+        /// is per <i>instance</i> hour.
+        /// </para>
+        ///  </note>
         /// </summary>
         public double? WeightedCapacity
         {

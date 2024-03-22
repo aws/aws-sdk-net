@@ -42,7 +42,7 @@ namespace Amazon.Rekognition.Model
     public partial class DeleteFacesRequest : AmazonRekognitionRequest
     {
         private string _collectionId;
-        private List<string> _faceIds = new List<string>();
+        private List<string> _faceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CollectionId. 
@@ -79,7 +79,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if FaceIds property is set
         internal bool IsSetFaceIds()
         {
-            return this._faceIds != null && this._faceIds.Count > 0; 
+            return this._faceIds != null && (this._faceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

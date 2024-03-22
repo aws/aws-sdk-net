@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _description;
         private string _eventTimeFeatureName;
         private string _failureReason;
-        private List<FeatureDefinition> _featureDefinitions = new List<FeatureDefinition>();
+        private List<FeatureDefinition> _featureDefinitions = AWSConfigs.InitializeCollections ? new List<FeatureDefinition>() : null;
         private string _featureGroupArn;
         private string _featureGroupName;
         private FeatureGroupStatus _featureGroupStatus;
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         private OnlineStoreConfig _onlineStoreConfig;
         private string _recordIdentifierFeatureName;
         private string _roleArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -167,7 +167,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if FeatureDefinitions property is set
         internal bool IsSetFeatureDefinitions()
         {
-            return this._featureDefinitions != null && this._featureDefinitions.Count > 0; 
+            return this._featureDefinitions != null && (this._featureDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -363,7 +363,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

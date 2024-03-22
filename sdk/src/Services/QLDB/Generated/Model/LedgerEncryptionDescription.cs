@@ -123,7 +123,9 @@ namespace Amazon.QLDB.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses
         /// for encryption at rest. If this parameter is undefined, the ledger uses an Amazon
-        /// Web Services owned KMS key for encryption.
+        /// Web Services owned KMS key for encryption. It will display <c>AWS_OWNED_KMS_KEY</c>
+        /// when updating the ledger's encryption configuration to the Amazon Web Services owned
+        /// KMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]

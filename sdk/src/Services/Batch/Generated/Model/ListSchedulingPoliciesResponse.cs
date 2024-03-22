@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model
     public partial class ListSchedulingPoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SchedulingPolicyListingDetail> _schedulingPolicies = new List<SchedulingPolicyListingDetail>();
+        private List<SchedulingPolicyListingDetail> _schedulingPolicies = AWSConfigs.InitializeCollections ? new List<SchedulingPolicyListingDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.Batch.Model
         // Check to see if SchedulingPolicies property is set
         internal bool IsSetSchedulingPolicies()
         {
-            return this._schedulingPolicies != null && this._schedulingPolicies.Count > 0; 
+            return this._schedulingPolicies != null && (this._schedulingPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

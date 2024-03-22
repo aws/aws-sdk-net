@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeNetworkInsightsPathsResponse : AmazonWebServiceResponse
     {
-        private List<NetworkInsightsPath> _networkInsightsPaths = new List<NetworkInsightsPath>();
+        private List<NetworkInsightsPath> _networkInsightsPaths = AWSConfigs.InitializeCollections ? new List<NetworkInsightsPath>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if NetworkInsightsPaths property is set
         internal bool IsSetNetworkInsightsPaths()
         {
-            return this._networkInsightsPaths != null && this._networkInsightsPaths.Count > 0; 
+            return this._networkInsightsPaths != null && (this._networkInsightsPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Enumerable containing all of the ScalableTargets
         /// </summary>
         public IPaginatedEnumerable<ScalableTarget> ScalableTargets => 
-            new PaginatedResultKeyResponse<DescribeScalableTargetsResponse, ScalableTarget>(this, (i) => i.ScalableTargets);
+            new PaginatedResultKeyResponse<DescribeScalableTargetsResponse, ScalableTarget>(this, (i) => i.ScalableTargets ?? new List<ScalableTarget>());
 
         internal DescribeScalableTargetsPaginator(IAmazonApplicationAutoScaling client, DescribeScalableTargetsRequest request)
         {

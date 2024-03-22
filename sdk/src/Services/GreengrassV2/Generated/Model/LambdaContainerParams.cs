@@ -34,10 +34,10 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class LambdaContainerParams
     {
-        private List<LambdaDeviceMount> _devices = new List<LambdaDeviceMount>();
+        private List<LambdaDeviceMount> _devices = AWSConfigs.InitializeCollections ? new List<LambdaDeviceMount>() : null;
         private int? _memorySizeInKB;
         private bool? _mountroSysfs;
-        private List<LambdaVolumeMount> _volumes = new List<LambdaVolumeMount>();
+        private List<LambdaVolumeMount> _volumes = AWSConfigs.InitializeCollections ? new List<LambdaVolumeMount>() : null;
 
         /// <summary>
         /// Gets and sets the property Devices. 
@@ -54,7 +54,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if Devices property is set
         internal bool IsSetDevices()
         {
-            return this._devices != null && this._devices.Count > 0; 
+            return this._devices != null && (this._devices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

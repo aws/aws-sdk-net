@@ -169,7 +169,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 }
                 lastRequestId = listVersionsResponse.ResponseMetadata.RequestId;
 
-                if (listVersionsResponse.Versions.Count == 0)
+                if (listVersionsResponse.Versions == null || listVersionsResponse.Versions.Count == 0)
                 {
                     // If the bucket has no objects break the loop.
                     break;

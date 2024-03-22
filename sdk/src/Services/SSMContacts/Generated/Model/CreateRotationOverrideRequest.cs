@@ -36,7 +36,7 @@ namespace Amazon.SSMContacts.Model
     {
         private DateTime? _endTime;
         private string _idempotencyToken;
-        private List<string> _newContactIds = new List<string>();
+        private List<string> _newContactIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _rotationId;
         private DateTime? _startTime;
 
@@ -100,7 +100,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if NewContactIds property is set
         internal bool IsSetNewContactIds()
         {
-            return this._newContactIds != null && this._newContactIds.Count > 0; 
+            return this._newContactIds != null && (this._newContactIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

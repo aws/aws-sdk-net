@@ -45,7 +45,7 @@ namespace Amazon.EMRContainers.Model
         /// Enumerable containing all of the JobRuns
         /// </summary>
         public IPaginatedEnumerable<JobRun> JobRuns => 
-            new PaginatedResultKeyResponse<ListJobRunsResponse, JobRun>(this, (i) => i.JobRuns);
+            new PaginatedResultKeyResponse<ListJobRunsResponse, JobRun>(this, (i) => i.JobRuns ?? new List<JobRun>());
 
         internal ListJobRunsPaginator(IAmazonEMRContainers client, ListJobRunsRequest request)
         {

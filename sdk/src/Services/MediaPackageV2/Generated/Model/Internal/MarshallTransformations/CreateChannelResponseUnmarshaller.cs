@@ -81,6 +81,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ETag", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ETag = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IngestEndpoints", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<IngestEndpoint, IngestEndpointUnmarshaller>(IngestEndpointUnmarshaller.Instance);

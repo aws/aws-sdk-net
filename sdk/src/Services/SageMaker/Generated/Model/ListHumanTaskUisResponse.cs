@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListHumanTaskUisResponse : AmazonWebServiceResponse
     {
-        private List<HumanTaskUiSummary> _humanTaskUiSummaries = new List<HumanTaskUiSummary>();
+        private List<HumanTaskUiSummary> _humanTaskUiSummaries = AWSConfigs.InitializeCollections ? new List<HumanTaskUiSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HumanTaskUiSummaries property is set
         internal bool IsSetHumanTaskUiSummaries()
         {
-            return this._humanTaskUiSummaries != null && this._humanTaskUiSummaries.Count > 0; 
+            return this._humanTaskUiSummaries != null && (this._humanTaskUiSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

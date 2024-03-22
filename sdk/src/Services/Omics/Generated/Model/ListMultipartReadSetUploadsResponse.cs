@@ -34,7 +34,7 @@ namespace Amazon.Omics.Model
     public partial class ListMultipartReadSetUploadsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<MultipartReadSetUploadListItem> _uploads = new List<MultipartReadSetUploadListItem>();
+        private List<MultipartReadSetUploadListItem> _uploads = AWSConfigs.InitializeCollections ? new List<MultipartReadSetUploadListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Omics.Model
         // Check to see if Uploads property is set
         internal bool IsSetUploads()
         {
-            return this._uploads != null && this._uploads.Count > 0; 
+            return this._uploads != null && (this._uploads.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

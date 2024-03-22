@@ -90,6 +90,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SourceRegions/SourceRegion", targetDepth))
                     {
                         var unmarshaller = SourceRegionUnmarshaller.Instance;
+                        if (response.SourceRegions == null)
+                        {
+                            response.SourceRegions = new List<SourceRegion>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SourceRegions.Add(item);
                         continue;

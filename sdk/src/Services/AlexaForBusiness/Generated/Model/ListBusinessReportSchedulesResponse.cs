@@ -33,7 +33,7 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class ListBusinessReportSchedulesResponse : AmazonWebServiceResponse
     {
-        private List<BusinessReportSchedule> _businessReportSchedules = new List<BusinessReportSchedule>();
+        private List<BusinessReportSchedule> _businessReportSchedules = AWSConfigs.InitializeCollections ? new List<BusinessReportSchedule>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if BusinessReportSchedules property is set
         internal bool IsSetBusinessReportSchedules()
         {
-            return this._businessReportSchedules != null && this._businessReportSchedules.Count > 0; 
+            return this._businessReportSchedules != null && (this._businessReportSchedules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

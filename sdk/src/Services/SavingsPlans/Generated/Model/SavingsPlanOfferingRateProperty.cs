@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
-    /// Information about a property.
+    /// Information about a Savings Plan offering rate property.
     /// </summary>
     public partial class SavingsPlanOfferingRateProperty
     {

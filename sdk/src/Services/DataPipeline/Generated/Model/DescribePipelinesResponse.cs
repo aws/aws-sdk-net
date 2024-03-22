@@ -33,7 +33,7 @@ namespace Amazon.DataPipeline.Model
     /// </summary>
     public partial class DescribePipelinesResponse : AmazonWebServiceResponse
     {
-        private List<PipelineDescription> _pipelineDescriptionList = new List<PipelineDescription>();
+        private List<PipelineDescription> _pipelineDescriptionList = AWSConfigs.InitializeCollections ? new List<PipelineDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property PipelineDescriptionList. 
@@ -51,7 +51,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if PipelineDescriptionList property is set
         internal bool IsSetPipelineDescriptionList()
         {
-            return this._pipelineDescriptionList != null && this._pipelineDescriptionList.Count > 0; 
+            return this._pipelineDescriptionList != null && (this._pipelineDescriptionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

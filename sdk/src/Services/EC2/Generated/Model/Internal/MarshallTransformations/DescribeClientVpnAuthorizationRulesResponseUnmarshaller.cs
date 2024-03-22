@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("authorizationRule/item", targetDepth))
                     {
                         var unmarshaller = AuthorizationRuleUnmarshaller.Instance;
+                        if (response.AuthorizationRules == null)
+                        {
+                            response.AuthorizationRules = new List<AuthorizationRule>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AuthorizationRules.Add(item);
                         continue;

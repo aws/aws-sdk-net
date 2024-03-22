@@ -33,13 +33,14 @@ namespace Amazon.VerifiedPermissions.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreateIdentitySource.html">CreateIdentitySource</a>
-    /// operation.
+    /// This data type was a response parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetIdentitySource.html">GetIdentitySource</a>
+    /// operation. Replaced by <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ConfigurationDetail.html">ConfigurationDetail</a>.
     /// </para>
     /// </summary>
+    [Obsolete("This shape has been replaced by ConfigurationDetail")]
     public partial class IdentitySourceDetails
     {
-        private List<string> _clientIds = new List<string>();
+        private List<string> _clientIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _discoveryUrl;
         private OpenIdIssuer _openIdIssuer;
         private string _userPoolArn;
@@ -51,6 +52,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// that are enabled for this identity source.
         /// </para>
         /// </summary>
+        [Obsolete("This attribute has been replaced by configuration.cognitoUserPoolConfiguration.clientIds")]
         [AWSProperty(Min=0, Max=1000)]
         public List<string> ClientIds
         {
@@ -61,7 +63,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if ClientIds property is set
         internal bool IsSetClientIds()
         {
-            return this._clientIds != null && this._clientIds.Count > 0; 
+            return this._clientIds != null && (this._clientIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,6 +80,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// 
         /// </para>
         /// </summary>
+        [Obsolete("This attribute has been replaced by configuration.cognitoUserPoolConfiguration.issuer")]
         [AWSProperty(Min=1, Max=2048)]
         public string DiscoveryUrl
         {
@@ -102,6 +105,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// At this time, the only valid value is <c>cognito</c>.
         /// </para>
         /// </summary>
+        [Obsolete("This attribute has been replaced by configuration")]
         public OpenIdIssuer OpenIdIssuer
         {
             get { return this._openIdIssuer; }
@@ -122,6 +126,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// to this Verified Permissions policy store.
         /// </para>
         /// </summary>
+        [Obsolete("This attribute has been replaced by configuration.cognitoUserPoolConfiguration.userPoolArn")]
         [AWSProperty(Min=1, Max=255)]
         public string UserPoolArn
         {

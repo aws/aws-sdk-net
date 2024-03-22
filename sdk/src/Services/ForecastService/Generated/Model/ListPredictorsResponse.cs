@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model
     public partial class ListPredictorsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PredictorSummary> _predictors = new List<PredictorSummary>();
+        private List<PredictorSummary> _predictors = AWSConfigs.InitializeCollections ? new List<PredictorSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if Predictors property is set
         internal bool IsSetPredictors()
         {
-            return this._predictors != null && this._predictors.Count > 0; 
+            return this._predictors != null && (this._predictors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

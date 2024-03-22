@@ -65,36 +65,37 @@ namespace Amazon.RDS.Model
         private ActivityStreamMode _activityStreamMode;
         private ActivityStreamStatus _activityStreamStatus;
         private int? _allocatedStorage;
-        private List<DBClusterRole> _associatedRoles = new List<DBClusterRole>();
+        private List<DBClusterRole> _associatedRoles = AWSConfigs.InitializeCollections ? new List<DBClusterRole>() : null;
         private DateTime? _automaticRestartTime;
         private bool? _autoMinorVersionUpgrade;
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _awsBackupRecoveryPointArn;
         private long? _backtrackConsumedChangeRecords;
         private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
         private int? _capacity;
+        private CertificateDetails _certificateDetails;
         private string _characterSetName;
         private string _cloneGroupId;
         private DateTime? _clusterCreateTime;
         private bool? _copyTagsToSnapshot;
         private bool? _crossAccountClone;
-        private List<string> _customEndpoints = new List<string>();
+        private List<string> _customEndpoints = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _databaseName;
         private string _dbClusterArn;
         private string _dbClusterIdentifier;
         private string _dbClusterInstanceClass;
-        private List<DBClusterMember> _dbClusterMembers = new List<DBClusterMember>();
-        private List<DBClusterOptionGroupStatus> _dbClusterOptionGroupMemberships = new List<DBClusterOptionGroupStatus>();
+        private List<DBClusterMember> _dbClusterMembers = AWSConfigs.InitializeCollections ? new List<DBClusterMember>() : null;
+        private List<DBClusterOptionGroupStatus> _dbClusterOptionGroupMemberships = AWSConfigs.InitializeCollections ? new List<DBClusterOptionGroupStatus>() : null;
         private string _dbClusterParameterGroup;
         private string _dbClusterResourceId;
         private string _dbSubnetGroup;
         private string _dbSystemId;
         private bool? _deletionProtection;
-        private List<DomainMembership> _domainMemberships = new List<DomainMembership>();
+        private List<DomainMembership> _domainMemberships = AWSConfigs.InitializeCollections ? new List<DomainMembership>() : null;
         private DateTime? _earliestBacktrackTime;
         private DateTime? _earliestRestorableTime;
-        private List<string> _enabledCloudwatchLogsExports = new List<string>();
+        private List<string> _enabledCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _endpoint;
         private string _engine;
         private string _engineMode;
@@ -127,16 +128,17 @@ namespace Amazon.RDS.Model
         private bool? _publiclyAccessible;
         private RdsCustomClusterConfiguration _rdsCustomClusterConfiguration;
         private string _readerEndpoint;
-        private List<string> _readReplicaIdentifiers = new List<string>();
+        private List<string> _readReplicaIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicationSourceIdentifier;
         private ScalingConfigurationInfo _scalingConfigurationInfo;
         private ServerlessV2ScalingConfigurationInfo _serverlessV2ScalingConfiguration;
         private string _status;
-        private List<DBClusterStatusInfo> _statusInfos = new List<DBClusterStatusInfo>();
+        private List<DBClusterStatusInfo> _statusInfos = AWSConfigs.InitializeCollections ? new List<DBClusterStatusInfo>() : null;
         private bool? _storageEncrypted;
+        private int? _storageThroughput;
         private string _storageType;
-        private List<Tag> _tagList = new List<Tag>();
-        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<VpcSecurityGroupMembership>() : null;
 
         /// <summary>
         /// Gets and sets the property ActivityStreamKinesisStreamName. 
@@ -256,7 +258,7 @@ namespace Amazon.RDS.Model
         // Check to see if AssociatedRoles property is set
         internal bool IsSetAssociatedRoles()
         {
-            return this._associatedRoles != null && this._associatedRoles.Count > 0; 
+            return this._associatedRoles != null && (this._associatedRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -314,7 +316,7 @@ namespace Amazon.RDS.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -412,6 +414,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetCapacity()
         {
             return this._capacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateDetails.
+        /// </summary>
+        public CertificateDetails CertificateDetails
+        {
+            get { return this._certificateDetails; }
+            set { this._certificateDetails = value; }
+        }
+
+        // Check to see if CertificateDetails property is set
+        internal bool IsSetCertificateDetails()
+        {
+            return this._certificateDetails != null;
         }
 
         /// <summary>
@@ -521,7 +538,7 @@ namespace Amazon.RDS.Model
         // Check to see if CustomEndpoints property is set
         internal bool IsSetCustomEndpoints()
         {
-            return this._customEndpoints != null && this._customEndpoints.Count > 0; 
+            return this._customEndpoints != null && (this._customEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -617,7 +634,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBClusterMembers property is set
         internal bool IsSetDBClusterMembers()
         {
-            return this._dbClusterMembers != null && this._dbClusterMembers.Count > 0; 
+            return this._dbClusterMembers != null && (this._dbClusterMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -635,7 +652,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBClusterOptionGroupMemberships property is set
         internal bool IsSetDBClusterOptionGroupMemberships()
         {
-            return this._dbClusterOptionGroupMemberships != null && this._dbClusterOptionGroupMemberships.Count > 0; 
+            return this._dbClusterOptionGroupMemberships != null && (this._dbClusterOptionGroupMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -747,7 +764,7 @@ namespace Amazon.RDS.Model
         // Check to see if DomainMemberships property is set
         internal bool IsSetDomainMemberships()
         {
-            return this._domainMemberships != null && this._domainMemberships.Count > 0; 
+            return this._domainMemberships != null && (this._domainMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -807,7 +824,7 @@ namespace Amazon.RDS.Model
         // Check to see if EnabledCloudwatchLogsExports property is set
         internal bool IsSetEnabledCloudwatchLogsExports()
         {
-            return this._enabledCloudwatchLogsExports != null && this._enabledCloudwatchLogsExports.Count > 0; 
+            return this._enabledCloudwatchLogsExports != null && (this._enabledCloudwatchLogsExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1550,7 +1567,7 @@ namespace Amazon.RDS.Model
         // Check to see if ReadReplicaIdentifiers property is set
         internal bool IsSetReadReplicaIdentifiers()
         {
-            return this._readReplicaIdentifiers != null && this._readReplicaIdentifiers.Count > 0; 
+            return this._readReplicaIdentifiers != null && (this._readReplicaIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1634,7 +1651,7 @@ namespace Amazon.RDS.Model
         // Check to see if StatusInfos property is set
         internal bool IsSetStatusInfos()
         {
-            return this._statusInfos != null && this._statusInfos.Count > 0; 
+            return this._statusInfos != null && (this._statusInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1653,6 +1670,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageThroughput. 
+        /// <para>
+        /// The storage throughput for the DB cluster. The throughput is automatically set based
+        /// on the IOPS that you provision, and is not configurable.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// </para>
+        /// </summary>
+        public int? StorageThroughput
+        {
+            get { return this._storageThroughput; }
+            set { this._storageThroughput = value; }
+        }
+
+        // Check to see if StorageThroughput property is set
+        internal bool IsSetStorageThroughput()
+        {
+            return this._storageThroughput.HasValue; 
         }
 
         /// <summary>
@@ -1685,7 +1725,7 @@ namespace Amazon.RDS.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1703,7 +1743,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcSecurityGroups property is set
         internal bool IsSetVpcSecurityGroups()
         {
-            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+            return this._vpcSecurityGroups != null && (this._vpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

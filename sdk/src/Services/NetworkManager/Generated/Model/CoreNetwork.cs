@@ -37,11 +37,11 @@ namespace Amazon.NetworkManager.Model
         private string _coreNetworkId;
         private DateTime? _createdAt;
         private string _description;
-        private List<CoreNetworkEdge> _edges = new List<CoreNetworkEdge>();
+        private List<CoreNetworkEdge> _edges = AWSConfigs.InitializeCollections ? new List<CoreNetworkEdge>() : null;
         private string _globalNetworkId;
-        private List<CoreNetworkSegment> _segments = new List<CoreNetworkSegment>();
+        private List<CoreNetworkSegment> _segments = AWSConfigs.InitializeCollections ? new List<CoreNetworkSegment>() : null;
         private CoreNetworkState _state;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CoreNetworkArn. 
@@ -133,7 +133,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if Edges property is set
         internal bool IsSetEdges()
         {
-            return this._edges != null && this._edges.Count > 0; 
+            return this._edges != null && (this._edges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if Segments property is set
         internal bool IsSetSegments()
         {
-            return this._segments != null && this._segments.Count > 0; 
+            return this._segments != null && (this._segments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -206,7 +206,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

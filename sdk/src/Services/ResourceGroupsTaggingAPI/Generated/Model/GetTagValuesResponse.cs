@@ -34,7 +34,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     public partial class GetTagValuesResponse : AmazonWebServiceResponse
     {
         private string _paginationToken;
-        private List<string> _tagValues = new List<string>();
+        private List<string> _tagValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property PaginationToken. 
@@ -73,7 +73,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if TagValues property is set
         internal bool IsSetTagValues()
         {
-            return this._tagValues != null && this._tagValues.Count > 0; 
+            return this._tagValues != null && (this._tagValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

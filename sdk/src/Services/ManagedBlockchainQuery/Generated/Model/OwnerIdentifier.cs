@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
-    /// The container for the identifier of the owner.
+    /// The container for the owner identifier.
     /// </summary>
     public partial class OwnerIdentifier
     {

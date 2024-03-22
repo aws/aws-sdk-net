@@ -176,10 +176,6 @@ namespace Amazon.EC2.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
         /// with instance tags using the instance metadata</a>.
         /// </para>
-        ///  
-        /// <para>
-        /// Default: <c>disabled</c> 
-        /// </para>
         /// </summary>
         public InstanceMetadataTagsState InstanceMetadataTags
         {

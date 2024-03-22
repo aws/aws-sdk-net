@@ -33,7 +33,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class ListAssetsResponse : AmazonWebServiceResponse
     {
-        private List<AssetSummary> _assetSummaries = new List<AssetSummary>();
+        private List<AssetSummary> _assetSummaries = AWSConfigs.InitializeCollections ? new List<AssetSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AssetSummaries property is set
         internal bool IsSetAssetSummaries()
         {
-            return this._assetSummaries != null && this._assetSummaries.Count > 0; 
+            return this._assetSummaries != null && (this._assetSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

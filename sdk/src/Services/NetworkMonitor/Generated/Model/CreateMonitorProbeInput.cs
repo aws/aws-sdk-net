@@ -36,7 +36,7 @@ namespace Amazon.NetworkMonitor.Model
         private string _destination;
         private int? _destinationPort;
         private int? _packetSize;
-        private Dictionary<string, string> _probeTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _probeTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Protocol _protocol;
         private string _sourceArn;
 
@@ -115,7 +115,7 @@ namespace Amazon.NetworkMonitor.Model
         // Check to see if ProbeTags property is set
         internal bool IsSetProbeTags()
         {
-            return this._probeTags != null && this._probeTags.Count > 0; 
+            return this._probeTags != null && (this._probeTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

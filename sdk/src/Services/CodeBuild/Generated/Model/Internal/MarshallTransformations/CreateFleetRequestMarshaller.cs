@@ -91,6 +91,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetOverflowBehavior())
+                {
+                    context.Writer.WritePropertyName("overflowBehavior");
+                    context.Writer.Write(publicRequest.OverflowBehavior);
+                }
+
                 if(publicRequest.IsSetScalingConfiguration())
                 {
                     context.Writer.WritePropertyName("scalingConfiguration");

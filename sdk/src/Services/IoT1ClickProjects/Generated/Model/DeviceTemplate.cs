@@ -33,7 +33,7 @@ namespace Amazon.IoT1ClickProjects.Model
     /// </summary>
     public partial class DeviceTemplate
     {
-        private Dictionary<string, string> _callbackOverrides = new Dictionary<string, string>();
+        private Dictionary<string, string> _callbackOverrides = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _deviceType;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IoT1ClickProjects.Model
         // Check to see if CallbackOverrides property is set
         internal bool IsSetCallbackOverrides()
         {
-            return this._callbackOverrides != null && this._callbackOverrides.Count > 0; 
+            return this._callbackOverrides != null && (this._callbackOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

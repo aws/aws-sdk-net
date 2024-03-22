@@ -56,8 +56,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             Assert.Equal(VersionStatus.Off, status);
 
             var objects = (await Client.ListObjectsAsync(bucketName)).S3Objects;
-            Assert.NotNull(objects);
-            var count = objects.Count;
+            var count = objects == null ? 0 : objects.Count;
 
             var key = "test.txt";
             var contents = "Sample content";
@@ -80,8 +79,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             await Client.DeleteObjectAsync(bucketName, key);
 
             objects = (await Client.ListObjectsAsync(bucketName)).S3Objects;
-            Assert.NotNull(objects);
-            Assert.Equal(count, objects.Count);
+            Assert.Equal(count, objects == null ? 0 : objects.Count);
         }
 
         [Fact]

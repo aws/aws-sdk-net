@@ -34,14 +34,14 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class CreateEnvironmentRequest : AmazonFinspaceRequest
     {
-        private List<string> _dataBundles = new List<string>();
+        private List<string> _dataBundles = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private FederationMode _federationMode;
         private FederationParameters _federationParameters;
         private string _kmsKeyId;
         private string _name;
         private SuperuserParameters _superuserParameters;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property DataBundles. 
@@ -70,7 +70,7 @@ namespace Amazon.Finspace.Model
         // Check to see if DataBundles property is set
         internal bool IsSetDataBundles()
         {
-            return this._dataBundles != null && this._dataBundles.Count > 0; 
+            return this._dataBundles != null && (this._dataBundles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

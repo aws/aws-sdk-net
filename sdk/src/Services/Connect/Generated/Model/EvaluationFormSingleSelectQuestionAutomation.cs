@@ -36,7 +36,7 @@ namespace Amazon.Connect.Model
     public partial class EvaluationFormSingleSelectQuestionAutomation
     {
         private string _defaultOptionRefId;
-        private List<EvaluationFormSingleSelectQuestionAutomationOption> _options = new List<EvaluationFormSingleSelectQuestionAutomationOption>();
+        private List<EvaluationFormSingleSelectQuestionAutomationOption> _options = AWSConfigs.InitializeCollections ? new List<EvaluationFormSingleSelectQuestionAutomationOption>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultOptionRefId. 
@@ -74,7 +74,7 @@ namespace Amazon.Connect.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

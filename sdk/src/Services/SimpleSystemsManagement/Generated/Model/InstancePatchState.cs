@@ -210,7 +210,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For more information about the <c>InstallOverrideList</c> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-        /// the <c>AWS-RunPatchBaseline</c> </a> SSM document in the <i>Amazon Web Services Systems
+        /// the <c>AWS-RunPatchBaseline SSM document</c> </a> in the <i>Amazon Web Services Systems
         /// Manager User Guide</i>.
         /// </para>
         /// </summary>

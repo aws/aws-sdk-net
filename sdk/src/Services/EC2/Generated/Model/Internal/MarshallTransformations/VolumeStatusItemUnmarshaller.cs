@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("actionsSet/item", targetDepth))
                     {
                         var unmarshaller = VolumeStatusActionUnmarshaller.Instance;
+                        if (unmarshalledObject.Actions == null)
+                        {
+                            unmarshalledObject.Actions = new List<VolumeStatusAction>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Actions.Add(item);
                         continue;
@@ -64,6 +68,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("attachmentStatuses/item", targetDepth))
                     {
                         var unmarshaller = VolumeStatusAttachmentStatusUnmarshaller.Instance;
+                        if (unmarshalledObject.AttachmentStatuses == null)
+                        {
+                            unmarshalledObject.AttachmentStatuses = new List<VolumeStatusAttachmentStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AttachmentStatuses.Add(item);
                         continue;
@@ -77,6 +85,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("eventsSet/item", targetDepth))
                     {
                         var unmarshaller = VolumeStatusEventUnmarshaller.Instance;
+                        if (unmarshalledObject.Events == null)
+                        {
+                            unmarshalledObject.Events = new List<VolumeStatusEvent>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Events.Add(item);
                         continue;

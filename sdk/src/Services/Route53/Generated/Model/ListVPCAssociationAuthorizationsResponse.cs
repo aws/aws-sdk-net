@@ -35,7 +35,7 @@ namespace Amazon.Route53.Model
     {
         private string _hostedZoneId;
         private string _nextToken;
-        private List<VPC> _vpCs = new List<VPC>();
+        private List<VPC> _vpCs = AWSConfigs.InitializeCollections ? new List<VPC>() : null;
 
         /// <summary>
         /// Gets and sets the property HostedZoneId. 
@@ -94,7 +94,7 @@ namespace Amazon.Route53.Model
         // Check to see if VPCs property is set
         internal bool IsSetVPCs()
         {
-            return this._vpCs != null && this._vpCs.Count > 0; 
+            return this._vpCs != null && (this._vpCs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -83,14 +83,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Transition", targetDepth))
                     {
+                        if (rulesItem.Transitions == null)
+                        {
+                            rulesItem.Transitions = new List<LifecycleTransition>();
+                        }
                         rulesItem.Transitions.Add(TransitionUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                     if (context.TestExpression("NoncurrentVersionTransition", targetDepth))
                     {
+                        if (rulesItem.NoncurrentVersionTransitions == null)
+                        {
+                            rulesItem.NoncurrentVersionTransitions = new List<LifecycleRuleNoncurrentVersionTransition>();
+                        }
                         rulesItem.NoncurrentVersionTransitions.Add(LifecycleRuleNoncurrentVersionTransitionUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                     if (context.TestExpression("NoncurrentVersionExpiration", targetDepth))

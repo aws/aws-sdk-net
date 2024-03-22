@@ -33,7 +33,7 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class ListClientDevicesAssociatedWithCoreDeviceResponse : AmazonWebServiceResponse
     {
-        private List<AssociatedClientDevice> _associatedClientDevices = new List<AssociatedClientDevice>();
+        private List<AssociatedClientDevice> _associatedClientDevices = AWSConfigs.InitializeCollections ? new List<AssociatedClientDevice>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if AssociatedClientDevices property is set
         internal bool IsSetAssociatedClientDevices()
         {
-            return this._associatedClientDevices != null && this._associatedClientDevices.Count > 0; 
+            return this._associatedClientDevices != null && (this._associatedClientDevices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

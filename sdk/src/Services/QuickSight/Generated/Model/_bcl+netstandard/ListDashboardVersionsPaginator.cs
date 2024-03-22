@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the DashboardVersionSummaryList
         /// </summary>
         public IPaginatedEnumerable<DashboardVersionSummary> DashboardVersionSummaryList => 
-            new PaginatedResultKeyResponse<ListDashboardVersionsResponse, DashboardVersionSummary>(this, (i) => i.DashboardVersionSummaryList);
+            new PaginatedResultKeyResponse<ListDashboardVersionsResponse, DashboardVersionSummary>(this, (i) => i.DashboardVersionSummaryList ?? new List<DashboardVersionSummary>());
 
         internal ListDashboardVersionsPaginator(IAmazonQuickSight client, ListDashboardVersionsRequest request)
         {

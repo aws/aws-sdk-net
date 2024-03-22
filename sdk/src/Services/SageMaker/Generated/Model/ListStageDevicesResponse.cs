@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListStageDevicesResponse : AmazonWebServiceResponse
     {
-        private List<DeviceDeploymentSummary> _deviceDeploymentSummaries = new List<DeviceDeploymentSummary>();
+        private List<DeviceDeploymentSummary> _deviceDeploymentSummaries = AWSConfigs.InitializeCollections ? new List<DeviceDeploymentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if DeviceDeploymentSummaries property is set
         internal bool IsSetDeviceDeploymentSummaries()
         {
-            return this._deviceDeploymentSummaries != null && this._deviceDeploymentSummaries.Count > 0; 
+            return this._deviceDeploymentSummaries != null && (this._deviceDeploymentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

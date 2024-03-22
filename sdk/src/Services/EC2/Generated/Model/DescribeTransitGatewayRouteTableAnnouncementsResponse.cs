@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeTransitGatewayRouteTableAnnouncementsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TransitGatewayRouteTableAnnouncement> _transitGatewayRouteTableAnnouncements = new List<TransitGatewayRouteTableAnnouncement>();
+        private List<TransitGatewayRouteTableAnnouncement> _transitGatewayRouteTableAnnouncements = AWSConfigs.InitializeCollections ? new List<TransitGatewayRouteTableAnnouncement>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         // Check to see if TransitGatewayRouteTableAnnouncements property is set
         internal bool IsSetTransitGatewayRouteTableAnnouncements()
         {
-            return this._transitGatewayRouteTableAnnouncements != null && this._transitGatewayRouteTableAnnouncements.Count > 0; 
+            return this._transitGatewayRouteTableAnnouncements != null && (this._transitGatewayRouteTableAnnouncements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

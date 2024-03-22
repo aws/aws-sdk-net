@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class GetHostReservationPurchasePreviewResponse : AmazonWebServiceResponse
     {
         private CurrencyCodeValues _currencyCode;
-        private List<Purchase> _purchase = new List<Purchase>();
+        private List<Purchase> _purchase = AWSConfigs.InitializeCollections ? new List<Purchase>() : null;
         private string _totalHourlyPrice;
         private string _totalUpfrontPrice;
 
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         // Check to see if Purchase property is set
         internal bool IsSetPurchase()
         {
-            return this._purchase != null && this._purchase.Count > 0; 
+            return this._purchase != null && (this._purchase.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

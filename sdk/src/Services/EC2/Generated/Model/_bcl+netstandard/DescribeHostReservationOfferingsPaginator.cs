@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the OfferingSet
         /// </summary>
         public IPaginatedEnumerable<HostOffering> OfferingSet => 
-            new PaginatedResultKeyResponse<DescribeHostReservationOfferingsResponse, HostOffering>(this, (i) => i.OfferingSet);
+            new PaginatedResultKeyResponse<DescribeHostReservationOfferingsResponse, HostOffering>(this, (i) => i.OfferingSet ?? new List<HostOffering>());
 
         internal DescribeHostReservationOfferingsPaginator(IAmazonEC2 client, DescribeHostReservationOfferingsRequest request)
         {

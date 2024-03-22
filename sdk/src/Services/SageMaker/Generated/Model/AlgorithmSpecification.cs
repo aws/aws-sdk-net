@@ -42,10 +42,10 @@ namespace Amazon.SageMaker.Model
     public partial class AlgorithmSpecification
     {
         private string _algorithmName;
-        private List<string> _containerArguments = new List<string>();
-        private List<string> _containerEntrypoint = new List<string>();
+        private List<string> _containerArguments = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _containerEntrypoint = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableSageMakerMetricsTimeSeries;
-        private List<MetricDefinition> _metricDefinitions = new List<MetricDefinition>();
+        private List<MetricDefinition> _metricDefinitions = AWSConfigs.InitializeCollections ? new List<MetricDefinition>() : null;
         private string _trainingImage;
         private TrainingImageConfig _trainingImageConfig;
         private TrainingInputMode _trainingInputMode;
@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ContainerArguments property is set
         internal bool IsSetContainerArguments()
         {
-            return this._containerArguments != null && this._containerArguments.Count > 0; 
+            return this._containerArguments != null && (this._containerArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ContainerEntrypoint property is set
         internal bool IsSetContainerEntrypoint()
         {
-            return this._containerEntrypoint != null && this._containerEntrypoint.Count > 0; 
+            return this._containerEntrypoint != null && (this._containerEntrypoint.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MetricDefinitions property is set
         internal bool IsSetMetricDefinitions()
         {
-            return this._metricDefinitions != null && this._metricDefinitions.Count > 0; 
+            return this._metricDefinitions != null && (this._metricDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

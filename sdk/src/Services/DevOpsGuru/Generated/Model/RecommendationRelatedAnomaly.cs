@@ -34,8 +34,8 @@ namespace Amazon.DevOpsGuru.Model
     public partial class RecommendationRelatedAnomaly
     {
         private string _anomalyId;
-        private List<RecommendationRelatedAnomalyResource> _resources = new List<RecommendationRelatedAnomalyResource>();
-        private List<RecommendationRelatedAnomalySourceDetail> _sourceDetails = new List<RecommendationRelatedAnomalySourceDetail>();
+        private List<RecommendationRelatedAnomalyResource> _resources = AWSConfigs.InitializeCollections ? new List<RecommendationRelatedAnomalyResource>() : null;
+        private List<RecommendationRelatedAnomalySourceDetail> _sourceDetails = AWSConfigs.InitializeCollections ? new List<RecommendationRelatedAnomalySourceDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property AnomalyId. 
@@ -72,7 +72,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if SourceDetails property is set
         internal bool IsSetSourceDetails()
         {
-            return this._sourceDetails != null && this._sourceDetails.Count > 0; 
+            return this._sourceDetails != null && (this._sourceDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

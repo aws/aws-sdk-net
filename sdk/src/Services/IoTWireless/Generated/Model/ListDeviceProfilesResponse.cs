@@ -33,7 +33,7 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class ListDeviceProfilesResponse : AmazonWebServiceResponse
     {
-        private List<DeviceProfile> _deviceProfileList = new List<DeviceProfile>();
+        private List<DeviceProfile> _deviceProfileList = AWSConfigs.InitializeCollections ? new List<DeviceProfile>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if DeviceProfileList property is set
         internal bool IsSetDeviceProfileList()
         {
-            return this._deviceProfileList != null && this._deviceProfileList.Count > 0; 
+            return this._deviceProfileList != null && (this._deviceProfileList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

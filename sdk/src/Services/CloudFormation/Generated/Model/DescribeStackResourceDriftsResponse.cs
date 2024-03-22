@@ -34,7 +34,7 @@ namespace Amazon.CloudFormation.Model
     public partial class DescribeStackResourceDriftsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StackResourceDrift> _stackResourceDrifts = new List<StackResourceDrift>();
+        private List<StackResourceDrift> _stackResourceDrifts = AWSConfigs.InitializeCollections ? new List<StackResourceDrift>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -85,7 +85,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackResourceDrifts property is set
         internal bool IsSetStackResourceDrifts()
         {
-            return this._stackResourceDrifts != null && this._stackResourceDrifts.Count > 0; 
+            return this._stackResourceDrifts != null && (this._stackResourceDrifts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

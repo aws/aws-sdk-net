@@ -45,11 +45,11 @@ namespace Amazon.APIGateway.Model
         private string _description;
         private string _documentationVersion;
         private DateTime? _lastUpdatedDate;
-        private Dictionary<string, MethodSetting> _methodSettings = new Dictionary<string, MethodSetting>();
+        private Dictionary<string, MethodSetting> _methodSettings = AWSConfigs.InitializeCollections ? new Dictionary<string, MethodSetting>() : null;
         private string _stageName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _tracingEnabled;
-        private Dictionary<string, string> _variables = new Dictionary<string, string>();
+        private Dictionary<string, string> _variables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _webAclArn;
 
         /// <summary>
@@ -73,7 +73,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CacheClusterEnabled. 
         /// <para>
-        /// Specifies whether a cache cluster is enabled for the stage.
+        /// Specifies whether a cache cluster is enabled for the stage. To activate a method-level
+        /// cache, set <c>CachingEnabled</c> to <c>true</c> for a method. 
         /// </para>
         /// </summary>
         public bool? CacheClusterEnabled
@@ -269,7 +270,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if MethodSettings property is set
         internal bool IsSetMethodSettings()
         {
-            return this._methodSettings != null && this._methodSettings.Count > 0; 
+            return this._methodSettings != null && (this._methodSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -307,7 +308,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -344,7 +345,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

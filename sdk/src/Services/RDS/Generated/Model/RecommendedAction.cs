@@ -35,12 +35,12 @@ namespace Amazon.RDS.Model
     public partial class RecommendedAction
     {
         private string _actionId;
-        private List<string> _applyModes = new List<string>();
-        private List<ContextAttribute> _contextAttributes = new List<ContextAttribute>();
+        private List<string> _applyModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ContextAttribute> _contextAttributes = AWSConfigs.InitializeCollections ? new List<ContextAttribute>() : null;
         private string _description;
         private IssueDetails _issueDetails;
         private string _operation;
-        private List<RecommendedActionParameter> _parameters = new List<RecommendedActionParameter>();
+        private List<RecommendedActionParameter> _parameters = AWSConfigs.InitializeCollections ? new List<RecommendedActionParameter>() : null;
         private string _status;
         private string _title;
 
@@ -95,7 +95,7 @@ namespace Amazon.RDS.Model
         // Check to see if ApplyModes property is set
         internal bool IsSetApplyModes()
         {
-            return this._applyModes != null && this._applyModes.Count > 0; 
+            return this._applyModes != null && (this._applyModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.RDS.Model
         // Check to see if ContextAttributes property is set
         internal bool IsSetContextAttributes()
         {
-            return this._contextAttributes != null && this._contextAttributes.Count > 0; 
+            return this._contextAttributes != null && (this._contextAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.RDS.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

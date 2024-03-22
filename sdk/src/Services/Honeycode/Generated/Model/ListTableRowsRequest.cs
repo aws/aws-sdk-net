@@ -37,7 +37,7 @@ namespace Amazon.Honeycode.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _rowIds = new List<string>();
+        private List<string> _rowIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tableId;
         private string _workbookId;
 
@@ -103,7 +103,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if RowIds property is set
         internal bool IsSetRowIds()
         {
-            return this._rowIds != null && this._rowIds.Count > 0; 
+            return this._rowIds != null && (this._rowIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsElbLoadBalancerListenerDescription
     {
         private AwsElbLoadBalancerListener _listener;
-        private List<string> _policyNames = new List<string>();
+        private List<string> _policyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Listener. 
@@ -69,7 +69,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this._policyNames != null && this._policyNames.Count > 0; 
+            return this._policyNames != null && (this._policyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

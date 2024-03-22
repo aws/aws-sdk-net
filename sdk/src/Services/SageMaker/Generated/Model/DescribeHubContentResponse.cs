@@ -38,13 +38,13 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private string _hubArn;
         private string _hubContentArn;
-        private List<HubContentDependency> _hubContentDependencies = new List<HubContentDependency>();
+        private List<HubContentDependency> _hubContentDependencies = AWSConfigs.InitializeCollections ? new List<HubContentDependency>() : null;
         private string _hubContentDescription;
         private string _hubContentDisplayName;
         private string _hubContentDocument;
         private string _hubContentMarkdown;
         private string _hubContentName;
-        private List<string> _hubContentSearchKeywords = new List<string>();
+        private List<string> _hubContentSearchKeywords = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private HubContentStatus _hubContentStatus;
         private HubContentType _hubContentType;
         private string _hubContentVersion;
@@ -162,7 +162,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HubContentDependencies property is set
         internal bool IsSetHubContentDependencies()
         {
-            return this._hubContentDependencies != null && this._hubContentDependencies.Count > 0; 
+            return this._hubContentDependencies != null && (this._hubContentDependencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HubContentSearchKeywords property is set
         internal bool IsSetHubContentSearchKeywords()
         {
-            return this._hubContentSearchKeywords != null && this._hubContentSearchKeywords.Count > 0; 
+            return this._hubContentSearchKeywords != null && (this._hubContentSearchKeywords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

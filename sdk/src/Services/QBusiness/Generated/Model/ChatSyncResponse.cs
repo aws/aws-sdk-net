@@ -35,8 +35,8 @@ namespace Amazon.QBusiness.Model
     {
         private ActionReview _actionReview;
         private string _conversationId;
-        private List<AttachmentOutput> _failedAttachments = new List<AttachmentOutput>();
-        private List<SourceAttribution> _sourceAttributions = new List<SourceAttribution>();
+        private List<AttachmentOutput> _failedAttachments = AWSConfigs.InitializeCollections ? new List<AttachmentOutput>() : null;
+        private List<SourceAttribution> _sourceAttributions = AWSConfigs.InitializeCollections ? new List<SourceAttribution>() : null;
         private string _systemMessage;
         private string _systemMessageId;
         private string _userMessageId;
@@ -94,7 +94,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if FailedAttachments property is set
         internal bool IsSetFailedAttachments()
         {
-            return this._failedAttachments != null && this._failedAttachments.Count > 0; 
+            return this._failedAttachments != null && (this._failedAttachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if SourceAttributions property is set
         internal bool IsSetSourceAttributions()
         {
-            return this._sourceAttributions != null && this._sourceAttributions.Count > 0; 
+            return this._sourceAttributions != null && (this._sourceAttributions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

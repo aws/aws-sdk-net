@@ -37,7 +37,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class PersonMatch
     {
-        private List<FaceMatch> _faceMatches = new List<FaceMatch>();
+        private List<FaceMatch> _faceMatches = AWSConfigs.InitializeCollections ? new List<FaceMatch>() : null;
         private PersonDetail _person;
         private long? _timestamp;
 
@@ -57,7 +57,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if FaceMatches property is set
         internal bool IsSetFaceMatches()
         {
-            return this._faceMatches != null && this._faceMatches.Count > 0; 
+            return this._faceMatches != null && (this._faceMatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

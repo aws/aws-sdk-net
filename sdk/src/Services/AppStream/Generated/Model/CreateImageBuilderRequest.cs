@@ -41,7 +41,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class CreateImageBuilderRequest : AmazonAppStreamRequest
     {
-        private List<AccessEndpoint> _accessEndpoints = new List<AccessEndpoint>();
+        private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
         private string _appstreamAgentVersion;
         private string _description;
         private string _displayName;
@@ -52,7 +52,7 @@ namespace Amazon.AppStream.Model
         private string _imageName;
         private string _instanceType;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.AppStream.Model
         // Check to see if AccessEndpoints property is set
         internal bool IsSetAccessEndpoints()
         {
-            return this._accessEndpoints != null && this._accessEndpoints.Count > 0; 
+            return this._accessEndpoints != null && (this._accessEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -443,7 +443,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

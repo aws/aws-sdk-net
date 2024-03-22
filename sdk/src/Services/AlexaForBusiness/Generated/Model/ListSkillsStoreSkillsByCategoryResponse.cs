@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model
     public partial class ListSkillsStoreSkillsByCategoryResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SkillsStoreSkill> _skillsStoreSkills = new List<SkillsStoreSkill>();
+        private List<SkillsStoreSkill> _skillsStoreSkills = AWSConfigs.InitializeCollections ? new List<SkillsStoreSkill>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if SkillsStoreSkills property is set
         internal bool IsSetSkillsStoreSkills()
         {
-            return this._skillsStoreSkills != null && this._skillsStoreSkills.Count > 0; 
+            return this._skillsStoreSkills != null && (this._skillsStoreSkills.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

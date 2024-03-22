@@ -45,7 +45,7 @@ namespace Amazon.GroundStation.Model
         /// Enumerable containing all of the Satellites
         /// </summary>
         public IPaginatedEnumerable<SatelliteListItem> Satellites => 
-            new PaginatedResultKeyResponse<ListSatellitesResponse, SatelliteListItem>(this, (i) => i.Satellites);
+            new PaginatedResultKeyResponse<ListSatellitesResponse, SatelliteListItem>(this, (i) => i.Satellites ?? new List<SatelliteListItem>());
 
         internal ListSatellitesPaginator(IAmazonGroundStation client, ListSatellitesRequest request)
         {

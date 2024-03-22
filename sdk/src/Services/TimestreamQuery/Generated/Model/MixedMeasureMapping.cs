@@ -36,7 +36,7 @@ namespace Amazon.TimestreamQuery.Model
     {
         private string _measureName;
         private MeasureValueType _measureValueType;
-        private List<MultiMeasureAttributeMapping> _multiMeasureAttributeMappings = new List<MultiMeasureAttributeMapping>();
+        private List<MultiMeasureAttributeMapping> _multiMeasureAttributeMappings = AWSConfigs.InitializeCollections ? new List<MultiMeasureAttributeMapping>() : null;
         private string _sourceColumn;
         private string _targetMeasureName;
 
@@ -95,7 +95,7 @@ namespace Amazon.TimestreamQuery.Model
         // Check to see if MultiMeasureAttributeMappings property is set
         internal bool IsSetMultiMeasureAttributeMappings()
         {
-            return this._multiMeasureAttributeMappings != null && this._multiMeasureAttributeMappings.Count > 0; 
+            return this._multiMeasureAttributeMappings != null && (this._multiMeasureAttributeMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

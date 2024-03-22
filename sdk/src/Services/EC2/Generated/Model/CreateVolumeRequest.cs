@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
     /// <para>
     /// You can create encrypted volumes. Encrypted volumes must be attached to instances
     /// that support Amazon EBS encryption. Volumes that are created from encrypted snapshots
-    /// are also automatically encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-    /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// are also automatically encrypted. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+    /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -52,8 +52,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Create
-    /// an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-creating-volume.html">Create
+    /// an Amazon EBS volume</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateVolumeRequest : AmazonEC2Request
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         private string _outpostArn;
         private int? _size;
         private string _snapshotId;
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private int? _throughput;
         private VolumeType _volumeType;
 
@@ -143,13 +143,13 @@ namespace Amazon.EC2.Model
         /// Indicates whether the volume should be encrypted. The effect of setting the encryption
         /// state to <c>true</c> depends on the volume origin (new or from a snapshot), starting
         /// encryption state, ownership, and whether encryption by default is enabled. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption
-        /// by default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default">Encryption
+        /// by default</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS
-        /// encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+        /// encryption. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
         /// instance types</a>.
         /// </para>
         /// </summary>
@@ -266,8 +266,8 @@ namespace Amazon.EC2.Model
         /// Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you
         /// can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
         /// built on the Nitro System</a> in the same Availability Zone. This parameter is supported
-        /// with <c>io1</c> and <c>io2</c> volumes only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
-        /// Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// with <c>io1</c> and <c>io2</c> volumes only. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
+        /// Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         public bool? MultiAttachEnabled
@@ -379,7 +379,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -440,8 +440,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+        /// EBS volume types</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>

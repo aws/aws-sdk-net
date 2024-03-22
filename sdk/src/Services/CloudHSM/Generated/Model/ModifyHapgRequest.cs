@@ -52,7 +52,7 @@ namespace Amazon.CloudHSM.Model
     {
         private string _hapgArn;
         private string _label;
-        private List<string> _partitionSerialList = new List<string>();
+        private List<string> _partitionSerialList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property HapgArn. 
@@ -107,7 +107,7 @@ namespace Amazon.CloudHSM.Model
         // Check to see if PartitionSerialList property is set
         internal bool IsSetPartitionSerialList()
         {
-            return this._partitionSerialList != null && this._partitionSerialList.Count > 0; 
+            return this._partitionSerialList != null && (this._partitionSerialList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

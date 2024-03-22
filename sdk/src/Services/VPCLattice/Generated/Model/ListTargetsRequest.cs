@@ -39,7 +39,7 @@ namespace Amazon.VPCLattice.Model
         private int? _maxResults;
         private string _nextToken;
         private string _targetGroupIdentifier;
-        private List<Target> _targets = new List<Target>();
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -114,7 +114,7 @@ namespace Amazon.VPCLattice.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

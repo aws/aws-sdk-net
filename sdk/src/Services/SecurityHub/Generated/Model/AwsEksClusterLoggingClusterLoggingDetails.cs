@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEksClusterLoggingClusterLoggingDetails
     {
         private bool? _enabled;
-        private List<string> _types = new List<string>();
+        private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -90,7 +90,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Types property is set
         internal bool IsSetTypes()
         {
-            return this._types != null && this._types.Count > 0; 
+            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

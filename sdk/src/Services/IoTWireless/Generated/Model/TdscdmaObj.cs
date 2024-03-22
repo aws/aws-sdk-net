@@ -39,7 +39,7 @@ namespace Amazon.IoTWireless.Model
         private int? _pathLoss;
         private int? _rscp;
         private TdscdmaLocalId _tdscdmaLocalId;
-        private List<TdscdmaNmrObj> _tdscdmaNmr = new List<TdscdmaNmrObj>();
+        private List<TdscdmaNmrObj> _tdscdmaNmr = AWSConfigs.InitializeCollections ? new List<TdscdmaNmrObj>() : null;
         private int? _tdscdmaTimingAdvance;
         private int? _utranCid;
 
@@ -174,7 +174,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if TdscdmaNmr property is set
         internal bool IsSetTdscdmaNmr()
         {
-            return this._tdscdmaNmr != null && this._tdscdmaNmr.Count > 0; 
+            return this._tdscdmaNmr != null && (this._tdscdmaNmr.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

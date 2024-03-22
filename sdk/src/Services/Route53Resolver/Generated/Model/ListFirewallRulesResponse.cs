@@ -33,7 +33,7 @@ namespace Amazon.Route53Resolver.Model
     /// </summary>
     public partial class ListFirewallRulesResponse : AmazonWebServiceResponse
     {
-        private List<FirewallRule> _firewallRules = new List<FirewallRule>();
+        private List<FirewallRule> _firewallRules = AWSConfigs.InitializeCollections ? new List<FirewallRule>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if FirewallRules property is set
         internal bool IsSetFirewallRules()
         {
-            return this._firewallRules != null && this._firewallRules.Count > 0; 
+            return this._firewallRules != null && (this._firewallRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

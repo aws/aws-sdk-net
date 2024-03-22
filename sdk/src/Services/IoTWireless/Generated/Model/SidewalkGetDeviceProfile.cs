@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     public partial class SidewalkGetDeviceProfile
     {
         private string _applicationServerPublicKey;
-        private List<DakCertificateMetadata> _dakCertificateMetadata = new List<DakCertificateMetadata>();
+        private List<DakCertificateMetadata> _dakCertificateMetadata = AWSConfigs.InitializeCollections ? new List<DakCertificateMetadata>() : null;
         private bool? _qualificationStatus;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if DakCertificateMetadata property is set
         internal bool IsSetDakCertificateMetadata()
         {
-            return this._dakCertificateMetadata != null && this._dakCertificateMetadata.Count > 0; 
+            return this._dakCertificateMetadata != null && (this._dakCertificateMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

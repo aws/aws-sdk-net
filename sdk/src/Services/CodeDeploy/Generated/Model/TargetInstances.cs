@@ -34,9 +34,9 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class TargetInstances
     {
-        private List<string> _autoScalingGroups = new List<string>();
+        private List<string> _autoScalingGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EC2TagSet _ec2TagSet;
-        private List<EC2TagFilter> _tagFilters = new List<EC2TagFilter>();
+        private List<EC2TagFilter> _tagFilters = AWSConfigs.InitializeCollections ? new List<EC2TagFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroups. 
@@ -54,7 +54,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if AutoScalingGroups property is set
         internal bool IsSetAutoScalingGroups()
         {
-            return this._autoScalingGroups != null && this._autoScalingGroups.Count > 0; 
+            return this._autoScalingGroups != null && (this._autoScalingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if TagFilters property is set
         internal bool IsSetTagFilters()
         {
-            return this._tagFilters != null && this._tagFilters.Count > 0; 
+            return this._tagFilters != null && (this._tagFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

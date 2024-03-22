@@ -37,7 +37,7 @@ namespace Amazon.RecycleBin.Model
         private string _identifier;
         private DateTime? _lockEndTime;
         private LockState _lockState;
-        private List<ResourceTag> _resourceTags = new List<ResourceTag>();
+        private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private ResourceType _resourceType;
         private RetentionPeriod _retentionPeriod;
         private string _ruleArn;
@@ -155,7 +155,7 @@ namespace Amazon.RecycleBin.Model
         // Check to see if ResourceTags property is set
         internal bool IsSetResourceTags()
         {
-            return this._resourceTags != null && this._resourceTags.Count > 0; 
+            return this._resourceTags != null && (this._resourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

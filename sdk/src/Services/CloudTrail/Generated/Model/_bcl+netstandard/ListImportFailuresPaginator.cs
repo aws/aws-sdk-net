@@ -45,7 +45,7 @@ namespace Amazon.CloudTrail.Model
         /// Enumerable containing all of the Failures
         /// </summary>
         public IPaginatedEnumerable<ImportFailureListItem> Failures => 
-            new PaginatedResultKeyResponse<ListImportFailuresResponse, ImportFailureListItem>(this, (i) => i.Failures);
+            new PaginatedResultKeyResponse<ListImportFailuresResponse, ImportFailureListItem>(this, (i) => i.Failures ?? new List<ImportFailureListItem>());
 
         internal ListImportFailuresPaginator(IAmazonCloudTrail client, ListImportFailuresRequest request)
         {

@@ -35,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _nextToken;
-        private List<UtteranceSpecification> _utterances = new List<UtteranceSpecification>();
+        private List<UtteranceSpecification> _utterances = AWSConfigs.InitializeCollections ? new List<UtteranceSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property BotId. 
@@ -98,7 +98,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Utterances property is set
         internal bool IsSetUtterances()
         {
-            return this._utterances != null && this._utterances.Count > 0; 
+            return this._utterances != null && (this._utterances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetECSServiceRecommendationProjectedMetricsResponse : AmazonWebServiceResponse
     {
-        private List<ECSServiceRecommendedOptionProjectedMetric> _recommendedOptionProjectedMetrics = new List<ECSServiceRecommendedOptionProjectedMetric>();
+        private List<ECSServiceRecommendedOptionProjectedMetric> _recommendedOptionProjectedMetrics = AWSConfigs.InitializeCollections ? new List<ECSServiceRecommendedOptionProjectedMetric>() : null;
 
         /// <summary>
         /// Gets and sets the property RecommendedOptionProjectedMetrics. 
@@ -50,7 +50,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if RecommendedOptionProjectedMetrics property is set
         internal bool IsSetRecommendedOptionProjectedMetrics()
         {
-            return this._recommendedOptionProjectedMetrics != null && this._recommendedOptionProjectedMetrics.Count > 0; 
+            return this._recommendedOptionProjectedMetrics != null && (this._recommendedOptionProjectedMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

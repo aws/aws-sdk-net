@@ -84,6 +84,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Listeners/member", targetDepth))
                     {
                         var unmarshaller = ListenerUnmarshaller.Instance;
+                        if (response.Listeners == null)
+                        {
+                            response.Listeners = new List<Listener>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Listeners.Add(item);
                         continue;

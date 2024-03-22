@@ -36,7 +36,7 @@ namespace Amazon.AWSHealth.Model
     {
         private string _awsAccountId;
         private string _eventArn;
-        private List<string> _statusCodes = new List<string>();
+        private List<string> _statusCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -102,7 +102,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if StatusCodes property is set
         internal bool IsSetStatusCodes()
         {
-            return this._statusCodes != null && this._statusCodes.Count > 0; 
+            return this._statusCodes != null && (this._statusCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

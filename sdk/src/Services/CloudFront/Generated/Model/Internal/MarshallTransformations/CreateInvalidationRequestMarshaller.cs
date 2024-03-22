@@ -75,7 +75,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                         var publicRequestInvalidationBatchPathsItems = publicRequest.InvalidationBatch.Paths.Items;
-                        if (publicRequestInvalidationBatchPathsItems != null && publicRequestInvalidationBatchPathsItems.Count > 0) 
+                        if (publicRequestInvalidationBatchPathsItems != null && (publicRequestInvalidationBatchPathsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
                         {                        
                             xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                             foreach (var publicRequestInvalidationBatchPathsItemsValue in publicRequestInvalidationBatchPathsItems) 

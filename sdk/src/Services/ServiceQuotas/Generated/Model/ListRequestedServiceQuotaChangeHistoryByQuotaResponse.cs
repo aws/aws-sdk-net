@@ -34,7 +34,7 @@ namespace Amazon.ServiceQuotas.Model
     public partial class ListRequestedServiceQuotaChangeHistoryByQuotaResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RequestedServiceQuotaChange> _requestedQuotas = new List<RequestedServiceQuotaChange>();
+        private List<RequestedServiceQuotaChange> _requestedQuotas = AWSConfigs.InitializeCollections ? new List<RequestedServiceQuotaChange>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.ServiceQuotas.Model
         // Check to see if RequestedQuotas property is set
         internal bool IsSetRequestedQuotas()
         {
-            return this._requestedQuotas != null && this._requestedQuotas.Count > 0; 
+            return this._requestedQuotas != null && (this._requestedQuotas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

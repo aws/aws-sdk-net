@@ -45,7 +45,7 @@ namespace Amazon.CleanRooms.Model
         /// Enumerable containing all of the PrivacyBudgetTemplateSummaries
         /// </summary>
         public IPaginatedEnumerable<PrivacyBudgetTemplateSummary> PrivacyBudgetTemplateSummaries => 
-            new PaginatedResultKeyResponse<ListPrivacyBudgetTemplatesResponse, PrivacyBudgetTemplateSummary>(this, (i) => i.PrivacyBudgetTemplateSummaries);
+            new PaginatedResultKeyResponse<ListPrivacyBudgetTemplatesResponse, PrivacyBudgetTemplateSummary>(this, (i) => i.PrivacyBudgetTemplateSummaries ?? new List<PrivacyBudgetTemplateSummary>());
 
         internal ListPrivacyBudgetTemplatesPaginator(IAmazonCleanRooms client, ListPrivacyBudgetTemplatesRequest request)
         {

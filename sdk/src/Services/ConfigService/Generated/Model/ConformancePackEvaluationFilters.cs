@@ -35,8 +35,8 @@ namespace Amazon.ConfigService.Model
     public partial class ConformancePackEvaluationFilters
     {
         private ConformancePackComplianceType _complianceType;
-        private List<string> _configRuleNames = new List<string>();
-        private List<string> _resourceIds = new List<string>();
+        private List<string> _configRuleNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceType;
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConfigRuleNames property is set
         internal bool IsSetConfigRuleNames()
         {
-            return this._configRuleNames != null && this._configRuleNames.Count > 0; 
+            return this._configRuleNames != null && (this._configRuleNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ResourceIds property is set
         internal bool IsSetResourceIds()
         {
-            return this._resourceIds != null && this._resourceIds.Count > 0; 
+            return this._resourceIds != null && (this._resourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

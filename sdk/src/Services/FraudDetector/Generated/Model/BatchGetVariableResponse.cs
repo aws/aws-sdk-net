@@ -33,8 +33,8 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class BatchGetVariableResponse : AmazonWebServiceResponse
     {
-        private List<BatchGetVariableError> _errors = new List<BatchGetVariableError>();
-        private List<Variable> _variables = new List<Variable>();
+        private List<BatchGetVariableError> _errors = AWSConfigs.InitializeCollections ? new List<BatchGetVariableError>() : null;
+        private List<Variable> _variables = AWSConfigs.InitializeCollections ? new List<Variable>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +51,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

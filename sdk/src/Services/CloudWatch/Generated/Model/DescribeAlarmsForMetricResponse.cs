@@ -33,7 +33,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DescribeAlarmsForMetricResponse : AmazonWebServiceResponse
     {
-        private List<MetricAlarm> _metricAlarms = new List<MetricAlarm>();
+        private List<MetricAlarm> _metricAlarms = AWSConfigs.InitializeCollections ? new List<MetricAlarm>() : null;
 
         /// <summary>
         /// Gets and sets the property MetricAlarms. 
@@ -50,7 +50,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if MetricAlarms property is set
         internal bool IsSetMetricAlarms()
         {
-            return this._metricAlarms != null && this._metricAlarms.Count > 0; 
+            return this._metricAlarms != null && (this._metricAlarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

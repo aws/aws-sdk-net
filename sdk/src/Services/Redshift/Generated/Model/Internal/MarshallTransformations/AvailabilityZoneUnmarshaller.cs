@@ -63,6 +63,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SupportedPlatforms/SupportedPlatform", targetDepth))
                     {
                         var unmarshaller = SupportedPlatformUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedPlatforms == null)
+                        {
+                            unmarshalledObject.SupportedPlatforms = new List<SupportedPlatform>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedPlatforms.Add(item);
                         continue;

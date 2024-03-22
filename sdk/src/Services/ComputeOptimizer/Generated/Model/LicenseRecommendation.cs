@@ -36,12 +36,12 @@ namespace Amazon.ComputeOptimizer.Model
         private string _accountId;
         private LicenseConfiguration _currentLicenseConfiguration;
         private LicenseFinding _finding;
-        private List<string> _findingReasonCodes = new List<string>();
+        private List<string> _findingReasonCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastRefreshTimestamp;
-        private List<LicenseRecommendationOption> _licenseRecommendationOptions = new List<LicenseRecommendationOption>();
+        private List<LicenseRecommendationOption> _licenseRecommendationOptions = AWSConfigs.InitializeCollections ? new List<LicenseRecommendationOption>() : null;
         private double? _lookbackPeriodInDays;
         private string _resourceArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -161,7 +161,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if FindingReasonCodes property is set
         internal bool IsSetFindingReasonCodes()
         {
-            return this._findingReasonCodes != null && this._findingReasonCodes.Count > 0; 
+            return this._findingReasonCodes != null && (this._findingReasonCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if LicenseRecommendationOptions property is set
         internal bool IsSetLicenseRecommendationOptions()
         {
-            return this._licenseRecommendationOptions != null && this._licenseRecommendationOptions.Count > 0; 
+            return this._licenseRecommendationOptions != null && (this._licenseRecommendationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -252,7 +252,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

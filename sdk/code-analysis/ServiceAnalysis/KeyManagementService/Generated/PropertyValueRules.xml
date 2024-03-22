@@ -401,6 +401,12 @@
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GetKeyPolicyResponse.PolicyName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetKeyRotationStatusRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>

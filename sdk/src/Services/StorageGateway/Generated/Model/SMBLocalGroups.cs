@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class SMBLocalGroups
     {
-        private List<string> _gatewayAdmins = new List<string>();
+        private List<string> _gatewayAdmins = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GatewayAdmins. 
@@ -59,7 +59,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayAdmins property is set
         internal bool IsSetGatewayAdmins()
         {
-            return this._gatewayAdmins != null && this._gatewayAdmins.Count > 0; 
+            return this._gatewayAdmins != null && (this._gatewayAdmins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -90,6 +90,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RedshiftIdcApplications/member", targetDepth))
                     {
                         var unmarshaller = RedshiftIdcApplicationUnmarshaller.Instance;
+                        if (response.RedshiftIdcApplications == null)
+                        {
+                            response.RedshiftIdcApplications = new List<RedshiftIdcApplication>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.RedshiftIdcApplications.Add(item);
                         continue;

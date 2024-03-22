@@ -36,7 +36,7 @@ namespace Amazon.CloudDirectory.Model
     {
         private ConsistencyLevel _consistencyLevel;
         private string _directoryArn;
-        private List<BatchReadOperation> _operations = new List<BatchReadOperation>();
+        private List<BatchReadOperation> _operations = AWSConfigs.InitializeCollections ? new List<BatchReadOperation>() : null;
 
         /// <summary>
         /// Gets and sets the property ConsistencyLevel. 
@@ -93,7 +93,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if Operations property is set
         internal bool IsSetOperations()
         {
-            return this._operations != null && this._operations.Count > 0; 
+            return this._operations != null && (this._operations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

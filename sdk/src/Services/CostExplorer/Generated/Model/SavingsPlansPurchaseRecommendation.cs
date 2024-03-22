@@ -36,7 +36,7 @@ namespace Amazon.CostExplorer.Model
         private AccountScope _accountScope;
         private LookbackPeriodInDays _lookbackPeriodInDays;
         private PaymentOption _paymentOption;
-        private List<SavingsPlansPurchaseRecommendationDetail> _savingsPlansPurchaseRecommendationDetails = new List<SavingsPlansPurchaseRecommendationDetail>();
+        private List<SavingsPlansPurchaseRecommendationDetail> _savingsPlansPurchaseRecommendationDetails = AWSConfigs.InitializeCollections ? new List<SavingsPlansPurchaseRecommendationDetail>() : null;
         private SavingsPlansPurchaseRecommendationSummary _savingsPlansPurchaseRecommendationSummary;
         private SupportedSavingsPlansType _savingsPlansType;
         private TermInYears _termInYears;
@@ -114,7 +114,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if SavingsPlansPurchaseRecommendationDetails property is set
         internal bool IsSetSavingsPlansPurchaseRecommendationDetails()
         {
-            return this._savingsPlansPurchaseRecommendationDetails != null && this._savingsPlansPurchaseRecommendationDetails.Count > 0; 
+            return this._savingsPlansPurchaseRecommendationDetails != null && (this._savingsPlansPurchaseRecommendationDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

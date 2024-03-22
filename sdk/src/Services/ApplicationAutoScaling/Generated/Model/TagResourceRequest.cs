@@ -62,7 +62,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     public partial class TagResourceRequest : AmazonApplicationAutoScalingRequest
     {
         private string _resourceARN;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
@@ -126,7 +126,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

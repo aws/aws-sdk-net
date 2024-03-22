@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetDisksResponse : AmazonWebServiceResponse
     {
-        private List<Disk> _disks = new List<Disk>();
+        private List<Disk> _disks = AWSConfigs.InitializeCollections ? new List<Disk>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Disks property is set
         internal bool IsSetDisks()
         {
-            return this._disks != null && this._disks.Count > 0; 
+            return this._disks != null && (this._disks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

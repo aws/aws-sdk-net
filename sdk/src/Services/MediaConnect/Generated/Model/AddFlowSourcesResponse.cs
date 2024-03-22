@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model
     public partial class AddFlowSourcesResponse : AmazonWebServiceResponse
     {
         private string _flowArn;
-        private List<Source> _sources = new List<Source>();
+        private List<Source> _sources = AWSConfigs.InitializeCollections ? new List<Source>() : null;
 
         /// <summary>
         /// Gets and sets the property FlowArn. The ARN of the flow that these sources were added
@@ -64,7 +64,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

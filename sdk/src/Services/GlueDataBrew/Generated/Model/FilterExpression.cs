@@ -36,7 +36,7 @@ namespace Amazon.GlueDataBrew.Model
     public partial class FilterExpression
     {
         private string _expression;
-        private Dictionary<string, string> _valuesMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _valuesMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Expression. 
@@ -76,7 +76,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if ValuesMap property is set
         internal bool IsSetValuesMap()
         {
-            return this._valuesMap != null && this._valuesMap.Count > 0; 
+            return this._valuesMap != null && (this._valuesMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

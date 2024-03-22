@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ruleOptionSet/item", targetDepth))
                     {
                         var unmarshaller = RuleOptionUnmarshaller.Instance;
+                        if (unmarshalledObject.RuleOptions == null)
+                        {
+                            unmarshalledObject.RuleOptions = new List<RuleOption>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RuleOptions.Add(item);
                         continue;

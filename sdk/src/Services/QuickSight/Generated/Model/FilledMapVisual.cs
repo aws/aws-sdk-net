@@ -39,9 +39,9 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class FilledMapVisual
     {
-        private List<VisualCustomAction> _actions = new List<VisualCustomAction>();
+        private List<VisualCustomAction> _actions = AWSConfigs.InitializeCollections ? new List<VisualCustomAction>() : null;
         private FilledMapConfiguration _chartConfiguration;
-        private List<ColumnHierarchy> _columnHierarchies = new List<ColumnHierarchy>();
+        private List<ColumnHierarchy> _columnHierarchies = AWSConfigs.InitializeCollections ? new List<ColumnHierarchy>() : null;
         private FilledMapConditionalFormatting _conditionalFormatting;
         private VisualSubtitleLabelOptions _subtitle;
         private VisualTitleLabelOptions _title;
@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ColumnHierarchies property is set
         internal bool IsSetColumnHierarchies()
         {
-            return this._columnHierarchies != null && this._columnHierarchies.Count > 0; 
+            return this._columnHierarchies != null && (this._columnHierarchies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

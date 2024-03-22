@@ -45,7 +45,7 @@ namespace Amazon.ManagedGrafana.Model
         /// Enumerable containing all of the Permissions
         /// </summary>
         public IPaginatedEnumerable<PermissionEntry> Permissions => 
-            new PaginatedResultKeyResponse<ListPermissionsResponse, PermissionEntry>(this, (i) => i.Permissions);
+            new PaginatedResultKeyResponse<ListPermissionsResponse, PermissionEntry>(this, (i) => i.Permissions ?? new List<PermissionEntry>());
 
         internal ListPermissionsPaginator(IAmazonManagedGrafana client, ListPermissionsRequest request)
         {

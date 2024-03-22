@@ -33,7 +33,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     /// </summary>
     public partial class ListWorkflowsResponse : AmazonWebServiceResponse
     {
-        private List<MigrationWorkflowSummary> _migrationWorkflowSummary = new List<MigrationWorkflowSummary>();
+        private List<MigrationWorkflowSummary> _migrationWorkflowSummary = AWSConfigs.InitializeCollections ? new List<MigrationWorkflowSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if MigrationWorkflowSummary property is set
         internal bool IsSetMigrationWorkflowSummary()
         {
-            return this._migrationWorkflowSummary != null && this._migrationWorkflowSummary.Count > 0; 
+            return this._migrationWorkflowSummary != null && (this._migrationWorkflowSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class DescribeJobsRequest : AmazonBatchRequest
     {
-        private List<string> _jobs = new List<string>();
+        private List<string> _jobs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Jobs. 
@@ -52,7 +52,7 @@ namespace Amazon.Batch.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

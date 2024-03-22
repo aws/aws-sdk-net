@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
         /// Enumerable containing all of the DBSnapshots
         /// </summary>
         public IPaginatedEnumerable<DBSnapshot> DBSnapshots => 
-            new PaginatedResultKeyResponse<DescribeDBSnapshotsResponse, DBSnapshot>(this, (i) => i.DBSnapshots);
+            new PaginatedResultKeyResponse<DescribeDBSnapshotsResponse, DBSnapshot>(this, (i) => i.DBSnapshots ?? new List<DBSnapshot>());
 
         internal DescribeDBSnapshotsPaginator(IAmazonRDS client, DescribeDBSnapshotsRequest request)
         {

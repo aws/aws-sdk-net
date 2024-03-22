@@ -33,7 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class ListQuerySuggestionsBlockListsResponse : AmazonWebServiceResponse
     {
-        private List<QuerySuggestionsBlockListSummary> _blockListSummaryItems = new List<QuerySuggestionsBlockListSummary>();
+        private List<QuerySuggestionsBlockListSummary> _blockListSummaryItems = AWSConfigs.InitializeCollections ? new List<QuerySuggestionsBlockListSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Amazon.Kendra.Model
         // Check to see if BlockListSummaryItems property is set
         internal bool IsSetBlockListSummaryItems()
         {
-            return this._blockListSummaryItems != null && this._blockListSummaryItems.Count > 0; 
+            return this._blockListSummaryItems != null && (this._blockListSummaryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

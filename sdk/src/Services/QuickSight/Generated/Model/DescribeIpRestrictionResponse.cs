@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _awsAccountId;
         private bool? _enabled;
-        private Dictionary<string, string> _ipRestrictionRuleMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _ipRestrictionRuleMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _requestId;
         private int? _status;
 
@@ -91,7 +91,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if IpRestrictionRuleMap property is set
         internal bool IsSetIpRestrictionRuleMap()
         {
-            return this._ipRestrictionRuleMap != null && this._ipRestrictionRuleMap.Count > 0; 
+            return this._ipRestrictionRuleMap != null && (this._ipRestrictionRuleMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

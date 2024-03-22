@@ -68,8 +68,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("AnalyticsConfiguration", targetDepth))
                     {
+                        if (response.AnalyticsConfigurationList == null)
+                        {
+                            response.AnalyticsConfigurationList = new List<AnalyticsConfiguration>();
+                        }
                         response.AnalyticsConfigurationList.Add(AnalyticsConfigurationUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                     if (context.TestExpression("IsTruncated", targetDepth))

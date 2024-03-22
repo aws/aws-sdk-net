@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the AccountAliases
         /// </summary>
         public IPaginatedEnumerable<string> AccountAliases => 
-            new PaginatedResultKeyResponse<ListAccountAliasesResponse, string>(this, (i) => i.AccountAliases);
+            new PaginatedResultKeyResponse<ListAccountAliasesResponse, string>(this, (i) => i.AccountAliases ?? new List<string>());
 
         internal ListAccountAliasesPaginator(IAmazonIdentityManagementService client, ListAccountAliasesRequest request)
         {

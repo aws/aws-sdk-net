@@ -36,7 +36,7 @@ namespace Amazon.QuickSight.Model
         private string _nextToken;
         private string _requestId;
         private int? _status;
-        private List<ThemeAlias> _themeAliasList = new List<ThemeAlias>();
+        private List<ThemeAlias> _themeAliasList = AWSConfigs.InitializeCollections ? new List<ThemeAlias>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -108,7 +108,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ThemeAliasList property is set
         internal bool IsSetThemeAliasList()
         {
-            return this._themeAliasList != null && this._themeAliasList.Count > 0; 
+            return this._themeAliasList != null && (this._themeAliasList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

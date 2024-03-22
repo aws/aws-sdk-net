@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the CoipPools
         /// </summary>
         public IPaginatedEnumerable<CoipPool> CoipPools => 
-            new PaginatedResultKeyResponse<DescribeCoipPoolsResponse, CoipPool>(this, (i) => i.CoipPools);
+            new PaginatedResultKeyResponse<DescribeCoipPoolsResponse, CoipPool>(this, (i) => i.CoipPools ?? new List<CoipPool>());
 
         internal DescribeCoipPoolsPaginator(IAmazonEC2 client, DescribeCoipPoolsRequest request)
         {

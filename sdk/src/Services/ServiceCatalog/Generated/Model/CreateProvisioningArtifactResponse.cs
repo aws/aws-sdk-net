@@ -33,7 +33,7 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class CreateProvisioningArtifactResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _info = new Dictionary<string, string>();
+        private Dictionary<string, string> _info = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ProvisioningArtifactDetail _provisioningArtifactDetail;
         private Status _status;
 
@@ -76,7 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Info property is set
         internal bool IsSetInfo()
         {
-            return this._info != null && this._info.Count > 0; 
+            return this._info != null && (this._info.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

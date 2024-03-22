@@ -45,7 +45,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Enumerable containing all of the Listeners
         /// </summary>
         public IPaginatedEnumerable<Listener> Listeners => 
-            new PaginatedResultKeyResponse<DescribeListenersResponse, Listener>(this, (i) => i.Listeners);
+            new PaginatedResultKeyResponse<DescribeListenersResponse, Listener>(this, (i) => i.Listeners ?? new List<Listener>());
 
         internal DescribeListenersPaginator(IAmazonElasticLoadBalancingV2 client, DescribeListenersRequest request)
         {

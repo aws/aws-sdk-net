@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the FlowLogs
         /// </summary>
         public IPaginatedEnumerable<FlowLog> FlowLogs => 
-            new PaginatedResultKeyResponse<DescribeFlowLogsResponse, FlowLog>(this, (i) => i.FlowLogs);
+            new PaginatedResultKeyResponse<DescribeFlowLogsResponse, FlowLog>(this, (i) => i.FlowLogs ?? new List<FlowLog>());
 
         internal DescribeFlowLogsPaginator(IAmazonEC2 client, DescribeFlowLogsRequest request)
         {

@@ -28,29 +28,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public static void DeleteUsersAndGroupsInTestNameSpace(AmazonIdentityManagementServiceClient client)
         {
             ListGroupsResponse lgRes = client.ListGroups(new ListGroupsRequest() { PathPrefix = TEST_PATH });
-            foreach (Group g in lgRes.Groups)
+            if (lgRes.Groups != null)
             {
-                GetGroupResponse ggRes = client.GetGroup(new GetGroupRequest() { GroupName = g.GroupName });
-                foreach (User u in ggRes.Users)
+                foreach (Group g in lgRes.Groups)
                 {
-                    client.RemoveUserFromGroup(new RemoveUserFromGroupRequest() { GroupName = g.GroupName, UserName = u.UserName });
+                    GetGroupResponse ggRes = client.GetGroup(new GetGroupRequest() { GroupName = g.GroupName });
+                    foreach (User u in ggRes.Users)
+                    {
+                        client.RemoveUserFromGroup(new RemoveUserFromGroupRequest() { GroupName = g.GroupName, UserName = u.UserName });
+                    }
+                    client.DeleteGroup(new DeleteGroupRequest() { GroupName = g.GroupName });
                 }
-                client.DeleteGroup(new DeleteGroupRequest() { GroupName = g.GroupName });
             }
 
             ListUsersResponse luRes = client.ListUsers(new ListUsersRequest() { PathPrefix = TEST_PATH });
-            foreach (User u in luRes.Users)
+            if (luRes.Users != null)
             {
-                DeleteTestUsers(client, u.UserName);
+                foreach (User u in luRes.Users)
+                {
+                    DeleteTestUsers(client, u.UserName);
+                }
             }
         }
 
         public static void DeleteAccessKeysForUser(AmazonIdentityManagementServiceClient client, string username)
         {
             ListAccessKeysResponse response = client.ListAccessKeys(new ListAccessKeysRequest() { UserName = username });
-            foreach (AccessKeyMetadata akm in response.AccessKeyMetadata)
+            if (response.AccessKeyMetadata != null)
             {
-                client.DeleteAccessKey(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = akm.AccessKeyId });
+                foreach (AccessKeyMetadata akm in response.AccessKeyMetadata)
+                {
+                    client.DeleteAccessKey(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = akm.AccessKeyId });
+                }
             }
         }
 
@@ -58,9 +67,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         {
             ListUserPoliciesResponse response =
                 client.ListUserPolicies(new ListUserPoliciesRequest() { UserName = username });
-            foreach (string pName in response.PolicyNames)
+            
+            if (response.PolicyNames != null)
             {
-                client.DeleteUserPolicy(new DeleteUserPolicyRequest() { UserName = username, PolicyName = pName });
+                foreach (string pName in response.PolicyNames)
+                {
+                    client.DeleteUserPolicy(new DeleteUserPolicyRequest() { UserName = username, PolicyName = pName });
+                }
             }
         }
 
@@ -68,9 +81,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         {
             ListSigningCertificatesResponse response =
                 client.ListSigningCertificates(new ListSigningCertificatesRequest() { UserName = username });
-            foreach (SigningCertificate cert in response.Certificates)
+            
+            if (response.Certificates != null)
             {
-                client.DeleteSigningCertificate(new DeleteSigningCertificateRequest() { UserName = username, CertificateId = cert.CertificateId });
+                foreach (SigningCertificate cert in response.Certificates)
+                {
+                    client.DeleteSigningCertificate(new DeleteSigningCertificateRequest() { UserName = username, CertificateId = cert.CertificateId });
+                }
             }
         }
 

@@ -38,8 +38,8 @@ namespace Amazon.QBusiness.Model
         private BlockedPhrasesConfigurationUpdate _blockedPhrasesConfigurationUpdate;
         private string _clientToken;
         private ResponseScope _responseScope;
-        private List<TopicConfiguration> _topicConfigurationsToCreateOrUpdate = new List<TopicConfiguration>();
-        private List<TopicConfiguration> _topicConfigurationsToDelete = new List<TopicConfiguration>();
+        private List<TopicConfiguration> _topicConfigurationsToCreateOrUpdate = AWSConfigs.InitializeCollections ? new List<TopicConfiguration>() : null;
+        private List<TopicConfiguration> _topicConfigurationsToDelete = AWSConfigs.InitializeCollections ? new List<TopicConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -135,7 +135,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if TopicConfigurationsToCreateOrUpdate property is set
         internal bool IsSetTopicConfigurationsToCreateOrUpdate()
         {
-            return this._topicConfigurationsToCreateOrUpdate != null && this._topicConfigurationsToCreateOrUpdate.Count > 0; 
+            return this._topicConfigurationsToCreateOrUpdate != null && (this._topicConfigurationsToCreateOrUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if TopicConfigurationsToDelete property is set
         internal bool IsSetTopicConfigurationsToDelete()
         {
-            return this._topicConfigurationsToDelete != null && this._topicConfigurationsToDelete.Count > 0; 
+            return this._topicConfigurationsToDelete != null && (this._topicConfigurationsToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -48,7 +48,7 @@ namespace Amazon.OpsWorks.Model
     public partial class DescribeElasticIpsRequest : AmazonOpsWorksRequest
     {
         private string _instanceId;
-        private List<string> _ips = new List<string>();
+        private List<string> _ips = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stackId;
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Ips property is set
         internal bool IsSetIps()
         {
-            return this._ips != null && this._ips.Count > 0; 
+            return this._ips != null && (this._ips.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

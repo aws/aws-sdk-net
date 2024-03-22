@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("blockDeviceMapping/item", targetDepth))
                     {
                         var unmarshaller = BlockDeviceMappingUnmarshaller.Instance;
+                        if (unmarshalledObject.BlockDeviceMappings == null)
+                        {
+                            unmarshalledObject.BlockDeviceMappings = new List<BlockDeviceMapping>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
@@ -100,6 +104,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("launchPermission/item", targetDepth))
                     {
                         var unmarshaller = LaunchPermissionUnmarshaller.Instance;
+                        if (unmarshalledObject.LaunchPermissions == null)
+                        {
+                            unmarshalledObject.LaunchPermissions = new List<LaunchPermission>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LaunchPermissions.Add(item);
                         continue;
@@ -107,6 +115,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("productCodes/item", targetDepth))
                     {
                         var unmarshaller = ProductCodeUnmarshaller.Instance;
+                        if (unmarshalledObject.ProductCodes == null)
+                        {
+                            unmarshalledObject.ProductCodes = new List<ProductCode>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ProductCodes.Add(item);
                         continue;

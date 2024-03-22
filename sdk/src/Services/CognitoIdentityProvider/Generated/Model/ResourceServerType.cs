@@ -35,7 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private string _identifier;
         private string _name;
-        private List<ResourceServerScopeType> _scopes = new List<ResourceServerScopeType>();
+        private List<ResourceServerScopeType> _scopes = AWSConfigs.InitializeCollections ? new List<ResourceServerScopeType>() : null;
         private string _userPoolId;
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if Scopes property is set
         internal bool IsSetScopes()
         {
-            return this._scopes != null && this._scopes.Count > 0; 
+            return this._scopes != null && (this._scopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.GuardDuty.Model
         /// Enumerable containing all of the ThreatIntelSetIds
         /// </summary>
         public IPaginatedEnumerable<string> ThreatIntelSetIds => 
-            new PaginatedResultKeyResponse<ListThreatIntelSetsResponse, string>(this, (i) => i.ThreatIntelSetIds);
+            new PaginatedResultKeyResponse<ListThreatIntelSetsResponse, string>(this, (i) => i.ThreatIntelSetIds ?? new List<string>());
 
         internal ListThreatIntelSetsPaginator(IAmazonGuardDuty client, ListThreatIntelSetsRequest request)
         {

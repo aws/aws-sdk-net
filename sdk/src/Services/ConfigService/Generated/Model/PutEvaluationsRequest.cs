@@ -35,7 +35,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class PutEvaluationsRequest : AmazonConfigServiceRequest
     {
-        private List<Evaluation> _evaluations = new List<Evaluation>();
+        private List<Evaluation> _evaluations = AWSConfigs.InitializeCollections ? new List<Evaluation>() : null;
         private string _resultToken;
         private bool? _testMode;
 
@@ -57,7 +57,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if Evaluations property is set
         internal bool IsSetEvaluations()
         {
-            return this._evaluations != null && this._evaluations.Count > 0; 
+            return this._evaluations != null && (this._evaluations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

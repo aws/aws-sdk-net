@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the PipelineSummaries
         /// </summary>
         public IPaginatedEnumerable<PipelineSummary> PipelineSummaries => 
-            new PaginatedResultKeyResponse<ListPipelinesResponse, PipelineSummary>(this, (i) => i.PipelineSummaries);
+            new PaginatedResultKeyResponse<ListPipelinesResponse, PipelineSummary>(this, (i) => i.PipelineSummaries ?? new List<PipelineSummary>());
 
         internal ListPipelinesPaginator(IAmazonSageMaker client, ListPipelinesRequest request)
         {

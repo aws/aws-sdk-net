@@ -39,7 +39,7 @@ namespace Amazon.XRay.Model
         private DateTime? _eventTime;
         private RequestImpactStatistics _rootCauseServiceRequestImpactStatistics;
         private string _summary;
-        private List<AnomalousService> _topAnomalousServices = new List<AnomalousService>();
+        private List<AnomalousService> _topAnomalousServices = AWSConfigs.InitializeCollections ? new List<AnomalousService>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestImpactStatistics. 
@@ -130,7 +130,7 @@ namespace Amazon.XRay.Model
         // Check to see if TopAnomalousServices property is set
         internal bool IsSetTopAnomalousServices()
         {
-            return this._topAnomalousServices != null && this._topAnomalousServices.Count > 0; 
+            return this._topAnomalousServices != null && (this._topAnomalousServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

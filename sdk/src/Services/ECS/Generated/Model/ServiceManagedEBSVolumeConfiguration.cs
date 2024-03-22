@@ -48,7 +48,7 @@ namespace Amazon.ECS.Model
         private string _roleArn;
         private int? _sizeInGiB;
         private string _snapshotId;
-        private List<EBSTagSpecification> _tagSpecifications = new List<EBSTagSpecification>();
+        private List<EBSTagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<EBSTagSpecification>() : null;
         private int? _throughput;
         private string _volumeType;
 
@@ -280,7 +280,7 @@ namespace Amazon.ECS.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

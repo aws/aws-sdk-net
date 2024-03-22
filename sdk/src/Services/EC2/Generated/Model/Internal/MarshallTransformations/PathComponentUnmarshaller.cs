@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("additionalDetailSet/item", targetDepth))
                     {
                         var unmarshaller = AdditionalDetailUnmarshaller.Instance;
+                        if (unmarshalledObject.AdditionalDetails == null)
+                        {
+                            unmarshalledObject.AdditionalDetails = new List<AdditionalDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AdditionalDetails.Add(item);
                         continue;
@@ -94,6 +98,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("explanationSet/item", targetDepth))
                     {
                         var unmarshaller = ExplanationUnmarshaller.Instance;
+                        if (unmarshalledObject.Explanations == null)
+                        {
+                            unmarshalledObject.Explanations = new List<Explanation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Explanations.Add(item);
                         continue;

@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model
     public partial class ListPublicKeysResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PublicKey> _publicKeyList = new List<PublicKey>();
+        private List<PublicKey> _publicKeyList = AWSConfigs.InitializeCollections ? new List<PublicKey>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if PublicKeyList property is set
         internal bool IsSetPublicKeyList()
         {
-            return this._publicKeyList != null && this._publicKeyList.Count > 0; 
+            return this._publicKeyList != null && (this._publicKeyList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

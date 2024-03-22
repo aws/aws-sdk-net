@@ -36,7 +36,7 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class UpdateProfileRequest : AmazonTransferRequest
     {
-        private List<string> _certificateIds = new List<string>();
+        private List<string> _certificateIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _profileId;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Transfer.Model
         // Check to see if CertificateIds property is set
         internal bool IsSetCertificateIds()
         {
-            return this._certificateIds != null && this._certificateIds.Count > 0; 
+            return this._certificateIds != null && (this._certificateIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

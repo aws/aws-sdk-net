@@ -87,6 +87,22 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetAudienceMedia())
+                {
+                    context.Writer.WritePropertyName("AudienceMedia");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAudienceMediaListValue in publicRequest.AudienceMedia)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AudienceMediaMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAudienceMediaListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetLiveSourceName())
                 {
                     context.Writer.WritePropertyName("LiveSourceName");

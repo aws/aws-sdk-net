@@ -34,7 +34,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class DescribeOptedOutNumbersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OptedOutNumberInformation> _optedOutNumbers = new List<OptedOutNumberInformation>();
+        private List<OptedOutNumberInformation> _optedOutNumbers = AWSConfigs.InitializeCollections ? new List<OptedOutNumberInformation>() : null;
         private string _optOutListArn;
         private string _optOutListName;
 
@@ -74,7 +74,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if OptedOutNumbers property is set
         internal bool IsSetOptedOutNumbers()
         {
-            return this._optedOutNumbers != null && this._optedOutNumbers.Count > 0; 
+            return this._optedOutNumbers != null && (this._optedOutNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

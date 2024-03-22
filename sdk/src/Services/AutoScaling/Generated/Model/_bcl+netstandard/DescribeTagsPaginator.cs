@@ -45,7 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<TagDescription> Tags => 
-            new PaginatedResultKeyResponse<DescribeTagsResponse, TagDescription>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<DescribeTagsResponse, TagDescription>(this, (i) => i.Tags ?? new List<TagDescription>());
 
         internal DescribeTagsPaginator(IAmazonAutoScaling client, DescribeTagsRequest request)
         {

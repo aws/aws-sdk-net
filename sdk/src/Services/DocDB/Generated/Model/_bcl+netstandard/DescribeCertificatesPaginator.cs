@@ -45,7 +45,7 @@ namespace Amazon.DocDB.Model
         /// Enumerable containing all of the Certificates
         /// </summary>
         public IPaginatedEnumerable<Certificate> Certificates => 
-            new PaginatedResultKeyResponse<DescribeCertificatesResponse, Certificate>(this, (i) => i.Certificates);
+            new PaginatedResultKeyResponse<DescribeCertificatesResponse, Certificate>(this, (i) => i.Certificates ?? new List<Certificate>());
 
         internal DescribeCertificatesPaginator(IAmazonDocDB client, DescribeCertificatesRequest request)
         {

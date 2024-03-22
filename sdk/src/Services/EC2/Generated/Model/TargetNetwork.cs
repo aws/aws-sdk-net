@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     {
         private string _associationId;
         private string _clientVpnEndpointId;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AssociationStatus _status;
         private string _targetNetworkId;
         private string _vpcId;
@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

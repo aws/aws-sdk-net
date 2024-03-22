@@ -35,7 +35,7 @@ namespace Amazon.Appflow.Model
     {
         private SalesforceDataTransferApi _dataTransferApi;
         private ErrorHandlingConfig _errorHandlingConfig;
-        private List<string> _idFieldNames = new List<string>();
+        private List<string> _idFieldNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _object;
         private WriteOperationType _writeOperationType;
 
@@ -139,7 +139,7 @@ namespace Amazon.Appflow.Model
         // Check to see if IdFieldNames property is set
         internal bool IsSetIdFieldNames()
         {
-            return this._idFieldNames != null && this._idFieldNames.Count > 0; 
+            return this._idFieldNames != null && (this._idFieldNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

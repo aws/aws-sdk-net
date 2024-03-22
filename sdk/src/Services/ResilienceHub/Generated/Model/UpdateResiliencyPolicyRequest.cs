@@ -46,7 +46,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class UpdateResiliencyPolicyRequest : AmazonResilienceHubRequest
     {
         private DataLocationConstraint _dataLocationConstraint;
-        private Dictionary<string, FailurePolicy> _policy = new Dictionary<string, FailurePolicy>();
+        private Dictionary<string, FailurePolicy> _policy = AWSConfigs.InitializeCollections ? new Dictionary<string, FailurePolicy>() : null;
         private string _policyArn;
         private string _policyDescription;
         private string _policyName;
@@ -87,7 +87,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if Policy property is set
         internal bool IsSetPolicy()
         {
-            return this._policy != null && this._policy.Count > 0; 
+            return this._policy != null && (this._policy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

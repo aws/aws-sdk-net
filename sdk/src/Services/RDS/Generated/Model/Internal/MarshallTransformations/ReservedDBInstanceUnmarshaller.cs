@@ -111,6 +111,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RecurringCharges/RecurringCharge", targetDepth))
                     {
                         var unmarshaller = RecurringChargeUnmarshaller.Instance;
+                        if (unmarshalledObject.RecurringCharges == null)
+                        {
+                            unmarshalledObject.RecurringCharges = new List<RecurringCharge>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RecurringCharges.Add(item);
                         continue;

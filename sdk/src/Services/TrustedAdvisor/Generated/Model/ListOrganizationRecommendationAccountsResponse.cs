@@ -33,7 +33,7 @@ namespace Amazon.TrustedAdvisor.Model
     /// </summary>
     public partial class ListOrganizationRecommendationAccountsResponse : AmazonWebServiceResponse
     {
-        private List<AccountRecommendationLifecycleSummary> _accountRecommendationLifecycleSummaries = new List<AccountRecommendationLifecycleSummary>();
+        private List<AccountRecommendationLifecycleSummary> _accountRecommendationLifecycleSummaries = AWSConfigs.InitializeCollections ? new List<AccountRecommendationLifecycleSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.TrustedAdvisor.Model
         // Check to see if AccountRecommendationLifecycleSummaries property is set
         internal bool IsSetAccountRecommendationLifecycleSummaries()
         {
-            return this._accountRecommendationLifecycleSummaries != null && this._accountRecommendationLifecycleSummaries.Count > 0; 
+            return this._accountRecommendationLifecycleSummaries != null && (this._accountRecommendationLifecycleSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

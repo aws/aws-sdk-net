@@ -43,13 +43,13 @@ namespace Amazon.Lightsail.Model
     public partial class CreateDistributionRequest : AmazonLightsailRequest
     {
         private string _bundleId;
-        private List<CacheBehaviorPerPath> _cacheBehaviors = new List<CacheBehaviorPerPath>();
+        private List<CacheBehaviorPerPath> _cacheBehaviors = AWSConfigs.InitializeCollections ? new List<CacheBehaviorPerPath>() : null;
         private CacheSettings _cacheBehaviorSettings;
         private CacheBehavior _defaultCacheBehavior;
         private string _distributionName;
         private IpAddressType _ipAddressType;
         private InputOrigin _origin;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property BundleId. 
@@ -95,7 +95,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if CacheBehaviors property is set
         internal bool IsSetCacheBehaviors()
         {
-            return this._cacheBehaviors != null && this._cacheBehaviors.Count > 0; 
+            return this._cacheBehaviors != null && (this._cacheBehaviors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

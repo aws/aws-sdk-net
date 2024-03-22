@@ -33,8 +33,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// </summary>
     public partial class VpcConfigurationUpdate
     {
-        private List<string> _securityGroupIdUpdates = new List<string>();
-        private List<string> _subnetIdUpdates = new List<string>();
+        private List<string> _securityGroupIdUpdates = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subnetIdUpdates = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcConfigurationId;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if SecurityGroupIdUpdates property is set
         internal bool IsSetSecurityGroupIdUpdates()
         {
-            return this._securityGroupIdUpdates != null && this._securityGroupIdUpdates.Count > 0; 
+            return this._securityGroupIdUpdates != null && (this._securityGroupIdUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if SubnetIdUpdates property is set
         internal bool IsSetSubnetIdUpdates()
         {
-            return this._subnetIdUpdates != null && this._subnetIdUpdates.Count > 0; 
+            return this._subnetIdUpdates != null && (this._subnetIdUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -69,6 +69,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Messages/member", targetDepth))
                     {
                         var unmarshaller = MessageDataUnmarshaller.Instance;
+                        if (unmarshalledObject.Messages == null)
+                        {
+                            unmarshalledObject.Messages = new List<MessageData>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Messages.Add(item);
                         continue;
@@ -82,6 +86,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Timestamps/member", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
+                        if (unmarshalledObject.Timestamps == null)
+                        {
+                            unmarshalledObject.Timestamps = new List<DateTime>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Timestamps.Add(item);
                         continue;
@@ -89,6 +97,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Values/member", targetDepth))
                     {
                         var unmarshaller = DoubleUnmarshaller.Instance;
+                        if (unmarshalledObject.Values == null)
+                        {
+                            unmarshalledObject.Values = new List<double>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Values.Add(item);
                         continue;

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class LambdaStepMetadata
     {
         private string _arn;
-        private List<OutputParameter> _outputParameters = new List<OutputParameter>();
+        private List<OutputParameter> _outputParameters = AWSConfigs.InitializeCollections ? new List<OutputParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if OutputParameters property is set
         internal bool IsSetOutputParameters()
         {
-            return this._outputParameters != null && this._outputParameters.Count > 0; 
+            return this._outputParameters != null && (this._outputParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

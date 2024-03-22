@@ -82,10 +82,10 @@ namespace Amazon.SimpleEmail.Model
     public partial class SendBulkTemplatedEmailRequest : AmazonSimpleEmailServiceRequest
     {
         private string _configurationSetName;
-        private List<MessageTag> _defaultTags = new List<MessageTag>();
+        private List<MessageTag> _defaultTags = AWSConfigs.InitializeCollections ? new List<MessageTag>() : null;
         private string _defaultTemplateData;
-        private List<BulkEmailDestination> _destinations = new List<BulkEmailDestination>();
-        private List<string> _replyToAddresses = new List<string>();
+        private List<BulkEmailDestination> _destinations = AWSConfigs.InitializeCollections ? new List<BulkEmailDestination>() : null;
+        private List<string> _replyToAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _returnPath;
         private string _returnPathArn;
         private string _source;
@@ -127,7 +127,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if DefaultTags property is set
         internal bool IsSetDefaultTags()
         {
-            return this._defaultTags != null && this._defaultTags.Count > 0; 
+            return this._defaultTags != null && (this._defaultTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if ReplyToAddresses property is set
         internal bool IsSetReplyToAddresses()
         {
-            return this._replyToAddresses != null && this._replyToAddresses.Count > 0; 
+            return this._replyToAddresses != null && (this._replyToAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

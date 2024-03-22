@@ -69,8 +69,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Field", targetDepth + 1))
                     {
+                        if (response.InventoryOptionalFields == null)
+                        {
+                            response.InventoryOptionalFields = new List<InventoryOptionalField>();
+                        }
                         response.InventoryOptionalFields.Add(InventoryOptionalField.FindValue(StringUnmarshaller.Instance.Unmarshall(context)));
-
                         continue;
                     }
                     if (context.TestExpression("Schedule", targetDepth))

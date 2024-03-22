@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     public partial class DescribeDBProxyTargetGroupsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<DBProxyTargetGroup> _targetGroups = new List<DBProxyTargetGroup>();
+        private List<DBProxyTargetGroup> _targetGroups = AWSConfigs.InitializeCollections ? new List<DBProxyTargetGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -72,7 +72,7 @@ namespace Amazon.RDS.Model
         // Check to see if TargetGroups property is set
         internal bool IsSetTargetGroups()
         {
-            return this._targetGroups != null && this._targetGroups.Count > 0; 
+            return this._targetGroups != null && (this._targetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

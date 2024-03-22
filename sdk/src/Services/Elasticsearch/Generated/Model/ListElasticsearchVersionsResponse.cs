@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class ListElasticsearchVersionsResponse : AmazonWebServiceResponse
     {
-        private List<string> _elasticsearchVersions = new List<string>();
+        private List<string> _elasticsearchVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if ElasticsearchVersions property is set
         internal bool IsSetElasticsearchVersions()
         {
-            return this._elasticsearchVersions != null && this._elasticsearchVersions.Count > 0; 
+            return this._elasticsearchVersions != null && (this._elasticsearchVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

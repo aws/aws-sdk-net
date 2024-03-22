@@ -73,6 +73,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         mapIndex++;
                     }
                 }
+                if(publicRequest.IsSetDataFilter())
+                {
+                    request.Parameters.Add("DataFilter", StringUtils.FromString(publicRequest.DataFilter));
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
                 if(publicRequest.IsSetIntegrationName())
                 {
                     request.Parameters.Add("IntegrationName", StringUtils.FromString(publicRequest.IntegrationName));

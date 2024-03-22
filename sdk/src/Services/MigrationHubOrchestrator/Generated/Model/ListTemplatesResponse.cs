@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     public partial class ListTemplatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TemplateSummary> _templateSummary = new List<TemplateSummary>();
+        private List<TemplateSummary> _templateSummary = AWSConfigs.InitializeCollections ? new List<TemplateSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if TemplateSummary property is set
         internal bool IsSetTemplateSummary()
         {
-            return this._templateSummary != null && this._templateSummary.Count > 0; 
+            return this._templateSummary != null && (this._templateSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

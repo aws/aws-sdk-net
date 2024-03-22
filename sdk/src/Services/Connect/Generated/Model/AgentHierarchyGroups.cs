@@ -35,11 +35,11 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class AgentHierarchyGroups
     {
-        private List<string> _l1Ids = new List<string>();
-        private List<string> _l2Ids = new List<string>();
-        private List<string> _l3Ids = new List<string>();
-        private List<string> _l4Ids = new List<string>();
-        private List<string> _l5Ids = new List<string>();
+        private List<string> _l1Ids = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _l2Ids = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _l3Ids = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _l4Ids = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _l5Ids = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property L1Ids. 
@@ -57,7 +57,7 @@ namespace Amazon.Connect.Model
         // Check to see if L1Ids property is set
         internal bool IsSetL1Ids()
         {
-            return this._l1Ids != null && this._l1Ids.Count > 0; 
+            return this._l1Ids != null && (this._l1Ids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.Connect.Model
         // Check to see if L2Ids property is set
         internal bool IsSetL2Ids()
         {
-            return this._l2Ids != null && this._l2Ids.Count > 0; 
+            return this._l2Ids != null && (this._l2Ids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.Connect.Model
         // Check to see if L3Ids property is set
         internal bool IsSetL3Ids()
         {
-            return this._l3Ids != null && this._l3Ids.Count > 0; 
+            return this._l3Ids != null && (this._l3Ids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.Connect.Model
         // Check to see if L4Ids property is set
         internal bool IsSetL4Ids()
         {
-            return this._l4Ids != null && this._l4Ids.Count > 0; 
+            return this._l4Ids != null && (this._l4Ids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.Connect.Model
         // Check to see if L5Ids property is set
         internal bool IsSetL5Ids()
         {
-            return this._l5Ids != null && this._l5Ids.Count > 0; 
+            return this._l5Ids != null && (this._l5Ids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

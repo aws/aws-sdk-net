@@ -45,7 +45,7 @@ namespace Amazon.ControlTower.Model
         /// Enumerable containing all of the Baselines
         /// </summary>
         public IPaginatedEnumerable<BaselineSummary> Baselines => 
-            new PaginatedResultKeyResponse<ListBaselinesResponse, BaselineSummary>(this, (i) => i.Baselines);
+            new PaginatedResultKeyResponse<ListBaselinesResponse, BaselineSummary>(this, (i) => i.Baselines ?? new List<BaselineSummary>());
 
         internal ListBaselinesPaginator(IAmazonControlTower client, ListBaselinesRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model
     public partial class ListSkillsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SkillSummary> _skillSummaries = new List<SkillSummary>();
+        private List<SkillSummary> _skillSummaries = AWSConfigs.InitializeCollections ? new List<SkillSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if SkillSummaries property is set
         internal bool IsSetSkillSummaries()
         {
-            return this._skillSummaries != null && this._skillSummaries.Count > 0; 
+            return this._skillSummaries != null && (this._skillSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

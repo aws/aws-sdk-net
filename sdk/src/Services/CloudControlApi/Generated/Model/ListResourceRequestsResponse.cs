@@ -34,7 +34,7 @@ namespace Amazon.CloudControlApi.Model
     public partial class ListResourceRequestsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProgressEvent> _resourceRequestStatusSummaries = new List<ProgressEvent>();
+        private List<ProgressEvent> _resourceRequestStatusSummaries = AWSConfigs.InitializeCollections ? new List<ProgressEvent>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.CloudControlApi.Model
         // Check to see if ResourceRequestStatusSummaries property is set
         internal bool IsSetResourceRequestStatusSummaries()
         {
-            return this._resourceRequestStatusSummaries != null && this._resourceRequestStatusSummaries.Count > 0; 
+            return this._resourceRequestStatusSummaries != null && (this._resourceRequestStatusSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

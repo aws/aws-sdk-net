@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the Aliases
         /// </summary>
         public IPaginatedEnumerable<Alias> Aliases => 
-            new PaginatedResultKeyResponse<ListAliasesResponse, Alias>(this, (i) => i.Aliases);
+            new PaginatedResultKeyResponse<ListAliasesResponse, Alias>(this, (i) => i.Aliases ?? new List<Alias>());
 
         internal ListAliasesPaginator(IAmazonGameLift client, ListAliasesRequest request)
         {

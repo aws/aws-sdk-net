@@ -33,8 +33,8 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class GetEventSelectorsResponse : AmazonWebServiceResponse
     {
-        private List<AdvancedEventSelector> _advancedEventSelectors = new List<AdvancedEventSelector>();
-        private List<EventSelector> _eventSelectors = new List<EventSelector>();
+        private List<AdvancedEventSelector> _advancedEventSelectors = AWSConfigs.InitializeCollections ? new List<AdvancedEventSelector>() : null;
+        private List<EventSelector> _eventSelectors = AWSConfigs.InitializeCollections ? new List<EventSelector>() : null;
         private string _trailARN;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if AdvancedEventSelectors property is set
         internal bool IsSetAdvancedEventSelectors()
         {
-            return this._advancedEventSelectors != null && this._advancedEventSelectors.Count > 0; 
+            return this._advancedEventSelectors != null && (this._advancedEventSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if EventSelectors property is set
         internal bool IsSetEventSelectors()
         {
-            return this._eventSelectors != null && this._eventSelectors.Count > 0; 
+            return this._eventSelectors != null && (this._eventSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

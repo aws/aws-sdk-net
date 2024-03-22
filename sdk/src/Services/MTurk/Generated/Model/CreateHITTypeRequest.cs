@@ -41,7 +41,7 @@ namespace Amazon.MTurk.Model
         private long? _autoApprovalDelayInSeconds;
         private string _description;
         private string _keywords;
-        private List<QualificationRequirement> _qualificationRequirements = new List<QualificationRequirement>();
+        private List<QualificationRequirement> _qualificationRequirements = AWSConfigs.InitializeCollections ? new List<QualificationRequirement>() : null;
         private string _reward;
         private string _title;
 
@@ -149,7 +149,7 @@ namespace Amazon.MTurk.Model
         // Check to see if QualificationRequirements property is set
         internal bool IsSetQualificationRequirements()
         {
-            return this._qualificationRequirements != null && this._qualificationRequirements.Count > 0; 
+            return this._qualificationRequirements != null && (this._qualificationRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

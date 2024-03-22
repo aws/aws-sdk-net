@@ -215,10 +215,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the key policy. The only valid value is <c>default</c>.
+        /// The name of the key policy. If no policy name is specified, the default value is <c>default</c>.
+        /// The only valid value is <c>default</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }

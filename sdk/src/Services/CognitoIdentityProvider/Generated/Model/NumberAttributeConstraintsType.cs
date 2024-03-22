@@ -39,7 +39,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MaxValue. 
         /// <para>
-        /// The maximum value of an attribute that is of the number data type.
+        /// The maximum length of a number attribute value. Must be a number less than or equal
+        /// to <c>2^1023</c>, represented as a string with a length of 131072 characters or fewer.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]

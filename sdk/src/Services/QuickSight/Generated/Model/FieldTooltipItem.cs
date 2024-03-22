@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _fieldId;
         private string _label;
+        private TooltipTarget _tooltipTarget;
         private Visibility _visibility;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetLabel()
         {
             return this._label != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TooltipTarget. 
+        /// <para>
+        /// Determines the target of the field tooltip item in a combo chart visual.
+        /// </para>
+        /// </summary>
+        public TooltipTarget TooltipTarget
+        {
+            get { return this._tooltipTarget; }
+            set { this._tooltipTarget = value; }
+        }
+
+        // Check to see if TooltipTarget property is set
+        internal bool IsSetTooltipTarget()
+        {
+            return this._tooltipTarget != null;
         }
 
         /// <summary>

@@ -55,13 +55,13 @@ namespace Amazon.SageMaker.Model
     {
         private string _displayName;
         private DateTime? _endTime;
-        private Dictionary<string, TrialComponentArtifact> _inputArtifacts = new Dictionary<string, TrialComponentArtifact>();
+        private Dictionary<string, TrialComponentArtifact> _inputArtifacts = AWSConfigs.InitializeCollections ? new Dictionary<string, TrialComponentArtifact>() : null;
         private MetadataProperties _metadataProperties;
-        private Dictionary<string, TrialComponentArtifact> _outputArtifacts = new Dictionary<string, TrialComponentArtifact>();
-        private Dictionary<string, TrialComponentParameterValue> _parameters = new Dictionary<string, TrialComponentParameterValue>();
+        private Dictionary<string, TrialComponentArtifact> _outputArtifacts = AWSConfigs.InitializeCollections ? new Dictionary<string, TrialComponentArtifact>() : null;
+        private Dictionary<string, TrialComponentParameterValue> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, TrialComponentParameterValue>() : null;
         private DateTime? _startTime;
         private TrialComponentStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _trialComponentName;
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InputArtifacts property is set
         internal bool IsSetInputArtifacts()
         {
-            return this._inputArtifacts != null && this._inputArtifacts.Count > 0; 
+            return this._inputArtifacts != null && (this._inputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if OutputArtifacts property is set
         internal bool IsSetOutputArtifacts()
         {
-            return this._outputArtifacts != null && this._outputArtifacts.Count > 0; 
+            return this._outputArtifacts != null && (this._outputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -242,7 +242,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

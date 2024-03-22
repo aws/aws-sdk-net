@@ -82,7 +82,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _domainName;
         private FieldSourceProfileIds _fieldSourceProfileIds;
         private string _mainProfileId;
-        private List<string> _profileIdsToBeMerged = new List<string>();
+        private List<string> _profileIdsToBeMerged = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -159,7 +159,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if ProfileIdsToBeMerged property is set
         internal bool IsSetProfileIdsToBeMerged()
         {
-            return this._profileIdsToBeMerged != null && this._profileIdsToBeMerged.Count > 0; 
+            return this._profileIdsToBeMerged != null && (this._profileIdsToBeMerged.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

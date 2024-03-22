@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("scheduledInstanceSet/item", targetDepth))
                     {
                         var unmarshaller = ScheduledInstanceUnmarshaller.Instance;
+                        if (response.ScheduledInstanceSet == null)
+                        {
+                            response.ScheduledInstanceSet = new List<ScheduledInstance>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ScheduledInstanceSet.Add(item);
                         continue;

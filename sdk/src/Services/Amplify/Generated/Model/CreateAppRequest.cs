@@ -36,23 +36,23 @@ namespace Amazon.Amplify.Model
     {
         private string _accessToken;
         private AutoBranchCreationConfig _autoBranchCreationConfig;
-        private List<string> _autoBranchCreationPatterns = new List<string>();
+        private List<string> _autoBranchCreationPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _basicAuthCredentials;
         private string _buildSpec;
         private string _customHeaders;
-        private List<CustomRule> _customRules = new List<CustomRule>();
+        private List<CustomRule> _customRules = AWSConfigs.InitializeCollections ? new List<CustomRule>() : null;
         private string _description;
         private bool? _enableAutoBranchCreation;
         private bool? _enableBasicAuth;
         private bool? _enableBranchAutoBuild;
         private bool? _enableBranchAutoDeletion;
-        private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
+        private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _iamServiceRoleArn;
         private string _name;
         private string _oauthToken;
         private Platform _platform;
         private string _repository;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessToken. 
@@ -126,7 +126,7 @@ namespace Amazon.Amplify.Model
         // Check to see if AutoBranchCreationPatterns property is set
         internal bool IsSetAutoBranchCreationPatterns()
         {
-            return this._autoBranchCreationPatterns != null && this._autoBranchCreationPatterns.Count > 0; 
+            return this._autoBranchCreationPatterns != null && (this._autoBranchCreationPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Amazon.Amplify.Model
         // Check to see if CustomRules property is set
         internal bool IsSetCustomRules()
         {
-            return this._customRules != null && this._customRules.Count > 0; 
+            return this._customRules != null && (this._customRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace Amazon.Amplify.Model
         // Check to see if EnvironmentVariables property is set
         internal bool IsSetEnvironmentVariables()
         {
-            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
+            return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -455,7 +455,7 @@ namespace Amazon.Amplify.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

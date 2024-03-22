@@ -65,6 +65,11 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 throw new AmazonManagedGrafanaException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}/licenses/{licenseType}";
+        
+            if (publicRequest.IsSetGrafanaToken()) 
+            {
+                request.Headers["Grafana-Token"] = publicRequest.GrafanaToken;
+            }
 
             return request;
         }

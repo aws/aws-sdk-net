@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsRedshiftClusterClusterParameterGroup
     {
-        private List<AwsRedshiftClusterClusterParameterStatus> _clusterParameterStatusList = new List<AwsRedshiftClusterClusterParameterStatus>();
+        private List<AwsRedshiftClusterClusterParameterStatus> _clusterParameterStatusList = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterClusterParameterStatus>() : null;
         private string _parameterApplyStatus;
         private string _parameterGroupName;
 
@@ -52,7 +52,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ClusterParameterStatusList property is set
         internal bool IsSetClusterParameterStatusList()
         {
-            return this._clusterParameterStatusList != null && this._clusterParameterStatusList.Count > 0; 
+            return this._clusterParameterStatusList != null && (this._clusterParameterStatusList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

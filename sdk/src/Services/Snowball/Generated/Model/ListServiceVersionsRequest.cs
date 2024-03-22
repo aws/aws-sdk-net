@@ -35,7 +35,7 @@ namespace Amazon.Snowball.Model
     /// </summary>
     public partial class ListServiceVersionsRequest : AmazonSnowballRequest
     {
-        private List<DependentService> _dependentServices = new List<DependentService>();
+        private List<DependentService> _dependentServices = AWSConfigs.InitializeCollections ? new List<DependentService>() : null;
         private int? _maxResults;
         private string _nextToken;
         private ServiceName _serviceName;
@@ -55,7 +55,7 @@ namespace Amazon.Snowball.Model
         // Check to see if DependentServices property is set
         internal bool IsSetDependentServices()
         {
-            return this._dependentServices != null && this._dependentServices.Count > 0; 
+            return this._dependentServices != null && (this._dependentServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

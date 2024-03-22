@@ -57,6 +57,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AppCookieStickinessPolicies/member", targetDepth))
                     {
                         var unmarshaller = AppCookieStickinessPolicyUnmarshaller.Instance;
+                        if (unmarshalledObject.AppCookieStickinessPolicies == null)
+                        {
+                            unmarshalledObject.AppCookieStickinessPolicies = new List<AppCookieStickinessPolicy>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AppCookieStickinessPolicies.Add(item);
                         continue;
@@ -64,6 +68,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LBCookieStickinessPolicies/member", targetDepth))
                     {
                         var unmarshaller = LBCookieStickinessPolicyUnmarshaller.Instance;
+                        if (unmarshalledObject.LBCookieStickinessPolicies == null)
+                        {
+                            unmarshalledObject.LBCookieStickinessPolicies = new List<LBCookieStickinessPolicy>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LBCookieStickinessPolicies.Add(item);
                         continue;
@@ -71,6 +79,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OtherPolicies/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.OtherPolicies == null)
+                        {
+                            unmarshalledObject.OtherPolicies = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.OtherPolicies.Add(item);
                         continue;

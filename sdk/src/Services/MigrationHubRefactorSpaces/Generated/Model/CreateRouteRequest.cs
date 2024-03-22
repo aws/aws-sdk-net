@@ -140,7 +140,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         private string _environmentIdentifier;
         private RouteType _routeType;
         private string _serviceIdentifier;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private UriPathRouteInput _uriPathRoute;
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

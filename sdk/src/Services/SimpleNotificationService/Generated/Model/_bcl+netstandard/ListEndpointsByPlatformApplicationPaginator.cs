@@ -45,7 +45,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Enumerable containing all of the Endpoints
         /// </summary>
         public IPaginatedEnumerable<Endpoint> Endpoints => 
-            new PaginatedResultKeyResponse<ListEndpointsByPlatformApplicationResponse, Endpoint>(this, (i) => i.Endpoints);
+            new PaginatedResultKeyResponse<ListEndpointsByPlatformApplicationResponse, Endpoint>(this, (i) => i.Endpoints ?? new List<Endpoint>());
 
         internal ListEndpointsByPlatformApplicationPaginator(IAmazonSimpleNotificationService client, ListEndpointsByPlatformApplicationRequest request)
         {

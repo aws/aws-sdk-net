@@ -69,6 +69,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("RegionalBucketList/RegionalBucket", targetDepth))
                     {
+                        if (response.RegionalBucketList == null)
+                        {
+                            response.RegionalBucketList = new List<RegionalBucket>();
+                        }
                         var unmarshaller = RegionalBucketUnmarshaller.Instance;
                         response.RegionalBucketList.Add(unmarshaller.Unmarshall(context));
                         continue;

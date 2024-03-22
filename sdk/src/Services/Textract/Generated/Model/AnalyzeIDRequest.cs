@@ -37,7 +37,7 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class AnalyzeIDRequest : AmazonTextractRequest
     {
-        private List<Document> _documentPages = new List<Document>();
+        private List<Document> _documentPages = AWSConfigs.InitializeCollections ? new List<Document>() : null;
 
         /// <summary>
         /// Gets and sets the property DocumentPages. 
@@ -55,7 +55,7 @@ namespace Amazon.Textract.Model
         // Check to see if DocumentPages property is set
         internal bool IsSetDocumentPages()
         {
-            return this._documentPages != null && this._documentPages.Count > 0; 
+            return this._documentPages != null && (this._documentPages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

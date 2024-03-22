@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class FargateDetails
     {
-        private List<string> _issues = new List<string>();
+        private List<string> _issues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ManagementType _managementType;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Issues property is set
         internal bool IsSetIssues()
         {
-            return this._issues != null && this._issues.Count > 0; 
+            return this._issues != null && (this._issues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

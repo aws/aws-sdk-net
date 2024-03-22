@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model
     public partial class ListWorkGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkGroupSummary> _workGroups = new List<WorkGroupSummary>();
+        private List<WorkGroupSummary> _workGroups = AWSConfigs.InitializeCollections ? new List<WorkGroupSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.Athena.Model
         // Check to see if WorkGroups property is set
         internal bool IsSetWorkGroups()
         {
-            return this._workGroups != null && this._workGroups.Count > 0; 
+            return this._workGroups != null && (this._workGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

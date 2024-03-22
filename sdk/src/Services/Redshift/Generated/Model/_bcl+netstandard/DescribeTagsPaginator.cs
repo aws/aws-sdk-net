@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the TaggedResources
         /// </summary>
         public IPaginatedEnumerable<TaggedResource> TaggedResources => 
-            new PaginatedResultKeyResponse<DescribeTagsResponse, TaggedResource>(this, (i) => i.TaggedResources);
+            new PaginatedResultKeyResponse<DescribeTagsResponse, TaggedResource>(this, (i) => i.TaggedResources ?? new List<TaggedResource>());
 
         internal DescribeTagsPaginator(IAmazonRedshift client, DescribeTagsRequest request)
         {

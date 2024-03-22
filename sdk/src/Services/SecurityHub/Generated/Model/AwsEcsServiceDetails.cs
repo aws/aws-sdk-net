@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEcsServiceDetails
     {
-        private List<AwsEcsServiceCapacityProviderStrategyDetails> _capacityProviderStrategy = new List<AwsEcsServiceCapacityProviderStrategyDetails>();
+        private List<AwsEcsServiceCapacityProviderStrategyDetails> _capacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<AwsEcsServiceCapacityProviderStrategyDetails>() : null;
         private string _cluster;
         private AwsEcsServiceDeploymentConfigurationDetails _deploymentConfiguration;
         private AwsEcsServiceDeploymentControllerDetails _deploymentController;
@@ -42,18 +42,18 @@ namespace Amazon.SecurityHub.Model
         private bool? _enableExecuteCommand;
         private int? _healthCheckGracePeriodSeconds;
         private string _launchType;
-        private List<AwsEcsServiceLoadBalancersDetails> _loadBalancers = new List<AwsEcsServiceLoadBalancersDetails>();
+        private List<AwsEcsServiceLoadBalancersDetails> _loadBalancers = AWSConfigs.InitializeCollections ? new List<AwsEcsServiceLoadBalancersDetails>() : null;
         private string _name;
         private AwsEcsServiceNetworkConfigurationDetails _networkConfiguration;
-        private List<AwsEcsServicePlacementConstraintsDetails> _placementConstraints = new List<AwsEcsServicePlacementConstraintsDetails>();
-        private List<AwsEcsServicePlacementStrategiesDetails> _placementStrategies = new List<AwsEcsServicePlacementStrategiesDetails>();
+        private List<AwsEcsServicePlacementConstraintsDetails> _placementConstraints = AWSConfigs.InitializeCollections ? new List<AwsEcsServicePlacementConstraintsDetails>() : null;
+        private List<AwsEcsServicePlacementStrategiesDetails> _placementStrategies = AWSConfigs.InitializeCollections ? new List<AwsEcsServicePlacementStrategiesDetails>() : null;
         private string _platformVersion;
         private string _propagateTags;
         private string _role;
         private string _schedulingStrategy;
         private string _serviceArn;
         private string _serviceName;
-        private List<AwsEcsServiceServiceRegistriesDetails> _serviceRegistries = new List<AwsEcsServiceServiceRegistriesDetails>();
+        private List<AwsEcsServiceServiceRegistriesDetails> _serviceRegistries = AWSConfigs.InitializeCollections ? new List<AwsEcsServiceServiceRegistriesDetails>() : null;
         private string _taskDefinition;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if CapacityProviderStrategy property is set
         internal bool IsSetCapacityProviderStrategy()
         {
-            return this._capacityProviderStrategy != null && this._capacityProviderStrategy.Count > 0; 
+            return this._capacityProviderStrategy != null && (this._capacityProviderStrategy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if LoadBalancers property is set
         internal bool IsSetLoadBalancers()
         {
-            return this._loadBalancers != null && this._loadBalancers.Count > 0; 
+            return this._loadBalancers != null && (this._loadBalancers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -294,7 +294,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PlacementConstraints property is set
         internal bool IsSetPlacementConstraints()
         {
-            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+            return this._placementConstraints != null && (this._placementConstraints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -312,7 +312,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PlacementStrategies property is set
         internal bool IsSetPlacementStrategies()
         {
-            return this._placementStrategies != null && this._placementStrategies.Count > 0; 
+            return this._placementStrategies != null && (this._placementStrategies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -470,7 +470,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ServiceRegistries property is set
         internal bool IsSetServiceRegistries()
         {
-            return this._serviceRegistries != null && this._serviceRegistries.Count > 0; 
+            return this._serviceRegistries != null && (this._serviceRegistries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

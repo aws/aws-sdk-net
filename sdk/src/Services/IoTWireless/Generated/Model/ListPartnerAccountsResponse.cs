@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     public partial class ListPartnerAccountsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SidewalkAccountInfoWithFingerprint> _sidewalk = new List<SidewalkAccountInfoWithFingerprint>();
+        private List<SidewalkAccountInfoWithFingerprint> _sidewalk = AWSConfigs.InitializeCollections ? new List<SidewalkAccountInfoWithFingerprint>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Sidewalk property is set
         internal bool IsSetSidewalk()
         {
-            return this._sidewalk != null && this._sidewalk.Count > 0; 
+            return this._sidewalk != null && (this._sidewalk.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

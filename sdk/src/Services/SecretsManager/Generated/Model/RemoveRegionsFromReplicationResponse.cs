@@ -34,7 +34,7 @@ namespace Amazon.SecretsManager.Model
     public partial class RemoveRegionsFromReplicationResponse : AmazonWebServiceResponse
     {
         private string _arn;
-        private List<ReplicationStatusType> _replicationStatus = new List<ReplicationStatusType>();
+        private List<ReplicationStatusType> _replicationStatus = AWSConfigs.InitializeCollections ? new List<ReplicationStatusType>() : null;
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -70,7 +70,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if ReplicationStatus property is set
         internal bool IsSetReplicationStatus()
         {
-            return this._replicationStatus != null && this._replicationStatus.Count > 0; 
+            return this._replicationStatus != null && (this._replicationStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

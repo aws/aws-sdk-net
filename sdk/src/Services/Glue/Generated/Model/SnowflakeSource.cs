@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     {
         private SnowflakeNodeData _data;
         private string _name;
-        private List<GlueSchema> _outputSchemas = new List<GlueSchema>();
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
 
         /// <summary>
         /// Gets and sets the property Data. 
@@ -90,7 +90,7 @@ namespace Amazon.Glue.Model
         // Check to see if OutputSchemas property is set
         internal bool IsSetOutputSchemas()
         {
-            return this._outputSchemas != null && this._outputSchemas.Count > 0; 
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

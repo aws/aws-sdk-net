@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ComparativeOrder
     {
-        private List<string> _specifedOrder = new List<string>();
+        private List<string> _specifedOrder = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private UndefinedSpecifiedValueType _treatUndefinedSpecifiedValues;
         private ColumnOrderingType _useOrdering;
 
@@ -52,7 +52,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SpecifedOrder property is set
         internal bool IsSetSpecifedOrder()
         {
-            return this._specifedOrder != null && this._specifedOrder.Count > 0; 
+            return this._specifedOrder != null && (this._specifedOrder.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

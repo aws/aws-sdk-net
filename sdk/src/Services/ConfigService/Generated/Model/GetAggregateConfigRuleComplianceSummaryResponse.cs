@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class GetAggregateConfigRuleComplianceSummaryResponse : AmazonWebServiceResponse
     {
-        private List<AggregateComplianceCount> _aggregateComplianceCounts = new List<AggregateComplianceCount>();
+        private List<AggregateComplianceCount> _aggregateComplianceCounts = AWSConfigs.InitializeCollections ? new List<AggregateComplianceCount>() : null;
         private string _groupByKey;
         private string _nextToken;
 
@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if AggregateComplianceCounts property is set
         internal bool IsSetAggregateComplianceCounts()
         {
-            return this._aggregateComplianceCounts != null && this._aggregateComplianceCounts.Count > 0; 
+            return this._aggregateComplianceCounts != null && (this._aggregateComplianceCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

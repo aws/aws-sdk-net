@@ -36,7 +36,7 @@ namespace Amazon.XRay.Model
         private double? _duration;
         private string _id;
         private bool? _limitExceeded;
-        private List<Segment> _segments = new List<Segment>();
+        private List<Segment> _segments = AWSConfigs.InitializeCollections ? new List<Segment>() : null;
 
         /// <summary>
         /// Gets and sets the property Duration. 
@@ -112,7 +112,7 @@ namespace Amazon.XRay.Model
         // Check to see if Segments property is set
         internal bool IsSetSegments()
         {
-            return this._segments != null && this._segments.Count > 0; 
+            return this._segments != null && (this._segments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

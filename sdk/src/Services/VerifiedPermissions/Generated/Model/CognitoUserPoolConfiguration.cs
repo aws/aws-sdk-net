@@ -35,7 +35,7 @@ namespace Amazon.VerifiedPermissions.Model
     ///  
     /// <para>
     /// This data type is used as a field that is part of an <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_Configuration.html">Configuration</a>
-    /// structure that is used as a parameter to the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_Configuration.html">Configuration</a>.
+    /// structure that is used as a parameter to <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreateIdentitySource.html">CreateIdentitySource</a>.
     /// </para>
     ///  
     /// <para>
@@ -45,7 +45,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// </summary>
     public partial class CognitoUserPoolConfiguration
     {
-        private List<string> _clientIds = new List<string>();
+        private List<string> _clientIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _userPoolArn;
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if ClientIds property is set
         internal bool IsSetClientIds()
         {
-            return this._clientIds != null && this._clientIds.Count > 0; 
+            return this._clientIds != null && (this._clientIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

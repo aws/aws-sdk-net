@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBProxiesResponse : AmazonWebServiceResponse
     {
-        private List<DBProxy> _dbProxies = new List<DBProxy>();
+        private List<DBProxy> _dbProxies = AWSConfigs.InitializeCollections ? new List<DBProxy>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBProxies property is set
         internal bool IsSetDBProxies()
         {
-            return this._dbProxies != null && this._dbProxies.Count > 0; 
+            return this._dbProxies != null && (this._dbProxies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

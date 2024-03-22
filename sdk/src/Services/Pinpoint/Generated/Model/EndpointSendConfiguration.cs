@@ -35,9 +35,9 @@ namespace Amazon.Pinpoint.Model
     public partial class EndpointSendConfiguration
     {
         private string _bodyOverride;
-        private Dictionary<string, string> _context = new Dictionary<string, string>();
+        private Dictionary<string, string> _context = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _rawContent;
-        private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _substitutions = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _titleOverride;
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Context property is set
         internal bool IsSetContext()
         {
-            return this._context != null && this._context.Count > 0; 
+            return this._context != null && (this._context.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Substitutions property is set
         internal bool IsSetSubstitutions()
         {
-            return this._substitutions != null && this._substitutions.Count > 0; 
+            return this._substitutions != null && (this._substitutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

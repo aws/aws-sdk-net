@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instanceConnectEndpointSet/item", targetDepth))
                     {
                         var unmarshaller = Ec2InstanceConnectEndpointUnmarshaller.Instance;
+                        if (response.InstanceConnectEndpoints == null)
+                        {
+                            response.InstanceConnectEndpoints = new List<Ec2InstanceConnectEndpoint>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.InstanceConnectEndpoints.Add(item);
                         continue;

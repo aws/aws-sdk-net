@@ -33,7 +33,7 @@ namespace Amazon.Amplify.Model
     /// </summary>
     public partial class ListBranchesResponse : AmazonWebServiceResponse
     {
-        private List<Branch> _branches = new List<Branch>();
+        private List<Branch> _branches = AWSConfigs.InitializeCollections ? new List<Branch>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Amplify.Model
         // Check to see if Branches property is set
         internal bool IsSetBranches()
         {
-            return this._branches != null && this._branches.Count > 0; 
+            return this._branches != null && (this._branches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

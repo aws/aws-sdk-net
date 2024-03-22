@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.CreateProfileRequest.DurationSeconds</property>
     <min>900</min>
-    <max>3600</max>
+    <max>43200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.CreateProfileRequest.Name</property>
@@ -179,7 +179,7 @@
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.DurationSeconds</property>
     <min>900</min>
-    <max>3600</max>
+    <max>43200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.Name</property>

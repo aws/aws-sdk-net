@@ -69,7 +69,7 @@ namespace Amazon.S3Control.Model
     public partial class ListJobsRequest : AmazonS3ControlRequest
     {
         private string _accountId;
-        private List<string> _jobStatuses = new List<string>();
+        private List<string> _jobStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -107,7 +107,7 @@ namespace Amazon.S3Control.Model
         // Check to see if JobStatuses property is set
         internal bool IsSetJobStatuses()
         {
-            return this._jobStatuses != null && this._jobStatuses.Count > 0; 
+            return this._jobStatuses != null && (this._jobStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

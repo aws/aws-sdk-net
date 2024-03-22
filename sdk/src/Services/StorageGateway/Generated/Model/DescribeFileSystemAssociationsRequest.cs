@@ -35,7 +35,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class DescribeFileSystemAssociationsRequest : AmazonStorageGatewayRequest
     {
-        private List<string> _fileSystemAssociationARNList = new List<string>();
+        private List<string> _fileSystemAssociationARNList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FileSystemAssociationARNList. 
@@ -54,7 +54,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if FileSystemAssociationARNList property is set
         internal bool IsSetFileSystemAssociationARNList()
         {
-            return this._fileSystemAssociationARNList != null && this._fileSystemAssociationARNList.Count > 0; 
+            return this._fileSystemAssociationARNList != null && (this._fileSystemAssociationARNList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

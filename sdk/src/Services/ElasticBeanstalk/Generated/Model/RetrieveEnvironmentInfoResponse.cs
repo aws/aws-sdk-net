@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class RetrieveEnvironmentInfoResponse : AmazonWebServiceResponse
     {
-        private List<EnvironmentInfoDescription> _environmentInfo = new List<EnvironmentInfoDescription>();
+        private List<EnvironmentInfoDescription> _environmentInfo = AWSConfigs.InitializeCollections ? new List<EnvironmentInfoDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property EnvironmentInfo. 
@@ -50,7 +50,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentInfo property is set
         internal bool IsSetEnvironmentInfo()
         {
-            return this._environmentInfo != null && this._environmentInfo.Count > 0; 
+            return this._environmentInfo != null && (this._environmentInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

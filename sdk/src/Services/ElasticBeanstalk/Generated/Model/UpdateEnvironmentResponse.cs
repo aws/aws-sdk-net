@@ -42,7 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _endpointURL;
         private string _environmentArn;
         private string _environmentId;
-        private List<EnvironmentLink> _environmentLinks = new List<EnvironmentLink>();
+        private List<EnvironmentLink> _environmentLinks = AWSConfigs.InitializeCollections ? new List<EnvironmentLink>() : null;
         private string _environmentName;
         private EnvironmentHealth _health;
         private EnvironmentHealthStatus _healthStatus;
@@ -246,7 +246,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentLinks property is set
         internal bool IsSetEnvironmentLinks()
         {
-            return this._environmentLinks != null && this._environmentLinks.Count > 0; 
+            return this._environmentLinks != null && (this._environmentLinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.MarketplaceAgreement.Model
     public partial class PaymentScheduleTerm
     {
         private string _currencyCode;
-        private List<ScheduleItem> _schedule = new List<ScheduleItem>();
+        private List<ScheduleItem> _schedule = AWSConfigs.InitializeCollections ? new List<ScheduleItem>() : null;
         private string _type;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.MarketplaceAgreement.Model
         // Check to see if Schedule property is set
         internal bool IsSetSchedule()
         {
-            return this._schedule != null && this._schedule.Count > 0; 
+            return this._schedule != null && (this._schedule.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

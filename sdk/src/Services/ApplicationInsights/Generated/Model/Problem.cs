@@ -36,7 +36,7 @@ namespace Amazon.ApplicationInsights.Model
         private string _accountId;
         private string _affectedResource;
         private DateTime? _endTime;
-        private Dictionary<string, string> _feedback = new Dictionary<string, string>();
+        private Dictionary<string, string> _feedback = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _id;
         private string _insights;
         private DateTime? _lastRecurrenceTime;
@@ -120,7 +120,7 @@ namespace Amazon.ApplicationInsights.Model
         // Check to see if Feedback property is set
         internal bool IsSetFeedback()
         {
-            return this._feedback != null && this._feedback.Count > 0; 
+            return this._feedback != null && (this._feedback.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

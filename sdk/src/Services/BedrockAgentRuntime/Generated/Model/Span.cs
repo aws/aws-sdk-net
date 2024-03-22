@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Span of text
+    /// Contains information about where the text with a citation begins and ends in the generated
+    /// output.
     /// </summary>
     public partial class Span
     {
@@ -39,7 +40,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property End. 
         /// <para>
-        /// End of span
+        /// Where the text with a citation ends in the generated output.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -58,7 +59,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Start. 
         /// <para>
-        /// Start of span
+        /// Where the text with a citation starts in the generated output.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

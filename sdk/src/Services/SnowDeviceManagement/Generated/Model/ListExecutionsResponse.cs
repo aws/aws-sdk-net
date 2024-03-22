@@ -33,7 +33,7 @@ namespace Amazon.SnowDeviceManagement.Model
     /// </summary>
     public partial class ListExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<ExecutionSummary> _executions = new List<ExecutionSummary>();
+        private List<ExecutionSummary> _executions = AWSConfigs.InitializeCollections ? new List<ExecutionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SnowDeviceManagement.Model
         // Check to see if Executions property is set
         internal bool IsSetExecutions()
         {
-            return this._executions != null && this._executions.Count > 0; 
+            return this._executions != null && (this._executions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

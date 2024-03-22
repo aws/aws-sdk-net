@@ -33,7 +33,7 @@ namespace Amazon.MediaPackage.Model
     /// </summary>
     public partial class HlsIngest
     {
-        private List<IngestEndpoint> _ingestEndpoints = new List<IngestEndpoint>();
+        private List<IngestEndpoint> _ingestEndpoints = AWSConfigs.InitializeCollections ? new List<IngestEndpoint>() : null;
 
         /// <summary>
         /// Gets and sets the property IngestEndpoints. A list of endpoints to which the source
@@ -48,7 +48,7 @@ namespace Amazon.MediaPackage.Model
         // Check to see if IngestEndpoints property is set
         internal bool IsSetIngestEndpoints()
         {
-            return this._ingestEndpoints != null && this._ingestEndpoints.Count > 0; 
+            return this._ingestEndpoints != null && (this._ingestEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

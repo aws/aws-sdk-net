@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the EffectivePatches
         /// </summary>
         public IPaginatedEnumerable<EffectivePatch> EffectivePatches => 
-            new PaginatedResultKeyResponse<DescribeEffectivePatchesForPatchBaselineResponse, EffectivePatch>(this, (i) => i.EffectivePatches);
+            new PaginatedResultKeyResponse<DescribeEffectivePatchesForPatchBaselineResponse, EffectivePatch>(this, (i) => i.EffectivePatches ?? new List<EffectivePatch>());
 
         internal DescribeEffectivePatchesForPatchBaselinePaginator(IAmazonSimpleSystemsManagement client, DescribeEffectivePatchesForPatchBaselineRequest request)
         {

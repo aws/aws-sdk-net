@@ -37,7 +37,7 @@ namespace Amazon.CodeGuruSecurity.Model
         private string _description;
         private string _detectorId;
         private string _detectorName;
-        private List<string> _detectorTags = new List<string>();
+        private List<string> _detectorTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _generatorId;
         private string _id;
         private Remediation _remediation;
@@ -141,7 +141,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if DetectorTags property is set
         internal bool IsSetDetectorTags()
         {
-            return this._detectorTags != null && this._detectorTags.Count > 0; 
+            return this._detectorTags != null && (this._detectorTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

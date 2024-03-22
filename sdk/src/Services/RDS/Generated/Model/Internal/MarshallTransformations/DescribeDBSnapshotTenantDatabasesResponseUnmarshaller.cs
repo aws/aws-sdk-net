@@ -84,6 +84,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBSnapshotTenantDatabases/DBSnapshotTenantDatabase", targetDepth))
                     {
                         var unmarshaller = DBSnapshotTenantDatabaseUnmarshaller.Instance;
+                        if (response.DBSnapshotTenantDatabases == null)
+                        {
+                            response.DBSnapshotTenantDatabases = new List<DBSnapshotTenantDatabase>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DBSnapshotTenantDatabases.Add(item);
                         continue;

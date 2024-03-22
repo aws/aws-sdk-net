@@ -33,7 +33,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
     /// </summary>
     public partial class ListKeysResponse : AmazonWebServiceResponse
     {
-        private List<ListKeysResponseListItem> _items = new List<ListKeysResponseListItem>();
+        private List<ListKeysResponseListItem> _items = AWSConfigs.InitializeCollections ? new List<ListKeysResponseListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

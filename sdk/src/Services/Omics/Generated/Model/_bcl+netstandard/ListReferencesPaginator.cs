@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the References
         /// </summary>
         public IPaginatedEnumerable<ReferenceListItem> References => 
-            new PaginatedResultKeyResponse<ListReferencesResponse, ReferenceListItem>(this, (i) => i.References);
+            new PaginatedResultKeyResponse<ListReferencesResponse, ReferenceListItem>(this, (i) => i.References ?? new List<ReferenceListItem>());
 
         internal ListReferencesPaginator(IAmazonOmics client, ListReferencesRequest request)
         {

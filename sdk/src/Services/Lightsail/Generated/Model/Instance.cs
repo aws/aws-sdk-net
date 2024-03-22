@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class Instance
     {
-        private List<AddOn> _addOns = new List<AddOn>();
+        private List<AddOn> _addOns = AWSConfigs.InitializeCollections ? new List<AddOn>() : null;
         private string _arn;
         private string _blueprintId;
         private string _blueprintName;
@@ -41,7 +41,7 @@ namespace Amazon.Lightsail.Model
         private DateTime? _createdAt;
         private InstanceHardware _hardware;
         private IpAddressType _ipAddressType;
-        private List<string> _ipv6Addresses = new List<string>();
+        private List<string> _ipv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _isStaticIp;
         private ResourceLocation _location;
         private InstanceMetadataOptions _metadataOptions;
@@ -53,7 +53,7 @@ namespace Amazon.Lightsail.Model
         private string _sshKeyName;
         private InstanceState _state;
         private string _supportCode;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _username;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if AddOns property is set
         internal bool IsSetAddOns()
         {
-            return this._addOns != null && this._addOns.Count > 0; 
+            return this._addOns != null && (this._addOns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Ipv6Addresses property is set
         internal bool IsSetIpv6Addresses()
         {
-            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+            return this._ipv6Addresses != null && (this._ipv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -440,7 +440,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

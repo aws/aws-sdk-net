@@ -45,7 +45,7 @@ namespace Amazon.Schemas.Model
         /// Enumerable containing all of the Discoverers
         /// </summary>
         public IPaginatedEnumerable<DiscovererSummary> Discoverers => 
-            new PaginatedResultKeyResponse<ListDiscoverersResponse, DiscovererSummary>(this, (i) => i.Discoverers);
+            new PaginatedResultKeyResponse<ListDiscoverersResponse, DiscovererSummary>(this, (i) => i.Discoverers ?? new List<DiscovererSummary>());
 
         internal ListDiscoverersPaginator(IAmazonSchemas client, ListDiscoverersRequest request)
         {

@@ -84,6 +84,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ManagedActions/member", targetDepth))
                     {
                         var unmarshaller = ManagedActionUnmarshaller.Instance;
+                        if (response.ManagedActions == null)
+                        {
+                            response.ManagedActions = new List<ManagedAction>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ManagedActions.Add(item);
                         continue;

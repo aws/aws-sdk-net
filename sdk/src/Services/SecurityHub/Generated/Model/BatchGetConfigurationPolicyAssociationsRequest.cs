@@ -37,7 +37,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchGetConfigurationPolicyAssociationsRequest : AmazonSecurityHubRequest
     {
-        private List<ConfigurationPolicyAssociation> _configurationPolicyAssociationIdentifiers = new List<ConfigurationPolicyAssociation>();
+        private List<ConfigurationPolicyAssociation> _configurationPolicyAssociationIdentifiers = AWSConfigs.InitializeCollections ? new List<ConfigurationPolicyAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationPolicyAssociationIdentifiers. 
@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ConfigurationPolicyAssociationIdentifiers property is set
         internal bool IsSetConfigurationPolicyAssociationIdentifiers()
         {
-            return this._configurationPolicyAssociationIdentifiers != null && this._configurationPolicyAssociationIdentifiers.Count > 0; 
+            return this._configurationPolicyAssociationIdentifiers != null && (this._configurationPolicyAssociationIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

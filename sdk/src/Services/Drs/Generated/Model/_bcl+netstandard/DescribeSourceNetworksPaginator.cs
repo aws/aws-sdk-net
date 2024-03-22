@@ -45,7 +45,7 @@ namespace Amazon.Drs.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<SourceNetwork> Items => 
-            new PaginatedResultKeyResponse<DescribeSourceNetworksResponse, SourceNetwork>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<DescribeSourceNetworksResponse, SourceNetwork>(this, (i) => i.Items ?? new List<SourceNetwork>());
 
         internal DescribeSourceNetworksPaginator(IAmazonDrs client, DescribeSourceNetworksRequest request)
         {

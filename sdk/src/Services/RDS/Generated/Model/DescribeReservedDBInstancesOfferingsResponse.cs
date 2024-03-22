@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model
     public partial class DescribeReservedDBInstancesOfferingsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ReservedDBInstancesOffering> _reservedDBInstancesOfferings = new List<ReservedDBInstancesOffering>();
+        private List<ReservedDBInstancesOffering> _reservedDBInstancesOfferings = AWSConfigs.InitializeCollections ? new List<ReservedDBInstancesOffering>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -72,7 +72,7 @@ namespace Amazon.RDS.Model
         // Check to see if ReservedDBInstancesOfferings property is set
         internal bool IsSetReservedDBInstancesOfferings()
         {
-            return this._reservedDBInstancesOfferings != null && this._reservedDBInstancesOfferings.Count > 0; 
+            return this._reservedDBInstancesOfferings != null && (this._reservedDBInstancesOfferings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

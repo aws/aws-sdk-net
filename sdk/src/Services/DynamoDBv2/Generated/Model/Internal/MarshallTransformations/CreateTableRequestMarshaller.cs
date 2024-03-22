@@ -154,6 +154,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetResourcePolicy())
+                {
+                    context.Writer.WritePropertyName("ResourcePolicy");
+                    context.Writer.Write(publicRequest.ResourcePolicy);
+                }
+
                 if(publicRequest.IsSetSSESpecification())
                 {
                     context.Writer.WritePropertyName("SSESpecification");

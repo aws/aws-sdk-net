@@ -39,7 +39,7 @@ namespace Amazon.Route53Domains.Model
         private ContactType _contactType;
         private CountryCode _countryCode;
         private string _email;
-        private List<ExtraParam> _extraParams = new List<ExtraParam>();
+        private List<ExtraParam> _extraParams = AWSConfigs.InitializeCollections ? new List<ExtraParam>() : null;
         private string _fax;
         private string _firstName;
         private string _lastName;
@@ -196,7 +196,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if ExtraParams property is set
         internal bool IsSetExtraParams()
         {
-            return this._extraParams != null && this._extraParams.Count > 0; 
+            return this._extraParams != null && (this._extraParams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

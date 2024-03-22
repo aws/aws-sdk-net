@@ -45,7 +45,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the CoveredResources
         /// </summary>
         public IPaginatedEnumerable<CoveredResource> CoveredResources => 
-            new PaginatedResultKeyResponse<ListCoverageResponse, CoveredResource>(this, (i) => i.CoveredResources);
+            new PaginatedResultKeyResponse<ListCoverageResponse, CoveredResource>(this, (i) => i.CoveredResources ?? new List<CoveredResource>());
 
         internal ListCoveragePaginator(IAmazonInspector2 client, ListCoverageRequest request)
         {

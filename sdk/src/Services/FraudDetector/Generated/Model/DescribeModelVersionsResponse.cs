@@ -33,7 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class DescribeModelVersionsResponse : AmazonWebServiceResponse
     {
-        private List<ModelVersionDetail> _modelVersionDetails = new List<ModelVersionDetail>();
+        private List<ModelVersionDetail> _modelVersionDetails = AWSConfigs.InitializeCollections ? new List<ModelVersionDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if ModelVersionDetails property is set
         internal bool IsSetModelVersionDetails()
         {
-            return this._modelVersionDetails != null && this._modelVersionDetails.Count > 0; 
+            return this._modelVersionDetails != null && (this._modelVersionDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -68,7 +68,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class AdvancedOptionsStatus
     {
-        private Dictionary<string, string> _options = new Dictionary<string, string>();
+        private Dictionary<string, string> _options = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private OptionStatus _status;
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -63,6 +63,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("QueryLoggingConfigs/QueryLoggingConfig", targetDepth))
                     {
+                        if (response.QueryLoggingConfigs == null)
+                        {
+                            response.QueryLoggingConfigs = new List<QueryLoggingConfig>();
+                        }
                         var unmarshaller = QueryLoggingConfigUnmarshaller.Instance;
                         response.QueryLoggingConfigs.Add(unmarshaller.Unmarshall(context));
                         continue;

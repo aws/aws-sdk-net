@@ -33,16 +33,16 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class SkillDetails
     {
-        private List<string> _bulletPoints = new List<string>();
+        private List<string> _bulletPoints = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DeveloperInfo _developerInfo;
         private string _endUserLicenseAgreement;
-        private List<string> _genericKeywords = new List<string>();
+        private List<string> _genericKeywords = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _invocationPhrase;
-        private List<string> _newInThisVersionBulletPoints = new List<string>();
+        private List<string> _newInThisVersionBulletPoints = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _productDescription;
         private string _releaseDate;
-        private Dictionary<string, string> _reviews = new Dictionary<string, string>();
-        private List<string> _skillTypes = new List<string>();
+        private Dictionary<string, string> _reviews = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _skillTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BulletPoints. 
@@ -59,7 +59,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if BulletPoints property is set
         internal bool IsSetBulletPoints()
         {
-            return this._bulletPoints != null && this._bulletPoints.Count > 0; 
+            return this._bulletPoints != null && (this._bulletPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if GenericKeywords property is set
         internal bool IsSetGenericKeywords()
         {
-            return this._genericKeywords != null && this._genericKeywords.Count > 0; 
+            return this._genericKeywords != null && (this._genericKeywords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if NewInThisVersionBulletPoints property is set
         internal bool IsSetNewInThisVersionBulletPoints()
         {
-            return this._newInThisVersionBulletPoints != null && this._newInThisVersionBulletPoints.Count > 0; 
+            return this._newInThisVersionBulletPoints != null && (this._newInThisVersionBulletPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if Reviews property is set
         internal bool IsSetReviews()
         {
-            return this._reviews != null && this._reviews.Count > 0; 
+            return this._reviews != null && (this._reviews.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -225,7 +225,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if SkillTypes property is set
         internal bool IsSetSkillTypes()
         {
-            return this._skillTypes != null && this._skillTypes.Count > 0; 
+            return this._skillTypes != null && (this._skillTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

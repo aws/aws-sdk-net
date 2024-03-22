@@ -35,7 +35,7 @@ namespace Amazon.WAFV2.Model
     {
         private string _currentDefaultVersion;
         private string _nextMarker;
-        private List<ManagedRuleGroupVersion> _versions = new List<ManagedRuleGroupVersion>();
+        private List<ManagedRuleGroupVersion> _versions = AWSConfigs.InitializeCollections ? new List<ManagedRuleGroupVersion>() : null;
 
         /// <summary>
         /// Gets and sets the property CurrentDefaultVersion. 
@@ -94,7 +94,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

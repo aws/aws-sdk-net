@@ -35,7 +35,7 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private string _bucketName;
         private string _marker;
-        private List<ReplicationTaskAssessmentResult> _replicationTaskAssessmentResults = new List<ReplicationTaskAssessmentResult>();
+        private List<ReplicationTaskAssessmentResult> _replicationTaskAssessmentResults = AWSConfigs.InitializeCollections ? new List<ReplicationTaskAssessmentResult>() : null;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -90,7 +90,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if ReplicationTaskAssessmentResults property is set
         internal bool IsSetReplicationTaskAssessmentResults()
         {
-            return this._replicationTaskAssessmentResults != null && this._replicationTaskAssessmentResults.Count > 0; 
+            return this._replicationTaskAssessmentResults != null && (this._replicationTaskAssessmentResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

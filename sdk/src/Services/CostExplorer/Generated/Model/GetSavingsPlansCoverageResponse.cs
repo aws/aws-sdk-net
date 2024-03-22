@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model
     public partial class GetSavingsPlansCoverageResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SavingsPlansCoverage> _savingsPlansCoverages = new List<SavingsPlansCoverage>();
+        private List<SavingsPlansCoverage> _savingsPlansCoverages = AWSConfigs.InitializeCollections ? new List<SavingsPlansCoverage>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if SavingsPlansCoverages property is set
         internal bool IsSetSavingsPlansCoverages()
         {
-            return this._savingsPlansCoverages != null && this._savingsPlansCoverages.Count > 0; 
+            return this._savingsPlansCoverages != null && (this._savingsPlansCoverages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

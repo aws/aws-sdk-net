@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model
     public partial class ListSqlInjectionMatchSetsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<SqlInjectionMatchSetSummary> _sqlInjectionMatchSets = new List<SqlInjectionMatchSetSummary>();
+        private List<SqlInjectionMatchSetSummary> _sqlInjectionMatchSets = AWSConfigs.InitializeCollections ? new List<SqlInjectionMatchSetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -74,7 +74,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if SqlInjectionMatchSets property is set
         internal bool IsSetSqlInjectionMatchSets()
         {
-            return this._sqlInjectionMatchSets != null && this._sqlInjectionMatchSets.Count > 0; 
+            return this._sqlInjectionMatchSets != null && (this._sqlInjectionMatchSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

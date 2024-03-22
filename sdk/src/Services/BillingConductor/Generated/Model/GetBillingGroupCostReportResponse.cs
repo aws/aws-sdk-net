@@ -33,7 +33,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class GetBillingGroupCostReportResponse : AmazonWebServiceResponse
     {
-        private List<BillingGroupCostReportResultElement> _billingGroupCostReportResults = new List<BillingGroupCostReportResultElement>();
+        private List<BillingGroupCostReportResultElement> _billingGroupCostReportResults = AWSConfigs.InitializeCollections ? new List<BillingGroupCostReportResultElement>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if BillingGroupCostReportResults property is set
         internal bool IsSetBillingGroupCostReportResults()
         {
-            return this._billingGroupCostReportResults != null && this._billingGroupCostReportResults.Count > 0; 
+            return this._billingGroupCostReportResults != null && (this._billingGroupCostReportResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

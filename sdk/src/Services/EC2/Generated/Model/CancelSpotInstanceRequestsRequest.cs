@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CancelSpotInstanceRequestsRequest : AmazonEC2Request
     {
-        private List<string> _spotInstanceRequestIds = new List<string>();
+        private List<string> _spotInstanceRequestIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         // Check to see if SpotInstanceRequestIds property is set
         internal bool IsSetSpotInstanceRequestIds()
         {
-            return this._spotInstanceRequestIds != null && this._spotInstanceRequestIds.Count > 0; 
+            return this._spotInstanceRequestIds != null && (this._spotInstanceRequestIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

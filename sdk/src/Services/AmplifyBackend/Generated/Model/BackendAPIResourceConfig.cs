@@ -33,7 +33,7 @@ namespace Amazon.AmplifyBackend.Model
     /// </summary>
     public partial class BackendAPIResourceConfig
     {
-        private List<BackendAPIAuthType> _additionalAuthTypes = new List<BackendAPIAuthType>();
+        private List<BackendAPIAuthType> _additionalAuthTypes = AWSConfigs.InitializeCollections ? new List<BackendAPIAuthType>() : null;
         private string _apiName;
         private BackendAPIConflictResolution _conflictResolution;
         private BackendAPIAuthType _defaultAuthType;
@@ -55,7 +55,7 @@ namespace Amazon.AmplifyBackend.Model
         // Check to see if AdditionalAuthTypes property is set
         internal bool IsSetAdditionalAuthTypes()
         {
-            return this._additionalAuthTypes != null && this._additionalAuthTypes.Count > 0; 
+            return this._additionalAuthTypes != null && (this._additionalAuthTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

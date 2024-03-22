@@ -37,8 +37,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
     #endif
     public partial class UnableToDetectSchemaException : AmazonKinesisAnalyticsV2Exception
     {
-        private List<string> _processedInputRecords = new List<string>();
-        private List<string> _rawInputRecords = new List<string>();
+        private List<string> _processedInputRecords = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _rawInputRecords = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Constructs a new UnableToDetectSchemaException with the specified error
@@ -138,7 +138,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if ProcessedInputRecords property is set
         internal bool IsSetProcessedInputRecords()
         {
-            return this._processedInputRecords != null && this._processedInputRecords.Count > 0; 
+            return this._processedInputRecords != null && (this._processedInputRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if RawInputRecords property is set
         internal bool IsSetRawInputRecords()
         {
-            return this._rawInputRecords != null && this._rawInputRecords.Count > 0; 
+            return this._rawInputRecords != null && (this._rawInputRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

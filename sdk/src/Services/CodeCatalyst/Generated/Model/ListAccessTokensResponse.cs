@@ -33,7 +33,7 @@ namespace Amazon.CodeCatalyst.Model
     /// </summary>
     public partial class ListAccessTokensResponse : AmazonWebServiceResponse
     {
-        private List<AccessTokenSummary> _items = new List<AccessTokenSummary>();
+        private List<AccessTokenSummary> _items = AWSConfigs.InitializeCollections ? new List<AccessTokenSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CodeCatalyst.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

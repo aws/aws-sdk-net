@@ -51,7 +51,7 @@ namespace Amazon.WAFRegional.Model
     public partial class SizeConstraintSet
     {
         private string _name;
-        private List<SizeConstraint> _sizeConstraints = new List<SizeConstraint>();
+        private List<SizeConstraint> _sizeConstraints = AWSConfigs.InitializeCollections ? new List<SizeConstraint>() : null;
         private string _sizeConstraintSetId;
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if SizeConstraints property is set
         internal bool IsSetSizeConstraints()
         {
-            return this._sizeConstraints != null && this._sizeConstraints.Count > 0; 
+            return this._sizeConstraints != null && (this._sizeConstraints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -56,7 +56,7 @@ namespace Amazon.Chime.Model
     public partial class CreateVoiceConnectorGroupRequest : AmazonChimeRequest
     {
         private string _name;
-        private List<VoiceConnectorItem> _voiceConnectorItems = new List<VoiceConnectorItem>();
+        private List<VoiceConnectorItem> _voiceConnectorItems = AWSConfigs.InitializeCollections ? new List<VoiceConnectorItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -92,7 +92,7 @@ namespace Amazon.Chime.Model
         // Check to see if VoiceConnectorItems property is set
         internal bool IsSetVoiceConnectorItems()
         {
-            return this._voiceConnectorItems != null && this._voiceConnectorItems.Count > 0; 
+            return this._voiceConnectorItems != null && (this._voiceConnectorItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

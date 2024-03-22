@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     public partial class Gnss
     {
         private float? _assistAltitude;
-        private List<float> _assistPosition = new List<float>();
+        private List<float> _assistPosition = AWSConfigs.InitializeCollections ? new List<float>() : null;
         private float? _captureTime;
         private float? _captureTimeAccuracy;
         private string _payload;
@@ -76,7 +76,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if AssistPosition property is set
         internal bool IsSetAssistPosition()
         {
-            return this._assistPosition != null && this._assistPosition.Count > 0; 
+            return this._assistPosition != null && (this._assistPosition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

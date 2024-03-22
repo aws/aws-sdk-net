@@ -44,13 +44,13 @@ namespace Amazon.Neptunedata.Model
     /// </summary>
     public partial class StartLoaderJobRequest : AmazonNeptunedataRequest
     {
-        private List<string> _dependencies = new List<string>();
+        private List<string> _dependencies = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _failOnError;
         private Format _format;
         private string _iamRoleArn;
         private Mode _mode;
         private Parallelism _parallelism;
-        private Dictionary<string, string> _parserConfiguration = new Dictionary<string, string>();
+        private Dictionary<string, string> _parserConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _queueRequest;
         private S3BucketRegion _s3BucketRegion;
         private string _source;
@@ -108,7 +108,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if Dependencies property is set
         internal bool IsSetDependencies()
         {
-            return this._dependencies != null && this._dependencies.Count > 0; 
+            return this._dependencies != null && (this._dependencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -396,7 +396,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if ParserConfiguration property is set
         internal bool IsSetParserConfiguration()
         {
-            return this._parserConfiguration != null && this._parserConfiguration.Count > 0; 
+            return this._parserConfiguration != null && (this._parserConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

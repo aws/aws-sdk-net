@@ -45,7 +45,7 @@ namespace Amazon.Glacier.Model
         /// Enumerable containing all of the JobList
         /// </summary>
         public IPaginatedEnumerable<GlacierJobDescription> JobList => 
-            new PaginatedResultKeyResponse<ListJobsResponse, GlacierJobDescription>(this, (i) => i.JobList);
+            new PaginatedResultKeyResponse<ListJobsResponse, GlacierJobDescription>(this, (i) => i.JobList ?? new List<GlacierJobDescription>());
 
         internal ListJobsPaginator(IAmazonGlacier client, ListJobsRequest request)
         {

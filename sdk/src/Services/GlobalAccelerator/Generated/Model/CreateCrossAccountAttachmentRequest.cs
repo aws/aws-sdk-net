@@ -49,9 +49,9 @@ namespace Amazon.GlobalAccelerator.Model
     {
         private string _idempotencyToken;
         private string _name;
-        private List<string> _principals = new List<string>();
-        private List<Resource> _resources = new List<Resource>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _principals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Resource> _resources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
@@ -109,7 +109,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

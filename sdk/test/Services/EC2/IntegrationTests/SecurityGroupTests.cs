@@ -1,4 +1,5 @@
-﻿using Amazon.EC2;
+﻿using Amazon;
+using Amazon.EC2;
 using Amazon.EC2.Model;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -117,13 +118,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
         [TestCategory("EC2")]
         public void IpRangeRoundTripTest()
         {
+#pragma warning disable CS0618
             var describeSecurityGroupsResponse = DescribeSecurityGroupById();
 
             var testCollection = new List<string>();
             var authorizeSecurityGroupEgressRequest = new AuthorizeSecurityGroupEgressRequest();
             authorizeSecurityGroupEgressRequest.GroupId = SECURITY_GROUP_ID;
-            IpPermission authorizeSecurityGroupEgressPermission = new IpPermission();
-            authorizeSecurityGroupEgressPermission.IpRanges.Add("0.0.0.0/7");
+            IpPermission authorizeSecurityGroupEgressPermission = new IpPermission()
+            {
+                IpRanges = new List<string>
+                {
+                    "0.0.0.0/7"
+                }
+            };
             testCollection.Add("0.0.0.0/7");
             authorizeSecurityGroupEgressPermission.IpProtocol = "ICMP";
             authorizeSecurityGroupEgressPermission.FromPort = -1;
@@ -132,12 +139,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             var authorizeSecurityGroupEgressResponse = Client.AuthorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
 
             Assert.IsNotNull(authorizeSecurityGroupEgressResponse);
-            Assert.IsFalse(authorizeSecurityGroupEgressRequest.IpPermissions[0].Ipv4Ranges.Any());
+
+            if (AWSConfigs.InitializeCollections)
+            {
+                Assert.IsFalse(authorizeSecurityGroupEgressRequest.IpPermissions[0].Ipv4Ranges.Any());
+            }
+            else
+            {
+                Assert.IsNull(authorizeSecurityGroupEgressRequest.IpPermissions[0].Ipv4Ranges);
+            }
+
             UtilityMethods.WaitUntilSuccess(() =>
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroupById();
-                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
-                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList(), testCollection);
+
+                if (!AWSConfigs.InitializeCollections && (testCollection == null || testCollection.Count == 0))
+                {
+                    Assert.IsNull(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges);
+                    Assert.IsNull(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges);
+                }
+                else
+                {
+                    CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
+                    CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList(), testCollection);
+                }
             });
 
             authorizeSecurityGroupEgressRequest = new AuthorizeSecurityGroupEgressRequest();
@@ -152,8 +177,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroupById();
                 validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
-                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
-                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+
+                if (!AWSConfigs.InitializeCollections && (testCollection == null || testCollection.Count == 0))
+                {
+                    Assert.IsNull(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges);
+                    Assert.IsNull(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges);
+                }
+                else
+                {
+                    CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
+                    CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+                }
             });
 
             authorizeSecurityGroupEgressRequest = new AuthorizeSecurityGroupEgressRequest();
@@ -177,8 +211,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroupById();
                 validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
-                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
-                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+
+                if (!AWSConfigs.InitializeCollections && (testCollection == null || testCollection.Count == 0))
+                {
+                    Assert.IsNull(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges);
+                    Assert.IsNull(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges);
+                }
+                else
+                {
+                    CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
+                    CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+                }
             });
 
             authorizeSecurityGroupEgressRequest.IpPermissions[0].Ipv4Ranges = new List<IpRange> { new IpRange { CidrIp = "0.0.0.0/10", Description = "TestDescription" }, new IpRange { CidrIp = "0.0.0.0/11", Description = "TestDescription" } };
@@ -191,8 +234,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroupById();
                 validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
-                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
-                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+
+                if (!AWSConfigs.InitializeCollections && (testCollection == null || testCollection.Count == 0))
+                {
+                    Assert.IsNull(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges);
+                    Assert.IsNull(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges);
+                }
+                else
+                {
+                    CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
+                    CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+                }
             });
 
             var updateSecurityGroupEgressRequest = new UpdateSecurityGroupRuleDescriptionsEgressRequest();
@@ -207,9 +259,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroupById();
                 validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
-                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0]?.IpPermissionsEgress[1]?.IpRanges, validationResult);
 
-                var descriptionTest = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Where(p => p.CidrIp == "0.0.0.0/8").Select(p => p.Description).Single().ToString();
+                var descriptionTest = describeSecurityGroupsResponse.SecurityGroups[0]?.IpPermissionsEgress[1]?.Ipv4Ranges?.Where(p => p.CidrIp == "0.0.0.0/8").Select(p => p.Description).Single().ToString();
                 Assert.AreEqual(descriptionTest, "TestDescription");
             });
 
@@ -223,9 +275,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             UtilityMethods.WaitUntilSuccess(() =>
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroupById();
-                Assert.IsFalse(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress
-                    .Where(p => p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/8", Description = "TestDescription" }) || p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/7" }) || p.IpRanges.Contains("0.0.0.0/7") || p.IpRanges.Contains("0.0.0.0/8")).ToList().Any());
+                var ipEgress = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress ?? new List<IpPermission>();
+                Assert.IsFalse(ipEgress
+                    .Where(p => p.Ipv4Ranges != null && (p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/8", Description = "TestDescription" }) || p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/7" }) || p.IpRanges.Contains("0.0.0.0/7") || p.IpRanges.Contains("0.0.0.0/8"))).ToList().Any());
             });
+#pragma warning restore CS0618
         }
 
         private static DescribeSecurityGroupsResponse DescribeSecurityGroupById()

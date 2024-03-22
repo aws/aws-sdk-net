@@ -33,7 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class CancelStepsResponse : AmazonWebServiceResponse
     {
-        private List<CancelStepsInfo> _cancelStepsInfoList = new List<CancelStepsInfo>();
+        private List<CancelStepsInfo> _cancelStepsInfoList = AWSConfigs.InitializeCollections ? new List<CancelStepsInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property CancelStepsInfoList. 
@@ -51,7 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if CancelStepsInfoList property is set
         internal bool IsSetCancelStepsInfoList()
         {
-            return this._cancelStepsInfoList != null && this._cancelStepsInfoList.Count > 0; 
+            return this._cancelStepsInfoList != null && (this._cancelStepsInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -493,6 +493,10 @@ namespace Amazon.Transfer
         /// </summary>
         public static readonly EncryptionAlg AES256_CBC = new EncryptionAlg("AES256_CBC");
         /// <summary>
+        /// Constant DES_EDE3_CBC for EncryptionAlg
+        /// </summary>
+        public static readonly EncryptionAlg DES_EDE3_CBC = new EncryptionAlg("DES_EDE3_CBC");
+        /// <summary>
         /// Constant NONE for EncryptionAlg
         /// </summary>
         public static readonly EncryptionAlg NONE = new EncryptionAlg("NONE");

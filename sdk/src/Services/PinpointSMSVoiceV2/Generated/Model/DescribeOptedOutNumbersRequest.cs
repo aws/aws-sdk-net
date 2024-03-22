@@ -48,10 +48,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribeOptedOutNumbersRequest : AmazonPinpointSMSVoiceV2Request
     {
-        private List<OptedOutFilter> _filters = new List<OptedOutFilter>();
+        private List<OptedOutFilter> _filters = AWSConfigs.InitializeCollections ? new List<OptedOutFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _optedOutNumbers = new List<string>();
+        private List<string> _optedOutNumbers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _optOutListName;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if OptedOutNumbers property is set
         internal bool IsSetOptedOutNumbers()
         {
-            return this._optedOutNumbers != null && this._optedOutNumbers.Count > 0; 
+            return this._optedOutNumbers != null && (this._optedOutNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

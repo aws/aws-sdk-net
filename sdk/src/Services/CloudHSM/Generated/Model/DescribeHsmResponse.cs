@@ -39,7 +39,7 @@ namespace Amazon.CloudHSM.Model
         private string _hsmArn;
         private string _hsmType;
         private string _iamRoleArn;
-        private List<string> _partitions = new List<string>();
+        private List<string> _partitions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serialNumber;
         private string _serverCertLastUpdated;
         private string _serverCertUri;
@@ -178,7 +178,7 @@ namespace Amazon.CloudHSM.Model
         // Check to see if Partitions property is set
         internal bool IsSetPartitions()
         {
-            return this._partitions != null && this._partitions.Count > 0; 
+            return this._partitions != null && (this._partitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

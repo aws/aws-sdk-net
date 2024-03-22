@@ -33,7 +33,7 @@ namespace Amazon.NimbleStudio.Model
     /// </summary>
     public partial class StreamConfigurationSessionStorage
     {
-        private List<string> _mode = new List<string>();
+        private List<string> _mode = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private StreamingSessionStorageRoot _root;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Mode property is set
         internal bool IsSetMode()
         {
-            return this._mode != null && this._mode.Count > 0; 
+            return this._mode != null && (this._mode.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

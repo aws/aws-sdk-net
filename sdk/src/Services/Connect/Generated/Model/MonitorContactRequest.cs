@@ -35,7 +35,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class MonitorContactRequest : AmazonConnectRequest
     {
-        private List<string> _allowedMonitorCapabilities = new List<string>();
+        private List<string> _allowedMonitorCapabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientToken;
         private string _contactId;
         private string _instanceId;
@@ -59,7 +59,7 @@ namespace Amazon.Connect.Model
         // Check to see if AllowedMonitorCapabilities property is set
         internal bool IsSetAllowedMonitorCapabilities()
         {
-            return this._allowedMonitorCapabilities != null && this._allowedMonitorCapabilities.Count > 0; 
+            return this._allowedMonitorCapabilities != null && (this._allowedMonitorCapabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

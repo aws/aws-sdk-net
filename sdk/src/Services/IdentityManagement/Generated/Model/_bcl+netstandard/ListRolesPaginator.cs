@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the Roles
         /// </summary>
         public IPaginatedEnumerable<Role> Roles => 
-            new PaginatedResultKeyResponse<ListRolesResponse, Role>(this, (i) => i.Roles);
+            new PaginatedResultKeyResponse<ListRolesResponse, Role>(this, (i) => i.Roles ?? new List<Role>());
 
         internal ListRolesPaginator(IAmazonIdentityManagementService client, ListRolesRequest request)
         {

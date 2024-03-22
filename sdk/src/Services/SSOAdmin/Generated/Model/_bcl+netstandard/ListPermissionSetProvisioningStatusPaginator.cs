@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the PermissionSetsProvisioningStatus
         /// </summary>
         public IPaginatedEnumerable<PermissionSetProvisioningStatusMetadata> PermissionSetsProvisioningStatus => 
-            new PaginatedResultKeyResponse<ListPermissionSetProvisioningStatusResponse, PermissionSetProvisioningStatusMetadata>(this, (i) => i.PermissionSetsProvisioningStatus);
+            new PaginatedResultKeyResponse<ListPermissionSetProvisioningStatusResponse, PermissionSetProvisioningStatusMetadata>(this, (i) => i.PermissionSetsProvisioningStatus ?? new List<PermissionSetProvisioningStatusMetadata>());
 
         internal ListPermissionSetProvisioningStatusPaginator(IAmazonSSOAdmin client, ListPermissionSetProvisioningStatusRequest request)
         {

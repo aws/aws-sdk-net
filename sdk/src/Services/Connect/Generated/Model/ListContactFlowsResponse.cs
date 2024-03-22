@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListContactFlowsResponse : AmazonWebServiceResponse
     {
-        private List<ContactFlowSummary> _contactFlowSummaryList = new List<ContactFlowSummary>();
+        private List<ContactFlowSummary> _contactFlowSummaryList = AWSConfigs.InitializeCollections ? new List<ContactFlowSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if ContactFlowSummaryList property is set
         internal bool IsSetContactFlowSummaryList()
         {
-            return this._contactFlowSummaryList != null && this._contactFlowSummaryList.Count > 0; 
+            return this._contactFlowSummaryList != null && (this._contactFlowSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListRoutingProfilesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RoutingProfileSummary> _routingProfileSummaryList = new List<RoutingProfileSummary>();
+        private List<RoutingProfileSummary> _routingProfileSummaryList = AWSConfigs.InitializeCollections ? new List<RoutingProfileSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         // Check to see if RoutingProfileSummaryList property is set
         internal bool IsSetRoutingProfileSummaryList()
         {
-            return this._routingProfileSummaryList != null && this._routingProfileSummaryList.Count > 0; 
+            return this._routingProfileSummaryList != null && (this._routingProfileSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

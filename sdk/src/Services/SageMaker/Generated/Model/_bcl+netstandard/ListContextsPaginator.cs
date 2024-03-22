@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the ContextSummaries
         /// </summary>
         public IPaginatedEnumerable<ContextSummary> ContextSummaries => 
-            new PaginatedResultKeyResponse<ListContextsResponse, ContextSummary>(this, (i) => i.ContextSummaries);
+            new PaginatedResultKeyResponse<ListContextsResponse, ContextSummary>(this, (i) => i.ContextSummaries ?? new List<ContextSummary>());
 
         internal ListContextsPaginator(IAmazonSageMaker client, ListContextsRequest request)
         {

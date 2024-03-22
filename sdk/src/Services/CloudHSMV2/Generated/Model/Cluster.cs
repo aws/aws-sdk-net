@@ -38,15 +38,15 @@ namespace Amazon.CloudHSMV2.Model
         private Certificates _certificates;
         private string _clusterId;
         private DateTime? _createTimestamp;
-        private List<Hsm> _hsms = new List<Hsm>();
+        private List<Hsm> _hsms = AWSConfigs.InitializeCollections ? new List<Hsm>() : null;
         private string _hsmType;
         private string _preCoPassword;
         private string _securityGroup;
         private string _sourceBackupId;
         private ClusterState _state;
         private string _stateMessage;
-        private Dictionary<string, string> _subnetMapping = new Dictionary<string, string>();
-        private List<Tag> _tagList = new List<Tag>();
+        private Dictionary<string, string> _subnetMapping = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.CloudHSMV2.Model
         // Check to see if Hsms property is set
         internal bool IsSetHsms()
         {
-            return this._hsms != null && this._hsms.Count > 0; 
+            return this._hsms != null && (this._hsms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -283,7 +283,7 @@ namespace Amazon.CloudHSMV2.Model
         // Check to see if SubnetMapping property is set
         internal bool IsSetSubnetMapping()
         {
-            return this._subnetMapping != null && this._subnetMapping.Count > 0; 
+            return this._subnetMapping != null && (this._subnetMapping.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -302,7 +302,7 @@ namespace Amazon.CloudHSMV2.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

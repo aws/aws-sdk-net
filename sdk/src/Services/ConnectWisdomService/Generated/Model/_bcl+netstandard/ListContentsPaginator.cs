@@ -45,7 +45,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// Enumerable containing all of the ContentSummaries
         /// </summary>
         public IPaginatedEnumerable<ContentSummary> ContentSummaries => 
-            new PaginatedResultKeyResponse<ListContentsResponse, ContentSummary>(this, (i) => i.ContentSummaries);
+            new PaginatedResultKeyResponse<ListContentsResponse, ContentSummary>(this, (i) => i.ContentSummaries ?? new List<ContentSummary>());
 
         internal ListContentsPaginator(IAmazonConnectWisdomService client, ListContentsRequest request)
         {

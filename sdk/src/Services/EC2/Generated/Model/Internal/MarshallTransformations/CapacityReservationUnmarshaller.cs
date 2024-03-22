@@ -75,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("capacityAllocationSet/item", targetDepth))
                     {
                         var unmarshaller = CapacityAllocationUnmarshaller.Instance;
+                        if (unmarshalledObject.CapacityAllocations == null)
+                        {
+                            unmarshalledObject.CapacityAllocations = new List<CapacityAllocation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CapacityAllocations.Add(item);
                         continue;
@@ -184,6 +188,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

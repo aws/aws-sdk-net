@@ -45,7 +45,7 @@ namespace Amazon.Outposts.Model
         /// Enumerable containing all of the CatalogItems
         /// </summary>
         public IPaginatedEnumerable<CatalogItem> CatalogItems => 
-            new PaginatedResultKeyResponse<ListCatalogItemsResponse, CatalogItem>(this, (i) => i.CatalogItems);
+            new PaginatedResultKeyResponse<ListCatalogItemsResponse, CatalogItem>(this, (i) => i.CatalogItems ?? new List<CatalogItem>());
 
         internal ListCatalogItemsPaginator(IAmazonOutposts client, ListCatalogItemsRequest request)
         {

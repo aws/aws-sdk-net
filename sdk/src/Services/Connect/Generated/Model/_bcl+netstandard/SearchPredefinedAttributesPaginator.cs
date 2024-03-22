@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the PredefinedAttributes
         /// </summary>
         public IPaginatedEnumerable<PredefinedAttribute> PredefinedAttributes => 
-            new PaginatedResultKeyResponse<SearchPredefinedAttributesResponse, PredefinedAttribute>(this, (i) => i.PredefinedAttributes);
+            new PaginatedResultKeyResponse<SearchPredefinedAttributesResponse, PredefinedAttribute>(this, (i) => i.PredefinedAttributes ?? new List<PredefinedAttribute>());
 
         internal SearchPredefinedAttributesPaginator(IAmazonConnect client, SearchPredefinedAttributesRequest request)
         {

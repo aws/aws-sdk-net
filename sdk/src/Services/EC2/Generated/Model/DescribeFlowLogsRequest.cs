@@ -41,8 +41,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeFlowLogsRequest : AmazonEC2Request
     {
-        private List<Filter> _filter = new List<Filter>();
-        private List<string> _flowLogIds = new List<string>();
+        private List<Filter> _filter = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _flowLogIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filter property is set
         internal bool IsSetFilter()
         {
-            return this._filter != null && this._filter.Count > 0; 
+            return this._filter != null && (this._filter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.EC2.Model
         // Check to see if FlowLogIds property is set
         internal bool IsSetFlowLogIds()
         {
-            return this._flowLogIds != null && this._flowLogIds.Count > 0; 
+            return this._flowLogIds != null && (this._flowLogIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

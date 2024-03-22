@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         private string _assessmentId;
         private string _assessmentName;
         private AssessmentReportsDestination _assessmentReportsDestination;
-        private List<Role> _roles = new List<Role>();
+        private List<Role> _roles = AWSConfigs.InitializeCollections ? new List<Role>() : null;
         private Scope _scope;
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Roles property is set
         internal bool IsSetRoles()
         {
-            return this._roles != null && this._roles.Count > 0; 
+            return this._roles != null && (this._roles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -60,7 +60,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// <summary>
         /// Gets and sets the property StepGroupId. 
         /// <para>
-        /// desThe ID of the step group.
+        /// The ID of the step group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

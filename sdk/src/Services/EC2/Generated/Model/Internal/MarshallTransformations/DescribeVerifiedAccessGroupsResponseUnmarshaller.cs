@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("verifiedAccessGroupSet/item", targetDepth))
                     {
                         var unmarshaller = VerifiedAccessGroupUnmarshaller.Instance;
+                        if (response.VerifiedAccessGroups == null)
+                        {
+                            response.VerifiedAccessGroups = new List<VerifiedAccessGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.VerifiedAccessGroups.Add(item);
                         continue;

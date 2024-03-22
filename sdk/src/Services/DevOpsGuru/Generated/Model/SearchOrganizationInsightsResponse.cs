@@ -34,8 +34,8 @@ namespace Amazon.DevOpsGuru.Model
     public partial class SearchOrganizationInsightsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProactiveInsightSummary> _proactiveInsights = new List<ProactiveInsightSummary>();
-        private List<ReactiveInsightSummary> _reactiveInsights = new List<ReactiveInsightSummary>();
+        private List<ProactiveInsightSummary> _proactiveInsights = AWSConfigs.InitializeCollections ? new List<ProactiveInsightSummary>() : null;
+        private List<ReactiveInsightSummary> _reactiveInsights = AWSConfigs.InitializeCollections ? new List<ReactiveInsightSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if ProactiveInsights property is set
         internal bool IsSetProactiveInsights()
         {
-            return this._proactiveInsights != null && this._proactiveInsights.Count > 0; 
+            return this._proactiveInsights != null && (this._proactiveInsights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if ReactiveInsights property is set
         internal bool IsSetReactiveInsights()
         {
-            return this._reactiveInsights != null && this._reactiveInsights.Count > 0; 
+            return this._reactiveInsights != null && (this._reactiveInsights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

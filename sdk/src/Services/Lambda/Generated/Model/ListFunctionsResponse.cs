@@ -33,7 +33,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class ListFunctionsResponse : AmazonWebServiceResponse
     {
-        private List<FunctionConfiguration> _functions = new List<FunctionConfiguration>();
+        private List<FunctionConfiguration> _functions = AWSConfigs.InitializeCollections ? new List<FunctionConfiguration>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Functions property is set
         internal bool IsSetFunctions()
         {
-            return this._functions != null && this._functions.Count > 0; 
+            return this._functions != null && (this._functions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

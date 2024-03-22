@@ -69,6 +69,7 @@ namespace Amazon.S3.Util
             { ".cs", "text/plain" },
             { ".csh", "application/x-csh" },
             { ".css", "text/css" },
+            { ".csv", "text/csv" },
             { ".dcr", "application/x-director" },
             { ".dir", "application/x-director" },
             { ".dms", "application/octet-stream" },
@@ -567,7 +568,10 @@ namespace Amazon.S3.Util
             {
                 xmlWriter.WriteStartElement("Tagging", S3Constants.S3RequestXmlNamespace);
 
-                SerializeTagSetToXml(xmlWriter, tagging.TagSet);
+                if (tagging.TagSet != null)
+                {
+                    SerializeTagSetToXml(xmlWriter, tagging.TagSet);
+                }
 
                 xmlWriter.WriteEndElement();
             }

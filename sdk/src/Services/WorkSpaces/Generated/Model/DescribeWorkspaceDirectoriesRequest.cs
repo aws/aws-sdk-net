@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeWorkspaceDirectoriesRequest : AmazonWorkSpacesRequest
     {
-        private List<string> _directoryIds = new List<string>();
+        private List<string> _directoryIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _limit;
         private string _nextToken;
 
@@ -54,7 +54,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if DirectoryIds property is set
         internal bool IsSetDirectoryIds()
         {
-            return this._directoryIds != null && this._directoryIds.Count > 0; 
+            return this._directoryIds != null && (this._directoryIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

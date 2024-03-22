@@ -63,6 +63,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AccessPoints/AccessPoint", targetDepth))
                     {
+                        if (response.AccessPoints == null)
+                        {
+                            response.AccessPoints = new List<MultiRegionAccessPointReport>();
+                        }
                         var unmarshaller = MultiRegionAccessPointReportUnmarshaller.Instance;
                         response.AccessPoints.Add(unmarshaller.Unmarshall(context));
                         continue;

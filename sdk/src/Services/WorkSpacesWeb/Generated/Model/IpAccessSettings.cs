@@ -33,12 +33,12 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class IpAccessSettings
     {
-        private List<string> _associatedPortalArns = new List<string>();
+        private List<string> _associatedPortalArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _creationDate;
         private string _description;
         private string _displayName;
         private string _ipAccessSettingsArn;
-        private List<IpRule> _ipRules = new List<IpRule>();
+        private List<IpRule> _ipRules = AWSConfigs.InitializeCollections ? new List<IpRule>() : null;
 
         /// <summary>
         /// Gets and sets the property AssociatedPortalArns. 
@@ -55,7 +55,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if AssociatedPortalArns property is set
         internal bool IsSetAssociatedPortalArns()
         {
-            return this._associatedPortalArns != null && this._associatedPortalArns.Count > 0; 
+            return this._associatedPortalArns != null && (this._associatedPortalArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if IpRules property is set
         internal bool IsSetIpRules()
         {
-            return this._ipRules != null && this._ipRules.Count > 0; 
+            return this._ipRules != null && (this._ipRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

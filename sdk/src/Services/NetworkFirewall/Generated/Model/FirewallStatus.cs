@@ -38,7 +38,7 @@ namespace Amazon.NetworkFirewall.Model
         private CapacityUsageSummary _capacityUsageSummary;
         private ConfigurationSyncState _configurationSyncStateSummary;
         private FirewallStatusValue _status;
-        private Dictionary<string, SyncState> _syncStates = new Dictionary<string, SyncState>();
+        private Dictionary<string, SyncState> _syncStates = AWSConfigs.InitializeCollections ? new Dictionary<string, SyncState>() : null;
 
         /// <summary>
         /// Gets and sets the property CapacityUsageSummary. 
@@ -134,7 +134,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if SyncStates property is set
         internal bool IsSetSyncStates()
         {
-            return this._syncStates != null && this._syncStates.Count > 0; 
+            return this._syncStates != null && (this._syncStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

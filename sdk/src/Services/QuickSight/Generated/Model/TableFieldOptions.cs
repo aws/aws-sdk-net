@@ -33,9 +33,9 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class TableFieldOptions
     {
-        private List<string> _order = new List<string>();
+        private List<string> _order = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TablePinnedFieldOptions _pinnedFieldOptions;
-        private List<TableFieldOption> _selectedFieldOptions = new List<TableFieldOption>();
+        private List<TableFieldOption> _selectedFieldOptions = AWSConfigs.InitializeCollections ? new List<TableFieldOption>() : null;
 
         /// <summary>
         /// Gets and sets the property Order. 
@@ -53,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Order property is set
         internal bool IsSetOrder()
         {
-            return this._order != null && this._order.Count > 0; 
+            return this._order != null && (this._order.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SelectedFieldOptions property is set
         internal bool IsSetSelectedFieldOptions()
         {
-            return this._selectedFieldOptions != null && this._selectedFieldOptions.Count > 0; 
+            return this._selectedFieldOptions != null && (this._selectedFieldOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

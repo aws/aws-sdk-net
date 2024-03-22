@@ -34,7 +34,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListVPCEConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VPCEConfiguration> _vpceConfigurations = new List<VPCEConfiguration>();
+        private List<VPCEConfiguration> _vpceConfigurations = AWSConfigs.InitializeCollections ? new List<VPCEConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if VpceConfigurations property is set
         internal bool IsSetVpceConfigurations()
         {
-            return this._vpceConfigurations != null && this._vpceConfigurations.Count > 0; 
+            return this._vpceConfigurations != null && (this._vpceConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the SensitivityInspectionTemplates
         /// </summary>
         public IPaginatedEnumerable<SensitivityInspectionTemplatesEntry> SensitivityInspectionTemplates => 
-            new PaginatedResultKeyResponse<ListSensitivityInspectionTemplatesResponse, SensitivityInspectionTemplatesEntry>(this, (i) => i.SensitivityInspectionTemplates);
+            new PaginatedResultKeyResponse<ListSensitivityInspectionTemplatesResponse, SensitivityInspectionTemplatesEntry>(this, (i) => i.SensitivityInspectionTemplates ?? new List<SensitivityInspectionTemplatesEntry>());
 
         internal ListSensitivityInspectionTemplatesPaginator(IAmazonMacie2 client, ListSensitivityInspectionTemplatesRequest request)
         {

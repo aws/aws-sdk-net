@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the Messages
         /// </summary>
         public IPaginatedEnumerable<Message> Messages => 
-            new PaginatedResultKeyResponse<ListMessagesResponse, Message>(this, (i) => i.Messages);
+            new PaginatedResultKeyResponse<ListMessagesResponse, Message>(this, (i) => i.Messages ?? new List<Message>());
 
         internal ListMessagesPaginator(IAmazonQBusiness client, ListMessagesRequest request)
         {

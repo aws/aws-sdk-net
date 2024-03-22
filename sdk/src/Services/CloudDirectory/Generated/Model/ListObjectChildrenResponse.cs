@@ -33,7 +33,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class ListObjectChildrenResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _children = new Dictionary<string, string>();
+        private Dictionary<string, string> _children = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if Children property is set
         internal bool IsSetChildren()
         {
-            return this._children != null && this._children.Count > 0; 
+            return this._children != null && (this._children.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

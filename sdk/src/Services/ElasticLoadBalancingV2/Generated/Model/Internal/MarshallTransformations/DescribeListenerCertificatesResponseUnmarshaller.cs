@@ -84,6 +84,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Certificates/member", targetDepth))
                     {
                         var unmarshaller = CertificateUnmarshaller.Instance;
+                        if (response.Certificates == null)
+                        {
+                            response.Certificates = new List<Certificate>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Certificates.Add(item);
                         continue;

@@ -45,7 +45,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Enumerable containing all of the FirewallPolicies
         /// </summary>
         public IPaginatedEnumerable<FirewallPolicyMetadata> FirewallPolicies => 
-            new PaginatedResultKeyResponse<ListFirewallPoliciesResponse, FirewallPolicyMetadata>(this, (i) => i.FirewallPolicies);
+            new PaginatedResultKeyResponse<ListFirewallPoliciesResponse, FirewallPolicyMetadata>(this, (i) => i.FirewallPolicies ?? new List<FirewallPolicyMetadata>());
 
         internal ListFirewallPoliciesPaginator(IAmazonNetworkFirewall client, ListFirewallPoliciesRequest request)
         {

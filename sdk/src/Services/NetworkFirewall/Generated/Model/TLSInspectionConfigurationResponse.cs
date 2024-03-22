@@ -36,12 +36,12 @@ namespace Amazon.NetworkFirewall.Model
     public partial class TLSInspectionConfigurationResponse
     {
         private TlsCertificateData _certificateAuthority;
-        private List<TlsCertificateData> _certificates = new List<TlsCertificateData>();
+        private List<TlsCertificateData> _certificates = AWSConfigs.InitializeCollections ? new List<TlsCertificateData>() : null;
         private string _description;
         private EncryptionConfiguration _encryptionConfiguration;
         private DateTime? _lastModifiedTime;
         private int? _numberOfAssociations;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tlsInspectionConfigurationArn;
         private string _tlsInspectionConfigurationId;
         private string _tlsInspectionConfigurationName;
@@ -77,7 +77,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Certificates property is set
         internal bool IsSetCertificates()
         {
-            return this._certificates != null && this._certificates.Count > 0; 
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

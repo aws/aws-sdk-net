@@ -36,7 +36,7 @@ namespace Amazon.IoTFleetWise.Model
     #endif
     public partial class InvalidSignalsException : AmazonIoTFleetWiseException
     {
-        private List<InvalidSignal> _invalidSignals = new List<InvalidSignal>();
+        private List<InvalidSignal> _invalidSignals = AWSConfigs.InitializeCollections ? new List<InvalidSignal>() : null;
 
         /// <summary>
         /// Constructs a new InvalidSignalsException with the specified error
@@ -133,7 +133,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if InvalidSignals property is set
         internal bool IsSetInvalidSignals()
         {
-            return this._invalidSignals != null && this._invalidSignals.Count > 0; 
+            return this._invalidSignals != null && (this._invalidSignals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -40,11 +40,11 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class LoadBalancerTlsPolicy
     {
-        private List<string> _ciphers = new List<string>();
+        private List<string> _ciphers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private bool? _isDefault;
         private string _name;
-        private List<string> _protocols = new List<string>();
+        private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Ciphers. 
@@ -65,7 +65,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Ciphers property is set
         internal bool IsSetCiphers()
         {
-            return this._ciphers != null && this._ciphers.Count > 0; 
+            return this._ciphers != null && (this._ciphers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

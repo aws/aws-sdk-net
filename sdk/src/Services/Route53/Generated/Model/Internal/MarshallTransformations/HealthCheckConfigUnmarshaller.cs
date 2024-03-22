@@ -129,6 +129,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ChildHealthChecks/ChildHealthCheck", targetDepth))
                     {
+                        if (unmarshalledObject.ChildHealthChecks == null)
+                        {
+                            unmarshalledObject.ChildHealthChecks = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ChildHealthChecks.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -141,6 +145,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Regions/Region", targetDepth))
                     {
+                        if (unmarshalledObject.Regions == null)
+                        {
+                            unmarshalledObject.Regions = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Regions.Add(unmarshaller.Unmarshall(context));
                         continue;

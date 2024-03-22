@@ -33,10 +33,10 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetUnfilteredTableMetadataResponse : AmazonWebServiceResponse
     {
-        private List<string> _authorizedColumns = new List<string>();
-        private List<ColumnRowFilter> _cellFilters = new List<ColumnRowFilter>();
+        private List<string> _authorizedColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ColumnRowFilter> _cellFilters = AWSConfigs.InitializeCollections ? new List<ColumnRowFilter>() : null;
         private bool? _isRegisteredWithLakeFormation;
-        private List<string> _permissions = new List<string>();
+        private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _queryAuthorizationId;
         private string _resourceArn;
         private Table _table;
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         // Check to see if AuthorizedColumns property is set
         internal bool IsSetAuthorizedColumns()
         {
-            return this._authorizedColumns != null && this._authorizedColumns.Count > 0; 
+            return this._authorizedColumns != null && (this._authorizedColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.Glue.Model
         // Check to see if CellFilters property is set
         internal bool IsSetCellFilters()
         {
-            return this._cellFilters != null && this._cellFilters.Count > 0; 
+            return this._cellFilters != null && (this._cellFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.Glue.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

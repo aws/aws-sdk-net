@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeAddressesAttributeRequest : AmazonEC2Request
     {
-        private List<string> _allocationIds = new List<string>();
+        private List<string> _allocationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AddressAttributeName _attribute;
         private int? _maxResults;
         private string _nextToken;
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         // Check to see if AllocationIds property is set
         internal bool IsSetAllocationIds()
         {
-            return this._allocationIds != null && this._allocationIds.Count > 0; 
+            return this._allocationIds != null && (this._allocationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

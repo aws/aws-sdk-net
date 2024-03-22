@@ -97,11 +97,11 @@ namespace Amazon.FSx.Model
         private CreateFileSystemLustreConfiguration _lustreConfiguration;
         private CreateFileSystemOntapConfiguration _ontapConfiguration;
         private CreateFileSystemOpenZFSConfiguration _openZFSConfiguration;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _storageCapacity;
         private StorageType _storageType;
-        private List<string> _subnetIds = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private CreateFileSystemWindowsConfiguration _windowsConfiguration;
 
         /// <summary>
@@ -256,6 +256,12 @@ namespace Amazon.FSx.Model
         /// for file system access. This list isn't returned in later requests to describe the
         /// file system.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must specify a security group if you are creating a Multi-AZ FSx for ONTAP file
+        /// system in a VPC subnet that has been shared with you.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Max=50)]
         public List<string> SecurityGroupIds
@@ -267,7 +273,7 @@ namespace Amazon.FSx.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -301,7 +307,8 @@ namespace Amazon.FSx.Model
         /// <para>
         ///  <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure
         /// depends on the value of the <c>HAPairs</c> property. The minimum value is calculated
-        /// as 1,024 * <c>HAPairs</c> and the maxium is calculated as 524,288 * <c>HAPairs</c>..
+        /// as 1,024 * <c>HAPairs</c> and the maximum is calculated as 524,288 * <c>HAPairs</c>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -404,7 +411,7 @@ namespace Amazon.FSx.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -424,7 +431,7 @@ namespace Amazon.FSx.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

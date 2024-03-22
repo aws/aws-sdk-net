@@ -35,7 +35,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
     {
         private bool? _parallelRun;
         private DeviceUnderTest _primaryDevice;
-        private List<string> _selectedTestList = new List<string>();
+        private List<string> _selectedTestList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ParallelRun. 
@@ -91,7 +91,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         // Check to see if SelectedTestList property is set
         internal bool IsSetSelectedTestList()
         {
-            return this._selectedTestList != null && this._selectedTestList.Count > 0; 
+            return this._selectedTestList != null && (this._selectedTestList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

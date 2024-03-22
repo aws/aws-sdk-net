@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model
     public partial class AddObjectInput
     {
         private string _eTag;
-        private List<string> _partitionValues = new List<string>();
+        private List<string> _partitionValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _size;
         private string _uri;
 
@@ -80,7 +80,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if PartitionValues property is set
         internal bool IsSetPartitionValues()
         {
-            return this._partitionValues != null && this._partitionValues.Count > 0; 
+            return this._partitionValues != null && (this._partitionValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

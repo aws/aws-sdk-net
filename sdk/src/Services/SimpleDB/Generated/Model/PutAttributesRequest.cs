@@ -76,7 +76,7 @@ namespace Amazon.SimpleDB.Model
     /// </summary>
     public partial class PutAttributesRequest : AmazonSimpleDBRequest
     {
-        private List<ReplaceableAttribute> _attributes = new List<ReplaceableAttribute>();
+        private List<ReplaceableAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<ReplaceableAttribute>() : null;
         private string _domainName;
         private UpdateCondition _expected;
         private string _itemName;
@@ -127,7 +127,7 @@ namespace Amazon.SimpleDB.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

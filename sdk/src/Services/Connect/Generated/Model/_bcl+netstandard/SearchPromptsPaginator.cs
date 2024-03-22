@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the Prompts
         /// </summary>
         public IPaginatedEnumerable<Prompt> Prompts => 
-            new PaginatedResultKeyResponse<SearchPromptsResponse, Prompt>(this, (i) => i.Prompts);
+            new PaginatedResultKeyResponse<SearchPromptsResponse, Prompt>(this, (i) => i.Prompts ?? new List<Prompt>());
 
         internal SearchPromptsPaginator(IAmazonConnect client, SearchPromptsRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model
     public partial class GetOperationsResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<Operation> _operations = new List<Operation>();
+        private List<Operation> _operations = AWSConfigs.InitializeCollections ? new List<Operation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -79,7 +79,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Operations property is set
         internal bool IsSetOperations()
         {
-            return this._operations != null && this._operations.Count > 0; 
+            return this._operations != null && (this._operations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

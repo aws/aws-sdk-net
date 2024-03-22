@@ -70,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("groupSet/item", targetDepth))
                     {
                         var unmarshaller = GroupIdentifierUnmarshaller.Instance;
+                        if (response.Groups == null)
+                        {
+                            response.Groups = new List<GroupIdentifier>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Groups.Add(item);
                         continue;

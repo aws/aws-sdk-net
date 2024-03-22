@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineVersion;
         private bool? _isMajorVersionUpgrade;
-        private List<string> _supportedEngineModes = new List<string>();
+        private List<string> _supportedEngineModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _supportsBabelfish;
         private bool? _supportsGlobalDatabases;
         private bool? _supportsIntegrations;
@@ -152,7 +152,7 @@ namespace Amazon.RDS.Model
         // Check to see if SupportedEngineModes property is set
         internal bool IsSetSupportedEngineModes()
         {
-            return this._supportedEngineModes != null && this._supportedEngineModes.Count > 0; 
+            return this._supportedEngineModes != null && (this._supportedEngineModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

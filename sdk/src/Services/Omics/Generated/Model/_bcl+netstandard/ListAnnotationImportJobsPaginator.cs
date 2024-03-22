@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the AnnotationImportJobs
         /// </summary>
         public IPaginatedEnumerable<AnnotationImportJobItem> AnnotationImportJobs => 
-            new PaginatedResultKeyResponse<ListAnnotationImportJobsResponse, AnnotationImportJobItem>(this, (i) => i.AnnotationImportJobs);
+            new PaginatedResultKeyResponse<ListAnnotationImportJobsResponse, AnnotationImportJobItem>(this, (i) => i.AnnotationImportJobs ?? new List<AnnotationImportJobItem>());
 
         internal ListAnnotationImportJobsPaginator(IAmazonOmics client, ListAnnotationImportJobsRequest request)
         {

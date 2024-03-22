@@ -45,7 +45,7 @@ namespace Amazon.WorkSpaces.Model
         /// Enumerable containing all of the Directories
         /// </summary>
         public IPaginatedEnumerable<WorkspaceDirectory> Directories => 
-            new PaginatedResultKeyResponse<DescribeWorkspaceDirectoriesResponse, WorkspaceDirectory>(this, (i) => i.Directories);
+            new PaginatedResultKeyResponse<DescribeWorkspaceDirectoriesResponse, WorkspaceDirectory>(this, (i) => i.Directories ?? new List<WorkspaceDirectory>());
 
         internal DescribeWorkspaceDirectoriesPaginator(IAmazonWorkSpaces client, DescribeWorkspaceDirectoriesRequest request)
         {

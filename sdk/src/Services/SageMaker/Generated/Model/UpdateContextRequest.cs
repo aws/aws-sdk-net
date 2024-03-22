@@ -36,8 +36,8 @@ namespace Amazon.SageMaker.Model
     {
         private string _contextName;
         private string _description;
-        private Dictionary<string, string> _properties = new Dictionary<string, string>();
-        private List<string> _propertiesToRemove = new List<string>();
+        private Dictionary<string, string> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _propertiesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContextName. 
@@ -93,7 +93,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if PropertiesToRemove property is set
         internal bool IsSetPropertiesToRemove()
         {
-            return this._propertiesToRemove != null && this._propertiesToRemove.Count > 0; 
+            return this._propertiesToRemove != null && (this._propertiesToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -48,7 +48,7 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class LambdaFunctionAssociations
     {
-        private List<LambdaFunctionAssociation> _items = new List<LambdaFunctionAssociation>();
+        private List<LambdaFunctionAssociation> _items = AWSConfigs.InitializeCollections ? new List<LambdaFunctionAssociation>() : null;
         private int? _quantity;
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

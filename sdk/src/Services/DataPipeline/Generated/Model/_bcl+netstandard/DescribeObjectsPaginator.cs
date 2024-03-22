@@ -45,7 +45,7 @@ namespace Amazon.DataPipeline.Model
         /// Enumerable containing all of the PipelineObjects
         /// </summary>
         public IPaginatedEnumerable<PipelineObject> PipelineObjects => 
-            new PaginatedResultKeyResponse<DescribeObjectsResponse, PipelineObject>(this, (i) => i.PipelineObjects);
+            new PaginatedResultKeyResponse<DescribeObjectsResponse, PipelineObject>(this, (i) => i.PipelineObjects ?? new List<PipelineObject>());
 
         internal DescribeObjectsPaginator(IAmazonDataPipeline client, DescribeObjectsRequest request)
         {

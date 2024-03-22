@@ -99,6 +99,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Dimensions/Dimension", targetDepth))
                     {
+                        if (unmarshalledObject.Dimensions == null)
+                        {
+                            unmarshalledObject.Dimensions = new List<Dimension>();
+                        }
                         var unmarshaller = DimensionUnmarshaller.Instance;
                         unmarshalledObject.Dimensions.Add(unmarshaller.Unmarshall(context));
                         continue;

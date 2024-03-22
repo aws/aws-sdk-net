@@ -36,7 +36,7 @@ namespace Amazon.QuickSight.Model
         private string _nextToken;
         private string _requestId;
         private int? _status;
-        private List<ThemeSummary> _themeSummaryList = new List<ThemeSummary>();
+        private List<ThemeSummary> _themeSummaryList = AWSConfigs.InitializeCollections ? new List<ThemeSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -108,7 +108,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ThemeSummaryList property is set
         internal bool IsSetThemeSummaryList()
         {
-            return this._themeSummaryList != null && this._themeSummaryList.Count > 0; 
+            return this._themeSummaryList != null && (this._themeSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

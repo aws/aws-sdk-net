@@ -45,7 +45,7 @@ namespace Amazon.Transfer.Model
         /// Enumerable containing all of the Users
         /// </summary>
         public IPaginatedEnumerable<ListedUser> Users => 
-            new PaginatedResultKeyResponse<ListUsersResponse, ListedUser>(this, (i) => i.Users);
+            new PaginatedResultKeyResponse<ListUsersResponse, ListedUser>(this, (i) => i.Users ?? new List<ListedUser>());
 
         internal ListUsersPaginator(IAmazonTransfer client, ListUsersRequest request)
         {

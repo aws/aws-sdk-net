@@ -41,8 +41,8 @@ namespace Amazon.Inspector.Model
         private int? _durationInSeconds;
         private string _lastAssessmentRunArn;
         private string _name;
-        private List<string> _rulesPackageArns = new List<string>();
-        private List<Attribute> _userAttributesForFindings = new List<Attribute>();
+        private List<string> _rulesPackageArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Attribute> _userAttributesForFindings = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -197,7 +197,7 @@ namespace Amazon.Inspector.Model
         // Check to see if RulesPackageArns property is set
         internal bool IsSetRulesPackageArns()
         {
-            return this._rulesPackageArns != null && this._rulesPackageArns.Count > 0; 
+            return this._rulesPackageArns != null && (this._rulesPackageArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Amazon.Inspector.Model
         // Check to see if UserAttributesForFindings property is set
         internal bool IsSetUserAttributesForFindings()
         {
-            return this._userAttributesForFindings != null && this._userAttributesForFindings.Count > 0; 
+            return this._userAttributesForFindings != null && (this._userAttributesForFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

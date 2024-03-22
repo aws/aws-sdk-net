@@ -33,14 +33,14 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class ElasticLoadBalancer
     {
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _dnsName;
-        private List<string> _ec2InstanceIds = new List<string>();
+        private List<string> _ec2InstanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _elasticLoadBalancerName;
         private string _layerId;
         private string _region;
         private string _stackId;
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Ec2InstanceIds property is set
         internal bool IsSetEc2InstanceIds()
         {
-            return this._ec2InstanceIds != null && this._ec2InstanceIds.Count > 0; 
+            return this._ec2InstanceIds != null && (this._ec2InstanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

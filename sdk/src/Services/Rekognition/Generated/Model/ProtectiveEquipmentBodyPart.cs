@@ -36,7 +36,7 @@ namespace Amazon.Rekognition.Model
     public partial class ProtectiveEquipmentBodyPart
     {
         private float? _confidence;
-        private List<EquipmentDetection> _equipmentDetections = new List<EquipmentDetection>();
+        private List<EquipmentDetection> _equipmentDetections = AWSConfigs.InitializeCollections ? new List<EquipmentDetection>() : null;
         private BodyPart _name;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if EquipmentDetections property is set
         internal bool IsSetEquipmentDetections()
         {
-            return this._equipmentDetections != null && this._equipmentDetections.Count > 0; 
+            return this._equipmentDetections != null && (this._equipmentDetections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

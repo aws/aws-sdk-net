@@ -34,7 +34,7 @@ namespace Amazon.IVS.Model
     public partial class ListRecordingConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RecordingConfigurationSummary> _recordingConfigurations = new List<RecordingConfigurationSummary>();
+        private List<RecordingConfigurationSummary> _recordingConfigurations = AWSConfigs.InitializeCollections ? new List<RecordingConfigurationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.IVS.Model
         // Check to see if RecordingConfigurations property is set
         internal bool IsSetRecordingConfigurations()
         {
-            return this._recordingConfigurations != null && this._recordingConfigurations.Count > 0; 
+            return this._recordingConfigurations != null && (this._recordingConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

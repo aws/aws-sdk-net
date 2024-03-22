@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ListThingRegistrationTasksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _taskIds = new List<string>();
+        private List<string> _taskIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.IoT.Model
         // Check to see if TaskIds property is set
         internal bool IsSetTaskIds()
         {
-            return this._taskIds != null && this._taskIds.Count > 0; 
+            return this._taskIds != null && (this._taskIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

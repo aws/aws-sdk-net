@@ -33,7 +33,7 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class ListCallAnalyticsJobsResponse : AmazonWebServiceResponse
     {
-        private List<CallAnalyticsJobSummary> _callAnalyticsJobSummaries = new List<CallAnalyticsJobSummary>();
+        private List<CallAnalyticsJobSummary> _callAnalyticsJobSummaries = AWSConfigs.InitializeCollections ? new List<CallAnalyticsJobSummary>() : null;
         private string _nextToken;
         private CallAnalyticsJobStatus _status;
 
@@ -52,7 +52,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if CallAnalyticsJobSummaries property is set
         internal bool IsSetCallAnalyticsJobSummaries()
         {
-            return this._callAnalyticsJobSummaries != null && this._callAnalyticsJobSummaries.Count > 0; 
+            return this._callAnalyticsJobSummaries != null && (this._callAnalyticsJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

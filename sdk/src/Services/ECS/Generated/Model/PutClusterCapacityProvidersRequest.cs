@@ -54,9 +54,9 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class PutClusterCapacityProvidersRequest : AmazonECSRequest
     {
-        private List<string> _capacityProviders = new List<string>();
+        private List<string> _capacityProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _cluster;
-        private List<CapacityProviderStrategyItem> _defaultCapacityProviderStrategy = new List<CapacityProviderStrategyItem>();
+        private List<CapacityProviderStrategyItem> _defaultCapacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<CapacityProviderStrategyItem>() : null;
 
         /// <summary>
         /// Gets and sets the property CapacityProviders. 
@@ -86,7 +86,7 @@ namespace Amazon.ECS.Model
         // Check to see if CapacityProviders property is set
         internal bool IsSetCapacityProviders()
         {
-            return this._capacityProviders != null && this._capacityProviders.Count > 0; 
+            return this._capacityProviders != null && (this._capacityProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.ECS.Model
         // Check to see if DefaultCapacityProviderStrategy property is set
         internal bool IsSetDefaultCapacityProviderStrategy()
         {
-            return this._defaultCapacityProviderStrategy != null && this._defaultCapacityProviderStrategy.Count > 0; 
+            return this._defaultCapacityProviderStrategy != null && (this._defaultCapacityProviderStrategy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

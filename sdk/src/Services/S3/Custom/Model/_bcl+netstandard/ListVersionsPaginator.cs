@@ -41,13 +41,13 @@ namespace Amazon.S3.Model
         /// Enumerable containing all of the Versions
         /// </summary>
         public IPaginatedEnumerable<S3ObjectVersion> Versions => 
-            new PaginatedResultKeyResponse<ListVersionsResponse, S3ObjectVersion>(this, (i) => i.Versions);
+            new PaginatedResultKeyResponse<ListVersionsResponse, S3ObjectVersion>(this, (i) => i.Versions ?? new List<S3ObjectVersion>());
 
         /// <summary>
         /// Enumerable containing all of the CommonPrefixes
         /// </summary>
         public IPaginatedEnumerable<string> CommonPrefixes => 
-            new PaginatedResultKeyResponse<ListVersionsResponse, string>(this, (i) => i.CommonPrefixes);
+            new PaginatedResultKeyResponse<ListVersionsResponse, string>(this, (i) => i.CommonPrefixes ?? new List<string>());
 
         internal ListVersionsPaginator(IAmazonS3 client, ListVersionsRequest request)
         {

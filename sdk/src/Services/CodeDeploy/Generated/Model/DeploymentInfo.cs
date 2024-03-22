@@ -45,7 +45,7 @@ namespace Amazon.CodeDeploy.Model
         private string _deploymentGroupName;
         private string _deploymentId;
         private DeploymentOverview _deploymentOverview;
-        private List<string> _deploymentStatusMessages = new List<string>();
+        private List<string> _deploymentStatusMessages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DeploymentStyle _deploymentStyle;
         private string _description;
         private ErrorInformation _errorInformation;
@@ -318,7 +318,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if DeploymentStatusMessages property is set
         internal bool IsSetDeploymentStatusMessages()
         {
-            return this._deploymentStatusMessages != null && this._deploymentStatusMessages.Count > 0; 
+            return this._deploymentStatusMessages != null && (this._deploymentStatusMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

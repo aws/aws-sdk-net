@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the ReferenceStores
         /// </summary>
         public IPaginatedEnumerable<ReferenceStoreDetail> ReferenceStores => 
-            new PaginatedResultKeyResponse<ListReferenceStoresResponse, ReferenceStoreDetail>(this, (i) => i.ReferenceStores);
+            new PaginatedResultKeyResponse<ListReferenceStoresResponse, ReferenceStoreDetail>(this, (i) => i.ReferenceStores ?? new List<ReferenceStoreDetail>());
 
         internal ListReferenceStoresPaginator(IAmazonOmics client, ListReferenceStoresRequest request)
         {

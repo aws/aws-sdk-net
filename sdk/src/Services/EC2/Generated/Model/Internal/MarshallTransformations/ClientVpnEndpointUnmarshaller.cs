@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("associatedTargetNetwork/item", targetDepth))
                     {
                         var unmarshaller = AssociatedTargetNetworkUnmarshaller.Instance;
+                        if (unmarshalledObject.AssociatedTargetNetworks == null)
+                        {
+                            unmarshalledObject.AssociatedTargetNetworks = new List<AssociatedTargetNetwork>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AssociatedTargetNetworks.Add(item);
                         continue;
@@ -64,6 +68,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("authenticationOptions/item", targetDepth))
                     {
                         var unmarshaller = ClientVpnAuthenticationUnmarshaller.Instance;
+                        if (unmarshalledObject.AuthenticationOptions == null)
+                        {
+                            unmarshalledObject.AuthenticationOptions = new List<ClientVpnAuthentication>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AuthenticationOptions.Add(item);
                         continue;
@@ -125,6 +133,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("dnsServer/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.DnsServers == null)
+                        {
+                            unmarshalledObject.DnsServers = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DnsServers.Add(item);
                         continue;
@@ -132,6 +144,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("securityGroupIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SecurityGroupIds == null)
+                        {
+                            unmarshalledObject.SecurityGroupIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SecurityGroupIds.Add(item);
                         continue;
@@ -169,6 +185,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

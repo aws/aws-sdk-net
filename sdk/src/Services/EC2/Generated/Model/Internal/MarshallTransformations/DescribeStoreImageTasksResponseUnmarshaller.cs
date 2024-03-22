@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("storeImageTaskResultSet/item", targetDepth))
                     {
                         var unmarshaller = StoreImageTaskResultUnmarshaller.Instance;
+                        if (response.StoreImageTaskResults == null)
+                        {
+                            response.StoreImageTaskResults = new List<StoreImageTaskResult>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.StoreImageTaskResults.Add(item);
                         continue;

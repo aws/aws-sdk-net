@@ -41,9 +41,9 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class ResponseInspectionHeader
     {
-        private List<string> _failureValues = new List<string>();
+        private List<string> _failureValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private List<string> _successValues = new List<string>();
+        private List<string> _successValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FailureValues. 
@@ -69,7 +69,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if FailureValues property is set
         internal bool IsSetFailureValues()
         {
-            return this._failureValues != null && this._failureValues.Count > 0; 
+            return this._failureValues != null && (this._failureValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if SuccessValues property is set
         internal bool IsSetSuccessValues()
         {
-            return this._successValues != null && this._successValues.Count > 0; 
+            return this._successValues != null && (this._successValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

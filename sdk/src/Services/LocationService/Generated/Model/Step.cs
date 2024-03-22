@@ -36,9 +36,9 @@ namespace Amazon.LocationService.Model
     {
         private double? _distance;
         private double? _durationSeconds;
-        private List<double> _endPosition = new List<double>();
+        private List<double> _endPosition = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private int? _geometryOffset;
-        private List<double> _startPosition = new List<double>();
+        private List<double> _startPosition = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property Distance. 
@@ -97,7 +97,7 @@ namespace Amazon.LocationService.Model
         // Check to see if EndPosition property is set
         internal bool IsSetEndPosition()
         {
-            return this._endPosition != null && this._endPosition.Count > 0; 
+            return this._endPosition != null && (this._endPosition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.LocationService.Model
         // Check to see if StartPosition property is set
         internal bool IsSetStartPosition()
         {
-            return this._startPosition != null && this._startPosition.Count > 0; 
+            return this._startPosition != null && (this._startPosition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

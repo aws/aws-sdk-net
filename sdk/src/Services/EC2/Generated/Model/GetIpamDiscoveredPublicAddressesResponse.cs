@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetIpamDiscoveredPublicAddressesResponse : AmazonWebServiceResponse
     {
-        private List<IpamDiscoveredPublicAddress> _ipamDiscoveredPublicAddresses = new List<IpamDiscoveredPublicAddress>();
+        private List<IpamDiscoveredPublicAddress> _ipamDiscoveredPublicAddresses = AWSConfigs.InitializeCollections ? new List<IpamDiscoveredPublicAddress>() : null;
         private string _nextToken;
         private DateTime? _oldestSampleTime;
 
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if IpamDiscoveredPublicAddresses property is set
         internal bool IsSetIpamDiscoveredPublicAddresses()
         {
-            return this._ipamDiscoveredPublicAddresses != null && this._ipamDiscoveredPublicAddresses.Count > 0; 
+            return this._ipamDiscoveredPublicAddresses != null && (this._ipamDiscoveredPublicAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -73,6 +73,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HostNetwork.Value);
             }
 
+            if(requestObject.IsSetInitContainers())
+            {
+                context.Writer.WritePropertyName("initContainers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInitContainersListValue in requestObject.InitContainers)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EksContainerMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInitContainersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetMetadata())
             {
                 context.Writer.WritePropertyName("metadata");
@@ -88,6 +104,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("serviceAccountName");
                 context.Writer.Write(requestObject.ServiceAccountName);
+            }
+
+            if(requestObject.IsSetShareProcessNamespace())
+            {
+                context.Writer.WritePropertyName("shareProcessNamespace");
+                context.Writer.Write(requestObject.ShareProcessNamespace.Value);
             }
 
             if(requestObject.IsSetVolumes())

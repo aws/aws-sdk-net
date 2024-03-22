@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model
     public partial class ListSharedProjectsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _projects = new List<string>();
+        private List<string> _projects = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -76,7 +76,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Projects property is set
         internal bool IsSetProjects()
         {
-            return this._projects != null && this._projects.Count > 0; 
+            return this._projects != null && (this._projects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

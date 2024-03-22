@@ -33,7 +33,7 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class EnhancedMetrics
     {
-        private List<string> _shardLevelMetrics = new List<string>();
+        private List<string> _shardLevelMetrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ShardLevelMetrics. 
@@ -94,7 +94,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if ShardLevelMetrics property is set
         internal bool IsSetShardLevelMetrics()
         {
-            return this._shardLevelMetrics != null && this._shardLevelMetrics.Count > 0; 
+            return this._shardLevelMetrics != null && (this._shardLevelMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

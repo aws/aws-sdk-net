@@ -35,7 +35,7 @@ namespace Amazon.MachineLearning.Model
     public partial class DescribeBatchPredictionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<BatchPrediction> _results = new List<BatchPrediction>();
+        private List<BatchPrediction> _results = AWSConfigs.InitializeCollections ? new List<BatchPrediction>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.MachineLearning.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

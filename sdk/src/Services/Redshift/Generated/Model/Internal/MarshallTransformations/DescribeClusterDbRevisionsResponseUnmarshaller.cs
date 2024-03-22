@@ -84,6 +84,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ClusterDbRevisions/ClusterDbRevision", targetDepth))
                     {
                         var unmarshaller = ClusterDbRevisionUnmarshaller.Instance;
+                        if (response.ClusterDbRevisions == null)
+                        {
+                            response.ClusterDbRevisions = new List<ClusterDbRevision>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ClusterDbRevisions.Add(item);
                         continue;

@@ -34,12 +34,12 @@ namespace Amazon.QuickSight.Model
     public partial class SemanticType
     {
         private string _falseyCellValue;
-        private List<string> _falseyCellValueSynonyms = new List<string>();
+        private List<string> _falseyCellValueSynonyms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subTypeName;
         private string _truthyCellValue;
-        private List<string> _truthyCellValueSynonyms = new List<string>();
+        private List<string> _truthyCellValueSynonyms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _typeName;
-        private Dictionary<string, string> _typeParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _typeParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property FalseyCellValue. 
@@ -75,7 +75,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FalseyCellValueSynonyms property is set
         internal bool IsSetFalseyCellValueSynonyms()
         {
-            return this._falseyCellValueSynonyms != null && this._falseyCellValueSynonyms.Count > 0; 
+            return this._falseyCellValueSynonyms != null && (this._falseyCellValueSynonyms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TruthyCellValueSynonyms property is set
         internal bool IsSetTruthyCellValueSynonyms()
         {
-            return this._truthyCellValueSynonyms != null && this._truthyCellValueSynonyms.Count > 0; 
+            return this._truthyCellValueSynonyms != null && (this._truthyCellValueSynonyms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TypeParameters property is set
         internal bool IsSetTypeParameters()
         {
-            return this._typeParameters != null && this._typeParameters.Count > 0; 
+            return this._typeParameters != null && (this._typeParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

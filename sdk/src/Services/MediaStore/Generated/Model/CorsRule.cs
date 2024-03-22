@@ -34,10 +34,10 @@ namespace Amazon.MediaStore.Model
     /// </summary>
     public partial class CorsRule
     {
-        private List<string> _allowedHeaders = new List<string>();
-        private List<string> _allowedMethods = new List<string>();
-        private List<string> _allowedOrigins = new List<string>();
-        private List<string> _exposeHeaders = new List<string>();
+        private List<string> _allowedHeaders = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allowedMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allowedOrigins = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _exposeHeaders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxAgeSeconds;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.MediaStore.Model
         // Check to see if AllowedHeaders property is set
         internal bool IsSetAllowedHeaders()
         {
-            return this._allowedHeaders != null && this._allowedHeaders.Count > 0; 
+            return this._allowedHeaders != null && (this._allowedHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.MediaStore.Model
         // Check to see if AllowedMethods property is set
         internal bool IsSetAllowedMethods()
         {
-            return this._allowedMethods != null && this._allowedMethods.Count > 0; 
+            return this._allowedMethods != null && (this._allowedMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.MediaStore.Model
         // Check to see if AllowedOrigins property is set
         internal bool IsSetAllowedOrigins()
         {
-            return this._allowedOrigins != null && this._allowedOrigins.Count > 0; 
+            return this._allowedOrigins != null && (this._allowedOrigins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.MediaStore.Model
         // Check to see if ExposeHeaders property is set
         internal bool IsSetExposeHeaders()
         {
-            return this._exposeHeaders != null && this._exposeHeaders.Count > 0; 
+            return this._exposeHeaders != null && (this._exposeHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

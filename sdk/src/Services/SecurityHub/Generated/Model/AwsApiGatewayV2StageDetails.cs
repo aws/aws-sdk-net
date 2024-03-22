@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         private string _lastUpdatedDate;
         private AwsApiGatewayV2RouteSettings _routeSettings;
         private string _stageName;
-        private Dictionary<string, string> _stageVariables = new Dictionary<string, string>();
+        private Dictionary<string, string> _stageVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessLogSettings. 
@@ -313,7 +313,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StageVariables property is set
         internal bool IsSetStageVariables()
         {
-            return this._stageVariables != null && this._stageVariables.Count > 0; 
+            return this._stageVariables != null && (this._stageVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

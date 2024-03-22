@@ -57,7 +57,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class DescribeTagsRequest : AmazonApplicationDiscoveryServiceRequest
     {
-        private List<TagFilter> _filters = new List<TagFilter>();
+        private List<TagFilter> _filters = AWSConfigs.InitializeCollections ? new List<TagFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -78,7 +78,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

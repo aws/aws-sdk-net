@@ -34,7 +34,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ListResourceScanResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScannedResource> _resources = new List<ScannedResource>();
+        private List<ScannedResource> _resources = AWSConfigs.InitializeCollections ? new List<ScannedResource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

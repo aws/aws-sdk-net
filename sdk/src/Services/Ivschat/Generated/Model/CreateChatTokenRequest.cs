@@ -54,8 +54,8 @@ namespace Amazon.Ivschat.Model
     /// </summary>
     public partial class CreateChatTokenRequest : AmazonIvschatRequest
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
-        private List<string> _capabilities = new List<string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roomIdentifier;
         private int? _sessionDurationInMinutes;
         private string _userId;
@@ -78,7 +78,7 @@ namespace Amazon.Ivschat.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.Ivschat.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

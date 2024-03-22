@@ -51,6 +51,12 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Description);
             }
 
+            if(requestObject.IsSetDynamic())
+            {
+                context.Writer.WritePropertyName("Dynamic");
+                context.Writer.Write(requestObject.Dynamic.Value);
+            }
+
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("Required");

@@ -37,10 +37,10 @@ namespace Amazon.NimbleStudio.Model
         private string _clientToken;
         private string _description;
         private string _launchProfileId;
-        private List<string> _launchProfileProtocolVersions = new List<string>();
+        private List<string> _launchProfileProtocolVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private StreamConfigurationCreate _streamConfiguration;
-        private List<string> _studioComponentIds = new List<string>();
+        private List<string> _studioComponentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _studioId;
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if LaunchProfileProtocolVersions property is set
         internal bool IsSetLaunchProfileProtocolVersions()
         {
-            return this._launchProfileProtocolVersions != null && this._launchProfileProtocolVersions.Count > 0; 
+            return this._launchProfileProtocolVersions != null && (this._launchProfileProtocolVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if StudioComponentIds property is set
         internal bool IsSetStudioComponentIds()
         {
-            return this._studioComponentIds != null && this._studioComponentIds.Count > 0; 
+            return this._studioComponentIds != null && (this._studioComponentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

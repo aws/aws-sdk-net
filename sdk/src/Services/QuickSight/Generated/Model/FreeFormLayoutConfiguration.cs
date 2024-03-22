@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class FreeFormLayoutConfiguration
     {
         private FreeFormLayoutCanvasSizeOptions _canvasSizeOptions;
-        private List<FreeFormLayoutElement> _elements = new List<FreeFormLayoutElement>();
+        private List<FreeFormLayoutElement> _elements = AWSConfigs.InitializeCollections ? new List<FreeFormLayoutElement>() : null;
 
         /// <summary>
         /// Gets and sets the property CanvasSizeOptions.
@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Elements property is set
         internal bool IsSetElements()
         {
-            return this._elements != null && this._elements.Count > 0; 
+            return this._elements != null && (this._elements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

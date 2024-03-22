@@ -38,7 +38,33 @@ namespace Amazon.DocDBElastic
     /// <summary>
     /// <para>Implementation for accessing DocDBElastic</para>
     ///
-    /// The new Amazon Elastic DocumentDB service endpoint.
+    /// Amazon DocumentDB elastic clusters 
+    /// <para>
+    /// Amazon DocumentDB elastic-clusters support workloads with millions of reads/writes
+    /// per second and petabytes of storage capacity. Amazon DocumentDB elastic clusters also
+    /// simplify how developers interact with Amazon DocumentDB elastic-clusters by eliminating
+    /// the need to choose, manage or upgrade instances.
+    /// 
+    ///  
+    /// <para>
+    /// Amazon DocumentDB elastic-clusters were created to:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// provide a solution for customers looking for a database that provides virtually limitless
+    /// scale with rich query capabilities and MongoDB API compatibility.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// give customers higher connection limits, and to reduce downtime from patching.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// continue investing in a cloud-native, elastic, and class leading architecture for
+    /// JSON workloads.
+    /// </para>
+    ///  </li> </ul>
+    /// </para>
     /// </summary>
     public partial class AmazonDocDBElasticClient : AmazonServiceClient, IAmazonDocDBElastic
     {
@@ -263,11 +289,94 @@ namespace Amazon.DocDBElastic
         #endregion
 
 
+        #region  CopyClusterSnapshot
+
+
+        /// <summary>
+        /// Copies a snapshot of an elastic cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyClusterSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the CopyClusterSnapshot service method, as returned by DocDBElastic.</returns>
+        /// <exception cref="Amazon.DocDBElastic.Model.AccessDeniedException">
+        /// An exception that occurs when there are not sufficient permissions to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ConflictException">
+        /// There was an access conflict.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.InternalServerException">
+        /// There was an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ResourceNotFoundException">
+        /// The specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ServiceQuotaExceededException">
+        /// The service quota for the action was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ThrottlingException">
+        /// ThrottlingException will be thrown when request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ValidationException">
+        /// A structure defining a validation exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/CopyClusterSnapshot">REST API Reference for CopyClusterSnapshot Operation</seealso>
+        public virtual CopyClusterSnapshotResponse CopyClusterSnapshot(CopyClusterSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyClusterSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CopyClusterSnapshotResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Copies a snapshot of an elastic cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyClusterSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CopyClusterSnapshot service method, as returned by DocDBElastic.</returns>
+        /// <exception cref="Amazon.DocDBElastic.Model.AccessDeniedException">
+        /// An exception that occurs when there are not sufficient permissions to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ConflictException">
+        /// There was an access conflict.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.InternalServerException">
+        /// There was an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ResourceNotFoundException">
+        /// The specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ServiceQuotaExceededException">
+        /// The service quota for the action was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ThrottlingException">
+        /// ThrottlingException will be thrown when request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ValidationException">
+        /// A structure defining a validation exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/CopyClusterSnapshot">REST API Reference for CopyClusterSnapshot Operation</seealso>
+        public virtual Task<CopyClusterSnapshotResponse> CopyClusterSnapshotAsync(CopyClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyClusterSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyClusterSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CopyClusterSnapshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCluster
 
 
         /// <summary>
-        /// Creates a new Elastic DocumentDB cluster and returns its Cluster structure.
+        /// Creates a new Amazon DocumentDB elastic cluster and returns its cluster structure.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// 
@@ -302,7 +411,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Creates a new Elastic DocumentDB cluster and returns its Cluster structure.
+        /// Creates a new Amazon DocumentDB elastic cluster and returns its cluster structure.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// <param name="cancellationToken">
@@ -344,7 +453,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Creates a snapshot of a cluster.
+        /// Creates a snapshot of an elastic cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterSnapshot service method.</param>
         /// 
@@ -382,7 +491,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Creates a snapshot of a cluster.
+        /// Creates a snapshot of an elastic cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateClusterSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -427,7 +536,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Delete a Elastic DocumentDB cluster.
+        /// Delete an elastic cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
         /// 
@@ -462,7 +571,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Delete a Elastic DocumentDB cluster.
+        /// Delete an elastic cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
         /// <param name="cancellationToken">
@@ -504,7 +613,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Delete a Elastic DocumentDB snapshot.
+        /// Delete an elastic cluster snapshot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSnapshot service method.</param>
         /// 
@@ -539,7 +648,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Delete a Elastic DocumentDB snapshot.
+        /// Delete an elastic cluster snapshot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -581,7 +690,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Returns information about a specific Elastic DocumentDB cluster.
+        /// Returns information about a specific elastic cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCluster service method.</param>
         /// 
@@ -613,7 +722,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Returns information about a specific Elastic DocumentDB cluster.
+        /// Returns information about a specific elastic cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCluster service method.</param>
         /// <param name="cancellationToken">
@@ -652,7 +761,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Returns information about a specific Elastic DocumentDB snapshot
+        /// Returns information about a specific elastic cluster snapshot
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClusterSnapshot service method.</param>
         /// 
@@ -684,7 +793,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Returns information about a specific Elastic DocumentDB snapshot
+        /// Returns information about a specific elastic cluster snapshot
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClusterSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -723,7 +832,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Returns information about provisioned Elastic DocumentDB clusters.
+        /// Returns information about provisioned Amazon DocumentDB elastic clusters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
@@ -752,7 +861,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Returns information about provisioned Elastic DocumentDB clusters.
+        /// Returns information about provisioned Amazon DocumentDB elastic clusters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// <param name="cancellationToken">
@@ -788,7 +897,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Returns information about Elastic DocumentDB snapshots for a specified cluster.
+        /// Returns information about snapshots for a specified elastic cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClusterSnapshots service method.</param>
         /// 
@@ -817,7 +926,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Returns information about Elastic DocumentDB snapshots for a specified cluster.
+        /// Returns information about snapshots for a specified elastic cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClusterSnapshots service method.</param>
         /// <param name="cancellationToken">
@@ -853,7 +962,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Lists all tags on a Elastic DocumentDB resource
+        /// Lists all tags on a elastic cluster resource
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -882,7 +991,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Lists all tags on a Elastic DocumentDB resource
+        /// Lists all tags on a elastic cluster resource
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -918,7 +1027,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Restores a Elastic DocumentDB cluster from a snapshot.
+        /// Restores an elastic cluster from a snapshot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreClusterFromSnapshot service method.</param>
         /// 
@@ -956,7 +1065,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Restores a Elastic DocumentDB cluster from a snapshot.
+        /// Restores an elastic cluster from a snapshot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreClusterFromSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -997,11 +1106,155 @@ namespace Amazon.DocDBElastic
 
         #endregion
         
+        #region  StartCluster
+
+
+        /// <summary>
+        /// Restarts the stopped elastic cluster that is specified by <c>clusterARN</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCluster service method.</param>
+        /// 
+        /// <returns>The response from the StartCluster service method, as returned by DocDBElastic.</returns>
+        /// <exception cref="Amazon.DocDBElastic.Model.AccessDeniedException">
+        /// An exception that occurs when there are not sufficient permissions to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.InternalServerException">
+        /// There was an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ResourceNotFoundException">
+        /// The specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ThrottlingException">
+        /// ThrottlingException will be thrown when request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ValidationException">
+        /// A structure defining a validation exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/StartCluster">REST API Reference for StartCluster Operation</seealso>
+        public virtual StartClusterResponse StartCluster(StartClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartClusterResponseUnmarshaller.Instance;
+
+            return Invoke<StartClusterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Restarts the stopped elastic cluster that is specified by <c>clusterARN</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCluster service method, as returned by DocDBElastic.</returns>
+        /// <exception cref="Amazon.DocDBElastic.Model.AccessDeniedException">
+        /// An exception that occurs when there are not sufficient permissions to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.InternalServerException">
+        /// There was an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ResourceNotFoundException">
+        /// The specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ThrottlingException">
+        /// ThrottlingException will be thrown when request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ValidationException">
+        /// A structure defining a validation exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/StartCluster">REST API Reference for StartCluster Operation</seealso>
+        public virtual Task<StartClusterResponse> StartClusterAsync(StartClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopCluster
+
+
+        /// <summary>
+        /// Stops the running elastic cluster that is specified by <c>clusterArn</c>. The elastic
+        /// cluster must be in the <i>available</i> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopCluster service method.</param>
+        /// 
+        /// <returns>The response from the StopCluster service method, as returned by DocDBElastic.</returns>
+        /// <exception cref="Amazon.DocDBElastic.Model.AccessDeniedException">
+        /// An exception that occurs when there are not sufficient permissions to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.InternalServerException">
+        /// There was an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ResourceNotFoundException">
+        /// The specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ThrottlingException">
+        /// ThrottlingException will be thrown when request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ValidationException">
+        /// A structure defining a validation exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/StopCluster">REST API Reference for StopCluster Operation</seealso>
+        public virtual StopClusterResponse StopCluster(StopClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopClusterResponseUnmarshaller.Instance;
+
+            return Invoke<StopClusterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops the running elastic cluster that is specified by <c>clusterArn</c>. The elastic
+        /// cluster must be in the <i>available</i> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopCluster service method, as returned by DocDBElastic.</returns>
+        /// <exception cref="Amazon.DocDBElastic.Model.AccessDeniedException">
+        /// An exception that occurs when there are not sufficient permissions to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.InternalServerException">
+        /// There was an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ResourceNotFoundException">
+        /// The specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ThrottlingException">
+        /// ThrottlingException will be thrown when request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ValidationException">
+        /// A structure defining a validation exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/StopCluster">REST API Reference for StopCluster Operation</seealso>
+        public virtual Task<StopClusterResponse> StopClusterAsync(StopClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
 
         /// <summary>
-        /// Adds metadata tags to a Elastic DocumentDB resource
+        /// Adds metadata tags to an elastic cluster resource
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1030,7 +1283,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Adds metadata tags to a Elastic DocumentDB resource
+        /// Adds metadata tags to an elastic cluster resource
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1066,7 +1319,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Removes metadata tags to a Elastic DocumentDB resource
+        /// Removes metadata tags from an elastic cluster resource
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1095,7 +1348,7 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Removes metadata tags to a Elastic DocumentDB resource
+        /// Removes metadata tags from an elastic cluster resource
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1131,8 +1384,8 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Modifies a Elastic DocumentDB cluster. This includes updating admin-username/password,
-        /// upgrading API version setting up a backup window and maintenance window
+        /// Modifies an elastic cluster. This includes updating admin-username/password, upgrading
+        /// the API version, and setting up a backup window and maintenance window
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
         /// 
@@ -1167,8 +1420,8 @@ namespace Amazon.DocDBElastic
 
 
         /// <summary>
-        /// Modifies a Elastic DocumentDB cluster. This includes updating admin-username/password,
-        /// upgrading API version setting up a backup window and maintenance window
+        /// Modifies an elastic cluster. This includes updating admin-username/password, upgrading
+        /// the API version, and setting up a backup window and maintenance window
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
         /// <param name="cancellationToken">

@@ -56,6 +56,28 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEcsProperties())
+            {
+                context.Writer.WritePropertyName("ecsProperties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EcsPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.EcsProperties, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetInstanceTypes())
+            {
+                context.Writer.WritePropertyName("instanceTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInstanceTypesListValue in requestObject.InstanceTypes)
+                {
+                        context.Writer.Write(requestObjectInstanceTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTargetNodes())
             {
                 context.Writer.WritePropertyName("targetNodes");

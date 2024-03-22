@@ -47,7 +47,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class DetachInstancesFromLoadBalancerRequest : AmazonLightsailRequest
     {
-        private List<string> _instanceNames = new List<string>();
+        private List<string> _instanceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _loadBalancerName;
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if InstanceNames property is set
         internal bool IsSetInstanceNames()
         {
-            return this._instanceNames != null && this._instanceNames.Count > 0; 
+            return this._instanceNames != null && (this._instanceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

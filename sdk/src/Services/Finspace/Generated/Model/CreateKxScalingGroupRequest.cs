@@ -39,7 +39,7 @@ namespace Amazon.Finspace.Model
         private string _environmentId;
         private string _hostType;
         private string _scalingGroupName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZoneId. 
@@ -47,7 +47,7 @@ namespace Amazon.Finspace.Model
         /// The identifier of the availability zones.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=8, Max=12)]
         public string AvailabilityZoneId
         {
             get { return this._availabilityZoneId; }
@@ -103,8 +103,43 @@ namespace Amazon.Finspace.Model
         /// Gets and sets the property HostType. 
         /// <para>
         ///  The memory and CPU capabilities of the scaling group host on which FinSpace Managed
-        /// kdb clusters will be placed. 
+        /// kdb clusters will be placed.
         /// </para>
+        ///  
+        /// <para>
+        /// You can add one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>kx.sg.4xlarge</c> – The host type with a configuration of 108 GiB memory and 16
+        /// vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kx.sg.8xlarge</c> – The host type with a configuration of 216 GiB memory and 32
+        /// vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kx.sg.16xlarge</c> – The host type with a configuration of 432 GiB memory and
+        /// 64 vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kx.sg.32xlarge</c> – The host type with a configuration of 864 GiB memory and
+        /// 128 vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kx.sg1.16xlarge</c> – The host type with a configuration of 1949 GiB memory and
+        /// 64 vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kx.sg1.24xlarge</c> – The host type with a configuration of 2948 GiB memory and
+        /// 96 vCPUs.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
         public string HostType
@@ -155,7 +190,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

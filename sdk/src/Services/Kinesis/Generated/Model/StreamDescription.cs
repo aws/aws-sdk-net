@@ -34,11 +34,11 @@ namespace Amazon.Kinesis.Model
     public partial class StreamDescription
     {
         private EncryptionType _encryptionType;
-        private List<EnhancedMetrics> _enhancedMonitoring = new List<EnhancedMetrics>();
+        private List<EnhancedMetrics> _enhancedMonitoring = AWSConfigs.InitializeCollections ? new List<EnhancedMetrics>() : null;
         private bool? _hasMoreShards;
         private string _keyId;
         private int? _retentionPeriodHours;
-        private List<Shard> _shards = new List<Shard>();
+        private List<Shard> _shards = AWSConfigs.InitializeCollections ? new List<Shard>() : null;
         private string _streamARN;
         private DateTime? _streamCreationTimestamp;
         private StreamModeDetails _streamModeDetails;
@@ -90,7 +90,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if EnhancedMonitoring property is set
         internal bool IsSetEnhancedMonitoring()
         {
-            return this._enhancedMonitoring != null && this._enhancedMonitoring.Count > 0; 
+            return this._enhancedMonitoring != null && (this._enhancedMonitoring.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if Shards property is set
         internal bool IsSetShards()
         {
-            return this._shards != null && this._shards.Count > 0; 
+            return this._shards != null && (this._shards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

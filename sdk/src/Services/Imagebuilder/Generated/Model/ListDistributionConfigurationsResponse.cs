@@ -33,7 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListDistributionConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<DistributionConfigurationSummary> _distributionConfigurationSummaryList = new List<DistributionConfigurationSummary>();
+        private List<DistributionConfigurationSummary> _distributionConfigurationSummaryList = AWSConfigs.InitializeCollections ? new List<DistributionConfigurationSummary>() : null;
         private string _nextToken;
         private string _requestId;
 
@@ -52,7 +52,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if DistributionConfigurationSummaryList property is set
         internal bool IsSetDistributionConfigurationSummaryList()
         {
-            return this._distributionConfigurationSummaryList != null && this._distributionConfigurationSummaryList.Count > 0; 
+            return this._distributionConfigurationSummaryList != null && (this._distributionConfigurationSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

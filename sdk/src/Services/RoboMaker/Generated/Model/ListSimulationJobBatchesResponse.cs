@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model
     public partial class ListSimulationJobBatchesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SimulationJobBatchSummary> _simulationJobBatchSummaries = new List<SimulationJobBatchSummary>();
+        private List<SimulationJobBatchSummary> _simulationJobBatchSummaries = AWSConfigs.InitializeCollections ? new List<SimulationJobBatchSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if SimulationJobBatchSummaries property is set
         internal bool IsSetSimulationJobBatchSummaries()
         {
-            return this._simulationJobBatchSummaries != null && this._simulationJobBatchSummaries.Count > 0; 
+            return this._simulationJobBatchSummaries != null && (this._simulationJobBatchSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

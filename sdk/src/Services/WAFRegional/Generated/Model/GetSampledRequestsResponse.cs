@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model
     public partial class GetSampledRequestsResponse : AmazonWebServiceResponse
     {
         private long? _populationSize;
-        private List<SampledHTTPRequest> _sampledRequests = new List<SampledHTTPRequest>();
+        private List<SampledHTTPRequest> _sampledRequests = AWSConfigs.InitializeCollections ? new List<SampledHTTPRequest>() : null;
         private TimeWindow _timeWindow;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if SampledRequests property is set
         internal bool IsSetSampledRequests()
         {
-            return this._sampledRequests != null && this._sampledRequests.Count > 0; 
+            return this._sampledRequests != null && (this._sampledRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

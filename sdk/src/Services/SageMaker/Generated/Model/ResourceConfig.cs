@@ -35,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ResourceConfig
     {
         private int? _instanceCount;
-        private List<InstanceGroup> _instanceGroups = new List<InstanceGroup>();
+        private List<InstanceGroup> _instanceGroups = AWSConfigs.InitializeCollections ? new List<InstanceGroup>() : null;
         private TrainingInstanceType _instanceType;
         private int? _keepAlivePeriodInSeconds;
         private string _volumeKmsKeyId;
@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
-            return this._instanceGroups != null && this._instanceGroups.Count > 0; 
+            return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// Enumerable containing all of the Destinations
         /// </summary>
         public IPaginatedEnumerable<MetricDestinationSummary> Destinations => 
-            new PaginatedResultKeyResponse<ListRumMetricsDestinationsResponse, MetricDestinationSummary>(this, (i) => i.Destinations);
+            new PaginatedResultKeyResponse<ListRumMetricsDestinationsResponse, MetricDestinationSummary>(this, (i) => i.Destinations ?? new List<MetricDestinationSummary>());
 
         internal ListRumMetricsDestinationsPaginator(IAmazonCloudWatchRUM client, ListRumMetricsDestinationsRequest request)
         {

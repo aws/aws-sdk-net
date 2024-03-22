@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails
     {
-        private List<string> _command = new List<string>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _interval;
         private int? _retries;
         private int? _startPeriod;
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model
     public partial class ListScriptsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Script> _scripts = new List<Script>();
+        private List<Script> _scripts = AWSConfigs.InitializeCollections ? new List<Script>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Scripts property is set
         internal bool IsSetScripts()
         {
-            return this._scripts != null && this._scripts.Count > 0; 
+            return this._scripts != null && (this._scripts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

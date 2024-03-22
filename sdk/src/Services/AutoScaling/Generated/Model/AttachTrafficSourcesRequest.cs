@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
     public partial class AttachTrafficSourcesRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<TrafficSourceIdentifier> _trafficSources = new List<TrafficSourceIdentifier>();
+        private List<TrafficSourceIdentifier> _trafficSources = AWSConfigs.InitializeCollections ? new List<TrafficSourceIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -110,7 +110,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TrafficSources property is set
         internal bool IsSetTrafficSources()
         {
-            return this._trafficSources != null && this._trafficSources.Count > 0; 
+            return this._trafficSources != null && (this._trafficSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

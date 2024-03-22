@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class NamedEntityDefinitionMetric
     {
         private NamedEntityAggType _aggregation;
-        private Dictionary<string, string> _aggregationFunctionParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _aggregationFunctionParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Aggregation. 
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AggregationFunctionParameters property is set
         internal bool IsSetAggregationFunctionParameters()
         {
-            return this._aggregationFunctionParameters != null && this._aggregationFunctionParameters.Count > 0; 
+            return this._aggregationFunctionParameters != null && (this._aggregationFunctionParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

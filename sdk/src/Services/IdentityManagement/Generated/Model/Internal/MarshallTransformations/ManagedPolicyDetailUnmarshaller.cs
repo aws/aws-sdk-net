@@ -117,6 +117,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PolicyVersionList/member", targetDepth))
                     {
                         var unmarshaller = PolicyVersionUnmarshaller.Instance;
+                        if (unmarshalledObject.PolicyVersionList == null)
+                        {
+                            unmarshalledObject.PolicyVersionList = new List<PolicyVersion>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PolicyVersionList.Add(item);
                         continue;

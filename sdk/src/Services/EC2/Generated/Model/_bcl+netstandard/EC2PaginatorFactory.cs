@@ -460,6 +460,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeMacHosts operation
+        ///</summary>
+        public IDescribeMacHostsPaginator DescribeMacHosts(DescribeMacHostsRequest request) 
+        {
+            return new DescribeMacHostsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeManagedPrefixLists operation
         ///</summary>
         public IDescribeManagedPrefixListsPaginator DescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request) 

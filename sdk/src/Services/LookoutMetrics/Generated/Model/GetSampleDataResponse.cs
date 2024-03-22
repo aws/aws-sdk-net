@@ -33,8 +33,8 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class GetSampleDataResponse : AmazonWebServiceResponse
     {
-        private List<string> _headerValues = new List<string>();
-        private List<List<string>> _sampleRows = new List<List<string>>();
+        private List<string> _headerValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<List<string>> _sampleRows = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property HeaderValues. 
@@ -51,7 +51,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if HeaderValues property is set
         internal bool IsSetHeaderValues()
         {
-            return this._headerValues != null && this._headerValues.Count > 0; 
+            return this._headerValues != null && (this._headerValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if SampleRows property is set
         internal bool IsSetSampleRows()
         {
-            return this._sampleRows != null && this._sampleRows.Count > 0; 
+            return this._sampleRows != null && (this._sampleRows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

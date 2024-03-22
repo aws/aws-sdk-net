@@ -35,7 +35,7 @@ namespace Amazon.ForecastService.Model
     public partial class EvaluationResult
     {
         private string _algorithmArn;
-        private List<WindowSummary> _testWindows = new List<WindowSummary>();
+        private List<WindowSummary> _testWindows = AWSConfigs.InitializeCollections ? new List<WindowSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property AlgorithmArn. 
@@ -73,7 +73,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if TestWindows property is set
         internal bool IsSetTestWindows()
         {
-            return this._testWindows != null && this._testWindows.Count > 0; 
+            return this._testWindows != null && (this._testWindows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

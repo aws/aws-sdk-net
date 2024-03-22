@@ -33,7 +33,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class ListDataSourcesResponse : AmazonWebServiceResponse
     {
-        private List<DataSourceDetails> _dataSources = new List<DataSourceDetails>();
+        private List<DataSourceDetails> _dataSources = AWSConfigs.InitializeCollections ? new List<DataSourceDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property DataSources. 
@@ -50,7 +50,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if DataSources property is set
         internal bool IsSetDataSources()
         {
-            return this._dataSources != null && this._dataSources.Count > 0; 
+            return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

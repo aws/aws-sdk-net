@@ -45,7 +45,7 @@ namespace Amazon.SSMIncidents.Model
         /// Enumerable containing all of the ReplicationSetArns
         /// </summary>
         public IPaginatedEnumerable<string> ReplicationSetArns => 
-            new PaginatedResultKeyResponse<ListReplicationSetsResponse, string>(this, (i) => i.ReplicationSetArns);
+            new PaginatedResultKeyResponse<ListReplicationSetsResponse, string>(this, (i) => i.ReplicationSetArns ?? new List<string>());
 
         internal ListReplicationSetsPaginator(IAmazonSSMIncidents client, ListReplicationSetsRequest request)
         {

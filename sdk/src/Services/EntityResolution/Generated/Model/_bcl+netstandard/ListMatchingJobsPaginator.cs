@@ -45,7 +45,7 @@ namespace Amazon.EntityResolution.Model
         /// Enumerable containing all of the Jobs
         /// </summary>
         public IPaginatedEnumerable<JobSummary> Jobs => 
-            new PaginatedResultKeyResponse<ListMatchingJobsResponse, JobSummary>(this, (i) => i.Jobs);
+            new PaginatedResultKeyResponse<ListMatchingJobsResponse, JobSummary>(this, (i) => i.Jobs ?? new List<JobSummary>());
 
         internal ListMatchingJobsPaginator(IAmazonEntityResolution client, ListMatchingJobsRequest request)
         {

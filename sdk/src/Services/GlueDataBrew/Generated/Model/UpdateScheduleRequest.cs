@@ -35,7 +35,7 @@ namespace Amazon.GlueDataBrew.Model
     public partial class UpdateScheduleRequest : AmazonGlueDataBrewRequest
     {
         private string _cronExpression;
-        private List<string> _jobNames = new List<string>();
+        private List<string> _jobNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if JobNames property is set
         internal bool IsSetJobNames()
         {
-            return this._jobNames != null && this._jobNames.Count > 0; 
+            return this._jobNames != null && (this._jobNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

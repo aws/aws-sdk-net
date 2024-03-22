@@ -70,6 +70,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Enables or disables the IPv6 endpoint for the instance metadata service.
         /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>disabled</c> 
+        /// </para>
         /// </summary>
         public InstanceMetadataProtocolState HttpProtocolIpv6
         {

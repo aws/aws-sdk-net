@@ -36,7 +36,7 @@ namespace Amazon.SSMContacts.Model
     #endif
     public partial class ConflictException : AmazonSSMContactsException
     {
-        private List<DependentEntity> _dependentEntities = new List<DependentEntity>();
+        private List<DependentEntity> _dependentEntities = AWSConfigs.InitializeCollections ? new List<DependentEntity>() : null;
         private string _resourceId;
         private string _resourceType;
 
@@ -137,7 +137,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if DependentEntities property is set
         internal bool IsSetDependentEntities()
         {
-            return this._dependentEntities != null && this._dependentEntities.Count > 0; 
+            return this._dependentEntities != null && (this._dependentEntities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

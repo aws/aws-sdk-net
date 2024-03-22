@@ -34,7 +34,7 @@ namespace Amazon.ManagedGrafana.Model
     public partial class ListPermissionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PermissionEntry> _permissions = new List<PermissionEntry>();
+        private List<PermissionEntry> _permissions = AWSConfigs.InitializeCollections ? new List<PermissionEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

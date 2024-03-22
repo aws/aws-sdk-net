@@ -63,6 +63,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Errors/IntegrationError", targetDepth))
                     {
                         var unmarshaller = IntegrationErrorUnmarshaller.Instance;
+                        if (unmarshalledObject.Errors == null)
+                        {
+                            unmarshalledObject.Errors = new List<IntegrationError>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Errors.Add(item);
                         continue;

@@ -41,7 +41,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _error;
         private bool? _hasResultSet;
         private string _id;
-        private List<SqlParameter> _queryParameters = new List<SqlParameter>();
+        private List<SqlParameter> _queryParameters = AWSConfigs.InitializeCollections ? new List<SqlParameter>() : null;
         private string _queryString;
         private long? _redshiftPid;
         private long? _redshiftQueryId;
@@ -49,7 +49,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private long? _resultSize;
         private string _secretArn;
         private StatusString _status;
-        private List<SubStatementData> _subStatements = new List<SubStatementData>();
+        private List<SubStatementData> _subStatements = AWSConfigs.InitializeCollections ? new List<SubStatementData>() : null;
         private DateTime? _updatedAt;
         private string _workgroupName;
 
@@ -218,7 +218,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         // Check to see if QueryParameters property is set
         internal bool IsSetQueryParameters()
         {
-            return this._queryParameters != null && this._queryParameters.Count > 0; 
+            return this._queryParameters != null && (this._queryParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -398,7 +398,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         // Check to see if SubStatements property is set
         internal bool IsSetSubStatements()
         {
-            return this._subStatements != null && this._subStatements.Count > 0; 
+            return this._subStatements != null && (this._subStatements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

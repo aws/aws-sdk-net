@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the Nodegroups
         /// </summary>
         public IPaginatedEnumerable<string> Nodegroups => 
-            new PaginatedResultKeyResponse<ListNodegroupsResponse, string>(this, (i) => i.Nodegroups);
+            new PaginatedResultKeyResponse<ListNodegroupsResponse, string>(this, (i) => i.Nodegroups ?? new List<string>());
 
         internal ListNodegroupsPaginator(IAmazonEKS client, ListNodegroupsRequest request)
         {

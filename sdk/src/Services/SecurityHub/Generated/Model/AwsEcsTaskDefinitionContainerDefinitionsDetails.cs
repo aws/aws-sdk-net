@@ -33,44 +33,44 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEcsTaskDefinitionContainerDefinitionsDetails
     {
-        private List<string> _command = new List<string>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _cpu;
-        private List<AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails> _dependsOn = new List<AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails>();
+        private List<AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails> _dependsOn = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails>() : null;
         private bool? _disableNetworking;
-        private List<string> _dnsSearchDomains = new List<string>();
-        private List<string> _dnsServers = new List<string>();
-        private Dictionary<string, string> _dockerLabels = new Dictionary<string, string>();
-        private List<string> _dockerSecurityOptions = new List<string>();
-        private List<string> _entryPoint = new List<string>();
-        private List<AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails> _environment = new List<AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails>();
-        private List<AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails> _environmentFiles = new List<AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails>();
+        private List<string> _dnsSearchDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _dnsServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _dockerLabels = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _dockerSecurityOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _entryPoint = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails> _environment = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails>() : null;
+        private List<AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails> _environmentFiles = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails>() : null;
         private bool? _essential;
-        private List<AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails> _extraHosts = new List<AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails>();
+        private List<AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails> _extraHosts = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails>() : null;
         private AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails _firelensConfiguration;
         private AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails _healthCheck;
         private string _hostname;
         private string _image;
         private bool? _interactive;
-        private List<string> _links = new List<string>();
+        private List<string> _links = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails _linuxParameters;
         private AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails _logConfiguration;
         private int? _memory;
         private int? _memoryReservation;
-        private List<AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails> _mountPoints = new List<AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails>();
+        private List<AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails> _mountPoints = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails>() : null;
         private string _name;
-        private List<AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails> _portMappings = new List<AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>();
+        private List<AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails> _portMappings = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>() : null;
         private bool? _privileged;
         private bool? _pseudoTerminal;
         private bool? _readonlyRootFilesystem;
         private AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails _repositoryCredentials;
-        private List<AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails> _resourceRequirements = new List<AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails>();
-        private List<AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails> _secrets = new List<AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>();
+        private List<AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails> _resourceRequirements = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails>() : null;
+        private List<AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails> _secrets = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>() : null;
         private int? _startTimeout;
         private int? _stopTimeout;
-        private List<AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails> _systemControls = new List<AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails>();
-        private List<AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails> _ulimits = new List<AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>();
+        private List<AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails> _systemControls = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails>() : null;
+        private List<AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails> _ulimits = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>() : null;
         private string _user;
-        private List<AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails> _volumesFrom = new List<AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails>();
+        private List<AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails> _volumesFrom = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails>() : null;
         private string _workingDirectory;
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DependsOn property is set
         internal bool IsSetDependsOn()
         {
-            return this._dependsOn != null && this._dependsOn.Count > 0; 
+            return this._dependsOn != null && (this._dependsOn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DnsSearchDomains property is set
         internal bool IsSetDnsSearchDomains()
         {
-            return this._dnsSearchDomains != null && this._dnsSearchDomains.Count > 0; 
+            return this._dnsSearchDomains != null && (this._dnsSearchDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -178,7 +178,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DnsServers property is set
         internal bool IsSetDnsServers()
         {
-            return this._dnsServers != null && this._dnsServers.Count > 0; 
+            return this._dnsServers != null && (this._dnsServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DockerLabels property is set
         internal bool IsSetDockerLabels()
         {
-            return this._dockerLabels != null && this._dockerLabels.Count > 0; 
+            return this._dockerLabels != null && (this._dockerLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DockerSecurityOptions property is set
         internal bool IsSetDockerSecurityOptions()
         {
-            return this._dockerSecurityOptions != null && this._dockerSecurityOptions.Count > 0; 
+            return this._dockerSecurityOptions != null && (this._dockerSecurityOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if EntryPoint property is set
         internal bool IsSetEntryPoint()
         {
-            return this._entryPoint != null && this._entryPoint.Count > 0; 
+            return this._entryPoint != null && (this._entryPoint.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -251,7 +251,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +269,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if EnvironmentFiles property is set
         internal bool IsSetEnvironmentFiles()
         {
-            return this._environmentFiles != null && this._environmentFiles.Count > 0; 
+            return this._environmentFiles != null && (this._environmentFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -306,7 +306,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ExtraHosts property is set
         internal bool IsSetExtraHosts()
         {
-            return this._extraHosts != null && this._extraHosts.Count > 0; 
+            return this._extraHosts != null && (this._extraHosts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -418,7 +418,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Links property is set
         internal bool IsSetLinks()
         {
-            return this._links != null && this._links.Count > 0; 
+            return this._links != null && (this._links.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -512,7 +512,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if MountPoints property is set
         internal bool IsSetMountPoints()
         {
-            return this._mountPoints != null && this._mountPoints.Count > 0; 
+            return this._mountPoints != null && (this._mountPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -548,7 +548,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PortMappings property is set
         internal bool IsSetPortMappings()
         {
-            return this._portMappings != null && this._portMappings.Count > 0; 
+            return this._portMappings != null && (this._portMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -640,7 +640,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ResourceRequirements property is set
         internal bool IsSetResourceRequirements()
         {
-            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
+            return this._resourceRequirements != null && (this._resourceRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -658,7 +658,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Secrets property is set
         internal bool IsSetSecrets()
         {
-            return this._secrets != null && this._secrets.Count > 0; 
+            return this._secrets != null && (this._secrets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -714,7 +714,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SystemControls property is set
         internal bool IsSetSystemControls()
         {
-            return this._systemControls != null && this._systemControls.Count > 0; 
+            return this._systemControls != null && (this._systemControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -732,7 +732,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Ulimits property is set
         internal bool IsSetUlimits()
         {
-            return this._ulimits != null && this._ulimits.Count > 0; 
+            return this._ulimits != null && (this._ulimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -797,7 +797,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if VolumesFrom property is set
         internal bool IsSetVolumesFrom()
         {
-            return this._volumesFrom != null && this._volumesFrom.Count > 0; 
+            return this._volumesFrom != null && (this._volumesFrom.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

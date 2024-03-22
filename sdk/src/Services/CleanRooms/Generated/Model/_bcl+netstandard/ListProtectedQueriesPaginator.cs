@@ -45,7 +45,7 @@ namespace Amazon.CleanRooms.Model
         /// Enumerable containing all of the ProtectedQueries
         /// </summary>
         public IPaginatedEnumerable<ProtectedQuerySummary> ProtectedQueries => 
-            new PaginatedResultKeyResponse<ListProtectedQueriesResponse, ProtectedQuerySummary>(this, (i) => i.ProtectedQueries);
+            new PaginatedResultKeyResponse<ListProtectedQueriesResponse, ProtectedQuerySummary>(this, (i) => i.ProtectedQueries ?? new List<ProtectedQuerySummary>());
 
         internal ListProtectedQueriesPaginator(IAmazonCleanRooms client, ListProtectedQueriesRequest request)
         {

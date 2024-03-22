@@ -45,7 +45,7 @@ namespace Amazon.MediaConnect.Model
         /// Enumerable containing all of the Reservations
         /// </summary>
         public IPaginatedEnumerable<Reservation> Reservations => 
-            new PaginatedResultKeyResponse<ListReservationsResponse, Reservation>(this, (i) => i.Reservations);
+            new PaginatedResultKeyResponse<ListReservationsResponse, Reservation>(this, (i) => i.Reservations ?? new List<Reservation>());
 
         internal ListReservationsPaginator(IAmazonMediaConnect client, ListReservationsRequest request)
         {

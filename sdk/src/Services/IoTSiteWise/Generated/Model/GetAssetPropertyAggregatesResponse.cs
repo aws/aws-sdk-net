@@ -33,7 +33,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class GetAssetPropertyAggregatesResponse : AmazonWebServiceResponse
     {
-        private List<AggregatedValue> _aggregatedValues = new List<AggregatedValue>();
+        private List<AggregatedValue> _aggregatedValues = AWSConfigs.InitializeCollections ? new List<AggregatedValue>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AggregatedValues property is set
         internal bool IsSetAggregatedValues()
         {
-            return this._aggregatedValues != null && this._aggregatedValues.Count > 0; 
+            return this._aggregatedValues != null && (this._aggregatedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

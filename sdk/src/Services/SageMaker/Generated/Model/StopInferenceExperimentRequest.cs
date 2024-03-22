@@ -34,9 +34,9 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class StopInferenceExperimentRequest : AmazonSageMakerRequest
     {
-        private List<ModelVariantConfig> _desiredModelVariants = new List<ModelVariantConfig>();
+        private List<ModelVariantConfig> _desiredModelVariants = AWSConfigs.InitializeCollections ? new List<ModelVariantConfig>() : null;
         private InferenceExperimentStopDesiredState _desiredState;
-        private Dictionary<string, string> _modelVariantActions = new Dictionary<string, string>();
+        private Dictionary<string, string> _modelVariantActions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
         private string _reason;
 
@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if DesiredModelVariants property is set
         internal bool IsSetDesiredModelVariants()
         {
-            return this._desiredModelVariants != null && this._desiredModelVariants.Count > 0; 
+            return this._desiredModelVariants != null && (this._desiredModelVariants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelVariantActions property is set
         internal bool IsSetModelVariantActions()
         {
-            return this._modelVariantActions != null && this._modelVariantActions.Count > 0; 
+            return this._modelVariantActions != null && (this._modelVariantActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

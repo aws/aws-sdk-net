@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ListDatasetsResponse : AmazonWebServiceResponse
     {
-        private List<DatasetProperties> _datasetPropertiesList = new List<DatasetProperties>();
+        private List<DatasetProperties> _datasetPropertiesList = AWSConfigs.InitializeCollections ? new List<DatasetProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if DatasetPropertiesList property is set
         internal bool IsSetDatasetPropertiesList()
         {
-            return this._datasetPropertiesList != null && this._datasetPropertiesList.Count > 0; 
+            return this._datasetPropertiesList != null && (this._datasetPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

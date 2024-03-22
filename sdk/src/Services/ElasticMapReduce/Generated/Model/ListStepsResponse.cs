@@ -35,7 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class ListStepsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<StepSummary> _steps = new List<StepSummary>();
+        private List<StepSummary> _steps = AWSConfigs.InitializeCollections ? new List<StepSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -73,7 +73,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

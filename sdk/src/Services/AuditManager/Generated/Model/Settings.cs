@@ -35,7 +35,7 @@ namespace Amazon.AuditManager.Model
     {
         private AssessmentReportsDestination _defaultAssessmentReportsDestination;
         private DefaultExportDestination _defaultExportDestination;
-        private List<Role> _defaultProcessOwners = new List<Role>();
+        private List<Role> _defaultProcessOwners = AWSConfigs.InitializeCollections ? new List<Role>() : null;
         private DeregistrationPolicy _deregistrationPolicy;
         private EvidenceFinderEnablement _evidenceFinderEnablement;
         private bool? _isAwsOrgEnabled;
@@ -95,7 +95,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if DefaultProcessOwners property is set
         internal bool IsSetDefaultProcessOwners()
         {
-            return this._defaultProcessOwners != null && this._defaultProcessOwners.Count > 0; 
+            return this._defaultProcessOwners != null && (this._defaultProcessOwners.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

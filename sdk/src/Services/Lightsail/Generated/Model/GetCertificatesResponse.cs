@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetCertificatesResponse : AmazonWebServiceResponse
     {
-        private List<CertificateSummary> _certificates = new List<CertificateSummary>();
+        private List<CertificateSummary> _certificates = AWSConfigs.InitializeCollections ? new List<CertificateSummary>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Certificates property is set
         internal bool IsSetCertificates()
         {
-            return this._certificates != null && this._certificates.Count > 0; 
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

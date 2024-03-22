@@ -33,7 +33,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
     /// </summary>
     public partial class GetDeviceMethodsResponse : AmazonWebServiceResponse
     {
-        private List<DeviceMethod> _deviceMethods = new List<DeviceMethod>();
+        private List<DeviceMethod> _deviceMethods = AWSConfigs.InitializeCollections ? new List<DeviceMethod>() : null;
 
         /// <summary>
         /// Gets and sets the property DeviceMethods. 
@@ -50,7 +50,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         // Check to see if DeviceMethods property is set
         internal bool IsSetDeviceMethods()
         {
-            return this._deviceMethods != null && this._deviceMethods.Count > 0; 
+            return this._deviceMethods != null && (this._deviceMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

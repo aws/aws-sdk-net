@@ -33,7 +33,7 @@ namespace Amazon.S3Outposts.Model
     /// </summary>
     public partial class ListEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<Endpoint> _endpoints = new List<Endpoint>();
+        private List<Endpoint> _endpoints = AWSConfigs.InitializeCollections ? new List<Endpoint>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.S3Outposts.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

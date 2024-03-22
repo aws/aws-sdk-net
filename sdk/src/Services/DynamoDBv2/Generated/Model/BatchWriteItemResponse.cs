@@ -33,9 +33,9 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class BatchWriteItemResponse : AmazonWebServiceResponse
     {
-        private List<ConsumedCapacity> _consumedCapacity = new List<ConsumedCapacity>();
-        private Dictionary<string, List<ItemCollectionMetrics>> _itemCollectionMetrics = new Dictionary<string, List<ItemCollectionMetrics>>();
-        private Dictionary<string, List<WriteRequest>> _unprocessedItems = new Dictionary<string, List<WriteRequest>>();
+        private List<ConsumedCapacity> _consumedCapacity = AWSConfigs.InitializeCollections ? new List<ConsumedCapacity>() : null;
+        private Dictionary<string, List<ItemCollectionMetrics>> _itemCollectionMetrics = AWSConfigs.InitializeCollections ? new Dictionary<string, List<ItemCollectionMetrics>>() : null;
+        private Dictionary<string, List<WriteRequest>> _unprocessedItems = AWSConfigs.InitializeCollections ? new Dictionary<string, List<WriteRequest>>() : null;
 
         /// <summary>
         /// Gets and sets the property ConsumedCapacity. 
@@ -65,7 +65,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ConsumedCapacity property is set
         internal bool IsSetConsumedCapacity()
         {
-            return this._consumedCapacity != null && this._consumedCapacity.Count > 0; 
+            return this._consumedCapacity != null && (this._consumedCapacity.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ItemCollectionMetrics property is set
         internal bool IsSetItemCollectionMetrics()
         {
-            return this._itemCollectionMetrics != null && this._itemCollectionMetrics.Count > 0; 
+            return this._itemCollectionMetrics != null && (this._itemCollectionMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// Each <c>UnprocessedItems</c> entry consists of a table name and, for that table, a
-        /// list of operations to perform (<c>DeleteRequest</c> or <c>PutRequest</c>).
+        /// Each <c>UnprocessedItems</c> entry consists of a table name or table ARN and, for
+        /// that table, a list of operations to perform (<c>DeleteRequest</c> or <c>PutRequest</c>).
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -168,7 +168,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if UnprocessedItems property is set
         internal bool IsSetUnprocessedItems()
         {
-            return this._unprocessedItems != null && this._unprocessedItems.Count > 0; 
+            return this._unprocessedItems != null && (this._unprocessedItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.ServerMigrationService.Model
     /// </summary>
     public partial class GetConnectorsResponse : AmazonWebServiceResponse
     {
-        private List<Connector> _connectorList = new List<Connector>();
+        private List<Connector> _connectorList = AWSConfigs.InitializeCollections ? new List<Connector>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ConnectorList property is set
         internal bool IsSetConnectorList()
         {
-            return this._connectorList != null && this._connectorList.Count > 0; 
+            return this._connectorList != null && (this._connectorList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

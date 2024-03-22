@@ -35,7 +35,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class UpgradeDomainRequest : AmazonOpenSearchServiceRequest
     {
-        private Dictionary<string, string> _advancedOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _advancedOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _domainName;
         private bool? _performCheckOnly;
         private string _targetVersion;
@@ -58,7 +58,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if AdvancedOptions property is set
         internal bool IsSetAdvancedOptions()
         {
-            return this._advancedOptions != null && this._advancedOptions.Count > 0; 
+            return this._advancedOptions != null && (this._advancedOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

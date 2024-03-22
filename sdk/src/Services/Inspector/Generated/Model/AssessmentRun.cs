@@ -45,15 +45,15 @@ namespace Amazon.Inspector.Model
         private DateTime? _createdAt;
         private bool? _dataCollected;
         private int? _durationInSeconds;
-        private Dictionary<string, int> _findingCounts = new Dictionary<string, int>();
+        private Dictionary<string, int> _findingCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private string _name;
-        private List<AssessmentRunNotification> _notifications = new List<AssessmentRunNotification>();
-        private List<string> _rulesPackageArns = new List<string>();
+        private List<AssessmentRunNotification> _notifications = AWSConfigs.InitializeCollections ? new List<AssessmentRunNotification>() : null;
+        private List<string> _rulesPackageArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _startedAt;
         private AssessmentRunState _state;
         private DateTime? _stateChangedAt;
-        private List<AssessmentRunStateChange> _stateChanges = new List<AssessmentRunStateChange>();
-        private List<Attribute> _userAttributesForFindings = new List<Attribute>();
+        private List<AssessmentRunStateChange> _stateChanges = AWSConfigs.InitializeCollections ? new List<AssessmentRunStateChange>() : null;
+        private List<Attribute> _userAttributesForFindings = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -186,7 +186,7 @@ namespace Amazon.Inspector.Model
         // Check to see if FindingCounts property is set
         internal bool IsSetFindingCounts()
         {
-            return this._findingCounts != null && this._findingCounts.Count > 0; 
+            return this._findingCounts != null && (this._findingCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -225,7 +225,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Notifications property is set
         internal bool IsSetNotifications()
         {
-            return this._notifications != null && this._notifications.Count > 0; 
+            return this._notifications != null && (this._notifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -244,7 +244,7 @@ namespace Amazon.Inspector.Model
         // Check to see if RulesPackageArns property is set
         internal bool IsSetRulesPackageArns()
         {
-            return this._rulesPackageArns != null && this._rulesPackageArns.Count > 0; 
+            return this._rulesPackageArns != null && (this._rulesPackageArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace Amazon.Inspector.Model
         // Check to see if StateChanges property is set
         internal bool IsSetStateChanges()
         {
-            return this._stateChanges != null && this._stateChanges.Count > 0; 
+            return this._stateChanges != null && (this._stateChanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -338,7 +338,7 @@ namespace Amazon.Inspector.Model
         // Check to see if UserAttributesForFindings property is set
         internal bool IsSetUserAttributesForFindings()
         {
-            return this._userAttributesForFindings != null && this._userAttributesForFindings.Count > 0; 
+            return this._userAttributesForFindings != null && (this._userAttributesForFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

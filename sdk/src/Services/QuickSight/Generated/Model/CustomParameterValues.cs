@@ -39,10 +39,10 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class CustomParameterValues
     {
-        private List<DateTime> _dateTimeValues = new List<DateTime>();
-        private List<double> _decimalValues = new List<double>();
-        private List<long> _integerValues = new List<long>();
-        private List<string> _stringValues = new List<string>();
+        private List<DateTime> _dateTimeValues = AWSConfigs.InitializeCollections ? new List<DateTime>() : null;
+        private List<double> _decimalValues = AWSConfigs.InitializeCollections ? new List<double>() : null;
+        private List<long> _integerValues = AWSConfigs.InitializeCollections ? new List<long>() : null;
+        private List<string> _stringValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DateTimeValues. 
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DateTimeValues property is set
         internal bool IsSetDateTimeValues()
         {
-            return this._dateTimeValues != null && this._dateTimeValues.Count > 0; 
+            return this._dateTimeValues != null && (this._dateTimeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DecimalValues property is set
         internal bool IsSetDecimalValues()
         {
-            return this._decimalValues != null && this._decimalValues.Count > 0; 
+            return this._decimalValues != null && (this._decimalValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if IntegerValues property is set
         internal bool IsSetIntegerValues()
         {
-            return this._integerValues != null && this._integerValues.Count > 0; 
+            return this._integerValues != null && (this._integerValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if StringValues property is set
         internal bool IsSetStringValues()
         {
-            return this._stringValues != null && this._stringValues.Count > 0; 
+            return this._stringValues != null && (this._stringValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

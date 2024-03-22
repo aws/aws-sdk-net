@@ -54,7 +54,7 @@ namespace Amazon.EBS.Model
         private bool? _encrypted;
         private string _kmsKeyArn;
         private string _parentSnapshotId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _timeout;
         private long? _volumeSize;
 
@@ -242,7 +242,7 @@ namespace Amazon.EBS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.Shield.Model
     /// </summary>
     public partial class UpdateEmergencyContactSettingsRequest : AmazonShieldRequest
     {
-        private List<EmergencyContact> _emergencyContactList = new List<EmergencyContact>();
+        private List<EmergencyContact> _emergencyContactList = AWSConfigs.InitializeCollections ? new List<EmergencyContact>() : null;
 
         /// <summary>
         /// Gets and sets the property EmergencyContactList. 
@@ -61,7 +61,7 @@ namespace Amazon.Shield.Model
         // Check to see if EmergencyContactList property is set
         internal bool IsSetEmergencyContactList()
         {
-            return this._emergencyContactList != null && this._emergencyContactList.Count > 0; 
+            return this._emergencyContactList != null && (this._emergencyContactList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

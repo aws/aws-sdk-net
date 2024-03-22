@@ -33,8 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchGetStandardsControlAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<StandardsControlAssociationDetail> _standardsControlAssociationDetails = new List<StandardsControlAssociationDetail>();
-        private List<UnprocessedStandardsControlAssociation> _unprocessedAssociations = new List<UnprocessedStandardsControlAssociation>();
+        private List<StandardsControlAssociationDetail> _standardsControlAssociationDetails = AWSConfigs.InitializeCollections ? new List<StandardsControlAssociationDetail>() : null;
+        private List<UnprocessedStandardsControlAssociation> _unprocessedAssociations = AWSConfigs.InitializeCollections ? new List<UnprocessedStandardsControlAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property StandardsControlAssociationDetails. 
@@ -53,7 +53,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StandardsControlAssociationDetails property is set
         internal bool IsSetStandardsControlAssociationDetails()
         {
-            return this._standardsControlAssociationDetails != null && this._standardsControlAssociationDetails.Count > 0; 
+            return this._standardsControlAssociationDetails != null && (this._standardsControlAssociationDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UnprocessedAssociations property is set
         internal bool IsSetUnprocessedAssociations()
         {
-            return this._unprocessedAssociations != null && this._unprocessedAssociations.Count > 0; 
+            return this._unprocessedAssociations != null && (this._unprocessedAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

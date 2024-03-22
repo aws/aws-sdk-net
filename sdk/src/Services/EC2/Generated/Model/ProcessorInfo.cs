@@ -34,8 +34,8 @@ namespace Amazon.EC2.Model
     public partial class ProcessorInfo
     {
         private string _manufacturer;
-        private List<string> _supportedArchitectures = new List<string>();
-        private List<string> _supportedFeatures = new List<string>();
+        private List<string> _supportedArchitectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedFeatures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _sustainedClockSpeedInGhz;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if SupportedArchitectures property is set
         internal bool IsSetSupportedArchitectures()
         {
-            return this._supportedArchitectures != null && this._supportedArchitectures.Count > 0; 
+            return this._supportedArchitectures != null && (this._supportedArchitectures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         // Check to see if SupportedFeatures property is set
         internal bool IsSetSupportedFeatures()
         {
-            return this._supportedFeatures != null && this._supportedFeatures.Count > 0; 
+            return this._supportedFeatures != null && (this._supportedFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

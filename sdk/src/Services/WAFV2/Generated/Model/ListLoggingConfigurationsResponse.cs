@@ -33,7 +33,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class ListLoggingConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<LoggingConfiguration> _loggingConfigurations = new List<LoggingConfiguration>();
+        private List<LoggingConfiguration> _loggingConfigurations = AWSConfigs.InitializeCollections ? new List<LoggingConfiguration>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if LoggingConfigurations property is set
         internal bool IsSetLoggingConfigurations()
         {
-            return this._loggingConfigurations != null && this._loggingConfigurations.Count > 0; 
+            return this._loggingConfigurations != null && (this._loggingConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

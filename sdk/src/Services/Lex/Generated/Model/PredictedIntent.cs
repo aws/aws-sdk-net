@@ -37,7 +37,7 @@ namespace Amazon.Lex.Model
     {
         private string _intentName;
         private IntentConfidence _nluIntentConfidence;
-        private Dictionary<string, string> _slots = new Dictionary<string, string>();
+        private Dictionary<string, string> _slots = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property IntentName. 
@@ -91,7 +91,7 @@ namespace Amazon.Lex.Model
         // Check to see if Slots property is set
         internal bool IsSetSlots()
         {
-            return this._slots != null && this._slots.Count > 0; 
+            return this._slots != null && (this._slots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,14 +34,14 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class BaselineOverride
     {
         private PatchRuleGroup _approvalRules;
-        private List<string> _approvedPatches = new List<string>();
+        private List<string> _approvedPatches = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PatchComplianceLevel _approvedPatchesComplianceLevel;
         private bool? _approvedPatchesEnableNonSecurity;
         private PatchFilterGroup _globalFilters;
         private OperatingSystem _operatingSystem;
-        private List<string> _rejectedPatches = new List<string>();
+        private List<string> _rejectedPatches = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PatchAction _rejectedPatchesAction;
-        private List<PatchSource> _sources = new List<PatchSource>();
+        private List<PatchSource> _sources = AWSConfigs.InitializeCollections ? new List<PatchSource>() : null;
 
         /// <summary>
         /// Gets and sets the property ApprovalRules.
@@ -81,7 +81,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ApprovedPatches property is set
         internal bool IsSetApprovedPatches()
         {
-            return this._approvedPatches != null && this._approvedPatches.Count > 0; 
+            return this._approvedPatches != null && (this._approvedPatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if RejectedPatches property is set
         internal bool IsSetRejectedPatches()
         {
-            return this._rejectedPatches != null && this._rejectedPatches.Count > 0; 
+            return this._rejectedPatches != null && (this._rejectedPatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

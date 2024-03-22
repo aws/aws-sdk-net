@@ -45,7 +45,7 @@ namespace Amazon.KafkaConnect.Model
         private KafkaClusterEncryptionInTransitDescription _kafkaClusterEncryptionInTransit;
         private string _kafkaConnectVersion;
         private LogDeliveryDescription _logDelivery;
-        private List<PluginDescription> _plugins = new List<PluginDescription>();
+        private List<PluginDescription> _plugins = AWSConfigs.InitializeCollections ? new List<PluginDescription>() : null;
         private string _serviceExecutionRoleArn;
         private WorkerConfigurationDescription _workerConfiguration;
 
@@ -282,7 +282,7 @@ namespace Amazon.KafkaConnect.Model
         // Check to see if Plugins property is set
         internal bool IsSetPlugins()
         {
-            return this._plugins != null && this._plugins.Count > 0; 
+            return this._plugins != null && (this._plugins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

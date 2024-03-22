@@ -37,13 +37,15 @@ namespace Amazon.ManagedGrafana.Model
         private DateTime? _created;
         private string _description;
         private string _endpoint;
+        private string _grafanaToken;
         private string _grafanaVersion;
         private string _id;
+        private LicenseType _licenseType;
         private DateTime? _modified;
         private string _name;
-        private List<string> _notificationDestinations = new List<string>();
+        private List<string> _notificationDestinations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WorkspaceStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Authentication. 
@@ -122,6 +124,27 @@ namespace Amazon.ManagedGrafana.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GrafanaToken. 
+        /// <para>
+        /// The token that ties this workspace to a Grafana Labs account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+        /// with Grafana Labs</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=36)]
+        public string GrafanaToken
+        {
+            get { return this._grafanaToken; }
+            set { this._grafanaToken = value; }
+        }
+
+        // Check to see if GrafanaToken property is set
+        internal bool IsSetGrafanaToken()
+        {
+            return this._grafanaToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GrafanaVersion. 
         /// <para>
         /// The Grafana version that the workspace is running.
@@ -157,6 +180,29 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseType. 
+        /// <para>
+        /// Specifies whether this workspace has a full Grafana Enterprise license.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public LicenseType LicenseType
+        {
+            get { return this._licenseType; }
+            set { this._licenseType = value; }
+        }
+
+        // Check to see if LicenseType property is set
+        internal bool IsSetLicenseType()
+        {
+            return this._licenseType != null;
         }
 
         /// <summary>
@@ -214,7 +260,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if NotificationDestinations property is set
         internal bool IsSetNotificationDestinations()
         {
-            return this._notificationDestinations != null && this._notificationDestinations.Count > 0; 
+            return this._notificationDestinations != null && (this._notificationDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -252,7 +298,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.MediaPackageVod.Model
     {
         private EncryptionContractConfiguration _encryptionContractConfiguration;
         private string _roleArn;
-        private List<string> _systemIds = new List<string>();
+        private List<string> _systemIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _url;
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.MediaPackageVod.Model
         // Check to see if SystemIds property is set
         internal bool IsSetSystemIds()
         {
-            return this._systemIds != null && this._systemIds.Count > 0; 
+            return this._systemIds != null && (this._systemIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

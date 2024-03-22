@@ -34,11 +34,11 @@ namespace Amazon.CodeGuruProfiler.Model
     public partial class BatchGetFrameMetricDataResponse : AmazonWebServiceResponse
     {
         private DateTime? _endTime;
-        private List<TimestampStructure> _endTimes = new List<TimestampStructure>();
-        private List<FrameMetricDatum> _frameMetricData = new List<FrameMetricDatum>();
+        private List<TimestampStructure> _endTimes = AWSConfigs.InitializeCollections ? new List<TimestampStructure>() : null;
+        private List<FrameMetricDatum> _frameMetricData = AWSConfigs.InitializeCollections ? new List<FrameMetricDatum>() : null;
         private AggregationPeriod _resolution;
         private DateTime? _startTime;
-        private Dictionary<string, List<TimestampStructure>> _unprocessedEndTimes = new Dictionary<string, List<TimestampStructure>>();
+        private Dictionary<string, List<TimestampStructure>> _unprocessedEndTimes = AWSConfigs.InitializeCollections ? new Dictionary<string, List<TimestampStructure>>() : null;
 
         /// <summary>
         /// Gets and sets the property EndTime. 
@@ -80,7 +80,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if EndTimes property is set
         internal bool IsSetEndTimes()
         {
-            return this._endTimes != null && this._endTimes.Count > 0; 
+            return this._endTimes != null && (this._endTimes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if FrameMetricData property is set
         internal bool IsSetFrameMetricData()
         {
-            return this._frameMetricData != null && this._frameMetricData.Count > 0; 
+            return this._frameMetricData != null && (this._frameMetricData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if UnprocessedEndTimes property is set
         internal bool IsSetUnprocessedEndTimes()
         {
-            return this._unprocessedEndTimes != null && this._unprocessedEndTimes.Count > 0; 
+            return this._unprocessedEndTimes != null && (this._unprocessedEndTimes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

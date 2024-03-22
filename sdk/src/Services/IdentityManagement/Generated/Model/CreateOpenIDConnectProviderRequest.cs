@@ -93,9 +93,9 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class CreateOpenIDConnectProviderRequest : AmazonIdentityManagementServiceRequest
     {
-        private List<string> _clientIDList = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _thumbprintList = new List<string>();
+        private List<string> _clientIDList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _thumbprintList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _url;
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ClientIDList property is set
         internal bool IsSetClientIDList()
         {
-            return this._clientIDList != null && this._clientIDList.Count > 0; 
+            return this._clientIDList != null && (this._clientIDList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ThumbprintList property is set
         internal bool IsSetThumbprintList()
         {
-            return this._thumbprintList != null && this._thumbprintList.Count > 0; 
+            return this._thumbprintList != null && (this._thumbprintList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -69,6 +69,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     if (context.TestExpression("NumberCapabilities/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.NumberCapabilities == null)
+                        {
+                            unmarshalledObject.NumberCapabilities = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NumberCapabilities.Add(item);
                         continue;

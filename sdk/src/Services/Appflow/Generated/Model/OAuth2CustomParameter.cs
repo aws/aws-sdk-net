@@ -33,7 +33,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class OAuth2CustomParameter
     {
-        private List<string> _connectorSuppliedValues = new List<string>();
+        private List<string> _connectorSuppliedValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private bool? _isRequired;
         private bool? _isSensitiveField;
@@ -57,7 +57,7 @@ namespace Amazon.Appflow.Model
         // Check to see if ConnectorSuppliedValues property is set
         internal bool IsSetConnectorSuppliedValues()
         {
-            return this._connectorSuppliedValues != null && this._connectorSuppliedValues.Count > 0; 
+            return this._connectorSuppliedValues != null && (this._connectorSuppliedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

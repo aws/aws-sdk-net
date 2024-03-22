@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListInstancesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceSummary> _instanceSummaryList = new List<InstanceSummary>();
+        private List<InstanceSummary> _instanceSummaryList = AWSConfigs.InitializeCollections ? new List<InstanceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if InstanceSummaryList property is set
         internal bool IsSetInstanceSummaryList()
         {
-            return this._instanceSummaryList != null && this._instanceSummaryList.Count > 0; 
+            return this._instanceSummaryList != null && (this._instanceSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

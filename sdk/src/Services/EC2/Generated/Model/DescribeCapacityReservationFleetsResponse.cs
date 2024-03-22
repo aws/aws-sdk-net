@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeCapacityReservationFleetsResponse : AmazonWebServiceResponse
     {
-        private List<CapacityReservationFleet> _capacityReservationFleets = new List<CapacityReservationFleet>();
+        private List<CapacityReservationFleet> _capacityReservationFleets = AWSConfigs.InitializeCollections ? new List<CapacityReservationFleet>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if CapacityReservationFleets property is set
         internal bool IsSetCapacityReservationFleets()
         {
-            return this._capacityReservationFleets != null && this._capacityReservationFleets.Count > 0; 
+            return this._capacityReservationFleets != null && (this._capacityReservationFleets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

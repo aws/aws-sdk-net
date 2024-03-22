@@ -33,7 +33,7 @@ namespace Amazon.CodeArtifact.Model
     /// </summary>
     public partial class AssetSummary
     {
-        private Dictionary<string, string> _hashes = new Dictionary<string, string>();
+        private Dictionary<string, string> _hashes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
         private long? _size;
 
@@ -52,7 +52,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Hashes property is set
         internal bool IsSetHashes()
         {
-            return this._hashes != null && this._hashes.Count > 0; 
+            return this._hashes != null && (this._hashes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

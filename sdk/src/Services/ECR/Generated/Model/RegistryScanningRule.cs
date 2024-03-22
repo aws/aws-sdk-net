@@ -33,7 +33,7 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class RegistryScanningRule
     {
-        private List<ScanningRepositoryFilter> _repositoryFilters = new List<ScanningRepositoryFilter>();
+        private List<ScanningRepositoryFilter> _repositoryFilters = AWSConfigs.InitializeCollections ? new List<ScanningRepositoryFilter>() : null;
         private ScanFrequency _scanFrequency;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ECR.Model
         // Check to see if RepositoryFilters property is set
         internal bool IsSetRepositoryFilters()
         {
-            return this._repositoryFilters != null && this._repositoryFilters.Count > 0; 
+            return this._repositoryFilters != null && (this._repositoryFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

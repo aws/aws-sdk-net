@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all of the Findings
         /// </summary>
         public IPaginatedEnumerable<AwsSecurityFinding> Findings => 
-            new PaginatedResultKeyResponse<GetFindingsResponse, AwsSecurityFinding>(this, (i) => i.Findings);
+            new PaginatedResultKeyResponse<GetFindingsResponse, AwsSecurityFinding>(this, (i) => i.Findings ?? new List<AwsSecurityFinding>());
 
         internal GetFindingsPaginator(IAmazonSecurityHub client, GetFindingsRequest request)
         {

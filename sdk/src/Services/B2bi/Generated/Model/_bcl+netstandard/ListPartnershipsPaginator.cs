@@ -45,7 +45,7 @@ namespace Amazon.B2bi.Model
         /// Enumerable containing all of the Partnerships
         /// </summary>
         public IPaginatedEnumerable<PartnershipSummary> Partnerships => 
-            new PaginatedResultKeyResponse<ListPartnershipsResponse, PartnershipSummary>(this, (i) => i.Partnerships);
+            new PaginatedResultKeyResponse<ListPartnershipsResponse, PartnershipSummary>(this, (i) => i.Partnerships ?? new List<PartnershipSummary>());
 
         internal ListPartnershipsPaginator(IAmazonB2bi client, ListPartnershipsRequest request)
         {

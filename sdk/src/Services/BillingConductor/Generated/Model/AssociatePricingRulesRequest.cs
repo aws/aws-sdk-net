@@ -36,7 +36,7 @@ namespace Amazon.BillingConductor.Model
     public partial class AssociatePricingRulesRequest : AmazonBillingConductorRequest
     {
         private string _arn;
-        private List<string> _pricingRuleArns = new List<string>();
+        private List<string> _pricingRuleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -73,7 +73,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if PricingRuleArns property is set
         internal bool IsSetPricingRuleArns()
         {
-            return this._pricingRuleArns != null && this._pricingRuleArns.Count > 0; 
+            return this._pricingRuleArns != null && (this._pricingRuleArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

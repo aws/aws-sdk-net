@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsBackupBackupVaultNotificationsDetails
     {
-        private List<string> _backupVaultEvents = new List<string>();
+        private List<string> _backupVaultEvents = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _snsTopicArn;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if BackupVaultEvents property is set
         internal bool IsSetBackupVaultEvents()
         {
-            return this._backupVaultEvents != null && this._backupVaultEvents.Count > 0; 
+            return this._backupVaultEvents != null && (this._backupVaultEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

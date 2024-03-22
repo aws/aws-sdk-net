@@ -81,7 +81,12 @@ namespace Amazon.VerifiedPermissions.Model
         /// <para>
         /// Specifies an access token for the principal to be authorized. This token is provided
         /// to you by the identity provider (IdP) associated with the specified identity source.
-        /// You must specify either an <c>AccessToken</c>, or an <c>IdentityToken</c>, or both.
+        /// You must specify either an <c>accessToken</c>, an <c>identityToken</c>, or both.
+        /// </para>
+        ///  
+        /// <para>
+        /// Must be an access token. Verified Permissions returns an error if the <c>token_use</c>
+        /// claim in the submitted token isn't <c>access</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=131072)]
@@ -175,7 +180,12 @@ namespace Amazon.VerifiedPermissions.Model
         /// <para>
         /// Specifies an identity token for the principal to be authorized. This token is provided
         /// to you by the identity provider (IdP) associated with the specified identity source.
-        /// You must specify either an <c>AccessToken</c> or an <c>IdentityToken</c>, or both.
+        /// You must specify either an <c>accessToken</c>, an <c>identityToken</c>, or both.
+        /// </para>
+        ///  
+        /// <para>
+        /// Must be an ID token. Verified Permissions returns an error if the <c>token_use</c>
+        /// claim in the submitted token isn't <c>id</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=131072)]

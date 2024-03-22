@@ -45,7 +45,7 @@ namespace Amazon.CleanRooms.Model
         /// Enumerable containing all of the MembershipSummaries
         /// </summary>
         public IPaginatedEnumerable<MembershipSummary> MembershipSummaries => 
-            new PaginatedResultKeyResponse<ListMembershipsResponse, MembershipSummary>(this, (i) => i.MembershipSummaries);
+            new PaginatedResultKeyResponse<ListMembershipsResponse, MembershipSummary>(this, (i) => i.MembershipSummaries ?? new List<MembershipSummary>());
 
         internal ListMembershipsPaginator(IAmazonCleanRooms client, ListMembershipsRequest request)
         {

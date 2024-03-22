@@ -37,7 +37,7 @@ namespace Amazon.B2bi.Model
     public partial class UntagResourceRequest : AmazonB2biRequest
     {
         private string _resourceARN;
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
@@ -77,7 +77,7 @@ namespace Amazon.B2bi.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

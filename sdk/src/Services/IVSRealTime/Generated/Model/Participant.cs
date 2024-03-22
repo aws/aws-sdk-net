@@ -33,7 +33,7 @@ namespace Amazon.IVSRealTime.Model
     /// </summary>
     public partial class Participant
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _browserName;
         private string _browserVersion;
         private DateTime? _firstJoinTime;
@@ -64,7 +64,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

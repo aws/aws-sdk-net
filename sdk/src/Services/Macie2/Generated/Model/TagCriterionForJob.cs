@@ -35,7 +35,7 @@ namespace Amazon.Macie2.Model
     public partial class TagCriterionForJob
     {
         private JobComparator _comparator;
-        private List<TagCriterionPairForJob> _tagValues = new List<TagCriterionPairForJob>();
+        private List<TagCriterionPairForJob> _tagValues = AWSConfigs.InitializeCollections ? new List<TagCriterionPairForJob>() : null;
 
         /// <summary>
         /// Gets and sets the property Comparator. 
@@ -70,7 +70,7 @@ namespace Amazon.Macie2.Model
         // Check to see if TagValues property is set
         internal bool IsSetTagValues()
         {
-            return this._tagValues != null && this._tagValues.Count > 0; 
+            return this._tagValues != null && (this._tagValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

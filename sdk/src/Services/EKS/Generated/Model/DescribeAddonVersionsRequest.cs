@@ -44,9 +44,9 @@ namespace Amazon.EKS.Model
         private string _kubernetesVersion;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _owners = new List<string>();
-        private List<string> _publishers = new List<string>();
-        private List<string> _types = new List<string>();
+        private List<string> _owners = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _publishers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AddonName. 
@@ -150,7 +150,7 @@ namespace Amazon.EKS.Model
         // Check to see if Owners property is set
         internal bool IsSetOwners()
         {
-            return this._owners != null && this._owners.Count > 0; 
+            return this._owners != null && (this._owners.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace Amazon.EKS.Model
         // Check to see if Publishers property is set
         internal bool IsSetPublishers()
         {
-            return this._publishers != null && this._publishers.Count > 0; 
+            return this._publishers != null && (this._publishers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Amazon.EKS.Model
         // Check to see if Types property is set
         internal bool IsSetTypes()
         {
-            return this._types != null && this._types.Count > 0; 
+            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,12 +33,12 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NetworkAcl
     {
-        private List<NetworkAclAssociation> _associations = new List<NetworkAclAssociation>();
-        private List<NetworkAclEntry> _entries = new List<NetworkAclEntry>();
+        private List<NetworkAclAssociation> _associations = AWSConfigs.InitializeCollections ? new List<NetworkAclAssociation>() : null;
+        private List<NetworkAclEntry> _entries = AWSConfigs.InitializeCollections ? new List<NetworkAclEntry>() : null;
         private bool? _isDefault;
         private string _networkAclId;
         private string _ownerId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         // Check to see if Associations property is set
         internal bool IsSetAssociations()
         {
-            return this._associations != null && this._associations.Count > 0; 
+            return this._associations != null && (this._associations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// Enumerable containing all of the CodeSigningConfigs
         /// </summary>
         public IPaginatedEnumerable<CodeSigningConfig> CodeSigningConfigs => 
-            new PaginatedResultKeyResponse<ListCodeSigningConfigsResponse, CodeSigningConfig>(this, (i) => i.CodeSigningConfigs);
+            new PaginatedResultKeyResponse<ListCodeSigningConfigsResponse, CodeSigningConfig>(this, (i) => i.CodeSigningConfigs ?? new List<CodeSigningConfig>());
 
         internal ListCodeSigningConfigsPaginator(IAmazonLambda client, ListCodeSigningConfigsRequest request)
         {

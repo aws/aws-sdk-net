@@ -40,9 +40,9 @@ namespace Amazon.RAM.Model
         private string _permissionArn;
         private int? _permissionVersion;
         private ResourceOwner _resourceOwner;
-        private List<string> _resourceShareArns = new List<string>();
+        private List<string> _resourceShareArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ResourceShareStatus _resourceShareStatus;
-        private List<TagFilter> _tagFilters = new List<TagFilter>();
+        private List<TagFilter> _tagFilters = AWSConfigs.InitializeCollections ? new List<TagFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -196,7 +196,7 @@ namespace Amazon.RAM.Model
         // Check to see if ResourceShareArns property is set
         internal bool IsSetResourceShareArns()
         {
-            return this._resourceShareArns != null && this._resourceShareArns.Count > 0; 
+            return this._resourceShareArns != null && (this._resourceShareArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Amazon.RAM.Model
         // Check to see if TagFilters property is set
         internal bool IsSetTagFilters()
         {
-            return this._tagFilters != null && this._tagFilters.Count > 0; 
+            return this._tagFilters != null && (this._tagFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

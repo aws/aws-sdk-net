@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsWafv2CustomRequestHandlingDetails
     {
-        private List<AwsWafv2CustomHttpHeader> _insertHeaders = new List<AwsWafv2CustomHttpHeader>();
+        private List<AwsWafv2CustomHttpHeader> _insertHeaders = AWSConfigs.InitializeCollections ? new List<AwsWafv2CustomHttpHeader>() : null;
 
         /// <summary>
         /// Gets and sets the property InsertHeaders. 
@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if InsertHeaders property is set
         internal bool IsSetInsertHeaders()
         {
-            return this._insertHeaders != null && this._insertHeaders.Count > 0; 
+            return this._insertHeaders != null && (this._insertHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

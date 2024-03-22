@@ -114,6 +114,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LogExports/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.LogExports == null)
+                        {
+                            response.LogExports = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.LogExports.Add(item);
                         continue;

@@ -43,12 +43,12 @@ namespace Amazon.Imagebuilder.Model
         private string _name;
         private bool? _obfuscate;
         private string _owner;
-        private List<ComponentParameterDetail> _parameters = new List<ComponentParameterDetail>();
+        private List<ComponentParameterDetail> _parameters = AWSConfigs.InitializeCollections ? new List<ComponentParameterDetail>() : null;
         private Platform _platform;
         private string _publisher;
         private ComponentState _state;
-        private List<string> _supportedOsVersions = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _supportedOsVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ComponentType _type;
         private string _version;
 
@@ -254,7 +254,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -332,7 +332,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if SupportedOsVersions property is set
         internal bool IsSetSupportedOsVersions()
         {
-            return this._supportedOsVersions != null && this._supportedOsVersions.Count > 0; 
+            return this._supportedOsVersions != null && (this._supportedOsVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -351,7 +351,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

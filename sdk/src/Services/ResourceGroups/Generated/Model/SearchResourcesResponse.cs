@@ -34,8 +34,8 @@ namespace Amazon.ResourceGroups.Model
     public partial class SearchResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<QueryError> _queryErrors = new List<QueryError>();
-        private List<ResourceIdentifier> _resourceIdentifiers = new List<ResourceIdentifier>();
+        private List<QueryError> _queryErrors = AWSConfigs.InitializeCollections ? new List<QueryError>() : null;
+        private List<ResourceIdentifier> _resourceIdentifiers = AWSConfigs.InitializeCollections ? new List<ResourceIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -88,7 +88,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if QueryErrors property is set
         internal bool IsSetQueryErrors()
         {
-            return this._queryErrors != null && this._queryErrors.Count > 0; 
+            return this._queryErrors != null && (this._queryErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if ResourceIdentifiers property is set
         internal bool IsSetResourceIdentifiers()
         {
-            return this._resourceIdentifiers != null && this._resourceIdentifiers.Count > 0; 
+            return this._resourceIdentifiers != null && (this._resourceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

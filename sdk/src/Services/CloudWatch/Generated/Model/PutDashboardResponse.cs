@@ -33,7 +33,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class PutDashboardResponse : AmazonWebServiceResponse
     {
-        private List<DashboardValidationMessage> _dashboardValidationMessages = new List<DashboardValidationMessage>();
+        private List<DashboardValidationMessage> _dashboardValidationMessages = AWSConfigs.InitializeCollections ? new List<DashboardValidationMessage>() : null;
 
         /// <summary>
         /// Gets and sets the property DashboardValidationMessages. 
@@ -62,7 +62,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if DashboardValidationMessages property is set
         internal bool IsSetDashboardValidationMessages()
         {
-            return this._dashboardValidationMessages != null && this._dashboardValidationMessages.Count > 0; 
+            return this._dashboardValidationMessages != null && (this._dashboardValidationMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

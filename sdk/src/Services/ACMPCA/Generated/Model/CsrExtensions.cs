@@ -35,7 +35,7 @@ namespace Amazon.ACMPCA.Model
     public partial class CsrExtensions
     {
         private KeyUsage _keyUsage;
-        private List<AccessDescription> _subjectInformationAccess = new List<AccessDescription>();
+        private List<AccessDescription> _subjectInformationAccess = AWSConfigs.InitializeCollections ? new List<AccessDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property KeyUsage. 
@@ -72,7 +72,7 @@ namespace Amazon.ACMPCA.Model
         // Check to see if SubjectInformationAccess property is set
         internal bool IsSetSubjectInformationAccess()
         {
-            return this._subjectInformationAccess != null && this._subjectInformationAccess.Count > 0; 
+            return this._subjectInformationAccess != null && (this._subjectInformationAccess.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

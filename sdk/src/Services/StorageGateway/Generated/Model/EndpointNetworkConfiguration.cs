@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class EndpointNetworkConfiguration
     {
-        private List<string> _ipAddresses = new List<string>();
+        private List<string> _ipAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IpAddresses. 
@@ -57,7 +57,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if IpAddresses property is set
         internal bool IsSetIpAddresses()
         {
-            return this._ipAddresses != null && this._ipAddresses.Count > 0; 
+            return this._ipAddresses != null && (this._ipAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

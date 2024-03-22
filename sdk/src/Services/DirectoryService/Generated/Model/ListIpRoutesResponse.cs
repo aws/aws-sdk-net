@@ -33,7 +33,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class ListIpRoutesResponse : AmazonWebServiceResponse
     {
-        private List<IpRouteInfo> _ipRoutesInfo = new List<IpRouteInfo>();
+        private List<IpRouteInfo> _ipRoutesInfo = AWSConfigs.InitializeCollections ? new List<IpRouteInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if IpRoutesInfo property is set
         internal bool IsSetIpRoutesInfo()
         {
-            return this._ipRoutesInfo != null && this._ipRoutesInfo.Count > 0; 
+            return this._ipRoutesInfo != null && (this._ipRoutesInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

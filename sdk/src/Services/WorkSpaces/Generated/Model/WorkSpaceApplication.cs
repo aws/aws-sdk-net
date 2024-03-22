@@ -40,8 +40,8 @@ namespace Amazon.WorkSpaces.Model
         private string _name;
         private string _owner;
         private WorkSpaceApplicationState _state;
-        private List<string> _supportedComputeTypeNames = new List<string>();
-        private List<string> _supportedOperatingSystemNames = new List<string>();
+        private List<string> _supportedComputeTypeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedOperatingSystemNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -186,7 +186,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if SupportedComputeTypeNames property is set
         internal bool IsSetSupportedComputeTypeNames()
         {
-            return this._supportedComputeTypeNames != null && this._supportedComputeTypeNames.Count > 0; 
+            return this._supportedComputeTypeNames != null && (this._supportedComputeTypeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if SupportedOperatingSystemNames property is set
         internal bool IsSetSupportedOperatingSystemNames()
         {
-            return this._supportedOperatingSystemNames != null && this._supportedOperatingSystemNames.Count > 0; 
+            return this._supportedOperatingSystemNames != null && (this._supportedOperatingSystemNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

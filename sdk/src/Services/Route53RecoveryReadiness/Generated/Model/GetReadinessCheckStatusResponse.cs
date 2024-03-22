@@ -33,10 +33,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
     /// </summary>
     public partial class GetReadinessCheckStatusResponse : AmazonWebServiceResponse
     {
-        private List<Message> _messages = new List<Message>();
+        private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
         private string _nextToken;
         private Readiness _readiness;
-        private List<ResourceResult> _resources = new List<ResourceResult>();
+        private List<ResourceResult> _resources = AWSConfigs.InitializeCollections ? new List<ResourceResult>() : null;
 
         /// <summary>
         /// Gets and sets the property Messages. 
@@ -53,7 +53,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

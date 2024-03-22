@@ -40,9 +40,9 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class QueryResultItem
     {
-        private List<AdditionalResultAttribute> _additionalAttributes = new List<AdditionalResultAttribute>();
+        private List<AdditionalResultAttribute> _additionalAttributes = AWSConfigs.InitializeCollections ? new List<AdditionalResultAttribute>() : null;
         private CollapsedResultDetail _collapsedResultDetail;
-        private List<DocumentAttribute> _documentAttributes = new List<DocumentAttribute>();
+        private List<DocumentAttribute> _documentAttributes = AWSConfigs.InitializeCollections ? new List<DocumentAttribute>() : null;
         private TextWithHighlights _documentExcerpt;
         private string _documentId;
         private TextWithHighlights _documentTitle;
@@ -69,7 +69,7 @@ namespace Amazon.Kendra.Model
         // Check to see if AdditionalAttributes property is set
         internal bool IsSetAdditionalAttributes()
         {
-            return this._additionalAttributes != null && this._additionalAttributes.Count > 0; 
+            return this._additionalAttributes != null && (this._additionalAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Amazon.Kendra.Model
         // Check to see if DocumentAttributes property is set
         internal bool IsSetDocumentAttributes()
         {
-            return this._documentAttributes != null && this._documentAttributes.Count > 0; 
+            return this._documentAttributes != null && (this._documentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -231,7 +231,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the query result.
+        /// The unique identifier for the query result item id (<c>Id</c>) and the query result
+        /// item document id (<c>DocumentId</c>) combined. The value of this field changes with
+        /// every request, even when you have the same documents.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=73)]

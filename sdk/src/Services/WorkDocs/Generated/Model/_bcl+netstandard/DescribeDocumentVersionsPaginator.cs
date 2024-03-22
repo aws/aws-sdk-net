@@ -45,7 +45,7 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the DocumentVersions
         /// </summary>
         public IPaginatedEnumerable<DocumentVersionMetadata> DocumentVersions => 
-            new PaginatedResultKeyResponse<DescribeDocumentVersionsResponse, DocumentVersionMetadata>(this, (i) => i.DocumentVersions);
+            new PaginatedResultKeyResponse<DescribeDocumentVersionsResponse, DocumentVersionMetadata>(this, (i) => i.DocumentVersions ?? new List<DocumentVersionMetadata>());
 
         internal DescribeDocumentVersionsPaginator(IAmazonWorkDocs client, DescribeDocumentVersionsRequest request)
         {

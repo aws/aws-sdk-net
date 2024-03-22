@@ -45,7 +45,7 @@ namespace Amazon.CertificateManager.Model
         /// Enumerable containing all of the CertificateSummaryList
         /// </summary>
         public IPaginatedEnumerable<CertificateSummary> CertificateSummaryList => 
-            new PaginatedResultKeyResponse<ListCertificatesResponse, CertificateSummary>(this, (i) => i.CertificateSummaryList);
+            new PaginatedResultKeyResponse<ListCertificatesResponse, CertificateSummary>(this, (i) => i.CertificateSummaryList ?? new List<CertificateSummary>());
 
         internal ListCertificatesPaginator(IAmazonCertificateManager client, ListCertificatesRequest request)
         {

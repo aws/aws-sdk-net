@@ -27,9 +27,9 @@ namespace Amazon.S3.Model
     /// Container for the parameters to the ListObjectsV2 operation.
     /// Returns some or all (up to 1,000) of the objects in a bucket with each request. You
     /// can use the request parameters as selection criteria to return a subset of the objects
-    /// in a bucket. A <code>200 OK</code> response can contain valid or invalid XML. Make
-    /// sure to design your application to parse the contents of the response and handle it
-    /// appropriately. For more information about listing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ListingKeysUsingAPIs.html">Listing
+    /// in a bucket. A <c>200 OK</c> response can contain valid or invalid XML. Make sure
+    /// to design your application to parse the contents of the response and handle it appropriately.
+    /// For more information about listing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ListingKeysUsingAPIs.html">Listing
     /// object keys programmatically</a> in the <i>Amazon S3 User Guide</i>. To get a list
     /// of your buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>.
     /// 
@@ -37,14 +37,14 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
     /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-    /// requests in the format <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-    /// </code>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+    /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+    /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
     /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
     /// <para>
     ///  <b>General purpose bucket permissions</b> - To use this operation, you must have
-    /// READ access to the bucket. You must have permission to perform the <code>s3:ListBucket</code>
+    /// READ access to the bucket. You must have permission to perform the <c>s3:ListBucket</c>
     /// action. The bucket owner has this permission by default and can grant this permission
     /// to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
     /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
@@ -54,30 +54,30 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
     /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-    /// <code>CreateSession</code> </a> API operation for session-based authorization. Specifically,
-    /// you grant the <code>s3express:CreateSession</code> permission to the directory bucket
-    /// in a bucket policy or an IAM identity-based policy. Then, you make the <code>CreateSession</code>
+    /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+    /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+    /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
     /// API call on the bucket to obtain a session token. With the session token in your request
     /// header, you can make API requests to this operation. After the session token expires,
-    /// you make another <code>CreateSession</code> API call to generate a new session token
-    /// for use. Amazon Web Services CLI or SDKs create session and refresh the session token
+    /// you make another <c>CreateSession</c> API call to generate a new session token for
+    /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
     /// automatically to avoid service interruptions when a session expires. For more information
     /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-    /// <code>CreateSession</code> </a>.
+    /// <c>CreateSession</c> </a>.
     /// </para>
     ///  </li> </ul> </dd> <dt>Sorting order of returned objects</dt> <dd> <ul> <li> 
     /// <para>
-    ///  <b>General purpose bucket</b> - For general purpose buckets, <code>ListObjectsV2</code>
+    ///  <b>General purpose bucket</b> - For general purpose buckets, <c>ListObjectsV2</c>
     /// returns objects in lexicographical order based on their key names.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Directory bucket</b> - For directory buckets, <code>ListObjectsV2</code> does
-    /// not return objects in lexicographical order.
+    ///  <b>Directory bucket</b> - For directory buckets, <c>ListObjectsV2</c> does not return
+    /// objects in lexicographical order.
     /// </para>
     ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
-    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
     /// </para>
     ///  </dd> </dl> <important> 
     /// <para>
@@ -87,7 +87,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// The following operations are related to <code>ListObjectsV2</code>:
+    /// The following operations are related to <c>ListObjectsV2</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -115,7 +115,7 @@ namespace Amazon.S3.Model
         private string expectedBucketOwner;
         private bool? fetchOwner;
         private int? maxKeys;
-        private List<string> _optionalObjectAttributes = new List<string>();
+        private List<string> _optionalObjectAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string prefix;
         private RequestPayer requestPayer;
         private string startAfter;
@@ -124,11 +124,11 @@ namespace Amazon.S3.Model
         /// Gets and sets the property BucketName. 
         /// <para>
         ///  <b>Directory buckets</b> - When you use this operation with a directory bucket, you
-        /// must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+        /// must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// Path-style requests are not supported. Directory bucket names must be unique in the
-        /// chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code>
-        /// (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
-        /// information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+        /// chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c>
+        /// (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information
+        /// about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
         /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -150,7 +150,7 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you
         /// must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes
-        /// the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>.
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
@@ -172,9 +172,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ContinuationToken. 
         /// <para>
-        ///  <code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued
-        /// on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not
-        /// a real key. You can use this <code>ContinuationToken</code> for pagination of the
+        ///  <c>ContinuationToken</c> indicates to Amazon S3 that the list is being continued
+        /// on this bucket with a token. <c>ContinuationToken</c> is obfuscated and is not
+        /// a real key. You can use this <c>ContinuationToken</c> for pagination of the
         /// list results. 
         /// </para>
         /// </summary>
@@ -197,13 +197,13 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported
+        ///  <b>Directory buckets</b> - For directory buckets, <c>/</c> is the only supported
         /// delimiter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter
-        /// during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter
+        ///  <b>Directory buckets </b> - When you query <c>ListObjectsV2</c> with a delimiter
+        /// during in-progress multipart uploads, the <c>CommonPrefixes</c> response parameter
         /// contains the prefixes that are associated with the in-progress multipart uploads.
         /// For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
         /// Upload Overview</a> in the <i>Amazon S3 User Guide</i>.
@@ -223,12 +223,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Requests Amazon S3 to encode the object keys in the response and specifies
-        /// the encoding method to use. An object key may contain any Unicode character;
-        /// however, XML 1.0 parser cannot parse some characters, such as characters
-        /// with an ASCII value from 0 to 10. For characters that are not supported in
-        /// XML 1.0, you can add this parameter to request that Amazon S3 encode the
-        /// keys in the response.
+        /// Gets and sets the property EncodingType. 
+        /// <para>
+        /// Encoding type used by Amazon S3 to encode object keys in the response. If using <c>url</c>,
+        /// non-ASCII characters used in an object's key name will be URL encoded. For example,
+        /// the object test_file(3).png will appear as test_file%283%29.png.
+        /// </para>
         /// </summary>
         public EncodingType Encoding
         {
@@ -247,7 +247,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
@@ -268,9 +268,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property FetchOwner. 
         /// <para>
-        /// The owner field is not present in <code>ListObjectsV2</code> by default. If you want
-        /// to return the owner field with each key in the result, then set the <code>FetchOwner</code>
-        /// field to <code>true</code>.
+        /// The owner field is not present in <c>ListObjectsV2</c> by default. If you want
+        /// to return the owner field with each key in the result, then set the <c>FetchOwner</c>
+        /// field to <c>true</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -332,7 +332,7 @@ namespace Amazon.S3.Model
         // Check to see if OptionalObjectAttributes property is set
         internal bool IsSetOptionalObjectAttributes()
         {
-            return this._optionalObjectAttributes != null && this._optionalObjectAttributes.Count > 0;
+            return this._optionalObjectAttributes != null && (this._optionalObjectAttributes.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>
@@ -343,7 +343,7 @@ namespace Amazon.S3.Model
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter
-        /// (<code>/</code>) are supported.
+        /// (<c>/</c>) are supported.
         /// </para>
         ///  </note>
         /// </summary>

@@ -30,27 +30,30 @@ namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCluster operation.
-    /// Creates a new Elastic DocumentDB cluster and returns its Cluster structure.
+    /// Creates a new Amazon DocumentDB elastic cluster and returns its cluster structure.
     /// </summary>
     public partial class CreateClusterRequest : AmazonDocDBElasticRequest
     {
         private string _adminUserName;
         private string _adminUserPassword;
         private Auth _authType;
+        private int? _backupRetentionPeriod;
         private string _clientToken;
         private string _clusterName;
         private string _kmsKeyId;
+        private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private int? _shardCapacity;
         private int? _shardCount;
-        private List<string> _subnetIds = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private int? _shardInstanceCount;
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AdminUserName. 
         /// <para>
-        /// The name of the Elastic DocumentDB cluster administrator.
+        /// The name of the Amazon DocumentDB elastic clusters administrator.
         /// </para>
         ///  
         /// <para>
@@ -86,8 +89,8 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property AdminUserPassword. 
         /// <para>
-        /// The password for the Elastic DocumentDB cluster administrator and can contain any
-        /// printable ASCII characters.
+        /// The password for the Amazon DocumentDB elastic clusters administrator. The password
+        /// can contain any printable ASCII characters.
         /// </para>
         ///  
         /// <para>
@@ -119,7 +122,8 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property AuthType. 
         /// <para>
-        /// The authentication type for the Elastic DocumentDB cluster.
+        /// The authentication type used to determine where to fetch the password used for accessing
+        /// the elastic cluster. Valid types are <c>PLAIN_TEXT</c> or <c>SECRET_ARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -136,9 +140,27 @@ namespace Amazon.DocDBElastic.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BackupRetentionPeriod. 
+        /// <para>
+        /// The number of days for which automatic snapshots are retained.
+        /// </para>
+        /// </summary>
+        public int? BackupRetentionPeriod
+        {
+            get { return this._backupRetentionPeriod; }
+            set { this._backupRetentionPeriod = value; }
+        }
+
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
+        {
+            return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The client token for the Elastic DocumentDB cluster.
+        /// The client token for the elastic cluster.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -156,8 +178,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase
-        /// string.
+        /// The name of the new elastic cluster. This parameter is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -196,7 +217,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.
+        /// The KMS key identifier to use to encrypt the new elastic cluster.
         /// </para>
         ///  
         /// <para>
@@ -206,7 +227,7 @@ namespace Amazon.DocDBElastic.Model
         /// </para>
         ///  
         /// <para>
-        /// If an encryption key is not specified, Elastic DocumentDB uses the default encryption
+        /// If an encryption key is not specified, Amazon DocumentDB uses the default encryption
         /// key that KMS creates for your account. Your account has a different default encryption
         /// key for each Amazon Region.
         /// </para>
@@ -221,6 +242,25 @@ namespace Amazon.DocDBElastic.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredBackupWindow. 
+        /// <para>
+        /// The daily time range during which automated backups are created if automated backups
+        /// are enabled, as determined by the <c>backupRetentionPeriod</c>.
+        /// </para>
+        /// </summary>
+        public string PreferredBackupWindow
+        {
+            get { return this._preferredBackupWindow; }
+            set { this._preferredBackupWindow = value; }
+        }
+
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
+        {
+            return this._preferredBackupWindow != null;
         }
 
         /// <summary>
@@ -262,7 +302,8 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property ShardCapacity. 
         /// <para>
-        /// The capacity of each shard in the new Elastic DocumentDB cluster.
+        /// The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed
+        /// values are 2, 4, 8, 16, 32, 64.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -281,7 +322,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property ShardCount. 
         /// <para>
-        /// The number of shards to create in the new Elastic DocumentDB cluster.
+        /// The number of shards assigned to the elastic cluster. Maximum is 32.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -298,9 +339,29 @@ namespace Amazon.DocDBElastic.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShardInstanceCount. 
+        /// <para>
+        /// The number of replica instances applying to all shards in the elastic cluster. A <c>shardInstanceCount</c>
+        /// value of 1 means there is one writer instance, and any additional instances are replicas
+        /// that can be used for reads and to improve availability.
+        /// </para>
+        /// </summary>
+        public int? ShardInstanceCount
+        {
+            get { return this._shardInstanceCount; }
+            set { this._shardInstanceCount = value; }
+        }
+
+        // Check to see if ShardInstanceCount property is set
+        internal bool IsSetShardInstanceCount()
+        {
+            return this._shardInstanceCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The Amazon EC2 subnet IDs for the new Elastic DocumentDB cluster.
+        /// The Amazon EC2 subnet IDs for the new elastic cluster.
         /// </para>
         /// </summary>
         public List<string> SubnetIds
@@ -312,13 +373,13 @@ namespace Amazon.DocDBElastic.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the new Elastic DocumentDB cluster.
+        /// The tags to be assigned to the new elastic cluster.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -330,13 +391,13 @@ namespace Amazon.DocDBElastic.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.
+        /// A list of EC2 VPC security groups to associate with the new elastic cluster.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds
@@ -348,7 +409,7 @@ namespace Amazon.DocDBElastic.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

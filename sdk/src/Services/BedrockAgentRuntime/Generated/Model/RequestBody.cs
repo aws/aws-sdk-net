@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Request Body Content Map
+    /// The parameters in the request body for the Lambda input event.
     /// </summary>
     public partial class RequestBody
     {
-        private Dictionary<string, List<Parameter>> _content = new Dictionary<string, List<Parameter>>();
+        private Dictionary<string, List<Parameter>> _content = AWSConfigs.InitializeCollections ? new Dictionary<string, List<Parameter>>() : null;
 
         /// <summary>
-        /// Gets and sets the property Content.
+        /// Gets and sets the property Content. 
+        /// <para>
+        /// The content in the request body.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<Parameter>> Content
         {
@@ -47,7 +50,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if Content property is set
         internal bool IsSetContent()
         {
-            return this._content != null && this._content.Count > 0; 
+            return this._content != null && (this._content.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

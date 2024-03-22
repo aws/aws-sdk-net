@@ -33,11 +33,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class PlatformDescription
     {
-        private List<CustomAmi> _customAmiList = new List<CustomAmi>();
+        private List<CustomAmi> _customAmiList = AWSConfigs.InitializeCollections ? new List<CustomAmi>() : null;
         private DateTime? _dateCreated;
         private DateTime? _dateUpdated;
         private string _description;
-        private List<PlatformFramework> _frameworks = new List<PlatformFramework>();
+        private List<PlatformFramework> _frameworks = AWSConfigs.InitializeCollections ? new List<PlatformFramework>() : null;
         private string _maintainer;
         private string _operatingSystemName;
         private string _operatingSystemVersion;
@@ -50,10 +50,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _platformOwner;
         private PlatformStatus _platformStatus;
         private string _platformVersion;
-        private List<PlatformProgrammingLanguage> _programmingLanguages = new List<PlatformProgrammingLanguage>();
+        private List<PlatformProgrammingLanguage> _programmingLanguages = AWSConfigs.InitializeCollections ? new List<PlatformProgrammingLanguage>() : null;
         private string _solutionStackName;
-        private List<string> _supportedAddonList = new List<string>();
-        private List<string> _supportedTierList = new List<string>();
+        private List<string> _supportedAddonList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedTierList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomAmiList. 
@@ -70,7 +70,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if CustomAmiList property is set
         internal bool IsSetCustomAmiList()
         {
-            return this._customAmiList != null && this._customAmiList.Count > 0; 
+            return this._customAmiList != null && (this._customAmiList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Frameworks property is set
         internal bool IsSetFrameworks()
         {
-            return this._frameworks != null && this._frameworks.Count > 0; 
+            return this._frameworks != null && (this._frameworks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -392,7 +392,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ProgrammingLanguages property is set
         internal bool IsSetProgrammingLanguages()
         {
-            return this._programmingLanguages != null && this._programmingLanguages.Count > 0; 
+            return this._programmingLanguages != null && (this._programmingLanguages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -428,7 +428,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SupportedAddonList property is set
         internal bool IsSetSupportedAddonList()
         {
-            return this._supportedAddonList != null && this._supportedAddonList.Count > 0; 
+            return this._supportedAddonList != null && (this._supportedAddonList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -446,7 +446,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SupportedTierList property is set
         internal bool IsSetSupportedTierList()
         {
-            return this._supportedTierList != null && this._supportedTierList.Count > 0; 
+            return this._supportedTierList != null && (this._supportedTierList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

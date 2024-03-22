@@ -46,10 +46,10 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class ExportLicenseRecommendationsRequest : AmazonComputeOptimizerRequest
     {
-        private List<string> _accountIds = new List<string>();
-        private List<string> _fieldsToExport = new List<string>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _fieldsToExport = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FileFormat _fileFormat;
-        private List<LicenseRecommendationFilter> _filters = new List<LicenseRecommendationFilter>();
+        private List<LicenseRecommendationFilter> _filters = AWSConfigs.InitializeCollections ? new List<LicenseRecommendationFilter>() : null;
         private bool? _includeMemberAccounts;
         private S3DestinationConfig _s3DestinationConfig;
 
@@ -87,7 +87,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if FieldsToExport property is set
         internal bool IsSetFieldsToExport()
         {
-            return this._fieldsToExport != null && this._fieldsToExport.Count > 0; 
+            return this._fieldsToExport != null && (this._fieldsToExport.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

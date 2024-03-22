@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the Peerings
         /// </summary>
         public IPaginatedEnumerable<Peering> Peerings => 
-            new PaginatedResultKeyResponse<ListPeeringsResponse, Peering>(this, (i) => i.Peerings);
+            new PaginatedResultKeyResponse<ListPeeringsResponse, Peering>(this, (i) => i.Peerings ?? new List<Peering>());
 
         internal ListPeeringsPaginator(IAmazonNetworkManager client, ListPeeringsRequest request)
         {

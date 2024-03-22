@@ -42,8 +42,8 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class UpdateLicenseSpecificationsForResourceRequest : AmazonLicenseManagerRequest
     {
-        private List<LicenseSpecification> _addLicenseSpecifications = new List<LicenseSpecification>();
-        private List<LicenseSpecification> _removeLicenseSpecifications = new List<LicenseSpecification>();
+        private List<LicenseSpecification> _addLicenseSpecifications = AWSConfigs.InitializeCollections ? new List<LicenseSpecification>() : null;
+        private List<LicenseSpecification> _removeLicenseSpecifications = AWSConfigs.InitializeCollections ? new List<LicenseSpecification>() : null;
         private string _resourceArn;
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if AddLicenseSpecifications property is set
         internal bool IsSetAddLicenseSpecifications()
         {
-            return this._addLicenseSpecifications != null && this._addLicenseSpecifications.Count > 0; 
+            return this._addLicenseSpecifications != null && (this._addLicenseSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if RemoveLicenseSpecifications property is set
         internal bool IsSetRemoveLicenseSpecifications()
         {
-            return this._removeLicenseSpecifications != null && this._removeLicenseSpecifications.Count > 0; 
+            return this._removeLicenseSpecifications != null && (this._removeLicenseSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

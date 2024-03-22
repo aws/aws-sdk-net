@@ -87,6 +87,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobQueueName);
                 }
 
+                if(publicRequest.IsSetJobStateTimeLimitActions())
+                {
+                    context.Writer.WritePropertyName("jobStateTimeLimitActions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestJobStateTimeLimitActionsListValue in publicRequest.JobStateTimeLimitActions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JobStateTimeLimitActionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestJobStateTimeLimitActionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetPriority())
                 {
                     context.Writer.WritePropertyName("priority");

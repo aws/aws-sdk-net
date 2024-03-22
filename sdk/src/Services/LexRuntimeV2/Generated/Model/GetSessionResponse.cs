@@ -33,8 +33,8 @@ namespace Amazon.LexRuntimeV2.Model
     /// </summary>
     public partial class GetSessionResponse : AmazonWebServiceResponse
     {
-        private List<Interpretation> _interpretations = new List<Interpretation>();
-        private List<Message> _messages = new List<Message>();
+        private List<Interpretation> _interpretations = AWSConfigs.InitializeCollections ? new List<Interpretation>() : null;
+        private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
         private string _sessionId;
         private SessionState _sessionStateValue;
 
@@ -61,7 +61,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if Interpretations property is set
         internal bool IsSetInterpretations()
         {
-            return this._interpretations != null && this._interpretations.Count > 0; 
+            return this._interpretations != null && (this._interpretations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

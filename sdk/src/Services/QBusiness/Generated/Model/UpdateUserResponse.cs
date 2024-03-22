@@ -33,9 +33,9 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class UpdateUserResponse : AmazonWebServiceResponse
     {
-        private List<UserAlias> _userAliasesAdded = new List<UserAlias>();
-        private List<UserAlias> _userAliasesDeleted = new List<UserAlias>();
-        private List<UserAlias> _userAliasesUpdated = new List<UserAlias>();
+        private List<UserAlias> _userAliasesAdded = AWSConfigs.InitializeCollections ? new List<UserAlias>() : null;
+        private List<UserAlias> _userAliasesDeleted = AWSConfigs.InitializeCollections ? new List<UserAlias>() : null;
+        private List<UserAlias> _userAliasesUpdated = AWSConfigs.InitializeCollections ? new List<UserAlias>() : null;
 
         /// <summary>
         /// Gets and sets the property UserAliasesAdded. 
@@ -52,7 +52,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if UserAliasesAdded property is set
         internal bool IsSetUserAliasesAdded()
         {
-            return this._userAliasesAdded != null && this._userAliasesAdded.Count > 0; 
+            return this._userAliasesAdded != null && (this._userAliasesAdded.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if UserAliasesDeleted property is set
         internal bool IsSetUserAliasesDeleted()
         {
-            return this._userAliasesDeleted != null && this._userAliasesDeleted.Count > 0; 
+            return this._userAliasesDeleted != null && (this._userAliasesDeleted.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if UserAliasesUpdated property is set
         internal bool IsSetUserAliasesUpdated()
         {
-            return this._userAliasesUpdated != null && this._userAliasesUpdated.Count > 0; 
+            return this._userAliasesUpdated != null && (this._userAliasesUpdated.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

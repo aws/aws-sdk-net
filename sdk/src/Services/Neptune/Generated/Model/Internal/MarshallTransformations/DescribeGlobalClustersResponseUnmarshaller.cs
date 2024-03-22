@@ -84,6 +84,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("GlobalClusters/GlobalClusterMember", targetDepth))
                     {
                         var unmarshaller = GlobalClusterUnmarshaller.Instance;
+                        if (response.GlobalClusters == null)
+                        {
+                            response.GlobalClusters = new List<GlobalCluster>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.GlobalClusters.Add(item);
                         continue;

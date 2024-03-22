@@ -75,12 +75,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Contents", targetDepth))
                     {
+                        if (response.S3Objects == null)
+                        {
+                            response.S3Objects = new List<S3Object>();
+                        }
+
                         // adding the bucket name into the S3Object instance enables
                         // a better pipelining experience in PowerShell
                         var s3Object = ContentsItemUnmarshaller.Instance.Unmarshall(context);
                         s3Object.BucketName = response.Name;
                         response.S3Objects.Add(s3Object);
-                            
                         continue;
                     }
                     if (context.TestExpression("Name", targetDepth))
@@ -112,8 +116,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         var prefix = CommonPrefixesItemUnmarshaller.Instance.Unmarshall(context);
 
                         if(prefix != null)
+                        {
+                            if (response.CommonPrefixes == null)
+                            {
+                                response.CommonPrefixes = new List<string>();
+                            }
                             response.CommonPrefixes.Add(prefix);
-                            
+                        }
+
                         continue;
                     }
                 }

@@ -35,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribeAssociationExecutionsRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _associationId;
-        private List<AssociationExecutionFilter> _filters = new List<AssociationExecutionFilter>();
+        private List<AssociationExecutionFilter> _filters = AWSConfigs.InitializeCollections ? new List<AssociationExecutionFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -86,7 +86,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

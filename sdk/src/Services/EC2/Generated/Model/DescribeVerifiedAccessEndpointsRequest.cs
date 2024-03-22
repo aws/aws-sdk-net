@@ -34,10 +34,10 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeVerifiedAccessEndpointsRequest : AmazonEC2Request
     {
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _verifiedAccessEndpointIds = new List<string>();
+        private List<string> _verifiedAccessEndpointIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _verifiedAccessGroupId;
         private string _verifiedAccessInstanceId;
 
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.EC2.Model
         // Check to see if VerifiedAccessEndpointIds property is set
         internal bool IsSetVerifiedAccessEndpointIds()
         {
-            return this._verifiedAccessEndpointIds != null && this._verifiedAccessEndpointIds.Count > 0; 
+            return this._verifiedAccessEndpointIds != null && (this._verifiedAccessEndpointIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

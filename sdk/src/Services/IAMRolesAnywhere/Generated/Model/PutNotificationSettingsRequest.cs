@@ -44,7 +44,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// </summary>
     public partial class PutNotificationSettingsRequest : AmazonIAMRolesAnywhereRequest
     {
-        private List<NotificationSetting> _notificationSettings = new List<NotificationSetting>();
+        private List<NotificationSetting> _notificationSettings = AWSConfigs.InitializeCollections ? new List<NotificationSetting>() : null;
         private string _trustAnchorId;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if NotificationSettings property is set
         internal bool IsSetNotificationSettings()
         {
-            return this._notificationSettings != null && this._notificationSettings.Count > 0; 
+            return this._notificationSettings != null && (this._notificationSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.MarketplaceAgreement.Model
     /// </summary>
     public partial class UsageBasedRateCardItem
     {
-        private List<RateCardItem> _rateCard = new List<RateCardItem>();
+        private List<RateCardItem> _rateCard = AWSConfigs.InitializeCollections ? new List<RateCardItem>() : null;
 
         /// <summary>
         /// Gets and sets the property RateCard. 
@@ -51,7 +51,7 @@ namespace Amazon.MarketplaceAgreement.Model
         // Check to see if RateCard property is set
         internal bool IsSetRateCard()
         {
-            return this._rateCard != null && this._rateCard.Count > 0; 
+            return this._rateCard != null && (this._rateCard.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

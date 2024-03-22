@@ -57,6 +57,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Fields/member", targetDepth))
                     {
+                        if (unmarshalledObject.Fields == null)
+                        {
+                            unmarshalledObject.Fields = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Fields.Add(unmarshaller.Unmarshall(context));
                         continue;

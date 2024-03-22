@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the GameSessionDetails
         /// </summary>
         public IPaginatedEnumerable<GameSessionDetail> GameSessionDetails => 
-            new PaginatedResultKeyResponse<DescribeGameSessionDetailsResponse, GameSessionDetail>(this, (i) => i.GameSessionDetails);
+            new PaginatedResultKeyResponse<DescribeGameSessionDetailsResponse, GameSessionDetail>(this, (i) => i.GameSessionDetails ?? new List<GameSessionDetail>());
 
         internal DescribeGameSessionDetailsPaginator(IAmazonGameLift client, DescribeGameSessionDetailsRequest request)
         {

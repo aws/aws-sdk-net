@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ListFindingAggregatorsResponse : AmazonWebServiceResponse
     {
-        private List<FindingAggregator> _findingAggregators = new List<FindingAggregator>();
+        private List<FindingAggregator> _findingAggregators = AWSConfigs.InitializeCollections ? new List<FindingAggregator>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if FindingAggregators property is set
         internal bool IsSetFindingAggregators()
         {
-            return this._findingAggregators != null && this._findingAggregators.Count > 0; 
+            return this._findingAggregators != null && (this._findingAggregators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

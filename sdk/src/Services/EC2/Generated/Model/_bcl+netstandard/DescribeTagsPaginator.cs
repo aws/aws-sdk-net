@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<TagDescription> Tags => 
-            new PaginatedResultKeyResponse<DescribeTagsResponse, TagDescription>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<DescribeTagsResponse, TagDescription>(this, (i) => i.Tags ?? new List<TagDescription>());
 
         internal DescribeTagsPaginator(IAmazonEC2 client, DescribeTagsRequest request)
         {

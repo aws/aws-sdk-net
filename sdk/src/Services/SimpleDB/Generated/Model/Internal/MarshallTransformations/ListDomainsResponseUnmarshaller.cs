@@ -84,6 +84,10 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DomainName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.DomainNames == null)
+                        {
+                            response.DomainNames = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DomainNames.Add(item);
                         continue;

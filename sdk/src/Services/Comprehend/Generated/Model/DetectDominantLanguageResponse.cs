@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class DetectDominantLanguageResponse : AmazonWebServiceResponse
     {
-        private List<DominantLanguage> _languages = new List<DominantLanguage>();
+        private List<DominantLanguage> _languages = AWSConfigs.InitializeCollections ? new List<DominantLanguage>() : null;
 
         /// <summary>
         /// Gets and sets the property Languages. 
@@ -59,7 +59,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Languages property is set
         internal bool IsSetLanguages()
         {
-            return this._languages != null && this._languages.Count > 0; 
+            return this._languages != null && (this._languages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the ImportJobs
         /// </summary>
         public IPaginatedEnumerable<ImportReadSetJobItem> ImportJobs => 
-            new PaginatedResultKeyResponse<ListReadSetImportJobsResponse, ImportReadSetJobItem>(this, (i) => i.ImportJobs);
+            new PaginatedResultKeyResponse<ListReadSetImportJobsResponse, ImportReadSetJobItem>(this, (i) => i.ImportJobs ?? new List<ImportReadSetJobItem>());
 
         internal ListReadSetImportJobsPaginator(IAmazonOmics client, ListReadSetImportJobsRequest request)
         {

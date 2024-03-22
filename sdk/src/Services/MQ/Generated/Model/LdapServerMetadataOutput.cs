@@ -34,7 +34,7 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class LdapServerMetadataOutput
     {
-        private List<string> _hosts = new List<string>();
+        private List<string> _hosts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleBase;
         private string _roleName;
         private string _roleSearchMatching;
@@ -62,7 +62,7 @@ namespace Amazon.MQ.Model
         // Check to see if Hosts property is set
         internal bool IsSetHosts()
         {
-            return this._hosts != null && this._hosts.Count > 0; 
+            return this._hosts != null && (this._hosts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

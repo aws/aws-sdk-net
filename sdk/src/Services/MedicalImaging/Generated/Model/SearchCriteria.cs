@@ -33,7 +33,7 @@ namespace Amazon.MedicalImaging.Model
     /// </summary>
     public partial class SearchCriteria
     {
-        private List<SearchFilter> _filters = new List<SearchFilter>();
+        private List<SearchFilter> _filters = AWSConfigs.InitializeCollections ? new List<SearchFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -51,7 +51,7 @@ namespace Amazon.MedicalImaging.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

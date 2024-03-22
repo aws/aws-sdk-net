@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class InventoryItemSchema
     {
-        private List<InventoryItemAttribute> _attributes = new List<InventoryItemAttribute>();
+        private List<InventoryItemAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<InventoryItemAttribute>() : null;
         private string _displayName;
         private string _typeName;
         private string _version;
@@ -55,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

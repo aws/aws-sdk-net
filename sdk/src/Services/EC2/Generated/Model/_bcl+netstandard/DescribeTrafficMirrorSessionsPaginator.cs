@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the TrafficMirrorSessions
         /// </summary>
         public IPaginatedEnumerable<TrafficMirrorSession> TrafficMirrorSessions => 
-            new PaginatedResultKeyResponse<DescribeTrafficMirrorSessionsResponse, TrafficMirrorSession>(this, (i) => i.TrafficMirrorSessions);
+            new PaginatedResultKeyResponse<DescribeTrafficMirrorSessionsResponse, TrafficMirrorSession>(this, (i) => i.TrafficMirrorSessions ?? new List<TrafficMirrorSession>());
 
         internal DescribeTrafficMirrorSessionsPaginator(IAmazonEC2 client, DescribeTrafficMirrorSessionsRequest request)
         {

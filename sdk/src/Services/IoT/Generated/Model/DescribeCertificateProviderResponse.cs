@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class DescribeCertificateProviderResponse : AmazonWebServiceResponse
     {
-        private List<string> _accountDefaultForOperations = new List<string>();
+        private List<string> _accountDefaultForOperations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _certificateProviderArn;
         private string _certificateProviderName;
         private DateTime? _creationDate;
@@ -57,7 +57,7 @@ namespace Amazon.IoT.Model
         // Check to see if AccountDefaultForOperations property is set
         internal bool IsSetAccountDefaultForOperations()
         {
-            return this._accountDefaultForOperations != null && this._accountDefaultForOperations.Count > 0; 
+            return this._accountDefaultForOperations != null && (this._accountDefaultForOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,9 +33,9 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     /// </summary>
     public partial class BatchGetRecordResponse : AmazonWebServiceResponse
     {
-        private List<BatchGetRecordError> _errors = new List<BatchGetRecordError>();
-        private List<BatchGetRecordResultDetail> _records = new List<BatchGetRecordResultDetail>();
-        private List<BatchGetRecordIdentifier> _unprocessedIdentifiers = new List<BatchGetRecordIdentifier>();
+        private List<BatchGetRecordError> _errors = AWSConfigs.InitializeCollections ? new List<BatchGetRecordError>() : null;
+        private List<BatchGetRecordResultDetail> _records = AWSConfigs.InitializeCollections ? new List<BatchGetRecordResultDetail>() : null;
+        private List<BatchGetRecordIdentifier> _unprocessedIdentifiers = AWSConfigs.InitializeCollections ? new List<BatchGetRecordIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -53,7 +53,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         // Check to see if UnprocessedIdentifiers property is set
         internal bool IsSetUnprocessedIdentifiers()
         {
-            return this._unprocessedIdentifiers != null && this._unprocessedIdentifiers.Count > 0; 
+            return this._unprocessedIdentifiers != null && (this._unprocessedIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

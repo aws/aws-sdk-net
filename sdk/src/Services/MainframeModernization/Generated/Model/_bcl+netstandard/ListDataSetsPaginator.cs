@@ -45,7 +45,7 @@ namespace Amazon.MainframeModernization.Model
         /// Enumerable containing all of the DataSets
         /// </summary>
         public IPaginatedEnumerable<DataSetSummary> DataSets => 
-            new PaginatedResultKeyResponse<ListDataSetsResponse, DataSetSummary>(this, (i) => i.DataSets);
+            new PaginatedResultKeyResponse<ListDataSetsResponse, DataSetSummary>(this, (i) => i.DataSets ?? new List<DataSetSummary>());
 
         internal ListDataSetsPaginator(IAmazonMainframeModernization client, ListDataSetsRequest request)
         {

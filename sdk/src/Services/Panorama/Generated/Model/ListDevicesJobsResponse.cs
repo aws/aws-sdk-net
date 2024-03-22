@@ -33,7 +33,7 @@ namespace Amazon.Panorama.Model
     /// </summary>
     public partial class ListDevicesJobsResponse : AmazonWebServiceResponse
     {
-        private List<DeviceJob> _deviceJobs = new List<DeviceJob>();
+        private List<DeviceJob> _deviceJobs = AWSConfigs.InitializeCollections ? new List<DeviceJob>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Panorama.Model
         // Check to see if DeviceJobs property is set
         internal bool IsSetDeviceJobs()
         {
-            return this._deviceJobs != null && this._deviceJobs.Count > 0; 
+            return this._deviceJobs != null && (this._deviceJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

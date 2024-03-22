@@ -33,7 +33,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// </summary>
     public partial class ListApplicationVersionsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationVersionSummary> _applicationVersionSummaries = new List<ApplicationVersionSummary>();
+        private List<ApplicationVersionSummary> _applicationVersionSummaries = AWSConfigs.InitializeCollections ? new List<ApplicationVersionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if ApplicationVersionSummaries property is set
         internal bool IsSetApplicationVersionSummaries()
         {
-            return this._applicationVersionSummaries != null && this._applicationVersionSummaries.Count > 0; 
+            return this._applicationVersionSummaries != null && (this._applicationVersionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -38,14 +38,14 @@ namespace Amazon.ComputeOptimizer.Model
         private ServiceConfiguration _currentServiceConfiguration;
         private ECSEffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private ECSServiceRecommendationFinding _finding;
-        private List<string> _findingReasonCodes = new List<string>();
+        private List<string> _findingReasonCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastRefreshTimestamp;
         private ECSServiceLaunchType _launchType;
         private double? _lookbackPeriodInDays;
         private string _serviceArn;
-        private List<ECSServiceRecommendationOption> _serviceRecommendationOptions = new List<ECSServiceRecommendationOption>();
-        private List<Tag> _tags = new List<Tag>();
-        private List<ECSServiceUtilizationMetric> _utilizationMetrics = new List<ECSServiceUtilizationMetric>();
+        private List<ECSServiceRecommendationOption> _serviceRecommendationOptions = AWSConfigs.InitializeCollections ? new List<ECSServiceRecommendationOption>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<ECSServiceUtilizationMetric> _utilizationMetrics = AWSConfigs.InitializeCollections ? new List<ECSServiceUtilizationMetric>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -207,7 +207,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if FindingReasonCodes property is set
         internal bool IsSetFindingReasonCodes()
         {
-            return this._findingReasonCodes != null && this._findingReasonCodes.Count > 0; 
+            return this._findingReasonCodes != null && (this._findingReasonCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -311,7 +311,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if ServiceRecommendationOptions property is set
         internal bool IsSetServiceRecommendationOptions()
         {
-            return this._serviceRecommendationOptions != null && this._serviceRecommendationOptions.Count > 0; 
+            return this._serviceRecommendationOptions != null && (this._serviceRecommendationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -329,7 +329,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -348,7 +348,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if UtilizationMetrics property is set
         internal bool IsSetUtilizationMetrics()
         {
-            return this._utilizationMetrics != null && this._utilizationMetrics.Count > 0; 
+            return this._utilizationMetrics != null && (this._utilizationMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

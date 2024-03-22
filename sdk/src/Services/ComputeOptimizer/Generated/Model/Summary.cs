@@ -34,7 +34,7 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class Summary
     {
         private Finding _name;
-        private List<ReasonCodeSummary> _reasonCodeSummaries = new List<ReasonCodeSummary>();
+        private List<ReasonCodeSummary> _reasonCodeSummaries = AWSConfigs.InitializeCollections ? new List<ReasonCodeSummary>() : null;
         private double? _value;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if ReasonCodeSummaries property is set
         internal bool IsSetReasonCodeSummaries()
         {
-            return this._reasonCodeSummaries != null && this._reasonCodeSummaries.Count > 0; 
+            return this._reasonCodeSummaries != null && (this._reasonCodeSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

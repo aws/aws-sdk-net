@@ -34,10 +34,10 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class LambdaFunctionAggregation
     {
-        private List<StringFilter> _functionNames = new List<StringFilter>();
-        private List<MapFilter> _functionTags = new List<MapFilter>();
-        private List<StringFilter> _resourceIds = new List<StringFilter>();
-        private List<StringFilter> _runtimes = new List<StringFilter>();
+        private List<StringFilter> _functionNames = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<MapFilter> _functionTags = AWSConfigs.InitializeCollections ? new List<MapFilter>() : null;
+        private List<StringFilter> _resourceIds = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _runtimes = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private LambdaFunctionSortBy _sortBy;
         private SortOrder _sortOrder;
 
@@ -57,7 +57,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FunctionNames property is set
         internal bool IsSetFunctionNames()
         {
-            return this._functionNames != null && this._functionNames.Count > 0; 
+            return this._functionNames != null && (this._functionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FunctionTags property is set
         internal bool IsSetFunctionTags()
         {
-            return this._functionTags != null && this._functionTags.Count > 0; 
+            return this._functionTags != null && (this._functionTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ResourceIds property is set
         internal bool IsSetResourceIds()
         {
-            return this._resourceIds != null && this._resourceIds.Count > 0; 
+            return this._resourceIds != null && (this._resourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Runtimes property is set
         internal bool IsSetRuntimes()
         {
-            return this._runtimes != null && this._runtimes.Count > 0; 
+            return this._runtimes != null && (this._runtimes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

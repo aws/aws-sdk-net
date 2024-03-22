@@ -34,7 +34,7 @@ namespace Amazon.RestJsonTest.Model
     /// </summary>
     public partial class QueryIntegerListMapRequest : AmazonRestJsonTestRequest
     {
-        private Dictionary<string, List<int>> _queryParamsMapOfIntegerList = new Dictionary<string, List<int>>();
+        private Dictionary<string, List<int>> _queryParamsMapOfIntegerList = AWSConfigs.InitializeCollections ? new Dictionary<string, List<int>>() : null;
 
         /// <summary>
         /// Gets and sets the property QueryParamsMapOfIntegerList.
@@ -48,7 +48,7 @@ namespace Amazon.RestJsonTest.Model
         // Check to see if QueryParamsMapOfIntegerList property is set
         internal bool IsSetQueryParamsMapOfIntegerList()
         {
-            return this._queryParamsMapOfIntegerList != null && this._queryParamsMapOfIntegerList.Count > 0; 
+            return this._queryParamsMapOfIntegerList != null && (this._queryParamsMapOfIntegerList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

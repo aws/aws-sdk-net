@@ -90,6 +90,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UserGroups/member", targetDepth))
                     {
                         var unmarshaller = UserGroupUnmarshaller.Instance;
+                        if (response.UserGroups == null)
+                        {
+                            response.UserGroups = new List<UserGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.UserGroups.Add(item);
                         continue;

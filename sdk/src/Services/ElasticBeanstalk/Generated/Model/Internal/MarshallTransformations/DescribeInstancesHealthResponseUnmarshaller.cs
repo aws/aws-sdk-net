@@ -84,6 +84,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("InstanceHealthList/member", targetDepth))
                     {
                         var unmarshaller = SingleInstanceHealthUnmarshaller.Instance;
+                        if (response.InstanceHealthList == null)
+                        {
+                            response.InstanceHealthList = new List<SingleInstanceHealth>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.InstanceHealthList.Add(item);
                         continue;

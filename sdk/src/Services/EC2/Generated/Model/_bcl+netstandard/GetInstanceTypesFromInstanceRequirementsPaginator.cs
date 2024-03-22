@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the InstanceTypes
         /// </summary>
         public IPaginatedEnumerable<InstanceTypeInfoFromInstanceRequirements> InstanceTypes => 
-            new PaginatedResultKeyResponse<GetInstanceTypesFromInstanceRequirementsResponse, InstanceTypeInfoFromInstanceRequirements>(this, (i) => i.InstanceTypes);
+            new PaginatedResultKeyResponse<GetInstanceTypesFromInstanceRequirementsResponse, InstanceTypeInfoFromInstanceRequirements>(this, (i) => i.InstanceTypes ?? new List<InstanceTypeInfoFromInstanceRequirements>());
 
         internal GetInstanceTypesFromInstanceRequirementsPaginator(IAmazonEC2 client, GetInstanceTypesFromInstanceRequirementsRequest request)
         {

@@ -39,8 +39,8 @@ namespace Amazon.KendraRanking.Model
         private string _id;
         private float? _originalScore;
         private string _title;
-        private List<string> _tokenizedBody = new List<string>();
-        private List<string> _tokenizedTitle = new List<string>();
+        private List<string> _tokenizedBody = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _tokenizedTitle = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -158,7 +158,7 @@ namespace Amazon.KendraRanking.Model
         // Check to see if TokenizedBody property is set
         internal bool IsSetTokenizedBody()
         {
-            return this._tokenizedBody != null && this._tokenizedBody.Count > 0; 
+            return this._tokenizedBody != null && (this._tokenizedBody.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.KendraRanking.Model
         // Check to see if TokenizedTitle property is set
         internal bool IsSetTokenizedTitle()
         {
-            return this._tokenizedTitle != null && this._tokenizedTitle.Count > 0; 
+            return this._tokenizedTitle != null && (this._tokenizedTitle.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

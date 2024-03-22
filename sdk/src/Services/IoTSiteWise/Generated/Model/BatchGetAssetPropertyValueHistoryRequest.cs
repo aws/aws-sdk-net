@@ -36,7 +36,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class BatchGetAssetPropertyValueHistoryRequest : AmazonIoTSiteWiseRequest
     {
-        private List<BatchGetAssetPropertyValueHistoryEntry> _entries = new List<BatchGetAssetPropertyValueHistoryEntry>();
+        private List<BatchGetAssetPropertyValueHistoryEntry> _entries = AWSConfigs.InitializeCollections ? new List<BatchGetAssetPropertyValueHistoryEntry>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -57,7 +57,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

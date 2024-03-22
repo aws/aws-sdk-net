@@ -33,9 +33,9 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class MetricsDataSource
     {
-        private Dictionary<string, List<string>> _dimensions = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _dimensions = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private DateTime? _endDate;
-        private List<ExportMetric> _metrics = new List<ExportMetric>();
+        private List<ExportMetric> _metrics = AWSConfigs.InitializeCollections ? new List<ExportMetric>() : null;
         private MetricNamespace _awsNamespace;
         private DateTime? _startDate;
 
@@ -56,7 +56,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

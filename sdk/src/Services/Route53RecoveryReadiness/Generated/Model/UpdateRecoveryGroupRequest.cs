@@ -34,7 +34,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     /// </summary>
     public partial class UpdateRecoveryGroupRequest : AmazonRoute53RecoveryReadinessRequest
     {
-        private List<string> _cells = new List<string>();
+        private List<string> _cells = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _recoveryGroupName;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         // Check to see if Cells property is set
         internal bool IsSetCells()
         {
-            return this._cells != null && this._cells.Count > 0; 
+            return this._cells != null && (this._cells.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

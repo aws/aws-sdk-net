@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Retrieved reference
+    /// Contains metadata about a sources cited for the generated response.
     /// </summary>
     public partial class RetrievedReference
     {
@@ -37,8 +37,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         private RetrievalResultLocation _location;
 
         /// <summary>
-        /// Gets and sets the property Content.
+        /// Gets and sets the property Content. 
+        /// <para>
+        /// Contains the cited text from the data source.
+        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RetrievalResultContent Content
         {
             get { return this._content; }
@@ -52,8 +56,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location.
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// Contains information about the location of the data source.
+        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RetrievalResultLocation Location
         {
             get { return this._location; }

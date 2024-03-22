@@ -35,8 +35,8 @@ namespace Amazon.ElastiCache.Model
     public partial class DecreaseNodeGroupsInGlobalReplicationGroupRequest : AmazonElastiCacheRequest
     {
         private bool? _applyImmediately;
-        private List<string> _globalNodeGroupsToRemove = new List<string>();
-        private List<string> _globalNodeGroupsToRetain = new List<string>();
+        private List<string> _globalNodeGroupsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _globalNodeGroupsToRetain = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _globalReplicationGroupId;
         private int? _nodeGroupCount;
 
@@ -78,7 +78,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if GlobalNodeGroupsToRemove property is set
         internal bool IsSetGlobalNodeGroupsToRemove()
         {
-            return this._globalNodeGroupsToRemove != null && this._globalNodeGroupsToRemove.Count > 0; 
+            return this._globalNodeGroupsToRemove != null && (this._globalNodeGroupsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if GlobalNodeGroupsToRetain property is set
         internal bool IsSetGlobalNodeGroupsToRetain()
         {
-            return this._globalNodeGroupsToRetain != null && this._globalNodeGroupsToRetain.Count > 0; 
+            return this._globalNodeGroupsToRetain != null && (this._globalNodeGroupsToRetain.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

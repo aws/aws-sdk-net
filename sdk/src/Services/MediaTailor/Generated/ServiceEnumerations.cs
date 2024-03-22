@@ -635,6 +635,10 @@ namespace Amazon.MediaTailor
     {
 
         /// <summary>
+        /// Constant ALTERNATE_MEDIA for ScheduleEntryType
+        /// </summary>
+        public static readonly ScheduleEntryType ALTERNATE_MEDIA = new ScheduleEntryType("ALTERNATE_MEDIA");
+        /// <summary>
         /// Constant FILLER_SLATE for ScheduleEntryType
         /// </summary>
         public static readonly ScheduleEntryType FILLER_SLATE = new ScheduleEntryType("FILLER_SLATE");

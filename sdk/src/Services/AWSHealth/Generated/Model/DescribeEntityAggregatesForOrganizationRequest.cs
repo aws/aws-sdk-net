@@ -35,8 +35,8 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class DescribeEntityAggregatesForOrganizationRequest : AmazonAWSHealthRequest
     {
-        private List<string> _awsAccountIds = new List<string>();
-        private List<string> _eventArns = new List<string>();
+        private List<string> _awsAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _eventArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccountIds. 
@@ -55,7 +55,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if AwsAccountIds property is set
         internal bool IsSetAwsAccountIds()
         {
-            return this._awsAccountIds != null && this._awsAccountIds.Count > 0; 
+            return this._awsAccountIds != null && (this._awsAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EventArns property is set
         internal bool IsSetEventArns()
         {
-            return this._eventArns != null && this._eventArns.Count > 0; 
+            return this._eventArns != null && (this._eventArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// </summary>
     public partial class ListCrlsResponse : AmazonWebServiceResponse
     {
-        private List<CrlDetail> _crls = new List<CrlDetail>();
+        private List<CrlDetail> _crls = AWSConfigs.InitializeCollections ? new List<CrlDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if Crls property is set
         internal bool IsSetCrls()
         {
-            return this._crls != null && this._crls.Count > 0; 
+            return this._crls != null && (this._crls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the Certificates
         /// </summary>
         public IPaginatedEnumerable<SigningCertificate> Certificates => 
-            new PaginatedResultKeyResponse<ListSigningCertificatesResponse, SigningCertificate>(this, (i) => i.Certificates);
+            new PaginatedResultKeyResponse<ListSigningCertificatesResponse, SigningCertificate>(this, (i) => i.Certificates ?? new List<SigningCertificate>());
 
         internal ListSigningCertificatesPaginator(IAmazonIdentityManagementService client, ListSigningCertificatesRequest request)
         {

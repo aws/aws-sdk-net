@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("importImageTaskSet/item", targetDepth))
                     {
                         var unmarshaller = ImportImageTaskUnmarshaller.Instance;
+                        if (response.ImportImageTasks == null)
+                        {
+                            response.ImportImageTasks = new List<ImportImageTask>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ImportImageTasks.Add(item);
                         continue;

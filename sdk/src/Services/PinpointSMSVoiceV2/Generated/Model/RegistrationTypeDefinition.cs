@@ -35,7 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     {
         private RegistrationTypeDisplayHints _displayHints;
         private string _registrationType;
-        private List<SupportedAssociation> _supportedAssociations = new List<SupportedAssociation>();
+        private List<SupportedAssociation> _supportedAssociations = AWSConfigs.InitializeCollections ? new List<SupportedAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property DisplayHints. 
@@ -91,7 +91,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if SupportedAssociations property is set
         internal bool IsSetSupportedAssociations()
         {
-            return this._supportedAssociations != null && this._supportedAssociations.Count > 0; 
+            return this._supportedAssociations != null && (this._supportedAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

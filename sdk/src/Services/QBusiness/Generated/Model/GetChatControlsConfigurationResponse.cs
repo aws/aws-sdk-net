@@ -36,7 +36,7 @@ namespace Amazon.QBusiness.Model
         private BlockedPhrasesConfiguration _blockedPhrases;
         private string _nextToken;
         private ResponseScope _responseScope;
-        private List<TopicConfiguration> _topicConfigurations = new List<TopicConfiguration>();
+        private List<TopicConfiguration> _topicConfigurations = AWSConfigs.InitializeCollections ? new List<TopicConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property BlockedPhrases. 
@@ -114,7 +114,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if TopicConfigurations property is set
         internal bool IsSetTopicConfigurations()
         {
-            return this._topicConfigurations != null && this._topicConfigurations.Count > 0; 
+            return this._topicConfigurations != null && (this._topicConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class TestAuthorizationResponse : AmazonWebServiceResponse
     {
-        private List<AuthResult> _authResults = new List<AuthResult>();
+        private List<AuthResult> _authResults = AWSConfigs.InitializeCollections ? new List<AuthResult>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthResults. 
@@ -50,7 +50,7 @@ namespace Amazon.IoT.Model
         // Check to see if AuthResults property is set
         internal bool IsSetAuthResults()
         {
-            return this._authResults != null && this._authResults.Count > 0; 
+            return this._authResults != null && (this._authResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

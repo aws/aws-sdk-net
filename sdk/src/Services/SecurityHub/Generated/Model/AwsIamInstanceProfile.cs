@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         private string _instanceProfileId;
         private string _instanceProfileName;
         private string _path;
-        private List<AwsIamInstanceProfileRole> _roles = new List<AwsIamInstanceProfileRole>();
+        private List<AwsIamInstanceProfileRole> _roles = AWSConfigs.InitializeCollections ? new List<AwsIamInstanceProfileRole>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -151,7 +151,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Roles property is set
         internal bool IsSetRoles()
         {
-            return this._roles != null && this._roles.Count > 0; 
+            return this._roles != null && (this._roles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

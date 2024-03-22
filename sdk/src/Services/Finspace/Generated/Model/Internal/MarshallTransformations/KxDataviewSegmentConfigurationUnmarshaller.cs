@@ -69,6 +69,12 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                     unmarshalledObject.DbPaths = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("onDemand", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.OnDemand = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("volumeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

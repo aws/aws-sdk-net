@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListMitigationActionsResponse : AmazonWebServiceResponse
     {
-        private List<MitigationActionIdentifier> _actionIdentifiers = new List<MitigationActionIdentifier>();
+        private List<MitigationActionIdentifier> _actionIdentifiers = AWSConfigs.InitializeCollections ? new List<MitigationActionIdentifier>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model
         // Check to see if ActionIdentifiers property is set
         internal bool IsSetActionIdentifiers()
         {
-            return this._actionIdentifiers != null && this._actionIdentifiers.Count > 0; 
+            return this._actionIdentifiers != null && (this._actionIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

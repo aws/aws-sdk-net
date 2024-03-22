@@ -45,7 +45,7 @@ namespace Amazon.APIGateway.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ApiKey> Items => 
-            new PaginatedResultKeyResponse<GetApiKeysResponse, ApiKey>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<GetApiKeysResponse, ApiKey>(this, (i) => i.Items ?? new List<ApiKey>());
 
         internal GetApiKeysPaginator(IAmazonAPIGateway client, GetApiKeysRequest request)
         {

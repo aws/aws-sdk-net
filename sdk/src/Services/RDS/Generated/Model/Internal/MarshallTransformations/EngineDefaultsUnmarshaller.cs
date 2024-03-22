@@ -69,6 +69,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Parameters/Parameter", targetDepth))
                     {
                         var unmarshaller = ParameterUnmarshaller.Instance;
+                        if (unmarshalledObject.Parameters == null)
+                        {
+                            unmarshalledObject.Parameters = new List<Parameter>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Parameters.Add(item);
                         continue;

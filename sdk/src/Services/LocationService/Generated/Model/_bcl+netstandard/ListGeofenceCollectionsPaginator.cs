@@ -45,7 +45,7 @@ namespace Amazon.LocationService.Model
         /// Enumerable containing all of the Entries
         /// </summary>
         public IPaginatedEnumerable<ListGeofenceCollectionsResponseEntry> Entries => 
-            new PaginatedResultKeyResponse<ListGeofenceCollectionsResponse, ListGeofenceCollectionsResponseEntry>(this, (i) => i.Entries);
+            new PaginatedResultKeyResponse<ListGeofenceCollectionsResponse, ListGeofenceCollectionsResponseEntry>(this, (i) => i.Entries ?? new List<ListGeofenceCollectionsResponseEntry>());
 
         internal ListGeofenceCollectionsPaginator(IAmazonLocationService client, ListGeofenceCollectionsRequest request)
         {

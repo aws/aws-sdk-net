@@ -34,9 +34,9 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class CreateVodSourceRequest : AmazonMediaTailorRequest
     {
-        private List<HttpPackageConfiguration> _httpPackageConfigurations = new List<HttpPackageConfiguration>();
+        private List<HttpPackageConfiguration> _httpPackageConfigurations = AWSConfigs.InitializeCollections ? new List<HttpPackageConfiguration>() : null;
         private string _sourceLocationName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _vodSourceName;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if HttpPackageConfigurations property is set
         internal bool IsSetHttpPackageConfigurations()
         {
-            return this._httpPackageConfigurations != null && this._httpPackageConfigurations.Count > 0; 
+            return this._httpPackageConfigurations != null && (this._httpPackageConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class TickerplantLogConfiguration
     {
-        private List<string> _tickerplantLogVolumes = new List<string>();
+        private List<string> _tickerplantLogVolumes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TickerplantLogVolumes. 
@@ -52,7 +52,7 @@ namespace Amazon.Finspace.Model
         // Check to see if TickerplantLogVolumes property is set
         internal bool IsSetTickerplantLogVolumes()
         {
-            return this._tickerplantLogVolumes != null && this._tickerplantLogVolumes.Count > 0; 
+            return this._tickerplantLogVolumes != null && (this._tickerplantLogVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

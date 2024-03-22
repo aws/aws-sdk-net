@@ -96,6 +96,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Roles/member", targetDepth))
                     {
                         var unmarshaller = RoleUnmarshaller.Instance;
+                        if (response.Roles == null)
+                        {
+                            response.Roles = new List<Role>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Roles.Add(item);
                         continue;

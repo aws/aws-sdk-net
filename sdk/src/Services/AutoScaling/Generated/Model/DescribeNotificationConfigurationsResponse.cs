@@ -34,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     public partial class DescribeNotificationConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<NotificationConfiguration> _notificationConfigurations = new List<NotificationConfiguration>();
+        private List<NotificationConfiguration> _notificationConfigurations = AWSConfigs.InitializeCollections ? new List<NotificationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NotificationConfigurations property is set
         internal bool IsSetNotificationConfigurations()
         {
-            return this._notificationConfigurations != null && this._notificationConfigurations.Count > 0; 
+            return this._notificationConfigurations != null && (this._notificationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

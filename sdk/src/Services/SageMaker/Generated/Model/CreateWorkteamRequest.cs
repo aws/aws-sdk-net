@@ -42,9 +42,9 @@ namespace Amazon.SageMaker.Model
     public partial class CreateWorkteamRequest : AmazonSageMakerRequest
     {
         private string _description;
-        private List<MemberDefinition> _memberDefinitions = new List<MemberDefinition>();
+        private List<MemberDefinition> _memberDefinitions = AWSConfigs.InitializeCollections ? new List<MemberDefinition>() : null;
         private NotificationConfiguration _notificationConfiguration;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _workforceName;
         private string _workteamName;
 
@@ -107,7 +107,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MemberDefinitions property is set
         internal bool IsSetMemberDefinitions()
         {
-            return this._memberDefinitions != null && this._memberDefinitions.Count > 0; 
+            return this._memberDefinitions != null && (this._memberDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

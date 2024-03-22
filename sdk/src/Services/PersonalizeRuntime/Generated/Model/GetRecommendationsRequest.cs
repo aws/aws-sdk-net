@@ -58,13 +58,13 @@ namespace Amazon.PersonalizeRuntime.Model
     public partial class GetRecommendationsRequest : AmazonPersonalizeRuntimeRequest
     {
         private string _campaignArn;
-        private Dictionary<string, string> _context = new Dictionary<string, string>();
+        private Dictionary<string, string> _context = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _filterArn;
-        private Dictionary<string, string> _filterValues = new Dictionary<string, string>();
+        private Dictionary<string, string> _filterValues = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _itemId;
-        private Dictionary<string, List<string>> _metadataColumns = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _metadataColumns = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private int? _numResults;
-        private List<Promotion> _promotions = new List<Promotion>();
+        private List<Promotion> _promotions = AWSConfigs.InitializeCollections ? new List<Promotion>() : null;
         private string _recommenderArn;
         private string _userId;
 
@@ -105,7 +105,7 @@ namespace Amazon.PersonalizeRuntime.Model
         // Check to see if Context property is set
         internal bool IsSetContext()
         {
-            return this._context != null && this._context.Count > 0; 
+            return this._context != null && (this._context.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Amazon.PersonalizeRuntime.Model
         // Check to see if FilterValues property is set
         internal bool IsSetFilterValues()
         {
-            return this._filterValues != null && this._filterValues.Count > 0; 
+            return this._filterValues != null && (this._filterValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Amazon.PersonalizeRuntime.Model
         // Check to see if MetadataColumns property is set
         internal bool IsSetMetadataColumns()
         {
-            return this._metadataColumns != null && this._metadataColumns.Count > 0; 
+            return this._metadataColumns != null && (this._metadataColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -257,7 +257,7 @@ namespace Amazon.PersonalizeRuntime.Model
         // Check to see if Promotions property is set
         internal bool IsSetPromotions()
         {
-            return this._promotions != null && this._promotions.Count > 0; 
+            return this._promotions != null && (this._promotions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

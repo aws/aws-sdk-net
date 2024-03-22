@@ -44,7 +44,7 @@ namespace Amazon.ComprehendMedical.Model
         private ICD10CMRelationshipType _relationshipType;
         private float? _score;
         private string _text;
-        private List<ICD10CMTrait> _traits = new List<ICD10CMTrait>();
+        private List<ICD10CMTrait> _traits = AWSConfigs.InitializeCollections ? new List<ICD10CMTrait>() : null;
         private ICD10CMAttributeType _type;
 
         /// <summary>
@@ -214,7 +214,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Traits property is set
         internal bool IsSetTraits()
         {
-            return this._traits != null && this._traits.Count > 0; 
+            return this._traits != null && (this._traits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

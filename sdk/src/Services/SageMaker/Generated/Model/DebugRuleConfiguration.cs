@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _localPath;
         private string _ruleConfigurationName;
         private string _ruleEvaluatorImage;
-        private Dictionary<string, string> _ruleParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _ruleParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _s3OutputPath;
         private int? _volumeSizeInGB;
 
@@ -136,7 +136,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if RuleParameters property is set
         internal bool IsSetRuleParameters()
         {
-            return this._ruleParameters != null && this._ruleParameters.Count > 0; 
+            return this._ruleParameters != null && (this._ruleParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

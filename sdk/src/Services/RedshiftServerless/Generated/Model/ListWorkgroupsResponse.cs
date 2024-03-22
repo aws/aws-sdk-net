@@ -34,7 +34,7 @@ namespace Amazon.RedshiftServerless.Model
     public partial class ListWorkgroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Workgroup> _workgroups = new List<Workgroup>();
+        private List<Workgroup> _workgroups = AWSConfigs.InitializeCollections ? new List<Workgroup>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if Workgroups property is set
         internal bool IsSetWorkgroups()
         {
-            return this._workgroups != null && this._workgroups.Count > 0; 
+            return this._workgroups != null && (this._workgroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

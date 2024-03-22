@@ -37,8 +37,8 @@ namespace Amazon.WorkMail.Model
         private AccessEffect _effect;
         private string _impersonationRuleId;
         private string _name;
-        private List<string> _notTargetUsers = new List<string>();
-        private List<string> _targetUsers = new List<string>();
+        private List<string> _notTargetUsers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _targetUsers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -133,7 +133,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if NotTargetUsers property is set
         internal bool IsSetNotTargetUsers()
         {
-            return this._notTargetUsers != null && this._notTargetUsers.Count > 0; 
+            return this._notTargetUsers != null && (this._notTargetUsers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if TargetUsers property is set
         internal bool IsSetTargetUsers()
         {
-            return this._targetUsers != null && this._targetUsers.Count > 0; 
+            return this._targetUsers != null && (this._targetUsers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

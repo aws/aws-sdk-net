@@ -33,7 +33,7 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class ListHostedZonesResponse : AmazonWebServiceResponse
     {
-        private List<HostedZone> _hostedZones = new List<HostedZone>();
+        private List<HostedZone> _hostedZones = AWSConfigs.InitializeCollections ? new List<HostedZone>() : null;
         private string _marker;
         private bool? _isTruncated;
         private string _nextMarker;
@@ -55,7 +55,7 @@ namespace Amazon.Route53.Model
         // Check to see if HostedZones property is set
         internal bool IsSetHostedZones()
         {
-            return this._hostedZones != null && this._hostedZones.Count > 0; 
+            return this._hostedZones != null && (this._hostedZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

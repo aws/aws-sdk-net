@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class TablePinnedFieldOptions
     {
-        private List<string> _pinnedLeftFields = new List<string>();
+        private List<string> _pinnedLeftFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property PinnedLeftFields. 
@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if PinnedLeftFields property is set
         internal bool IsSetPinnedLeftFields()
         {
-            return this._pinnedLeftFields != null && this._pinnedLeftFields.Count > 0; 
+            return this._pinnedLeftFields != null && (this._pinnedLeftFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.LakeFormation.Model
         /// Enumerable containing all of the DataCellsFilters
         /// </summary>
         public IPaginatedEnumerable<DataCellsFilter> DataCellsFilters => 
-            new PaginatedResultKeyResponse<ListDataCellsFilterResponse, DataCellsFilter>(this, (i) => i.DataCellsFilters);
+            new PaginatedResultKeyResponse<ListDataCellsFilterResponse, DataCellsFilter>(this, (i) => i.DataCellsFilters ?? new List<DataCellsFilter>());
 
         internal ListDataCellsFilterPaginator(IAmazonLakeFormation client, ListDataCellsFilterRequest request)
         {

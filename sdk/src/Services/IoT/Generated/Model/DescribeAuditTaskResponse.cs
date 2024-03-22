@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class DescribeAuditTaskResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, AuditCheckDetails> _auditDetails = new Dictionary<string, AuditCheckDetails>();
+        private Dictionary<string, AuditCheckDetails> _auditDetails = AWSConfigs.InitializeCollections ? new Dictionary<string, AuditCheckDetails>() : null;
         private string _scheduledAuditName;
         private DateTime? _taskStartTime;
         private TaskStatistics _taskStatistics;
@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model
         // Check to see if AuditDetails property is set
         internal bool IsSetAuditDetails()
         {
-            return this._auditDetails != null && this._auditDetails.Count > 0; 
+            return this._auditDetails != null && (this._auditDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

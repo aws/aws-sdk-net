@@ -45,7 +45,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Enumerable containing all of the Recipes
         /// </summary>
         public IPaginatedEnumerable<Recipe> Recipes => 
-            new PaginatedResultKeyResponse<ListRecipesResponse, Recipe>(this, (i) => i.Recipes);
+            new PaginatedResultKeyResponse<ListRecipesResponse, Recipe>(this, (i) => i.Recipes ?? new List<Recipe>());
 
         internal ListRecipesPaginator(IAmazonGlueDataBrew client, ListRecipesRequest request)
         {

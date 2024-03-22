@@ -33,11 +33,11 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class KxEnvironment
     {
-        private List<string> _availabilityZoneIds = new List<string>();
+        private List<string> _availabilityZoneIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _awsAccountId;
         private string _certificateAuthorityArn;
         private DateTime? _creationTimestamp;
-        private List<CustomDNSServer> _customdnsConfiguration = new List<CustomDNSServer>();
+        private List<CustomDNSServer> _customdnsConfiguration = AWSConfigs.InitializeCollections ? new List<CustomDNSServer>() : null;
         private string _dedicatedServiceAccountId;
         private string _description;
         private DnsStatus _dnsStatus;
@@ -66,7 +66,7 @@ namespace Amazon.Finspace.Model
         // Check to see if AvailabilityZoneIds property is set
         internal bool IsSetAvailabilityZoneIds()
         {
-            return this._availabilityZoneIds != null && this._availabilityZoneIds.Count > 0; 
+            return this._availabilityZoneIds != null && (this._availabilityZoneIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.Finspace.Model
         // Check to see if CustomDNSConfiguration property is set
         internal bool IsSetCustomDNSConfiguration()
         {
-            return this._customdnsConfiguration != null && this._customdnsConfiguration.Count > 0; 
+            return this._customdnsConfiguration != null && (this._customdnsConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

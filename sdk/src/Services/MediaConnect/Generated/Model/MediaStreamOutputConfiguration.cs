@@ -33,7 +33,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class MediaStreamOutputConfiguration
     {
-        private List<DestinationConfiguration> _destinationConfigurations = new List<DestinationConfiguration>();
+        private List<DestinationConfiguration> _destinationConfigurations = AWSConfigs.InitializeCollections ? new List<DestinationConfiguration>() : null;
         private EncodingName _encodingName;
         private EncodingParameters _encodingParameters;
         private string _mediaStreamName;
@@ -51,7 +51,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if DestinationConfigurations property is set
         internal bool IsSetDestinationConfigurations()
         {
-            return this._destinationConfigurations != null && this._destinationConfigurations.Count > 0; 
+            return this._destinationConfigurations != null && (this._destinationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

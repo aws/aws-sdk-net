@@ -46,7 +46,7 @@ namespace Amazon.CodeArtifact.Model
         private string _awsNamespace;
         private string _package;
         private string _repository;
-        private List<string> _versions = new List<string>();
+        private List<string> _versions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Domain. 
@@ -127,26 +127,41 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the package versions to be deleted. The package version component
-        /// that specifies its namespace depends on its type. For example:
+        /// The namespace of the package versions to be deleted. The package component that specifies
+        /// its namespace depends on its type. For example:
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The namespace is required when deleting package versions of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package version is its <c>groupId</c>. The namespace is
-        /// required when deleting Maven package versions. 
+        /// Maven
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <c>scope</c>. 
+        /// Swift
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// generic
+        /// </para>
+        ///  </li> </ul> </note> <ul> <li> 
+        /// <para>
+        ///  The namespace of a Maven package version is its <c>groupId</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The namespace of an npm or Swift package version is its <c>scope</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The namespace of a generic package is its <c>namespace</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  Python and NuGet package versions do not contain a corresponding component, package
         /// versions of those formats do not have a namespace. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  The namespace of a generic package is its <c>namespace</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -217,7 +232,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -69,6 +69,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("NextInvocations/ScheduledActionTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
+                        if (unmarshalledObject.NextInvocations == null)
+                        {
+                            unmarshalledObject.NextInvocations = new List<DateTime>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NextInvocations.Add(item);
                         continue;

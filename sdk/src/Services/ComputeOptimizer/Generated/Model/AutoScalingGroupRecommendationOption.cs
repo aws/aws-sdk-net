@@ -37,7 +37,7 @@ namespace Amazon.ComputeOptimizer.Model
         private GpuInfo _instanceGpuInfo;
         private MigrationEffort _migrationEffort;
         private double? _performanceRisk;
-        private List<UtilizationMetric> _projectedUtilizationMetrics = new List<UtilizationMetric>();
+        private List<UtilizationMetric> _projectedUtilizationMetrics = AWSConfigs.InitializeCollections ? new List<UtilizationMetric>() : null;
         private int? _rank;
         private SavingsOpportunity _savingsOpportunity;
         private AutoScalingGroupSavingsOpportunityAfterDiscounts _savingsOpportunityAfterDiscounts;
@@ -166,7 +166,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if ProjectedUtilizationMetrics property is set
         internal bool IsSetProjectedUtilizationMetrics()
         {
-            return this._projectedUtilizationMetrics != null && this._projectedUtilizationMetrics.Count > 0; 
+            return this._projectedUtilizationMetrics != null && (this._projectedUtilizationMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

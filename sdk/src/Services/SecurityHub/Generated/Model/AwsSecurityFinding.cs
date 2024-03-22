@@ -57,33 +57,33 @@ namespace Amazon.SecurityHub.Model
         private string _generatorId;
         private string _id;
         private string _lastObservedAt;
-        private List<Malware> _malware = new List<Malware>();
+        private List<Malware> _malware = AWSConfigs.InitializeCollections ? new List<Malware>() : null;
         private Network _network;
-        private List<NetworkPathComponent> _networkPath = new List<NetworkPathComponent>();
+        private List<NetworkPathComponent> _networkPath = AWSConfigs.InitializeCollections ? new List<NetworkPathComponent>() : null;
         private Note _note;
         private PatchSummary _patchSummary;
         private ProcessDetails _process;
         private string _processedAt;
         private string _productArn;
-        private Dictionary<string, string> _productFields = new Dictionary<string, string>();
+        private Dictionary<string, string> _productFields = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _productName;
         private RecordState _recordState;
         private string _region;
-        private List<RelatedFinding> _relatedFindings = new List<RelatedFinding>();
+        private List<RelatedFinding> _relatedFindings = AWSConfigs.InitializeCollections ? new List<RelatedFinding>() : null;
         private Remediation _remediation;
-        private List<Resource> _resources = new List<Resource>();
+        private List<Resource> _resources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
         private bool? _sample;
         private string _schemaVersion;
         private Severity _severity;
         private string _sourceUrl;
-        private List<ThreatIntelIndicator> _threatIntelIndicators = new List<ThreatIntelIndicator>();
-        private List<Threat> _threats = new List<Threat>();
+        private List<ThreatIntelIndicator> _threatIntelIndicators = AWSConfigs.InitializeCollections ? new List<ThreatIntelIndicator>() : null;
+        private List<Threat> _threats = AWSConfigs.InitializeCollections ? new List<Threat>() : null;
         private string _title;
-        private List<string> _types = new List<string>();
+        private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _updatedAt;
-        private Dictionary<string, string> _userDefinedFields = new Dictionary<string, string>();
+        private Dictionary<string, string> _userDefinedFields = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VerificationState _verificationState;
-        private List<Vulnerability> _vulnerabilities = new List<Vulnerability>();
+        private List<Vulnerability> _vulnerabilities = AWSConfigs.InitializeCollections ? new List<Vulnerability>() : null;
         private Workflow _workflow;
         private WorkflowState _workflowState;
 
@@ -435,7 +435,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Malware property is set
         internal bool IsSetMalware()
         {
-            return this._malware != null && this._malware.Count > 0; 
+            return this._malware != null && (this._malware.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -472,7 +472,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if NetworkPath property is set
         internal bool IsSetNetworkPath()
         {
-            return this._networkPath != null && this._networkPath.Count > 0; 
+            return this._networkPath != null && (this._networkPath.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -598,7 +598,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ProductFields property is set
         internal bool IsSetProductFields()
         {
-            return this._productFields != null && this._productFields.Count > 0; 
+            return this._productFields != null && (this._productFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -686,7 +686,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RelatedFindings property is set
         internal bool IsSetRelatedFindings()
         {
-            return this._relatedFindings != null && this._relatedFindings.Count > 0; 
+            return this._relatedFindings != null && (this._relatedFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -723,7 +723,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -815,7 +815,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ThreatIntelIndicators property is set
         internal bool IsSetThreatIntelIndicators()
         {
-            return this._threatIntelIndicators != null && this._threatIntelIndicators.Count > 0; 
+            return this._threatIntelIndicators != null && (this._threatIntelIndicators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -834,7 +834,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Threats property is set
         internal bool IsSetThreats()
         {
-            return this._threats != null && this._threats.Count > 0; 
+            return this._threats != null && (this._threats.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -882,7 +882,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Types property is set
         internal bool IsSetTypes()
         {
-            return this._types != null && this._types.Count > 0; 
+            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -926,7 +926,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UserDefinedFields property is set
         internal bool IsSetUserDefinedFields()
         {
-            return this._userDefinedFields != null && this._userDefinedFields.Count > 0; 
+            return this._userDefinedFields != null && (this._userDefinedFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -962,7 +962,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Vulnerabilities property is set
         internal bool IsSetVulnerabilities()
         {
-            return this._vulnerabilities != null && this._vulnerabilities.Count > 0; 
+            return this._vulnerabilities != null && (this._vulnerabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

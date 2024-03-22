@@ -68,6 +68,10 @@ namespace Amazon.EC2.Model
         /// Indicates whether the IPv6 endpoint for the instance metadata service is enabled or
         /// disabled.
         /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>disabled</c> 
+        /// </para>
         /// </summary>
         public InstanceMetadataProtocolState HttpProtocolIpv6
         {
@@ -89,11 +93,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: 1
+        /// Default: <c>1</c> 
         /// </para>
         ///  
         /// <para>
-        /// Possible values: Integers from 1 to 64
+        /// Possible values: Integers from <c>1</c> to <c>64</c> 
         /// </para>
         /// </summary>
         public int? HttpPutResponseHopLimit

@@ -48,7 +48,7 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class CustomErrorResponses
     {
-        private List<CustomErrorResponse> _items = new List<CustomErrorResponse>();
+        private List<CustomErrorResponse> _items = AWSConfigs.InitializeCollections ? new List<CustomErrorResponse>() : null;
         private int? _quantity;
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

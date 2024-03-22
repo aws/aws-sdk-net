@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class HistoricalMetricResult
     {
-        private List<HistoricalMetricData> _collections = new List<HistoricalMetricData>();
+        private List<HistoricalMetricData> _collections = AWSConfigs.InitializeCollections ? new List<HistoricalMetricData>() : null;
         private Dimensions _dimensions;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if Collections property is set
         internal bool IsSetCollections()
         {
-            return this._collections != null && this._collections.Count > 0; 
+            return this._collections != null && (this._collections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -103,6 +103,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetEcsPropertiesOverride())
+                {
+                    context.Writer.WritePropertyName("ecsPropertiesOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EcsPropertiesOverrideMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EcsPropertiesOverride, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEksPropertiesOverride())
                 {
                     context.Writer.WritePropertyName("eksPropertiesOverride");

@@ -45,7 +45,7 @@ namespace Amazon.KafkaConnect.Model
         /// Enumerable containing all of the CustomPlugins
         /// </summary>
         public IPaginatedEnumerable<CustomPluginSummary> CustomPlugins => 
-            new PaginatedResultKeyResponse<ListCustomPluginsResponse, CustomPluginSummary>(this, (i) => i.CustomPlugins);
+            new PaginatedResultKeyResponse<ListCustomPluginsResponse, CustomPluginSummary>(this, (i) => i.CustomPlugins ?? new List<CustomPluginSummary>());
 
         internal ListCustomPluginsPaginator(IAmazonKafkaConnect client, ListCustomPluginsRequest request)
         {

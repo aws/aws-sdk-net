@@ -33,7 +33,7 @@ namespace Amazon.ChimeSDKIdentity.Model
     /// </summary>
     public partial class ListAppInstanceUserEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<AppInstanceUserEndpointSummary> _appInstanceUserEndpoints = new List<AppInstanceUserEndpointSummary>();
+        private List<AppInstanceUserEndpointSummary> _appInstanceUserEndpoints = AWSConfigs.InitializeCollections ? new List<AppInstanceUserEndpointSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         // Check to see if AppInstanceUserEndpoints property is set
         internal bool IsSetAppInstanceUserEndpoints()
         {
-            return this._appInstanceUserEndpoints != null && this._appInstanceUserEndpoints.Count > 0; 
+            return this._appInstanceUserEndpoints != null && (this._appInstanceUserEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

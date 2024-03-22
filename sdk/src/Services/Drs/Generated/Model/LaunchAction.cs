@@ -42,7 +42,7 @@ namespace Amazon.Drs.Model
         private string _name;
         private bool? _optional;
         private int? _order;
-        private Dictionary<string, LaunchActionParameter> _parameters = new Dictionary<string, LaunchActionParameter>();
+        private Dictionary<string, LaunchActionParameter> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, LaunchActionParameter>() : null;
         private LaunchActionType _type;
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace Amazon.Drs.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

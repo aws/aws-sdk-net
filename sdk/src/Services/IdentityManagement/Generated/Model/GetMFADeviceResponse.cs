@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class GetMFADeviceResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _certifications = new Dictionary<string, string>();
+        private Dictionary<string, string> _certifications = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _enableDate;
         private string _serialNumber;
         private string _userName;
@@ -55,7 +55,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Certifications property is set
         internal bool IsSetCertifications()
         {
-            return this._certifications != null && this._certifications.Count > 0; 
+            return this._certifications != null && (this._certifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -41,13 +41,13 @@ namespace Amazon.S3.Model
         /// Enumerable containing all of the S3Objects
         /// </summary>
         public IPaginatedEnumerable<S3Object> S3Objects =>
-            new PaginatedResultKeyResponse<ListObjectsResponse, S3Object>(this, (i) => i.S3Objects);
+            new PaginatedResultKeyResponse<ListObjectsResponse, S3Object>(this, (i) => i.S3Objects ?? new List<S3Object>());
 
         /// <summary>
         /// Enumerable containing all of the CommonPrefixes
         /// </summary>
         public IPaginatedEnumerable<string> CommonPrefixes =>
-            new PaginatedResultKeyResponse<ListObjectsResponse, string>(this, (i) => i.CommonPrefixes);
+            new PaginatedResultKeyResponse<ListObjectsResponse, string>(this, (i) => i.CommonPrefixes ?? new List<string>());
 
         internal ListObjectsPaginator(IAmazonS3 client, ListObjectsRequest request)
         {

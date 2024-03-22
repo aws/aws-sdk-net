@@ -41,7 +41,7 @@ namespace Amazon.LexModelsV2.Model
         private string _testSetGenerationId;
         private TestSetGenerationStatus _testSetGenerationStatus;
         private string _testSetName;
-        private Dictionary<string, string> _testSetTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _testSetTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
@@ -208,7 +208,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if TestSetTags property is set
         internal bool IsSetTestSetTags()
         {
-            return this._testSetTags != null && this._testSetTags.Count > 0; 
+            return this._testSetTags != null && (this._testSetTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

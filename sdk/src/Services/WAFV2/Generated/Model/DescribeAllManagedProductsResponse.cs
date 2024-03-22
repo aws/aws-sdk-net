@@ -33,7 +33,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class DescribeAllManagedProductsResponse : AmazonWebServiceResponse
     {
-        private List<ManagedProductDescriptor> _managedProducts = new List<ManagedProductDescriptor>();
+        private List<ManagedProductDescriptor> _managedProducts = AWSConfigs.InitializeCollections ? new List<ManagedProductDescriptor>() : null;
 
         /// <summary>
         /// Gets and sets the property ManagedProducts. 
@@ -51,7 +51,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if ManagedProducts property is set
         internal bool IsSetManagedProducts()
         {
-            return this._managedProducts != null && this._managedProducts.Count > 0; 
+            return this._managedProducts != null && (this._managedProducts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

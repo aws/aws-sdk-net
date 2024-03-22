@@ -33,19 +33,19 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsDynamoDbTableDetails
     {
-        private List<AwsDynamoDbTableAttributeDefinition> _attributeDefinitions = new List<AwsDynamoDbTableAttributeDefinition>();
+        private List<AwsDynamoDbTableAttributeDefinition> _attributeDefinitions = AWSConfigs.InitializeCollections ? new List<AwsDynamoDbTableAttributeDefinition>() : null;
         private AwsDynamoDbTableBillingModeSummary _billingModeSummary;
         private string _creationDateTime;
         private bool? _deletionProtectionEnabled;
-        private List<AwsDynamoDbTableGlobalSecondaryIndex> _globalSecondaryIndexes = new List<AwsDynamoDbTableGlobalSecondaryIndex>();
+        private List<AwsDynamoDbTableGlobalSecondaryIndex> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<AwsDynamoDbTableGlobalSecondaryIndex>() : null;
         private string _globalTableVersion;
         private int? _itemCount;
-        private List<AwsDynamoDbTableKeySchema> _keySchema = new List<AwsDynamoDbTableKeySchema>();
+        private List<AwsDynamoDbTableKeySchema> _keySchema = AWSConfigs.InitializeCollections ? new List<AwsDynamoDbTableKeySchema>() : null;
         private string _latestStreamArn;
         private string _latestStreamLabel;
-        private List<AwsDynamoDbTableLocalSecondaryIndex> _localSecondaryIndexes = new List<AwsDynamoDbTableLocalSecondaryIndex>();
+        private List<AwsDynamoDbTableLocalSecondaryIndex> _localSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<AwsDynamoDbTableLocalSecondaryIndex>() : null;
         private AwsDynamoDbTableProvisionedThroughput _provisionedThroughput;
-        private List<AwsDynamoDbTableReplica> _replicas = new List<AwsDynamoDbTableReplica>();
+        private List<AwsDynamoDbTableReplica> _replicas = AWSConfigs.InitializeCollections ? new List<AwsDynamoDbTableReplica>() : null;
         private AwsDynamoDbTableRestoreSummary _restoreSummary;
         private AwsDynamoDbTableSseDescription _sseDescription;
         private AwsDynamoDbTableStreamSpecification _streamSpecification;
@@ -69,7 +69,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AttributeDefinitions property is set
         internal bool IsSetAttributeDefinitions()
         {
-            return this._attributeDefinitions != null && this._attributeDefinitions.Count > 0; 
+            return this._attributeDefinitions != null && (this._attributeDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if GlobalSecondaryIndexes property is set
         internal bool IsSetGlobalSecondaryIndexes()
         {
-            return this._globalSecondaryIndexes != null && this._globalSecondaryIndexes.Count > 0; 
+            return this._globalSecondaryIndexes != null && (this._globalSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if KeySchema property is set
         internal bool IsSetKeySchema()
         {
-            return this._keySchema != null && this._keySchema.Count > 0; 
+            return this._keySchema != null && (this._keySchema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if LocalSecondaryIndexes property is set
         internal bool IsSetLocalSecondaryIndexes()
         {
-            return this._localSecondaryIndexes != null && this._localSecondaryIndexes.Count > 0; 
+            return this._localSecondaryIndexes != null && (this._localSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Replicas property is set
         internal bool IsSetReplicas()
         {
-            return this._replicas != null && this._replicas.Count > 0; 
+            return this._replicas != null && (this._replicas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

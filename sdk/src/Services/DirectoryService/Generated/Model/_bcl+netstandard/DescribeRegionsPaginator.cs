@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// Enumerable containing all of the RegionsDescription
         /// </summary>
         public IPaginatedEnumerable<RegionDescription> RegionsDescription => 
-            new PaginatedResultKeyResponse<DescribeRegionsResponse, RegionDescription>(this, (i) => i.RegionsDescription);
+            new PaginatedResultKeyResponse<DescribeRegionsResponse, RegionDescription>(this, (i) => i.RegionsDescription ?? new List<RegionDescription>());
 
         internal DescribeRegionsPaginator(IAmazonDirectoryService client, DescribeRegionsRequest request)
         {

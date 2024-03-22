@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the Results
         /// </summary>
         public IPaginatedEnumerable<SearchRecord> Results => 
-            new PaginatedResultKeyResponse<SearchResponse, SearchRecord>(this, (i) => i.Results);
+            new PaginatedResultKeyResponse<SearchResponse, SearchRecord>(this, (i) => i.Results ?? new List<SearchRecord>());
 
         internal SearchPaginator(IAmazonSageMaker client, SearchRequest request)
         {

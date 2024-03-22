@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model
     public partial class ListCisScanConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<CisScanConfiguration> _scanConfigurations = new List<CisScanConfiguration>();
+        private List<CisScanConfiguration> _scanConfigurations = AWSConfigs.InitializeCollections ? new List<CisScanConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ScanConfigurations property is set
         internal bool IsSetScanConfigurations()
         {
-            return this._scanConfigurations != null && this._scanConfigurations.Count > 0; 
+            return this._scanConfigurations != null && (this._scanConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

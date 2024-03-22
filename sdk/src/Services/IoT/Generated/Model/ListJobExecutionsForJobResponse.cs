@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListJobExecutionsForJobResponse : AmazonWebServiceResponse
     {
-        private List<JobExecutionSummaryForJob> _executionSummaries = new List<JobExecutionSummaryForJob>();
+        private List<JobExecutionSummaryForJob> _executionSummaries = AWSConfigs.InitializeCollections ? new List<JobExecutionSummaryForJob>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model
         // Check to see if ExecutionSummaries property is set
         internal bool IsSetExecutionSummaries()
         {
-            return this._executionSummaries != null && this._executionSummaries.Count > 0; 
+            return this._executionSummaries != null && (this._executionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

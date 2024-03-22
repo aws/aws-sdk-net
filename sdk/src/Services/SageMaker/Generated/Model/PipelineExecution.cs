@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         private string _pipelineExecutionDisplayName;
         private PipelineExecutionStatus _pipelineExecutionStatus;
         private PipelineExperimentConfig _pipelineExperimentConfig;
-        private List<Parameter> _pipelineParameters = new List<Parameter>();
+        private List<Parameter> _pipelineParameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
         private SelectiveExecutionConfig _selectiveExecutionConfig;
 
         /// <summary>
@@ -276,7 +276,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if PipelineParameters property is set
         internal bool IsSetPipelineParameters()
         {
-            return this._pipelineParameters != null && this._pipelineParameters.Count > 0; 
+            return this._pipelineParameters != null && (this._pipelineParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

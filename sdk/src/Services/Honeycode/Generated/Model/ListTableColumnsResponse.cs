@@ -34,7 +34,7 @@ namespace Amazon.Honeycode.Model
     public partial class ListTableColumnsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TableColumn> _tableColumns = new List<TableColumn>();
+        private List<TableColumn> _tableColumns = AWSConfigs.InitializeCollections ? new List<TableColumn>() : null;
         private long? _workbookCursor;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if TableColumns property is set
         internal bool IsSetTableColumns()
         {
-            return this._tableColumns != null && this._tableColumns.Count > 0; 
+            return this._tableColumns != null && (this._tableColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

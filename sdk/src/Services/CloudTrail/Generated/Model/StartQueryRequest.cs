@@ -46,7 +46,7 @@ namespace Amazon.CloudTrail.Model
     {
         private string _deliveryS3Uri;
         private string _queryAlias;
-        private List<string> _queryParameters = new List<string>();
+        private List<string> _queryParameters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _queryStatement;
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if QueryParameters property is set
         internal bool IsSetQueryParameters()
         {
-            return this._queryParameters != null && this._queryParameters.Count > 0; 
+            return this._queryParameters != null && (this._queryParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

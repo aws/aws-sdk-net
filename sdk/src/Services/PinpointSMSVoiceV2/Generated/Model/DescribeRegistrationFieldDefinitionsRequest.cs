@@ -36,7 +36,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribeRegistrationFieldDefinitionsRequest : AmazonPinpointSMSVoiceV2Request
     {
-        private List<string> _fieldPaths = new List<string>();
+        private List<string> _fieldPaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _registrationType;
@@ -58,7 +58,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if FieldPaths property is set
         internal bool IsSetFieldPaths()
         {
-            return this._fieldPaths != null && this._fieldPaths.Count > 0; 
+            return this._fieldPaths != null && (this._fieldPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

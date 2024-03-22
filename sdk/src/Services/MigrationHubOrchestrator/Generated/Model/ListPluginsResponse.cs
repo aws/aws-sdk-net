@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     public partial class ListPluginsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PluginSummary> _plugins = new List<PluginSummary>();
+        private List<PluginSummary> _plugins = AWSConfigs.InitializeCollections ? new List<PluginSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Plugins property is set
         internal bool IsSetPlugins()
         {
-            return this._plugins != null && this._plugins.Count > 0; 
+            return this._plugins != null && (this._plugins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

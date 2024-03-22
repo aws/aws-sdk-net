@@ -36,7 +36,7 @@ namespace Amazon.ConfigService.Model
     {
         private ConformancePackComplianceType _complianceType;
         private string _configRuleName;
-        private List<string> _controls = new List<string>();
+        private List<string> _controls = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ComplianceType. 
@@ -93,7 +93,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if Controls property is set
         internal bool IsSetControls()
         {
-            return this._controls != null && this._controls.Count > 0; 
+            return this._controls != null && (this._controls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the Endpoints
         /// </summary>
         public IPaginatedEnumerable<EndpointSummary> Endpoints => 
-            new PaginatedResultKeyResponse<ListEndpointsResponse, EndpointSummary>(this, (i) => i.Endpoints);
+            new PaginatedResultKeyResponse<ListEndpointsResponse, EndpointSummary>(this, (i) => i.Endpoints ?? new List<EndpointSummary>());
 
         internal ListEndpointsPaginator(IAmazonSageMaker client, ListEndpointsRequest request)
         {

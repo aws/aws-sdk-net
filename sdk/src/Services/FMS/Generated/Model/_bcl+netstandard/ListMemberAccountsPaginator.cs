@@ -45,7 +45,7 @@ namespace Amazon.FMS.Model
         /// Enumerable containing all of the MemberAccounts
         /// </summary>
         public IPaginatedEnumerable<string> MemberAccounts => 
-            new PaginatedResultKeyResponse<ListMemberAccountsResponse, string>(this, (i) => i.MemberAccounts);
+            new PaginatedResultKeyResponse<ListMemberAccountsResponse, string>(this, (i) => i.MemberAccounts ?? new List<string>());
 
         internal ListMemberAccountsPaginator(IAmazonFMS client, ListMemberAccountsRequest request)
         {

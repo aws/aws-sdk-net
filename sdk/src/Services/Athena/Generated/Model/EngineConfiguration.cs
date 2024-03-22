@@ -34,11 +34,11 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class EngineConfiguration
     {
-        private Dictionary<string, string> _additionalConfigs = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalConfigs = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _coordinatorDpuSize;
         private int? _defaultExecutorDpuSize;
         private int? _maxConcurrentDpus;
-        private Dictionary<string, string> _sparkProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _sparkProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalConfigs. 
@@ -59,7 +59,7 @@ namespace Amazon.Athena.Model
         // Check to see if AdditionalConfigs property is set
         internal bool IsSetAdditionalConfigs()
         {
-            return this._additionalConfigs != null && this._additionalConfigs.Count > 0; 
+            return this._additionalConfigs != null && (this._additionalConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.Athena.Model
         // Check to see if SparkProperties property is set
         internal bool IsSetSparkProperties()
         {
-            return this._sparkProperties != null && this._sparkProperties.Count > 0; 
+            return this._sparkProperties != null && (this._sparkProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

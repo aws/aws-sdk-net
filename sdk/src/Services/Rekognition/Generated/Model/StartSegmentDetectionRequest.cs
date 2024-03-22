@@ -67,7 +67,7 @@ namespace Amazon.Rekognition.Model
         private StartSegmentDetectionFilters _filters;
         private string _jobTag;
         private NotificationChannel _notificationChannel;
-        private List<string> _segmentTypes = new List<string>();
+        private List<string> _segmentTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Video _video;
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if SegmentTypes property is set
         internal bool IsSetSegmentTypes()
         {
-            return this._segmentTypes != null && this._segmentTypes.Count > 0; 
+            return this._segmentTypes != null && (this._segmentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

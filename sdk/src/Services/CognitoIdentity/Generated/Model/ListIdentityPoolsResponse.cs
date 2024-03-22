@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentity.Model
     /// </summary>
     public partial class ListIdentityPoolsResponse : AmazonWebServiceResponse
     {
-        private List<IdentityPoolShortDescription> _identityPools = new List<IdentityPoolShortDescription>();
+        private List<IdentityPoolShortDescription> _identityPools = AWSConfigs.InitializeCollections ? new List<IdentityPoolShortDescription>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if IdentityPools property is set
         internal bool IsSetIdentityPools()
         {
-            return this._identityPools != null && this._identityPools.Count > 0; 
+            return this._identityPools != null && (this._identityPools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

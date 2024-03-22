@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListPredefinedAttributesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PredefinedAttributeSummary> _predefinedAttributeSummaryList = new List<PredefinedAttributeSummary>();
+        private List<PredefinedAttributeSummary> _predefinedAttributeSummaryList = AWSConfigs.InitializeCollections ? new List<PredefinedAttributeSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         // Check to see if PredefinedAttributeSummaryList property is set
         internal bool IsSetPredefinedAttributeSummaryList()
         {
-            return this._predefinedAttributeSummaryList != null && this._predefinedAttributeSummaryList.Count > 0; 
+            return this._predefinedAttributeSummaryList != null && (this._predefinedAttributeSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

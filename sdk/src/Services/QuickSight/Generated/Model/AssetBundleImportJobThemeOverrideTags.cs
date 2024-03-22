@@ -33,8 +33,8 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AssetBundleImportJobThemeOverrideTags
     {
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _themeIds = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _themeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Tags. 
@@ -52,7 +52,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ThemeIds property is set
         internal bool IsSetThemeIds()
         {
-            return this._themeIds != null && this._themeIds.Count > 0; 
+            return this._themeIds != null && (this._themeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

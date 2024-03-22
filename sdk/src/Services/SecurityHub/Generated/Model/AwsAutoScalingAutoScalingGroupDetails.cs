@@ -33,14 +33,14 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsAutoScalingAutoScalingGroupDetails
     {
-        private List<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails> _availabilityZones = new List<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>();
+        private List<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails> _availabilityZones = AWSConfigs.InitializeCollections ? new List<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>() : null;
         private bool? _capacityRebalance;
         private string _createdTime;
         private int? _healthCheckGracePeriod;
         private string _healthCheckType;
         private string _launchConfigurationName;
         private AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification _launchTemplate;
-        private List<string> _loadBalancerNames = new List<string>();
+        private List<string> _loadBalancerNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails _mixedInstancesPolicy;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if LoadBalancerNames property is set
         internal bool IsSetLoadBalancerNames()
         {
-            return this._loadBalancerNames != null && this._loadBalancerNames.Count > 0; 
+            return this._loadBalancerNames != null && (this._loadBalancerNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

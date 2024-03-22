@@ -39,7 +39,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         private bool? _configureOnly;
         private InclusionStatus _inclusionStatus;
         private string _secretsManagerKey;
-        private List<SourceCode> _sourceCodeList = new List<SourceCode>();
+        private List<SourceCode> _sourceCodeList = AWSConfigs.InitializeCollections ? new List<SourceCode>() : null;
         private StrategyOption _strategyOption;
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if SourceCodeList property is set
         internal bool IsSetSourceCodeList()
         {
-            return this._sourceCodeList != null && this._sourceCodeList.Count > 0; 
+            return this._sourceCodeList != null && (this._sourceCodeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

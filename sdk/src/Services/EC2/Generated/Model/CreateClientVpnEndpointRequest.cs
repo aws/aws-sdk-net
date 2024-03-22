@@ -36,20 +36,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateClientVpnEndpointRequest : AmazonEC2Request
     {
-        private List<ClientVpnAuthenticationRequest> _authenticationOptions = new List<ClientVpnAuthenticationRequest>();
+        private List<ClientVpnAuthenticationRequest> _authenticationOptions = AWSConfigs.InitializeCollections ? new List<ClientVpnAuthenticationRequest>() : null;
         private string _clientCidrBlock;
         private ClientConnectOptions _clientConnectOptions;
         private ClientLoginBannerOptions _clientLoginBannerOptions;
         private string _clientToken;
         private ConnectionLogOptions _connectionLogOptions;
         private string _description;
-        private List<string> _dnsServers = new List<string>();
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _dnsServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SelfServicePortal _selfServicePortal;
         private string _serverCertificateArn;
         private int? _sessionTimeoutHours;
         private bool? _splitTunnel;
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private TransportProtocol _transportProtocol;
         private string _vpcId;
         private int? _vpnPort;
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if AuthenticationOptions property is set
         internal bool IsSetAuthenticationOptions()
         {
-            return this._authenticationOptions != null && this._authenticationOptions.Count > 0; 
+            return this._authenticationOptions != null && (this._authenticationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Amazon.EC2.Model
         // Check to see if DnsServers property is set
         internal bool IsSetDnsServers()
         {
-            return this._dnsServers != null && this._dnsServers.Count > 0; 
+            return this._dnsServers != null && (this._dnsServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -361,7 +361,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

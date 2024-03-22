@@ -117,6 +117,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SupportedEngineModes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedEngineModes == null)
+                        {
+                            unmarshalledObject.SupportedEngineModes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedEngineModes.Add(item);
                         continue;

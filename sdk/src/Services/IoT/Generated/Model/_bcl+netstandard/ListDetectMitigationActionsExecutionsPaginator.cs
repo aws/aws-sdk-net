@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the ActionsExecutions
         /// </summary>
         public IPaginatedEnumerable<DetectMitigationActionExecution> ActionsExecutions => 
-            new PaginatedResultKeyResponse<ListDetectMitigationActionsExecutionsResponse, DetectMitigationActionExecution>(this, (i) => i.ActionsExecutions);
+            new PaginatedResultKeyResponse<ListDetectMitigationActionsExecutionsResponse, DetectMitigationActionExecution>(this, (i) => i.ActionsExecutions ?? new List<DetectMitigationActionExecution>());
 
         internal ListDetectMitigationActionsExecutionsPaginator(IAmazonIoT client, ListDetectMitigationActionsExecutionsRequest request)
         {

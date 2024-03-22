@@ -38,7 +38,7 @@ namespace Amazon.S3Control.Model
         private string _bucket;
         private string _bucketAccountId;
         private DateTime? _creationDate;
-        private Dictionary<string, string> _endpoints = new Dictionary<string, string>();
+        private Dictionary<string, string> _endpoints = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
         private NetworkOrigin _networkOrigin;
         private PublicAccessBlockConfiguration _publicAccessBlockConfiguration;
@@ -154,7 +154,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class RegistrationVersionInformation
     {
-        private List<RegistrationDeniedReasonInformation> _deniedReasons = new List<RegistrationDeniedReasonInformation>();
+        private List<RegistrationDeniedReasonInformation> _deniedReasons = AWSConfigs.InitializeCollections ? new List<RegistrationDeniedReasonInformation>() : null;
         private RegistrationVersionStatus _registrationVersionStatus;
         private RegistrationVersionStatusHistory _registrationVersionStatusHistory;
         private long? _versionNumber;
@@ -53,7 +53,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if DeniedReasons property is set
         internal bool IsSetDeniedReasons()
         {
-            return this._deniedReasons != null && this._deniedReasons.Count > 0; 
+            return this._deniedReasons != null && (this._deniedReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

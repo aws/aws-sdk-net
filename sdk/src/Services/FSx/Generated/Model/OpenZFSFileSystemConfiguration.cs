@@ -43,7 +43,7 @@ namespace Amazon.FSx.Model
         private string _endpointIpAddressRange;
         private string _preferredSubnetId;
         private string _rootVolumeId;
-        private List<string> _routeTableIds = new List<string>();
+        private List<string> _routeTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
 
@@ -256,7 +256,7 @@ namespace Amazon.FSx.Model
         // Check to see if RouteTableIds property is set
         internal bool IsSetRouteTableIds()
         {
-            return this._routeTableIds != null && this._routeTableIds.Count > 0; 
+            return this._routeTableIds != null && (this._routeTableIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

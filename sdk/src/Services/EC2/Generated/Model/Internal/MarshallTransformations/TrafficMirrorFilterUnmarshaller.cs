@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("egressFilterRuleSet/item", targetDepth))
                     {
                         var unmarshaller = TrafficMirrorFilterRuleUnmarshaller.Instance;
+                        if (unmarshalledObject.EgressFilterRules == null)
+                        {
+                            unmarshalledObject.EgressFilterRules = new List<TrafficMirrorFilterRule>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.EgressFilterRules.Add(item);
                         continue;
@@ -70,6 +74,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ingressFilterRuleSet/item", targetDepth))
                     {
                         var unmarshaller = TrafficMirrorFilterRuleUnmarshaller.Instance;
+                        if (unmarshalledObject.IngressFilterRules == null)
+                        {
+                            unmarshalledObject.IngressFilterRules = new List<TrafficMirrorFilterRule>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.IngressFilterRules.Add(item);
                         continue;
@@ -77,6 +85,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("networkServiceSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.NetworkServices == null)
+                        {
+                            unmarshalledObject.NetworkServices = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NetworkServices.Add(item);
                         continue;
@@ -84,6 +96,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

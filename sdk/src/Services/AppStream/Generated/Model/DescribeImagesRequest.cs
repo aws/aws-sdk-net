@@ -35,9 +35,9 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class DescribeImagesRequest : AmazonAppStreamRequest
     {
-        private List<string> _arns = new List<string>();
+        private List<string> _arns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
-        private List<string> _names = new List<string>();
+        private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
         private VisibilityType _type;
 
@@ -56,7 +56,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Arns property is set
         internal bool IsSetArns()
         {
-            return this._arns != null && this._arns.Count > 0; 
+            return this._arns != null && (this._arns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Names property is set
         internal bool IsSetNames()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

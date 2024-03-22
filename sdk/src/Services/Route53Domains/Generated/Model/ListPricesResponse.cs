@@ -34,7 +34,7 @@ namespace Amazon.Route53Domains.Model
     public partial class ListPricesResponse : AmazonWebServiceResponse
     {
         private string _nextPageMarker;
-        private List<DomainPrice> _prices = new List<DomainPrice>();
+        private List<DomainPrice> _prices = AWSConfigs.InitializeCollections ? new List<DomainPrice>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageMarker. 
@@ -77,7 +77,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if Prices property is set
         internal bool IsSetPrices()
         {
-            return this._prices != null && this._prices.Count > 0; 
+            return this._prices != null && (this._prices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

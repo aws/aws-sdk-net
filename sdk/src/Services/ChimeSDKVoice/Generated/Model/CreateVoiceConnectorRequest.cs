@@ -40,7 +40,7 @@ namespace Amazon.ChimeSDKVoice.Model
         private VoiceConnectorAwsRegion _awsRegion;
         private string _name;
         private bool? _requireEncryption;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsRegion. 
@@ -115,7 +115,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

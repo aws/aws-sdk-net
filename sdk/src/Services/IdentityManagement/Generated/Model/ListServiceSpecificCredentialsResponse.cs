@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class ListServiceSpecificCredentialsResponse : AmazonWebServiceResponse
     {
-        private List<ServiceSpecificCredentialMetadata> _serviceSpecificCredentials = new List<ServiceSpecificCredentialMetadata>();
+        private List<ServiceSpecificCredentialMetadata> _serviceSpecificCredentials = AWSConfigs.InitializeCollections ? new List<ServiceSpecificCredentialMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property ServiceSpecificCredentials. 
@@ -50,7 +50,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServiceSpecificCredentials property is set
         internal bool IsSetServiceSpecificCredentials()
         {
-            return this._serviceSpecificCredentials != null && this._serviceSpecificCredentials.Count > 0; 
+            return this._serviceSpecificCredentials != null && (this._serviceSpecificCredentials.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

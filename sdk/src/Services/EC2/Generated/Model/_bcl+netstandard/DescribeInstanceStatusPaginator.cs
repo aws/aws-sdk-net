@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the InstanceStatuses
         /// </summary>
         public IPaginatedEnumerable<InstanceStatus> InstanceStatuses => 
-            new PaginatedResultKeyResponse<DescribeInstanceStatusResponse, InstanceStatus>(this, (i) => i.InstanceStatuses);
+            new PaginatedResultKeyResponse<DescribeInstanceStatusResponse, InstanceStatus>(this, (i) => i.InstanceStatuses ?? new List<InstanceStatus>());
 
         internal DescribeInstanceStatusPaginator(IAmazonEC2 client, DescribeInstanceStatusRequest request)
         {

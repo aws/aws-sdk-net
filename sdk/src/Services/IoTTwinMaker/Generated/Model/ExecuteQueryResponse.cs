@@ -33,9 +33,9 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class ExecuteQueryResponse : AmazonWebServiceResponse
     {
-        private List<ColumnDescription> _columnDescriptions = new List<ColumnDescription>();
+        private List<ColumnDescription> _columnDescriptions = AWSConfigs.InitializeCollections ? new List<ColumnDescription>() : null;
         private string _nextToken;
-        private List<Row> _rows = new List<Row>();
+        private List<Row> _rows = AWSConfigs.InitializeCollections ? new List<Row>() : null;
 
         /// <summary>
         /// Gets and sets the property ColumnDescriptions. 
@@ -52,7 +52,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if ColumnDescriptions property is set
         internal bool IsSetColumnDescriptions()
         {
-            return this._columnDescriptions != null && this._columnDescriptions.Count > 0; 
+            return this._columnDescriptions != null && (this._columnDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Rows property is set
         internal bool IsSetRows()
         {
-            return this._rows != null && this._rows.Count > 0; 
+            return this._rows != null && (this._rows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

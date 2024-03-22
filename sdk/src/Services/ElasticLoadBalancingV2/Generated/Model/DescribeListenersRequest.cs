@@ -36,7 +36,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class DescribeListenersRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<string> _listenerArns = new List<string>();
+        private List<string> _listenerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _loadBalancerArn;
         private string _marker;
         private int? _pageSize;
@@ -56,7 +56,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if ListenerArns property is set
         internal bool IsSetListenerArns()
         {
-            return this._listenerArns != null && this._listenerArns.Count > 0; 
+            return this._listenerArns != null && (this._listenerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

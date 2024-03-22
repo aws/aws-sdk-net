@@ -76,6 +76,17 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetExperimentOptions())
+                {
+                    context.Writer.WritePropertyName("experimentOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StartExperimentExperimentOptionsInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExperimentOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetExperimentTemplateId())
                 {
                     context.Writer.WritePropertyName("experimentTemplateId");

@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
         /// Enumerable containing all of the ServiceArns
         /// </summary>
         public IPaginatedEnumerable<string> ServiceArns => 
-            new PaginatedResultKeyResponse<ListServicesResponse, string>(this, (i) => i.ServiceArns);
+            new PaginatedResultKeyResponse<ListServicesResponse, string>(this, (i) => i.ServiceArns ?? new List<string>());
 
         internal ListServicesPaginator(IAmazonECS client, ListServicesRequest request)
         {

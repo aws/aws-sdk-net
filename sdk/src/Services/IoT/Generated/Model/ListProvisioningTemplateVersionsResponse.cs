@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ListProvisioningTemplateVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProvisioningTemplateVersionSummary> _versions = new List<ProvisioningTemplateVersionSummary>();
+        private List<ProvisioningTemplateVersionSummary> _versions = AWSConfigs.InitializeCollections ? new List<ProvisioningTemplateVersionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.IoT.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

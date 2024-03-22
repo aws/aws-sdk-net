@@ -37,11 +37,11 @@ namespace Amazon.ComputeOptimizer.Model
         private ExternalMetricsPreference _externalMetricsPreference;
         private InferredWorkloadTypesPreference _inferredWorkloadTypes;
         private LookBackPeriodPreference _lookBackPeriod;
-        private List<EffectivePreferredResource> _preferredResources = new List<EffectivePreferredResource>();
+        private List<EffectivePreferredResource> _preferredResources = AWSConfigs.InitializeCollections ? new List<EffectivePreferredResource>() : null;
         private ResourceType _resourceType;
         private SavingsEstimationMode _savingsEstimationMode;
         private Scope _scope;
-        private List<UtilizationPreference> _utilizationPreferences = new List<UtilizationPreference>();
+        private List<UtilizationPreference> _utilizationPreferences = AWSConfigs.InitializeCollections ? new List<UtilizationPreference>() : null;
 
         /// <summary>
         /// Gets and sets the property EnhancedInfrastructureMetrics. 
@@ -158,7 +158,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if PreferredResources property is set
         internal bool IsSetPreferredResources()
         {
-            return this._preferredResources != null && this._preferredResources.Count > 0; 
+            return this._preferredResources != null && (this._preferredResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if UtilizationPreferences property is set
         internal bool IsSetUtilizationPreferences()
         {
-            return this._utilizationPreferences != null && this._utilizationPreferences.Count > 0; 
+            return this._utilizationPreferences != null && (this._utilizationPreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

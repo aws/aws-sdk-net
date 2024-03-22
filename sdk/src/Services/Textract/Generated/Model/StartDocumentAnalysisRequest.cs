@@ -60,7 +60,7 @@ namespace Amazon.Textract.Model
         private AdaptersConfig _adaptersConfig;
         private string _clientRequestToken;
         private DocumentLocation _documentLocation;
-        private List<string> _featureTypes = new List<string>();
+        private List<string> _featureTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _jobTag;
         private string _kmsKeyId;
         private NotificationChannel _notificationChannel;
@@ -147,7 +147,7 @@ namespace Amazon.Textract.Model
         // Check to see if FeatureTypes property is set
         internal bool IsSetFeatureTypes()
         {
-            return this._featureTypes != null && this._featureTypes.Count > 0; 
+            return this._featureTypes != null && (this._featureTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,21 +33,21 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class LoadBalancerDescription
     {
-        private List<string> _availabilityZones = new List<string>();
-        private List<BackendServerDescription> _backendServerDescriptions = new List<BackendServerDescription>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<BackendServerDescription> _backendServerDescriptions = AWSConfigs.InitializeCollections ? new List<BackendServerDescription>() : null;
         private string _canonicalHostedZoneName;
         private string _canonicalHostedZoneNameID;
         private DateTime? _createdTime;
         private string _dnsName;
         private HealthCheck _healthCheck;
-        private List<Instance> _instances = new List<Instance>();
-        private List<ListenerDescription> _listenerDescriptions = new List<ListenerDescription>();
+        private List<Instance> _instances = AWSConfigs.InitializeCollections ? new List<Instance>() : null;
+        private List<ListenerDescription> _listenerDescriptions = AWSConfigs.InitializeCollections ? new List<ListenerDescription>() : null;
         private string _loadBalancerName;
         private Policies _policies;
         private string _scheme;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SourceSecurityGroup _sourceSecurityGroup;
-        private List<string> _subnets = new List<string>();
+        private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if BackendServerDescriptions property is set
         internal bool IsSetBackendServerDescriptions()
         {
-            return this._backendServerDescriptions != null && this._backendServerDescriptions.Count > 0; 
+            return this._backendServerDescriptions != null && (this._backendServerDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if ListenerDescriptions property is set
         internal bool IsSetListenerDescriptions()
         {
-            return this._listenerDescriptions != null && this._listenerDescriptions.Count > 0; 
+            return this._listenerDescriptions != null && (this._listenerDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -301,7 +301,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -339,7 +339,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

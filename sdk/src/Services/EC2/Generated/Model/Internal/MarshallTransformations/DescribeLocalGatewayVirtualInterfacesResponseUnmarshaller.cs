@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("localGatewayVirtualInterfaceSet/item", targetDepth))
                     {
                         var unmarshaller = LocalGatewayVirtualInterfaceUnmarshaller.Instance;
+                        if (response.LocalGatewayVirtualInterfaces == null)
+                        {
+                            response.LocalGatewayVirtualInterfaces = new List<LocalGatewayVirtualInterface>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.LocalGatewayVirtualInterfaces.Add(item);
                         continue;

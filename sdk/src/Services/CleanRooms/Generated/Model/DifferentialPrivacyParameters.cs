@@ -33,7 +33,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class DifferentialPrivacyParameters
     {
-        private List<DifferentialPrivacySensitivityParameters> _sensitivityParameters = new List<DifferentialPrivacySensitivityParameters>();
+        private List<DifferentialPrivacySensitivityParameters> _sensitivityParameters = AWSConfigs.InitializeCollections ? new List<DifferentialPrivacySensitivityParameters>() : null;
 
         /// <summary>
         /// Gets and sets the property SensitivityParameters. 
@@ -52,7 +52,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if SensitivityParameters property is set
         internal bool IsSetSensitivityParameters()
         {
-            return this._sensitivityParameters != null && this._sensitivityParameters.Count > 0; 
+            return this._sensitivityParameters != null && (this._sensitivityParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

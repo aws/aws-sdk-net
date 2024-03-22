@@ -36,7 +36,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class RdsDbSnapshotConfiguration
     {
-        private Dictionary<string, RdsDbSnapshotAttributeValue> _attributes = new Dictionary<string, RdsDbSnapshotAttributeValue>();
+        private Dictionary<string, RdsDbSnapshotAttributeValue> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, RdsDbSnapshotAttributeValue>() : null;
         private string _kmsKeyId;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

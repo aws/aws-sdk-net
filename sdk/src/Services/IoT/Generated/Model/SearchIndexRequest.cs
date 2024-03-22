@@ -68,11 +68,14 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return per page at one time. The response might contain
-        /// fewer results but will never contain more.
+        /// The maximum number of results to return per page at one time. This maximum number
+        /// cannot exceed 100. The response might contain fewer results but will never contain
+        /// more. You can use <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_SearchIndex.html#iot-SearchIndex-request-nextToken">
+        /// <c>nextToken</c> </a> to retrieve the next set of results until <c>nextToken</c> returns
+        /// <c>NULL</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=500)]
+        [AWSProperty(Min=1)]
         public int? MaxResults
         {
             get { return this._maxResults; }

@@ -43,7 +43,7 @@ namespace Amazon.SimpleDB.Model
     /// </summary>
     public partial class GetAttributesRequest : AmazonSimpleDBRequest
     {
-        private List<string> _attributeNames = new List<string>();
+        private List<string> _attributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _consistentRead;
         private string _domainName;
         private string _itemName;
@@ -76,7 +76,7 @@ namespace Amazon.SimpleDB.Model
         // Check to see if AttributeNames property is set
         internal bool IsSetAttributeNames()
         {
-            return this._attributeNames != null && this._attributeNames.Count > 0; 
+            return this._attributeNames != null && (this._attributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

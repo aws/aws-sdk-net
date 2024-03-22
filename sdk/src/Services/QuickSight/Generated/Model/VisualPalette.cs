@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class VisualPalette
     {
         private string _chartColor;
-        private List<DataPathColor> _colorMap = new List<DataPathColor>();
+        private List<DataPathColor> _colorMap = AWSConfigs.InitializeCollections ? new List<DataPathColor>() : null;
 
         /// <summary>
         /// Gets and sets the property ChartColor. 
@@ -70,7 +70,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ColorMap property is set
         internal bool IsSetColorMap()
         {
-            return this._colorMap != null && this._colorMap.Count > 0; 
+            return this._colorMap != null && (this._colorMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

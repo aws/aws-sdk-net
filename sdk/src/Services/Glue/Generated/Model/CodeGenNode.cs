@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CodeGenNode
     {
-        private List<CodeGenNodeArg> _args = new List<CodeGenNodeArg>();
+        private List<CodeGenNodeArg> _args = AWSConfigs.InitializeCollections ? new List<CodeGenNodeArg>() : null;
         private string _id;
         private int? _lineNumber;
         private string _nodeType;
@@ -54,7 +54,7 @@ namespace Amazon.Glue.Model
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this._args != null && this._args.Count > 0; 
+            return this._args != null && (this._args.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

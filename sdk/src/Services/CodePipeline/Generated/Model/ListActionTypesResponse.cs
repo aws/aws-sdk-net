@@ -33,7 +33,7 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ListActionTypesResponse : AmazonWebServiceResponse
     {
-        private List<ActionType> _actionTypes = new List<ActionType>();
+        private List<ActionType> _actionTypes = AWSConfigs.InitializeCollections ? new List<ActionType>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if ActionTypes property is set
         internal bool IsSetActionTypes()
         {
-            return this._actionTypes != null && this._actionTypes.Count > 0; 
+            return this._actionTypes != null && (this._actionTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

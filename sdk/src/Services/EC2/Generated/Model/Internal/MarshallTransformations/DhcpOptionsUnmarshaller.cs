@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("dhcpConfigurationSet/item", targetDepth))
                     {
                         var unmarshaller = DhcpConfigurationUnmarshaller.Instance;
+                        if (unmarshalledObject.DhcpConfigurations == null)
+                        {
+                            unmarshalledObject.DhcpConfigurations = new List<DhcpConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DhcpConfigurations.Add(item);
                         continue;
@@ -76,6 +80,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

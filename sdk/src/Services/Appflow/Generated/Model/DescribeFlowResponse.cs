@@ -36,21 +36,21 @@ namespace Amazon.Appflow.Model
         private DateTime? _createdAt;
         private string _createdBy;
         private string _description;
-        private List<DestinationFlowConfig> _destinationFlowConfigList = new List<DestinationFlowConfig>();
+        private List<DestinationFlowConfig> _destinationFlowConfigList = AWSConfigs.InitializeCollections ? new List<DestinationFlowConfig>() : null;
         private string _flowArn;
         private string _flowName;
         private FlowStatus _flowStatus;
         private string _flowStatusMessage;
         private string _kmsArn;
         private ExecutionDetails _lastRunExecutionDetails;
-        private List<MetadataCatalogDetail> _lastRunMetadataCatalogDetails = new List<MetadataCatalogDetail>();
+        private List<MetadataCatalogDetail> _lastRunMetadataCatalogDetails = AWSConfigs.InitializeCollections ? new List<MetadataCatalogDetail>() : null;
         private DateTime? _lastUpdatedAt;
         private string _lastUpdatedBy;
         private MetadataCatalogConfig _metadataCatalogConfig;
         private long? _schemaVersion;
         private SourceFlowConfig _sourceFlowConfig;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<Task> _tasks = new List<Task>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Task> _tasks = AWSConfigs.InitializeCollections ? new List<Task>() : null;
         private TriggerConfig _triggerConfig;
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.Appflow.Model
         // Check to see if DestinationFlowConfigList property is set
         internal bool IsSetDestinationFlowConfigList()
         {
-            return this._destinationFlowConfigList != null && this._destinationFlowConfigList.Count > 0; 
+            return this._destinationFlowConfigList != null && (this._destinationFlowConfigList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -261,7 +261,7 @@ namespace Amazon.Appflow.Model
         // Check to see if LastRunMetadataCatalogDetails property is set
         internal bool IsSetLastRunMetadataCatalogDetails()
         {
-            return this._lastRunMetadataCatalogDetails != null && this._lastRunMetadataCatalogDetails.Count > 0; 
+            return this._lastRunMetadataCatalogDetails != null && (this._lastRunMetadataCatalogDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -389,7 +389,7 @@ namespace Amazon.Appflow.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -408,7 +408,7 @@ namespace Amazon.Appflow.Model
         // Check to see if Tasks property is set
         internal bool IsSetTasks()
         {
-            return this._tasks != null && this._tasks.Count > 0; 
+            return this._tasks != null && (this._tasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

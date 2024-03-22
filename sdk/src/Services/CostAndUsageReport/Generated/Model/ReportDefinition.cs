@@ -35,8 +35,8 @@ namespace Amazon.CostAndUsageReport.Model
     /// </summary>
     public partial class ReportDefinition
     {
-        private List<string> _additionalArtifacts = new List<string>();
-        private List<string> _additionalSchemaElements = new List<string>();
+        private List<string> _additionalArtifacts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _additionalSchemaElements = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _billingViewArn;
         private CompressionFormat _compression;
         private ReportFormat _format;
@@ -64,7 +64,7 @@ namespace Amazon.CostAndUsageReport.Model
         // Check to see if AdditionalArtifacts property is set
         internal bool IsSetAdditionalArtifacts()
         {
-            return this._additionalArtifacts != null && this._additionalArtifacts.Count > 0; 
+            return this._additionalArtifacts != null && (this._additionalArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.CostAndUsageReport.Model
         // Check to see if AdditionalSchemaElements property is set
         internal bool IsSetAdditionalSchemaElements()
         {
-            return this._additionalSchemaElements != null && this._additionalSchemaElements.Count > 0; 
+            return this._additionalSchemaElements != null && (this._additionalSchemaElements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

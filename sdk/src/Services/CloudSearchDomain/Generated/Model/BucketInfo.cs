@@ -33,7 +33,7 @@ namespace Amazon.CloudSearchDomain.Model
     /// </summary>
     public partial class BucketInfo
     {
-        private List<Bucket> _buckets = new List<Bucket>();
+        private List<Bucket> _buckets = AWSConfigs.InitializeCollections ? new List<Bucket>() : null;
 
         /// <summary>
         /// Gets and sets the property Buckets. 
@@ -50,7 +50,7 @@ namespace Amazon.CloudSearchDomain.Model
         // Check to see if Buckets property is set
         internal bool IsSetBuckets()
         {
-            return this._buckets != null && this._buckets.Count > 0; 
+            return this._buckets != null && (this._buckets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

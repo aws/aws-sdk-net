@@ -36,7 +36,7 @@ namespace Amazon.SsmSap.Model
         private string _applicationId;
         private string _arn;
         private string _componentId;
-        private List<ApplicationCredential> _credentials = new List<ApplicationCredential>();
+        private List<ApplicationCredential> _credentials = AWSConfigs.InitializeCollections ? new List<ApplicationCredential>() : null;
         private string _databaseId;
         private string _databaseName;
         private DatabaseType _databaseType;
@@ -115,7 +115,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if Credentials property is set
         internal bool IsSetCredentials()
         {
-            return this._credentials != null && this._credentials.Count > 0; 
+            return this._credentials != null && (this._credentials.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

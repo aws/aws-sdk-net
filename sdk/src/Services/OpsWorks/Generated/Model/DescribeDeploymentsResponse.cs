@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeDeploymentsResponse : AmazonWebServiceResponse
     {
-        private List<Deployment> _deployments = new List<Deployment>();
+        private List<Deployment> _deployments = AWSConfigs.InitializeCollections ? new List<Deployment>() : null;
 
         /// <summary>
         /// Gets and sets the property Deployments. 
@@ -50,7 +50,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Deployments property is set
         internal bool IsSetDeployments()
         {
-            return this._deployments != null && this._deployments.Count > 0; 
+            return this._deployments != null && (this._deployments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

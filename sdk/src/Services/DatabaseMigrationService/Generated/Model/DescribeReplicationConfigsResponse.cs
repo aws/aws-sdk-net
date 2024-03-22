@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class DescribeReplicationConfigsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ReplicationConfig> _replicationConfigs = new List<ReplicationConfig>();
+        private List<ReplicationConfig> _replicationConfigs = AWSConfigs.InitializeCollections ? new List<ReplicationConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +71,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if ReplicationConfigs property is set
         internal bool IsSetReplicationConfigs()
         {
-            return this._replicationConfigs != null && this._replicationConfigs.Count > 0; 
+            return this._replicationConfigs != null && (this._replicationConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

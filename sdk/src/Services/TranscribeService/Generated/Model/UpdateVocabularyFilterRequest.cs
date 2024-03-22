@@ -39,7 +39,7 @@ namespace Amazon.TranscribeService.Model
         private string _dataAccessRoleArn;
         private string _vocabularyFilterFileUri;
         private string _vocabularyFilterName;
-        private List<string> _words = new List<string>();
+        private List<string> _words = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
@@ -156,7 +156,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Words property is set
         internal bool IsSetWords()
         {
-            return this._words != null && this._words.Count > 0; 
+            return this._words != null && (this._words.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

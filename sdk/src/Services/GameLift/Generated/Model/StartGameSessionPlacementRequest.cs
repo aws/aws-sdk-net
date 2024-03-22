@@ -94,14 +94,14 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class StartGameSessionPlacementRequest : AmazonGameLiftRequest
     {
-        private List<DesiredPlayerSession> _desiredPlayerSessions = new List<DesiredPlayerSession>();
-        private List<GameProperty> _gameProperties = new List<GameProperty>();
+        private List<DesiredPlayerSession> _desiredPlayerSessions = AWSConfigs.InitializeCollections ? new List<DesiredPlayerSession>() : null;
+        private List<GameProperty> _gameProperties = AWSConfigs.InitializeCollections ? new List<GameProperty>() : null;
         private string _gameSessionData;
         private string _gameSessionName;
         private string _gameSessionQueueName;
         private int? _maximumPlayerSessionCount;
         private string _placementId;
-        private List<PlayerLatency> _playerLatencies = new List<PlayerLatency>();
+        private List<PlayerLatency> _playerLatencies = AWSConfigs.InitializeCollections ? new List<PlayerLatency>() : null;
 
         /// <summary>
         /// Gets and sets the property DesiredPlayerSessions. 
@@ -118,7 +118,7 @@ namespace Amazon.GameLift.Model
         // Check to see if DesiredPlayerSessions property is set
         internal bool IsSetDesiredPlayerSessions()
         {
-            return this._desiredPlayerSessions != null && this._desiredPlayerSessions.Count > 0; 
+            return this._desiredPlayerSessions != null && (this._desiredPlayerSessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.GameLift.Model
         // Check to see if GameProperties property is set
         internal bool IsSetGameProperties()
         {
-            return this._gameProperties != null && this._gameProperties.Count > 0; 
+            return this._gameProperties != null && (this._gameProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace Amazon.GameLift.Model
         // Check to see if PlayerLatencies property is set
         internal bool IsSetPlayerLatencies()
         {
-            return this._playerLatencies != null && this._playerLatencies.Count > 0; 
+            return this._playerLatencies != null && (this._playerLatencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

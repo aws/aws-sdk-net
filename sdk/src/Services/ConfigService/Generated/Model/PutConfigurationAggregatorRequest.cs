@@ -69,10 +69,10 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class PutConfigurationAggregatorRequest : AmazonConfigServiceRequest
     {
-        private List<AccountAggregationSource> _accountAggregationSources = new List<AccountAggregationSource>();
+        private List<AccountAggregationSource> _accountAggregationSources = AWSConfigs.InitializeCollections ? new List<AccountAggregationSource>() : null;
         private string _configurationAggregatorName;
         private OrganizationAggregationSource _organizationAggregationSource;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountAggregationSources. 
@@ -90,7 +90,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if AccountAggregationSources property is set
         internal bool IsSetAccountAggregationSources()
         {
-            return this._accountAggregationSources != null && this._accountAggregationSources.Count > 0; 
+            return this._accountAggregationSources != null && (this._accountAggregationSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

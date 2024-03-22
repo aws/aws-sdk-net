@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
     {
         private string _context;
         private ExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
-        private List<LaunchTemplateConfig> _launchTemplateConfigs = new List<LaunchTemplateConfig>();
+        private List<LaunchTemplateConfig> _launchTemplateConfigs = AWSConfigs.InitializeCollections ? new List<LaunchTemplateConfig>() : null;
         private int? _onDemandTargetCapacity;
         private string _spotFleetRequestId;
         private int? _targetCapacity;
@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         // Check to see if LaunchTemplateConfigs property is set
         internal bool IsSetLaunchTemplateConfigs()
         {
-            return this._launchTemplateConfigs != null && this._launchTemplateConfigs.Count > 0; 
+            return this._launchTemplateConfigs != null && (this._launchTemplateConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

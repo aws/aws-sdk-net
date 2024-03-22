@@ -37,8 +37,8 @@ namespace Amazon.AccessAnalyzer.Model
     /// bucket. If the access preview is for a new resource and you do not specify the Amazon
     /// S3 bucket policy, the access preview assumes an directory bucket without a policy.
     /// To propose deletion of an existing bucket policy, you can specify an empty string.
-    /// For more information about bucket policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
-    /// bucket policies</a>.
+    /// For more information about Amazon S3 directory bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
+    /// directory bucket policies for S3 Express One Zone</a>.
     /// </summary>
     public partial class S3ExpressDirectoryBucketConfiguration
     {

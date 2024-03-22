@@ -42,8 +42,8 @@ namespace Amazon.RoboMaker.Model
         private string _revisionId;
         private RobotSoftwareSuite _robotSoftwareSuite;
         private SimulationSoftwareSuite _simulationSoftwareSuite;
-        private List<Source> _sources = new List<Source>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<Source> _sources = AWSConfigs.InitializeCollections ? new List<Source>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _version;
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

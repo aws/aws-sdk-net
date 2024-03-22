@@ -45,7 +45,7 @@ namespace Amazon.Athena.Model
         /// Enumerable containing all of the TableMetadataList
         /// </summary>
         public IPaginatedEnumerable<TableMetadata> TableMetadataList => 
-            new PaginatedResultKeyResponse<ListTableMetadataResponse, TableMetadata>(this, (i) => i.TableMetadataList);
+            new PaginatedResultKeyResponse<ListTableMetadataResponse, TableMetadata>(this, (i) => i.TableMetadataList ?? new List<TableMetadata>());
 
         internal ListTableMetadataPaginator(IAmazonAthena client, ListTableMetadataRequest request)
         {

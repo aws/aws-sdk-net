@@ -35,7 +35,7 @@ namespace Amazon.IoT.Model
     {
         private int? _disconnectAfterInSeconds;
         private bool? _isAuthenticated;
-        private List<string> _policyDocuments = new List<string>();
+        private List<string> _policyDocuments = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _principalId;
         private int? _refreshAfterInSeconds;
 
@@ -90,7 +90,7 @@ namespace Amazon.IoT.Model
         // Check to see if PolicyDocuments property is set
         internal bool IsSetPolicyDocuments()
         {
-            return this._policyDocuments != null && this._policyDocuments.Count > 0; 
+            return this._policyDocuments != null && (this._policyDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

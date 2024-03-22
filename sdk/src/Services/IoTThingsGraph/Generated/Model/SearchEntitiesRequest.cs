@@ -35,8 +35,8 @@ namespace Amazon.IoTThingsGraph.Model
     /// </summary>
     public partial class SearchEntitiesRequest : AmazonIoTThingsGraphRequest
     {
-        private List<string> _entityTypes = new List<string>();
-        private List<EntityFilter> _filters = new List<EntityFilter>();
+        private List<string> _entityTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<EntityFilter> _filters = AWSConfigs.InitializeCollections ? new List<EntityFilter>() : null;
         private int? _maxResults;
         private long? _namespaceVersion;
         private string _nextToken;
@@ -57,7 +57,7 @@ namespace Amazon.IoTThingsGraph.Model
         // Check to see if EntityTypes property is set
         internal bool IsSetEntityTypes()
         {
-            return this._entityTypes != null && this._entityTypes.Count > 0; 
+            return this._entityTypes != null && (this._entityTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.IoTThingsGraph.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

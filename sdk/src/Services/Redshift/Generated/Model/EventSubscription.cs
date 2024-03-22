@@ -36,14 +36,14 @@ namespace Amazon.Redshift.Model
         private string _customerAwsId;
         private string _custSubscriptionId;
         private bool? _enabled;
-        private List<string> _eventCategoriesList = new List<string>();
+        private List<string> _eventCategoriesList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _severity;
         private string _snsTopicArn;
-        private List<string> _sourceIdsList = new List<string>();
+        private List<string> _sourceIdsList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sourceType;
         private string _status;
         private DateTime? _subscriptionCreationTime;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomerAwsId. 
@@ -122,7 +122,7 @@ namespace Amazon.Redshift.Model
         // Check to see if EventCategoriesList property is set
         internal bool IsSetEventCategoriesList()
         {
-            return this._eventCategoriesList != null && this._eventCategoriesList.Count > 0; 
+            return this._eventCategoriesList != null && (this._eventCategoriesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Amazon.Redshift.Model
         // Check to see if SourceIdsList property is set
         internal bool IsSetSourceIdsList()
         {
-            return this._sourceIdsList != null && this._sourceIdsList.Count > 0; 
+            return this._sourceIdsList != null && (this._sourceIdsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

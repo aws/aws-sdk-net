@@ -33,7 +33,7 @@ namespace Amazon.CodeGuruProfiler.Model
     /// </summary>
     public partial class ListFindingsReportsResponse : AmazonWebServiceResponse
     {
-        private List<FindingsReportSummary> _findingsReportSummaries = new List<FindingsReportSummary>();
+        private List<FindingsReportSummary> _findingsReportSummaries = AWSConfigs.InitializeCollections ? new List<FindingsReportSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if FindingsReportSummaries property is set
         internal bool IsSetFindingsReportSummaries()
         {
-            return this._findingsReportSummaries != null && this._findingsReportSummaries.Count > 0; 
+            return this._findingsReportSummaries != null && (this._findingsReportSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

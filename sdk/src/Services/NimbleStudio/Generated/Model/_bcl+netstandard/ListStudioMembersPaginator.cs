@@ -45,7 +45,7 @@ namespace Amazon.NimbleStudio.Model
         /// Enumerable containing all of the Members
         /// </summary>
         public IPaginatedEnumerable<StudioMembership> Members => 
-            new PaginatedResultKeyResponse<ListStudioMembersResponse, StudioMembership>(this, (i) => i.Members);
+            new PaginatedResultKeyResponse<ListStudioMembersResponse, StudioMembership>(this, (i) => i.Members ?? new List<StudioMembership>());
 
         internal ListStudioMembersPaginator(IAmazonNimbleStudio client, ListStudioMembersRequest request)
         {

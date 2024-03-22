@@ -35,7 +35,7 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class DescribePackagesRequest : AmazonElasticsearchRequest
     {
-        private List<DescribePackagesFilter> _filters = new List<DescribePackagesFilter>();
+        private List<DescribePackagesFilter> _filters = AWSConfigs.InitializeCollections ? new List<DescribePackagesFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -54,7 +54,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the TopicConfigurations
         /// </summary>
         public IPaginatedEnumerable<TopicConfiguration> TopicConfigurations => 
-            new PaginatedResultKeyResponse<GetChatControlsConfigurationResponse, TopicConfiguration>(this, (i) => i.TopicConfigurations);
+            new PaginatedResultKeyResponse<GetChatControlsConfigurationResponse, TopicConfiguration>(this, (i) => i.TopicConfigurations ?? new List<TopicConfiguration>());
 
         internal GetChatControlsConfigurationPaginator(IAmazonQBusiness client, GetChatControlsConfigurationRequest request)
         {

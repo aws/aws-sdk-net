@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class ConnectorRuntimeSetting
     {
-        private List<string> _connectorSuppliedValueOptions = new List<string>();
+        private List<string> _connectorSuppliedValueOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _dataType;
         private string _description;
         private bool? _isRequired;
@@ -58,7 +58,7 @@ namespace Amazon.Appflow.Model
         // Check to see if ConnectorSuppliedValueOptions property is set
         internal bool IsSetConnectorSuppliedValueOptions()
         {
-            return this._connectorSuppliedValueOptions != null && this._connectorSuppliedValueOptions.Count > 0; 
+            return this._connectorSuppliedValueOptions != null && (this._connectorSuppliedValueOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

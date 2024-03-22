@@ -33,8 +33,8 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class AssetItemAdditionalAttributes
     {
-        private List<FormOutput> _formsOutput = new List<FormOutput>();
-        private List<FormOutput> _readOnlyFormsOutput = new List<FormOutput>();
+        private List<FormOutput> _formsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
+        private List<FormOutput> _readOnlyFormsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property FormsOutput. 
@@ -52,7 +52,7 @@ namespace Amazon.DataZone.Model
         // Check to see if FormsOutput property is set
         internal bool IsSetFormsOutput()
         {
-            return this._formsOutput != null && this._formsOutput.Count > 0; 
+            return this._formsOutput != null && (this._formsOutput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.DataZone.Model
         // Check to see if ReadOnlyFormsOutput property is set
         internal bool IsSetReadOnlyFormsOutput()
         {
-            return this._readOnlyFormsOutput != null && this._readOnlyFormsOutput.Count > 0; 
+            return this._readOnlyFormsOutput != null && (this._readOnlyFormsOutput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

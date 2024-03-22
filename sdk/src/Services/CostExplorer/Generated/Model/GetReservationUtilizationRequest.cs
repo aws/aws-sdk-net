@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
     {
         private Expression _filter;
         private Granularity _granularity;
-        private List<GroupDefinition> _groupBy = new List<GroupDefinition>();
+        private List<GroupDefinition> _groupBy = AWSConfigs.InitializeCollections ? new List<GroupDefinition>() : null;
         private int? _maxResults;
         private string _nextPageToken;
         private SortDefinition _sortBy;
@@ -155,7 +155,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if GroupBy property is set
         internal bool IsSetGroupBy()
         {
-            return this._groupBy != null && this._groupBy.Count > 0; 
+            return this._groupBy != null && (this._groupBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

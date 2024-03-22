@@ -34,7 +34,7 @@ namespace Amazon.SecurityLake.Model
     public partial class ListSubscribersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SubscriberResource> _subscribers = new List<SubscriberResource>();
+        private List<SubscriberResource> _subscribers = AWSConfigs.InitializeCollections ? new List<SubscriberResource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Subscribers property is set
         internal bool IsSetSubscribers()
         {
-            return this._subscribers != null && this._subscribers.Count > 0; 
+            return this._subscribers != null && (this._subscribers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

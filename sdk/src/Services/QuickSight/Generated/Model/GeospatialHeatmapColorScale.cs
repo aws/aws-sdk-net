@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GeospatialHeatmapColorScale
     {
-        private List<GeospatialHeatmapDataColor> _colors = new List<GeospatialHeatmapDataColor>();
+        private List<GeospatialHeatmapDataColor> _colors = AWSConfigs.InitializeCollections ? new List<GeospatialHeatmapDataColor>() : null;
 
         /// <summary>
         /// Gets and sets the property Colors. 
@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Colors property is set
         internal bool IsSetColors()
         {
-            return this._colors != null && this._colors.Count > 0; 
+            return this._colors != null && (this._colors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

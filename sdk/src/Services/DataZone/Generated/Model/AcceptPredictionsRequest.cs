@@ -35,7 +35,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class AcceptPredictionsRequest : AmazonDataZoneRequest
     {
-        private List<AcceptChoice> _acceptChoices = new List<AcceptChoice>();
+        private List<AcceptChoice> _acceptChoices = AWSConfigs.InitializeCollections ? new List<AcceptChoice>() : null;
         private AcceptRule _acceptRule;
         private string _clientToken;
         private string _domainIdentifier;
@@ -54,7 +54,7 @@ namespace Amazon.DataZone.Model
         // Check to see if AcceptChoices property is set
         internal bool IsSetAcceptChoices()
         {
-            return this._acceptChoices != null && this._acceptChoices.Count > 0; 
+            return this._acceptChoices != null && (this._acceptChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

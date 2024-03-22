@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<TagSet> Tags => 
-            new PaginatedResultKeyResponse<SearchResourceTagsResponse, TagSet>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<SearchResourceTagsResponse, TagSet>(this, (i) => i.Tags ?? new List<TagSet>());
 
         internal SearchResourceTagsPaginator(IAmazonConnect client, SearchResourceTagsRequest request)
         {

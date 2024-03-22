@@ -41,7 +41,7 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class BatchDescribeTypeConfigurationsRequest : AmazonCloudFormationRequest
     {
-        private List<TypeConfigurationIdentifier> _typeConfigurationIdentifiers = new List<TypeConfigurationIdentifier>();
+        private List<TypeConfigurationIdentifier> _typeConfigurationIdentifiers = AWSConfigs.InitializeCollections ? new List<TypeConfigurationIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property TypeConfigurationIdentifiers. 
@@ -59,7 +59,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TypeConfigurationIdentifiers property is set
         internal bool IsSetTypeConfigurationIdentifiers()
         {
-            return this._typeConfigurationIdentifiers != null && this._typeConfigurationIdentifiers.Count > 0; 
+            return this._typeConfigurationIdentifiers != null && (this._typeConfigurationIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ListServiceActionsResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<ServiceActionSummary> _serviceActionSummaries = new List<ServiceActionSummary>();
+        private List<ServiceActionSummary> _serviceActionSummaries = AWSConfigs.InitializeCollections ? new List<ServiceActionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -72,7 +72,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ServiceActionSummaries property is set
         internal bool IsSetServiceActionSummaries()
         {
-            return this._serviceActionSummaries != null && this._serviceActionSummaries.Count > 0; 
+            return this._serviceActionSummaries != null && (this._serviceActionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

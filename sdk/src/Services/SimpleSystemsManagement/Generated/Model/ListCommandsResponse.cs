@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ListCommandsResponse : AmazonWebServiceResponse
     {
-        private List<Command> _commands = new List<Command>();
+        private List<Command> _commands = AWSConfigs.InitializeCollections ? new List<Command>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Commands property is set
         internal bool IsSetCommands()
         {
-            return this._commands != null && this._commands.Count > 0; 
+            return this._commands != null && (this._commands.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

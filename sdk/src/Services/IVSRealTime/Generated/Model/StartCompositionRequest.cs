@@ -62,11 +62,11 @@ namespace Amazon.IVSRealTime.Model
     /// </summary>
     public partial class StartCompositionRequest : AmazonIVSRealTimeRequest
     {
-        private List<DestinationConfiguration> _destinations = new List<DestinationConfiguration>();
+        private List<DestinationConfiguration> _destinations = AWSConfigs.InitializeCollections ? new List<DestinationConfiguration>() : null;
         private string _idempotencyToken;
         private LayoutConfiguration _layout;
         private string _stageArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Destinations. 
@@ -84,7 +84,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

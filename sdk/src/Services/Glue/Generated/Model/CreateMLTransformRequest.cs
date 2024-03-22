@@ -52,14 +52,14 @@ namespace Amazon.Glue.Model
     {
         private string _description;
         private string _glueVersion;
-        private List<GlueTable> _inputRecordTables = new List<GlueTable>();
+        private List<GlueTable> _inputRecordTables = AWSConfigs.InitializeCollections ? new List<GlueTable>() : null;
         private double? _maxCapacity;
         private int? _maxRetries;
         private string _name;
         private int? _numberOfWorkers;
         private TransformParameters _parameters;
         private string _role;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _timeout;
         private TransformEncryption _transformEncryption;
         private WorkerType _workerType;
@@ -122,7 +122,7 @@ namespace Amazon.Glue.Model
         // Check to see if InputRecordTables property is set
         internal bool IsSetInputRecordTables()
         {
-            return this._inputRecordTables != null && this._inputRecordTables.Count > 0; 
+            return this._inputRecordTables != null && (this._inputRecordTables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -313,7 +313,7 @@ namespace Amazon.Glue.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

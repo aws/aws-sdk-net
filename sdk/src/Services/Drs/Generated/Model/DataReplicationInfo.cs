@@ -38,7 +38,7 @@ namespace Amazon.Drs.Model
         private DataReplicationState _dataReplicationState;
         private string _etaDateTime;
         private string _lagDuration;
-        private List<DataReplicationInfoReplicatedDisk> _replicatedDisks = new List<DataReplicationInfoReplicatedDisk>();
+        private List<DataReplicationInfoReplicatedDisk> _replicatedDisks = AWSConfigs.InitializeCollections ? new List<DataReplicationInfoReplicatedDisk>() : null;
         private string _stagingAvailabilityZone;
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.Drs.Model
         // Check to see if ReplicatedDisks property is set
         internal bool IsSetReplicatedDisks()
         {
-            return this._replicatedDisks != null && this._replicatedDisks.Count > 0; 
+            return this._replicatedDisks != null && (this._replicatedDisks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

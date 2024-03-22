@@ -36,8 +36,8 @@ namespace Amazon.CustomerProfiles.Model
     {
         private ConnectorOperator _connectorOperator;
         private string _destinationField;
-        private List<string> _sourceFields = new List<string>();
-        private Dictionary<string, string> _taskProperties = new Dictionary<string, string>();
+        private List<string> _sourceFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _taskProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TaskType _taskType;
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if SourceFields property is set
         internal bool IsSetSourceFields()
         {
-            return this._sourceFields != null && this._sourceFields.Count > 0; 
+            return this._sourceFields != null && (this._sourceFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if TaskProperties property is set
         internal bool IsSetTaskProperties()
         {
-            return this._taskProperties != null && this._taskProperties.Count > 0; 
+            return this._taskProperties != null && (this._taskProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

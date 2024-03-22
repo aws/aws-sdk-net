@@ -41,7 +41,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetEnrollmentStatusesForOrganizationRequest : AmazonComputeOptimizerRequest
     {
-        private List<EnrollmentFilter> _filters = new List<EnrollmentFilter>();
+        private List<EnrollmentFilter> _filters = AWSConfigs.InitializeCollections ? new List<EnrollmentFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -61,7 +61,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

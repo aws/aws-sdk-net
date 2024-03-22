@@ -69,6 +69,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("FunctionExecutionLogs/member", targetDepth))
                     {
+                        if (unmarshalledObject.FunctionExecutionLogs == null)
+                        {
+                            unmarshalledObject.FunctionExecutionLogs = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.FunctionExecutionLogs.Add(unmarshaller.Unmarshall(context));
                         continue;

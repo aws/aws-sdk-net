@@ -37,7 +37,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class OidcMemberDefinition
     {
-        private List<string> _groups = new List<string>();
+        private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Groups. 
@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

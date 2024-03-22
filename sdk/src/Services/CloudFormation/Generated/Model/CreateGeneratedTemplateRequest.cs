@@ -37,7 +37,7 @@ namespace Amazon.CloudFormation.Model
     public partial class CreateGeneratedTemplateRequest : AmazonCloudFormationRequest
     {
         private string _generatedTemplateName;
-        private List<ResourceDefinition> _resources = new List<ResourceDefinition>();
+        private List<ResourceDefinition> _resources = AWSConfigs.InitializeCollections ? new List<ResourceDefinition>() : null;
         private string _stackName;
         private TemplateConfiguration _templateConfiguration;
 
@@ -82,7 +82,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         private DateTime? _lastModifiedAfter;
         private DateTime? _lastModifiedBefore;
         private string _name;
-        private List<SchemaColumn> _schema = new List<SchemaColumn>();
+        private List<SchemaColumn> _schema = AWSConfigs.InitializeCollections ? new List<SchemaColumn>() : null;
         private TransformStatusType _status;
         private TransformType _transformType;
 
@@ -175,7 +175,7 @@ namespace Amazon.Glue.Model
         // Check to see if Schema property is set
         internal bool IsSetSchema()
         {
-            return this._schema != null && this._schema.Count > 0; 
+            return this._schema != null && (this._schema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

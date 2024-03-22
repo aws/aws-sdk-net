@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     public partial class ColumnStatisticsTaskRun
     {
         private string _catalogID;
-        private List<string> _columnNameList = new List<string>();
+        private List<string> _columnNameList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _columnStatisticsTaskRunId;
         private DateTime? _creationTime;
         private string _customerId;
@@ -88,7 +88,7 @@ namespace Amazon.Glue.Model
         // Check to see if ColumnNameList property is set
         internal bool IsSetColumnNameList()
         {
-            return this._columnNameList != null && this._columnNameList.Count > 0; 
+            return this._columnNameList != null && (this._columnNameList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

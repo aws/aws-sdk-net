@@ -45,7 +45,7 @@ namespace Amazon.EMRContainers.Model
         /// Enumerable containing all of the Templates
         /// </summary>
         public IPaginatedEnumerable<JobTemplate> Templates => 
-            new PaginatedResultKeyResponse<ListJobTemplatesResponse, JobTemplate>(this, (i) => i.Templates);
+            new PaginatedResultKeyResponse<ListJobTemplatesResponse, JobTemplate>(this, (i) => i.Templates ?? new List<JobTemplate>());
 
         internal ListJobTemplatesPaginator(IAmazonEMRContainers client, ListJobTemplatesRequest request)
         {

@@ -95,7 +95,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("Cookies", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                                 var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems = publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.Items;
-                                if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems != null && publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems.Count > 0) 
+                                if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems != null && (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
                                 {                        
                                     xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                                     foreach (var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItemsValue in publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems) 
@@ -131,7 +131,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("Headers", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                                 var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems = publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.Items;
-                                if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems != null && publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems.Count > 0) 
+                                if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems != null && (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
                                 {                        
                                     xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                                     foreach (var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItemsValue in publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems) 
@@ -161,7 +161,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("QueryStrings", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                                 var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems = publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.Items;
-                                if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems != null && publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems.Count > 0) 
+                                if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems != null && (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
                                 {                        
                                     xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                                     foreach (var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItemsValue in publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems) 

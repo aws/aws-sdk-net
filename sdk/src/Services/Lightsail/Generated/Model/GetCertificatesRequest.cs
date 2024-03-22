@@ -43,7 +43,7 @@ namespace Amazon.Lightsail.Model
     public partial class GetCertificatesRequest : AmazonLightsailRequest
     {
         private string _certificateName;
-        private List<string> _certificateStatuses = new List<string>();
+        private List<string> _certificateStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _includeCertificateDetails;
         private string _pageToken;
 
@@ -95,7 +95,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if CertificateStatuses property is set
         internal bool IsSetCertificateStatuses()
         {
-            return this._certificateStatuses != null && this._certificateStatuses.Count > 0; 
+            return this._certificateStatuses != null && (this._certificateStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

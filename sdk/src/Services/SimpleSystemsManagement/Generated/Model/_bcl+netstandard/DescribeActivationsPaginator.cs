@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the ActivationList
         /// </summary>
         public IPaginatedEnumerable<Activation> ActivationList => 
-            new PaginatedResultKeyResponse<DescribeActivationsResponse, Activation>(this, (i) => i.ActivationList);
+            new PaginatedResultKeyResponse<DescribeActivationsResponse, Activation>(this, (i) => i.ActivationList ?? new List<Activation>());
 
         internal DescribeActivationsPaginator(IAmazonSimpleSystemsManagement client, DescribeActivationsRequest request)
         {

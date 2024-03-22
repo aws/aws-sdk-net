@@ -34,7 +34,7 @@ namespace Amazon.IoTFleetWise.Model
     public partial class GetVehicleResponse : AmazonWebServiceResponse
     {
         private string _arn;
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _creationTime;
         private string _decoderManifestArn;
         private DateTime? _lastModificationTime;
@@ -78,7 +78,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

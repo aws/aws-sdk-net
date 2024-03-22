@@ -108,6 +108,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ImportTablesCompleted/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.ImportTablesCompleted == null)
+                        {
+                            response.ImportTablesCompleted = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ImportTablesCompleted.Add(item);
                         continue;
@@ -115,6 +119,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ImportTablesInProgress/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.ImportTablesInProgress == null)
+                        {
+                            response.ImportTablesInProgress = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ImportTablesInProgress.Add(item);
                         continue;
@@ -122,6 +130,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ImportTablesNotStarted/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.ImportTablesNotStarted == null)
+                        {
+                            response.ImportTablesNotStarted = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ImportTablesNotStarted.Add(item);
                         continue;

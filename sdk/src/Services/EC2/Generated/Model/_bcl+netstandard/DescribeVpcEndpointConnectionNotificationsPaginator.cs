@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the ConnectionNotificationSet
         /// </summary>
         public IPaginatedEnumerable<ConnectionNotification> ConnectionNotificationSet => 
-            new PaginatedResultKeyResponse<DescribeVpcEndpointConnectionNotificationsResponse, ConnectionNotification>(this, (i) => i.ConnectionNotificationSet);
+            new PaginatedResultKeyResponse<DescribeVpcEndpointConnectionNotificationsResponse, ConnectionNotification>(this, (i) => i.ConnectionNotificationSet ?? new List<ConnectionNotification>());
 
         internal DescribeVpcEndpointConnectionNotificationsPaginator(IAmazonEC2 client, DescribeVpcEndpointConnectionNotificationsRequest request)
         {

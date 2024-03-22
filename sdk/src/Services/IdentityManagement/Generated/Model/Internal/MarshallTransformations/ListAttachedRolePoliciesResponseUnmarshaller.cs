@@ -84,6 +84,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AttachedPolicies/member", targetDepth))
                     {
                         var unmarshaller = AttachedPolicyTypeUnmarshaller.Instance;
+                        if (response.AttachedPolicies == null)
+                        {
+                            response.AttachedPolicies = new List<AttachedPolicyType>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AttachedPolicies.Add(item);
                         continue;

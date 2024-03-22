@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the StorageConfigs
         /// </summary>
         public IPaginatedEnumerable<InstanceStorageConfig> StorageConfigs => 
-            new PaginatedResultKeyResponse<ListInstanceStorageConfigsResponse, InstanceStorageConfig>(this, (i) => i.StorageConfigs);
+            new PaginatedResultKeyResponse<ListInstanceStorageConfigsResponse, InstanceStorageConfig>(this, (i) => i.StorageConfigs ?? new List<InstanceStorageConfig>());
 
         internal ListInstanceStorageConfigsPaginator(IAmazonConnect client, ListInstanceStorageConfigsRequest request)
         {

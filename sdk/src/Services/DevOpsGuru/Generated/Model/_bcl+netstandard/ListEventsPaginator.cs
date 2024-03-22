@@ -45,7 +45,7 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<Event> Events => 
-            new PaginatedResultKeyResponse<ListEventsResponse, Event>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<ListEventsResponse, Event>(this, (i) => i.Events ?? new List<Event>());
 
         internal ListEventsPaginator(IAmazonDevOpsGuru client, ListEventsRequest request)
         {

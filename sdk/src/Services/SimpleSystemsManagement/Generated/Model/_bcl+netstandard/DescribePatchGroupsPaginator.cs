@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the Mappings
         /// </summary>
         public IPaginatedEnumerable<PatchGroupPatchBaselineMapping> Mappings => 
-            new PaginatedResultKeyResponse<DescribePatchGroupsResponse, PatchGroupPatchBaselineMapping>(this, (i) => i.Mappings);
+            new PaginatedResultKeyResponse<DescribePatchGroupsResponse, PatchGroupPatchBaselineMapping>(this, (i) => i.Mappings ?? new List<PatchGroupPatchBaselineMapping>());
 
         internal DescribePatchGroupsPaginator(IAmazonSimpleSystemsManagement client, DescribePatchGroupsRequest request)
         {

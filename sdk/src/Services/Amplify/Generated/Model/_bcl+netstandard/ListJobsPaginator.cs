@@ -45,7 +45,7 @@ namespace Amazon.Amplify.Model
         /// Enumerable containing all of the JobSummaries
         /// </summary>
         public IPaginatedEnumerable<JobSummary> JobSummaries => 
-            new PaginatedResultKeyResponse<ListJobsResponse, JobSummary>(this, (i) => i.JobSummaries);
+            new PaginatedResultKeyResponse<ListJobsResponse, JobSummary>(this, (i) => i.JobSummaries ?? new List<JobSummary>());
 
         internal ListJobsPaginator(IAmazonAmplify client, ListJobsRequest request)
         {

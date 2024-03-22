@@ -45,7 +45,7 @@ namespace Amazon.BedrockAgent.Model
         /// Enumerable containing all of the AgentAliasSummaries
         /// </summary>
         public IPaginatedEnumerable<AgentAliasSummary> AgentAliasSummaries => 
-            new PaginatedResultKeyResponse<ListAgentAliasesResponse, AgentAliasSummary>(this, (i) => i.AgentAliasSummaries);
+            new PaginatedResultKeyResponse<ListAgentAliasesResponse, AgentAliasSummary>(this, (i) => i.AgentAliasSummaries ?? new List<AgentAliasSummary>());
 
         internal ListAgentAliasesPaginator(IAmazonBedrockAgent client, ListAgentAliasesRequest request)
         {

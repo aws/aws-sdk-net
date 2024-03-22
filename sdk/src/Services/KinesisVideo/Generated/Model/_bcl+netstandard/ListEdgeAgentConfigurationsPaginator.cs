@@ -45,7 +45,7 @@ namespace Amazon.KinesisVideo.Model
         /// Enumerable containing all of the EdgeConfigs
         /// </summary>
         public IPaginatedEnumerable<ListEdgeAgentConfigurationsEdgeConfig> EdgeConfigs => 
-            new PaginatedResultKeyResponse<ListEdgeAgentConfigurationsResponse, ListEdgeAgentConfigurationsEdgeConfig>(this, (i) => i.EdgeConfigs);
+            new PaginatedResultKeyResponse<ListEdgeAgentConfigurationsResponse, ListEdgeAgentConfigurationsEdgeConfig>(this, (i) => i.EdgeConfigs ?? new List<ListEdgeAgentConfigurationsEdgeConfig>());
 
         internal ListEdgeAgentConfigurationsPaginator(IAmazonKinesisVideo client, ListEdgeAgentConfigurationsRequest request)
         {

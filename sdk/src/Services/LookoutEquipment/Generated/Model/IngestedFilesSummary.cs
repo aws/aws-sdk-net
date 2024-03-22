@@ -34,7 +34,7 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class IngestedFilesSummary
     {
-        private List<S3Object> _discardedFiles = new List<S3Object>();
+        private List<S3Object> _discardedFiles = AWSConfigs.InitializeCollections ? new List<S3Object>() : null;
         private int? _ingestedNumberOfFiles;
         private int? _totalNumberOfFiles;
 
@@ -55,7 +55,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if DiscardedFiles property is set
         internal bool IsSetDiscardedFiles()
         {
-            return this._discardedFiles != null && this._discardedFiles.Count > 0; 
+            return this._discardedFiles != null && (this._discardedFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

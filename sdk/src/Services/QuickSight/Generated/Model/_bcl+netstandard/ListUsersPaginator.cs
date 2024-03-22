@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the UserList
         /// </summary>
         public IPaginatedEnumerable<User> UserList => 
-            new PaginatedResultKeyResponse<ListUsersResponse, User>(this, (i) => i.UserList);
+            new PaginatedResultKeyResponse<ListUsersResponse, User>(this, (i) => i.UserList ?? new List<User>());
 
         internal ListUsersPaginator(IAmazonQuickSight client, ListUsersRequest request)
         {

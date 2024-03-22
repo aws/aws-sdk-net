@@ -61,7 +61,7 @@ namespace Amazon.CodeDeploy.Model
     public partial class BatchGetDeploymentTargetsRequest : AmazonCodeDeployRequest
     {
         private string _deploymentId;
-        private List<string> _targetIds = new List<string>();
+        private List<string> _targetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DeploymentId. 
@@ -123,7 +123,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if TargetIds property is set
         internal bool IsSetTargetIds()
         {
-            return this._targetIds != null && this._targetIds.Count > 0; 
+            return this._targetIds != null && (this._targetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

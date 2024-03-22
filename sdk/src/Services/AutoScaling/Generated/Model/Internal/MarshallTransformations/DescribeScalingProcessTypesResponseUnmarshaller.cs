@@ -84,6 +84,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Processes/member", targetDepth))
                     {
                         var unmarshaller = ProcessTypeUnmarshaller.Instance;
+                        if (response.Processes == null)
+                        {
+                            response.Processes = new List<ProcessType>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Processes.Add(item);
                         continue;

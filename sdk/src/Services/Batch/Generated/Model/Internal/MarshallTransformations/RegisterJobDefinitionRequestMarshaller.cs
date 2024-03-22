@@ -76,6 +76,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetEcsProperties())
+                {
+                    context.Writer.WritePropertyName("ecsProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EcsPropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EcsProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEksProperties())
                 {
                     context.Writer.WritePropertyName("eksProperties");

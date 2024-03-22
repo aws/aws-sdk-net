@@ -35,7 +35,7 @@ namespace Amazon.CostExplorer.Model
     {
         private string _nextPageToken;
         private ReservationAggregates _total;
-        private List<UtilizationByTime> _utilizationsByTime = new List<UtilizationByTime>();
+        private List<UtilizationByTime> _utilizationsByTime = AWSConfigs.InitializeCollections ? new List<UtilizationByTime>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -92,7 +92,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if UtilizationsByTime property is set
         internal bool IsSetUtilizationsByTime()
         {
-            return this._utilizationsByTime != null && this._utilizationsByTime.Count > 0; 
+            return this._utilizationsByTime != null && (this._utilizationsByTime.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

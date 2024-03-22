@@ -63,15 +63,15 @@ namespace Amazon.FSx.Model
     {
         private string _clientRequestToken;
         private bool? _copyTagsToDataRepositoryAssociations;
-        private List<FileCacheDataRepositoryAssociation> _dataRepositoryAssociations = new List<FileCacheDataRepositoryAssociation>();
+        private List<FileCacheDataRepositoryAssociation> _dataRepositoryAssociations = AWSConfigs.InitializeCollections ? new List<FileCacheDataRepositoryAssociation>() : null;
         private FileCacheType _fileCacheType;
         private string _fileCacheTypeVersion;
         private string _kmsKeyId;
         private CreateFileCacheLustreConfiguration _lustreConfiguration;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _storageCapacity;
-        private List<string> _subnetIds = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -157,7 +157,7 @@ namespace Amazon.FSx.Model
         // Check to see if DataRepositoryAssociations property is set
         internal bool IsSetDataRepositoryAssociations()
         {
-            return this._dataRepositoryAssociations != null && this._dataRepositoryAssociations.Count > 0; 
+            return this._dataRepositoryAssociations != null && (this._dataRepositoryAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace Amazon.FSx.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace Amazon.FSx.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -308,7 +308,7 @@ namespace Amazon.FSx.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeprovisionPublicIpv4PoolCidrResponse : AmazonWebServiceResponse
     {
-        private List<string> _deprovisionedAddresses = new List<string>();
+        private List<string> _deprovisionedAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _poolId;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if DeprovisionedAddresses property is set
         internal bool IsSetDeprovisionedAddresses()
         {
-            return this._deprovisionedAddresses != null && this._deprovisionedAddresses.Count > 0; 
+            return this._deprovisionedAddresses != null && (this._deprovisionedAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Amazon.ConnectCases.Model
     public partial class BatchGetFieldRequest : AmazonConnectCasesRequest
     {
         private string _domainId;
-        private List<FieldIdentifier> _fields = new List<FieldIdentifier>();
+        private List<FieldIdentifier> _fields = AWSConfigs.InitializeCollections ? new List<FieldIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property DomainId. 
@@ -72,7 +72,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

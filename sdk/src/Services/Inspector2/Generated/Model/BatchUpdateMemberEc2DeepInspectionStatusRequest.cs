@@ -36,7 +36,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class BatchUpdateMemberEc2DeepInspectionStatusRequest : AmazonInspector2Request
     {
-        private List<MemberAccountEc2DeepInspectionStatus> _accountIds = new List<MemberAccountEc2DeepInspectionStatus>();
+        private List<MemberAccountEc2DeepInspectionStatus> _accountIds = AWSConfigs.InitializeCollections ? new List<MemberAccountEc2DeepInspectionStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountIds. 
@@ -55,7 +55,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

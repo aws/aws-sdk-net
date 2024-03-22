@@ -33,7 +33,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetLambdaFunctionRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<LambdaFunctionRecommendation> _lambdaFunctionRecommendations = new List<LambdaFunctionRecommendation>();
+        private List<LambdaFunctionRecommendation> _lambdaFunctionRecommendations = AWSConfigs.InitializeCollections ? new List<LambdaFunctionRecommendation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if LambdaFunctionRecommendations property is set
         internal bool IsSetLambdaFunctionRecommendations()
         {
-            return this._lambdaFunctionRecommendations != null && this._lambdaFunctionRecommendations.Count > 0; 
+            return this._lambdaFunctionRecommendations != null && (this._lambdaFunctionRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

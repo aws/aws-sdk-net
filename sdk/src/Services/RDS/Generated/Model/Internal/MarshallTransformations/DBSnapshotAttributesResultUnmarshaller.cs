@@ -57,6 +57,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBSnapshotAttributes/DBSnapshotAttribute", targetDepth))
                     {
                         var unmarshaller = DBSnapshotAttributeUnmarshaller.Instance;
+                        if (unmarshalledObject.DBSnapshotAttributes == null)
+                        {
+                            unmarshalledObject.DBSnapshotAttributes = new List<DBSnapshotAttribute>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DBSnapshotAttributes.Add(item);
                         continue;

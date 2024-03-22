@@ -33,7 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class GetBatchPredictionJobsResponse : AmazonWebServiceResponse
     {
-        private List<BatchPrediction> _batchPredictions = new List<BatchPrediction>();
+        private List<BatchPrediction> _batchPredictions = AWSConfigs.InitializeCollections ? new List<BatchPrediction>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if BatchPredictions property is set
         internal bool IsSetBatchPredictions()
         {
-            return this._batchPredictions != null && this._batchPredictions.Count > 0; 
+            return this._batchPredictions != null && (this._batchPredictions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

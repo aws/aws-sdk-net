@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the Targets
         /// </summary>
         public IPaginatedEnumerable<MaintenanceWindowTarget> Targets => 
-            new PaginatedResultKeyResponse<DescribeMaintenanceWindowTargetsResponse, MaintenanceWindowTarget>(this, (i) => i.Targets);
+            new PaginatedResultKeyResponse<DescribeMaintenanceWindowTargetsResponse, MaintenanceWindowTarget>(this, (i) => i.Targets ?? new List<MaintenanceWindowTarget>());
 
         internal DescribeMaintenanceWindowTargetsPaginator(IAmazonSimpleSystemsManagement client, DescribeMaintenanceWindowTargetsRequest request)
         {

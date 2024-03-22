@@ -45,7 +45,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Notifications
         /// </summary>
         public IPaginatedEnumerable<NotificationOutput> Notifications => 
-            new PaginatedResultKeyResponse<ListNotificationsResponse, NotificationOutput>(this, (i) => i.Notifications);
+            new PaginatedResultKeyResponse<ListNotificationsResponse, NotificationOutput>(this, (i) => i.Notifications ?? new List<NotificationOutput>());
 
         internal ListNotificationsPaginator(IAmazonDataZone client, ListNotificationsRequest request)
         {

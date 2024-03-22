@@ -33,7 +33,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class ListEndpointGroupsResponse : AmazonWebServiceResponse
     {
-        private List<EndpointGroup> _endpointGroups = new List<EndpointGroup>();
+        private List<EndpointGroup> _endpointGroups = AWSConfigs.InitializeCollections ? new List<EndpointGroup>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if EndpointGroups property is set
         internal bool IsSetEndpointGroups()
         {
-            return this._endpointGroups != null && this._endpointGroups.Count > 0; 
+            return this._endpointGroups != null && (this._endpointGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

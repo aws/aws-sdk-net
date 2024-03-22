@@ -45,7 +45,7 @@ namespace Amazon.SSMContacts.Model
         /// Enumerable containing all of the ContactChannels
         /// </summary>
         public IPaginatedEnumerable<ContactChannel> ContactChannels => 
-            new PaginatedResultKeyResponse<ListContactChannelsResponse, ContactChannel>(this, (i) => i.ContactChannels);
+            new PaginatedResultKeyResponse<ListContactChannelsResponse, ContactChannel>(this, (i) => i.ContactChannels ?? new List<ContactChannel>());
 
         internal ListContactChannelsPaginator(IAmazonSSMContacts client, ListContactChannelsRequest request)
         {

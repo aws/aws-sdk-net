@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("flowLogSet/item", targetDepth))
                     {
                         var unmarshaller = FlowLogUnmarshaller.Instance;
+                        if (response.FlowLogs == null)
+                        {
+                            response.FlowLogs = new List<FlowLog>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.FlowLogs.Add(item);
                         continue;

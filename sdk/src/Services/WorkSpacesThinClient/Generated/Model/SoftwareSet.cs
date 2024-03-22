@@ -36,7 +36,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         private string _arn;
         private string _id;
         private DateTime? _releasedAt;
-        private List<Software> _software = new List<Software>();
+        private List<Software> _software = AWSConfigs.InitializeCollections ? new List<Software>() : null;
         private DateTime? _supportedUntil;
         private SoftwareSetValidationStatus _validationStatus;
         private string _version;
@@ -111,7 +111,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         // Check to see if Software property is set
         internal bool IsSetSoftware()
         {
-            return this._software != null && this._software.Count > 0; 
+            return this._software != null && (this._software.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

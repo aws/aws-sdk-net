@@ -33,7 +33,7 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class GetCaseAuditEventsResponse : AmazonWebServiceResponse
     {
-        private List<AuditEvent> _auditEvents = new List<AuditEvent>();
+        private List<AuditEvent> _auditEvents = AWSConfigs.InitializeCollections ? new List<AuditEvent>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if AuditEvents property is set
         internal bool IsSetAuditEvents()
         {
-            return this._auditEvents != null && this._auditEvents.Count > 0; 
+            return this._auditEvents != null && (this._auditEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

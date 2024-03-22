@@ -35,7 +35,7 @@ namespace Amazon.AWSSupport.Model
     /// </summary>
     public partial class Communication
     {
-        private List<AttachmentDetails> _attachmentSet = new List<AttachmentDetails>();
+        private List<AttachmentDetails> _attachmentSet = AWSConfigs.InitializeCollections ? new List<AttachmentDetails>() : null;
         private string _body;
         private string _caseId;
         private string _submittedBy;
@@ -56,7 +56,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if AttachmentSet property is set
         internal bool IsSetAttachmentSet()
         {
-            return this._attachmentSet != null && this._attachmentSet.Count > 0; 
+            return this._attachmentSet != null && (this._attachmentSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

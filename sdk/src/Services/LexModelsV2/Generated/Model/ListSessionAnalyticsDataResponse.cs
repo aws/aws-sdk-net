@@ -35,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _nextToken;
-        private List<SessionSpecification> _sessions = new List<SessionSpecification>();
+        private List<SessionSpecification> _sessions = AWSConfigs.InitializeCollections ? new List<SessionSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property BotId. 
@@ -96,7 +96,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Sessions property is set
         internal bool IsSetSessions()
         {
-            return this._sessions != null && this._sessions.Count > 0; 
+            return this._sessions != null && (this._sessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

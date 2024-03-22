@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the RegistrationAssociations
         /// </summary>
         public IPaginatedEnumerable<RegistrationAssociationMetadata> RegistrationAssociations => 
-            new PaginatedResultKeyResponse<ListRegistrationAssociationsResponse, RegistrationAssociationMetadata>(this, (i) => i.RegistrationAssociations);
+            new PaginatedResultKeyResponse<ListRegistrationAssociationsResponse, RegistrationAssociationMetadata>(this, (i) => i.RegistrationAssociations ?? new List<RegistrationAssociationMetadata>());
 
         internal ListRegistrationAssociationsPaginator(IAmazonPinpointSMSVoiceV2 client, ListRegistrationAssociationsRequest request)
         {

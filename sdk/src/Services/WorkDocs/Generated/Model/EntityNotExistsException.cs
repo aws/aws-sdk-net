@@ -36,7 +36,7 @@ namespace Amazon.WorkDocs.Model
     #endif
     public partial class EntityNotExistsException : AmazonWorkDocsException
     {
-        private List<string> _entityIds = new List<string>();
+        private List<string> _entityIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Constructs a new EntityNotExistsException with the specified error
@@ -133,7 +133,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if EntityIds property is set
         internal bool IsSetEntityIds()
         {
-            return this._entityIds != null && this._entityIds.Count > 0; 
+            return this._entityIds != null && (this._entityIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

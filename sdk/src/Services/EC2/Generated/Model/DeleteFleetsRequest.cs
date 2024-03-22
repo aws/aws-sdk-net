@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteFleetsRequest : AmazonEC2Request
     {
-        private List<string> _fleetIds = new List<string>();
+        private List<string> _fleetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _terminateInstances;
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         // Check to see if FleetIds property is set
         internal bool IsSetFleetIds()
         {
-            return this._fleetIds != null && this._fleetIds.Count > 0; 
+            return this._fleetIds != null && (this._fleetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

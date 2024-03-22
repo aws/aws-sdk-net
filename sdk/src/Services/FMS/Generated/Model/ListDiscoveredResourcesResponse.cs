@@ -33,7 +33,7 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class ListDiscoveredResourcesResponse : AmazonWebServiceResponse
     {
-        private List<DiscoveredResource> _items = new List<DiscoveredResource>();
+        private List<DiscoveredResource> _items = AWSConfigs.InitializeCollections ? new List<DiscoveredResource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FMS.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

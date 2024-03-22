@@ -33,7 +33,7 @@ namespace Amazon.MainframeModernization.Model
     /// </summary>
     public partial class ListDataSetsResponse : AmazonWebServiceResponse
     {
-        private List<DataSetSummary> _dataSets = new List<DataSetSummary>();
+        private List<DataSetSummary> _dataSets = AWSConfigs.InitializeCollections ? new List<DataSetSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if DataSets property is set
         internal bool IsSetDataSets()
         {
-            return this._dataSets != null && this._dataSets.Count > 0; 
+            return this._dataSets != null && (this._dataSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

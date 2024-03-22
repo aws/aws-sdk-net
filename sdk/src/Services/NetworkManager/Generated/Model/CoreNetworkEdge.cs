@@ -35,7 +35,7 @@ namespace Amazon.NetworkManager.Model
     {
         private long? _asn;
         private string _edgeLocation;
-        private List<string> _insideCidrBlocks = new List<string>();
+        private List<string> _insideCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Asn. 
@@ -89,7 +89,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if InsideCidrBlocks property is set
         internal bool IsSetInsideCidrBlocks()
         {
-            return this._insideCidrBlocks != null && this._insideCidrBlocks.Count > 0; 
+            return this._insideCidrBlocks != null && (this._insideCidrBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

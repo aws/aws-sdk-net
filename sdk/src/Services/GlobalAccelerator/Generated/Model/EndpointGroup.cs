@@ -34,14 +34,14 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class EndpointGroup
     {
-        private List<EndpointDescription> _endpointDescriptions = new List<EndpointDescription>();
+        private List<EndpointDescription> _endpointDescriptions = AWSConfigs.InitializeCollections ? new List<EndpointDescription>() : null;
         private string _endpointGroupArn;
         private string _endpointGroupRegion;
         private int? _healthCheckIntervalSeconds;
         private string _healthCheckPath;
         private int? _healthCheckPort;
         private HealthCheckProtocol _healthCheckProtocol;
-        private List<PortOverride> _portOverrides = new List<PortOverride>();
+        private List<PortOverride> _portOverrides = AWSConfigs.InitializeCollections ? new List<PortOverride>() : null;
         private int? _thresholdCount;
         private float? _trafficDialPercentage;
 
@@ -60,7 +60,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if EndpointDescriptions property is set
         internal bool IsSetEndpointDescriptions()
         {
-            return this._endpointDescriptions != null && this._endpointDescriptions.Count > 0; 
+            return this._endpointDescriptions != null && (this._endpointDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -206,7 +206,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if PortOverrides property is set
         internal bool IsSetPortOverrides()
         {
-            return this._portOverrides != null && this._portOverrides.Count > 0; 
+            return this._portOverrides != null && (this._portOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

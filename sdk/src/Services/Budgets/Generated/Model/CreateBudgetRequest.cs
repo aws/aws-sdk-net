@@ -45,7 +45,7 @@ namespace Amazon.Budgets.Model
     {
         private string _accountId;
         private Budget _budget;
-        private List<NotificationWithSubscribers> _notificationsWithSubscribers = new List<NotificationWithSubscribers>();
+        private List<NotificationWithSubscribers> _notificationsWithSubscribers = AWSConfigs.InitializeCollections ? new List<NotificationWithSubscribers>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -104,7 +104,7 @@ namespace Amazon.Budgets.Model
         // Check to see if NotificationsWithSubscribers property is set
         internal bool IsSetNotificationsWithSubscribers()
         {
-            return this._notificationsWithSubscribers != null && this._notificationsWithSubscribers.Count > 0; 
+            return this._notificationsWithSubscribers != null && (this._notificationsWithSubscribers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

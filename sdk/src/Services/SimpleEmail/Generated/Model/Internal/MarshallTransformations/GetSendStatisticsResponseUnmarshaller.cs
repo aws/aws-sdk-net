@@ -84,6 +84,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SendDataPoints/member", targetDepth))
                     {
                         var unmarshaller = SendDataPointUnmarshaller.Instance;
+                        if (response.SendDataPoints == null)
+                        {
+                            response.SendDataPoints = new List<SendDataPoint>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SendDataPoints.Add(item);
                         continue;

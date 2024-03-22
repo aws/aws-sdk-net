@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListInferenceExperimentsResponse : AmazonWebServiceResponse
     {
-        private List<InferenceExperimentSummary> _inferenceExperiments = new List<InferenceExperimentSummary>();
+        private List<InferenceExperimentSummary> _inferenceExperiments = AWSConfigs.InitializeCollections ? new List<InferenceExperimentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InferenceExperiments property is set
         internal bool IsSetInferenceExperiments()
         {
-            return this._inferenceExperiments != null && this._inferenceExperiments.Count > 0; 
+            return this._inferenceExperiments != null && (this._inferenceExperiments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

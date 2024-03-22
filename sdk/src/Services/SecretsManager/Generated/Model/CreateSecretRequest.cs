@@ -101,7 +101,7 @@ namespace Amazon.SecretsManager.Model
     /// </summary>
     public partial class CreateSecretRequest : AmazonSecretsManagerRequest
     {
-        private List<ReplicaRegionType> _addReplicaRegions = new List<ReplicaRegionType>();
+        private List<ReplicaRegionType> _addReplicaRegions = AWSConfigs.InitializeCollections ? new List<ReplicaRegionType>() : null;
         private string _clientRequestToken;
         private string _description;
         private bool? _forceOverwriteReplicaSecret;
@@ -109,7 +109,7 @@ namespace Amazon.SecretsManager.Model
         private string _name;
         private MemoryStream _secretBinary;
         private string _secretString;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AddReplicaRegions. 
@@ -127,7 +127,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if AddReplicaRegions property is set
         internal bool IsSetAddReplicaRegions()
         {
-            return this._addReplicaRegions != null && this._addReplicaRegions.Count > 0; 
+            return this._addReplicaRegions != null && (this._addReplicaRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -408,7 +408,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

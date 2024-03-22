@@ -38,7 +38,7 @@ namespace Amazon.Mgn.Model
     public partial class ConflictException : AmazonMgnException
     {
         private string _code;
-        private List<ErrorDetails> _errors = new List<ErrorDetails>();
+        private List<ErrorDetails> _errors = AWSConfigs.InitializeCollections ? new List<ErrorDetails>() : null;
         private string _resourceId;
         private string _resourceType;
 
@@ -159,7 +159,7 @@ namespace Amazon.Mgn.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

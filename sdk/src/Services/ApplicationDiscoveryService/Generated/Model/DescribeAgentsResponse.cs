@@ -33,7 +33,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class DescribeAgentsResponse : AmazonWebServiceResponse
     {
-        private List<AgentInfo> _agentsInfo = new List<AgentInfo>();
+        private List<AgentInfo> _agentsInfo = AWSConfigs.InitializeCollections ? new List<AgentInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if AgentsInfo property is set
         internal bool IsSetAgentsInfo()
         {
-            return this._agentsInfo != null && this._agentsInfo.Count > 0; 
+            return this._agentsInfo != null && (this._agentsInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

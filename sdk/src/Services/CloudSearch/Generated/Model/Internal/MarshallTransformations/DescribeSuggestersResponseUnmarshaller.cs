@@ -84,6 +84,10 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Suggesters/member", targetDepth))
                     {
                         var unmarshaller = SuggesterStatusUnmarshaller.Instance;
+                        if (response.Suggesters == null)
+                        {
+                            response.Suggesters = new List<SuggesterStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Suggesters.Add(item);
                         continue;

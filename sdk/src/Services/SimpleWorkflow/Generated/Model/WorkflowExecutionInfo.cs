@@ -40,7 +40,7 @@ namespace Amazon.SimpleWorkflow.Model
         private ExecutionStatus _executionStatus;
         private WorkflowExecution _parent;
         private DateTime? _startTimestamp;
-        private List<string> _tagList = new List<string>();
+        private List<string> _tagList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WorkflowType _workflowType;
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

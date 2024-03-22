@@ -51,9 +51,9 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class UpdateAppVersionResourceRequest : AmazonResilienceHubRequest
     {
-        private Dictionary<string, List<string>> _additionalInfo = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _additionalInfo = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _appArn;
-        private List<string> _appComponents = new List<string>();
+        private List<string> _appComponents = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _awsAccountId;
         private string _awsRegion;
         private bool? _excluded;
@@ -77,7 +77,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if AdditionalInfo property is set
         internal bool IsSetAdditionalInfo()
         {
-            return this._additionalInfo != null && this._additionalInfo.Count > 0; 
+            return this._additionalInfo != null && (this._additionalInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if AppComponents property is set
         internal bool IsSetAppComponents()
         {
-            return this._appComponents != null && this._appComponents.Count > 0; 
+            return this._appComponents != null && (this._appComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

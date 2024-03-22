@@ -38,8 +38,8 @@ namespace Amazon.IoT.Model
         private DateTime? _completedAt;
         private DateTime? _createdAt;
         private string _description;
-        private List<string> _destinationPackageVersions = new List<string>();
-        private Dictionary<string, string> _documentParameters = new Dictionary<string, string>();
+        private List<string> _destinationPackageVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _documentParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _forceCanceled;
         private bool? _isConcurrent;
         private string _jobArn;
@@ -52,10 +52,10 @@ namespace Amazon.IoT.Model
         private string _namespaceId;
         private PresignedUrlConfig _presignedUrlConfig;
         private string _reasonCode;
-        private List<ScheduledJobRollout> _scheduledJobRollouts = new List<ScheduledJobRollout>();
+        private List<ScheduledJobRollout> _scheduledJobRollouts = AWSConfigs.InitializeCollections ? new List<ScheduledJobRollout>() : null;
         private SchedulingConfig _schedulingConfig;
         private JobStatus _status;
-        private List<string> _targets = new List<string>();
+        private List<string> _targets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TargetSelection _targetSelection;
         private TimeoutConfig _timeoutConfig;
 
@@ -176,7 +176,7 @@ namespace Amazon.IoT.Model
         // Check to see if DestinationPackageVersions property is set
         internal bool IsSetDestinationPackageVersions()
         {
-            return this._destinationPackageVersions != null && this._destinationPackageVersions.Count > 0; 
+            return this._destinationPackageVersions != null && (this._destinationPackageVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Amazon.IoT.Model
         // Check to see if DocumentParameters property is set
         internal bool IsSetDocumentParameters()
         {
-            return this._documentParameters != null && this._documentParameters.Count > 0; 
+            return this._documentParameters != null && (this._documentParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -389,7 +389,9 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>namespaceId</c> feature is in public preview.
+        /// The <c>namespaceId</c> feature is only supported by IoT Greengrass at this time. For
+        /// more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+        /// up IoT Greengrass core devices.</a> 
         /// </para>
         ///  </note>
         /// </summary>
@@ -457,7 +459,7 @@ namespace Amazon.IoT.Model
         // Check to see if ScheduledJobRollouts property is set
         internal bool IsSetScheduledJobRollouts()
         {
-            return this._scheduledJobRollouts != null && this._scheduledJobRollouts.Count > 0; 
+            return this._scheduledJobRollouts != null && (this._scheduledJobRollouts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -514,7 +516,7 @@ namespace Amazon.IoT.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

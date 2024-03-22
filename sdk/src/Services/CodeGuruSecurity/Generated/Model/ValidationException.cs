@@ -37,7 +37,7 @@ namespace Amazon.CodeGuruSecurity.Model
     public partial class ValidationException : AmazonCodeGuruSecurityException
     {
         private string _errorCode;
-        private List<ValidationExceptionField> _fieldList = new List<ValidationExceptionField>();
+        private List<ValidationExceptionField> _fieldList = AWSConfigs.InitializeCollections ? new List<ValidationExceptionField>() : null;
         private ValidationExceptionReason _reason;
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if FieldList property is set
         internal bool IsSetFieldList()
         {
-            return this._fieldList != null && this._fieldList.Count > 0; 
+            return this._fieldList != null && (this._fieldList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

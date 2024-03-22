@@ -42,7 +42,7 @@ namespace Amazon.EBS.Model
         private SSEType _sseType;
         private DateTime? _startTime;
         private Status _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private long? _volumeSize;
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace Amazon.EBS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

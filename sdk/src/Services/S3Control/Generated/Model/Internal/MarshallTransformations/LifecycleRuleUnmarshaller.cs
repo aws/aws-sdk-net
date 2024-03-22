@@ -87,6 +87,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NoncurrentVersionTransitions/NoncurrentVersionTransition", targetDepth))
                     {
+                        if (unmarshalledObject.NoncurrentVersionTransitions == null)
+                        {
+                            unmarshalledObject.NoncurrentVersionTransitions = new List<NoncurrentVersionTransition>();
+                        }
                         var unmarshaller = NoncurrentVersionTransitionUnmarshaller.Instance;
                         unmarshalledObject.NoncurrentVersionTransitions.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -99,6 +103,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Transitions/Transition", targetDepth))
                     {
+                        if (unmarshalledObject.Transitions == null)
+                        {
+                            unmarshalledObject.Transitions = new List<Transition>();
+                        }
                         var unmarshaller = TransitionUnmarshaller.Instance;
                         unmarshalledObject.Transitions.Add(unmarshaller.Unmarshall(context));
                         continue;

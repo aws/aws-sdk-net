@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class TrafficPattern
     {
-        private List<Phase> _phases = new List<Phase>();
+        private List<Phase> _phases = AWSConfigs.InitializeCollections ? new List<Phase>() : null;
         private Stairs _stairs;
         private TrafficType _trafficType;
 
@@ -53,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Phases property is set
         internal bool IsSetPhases()
         {
-            return this._phases != null && this._phases.Count > 0; 
+            return this._phases != null && (this._phases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

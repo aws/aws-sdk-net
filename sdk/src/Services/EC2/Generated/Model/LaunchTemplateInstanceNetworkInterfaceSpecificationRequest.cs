@@ -40,19 +40,19 @@ namespace Amazon.EC2.Model
         private string _description;
         private int? _deviceIndex;
         private EnaSrdSpecificationRequest _enaSrdSpecification;
-        private List<string> _groups = new List<string>();
+        private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _interfaceType;
         private int? _ipv4PrefixCount;
-        private List<Ipv4PrefixSpecificationRequest> _ipv4Prefixes = new List<Ipv4PrefixSpecificationRequest>();
+        private List<Ipv4PrefixSpecificationRequest> _ipv4Prefixes = AWSConfigs.InitializeCollections ? new List<Ipv4PrefixSpecificationRequest>() : null;
         private int? _ipv6AddressCount;
-        private List<InstanceIpv6AddressRequest> _ipv6Addresses = new List<InstanceIpv6AddressRequest>();
+        private List<InstanceIpv6AddressRequest> _ipv6Addresses = AWSConfigs.InitializeCollections ? new List<InstanceIpv6AddressRequest>() : null;
         private int? _ipv6PrefixCount;
-        private List<Ipv6PrefixSpecificationRequest> _ipv6Prefixes = new List<Ipv6PrefixSpecificationRequest>();
+        private List<Ipv6PrefixSpecificationRequest> _ipv6Prefixes = AWSConfigs.InitializeCollections ? new List<Ipv6PrefixSpecificationRequest>() : null;
         private int? _networkCardIndex;
         private string _networkInterfaceId;
         private bool? _primaryIpv6;
         private string _privateIpAddress;
-        private List<PrivateIpAddressSpecification> _privateIpAddresses = new List<PrivateIpAddressSpecification>();
+        private List<PrivateIpAddressSpecification> _privateIpAddresses = AWSConfigs.InitializeCollections ? new List<PrivateIpAddressSpecification>() : null;
         private int? _secondaryPrivateIpAddressCount;
         private string _subnetId;
 
@@ -88,10 +88,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4
-        /// addresses, including public IPv4 addresses associated with running instances and Elastic
-        /// IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the
-        /// <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
+        /// Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses
+        /// associated with running instances and Elastic IP addresses. For more information,
+        /// see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon
+        /// VPC pricing page</a>.
         /// </para>
         /// </summary>
         public bool? AssociatePublicIpAddress
@@ -214,7 +214,7 @@ namespace Amazon.EC2.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -280,7 +280,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv4Prefixes property is set
         internal bool IsSetIpv4Prefixes()
         {
-            return this._ipv4Prefixes != null && this._ipv4Prefixes.Count > 0; 
+            return this._ipv4Prefixes != null && (this._ipv4Prefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv6Addresses property is set
         internal bool IsSetIpv6Addresses()
         {
-            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+            return this._ipv6Addresses != null && (this._ipv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -357,7 +357,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv6Prefixes property is set
         internal bool IsSetIpv6Prefixes()
         {
-            return this._ipv6Prefixes != null && this._ipv6Prefixes.Count > 0; 
+            return this._ipv6Prefixes != null && (this._ipv6Prefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -452,7 +452,7 @@ namespace Amazon.EC2.Model
         // Check to see if PrivateIpAddresses property is set
         internal bool IsSetPrivateIpAddresses()
         {
-            return this._privateIpAddresses != null && this._privateIpAddresses.Count > 0; 
+            return this._privateIpAddresses != null && (this._privateIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

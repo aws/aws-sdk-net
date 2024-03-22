@@ -45,7 +45,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<DecoderManifestSummary> Summaries => 
-            new PaginatedResultKeyResponse<ListDecoderManifestsResponse, DecoderManifestSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<ListDecoderManifestsResponse, DecoderManifestSummary>(this, (i) => i.Summaries ?? new List<DecoderManifestSummary>());
 
         internal ListDecoderManifestsPaginator(IAmazonIoTFleetWise client, ListDecoderManifestsRequest request)
         {

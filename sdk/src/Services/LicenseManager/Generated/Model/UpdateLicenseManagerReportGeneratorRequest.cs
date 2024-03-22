@@ -46,7 +46,7 @@ namespace Amazon.LicenseManager.Model
         private ReportContext _reportContext;
         private ReportFrequency _reportFrequency;
         private string _reportGeneratorName;
-        private List<string> _type = new List<string>();
+        private List<string> _type = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -189,7 +189,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this._type != null && this._type.Count > 0; 
+            return this._type != null && (this._type.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

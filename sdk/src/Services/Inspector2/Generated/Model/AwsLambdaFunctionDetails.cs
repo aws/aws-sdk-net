@@ -33,12 +33,12 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class AwsLambdaFunctionDetails
     {
-        private List<string> _architectures = new List<string>();
+        private List<string> _architectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _codeSha256;
         private string _executionRoleArn;
         private string _functionName;
         private DateTime? _lastModifiedAt;
-        private List<string> _layers = new List<string>();
+        private List<string> _layers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PackageType _packageType;
         private Runtime _runtime;
         private string _version;
@@ -62,7 +62,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Architectures property is set
         internal bool IsSetArchitectures()
         {
-            return this._architectures != null && this._architectures.Count > 0; 
+            return this._architectures != null && (this._architectures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Layers property is set
         internal bool IsSetLayers()
         {
-            return this._layers != null && this._layers.Count > 0; 
+            return this._layers != null && (this._layers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

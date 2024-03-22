@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipamDiscoveredAccountSet/item", targetDepth))
                     {
                         var unmarshaller = IpamDiscoveredAccountUnmarshaller.Instance;
+                        if (response.IpamDiscoveredAccounts == null)
+                        {
+                            response.IpamDiscoveredAccounts = new List<IpamDiscoveredAccount>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.IpamDiscoveredAccounts.Add(item);
                         continue;

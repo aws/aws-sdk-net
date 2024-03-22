@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class TransitGatewayMulticastRegisteredGroupMembers
     {
         private string _groupIpAddress;
-        private List<string> _registeredNetworkInterfaceIds = new List<string>();
+        private List<string> _registeredNetworkInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _transitGatewayMulticastDomainId;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if RegisteredNetworkInterfaceIds property is set
         internal bool IsSetRegisteredNetworkInterfaceIds()
         {
-            return this._registeredNetworkInterfaceIds != null && this._registeredNetworkInterfaceIds.Count > 0; 
+            return this._registeredNetworkInterfaceIds != null && (this._registeredNetworkInterfaceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

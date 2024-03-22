@@ -34,7 +34,7 @@ namespace Amazon.Omics.Model
     public partial class ListReferencesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReferenceListItem> _references = new List<ReferenceListItem>();
+        private List<ReferenceListItem> _references = AWSConfigs.InitializeCollections ? new List<ReferenceListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Omics.Model
         // Check to see if References property is set
         internal bool IsSetReferences()
         {
-            return this._references != null && this._references.Count > 0; 
+            return this._references != null && (this._references.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

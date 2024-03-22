@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("routeSet/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayRouteUnmarshaller.Instance;
+                        if (response.Routes == null)
+                        {
+                            response.Routes = new List<TransitGatewayRoute>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Routes.Add(item);
                         continue;

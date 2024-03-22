@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     public partial class GetUnfilteredPartitionsMetadataResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UnfilteredPartition> _unfilteredPartitions = new List<UnfilteredPartition>();
+        private List<UnfilteredPartition> _unfilteredPartitions = AWSConfigs.InitializeCollections ? new List<UnfilteredPartition>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if UnfilteredPartitions property is set
         internal bool IsSetUnfilteredPartitions()
         {
-            return this._unfilteredPartitions != null && this._unfilteredPartitions.Count > 0; 
+            return this._unfilteredPartitions != null && (this._unfilteredPartitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

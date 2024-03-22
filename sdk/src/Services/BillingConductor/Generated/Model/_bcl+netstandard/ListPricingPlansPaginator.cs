@@ -45,7 +45,7 @@ namespace Amazon.BillingConductor.Model
         /// Enumerable containing all of the PricingPlans
         /// </summary>
         public IPaginatedEnumerable<PricingPlanListElement> PricingPlans => 
-            new PaginatedResultKeyResponse<ListPricingPlansResponse, PricingPlanListElement>(this, (i) => i.PricingPlans);
+            new PaginatedResultKeyResponse<ListPricingPlansResponse, PricingPlanListElement>(this, (i) => i.PricingPlans ?? new List<PricingPlanListElement>());
 
         internal ListPricingPlansPaginator(IAmazonBillingConductor client, ListPricingPlansRequest request)
         {

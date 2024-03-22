@@ -40,8 +40,8 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ProtectedResourceConditions
     {
-        private List<KeyValue> _stringEquals = new List<KeyValue>();
-        private List<KeyValue> _stringNotEquals = new List<KeyValue>();
+        private List<KeyValue> _stringEquals = AWSConfigs.InitializeCollections ? new List<KeyValue>() : null;
+        private List<KeyValue> _stringNotEquals = AWSConfigs.InitializeCollections ? new List<KeyValue>() : null;
 
         /// <summary>
         /// Gets and sets the property StringEquals. 
@@ -59,7 +59,7 @@ namespace Amazon.Backup.Model
         // Check to see if StringEquals property is set
         internal bool IsSetStringEquals()
         {
-            return this._stringEquals != null && this._stringEquals.Count > 0; 
+            return this._stringEquals != null && (this._stringEquals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.Backup.Model
         // Check to see if StringNotEquals property is set
         internal bool IsSetStringNotEquals()
         {
-            return this._stringNotEquals != null && this._stringNotEquals.Count > 0; 
+            return this._stringNotEquals != null && (this._stringNotEquals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

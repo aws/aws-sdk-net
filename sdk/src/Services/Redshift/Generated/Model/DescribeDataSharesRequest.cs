@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DataShareArn. 
         /// <para>
-        /// The identifier of the datashare to describe details of.
+        /// The Amazon resource name (ARN) of the datashare to describe details of.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

@@ -38,7 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _externalId;
         private string _id;
         private string _name;
-        private List<AssetModelPropertyDefinition> _properties = new List<AssetModelPropertyDefinition>();
+        private List<AssetModelPropertyDefinition> _properties = AWSConfigs.InitializeCollections ? new List<AssetModelPropertyDefinition>() : null;
         private string _type;
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

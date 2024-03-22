@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("assignedIpv4PrefixSet/item", targetDepth))
                     {
                         var unmarshaller = Ipv4PrefixSpecificationUnmarshaller.Instance;
+                        if (response.AssignedIpv4Prefixes == null)
+                        {
+                            response.AssignedIpv4Prefixes = new List<Ipv4PrefixSpecification>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AssignedIpv4Prefixes.Add(item);
                         continue;
@@ -65,6 +69,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("assignedPrivateIpAddressesSet/item", targetDepth))
                     {
                         var unmarshaller = AssignedPrivateIpAddressUnmarshaller.Instance;
+                        if (response.AssignedPrivateIpAddresses == null)
+                        {
+                            response.AssignedPrivateIpAddresses = new List<AssignedPrivateIpAddress>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AssignedPrivateIpAddresses.Add(item);
                         continue;

@@ -105,6 +105,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LoadBalancerArns/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.LoadBalancerArns == null)
+                        {
+                            unmarshalledObject.LoadBalancerArns = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LoadBalancerArns.Add(item);
                         continue;

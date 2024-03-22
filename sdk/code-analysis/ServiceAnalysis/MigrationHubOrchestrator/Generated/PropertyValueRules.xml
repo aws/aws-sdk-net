@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
-    <property>Amazon.MigrationHubOrchestrator.Model.CreateWorkflowRequest.ApplicationConfigurationId</property>
+    <property>Amazon.MigrationHubOrchestrator.Model.CreateTemplateRequest.ClientToken</property>
     <min>1</min>
+    <max>256</max>
+    <pattern>[-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubOrchestrator.Model.CreateTemplateRequest.TemplateDescription</property>
+    <min>0</min>
+    <max>250</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubOrchestrator.Model.CreateTemplateRequest.TemplateName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[ a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubOrchestrator.Model.CreateWorkflowRequest.ApplicationConfigurationId</property>
+    <min>0</min>
     <max>100</max>
-    <pattern>[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*</pattern>
+    <pattern>[-a-zA-Z0-9_.+]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubOrchestrator.Model.CreateWorkflowRequest.Description</property>
@@ -71,6 +89,12 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubOrchestrator.Model.DeleteTemplateRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubOrchestrator.Model.DeleteWorkflowRequest.Id</property>
@@ -235,7 +259,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubOrchestrator.Model.ListTagsForResourceRequest.ResourceArn</property>
-    <pattern>arn:aws:migrationhub-orchestrator:[a-z0-9-]+:[0-9]+:workflow/[.]*</pattern>
+    <pattern>arn:aws:migrationhub-orchestrator:[a-z0-9-]+:[0-9]+:(template|workflow)/[.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubOrchestrator.Model.ListTemplatesRequest.MaxResults</property>
@@ -437,11 +461,35 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubOrchestrator.Model.TagResourceRequest.ResourceArn</property>
-    <pattern>arn:aws:migrationhub-orchestrator:[a-z0-9-]+:[0-9]+:workflow/[.]*</pattern>
+    <pattern>arn:aws:migrationhub-orchestrator:[a-z0-9-]+:[0-9]+:(template|workflow)/[.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubOrchestrator.Model.UntagResourceRequest.ResourceArn</property>
-    <pattern>arn:aws:migrationhub-orchestrator:[a-z0-9-]+:[0-9]+:workflow/[.]*</pattern>
+    <pattern>arn:aws:migrationhub-orchestrator:[a-z0-9-]+:[0-9]+:(template|workflow)/[.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubOrchestrator.Model.UpdateTemplateRequest.ClientToken</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubOrchestrator.Model.UpdateTemplateRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubOrchestrator.Model.UpdateTemplateRequest.TemplateDescription</property>
+    <min>0</min>
+    <max>250</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubOrchestrator.Model.UpdateTemplateRequest.TemplateName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[ a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubOrchestrator.Model.UpdateWorkflowRequest.Description</property>
@@ -573,6 +621,12 @@
     <pattern>[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHubOrchestrator.Model.TemplateSource.WorkflowId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHubOrchestrator.Model.WorkflowStepAutomationConfiguration.ScriptLocationS3Bucket</property>
     <min>0</min>
     <max>63</max>
@@ -587,6 +641,6 @@
   <property-value-rule>
     <property>Amazon.MigrationHubOrchestrator.Model.WorkflowStepOutputUnion.StringValue</property>
     <min>0</min>
-    <max>100</max>
+    <max>2048</max>
   </property-value-rule>
 </property-value-rules>

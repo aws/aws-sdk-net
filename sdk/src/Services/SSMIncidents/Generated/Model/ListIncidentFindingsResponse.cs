@@ -33,7 +33,7 @@ namespace Amazon.SSMIncidents.Model
     /// </summary>
     public partial class ListIncidentFindingsResponse : AmazonWebServiceResponse
     {
-        private List<FindingSummary> _findings = new List<FindingSummary>();
+        private List<FindingSummary> _findings = AWSConfigs.InitializeCollections ? new List<FindingSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

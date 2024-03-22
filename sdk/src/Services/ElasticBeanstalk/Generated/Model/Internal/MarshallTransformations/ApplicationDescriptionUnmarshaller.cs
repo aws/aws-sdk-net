@@ -69,6 +69,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ConfigurationTemplates/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ConfigurationTemplates == null)
+                        {
+                            unmarshalledObject.ConfigurationTemplates = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ConfigurationTemplates.Add(item);
                         continue;
@@ -100,6 +104,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Versions/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.Versions == null)
+                        {
+                            unmarshalledObject.Versions = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Versions.Add(item);
                         continue;

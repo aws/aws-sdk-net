@@ -34,7 +34,7 @@ namespace Amazon.SQS.Model
     public partial class ListQueuesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _queueUrls = new List<string>();
+        private List<string> _queueUrls = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.SQS.Model
         // Check to see if QueueUrls property is set
         internal bool IsSetQueueUrls()
         {
-            return this._queueUrls != null && this._queueUrls.Count > 0; 
+            return this._queueUrls != null && (this._queueUrls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

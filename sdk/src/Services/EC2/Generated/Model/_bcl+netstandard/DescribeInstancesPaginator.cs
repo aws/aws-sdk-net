@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Reservations
         /// </summary>
         public IPaginatedEnumerable<Reservation> Reservations => 
-            new PaginatedResultKeyResponse<DescribeInstancesResponse, Reservation>(this, (i) => i.Reservations);
+            new PaginatedResultKeyResponse<DescribeInstancesResponse, Reservation>(this, (i) => i.Reservations ?? new List<Reservation>());
 
         internal DescribeInstancesPaginator(IAmazonEC2 client, DescribeInstancesRequest request)
         {

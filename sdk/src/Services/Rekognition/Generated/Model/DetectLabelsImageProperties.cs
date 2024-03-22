@@ -35,7 +35,7 @@ namespace Amazon.Rekognition.Model
     public partial class DetectLabelsImageProperties
     {
         private DetectLabelsImageBackground _background;
-        private List<DominantColor> _dominantColors = new List<DominantColor>();
+        private List<DominantColor> _dominantColors = AWSConfigs.InitializeCollections ? new List<DominantColor>() : null;
         private DetectLabelsImageForeground _foreground;
         private DetectLabelsImageQuality _quality;
 
@@ -75,7 +75,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if DominantColors property is set
         internal bool IsSetDominantColors()
         {
-            return this._dominantColors != null && this._dominantColors.Count > 0; 
+            return this._dominantColors != null && (this._dominantColors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

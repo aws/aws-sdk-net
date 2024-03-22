@@ -33,7 +33,7 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class ListMeshesResponse : AmazonWebServiceResponse
     {
-        private List<MeshRef> _meshes = new List<MeshRef>();
+        private List<MeshRef> _meshes = AWSConfigs.InitializeCollections ? new List<MeshRef>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if Meshes property is set
         internal bool IsSetMeshes()
         {
-            return this._meshes != null && this._meshes.Count > 0; 
+            return this._meshes != null && (this._meshes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

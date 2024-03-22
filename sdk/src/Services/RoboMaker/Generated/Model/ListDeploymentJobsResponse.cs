@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model
     [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     public partial class ListDeploymentJobsResponse : AmazonWebServiceResponse
     {
-        private List<DeploymentJob> _deploymentJobs = new List<DeploymentJob>();
+        private List<DeploymentJob> _deploymentJobs = AWSConfigs.InitializeCollections ? new List<DeploymentJob>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if DeploymentJobs property is set
         internal bool IsSetDeploymentJobs()
         {
-            return this._deploymentJobs != null && this._deploymentJobs.Count > 0; 
+            return this._deploymentJobs != null && (this._deploymentJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

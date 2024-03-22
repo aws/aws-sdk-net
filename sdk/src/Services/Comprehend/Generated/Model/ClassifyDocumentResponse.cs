@@ -33,12 +33,12 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ClassifyDocumentResponse : AmazonWebServiceResponse
     {
-        private List<DocumentClass> _classes = new List<DocumentClass>();
+        private List<DocumentClass> _classes = AWSConfigs.InitializeCollections ? new List<DocumentClass>() : null;
         private DocumentMetadata _documentMetadata;
-        private List<DocumentTypeListItem> _documentType = new List<DocumentTypeListItem>();
-        private List<ErrorsListItem> _errors = new List<ErrorsListItem>();
-        private List<DocumentLabel> _labels = new List<DocumentLabel>();
-        private List<WarningsListItem> _warnings = new List<WarningsListItem>();
+        private List<DocumentTypeListItem> _documentType = AWSConfigs.InitializeCollections ? new List<DocumentTypeListItem>() : null;
+        private List<ErrorsListItem> _errors = AWSConfigs.InitializeCollections ? new List<ErrorsListItem>() : null;
+        private List<DocumentLabel> _labels = AWSConfigs.InitializeCollections ? new List<DocumentLabel>() : null;
+        private List<WarningsListItem> _warnings = AWSConfigs.InitializeCollections ? new List<WarningsListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Classes. 
@@ -64,7 +64,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Classes property is set
         internal bool IsSetClasses()
         {
-            return this._classes != null && this._classes.Count > 0; 
+            return this._classes != null && (this._classes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if DocumentType property is set
         internal bool IsSetDocumentType()
         {
-            return this._documentType != null && this._documentType.Count > 0; 
+            return this._documentType != null && (this._documentType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

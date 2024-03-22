@@ -35,7 +35,7 @@ namespace Amazon.Batch.Model
     {
         private int? _computeReservation;
         private int? _shareDecaySeconds;
-        private List<ShareAttributes> _shareDistribution = new List<ShareAttributes>();
+        private List<ShareAttributes> _shareDistribution = AWSConfigs.InitializeCollections ? new List<ShareAttributes>() : null;
 
         /// <summary>
         /// Gets and sets the property ComputeReservation. 
@@ -113,7 +113,7 @@ namespace Amazon.Batch.Model
         // Check to see if ShareDistribution property is set
         internal bool IsSetShareDistribution()
         {
-            return this._shareDistribution != null && this._shareDistribution.Count > 0; 
+            return this._shareDistribution != null && (this._shareDistribution.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

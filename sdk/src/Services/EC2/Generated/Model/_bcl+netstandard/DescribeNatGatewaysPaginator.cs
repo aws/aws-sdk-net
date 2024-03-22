@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the NatGateways
         /// </summary>
         public IPaginatedEnumerable<NatGateway> NatGateways => 
-            new PaginatedResultKeyResponse<DescribeNatGatewaysResponse, NatGateway>(this, (i) => i.NatGateways);
+            new PaginatedResultKeyResponse<DescribeNatGatewaysResponse, NatGateway>(this, (i) => i.NatGateways ?? new List<NatGateway>());
 
         internal DescribeNatGatewaysPaginator(IAmazonEC2 client, DescribeNatGatewaysRequest request)
         {

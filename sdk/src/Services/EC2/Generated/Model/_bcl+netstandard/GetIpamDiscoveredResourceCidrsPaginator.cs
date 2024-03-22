@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the IpamDiscoveredResourceCidrs
         /// </summary>
         public IPaginatedEnumerable<IpamDiscoveredResourceCidr> IpamDiscoveredResourceCidrs => 
-            new PaginatedResultKeyResponse<GetIpamDiscoveredResourceCidrsResponse, IpamDiscoveredResourceCidr>(this, (i) => i.IpamDiscoveredResourceCidrs);
+            new PaginatedResultKeyResponse<GetIpamDiscoveredResourceCidrsResponse, IpamDiscoveredResourceCidr>(this, (i) => i.IpamDiscoveredResourceCidrs ?? new List<IpamDiscoveredResourceCidr>());
 
         internal GetIpamDiscoveredResourceCidrsPaginator(IAmazonEC2 client, GetIpamDiscoveredResourceCidrsRequest request)
         {

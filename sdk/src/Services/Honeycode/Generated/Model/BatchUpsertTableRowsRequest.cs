@@ -48,7 +48,7 @@ namespace Amazon.Honeycode.Model
     public partial class BatchUpsertTableRowsRequest : AmazonHoneycodeRequest
     {
         private string _clientRequestToken;
-        private List<UpsertRowData> _rowsToUpsert = new List<UpsertRowData>();
+        private List<UpsertRowData> _rowsToUpsert = AWSConfigs.InitializeCollections ? new List<UpsertRowData>() : null;
         private string _tableId;
         private string _workbookId;
 
@@ -105,7 +105,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if RowsToUpsert property is set
         internal bool IsSetRowsToUpsert()
         {
-            return this._rowsToUpsert != null && this._rowsToUpsert.Count > 0; 
+            return this._rowsToUpsert != null && (this._rowsToUpsert.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

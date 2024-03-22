@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the Members
         /// </summary>
         public IPaginatedEnumerable<Member> Members => 
-            new PaginatedResultKeyResponse<ListMembersResponse, Member>(this, (i) => i.Members);
+            new PaginatedResultKeyResponse<ListMembersResponse, Member>(this, (i) => i.Members ?? new List<Member>());
 
         internal ListMembersPaginator(IAmazonMacie2 client, ListMembersRequest request)
         {

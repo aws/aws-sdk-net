@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SnapshotAnonymousUser
     {
-        private List<SessionTag> _rowLevelPermissionTags = new List<SessionTag>();
+        private List<SessionTag> _rowLevelPermissionTags = AWSConfigs.InitializeCollections ? new List<SessionTag>() : null;
 
         /// <summary>
         /// Gets and sets the property RowLevelPermissionTags. 
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if RowLevelPermissionTags property is set
         internal bool IsSetRowLevelPermissionTags()
         {
-            return this._rowLevelPermissionTags != null && this._rowLevelPermissionTags.Count > 0; 
+            return this._rowLevelPermissionTags != null && (this._rowLevelPermissionTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

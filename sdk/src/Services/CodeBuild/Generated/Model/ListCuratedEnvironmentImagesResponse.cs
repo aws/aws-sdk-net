@@ -33,7 +33,7 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class ListCuratedEnvironmentImagesResponse : AmazonWebServiceResponse
     {
-        private List<EnvironmentPlatform> _platforms = new List<EnvironmentPlatform>();
+        private List<EnvironmentPlatform> _platforms = AWSConfigs.InitializeCollections ? new List<EnvironmentPlatform>() : null;
 
         /// <summary>
         /// Gets and sets the property Platforms. 
@@ -50,7 +50,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Platforms property is set
         internal bool IsSetPlatforms()
         {
-            return this._platforms != null && this._platforms.Count > 0; 
+            return this._platforms != null && (this._platforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

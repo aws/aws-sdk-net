@@ -42,7 +42,7 @@ namespace Amazon.DirectoryService.Model
     public partial class DescribeEventTopicsRequest : AmazonDirectoryServiceRequest
     {
         private string _directoryId;
-        private List<string> _topicNames = new List<string>();
+        private List<string> _topicNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
@@ -83,7 +83,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if TopicNames property is set
         internal bool IsSetTopicNames()
         {
-            return this._topicNames != null && this._topicNames.Count > 0; 
+            return this._topicNames != null && (this._topicNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

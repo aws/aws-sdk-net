@@ -34,11 +34,12 @@ namespace Amazon.Batch.Model
     public partial class JobDetail
     {
         private ArrayPropertiesDetail _arrayProperties;
-        private List<AttemptDetail> _attempts = new List<AttemptDetail>();
+        private List<AttemptDetail> _attempts = AWSConfigs.InitializeCollections ? new List<AttemptDetail>() : null;
         private ContainerDetail _container;
         private long? _createdAt;
-        private List<JobDependency> _dependsOn = new List<JobDependency>();
-        private List<EksAttemptDetail> _eksAttempts = new List<EksAttemptDetail>();
+        private List<JobDependency> _dependsOn = AWSConfigs.InitializeCollections ? new List<JobDependency>() : null;
+        private EcsPropertiesDetail _ecsProperties;
+        private List<EksAttemptDetail> _eksAttempts = AWSConfigs.InitializeCollections ? new List<EksAttemptDetail>() : null;
         private EksPropertiesDetail _eksProperties;
         private bool? _isCancelled;
         private bool? _isTerminated;
@@ -49,8 +50,8 @@ namespace Amazon.Batch.Model
         private string _jobQueue;
         private NodeDetails _nodeDetails;
         private NodeProperties _nodeProperties;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
-        private List<string> _platformCapabilities = new List<string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _platformCapabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
         private int? _schedulingPriority;
@@ -59,7 +60,7 @@ namespace Amazon.Batch.Model
         private JobStatus _status;
         private string _statusReason;
         private long? _stoppedAt;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private JobTimeout _timeout;
 
         /// <summary>
@@ -95,14 +96,14 @@ namespace Amazon.Batch.Model
         // Check to see if Attempts property is set
         internal bool IsSetAttempts()
         {
-            return this._attempts != null && this._attempts.Count > 0; 
+            return this._attempts != null && (this._attempts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Container. 
         /// <para>
         /// An object that represents the details for the container that's associated with the
-        /// job.
+        /// job. If the details are for a multiple-container job, this object will be empty. 
         /// </para>
         /// </summary>
         public ContainerDetail Container
@@ -122,8 +123,9 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs
         /// and parent array jobs, this is when the job entered the <c>SUBMITTED</c> state. This
-        /// is specifically at the time <a>SubmitJob</a> was called. For array child jobs, this
-        /// is when the child job was spawned by its parent and entered the <c>PENDING</c> state.
+        /// is specifically at the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
+        /// was called. For array child jobs, this is when the child job was spawned by its parent
+        /// and entered the <c>PENDING</c> state.
         /// </para>
         /// </summary>
         public long? CreatedAt
@@ -153,7 +155,25 @@ namespace Amazon.Batch.Model
         // Check to see if DependsOn property is set
         internal bool IsSetDependsOn()
         {
-            return this._dependsOn != null && this._dependsOn.Count > 0; 
+            return this._dependsOn != null && (this._dependsOn.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsProperties. 
+        /// <para>
+        /// An object with properties that are specific to Amazon ECS-based jobs. 
+        /// </para>
+        /// </summary>
+        public EcsPropertiesDetail EcsProperties
+        {
+            get { return this._ecsProperties; }
+            set { this._ecsProperties = value; }
+        }
+
+        // Check to see if EcsProperties property is set
+        internal bool IsSetEcsProperties()
+        {
+            return this._ecsProperties != null;
         }
 
         /// <summary>
@@ -171,14 +191,13 @@ namespace Amazon.Batch.Model
         // Check to see if EksAttempts property is set
         internal bool IsSetEksAttempts()
         {
-            return this._eksAttempts != null && this._eksAttempts.Count > 0; 
+            return this._eksAttempts != null && (this._eksAttempts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property EksProperties. 
         /// <para>
-        /// An object with various properties that are specific to Amazon EKS based jobs. Only
-        /// one of <c>container</c>, <c>eksProperties</c>, or <c>nodeDetails</c> is specified.
+        /// An object with various properties that are specific to Amazon EKS based jobs. 
         /// </para>
         /// </summary>
         public EksPropertiesDetail EksProperties
@@ -381,7 +400,7 @@ namespace Amazon.Batch.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -400,7 +419,7 @@ namespace Amazon.Batch.Model
         // Check to see if PlatformCapabilities property is set
         internal bool IsSetPlatformCapabilities()
         {
-            return this._platformCapabilities != null && this._platformCapabilities.Count > 0; 
+            return this._platformCapabilities != null && (this._platformCapabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -534,6 +553,27 @@ namespace Amazon.Batch.Model
         /// A short, human-readable string to provide more details for the current status of the
         /// job.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</c> - All compute environments have insufficient
+        /// capacity to service the job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</c> - All compute environments
+        /// have a <c>maxVcpu</c> setting that is smaller than the job requirements.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</c> - All compute environments have
+        /// no connected instances that meet the job requirements.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</c> - All compute environments have
+        /// problems with the service role permissions.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string StatusReason
         {
@@ -583,7 +623,7 @@ namespace Amazon.Batch.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

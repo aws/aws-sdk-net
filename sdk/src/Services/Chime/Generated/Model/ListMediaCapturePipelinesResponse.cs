@@ -33,7 +33,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class ListMediaCapturePipelinesResponse : AmazonWebServiceResponse
     {
-        private List<MediaCapturePipeline> _mediaCapturePipelines = new List<MediaCapturePipeline>();
+        private List<MediaCapturePipeline> _mediaCapturePipelines = AWSConfigs.InitializeCollections ? new List<MediaCapturePipeline>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Chime.Model
         // Check to see if MediaCapturePipelines property is set
         internal bool IsSetMediaCapturePipelines()
         {
-            return this._mediaCapturePipelines != null && this._mediaCapturePipelines.Count > 0; 
+            return this._mediaCapturePipelines != null && (this._mediaCapturePipelines.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

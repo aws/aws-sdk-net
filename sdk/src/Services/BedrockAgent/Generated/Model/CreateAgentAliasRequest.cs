@@ -38,8 +38,8 @@ namespace Amazon.BedrockAgent.Model
         private string _agentId;
         private string _clientToken;
         private string _description;
-        private List<AgentAliasRoutingConfigurationListItem> _routingConfiguration = new List<AgentAliasRoutingConfigurationListItem>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<AgentAliasRoutingConfigurationListItem> _routingConfiguration = AWSConfigs.InitializeCollections ? new List<AgentAliasRoutingConfigurationListItem>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentAliasName.
@@ -121,7 +121,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if RoutingConfiguration property is set
         internal bool IsSetRoutingConfiguration()
         {
-            return this._routingConfiguration != null && this._routingConfiguration.Count > 0; 
+            return this._routingConfiguration != null && (this._routingConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

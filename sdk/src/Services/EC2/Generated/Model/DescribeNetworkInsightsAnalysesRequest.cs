@@ -36,9 +36,9 @@ namespace Amazon.EC2.Model
     {
         private DateTime? _analysisEndTime;
         private DateTime? _analysisStartTime;
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
-        private List<string> _networkInsightsAnalysisIds = new List<string>();
+        private List<string> _networkInsightsAnalysisIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _networkInsightsPathId;
         private string _nextToken;
 
@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.EC2.Model
         // Check to see if NetworkInsightsAnalysisIds property is set
         internal bool IsSetNetworkInsightsAnalysisIds()
         {
-            return this._networkInsightsAnalysisIds != null && this._networkInsightsAnalysisIds.Count > 0; 
+            return this._networkInsightsAnalysisIds != null && (this._networkInsightsAnalysisIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

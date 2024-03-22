@@ -30,8 +30,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplication operation.
-    /// Deletes the specified application. Kinesis Data Analytics halts application execution
-    /// and deletes the application.
+    /// Deletes the specified application. Managed Service for Apache Flink halts application
+    /// execution and deletes the application.
     /// </summary>
     public partial class DeleteApplicationRequest : AmazonKinesisAnalyticsV2Request
     {

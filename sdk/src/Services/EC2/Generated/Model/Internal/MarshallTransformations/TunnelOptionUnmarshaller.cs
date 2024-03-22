@@ -75,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ikeVersionSet/item", targetDepth))
                     {
                         var unmarshaller = IKEVersionsListValueUnmarshaller.Instance;
+                        if (unmarshalledObject.IkeVersions == null)
+                        {
+                            unmarshalledObject.IkeVersions = new List<IKEVersionsListValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.IkeVersions.Add(item);
                         continue;
@@ -94,6 +98,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("phase1DHGroupNumberSet/item", targetDepth))
                     {
                         var unmarshaller = Phase1DHGroupNumbersListValueUnmarshaller.Instance;
+                        if (unmarshalledObject.Phase1DHGroupNumbers == null)
+                        {
+                            unmarshalledObject.Phase1DHGroupNumbers = new List<Phase1DHGroupNumbersListValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Phase1DHGroupNumbers.Add(item);
                         continue;
@@ -101,6 +109,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("phase1EncryptionAlgorithmSet/item", targetDepth))
                     {
                         var unmarshaller = Phase1EncryptionAlgorithmsListValueUnmarshaller.Instance;
+                        if (unmarshalledObject.Phase1EncryptionAlgorithms == null)
+                        {
+                            unmarshalledObject.Phase1EncryptionAlgorithms = new List<Phase1EncryptionAlgorithmsListValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Phase1EncryptionAlgorithms.Add(item);
                         continue;
@@ -108,6 +120,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("phase1IntegrityAlgorithmSet/item", targetDepth))
                     {
                         var unmarshaller = Phase1IntegrityAlgorithmsListValueUnmarshaller.Instance;
+                        if (unmarshalledObject.Phase1IntegrityAlgorithms == null)
+                        {
+                            unmarshalledObject.Phase1IntegrityAlgorithms = new List<Phase1IntegrityAlgorithmsListValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Phase1IntegrityAlgorithms.Add(item);
                         continue;
@@ -121,6 +137,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("phase2DHGroupNumberSet/item", targetDepth))
                     {
                         var unmarshaller = Phase2DHGroupNumbersListValueUnmarshaller.Instance;
+                        if (unmarshalledObject.Phase2DHGroupNumbers == null)
+                        {
+                            unmarshalledObject.Phase2DHGroupNumbers = new List<Phase2DHGroupNumbersListValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Phase2DHGroupNumbers.Add(item);
                         continue;
@@ -128,6 +148,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("phase2EncryptionAlgorithmSet/item", targetDepth))
                     {
                         var unmarshaller = Phase2EncryptionAlgorithmsListValueUnmarshaller.Instance;
+                        if (unmarshalledObject.Phase2EncryptionAlgorithms == null)
+                        {
+                            unmarshalledObject.Phase2EncryptionAlgorithms = new List<Phase2EncryptionAlgorithmsListValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Phase2EncryptionAlgorithms.Add(item);
                         continue;
@@ -135,6 +159,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("phase2IntegrityAlgorithmSet/item", targetDepth))
                     {
                         var unmarshaller = Phase2IntegrityAlgorithmsListValueUnmarshaller.Instance;
+                        if (unmarshalledObject.Phase2IntegrityAlgorithms == null)
+                        {
+                            unmarshalledObject.Phase2IntegrityAlgorithms = new List<Phase2IntegrityAlgorithmsListValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Phase2IntegrityAlgorithms.Add(item);
                         continue;

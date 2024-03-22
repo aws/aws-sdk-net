@@ -84,7 +84,7 @@ namespace Amazon.ConfigService.Model
         private ExclusionByResourceTypes _exclusionByResourceTypes;
         private bool? _includeGlobalResourceTypes;
         private RecordingStrategy _recordingStrategy;
-        private List<string> _resourceTypes = new List<string>();
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllSupported. 
@@ -474,7 +474,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

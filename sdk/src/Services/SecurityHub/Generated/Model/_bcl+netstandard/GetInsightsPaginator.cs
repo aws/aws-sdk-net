@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all of the Insights
         /// </summary>
         public IPaginatedEnumerable<Insight> Insights => 
-            new PaginatedResultKeyResponse<GetInsightsResponse, Insight>(this, (i) => i.Insights);
+            new PaginatedResultKeyResponse<GetInsightsResponse, Insight>(this, (i) => i.Insights ?? new List<Insight>());
 
         internal GetInsightsPaginator(IAmazonSecurityHub client, GetInsightsRequest request)
         {

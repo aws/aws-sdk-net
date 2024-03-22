@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         private GenerationStatus _generationStatus;
         private string _nextPageToken;
         private int? _pageSize;
-        private List<string> _recommendationIds = new List<string>();
+        private List<string> _recommendationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GenerationStatus. 
@@ -111,7 +111,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if RecommendationIds property is set
         internal bool IsSetRecommendationIds()
         {
-            return this._recommendationIds != null && this._recommendationIds.Count > 0; 
+            return this._recommendationIds != null && (this._recommendationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

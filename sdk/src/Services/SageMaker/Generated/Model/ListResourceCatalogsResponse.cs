@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListResourceCatalogsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceCatalog> _resourceCatalogs = new List<ResourceCatalog>();
+        private List<ResourceCatalog> _resourceCatalogs = AWSConfigs.InitializeCollections ? new List<ResourceCatalog>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ResourceCatalogs property is set
         internal bool IsSetResourceCatalogs()
         {
-            return this._resourceCatalogs != null && this._resourceCatalogs.Count > 0; 
+            return this._resourceCatalogs != null && (this._resourceCatalogs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

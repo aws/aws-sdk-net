@@ -45,7 +45,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// Enumerable containing all of the EventTypes
         /// </summary>
         public IPaginatedEnumerable<EventTypeSummary> EventTypes => 
-            new PaginatedResultKeyResponse<ListEventTypesResponse, EventTypeSummary>(this, (i) => i.EventTypes);
+            new PaginatedResultKeyResponse<ListEventTypesResponse, EventTypeSummary>(this, (i) => i.EventTypes ?? new List<EventTypeSummary>());
 
         internal ListEventTypesPaginator(IAmazonCodeStarNotifications client, ListEventTypesRequest request)
         {

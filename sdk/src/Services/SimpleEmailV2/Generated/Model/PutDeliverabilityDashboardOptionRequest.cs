@@ -47,7 +47,7 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class PutDeliverabilityDashboardOptionRequest : AmazonSimpleEmailServiceV2Request
     {
         private bool? _dashboardEnabled;
-        private List<DomainDeliverabilityTrackingOption> _subscribedDomains = new List<DomainDeliverabilityTrackingOption>();
+        private List<DomainDeliverabilityTrackingOption> _subscribedDomains = AWSConfigs.InitializeCollections ? new List<DomainDeliverabilityTrackingOption>() : null;
 
         /// <summary>
         /// Gets and sets the property DashboardEnabled. 
@@ -85,7 +85,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if SubscribedDomains property is set
         internal bool IsSetSubscribedDomains()
         {
-            return this._subscribedDomains != null && this._subscribedDomains.Count > 0; 
+            return this._subscribedDomains != null && (this._subscribedDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

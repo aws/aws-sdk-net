@@ -57,6 +57,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("NetworkInterfaces/NetworkInterface", targetDepth))
                     {
                         var unmarshaller = NetworkInterfaceUnmarshaller.Instance;
+                        if (unmarshalledObject.NetworkInterfaces == null)
+                        {
+                            unmarshalledObject.NetworkInterfaces = new List<NetworkInterface>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NetworkInterfaces.Add(item);
                         continue;

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model
     public partial class ActiveTrustedSigners
     {
         private bool? _enabled;
-        private List<Signer> _items = new List<Signer>();
+        private List<Signer> _items = AWSConfigs.InitializeCollections ? new List<Signer>() : null;
         private int? _quantity;
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

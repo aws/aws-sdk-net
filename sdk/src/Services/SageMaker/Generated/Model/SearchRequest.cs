@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model
         private SearchExpression _searchExpression;
         private string _sortBy;
         private SearchSortOrder _sortOrder;
-        private List<VisibilityConditions> _visibilityConditions = new List<VisibilityConditions>();
+        private List<VisibilityConditions> _visibilityConditions = AWSConfigs.InitializeCollections ? new List<VisibilityConditions>() : null;
 
         /// <summary>
         /// Gets and sets the property CrossAccountFilterOption. 
@@ -216,7 +216,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if VisibilityConditions property is set
         internal bool IsSetVisibilityConditions()
         {
-            return this._visibilityConditions != null && this._visibilityConditions.Count > 0; 
+            return this._visibilityConditions != null && (this._visibilityConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

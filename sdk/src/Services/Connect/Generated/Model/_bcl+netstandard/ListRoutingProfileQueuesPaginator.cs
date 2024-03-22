@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the RoutingProfileQueueConfigSummaryList
         /// </summary>
         public IPaginatedEnumerable<RoutingProfileQueueConfigSummary> RoutingProfileQueueConfigSummaryList => 
-            new PaginatedResultKeyResponse<ListRoutingProfileQueuesResponse, RoutingProfileQueueConfigSummary>(this, (i) => i.RoutingProfileQueueConfigSummaryList);
+            new PaginatedResultKeyResponse<ListRoutingProfileQueuesResponse, RoutingProfileQueueConfigSummary>(this, (i) => i.RoutingProfileQueueConfigSummaryList ?? new List<RoutingProfileQueueConfigSummary>());
 
         internal ListRoutingProfileQueuesPaginator(IAmazonConnect client, ListRoutingProfileQueuesRequest request)
         {

@@ -39,7 +39,7 @@ namespace Amazon.LaunchWizard.Model
         private string _name;
         private string _patternName;
         private string _resourceGroup;
-        private Dictionary<string, string> _specifications = new Dictionary<string, string>();
+        private Dictionary<string, string> _specifications = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DeploymentStatus _status;
         private string _workloadName;
 
@@ -171,7 +171,7 @@ namespace Amazon.LaunchWizard.Model
         // Check to see if Specifications property is set
         internal bool IsSetSpecifications()
         {
-            return this._specifications != null && this._specifications.Count > 0; 
+            return this._specifications != null && (this._specifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

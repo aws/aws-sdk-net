@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListAuditMitigationActionsExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<AuditMitigationActionExecutionMetadata> _actionsExecutions = new List<AuditMitigationActionExecutionMetadata>();
+        private List<AuditMitigationActionExecutionMetadata> _actionsExecutions = AWSConfigs.InitializeCollections ? new List<AuditMitigationActionExecutionMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model
         // Check to see if ActionsExecutions property is set
         internal bool IsSetActionsExecutions()
         {
-            return this._actionsExecutions != null && this._actionsExecutions.Count > 0; 
+            return this._actionsExecutions != null && (this._actionsExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

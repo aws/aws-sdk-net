@@ -33,8 +33,8 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class UsersAndGroups
     {
-        private List<string> _userGroups = new List<string>();
-        private List<string> _userIds = new List<string>();
+        private List<string> _userGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _userIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property UserGroups. 
@@ -51,7 +51,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if UserGroups property is set
         internal bool IsSetUserGroups()
         {
-            return this._userGroups != null && this._userGroups.Count > 0; 
+            return this._userGroups != null && (this._userGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if UserIds property is set
         internal bool IsSetUserIds()
         {
-            return this._userIds != null && this._userIds.Count > 0; 
+            return this._userIds != null && (this._userIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

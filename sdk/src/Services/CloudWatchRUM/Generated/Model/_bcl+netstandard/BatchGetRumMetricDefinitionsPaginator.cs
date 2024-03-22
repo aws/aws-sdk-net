@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// Enumerable containing all of the MetricDefinitions
         /// </summary>
         public IPaginatedEnumerable<MetricDefinition> MetricDefinitions => 
-            new PaginatedResultKeyResponse<BatchGetRumMetricDefinitionsResponse, MetricDefinition>(this, (i) => i.MetricDefinitions);
+            new PaginatedResultKeyResponse<BatchGetRumMetricDefinitionsResponse, MetricDefinition>(this, (i) => i.MetricDefinitions ?? new List<MetricDefinition>());
 
         internal BatchGetRumMetricDefinitionsPaginator(IAmazonCloudWatchRUM client, BatchGetRumMetricDefinitionsRequest request)
         {

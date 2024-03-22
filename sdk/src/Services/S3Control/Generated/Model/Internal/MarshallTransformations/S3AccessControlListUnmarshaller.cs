@@ -57,6 +57,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Grants/member", targetDepth))
                     {
+                        if (unmarshalledObject.Grants == null)
+                        {
+                            unmarshalledObject.Grants = new List<S3Grant>();
+                        }
                         var unmarshaller = S3GrantUnmarshaller.Instance;
                         unmarshalledObject.Grants.Add(unmarshaller.Unmarshall(context));
                         continue;

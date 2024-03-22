@@ -45,7 +45,7 @@ namespace Amazon.DataExchange.Model
         /// Enumerable containing all of the Assets
         /// </summary>
         public IPaginatedEnumerable<AssetEntry> Assets => 
-            new PaginatedResultKeyResponse<ListRevisionAssetsResponse, AssetEntry>(this, (i) => i.Assets);
+            new PaginatedResultKeyResponse<ListRevisionAssetsResponse, AssetEntry>(this, (i) => i.Assets ?? new List<AssetEntry>());
 
         internal ListRevisionAssetsPaginator(IAmazonDataExchange client, ListRevisionAssetsRequest request)
         {

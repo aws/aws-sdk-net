@@ -35,7 +35,7 @@ namespace Amazon.Connect.Model
     {
         private EvaluationFormSingleSelectQuestionAutomation _automation;
         private EvaluationFormSingleSelectQuestionDisplayMode _displayAs;
-        private List<EvaluationFormSingleSelectQuestionOption> _options = new List<EvaluationFormSingleSelectQuestionOption>();
+        private List<EvaluationFormSingleSelectQuestionOption> _options = AWSConfigs.InitializeCollections ? new List<EvaluationFormSingleSelectQuestionOption>() : null;
 
         /// <summary>
         /// Gets and sets the property Automation. 
@@ -89,7 +89,7 @@ namespace Amazon.Connect.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

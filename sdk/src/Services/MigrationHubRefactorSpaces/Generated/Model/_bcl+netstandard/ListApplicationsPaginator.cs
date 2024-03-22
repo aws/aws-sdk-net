@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Enumerable containing all of the ApplicationSummaryList
         /// </summary>
         public IPaginatedEnumerable<ApplicationSummary> ApplicationSummaryList => 
-            new PaginatedResultKeyResponse<ListApplicationsResponse, ApplicationSummary>(this, (i) => i.ApplicationSummaryList);
+            new PaginatedResultKeyResponse<ListApplicationsResponse, ApplicationSummary>(this, (i) => i.ApplicationSummaryList ?? new List<ApplicationSummary>());
 
         internal ListApplicationsPaginator(IAmazonMigrationHubRefactorSpaces client, ListApplicationsRequest request)
         {

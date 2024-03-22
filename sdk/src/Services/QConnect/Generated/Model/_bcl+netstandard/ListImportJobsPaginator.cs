@@ -45,7 +45,7 @@ namespace Amazon.QConnect.Model
         /// Enumerable containing all of the ImportJobSummaries
         /// </summary>
         public IPaginatedEnumerable<ImportJobSummary> ImportJobSummaries => 
-            new PaginatedResultKeyResponse<ListImportJobsResponse, ImportJobSummary>(this, (i) => i.ImportJobSummaries);
+            new PaginatedResultKeyResponse<ListImportJobsResponse, ImportJobSummary>(this, (i) => i.ImportJobSummaries ?? new List<ImportJobSummary>());
 
         internal ListImportJobsPaginator(IAmazonQConnect client, ListImportJobsRequest request)
         {

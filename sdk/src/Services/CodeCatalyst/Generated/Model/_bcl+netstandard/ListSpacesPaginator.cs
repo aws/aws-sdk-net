@@ -45,7 +45,7 @@ namespace Amazon.CodeCatalyst.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<SpaceSummary> Items => 
-            new PaginatedResultKeyResponse<ListSpacesResponse, SpaceSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListSpacesResponse, SpaceSummary>(this, (i) => i.Items ?? new List<SpaceSummary>());
 
         internal ListSpacesPaginator(IAmazonCodeCatalyst client, ListSpacesRequest request)
         {

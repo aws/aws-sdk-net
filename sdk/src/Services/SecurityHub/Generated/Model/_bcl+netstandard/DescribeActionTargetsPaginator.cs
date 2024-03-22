@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all of the ActionTargets
         /// </summary>
         public IPaginatedEnumerable<ActionTarget> ActionTargets => 
-            new PaginatedResultKeyResponse<DescribeActionTargetsResponse, ActionTarget>(this, (i) => i.ActionTargets);
+            new PaginatedResultKeyResponse<DescribeActionTargetsResponse, ActionTarget>(this, (i) => i.ActionTargets ?? new List<ActionTarget>());
 
         internal DescribeActionTargetsPaginator(IAmazonSecurityHub client, DescribeActionTargetsRequest request)
         {

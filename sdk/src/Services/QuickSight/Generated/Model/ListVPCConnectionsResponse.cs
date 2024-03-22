@@ -36,7 +36,7 @@ namespace Amazon.QuickSight.Model
         private string _nextToken;
         private string _requestId;
         private int? _status;
-        private List<VPCConnectionSummary> _vpcConnectionSummaries = new List<VPCConnectionSummary>();
+        private List<VPCConnectionSummary> _vpcConnectionSummaries = AWSConfigs.InitializeCollections ? new List<VPCConnectionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -107,7 +107,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if VPCConnectionSummaries property is set
         internal bool IsSetVPCConnectionSummaries()
         {
-            return this._vpcConnectionSummaries != null && this._vpcConnectionSummaries.Count > 0; 
+            return this._vpcConnectionSummaries != null && (this._vpcConnectionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

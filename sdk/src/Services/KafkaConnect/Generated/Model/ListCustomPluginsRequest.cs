@@ -35,6 +35,7 @@ namespace Amazon.KafkaConnect.Model
     public partial class ListCustomPluginsRequest : AmazonKafkaConnectRequest
     {
         private int? _maxResults;
+        private string _namePrefix;
         private string _nextToken;
 
         /// <summary>
@@ -54,6 +55,24 @@ namespace Amazon.KafkaConnect.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamePrefix. 
+        /// <para>
+        /// Lists custom plugin names that start with the specified text string.
+        /// </para>
+        /// </summary>
+        public string NamePrefix
+        {
+            get { return this._namePrefix; }
+            set { this._namePrefix = value; }
+        }
+
+        // Check to see if NamePrefix property is set
+        internal bool IsSetNamePrefix()
+        {
+            return this._namePrefix != null;
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class GetLinkAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<LinkAssociation> _linkAssociations = new List<LinkAssociation>();
+        private List<LinkAssociation> _linkAssociations = AWSConfigs.InitializeCollections ? new List<LinkAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if LinkAssociations property is set
         internal bool IsSetLinkAssociations()
         {
-            return this._linkAssociations != null && this._linkAssociations.Count > 0; 
+            return this._linkAssociations != null && (this._linkAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

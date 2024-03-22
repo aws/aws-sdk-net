@@ -45,7 +45,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<Recommendation> Items => 
-            new PaginatedResultKeyResponse<ListRecommendationsResponse, Recommendation>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListRecommendationsResponse, Recommendation>(this, (i) => i.Items ?? new List<Recommendation>());
 
         internal ListRecommendationsPaginator(IAmazonCostOptimizationHub client, ListRecommendationsRequest request)
         {

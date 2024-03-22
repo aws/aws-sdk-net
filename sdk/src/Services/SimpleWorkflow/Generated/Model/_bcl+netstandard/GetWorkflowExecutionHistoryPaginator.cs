@@ -45,7 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<HistoryEvent> Events => 
-            new PaginatedResultKeyResponse<GetWorkflowExecutionHistoryResponse, HistoryEvent>(this, (i) => i.History.Events);
+            new PaginatedResultKeyResponse<GetWorkflowExecutionHistoryResponse, HistoryEvent>(this, (i) => i.History.Events ?? new List<HistoryEvent>());
 
         internal GetWorkflowExecutionHistoryPaginator(IAmazonSimpleWorkflow client, GetWorkflowExecutionHistoryRequest request)
         {

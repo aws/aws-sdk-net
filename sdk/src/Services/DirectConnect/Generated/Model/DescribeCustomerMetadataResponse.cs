@@ -33,7 +33,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class DescribeCustomerMetadataResponse : AmazonWebServiceResponse
     {
-        private List<CustomerAgreement> _agreements = new List<CustomerAgreement>();
+        private List<CustomerAgreement> _agreements = AWSConfigs.InitializeCollections ? new List<CustomerAgreement>() : null;
         private NniPartnerType _nniPartnerType;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Agreements property is set
         internal bool IsSetAgreements()
         {
-            return this._agreements != null && this._agreements.Count > 0; 
+            return this._agreements != null && (this._agreements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

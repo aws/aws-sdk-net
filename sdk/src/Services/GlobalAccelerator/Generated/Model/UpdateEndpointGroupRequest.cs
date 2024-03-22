@@ -35,13 +35,13 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class UpdateEndpointGroupRequest : AmazonGlobalAcceleratorRequest
     {
-        private List<EndpointConfiguration> _endpointConfigurations = new List<EndpointConfiguration>();
+        private List<EndpointConfiguration> _endpointConfigurations = AWSConfigs.InitializeCollections ? new List<EndpointConfiguration>() : null;
         private string _endpointGroupArn;
         private int? _healthCheckIntervalSeconds;
         private string _healthCheckPath;
         private int? _healthCheckPort;
         private HealthCheckProtocol _healthCheckProtocol;
-        private List<PortOverride> _portOverrides = new List<PortOverride>();
+        private List<PortOverride> _portOverrides = AWSConfigs.InitializeCollections ? new List<PortOverride>() : null;
         private int? _thresholdCount;
         private float? _trafficDialPercentage;
 

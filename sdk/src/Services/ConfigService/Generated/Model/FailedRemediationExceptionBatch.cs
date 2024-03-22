@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class FailedRemediationExceptionBatch
     {
-        private List<RemediationException> _failedItems = new List<RemediationException>();
+        private List<RemediationException> _failedItems = AWSConfigs.InitializeCollections ? new List<RemediationException>() : null;
         private string _failureMessage;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if FailedItems property is set
         internal bool IsSetFailedItems()
         {
-            return this._failedItems != null && this._failedItems.Count > 0; 
+            return this._failedItems != null && (this._failedItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

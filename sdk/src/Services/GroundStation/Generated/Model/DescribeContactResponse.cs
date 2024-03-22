@@ -35,7 +35,7 @@ namespace Amazon.GroundStation.Model
     {
         private string _contactId;
         private ContactStatus _contactStatus;
-        private List<DataflowDetail> _dataflowList = new List<DataflowDetail>();
+        private List<DataflowDetail> _dataflowList = AWSConfigs.InitializeCollections ? new List<DataflowDetail>() : null;
         private DateTime? _endTime;
         private string _errorMessage;
         private string _groundStation;
@@ -46,7 +46,7 @@ namespace Amazon.GroundStation.Model
         private string _region;
         private string _satelliteArn;
         private DateTime? _startTime;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactId. 
@@ -100,7 +100,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if DataflowList property is set
         internal bool IsSetDataflowList()
         {
-            return this._dataflowList != null && this._dataflowList.Count > 0; 
+            return this._dataflowList != null && (this._dataflowList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -300,7 +300,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

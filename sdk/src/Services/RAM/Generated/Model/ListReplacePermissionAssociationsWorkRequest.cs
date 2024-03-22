@@ -38,7 +38,7 @@ namespace Amazon.RAM.Model
         private int? _maxResults;
         private string _nextToken;
         private ReplacePermissionAssociationsWorkStatus _status;
-        private List<string> _workIds = new List<string>();
+        private List<string> _workIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -122,7 +122,7 @@ namespace Amazon.RAM.Model
         // Check to see if WorkIds property is set
         internal bool IsSetWorkIds()
         {
-            return this._workIds != null && this._workIds.Count > 0; 
+            return this._workIds != null && (this._workIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

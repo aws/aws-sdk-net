@@ -33,10 +33,10 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class ConnectionInput
     {
-        private Dictionary<string, string> _connectionProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _connectionProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ConnectionType _connectionType;
         private string _description;
-        private List<string> _matchCriteria = new List<string>();
+        private List<string> _matchCriteria = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private PhysicalConnectionRequirements _physicalConnectionRequirements;
 
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         // Check to see if ConnectionProperties property is set
         internal bool IsSetConnectionProperties()
         {
-            return this._connectionProperties != null && this._connectionProperties.Count > 0; 
+            return this._connectionProperties != null && (this._connectionProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -242,7 +242,7 @@ namespace Amazon.Glue.Model
         // Check to see if MatchCriteria property is set
         internal bool IsSetMatchCriteria()
         {
-            return this._matchCriteria != null && this._matchCriteria.Count > 0; 
+            return this._matchCriteria != null && (this._matchCriteria.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

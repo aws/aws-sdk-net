@@ -84,6 +84,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Associations/Association", targetDepth))
                     {
                         var unmarshaller = AssociationUnmarshaller.Instance;
+                        if (response.Associations == null)
+                        {
+                            response.Associations = new List<Association>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Associations.Add(item);
                         continue;

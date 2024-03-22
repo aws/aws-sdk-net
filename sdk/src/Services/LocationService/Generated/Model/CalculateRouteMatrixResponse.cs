@@ -33,9 +33,9 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class CalculateRouteMatrixResponse : AmazonWebServiceResponse
     {
-        private List<List<RouteMatrixEntry>> _routeMatrix = new List<List<RouteMatrixEntry>>();
-        private List<List<double>> _snappedDeparturePositions = new List<List<double>>();
-        private List<List<double>> _snappedDestinationPositions = new List<List<double>>();
+        private List<List<RouteMatrixEntry>> _routeMatrix = AWSConfigs.InitializeCollections ? new List<List<RouteMatrixEntry>>() : null;
+        private List<List<double>> _snappedDeparturePositions = AWSConfigs.InitializeCollections ? new List<List<double>>() : null;
+        private List<List<double>> _snappedDestinationPositions = AWSConfigs.InitializeCollections ? new List<List<double>>() : null;
         private CalculateRouteMatrixSummary _summary;
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Amazon.LocationService.Model
         // Check to see if RouteMatrix property is set
         internal bool IsSetRouteMatrix()
         {
-            return this._routeMatrix != null && this._routeMatrix.Count > 0; 
+            return this._routeMatrix != null && (this._routeMatrix.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.LocationService.Model
         // Check to see if SnappedDeparturePositions property is set
         internal bool IsSetSnappedDeparturePositions()
         {
-            return this._snappedDeparturePositions != null && this._snappedDeparturePositions.Count > 0; 
+            return this._snappedDeparturePositions != null && (this._snappedDeparturePositions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.LocationService.Model
         // Check to see if SnappedDestinationPositions property is set
         internal bool IsSetSnappedDestinationPositions()
         {
-            return this._snappedDestinationPositions != null && this._snappedDestinationPositions.Count > 0; 
+            return this._snappedDestinationPositions != null && (this._snappedDestinationPositions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ using Amazon.Runtime.EventStreams.Utils;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Base 64 endoded byte response
+    /// Contains a part of an agent response and citations for it.
     /// </summary>
     public partial class PayloadPart
         : IEventStreamEvent
@@ -42,7 +42,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private MemoryStream _bytes;
 
         /// <summary>
-        /// Gets and sets the property Attribution.
+        /// Gets and sets the property Attribution. 
+        /// <para>
+        /// Contains citations for a part of an agent response.
+        /// </para>
         /// </summary>
         public Attribution Attribution
         {
@@ -57,7 +60,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Bytes.
+        /// Gets and sets the property Bytes. 
+        /// <para>
+        /// A part of the agent response in bytes.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1000000)]
         public MemoryStream Bytes

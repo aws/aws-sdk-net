@@ -34,8 +34,8 @@ namespace Amazon.CloudFront.Model
     public partial class RealtimeLogConfig
     {
         private string _arn;
-        private List<EndPoint> _endPoints = new List<EndPoint>();
-        private List<string> _fields = new List<string>();
+        private List<EndPoint> _endPoints = AWSConfigs.InitializeCollections ? new List<EndPoint>() : null;
+        private List<string> _fields = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private long? _samplingRate;
 
@@ -75,7 +75,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if EndPoints property is set
         internal bool IsSetEndPoints()
         {
-            return this._endPoints != null && this._endPoints.Count > 0; 
+            return this._endPoints != null && (this._endPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

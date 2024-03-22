@@ -33,7 +33,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class PreviewAgentsResponse : AmazonWebServiceResponse
     {
-        private List<AgentPreview> _agentPreviews = new List<AgentPreview>();
+        private List<AgentPreview> _agentPreviews = AWSConfigs.InitializeCollections ? new List<AgentPreview>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Inspector.Model
         // Check to see if AgentPreviews property is set
         internal bool IsSetAgentPreviews()
         {
-            return this._agentPreviews != null && this._agentPreviews.Count > 0; 
+            return this._agentPreviews != null && (this._agentPreviews.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -75,6 +75,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomKeys = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EvaluationWindowSec", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationWindowSec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ForwardedIPConfig", targetDepth))
                 {
                     var unmarshaller = ForwardedIPConfigUnmarshaller.Instance;

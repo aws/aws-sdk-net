@@ -63,6 +63,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheNodeTypeSpecificValues/CacheNodeTypeSpecificValue", targetDepth))
                     {
                         var unmarshaller = CacheNodeTypeSpecificValueUnmarshaller.Instance;
+                        if (unmarshalledObject.CacheNodeTypeSpecificValues == null)
+                        {
+                            unmarshalledObject.CacheNodeTypeSpecificValues = new List<CacheNodeTypeSpecificValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CacheNodeTypeSpecificValues.Add(item);
                         continue;

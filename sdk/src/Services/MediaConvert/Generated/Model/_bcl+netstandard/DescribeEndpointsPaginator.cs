@@ -45,7 +45,7 @@ namespace Amazon.MediaConvert.Model
         /// Enumerable containing all of the Endpoints
         /// </summary>
         public IPaginatedEnumerable<Endpoint> Endpoints => 
-            new PaginatedResultKeyResponse<DescribeEndpointsResponse, Endpoint>(this, (i) => i.Endpoints);
+            new PaginatedResultKeyResponse<DescribeEndpointsResponse, Endpoint>(this, (i) => i.Endpoints ?? new List<Endpoint>());
 
         internal DescribeEndpointsPaginator(IAmazonMediaConvert client, DescribeEndpointsRequest request)
         {

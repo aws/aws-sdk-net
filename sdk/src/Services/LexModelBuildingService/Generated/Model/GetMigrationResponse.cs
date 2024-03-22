@@ -33,7 +33,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// </summary>
     public partial class GetMigrationResponse : AmazonWebServiceResponse
     {
-        private List<MigrationAlert> _alerts = new List<MigrationAlert>();
+        private List<MigrationAlert> _alerts = AWSConfigs.InitializeCollections ? new List<MigrationAlert>() : null;
         private string _migrationId;
         private MigrationStatus _migrationStatus;
         private MigrationStrategy _migrationStrategy;
@@ -66,7 +66,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if Alerts property is set
         internal bool IsSetAlerts()
         {
-            return this._alerts != null && this._alerts.Count > 0; 
+            return this._alerts != null && (this._alerts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

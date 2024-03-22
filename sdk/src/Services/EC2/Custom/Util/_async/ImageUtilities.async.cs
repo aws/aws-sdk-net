@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 using Amazon.Runtime;
 using System.Threading.Tasks;
+using Amazon.Util.Internal;
 
 #pragma warning disable 1591
 
@@ -103,7 +104,7 @@ namespace Amazon.EC2.Util
                     foreach (var location in DownloadLocations)
                     {
                         var useProxy = webProxy;
-                        if (useProxy == null)
+                        if (useProxy == null && !NoProxyFilter.Instance.Match(new Uri(location)))
                         {
                             if (location.StartsWith(httpPrefix))
                             {

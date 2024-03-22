@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("vpcSet/item", targetDepth))
                     {
                         var unmarshaller = VpcUnmarshaller.Instance;
+                        if (response.Vpcs == null)
+                        {
+                            response.Vpcs = new List<Vpc>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Vpcs.Add(item);
                         continue;

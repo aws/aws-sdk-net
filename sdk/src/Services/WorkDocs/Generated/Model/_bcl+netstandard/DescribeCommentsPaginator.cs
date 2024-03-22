@@ -45,7 +45,7 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the Comments
         /// </summary>
         public IPaginatedEnumerable<Comment> Comments => 
-            new PaginatedResultKeyResponse<DescribeCommentsResponse, Comment>(this, (i) => i.Comments);
+            new PaginatedResultKeyResponse<DescribeCommentsResponse, Comment>(this, (i) => i.Comments ?? new List<Comment>());
 
         internal DescribeCommentsPaginator(IAmazonWorkDocs client, DescribeCommentsRequest request)
         {

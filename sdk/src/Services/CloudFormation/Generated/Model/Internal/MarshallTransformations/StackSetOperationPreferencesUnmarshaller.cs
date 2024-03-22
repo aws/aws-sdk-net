@@ -93,6 +93,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RegionOrder/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.RegionOrder == null)
+                        {
+                            unmarshalledObject.RegionOrder = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RegionOrder.Add(item);
                         continue;

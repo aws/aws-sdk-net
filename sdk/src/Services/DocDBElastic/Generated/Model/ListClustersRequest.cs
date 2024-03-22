@@ -30,7 +30,7 @@ namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the ListClusters operation.
-    /// Returns information about provisioned Elastic DocumentDB clusters.
+    /// Returns information about provisioned Amazon DocumentDB elastic clusters.
     /// </summary>
     public partial class ListClustersRequest : AmazonDocDBElasticRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of entries to recieve in the response.
+        /// The maximum number of elastic cluster snapshot results to receive in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -59,7 +59,13 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The nextToken which is used the get the next page of data.
+        /// A pagination token provided by a previous request. If this parameter is specified,
+        /// the response includes only records beyond this token, up to the value specified by
+        /// <c>max-results</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If there is no more data in the responce, the <c>nextToken</c> will not be returned.
         /// </para>
         /// </summary>
         public string NextToken

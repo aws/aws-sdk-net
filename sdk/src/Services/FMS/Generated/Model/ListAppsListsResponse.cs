@@ -33,7 +33,7 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class ListAppsListsResponse : AmazonWebServiceResponse
     {
-        private List<AppsListDataSummary> _appsLists = new List<AppsListDataSummary>();
+        private List<AppsListDataSummary> _appsLists = AWSConfigs.InitializeCollections ? new List<AppsListDataSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FMS.Model
         // Check to see if AppsLists property is set
         internal bool IsSetAppsLists()
         {
-            return this._appsLists != null && this._appsLists.Count > 0; 
+            return this._appsLists != null && (this._appsLists.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

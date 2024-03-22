@@ -38,9 +38,9 @@ namespace Amazon.ElastiCache.Model
         private string _nodeGroupId;
         private string _primaryAvailabilityZone;
         private string _primaryOutpostArn;
-        private List<string> _replicaAvailabilityZones = new List<string>();
+        private List<string> _replicaAvailabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _replicaCount;
-        private List<string> _replicaOutpostArns = new List<string>();
+        private List<string> _replicaOutpostArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _slots;
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReplicaAvailabilityZones property is set
         internal bool IsSetReplicaAvailabilityZones()
         {
-            return this._replicaAvailabilityZones != null && this._replicaAvailabilityZones.Count > 0; 
+            return this._replicaAvailabilityZones != null && (this._replicaAvailabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReplicaOutpostArns property is set
         internal bool IsSetReplicaOutpostArns()
         {
-            return this._replicaOutpostArns != null && this._replicaOutpostArns.Count > 0; 
+            return this._replicaOutpostArns != null && (this._replicaOutpostArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

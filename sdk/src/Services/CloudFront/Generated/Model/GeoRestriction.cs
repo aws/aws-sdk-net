@@ -34,7 +34,7 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class GeoRestriction
     {
-        private List<string> _items = new List<string>();
+        private List<string> _items = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _quantity;
         private GeoRestrictionType _restrictionType;
 
@@ -83,7 +83,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

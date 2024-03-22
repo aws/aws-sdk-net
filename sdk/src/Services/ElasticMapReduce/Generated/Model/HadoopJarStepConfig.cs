@@ -35,10 +35,10 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class HadoopJarStepConfig
     {
-        private List<string> _args = new List<string>();
+        private List<string> _args = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _jar;
         private string _mainClass;
-        private List<KeyValue> _properties = new List<KeyValue>();
+        private List<KeyValue> _properties = AWSConfigs.InitializeCollections ? new List<KeyValue>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -69,7 +69,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this._args != null && this._args.Count > 0; 
+            return this._args != null && (this._args.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

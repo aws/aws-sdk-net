@@ -45,7 +45,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         /// Enumerable containing all of the ResourceSets
         /// </summary>
         public IPaginatedEnumerable<ResourceSetOutput> ResourceSets => 
-            new PaginatedResultKeyResponse<ListResourceSetsResponse, ResourceSetOutput>(this, (i) => i.ResourceSets);
+            new PaginatedResultKeyResponse<ListResourceSetsResponse, ResourceSetOutput>(this, (i) => i.ResourceSets ?? new List<ResourceSetOutput>());
 
         internal ListResourceSetsPaginator(IAmazonRoute53RecoveryReadiness client, ListResourceSetsRequest request)
         {

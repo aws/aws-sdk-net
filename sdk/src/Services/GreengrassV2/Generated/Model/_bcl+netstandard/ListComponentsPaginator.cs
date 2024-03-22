@@ -45,7 +45,7 @@ namespace Amazon.GreengrassV2.Model
         /// Enumerable containing all of the Components
         /// </summary>
         public IPaginatedEnumerable<Component> Components => 
-            new PaginatedResultKeyResponse<ListComponentsResponse, Component>(this, (i) => i.Components);
+            new PaginatedResultKeyResponse<ListComponentsResponse, Component>(this, (i) => i.Components ?? new List<Component>());
 
         internal ListComponentsPaginator(IAmazonGreengrassV2 client, ListComponentsRequest request)
         {

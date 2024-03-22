@@ -33,14 +33,14 @@ namespace Amazon.ComprehendMedical.Model
     /// </summary>
     public partial class Entity
     {
-        private List<Attribute> _attributes = new List<Attribute>();
+        private List<Attribute> _attributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
         private int? _beginOffset;
         private EntityType _category;
         private int? _endOffset;
         private int? _id;
         private float? _score;
         private string _text;
-        private List<Trait> _traits = new List<Trait>();
+        private List<Trait> _traits = AWSConfigs.InitializeCollections ? new List<Trait>() : null;
         private EntitySubType _type;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Traits property is set
         internal bool IsSetTraits()
         {
-            return this._traits != null && this._traits.Count > 0; 
+            return this._traits != null && (this._traits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

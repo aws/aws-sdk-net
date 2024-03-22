@@ -52,15 +52,15 @@ namespace Amazon.ServiceCatalog.Model
     {
         private string _acceptLanguage;
         private string _idempotencyToken;
-        private List<string> _notificationArns = new List<string>();
+        private List<string> _notificationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _pathId;
         private string _planName;
         private ProvisionedProductPlanType _planType;
         private string _productId;
         private string _provisionedProductName;
         private string _provisioningArtifactId;
-        private List<UpdateProvisioningParameter> _provisioningParameters = new List<UpdateProvisioningParameter>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<UpdateProvisioningParameter> _provisioningParameters = AWSConfigs.InitializeCollections ? new List<UpdateProvisioningParameter>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -126,7 +126,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if NotificationArns property is set
         internal bool IsSetNotificationArns()
         {
-            return this._notificationArns != null && this._notificationArns.Count > 0; 
+            return this._notificationArns != null && (this._notificationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -261,7 +261,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisioningParameters property is set
         internal bool IsSetProvisioningParameters()
         {
-            return this._provisioningParameters != null && this._provisioningParameters.Count > 0; 
+            return this._provisioningParameters != null && (this._provisioningParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -286,7 +286,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

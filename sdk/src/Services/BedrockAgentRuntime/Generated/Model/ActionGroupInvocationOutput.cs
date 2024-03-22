@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// output from lambda used in action group
+    /// Contains the JSON-formatted string returned by the API invoked by the action group.
     /// </summary>
     public partial class ActionGroupInvocationOutput
     {
         private string _text;
 
         /// <summary>
-        /// Gets and sets the property Text.
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The JSON-formatted string returned by the API invoked by the action group.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string Text

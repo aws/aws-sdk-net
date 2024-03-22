@@ -34,7 +34,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class AgentAlias
     {
         private string _agentAliasArn;
-        private List<AgentAliasHistoryEvent> _agentAliasHistoryEvents = new List<AgentAliasHistoryEvent>();
+        private List<AgentAliasHistoryEvent> _agentAliasHistoryEvents = AWSConfigs.InitializeCollections ? new List<AgentAliasHistoryEvent>() : null;
         private string _agentAliasId;
         private string _agentAliasName;
         private AgentAliasStatus _agentAliasStatus;
@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgent.Model
         private string _clientToken;
         private DateTime? _createdAt;
         private string _description;
-        private List<AgentAliasRoutingConfigurationListItem> _routingConfiguration = new List<AgentAliasRoutingConfigurationListItem>();
+        private List<AgentAliasRoutingConfigurationListItem> _routingConfiguration = AWSConfigs.InitializeCollections ? new List<AgentAliasRoutingConfigurationListItem>() : null;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if AgentAliasHistoryEvents property is set
         internal bool IsSetAgentAliasHistoryEvents()
         {
-            return this._agentAliasHistoryEvents != null && this._agentAliasHistoryEvents.Count > 0; 
+            return this._agentAliasHistoryEvents != null && (this._agentAliasHistoryEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if RoutingConfiguration property is set
         internal bool IsSetRoutingConfiguration()
         {
-            return this._routingConfiguration != null && this._routingConfiguration.Count > 0; 
+            return this._routingConfiguration != null && (this._routingConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,8 +35,8 @@ namespace Amazon.Inspector2.Model
     {
         private DateTime? _firstSeen;
         private DateTime? _lastSeen;
-        private List<string> _targets = new List<string>();
-        private List<string> _ttps = new List<string>();
+        private List<string> _targets = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _ttps = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FirstSeen. 
@@ -90,7 +90,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Ttps property is set
         internal bool IsSetTtps()
         {
-            return this._ttps != null && this._ttps.Count > 0; 
+            return this._ttps != null && (this._ttps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

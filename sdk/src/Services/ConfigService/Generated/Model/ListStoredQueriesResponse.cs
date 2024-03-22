@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model
     public partial class ListStoredQueriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StoredQueryMetadata> _storedQueryMetadata = new List<StoredQueryMetadata>();
+        private List<StoredQueryMetadata> _storedQueryMetadata = AWSConfigs.InitializeCollections ? new List<StoredQueryMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if StoredQueryMetadata property is set
         internal bool IsSetStoredQueryMetadata()
         {
-            return this._storedQueryMetadata != null && this._storedQueryMetadata.Count > 0; 
+            return this._storedQueryMetadata != null && (this._storedQueryMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

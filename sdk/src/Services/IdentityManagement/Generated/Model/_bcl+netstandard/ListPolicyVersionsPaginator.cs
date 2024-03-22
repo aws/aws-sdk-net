@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the Versions
         /// </summary>
         public IPaginatedEnumerable<PolicyVersion> Versions => 
-            new PaginatedResultKeyResponse<ListPolicyVersionsResponse, PolicyVersion>(this, (i) => i.Versions);
+            new PaginatedResultKeyResponse<ListPolicyVersionsResponse, PolicyVersion>(this, (i) => i.Versions ?? new List<PolicyVersion>());
 
         internal ListPolicyVersionsPaginator(IAmazonIdentityManagementService client, ListPolicyVersionsRequest request)
         {

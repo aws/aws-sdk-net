@@ -33,7 +33,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class UpgradeStepItem
     {
-        private List<string> _issues = new List<string>();
+        private List<string> _issues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _progressPercent;
         private UpgradeStep _upgradeStep;
         private UpgradeStatus _upgradeStepStatus;
@@ -54,7 +54,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if Issues property is set
         internal bool IsSetIssues()
         {
-            return this._issues != null && this._issues.Count > 0; 
+            return this._issues != null && (this._issues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

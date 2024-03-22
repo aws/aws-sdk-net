@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListBotsResponse : AmazonWebServiceResponse
     {
-        private List<LexBotConfig> _lexBots = new List<LexBotConfig>();
+        private List<LexBotConfig> _lexBots = AWSConfigs.InitializeCollections ? new List<LexBotConfig>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if LexBots property is set
         internal bool IsSetLexBots()
         {
-            return this._lexBots != null && this._lexBots.Count > 0; 
+            return this._lexBots != null && (this._lexBots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

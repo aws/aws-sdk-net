@@ -45,7 +45,7 @@ namespace Amazon.CodeDeploy.Model
         /// Enumerable containing all of the DeploymentGroups
         /// </summary>
         public IPaginatedEnumerable<string> DeploymentGroups => 
-            new PaginatedResultKeyResponse<ListDeploymentGroupsResponse, string>(this, (i) => i.DeploymentGroups);
+            new PaginatedResultKeyResponse<ListDeploymentGroupsResponse, string>(this, (i) => i.DeploymentGroups ?? new List<string>());
 
         internal ListDeploymentGroupsPaginator(IAmazonCodeDeploy client, ListDeploymentGroupsRequest request)
         {

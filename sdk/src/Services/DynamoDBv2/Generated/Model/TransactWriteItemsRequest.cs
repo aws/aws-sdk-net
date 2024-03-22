@@ -112,7 +112,7 @@ namespace Amazon.DynamoDBv2.Model
         private string _clientRequestToken;
         private ReturnConsumedCapacity _returnConsumedCapacity;
         private ReturnItemCollectionMetrics _returnItemCollectionMetrics;
-        private List<TransactWriteItem> _transactItems = new List<TransactWriteItem>();
+        private List<TransactWriteItem> _transactItems = AWSConfigs.InitializeCollections ? new List<TransactWriteItem>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -213,7 +213,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if TransactItems property is set
         internal bool IsSetTransactItems()
         {
-            return this._transactItems != null && this._transactItems.Count > 0; 
+            return this._transactItems != null && (this._transactItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

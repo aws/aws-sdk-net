@@ -229,7 +229,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				var listItemVariable = (variableName + member.PropertyName).Replace(".",string.Empty) + "Value";
 #>
 <#=new string(' ', level * 4)#>				var <#=listVariable#> = <#=variableName#>.<#=member.PropertyName#>;
-<#=new string(' ', level * 4)#>				if (<#=listVariable#> != null && <#=listVariable#>.Count > 0) 
+<#=new string(' ', level * 4)#>				if (<#=listVariable#> != null && (<#=listVariable#>.Count > 0 || !AWSConfigs.InitializeCollections)) 
 <#=new string(' ', level * 4)#>				{						
 <#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>", "<#=xmlNamespace#>");
 <#=new string(' ', level * 4)#>					foreach (var <#=listItemVariable#> in <#=listVariable#>) 

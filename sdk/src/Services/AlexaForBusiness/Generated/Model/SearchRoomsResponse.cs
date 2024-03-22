@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model
     public partial class SearchRoomsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RoomData> _rooms = new List<RoomData>();
+        private List<RoomData> _rooms = AWSConfigs.InitializeCollections ? new List<RoomData>() : null;
         private int? _totalCount;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if Rooms property is set
         internal bool IsSetRooms()
         {
-            return this._rooms != null && this._rooms.Count > 0; 
+            return this._rooms != null && (this._rooms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

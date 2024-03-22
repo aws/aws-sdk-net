@@ -63,6 +63,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DetectAndCopyNewTopics.Value);
             }
 
+            if(requestObject.IsSetStartingPosition())
+            {
+                context.Writer.WritePropertyName("startingPosition");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ReplicationStartingPositionMarshaller.Instance;
+                marshaller.Marshall(requestObject.StartingPosition, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTopicsToExclude())
             {
                 context.Writer.WritePropertyName("topicsToExclude");

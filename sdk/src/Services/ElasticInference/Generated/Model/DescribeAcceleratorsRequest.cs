@@ -46,8 +46,8 @@ namespace Amazon.ElasticInference.Model
     /// </summary>
     public partial class DescribeAcceleratorsRequest : AmazonElasticInferenceRequest
     {
-        private List<string> _acceleratorIds = new List<string>();
-        private List<Filter> _filters = new List<Filter>();
+        private List<string> _acceleratorIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -67,7 +67,7 @@ namespace Amazon.ElasticInference.Model
         // Check to see if AcceleratorIds property is set
         internal bool IsSetAcceleratorIds()
         {
-            return this._acceleratorIds != null && this._acceleratorIds.Count > 0; 
+            return this._acceleratorIds != null && (this._acceleratorIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.ElasticInference.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

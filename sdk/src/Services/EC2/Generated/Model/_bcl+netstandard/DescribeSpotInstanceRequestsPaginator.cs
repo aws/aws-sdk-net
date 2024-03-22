@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the SpotInstanceRequests
         /// </summary>
         public IPaginatedEnumerable<SpotInstanceRequest> SpotInstanceRequests => 
-            new PaginatedResultKeyResponse<DescribeSpotInstanceRequestsResponse, SpotInstanceRequest>(this, (i) => i.SpotInstanceRequests);
+            new PaginatedResultKeyResponse<DescribeSpotInstanceRequestsResponse, SpotInstanceRequest>(this, (i) => i.SpotInstanceRequests ?? new List<SpotInstanceRequest>());
 
         internal DescribeSpotInstanceRequestsPaginator(IAmazonEC2 client, DescribeSpotInstanceRequestsRequest request)
         {

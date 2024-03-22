@@ -84,6 +84,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Subnets/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.Subnets == null)
+                        {
+                            response.Subnets = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Subnets.Add(item);
                         continue;

@@ -33,9 +33,9 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class DescribeProvisioningArtifactResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _info = new Dictionary<string, string>();
+        private Dictionary<string, string> _info = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ProvisioningArtifactDetail _provisioningArtifactDetail;
-        private List<ProvisioningArtifactParameter> _provisioningArtifactParameters = new List<ProvisioningArtifactParameter>();
+        private List<ProvisioningArtifactParameter> _provisioningArtifactParameters = AWSConfigs.InitializeCollections ? new List<ProvisioningArtifactParameter>() : null;
         private Status _status;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Info property is set
         internal bool IsSetInfo()
         {
-            return this._info != null && this._info.Count > 0; 
+            return this._info != null && (this._info.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisioningArtifactParameters property is set
         internal bool IsSetProvisioningArtifactParameters()
         {
-            return this._provisioningArtifactParameters != null && this._provisioningArtifactParameters.Count > 0; 
+            return this._provisioningArtifactParameters != null && (this._provisioningArtifactParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model
     public partial class SatelliteListItem
     {
         private EphemerisMetaData _currentEphemeris;
-        private List<string> _groundStations = new List<string>();
+        private List<string> _groundStations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _noradSatelliteID;
         private string _satelliteArn;
         private string _satelliteId;
@@ -73,7 +73,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if GroundStations property is set
         internal bool IsSetGroundStations()
         {
-            return this._groundStations != null && this._groundStations.Count > 0; 
+            return this._groundStations != null && (this._groundStations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

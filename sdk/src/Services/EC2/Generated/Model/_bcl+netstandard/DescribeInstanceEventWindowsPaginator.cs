@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the InstanceEventWindows
         /// </summary>
         public IPaginatedEnumerable<InstanceEventWindow> InstanceEventWindows => 
-            new PaginatedResultKeyResponse<DescribeInstanceEventWindowsResponse, InstanceEventWindow>(this, (i) => i.InstanceEventWindows);
+            new PaginatedResultKeyResponse<DescribeInstanceEventWindowsResponse, InstanceEventWindow>(this, (i) => i.InstanceEventWindows ?? new List<InstanceEventWindow>());
 
         internal DescribeInstanceEventWindowsPaginator(IAmazonEC2 client, DescribeInstanceEventWindowsRequest request)
         {

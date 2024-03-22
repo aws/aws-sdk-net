@@ -33,7 +33,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DetectTextResponse : AmazonWebServiceResponse
     {
-        private List<TextDetection> _textDetections = new List<TextDetection>();
+        private List<TextDetection> _textDetections = AWSConfigs.InitializeCollections ? new List<TextDetection>() : null;
         private string _textModelVersion;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if TextDetections property is set
         internal bool IsSetTextDetections()
         {
-            return this._textDetections != null && this._textDetections.Count > 0; 
+            return this._textDetections != null && (this._textDetections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

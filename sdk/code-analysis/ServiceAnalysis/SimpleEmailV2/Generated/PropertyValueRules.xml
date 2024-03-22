@@ -242,6 +242,18 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.MessageHeader.Name</property>
+    <min>1</min>
+    <max>126</max>
+    <pattern>^[!-9;-@A-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.MessageHeader.Value</property>
+    <min>1</min>
+    <max>870</max>
+    <pattern>[ -~]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.MessageInsightsDataSource.MaxResults</property>
     <min>1</min>
     <max>10000</max>

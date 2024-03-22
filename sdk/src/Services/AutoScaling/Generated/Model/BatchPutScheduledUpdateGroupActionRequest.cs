@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model
     public partial class BatchPutScheduledUpdateGroupActionRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<ScheduledUpdateGroupActionRequest> _scheduledUpdateGroupActions = new List<ScheduledUpdateGroupActionRequest>();
+        private List<ScheduledUpdateGroupActionRequest> _scheduledUpdateGroupActions = AWSConfigs.InitializeCollections ? new List<ScheduledUpdateGroupActionRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScheduledUpdateGroupActions property is set
         internal bool IsSetScheduledUpdateGroupActions()
         {
-            return this._scheduledUpdateGroupActions != null && this._scheduledUpdateGroupActions.Count > 0; 
+            return this._scheduledUpdateGroupActions != null && (this._scheduledUpdateGroupActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

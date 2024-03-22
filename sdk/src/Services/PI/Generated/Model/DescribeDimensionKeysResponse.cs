@@ -35,9 +35,9 @@ namespace Amazon.PI.Model
     {
         private DateTime? _alignedEndTime;
         private DateTime? _alignedStartTime;
-        private List<DimensionKeyDescription> _keys = new List<DimensionKeyDescription>();
+        private List<DimensionKeyDescription> _keys = AWSConfigs.InitializeCollections ? new List<DimensionKeyDescription>() : null;
         private string _nextToken;
-        private List<ResponsePartitionKey> _partitionKeys = new List<ResponsePartitionKey>();
+        private List<ResponsePartitionKey> _partitionKeys = AWSConfigs.InitializeCollections ? new List<ResponsePartitionKey>() : null;
 
         /// <summary>
         /// Gets and sets the property AlignedEndTime. 
@@ -94,7 +94,7 @@ namespace Amazon.PI.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.PI.Model
         // Check to see if PartitionKeys property is set
         internal bool IsSetPartitionKeys()
         {
-            return this._partitionKeys != null && this._partitionKeys.Count > 0; 
+            return this._partitionKeys != null && (this._partitionKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

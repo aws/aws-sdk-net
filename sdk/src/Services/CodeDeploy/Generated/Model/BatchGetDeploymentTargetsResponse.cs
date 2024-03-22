@@ -33,7 +33,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class BatchGetDeploymentTargetsResponse : AmazonWebServiceResponse
     {
-        private List<DeploymentTarget> _deploymentTargets = new List<DeploymentTarget>();
+        private List<DeploymentTarget> _deploymentTargets = AWSConfigs.InitializeCollections ? new List<DeploymentTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property DeploymentTargets. 
@@ -71,7 +71,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if DeploymentTargets property is set
         internal bool IsSetDeploymentTargets()
         {
-            return this._deploymentTargets != null && this._deploymentTargets.Count > 0; 
+            return this._deploymentTargets != null && (this._deploymentTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

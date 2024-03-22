@@ -42,7 +42,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeDeliveryChannelsRequest : AmazonConfigServiceRequest
     {
-        private List<string> _deliveryChannelNames = new List<string>();
+        private List<string> _deliveryChannelNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DeliveryChannelNames. 
@@ -59,7 +59,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if DeliveryChannelNames property is set
         internal bool IsSetDeliveryChannelNames()
         {
-            return this._deliveryChannelNames != null && this._deliveryChannelNames.Count > 0; 
+            return this._deliveryChannelNames != null && (this._deliveryChannelNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

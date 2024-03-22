@@ -84,6 +84,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AnomalyDetectors/member", targetDepth))
                     {
                         var unmarshaller = AnomalyDetectorUnmarshaller.Instance;
+                        if (response.AnomalyDetectors == null)
+                        {
+                            response.AnomalyDetectors = new List<AnomalyDetector>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AnomalyDetectors.Add(item);
                         continue;

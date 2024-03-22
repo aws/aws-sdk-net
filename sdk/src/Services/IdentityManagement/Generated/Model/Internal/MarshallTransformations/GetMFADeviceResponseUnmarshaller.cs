@@ -84,6 +84,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Certifications/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        if (response.Certifications == null)
+                        {
+                            response.Certifications = new Dictionary<string, string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Certifications.Add(item);
                         continue;

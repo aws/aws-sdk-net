@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model
     public partial class ListResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceInfo> _resourceInfoList = new List<ResourceInfo>();
+        private List<ResourceInfo> _resourceInfoList = AWSConfigs.InitializeCollections ? new List<ResourceInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if ResourceInfoList property is set
         internal bool IsSetResourceInfoList()
         {
-            return this._resourceInfoList != null && this._resourceInfoList.Count > 0; 
+            return this._resourceInfoList != null && (this._resourceInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

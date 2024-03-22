@@ -99,7 +99,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class PutMetricDataRequest : AmazonCloudWatchRequest
     {
-        private List<MetricDatum> _metricData = new List<MetricDatum>();
+        private List<MetricDatum> _metricData = AWSConfigs.InitializeCollections ? new List<MetricDatum>() : null;
         private string _awsNamespace;
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if MetricData property is set
         internal bool IsSetMetricData()
         {
-            return this._metricData != null && this._metricData.Count > 0; 
+            return this._metricData != null && (this._metricData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

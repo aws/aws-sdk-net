@@ -45,7 +45,7 @@ namespace Amazon.QConnect.Model
         /// Enumerable containing all of the KnowledgeBaseSummaries
         /// </summary>
         public IPaginatedEnumerable<KnowledgeBaseSummary> KnowledgeBaseSummaries => 
-            new PaginatedResultKeyResponse<ListKnowledgeBasesResponse, KnowledgeBaseSummary>(this, (i) => i.KnowledgeBaseSummaries);
+            new PaginatedResultKeyResponse<ListKnowledgeBasesResponse, KnowledgeBaseSummary>(this, (i) => i.KnowledgeBaseSummaries ?? new List<KnowledgeBaseSummary>());
 
         internal ListKnowledgeBasesPaginator(IAmazonQConnect client, ListKnowledgeBasesRequest request)
         {

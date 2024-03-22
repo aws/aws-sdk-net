@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeMovingAddressesResponse : AmazonWebServiceResponse
     {
-        private List<MovingAddressStatus> _movingAddressStatuses = new List<MovingAddressStatus>();
+        private List<MovingAddressStatus> _movingAddressStatuses = AWSConfigs.InitializeCollections ? new List<MovingAddressStatus>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if MovingAddressStatuses property is set
         internal bool IsSetMovingAddressStatuses()
         {
-            return this._movingAddressStatuses != null && this._movingAddressStatuses.Count > 0; 
+            return this._movingAddressStatuses != null && (this._movingAddressStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

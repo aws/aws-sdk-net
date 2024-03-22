@@ -35,7 +35,7 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class UpdateStorageSystemRequest : AmazonDataSyncRequest
     {
-        private List<string> _agentArns = new List<string>();
+        private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _cloudWatchLogGroupArn;
         private Credentials _credentials;
         private string _name;
@@ -59,7 +59,7 @@ namespace Amazon.DataSync.Model
         // Check to see if AgentArns property is set
         internal bool IsSetAgentArns()
         {
-            return this._agentArns != null && this._agentArns.Count > 0; 
+            return this._agentArns != null && (this._agentArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

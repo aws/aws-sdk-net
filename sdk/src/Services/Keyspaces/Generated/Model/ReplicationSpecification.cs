@@ -44,7 +44,7 @@ namespace Amazon.Keyspaces.Model
     /// </summary>
     public partial class ReplicationSpecification
     {
-        private List<string> _regionList = new List<string>();
+        private List<string> _regionList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Rs _replicationStrategy;
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if RegionList property is set
         internal bool IsSetRegionList()
         {
-            return this._regionList != null && this._regionList.Count > 0; 
+            return this._regionList != null && (this._regionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

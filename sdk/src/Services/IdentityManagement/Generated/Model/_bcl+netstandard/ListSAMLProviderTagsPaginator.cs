@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<Tag> Tags => 
-            new PaginatedResultKeyResponse<ListSAMLProviderTagsResponse, Tag>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<ListSAMLProviderTagsResponse, Tag>(this, (i) => i.Tags ?? new List<Tag>());
 
         internal ListSAMLProviderTagsPaginator(IAmazonIdentityManagementService client, ListSAMLProviderTagsRequest request)
         {

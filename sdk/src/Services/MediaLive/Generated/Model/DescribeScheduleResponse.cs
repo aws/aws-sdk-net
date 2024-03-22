@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model
     public partial class DescribeScheduleResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScheduleAction> _scheduleActions = new List<ScheduleAction>();
+        private List<ScheduleAction> _scheduleActions = AWSConfigs.InitializeCollections ? new List<ScheduleAction>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. The next token; for use in pagination.
@@ -63,7 +63,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if ScheduleActions property is set
         internal bool IsSetScheduleActions()
         {
-            return this._scheduleActions != null && this._scheduleActions.Count > 0; 
+            return this._scheduleActions != null && (this._scheduleActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

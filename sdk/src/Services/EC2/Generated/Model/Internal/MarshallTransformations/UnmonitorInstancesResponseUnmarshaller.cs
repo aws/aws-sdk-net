@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instancesSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceMonitoringUnmarshaller.Instance;
+                        if (response.InstanceMonitorings == null)
+                        {
+                            response.InstanceMonitorings = new List<InstanceMonitoring>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.InstanceMonitorings.Add(item);
                         continue;

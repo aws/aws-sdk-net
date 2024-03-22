@@ -65,7 +65,7 @@ namespace Amazon.NeptuneGraph.Model
         private ExplainMode _explainMode;
         private string _graphIdentifier;
         private QueryLanguage _language;
-        private Dictionary<string, Amazon.Runtime.Documents.Document> _parameters = new Dictionary<string, Amazon.Runtime.Documents.Document>();
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
         private PlanCacheType _planCache;
         private string _queryString;
         private int? _queryTimeoutMilliseconds;
@@ -144,7 +144,7 @@ namespace Amazon.NeptuneGraph.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

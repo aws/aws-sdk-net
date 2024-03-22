@@ -54,18 +54,19 @@ namespace Amazon.Batch.Model
     {
         private ArrayProperties _arrayProperties;
         private ContainerOverrides _containerOverrides;
-        private List<JobDependency> _dependsOn = new List<JobDependency>();
+        private List<JobDependency> _dependsOn = AWSConfigs.InitializeCollections ? new List<JobDependency>() : null;
+        private EcsPropertiesOverride _ecsPropertiesOverride;
         private EksPropertiesOverride _eksPropertiesOverride;
         private string _jobDefinition;
         private string _jobName;
         private string _jobQueue;
         private NodeOverrides _nodeOverrides;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
         private int? _schedulingPriorityOverride;
         private string _shareIdentifier;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private JobTimeout _timeout;
 
         /// <summary>
@@ -92,11 +93,11 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerOverrides. 
         /// <para>
-        /// An object with various properties that override the defaults for the job definition
-        /// that specify the name of a container in the specified job definition and the overrides
-        /// it should receive. You can override the default command for a container, which is
-        /// specified in the job definition or the Docker image, with a <c>command</c> override.
-        /// You can also override existing environment variables on a container or add new environment
+        /// An object with properties that override the defaults for the job definition that specify
+        /// the name of a container in the specified job definition and the overrides it should
+        /// receive. You can override the default command for a container, which is specified
+        /// in the job definition or the Docker image, with a <c>command</c> override. You can
+        /// also override existing environment variables on a container or add new environment
         /// variables to it with an <c>environment</c> override.
         /// </para>
         /// </summary>
@@ -132,14 +133,33 @@ namespace Amazon.Batch.Model
         // Check to see if DependsOn property is set
         internal bool IsSetDependsOn()
         {
-            return this._dependsOn != null && this._dependsOn.Count > 0; 
+            return this._dependsOn != null && (this._dependsOn.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsPropertiesOverride. 
+        /// <para>
+        /// An object, with properties that override defaults for the job definition, can only
+        /// be specified for jobs that are run on Amazon ECS resources.
+        /// </para>
+        /// </summary>
+        public EcsPropertiesOverride EcsPropertiesOverride
+        {
+            get { return this._ecsPropertiesOverride; }
+            set { this._ecsPropertiesOverride = value; }
+        }
+
+        // Check to see if EcsPropertiesOverride property is set
+        internal bool IsSetEcsPropertiesOverride()
+        {
+            return this._ecsPropertiesOverride != null;
         }
 
         /// <summary>
         /// Gets and sets the property EksPropertiesOverride. 
         /// <para>
-        /// An object that can only be specified for jobs that are run on Amazon EKS resources
-        /// with various properties that override defaults for the job definition.
+        /// An object, with properties that override defaults for the job definition, can only
+        /// be specified for jobs that are run on Amazon EKS resources.
         /// </para>
         /// </summary>
         public EksPropertiesOverride EksPropertiesOverride
@@ -265,7 +285,7 @@ namespace Amazon.Batch.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -380,7 +400,7 @@ namespace Amazon.Batch.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

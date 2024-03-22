@@ -34,7 +34,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class S3DataSourceConfiguration
     {
         private string _bucketArn;
-        private List<string> _inclusionPrefixes = new List<string>();
+        private List<string> _inclusionPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BucketArn.
@@ -65,7 +65,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if InclusionPrefixes property is set
         internal bool IsSetInclusionPrefixes()
         {
-            return this._inclusionPrefixes != null && this._inclusionPrefixes.Count > 0; 
+            return this._inclusionPrefixes != null && (this._inclusionPrefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

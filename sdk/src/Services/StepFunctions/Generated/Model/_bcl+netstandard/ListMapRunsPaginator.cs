@@ -45,7 +45,7 @@ namespace Amazon.StepFunctions.Model
         /// Enumerable containing all of the MapRuns
         /// </summary>
         public IPaginatedEnumerable<MapRunListItem> MapRuns => 
-            new PaginatedResultKeyResponse<ListMapRunsResponse, MapRunListItem>(this, (i) => i.MapRuns);
+            new PaginatedResultKeyResponse<ListMapRunsResponse, MapRunListItem>(this, (i) => i.MapRuns ?? new List<MapRunListItem>());
 
         internal ListMapRunsPaginator(IAmazonStepFunctions client, ListMapRunsRequest request)
         {

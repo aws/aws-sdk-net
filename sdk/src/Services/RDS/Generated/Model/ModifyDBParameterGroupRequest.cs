@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
     public partial class ModifyDBParameterGroupRequest : AmazonRDSRequest
     {
         private string _dbParameterGroupName;
-        private List<Parameter> _parameters = new List<Parameter>();
+        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -146,7 +146,7 @@ namespace Amazon.RDS.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

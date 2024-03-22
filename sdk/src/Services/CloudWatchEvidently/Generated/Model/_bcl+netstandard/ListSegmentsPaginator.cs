@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Enumerable containing all of the Segments
         /// </summary>
         public IPaginatedEnumerable<Segment> Segments => 
-            new PaginatedResultKeyResponse<ListSegmentsResponse, Segment>(this, (i) => i.Segments);
+            new PaginatedResultKeyResponse<ListSegmentsResponse, Segment>(this, (i) => i.Segments ?? new List<Segment>());
 
         internal ListSegmentsPaginator(IAmazonCloudWatchEvidently client, ListSegmentsRequest request)
         {

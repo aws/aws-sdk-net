@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the AssociationVersions
         /// </summary>
         public IPaginatedEnumerable<AssociationVersionInfo> AssociationVersions => 
-            new PaginatedResultKeyResponse<ListAssociationVersionsResponse, AssociationVersionInfo>(this, (i) => i.AssociationVersions);
+            new PaginatedResultKeyResponse<ListAssociationVersionsResponse, AssociationVersionInfo>(this, (i) => i.AssociationVersions ?? new List<AssociationVersionInfo>());
 
         internal ListAssociationVersionsPaginator(IAmazonSimpleSystemsManagement client, ListAssociationVersionsRequest request)
         {

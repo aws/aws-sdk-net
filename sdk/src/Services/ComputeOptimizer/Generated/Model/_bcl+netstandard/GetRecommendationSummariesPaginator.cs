@@ -45,7 +45,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Enumerable containing all of the RecommendationSummaries
         /// </summary>
         public IPaginatedEnumerable<RecommendationSummary> RecommendationSummaries => 
-            new PaginatedResultKeyResponse<GetRecommendationSummariesResponse, RecommendationSummary>(this, (i) => i.RecommendationSummaries);
+            new PaginatedResultKeyResponse<GetRecommendationSummariesResponse, RecommendationSummary>(this, (i) => i.RecommendationSummaries ?? new List<RecommendationSummary>());
 
         internal GetRecommendationSummariesPaginator(IAmazonComputeOptimizer client, GetRecommendationSummariesRequest request)
         {

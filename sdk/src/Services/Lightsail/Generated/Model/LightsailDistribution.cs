@@ -34,10 +34,10 @@ namespace Amazon.Lightsail.Model
     public partial class LightsailDistribution
     {
         private bool? _ableToUpdateBundle;
-        private List<string> _alternativeDomainNames = new List<string>();
+        private List<string> _alternativeDomainNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _arn;
         private string _bundleId;
-        private List<CacheBehaviorPerPath> _cacheBehaviors = new List<CacheBehaviorPerPath>();
+        private List<CacheBehaviorPerPath> _cacheBehaviors = AWSConfigs.InitializeCollections ? new List<CacheBehaviorPerPath>() : null;
         private CacheSettings _cacheBehaviorSettings;
         private string _certificateName;
         private DateTime? _createdAt;
@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model
         private ResourceType _resourceType;
         private string _status;
         private string _supportCode;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AbleToUpdateBundle. 
@@ -92,7 +92,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if AlternativeDomainNames property is set
         internal bool IsSetAlternativeDomainNames()
         {
-            return this._alternativeDomainNames != null && this._alternativeDomainNames.Count > 0; 
+            return this._alternativeDomainNames != null && (this._alternativeDomainNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if CacheBehaviors property is set
         internal bool IsSetCacheBehaviors()
         {
-            return this._cacheBehaviors != null && this._cacheBehaviors.Count > 0; 
+            return this._cacheBehaviors != null && (this._cacheBehaviors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -438,7 +438,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

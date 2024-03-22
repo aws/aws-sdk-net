@@ -33,7 +33,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class ListIdentityProvidersResponse : AmazonWebServiceResponse
     {
-        private List<IdentityProviderSummary> _identityProviders = new List<IdentityProviderSummary>();
+        private List<IdentityProviderSummary> _identityProviders = AWSConfigs.InitializeCollections ? new List<IdentityProviderSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if IdentityProviders property is set
         internal bool IsSetIdentityProviders()
         {
-            return this._identityProviders != null && this._identityProviders.Count > 0; 
+            return this._identityProviders != null && (this._identityProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

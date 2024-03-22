@@ -43,7 +43,7 @@ namespace Amazon.FraudDetector.Model
     public partial class AggregatedLogOddsMetric
     {
         private float? _aggregatedVariablesImportance;
-        private List<string> _variableNames = new List<string>();
+        private List<string> _variableNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AggregatedVariablesImportance. 
@@ -81,7 +81,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if VariableNames property is set
         internal bool IsSetVariableNames()
         {
-            return this._variableNames != null && this._variableNames.Count > 0; 
+            return this._variableNames != null && (this._variableNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

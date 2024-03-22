@@ -35,7 +35,7 @@ namespace Amazon.ServerMigrationService.Model
     public partial class PutAppReplicationConfigurationRequest : AmazonServerMigrationServiceRequest
     {
         private string _appId;
-        private List<ServerGroupReplicationConfiguration> _serverGroupReplicationConfigurations = new List<ServerGroupReplicationConfiguration>();
+        private List<ServerGroupReplicationConfiguration> _serverGroupReplicationConfigurations = AWSConfigs.InitializeCollections ? new List<ServerGroupReplicationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AppId. 
@@ -70,7 +70,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ServerGroupReplicationConfigurations property is set
         internal bool IsSetServerGroupReplicationConfigurations()
         {
-            return this._serverGroupReplicationConfigurations != null && this._serverGroupReplicationConfigurations.Count > 0; 
+            return this._serverGroupReplicationConfigurations != null && (this._serverGroupReplicationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

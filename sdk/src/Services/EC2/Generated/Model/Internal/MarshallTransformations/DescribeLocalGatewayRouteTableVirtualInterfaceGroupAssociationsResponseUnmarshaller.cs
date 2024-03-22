@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("localGatewayRouteTableVirtualInterfaceGroupAssociationSet/item", targetDepth))
                     {
                         var unmarshaller = LocalGatewayRouteTableVirtualInterfaceGroupAssociationUnmarshaller.Instance;
+                        if (response.LocalGatewayRouteTableVirtualInterfaceGroupAssociations == null)
+                        {
+                            response.LocalGatewayRouteTableVirtualInterfaceGroupAssociations = new List<LocalGatewayRouteTableVirtualInterfaceGroupAssociation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.LocalGatewayRouteTableVirtualInterfaceGroupAssociations.Add(item);
                         continue;

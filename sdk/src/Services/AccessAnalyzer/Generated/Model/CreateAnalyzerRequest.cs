@@ -35,10 +35,10 @@ namespace Amazon.AccessAnalyzer.Model
     public partial class CreateAnalyzerRequest : AmazonAccessAnalyzerRequest
     {
         private string _analyzerName;
-        private List<InlineArchiveRule> _archiveRules = new List<InlineArchiveRule>();
+        private List<InlineArchiveRule> _archiveRules = AWSConfigs.InitializeCollections ? new List<InlineArchiveRule>() : null;
         private string _clientToken;
         private AnalyzerConfiguration _configuration;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Type _type;
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if ArchiveRules property is set
         internal bool IsSetArchiveRules()
         {
-            return this._archiveRules != null && this._archiveRules.Count > 0; 
+            return this._archiveRules != null && (this._archiveRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,14 +132,14 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of analyzer to create. Only <c>ACCOUNT</c>, <c>ORGANIZATION</c>, <c>ACCOUNT_UNUSED_ACCESS</c>,
-        /// and <c>ORGANIZTAION_UNUSED_ACCESS</c> analyzers are supported. You can create only
+        /// and <c>ORGANIZATION_UNUSED_ACCESS</c> analyzers are supported. You can create only
         /// one analyzer per account per Region. You can create up to 5 analyzers per organization
         /// per Region.
         /// </para>

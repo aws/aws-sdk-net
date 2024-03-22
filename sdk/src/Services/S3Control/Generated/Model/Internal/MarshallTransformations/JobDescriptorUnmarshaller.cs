@@ -75,6 +75,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("FailureReasons/member", targetDepth))
                     {
+                        if (unmarshalledObject.FailureReasons == null)
+                        {
+                            unmarshalledObject.FailureReasons = new List<JobFailure>();
+                        }
                         var unmarshaller = JobFailureUnmarshaller.Instance;
                         unmarshalledObject.FailureReasons.Add(unmarshaller.Unmarshall(context));
                         continue;

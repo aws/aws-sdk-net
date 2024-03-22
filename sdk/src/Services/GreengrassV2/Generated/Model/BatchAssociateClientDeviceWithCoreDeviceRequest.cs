@@ -49,7 +49,7 @@ namespace Amazon.GreengrassV2.Model
     public partial class BatchAssociateClientDeviceWithCoreDeviceRequest : AmazonGreengrassV2Request
     {
         private string _coreDeviceThingName;
-        private List<AssociateClientDeviceWithCoreDeviceEntry> _entries = new List<AssociateClientDeviceWithCoreDeviceEntry>();
+        private List<AssociateClientDeviceWithCoreDeviceEntry> _entries = AWSConfigs.InitializeCollections ? new List<AssociateClientDeviceWithCoreDeviceEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property CoreDeviceThingName. 
@@ -86,7 +86,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

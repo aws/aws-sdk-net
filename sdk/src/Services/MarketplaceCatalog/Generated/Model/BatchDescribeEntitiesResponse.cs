@@ -33,8 +33,8 @@ namespace Amazon.MarketplaceCatalog.Model
     /// </summary>
     public partial class BatchDescribeEntitiesResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, EntityDetail> _entityDetails = new Dictionary<string, EntityDetail>();
-        private Dictionary<string, BatchDescribeErrorDetail> _errors = new Dictionary<string, BatchDescribeErrorDetail>();
+        private Dictionary<string, EntityDetail> _entityDetails = AWSConfigs.InitializeCollections ? new Dictionary<string, EntityDetail>() : null;
+        private Dictionary<string, BatchDescribeErrorDetail> _errors = AWSConfigs.InitializeCollections ? new Dictionary<string, BatchDescribeErrorDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property EntityDetails. 
@@ -51,7 +51,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if EntityDetails property is set
         internal bool IsSetEntityDetails()
         {
-            return this._entityDetails != null && this._entityDetails.Count > 0; 
+            return this._entityDetails != null && (this._entityDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

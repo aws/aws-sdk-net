@@ -45,7 +45,7 @@ namespace Amazon.AppFabric.Model
         /// Enumerable containing all of the AppBundleSummaryList
         /// </summary>
         public IPaginatedEnumerable<AppBundleSummary> AppBundleSummaryList => 
-            new PaginatedResultKeyResponse<ListAppBundlesResponse, AppBundleSummary>(this, (i) => i.AppBundleSummaryList);
+            new PaginatedResultKeyResponse<ListAppBundlesResponse, AppBundleSummary>(this, (i) => i.AppBundleSummaryList ?? new List<AppBundleSummary>());
 
         internal ListAppBundlesPaginator(IAmazonAppFabric client, ListAppBundlesRequest request)
         {

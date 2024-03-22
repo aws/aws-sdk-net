@@ -90,6 +90,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReservedNodeExchangeStatusDetails/ReservedNodeExchangeStatus", targetDepth))
                     {
                         var unmarshaller = ReservedNodeExchangeStatusUnmarshaller.Instance;
+                        if (response.ReservedNodeExchangeStatusDetails == null)
+                        {
+                            response.ReservedNodeExchangeStatusDetails = new List<ReservedNodeExchangeStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ReservedNodeExchangeStatusDetails.Add(item);
                         continue;

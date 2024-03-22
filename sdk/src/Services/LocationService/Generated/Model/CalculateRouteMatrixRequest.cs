@@ -83,9 +83,9 @@ namespace Amazon.LocationService.Model
         private string _calculatorName;
         private CalculateRouteCarModeOptions _carModeOptions;
         private bool? _departNow;
-        private List<List<double>> _departurePositions = new List<List<double>>();
+        private List<List<double>> _departurePositions = AWSConfigs.InitializeCollections ? new List<List<double>>() : null;
         private DateTime? _departureTime;
-        private List<List<double>> _destinationPositions = new List<List<double>>();
+        private List<List<double>> _destinationPositions = AWSConfigs.InitializeCollections ? new List<List<double>>() : null;
         private DistanceUnit _distanceUnit;
         private string _key;
         private TravelMode _travelMode;
@@ -198,7 +198,7 @@ namespace Amazon.LocationService.Model
         // Check to see if DeparturePositions property is set
         internal bool IsSetDeparturePositions()
         {
-            return this._departurePositions != null && this._departurePositions.Count > 0; 
+            return this._departurePositions != null && (this._departurePositions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +269,7 @@ namespace Amazon.LocationService.Model
         // Check to see if DestinationPositions property is set
         internal bool IsSetDestinationPositions()
         {
-            return this._destinationPositions != null && this._destinationPositions.Count > 0; 
+            return this._destinationPositions != null && (this._destinationPositions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

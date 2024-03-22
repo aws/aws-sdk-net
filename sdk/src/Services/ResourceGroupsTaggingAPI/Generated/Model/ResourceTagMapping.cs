@@ -35,7 +35,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     {
         private ComplianceDetails _complianceDetails;
         private string _resourceARN;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ComplianceDetails. 
@@ -90,7 +90,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

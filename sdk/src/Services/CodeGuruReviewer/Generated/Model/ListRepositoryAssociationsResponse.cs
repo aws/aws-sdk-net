@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruReviewer.Model
     public partial class ListRepositoryAssociationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RepositoryAssociationSummary> _repositoryAssociationSummaries = new List<RepositoryAssociationSummary>();
+        private List<RepositoryAssociationSummary> _repositoryAssociationSummaries = AWSConfigs.InitializeCollections ? new List<RepositoryAssociationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if RepositoryAssociationSummaries property is set
         internal bool IsSetRepositoryAssociationSummaries()
         {
-            return this._repositoryAssociationSummaries != null && this._repositoryAssociationSummaries.Count > 0; 
+            return this._repositoryAssociationSummaries != null && (this._repositoryAssociationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

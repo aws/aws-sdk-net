@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model
     public partial class RecipeStep
     {
         private RecipeAction _action;
-        private List<ConditionExpression> _conditionExpressions = new List<ConditionExpression>();
+        private List<ConditionExpression> _conditionExpressions = AWSConfigs.InitializeCollections ? new List<ConditionExpression>() : null;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -76,7 +76,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if ConditionExpressions property is set
         internal bool IsSetConditionExpressions()
         {
-            return this._conditionExpressions != null && this._conditionExpressions.Count > 0; 
+            return this._conditionExpressions != null && (this._conditionExpressions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

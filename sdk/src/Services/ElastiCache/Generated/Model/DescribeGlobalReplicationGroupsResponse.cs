@@ -33,7 +33,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class DescribeGlobalReplicationGroupsResponse : AmazonWebServiceResponse
     {
-        private List<GlobalReplicationGroup> _globalReplicationGroups = new List<GlobalReplicationGroup>();
+        private List<GlobalReplicationGroup> _globalReplicationGroups = AWSConfigs.InitializeCollections ? new List<GlobalReplicationGroup>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if GlobalReplicationGroups property is set
         internal bool IsSetGlobalReplicationGroups()
         {
-            return this._globalReplicationGroups != null && this._globalReplicationGroups.Count > 0; 
+            return this._globalReplicationGroups != null && (this._globalReplicationGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

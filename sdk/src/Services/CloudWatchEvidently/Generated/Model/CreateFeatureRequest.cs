@@ -45,12 +45,12 @@ namespace Amazon.CloudWatchEvidently.Model
     {
         private string _defaultVariation;
         private string _description;
-        private Dictionary<string, string> _entityOverrides = new Dictionary<string, string>();
+        private Dictionary<string, string> _entityOverrides = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private FeatureEvaluationStrategy _evaluationStrategy;
         private string _name;
         private string _project;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<VariationConfig> _variations = new List<VariationConfig>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<VariationConfig> _variations = AWSConfigs.InitializeCollections ? new List<VariationConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultVariation. 
@@ -125,7 +125,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if EntityOverrides property is set
         internal bool IsSetEntityOverrides()
         {
-            return this._entityOverrides != null && this._entityOverrides.Count > 0; 
+            return this._entityOverrides != null && (this._entityOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -221,7 +221,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -240,7 +240,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Variations property is set
         internal bool IsSetVariations()
         {
-            return this._variations != null && this._variations.Count > 0; 
+            return this._variations != null && (this._variations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

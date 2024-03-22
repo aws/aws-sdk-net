@@ -33,7 +33,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class DescribeDomainControllersResponse : AmazonWebServiceResponse
     {
-        private List<DomainController> _domainControllers = new List<DomainController>();
+        private List<DomainController> _domainControllers = AWSConfigs.InitializeCollections ? new List<DomainController>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if DomainControllers property is set
         internal bool IsSetDomainControllers()
         {
-            return this._domainControllers != null && this._domainControllers.Count > 0; 
+            return this._domainControllers != null && (this._domainControllers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

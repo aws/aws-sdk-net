@@ -36,7 +36,7 @@ namespace Amazon.AutoScaling.Model
         private AlarmSpecification _alarmSpecification;
         private bool? _autoRollback;
         private int? _checkpointDelay;
-        private List<int> _checkpointPercentages = new List<int>();
+        private List<int> _checkpointPercentages = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _instanceWarmup;
         private int? _maxHealthyPercentage;
         private int? _minHealthyPercentage;
@@ -151,7 +151,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if CheckpointPercentages property is set
         internal bool IsSetCheckpointPercentages()
         {
-            return this._checkpointPercentages != null && this._checkpointPercentages.Count > 0; 
+            return this._checkpointPercentages != null && (this._checkpointPercentages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

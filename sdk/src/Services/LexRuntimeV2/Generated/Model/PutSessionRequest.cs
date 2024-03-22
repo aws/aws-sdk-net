@@ -38,8 +38,8 @@ namespace Amazon.LexRuntimeV2.Model
         private string _botAliasId;
         private string _botId;
         private string _localeId;
-        private List<Message> _messages = new List<Message>();
-        private Dictionary<string, string> _requestAttributes = new Dictionary<string, string>();
+        private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
+        private Dictionary<string, string> _requestAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _responseContentType;
         private string _sessionId;
         private SessionState _sessionStateValue;
@@ -118,7 +118,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if RequestAttributes property is set
         internal bool IsSetRequestAttributes()
         {
-            return this._requestAttributes != null && this._requestAttributes.Count > 0; 
+            return this._requestAttributes != null && (this._requestAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

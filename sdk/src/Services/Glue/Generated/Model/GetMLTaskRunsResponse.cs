@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     public partial class GetMLTaskRunsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TaskRun> _taskRuns = new List<TaskRun>();
+        private List<TaskRun> _taskRuns = AWSConfigs.InitializeCollections ? new List<TaskRun>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Glue.Model
         // Check to see if TaskRuns property is set
         internal bool IsSetTaskRuns()
         {
-            return this._taskRuns != null && this._taskRuns.Count > 0; 
+            return this._taskRuns != null && (this._taskRuns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

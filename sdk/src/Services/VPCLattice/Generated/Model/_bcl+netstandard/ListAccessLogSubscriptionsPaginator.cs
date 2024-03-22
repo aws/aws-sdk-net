@@ -45,7 +45,7 @@ namespace Amazon.VPCLattice.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<AccessLogSubscriptionSummary> Items => 
-            new PaginatedResultKeyResponse<ListAccessLogSubscriptionsResponse, AccessLogSubscriptionSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListAccessLogSubscriptionsResponse, AccessLogSubscriptionSummary>(this, (i) => i.Items ?? new List<AccessLogSubscriptionSummary>());
 
         internal ListAccessLogSubscriptionsPaginator(IAmazonVPCLattice client, ListAccessLogSubscriptionsRequest request)
         {

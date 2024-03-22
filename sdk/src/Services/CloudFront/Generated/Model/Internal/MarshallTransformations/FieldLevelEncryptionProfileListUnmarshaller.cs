@@ -57,6 +57,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Items/FieldLevelEncryptionProfileSummary", targetDepth))
                     {
+                        if (unmarshalledObject.Items == null)
+                        {
+                            unmarshalledObject.Items = new List<FieldLevelEncryptionProfileSummary>();
+                        }
                         var unmarshaller = FieldLevelEncryptionProfileSummaryUnmarshaller.Instance;
                         unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
                         continue;

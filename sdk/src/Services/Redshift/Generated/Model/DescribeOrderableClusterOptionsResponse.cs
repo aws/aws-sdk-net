@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeOrderableClusterOptionsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<OrderableClusterOption> _orderableClusterOptions = new List<OrderableClusterOption>();
+        private List<OrderableClusterOption> _orderableClusterOptions = AWSConfigs.InitializeCollections ? new List<OrderableClusterOption>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -75,7 +75,7 @@ namespace Amazon.Redshift.Model
         // Check to see if OrderableClusterOptions property is set
         internal bool IsSetOrderableClusterOptions()
         {
-            return this._orderableClusterOptions != null && this._orderableClusterOptions.Count > 0; 
+            return this._orderableClusterOptions != null && (this._orderableClusterOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

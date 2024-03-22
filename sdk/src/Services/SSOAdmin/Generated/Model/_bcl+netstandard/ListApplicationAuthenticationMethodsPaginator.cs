@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the AuthenticationMethods
         /// </summary>
         public IPaginatedEnumerable<AuthenticationMethodItem> AuthenticationMethods => 
-            new PaginatedResultKeyResponse<ListApplicationAuthenticationMethodsResponse, AuthenticationMethodItem>(this, (i) => i.AuthenticationMethods);
+            new PaginatedResultKeyResponse<ListApplicationAuthenticationMethodsResponse, AuthenticationMethodItem>(this, (i) => i.AuthenticationMethods ?? new List<AuthenticationMethodItem>());
 
         internal ListApplicationAuthenticationMethodsPaginator(IAmazonSSOAdmin client, ListApplicationAuthenticationMethodsRequest request)
         {

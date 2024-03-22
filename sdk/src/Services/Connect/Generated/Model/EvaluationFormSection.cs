@@ -36,7 +36,7 @@ namespace Amazon.Connect.Model
     public partial class EvaluationFormSection
     {
         private string _instructions;
-        private List<EvaluationFormItem> _items = new List<EvaluationFormItem>();
+        private List<EvaluationFormItem> _items = AWSConfigs.InitializeCollections ? new List<EvaluationFormItem>() : null;
         private string _refId;
         private string _title;
         private double? _weight;
@@ -76,7 +76,7 @@ namespace Amazon.Connect.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

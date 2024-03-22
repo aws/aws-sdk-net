@@ -33,8 +33,8 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class BatchStopUpdateActionResponse : AmazonWebServiceResponse
     {
-        private List<ProcessedUpdateAction> _processedUpdateActions = new List<ProcessedUpdateAction>();
-        private List<UnprocessedUpdateAction> _unprocessedUpdateActions = new List<UnprocessedUpdateAction>();
+        private List<ProcessedUpdateAction> _processedUpdateActions = AWSConfigs.InitializeCollections ? new List<ProcessedUpdateAction>() : null;
+        private List<UnprocessedUpdateAction> _unprocessedUpdateActions = AWSConfigs.InitializeCollections ? new List<UnprocessedUpdateAction>() : null;
 
         /// <summary>
         /// Gets and sets the property ProcessedUpdateActions. 
@@ -51,7 +51,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ProcessedUpdateActions property is set
         internal bool IsSetProcessedUpdateActions()
         {
-            return this._processedUpdateActions != null && this._processedUpdateActions.Count > 0; 
+            return this._processedUpdateActions != null && (this._processedUpdateActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UnprocessedUpdateActions property is set
         internal bool IsSetUnprocessedUpdateActions()
         {
-            return this._unprocessedUpdateActions != null && this._unprocessedUpdateActions.Count > 0; 
+            return this._unprocessedUpdateActions != null && (this._unprocessedUpdateActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

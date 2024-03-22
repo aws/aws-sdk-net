@@ -35,7 +35,7 @@ namespace Amazon.Textract.Model
     public partial class ExpenseField
     {
         private ExpenseCurrency _currency;
-        private List<ExpenseGroupProperty> _groupProperties = new List<ExpenseGroupProperty>();
+        private List<ExpenseGroupProperty> _groupProperties = AWSConfigs.InitializeCollections ? new List<ExpenseGroupProperty>() : null;
         private ExpenseDetection _labelDetection;
         private int? _pageNumber;
         private ExpenseType _type;
@@ -76,7 +76,7 @@ namespace Amazon.Textract.Model
         // Check to see if GroupProperties property is set
         internal bool IsSetGroupProperties()
         {
-            return this._groupProperties != null && this._groupProperties.Count > 0; 
+            return this._groupProperties != null && (this._groupProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

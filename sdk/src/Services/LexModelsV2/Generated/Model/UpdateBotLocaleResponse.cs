@@ -38,13 +38,13 @@ namespace Amazon.LexModelsV2.Model
         private string _botVersion;
         private DateTime? _creationDateTime;
         private string _description;
-        private List<string> _failureReasons = new List<string>();
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private GenerativeAISettings _generativeaiSettings;
         private DateTime? _lastUpdatedDateTime;
         private string _localeId;
         private string _localeName;
         private double? _nluIntentConfidenceThreshold;
-        private List<string> _recommendedActions = new List<string>();
+        private List<string> _recommendedActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VoiceSettings _voiceSettings;
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if RecommendedActions property is set
         internal bool IsSetRecommendedActions()
         {
-            return this._recommendedActions != null && this._recommendedActions.Count > 0; 
+            return this._recommendedActions != null && (this._recommendedActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

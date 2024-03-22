@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         private string _lastUpdatedTime;
         private string _owner;
         private VerifiedAccessSseSpecificationResponse _sseSpecification;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _verifiedAccessGroupArn;
         private string _verifiedAccessGroupId;
         private string _verifiedAccessInstanceId;
@@ -167,7 +167,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

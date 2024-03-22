@@ -33,8 +33,8 @@ namespace Amazon.ConnectCampaignService.Model
     /// </summary>
     public partial class GetCampaignStateBatchResponse : AmazonWebServiceResponse
     {
-        private List<FailedCampaignStateResponse> _failedRequests = new List<FailedCampaignStateResponse>();
-        private List<SuccessfulCampaignStateResponse> _successfulRequests = new List<SuccessfulCampaignStateResponse>();
+        private List<FailedCampaignStateResponse> _failedRequests = AWSConfigs.InitializeCollections ? new List<FailedCampaignStateResponse>() : null;
+        private List<SuccessfulCampaignStateResponse> _successfulRequests = AWSConfigs.InitializeCollections ? new List<SuccessfulCampaignStateResponse>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedRequests.
@@ -49,7 +49,7 @@ namespace Amazon.ConnectCampaignService.Model
         // Check to see if FailedRequests property is set
         internal bool IsSetFailedRequests()
         {
-            return this._failedRequests != null && this._failedRequests.Count > 0; 
+            return this._failedRequests != null && (this._failedRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.ConnectCampaignService.Model
         // Check to see if SuccessfulRequests property is set
         internal bool IsSetSuccessfulRequests()
         {
-            return this._successfulRequests != null && this._successfulRequests.Count > 0; 
+            return this._successfulRequests != null && (this._successfulRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

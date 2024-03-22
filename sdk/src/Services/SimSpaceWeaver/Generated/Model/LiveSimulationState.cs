@@ -33,8 +33,8 @@ namespace Amazon.SimSpaceWeaver.Model
     /// </summary>
     public partial class LiveSimulationState
     {
-        private List<SimulationClock> _clocks = new List<SimulationClock>();
-        private List<Domain> _domains = new List<Domain>();
+        private List<SimulationClock> _clocks = AWSConfigs.InitializeCollections ? new List<SimulationClock>() : null;
+        private List<Domain> _domains = AWSConfigs.InitializeCollections ? new List<Domain>() : null;
 
         /// <summary>
         /// Gets and sets the property Clocks. 
@@ -56,7 +56,7 @@ namespace Amazon.SimSpaceWeaver.Model
         // Check to see if Clocks property is set
         internal bool IsSetClocks()
         {
-            return this._clocks != null && this._clocks.Count > 0; 
+            return this._clocks != null && (this._clocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.SimSpaceWeaver.Model
         // Check to see if Domains property is set
         internal bool IsSetDomains()
         {
-            return this._domains != null && this._domains.Count > 0; 
+            return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

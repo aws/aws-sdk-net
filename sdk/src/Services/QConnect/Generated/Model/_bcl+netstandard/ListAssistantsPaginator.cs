@@ -45,7 +45,7 @@ namespace Amazon.QConnect.Model
         /// Enumerable containing all of the AssistantSummaries
         /// </summary>
         public IPaginatedEnumerable<AssistantSummary> AssistantSummaries => 
-            new PaginatedResultKeyResponse<ListAssistantsResponse, AssistantSummary>(this, (i) => i.AssistantSummaries);
+            new PaginatedResultKeyResponse<ListAssistantsResponse, AssistantSummary>(this, (i) => i.AssistantSummaries ?? new List<AssistantSummary>());
 
         internal ListAssistantsPaginator(IAmazonQConnect client, ListAssistantsRequest request)
         {

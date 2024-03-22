@@ -55,7 +55,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class StartExportTaskRequest : AmazonRDSRequest
     {
-        private List<string> _exportOnly = new List<string>();
+        private List<string> _exportOnly = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _exportTaskIdentifier;
         private string _iamRoleArn;
         private string _kmsKeyId;
@@ -103,7 +103,7 @@ namespace Amazon.RDS.Model
         // Check to see if ExportOnly property is set
         internal bool IsSetExportOnly()
         {
-            return this._exportOnly != null && this._exportOnly.Count > 0; 
+            return this._exportOnly != null && (this._exportOnly.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

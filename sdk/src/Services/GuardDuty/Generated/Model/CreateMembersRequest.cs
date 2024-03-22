@@ -66,7 +66,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class CreateMembersRequest : AmazonGuardDutyRequest
     {
-        private List<AccountDetail> _accountDetails = new List<AccountDetail>();
+        private List<AccountDetail> _accountDetails = AWSConfigs.InitializeCollections ? new List<AccountDetail>() : null;
         private string _detectorId;
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if AccountDetails property is set
         internal bool IsSetAccountDetails()
         {
-            return this._accountDetails != null && this._accountDetails.Count > 0; 
+            return this._accountDetails != null && (this._accountDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

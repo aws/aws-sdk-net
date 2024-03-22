@@ -30,8 +30,51 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeAgent operation.
-    /// Invokes the specified Bedrock model to run inference using the input provided in the
-    /// request body.
+    /// Sends a prompt for the agent to process and respond to.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The CLI doesn't support <c>InvokeAgent</c>.
+    /// </para>
+    ///  </note> <ul> <li> 
+    /// <para>
+    /// To continue the same conversation with an agent, use the same <c>sessionId</c> value
+    /// in the request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To activate trace enablement, turn <c>enableTrace</c> to <c>true</c>. Trace enablement
+    /// helps you follow the agent's reasoning process that led it to the information it processed,
+    /// the actions it took, and the final result it yielded. For more information, see <a
+    /// href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace
+    /// enablement</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// End a conversation by setting <c>endSession</c> to <c>true</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Include attributes for the session or prompt in the <c>sessionState</c> object.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The response is returned in the <c>bytes</c> field of the <c>chunk</c> object.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The <c>attribution</c> object contains citations for parts of the response.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you set <c>enableTrace</c> to <c>true</c> in the request, you can trace the agent's
+    /// steps and reasoning process that led it to the response.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Errors are also surfaced in the response.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class InvokeAgentRequest : AmazonBedrockAgentRuntimeRequest
     {
@@ -46,7 +89,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property AgentAliasId. 
         /// <para>
-        /// Identifier for Agent Alias
+        /// The alias of the agent to use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
@@ -65,7 +108,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Identifier for Agent
+        /// The unique identifier of the agent to use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
@@ -84,7 +127,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property EnableTrace. 
         /// <para>
-        /// Enable agent trace events for improved debugging
+        /// Specifies whether to turn on the trace or not to track the agent's reasoning process.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace
+        /// enablement</a>.
         /// </para>
         /// </summary>
         public bool? EnableTrace
@@ -102,7 +147,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property EndSession. 
         /// <para>
-        /// End current session
+        /// Specifies whether to end the session with the agent or not.
         /// </para>
         /// </summary>
         public bool? EndSession
@@ -120,7 +165,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property InputText. 
         /// <para>
-        /// Input data in the format specified in the Content-Type request header.
+        /// The prompt text to send the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=25000000)]
@@ -139,7 +184,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// Identifier used for the current session
+        /// The unique identifier of the session. Use the same value across requests to continue
+        /// the same conversation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]
@@ -158,7 +204,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property SessionState. 
         /// <para>
-        /// Session state passed by customer. Base64 encoded json string representation of SessionState.
+        /// Contains parameters that specify various attributes of the session.
         /// </para>
         /// </summary>
         public SessionState SessionState

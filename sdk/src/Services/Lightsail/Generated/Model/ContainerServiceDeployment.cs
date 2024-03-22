@@ -39,7 +39,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class ContainerServiceDeployment
     {
-        private Dictionary<string, Container> _containers = new Dictionary<string, Container>();
+        private Dictionary<string, Container> _containers = AWSConfigs.InitializeCollections ? new Dictionary<string, Container>() : null;
         private DateTime? _createdAt;
         private ContainerServiceEndpoint _publicEndpoint;
         private ContainerServiceDeploymentState _state;
@@ -60,7 +60,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

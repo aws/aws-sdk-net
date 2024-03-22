@@ -57,18 +57,30 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("MatchAnyPrefix/member", targetDepth))
                     {
+                        if (unmarshalledObject.MatchAnyPrefix == null)
+                        {
+                            unmarshalledObject.MatchAnyPrefix = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MatchAnyPrefix.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("MatchAnySubstring/member", targetDepth))
                     {
+                        if (unmarshalledObject.MatchAnySubstring == null)
+                        {
+                            unmarshalledObject.MatchAnySubstring = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MatchAnySubstring.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("MatchAnySuffix/member", targetDepth))
                     {
+                        if (unmarshalledObject.MatchAnySuffix == null)
+                        {
+                            unmarshalledObject.MatchAnySuffix = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MatchAnySuffix.Add(unmarshaller.Unmarshall(context));
                         continue;

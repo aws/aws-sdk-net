@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         private string _ownerId;
         private int? _packetLength;
         private int? _sessionNumber;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _trafficMirrorFilterId;
         private string _trafficMirrorSessionId;
         private string _trafficMirrorTargetId;
@@ -159,7 +159,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

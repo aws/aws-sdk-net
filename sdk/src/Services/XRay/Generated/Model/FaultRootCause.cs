@@ -34,7 +34,7 @@ namespace Amazon.XRay.Model
     public partial class FaultRootCause
     {
         private bool? _clientImpacting;
-        private List<FaultRootCauseService> _services = new List<FaultRootCauseService>();
+        private List<FaultRootCauseService> _services = AWSConfigs.InitializeCollections ? new List<FaultRootCauseService>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientImpacting. 
@@ -70,7 +70,7 @@ namespace Amazon.XRay.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

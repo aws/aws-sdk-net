@@ -34,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     public partial class DescribeTrafficSourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TrafficSourceState> _trafficSources = new List<TrafficSourceState>();
+        private List<TrafficSourceState> _trafficSources = AWSConfigs.InitializeCollections ? new List<TrafficSourceState>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TrafficSources property is set
         internal bool IsSetTrafficSources()
         {
-            return this._trafficSources != null && this._trafficSources.Count > 0; 
+            return this._trafficSources != null && (this._trafficSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

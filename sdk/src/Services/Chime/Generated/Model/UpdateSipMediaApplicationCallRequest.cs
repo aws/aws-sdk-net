@@ -49,7 +49,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class UpdateSipMediaApplicationCallRequest : AmazonChimeRequest
     {
-        private Dictionary<string, string> _arguments = new Dictionary<string, string>();
+        private Dictionary<string, string> _arguments = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _sipMediaApplicationId;
         private string _transactionId;
 
@@ -70,7 +70,7 @@ namespace Amazon.Chime.Model
         // Check to see if Arguments property is set
         internal bool IsSetArguments()
         {
-            return this._arguments != null && this._arguments.Count > 0; 
+            return this._arguments != null && (this._arguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

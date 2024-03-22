@@ -34,7 +34,7 @@ namespace Amazon.RedshiftServerless.Model
     public partial class ListSnapshotCopyConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SnapshotCopyConfiguration> _snapshotCopyConfigurations = new List<SnapshotCopyConfiguration>();
+        private List<SnapshotCopyConfiguration> _snapshotCopyConfigurations = AWSConfigs.InitializeCollections ? new List<SnapshotCopyConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if SnapshotCopyConfigurations property is set
         internal bool IsSetSnapshotCopyConfigurations()
         {
-            return this._snapshotCopyConfigurations != null && this._snapshotCopyConfigurations.Count > 0; 
+            return this._snapshotCopyConfigurations != null && (this._snapshotCopyConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

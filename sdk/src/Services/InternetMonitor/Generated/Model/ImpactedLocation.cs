@@ -48,6 +48,7 @@ namespace Amazon.InternetMonitor.Model
         private string _country;
         private string _countryCode;
         private InternetHealth _internetHealth;
+        private List<string> _ipv4Prefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _latitude;
         private double? _longitude;
         private string _metro;
@@ -186,6 +187,24 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetInternetHealth()
         {
             return this._internetHealth != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv4Prefixes. 
+        /// <para>
+        /// The IPv4 prefixes at the client location that was impacted by the health event.
+        /// </para>
+        /// </summary>
+        public List<string> Ipv4Prefixes
+        {
+            get { return this._ipv4Prefixes; }
+            set { this._ipv4Prefixes = value; }
+        }
+
+        // Check to see if Ipv4Prefixes property is set
+        internal bool IsSetIpv4Prefixes()
+        {
+            return this._ipv4Prefixes != null && (this._ipv4Prefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

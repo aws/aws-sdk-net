@@ -33,7 +33,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class ListFindingsResponse : AmazonWebServiceResponse
     {
-        private List<Finding> _findings = new List<Finding>();
+        private List<Finding> _findings = AWSConfigs.InitializeCollections ? new List<Finding>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

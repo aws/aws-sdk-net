@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the ThingTypes
         /// </summary>
         public IPaginatedEnumerable<ThingTypeDefinition> ThingTypes => 
-            new PaginatedResultKeyResponse<ListThingTypesResponse, ThingTypeDefinition>(this, (i) => i.ThingTypes);
+            new PaginatedResultKeyResponse<ListThingTypesResponse, ThingTypeDefinition>(this, (i) => i.ThingTypes ?? new List<ThingTypeDefinition>());
 
         internal ListThingTypesPaginator(IAmazonIoT client, ListThingTypesRequest request)
         {

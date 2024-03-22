@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class SetLogDeliveryConfigurationRequest : AmazonCognitoIdentityProviderRequest
     {
-        private List<LogConfigurationType> _logConfigurations = new List<LogConfigurationType>();
+        private List<LogConfigurationType> _logConfigurations = AWSConfigs.InitializeCollections ? new List<LogConfigurationType>() : null;
         private string _userPoolId;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if LogConfigurations property is set
         internal bool IsSetLogConfigurations()
         {
-            return this._logConfigurations != null && this._logConfigurations.Count > 0; 
+            return this._logConfigurations != null && (this._logConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

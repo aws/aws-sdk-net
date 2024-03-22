@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class DescribeApplicationVersionsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationVersionDescription> _applicationVersions = new List<ApplicationVersionDescription>();
+        private List<ApplicationVersionDescription> _applicationVersions = AWSConfigs.InitializeCollections ? new List<ApplicationVersionDescription>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationVersions property is set
         internal bool IsSetApplicationVersions()
         {
-            return this._applicationVersions != null && this._applicationVersions.Count > 0; 
+            return this._applicationVersions != null && (this._applicationVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

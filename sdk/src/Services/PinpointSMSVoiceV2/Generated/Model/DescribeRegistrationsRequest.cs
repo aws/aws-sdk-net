@@ -34,10 +34,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribeRegistrationsRequest : AmazonPinpointSMSVoiceV2Request
     {
-        private List<RegistrationFilter> _filters = new List<RegistrationFilter>();
+        private List<RegistrationFilter> _filters = AWSConfigs.InitializeCollections ? new List<RegistrationFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _registrationIds = new List<string>();
+        private List<string> _registrationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -55,7 +55,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if RegistrationIds property is set
         internal bool IsSetRegistrationIds()
         {
-            return this._registrationIds != null && this._registrationIds.Count > 0; 
+            return this._registrationIds != null && (this._registrationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

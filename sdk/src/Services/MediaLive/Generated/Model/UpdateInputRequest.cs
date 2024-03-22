@@ -34,14 +34,14 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class UpdateInputRequest : AmazonMediaLiveRequest
     {
-        private List<InputDestinationRequest> _destinations = new List<InputDestinationRequest>();
-        private List<InputDeviceRequest> _inputDevices = new List<InputDeviceRequest>();
+        private List<InputDestinationRequest> _destinations = AWSConfigs.InitializeCollections ? new List<InputDestinationRequest>() : null;
+        private List<InputDeviceRequest> _inputDevices = AWSConfigs.InitializeCollections ? new List<InputDeviceRequest>() : null;
         private string _inputId;
-        private List<string> _inputSecurityGroups = new List<string>();
-        private List<MediaConnectFlowRequest> _mediaConnectFlows = new List<MediaConnectFlowRequest>();
+        private List<string> _inputSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<MediaConnectFlowRequest> _mediaConnectFlows = AWSConfigs.InitializeCollections ? new List<MediaConnectFlowRequest>() : null;
         private string _name;
         private string _roleArn;
-        private List<InputSourceRequest> _sources = new List<InputSourceRequest>();
+        private List<InputSourceRequest> _sources = AWSConfigs.InitializeCollections ? new List<InputSourceRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property Destinations. Destination settings for PUSH type inputs.
@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if InputDevices property is set
         internal bool IsSetInputDevices()
         {
-            return this._inputDevices != null && this._inputDevices.Count > 0; 
+            return this._inputDevices != null && (this._inputDevices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if InputSecurityGroups property is set
         internal bool IsSetInputSecurityGroups()
         {
-            return this._inputSecurityGroups != null && this._inputSecurityGroups.Count > 0; 
+            return this._inputSecurityGroups != null && (this._inputSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if MediaConnectFlows property is set
         internal bool IsSetMediaConnectFlows()
         {
-            return this._mediaConnectFlows != null && this._mediaConnectFlows.Count > 0; 
+            return this._mediaConnectFlows != null && (this._mediaConnectFlows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

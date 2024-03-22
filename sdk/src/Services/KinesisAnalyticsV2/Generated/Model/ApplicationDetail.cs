@@ -45,7 +45,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private long? _applicationVersionRolledBackFrom;
         private long? _applicationVersionRolledBackTo;
         private long? _applicationVersionUpdatedFrom;
-        private List<CloudWatchLoggingOptionDescription> _cloudWatchLoggingOptionDescriptions = new List<CloudWatchLoggingOptionDescription>();
+        private List<CloudWatchLoggingOptionDescription> _cloudWatchLoggingOptionDescriptions = AWSConfigs.InitializeCollections ? new List<CloudWatchLoggingOptionDescription>() : null;
         private string _conditionalToken;
         private DateTime? _createTimestamp;
         private DateTime? _lastUpdateTimestamp;
@@ -74,8 +74,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationConfigurationDescription. 
         /// <para>
-        /// Describes details about the application code and starting parameters for a Kinesis
-        /// Data Analytics application.
+        /// Describes details about the application code and starting parameters for a Managed
+        /// Service for Apache Flink application.
         /// </para>
         /// </summary>
         public ApplicationConfigurationDescription ApplicationConfigurationDescription
@@ -130,8 +130,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationMode. 
         /// <para>
-        /// To create a Kinesis Data Analytics Studio notebook, you must set the mode to <c>INTERACTIVE</c>.
-        /// However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+        /// To create a Managed Service for Apache Flink Studio notebook, you must set the mode
+        /// to <c>INTERACTIVE</c>. However, for a Managed Service for Apache Flink application,
+        /// the mode is optional.
         /// </para>
         /// </summary>
         public ApplicationMode ApplicationMode
@@ -187,8 +188,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationVersionId. 
         /// <para>
-        /// Provides the current application version. Kinesis Data Analytics updates the <c>ApplicationVersionId</c>
-        /// each time you update the application.
+        /// Provides the current application version. Managed Service for Apache Flink updates
+        /// the <c>ApplicationVersionId</c> each time you update the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
@@ -278,7 +279,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if CloudWatchLoggingOptionDescriptions property is set
         internal bool IsSetCloudWatchLoggingOptionDescriptions()
         {
-            return this._cloudWatchLoggingOptionDescriptions != null && this._cloudWatchLoggingOptionDescriptions.Count > 0; 
+            return this._cloudWatchLoggingOptionDescriptions != null && (this._cloudWatchLoggingOptionDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

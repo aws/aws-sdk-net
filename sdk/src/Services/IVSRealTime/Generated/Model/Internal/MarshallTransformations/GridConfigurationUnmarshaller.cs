@@ -69,6 +69,30 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.FeaturedParticipantAttribute = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("gridGap", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.GridGap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("omitStoppedVideo", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.OmitStoppedVideo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("videoAspectRatio", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VideoAspectRatio = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("videoFillMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VideoFillMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

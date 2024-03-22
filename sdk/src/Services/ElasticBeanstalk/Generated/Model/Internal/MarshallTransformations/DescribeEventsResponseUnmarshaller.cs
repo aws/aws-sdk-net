@@ -84,6 +84,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Events/member", targetDepth))
                     {
                         var unmarshaller = EventDescriptionUnmarshaller.Instance;
+                        if (response.Events == null)
+                        {
+                            response.Events = new List<EventDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Events.Add(item);
                         continue;

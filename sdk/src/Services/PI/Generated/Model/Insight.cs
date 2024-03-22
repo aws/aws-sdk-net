@@ -33,17 +33,17 @@ namespace Amazon.PI.Model
     /// </summary>
     public partial class Insight
     {
-        private List<Data> _baselineData = new List<Data>();
+        private List<Data> _baselineData = AWSConfigs.InitializeCollections ? new List<Data>() : null;
         private ContextType _context;
         private string _description;
         private DateTime? _endTime;
-        private List<Data> _insightData = new List<Data>();
+        private List<Data> _insightData = AWSConfigs.InitializeCollections ? new List<Data>() : null;
         private string _insightId;
         private string _insightType;
-        private List<Recommendation> _recommendations = new List<Recommendation>();
+        private List<Recommendation> _recommendations = AWSConfigs.InitializeCollections ? new List<Recommendation>() : null;
         private Severity _severity;
         private DateTime? _startTime;
-        private List<Insight> _supportingInsights = new List<Insight>();
+        private List<Insight> _supportingInsights = AWSConfigs.InitializeCollections ? new List<Insight>() : null;
 
         /// <summary>
         /// Gets and sets the property BaselineData. 
@@ -60,7 +60,7 @@ namespace Amazon.PI.Model
         // Check to see if BaselineData property is set
         internal bool IsSetBaselineData()
         {
-            return this._baselineData != null && this._baselineData.Count > 0; 
+            return this._baselineData != null && (this._baselineData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.PI.Model
         // Check to see if InsightData property is set
         internal bool IsSetInsightData()
         {
-            return this._insightData != null && this._insightData.Count > 0; 
+            return this._insightData != null && (this._insightData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.PI.Model
         // Check to see if Recommendations property is set
         internal bool IsSetRecommendations()
         {
-            return this._recommendations != null && this._recommendations.Count > 0; 
+            return this._recommendations != null && (this._recommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace Amazon.PI.Model
         // Check to see if SupportingInsights property is set
         internal bool IsSetSupportingInsights()
         {
-            return this._supportingInsights != null && this._supportingInsights.Count > 0; 
+            return this._supportingInsights != null && (this._supportingInsights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

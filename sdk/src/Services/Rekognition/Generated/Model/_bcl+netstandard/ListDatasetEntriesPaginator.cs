@@ -45,7 +45,7 @@ namespace Amazon.Rekognition.Model
         /// Enumerable containing all of the DatasetEntries
         /// </summary>
         public IPaginatedEnumerable<string> DatasetEntries => 
-            new PaginatedResultKeyResponse<ListDatasetEntriesResponse, string>(this, (i) => i.DatasetEntries);
+            new PaginatedResultKeyResponse<ListDatasetEntriesResponse, string>(this, (i) => i.DatasetEntries ?? new List<string>());
 
         internal ListDatasetEntriesPaginator(IAmazonRekognition client, ListDatasetEntriesRequest request)
         {

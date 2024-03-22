@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ListSecurityProfilesForTargetResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SecurityProfileTargetMapping> _securityProfileTargetMappings = new List<SecurityProfileTargetMapping>();
+        private List<SecurityProfileTargetMapping> _securityProfileTargetMappings = AWSConfigs.InitializeCollections ? new List<SecurityProfileTargetMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.IoT.Model
         // Check to see if SecurityProfileTargetMappings property is set
         internal bool IsSetSecurityProfileTargetMappings()
         {
-            return this._securityProfileTargetMappings != null && this._securityProfileTargetMappings.Count > 0; 
+            return this._securityProfileTargetMappings != null && (this._securityProfileTargetMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

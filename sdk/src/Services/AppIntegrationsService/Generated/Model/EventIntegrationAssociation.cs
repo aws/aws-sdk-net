@@ -33,7 +33,7 @@ namespace Amazon.AppIntegrationsService.Model
     /// </summary>
     public partial class EventIntegrationAssociation
     {
-        private Dictionary<string, string> _clientAssociationMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _clientAssociationMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _clientId;
         private string _eventBridgeRuleName;
         private string _eventIntegrationAssociationArn;
@@ -55,7 +55,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if ClientAssociationMetadata property is set
         internal bool IsSetClientAssociationMetadata()
         {
-            return this._clientAssociationMetadata != null && this._clientAssociationMetadata.Count > 0; 
+            return this._clientAssociationMetadata != null && (this._clientAssociationMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

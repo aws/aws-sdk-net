@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class DescribeInboundCrossClusterSearchConnectionsResponse : AmazonWebServiceResponse
     {
-        private List<InboundCrossClusterSearchConnection> _crossClusterSearchConnections = new List<InboundCrossClusterSearchConnection>();
+        private List<InboundCrossClusterSearchConnection> _crossClusterSearchConnections = AWSConfigs.InitializeCollections ? new List<InboundCrossClusterSearchConnection>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if CrossClusterSearchConnections property is set
         internal bool IsSetCrossClusterSearchConnections()
         {
-            return this._crossClusterSearchConnections != null && this._crossClusterSearchConnections.Count > 0; 
+            return this._crossClusterSearchConnections != null && (this._crossClusterSearchConnections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

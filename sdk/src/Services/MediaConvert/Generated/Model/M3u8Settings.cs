@@ -36,7 +36,7 @@ namespace Amazon.MediaConvert.Model
     {
         private M3u8AudioDuration _audioDuration;
         private int? _audioFramesPerPes;
-        private List<int> _audioPids = new List<int>();
+        private List<int> _audioPids = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private M3u8DataPtsControl _dataPTSControl;
         private int? _maxPcrInterval;
         private M3u8NielsenId3 _nielsenId3;
@@ -113,7 +113,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AudioPids property is set
         internal bool IsSetAudioPids()
         {
-            return this._audioPids != null && this._audioPids.Count > 0; 
+            return this._audioPids != null && (this._audioPids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     {
         private bool? _negated;
         private FilterOperation _operation;
-        private List<FilterValue> _values = new List<FilterValue>();
+        private List<FilterValue> _values = AWSConfigs.InitializeCollections ? new List<FilterValue>() : null;
 
         /// <summary>
         /// Gets and sets the property Negated. 
@@ -90,7 +90,7 @@ namespace Amazon.Glue.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class PromptOverrideConfiguration
     {
         private string _overrideLambda;
-        private List<PromptConfiguration> _promptConfigurations = new List<PromptConfiguration>();
+        private List<PromptConfiguration> _promptConfigurations = AWSConfigs.InitializeCollections ? new List<PromptConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property OverrideLambda.
@@ -65,7 +65,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if PromptConfigurations property is set
         internal bool IsSetPromptConfigurations()
         {
-            return this._promptConfigurations != null && this._promptConfigurations.Count > 0; 
+            return this._promptConfigurations != null && (this._promptConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

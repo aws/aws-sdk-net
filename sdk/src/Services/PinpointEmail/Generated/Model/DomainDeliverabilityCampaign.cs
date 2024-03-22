@@ -38,7 +38,7 @@ namespace Amazon.PinpointEmail.Model
     {
         private string _campaignId;
         private double? _deleteRate;
-        private List<string> _esps = new List<string>();
+        private List<string> _esps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _firstSeenDateTime;
         private string _fromAddress;
         private string _imageUrl;
@@ -47,7 +47,7 @@ namespace Amazon.PinpointEmail.Model
         private long? _projectedVolume;
         private double? _readDeleteRate;
         private double? _readRate;
-        private List<string> _sendingIps = new List<string>();
+        private List<string> _sendingIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _spamCount;
         private string _subject;
 
@@ -107,7 +107,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if Esps property is set
         internal bool IsSetEsps()
         {
-            return this._esps != null && this._esps.Count > 0; 
+            return this._esps != null && (this._esps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if SendingIps property is set
         internal bool IsSetSendingIps()
         {
-            return this._sendingIps != null && this._sendingIps.Count > 0; 
+            return this._sendingIps != null && (this._sendingIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -49,7 +49,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class DeleteVoiceConnectorTerminationCredentialsRequest : AmazonChimeRequest
     {
-        private List<string> _usernames = new List<string>();
+        private List<string> _usernames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _voiceConnectorId;
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.Chime.Model
         // Check to see if Usernames property is set
         internal bool IsSetUsernames()
         {
-            return this._usernames != null && this._usernames.Count > 0; 
+            return this._usernames != null && (this._usernames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

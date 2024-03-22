@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the Contacts
         /// </summary>
         public IPaginatedEnumerable<ContactSearchSummary> Contacts => 
-            new PaginatedResultKeyResponse<SearchContactsResponse, ContactSearchSummary>(this, (i) => i.Contacts);
+            new PaginatedResultKeyResponse<SearchContactsResponse, ContactSearchSummary>(this, (i) => i.Contacts ?? new List<ContactSearchSummary>());
 
         internal SearchContactsPaginator(IAmazonConnect client, SearchContactsRequest request)
         {

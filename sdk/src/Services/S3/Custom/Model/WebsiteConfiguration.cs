@@ -28,7 +28,7 @@ namespace Amazon.S3.Model
         private string errorDocument;
         private string indexDocumentSuffix;
         private RoutingRuleRedirect redirectAllRequestsTo;
-        private List<RoutingRule> routingRules = new List<RoutingRule>();
+        private List<RoutingRule> routingRules = AWSConfigs.InitializeCollections ? new List<RoutingRule>() : null;
 
         /// <summary>
         /// The ErrorDocument value, an object key name to use when a 4XX class error occurs.
@@ -100,7 +100,7 @@ namespace Amazon.S3.Model
         // Check to see if RoutingRules property is set
         internal bool IsSetRoutingRules()
         {
-            return this.routingRules.Count > 0;
+            return this.routingRules != null && (this.routingRules.Count > 0 || !AWSConfigs.InitializeCollections);
         }
     }
 }

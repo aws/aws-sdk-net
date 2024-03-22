@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class CredentialPair
     {
-        private List<DataSourceParameters> _alternateDataSourceParameters = new List<DataSourceParameters>();
+        private List<DataSourceParameters> _alternateDataSourceParameters = AWSConfigs.InitializeCollections ? new List<DataSourceParameters>() : null;
         private string _password;
         private string _username;
 
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AlternateDataSourceParameters property is set
         internal bool IsSetAlternateDataSourceParameters()
         {
-            return this._alternateDataSourceParameters != null && this._alternateDataSourceParameters.Count > 0; 
+            return this._alternateDataSourceParameters != null && (this._alternateDataSourceParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

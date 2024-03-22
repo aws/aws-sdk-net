@@ -35,7 +35,7 @@ namespace Amazon.IoTWireless.Model
     {
         private int? _classBTimeout;
         private int? _classCTimeout;
-        private List<int> _factoryPresetFreqsList = new List<int>();
+        private List<int> _factoryPresetFreqsList = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private string _macVersion;
         private int? _maxDutyCycle;
         private int? _maxEirp;
@@ -107,7 +107,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if FactoryPresetFreqsList property is set
         internal bool IsSetFactoryPresetFreqsList()
         {
-            return this._factoryPresetFreqsList != null && this._factoryPresetFreqsList.Count > 0; 
+            return this._factoryPresetFreqsList != null && (this._factoryPresetFreqsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

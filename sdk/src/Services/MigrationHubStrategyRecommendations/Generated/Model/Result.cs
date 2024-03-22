@@ -35,7 +35,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     {
         private AnalysisStatusUnion _analysisStatus;
         private AnalysisType _analysisType;
-        private List<AntipatternReportResult> _antipatternReportResultList = new List<AntipatternReportResult>();
+        private List<AntipatternReportResult> _antipatternReportResultList = AWSConfigs.InitializeCollections ? new List<AntipatternReportResult>() : null;
         private string _statusMessage;
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if AntipatternReportResultList property is set
         internal bool IsSetAntipatternReportResultList()
         {
-            return this._antipatternReportResultList != null && this._antipatternReportResultList.Count > 0; 
+            return this._antipatternReportResultList != null && (this._antipatternReportResultList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

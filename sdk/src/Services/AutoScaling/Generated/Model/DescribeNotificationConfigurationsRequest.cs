@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeNotificationConfigurationsRequest : AmazonAutoScalingRequest
     {
-        private List<string> _autoScalingGroupNames = new List<string>();
+        private List<string> _autoScalingGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxRecords;
         private string _nextToken;
 
@@ -54,7 +54,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupNames property is set
         internal bool IsSetAutoScalingGroupNames()
         {
-            return this._autoScalingGroupNames != null && this._autoScalingGroupNames.Count > 0; 
+            return this._autoScalingGroupNames != null && (this._autoScalingGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

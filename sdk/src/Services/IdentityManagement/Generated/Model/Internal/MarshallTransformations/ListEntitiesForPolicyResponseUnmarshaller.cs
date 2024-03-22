@@ -96,6 +96,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PolicyGroups/member", targetDepth))
                     {
                         var unmarshaller = PolicyGroupUnmarshaller.Instance;
+                        if (response.PolicyGroups == null)
+                        {
+                            response.PolicyGroups = new List<PolicyGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.PolicyGroups.Add(item);
                         continue;
@@ -103,6 +107,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PolicyRoles/member", targetDepth))
                     {
                         var unmarshaller = PolicyRoleUnmarshaller.Instance;
+                        if (response.PolicyRoles == null)
+                        {
+                            response.PolicyRoles = new List<PolicyRole>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.PolicyRoles.Add(item);
                         continue;
@@ -110,6 +118,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PolicyUsers/member", targetDepth))
                     {
                         var unmarshaller = PolicyUserUnmarshaller.Instance;
+                        if (response.PolicyUsers == null)
+                        {
+                            response.PolicyUsers = new List<PolicyUser>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.PolicyUsers.Add(item);
                         continue;

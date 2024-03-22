@@ -40,7 +40,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class ListRecommendationsRequest : AmazonSimpleEmailServiceV2Request
     {
-        private Dictionary<string, string> _filter = new Dictionary<string, string>();
+        private Dictionary<string, string> _filter = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _nextToken;
         private int? _pageSize;
 
@@ -62,7 +62,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Filter property is set
         internal bool IsSetFilter()
         {
-            return this._filter != null && this._filter.Count > 0; 
+            return this._filter != null && (this._filter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

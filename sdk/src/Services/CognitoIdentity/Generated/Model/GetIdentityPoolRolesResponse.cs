@@ -34,8 +34,8 @@ namespace Amazon.CognitoIdentity.Model
     public partial class GetIdentityPoolRolesResponse : AmazonWebServiceResponse
     {
         private string _identityPoolId;
-        private Dictionary<string, RoleMapping> _roleMappings = new Dictionary<string, RoleMapping>();
-        private Dictionary<string, string> _roles = new Dictionary<string, string>();
+        private Dictionary<string, RoleMapping> _roleMappings = AWSConfigs.InitializeCollections ? new Dictionary<string, RoleMapping>() : null;
+        private Dictionary<string, string> _roles = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property IdentityPoolId. 
@@ -74,7 +74,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if RoleMappings property is set
         internal bool IsSetRoleMappings()
         {
-            return this._roleMappings != null && this._roleMappings.Count > 0; 
+            return this._roleMappings != null && (this._roleMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if Roles property is set
         internal bool IsSetRoles()
         {
-            return this._roles != null && this._roles.Count > 0; 
+            return this._roles != null && (this._roles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

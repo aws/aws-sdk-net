@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("fpgas/item", targetDepth))
                     {
                         var unmarshaller = FpgaDeviceInfoUnmarshaller.Instance;
+                        if (unmarshalledObject.Fpgas == null)
+                        {
+                            unmarshalledObject.Fpgas = new List<FpgaDeviceInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Fpgas.Add(item);
                         continue;

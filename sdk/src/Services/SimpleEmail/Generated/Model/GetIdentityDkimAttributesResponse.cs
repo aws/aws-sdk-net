@@ -36,7 +36,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class GetIdentityDkimAttributesResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, IdentityDkimAttributes> _dkimAttributes = new Dictionary<string, IdentityDkimAttributes>();
+        private Dictionary<string, IdentityDkimAttributes> _dkimAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, IdentityDkimAttributes>() : null;
 
         /// <summary>
         /// Gets and sets the property DkimAttributes. 
@@ -54,7 +54,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if DkimAttributes property is set
         internal bool IsSetDkimAttributes()
         {
-            return this._dkimAttributes != null && this._dkimAttributes.Count > 0; 
+            return this._dkimAttributes != null && (this._dkimAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

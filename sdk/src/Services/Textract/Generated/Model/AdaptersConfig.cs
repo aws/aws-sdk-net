@@ -34,7 +34,7 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class AdaptersConfig
     {
-        private List<Adapter> _adapters = new List<Adapter>();
+        private List<Adapter> _adapters = AWSConfigs.InitializeCollections ? new List<Adapter>() : null;
 
         /// <summary>
         /// Gets and sets the property Adapters. 
@@ -52,7 +52,7 @@ namespace Amazon.Textract.Model
         // Check to see if Adapters property is set
         internal bool IsSetAdapters()
         {
-            return this._adapters != null && this._adapters.Count > 0; 
+            return this._adapters != null && (this._adapters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

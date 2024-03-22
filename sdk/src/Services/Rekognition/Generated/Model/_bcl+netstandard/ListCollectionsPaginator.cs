@@ -45,7 +45,7 @@ namespace Amazon.Rekognition.Model
         /// Enumerable containing all of the CollectionIds
         /// </summary>
         public IPaginatedEnumerable<string> CollectionIds => 
-            new PaginatedResultKeyResponse<ListCollectionsResponse, string>(this, (i) => i.CollectionIds);
+            new PaginatedResultKeyResponse<ListCollectionsResponse, string>(this, (i) => i.CollectionIds ?? new List<string>());
 
         internal ListCollectionsPaginator(IAmazonRekognition client, ListCollectionsRequest request)
         {

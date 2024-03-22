@@ -40,7 +40,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ExitCode. 
         /// <para>
-        /// The exit code for the job attempt. A non-zero exit code is considered failed.
+        /// The exit code returned for the job attempt. A non-zero exit code is considered failed.
         /// </para>
         /// </summary>
         public int? ExitCode

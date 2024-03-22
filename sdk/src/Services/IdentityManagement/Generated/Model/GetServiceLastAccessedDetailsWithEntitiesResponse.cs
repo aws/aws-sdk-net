@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class GetServiceLastAccessedDetailsWithEntitiesResponse : AmazonWebServiceResponse
     {
-        private List<EntityDetails> _entityDetailsList = new List<EntityDetails>();
+        private List<EntityDetails> _entityDetailsList = AWSConfigs.InitializeCollections ? new List<EntityDetails>() : null;
         private ErrorDetails _error;
         private bool? _isTruncated;
         private DateTime? _jobCompletionDate;
@@ -59,7 +59,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if EntityDetailsList property is set
         internal bool IsSetEntityDetailsList()
         {
-            return this._entityDetailsList != null && this._entityDetailsList.Count > 0; 
+            return this._entityDetailsList != null && (this._entityDetailsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// </summary>
     public partial class JobAlbumArt
     {
-        private List<Artwork> _artwork = new List<Artwork>();
+        private List<Artwork> _artwork = AWSConfigs.InitializeCollections ? new List<Artwork>() : null;
         private string _mergePolicy;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Artwork property is set
         internal bool IsSetArtwork()
         {
-            return this._artwork != null && this._artwork.Count > 0; 
+            return this._artwork != null && (this._artwork.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

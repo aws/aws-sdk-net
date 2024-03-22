@@ -33,7 +33,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class CodegenGenericDataNonModel
     {
-        private Dictionary<string, CodegenGenericDataField> _fields = new Dictionary<string, CodegenGenericDataField>();
+        private Dictionary<string, CodegenGenericDataField> _fields = AWSConfigs.InitializeCollections ? new Dictionary<string, CodegenGenericDataField>() : null;
 
         /// <summary>
         /// Gets and sets the property Fields. 
@@ -51,7 +51,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

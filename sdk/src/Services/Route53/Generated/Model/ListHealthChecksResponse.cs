@@ -33,7 +33,7 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class ListHealthChecksResponse : AmazonWebServiceResponse
     {
-        private List<HealthCheck> _healthChecks = new List<HealthCheck>();
+        private List<HealthCheck> _healthChecks = AWSConfigs.InitializeCollections ? new List<HealthCheck>() : null;
         private string _marker;
         private bool? _isTruncated;
         private string _nextMarker;
@@ -56,7 +56,7 @@ namespace Amazon.Route53.Model
         // Check to see if HealthChecks property is set
         internal bool IsSetHealthChecks()
         {
-            return this._healthChecks != null && this._healthChecks.Count > 0; 
+            return this._healthChecks != null && (this._healthChecks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsStepFunctionStateMachineLoggingConfigurationDetails
     {
-        private List<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails> _destinations = new List<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>();
+        private List<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails> _destinations = AWSConfigs.InitializeCollections ? new List<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>() : null;
         private bool? _includeExecutionData;
         private string _level;
 
@@ -53,7 +53,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

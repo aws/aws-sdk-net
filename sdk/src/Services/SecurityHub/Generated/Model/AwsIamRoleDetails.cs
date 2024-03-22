@@ -34,15 +34,15 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsIamRoleDetails
     {
         private string _assumeRolePolicyDocument;
-        private List<AwsIamAttachedManagedPolicy> _attachedManagedPolicies = new List<AwsIamAttachedManagedPolicy>();
+        private List<AwsIamAttachedManagedPolicy> _attachedManagedPolicies = AWSConfigs.InitializeCollections ? new List<AwsIamAttachedManagedPolicy>() : null;
         private string _createDate;
-        private List<AwsIamInstanceProfile> _instanceProfileList = new List<AwsIamInstanceProfile>();
+        private List<AwsIamInstanceProfile> _instanceProfileList = AWSConfigs.InitializeCollections ? new List<AwsIamInstanceProfile>() : null;
         private int? _maxSessionDuration;
         private string _path;
         private AwsIamPermissionsBoundary _permissionsBoundary;
         private string _roleId;
         private string _roleName;
-        private List<AwsIamRolePolicy> _rolePolicyList = new List<AwsIamRolePolicy>();
+        private List<AwsIamRolePolicy> _rolePolicyList = AWSConfigs.InitializeCollections ? new List<AwsIamRolePolicy>() : null;
 
         /// <summary>
         /// Gets and sets the property AssumeRolePolicyDocument. 
@@ -78,7 +78,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AttachedManagedPolicies property is set
         internal bool IsSetAttachedManagedPolicies()
         {
-            return this._attachedManagedPolicies != null && this._attachedManagedPolicies.Count > 0; 
+            return this._attachedManagedPolicies != null && (this._attachedManagedPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if InstanceProfileList property is set
         internal bool IsSetInstanceProfileList()
         {
-            return this._instanceProfileList != null && this._instanceProfileList.Count > 0; 
+            return this._instanceProfileList != null && (this._instanceProfileList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -225,7 +225,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RolePolicyList property is set
         internal bool IsSetRolePolicyList()
         {
-            return this._rolePolicyList != null && this._rolePolicyList.Count > 0; 
+            return this._rolePolicyList != null && (this._rolePolicyList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

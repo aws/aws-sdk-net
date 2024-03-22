@@ -45,7 +45,7 @@ namespace Amazon.FMS.Model
         /// Enumerable containing all of the ThirdPartyFirewallFirewallPolicies
         /// </summary>
         public IPaginatedEnumerable<ThirdPartyFirewallFirewallPolicy> ThirdPartyFirewallFirewallPolicies => 
-            new PaginatedResultKeyResponse<ListThirdPartyFirewallFirewallPoliciesResponse, ThirdPartyFirewallFirewallPolicy>(this, (i) => i.ThirdPartyFirewallFirewallPolicies);
+            new PaginatedResultKeyResponse<ListThirdPartyFirewallFirewallPoliciesResponse, ThirdPartyFirewallFirewallPolicy>(this, (i) => i.ThirdPartyFirewallFirewallPolicies ?? new List<ThirdPartyFirewallFirewallPolicy>());
 
         internal ListThirdPartyFirewallFirewallPoliciesPaginator(IAmazonFMS client, ListThirdPartyFirewallFirewallPoliciesRequest request)
         {

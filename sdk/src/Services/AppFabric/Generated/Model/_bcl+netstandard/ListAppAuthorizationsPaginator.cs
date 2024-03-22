@@ -45,7 +45,7 @@ namespace Amazon.AppFabric.Model
         /// Enumerable containing all of the AppAuthorizationSummaryList
         /// </summary>
         public IPaginatedEnumerable<AppAuthorizationSummary> AppAuthorizationSummaryList => 
-            new PaginatedResultKeyResponse<ListAppAuthorizationsResponse, AppAuthorizationSummary>(this, (i) => i.AppAuthorizationSummaryList);
+            new PaginatedResultKeyResponse<ListAppAuthorizationsResponse, AppAuthorizationSummary>(this, (i) => i.AppAuthorizationSummaryList ?? new List<AppAuthorizationSummary>());
 
         internal ListAppAuthorizationsPaginator(IAmazonAppFabric client, ListAppAuthorizationsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class BatchWriteResponse : AmazonWebServiceResponse
     {
-        private List<BatchWriteOperationResponse> _responses = new List<BatchWriteOperationResponse>();
+        private List<BatchWriteOperationResponse> _responses = AWSConfigs.InitializeCollections ? new List<BatchWriteOperationResponse>() : null;
 
         /// <summary>
         /// Gets and sets the property Responses. 
@@ -50,7 +50,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if Responses property is set
         internal bool IsSetResponses()
         {
-            return this._responses != null && this._responses.Count > 0; 
+            return this._responses != null && (this._responses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

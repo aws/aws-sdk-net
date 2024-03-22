@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class MsSmoothGroupSettings
     {
-        private List<MsSmoothAdditionalManifest> _additionalManifests = new List<MsSmoothAdditionalManifest>();
+        private List<MsSmoothAdditionalManifest> _additionalManifests = AWSConfigs.InitializeCollections ? new List<MsSmoothAdditionalManifest>() : null;
         private MsSmoothAudioDeduplication _audioDeduplication;
         private string _destination;
         private DestinationSettings _destinationSettings;
@@ -59,7 +59,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AdditionalManifests property is set
         internal bool IsSetAdditionalManifests()
         {
-            return this._additionalManifests != null && this._additionalManifests.Count > 0; 
+            return this._additionalManifests != null && (this._additionalManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.QConnect.Model
         /// Enumerable containing all of the SessionSummaries
         /// </summary>
         public IPaginatedEnumerable<SessionSummary> SessionSummaries => 
-            new PaginatedResultKeyResponse<SearchSessionsResponse, SessionSummary>(this, (i) => i.SessionSummaries);
+            new PaginatedResultKeyResponse<SearchSessionsResponse, SessionSummary>(this, (i) => i.SessionSummaries ?? new List<SessionSummary>());
 
         internal SearchSessionsPaginator(IAmazonQConnect client, SearchSessionsRequest request)
         {

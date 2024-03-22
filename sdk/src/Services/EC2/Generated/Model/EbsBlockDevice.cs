@@ -70,8 +70,8 @@ namespace Amazon.EC2.Model
         /// from a backing snapshot. The effect of setting the encryption state to <c>true</c>
         /// depends on the volume origin (new or from a snapshot), starting encryption state,
         /// ownership, and whether encryption by default is enabled. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
-        /// EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html#encryption-parameters">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Encrypted volumes can only be attached to instances that support Amazon EBS encryption.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
         /// instance types</a>.
         /// </para>
         ///  
@@ -321,8 +321,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.
+        /// The volume type. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+        /// EBS volume types</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         public VolumeType VolumeType

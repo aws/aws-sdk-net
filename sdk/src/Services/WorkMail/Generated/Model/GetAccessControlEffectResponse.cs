@@ -34,7 +34,7 @@ namespace Amazon.WorkMail.Model
     public partial class GetAccessControlEffectResponse : AmazonWebServiceResponse
     {
         private AccessControlRuleEffect _effect;
-        private List<string> _matchedRules = new List<string>();
+        private List<string> _matchedRules = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Effect. 
@@ -70,7 +70,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if MatchedRules property is set
         internal bool IsSetMatchedRules()
         {
-            return this._matchedRules != null && this._matchedRules.Count > 0; 
+            return this._matchedRules != null && (this._matchedRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

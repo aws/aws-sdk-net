@@ -33,7 +33,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ListConversationsResponse : AmazonWebServiceResponse
     {
-        private List<Conversation> _conversations = new List<Conversation>();
+        private List<Conversation> _conversations = AWSConfigs.InitializeCollections ? new List<Conversation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Conversations property is set
         internal bool IsSetConversations()
         {
-            return this._conversations != null && this._conversations.Count > 0; 
+            return this._conversations != null && (this._conversations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

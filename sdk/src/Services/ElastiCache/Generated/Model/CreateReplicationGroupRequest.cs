@@ -40,9 +40,9 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  
     /// <para>
-    /// A Redis (cluster mode disabled) replication group is a collection of clusters, where
-    /// one of the clusters is a read/write primary and the others are read-only replicas.
-    /// Writes to the primary are asynchronously propagated to the replicas.
+    /// A Redis (cluster mode disabled) replication group is a collection of nodes, where
+    /// one of the nodes is a read/write primary and the others are read-only replicas. Writes
+    /// to the primary are asynchronously propagated to the replicas.
     /// </para>
     ///  
     /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.ElastiCache.Model
         private bool? _autoMinorVersionUpgrade;
         private string _cacheNodeType;
         private string _cacheParameterGroupName;
-        private List<string> _cacheSecurityGroupNames = new List<string>();
+        private List<string> _cacheSecurityGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _cacheSubnetGroupName;
         private ClusterMode _clusterMode;
         private bool? _dataTieringEnabled;
@@ -100,30 +100,30 @@ namespace Amazon.ElastiCache.Model
         private string _globalReplicationGroupId;
         private IpDiscovery _ipDiscovery;
         private string _kmsKeyId;
-        private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = new List<LogDeliveryConfigurationRequest>();
+        private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = AWSConfigs.InitializeCollections ? new List<LogDeliveryConfigurationRequest>() : null;
         private bool? _multiAZEnabled;
         private NetworkType _networkType;
-        private List<NodeGroupConfiguration> _nodeGroupConfiguration = new List<NodeGroupConfiguration>();
+        private List<NodeGroupConfiguration> _nodeGroupConfiguration = AWSConfigs.InitializeCollections ? new List<NodeGroupConfiguration>() : null;
         private string _notificationTopicArn;
         private int? _numCacheClusters;
         private int? _numNodeGroups;
         private int? _port;
-        private List<string> _preferredCacheClusterAZs = new List<string>();
+        private List<string> _preferredCacheClusterAZs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _preferredMaintenanceWindow;
         private string _primaryClusterId;
         private int? _replicasPerNodeGroup;
         private string _replicationGroupDescription;
         private string _replicationGroupId;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serverlessCacheSnapshotName;
-        private List<string> _snapshotArns = new List<string>();
+        private List<string> _snapshotArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _snapshotName;
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _transitEncryptionEnabled;
         private TransitEncryptionMode _transitEncryptionMode;
-        private List<string> _userGroupIds = new List<string>();
+        private List<string> _userGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AtRestEncryptionEnabled. 
@@ -488,7 +488,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheSecurityGroupNames property is set
         internal bool IsSetCacheSecurityGroupNames()
         {
-            return this._cacheSecurityGroupNames != null && this._cacheSecurityGroupNames.Count > 0; 
+            return this._cacheSecurityGroupNames != null && (this._cacheSecurityGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -678,7 +678,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if LogDeliveryConfigurations property is set
         internal bool IsSetLogDeliveryConfigurations()
         {
-            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+            return this._logDeliveryConfigurations != null && (this._logDeliveryConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -747,7 +747,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NodeGroupConfiguration property is set
         internal bool IsSetNodeGroupConfiguration()
         {
-            return this._nodeGroupConfiguration != null && this._nodeGroupConfiguration.Count > 0; 
+            return this._nodeGroupConfiguration != null && (this._nodeGroupConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -886,18 +886,11 @@ namespace Amazon.ElastiCache.Model
         // Check to see if PreferredCacheClusterAZs property is set
         internal bool IsSetPreferredCacheClusterAZs()
         {
-            return this._preferredCacheClusterAZs != null && this._preferredCacheClusterAZs.Count > 0; 
+            return this._preferredCacheClusterAZs != null && (this._preferredCacheClusterAZs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
-        /// <para>
-        /// Specifies the weekly time range during which maintenance on the cluster is performed.
-        /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
-        /// The minimum maintenance window is a 60 minute period. Valid values for <c>ddd</c>
-        /// are:
-        /// </para>
-        ///  
         /// <para>
         /// Specifies the weekly time range during which maintenance on the cluster is performed.
         /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
@@ -1070,7 +1063,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1115,7 +1108,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SnapshotArns property is set
         internal bool IsSetSnapshotArns()
         {
-            return this._snapshotArns != null && this._snapshotArns.Count > 0; 
+            return this._snapshotArns != null && (this._snapshotArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1209,7 +1202,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1307,7 +1300,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UserGroupIds property is set
         internal bool IsSetUserGroupIds()
         {
-            return this._userGroupIds != null && this._userGroupIds.Count > 0; 
+            return this._userGroupIds != null && (this._userGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

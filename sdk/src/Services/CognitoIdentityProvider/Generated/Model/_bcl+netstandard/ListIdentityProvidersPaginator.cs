@@ -45,7 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Enumerable containing all of the Providers
         /// </summary>
         public IPaginatedEnumerable<ProviderDescription> Providers => 
-            new PaginatedResultKeyResponse<ListIdentityProvidersResponse, ProviderDescription>(this, (i) => i.Providers);
+            new PaginatedResultKeyResponse<ListIdentityProvidersResponse, ProviderDescription>(this, (i) => i.Providers ?? new List<ProviderDescription>());
 
         internal ListIdentityProvidersPaginator(IAmazonCognitoIdentityProvider client, ListIdentityProvidersRequest request)
         {

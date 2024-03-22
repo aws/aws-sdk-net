@@ -34,8 +34,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails
     {
-        private List<string> _add = new List<string>();
-        private List<string> _drop = new List<string>();
+        private List<string> _add = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _drop = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Add. 
@@ -66,7 +66,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Add property is set
         internal bool IsSetAdd()
         {
-            return this._add != null && this._add.Count > 0; 
+            return this._add != null && (this._add.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Drop property is set
         internal bool IsSetDrop()
         {
-            return this._drop != null && this._drop.Count > 0; 
+            return this._drop != null && (this._drop.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

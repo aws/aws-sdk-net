@@ -33,8 +33,8 @@ namespace Amazon.Honeycode.Model
     /// </summary>
     public partial class BatchCreateTableRowsResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _createdRows = new Dictionary<string, string>();
-        private List<FailedBatchItem> _failedBatchItems = new List<FailedBatchItem>();
+        private Dictionary<string, string> _createdRows = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<FailedBatchItem> _failedBatchItems = AWSConfigs.InitializeCollections ? new List<FailedBatchItem>() : null;
         private long? _workbookCursor;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if CreatedRows property is set
         internal bool IsSetCreatedRows()
         {
-            return this._createdRows != null && this._createdRows.Count > 0; 
+            return this._createdRows != null && (this._createdRows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if FailedBatchItems property is set
         internal bool IsSetFailedBatchItems()
         {
-            return this._failedBatchItems != null && this._failedBatchItems.Count > 0; 
+            return this._failedBatchItems != null && (this._failedBatchItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -53,7 +53,7 @@ namespace Amazon.ECS.Model
     #endif
     public partial class ConflictException : AmazonECSException
     {
-        private List<string> _resourceIds = new List<string>();
+        private List<string> _resourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Constructs a new ConflictException with the specified error
@@ -150,7 +150,7 @@ namespace Amazon.ECS.Model
         // Check to see if ResourceIds property is set
         internal bool IsSetResourceIds()
         {
-            return this._resourceIds != null && this._resourceIds.Count > 0; 
+            return this._resourceIds != null && (this._resourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

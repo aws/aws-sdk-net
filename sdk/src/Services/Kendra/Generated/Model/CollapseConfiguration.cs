@@ -38,7 +38,7 @@ namespace Amazon.Kendra.Model
         private bool? _expand;
         private ExpandConfiguration _expandConfiguration;
         private MissingAttributeKeyStrategy _missingAttributeKeyStrategy;
-        private List<SortingConfiguration> _sortingConfigurations = new List<SortingConfiguration>();
+        private List<SortingConfiguration> _sortingConfigurations = AWSConfigs.InitializeCollections ? new List<SortingConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property DocumentAttributeKey. 
@@ -153,7 +153,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SortingConfigurations property is set
         internal bool IsSetSortingConfigurations()
         {
-            return this._sortingConfigurations != null && this._sortingConfigurations.Count > 0; 
+            return this._sortingConfigurations != null && (this._sortingConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

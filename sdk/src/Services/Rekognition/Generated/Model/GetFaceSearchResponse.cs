@@ -37,7 +37,7 @@ namespace Amazon.Rekognition.Model
         private VideoJobStatus _jobStatus;
         private string _jobTag;
         private string _nextToken;
-        private List<PersonMatch> _persons = new List<PersonMatch>();
+        private List<PersonMatch> _persons = AWSConfigs.InitializeCollections ? new List<PersonMatch>() : null;
         private string _statusMessage;
         private Video _video;
         private VideoMetadata _videoMetadata;
@@ -140,7 +140,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Persons property is set
         internal bool IsSetPersons()
         {
-            return this._persons != null && this._persons.Count > 0; 
+            return this._persons != null && (this._persons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

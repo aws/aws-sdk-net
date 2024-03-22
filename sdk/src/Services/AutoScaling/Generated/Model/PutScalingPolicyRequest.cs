@@ -66,7 +66,7 @@ namespace Amazon.AutoScaling.Model
         private string _policyType;
         private PredictiveScalingConfiguration _predictiveScalingConfiguration;
         private int? _scalingAdjustment;
-        private List<StepAdjustment> _stepAdjustments = new List<StepAdjustment>();
+        private List<StepAdjustment> _stepAdjustments = AWSConfigs.InitializeCollections ? new List<StepAdjustment>() : null;
         private TargetTrackingConfiguration _targetTrackingConfiguration;
 
         /// <summary>
@@ -411,7 +411,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if StepAdjustments property is set
         internal bool IsSetStepAdjustments()
         {
-            return this._stepAdjustments != null && this._stepAdjustments.Count > 0; 
+            return this._stepAdjustments != null && (this._stepAdjustments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

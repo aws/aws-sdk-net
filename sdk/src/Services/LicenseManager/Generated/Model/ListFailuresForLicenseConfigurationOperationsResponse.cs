@@ -33,7 +33,7 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class ListFailuresForLicenseConfigurationOperationsResponse : AmazonWebServiceResponse
     {
-        private List<LicenseOperationFailure> _licenseOperationFailureList = new List<LicenseOperationFailure>();
+        private List<LicenseOperationFailure> _licenseOperationFailureList = AWSConfigs.InitializeCollections ? new List<LicenseOperationFailure>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if LicenseOperationFailureList property is set
         internal bool IsSetLicenseOperationFailureList()
         {
-            return this._licenseOperationFailureList != null && this._licenseOperationFailureList.Count > 0; 
+            return this._licenseOperationFailureList != null && (this._licenseOperationFailureList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

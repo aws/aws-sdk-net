@@ -63,12 +63,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("EndPoints/member", targetDepth))
                     {
+                        if (unmarshalledObject.EndPoints == null)
+                        {
+                            unmarshalledObject.EndPoints = new List<EndPoint>();
+                        }
                         var unmarshaller = EndPointUnmarshaller.Instance;
                         unmarshalledObject.EndPoints.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("Fields/Field", targetDepth))
                     {
+                        if (unmarshalledObject.Fields == null)
+                        {
+                            unmarshalledObject.Fields = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Fields.Add(unmarshaller.Unmarshall(context));
                         continue;

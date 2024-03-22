@@ -63,6 +63,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Alarms/member", targetDepth))
                     {
                         var unmarshaller = AlarmUnmarshaller.Instance;
+                        if (unmarshalledObject.Alarms == null)
+                        {
+                            unmarshalledObject.Alarms = new List<Alarm>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Alarms.Add(item);
                         continue;
@@ -142,6 +146,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("StepAdjustments/member", targetDepth))
                     {
                         var unmarshaller = StepAdjustmentUnmarshaller.Instance;
+                        if (unmarshalledObject.StepAdjustments == null)
+                        {
+                            unmarshalledObject.StepAdjustments = new List<StepAdjustment>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.StepAdjustments.Add(item);
                         continue;

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     {
         private int? _amiLaunchIndex;
         private ArchitectureValues _architecture;
-        private List<InstanceBlockDeviceMapping> _blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
+        private List<InstanceBlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<InstanceBlockDeviceMapping>() : null;
         private BootModeValues _bootMode;
         private string _capacityReservationId;
         private CapacityReservationSpecificationResponse _capacityReservationSpecification;
@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
         private CpuOptions _cpuOptions;
         private InstanceBootModeValues _currentInstanceBootMode;
         private bool? _ebsOptimized;
-        private List<ElasticGpuAssociation> _elasticGpuAssociations = new List<ElasticGpuAssociation>();
-        private List<ElasticInferenceAcceleratorAssociation> _elasticInferenceAcceleratorAssociations = new List<ElasticInferenceAcceleratorAssociation>();
+        private List<ElasticGpuAssociation> _elasticGpuAssociations = AWSConfigs.InitializeCollections ? new List<ElasticGpuAssociation>() : null;
+        private List<ElasticInferenceAcceleratorAssociation> _elasticInferenceAcceleratorAssociations = AWSConfigs.InitializeCollections ? new List<ElasticInferenceAcceleratorAssociation>() : null;
         private bool? _enaSupport;
         private EnclaveOptions _enclaveOptions;
         private HibernationOptions _hibernationOptions;
@@ -58,11 +58,11 @@ namespace Amazon.EC2.Model
         private string _kernelId;
         private string _keyName;
         private DateTime? _launchTime;
-        private List<LicenseConfiguration> _licenses = new List<LicenseConfiguration>();
+        private List<LicenseConfiguration> _licenses = AWSConfigs.InitializeCollections ? new List<LicenseConfiguration>() : null;
         private InstanceMaintenanceOptions _maintenanceOptions;
         private InstanceMetadataOptionsResponse _metadataOptions;
         private Monitoring _monitoring;
-        private List<InstanceNetworkInterface> _networkInterfaces = new List<InstanceNetworkInterface>();
+        private List<InstanceNetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<InstanceNetworkInterface>() : null;
         private string _outpostArn;
         private Placement _placement;
         private PlatformValues _platform;
@@ -70,13 +70,13 @@ namespace Amazon.EC2.Model
         private string _privateDnsName;
         private PrivateDnsNameOptionsResponse _privateDnsNameOptions;
         private string _privateIpAddress;
-        private List<ProductCode> _productCodes = new List<ProductCode>();
+        private List<ProductCode> _productCodes = AWSConfigs.InitializeCollections ? new List<ProductCode>() : null;
         private string _publicDnsName;
         private string _publicIpAddress;
         private string _ramdiskId;
         private string _rootDeviceName;
         private DeviceType _rootDeviceType;
-        private List<GroupIdentifier> _securityGroups = new List<GroupIdentifier>();
+        private List<GroupIdentifier> _securityGroups = AWSConfigs.InitializeCollections ? new List<GroupIdentifier>() : null;
         private bool? _sourceDestCheck;
         private string _spotInstanceRequestId;
         private string _sriovNetSupport;
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         private StateReason _stateReason;
         private string _stateTransitionReason;
         private string _subnetId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tpmSupport;
         private string _usageOperation;
         private DateTime? _usageOperationUpdateTime;
@@ -142,7 +142,7 @@ namespace Amazon.EC2.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -310,7 +310,7 @@ namespace Amazon.EC2.Model
         // Check to see if ElasticGpuAssociations property is set
         internal bool IsSetElasticGpuAssociations()
         {
-            return this._elasticGpuAssociations != null && this._elasticGpuAssociations.Count > 0; 
+            return this._elasticGpuAssociations != null && (this._elasticGpuAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -328,7 +328,7 @@ namespace Amazon.EC2.Model
         // Check to see if ElasticInferenceAcceleratorAssociations property is set
         internal bool IsSetElasticInferenceAcceleratorAssociations()
         {
-            return this._elasticInferenceAcceleratorAssociations != null && this._elasticInferenceAcceleratorAssociations.Count > 0; 
+            return this._elasticInferenceAcceleratorAssociations != null && (this._elasticInferenceAcceleratorAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -581,7 +581,7 @@ namespace Amazon.EC2.Model
         // Check to see if Licenses property is set
         internal bool IsSetLicenses()
         {
-            return this._licenses != null && this._licenses.Count > 0; 
+            return this._licenses != null && (this._licenses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -653,7 +653,7 @@ namespace Amazon.EC2.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -808,7 +808,7 @@ namespace Amazon.EC2.Model
         // Check to see if ProductCodes property is set
         internal bool IsSetProductCodes()
         {
-            return this._productCodes != null && this._productCodes.Count > 0; 
+            return this._productCodes != null && (this._productCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -924,7 +924,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1069,7 +1069,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

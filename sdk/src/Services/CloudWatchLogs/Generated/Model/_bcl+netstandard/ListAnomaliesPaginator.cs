@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all of the Anomalies
         /// </summary>
         public IPaginatedEnumerable<Anomaly> Anomalies => 
-            new PaginatedResultKeyResponse<ListAnomaliesResponse, Anomaly>(this, (i) => i.Anomalies);
+            new PaginatedResultKeyResponse<ListAnomaliesResponse, Anomaly>(this, (i) => i.Anomalies ?? new List<Anomaly>());
 
         internal ListAnomaliesPaginator(IAmazonCloudWatchLogs client, ListAnomaliesRequest request)
         {

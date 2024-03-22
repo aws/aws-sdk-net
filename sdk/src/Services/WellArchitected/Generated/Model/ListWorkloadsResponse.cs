@@ -34,7 +34,7 @@ namespace Amazon.WellArchitected.Model
     public partial class ListWorkloadsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkloadSummary> _workloadSummaries = new List<WorkloadSummary>();
+        private List<WorkloadSummary> _workloadSummaries = AWSConfigs.InitializeCollections ? new List<WorkloadSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -63,7 +63,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if WorkloadSummaries property is set
         internal bool IsSetWorkloadSummaries()
         {
-            return this._workloadSummaries != null && this._workloadSummaries.Count > 0; 
+            return this._workloadSummaries != null && (this._workloadSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

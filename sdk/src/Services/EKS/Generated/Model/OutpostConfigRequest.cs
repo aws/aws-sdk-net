@@ -38,7 +38,7 @@ namespace Amazon.EKS.Model
     {
         private string _controlPlaneInstanceType;
         private ControlPlanePlacementRequest _controlPlanePlacement;
-        private List<string> _outpostArns = new List<string>();
+        private List<string> _outpostArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ControlPlaneInstanceType. 
@@ -110,7 +110,7 @@ namespace Amazon.EKS.Model
         // Check to see if OutpostArns property is set
         internal bool IsSetOutpostArns()
         {
-            return this._outpostArns != null && this._outpostArns.Count > 0; 
+            return this._outpostArns != null && (this._outpostArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

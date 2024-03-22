@@ -35,7 +35,7 @@ namespace Amazon.FMS.Model
     {
         private string _gatewayId;
         private string _routeTableId;
-        private List<Route> _violatingRoutes = new List<Route>();
+        private List<Route> _violatingRoutes = AWSConfigs.InitializeCollections ? new List<Route>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.FMS.Model
         // Check to see if ViolatingRoutes property is set
         internal bool IsSetViolatingRoutes()
         {
-            return this._violatingRoutes != null && this._violatingRoutes.Count > 0; 
+            return this._violatingRoutes != null && (this._violatingRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

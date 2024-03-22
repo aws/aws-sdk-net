@@ -33,7 +33,7 @@ namespace Amazon.KeyManagementService.Model
     /// </summary>
     public partial class ListKeysResponse : AmazonWebServiceResponse
     {
-        private List<KeyListEntry> _keys = new List<KeyListEntry>();
+        private List<KeyListEntry> _keys = AWSConfigs.InitializeCollections ? new List<KeyListEntry>() : null;
         private string _nextMarker;
         private bool? _truncated;
 
@@ -52,7 +52,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class GrpcRouteMatch
     {
-        private List<GrpcRouteMetadata> _metadata = new List<GrpcRouteMetadata>();
+        private List<GrpcRouteMetadata> _metadata = AWSConfigs.InitializeCollections ? new List<GrpcRouteMetadata>() : null;
         private string _methodName;
         private int? _port;
         private string _serviceName;
@@ -54,7 +54,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

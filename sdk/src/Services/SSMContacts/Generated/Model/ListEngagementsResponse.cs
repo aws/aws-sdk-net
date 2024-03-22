@@ -33,7 +33,7 @@ namespace Amazon.SSMContacts.Model
     /// </summary>
     public partial class ListEngagementsResponse : AmazonWebServiceResponse
     {
-        private List<Engagement> _engagements = new List<Engagement>();
+        private List<Engagement> _engagements = AWSConfigs.InitializeCollections ? new List<Engagement>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if Engagements property is set
         internal bool IsSetEngagements()
         {
-            return this._engagements != null && this._engagements.Count > 0; 
+            return this._engagements != null && (this._engagements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

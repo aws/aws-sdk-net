@@ -33,8 +33,8 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class InAppMessage
     {
-        private List<InAppMessageContent> _content = new List<InAppMessageContent>();
-        private Dictionary<string, string> _customConfig = new Dictionary<string, string>();
+        private List<InAppMessageContent> _content = AWSConfigs.InitializeCollections ? new List<InAppMessageContent>() : null;
+        private Dictionary<string, string> _customConfig = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Layout _layout;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Content property is set
         internal bool IsSetContent()
         {
-            return this._content != null && this._content.Count > 0; 
+            return this._content != null && (this._content.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if CustomConfig property is set
         internal bool IsSetCustomConfig()
         {
-            return this._customConfig != null && this._customConfig.Count > 0; 
+            return this._customConfig != null && (this._customConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

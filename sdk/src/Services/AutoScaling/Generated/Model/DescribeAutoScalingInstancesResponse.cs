@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeAutoScalingInstancesResponse : AmazonWebServiceResponse
     {
-        private List<AutoScalingInstanceDetails> _autoScalingInstances = new List<AutoScalingInstanceDetails>();
+        private List<AutoScalingInstanceDetails> _autoScalingInstances = AWSConfigs.InitializeCollections ? new List<AutoScalingInstanceDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingInstances property is set
         internal bool IsSetAutoScalingInstances()
         {
-            return this._autoScalingInstances != null && this._autoScalingInstances.Count > 0; 
+            return this._autoScalingInstances != null && (this._autoScalingInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<HistoryEvent> Events => 
-            new PaginatedResultKeyResponse<PollForDecisionTaskResponse, HistoryEvent>(this, (i) => i.DecisionTask.Events);
+            new PaginatedResultKeyResponse<PollForDecisionTaskResponse, HistoryEvent>(this, (i) => i.DecisionTask.Events ?? new List<HistoryEvent>());
 
         internal PollForDecisionTaskPaginator(IAmazonSimpleWorkflow client, PollForDecisionTaskRequest request)
         {

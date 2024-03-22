@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class DecimalParameter
     {
         private string _name;
-        private List<double> _values = new List<double>();
+        private List<double> _values = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

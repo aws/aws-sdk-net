@@ -1,3 +1,289 @@
+### 3.7.774.0 (2024-03-22 18:19 UTC)
+* IAMRolesAnywhere (3.7.301.0)
+	* This release relaxes constraints on the durationSeconds request parameter for the *Profile APIs that support it. This parameter can now take on values that go up to 43200.
+* Kendra (3.7.301.0)
+	* Documentation update, March 2024. Corrects some docs for Amazon Kendra.
+* KinesisFirehose (3.7.304.8)
+	* Updates Amazon Firehose documentation for message regarding Enforcing Tags IAM Policy.
+* Pricing (3.7.302.0)
+	* Add ResourceNotFoundException to ListPriceLists and GetPriceListFileUrl APIs
+* SecurityHub (3.7.304.0)
+	* Added new resource detail object to ASFF, including resource for LastKnownExploitAt
+* Core 3.7.303.0
+	* Add InitializeCollections property to AWSConfigs. If true types used for request and responses for service calls initializes collection properties to empty collection. If false the collections will be initialized to null. The default value is true.
+	* Fixed issue overriding OS configured proxy for .NET Framework targets.
+	* All services packages updated to require new Core
+
+### 3.7.773.0 (2024-03-21 18:14 UTC)
+* CodeArtifact (3.7.301.0)
+	* This release adds Package groups to CodeArtifact so you can more conveniently configure package origin controls for multiple packages.
+
+### 3.7.772.0 (2024-03-20 18:28 UTC)
+* AccessAnalyzer (3.7.303.0)
+	* This release adds support for policy validation and external access findings for DynamoDB tables and streams. IAM Access Analyzer helps you author functional and secure resource-based policies and identify cross-account access. Updated service API, documentation, and paginators.
+* CodeBuild (3.7.303.2)
+	* This release adds support for new webhook events (RELEASED and PRERELEASED) and filter types (TAG_NAME and RELEASE_NAME).
+* Connect (3.7.315.0)
+	* This release updates the *InstanceStorageConfig APIs to support a new ResourceType: REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS. Use this resource type to enable streaming for real-time analysis of chat contacts and to associate a Kinesis stream where real-time analysis chat segments will be published.
+* DynamoDBv2 (3.7.302.0)
+	* This release introduces 3 new APIs ('GetResourcePolicy', 'PutResourcePolicy' and 'DeleteResourcePolicy') and modifies the existing 'CreateTable' API for the resource-based policy support. It also modifies several APIs to accept a 'TableArn' for the 'TableName' parameter.
+* ManagedBlockchainQuery (3.7.304.0)
+	* AMB Query: update GetTransaction to include transactionId as input
+* SavingsPlans (3.7.301.0)
+	* Introducing the Savings Plans Return feature enabling customers to return their Savings Plans within 7 days of purchase.
+
+### 3.7.771.0 (2024-03-19 18:16 UTC)
+* CloudFormation (3.7.305.1)
+	* Documentation update, March 2024. Corrects some formatting.
+* CloudWatchLogs (3.7.305.0)
+	* Update LogSamples field in Anomaly model to be a list of LogEvent
+* EC2 (3.7.318.0)
+	* This release adds the new DescribeMacHosts API operation for getting information about EC2 Mac Dedicated Hosts. Users can now see the latest macOS versions that their underlying Apple Mac can support without needing to be updated.
+* Finspace (3.7.305.0)
+	* Adding new attributes readWrite and onDemand to dataview models for Database Maintenance operations.
+* ManagedBlockchainQuery (3.7.303.0)
+	* Introduces a new API for Amazon Managed Blockchain Query: ListFilteredTransactionEvents.
+
+### 3.7.770.0 (2024-03-18 18:42 UTC)
+* CloudFormation (3.7.305.0)
+	* This release supports for a new API ListStackSetAutoDeploymentTargets, which provider auto-deployment configuration as a describable resource. Customers can now view the specific combinations of regions and OUs that are being auto-deployed.
+* KeyManagementService (3.7.301.0)
+	* Adds the ability to use the default policy name by omitting the policyName parameter in calls to PutKeyPolicy and GetKeyPolicy
+* MediaTailor (3.7.304.0)
+	* This release adds support to allow customers to show different content within a channel depending on metadata associated with the viewer.
+* RDS (3.7.310.0)
+	* This release launches the ModifyIntegration API and support for data filtering for zero-ETL Integrations.
+* S3 (3.7.307.0)
+	* Fix two issues with response root node names.
+* TimestreamQuery (3.7.300.59)
+	* Documentation updates, March 2024
+* Core 3.7.302.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.769.0 (2024-03-15 18:28 UTC)
+* Backup (3.7.304.0)
+	* This release introduces a boolean attribute ManagedByAWSBackupOnly as part of ListRecoveryPointsByResource api to filter the recovery points based on ownership. This attribute can be used to filter out the recovery points protected by AWSBackup.
+* CodeBuild (3.7.303.0)
+	* AWS CodeBuild now supports overflow behavior on Reserved Capacity.
+* Connect (3.7.314.0)
+	* This release adds Hierarchy based Access Control fields to Security Profile public APIs and adds support for UserAttributeFilter to SearchUsers API.
+* EC2 (3.7.317.0)
+	* Add media accelerator and neuron device information on the describe instance types API.
+* KinesisAnalyticsV2 (3.7.302.0)
+	* Support for Flink 1.18 in Managed Service for Apache Flink
+* S3 (3.7.306.2)
+	* Documentation updates for Amazon S3.
+* SageMaker (3.7.315.0)
+	* Adds m6i, m6id, m7i, c6i, c6id, c7i, r6i r6id, r7i, p5 instance type support to Sagemaker Notebook Instances and miscellaneous wording fixes for previous Sagemaker documentation.
+* WorkSpacesThinClient (3.7.301.0)
+	* Removed unused parameter kmsKeyArn from UpdateDeviceRequest
+* Core 3.7.302.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.768.0 (2024-03-14 18:25 UTC)
+* Amplify (3.7.301.5)
+	* Documentation updates for Amplify. Identifies the APIs available only to apps created using Amplify Gen 1.
+* EC2InstanceConnect (3.7.301.0)
+	* This release includes a new exception type "SerialConsoleSessionUnsupportedException" for SendSerialConsoleSSHPublicKey API.
+* ElasticLoadBalancingV2 (3.7.302.13)
+	* This release allows you to configure HTTP client keep-alive duration for communication between clients and Application Load Balancers.
+* FIS (3.7.302.0)
+	* This release adds support for previewing target resources before running a FIS experiment. It also adds resource ARNs for actions, experiments, and experiment templates to API responses.
+* IoTRoboRunner (Removed)
+	* AWS IoT RoboRunner has been removed from the SDK because it has been discontinued.
+* RDS (3.7.309.4)
+	* Updates Amazon RDS documentation for EBCDIC collation for RDS for Db2.
+* SecretsManager (3.7.302.32)
+	* Doc only update for Secrets Manager
+* TimestreamInfluxDB (3.7.300.0)
+	* This is the initial SDK release for Amazon Timestream for InfluxDB. Amazon Timestream for InfluxDB is a new time-series database engine that makes it easy for application developers and DevOps teams to run InfluxDB databases on AWS for near real-time time-series applications using open source APIs.
+* Core 3.7.302.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.767.0 (2024-03-13 18:17 UTC)
+* IVSRealTime (3.7.302.0)
+	* adds support for multiple new composition layout configuration options (grid, pip)
+* KinesisAnalyticsV2 (3.7.301.0)
+	* Support new RuntimeEnvironmentUpdate parameter within UpdateApplication API allowing callers to change the Flink version upon which their application runs.
+* S3 (3.7.306.0)
+	* This release makes the default option for S3 on Outposts request signing to use the SigV4A algorithm when using AWS Common Runtime (CRT).
+	* Add mime code mapping for .csv file extension.
+* Core 3.7.302.17
+	* Update endpoint resolver to handle scenarios where both SigV4 and SigV4A authentication schemes are defined for the same service
+	* All services packages updated to require new Core
+
+### 3.7.766.0 (2024-03-12 18:17 UTC)
+* CloudFormation (3.7.304.2)
+	* CloudFormation documentation update for March, 2024
+* Connect (3.7.313.0)
+	* This release increases MaxResults limit to 500 in request for SearchUsers, SearchQueues and SearchRoutingProfiles APIs of Amazon Connect.
+* EC2 (3.7.316.2)
+	* Documentation updates for Amazon EC2.
+* Kafka (3.7.302.0)
+	* Added support for specifying the starting position of topic replication in MSK-Replicator.
+* SimpleSystemsManagement (3.7.303.4)
+	* March 2024 doc-only updates for Systems Manager.
+
+### 3.7.765.0 (2024-03-11 18:46 UTC)
+* CodeStarconnections (3.7.305.0)
+	* Added a sync configuration enum to disable publishing of deployment status to source providers (PublishDeploymentStatus). Added a sync configuration enum (TriggerStackUpdateOn) to only trigger changes.
+* ElastiCache (3.7.301.46)
+	* Revisions to API text that are now to be carried over to SDK text, changing usages of "SFO" in code examples to "us-west-1", and some other typos.
+* MediaPackageV2 (3.7.301.0)
+	* This release enables customers to safely update their MediaPackage v2 channel groups, channels and origin endpoints using entity tags.
+
+### 3.7.764.0 (2024-03-08 19:19 UTC)
+* Batch (3.7.303.0)
+	* This release adds JobStateTimeLimitActions setting to the Job Queue API. It allows you to configure an action Batch can take for a blocking job in front of the queue after the defined period of time. The new parameter applies for ECS, EKS, and FARGATE Job Queues.
+* BedrockAgentRuntime (3.7.301.2)
+	* Documentation update for Bedrock Runtime Agent
+* CloudTrail (3.7.304.0)
+	* Added exceptions to CreateTrail, DescribeTrails, and ListImportFailures APIs.
+* CodeBuild (3.7.302.16)
+	* This release adds support for a new webhook event: PULL_REQUEST_CLOSED.
+* CognitoIdentityProvider (3.7.303.0)
+	* Add ConcurrentModificationException to SetUserPoolMfaConfig
+* GuardDuty (3.7.304.0)
+	* Add RDS Provisioned and Serverless Usage types
+* Transfer (3.7.303.0)
+	* Added DES_EDE3_CBC to the list of supported encryption algorithms for messages sent with an AS2 connector.
+* Core 3.7.302.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.763.0 (2024-03-07 19:29 UTC)
+* AppConfig (3.7.301.0)
+	* AWS AppConfig now supports dynamic parameters, which enhance the functionality of AppConfig Extensions by allowing you to provide parameter values to your Extensions at the time you deploy your configuration.
+* EC2 (3.7.316.0)
+	* This release adds an optional parameter to RegisterImage and CopyImage APIs to support tagging AMIs at the time of creation.
+* Lambda (3.7.304.3)
+	* Documentation updates for AWS Lambda
+* ManagedGrafana (3.7.301.0)
+	* Adds support for the new GrafanaToken as part of the Amazon Managed Grafana Enterprise plugins upgrade to associate your AWS account with a Grafana Labs account.
+* PaymentCryptographyData (3.7.301.0)
+	* AWS Payment Cryptography EMV Decrypt Feature  Release
+* RDS (3.7.309.1)
+	* Updates Amazon RDS documentation for io2 storage for Multi-AZ DB clusters
+* Snowball (3.7.300.55)
+	* Doc-only update for change to EKS-Anywhere ordering.
+* WAFV2 (3.7.303.0)
+	* You can increase the max request body inspection size for some regional resources. The size setting is in the web ACL association config. Also, the AWSManagedRulesBotControlRuleSet EnableMachineLearning setting now takes a Boolean instead of a primitive boolean type, for languages like Java.
+* WorkSpaces (3.7.302.8)
+	* Added note for user decoupling
+
+### 3.7.762.0 (2024-03-06 19:53 UTC)
+* DynamoDBv2 (3.7.301.18)
+	* Doc only updates for DynamoDB documentation
+* Imagebuilder (3.7.303.0)
+	* Add PENDING status to Lifecycle Execution resource status. Add StartTime and EndTime to ListLifecycleExecutionResource API response.
+* MWAA (3.7.303.13)
+	* Amazon MWAA adds support for Apache Airflow v2.8.1.
+* RDS (3.7.309.0)
+	* Updated the input of CreateDBCluster and ModifyDBCluster to support setting CA certificates. Updated the output of DescribeDBCluster to show current CA certificate setting value.
+* Redshift (3.7.304.8)
+	* Update for documentation only. Covers port ranges, definition updates for data sharing, and definition updates to cluster-snapshot documentation.
+* VerifiedPermissions (3.7.303.0)
+	* Deprecating details in favor of configuration for GetIdentitySource and ListIdentitySources APIs.
+
+### 3.7.761.0 (2024-03-05 19:17 UTC)
+* APIGateway (3.7.300.56)
+	* Documentation updates for Amazon API Gateway
+* Chatbot (3.7.300.3)
+	* Minor update to documentation.
+* Organizations (3.7.302.0)
+	* This release contains an endpoint addition
+* SimpleEmailV2 (3.7.301.0)
+	* Adds support for providing custom headers within SendEmail and SendBulkEmail for SESv2.
+
+### 3.7.760.0 (2024-03-04 19:15 UTC)
+* CloudFormation (3.7.304.0)
+	* Add DetailedStatus field to DescribeStackEvents and DescribeStacks APIs
+* FSx (3.7.304.0)
+	* Added support for creating FSx for NetApp ONTAP file systems with up to 12 HA pairs, delivering up to 72 GB/s of read throughput and 12 GB/s of write throughput.
+* Organizations (3.7.301.0)
+	* Documentation update for AWS Organizations
+
+### 3.7.759.1 (2024-03-01 19:13 UTC)
+* AccessAnalyzer (3.7.302.44)
+	* Fixed a typo in description field.
+* AutoScaling (3.7.302.13)
+	* With this release, Amazon EC2 Auto Scaling groups, EC2 Fleet, and Spot Fleet improve the default price protection behavior of attribute-based instance type selection of Spot Instances, to consistently select from a wide range of instance types.
+* EC2 (3.7.315.2)
+	* With this release, Amazon EC2 Auto Scaling groups, EC2 Fleet, and Spot Fleet improve the default price protection behavior of attribute-based instance type selection of Spot Instances, to consistently select from a wide range of instance types.
+
+### 3.7.759.0 (2024-02-29 19:18 UTC)
+* DocDBElastic (3.7.301.0)
+	* Launched Elastic Clusters Readable Secondaries, Start/Stop, Configurable Shard Instance count, Automatic Backups and Snapshot Copying
+* EKS (3.7.304.0)
+	* Added support for new AL2023 AMIs to the supported AMITypes.
+* LexModelsV2 (3.7.303.0)
+	* This release makes AMAZON.QnAIntent generally available in Amazon Lex. This generative AI feature leverages large language models available through Amazon Bedrock to automate frequently asked questions (FAQ) experience for end-users.
+* MigrationHubOrchestrator (3.7.301.0)
+	* Adds new CreateTemplate, UpdateTemplate and DeleteTemplate APIs.
+* QuickSight (3.7.306.0)
+	* TooltipTarget for Combo chart visuals; ColumnConfiguration limit increase to 2000; Documentation Update
+* SageMaker (3.7.314.0)
+	* Adds support for ModelDataSource in Model Packages to support unzipped models. Adds support to specify SourceUri for models which allows registration of models without mandating a container for hosting. Using SourceUri, customers can decouple the model from hosting information during registration.
+* SecurityLake (3.7.301.0)
+	* Add capability to update the Data Lake's MetaStoreManager Role in order to perform required data lake updates to use Iceberg table format in their data lake or update the role for any other reason.
+* Core 3.7.302.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.758.0 (2024-02-28 19:18 UTC)
+* Batch (3.7.302.0)
+	* This release adds Batch support for configuration of multicontainer jobs in ECS, Fargate, and EKS. This support is available for all types of jobs, including both array jobs and multi-node parallel jobs.
+* BedrockAgentRuntime (3.7.301.0)
+	* This release adds support to override search strategy performed by the Retrieve and RetrieveAndGenerate APIs for Amazon Bedrock Agents
+* CostExplorer (3.7.301.0)
+	* This release introduces the new API 'GetApproximateUsageRecords', which retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.
+* DynamoDBv2 (3.7.301.16)
+	* Expose PaginationToken property in AsyncSearch.
+* EC2 (3.7.315.0)
+	* This release increases the range of MaxResults for GetNetworkInsightsAccessScopeAnalysisFindings to 1,000.
+* IoT (3.7.307.0)
+	* This release reduces the maximum results returned per query invocation from 500 to 100 for the SearchIndex API. This change has no implications as long as the API is invoked until the nextToken is NULL.
+* WAFV2 (3.7.302.0)
+	* AWS WAF now supports configurable time windows for request aggregation with rate-based rules. Customers can now select time windows of 1 minute, 2 minutes or 10 minutes, in addition to the previously supported 5 minutes.
+
+### 3.7.757.0 (2024-02-27 19:13 UTC)
+* AmplifyUIBuilder (3.7.301.0)
+	* We have added the ability to tag resources after they are created
+* Core 3.7.302.14
+	* Add support for no_proxy environment variable for .NET Framework targets.
+	* All services packages updated to require new Core
+
+### 3.7.756.0 (2024-02-26 19:20 UTC)
+* APIGateway (3.7.300.53)
+	* Documentation updates for Amazon API Gateway.
+* Drs (3.7.303.0)
+	* Added volume status to DescribeSourceServer replicated volumes.
+* KafkaConnect (3.7.301.0)
+	* Adds support for tagging, with new TagResource, UntagResource and ListTagsForResource APIs to manage tags and updates to existing APIs to allow tag on create. This release also adds support for the new DeleteWorkerConfiguration API.
+* RDS (3.7.308.0)
+	* This release adds support for gp3 data volumes for Multi-AZ DB Clusters.
+
+### 3.7.755.0 (2024-02-23 19:20 UTC)
+* AppSync (3.7.304.5)
+	* Documentation only updates for AppSync
+* CloudWatchRUM (3.7.300.53)
+	* Doc-only update for new RUM metrics that were added
+* QLDB (3.7.300.53)
+	* Clarify possible values for KmsKeyArn and EncryptionDescription.
+* RDS (3.7.307.0)
+	* Add pattern and length based validations for DBShardGroupIdentifier
+* Core 3.7.302.13
+	* Use sso_registration_scopes when retrieving SSO token with SSOAWSCredentials
+
+### 3.7.754.0 (2024-02-22 19:29 UTC)
+* InternetMonitor (3.7.302.0)
+	* This release adds IPv4 prefixes to health events
+* KinesisVideo (3.7.301.0)
+	* Increasing NextToken parameter length restriction for List APIs from 512 to 1024.
+
 ### 3.7.753.0 (2024-02-21 19:17 UTC)
 * IoTEvents (3.7.301.0)
 	* Increase the maximum length of descriptions for Inputs, Detector Models, and Alarm Models

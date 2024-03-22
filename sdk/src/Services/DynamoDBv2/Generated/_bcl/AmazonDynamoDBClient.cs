@@ -480,7 +480,7 @@ namespace Amazon.DynamoDBv2
         /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <c>BatchGetItem</c> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <c>ConsistentRead</c> - If <c>true</c>, a strongly consistent read is used; if <c>false</c> (the default), an eventually consistent read is used. </li> <li>  <c>ExpressionAttributeNames</c> - One or more substitution tokens for attribute names in the <c>ProjectionExpression</c> parameter. The following are some use cases for using <c>ExpressionAttributeNames</c>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <c>Percentile</c>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <c>ExpressionAttributeNames</c>: <ul> <li>  <c>{"#P":"Percentile"}</c>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <c>#P = :val</c>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>Keys</c> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <c>ProjectionExpression</c> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>AttributesToGet</c> - This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names or table ARNs and, for each table, a map that describes one or more items to retrieve from that table. Each table name or ARN can be used only once per <c>BatchGetItem</c> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <c>ConsistentRead</c> - If <c>true</c>, a strongly consistent read is used; if <c>false</c> (the default), an eventually consistent read is used. </li> <li>  <c>ExpressionAttributeNames</c> - One or more substitution tokens for attribute names in the <c>ProjectionExpression</c> parameter. The following are some use cases for using <c>ExpressionAttributeNames</c>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <c>Percentile</c>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <c>ExpressionAttributeNames</c>: <ul> <li>  <c>{"#P":"Percentile"}</c>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <c>#P = :val</c>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>Keys</c> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <c>ProjectionExpression</c> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>AttributesToGet</c> - This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
         /// <param name="returnConsumedCapacity">A property of BatchGetItemRequest used to execute the BatchGetItem service method.</param>
         /// 
         /// <returns>The response from the BatchGetItem service method, as returned by DynamoDB.</returns>
@@ -584,7 +584,7 @@ namespace Amazon.DynamoDBv2
         /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <c>BatchGetItem</c> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <c>ConsistentRead</c> - If <c>true</c>, a strongly consistent read is used; if <c>false</c> (the default), an eventually consistent read is used. </li> <li>  <c>ExpressionAttributeNames</c> - One or more substitution tokens for attribute names in the <c>ProjectionExpression</c> parameter. The following are some use cases for using <c>ExpressionAttributeNames</c>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <c>Percentile</c>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <c>ExpressionAttributeNames</c>: <ul> <li>  <c>{"#P":"Percentile"}</c>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <c>#P = :val</c>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>Keys</c> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <c>ProjectionExpression</c> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>AttributesToGet</c> - This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names or table ARNs and, for each table, a map that describes one or more items to retrieve from that table. Each table name or ARN can be used only once per <c>BatchGetItem</c> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <c>ConsistentRead</c> - If <c>true</c>, a strongly consistent read is used; if <c>false</c> (the default), an eventually consistent read is used. </li> <li>  <c>ExpressionAttributeNames</c> - One or more substitution tokens for attribute names in the <c>ProjectionExpression</c> parameter. The following are some use cases for using <c>ExpressionAttributeNames</c>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <c>Percentile</c>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <c>ExpressionAttributeNames</c>: <ul> <li>  <c>{"#P":"Percentile"}</c>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <c>#P = :val</c>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>Keys</c> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <c>ProjectionExpression</c> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>AttributesToGet</c> - This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
         /// 
         /// <returns>The response from the BatchGetItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -792,7 +792,7 @@ namespace Amazon.DynamoDBv2
         /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <c>BatchGetItem</c> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <c>ConsistentRead</c> - If <c>true</c>, a strongly consistent read is used; if <c>false</c> (the default), an eventually consistent read is used. </li> <li>  <c>ExpressionAttributeNames</c> - One or more substitution tokens for attribute names in the <c>ProjectionExpression</c> parameter. The following are some use cases for using <c>ExpressionAttributeNames</c>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <c>Percentile</c>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <c>ExpressionAttributeNames</c>: <ul> <li>  <c>{"#P":"Percentile"}</c>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <c>#P = :val</c>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>Keys</c> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <c>ProjectionExpression</c> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>AttributesToGet</c> - This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names or table ARNs and, for each table, a map that describes one or more items to retrieve from that table. Each table name or ARN can be used only once per <c>BatchGetItem</c> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <c>ConsistentRead</c> - If <c>true</c>, a strongly consistent read is used; if <c>false</c> (the default), an eventually consistent read is used. </li> <li>  <c>ExpressionAttributeNames</c> - One or more substitution tokens for attribute names in the <c>ProjectionExpression</c> parameter. The following are some use cases for using <c>ExpressionAttributeNames</c>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <c>Percentile</c>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <c>ExpressionAttributeNames</c>: <ul> <li>  <c>{"#P":"Percentile"}</c>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <c>#P = :val</c>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>Keys</c> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <c>ProjectionExpression</c> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>AttributesToGet</c> - This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
         /// <param name="returnConsumedCapacity">A property of BatchGetItemRequest used to execute the BatchGetItem service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -899,7 +899,7 @@ namespace Amazon.DynamoDBv2
         /// with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <c>BatchGetItem</c> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <c>ConsistentRead</c> - If <c>true</c>, a strongly consistent read is used; if <c>false</c> (the default), an eventually consistent read is used. </li> <li>  <c>ExpressionAttributeNames</c> - One or more substitution tokens for attribute names in the <c>ProjectionExpression</c> parameter. The following are some use cases for using <c>ExpressionAttributeNames</c>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <c>Percentile</c>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <c>ExpressionAttributeNames</c>: <ul> <li>  <c>{"#P":"Percentile"}</c>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <c>#P = :val</c>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>Keys</c> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <c>ProjectionExpression</c> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>AttributesToGet</c> - This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names or table ARNs and, for each table, a map that describes one or more items to retrieve from that table. Each table name or ARN can be used only once per <c>BatchGetItem</c> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <c>ConsistentRead</c> - If <c>true</c>, a strongly consistent read is used; if <c>false</c> (the default), an eventually consistent read is used. </li> <li>  <c>ExpressionAttributeNames</c> - One or more substitution tokens for attribute names in the <c>ProjectionExpression</c> parameter. The following are some use cases for using <c>ExpressionAttributeNames</c>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <c>Percentile</c>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <c>ExpressionAttributeNames</c>: <ul> <li>  <c>{"#P":"Percentile"}</c>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <c>#P = :val</c>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>Keys</c> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <c>ProjectionExpression</c> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <c>AttributesToGet</c> - This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1154,7 +1154,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<c>DeleteRequest</c> or <c>PutRequest</c>). Each element in the map consists of the following: <ul> <li>  <c>DeleteRequest</c> - Perform a <c>DeleteItem</c> operation on the specified item. The item to be deleted is identified by a <c>Key</c> subelement: <ul> <li>  <c>Key</c> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <c>PutRequest</c> - Perform a <c>PutItem</c> operation on the specified item. The item to be put is identified by an <c>Item</c> subelement: <ul> <li>  <c>Item</c> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a <c>ValidationException</c> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (<c>DeleteRequest</c> or <c>PutRequest</c>). Each element in the map consists of the following: <ul> <li>  <c>DeleteRequest</c> - Perform a <c>DeleteItem</c> operation on the specified item. The item to be deleted is identified by a <c>Key</c> subelement: <ul> <li>  <c>Key</c> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <c>PutRequest</c> - Perform a <c>PutItem</c> operation on the specified item. The item to be put is identified by an <c>Item</c> subelement: <ul> <li>  <c>Item</c> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a <c>ValidationException</c> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
         /// 
         /// <returns>The response from the BatchWriteItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -1444,7 +1444,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<c>DeleteRequest</c> or <c>PutRequest</c>). Each element in the map consists of the following: <ul> <li>  <c>DeleteRequest</c> - Perform a <c>DeleteItem</c> operation on the specified item. The item to be deleted is identified by a <c>Key</c> subelement: <ul> <li>  <c>Key</c> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <c>PutRequest</c> - Perform a <c>PutItem</c> operation on the specified item. The item to be put is identified by an <c>Item</c> subelement: <ul> <li>  <c>Item</c> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a <c>ValidationException</c> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (<c>DeleteRequest</c> or <c>PutRequest</c>). Each element in the map consists of the following: <ul> <li>  <c>DeleteRequest</c> - Perform a <c>DeleteItem</c> operation on the specified item. The item to be deleted is identified by a <c>Key</c> subelement: <ul> <li>  <c>Key</c> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <c>PutRequest</c> - Perform a <c>PutItem</c> operation on the specified item. The item to be put is identified by an <c>Item</c> subelement: <ul> <li>  <c>Item</c> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a <c>ValidationException</c> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2198,7 +2198,7 @@ namespace Amazon.DynamoDBv2
         /// You can use the <c>DescribeTable</c> action to check the table status.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table to create.</param>
+        /// <param name="tableName">The name of the table to create. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <c>KeySchema</c> must also be defined in the <c>AttributeDefinitions</c> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <c>KeySchemaElement</c> in the array is composed of: <ul> <li>  <c>AttributeName</c> - The name of this key attribute. </li> <li>  <c>KeyType</c> - The role that the key attribute will assume: <ul> <li>  <c>HASH</c> - partition key </li> <li>  <c>RANGE</c> - sort key </li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value. </note> For a simple primary key (partition key), you must provide exactly one element with a <c>KeyType</c> of <c>HASH</c>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <c>KeyType</c> of <c>HASH</c>, and the second element must have a <c>KeyType</c> of <c>RANGE</c>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="attributeDefinitions">An array of attributes that describe the key schema for the table and indexes.</param>
         /// <param name="provisionedThroughput">Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <c>UpdateTable</c> operation.  If you set BillingMode as <c>PROVISIONED</c>, you must specify this property. If you set BillingMode as <c>PAY_PER_REQUEST</c>, you cannot specify this property. For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
@@ -2364,7 +2364,7 @@ namespace Amazon.DynamoDBv2
         /// You can use the <c>DescribeTable</c> action to check the table status.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table to create.</param>
+        /// <param name="tableName">The name of the table to create. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <c>KeySchema</c> must also be defined in the <c>AttributeDefinitions</c> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <c>KeySchemaElement</c> in the array is composed of: <ul> <li>  <c>AttributeName</c> - The name of this key attribute. </li> <li>  <c>KeyType</c> - The role that the key attribute will assume: <ul> <li>  <c>HASH</c> - partition key </li> <li>  <c>RANGE</c> - sort key </li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value. </note> For a simple primary key (partition key), you must provide exactly one element with a <c>KeyType</c> of <c>HASH</c>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <c>KeyType</c> of <c>HASH</c>, and the second element must have a <c>KeyType</c> of <c>RANGE</c>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="attributeDefinitions">An array of attributes that describe the key schema for the table and indexes.</param>
         /// <param name="provisionedThroughput">Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <c>UpdateTable</c> operation.  If you set BillingMode as <c>PROVISIONED</c>, you must specify this property. If you set BillingMode as <c>PAY_PER_REQUEST</c>, you cannot specify this property. For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
@@ -2681,7 +2681,7 @@ namespace Amazon.DynamoDBv2
         /// is not deleted.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table from which to delete the item.</param>
+        /// <param name="tableName">The name of the table from which to delete the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">A map of attribute names to <c>AttributeValue</c> objects, representing the primary key of the item to delete. For the primary key, you must provide all of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// 
         /// <returns>The response from the DeleteItem service method, as returned by DynamoDB.</returns>
@@ -2746,7 +2746,7 @@ namespace Amazon.DynamoDBv2
         /// is not deleted.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table from which to delete the item.</param>
+        /// <param name="tableName">The name of the table from which to delete the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">A map of attribute names to <c>AttributeValue</c> objects, representing the primary key of the item to delete. For the primary key, you must provide all of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="returnValues">Use <c>ReturnValues</c> if you want to get the item attributes as they appeared before they were deleted. For <c>DeleteItem</c>, the valid values are: <ul> <li>  <c>NONE</c> - If <c>ReturnValues</c> is not specified, or if its value is <c>NONE</c>, then nothing is returned. (This setting is the default for <c>ReturnValues</c>.) </li> <li>  <c>ALL_OLD</c> - The content of the old item is returned. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed. <note> The <c>ReturnValues</c> parameter is used by several DynamoDB operations; however, <c>DeleteItem</c> does not recognize any values other than <c>NONE</c> or <c>ALL_OLD</c>. </note></param>
         /// 
@@ -2880,7 +2880,7 @@ namespace Amazon.DynamoDBv2
         /// is not deleted.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table from which to delete the item.</param>
+        /// <param name="tableName">The name of the table from which to delete the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">A map of attribute names to <c>AttributeValue</c> objects, representing the primary key of the item to delete. For the primary key, you must provide all of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2948,7 +2948,7 @@ namespace Amazon.DynamoDBv2
         /// is not deleted.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table from which to delete the item.</param>
+        /// <param name="tableName">The name of the table from which to delete the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">A map of attribute names to <c>AttributeValue</c> objects, representing the primary key of the item to delete. For the primary key, you must provide all of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="returnValues">Use <c>ReturnValues</c> if you want to get the item attributes as they appeared before they were deleted. For <c>DeleteItem</c>, the valid values are: <ul> <li>  <c>NONE</c> - If <c>ReturnValues</c> is not specified, or if its value is <c>NONE</c>, then nothing is returned. (This setting is the default for <c>ReturnValues</c>.) </li> <li>  <c>ALL_OLD</c> - The content of the old item is returned. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed. <note> The <c>ReturnValues</c> parameter is used by several DynamoDB operations; however, <c>DeleteItem</c> does not recognize any values other than <c>NONE</c> or <c>ALL_OLD</c>. </note></param>
         /// <param name="cancellationToken">
@@ -3067,6 +3067,209 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes the resource-based policy attached to the resource, which can be a table or
+        /// stream.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>DeleteResourcePolicy</c> is an idempotent operation; running it multiple times
+        /// on the same resource <i>doesn't</i> result in an error response, unless you specify
+        /// an <c>ExpectedRevisionId</c>, which will then return a <c>PolicyNotFoundException</c>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To make sure that you don't inadvertently lock yourself out of your own resources,
+        /// the root principal in your Amazon Web Services account can perform <c>DeleteResourcePolicy</c>
+        /// requests, even if your resource-based policy explicitly denies the root principal's
+        /// access. 
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        ///  <c>DeleteResourcePolicy</c> is an asynchronous operation. If you issue a <c>GetResourcePolicy</c>
+        /// request immediately after running the <c>DeleteResourcePolicy</c> request, DynamoDB
+        /// might still return the deleted policy. This is because the policy for your resource
+        /// might not have been deleted yet. Wait for a few seconds, and then try the <c>GetResourcePolicy</c>
+        /// request again.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.PolicyNotFoundException">
+        /// The operation tried to access a nonexistent resource-based policy.
+        /// 
+        ///  
+        /// <para>
+        /// If you specified an <c>ExpectedRevisionId</c>, it's possible that a policy is present
+        /// for the resource but its revision ID didn't match the expected value.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = DeleteResourcePolicyEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the resource-based policy attached to the resource, which can be a table or
+        /// stream.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>DeleteResourcePolicy</c> is an idempotent operation; running it multiple times
+        /// on the same resource <i>doesn't</i> result in an error response, unless you specify
+        /// an <c>ExpectedRevisionId</c>, which will then return a <c>PolicyNotFoundException</c>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To make sure that you don't inadvertently lock yourself out of your own resources,
+        /// the root principal in your Amazon Web Services account can perform <c>DeleteResourcePolicy</c>
+        /// requests, even if your resource-based policy explicitly denies the root principal's
+        /// access. 
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        ///  <c>DeleteResourcePolicy</c> is an asynchronous operation. If you issue a <c>GetResourcePolicy</c>
+        /// request immediately after running the <c>DeleteResourcePolicy</c> request, DynamoDB
+        /// might still return the deleted policy. This is because the policy for your resource
+        /// might not have been deleted yet. Wait for a few seconds, and then try the <c>GetResourcePolicy</c>
+        /// request again.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.PolicyNotFoundException">
+        /// The operation tried to access a nonexistent resource-based policy.
+        /// 
+        ///  
+        /// <para>
+        /// If you specified an <c>ExpectedRevisionId</c>, it's possible that a policy is present
+        /// for the resource but its revision ID didn't match the expected value.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = DeleteResourcePolicyEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+            
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTable
 
 
@@ -3104,7 +3307,7 @@ namespace Amazon.DynamoDBv2
         /// Use the <c>DescribeTable</c> action to check the status of the table. 
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table to delete.</param>
+        /// <param name="tableName">The name of the table to delete. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// 
         /// <returns>The response from the DeleteTable service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -3292,7 +3495,7 @@ namespace Amazon.DynamoDBv2
         /// Use the <c>DescribeTable</c> action to check the status of the table. 
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table to delete.</param>
+        /// <param name="tableName">The name of the table to delete. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4359,7 +4562,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="tableName">The name of the table to describe.</param>
+        /// <param name="tableName">The name of the table to describe. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// 
         /// <returns>The response from the DescribeTable service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -4439,7 +4642,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="tableName">The name of the table to describe.</param>
+        /// <param name="tableName">The name of the table to describe. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4582,7 +4785,7 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// Gives a description of the Time to Live (TTL) status on the specified table.
         /// </summary>
-        /// <param name="tableName">The name of the table to be described.</param>
+        /// <param name="tableName">The name of the table to be described. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// 
         /// <returns>The response from the DescribeTimeToLive service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -4630,7 +4833,7 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// Gives a description of the Time to Live (TTL) status on the specified table.
         /// </summary>
-        /// <param name="tableName">The name of the table to be described.</param>
+        /// <param name="tableName">The name of the table to be described. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -6015,7 +6218,7 @@ namespace Amazon.DynamoDBv2
         /// it always returns the last updated value.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested item.</param>
+        /// <param name="tableName">The name of the table containing the requested item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">A map of attribute names to <c>AttributeValue</c> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// 
         /// <returns>The response from the GetItem service method, as returned by DynamoDB.</returns>
@@ -6061,7 +6264,7 @@ namespace Amazon.DynamoDBv2
         /// it always returns the last updated value.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested item.</param>
+        /// <param name="tableName">The name of the table containing the requested item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">A map of attribute names to <c>AttributeValue</c> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="consistentRead">Determines the read consistency model: If set to <c>true</c>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</param>
         /// 
@@ -6157,7 +6360,7 @@ namespace Amazon.DynamoDBv2
         /// it always returns the last updated value.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested item.</param>
+        /// <param name="tableName">The name of the table containing the requested item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">A map of attribute names to <c>AttributeValue</c> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -6206,7 +6409,7 @@ namespace Amazon.DynamoDBv2
         /// it always returns the last updated value.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested item.</param>
+        /// <param name="tableName">The name of the table containing the requested item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">A map of attribute names to <c>AttributeValue</c> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="consistentRead">Determines the read consistency model: If set to <c>true</c>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</param>
         /// <param name="cancellationToken">
@@ -6292,6 +6495,163 @@ namespace Amazon.DynamoDBv2
             options.EndpointOperation = EndpointOperation;
             
             return InvokeAsync<GetItemResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResourcePolicy
+
+
+        /// <summary>
+        /// Returns the resource-based policy document attached to the resource, which can be
+        /// a table or stream, in JSON format.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>GetResourcePolicy</c> follows an <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+        /// <i>eventually consistent</i> </a> model. The following list describes the outcomes
+        /// when you issue the <c>GetResourcePolicy</c> request immediately after issuing another
+        /// request:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you issue a <c>GetResourcePolicy</c> request immediately after a <c>PutResourcePolicy</c>
+        /// request, DynamoDB might return a <c>PolicyNotFoundException</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you issue a <c>GetResourcePolicy</c>request immediately after a <c>DeleteResourcePolicy</c>
+        /// request, DynamoDB might return the policy that was present before the deletion request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you issue a <c>GetResourcePolicy</c> request immediately after a <c>CreateTable</c>
+        /// request, which includes a resource-based policy, DynamoDB might return a <c>ResourceNotFoundException</c>
+        /// or a <c>PolicyNotFoundException</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Because <c>GetResourcePolicy</c> uses an <i>eventually consistent</i> query, the metadata
+        /// for your policy or table might not be available at that moment. Wait for a few seconds,
+        /// and then retry the <c>GetResourcePolicy</c> request.
+        /// </para>
+        ///  
+        /// <para>
+        /// After a <c>GetResourcePolicy</c> request returns a policy created using the <c>PutResourcePolicy</c>
+        /// request, you can assume the policy will start getting applied in the authorization
+        /// of requests to the resource. Because this process is eventually consistent, it will
+        /// take some time to apply the policy to all requests to a resource. Policies that you
+        /// attach while creating a table using the <c>CreateTable</c> request will always be
+        /// applied to all requests for that table.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.PolicyNotFoundException">
+        /// The operation tried to access a nonexistent resource-based policy.
+        /// 
+        ///  
+        /// <para>
+        /// If you specified an <c>ExpectedRevisionId</c>, it's possible that a policy is present
+        /// for the resource but its revision ID didn't match the expected value.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = GetResourcePolicyEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the resource-based policy document attached to the resource, which can be
+        /// a table or stream, in JSON format.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>GetResourcePolicy</c> follows an <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+        /// <i>eventually consistent</i> </a> model. The following list describes the outcomes
+        /// when you issue the <c>GetResourcePolicy</c> request immediately after issuing another
+        /// request:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you issue a <c>GetResourcePolicy</c> request immediately after a <c>PutResourcePolicy</c>
+        /// request, DynamoDB might return a <c>PolicyNotFoundException</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you issue a <c>GetResourcePolicy</c>request immediately after a <c>DeleteResourcePolicy</c>
+        /// request, DynamoDB might return the policy that was present before the deletion request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you issue a <c>GetResourcePolicy</c> request immediately after a <c>CreateTable</c>
+        /// request, which includes a resource-based policy, DynamoDB might return a <c>ResourceNotFoundException</c>
+        /// or a <c>PolicyNotFoundException</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Because <c>GetResourcePolicy</c> uses an <i>eventually consistent</i> query, the metadata
+        /// for your policy or table might not be available at that moment. Wait for a few seconds,
+        /// and then retry the <c>GetResourcePolicy</c> request.
+        /// </para>
+        ///  
+        /// <para>
+        /// After a <c>GetResourcePolicy</c> request returns a policy created using the <c>PutResourcePolicy</c>
+        /// request, you can assume the policy will start getting applied in the authorization
+        /// of requests to the resource. Because this process is eventually consistent, it will
+        /// take some time to apply the policy to all requests to a resource. Policies that you
+        /// attach while creating a table using the <c>CreateTable</c> request will always be
+        /// applied to all requests for that table.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.PolicyNotFoundException">
+        /// The operation tried to access a nonexistent resource-based policy.
+        /// 
+        ///  
+        /// <para>
+        /// If you specified an <c>ExpectedRevisionId</c>, it's possible that a policy is present
+        /// for the resource but its revision ID didn't match the expected value.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = GetResourcePolicyEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+            
+            return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7212,7 +7572,7 @@ namespace Amazon.DynamoDBv2
         /// with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table to contain the item.</param>
+        /// <param name="tableName">The name of the table to contain the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <c>Item</c> map is an <c>AttributeValue</c> object.</param>
         /// 
         /// <returns>The response from the PutItem service method, as returned by DynamoDB.</returns>
@@ -7293,7 +7653,7 @@ namespace Amazon.DynamoDBv2
         /// with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table to contain the item.</param>
+        /// <param name="tableName">The name of the table to contain the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <c>Item</c> map is an <c>AttributeValue</c> object.</param>
         /// <param name="returnValues">Use <c>ReturnValues</c> if you want to get the item attributes as they appeared before they were updated with the <c>PutItem</c> request. For <c>PutItem</c>, the valid values are: <ul> <li>  <c>NONE</c> - If <c>ReturnValues</c> is not specified, or if its value is <c>NONE</c>, then nothing is returned. (This setting is the default for <c>ReturnValues</c>.) </li> <li>  <c>ALL_OLD</c> - If <c>PutItem</c> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul> The values returned are strongly consistent. There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed. <note> The <c>ReturnValues</c> parameter is used by several DynamoDB operations; however, <c>PutItem</c> does not recognize any values other than <c>NONE</c> or <c>ALL_OLD</c>. </note></param>
         /// 
@@ -7459,7 +7819,7 @@ namespace Amazon.DynamoDBv2
         /// with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table to contain the item.</param>
+        /// <param name="tableName">The name of the table to contain the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <c>Item</c> map is an <c>AttributeValue</c> object.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -7543,7 +7903,7 @@ namespace Amazon.DynamoDBv2
         /// with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table to contain the item.</param>
+        /// <param name="tableName">The name of the table to contain the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <c>Item</c> map is an <c>AttributeValue</c> object.</param>
         /// <param name="returnValues">Use <c>ReturnValues</c> if you want to get the item attributes as they appeared before they were updated with the <c>PutItem</c> request. For <c>PutItem</c>, the valid values are: <ul> <li>  <c>NONE</c> - If <c>ReturnValues</c> is not specified, or if its value is <c>NONE</c>, then nothing is returned. (This setting is the default for <c>ReturnValues</c>.) </li> <li>  <c>ALL_OLD</c> - If <c>PutItem</c> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul> The values returned are strongly consistent. There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed. <note> The <c>ReturnValues</c> parameter is used by several DynamoDB operations; however, <c>PutItem</c> does not recognize any values other than <c>NONE</c> or <c>ALL_OLD</c>. </note></param>
         /// <param name="cancellationToken">
@@ -7674,6 +8034,203 @@ namespace Amazon.DynamoDBv2
             options.EndpointOperation = EndpointOperation;
             
             return InvokeAsync<PutItemResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Attaches a resource-based policy document to the resource, which can be a table or
+        /// stream. When you attach a resource-based policy using this API, the policy application
+        /// is <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+        /// <i>eventually consistent</i> </a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>PutResourcePolicy</c> is an idempotent operation; running it multiple times on
+        /// the same resource using the same policy document will return the same revision ID.
+        /// If you specify an <c>ExpectedRevisionId</c> which doesn't match the current policy's
+        /// <c>RevisionId</c>, the <c>PolicyNotFoundException</c> will be returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>PutResourcePolicy</c> is an asynchronous operation. If you issue a <c>GetResourcePolicy</c>
+        /// request immediately after a <c>PutResourcePolicy</c> request, DynamoDB might return
+        /// your previous policy, if there was one, or return the <c>PolicyNotFoundException</c>.
+        /// This is because <c>GetResourcePolicy</c> uses an eventually consistent query, and
+        /// the metadata for your policy or table might not be available at that moment. Wait
+        /// for a few seconds, and then try the <c>GetResourcePolicy</c> request again.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.PolicyNotFoundException">
+        /// The operation tried to access a nonexistent resource-based policy.
+        /// 
+        ///  
+        /// <para>
+        /// If you specified an <c>ExpectedRevisionId</c>, it's possible that a policy is present
+        /// for the resource but its revision ID didn't match the expected value.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = PutResourcePolicyEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Attaches a resource-based policy document to the resource, which can be a table or
+        /// stream. When you attach a resource-based policy using this API, the policy application
+        /// is <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+        /// <i>eventually consistent</i> </a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>PutResourcePolicy</c> is an idempotent operation; running it multiple times on
+        /// the same resource using the same policy document will return the same revision ID.
+        /// If you specify an <c>ExpectedRevisionId</c> which doesn't match the current policy's
+        /// <c>RevisionId</c>, the <c>PolicyNotFoundException</c> will be returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>PutResourcePolicy</c> is an asynchronous operation. If you issue a <c>GetResourcePolicy</c>
+        /// request immediately after a <c>PutResourcePolicy</c> request, DynamoDB might return
+        /// your previous policy, if there was one, or return the <c>PolicyNotFoundException</c>.
+        /// This is because <c>GetResourcePolicy</c> uses an eventually consistent query, and
+        /// the metadata for your policy or table might not be available at that moment. Wait
+        /// for a few seconds, and then try the <c>GetResourcePolicy</c> request again.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.PolicyNotFoundException">
+        /// The operation tried to access a nonexistent resource-based policy.
+        /// 
+        ///  
+        /// <para>
+        /// If you specified an <c>ExpectedRevisionId</c>, it's possible that a policy is present
+        /// for the resource but its revision ID didn't match the expected value.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = PutResourcePolicyEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+            
+            return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8459,7 +9016,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested items; or, if you provide <c>IndexName</c>, the name of the table to which that index belongs.</param>
+        /// <param name="tableName">The name of the table containing the requested items or if you provide <c>IndexName</c>, the name of the table to which that index belongs. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="attributesToGet">This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the Scan service method, as returned by DynamoDB.</returns>
@@ -8549,7 +9106,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested items; or, if you provide <c>IndexName</c>, the name of the table to which that index belongs.</param>
+        /// <param name="tableName">The name of the table containing the requested items or if you provide <c>IndexName</c>, the name of the table to which that index belongs. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="scanFilter">This is a legacy parameter. Use <c>FilterExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the Scan service method, as returned by DynamoDB.</returns>
@@ -8639,7 +9196,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested items; or, if you provide <c>IndexName</c>, the name of the table to which that index belongs.</param>
+        /// <param name="tableName">The name of the table containing the requested items or if you provide <c>IndexName</c>, the name of the table to which that index belongs. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="attributesToGet">This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="scanFilter">This is a legacy parameter. Use <c>FilterExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// 
@@ -8823,7 +9380,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested items; or, if you provide <c>IndexName</c>, the name of the table to which that index belongs.</param>
+        /// <param name="tableName">The name of the table containing the requested items or if you provide <c>IndexName</c>, the name of the table to which that index belongs. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="attributesToGet">This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -8916,7 +9473,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested items; or, if you provide <c>IndexName</c>, the name of the table to which that index belongs.</param>
+        /// <param name="tableName">The name of the table containing the requested items or if you provide <c>IndexName</c>, the name of the table to which that index belongs. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="scanFilter">This is a legacy parameter. Use <c>FilterExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -9009,7 +9566,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested items; or, if you provide <c>IndexName</c>, the name of the table to which that index belongs.</param>
+        /// <param name="tableName">The name of the table containing the requested items or if you provide <c>IndexName</c>, the name of the table to which that index belongs. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="attributesToGet">This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="scanFilter">This is a legacy parameter. Use <c>FilterExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="cancellationToken">
@@ -11143,7 +11700,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         ///  This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
         /// 2017.11.29</a> of global tables. If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+        /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
         /// instead. 
         /// </para>
         ///  
@@ -11227,7 +11784,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         ///  This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
         /// 2017.11.29</a> of global tables. If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+        /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
         /// instead. 
         /// </para>
         ///  
@@ -11483,7 +12040,7 @@ namespace Amazon.DynamoDBv2
         /// using the <c>ReturnValues</c> parameter.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the item to update.</param>
+        /// <param name="tableName">The name of the table containing the item to update. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="attributeUpdates">This is a legacy parameter. Use <c>UpdateExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// 
@@ -11541,7 +12098,7 @@ namespace Amazon.DynamoDBv2
         /// using the <c>ReturnValues</c> parameter.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the item to update.</param>
+        /// <param name="tableName">The name of the table containing the item to update. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="attributeUpdates">This is a legacy parameter. Use <c>UpdateExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="returnValues">Use <c>ReturnValues</c> if you want to get the item attributes as they appear before or after they are successfully updated. For <c>UpdateItem</c>, the valid values are: <ul> <li>  <c>NONE</c> - If <c>ReturnValues</c> is not specified, or if its value is <c>NONE</c>, then nothing is returned. (This setting is the default for <c>ReturnValues</c>.) </li> <li>  <c>ALL_OLD</c> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation. </li> <li>  <c>UPDATED_OLD</c> - Returns only the updated attributes, as they appeared before the UpdateItem operation. </li> <li>  <c>ALL_NEW</c> - Returns all of the attributes of the item, as they appear after the UpdateItem operation. </li> <li>  <c>UPDATED_NEW</c> - Returns only the updated attributes, as they appear after the UpdateItem operation. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed. The values returned are strongly consistent.</param>
@@ -11659,7 +12216,7 @@ namespace Amazon.DynamoDBv2
         /// using the <c>ReturnValues</c> parameter.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the item to update.</param>
+        /// <param name="tableName">The name of the table containing the item to update. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="attributeUpdates">This is a legacy parameter. Use <c>UpdateExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="cancellationToken">
@@ -11720,7 +12277,7 @@ namespace Amazon.DynamoDBv2
         /// using the <c>ReturnValues</c> parameter.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table containing the item to update.</param>
+        /// <param name="tableName">The name of the table containing the item to update. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="attributeUpdates">This is a legacy parameter. Use <c>UpdateExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="returnValues">Use <c>ReturnValues</c> if you want to get the item attributes as they appear before or after they are successfully updated. For <c>UpdateItem</c>, the valid values are: <ul> <li>  <c>NONE</c> - If <c>ReturnValues</c> is not specified, or if its value is <c>NONE</c>, then nothing is returned. (This setting is the default for <c>ReturnValues</c>.) </li> <li>  <c>ALL_OLD</c> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation. </li> <li>  <c>UPDATED_OLD</c> - Returns only the updated attributes, as they appeared before the UpdateItem operation. </li> <li>  <c>ALL_NEW</c> - Returns all of the attributes of the item, as they appear after the UpdateItem operation. </li> <li>  <c>UPDATED_NEW</c> - Returns only the updated attributes, as they appear after the UpdateItem operation. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed. The values returned are strongly consistent.</param>
@@ -12002,12 +12559,11 @@ namespace Amazon.DynamoDBv2
         /// <para>
         ///  <c>UpdateTable</c> is an asynchronous operation; while it's executing, the table
         /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it's <c>UPDATING</c>,
-        /// you can't issue another <c>UpdateTable</c> request on the base table nor any replicas.
-        /// When the table returns to the <c>ACTIVE</c> state, the <c>UpdateTable</c> operation
-        /// is complete.
+        /// you can't issue another <c>UpdateTable</c> request. When the table returns to the
+        /// <c>ACTIVE</c> state, the <c>UpdateTable</c> operation is complete.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table to be updated.</param>
+        /// <param name="tableName">The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="provisionedThroughput">The new provisioned throughput settings for the specified table or index.</param>
         /// 
         /// <returns>The response from the UpdateTable service method, as returned by DynamoDB.</returns>
@@ -12097,9 +12653,8 @@ namespace Amazon.DynamoDBv2
         /// <para>
         ///  <c>UpdateTable</c> is an asynchronous operation; while it's executing, the table
         /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it's <c>UPDATING</c>,
-        /// you can't issue another <c>UpdateTable</c> request on the base table nor any replicas.
-        /// When the table returns to the <c>ACTIVE</c> state, the <c>UpdateTable</c> operation
-        /// is complete.
+        /// you can't issue another <c>UpdateTable</c> request. When the table returns to the
+        /// <c>ACTIVE</c> state, the <c>UpdateTable</c> operation is complete.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTable service method.</param>
@@ -12194,12 +12749,11 @@ namespace Amazon.DynamoDBv2
         /// <para>
         ///  <c>UpdateTable</c> is an asynchronous operation; while it's executing, the table
         /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it's <c>UPDATING</c>,
-        /// you can't issue another <c>UpdateTable</c> request on the base table nor any replicas.
-        /// When the table returns to the <c>ACTIVE</c> state, the <c>UpdateTable</c> operation
-        /// is complete.
+        /// you can't issue another <c>UpdateTable</c> request. When the table returns to the
+        /// <c>ACTIVE</c> state, the <c>UpdateTable</c> operation is complete.
         /// </para>
         /// </summary>
-        /// <param name="tableName">The name of the table to be updated.</param>
+        /// <param name="tableName">The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="provisionedThroughput">The new provisioned throughput settings for the specified table or index.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -12292,9 +12846,8 @@ namespace Amazon.DynamoDBv2
         /// <para>
         ///  <c>UpdateTable</c> is an asynchronous operation; while it's executing, the table
         /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it's <c>UPDATING</c>,
-        /// you can't issue another <c>UpdateTable</c> request on the base table nor any replicas.
-        /// When the table returns to the <c>ACTIVE</c> state, the <c>UpdateTable</c> operation
-        /// is complete.
+        /// you can't issue another <c>UpdateTable</c> request. When the table returns to the
+        /// <c>ACTIVE</c> state, the <c>UpdateTable</c> operation is complete.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTable service method.</param>

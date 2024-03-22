@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
         /// Enumerable containing all of the OptionGroupOptions
         /// </summary>
         public IPaginatedEnumerable<OptionGroupOption> OptionGroupOptions => 
-            new PaginatedResultKeyResponse<DescribeOptionGroupOptionsResponse, OptionGroupOption>(this, (i) => i.OptionGroupOptions);
+            new PaginatedResultKeyResponse<DescribeOptionGroupOptionsResponse, OptionGroupOption>(this, (i) => i.OptionGroupOptions ?? new List<OptionGroupOption>());
 
         internal DescribeOptionGroupOptionsPaginator(IAmazonRDS client, DescribeOptionGroupOptionsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class BatchDeleteReadSetResponse : AmazonWebServiceResponse
     {
-        private List<ReadSetBatchError> _errors = new List<ReadSetBatchError>();
+        private List<ReadSetBatchError> _errors = AWSConfigs.InitializeCollections ? new List<ReadSetBatchError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -50,7 +50,7 @@ namespace Amazon.Omics.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

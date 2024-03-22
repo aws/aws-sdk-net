@@ -84,6 +84,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DashboardEntries/member", targetDepth))
                     {
                         var unmarshaller = DashboardEntryUnmarshaller.Instance;
+                        if (response.DashboardEntries == null)
+                        {
+                            response.DashboardEntries = new List<DashboardEntry>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DashboardEntries.Add(item);
                         continue;

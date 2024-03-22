@@ -39,9 +39,9 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class CreateTrustStoreRequest : AmazonWorkSpacesWebRequest
     {
-        private List<MemoryStream> _certificateList = new List<MemoryStream>();
+        private List<MemoryStream> _certificateList = AWSConfigs.InitializeCollections ? new List<MemoryStream>() : null;
         private string _clientToken;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CertificateList. 
@@ -59,7 +59,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if CertificateList property is set
         internal bool IsSetCertificateList()
         {
-            return this._certificateList != null && this._certificateList.Count > 0; 
+            return this._certificateList != null && (this._certificateList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         private DayOfWeek _dayOfWeek;
         private AuditFrequency _frequency;
         private string _scheduledAuditName;
-        private List<string> _targetCheckNames = new List<string>();
+        private List<string> _targetCheckNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DayOfMonth. 
@@ -144,7 +144,7 @@ namespace Amazon.IoT.Model
         // Check to see if TargetCheckNames property is set
         internal bool IsSetTargetCheckNames()
         {
-            return this._targetCheckNames != null && this._targetCheckNames.Count > 0; 
+            return this._targetCheckNames != null && (this._targetCheckNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the Rows
         /// </summary>
         public IPaginatedEnumerable<Row> Rows => 
-            new PaginatedResultKeyResponse<ExecuteQueryResponse, Row>(this, (i) => i.Rows);
+            new PaginatedResultKeyResponse<ExecuteQueryResponse, Row>(this, (i) => i.Rows ?? new List<Row>());
 
         internal ExecuteQueryPaginator(IAmazonIoTSiteWise client, ExecuteQueryRequest request)
         {

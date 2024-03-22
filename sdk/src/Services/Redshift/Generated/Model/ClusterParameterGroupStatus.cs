@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class ClusterParameterGroupStatus
     {
-        private List<ClusterParameterStatus> _clusterParameterStatusList = new List<ClusterParameterStatus>();
+        private List<ClusterParameterStatus> _clusterParameterStatusList = AWSConfigs.InitializeCollections ? new List<ClusterParameterStatus>() : null;
         private string _parameterApplyStatus;
         private string _parameterGroupName;
 
@@ -57,7 +57,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ClusterParameterStatusList property is set
         internal bool IsSetClusterParameterStatusList()
         {
-            return this._clusterParameterStatusList != null && this._clusterParameterStatusList.Count > 0; 
+            return this._clusterParameterStatusList != null && (this._clusterParameterStatusList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

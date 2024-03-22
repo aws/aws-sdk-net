@@ -117,6 +117,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("postureComplianceStatusSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.PostureComplianceStatuses == null)
+                        {
+                            unmarshalledObject.PostureComplianceStatuses = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PostureComplianceStatuses.Add(item);
                         continue;

@@ -69,6 +69,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instanceCounts/item", targetDepth))
                     {
                         var unmarshaller = InstanceCountUnmarshaller.Instance;
+                        if (unmarshalledObject.InstanceCounts == null)
+                        {
+                            unmarshalledObject.InstanceCounts = new List<InstanceCount>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.InstanceCounts.Add(item);
                         continue;
@@ -76,6 +80,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("priceSchedules/item", targetDepth))
                     {
                         var unmarshaller = PriceScheduleUnmarshaller.Instance;
+                        if (unmarshalledObject.PriceSchedules == null)
+                        {
+                            unmarshalledObject.PriceSchedules = new List<PriceSchedule>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PriceSchedules.Add(item);
                         continue;
@@ -107,6 +115,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

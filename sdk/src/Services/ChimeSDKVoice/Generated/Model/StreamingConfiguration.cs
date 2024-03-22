@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKVoice.Model
         private int? _dataRetentionInHours;
         private bool? _disabled;
         private MediaInsightsConfiguration _mediaInsightsConfiguration;
-        private List<StreamingNotificationTarget> _streamingNotificationTargets = new List<StreamingNotificationTarget>();
+        private List<StreamingNotificationTarget> _streamingNotificationTargets = AWSConfigs.InitializeCollections ? new List<StreamingNotificationTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property DataRetentionInHours. 
@@ -112,7 +112,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if StreamingNotificationTargets property is set
         internal bool IsSetStreamingNotificationTargets()
         {
-            return this._streamingNotificationTargets != null && this._streamingNotificationTargets.Count > 0; 
+            return this._streamingNotificationTargets != null && (this._streamingNotificationTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

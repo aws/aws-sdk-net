@@ -34,7 +34,7 @@ namespace Amazon.KinesisVideo.Model
     /// </summary>
     public partial class SingleMasterChannelEndpointConfiguration
     {
-        private List<string> _protocols = new List<string>();
+        private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ChannelRole _role;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KinesisVideo.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

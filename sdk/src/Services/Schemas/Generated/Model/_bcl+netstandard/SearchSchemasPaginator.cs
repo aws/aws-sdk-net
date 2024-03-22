@@ -45,7 +45,7 @@ namespace Amazon.Schemas.Model
         /// Enumerable containing all of the Schemas
         /// </summary>
         public IPaginatedEnumerable<SearchSchemaSummary> Schemas => 
-            new PaginatedResultKeyResponse<SearchSchemasResponse, SearchSchemaSummary>(this, (i) => i.Schemas);
+            new PaginatedResultKeyResponse<SearchSchemasResponse, SearchSchemaSummary>(this, (i) => i.Schemas ?? new List<SearchSchemaSummary>());
 
         internal SearchSchemasPaginator(IAmazonSchemas client, SearchSchemasRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the Recommendations
         /// </summary>
         public IPaginatedEnumerable<Recommendation> Recommendations => 
-            new PaginatedResultKeyResponse<ListRecommendationsResponse, Recommendation>(this, (i) => i.Recommendations);
+            new PaginatedResultKeyResponse<ListRecommendationsResponse, Recommendation>(this, (i) => i.Recommendations ?? new List<Recommendation>());
 
         internal ListRecommendationsPaginator(IAmazonRedshift client, ListRecommendationsRequest request)
         {

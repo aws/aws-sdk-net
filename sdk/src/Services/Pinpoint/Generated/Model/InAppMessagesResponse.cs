@@ -33,7 +33,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class InAppMessagesResponse
     {
-        private List<InAppMessageCampaign> _inAppMessageCampaigns = new List<InAppMessageCampaign>();
+        private List<InAppMessageCampaign> _inAppMessageCampaigns = AWSConfigs.InitializeCollections ? new List<InAppMessageCampaign>() : null;
 
         /// <summary>
         /// Gets and sets the property InAppMessageCampaigns. 
@@ -50,7 +50,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if InAppMessageCampaigns property is set
         internal bool IsSetInAppMessageCampaigns()
         {
-            return this._inAppMessageCampaigns != null && this._inAppMessageCampaigns.Count > 0; 
+            return this._inAppMessageCampaigns != null && (this._inAppMessageCampaigns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

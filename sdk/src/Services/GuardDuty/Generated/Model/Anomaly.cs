@@ -33,7 +33,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class Anomaly
     {
-        private Dictionary<string, Dictionary<string, List<AnomalyObject>>> _profiles = new Dictionary<string, Dictionary<string, List<AnomalyObject>>>();
+        private Dictionary<string, Dictionary<string, List<AnomalyObject>>> _profiles = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, List<AnomalyObject>>>() : null;
         private AnomalyUnusual _unusual;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Profiles property is set
         internal bool IsSetProfiles()
         {
-            return this._profiles != null && this._profiles.Count > 0; 
+            return this._profiles != null && (this._profiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.InternetMonitor.Model
     /// </summary>
     public partial class ListMonitorsResponse : AmazonWebServiceResponse
     {
-        private List<Monitor> _monitors = new List<Monitor>();
+        private List<Monitor> _monitors = AWSConfigs.InitializeCollections ? new List<Monitor>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if Monitors property is set
         internal bool IsSetMonitors()
         {
-            return this._monitors != null && this._monitors.Count > 0; 
+            return this._monitors != null && (this._monitors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

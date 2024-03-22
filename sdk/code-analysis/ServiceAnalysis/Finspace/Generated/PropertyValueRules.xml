@@ -58,6 +58,7 @@
     <property>Amazon.Finspace.Model.CreateKxChangesetResponse.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.CreateKxChangesetResponse.DatabaseName</property>
@@ -70,6 +71,12 @@
     <min>1</min>
     <max>32</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.CreateKxClusterRequest.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.CreateKxClusterRequest.ClientToken</property>
@@ -110,6 +117,12 @@
     <min>1</min>
     <max>16</max>
     <pattern>^[a-zA-Z0-9._-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.CreateKxClusterResponse.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.CreateKxClusterResponse.ClusterDescription</property>
@@ -193,9 +206,16 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Finspace.Model.CreateKxDataviewRequest.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Finspace.Model.CreateKxDataviewRequest.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.CreateKxDataviewRequest.ClientToken</property>
@@ -228,9 +248,16 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Finspace.Model.CreateKxDataviewResponse.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Finspace.Model.CreateKxDataviewResponse.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.CreateKxDataviewResponse.DatabaseName</property>
@@ -311,6 +338,12 @@
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Finspace.Model.CreateKxScalingGroupRequest.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Finspace.Model.CreateKxScalingGroupRequest.ClientToken</property>
     <min>1</min>
     <max>36</max>
@@ -333,6 +366,12 @@
     <min>3</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.CreateKxScalingGroupResponse.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.CreateKxScalingGroupResponse.EnvironmentId</property>
@@ -595,6 +634,7 @@
     <property>Amazon.Finspace.Model.GetKxChangesetRequest.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.GetKxChangesetRequest.DatabaseName</property>
@@ -612,6 +652,7 @@
     <property>Amazon.Finspace.Model.GetKxChangesetResponse.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.GetKxChangesetResponse.DatabaseName</property>
@@ -636,6 +677,12 @@
     <min>1</min>
     <max>32</max>
     <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.GetKxClusterResponse.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.GetKxClusterResponse.ClusterDescription</property>
@@ -727,6 +774,7 @@
     <property>Amazon.Finspace.Model.GetKxDatabaseResponse.LastCompletedChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.GetKxDataviewRequest.DatabaseName</property>
@@ -747,9 +795,16 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Finspace.Model.GetKxDataviewResponse.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Finspace.Model.GetKxDataviewResponse.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.GetKxDataviewResponse.DatabaseName</property>
@@ -850,6 +905,12 @@
     <min>3</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.GetKxScalingGroupResponse.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.GetKxScalingGroupResponse.HostType</property>
@@ -1305,6 +1366,7 @@
     <property>Amazon.Finspace.Model.UpdateKxDataviewRequest.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.UpdateKxDataviewRequest.ClientToken</property>
@@ -1337,9 +1399,16 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Finspace.Model.UpdateKxDataviewResponse.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Finspace.Model.UpdateKxDataviewResponse.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.UpdateKxDataviewResponse.DatabaseName</property>
@@ -1641,7 +1710,7 @@
     <property>Amazon.Finspace.Model.ChangeRequest.S3Path</property>
     <min>9</min>
     <max>1093</max>
-    <pattern>^s3:\/\/[a-z0-9][a-z0-9-]{1,61}[a-z0-9]\/([^\/]+\/)*[^\/]*$</pattern>
+    <pattern>^s3:\/\/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]\/([^\/]+\/)*[^\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.CodeConfiguration.S3Bucket</property>
@@ -1773,6 +1842,13 @@
     <property>Amazon.Finspace.Model.KxChangesetListEntry.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.KxCluster.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.KxCluster.ClusterDescription</property>
@@ -1810,13 +1886,13 @@
   <property-value-rule>
     <property>Amazon.Finspace.Model.KxCommandLineArgument.Key</property>
     <min>1</min>
-    <max>50</max>
+    <max>1024</max>
     <pattern>^(?![Aa][Ww][Ss])(s|([a-zA-Z][a-zA-Z0-9_]+))|(AWS_ZIP_DEFAULT)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.KxCommandLineArgument.Value</property>
     <min>1</min>
-    <max>50</max>
+    <max>1024</max>
     <pattern>^[a-zA-Z0-9_:./,]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1834,6 +1910,7 @@
     <property>Amazon.Finspace.Model.KxDatabaseConfiguration.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.KxDatabaseConfiguration.DatabaseName</property>
@@ -1857,6 +1934,7 @@
     <property>Amazon.Finspace.Model.KxDataviewActiveVersion.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.KxDataviewActiveVersion.VersionId</property>
@@ -1867,6 +1945,7 @@
     <property>Amazon.Finspace.Model.KxDataviewConfiguration.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.KxDataviewConfiguration.DataviewName</property>
@@ -1880,9 +1959,16 @@
     <max>26</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Finspace.Model.KxDataviewListEntry.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Finspace.Model.KxDataviewListEntry.ChangesetId</property>
     <min>1</min>
     <max>26</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.KxDataviewListEntry.DatabaseName</property>
@@ -1975,7 +2061,12 @@
   <property-value-rule>
     <property>Amazon.Finspace.Model.KxNAS1Configuration.Size</property>
     <min>1200</min>
-    <max>33600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.KxNode.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.KxNode.NodeId</property>
@@ -1992,6 +2083,12 @@
     <min>3</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.KxScalingGroup.AvailabilityZoneId</property>
+    <min>8</min>
+    <max>12</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Finspace.Model.KxScalingGroup.HostType</property>

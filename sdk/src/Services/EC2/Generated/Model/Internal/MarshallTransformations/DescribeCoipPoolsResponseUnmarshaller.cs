@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("coipPoolSet/item", targetDepth))
                     {
                         var unmarshaller = CoipPoolUnmarshaller.Instance;
+                        if (response.CoipPools == null)
+                        {
+                            response.CoipPools = new List<CoipPool>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CoipPools.Add(item);
                         continue;

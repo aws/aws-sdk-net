@@ -37,8 +37,8 @@ namespace Amazon.IoTFleetWise.Model
     {
         private string _description;
         private string _name;
-        private List<string> _nodesToAdd = new List<string>();
-        private List<string> _nodesToRemove = new List<string>();
+        private List<string> _nodesToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _nodesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ManifestStatus _status;
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if NodesToAdd property is set
         internal bool IsSetNodesToAdd()
         {
-            return this._nodesToAdd != null && this._nodesToAdd.Count > 0; 
+            return this._nodesToAdd != null && (this._nodesToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if NodesToRemove property is set
         internal bool IsSetNodesToRemove()
         {
-            return this._nodesToRemove != null && this._nodesToRemove.Count > 0; 
+            return this._nodesToRemove != null && (this._nodesToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

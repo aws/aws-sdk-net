@@ -34,7 +34,7 @@ namespace Amazon.RestJsonTest.Model
     /// </summary>
     public partial class QueryStringListRequest : AmazonRestJsonTestRequest
     {
-        private List<string> _queryStringList = new List<string>();
+        private List<string> _queryStringList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property QueryStringList.
@@ -48,7 +48,7 @@ namespace Amazon.RestJsonTest.Model
         // Check to see if QueryStringList property is set
         internal bool IsSetQueryStringList()
         {
-            return this._queryStringList != null && this._queryStringList.Count > 0; 
+            return this._queryStringList != null && (this._queryStringList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

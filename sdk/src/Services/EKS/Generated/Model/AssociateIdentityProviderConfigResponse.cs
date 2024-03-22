@@ -33,7 +33,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class AssociateIdentityProviderConfigResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Update _update;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.EKS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

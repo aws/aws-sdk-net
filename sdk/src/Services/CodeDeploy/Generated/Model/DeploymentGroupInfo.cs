@@ -36,26 +36,26 @@ namespace Amazon.CodeDeploy.Model
         private AlarmConfiguration _alarmConfiguration;
         private string _applicationName;
         private AutoRollbackConfiguration _autoRollbackConfiguration;
-        private List<AutoScalingGroup> _autoScalingGroups = new List<AutoScalingGroup>();
+        private List<AutoScalingGroup> _autoScalingGroups = AWSConfigs.InitializeCollections ? new List<AutoScalingGroup>() : null;
         private BlueGreenDeploymentConfiguration _blueGreenDeploymentConfiguration;
         private ComputePlatform _computePlatform;
         private string _deploymentConfigName;
         private string _deploymentGroupId;
         private string _deploymentGroupName;
         private DeploymentStyle _deploymentStyle;
-        private List<EC2TagFilter> _ec2TagFilters = new List<EC2TagFilter>();
+        private List<EC2TagFilter> _ec2TagFilters = AWSConfigs.InitializeCollections ? new List<EC2TagFilter>() : null;
         private EC2TagSet _ec2TagSet;
-        private List<ECSService> _ecsServices = new List<ECSService>();
+        private List<ECSService> _ecsServices = AWSConfigs.InitializeCollections ? new List<ECSService>() : null;
         private LastDeploymentInfo _lastAttemptedDeployment;
         private LastDeploymentInfo _lastSuccessfulDeployment;
         private LoadBalancerInfo _loadBalancerInfo;
-        private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
+        private List<TagFilter> _onPremisesInstanceTagFilters = AWSConfigs.InitializeCollections ? new List<TagFilter>() : null;
         private OnPremisesTagSet _onPremisesTagSet;
         private OutdatedInstancesStrategy _outdatedInstancesStrategy;
         private string _serviceRoleArn;
         private RevisionLocation _targetRevision;
         private bool? _terminationHookEnabled;
-        private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
+        private List<TriggerConfig> _triggerConfigurations = AWSConfigs.InitializeCollections ? new List<TriggerConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property AlarmConfiguration. 
@@ -128,7 +128,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if AutoScalingGroups property is set
         internal bool IsSetAutoScalingGroups()
         {
-            return this._autoScalingGroups != null && this._autoScalingGroups.Count > 0; 
+            return this._autoScalingGroups != null && (this._autoScalingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if Ec2TagFilters property is set
         internal bool IsSetEc2TagFilters()
         {
-            return this._ec2TagFilters != null && this._ec2TagFilters.Count > 0; 
+            return this._ec2TagFilters != null && (this._ec2TagFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -300,7 +300,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if EcsServices property is set
         internal bool IsSetEcsServices()
         {
-            return this._ecsServices != null && this._ecsServices.Count > 0; 
+            return this._ecsServices != null && (this._ecsServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -373,7 +373,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if OnPremisesInstanceTagFilters property is set
         internal bool IsSetOnPremisesInstanceTagFilters()
         {
-            return this._onPremisesInstanceTagFilters != null && this._onPremisesInstanceTagFilters.Count > 0; 
+            return this._onPremisesInstanceTagFilters != null && (this._onPremisesInstanceTagFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -505,7 +505,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if TriggerConfigurations property is set
         internal bool IsSetTriggerConfigurations()
         {
-            return this._triggerConfigurations != null && this._triggerConfigurations.Count > 0; 
+            return this._triggerConfigurations != null && (this._triggerConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

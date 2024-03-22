@@ -39,13 +39,13 @@ namespace Amazon.Connect.Model
         private string _evaluationFormArn;
         private string _evaluationFormId;
         private int? _evaluationFormVersion;
-        private List<EvaluationFormItem> _items = new List<EvaluationFormItem>();
+        private List<EvaluationFormItem> _items = AWSConfigs.InitializeCollections ? new List<EvaluationFormItem>() : null;
         private string _lastModifiedBy;
         private DateTime? _lastModifiedTime;
         private bool? _locked;
         private EvaluationFormScoringStrategy _scoringStrategy;
         private EvaluationFormVersionStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _title;
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.Connect.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -293,7 +293,7 @@ namespace Amazon.Connect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

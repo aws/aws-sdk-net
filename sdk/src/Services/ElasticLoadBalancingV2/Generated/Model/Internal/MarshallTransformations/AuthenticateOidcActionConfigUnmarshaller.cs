@@ -57,6 +57,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AuthenticationRequestExtraParams/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        if (unmarshalledObject.AuthenticationRequestExtraParams == null)
+                        {
+                            unmarshalledObject.AuthenticationRequestExtraParams = new Dictionary<string, string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AuthenticationRequestExtraParams.Add(item);
                         continue;

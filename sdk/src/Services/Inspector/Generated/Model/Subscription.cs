@@ -34,7 +34,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class Subscription
     {
-        private List<EventSubscription> _eventSubscriptions = new List<EventSubscription>();
+        private List<EventSubscription> _eventSubscriptions = AWSConfigs.InitializeCollections ? new List<EventSubscription>() : null;
         private string _resourceArn;
         private string _topicArn;
 
@@ -54,7 +54,7 @@ namespace Amazon.Inspector.Model
         // Check to see if EventSubscriptions property is set
         internal bool IsSetEventSubscriptions()
         {
-            return this._eventSubscriptions != null && this._eventSubscriptions.Count > 0; 
+            return this._eventSubscriptions != null && (this._eventSubscriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

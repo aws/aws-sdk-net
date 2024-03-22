@@ -45,7 +45,7 @@ namespace Amazon.B2bi.Model
         /// Enumerable containing all of the Capabilities
         /// </summary>
         public IPaginatedEnumerable<CapabilitySummary> Capabilities => 
-            new PaginatedResultKeyResponse<ListCapabilitiesResponse, CapabilitySummary>(this, (i) => i.Capabilities);
+            new PaginatedResultKeyResponse<ListCapabilitiesResponse, CapabilitySummary>(this, (i) => i.Capabilities ?? new List<CapabilitySummary>());
 
         internal ListCapabilitiesPaginator(IAmazonB2bi client, ListCapabilitiesRequest request)
         {

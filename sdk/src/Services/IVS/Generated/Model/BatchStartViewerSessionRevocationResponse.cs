@@ -33,7 +33,7 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class BatchStartViewerSessionRevocationResponse : AmazonWebServiceResponse
     {
-        private List<BatchStartViewerSessionRevocationError> _errors = new List<BatchStartViewerSessionRevocationError>();
+        private List<BatchStartViewerSessionRevocationError> _errors = AWSConfigs.InitializeCollections ? new List<BatchStartViewerSessionRevocationError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +51,7 @@ namespace Amazon.IVS.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

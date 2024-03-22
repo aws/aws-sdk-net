@@ -57,6 +57,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Policies/member", targetDepth))
                     {
                         var unmarshaller = PolicyGrantingServiceAccessUnmarshaller.Instance;
+                        if (unmarshalledObject.Policies == null)
+                        {
+                            unmarshalledObject.Policies = new List<PolicyGrantingServiceAccess>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Policies.Add(item);
                         continue;

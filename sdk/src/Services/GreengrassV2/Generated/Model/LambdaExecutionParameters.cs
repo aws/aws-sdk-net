@@ -33,9 +33,9 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class LambdaExecutionParameters
     {
-        private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
-        private List<LambdaEventSource> _eventSources = new List<LambdaEventSource>();
-        private List<string> _execArgs = new List<string>();
+        private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<LambdaEventSource> _eventSources = AWSConfigs.InitializeCollections ? new List<LambdaEventSource>() : null;
+        private List<string> _execArgs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LambdaInputPayloadEncodingType _inputPayloadEncodingType;
         private LambdaLinuxProcessParams _linuxProcessParams;
         private int? _maxIdleTimeInSeconds;
@@ -61,7 +61,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if EnvironmentVariables property is set
         internal bool IsSetEnvironmentVariables()
         {
-            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
+            return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if EventSources property is set
         internal bool IsSetEventSources()
         {
-            return this._eventSources != null && this._eventSources.Count > 0; 
+            return this._eventSources != null && (this._eventSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if ExecArgs property is set
         internal bool IsSetExecArgs()
         {
-            return this._execArgs != null && this._execArgs.Count > 0; 
+            return this._execArgs != null && (this._execArgs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

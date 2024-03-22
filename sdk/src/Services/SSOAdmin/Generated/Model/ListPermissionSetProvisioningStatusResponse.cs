@@ -34,7 +34,7 @@ namespace Amazon.SSOAdmin.Model
     public partial class ListPermissionSetProvisioningStatusResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PermissionSetProvisioningStatusMetadata> _permissionSetsProvisioningStatus = new List<PermissionSetProvisioningStatusMetadata>();
+        private List<PermissionSetProvisioningStatusMetadata> _permissionSetsProvisioningStatus = AWSConfigs.InitializeCollections ? new List<PermissionSetProvisioningStatusMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if PermissionSetsProvisioningStatus property is set
         internal bool IsSetPermissionSetsProvisioningStatus()
         {
-            return this._permissionSetsProvisioningStatus != null && this._permissionSetsProvisioningStatus.Count > 0; 
+            return this._permissionSetsProvisioningStatus != null && (this._permissionSetsProvisioningStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

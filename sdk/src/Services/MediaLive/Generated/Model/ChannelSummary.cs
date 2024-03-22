@@ -36,10 +36,10 @@ namespace Amazon.MediaLive.Model
         private string _arn;
         private CdiInputSpecification _cdiInputSpecification;
         private ChannelClass _channelClass;
-        private List<OutputDestination> _destinations = new List<OutputDestination>();
-        private List<ChannelEgressEndpoint> _egressEndpoints = new List<ChannelEgressEndpoint>();
+        private List<OutputDestination> _destinations = AWSConfigs.InitializeCollections ? new List<OutputDestination>() : null;
+        private List<ChannelEgressEndpoint> _egressEndpoints = AWSConfigs.InitializeCollections ? new List<ChannelEgressEndpoint>() : null;
         private string _id;
-        private List<InputAttachment> _inputAttachments = new List<InputAttachment>();
+        private List<InputAttachment> _inputAttachments = AWSConfigs.InitializeCollections ? new List<InputAttachment>() : null;
         private InputSpecification _inputSpecification;
         private LogLevel _logLevel;
         private MaintenanceStatus _maintenance;
@@ -47,7 +47,7 @@ namespace Amazon.MediaLive.Model
         private int? _pipelinesRunningCount;
         private string _roleArn;
         private ChannelState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VpcOutputSettingsDescription _vpc;
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if EgressEndpoints property is set
         internal bool IsSetEgressEndpoints()
         {
-            return this._egressEndpoints != null && this._egressEndpoints.Count > 0; 
+            return this._egressEndpoints != null && (this._egressEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if InputAttachments property is set
         internal bool IsSetInputAttachments()
         {
-            return this._inputAttachments != null && this._inputAttachments.Count > 0; 
+            return this._inputAttachments != null && (this._inputAttachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -280,7 +280,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

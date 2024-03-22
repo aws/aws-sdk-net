@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the FleetIds
         /// </summary>
         public IPaginatedEnumerable<string> FleetIds => 
-            new PaginatedResultKeyResponse<ListFleetsResponse, string>(this, (i) => i.FleetIds);
+            new PaginatedResultKeyResponse<ListFleetsResponse, string>(this, (i) => i.FleetIds ?? new List<string>());
 
         internal ListFleetsPaginator(IAmazonGameLift client, ListFleetsRequest request)
         {

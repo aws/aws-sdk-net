@@ -45,7 +45,7 @@ namespace Amazon.Rekognition.Model
         /// Enumerable containing all of the Faces
         /// </summary>
         public IPaginatedEnumerable<Face> Faces => 
-            new PaginatedResultKeyResponse<ListFacesResponse, Face>(this, (i) => i.Faces);
+            new PaginatedResultKeyResponse<ListFacesResponse, Face>(this, (i) => i.Faces ?? new List<Face>());
 
         internal ListFacesPaginator(IAmazonRekognition client, ListFacesRequest request)
         {

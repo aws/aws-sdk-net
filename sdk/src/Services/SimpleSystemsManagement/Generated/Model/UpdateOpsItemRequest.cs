@@ -38,8 +38,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     /// Operations engineers and IT professionals use Amazon Web Services Systems Manager
     /// OpsCenter to view, investigate, and remediate operational issues impacting the performance
-    /// and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
-    /// in the <i>Amazon Web Services Systems Manager User Guide</i>. 
+    /// and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon
+    /// Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager
+    /// User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class UpdateOpsItemRequest : AmazonSimpleSystemsManagementRequest
@@ -48,15 +49,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _actualStartTime;
         private string _category;
         private string _description;
-        private List<OpsItemNotification> _notifications = new List<OpsItemNotification>();
-        private Dictionary<string, OpsItemDataValue> _operationalData = new Dictionary<string, OpsItemDataValue>();
-        private List<string> _operationalDataToDelete = new List<string>();
+        private List<OpsItemNotification> _notifications = AWSConfigs.InitializeCollections ? new List<OpsItemNotification>() : null;
+        private Dictionary<string, OpsItemDataValue> _operationalData = AWSConfigs.InitializeCollections ? new Dictionary<string, OpsItemDataValue>() : null;
+        private List<string> _operationalDataToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _opsItemArn;
         private string _opsItemId;
         private DateTime? _plannedEndTime;
         private DateTime? _plannedStartTime;
         private int? _priority;
-        private List<RelatedOpsItem> _relatedOpsItems = new List<RelatedOpsItem>();
+        private List<RelatedOpsItem> _relatedOpsItems = AWSConfigs.InitializeCollections ? new List<RelatedOpsItem>() : null;
         private string _severity;
         private OpsItemStatus _status;
         private string _title;
@@ -153,7 +154,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Notifications property is set
         internal bool IsSetNotifications()
         {
-            return this._notifications != null && this._notifications.Count > 0; 
+            return this._notifications != null && (this._notifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -201,7 +202,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if OperationalData property is set
         internal bool IsSetOperationalData()
         {
-            return this._operationalData != null && this._operationalData.Count > 0; 
+            return this._operationalData != null && (this._operationalData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -219,7 +220,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if OperationalDataToDelete property is set
         internal bool IsSetOperationalDataToDelete()
         {
-            return this._operationalDataToDelete != null && this._operationalDataToDelete.Count > 0; 
+            return this._operationalDataToDelete != null && (this._operationalDataToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -334,7 +335,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if RelatedOpsItems property is set
         internal bool IsSetRelatedOpsItems()
         {
-            return this._relatedOpsItems != null && this._relatedOpsItems.Count > 0; 
+            return this._relatedOpsItems != null && (this._relatedOpsItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

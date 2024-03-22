@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class CheckAccessNotGrantedRequest : AmazonAccessAnalyzerRequest
     {
-        private List<Access> _access = new List<Access>();
+        private List<Access> _access = AWSConfigs.InitializeCollections ? new List<Access>() : null;
         private string _policyDocument;
         private AccessCheckPolicyType _policyType;
 
@@ -55,7 +55,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Access property is set
         internal bool IsSetAccess()
         {
-            return this._access != null && this._access.Count > 0; 
+            return this._access != null && (this._access.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

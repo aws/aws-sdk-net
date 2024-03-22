@@ -43,7 +43,7 @@ namespace Amazon.EKS.Model
     {
         private string _clientRequestToken;
         private string _clusterName;
-        private List<EncryptionConfig> _encryptionConfig = new List<EncryptionConfig>();
+        private List<EncryptionConfig> _encryptionConfig = AWSConfigs.InitializeCollections ? new List<EncryptionConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -99,7 +99,7 @@ namespace Amazon.EKS.Model
         // Check to see if EncryptionConfig property is set
         internal bool IsSetEncryptionConfig()
         {
-            return this._encryptionConfig != null && this._encryptionConfig.Count > 0; 
+            return this._encryptionConfig != null && (this._encryptionConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

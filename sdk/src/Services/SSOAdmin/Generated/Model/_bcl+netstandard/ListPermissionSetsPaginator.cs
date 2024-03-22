@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the PermissionSets
         /// </summary>
         public IPaginatedEnumerable<string> PermissionSets => 
-            new PaginatedResultKeyResponse<ListPermissionSetsResponse, string>(this, (i) => i.PermissionSets);
+            new PaginatedResultKeyResponse<ListPermissionSetsResponse, string>(this, (i) => i.PermissionSets ?? new List<string>());
 
         internal ListPermissionSetsPaginator(IAmazonSSOAdmin client, ListPermissionSetsRequest request)
         {

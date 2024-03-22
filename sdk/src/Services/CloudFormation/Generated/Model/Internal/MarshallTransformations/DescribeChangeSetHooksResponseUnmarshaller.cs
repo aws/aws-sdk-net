@@ -96,6 +96,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Hooks/member", targetDepth))
                     {
                         var unmarshaller = ChangeSetHookUnmarshaller.Instance;
+                        if (response.Hooks == null)
+                        {
+                            response.Hooks = new List<ChangeSetHook>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Hooks.Add(item);
                         continue;

@@ -46,7 +46,7 @@ namespace Amazon.SSOAdmin.Model
         private string _clientToken;
         private string _instanceArn;
         private string _name;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TrustedTokenIssuerConfiguration _trustedTokenIssuerConfiguration;
         private TrustedTokenIssuerType _trustedTokenIssuerType;
 
@@ -139,7 +139,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

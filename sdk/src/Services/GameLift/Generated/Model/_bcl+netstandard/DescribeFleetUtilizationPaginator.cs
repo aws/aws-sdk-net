@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the FleetUtilization
         /// </summary>
         public IPaginatedEnumerable<FleetUtilization> FleetUtilization => 
-            new PaginatedResultKeyResponse<DescribeFleetUtilizationResponse, FleetUtilization>(this, (i) => i.FleetUtilization);
+            new PaginatedResultKeyResponse<DescribeFleetUtilizationResponse, FleetUtilization>(this, (i) => i.FleetUtilization ?? new List<FleetUtilization>());
 
         internal DescribeFleetUtilizationPaginator(IAmazonGameLift client, DescribeFleetUtilizationRequest request)
         {

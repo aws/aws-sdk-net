@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsDynamoDbTableReplica
     {
-        private List<AwsDynamoDbTableReplicaGlobalSecondaryIndex> _globalSecondaryIndexes = new List<AwsDynamoDbTableReplicaGlobalSecondaryIndex>();
+        private List<AwsDynamoDbTableReplicaGlobalSecondaryIndex> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<AwsDynamoDbTableReplicaGlobalSecondaryIndex>() : null;
         private string _kmsMasterKeyId;
         private AwsDynamoDbTableProvisionedThroughputOverride _provisionedThroughputOverride;
         private string _regionName;
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if GlobalSecondaryIndexes property is set
         internal bool IsSetGlobalSecondaryIndexes()
         {
-            return this._globalSecondaryIndexes != null && this._globalSecondaryIndexes.Count > 0; 
+            return this._globalSecondaryIndexes != null && (this._globalSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

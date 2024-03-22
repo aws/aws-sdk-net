@@ -84,7 +84,7 @@ namespace Amazon.StorageGateway.Model
     public partial class RefreshCacheRequest : AmazonStorageGatewayRequest
     {
         private string _fileShareARN;
-        private List<string> _folderList = new List<string>();
+        private List<string> _folderList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _recursive;
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if FolderList property is set
         internal bool IsSetFolderList()
         {
-            return this._folderList != null && this._folderList.Count > 0; 
+            return this._folderList != null && (this._folderList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

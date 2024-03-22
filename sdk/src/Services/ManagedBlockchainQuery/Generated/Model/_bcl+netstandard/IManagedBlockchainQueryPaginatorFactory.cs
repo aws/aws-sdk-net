@@ -31,6 +31,11 @@ namespace Amazon.ManagedBlockchainQuery.Model
         IListAssetContractsPaginator ListAssetContracts(ListAssetContractsRequest request);
 
         /// <summary>
+        /// Paginator for ListFilteredTransactionEvents operation
+        ///</summary>
+        IListFilteredTransactionEventsPaginator ListFilteredTransactionEvents(ListFilteredTransactionEventsRequest request);
+
+        /// <summary>
         /// Paginator for ListTokenBalances operation
         ///</summary>
         IListTokenBalancesPaginator ListTokenBalances(ListTokenBalancesRequest request);

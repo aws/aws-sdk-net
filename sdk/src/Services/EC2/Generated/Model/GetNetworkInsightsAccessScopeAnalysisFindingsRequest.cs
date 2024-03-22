@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=1000)]
         public int? MaxResults
         {
             get { return this._maxResults; }

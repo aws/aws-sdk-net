@@ -29,18 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Configurations for controlling the inference response of an InvokeAgent API call
+    /// Specifications about the inference parameters that were provided alongside the prompt.
+    /// These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
+    /// object that was set when the agent was created or updated. For more information, see
+    /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+    /// parameters for foundation models</a>.
     /// </summary>
     public partial class InferenceConfiguration
     {
         private int? _maximumLength;
-        private List<string> _stopSequences = new List<string>();
+        private List<string> _stopSequences = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private float? _temperature;
         private int? _topk;
         private float? _topp;
 
         /// <summary>
-        /// Gets and sets the property MaximumLength.
+        /// Gets and sets the property MaximumLength. 
+        /// <para>
+        /// The maximum number of tokens allowed in the generated response.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4096)]
         public int? MaximumLength
@@ -56,7 +63,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StopSequences.
+        /// Gets and sets the property StopSequences. 
+        /// <para>
+        /// A list of stop sequences. A stop sequence is a sequence of characters that causes
+        /// the model to stop generating the response.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4)]
         public List<string> StopSequences
@@ -68,11 +79,17 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if StopSequences property is set
         internal bool IsSetStopSequences()
         {
-            return this._stopSequences != null && this._stopSequences.Count > 0; 
+            return this._stopSequences != null && (this._stopSequences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property Temperature.
+        /// Gets and sets the property Temperature. 
+        /// <para>
+        /// The likelihood of the model selecting higher-probability options while generating
+        /// a response. A lower value makes the model more likely to choose higher-probability
+        /// options, while a higher value makes the model more likely to choose lower-probability
+        /// options.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public float? Temperature
@@ -88,7 +105,14 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TopK.
+        /// Gets and sets the property TopK. 
+        /// <para>
+        /// While generating a response, the model determines the probability of the following
+        /// token at each point of generation. The value that you set for <c>topK</c> is the number
+        /// of most-likely candidates from which the model chooses the next token in the sequence.
+        /// For example, if you set <c>topK</c> to 50, the model selects the next token from among
+        /// the top 50 most likely choices.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
         public int? TopK
@@ -104,7 +128,14 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TopP.
+        /// Gets and sets the property TopP. 
+        /// <para>
+        /// While generating a response, the model determines the probability of the following
+        /// token at each point of generation. The value that you set for <c>Top P</c> determines
+        /// the number of most-likely candidates from which the model chooses the next token in
+        /// the sequence. For example, if you set <c>topP</c> to 80, the model only selects the
+        /// next token from the top 80% of the probability distribution of next tokens.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public float? TopP

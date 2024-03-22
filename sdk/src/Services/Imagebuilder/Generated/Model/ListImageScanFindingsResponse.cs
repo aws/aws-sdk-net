@@ -33,7 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListImageScanFindingsResponse : AmazonWebServiceResponse
     {
-        private List<ImageScanFinding> _findings = new List<ImageScanFinding>();
+        private List<ImageScanFinding> _findings = AWSConfigs.InitializeCollections ? new List<ImageScanFinding>() : null;
         private string _nextToken;
         private string _requestId;
 
@@ -53,7 +53,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

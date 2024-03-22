@@ -33,7 +33,7 @@ namespace Amazon.OSIS.Model
     /// </summary>
     public partial class ValidatePipelineResponse : AmazonWebServiceResponse
     {
-        private List<ValidationMessage> _errors = new List<ValidationMessage>();
+        private List<ValidationMessage> _errors = AWSConfigs.InitializeCollections ? new List<ValidationMessage>() : null;
         private bool? _isValid;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.OSIS.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

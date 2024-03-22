@@ -45,7 +45,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Enumerable containing all of the PolicyGenerations
         /// </summary>
         public IPaginatedEnumerable<PolicyGeneration> PolicyGenerations => 
-            new PaginatedResultKeyResponse<ListPolicyGenerationsResponse, PolicyGeneration>(this, (i) => i.PolicyGenerations);
+            new PaginatedResultKeyResponse<ListPolicyGenerationsResponse, PolicyGeneration>(this, (i) => i.PolicyGenerations ?? new List<PolicyGeneration>());
 
         internal ListPolicyGenerationsPaginator(IAmazonAccessAnalyzer client, ListPolicyGenerationsRequest request)
         {

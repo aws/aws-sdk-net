@@ -45,7 +45,7 @@ namespace Amazon.FinSpaceData.Model
         /// Enumerable containing all of the DataViews
         /// </summary>
         public IPaginatedEnumerable<DataViewSummary> DataViews => 
-            new PaginatedResultKeyResponse<ListDataViewsResponse, DataViewSummary>(this, (i) => i.DataViews);
+            new PaginatedResultKeyResponse<ListDataViewsResponse, DataViewSummary>(this, (i) => i.DataViews ?? new List<DataViewSummary>());
 
         internal ListDataViewsPaginator(IAmazonFinSpaceData client, ListDataViewsRequest request)
         {

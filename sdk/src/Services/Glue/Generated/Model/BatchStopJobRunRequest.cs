@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class BatchStopJobRunRequest : AmazonGlueRequest
     {
         private string _jobName;
-        private List<string> _jobRunIds = new List<string>();
+        private List<string> _jobRunIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property JobName. 
@@ -72,7 +72,7 @@ namespace Amazon.Glue.Model
         // Check to see if JobRunIds property is set
         internal bool IsSetJobRunIds()
         {
-            return this._jobRunIds != null && this._jobRunIds.Count > 0; 
+            return this._jobRunIds != null && (this._jobRunIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

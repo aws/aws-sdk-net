@@ -68,7 +68,7 @@ namespace Amazon.GameLift.Model
     public partial class SuspendGameServerGroupRequest : AmazonGameLiftRequest
     {
         private string _gameServerGroupName;
-        private List<string> _suspendActions = new List<string>();
+        private List<string> _suspendActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
@@ -105,7 +105,7 @@ namespace Amazon.GameLift.Model
         // Check to see if SuspendActions property is set
         internal bool IsSetSuspendActions()
         {
-            return this._suspendActions != null && this._suspendActions.Count > 0; 
+            return this._suspendActions != null && (this._suspendActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

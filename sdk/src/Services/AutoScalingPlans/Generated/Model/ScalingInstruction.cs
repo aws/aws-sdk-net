@@ -73,7 +73,7 @@ namespace Amazon.AutoScalingPlans.Model
         private ScalingPolicyUpdateBehavior _scalingPolicyUpdateBehavior;
         private int? _scheduledActionBufferTime;
         private ServiceNamespace _serviceNamespace;
-        private List<TargetTrackingConfiguration> _targetTrackingConfigurations = new List<TargetTrackingConfiguration>();
+        private List<TargetTrackingConfiguration> _targetTrackingConfigurations = AWSConfigs.InitializeCollections ? new List<TargetTrackingConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomizedLoadMetricSpecification. 
@@ -487,7 +487,7 @@ namespace Amazon.AutoScalingPlans.Model
         // Check to see if TargetTrackingConfigurations property is set
         internal bool IsSetTargetTrackingConfigurations()
         {
-            return this._targetTrackingConfigurations != null && this._targetTrackingConfigurations.Count > 0; 
+            return this._targetTrackingConfigurations != null && (this._targetTrackingConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

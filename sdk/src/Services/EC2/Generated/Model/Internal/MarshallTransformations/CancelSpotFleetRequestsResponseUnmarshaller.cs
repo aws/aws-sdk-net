@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("successfulFleetRequestSet/item", targetDepth))
                     {
                         var unmarshaller = CancelSpotFleetRequestsSuccessItemUnmarshaller.Instance;
+                        if (response.SuccessfulFleetRequests == null)
+                        {
+                            response.SuccessfulFleetRequests = new List<CancelSpotFleetRequestsSuccessItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SuccessfulFleetRequests.Add(item);
                         continue;
@@ -65,6 +69,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("unsuccessfulFleetRequestSet/item", targetDepth))
                     {
                         var unmarshaller = CancelSpotFleetRequestsErrorItemUnmarshaller.Instance;
+                        if (response.UnsuccessfulFleetRequests == null)
+                        {
+                            response.UnsuccessfulFleetRequests = new List<CancelSpotFleetRequestsErrorItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.UnsuccessfulFleetRequests.Add(item);
                         continue;

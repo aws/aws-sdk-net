@@ -45,7 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// Enumerable containing all of the AutoScalingInstances
         /// </summary>
         public IPaginatedEnumerable<AutoScalingInstanceDetails> AutoScalingInstances => 
-            new PaginatedResultKeyResponse<DescribeAutoScalingInstancesResponse, AutoScalingInstanceDetails>(this, (i) => i.AutoScalingInstances);
+            new PaginatedResultKeyResponse<DescribeAutoScalingInstancesResponse, AutoScalingInstanceDetails>(this, (i) => i.AutoScalingInstances ?? new List<AutoScalingInstanceDetails>());
 
         internal DescribeAutoScalingInstancesPaginator(IAmazonAutoScaling client, DescribeAutoScalingInstancesRequest request)
         {

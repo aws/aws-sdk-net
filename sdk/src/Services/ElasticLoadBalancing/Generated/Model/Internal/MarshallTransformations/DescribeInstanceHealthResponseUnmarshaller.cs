@@ -84,6 +84,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("InstanceStates/member", targetDepth))
                     {
                         var unmarshaller = InstanceStateUnmarshaller.Instance;
+                        if (response.InstanceStates == null)
+                        {
+                            response.InstanceStates = new List<InstanceState>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.InstanceStates.Add(item);
                         continue;

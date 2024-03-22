@@ -44,7 +44,7 @@ namespace Amazon.FSx.Model
         private StorageVirtualMachineRootVolumeSecurityStyle _rootVolumeSecurityStyle;
         private string _storageVirtualMachineId;
         private StorageVirtualMachineSubtype _subtype;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _uuid;
 
         /// <summary>
@@ -281,7 +281,7 @@ namespace Amazon.FSx.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

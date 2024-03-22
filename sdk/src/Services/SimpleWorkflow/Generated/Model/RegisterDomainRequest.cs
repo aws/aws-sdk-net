@@ -67,7 +67,7 @@ namespace Amazon.SimpleWorkflow.Model
     {
         private string _description;
         private string _name;
-        private List<ResourceTag> _tags = new List<ResourceTag>();
+        private List<ResourceTag> _tags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private string _workflowExecutionRetentionPeriodInDays;
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

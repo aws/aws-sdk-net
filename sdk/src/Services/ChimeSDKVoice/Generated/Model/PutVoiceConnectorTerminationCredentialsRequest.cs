@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class PutVoiceConnectorTerminationCredentialsRequest : AmazonChimeSDKVoiceRequest
     {
-        private List<Credential> _credentials = new List<Credential>();
+        private List<Credential> _credentials = AWSConfigs.InitializeCollections ? new List<Credential>() : null;
         private string _voiceConnectorId;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if Credentials property is set
         internal bool IsSetCredentials()
         {
-            return this._credentials != null && this._credentials.Count > 0; 
+            return this._credentials != null && (this._credentials.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

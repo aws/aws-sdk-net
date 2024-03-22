@@ -45,7 +45,7 @@ namespace Amazon.Drs.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<LaunchAction> Items => 
-            new PaginatedResultKeyResponse<ListLaunchActionsResponse, LaunchAction>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListLaunchActionsResponse, LaunchAction>(this, (i) => i.Items ?? new List<LaunchAction>());
 
         internal ListLaunchActionsPaginator(IAmazonDrs client, ListLaunchActionsRequest request)
         {

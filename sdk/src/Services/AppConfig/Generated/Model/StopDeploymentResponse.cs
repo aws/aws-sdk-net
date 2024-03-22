@@ -34,7 +34,7 @@ namespace Amazon.AppConfig.Model
     public partial class StopDeploymentResponse : AmazonWebServiceResponse
     {
         private string _applicationId;
-        private List<AppliedExtension> _appliedExtensions = new List<AppliedExtension>();
+        private List<AppliedExtension> _appliedExtensions = AWSConfigs.InitializeCollections ? new List<AppliedExtension>() : null;
         private DateTime? _completedAt;
         private string _configurationLocationUri;
         private string _configurationName;
@@ -45,7 +45,7 @@ namespace Amazon.AppConfig.Model
         private string _deploymentStrategyId;
         private string _description;
         private string _environmentId;
-        private List<DeploymentEvent> _eventLog = new List<DeploymentEvent>();
+        private List<DeploymentEvent> _eventLog = AWSConfigs.InitializeCollections ? new List<DeploymentEvent>() : null;
         private int? _finalBakeTimeInMinutes;
         private float? _growthFactor;
         private GrowthType _growthType;
@@ -91,7 +91,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if AppliedExtensions property is set
         internal bool IsSetAppliedExtensions()
         {
-            return this._appliedExtensions != null && this._appliedExtensions.Count > 0; 
+            return this._appliedExtensions != null && (this._appliedExtensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -295,7 +295,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if EventLog property is set
         internal bool IsSetEventLog()
         {
-            return this._eventLog != null && this._eventLog.Count > 0; 
+            return this._eventLog != null && (this._eventLog.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

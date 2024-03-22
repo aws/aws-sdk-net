@@ -34,7 +34,7 @@ namespace Amazon.AppRunner.Model
     public partial class ListServicesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServiceSummary> _serviceSummaryList = new List<ServiceSummary>();
+        private List<ServiceSummary> _serviceSummaryList = AWSConfigs.InitializeCollections ? new List<ServiceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if ServiceSummaryList property is set
         internal bool IsSetServiceSummaryList()
         {
-            return this._serviceSummaryList != null && this._serviceSummaryList.Count > 0; 
+            return this._serviceSummaryList != null && (this._serviceSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

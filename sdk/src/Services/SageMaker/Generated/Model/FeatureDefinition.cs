@@ -97,6 +97,20 @@ namespace Amazon.SageMaker.Model
         /// The name of a feature. The type must be a string. <c>FeatureName</c> cannot be any
         /// of the following: <c>is_deleted</c>, <c>write_time</c>, <c>api_invocation_time</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// The name:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must start and end with an alphanumeric character.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can only include alphanumeric characters, underscores, and hyphens. Spaces are not
+        /// allowed.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string FeatureName

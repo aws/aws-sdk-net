@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("byoasnSet/item", targetDepth))
                     {
                         var unmarshaller = ByoasnUnmarshaller.Instance;
+                        if (response.Byoasns == null)
+                        {
+                            response.Byoasns = new List<Byoasn>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Byoasns.Add(item);
                         continue;

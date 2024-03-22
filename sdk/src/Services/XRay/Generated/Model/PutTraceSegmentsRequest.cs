@@ -106,7 +106,7 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class PutTraceSegmentsRequest : AmazonXRayRequest
     {
-        private List<string> _traceSegmentDocuments = new List<string>();
+        private List<string> _traceSegmentDocuments = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TraceSegmentDocuments. 
@@ -124,7 +124,7 @@ namespace Amazon.XRay.Model
         // Check to see if TraceSegmentDocuments property is set
         internal bool IsSetTraceSegmentDocuments()
         {
-            return this._traceSegmentDocuments != null && this._traceSegmentDocuments.Count > 0; 
+            return this._traceSegmentDocuments != null && (this._traceSegmentDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

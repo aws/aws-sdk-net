@@ -45,7 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// Enumerable containing all of the NotificationConfigurations
         /// </summary>
         public IPaginatedEnumerable<NotificationConfiguration> NotificationConfigurations => 
-            new PaginatedResultKeyResponse<DescribeNotificationConfigurationsResponse, NotificationConfiguration>(this, (i) => i.NotificationConfigurations);
+            new PaginatedResultKeyResponse<DescribeNotificationConfigurationsResponse, NotificationConfiguration>(this, (i) => i.NotificationConfigurations ?? new List<NotificationConfiguration>());
 
         internal DescribeNotificationConfigurationsPaginator(IAmazonAutoScaling client, DescribeNotificationConfigurationsRequest request)
         {

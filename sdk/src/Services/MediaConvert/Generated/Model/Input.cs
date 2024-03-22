@@ -38,9 +38,9 @@ namespace Amazon.MediaConvert.Model
     {
         private AdvancedInputFilter _advancedInputFilter;
         private AdvancedInputFilterSettings _advancedInputFilterSettings;
-        private Dictionary<string, AudioSelectorGroup> _audioSelectorGroups = new Dictionary<string, AudioSelectorGroup>();
-        private Dictionary<string, AudioSelector> _audioSelectors = new Dictionary<string, AudioSelector>();
-        private Dictionary<string, CaptionSelector> _captionSelectors = new Dictionary<string, CaptionSelector>();
+        private Dictionary<string, AudioSelectorGroup> _audioSelectorGroups = AWSConfigs.InitializeCollections ? new Dictionary<string, AudioSelectorGroup>() : null;
+        private Dictionary<string, AudioSelector> _audioSelectors = AWSConfigs.InitializeCollections ? new Dictionary<string, AudioSelector>() : null;
+        private Dictionary<string, CaptionSelector> _captionSelectors = AWSConfigs.InitializeCollections ? new Dictionary<string, CaptionSelector>() : null;
         private Rectangle _crop;
         private InputDeblockFilter _deblockFilter;
         private InputDecryptionSettings _decryptionSettings;
@@ -50,16 +50,16 @@ namespace Amazon.MediaConvert.Model
         private InputFilterEnable _filterEnable;
         private int? _filterStrength;
         private ImageInserter _imageInserter;
-        private List<InputClipping> _inputClippings = new List<InputClipping>();
+        private List<InputClipping> _inputClippings = AWSConfigs.InitializeCollections ? new List<InputClipping>() : null;
         private InputScanType _inputScanType;
         private Rectangle _position;
         private int? _programNumber;
         private InputPsiControl _psiControl;
-        private List<string> _supplementalImps = new List<string>();
+        private List<string> _supplementalImps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private InputTimecodeSource _timecodeSource;
         private string _timecodeStart;
         private InputVideoGenerator _videoGenerator;
-        private List<VideoOverlay> _videoOverlays = new List<VideoOverlay>();
+        private List<VideoOverlay> _videoOverlays = AWSConfigs.InitializeCollections ? new List<VideoOverlay>() : null;
         private VideoSelector _videoSelector;
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AudioSelectorGroups property is set
         internal bool IsSetAudioSelectorGroups()
         {
-            return this._audioSelectorGroups != null && this._audioSelectorGroups.Count > 0; 
+            return this._audioSelectorGroups != null && (this._audioSelectorGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AudioSelectors property is set
         internal bool IsSetAudioSelectors()
         {
-            return this._audioSelectors != null && this._audioSelectors.Count > 0; 
+            return this._audioSelectors != null && (this._audioSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if CaptionSelectors property is set
         internal bool IsSetCaptionSelectors()
         {
-            return this._captionSelectors != null && this._captionSelectors.Count > 0; 
+            return this._captionSelectors != null && (this._captionSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -341,7 +341,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if InputClippings property is set
         internal bool IsSetInputClippings()
         {
-            return this._inputClippings != null && this._inputClippings.Count > 0; 
+            return this._inputClippings != null && (this._inputClippings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -438,7 +438,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if SupplementalImps property is set
         internal bool IsSetSupplementalImps()
         {
-            return this._supplementalImps != null && this._supplementalImps.Count > 0; 
+            return this._supplementalImps != null && (this._supplementalImps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -514,7 +514,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if VideoOverlays property is set
         internal bool IsSetVideoOverlays()
         {
-            return this._videoOverlays != null && this._videoOverlays.Count > 0; 
+            return this._videoOverlays != null && (this._videoOverlays.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class AuthEventType
     {
-        private List<ChallengeResponseType> _challengeResponses = new List<ChallengeResponseType>();
+        private List<ChallengeResponseType> _challengeResponses = AWSConfigs.InitializeCollections ? new List<ChallengeResponseType>() : null;
         private DateTime? _creationDate;
         private EventContextDataType _eventContextData;
         private EventFeedbackType _eventFeedback;
@@ -57,7 +57,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ChallengeResponses property is set
         internal bool IsSetChallengeResponses()
         {
-            return this._challengeResponses != null && this._challengeResponses.Count > 0; 
+            return this._challengeResponses != null && (this._challengeResponses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

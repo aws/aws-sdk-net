@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Enumerable containing all of the Launches
         /// </summary>
         public IPaginatedEnumerable<Launch> Launches => 
-            new PaginatedResultKeyResponse<ListLaunchesResponse, Launch>(this, (i) => i.Launches);
+            new PaginatedResultKeyResponse<ListLaunchesResponse, Launch>(this, (i) => i.Launches ?? new List<Launch>());
 
         internal ListLaunchesPaginator(IAmazonCloudWatchEvidently client, ListLaunchesRequest request)
         {

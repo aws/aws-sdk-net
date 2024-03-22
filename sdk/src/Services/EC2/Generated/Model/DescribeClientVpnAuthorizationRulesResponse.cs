@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeClientVpnAuthorizationRulesResponse : AmazonWebServiceResponse
     {
-        private List<AuthorizationRule> _authorizationRules = new List<AuthorizationRule>();
+        private List<AuthorizationRule> _authorizationRules = AWSConfigs.InitializeCollections ? new List<AuthorizationRule>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if AuthorizationRules property is set
         internal bool IsSetAuthorizationRules()
         {
-            return this._authorizationRules != null && this._authorizationRules.Count > 0; 
+            return this._authorizationRules != null && (this._authorizationRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

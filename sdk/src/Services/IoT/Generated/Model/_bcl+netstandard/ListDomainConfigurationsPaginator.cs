@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the DomainConfigurations
         /// </summary>
         public IPaginatedEnumerable<DomainConfigurationSummary> DomainConfigurations => 
-            new PaginatedResultKeyResponse<ListDomainConfigurationsResponse, DomainConfigurationSummary>(this, (i) => i.DomainConfigurations);
+            new PaginatedResultKeyResponse<ListDomainConfigurationsResponse, DomainConfigurationSummary>(this, (i) => i.DomainConfigurations ?? new List<DomainConfigurationSummary>());
 
         internal ListDomainConfigurationsPaginator(IAmazonIoT client, ListDomainConfigurationsRequest request)
         {

@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("subnetSet/item", targetDepth))
                     {
                         var unmarshaller = SubnetUnmarshaller.Instance;
+                        if (response.Subnets == null)
+                        {
+                            response.Subnets = new List<Subnet>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Subnets.Add(item);
                         continue;

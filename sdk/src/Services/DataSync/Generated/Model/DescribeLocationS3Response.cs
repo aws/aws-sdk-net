@@ -33,7 +33,7 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class DescribeLocationS3Response : AmazonWebServiceResponse
     {
-        private List<string> _agentArns = new List<string>();
+        private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _creationTime;
         private string _locationArn;
         private string _locationUri;
@@ -62,7 +62,7 @@ namespace Amazon.DataSync.Model
         // Check to see if AgentArns property is set
         internal bool IsSetAgentArns()
         {
-            return this._agentArns != null && this._agentArns.Count > 0; 
+            return this._agentArns != null && (this._agentArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model
     public partial class GetRelationalDatabaseSnapshotsResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<RelationalDatabaseSnapshot> _relationalDatabaseSnapshots = new List<RelationalDatabaseSnapshot>();
+        private List<RelationalDatabaseSnapshot> _relationalDatabaseSnapshots = AWSConfigs.InitializeCollections ? new List<RelationalDatabaseSnapshot>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -78,7 +78,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if RelationalDatabaseSnapshots property is set
         internal bool IsSetRelationalDatabaseSnapshots()
         {
-            return this._relationalDatabaseSnapshots != null && this._relationalDatabaseSnapshots.Count > 0; 
+            return this._relationalDatabaseSnapshots != null && (this._relationalDatabaseSnapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

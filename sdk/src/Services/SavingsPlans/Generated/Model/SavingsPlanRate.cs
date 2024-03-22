@@ -36,7 +36,7 @@ namespace Amazon.SavingsPlans.Model
         private CurrencyCode _currency;
         private string _operation;
         private SavingsPlanProductType _productType;
-        private List<SavingsPlanRateProperty> _properties = new List<SavingsPlanRateProperty>();
+        private List<SavingsPlanRateProperty> _properties = AWSConfigs.InitializeCollections ? new List<SavingsPlanRateProperty>() : null;
         private string _rate;
         private SavingsPlanRateServiceCode _serviceCode;
         private SavingsPlanRateUnit _unit;
@@ -63,7 +63,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// The specific AWS operation for the line item in the billing report.
+        /// The specific Amazon Web Services operation for the line item in the billing report.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -112,7 +112,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

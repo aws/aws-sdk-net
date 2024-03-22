@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeEgressOnlyInternetGatewaysResponse : AmazonWebServiceResponse
     {
-        private List<EgressOnlyInternetGateway> _egressOnlyInternetGateways = new List<EgressOnlyInternetGateway>();
+        private List<EgressOnlyInternetGateway> _egressOnlyInternetGateways = AWSConfigs.InitializeCollections ? new List<EgressOnlyInternetGateway>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if EgressOnlyInternetGateways property is set
         internal bool IsSetEgressOnlyInternetGateways()
         {
-            return this._egressOnlyInternetGateways != null && this._egressOnlyInternetGateways.Count > 0; 
+            return this._egressOnlyInternetGateways != null && (this._egressOnlyInternetGateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

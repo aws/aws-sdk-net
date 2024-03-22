@@ -33,7 +33,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class StopDataCollectionByAgentIdsResponse : AmazonWebServiceResponse
     {
-        private List<AgentConfigurationStatus> _agentsConfigurationStatus = new List<AgentConfigurationStatus>();
+        private List<AgentConfigurationStatus> _agentsConfigurationStatus = AWSConfigs.InitializeCollections ? new List<AgentConfigurationStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentsConfigurationStatus. 
@@ -52,7 +52,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if AgentsConfigurationStatus property is set
         internal bool IsSetAgentsConfigurationStatus()
         {
-            return this._agentsConfigurationStatus != null && this._agentsConfigurationStatus.Count > 0; 
+            return this._agentsConfigurationStatus != null && (this._agentsConfigurationStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

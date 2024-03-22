@@ -37,7 +37,7 @@ namespace Amazon.Inspector.Model
     #endif
     public partial class AgentsAlreadyRunningAssessmentException : AmazonInspectorException
     {
-        private List<AgentAlreadyRunningAssessment> _agents = new List<AgentAlreadyRunningAssessment>();
+        private List<AgentAlreadyRunningAssessment> _agents = AWSConfigs.InitializeCollections ? new List<AgentAlreadyRunningAssessment>() : null;
         private bool? _agentsTruncated;
         private bool? _canRetry;
 
@@ -138,7 +138,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Agents property is set
         internal bool IsSetAgents()
         {
-            return this._agents != null && this._agents.Count > 0; 
+            return this._agents != null && (this._agents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

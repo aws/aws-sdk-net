@@ -271,13 +271,16 @@ namespace Amazon.Util.Internal
             IDictionary<TKey, TValue> dictionary, TValue value, IEqualityComparer<TValue> valueComparer,
             out TKey key)
         {
-            foreach (var kvp in dictionary)
+            if (dictionary != null)
             {
-                var candidateValue = kvp.Value;
-                if (valueComparer.Equals(value, candidateValue))
+                foreach (var kvp in dictionary)
                 {
-                    key = kvp.Key;
-                    return true;
+                    var candidateValue = kvp.Value;
+                    if (valueComparer.Equals(value, candidateValue))
+                    {
+                        key = kvp.Key;
+                        return true;
+                    }
                 }
             }
 

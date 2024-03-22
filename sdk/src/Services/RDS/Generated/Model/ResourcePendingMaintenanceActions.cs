@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ResourcePendingMaintenanceActions
     {
-        private List<PendingMaintenanceAction> _pendingMaintenanceActionDetails = new List<PendingMaintenanceAction>();
+        private List<PendingMaintenanceAction> _pendingMaintenanceActionDetails = AWSConfigs.InitializeCollections ? new List<PendingMaintenanceAction>() : null;
         private string _resourceIdentifier;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         // Check to see if PendingMaintenanceActionDetails property is set
         internal bool IsSetPendingMaintenanceActionDetails()
         {
-            return this._pendingMaintenanceActionDetails != null && this._pendingMaintenanceActionDetails.Count > 0; 
+            return this._pendingMaintenanceActionDetails != null && (this._pendingMaintenanceActionDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

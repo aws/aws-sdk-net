@@ -33,7 +33,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class DashIsoGroupSettings
     {
-        private List<DashAdditionalManifest> _additionalManifests = new List<DashAdditionalManifest>();
+        private List<DashAdditionalManifest> _additionalManifests = AWSConfigs.InitializeCollections ? new List<DashAdditionalManifest>() : null;
         private DashIsoGroupAudioChannelConfigSchemeIdUri _audioChannelConfigSchemeIdUri;
         private string _baseUrl;
         private DashManifestStyle _dashManifestStyle;
@@ -70,7 +70,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AdditionalManifests property is set
         internal bool IsSetAdditionalManifests()
         {
-            return this._additionalManifests != null && this._additionalManifests.Count > 0; 
+            return this._additionalManifests != null && (this._additionalManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

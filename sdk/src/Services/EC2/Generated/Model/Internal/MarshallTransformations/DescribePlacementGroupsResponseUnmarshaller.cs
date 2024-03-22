@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("placementGroupSet/item", targetDepth))
                     {
                         var unmarshaller = PlacementGroupUnmarshaller.Instance;
+                        if (response.PlacementGroups == null)
+                        {
+                            response.PlacementGroups = new List<PlacementGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.PlacementGroups.Add(item);
                         continue;

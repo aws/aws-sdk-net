@@ -40,10 +40,10 @@ namespace Amazon.RoboMaker.Model
         private string _failureReason;
         private FinishedWorldsSummary _finishedWorldsSummary;
         private WorldGenerationJobStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _template;
         private WorldCount _worldCount;
-        private Dictionary<string, string> _worldTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _worldTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -243,7 +243,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -299,7 +299,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if WorldTags property is set
         internal bool IsSetWorldTags()
         {
-            return this._worldTags != null && this._worldTags.Count > 0; 
+            return this._worldTags != null && (this._worldTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

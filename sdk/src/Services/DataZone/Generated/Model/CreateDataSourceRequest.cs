@@ -34,7 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class CreateDataSourceRequest : AmazonDataZoneRequest
     {
-        private List<FormInput> _assetFormsInput = new List<FormInput>();
+        private List<FormInput> _assetFormsInput = AWSConfigs.InitializeCollections ? new List<FormInput>() : null;
         private string _clientToken;
         private DataSourceConfigurationInput _configuration;
         private string _description;
@@ -65,7 +65,7 @@ namespace Amazon.DataZone.Model
         // Check to see if AssetFormsInput property is set
         internal bool IsSetAssetFormsInput()
         {
-            return this._assetFormsInput != null && this._assetFormsInput.Count > 0; 
+            return this._assetFormsInput != null && (this._assetFormsInput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

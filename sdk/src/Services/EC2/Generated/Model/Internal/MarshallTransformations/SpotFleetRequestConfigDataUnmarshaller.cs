@@ -105,6 +105,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("launchSpecifications/item", targetDepth))
                     {
                         var unmarshaller = SpotFleetLaunchSpecificationUnmarshaller.Instance;
+                        if (unmarshalledObject.LaunchSpecifications == null)
+                        {
+                            unmarshalledObject.LaunchSpecifications = new List<SpotFleetLaunchSpecification>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LaunchSpecifications.Add(item);
                         continue;
@@ -112,6 +116,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("launchTemplateConfigs/item", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateConfigUnmarshaller.Instance;
+                        if (unmarshalledObject.LaunchTemplateConfigs == null)
+                        {
+                            unmarshalledObject.LaunchTemplateConfigs = new List<LaunchTemplateConfig>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LaunchTemplateConfigs.Add(item);
                         continue;
@@ -173,6 +181,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSpecification/item", targetDepth))
                     {
                         var unmarshaller = TagSpecificationUnmarshaller.Instance;
+                        if (unmarshalledObject.TagSpecifications == null)
+                        {
+                            unmarshalledObject.TagSpecifications = new List<TagSpecification>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TagSpecifications.Add(item);
                         continue;

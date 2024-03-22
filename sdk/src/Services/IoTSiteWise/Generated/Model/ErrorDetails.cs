@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class ErrorDetails
     {
         private ErrorCode _code;
-        private List<DetailedError> _details = new List<DetailedError>();
+        private List<DetailedError> _details = AWSConfigs.InitializeCollections ? new List<DetailedError>() : null;
         private string _message;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this._details != null && this._details.Count > 0; 
+            return this._details != null && (this._details.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

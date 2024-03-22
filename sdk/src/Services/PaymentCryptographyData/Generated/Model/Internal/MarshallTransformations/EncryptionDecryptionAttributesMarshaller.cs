@@ -67,6 +67,17 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEmv())
+            {
+                context.Writer.WritePropertyName("Emv");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EmvEncryptionAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Emv, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSymmetric())
             {
                 context.Writer.WritePropertyName("Symmetric");

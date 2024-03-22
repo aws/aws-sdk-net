@@ -41,12 +41,12 @@ namespace Amazon.BedrockAgent.Model
         private DateTime? _createdAt;
         private string _customerEncryptionKeyArn;
         private string _description;
-        private List<string> _failureReasons = new List<string>();
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _foundationModel;
         private int? _idleSessionTTLInSeconds;
         private string _instruction;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
-        private List<string> _recommendedActions = new List<string>();
+        private List<string> _recommendedActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _updatedAt;
         private string _version;
 
@@ -191,7 +191,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -271,7 +271,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if RecommendedActions property is set
         internal bool IsSetRecommendedActions()
         {
-            return this._recommendedActions != null && this._recommendedActions.Count > 0; 
+            return this._recommendedActions != null && (this._recommendedActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.QConnect.Model
         /// Enumerable containing all of the ContentSummaries
         /// </summary>
         public IPaginatedEnumerable<ContentSummary> ContentSummaries => 
-            new PaginatedResultKeyResponse<ListContentsResponse, ContentSummary>(this, (i) => i.ContentSummaries);
+            new PaginatedResultKeyResponse<ListContentsResponse, ContentSummary>(this, (i) => i.ContentSummaries ?? new List<ContentSummary>());
 
         internal ListContentsPaginator(IAmazonQConnect client, ListContentsRequest request)
         {

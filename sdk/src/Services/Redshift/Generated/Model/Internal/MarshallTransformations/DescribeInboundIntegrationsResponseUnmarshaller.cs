@@ -84,6 +84,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("InboundIntegrations/InboundIntegration", targetDepth))
                     {
                         var unmarshaller = InboundIntegrationUnmarshaller.Instance;
+                        if (response.InboundIntegrations == null)
+                        {
+                            response.InboundIntegrations = new List<InboundIntegration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.InboundIntegrations.Add(item);
                         continue;

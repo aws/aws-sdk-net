@@ -45,7 +45,7 @@ namespace Amazon.Textract.Model
         /// Enumerable containing all of the Adapters
         /// </summary>
         public IPaginatedEnumerable<AdapterOverview> Adapters => 
-            new PaginatedResultKeyResponse<ListAdaptersResponse, AdapterOverview>(this, (i) => i.Adapters);
+            new PaginatedResultKeyResponse<ListAdaptersResponse, AdapterOverview>(this, (i) => i.Adapters ?? new List<AdapterOverview>());
 
         internal ListAdaptersPaginator(IAmazonTextract client, ListAdaptersRequest request)
         {

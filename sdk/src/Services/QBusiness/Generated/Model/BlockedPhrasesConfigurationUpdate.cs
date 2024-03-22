@@ -33,8 +33,8 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class BlockedPhrasesConfigurationUpdate
     {
-        private List<string> _blockedPhrasesToCreateOrUpdate = new List<string>();
-        private List<string> _blockedPhrasesToDelete = new List<string>();
+        private List<string> _blockedPhrasesToCreateOrUpdate = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _blockedPhrasesToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _systemMessageOverride;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if BlockedPhrasesToCreateOrUpdate property is set
         internal bool IsSetBlockedPhrasesToCreateOrUpdate()
         {
-            return this._blockedPhrasesToCreateOrUpdate != null && this._blockedPhrasesToCreateOrUpdate.Count > 0; 
+            return this._blockedPhrasesToCreateOrUpdate != null && (this._blockedPhrasesToCreateOrUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if BlockedPhrasesToDelete property is set
         internal bool IsSetBlockedPhrasesToDelete()
         {
-            return this._blockedPhrasesToDelete != null && this._blockedPhrasesToDelete.Count > 0; 
+            return this._blockedPhrasesToDelete != null && (this._blockedPhrasesToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

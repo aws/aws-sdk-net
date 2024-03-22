@@ -48,9 +48,9 @@ namespace Amazon.AppRunner.Model
     {
         private DateTime? _createdAt;
         private DateTime? _deletedAt;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConnectorStatus _status;
-        private List<string> _subnets = new List<string>();
+        private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcConnectorArn;
         private string _vpcConnectorName;
         private int? _vpcConnectorRevision;
@@ -108,7 +108,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

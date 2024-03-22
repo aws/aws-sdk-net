@@ -37,7 +37,7 @@ namespace Amazon.Lex.Model
     public partial class ResponseCard
     {
         private ContentType _contentType;
-        private List<GenericAttachment> _genericAttachments = new List<GenericAttachment>();
+        private List<GenericAttachment> _genericAttachments = AWSConfigs.InitializeCollections ? new List<GenericAttachment>() : null;
         private string _version;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.Lex.Model
         // Check to see if GenericAttachments property is set
         internal bool IsSetGenericAttachments()
         {
-            return this._genericAttachments != null && this._genericAttachments.Count > 0; 
+            return this._genericAttachments != null && (this._genericAttachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

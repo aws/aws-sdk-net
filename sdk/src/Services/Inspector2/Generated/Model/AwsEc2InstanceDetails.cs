@@ -35,8 +35,8 @@ namespace Amazon.Inspector2.Model
     {
         private string _iamInstanceProfileArn;
         private string _imageId;
-        private List<string> _ipv4Addresses = new List<string>();
-        private List<string> _ipv6Addresses = new List<string>();
+        private List<string> _ipv4Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _ipv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyName;
         private DateTime? _launchedAt;
         private string _platform;
@@ -97,7 +97,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if IpV4Addresses property is set
         internal bool IsSetIpV4Addresses()
         {
-            return this._ipv4Addresses != null && this._ipv4Addresses.Count > 0; 
+            return this._ipv4Addresses != null && (this._ipv4Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if IpV6Addresses property is set
         internal bool IsSetIpV6Addresses()
         {
-            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+            return this._ipv6Addresses != null && (this._ipv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

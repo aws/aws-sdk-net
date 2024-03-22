@@ -49,10 +49,10 @@ namespace Amazon.RDS.Model
         private string _source;
         private string _status;
         private string _statusDetails;
-        private List<SwitchoverDetail> _switchoverDetails = new List<SwitchoverDetail>();
-        private List<Tag> _tagList = new List<Tag>();
+        private List<SwitchoverDetail> _switchoverDetails = AWSConfigs.InitializeCollections ? new List<SwitchoverDetail>() : null;
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _target;
-        private List<BlueGreenDeploymentTask> _tasks = new List<BlueGreenDeploymentTask>();
+        private List<BlueGreenDeploymentTask> _tasks = AWSConfigs.InitializeCollections ? new List<BlueGreenDeploymentTask>() : null;
 
         /// <summary>
         /// Gets and sets the property BlueGreenDeploymentIdentifier. 
@@ -240,7 +240,7 @@ namespace Amazon.RDS.Model
         // Check to see if SwitchoverDetails property is set
         internal bool IsSetSwitchoverDetails()
         {
-            return this._switchoverDetails != null && this._switchoverDetails.Count > 0; 
+            return this._switchoverDetails != null && (this._switchoverDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -255,7 +255,7 @@ namespace Amazon.RDS.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -297,7 +297,7 @@ namespace Amazon.RDS.Model
         // Check to see if Tasks property is set
         internal bool IsSetTasks()
         {
-            return this._tasks != null && this._tasks.Count > 0; 
+            return this._tasks != null && (this._tasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

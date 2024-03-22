@@ -34,7 +34,7 @@ namespace Amazon.ServerMigrationService.Model
     public partial class Connector
     {
         private DateTime? _associatedOn;
-        private List<string> _capabilityList = new List<string>();
+        private List<string> _capabilityList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _connectorId;
         private string _ipAddress;
         private string _macAddress;
@@ -77,7 +77,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if CapabilityList property is set
         internal bool IsSetCapabilityList()
         {
-            return this._capabilityList != null && this._capabilityList.Count > 0; 
+            return this._capabilityList != null && (this._capabilityList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

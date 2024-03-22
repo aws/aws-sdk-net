@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("byoipCidrSet/item", targetDepth))
                     {
                         var unmarshaller = ByoipCidrUnmarshaller.Instance;
+                        if (response.ByoipCidrs == null)
+                        {
+                            response.ByoipCidrs = new List<ByoipCidr>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ByoipCidrs.Add(item);
                         continue;

@@ -84,6 +84,10 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("IndexFields/member", targetDepth))
                     {
                         var unmarshaller = IndexFieldStatusUnmarshaller.Instance;
+                        if (response.IndexFields == null)
+                        {
+                            response.IndexFields = new List<IndexFieldStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.IndexFields.Add(item);
                         continue;

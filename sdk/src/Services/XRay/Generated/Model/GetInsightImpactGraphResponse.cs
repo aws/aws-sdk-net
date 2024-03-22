@@ -38,7 +38,7 @@ namespace Amazon.XRay.Model
         private string _nextToken;
         private DateTime? _serviceGraphEndTime;
         private DateTime? _serviceGraphStartTime;
-        private List<InsightImpactGraphService> _services = new List<InsightImpactGraphService>();
+        private List<InsightImpactGraphService> _services = AWSConfigs.InitializeCollections ? new List<InsightImpactGraphService>() : null;
         private DateTime? _startTime;
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.XRay.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

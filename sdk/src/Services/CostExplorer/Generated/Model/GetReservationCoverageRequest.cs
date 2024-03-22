@@ -95,9 +95,9 @@ namespace Amazon.CostExplorer.Model
     {
         private Expression _filter;
         private Granularity _granularity;
-        private List<GroupDefinition> _groupBy = new List<GroupDefinition>();
+        private List<GroupDefinition> _groupBy = AWSConfigs.InitializeCollections ? new List<GroupDefinition>() : null;
         private int? _maxResults;
-        private List<string> _metrics = new List<string>();
+        private List<string> _metrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextPageToken;
         private SortDefinition _sortBy;
         private DateInterval _timePeriod;
@@ -273,7 +273,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if GroupBy property is set
         internal bool IsSetGroupBy()
         {
-            return this._groupBy != null && this._groupBy.Count > 0; 
+            return this._groupBy != null && (this._groupBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -317,7 +317,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

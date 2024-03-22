@@ -35,7 +35,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class ListIngestionJobsRequest : AmazonBedrockAgentRequest
     {
         private string _dataSourceId;
-        private List<IngestionJobFilter> _filters = new List<IngestionJobFilter>();
+        private List<IngestionJobFilter> _filters = AWSConfigs.InitializeCollections ? new List<IngestionJobFilter>() : null;
         private string _knowledgeBaseId;
         private int? _maxResults;
         private string _nextToken;
@@ -70,7 +70,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

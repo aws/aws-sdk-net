@@ -57,7 +57,7 @@ namespace Amazon.StorageGateway.Model
         private string _networkInterfaceId;
         private bool? _preserveExistingData;
         private string _snapshotId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _targetName;
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

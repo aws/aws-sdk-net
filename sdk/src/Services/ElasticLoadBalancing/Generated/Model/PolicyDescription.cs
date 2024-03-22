@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class PolicyDescription
     {
-        private List<PolicyAttributeDescription> _policyAttributeDescriptions = new List<PolicyAttributeDescription>();
+        private List<PolicyAttributeDescription> _policyAttributeDescriptions = AWSConfigs.InitializeCollections ? new List<PolicyAttributeDescription>() : null;
         private string _policyName;
         private string _policyTypeName;
 
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyAttributeDescriptions property is set
         internal bool IsSetPolicyAttributeDescriptions()
         {
-            return this._policyAttributeDescriptions != null && this._policyAttributeDescriptions.Count > 0; 
+            return this._policyAttributeDescriptions != null && (this._policyAttributeDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

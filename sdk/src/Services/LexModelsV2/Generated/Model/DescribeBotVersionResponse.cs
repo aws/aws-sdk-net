@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class DescribeBotVersionResponse : AmazonWebServiceResponse
     {
         private string _botId;
-        private List<BotMember> _botMembers = new List<BotMember>();
+        private List<BotMember> _botMembers = AWSConfigs.InitializeCollections ? new List<BotMember>() : null;
         private string _botName;
         private BotStatus _botStatus;
         private BotType _botType;
@@ -42,9 +42,9 @@ namespace Amazon.LexModelsV2.Model
         private DateTime? _creationDateTime;
         private DataPrivacy _dataPrivacy;
         private string _description;
-        private List<string> _failureReasons = new List<string>();
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _idleSessionTTLInSeconds;
-        private List<ParentBotNetwork> _parentBotNetworks = new List<ParentBotNetwork>();
+        private List<ParentBotNetwork> _parentBotNetworks = AWSConfigs.InitializeCollections ? new List<ParentBotNetwork>() : null;
         private string _roleArn;
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotMembers property is set
         internal bool IsSetBotMembers()
         {
-            return this._botMembers != null && this._botMembers.Count > 0; 
+            return this._botMembers != null && (this._botMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -270,7 +270,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if ParentBotNetworks property is set
         internal bool IsSetParentBotNetworks()
         {
-            return this._parentBotNetworks != null && this._parentBotNetworks.Count > 0; 
+            return this._parentBotNetworks != null && (this._parentBotNetworks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

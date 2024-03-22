@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         private int? _maxDepth;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _startArns = new List<string>();
+        private List<string> _startArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Direction. 
@@ -202,7 +202,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if StartArns property is set
         internal bool IsSetStartArns()
         {
-            return this._startArns != null && this._startArns.Count > 0; 
+            return this._startArns != null && (this._startArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

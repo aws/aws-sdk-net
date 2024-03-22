@@ -33,7 +33,7 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class UploadMetadata
     {
-        private Dictionary<string, string> _signedHeaders = new Dictionary<string, string>();
+        private Dictionary<string, string> _signedHeaders = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uploadUrl;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if SignedHeaders property is set
         internal bool IsSetSignedHeaders()
         {
-            return this._signedHeaders != null && this._signedHeaders.Count > 0; 
+            return this._signedHeaders != null && (this._signedHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

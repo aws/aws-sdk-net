@@ -57,6 +57,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Values/member", targetDepth))
                     {
                         var unmarshaller = QueryStringKeyValuePairUnmarshaller.Instance;
+                        if (unmarshalledObject.Values == null)
+                        {
+                            unmarshalledObject.Values = new List<QueryStringKeyValuePair>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Values.Add(item);
                         continue;

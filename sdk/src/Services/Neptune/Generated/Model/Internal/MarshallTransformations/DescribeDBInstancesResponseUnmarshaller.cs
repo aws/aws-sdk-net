@@ -84,6 +84,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBInstances/DBInstance", targetDepth))
                     {
                         var unmarshaller = DBInstanceUnmarshaller.Instance;
+                        if (response.DBInstances == null)
+                        {
+                            response.DBInstances = new List<DBInstance>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DBInstances.Add(item);
                         continue;

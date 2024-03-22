@@ -34,7 +34,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
     public partial class ListLinuxSubscriptionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Subscription> _subscriptions = new List<Subscription>();
+        private List<Subscription> _subscriptions = AWSConfigs.InitializeCollections ? new List<Subscription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         // Check to see if Subscriptions property is set
         internal bool IsSetSubscriptions()
         {
-            return this._subscriptions != null && this._subscriptions.Count > 0; 
+            return this._subscriptions != null && (this._subscriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class ListAnomalousLogGroupsResponse : AmazonWebServiceResponse
     {
-        private List<AnomalousLogGroup> _anomalousLogGroups = new List<AnomalousLogGroup>();
+        private List<AnomalousLogGroup> _anomalousLogGroups = AWSConfigs.InitializeCollections ? new List<AnomalousLogGroup>() : null;
         private string _insightId;
         private string _nextToken;
 
@@ -53,7 +53,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if AnomalousLogGroups property is set
         internal bool IsSetAnomalousLogGroups()
         {
-            return this._anomalousLogGroups != null && this._anomalousLogGroups.Count > 0; 
+            return this._anomalousLogGroups != null && (this._anomalousLogGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

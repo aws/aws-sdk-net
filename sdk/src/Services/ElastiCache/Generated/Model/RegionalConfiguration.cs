@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model
     {
         private string _replicationGroupId;
         private string _replicationGroupRegion;
-        private List<ReshardingConfiguration> _reshardingConfiguration = new List<ReshardingConfiguration>();
+        private List<ReshardingConfiguration> _reshardingConfiguration = AWSConfigs.InitializeCollections ? new List<ReshardingConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ReplicationGroupId. 
@@ -92,7 +92,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReshardingConfiguration property is set
         internal bool IsSetReshardingConfiguration()
         {
-            return this._reshardingConfiguration != null && this._reshardingConfiguration.Count > 0; 
+            return this._reshardingConfiguration != null && (this._reshardingConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

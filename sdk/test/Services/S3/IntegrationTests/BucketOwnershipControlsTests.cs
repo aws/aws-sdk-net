@@ -92,10 +92,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var putRequest = new PutBucketOwnershipControlsRequest
             {
                 BucketName = bucketName,
-                OwnershipControls = new OwnershipControls()
+                OwnershipControls = new OwnershipControls
+                {
+                    Rules = new List<OwnershipControlsRule> { new OwnershipControlsRule { ObjectOwnership = objectOwnership } }
+                }
             };
-
-            putRequest.OwnershipControls.Rules.Add(new OwnershipControlsRule { ObjectOwnership = objectOwnership });
 
             s3Client.PutBucketOwnershipControls(putRequest);
 

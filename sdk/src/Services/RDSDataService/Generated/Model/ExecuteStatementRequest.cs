@@ -49,7 +49,7 @@ namespace Amazon.RDSDataService.Model
         private string _database;
         private RecordsFormatType _formatRecordsAs;
         private bool? _includeResultMetadata;
-        private List<SqlParameter> _parameters = new List<SqlParameter>();
+        private List<SqlParameter> _parameters = AWSConfigs.InitializeCollections ? new List<SqlParameter>() : null;
         private string _resourceArn;
         private ResultSetOptions _resultSetOptions;
         private string _schema;
@@ -166,7 +166,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

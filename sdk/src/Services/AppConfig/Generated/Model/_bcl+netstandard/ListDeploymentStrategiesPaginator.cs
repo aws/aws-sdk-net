@@ -45,7 +45,7 @@ namespace Amazon.AppConfig.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<DeploymentStrategy> Items => 
-            new PaginatedResultKeyResponse<ListDeploymentStrategiesResponse, DeploymentStrategy>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListDeploymentStrategiesResponse, DeploymentStrategy>(this, (i) => i.Items ?? new List<DeploymentStrategy>());
 
         internal ListDeploymentStrategiesPaginator(IAmazonAppConfig client, ListDeploymentStrategiesRequest request)
         {

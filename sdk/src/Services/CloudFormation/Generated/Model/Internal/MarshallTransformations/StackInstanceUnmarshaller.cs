@@ -87,6 +87,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ParameterOverrides/member", targetDepth))
                     {
                         var unmarshaller = ParameterUnmarshaller.Instance;
+                        if (unmarshalledObject.ParameterOverrides == null)
+                        {
+                            unmarshalledObject.ParameterOverrides = new List<Parameter>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ParameterOverrides.Add(item);
                         continue;

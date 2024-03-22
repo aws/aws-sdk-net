@@ -64,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("spotFleetRequestConfigSet/item", targetDepth))
                     {
                         var unmarshaller = SpotFleetRequestConfigUnmarshaller.Instance;
+                        if (response.SpotFleetRequestConfigs == null)
+                        {
+                            response.SpotFleetRequestConfigs = new List<SpotFleetRequestConfig>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SpotFleetRequestConfigs.Add(item);
                         continue;

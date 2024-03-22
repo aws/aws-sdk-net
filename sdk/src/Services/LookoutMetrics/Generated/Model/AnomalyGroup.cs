@@ -36,7 +36,7 @@ namespace Amazon.LookoutMetrics.Model
         private string _anomalyGroupId;
         private double? _anomalyGroupScore;
         private string _endTime;
-        private List<MetricLevelImpact> _metricLevelImpactList = new List<MetricLevelImpact>();
+        private List<MetricLevelImpact> _metricLevelImpactList = AWSConfigs.InitializeCollections ? new List<MetricLevelImpact>() : null;
         private string _primaryMetricName;
         private string _startTime;
 
@@ -112,7 +112,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if MetricLevelImpactList property is set
         internal bool IsSetMetricLevelImpactList()
         {
-            return this._metricLevelImpactList != null && this._metricLevelImpactList.Count > 0; 
+            return this._metricLevelImpactList != null && (this._metricLevelImpactList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

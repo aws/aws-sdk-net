@@ -45,7 +45,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Enumerable containing all of the Images
         /// </summary>
         public IPaginatedEnumerable<Image> Images => 
-            new PaginatedResultKeyResponse<GetImagesResponse, Image>(this, (i) => i.Images);
+            new PaginatedResultKeyResponse<GetImagesResponse, Image>(this, (i) => i.Images ?? new List<Image>());
 
         internal GetImagesPaginator(IAmazonKinesisVideoArchivedMedia client, GetImagesRequest request)
         {

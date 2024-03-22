@@ -33,7 +33,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class ListApplicationProvidersResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationProvider> _applicationProviders = new List<ApplicationProvider>();
+        private List<ApplicationProvider> _applicationProviders = AWSConfigs.InitializeCollections ? new List<ApplicationProvider>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if ApplicationProviders property is set
         internal bool IsSetApplicationProviders()
         {
-            return this._applicationProviders != null && this._applicationProviders.Count > 0; 
+            return this._applicationProviders != null && (this._applicationProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

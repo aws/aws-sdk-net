@@ -45,7 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Enumerable containing all of the TypeInfos
         /// </summary>
         public IPaginatedEnumerable<WorkflowTypeInfo> TypeInfos => 
-            new PaginatedResultKeyResponse<ListWorkflowTypesResponse, WorkflowTypeInfo>(this, (i) => i.WorkflowTypeInfos.TypeInfos);
+            new PaginatedResultKeyResponse<ListWorkflowTypesResponse, WorkflowTypeInfo>(this, (i) => i.WorkflowTypeInfos.TypeInfos ?? new List<WorkflowTypeInfo>());
 
         internal ListWorkflowTypesPaginator(IAmazonSimpleWorkflow client, ListWorkflowTypesRequest request)
         {

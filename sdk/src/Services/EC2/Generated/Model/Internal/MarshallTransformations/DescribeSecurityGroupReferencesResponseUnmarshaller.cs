@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("securityGroupReferenceSet/item", targetDepth))
                     {
                         var unmarshaller = SecurityGroupReferenceUnmarshaller.Instance;
+                        if (response.SecurityGroupReferenceSet == null)
+                        {
+                            response.SecurityGroupReferenceSet = new List<SecurityGroupReference>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SecurityGroupReferenceSet.Add(item);
                         continue;

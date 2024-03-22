@@ -45,7 +45,7 @@ namespace Amazon.Artifact.Model
         /// Enumerable containing all of the Reports
         /// </summary>
         public IPaginatedEnumerable<ReportSummary> Reports => 
-            new PaginatedResultKeyResponse<ListReportsResponse, ReportSummary>(this, (i) => i.Reports);
+            new PaginatedResultKeyResponse<ListReportsResponse, ReportSummary>(this, (i) => i.Reports ?? new List<ReportSummary>());
 
         internal ListReportsPaginator(IAmazonArtifact client, ListReportsRequest request)
         {

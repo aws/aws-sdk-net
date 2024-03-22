@@ -46,7 +46,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeRdsDbInstancesRequest : AmazonOpsWorksRequest
     {
-        private List<string> _rdsDbInstanceArns = new List<string>();
+        private List<string> _rdsDbInstanceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stackId;
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if RdsDbInstanceArns property is set
         internal bool IsSetRdsDbInstanceArns()
         {
-            return this._rdsDbInstanceArns != null && this._rdsDbInstanceArns.Count > 0; 
+            return this._rdsDbInstanceArns != null && (this._rdsDbInstanceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

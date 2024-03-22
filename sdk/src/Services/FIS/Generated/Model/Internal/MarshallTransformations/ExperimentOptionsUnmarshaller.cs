@@ -69,6 +69,12 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountTargeting = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("actionsMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActionsMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("emptyTargetResolutionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

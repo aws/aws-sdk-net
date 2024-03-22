@@ -33,7 +33,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class BatchImportEvidenceToAssessmentControlResponse : AmazonWebServiceResponse
     {
-        private List<BatchImportEvidenceToAssessmentControlError> _errors = new List<BatchImportEvidenceToAssessmentControlError>();
+        private List<BatchImportEvidenceToAssessmentControlError> _errors = AWSConfigs.InitializeCollections ? new List<BatchImportEvidenceToAssessmentControlError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +51,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

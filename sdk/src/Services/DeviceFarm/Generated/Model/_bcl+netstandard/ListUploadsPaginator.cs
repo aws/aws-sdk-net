@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// Enumerable containing all of the Uploads
         /// </summary>
         public IPaginatedEnumerable<Upload> Uploads => 
-            new PaginatedResultKeyResponse<ListUploadsResponse, Upload>(this, (i) => i.Uploads);
+            new PaginatedResultKeyResponse<ListUploadsResponse, Upload>(this, (i) => i.Uploads ?? new List<Upload>());
 
         internal ListUploadsPaginator(IAmazonDeviceFarm client, ListUploadsRequest request)
         {

@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
     public partial class TagResourceRequest : AmazonGlueRequest
     {
         private string _resourceArn;
-        private Dictionary<string, string> _tagsToAdd = new Dictionary<string, string>();
+        private Dictionary<string, string> _tagsToAdd = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -77,7 +77,7 @@ namespace Amazon.Glue.Model
         // Check to see if TagsToAdd property is set
         internal bool IsSetTagsToAdd()
         {
-            return this._tagsToAdd != null && this._tagsToAdd.Count > 0; 
+            return this._tagsToAdd != null && (this._tagsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

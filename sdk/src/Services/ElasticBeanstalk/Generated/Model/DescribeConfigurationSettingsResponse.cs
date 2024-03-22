@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class DescribeConfigurationSettingsResponse : AmazonWebServiceResponse
     {
-        private List<ConfigurationSettingsDescription> _configurationSettings = new List<ConfigurationSettingsDescription>();
+        private List<ConfigurationSettingsDescription> _configurationSettings = AWSConfigs.InitializeCollections ? new List<ConfigurationSettingsDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationSettings. 
@@ -50,7 +50,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ConfigurationSettings property is set
         internal bool IsSetConfigurationSettings()
         {
-            return this._configurationSettings != null && this._configurationSettings.Count > 0; 
+            return this._configurationSettings != null && (this._configurationSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

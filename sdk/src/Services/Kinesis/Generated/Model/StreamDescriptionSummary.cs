@@ -35,7 +35,7 @@ namespace Amazon.Kinesis.Model
     {
         private int? _consumerCount;
         private EncryptionType _encryptionType;
-        private List<EnhancedMetrics> _enhancedMonitoring = new List<EnhancedMetrics>();
+        private List<EnhancedMetrics> _enhancedMonitoring = AWSConfigs.InitializeCollections ? new List<EnhancedMetrics>() : null;
         private string _keyId;
         private int? _openShardCount;
         private int? _retentionPeriodHours;
@@ -107,7 +107,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if EnhancedMonitoring property is set
         internal bool IsSetEnhancedMonitoring()
         {
-            return this._enhancedMonitoring != null && this._enhancedMonitoring.Count > 0; 
+            return this._enhancedMonitoring != null && (this._enhancedMonitoring.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

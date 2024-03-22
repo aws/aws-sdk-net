@@ -50,7 +50,7 @@ namespace Amazon.SecretsManager.Model
     /// </summary>
     public partial class RemoveRegionsFromReplicationRequest : AmazonSecretsManagerRequest
     {
-        private List<string> _removeReplicaRegions = new List<string>();
+        private List<string> _removeReplicaRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _secretId;
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if RemoveReplicaRegions property is set
         internal bool IsSetRemoveReplicaRegions()
         {
-            return this._removeReplicaRegions != null && this._removeReplicaRegions.Count > 0; 
+            return this._removeReplicaRegions != null && (this._removeReplicaRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

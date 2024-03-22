@@ -41,7 +41,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// </summary>
     public partial class ScalingPolicy
     {
-        private List<Alarm> _alarms = new List<Alarm>();
+        private List<Alarm> _alarms = AWSConfigs.InitializeCollections ? new List<Alarm>() : null;
         private DateTime? _creationTime;
         private string _policyARN;
         private string _policyName;
@@ -67,7 +67,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if Alarms property is set
         internal bool IsSetAlarms()
         {
-            return this._alarms != null && this._alarms.Count > 0; 
+            return this._alarms != null && (this._alarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

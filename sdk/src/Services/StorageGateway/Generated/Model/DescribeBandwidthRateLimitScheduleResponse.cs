@@ -33,7 +33,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class DescribeBandwidthRateLimitScheduleResponse : AmazonWebServiceResponse
     {
-        private List<BandwidthRateLimitInterval> _bandwidthRateLimitIntervals = new List<BandwidthRateLimitInterval>();
+        private List<BandwidthRateLimitInterval> _bandwidthRateLimitIntervals = AWSConfigs.InitializeCollections ? new List<BandwidthRateLimitInterval>() : null;
         private string _gatewayARN;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if BandwidthRateLimitIntervals property is set
         internal bool IsSetBandwidthRateLimitIntervals()
         {
-            return this._bandwidthRateLimitIntervals != null && this._bandwidthRateLimitIntervals.Count > 0; 
+            return this._bandwidthRateLimitIntervals != null && (this._bandwidthRateLimitIntervals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

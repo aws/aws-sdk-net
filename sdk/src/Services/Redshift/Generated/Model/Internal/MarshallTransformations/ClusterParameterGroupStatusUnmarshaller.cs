@@ -57,6 +57,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ClusterParameterStatusList/member", targetDepth))
                     {
                         var unmarshaller = ClusterParameterStatusUnmarshaller.Instance;
+                        if (unmarshalledObject.ClusterParameterStatusList == null)
+                        {
+                            unmarshalledObject.ClusterParameterStatusList = new List<ClusterParameterStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ClusterParameterStatusList.Add(item);
                         continue;

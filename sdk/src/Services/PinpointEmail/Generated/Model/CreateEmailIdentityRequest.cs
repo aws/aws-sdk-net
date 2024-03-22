@@ -54,7 +54,7 @@ namespace Amazon.PinpointEmail.Model
     public partial class CreateEmailIdentityRequest : AmazonPinpointEmailRequest
     {
         private string _emailIdentity;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property EmailIdentity. 
@@ -91,7 +91,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

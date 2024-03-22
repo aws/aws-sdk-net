@@ -53,12 +53,12 @@ namespace Amazon.Neptune.Model
         private string _dbInstanceStatus;
         private string _dbiResourceId;
         private string _dbName;
-        private List<DBParameterGroupStatus> _dbParameterGroups = new List<DBParameterGroupStatus>();
-        private List<DBSecurityGroupMembership> _dbSecurityGroups = new List<DBSecurityGroupMembership>();
+        private List<DBParameterGroupStatus> _dbParameterGroups = AWSConfigs.InitializeCollections ? new List<DBParameterGroupStatus>() : null;
+        private List<DBSecurityGroupMembership> _dbSecurityGroups = AWSConfigs.InitializeCollections ? new List<DBSecurityGroupMembership>() : null;
         private DBSubnetGroup _dbSubnetGroup;
         private bool? _deletionProtection;
-        private List<DomainMembership> _domainMemberships = new List<DomainMembership>();
-        private List<string> _enabledCloudwatchLogsExports = new List<string>();
+        private List<DomainMembership> _domainMemberships = AWSConfigs.InitializeCollections ? new List<DomainMembership>() : null;
+        private List<string> _enabledCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Endpoint _endpoint;
         private string _engine;
         private string _engineVersion;
@@ -73,7 +73,7 @@ namespace Amazon.Neptune.Model
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private bool? _multiAZ;
-        private List<OptionGroupMembership> _optionGroupMemberships = new List<OptionGroupMembership>();
+        private List<OptionGroupMembership> _optionGroupMemberships = AWSConfigs.InitializeCollections ? new List<OptionGroupMembership>() : null;
         private PendingModifiedValues _pendingModifiedValues;
         private bool? _performanceInsightsEnabled;
         private string _performanceInsightsKMSKeyId;
@@ -81,16 +81,16 @@ namespace Amazon.Neptune.Model
         private string _preferredMaintenanceWindow;
         private int? _promotionTier;
         private bool? _publiclyAccessible;
-        private List<string> _readReplicaDBClusterIdentifiers = new List<string>();
-        private List<string> _readReplicaDBInstanceIdentifiers = new List<string>();
+        private List<string> _readReplicaDBClusterIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _readReplicaDBInstanceIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _readReplicaSourceDBInstanceIdentifier;
         private string _secondaryAvailabilityZone;
-        private List<DBInstanceStatusInfo> _statusInfos = new List<DBInstanceStatusInfo>();
+        private List<DBInstanceStatusInfo> _statusInfos = AWSConfigs.InitializeCollections ? new List<DBInstanceStatusInfo>() : null;
         private bool? _storageEncrypted;
         private string _storageType;
         private string _tdeCredentialArn;
         private string _timezone;
-        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
+        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<VpcSecurityGroupMembership>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
@@ -382,7 +382,7 @@ namespace Amazon.Neptune.Model
         // Check to see if DBParameterGroups property is set
         internal bool IsSetDBParameterGroups()
         {
-            return this._dbParameterGroups != null && this._dbParameterGroups.Count > 0; 
+            return this._dbParameterGroups != null && (this._dbParameterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -401,7 +401,7 @@ namespace Amazon.Neptune.Model
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
+            return this._dbSecurityGroups != null && (this._dbSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -458,7 +458,7 @@ namespace Amazon.Neptune.Model
         // Check to see if DomainMemberships property is set
         internal bool IsSetDomainMemberships()
         {
-            return this._domainMemberships != null && this._domainMemberships.Count > 0; 
+            return this._domainMemberships != null && (this._domainMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -476,7 +476,7 @@ namespace Amazon.Neptune.Model
         // Check to see if EnabledCloudwatchLogsExports property is set
         internal bool IsSetEnabledCloudwatchLogsExports()
         {
-            return this._enabledCloudwatchLogsExports != null && this._enabledCloudwatchLogsExports.Count > 0; 
+            return this._enabledCloudwatchLogsExports != null && (this._enabledCloudwatchLogsExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -750,7 +750,7 @@ namespace Amazon.Neptune.Model
         // Check to see if OptionGroupMemberships property is set
         internal bool IsSetOptionGroupMemberships()
         {
-            return this._optionGroupMemberships != null && this._optionGroupMemberships.Count > 0; 
+            return this._optionGroupMemberships != null && (this._optionGroupMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -900,7 +900,7 @@ namespace Amazon.Neptune.Model
         // Check to see if ReadReplicaDBClusterIdentifiers property is set
         internal bool IsSetReadReplicaDBClusterIdentifiers()
         {
-            return this._readReplicaDBClusterIdentifiers != null && this._readReplicaDBClusterIdentifiers.Count > 0; 
+            return this._readReplicaDBClusterIdentifiers != null && (this._readReplicaDBClusterIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -918,7 +918,7 @@ namespace Amazon.Neptune.Model
         // Check to see if ReadReplicaDBInstanceIdentifiers property is set
         internal bool IsSetReadReplicaDBInstanceIdentifiers()
         {
-            return this._readReplicaDBInstanceIdentifiers != null && this._readReplicaDBInstanceIdentifiers.Count > 0; 
+            return this._readReplicaDBInstanceIdentifiers != null && (this._readReplicaDBInstanceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -973,7 +973,7 @@ namespace Amazon.Neptune.Model
         // Check to see if StatusInfos property is set
         internal bool IsSetStatusInfos()
         {
-            return this._statusInfos != null && this._statusInfos.Count > 0; 
+            return this._statusInfos != null && (this._statusInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1063,7 +1063,7 @@ namespace Amazon.Neptune.Model
         // Check to see if VpcSecurityGroups property is set
         internal bool IsSetVpcSecurityGroups()
         {
-            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+            return this._vpcSecurityGroups != null && (this._vpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

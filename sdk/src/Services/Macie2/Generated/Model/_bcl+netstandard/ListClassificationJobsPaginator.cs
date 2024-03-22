@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<JobSummary> Items => 
-            new PaginatedResultKeyResponse<ListClassificationJobsResponse, JobSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListClassificationJobsResponse, JobSummary>(this, (i) => i.Items ?? new List<JobSummary>());
 
         internal ListClassificationJobsPaginator(IAmazonMacie2 client, ListClassificationJobsRequest request)
         {

@@ -84,6 +84,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Messages/member", targetDepth))
                     {
                         var unmarshaller = ValidationMessageUnmarshaller.Instance;
+                        if (response.Messages == null)
+                        {
+                            response.Messages = new List<ValidationMessage>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Messages.Add(item);
                         continue;

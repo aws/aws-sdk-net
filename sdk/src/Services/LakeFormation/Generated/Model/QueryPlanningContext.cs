@@ -36,7 +36,7 @@ namespace Amazon.LakeFormation.Model
         private string _catalogId;
         private string _databaseName;
         private DateTime? _queryAsOfTime;
-        private Dictionary<string, string> _queryParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _queryParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _transactionId;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if QueryParameters property is set
         internal bool IsSetQueryParameters()
         {
-            return this._queryParameters != null && this._queryParameters.Count > 0; 
+            return this._queryParameters != null && (this._queryParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class ListCustomModelsResponse : AmazonWebServiceResponse
     {
-        private List<CustomModelSummary> _modelSummaries = new List<CustomModelSummary>();
+        private List<CustomModelSummary> _modelSummaries = AWSConfigs.InitializeCollections ? new List<CustomModelSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Bedrock.Model
         // Check to see if ModelSummaries property is set
         internal bool IsSetModelSummaries()
         {
-            return this._modelSummaries != null && this._modelSummaries.Count > 0; 
+            return this._modelSummaries != null && (this._modelSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

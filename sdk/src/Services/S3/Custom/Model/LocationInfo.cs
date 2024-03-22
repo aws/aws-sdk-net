@@ -46,8 +46,8 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// For directory buckets, the AZ ID of the Availability Zone where the bucket will be
-        /// created. An example AZ ID value is <code>usw2-az2</code>.
+        /// For directory buckets, the name of the location is the AZ ID of the Availability Zone
+        /// where the bucket will be created. An example AZ ID value is <c>usw2-az1</c>.
         /// </para>
         /// </summary>
         public string Name

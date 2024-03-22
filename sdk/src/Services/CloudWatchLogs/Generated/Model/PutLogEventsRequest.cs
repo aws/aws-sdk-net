@@ -92,7 +92,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class PutLogEventsRequest : AmazonCloudWatchLogsRequest
     {
-        private List<InputLogEvent> _logEvents = new List<InputLogEvent>();
+        private List<InputLogEvent> _logEvents = AWSConfigs.InitializeCollections ? new List<InputLogEvent>() : null;
         private string _logGroupName;
         private string _logStreamName;
         private string _sequenceToken;
@@ -131,7 +131,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogEvents property is set
         internal bool IsSetLogEvents()
         {
-            return this._logEvents != null && this._logEvents.Count > 0; 
+            return this._logEvents != null && (this._logEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

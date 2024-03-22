@@ -33,7 +33,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class DescribeSMBFileSharesResponse : AmazonWebServiceResponse
     {
-        private List<SMBFileShareInfo> _smbFileShareInfoList = new List<SMBFileShareInfo>();
+        private List<SMBFileShareInfo> _smbFileShareInfoList = AWSConfigs.InitializeCollections ? new List<SMBFileShareInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property SMBFileShareInfoList. 
@@ -50,7 +50,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if SMBFileShareInfoList property is set
         internal bool IsSetSMBFileShareInfoList()
         {
-            return this._smbFileShareInfoList != null && this._smbFileShareInfoList.Count > 0; 
+            return this._smbFileShareInfoList != null && (this._smbFileShareInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -42,8 +42,8 @@ namespace Amazon.SageMaker.Model
         private string _executionRoleArn;
         private ExplainerConfig _explainerConfig;
         private string _kmsKeyId;
-        private List<ProductionVariant> _productionVariants = new List<ProductionVariant>();
-        private List<ProductionVariant> _shadowProductionVariants = new List<ProductionVariant>();
+        private List<ProductionVariant> _productionVariants = AWSConfigs.InitializeCollections ? new List<ProductionVariant>() : null;
+        private List<ProductionVariant> _shadowProductionVariants = AWSConfigs.InitializeCollections ? new List<ProductionVariant>() : null;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProductionVariants property is set
         internal bool IsSetProductionVariants()
         {
-            return this._productionVariants != null && this._productionVariants.Count > 0; 
+            return this._productionVariants != null && (this._productionVariants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -251,7 +251,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ShadowProductionVariants property is set
         internal bool IsSetShadowProductionVariants()
         {
-            return this._shadowProductionVariants != null && this._shadowProductionVariants.Count > 0; 
+            return this._shadowProductionVariants != null && (this._shadowProductionVariants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

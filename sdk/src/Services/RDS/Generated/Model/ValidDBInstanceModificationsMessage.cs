@@ -35,9 +35,9 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ValidDBInstanceModificationsMessage
     {
-        private List<ValidStorageOptions> _storage = new List<ValidStorageOptions>();
+        private List<ValidStorageOptions> _storage = AWSConfigs.InitializeCollections ? new List<ValidStorageOptions>() : null;
         private bool? _supportsDedicatedLogVolume;
-        private List<AvailableProcessorFeature> _validProcessorFeatures = new List<AvailableProcessorFeature>();
+        private List<AvailableProcessorFeature> _validProcessorFeatures = AWSConfigs.InitializeCollections ? new List<AvailableProcessorFeature>() : null;
 
         /// <summary>
         /// Gets and sets the property Storage. 
@@ -54,7 +54,7 @@ namespace Amazon.RDS.Model
         // Check to see if Storage property is set
         internal bool IsSetStorage()
         {
-            return this._storage != null && this._storage.Count > 0; 
+            return this._storage != null && (this._storage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.RDS.Model
         // Check to see if ValidProcessorFeatures property is set
         internal bool IsSetValidProcessorFeatures()
         {
-            return this._validProcessorFeatures != null && this._validProcessorFeatures.Count > 0; 
+            return this._validProcessorFeatures != null && (this._validProcessorFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

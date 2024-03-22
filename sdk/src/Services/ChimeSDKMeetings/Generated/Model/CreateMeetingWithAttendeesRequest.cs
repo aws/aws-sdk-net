@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// </summary>
     public partial class CreateMeetingWithAttendeesRequest : AmazonChimeSDKMeetingsRequest
     {
-        private List<CreateAttendeeRequestItem> _attendees = new List<CreateAttendeeRequestItem>();
+        private List<CreateAttendeeRequestItem> _attendees = AWSConfigs.InitializeCollections ? new List<CreateAttendeeRequestItem>() : null;
         private string _clientRequestToken;
         private string _externalMeetingId;
         private string _mediaRegion;
@@ -46,8 +46,8 @@ namespace Amazon.ChimeSDKMeetings.Model
         private string _meetingHostId;
         private NotificationsConfiguration _notificationsConfiguration;
         private string _primaryMeetingId;
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _tenantIds = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _tenantIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Attendees. 
@@ -65,7 +65,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         // Check to see if Attendees property is set
         internal bool IsSetAttendees()
         {
-            return this._attendees != null && this._attendees.Count > 0; 
+            return this._attendees != null && (this._attendees.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         // Check to see if TenantIds property is set
         internal bool IsSetTenantIds()
         {
-            return this._tenantIds != null && this._tenantIds.Count > 0; 
+            return this._tenantIds != null && (this._tenantIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

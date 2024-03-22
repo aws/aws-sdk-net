@@ -33,7 +33,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class JourneyResponse
     {
-        private Dictionary<string, Activity> _activities = new Dictionary<string, Activity>();
+        private Dictionary<string, Activity> _activities = AWSConfigs.InitializeCollections ? new Dictionary<string, Activity>() : null;
         private string _applicationId;
         private ClosedDays _closedDays;
         private string _creationDate;
@@ -52,8 +52,8 @@ namespace Amazon.Pinpoint.Model
         private string _startActivity;
         private StartCondition _startCondition;
         private State _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<string> _timezoneEstimationMethods = new List<string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _timezoneEstimationMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _waitForQuietTime;
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Activities property is set
         internal bool IsSetActivities()
         {
-            return this._activities != null && this._activities.Count > 0; 
+            return this._activities != null && (this._activities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -477,7 +477,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -512,7 +512,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if TimezoneEstimationMethods property is set
         internal bool IsSetTimezoneEstimationMethods()
         {
-            return this._timezoneEstimationMethods != null && this._timezoneEstimationMethods.Count > 0; 
+            return this._timezoneEstimationMethods != null && (this._timezoneEstimationMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

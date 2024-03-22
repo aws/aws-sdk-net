@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBClusterSnapshotsResponse : AmazonWebServiceResponse
     {
-        private List<DBClusterSnapshot> _dbClusterSnapshots = new List<DBClusterSnapshot>();
+        private List<DBClusterSnapshot> _dbClusterSnapshots = AWSConfigs.InitializeCollections ? new List<DBClusterSnapshot>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBClusterSnapshots property is set
         internal bool IsSetDBClusterSnapshots()
         {
-            return this._dbClusterSnapshots != null && this._dbClusterSnapshots.Count > 0; 
+            return this._dbClusterSnapshots != null && (this._dbClusterSnapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

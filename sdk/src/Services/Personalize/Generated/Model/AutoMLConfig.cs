@@ -36,7 +36,7 @@ namespace Amazon.Personalize.Model
     public partial class AutoMLConfig
     {
         private string _metricName;
-        private List<string> _recipeList = new List<string>();
+        private List<string> _recipeList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MetricName. 
@@ -73,7 +73,7 @@ namespace Amazon.Personalize.Model
         // Check to see if RecipeList property is set
         internal bool IsSetRecipeList()
         {
-            return this._recipeList != null && this._recipeList.Count > 0; 
+            return this._recipeList != null && (this._recipeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the AssociationExecutionTargets
         /// </summary>
         public IPaginatedEnumerable<AssociationExecutionTarget> AssociationExecutionTargets => 
-            new PaginatedResultKeyResponse<DescribeAssociationExecutionTargetsResponse, AssociationExecutionTarget>(this, (i) => i.AssociationExecutionTargets);
+            new PaginatedResultKeyResponse<DescribeAssociationExecutionTargetsResponse, AssociationExecutionTarget>(this, (i) => i.AssociationExecutionTargets ?? new List<AssociationExecutionTarget>());
 
         internal DescribeAssociationExecutionTargetsPaginator(IAmazonSimpleSystemsManagement client, DescribeAssociationExecutionTargetsRequest request)
         {

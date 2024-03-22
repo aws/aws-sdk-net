@@ -33,8 +33,8 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class BatchGetCommitsResponse : AmazonWebServiceResponse
     {
-        private List<Commit> _commits = new List<Commit>();
-        private List<BatchGetCommitsError> _errors = new List<BatchGetCommitsError>();
+        private List<Commit> _commits = AWSConfigs.InitializeCollections ? new List<Commit>() : null;
+        private List<BatchGetCommitsError> _errors = AWSConfigs.InitializeCollections ? new List<BatchGetCommitsError>() : null;
 
         /// <summary>
         /// Gets and sets the property Commits. 
@@ -52,7 +52,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Commits property is set
         internal bool IsSetCommits()
         {
-            return this._commits != null && this._commits.Count > 0; 
+            return this._commits != null && (this._commits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

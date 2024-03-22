@@ -66,7 +66,7 @@ namespace Amazon.S3Control.Model
         private Grantee _grantee;
         private Permission _permission;
         private S3PrefixType _s3PrefixType;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessGrantsLocationConfiguration. 
@@ -251,7 +251,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

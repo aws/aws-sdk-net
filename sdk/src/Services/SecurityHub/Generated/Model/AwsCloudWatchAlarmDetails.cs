@@ -34,21 +34,21 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsCloudWatchAlarmDetails
     {
         private bool? _actionsEnabled;
-        private List<string> _alarmActions = new List<string>();
+        private List<string> _alarmActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _alarmArn;
         private string _alarmConfigurationUpdatedTimestamp;
         private string _alarmDescription;
         private string _alarmName;
         private string _comparisonOperator;
         private int? _datapointsToAlarm;
-        private List<AwsCloudWatchAlarmDimensionsDetails> _dimensions = new List<AwsCloudWatchAlarmDimensionsDetails>();
+        private List<AwsCloudWatchAlarmDimensionsDetails> _dimensions = AWSConfigs.InitializeCollections ? new List<AwsCloudWatchAlarmDimensionsDetails>() : null;
         private string _evaluateLowSampleCountPercentile;
         private int? _evaluationPeriods;
         private string _extendedStatistic;
-        private List<string> _insufficientDataActions = new List<string>();
+        private List<string> _insufficientDataActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _metricName;
         private string _awsNamespace;
-        private List<string> _okActions = new List<string>();
+        private List<string> _okActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _period;
         private string _statistic;
         private double? _threshold;
@@ -91,7 +91,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AlarmActions property is set
         internal bool IsSetAlarmActions()
         {
-            return this._alarmActions != null && this._alarmActions.Count > 0; 
+            return this._alarmActions != null && (this._alarmActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -295,7 +295,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if InsufficientDataActions property is set
         internal bool IsSetInsufficientDataActions()
         {
-            return this._insufficientDataActions != null && this._insufficientDataActions.Count > 0; 
+            return this._insufficientDataActions != null && (this._insufficientDataActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -354,7 +354,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if OkActions property is set
         internal bool IsSetOkActions()
         {
-            return this._okActions != null && this._okActions.Count > 0; 
+            return this._okActions != null && (this._okActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

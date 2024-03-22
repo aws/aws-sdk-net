@@ -42,7 +42,7 @@ namespace Amazon.DLM.Model
     {
         private bool? _copyTags;
         private int? _createInterval;
-        private List<CrossRegionCopyTarget> _crossRegionCopyTargets = new List<CrossRegionCopyTarget>();
+        private List<CrossRegionCopyTarget> _crossRegionCopyTargets = AWSConfigs.InitializeCollections ? new List<CrossRegionCopyTarget>() : null;
         private string _description;
         private Exclusions _exclusions;
         private string _executionRoleArn;
@@ -109,7 +109,7 @@ namespace Amazon.DLM.Model
         // Check to see if CrossRegionCopyTargets property is set
         internal bool IsSetCrossRegionCopyTargets()
         {
-            return this._crossRegionCopyTargets != null && this._crossRegionCopyTargets.Count > 0; 
+            return this._crossRegionCopyTargets != null && (this._crossRegionCopyTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

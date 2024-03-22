@@ -33,7 +33,7 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class AppsListDataSummary
     {
-        private List<App> _appsList = new List<App>();
+        private List<App> _appsList = AWSConfigs.InitializeCollections ? new List<App>() : null;
         private string _listArn;
         private string _listId;
         private string _listName;
@@ -53,7 +53,7 @@ namespace Amazon.FMS.Model
         // Check to see if AppsList property is set
         internal bool IsSetAppsList()
         {
-            return this._appsList != null && this._appsList.Count > 0; 
+            return this._appsList != null && (this._appsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

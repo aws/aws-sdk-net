@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("messageSet/item", targetDepth))
                     {
                         var unmarshaller = AvailabilityZoneMessageUnmarshaller.Instance;
+                        if (unmarshalledObject.Messages == null)
+                        {
+                            unmarshalledObject.Messages = new List<AvailabilityZoneMessage>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Messages.Add(item);
                         continue;

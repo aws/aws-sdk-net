@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the ScheduledAudits
         /// </summary>
         public IPaginatedEnumerable<ScheduledAuditMetadata> ScheduledAudits => 
-            new PaginatedResultKeyResponse<ListScheduledAuditsResponse, ScheduledAuditMetadata>(this, (i) => i.ScheduledAudits);
+            new PaginatedResultKeyResponse<ListScheduledAuditsResponse, ScheduledAuditMetadata>(this, (i) => i.ScheduledAudits ?? new List<ScheduledAuditMetadata>());
 
         internal ListScheduledAuditsPaginator(IAmazonIoT client, ListScheduledAuditsRequest request)
         {

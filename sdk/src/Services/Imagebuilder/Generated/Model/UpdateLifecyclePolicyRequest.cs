@@ -38,7 +38,7 @@ namespace Amazon.Imagebuilder.Model
         private string _description;
         private string _executionRole;
         private string _lifecyclePolicyArn;
-        private List<LifecyclePolicyDetail> _policyDetails = new List<LifecyclePolicyDetail>();
+        private List<LifecyclePolicyDetail> _policyDetails = AWSConfigs.InitializeCollections ? new List<LifecyclePolicyDetail>() : null;
         private LifecyclePolicyResourceSelection _resourceSelection;
         private LifecyclePolicyResourceType _resourceType;
         private LifecyclePolicyStatus _status;
@@ -138,7 +138,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if PolicyDetails property is set
         internal bool IsSetPolicyDetails()
         {
-            return this._policyDetails != null && this._policyDetails.Count > 0; 
+            return this._policyDetails != null && (this._policyDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

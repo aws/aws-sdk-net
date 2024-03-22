@@ -81,6 +81,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;
@@ -94,6 +98,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("verifiedAccessTrustProviderSet/item", targetDepth))
                     {
                         var unmarshaller = VerifiedAccessTrustProviderCondensedUnmarshaller.Instance;
+                        if (unmarshalledObject.VerifiedAccessTrustProviders == null)
+                        {
+                            unmarshalledObject.VerifiedAccessTrustProviders = new List<VerifiedAccessTrustProviderCondensed>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.VerifiedAccessTrustProviders.Add(item);
                         continue;

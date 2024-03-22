@@ -66,7 +66,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DeleteAlarmsRequest : AmazonCloudWatchRequest
     {
-        private List<string> _alarmNames = new List<string>();
+        private List<string> _alarmNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AlarmNames. 
@@ -84,7 +84,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if AlarmNames property is set
         internal bool IsSetAlarmNames()
         {
-            return this._alarmNames != null && this._alarmNames.Count > 0; 
+            return this._alarmNames != null && (this._alarmNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

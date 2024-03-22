@@ -33,7 +33,7 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class GetReportGroupTrendResponse : AmazonWebServiceResponse
     {
-        private List<ReportWithRawData> _rawData = new List<ReportWithRawData>();
+        private List<ReportWithRawData> _rawData = AWSConfigs.InitializeCollections ? new List<ReportWithRawData>() : null;
         private ReportGroupTrendStats _stats;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if RawData property is set
         internal bool IsSetRawData()
         {
-            return this._rawData != null && this._rawData.Count > 0; 
+            return this._rawData != null && (this._rawData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

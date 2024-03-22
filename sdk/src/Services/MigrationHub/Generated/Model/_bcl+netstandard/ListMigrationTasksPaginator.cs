@@ -45,7 +45,7 @@ namespace Amazon.MigrationHub.Model
         /// Enumerable containing all of the MigrationTaskSummaryList
         /// </summary>
         public IPaginatedEnumerable<MigrationTaskSummary> MigrationTaskSummaryList => 
-            new PaginatedResultKeyResponse<ListMigrationTasksResponse, MigrationTaskSummary>(this, (i) => i.MigrationTaskSummaryList);
+            new PaginatedResultKeyResponse<ListMigrationTasksResponse, MigrationTaskSummary>(this, (i) => i.MigrationTaskSummaryList ?? new List<MigrationTaskSummary>());
 
         internal ListMigrationTasksPaginator(IAmazonMigrationHub client, ListMigrationTasksRequest request)
         {

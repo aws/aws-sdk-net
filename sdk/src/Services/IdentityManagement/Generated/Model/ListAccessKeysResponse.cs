@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class ListAccessKeysResponse : AmazonWebServiceResponse
     {
-        private List<AccessKeyMetadata> _accessKeyMetadata = new List<AccessKeyMetadata>();
+        private List<AccessKeyMetadata> _accessKeyMetadata = AWSConfigs.InitializeCollections ? new List<AccessKeyMetadata>() : null;
         private bool? _isTruncated;
         private string _marker;
 
@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AccessKeyMetadata property is set
         internal bool IsSetAccessKeyMetadata()
         {
-            return this._accessKeyMetadata != null && this._accessKeyMetadata.Count > 0; 
+            return this._accessKeyMetadata != null && (this._accessKeyMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

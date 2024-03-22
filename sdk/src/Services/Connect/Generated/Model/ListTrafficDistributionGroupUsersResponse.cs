@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListTrafficDistributionGroupUsersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TrafficDistributionGroupUserSummary> _trafficDistributionGroupUserSummaryList = new List<TrafficDistributionGroupUserSummary>();
+        private List<TrafficDistributionGroupUserSummary> _trafficDistributionGroupUserSummaryList = AWSConfigs.InitializeCollections ? new List<TrafficDistributionGroupUserSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Connect.Model
         // Check to see if TrafficDistributionGroupUserSummaryList property is set
         internal bool IsSetTrafficDistributionGroupUserSummaryList()
         {
-            return this._trafficDistributionGroupUserSummaryList != null && this._trafficDistributionGroupUserSummaryList.Count > 0; 
+            return this._trafficDistributionGroupUserSummaryList != null && (this._trafficDistributionGroupUserSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

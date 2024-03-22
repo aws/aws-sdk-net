@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the StepExecutions
         /// </summary>
         public IPaginatedEnumerable<StepExecution> StepExecutions => 
-            new PaginatedResultKeyResponse<DescribeAutomationStepExecutionsResponse, StepExecution>(this, (i) => i.StepExecutions);
+            new PaginatedResultKeyResponse<DescribeAutomationStepExecutionsResponse, StepExecution>(this, (i) => i.StepExecutions ?? new List<StepExecution>());
 
         internal DescribeAutomationStepExecutionsPaginator(IAmazonSimpleSystemsManagement client, DescribeAutomationStepExecutionsRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class PutEventsRequest : AmazonCloudWatchEventsRequest
     {
-        private List<PutEventsRequestEntry> _entries = new List<PutEventsRequestEntry>();
+        private List<PutEventsRequestEntry> _entries = AWSConfigs.InitializeCollections ? new List<PutEventsRequestEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Entries. 
@@ -54,7 +54,7 @@ namespace Amazon.CloudWatchEvents.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

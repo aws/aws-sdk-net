@@ -80,6 +80,12 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthType);
                 }
 
+                if(publicRequest.IsSetBackupRetentionPeriod())
+                {
+                    context.Writer.WritePropertyName("backupRetentionPeriod");
+                    context.Writer.Write(publicRequest.BackupRetentionPeriod.Value);
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");
@@ -91,6 +97,12 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetPreferredBackupWindow())
+                {
+                    context.Writer.WritePropertyName("preferredBackupWindow");
+                    context.Writer.Write(publicRequest.PreferredBackupWindow);
+                }
+
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     context.Writer.WritePropertyName("preferredMaintenanceWindow");
@@ -107,6 +119,12 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("shardCount");
                     context.Writer.Write(publicRequest.ShardCount.Value);
+                }
+
+                if(publicRequest.IsSetShardInstanceCount())
+                {
+                    context.Writer.WritePropertyName("shardInstanceCount");
+                    context.Writer.Write(publicRequest.ShardInstanceCount.Value);
                 }
 
                 if(publicRequest.IsSetSubnetIds())

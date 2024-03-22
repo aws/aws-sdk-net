@@ -81,12 +81,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MatchAnyStorageClass/member", targetDepth))
                     {
+                        if (unmarshalledObject.MatchAnyStorageClass == null)
+                        {
+                            unmarshalledObject.MatchAnyStorageClass = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MatchAnyStorageClass.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("ObjectReplicationStatuses/member", targetDepth))
                     {
+                        if (unmarshalledObject.ObjectReplicationStatuses == null)
+                        {
+                            unmarshalledObject.ObjectReplicationStatuses = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ObjectReplicationStatuses.Add(unmarshaller.Unmarshall(context));
                         continue;

@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the AccountAssignments
         /// </summary>
         public IPaginatedEnumerable<AccountAssignmentForPrincipal> AccountAssignments => 
-            new PaginatedResultKeyResponse<ListAccountAssignmentsForPrincipalResponse, AccountAssignmentForPrincipal>(this, (i) => i.AccountAssignments);
+            new PaginatedResultKeyResponse<ListAccountAssignmentsForPrincipalResponse, AccountAssignmentForPrincipal>(this, (i) => i.AccountAssignments ?? new List<AccountAssignmentForPrincipal>());
 
         internal ListAccountAssignmentsForPrincipalPaginator(IAmazonSSOAdmin client, ListAccountAssignmentsForPrincipalRequest request)
         {

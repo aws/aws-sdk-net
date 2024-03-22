@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteVpcEndpointServiceConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<UnsuccessfulItem> _unsuccessful = new List<UnsuccessfulItem>();
+        private List<UnsuccessfulItem> _unsuccessful = AWSConfigs.InitializeCollections ? new List<UnsuccessfulItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Unsuccessful. 
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         // Check to see if Unsuccessful property is set
         internal bool IsSetUnsuccessful()
         {
-            return this._unsuccessful != null && this._unsuccessful.Count > 0; 
+            return this._unsuccessful != null && (this._unsuccessful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

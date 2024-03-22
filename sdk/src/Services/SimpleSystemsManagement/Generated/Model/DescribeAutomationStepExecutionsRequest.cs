@@ -35,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribeAutomationStepExecutionsRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _automationExecutionId;
-        private List<StepExecutionFilter> _filters = new List<StepExecutionFilter>();
+        private List<StepExecutionFilter> _filters = AWSConfigs.InitializeCollections ? new List<StepExecutionFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private bool? _reverseOrder;
@@ -75,7 +75,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

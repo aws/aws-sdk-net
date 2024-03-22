@@ -38,7 +38,7 @@ namespace Amazon.ComputeOptimizer.Model
         private LicenseModel _licenseModel;
         private LicenseName _licenseName;
         private string _licenseVersion;
-        private List<MetricSource> _metricsSource = new List<MetricSource>();
+        private List<MetricSource> _metricsSource = AWSConfigs.InitializeCollections ? new List<MetricSource>() : null;
         private int? _numberOfCores;
         private string _operatingSystem;
 
@@ -148,7 +148,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if MetricsSource property is set
         internal bool IsSetMetricsSource()
         {
-            return this._metricsSource != null && this._metricsSource.Count > 0; 
+            return this._metricsSource != null && (this._metricsSource.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

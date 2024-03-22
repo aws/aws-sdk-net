@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class ServiceConnectService
     {
-        private List<ServiceConnectClientAlias> _clientAliases = new List<ServiceConnectClientAlias>();
+        private List<ServiceConnectClientAlias> _clientAliases = AWSConfigs.InitializeCollections ? new List<ServiceConnectClientAlias>() : null;
         private string _discoveryName;
         private int? _ingressPortOverride;
         private string _portName;
@@ -72,7 +72,7 @@ namespace Amazon.ECS.Model
         // Check to see if ClientAliases property is set
         internal bool IsSetClientAliases()
         {
-            return this._clientAliases != null && this._clientAliases.Count > 0; 
+            return this._clientAliases != null && (this._clientAliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

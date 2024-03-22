@@ -56,9 +56,9 @@ namespace Amazon.MarketplaceCatalog.Model
     public partial class StartChangeSetRequest : AmazonMarketplaceCatalogRequest
     {
         private string _catalog;
-        private List<Change> _changeSet = new List<Change>();
+        private List<Change> _changeSet = AWSConfigs.InitializeCollections ? new List<Change>() : null;
         private string _changeSetName;
-        private List<Tag> _changeSetTags = new List<Tag>();
+        private List<Tag> _changeSetTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _clientRequestToken;
         private Intent _intent;
 
@@ -97,7 +97,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if ChangeSet property is set
         internal bool IsSetChangeSet()
         {
-            return this._changeSet != null && this._changeSet.Count > 0; 
+            return this._changeSet != null && (this._changeSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if ChangeSetTags property is set
         internal bool IsSetChangeSetTags()
         {
-            return this._changeSetTags != null && this._changeSetTags.Count > 0; 
+            return this._changeSetTags != null && (this._changeSetTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

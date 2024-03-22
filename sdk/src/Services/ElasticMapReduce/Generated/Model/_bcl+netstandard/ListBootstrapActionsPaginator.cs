@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Enumerable containing all of the BootstrapActions
         /// </summary>
         public IPaginatedEnumerable<Command> BootstrapActions => 
-            new PaginatedResultKeyResponse<ListBootstrapActionsResponse, Command>(this, (i) => i.BootstrapActions);
+            new PaginatedResultKeyResponse<ListBootstrapActionsResponse, Command>(this, (i) => i.BootstrapActions ?? new List<Command>());
 
         internal ListBootstrapActionsPaginator(IAmazonElasticMapReduce client, ListBootstrapActionsRequest request)
         {

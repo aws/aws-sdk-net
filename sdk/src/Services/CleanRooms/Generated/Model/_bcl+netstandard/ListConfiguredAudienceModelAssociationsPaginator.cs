@@ -45,7 +45,7 @@ namespace Amazon.CleanRooms.Model
         /// Enumerable containing all of the ConfiguredAudienceModelAssociationSummaries
         /// </summary>
         public IPaginatedEnumerable<ConfiguredAudienceModelAssociationSummary> ConfiguredAudienceModelAssociationSummaries => 
-            new PaginatedResultKeyResponse<ListConfiguredAudienceModelAssociationsResponse, ConfiguredAudienceModelAssociationSummary>(this, (i) => i.ConfiguredAudienceModelAssociationSummaries);
+            new PaginatedResultKeyResponse<ListConfiguredAudienceModelAssociationsResponse, ConfiguredAudienceModelAssociationSummary>(this, (i) => i.ConfiguredAudienceModelAssociationSummaries ?? new List<ConfiguredAudienceModelAssociationSummary>());
 
         internal ListConfiguredAudienceModelAssociationsPaginator(IAmazonCleanRooms client, ListConfiguredAudienceModelAssociationsRequest request)
         {

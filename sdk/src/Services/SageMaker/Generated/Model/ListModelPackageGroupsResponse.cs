@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListModelPackageGroupsResponse : AmazonWebServiceResponse
     {
-        private List<ModelPackageGroupSummary> _modelPackageGroupSummaryList = new List<ModelPackageGroupSummary>();
+        private List<ModelPackageGroupSummary> _modelPackageGroupSummaryList = AWSConfigs.InitializeCollections ? new List<ModelPackageGroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelPackageGroupSummaryList property is set
         internal bool IsSetModelPackageGroupSummaryList()
         {
-            return this._modelPackageGroupSummaryList != null && this._modelPackageGroupSummaryList.Count > 0; 
+            return this._modelPackageGroupSummaryList != null && (this._modelPackageGroupSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

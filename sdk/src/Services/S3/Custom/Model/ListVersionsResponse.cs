@@ -32,11 +32,11 @@ namespace Amazon.S3.Model
         private string versionIdMarker;
         private string nextKeyMarker;
         private string nextVersionIdMarker;
-        private List<S3ObjectVersion> versions = new List<S3ObjectVersion>();
+        private List<S3ObjectVersion> versions = AWSConfigs.InitializeCollections ? new List<S3ObjectVersion>() : null;
         private string name;
         private string prefix;
         private int? maxKeys;
-        private List<string> commonPrefixes = new List<string>();
+        private List<string> commonPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string delimiter;
         private RequestCharged _requestCharged;
 
@@ -144,7 +144,7 @@ namespace Amazon.S3.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this.versions.Count > 0;
+            return this.versions != null && (this.versions.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>
@@ -225,7 +225,7 @@ namespace Amazon.S3.Model
         // Check to see if CommonPrefixes property is set
         internal bool IsSetCommonPrefixes()
         {
-            return this.commonPrefixes.Count > 0;
+            return this.commonPrefixes != null && (this.commonPrefixes.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

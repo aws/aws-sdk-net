@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the UpdateIds
         /// </summary>
         public IPaginatedEnumerable<string> UpdateIds => 
-            new PaginatedResultKeyResponse<ListUpdatesResponse, string>(this, (i) => i.UpdateIds);
+            new PaginatedResultKeyResponse<ListUpdatesResponse, string>(this, (i) => i.UpdateIds ?? new List<string>());
 
         internal ListUpdatesPaginator(IAmazonEKS client, ListUpdatesRequest request)
         {

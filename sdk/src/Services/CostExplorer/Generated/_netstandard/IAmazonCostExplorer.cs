@@ -324,6 +324,31 @@ namespace Amazon.CostExplorer
 
         #endregion
                 
+        #region  GetApproximateUsageRecords
+
+
+
+        /// <summary>
+        /// Retrieves estimated usage records for hourly granularity or resource-level data at
+        /// daily granularity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApproximateUsageRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetApproximateUsageRecords service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetApproximateUsageRecords">REST API Reference for GetApproximateUsageRecords Operation</seealso>
+        Task<GetApproximateUsageRecordsResponse> GetApproximateUsageRecordsAsync(GetApproximateUsageRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetCostAndUsage
 
 

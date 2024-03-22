@@ -33,12 +33,12 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class TableMetadata
     {
-        private List<Column> _columns = new List<Column>();
+        private List<Column> _columns = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private DateTime? _createTime;
         private DateTime? _lastAccessTime;
         private string _name;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
-        private List<Column> _partitionKeys = new List<Column>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Column> _partitionKeys = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private string _tableType;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.Athena.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.Athena.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.Athena.Model
         // Check to see if PartitionKeys property is set
         internal bool IsSetPartitionKeys()
         {
-            return this._partitionKeys != null && this._partitionKeys.Count > 0; 
+            return this._partitionKeys != null && (this._partitionKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

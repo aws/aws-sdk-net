@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the LocalGatewayRouteTables
         /// </summary>
         public IPaginatedEnumerable<LocalGatewayRouteTable> LocalGatewayRouteTables => 
-            new PaginatedResultKeyResponse<DescribeLocalGatewayRouteTablesResponse, LocalGatewayRouteTable>(this, (i) => i.LocalGatewayRouteTables);
+            new PaginatedResultKeyResponse<DescribeLocalGatewayRouteTablesResponse, LocalGatewayRouteTable>(this, (i) => i.LocalGatewayRouteTables ?? new List<LocalGatewayRouteTable>());
 
         internal DescribeLocalGatewayRouteTablesPaginator(IAmazonEC2 client, DescribeLocalGatewayRouteTablesRequest request)
         {

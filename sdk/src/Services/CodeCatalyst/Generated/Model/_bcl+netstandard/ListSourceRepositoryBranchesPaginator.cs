@@ -45,7 +45,7 @@ namespace Amazon.CodeCatalyst.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ListSourceRepositoryBranchesItem> Items => 
-            new PaginatedResultKeyResponse<ListSourceRepositoryBranchesResponse, ListSourceRepositoryBranchesItem>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListSourceRepositoryBranchesResponse, ListSourceRepositoryBranchesItem>(this, (i) => i.Items ?? new List<ListSourceRepositoryBranchesItem>());
 
         internal ListSourceRepositoryBranchesPaginator(IAmazonCodeCatalyst client, ListSourceRepositoryBranchesRequest request)
         {

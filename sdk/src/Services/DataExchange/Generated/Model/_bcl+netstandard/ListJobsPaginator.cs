@@ -45,7 +45,7 @@ namespace Amazon.DataExchange.Model
         /// Enumerable containing all of the Jobs
         /// </summary>
         public IPaginatedEnumerable<JobEntry> Jobs => 
-            new PaginatedResultKeyResponse<ListJobsResponse, JobEntry>(this, (i) => i.Jobs);
+            new PaginatedResultKeyResponse<ListJobsResponse, JobEntry>(this, (i) => i.Jobs ?? new List<JobEntry>());
 
         internal ListJobsPaginator(IAmazonDataExchange client, ListJobsRequest request)
         {

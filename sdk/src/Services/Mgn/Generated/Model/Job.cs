@@ -38,9 +38,9 @@ namespace Amazon.Mgn.Model
         private string _endDateTime;
         private InitiatedBy _initiatedBy;
         private string _jobid;
-        private List<ParticipatingServer> _participatingServers = new List<ParticipatingServer>();
+        private List<ParticipatingServer> _participatingServers = AWSConfigs.InitializeCollections ? new List<ParticipatingServer>() : null;
         private JobStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private JobType _type;
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Amazon.Mgn.Model
         // Check to see if ParticipatingServers property is set
         internal bool IsSetParticipatingServers()
         {
-            return this._participatingServers != null && this._participatingServers.Count > 0; 
+            return this._participatingServers != null && (this._participatingServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.Mgn.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

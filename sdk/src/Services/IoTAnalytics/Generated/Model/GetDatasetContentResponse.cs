@@ -33,7 +33,7 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class GetDatasetContentResponse : AmazonWebServiceResponse
     {
-        private List<DatasetEntry> _entries = new List<DatasetEntry>();
+        private List<DatasetEntry> _entries = AWSConfigs.InitializeCollections ? new List<DatasetEntry>() : null;
         private DatasetContentStatus _status;
         private DateTime? _timestamp;
 
@@ -52,7 +52,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

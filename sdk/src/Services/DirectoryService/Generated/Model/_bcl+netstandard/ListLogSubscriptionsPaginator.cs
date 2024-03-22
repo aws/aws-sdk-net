@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// Enumerable containing all of the LogSubscriptions
         /// </summary>
         public IPaginatedEnumerable<LogSubscription> LogSubscriptions => 
-            new PaginatedResultKeyResponse<ListLogSubscriptionsResponse, LogSubscription>(this, (i) => i.LogSubscriptions);
+            new PaginatedResultKeyResponse<ListLogSubscriptionsResponse, LogSubscription>(this, (i) => i.LogSubscriptions ?? new List<LogSubscription>());
 
         internal ListLogSubscriptionsPaginator(IAmazonDirectoryService client, ListLogSubscriptionsRequest request)
         {

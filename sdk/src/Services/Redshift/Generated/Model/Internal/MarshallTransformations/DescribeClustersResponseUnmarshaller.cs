@@ -84,6 +84,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Clusters/Cluster", targetDepth))
                     {
                         var unmarshaller = ClusterUnmarshaller.Instance;
+                        if (response.Clusters == null)
+                        {
+                            response.Clusters = new List<Cluster>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Clusters.Add(item);
                         continue;

@@ -40,7 +40,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class DocumentEnrichmentConfiguration
     {
-        private List<InlineDocumentEnrichmentConfiguration> _inlineConfigurations = new List<InlineDocumentEnrichmentConfiguration>();
+        private List<InlineDocumentEnrichmentConfiguration> _inlineConfigurations = AWSConfigs.InitializeCollections ? new List<InlineDocumentEnrichmentConfiguration>() : null;
         private HookConfiguration _postExtractionHookConfiguration;
         private HookConfiguration _preExtractionHookConfiguration;
 
@@ -61,7 +61,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if InlineConfigurations property is set
         internal bool IsSetInlineConfigurations()
         {
-            return this._inlineConfigurations != null && this._inlineConfigurations.Count > 0; 
+            return this._inlineConfigurations != null && (this._inlineConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the Devices
         /// </summary>
         public IPaginatedEnumerable<Device> Devices => 
-            new PaginatedResultKeyResponse<GetDevicesResponse, Device>(this, (i) => i.Devices);
+            new PaginatedResultKeyResponse<GetDevicesResponse, Device>(this, (i) => i.Devices ?? new List<Device>());
 
         internal GetDevicesPaginator(IAmazonNetworkManager client, GetDevicesRequest request)
         {

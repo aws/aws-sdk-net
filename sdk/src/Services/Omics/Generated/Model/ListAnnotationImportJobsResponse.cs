@@ -33,7 +33,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class ListAnnotationImportJobsResponse : AmazonWebServiceResponse
     {
-        private List<AnnotationImportJobItem> _annotationImportJobs = new List<AnnotationImportJobItem>();
+        private List<AnnotationImportJobItem> _annotationImportJobs = AWSConfigs.InitializeCollections ? new List<AnnotationImportJobItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Omics.Model
         // Check to see if AnnotationImportJobs property is set
         internal bool IsSetAnnotationImportJobs()
         {
-            return this._annotationImportJobs != null && this._annotationImportJobs.Count > 0; 
+            return this._annotationImportJobs != null && (this._annotationImportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

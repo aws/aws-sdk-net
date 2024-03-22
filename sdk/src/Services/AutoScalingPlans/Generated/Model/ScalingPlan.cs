@@ -35,7 +35,7 @@ namespace Amazon.AutoScalingPlans.Model
     {
         private ApplicationSource _applicationSource;
         private DateTime? _creationTime;
-        private List<ScalingInstruction> _scalingInstructions = new List<ScalingInstruction>();
+        private List<ScalingInstruction> _scalingInstructions = AWSConfigs.InitializeCollections ? new List<ScalingInstruction>() : null;
         private string _scalingPlanName;
         private long? _scalingPlanVersion;
         private ScalingPlanStatusCode _statusCode;
@@ -96,7 +96,7 @@ namespace Amazon.AutoScalingPlans.Model
         // Check to see if ScalingInstructions property is set
         internal bool IsSetScalingInstructions()
         {
-            return this._scalingInstructions != null && this._scalingInstructions.Count > 0; 
+            return this._scalingInstructions != null && (this._scalingInstructions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

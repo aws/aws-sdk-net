@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the StaleSecurityGroupSet
         /// </summary>
         public IPaginatedEnumerable<StaleSecurityGroup> StaleSecurityGroupSet => 
-            new PaginatedResultKeyResponse<DescribeStaleSecurityGroupsResponse, StaleSecurityGroup>(this, (i) => i.StaleSecurityGroupSet);
+            new PaginatedResultKeyResponse<DescribeStaleSecurityGroupsResponse, StaleSecurityGroup>(this, (i) => i.StaleSecurityGroupSet ?? new List<StaleSecurityGroup>());
 
         internal DescribeStaleSecurityGroupsPaginator(IAmazonEC2 client, DescribeStaleSecurityGroupsRequest request)
         {

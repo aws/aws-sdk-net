@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the IpamResourceDiscoveryAssociations
         /// </summary>
         public IPaginatedEnumerable<IpamResourceDiscoveryAssociation> IpamResourceDiscoveryAssociations => 
-            new PaginatedResultKeyResponse<DescribeIpamResourceDiscoveryAssociationsResponse, IpamResourceDiscoveryAssociation>(this, (i) => i.IpamResourceDiscoveryAssociations);
+            new PaginatedResultKeyResponse<DescribeIpamResourceDiscoveryAssociationsResponse, IpamResourceDiscoveryAssociation>(this, (i) => i.IpamResourceDiscoveryAssociations ?? new List<IpamResourceDiscoveryAssociation>());
 
         internal DescribeIpamResourceDiscoveryAssociationsPaginator(IAmazonEC2 client, DescribeIpamResourceDiscoveryAssociationsRequest request)
         {

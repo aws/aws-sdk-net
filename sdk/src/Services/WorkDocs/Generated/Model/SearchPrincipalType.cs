@@ -34,7 +34,7 @@ namespace Amazon.WorkDocs.Model
     public partial class SearchPrincipalType
     {
         private string _id;
-        private List<string> _roles = new List<string>();
+        private List<string> _roles = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -71,7 +71,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Roles property is set
         internal bool IsSetRoles()
         {
-            return this._roles != null && this._roles.Count > 0; 
+            return this._roles != null && (this._roles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

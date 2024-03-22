@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private bool? _isTruncated;
         private string _marker;
-        private List<Role> _roles = new List<Role>();
+        private List<Role> _roles = AWSConfigs.InitializeCollections ? new List<Role>() : null;
 
         /// <summary>
         /// Gets and sets the property IsTruncated. 
@@ -94,7 +94,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Roles property is set
         internal bool IsSetRoles()
         {
-            return this._roles != null && this._roles.Count > 0; 
+            return this._roles != null && (this._roles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

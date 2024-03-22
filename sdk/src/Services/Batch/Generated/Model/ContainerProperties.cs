@@ -34,8 +34,8 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class ContainerProperties
     {
-        private List<string> _command = new List<string>();
-        private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<KeyValuePair> _environment = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
         private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
         private FargatePlatformConfiguration _fargatePlatformConfiguration;
@@ -45,18 +45,18 @@ namespace Amazon.Batch.Model
         private LinuxParameters _linuxParameters;
         private LogConfiguration _logConfiguration;
         private int? _memory;
-        private List<MountPoint> _mountPoints = new List<MountPoint>();
+        private List<MountPoint> _mountPoints = AWSConfigs.InitializeCollections ? new List<MountPoint>() : null;
         private NetworkConfiguration _networkConfiguration;
         private bool? _privileged;
         private bool? _readonlyRootFilesystem;
         private RepositoryCredentials _repositoryCredentials;
-        private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
+        private List<ResourceRequirement> _resourceRequirements = AWSConfigs.InitializeCollections ? new List<ResourceRequirement>() : null;
         private RuntimePlatform _runtimePlatform;
-        private List<Secret> _secrets = new List<Secret>();
-        private List<Ulimit> _ulimits = new List<Ulimit>();
+        private List<Secret> _secrets = AWSConfigs.InitializeCollections ? new List<Secret>() : null;
+        private List<Ulimit> _ulimits = AWSConfigs.InitializeCollections ? new List<Ulimit>() : null;
         private string _user;
         private int? _vcpus;
-        private List<Volume> _volumes = new List<Volume>();
+        private List<Volume> _volumes = AWSConfigs.InitializeCollections ? new List<Volume>() : null;
 
         /// <summary>
         /// Gets and sets the property Command. 
@@ -77,7 +77,7 @@ namespace Amazon.Batch.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.Batch.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property FargatePlatformConfiguration. 
         /// <para>
         /// The platform configuration for jobs that are running on Fargate resources. Jobs that
-        /// are running on EC2 resources must not specify this parameter.
+        /// are running on Amazon EC2 resources must not specify this parameter.
         /// </para>
         /// </summary>
         public FargatePlatformConfiguration FargatePlatformConfiguration
@@ -317,7 +317,8 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// Batch currently supports a subset of the logging drivers available to the Docker daemon
-        /// (shown in the <a>LogConfiguration</a> data type).
+        /// (shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+        /// data type).
         /// </para>
         ///  </note> 
         /// <para>
@@ -354,11 +355,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter is deprecated, use <c>resourceRequirements</c> to specify the memory
         /// requirements for the job definition. It's not supported for jobs running on Fargate
-        /// resources. For jobs that run on EC2 resources, it specifies the memory hard limit
-        /// (in MiB) for a container. If your container attempts to exceed the specified number,
-        /// it's terminated. You must specify at least 4 MiB of memory for a job using this parameter.
-        /// The memory hard limit can be specified in several places. It must be specified for
-        /// each node at least once.
+        /// resources. For jobs that run on Amazon EC2 resources, it specifies the memory hard
+        /// limit (in MiB) for a container. If your container attempts to exceed the specified
+        /// number, it's terminated. You must specify at least 4 MiB of memory for a job using
+        /// this parameter. The memory hard limit can be specified in several places. It must
+        /// be specified for each node at least once.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use resourceRequirements instead.")]
@@ -393,14 +394,14 @@ namespace Amazon.Batch.Model
         // Check to see if MountPoints property is set
         internal bool IsSetMountPoints()
         {
-            return this._mountPoints != null && this._mountPoints.Count > 0; 
+            return this._mountPoints != null && (this._mountPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The network configuration for jobs that are running on Fargate resources. Jobs that
-        /// are running on EC2 resources must not specify this parameter.
+        /// are running on Amazon EC2 resources must not specify this parameter.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -499,7 +500,7 @@ namespace Amazon.Batch.Model
         // Check to see if ResourceRequirements property is set
         internal bool IsSetResourceRequirements()
         {
-            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
+            return this._resourceRequirements != null && (this._resourceRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -536,7 +537,7 @@ namespace Amazon.Batch.Model
         // Check to see if Secrets property is set
         internal bool IsSetSecrets()
         {
-            return this._secrets != null && this._secrets.Count > 0; 
+            return this._secrets != null && (this._secrets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -564,7 +565,7 @@ namespace Amazon.Batch.Model
         // Check to see if Ulimits property is set
         internal bool IsSetUlimits()
         {
-            return this._ulimits != null && this._ulimits.Count > 0; 
+            return this._ulimits != null && (this._ulimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -594,8 +595,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter is deprecated, use <c>resourceRequirements</c> to specify the vCPU
         /// requirements for the job definition. It's not supported for jobs running on Fargate
-        /// resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved
-        /// for the job.
+        /// resources. For jobs running on Amazon EC2 resources, it specifies the number of vCPUs
+        /// reserved for the job.
         /// </para>
         ///  
         /// <para>
@@ -635,7 +636,7 @@ namespace Amazon.Batch.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

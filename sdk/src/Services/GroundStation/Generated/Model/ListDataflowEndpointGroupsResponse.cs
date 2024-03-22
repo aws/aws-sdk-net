@@ -33,7 +33,7 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class ListDataflowEndpointGroupsResponse : AmazonWebServiceResponse
     {
-        private List<DataflowEndpointListItem> _dataflowEndpointGroupList = new List<DataflowEndpointListItem>();
+        private List<DataflowEndpointListItem> _dataflowEndpointGroupList = AWSConfigs.InitializeCollections ? new List<DataflowEndpointListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if DataflowEndpointGroupList property is set
         internal bool IsSetDataflowEndpointGroupList()
         {
-            return this._dataflowEndpointGroupList != null && this._dataflowEndpointGroupList.Count > 0; 
+            return this._dataflowEndpointGroupList != null && (this._dataflowEndpointGroupList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

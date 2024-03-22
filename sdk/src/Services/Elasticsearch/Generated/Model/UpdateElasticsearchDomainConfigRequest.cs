@@ -36,7 +36,7 @@ namespace Amazon.Elasticsearch.Model
     public partial class UpdateElasticsearchDomainConfigRequest : AmazonElasticsearchRequest
     {
         private string _accessPolicies;
-        private Dictionary<string, string> _advancedOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _advancedOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AdvancedSecurityOptionsInput _advancedSecurityOptions;
         private AutoTuneOptions _autoTuneOptions;
         private CognitoOptions _cognitoOptions;
@@ -46,7 +46,7 @@ namespace Amazon.Elasticsearch.Model
         private EBSOptions _ebsOptions;
         private ElasticsearchClusterConfig _elasticsearchClusterConfig;
         private EncryptionAtRestOptions _encryptionAtRestOptions;
-        private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
+        private Dictionary<string, LogPublishingOption> _logPublishingOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, LogPublishingOption>() : null;
         private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
         private SnapshotOptions _snapshotOptions;
         private VPCOptions _vpcOptions;
@@ -87,7 +87,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if AdvancedOptions property is set
         internal bool IsSetAdvancedOptions()
         {
-            return this._advancedOptions != null && this._advancedOptions.Count > 0; 
+            return this._advancedOptions != null && (this._advancedOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if LogPublishingOptions property is set
         internal bool IsSetLogPublishingOptions()
         {
-            return this._logPublishingOptions != null && this._logPublishingOptions.Count > 0; 
+            return this._logPublishingOptions != null && (this._logPublishingOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

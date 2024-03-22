@@ -34,15 +34,15 @@ namespace Amazon.CleanRooms.Model
     public partial class Schema
     {
         private AnalysisMethod _analysisMethod;
-        private List<string> _analysisRuleTypes = new List<string>();
+        private List<string> _analysisRuleTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _collaborationArn;
         private string _collaborationId;
-        private List<Column> _columns = new List<Column>();
+        private List<Column> _columns = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private DateTime? _createTime;
         private string _creatorAccountId;
         private string _description;
         private string _name;
-        private List<Column> _partitionKeys = new List<Column>();
+        private List<Column> _partitionKeys = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private SchemaType _type;
         private DateTime? _updateTime;
 
@@ -80,7 +80,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if AnalysisRuleTypes property is set
         internal bool IsSetAnalysisRuleTypes()
         {
-            return this._analysisRuleTypes != null && this._analysisRuleTypes.Count > 0; 
+            return this._analysisRuleTypes != null && (this._analysisRuleTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if PartitionKeys property is set
         internal bool IsSetPartitionKeys()
         {
-            return this._partitionKeys != null && this._partitionKeys.Count > 0; 
+            return this._partitionKeys != null && (this._partitionKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

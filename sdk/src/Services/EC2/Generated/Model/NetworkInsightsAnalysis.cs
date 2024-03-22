@@ -33,21 +33,21 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NetworkInsightsAnalysis
     {
-        private List<string> _additionalAccounts = new List<string>();
-        private List<AlternatePathHint> _alternatePathHints = new List<AlternatePathHint>();
-        private List<Explanation> _explanations = new List<Explanation>();
-        private List<string> _filterInArns = new List<string>();
-        private List<PathComponent> _forwardPathComponents = new List<PathComponent>();
+        private List<string> _additionalAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<AlternatePathHint> _alternatePathHints = AWSConfigs.InitializeCollections ? new List<AlternatePathHint>() : null;
+        private List<Explanation> _explanations = AWSConfigs.InitializeCollections ? new List<Explanation>() : null;
+        private List<string> _filterInArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<PathComponent> _forwardPathComponents = AWSConfigs.InitializeCollections ? new List<PathComponent>() : null;
         private string _networkInsightsAnalysisArn;
         private string _networkInsightsAnalysisId;
         private string _networkInsightsPathId;
         private bool? _networkPathFound;
-        private List<PathComponent> _returnPathComponents = new List<PathComponent>();
+        private List<PathComponent> _returnPathComponents = AWSConfigs.InitializeCollections ? new List<PathComponent>() : null;
         private DateTime? _startDate;
         private AnalysisStatus _status;
         private string _statusMessage;
-        private List<string> _suggestedAccounts = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _suggestedAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _warningMessage;
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         // Check to see if AdditionalAccounts property is set
         internal bool IsSetAdditionalAccounts()
         {
-            return this._additionalAccounts != null && this._additionalAccounts.Count > 0; 
+            return this._additionalAccounts != null && (this._additionalAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         // Check to see if AlternatePathHints property is set
         internal bool IsSetAlternatePathHints()
         {
-            return this._alternatePathHints != null && this._alternatePathHints.Count > 0; 
+            return this._alternatePathHints != null && (this._alternatePathHints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         // Check to see if Explanations property is set
         internal bool IsSetExplanations()
         {
-            return this._explanations != null && this._explanations.Count > 0; 
+            return this._explanations != null && (this._explanations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.EC2.Model
         // Check to see if FilterInArns property is set
         internal bool IsSetFilterInArns()
         {
-            return this._filterInArns != null && this._filterInArns.Count > 0; 
+            return this._filterInArns != null && (this._filterInArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         // Check to see if ForwardPathComponents property is set
         internal bool IsSetForwardPathComponents()
         {
-            return this._forwardPathComponents != null && this._forwardPathComponents.Count > 0; 
+            return this._forwardPathComponents != null && (this._forwardPathComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Amazon.EC2.Model
         // Check to see if ReturnPathComponents property is set
         internal bool IsSetReturnPathComponents()
         {
-            return this._returnPathComponents != null && this._returnPathComponents.Count > 0; 
+            return this._returnPathComponents != null && (this._returnPathComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -301,7 +301,7 @@ namespace Amazon.EC2.Model
         // Check to see if SuggestedAccounts property is set
         internal bool IsSetSuggestedAccounts()
         {
-            return this._suggestedAccounts != null && this._suggestedAccounts.Count > 0; 
+            return this._suggestedAccounts != null && (this._suggestedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

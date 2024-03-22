@@ -45,7 +45,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<SubscriptionTargetSummary> Items => 
-            new PaginatedResultKeyResponse<ListSubscriptionTargetsResponse, SubscriptionTargetSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListSubscriptionTargetsResponse, SubscriptionTargetSummary>(this, (i) => i.Items ?? new List<SubscriptionTargetSummary>());
 
         internal ListSubscriptionTargetsPaginator(IAmazonDataZone client, ListSubscriptionTargetsRequest request)
         {

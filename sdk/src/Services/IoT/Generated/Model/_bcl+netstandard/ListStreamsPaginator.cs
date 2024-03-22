@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the Streams
         /// </summary>
         public IPaginatedEnumerable<StreamSummary> Streams => 
-            new PaginatedResultKeyResponse<ListStreamsResponse, StreamSummary>(this, (i) => i.Streams);
+            new PaginatedResultKeyResponse<ListStreamsResponse, StreamSummary>(this, (i) => i.Streams ?? new List<StreamSummary>());
 
         internal ListStreamsPaginator(IAmazonIoT client, ListStreamsRequest request)
         {

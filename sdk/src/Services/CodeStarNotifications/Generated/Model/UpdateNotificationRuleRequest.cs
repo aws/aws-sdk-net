@@ -44,10 +44,10 @@ namespace Amazon.CodeStarNotifications.Model
     {
         private string _arn;
         private DetailType _detailType;
-        private List<string> _eventTypeIds = new List<string>();
+        private List<string> _eventTypeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private NotificationRuleStatus _status;
-        private List<Target> _targets = new List<Target>();
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -106,7 +106,7 @@ namespace Amazon.CodeStarNotifications.Model
         // Check to see if EventTypeIds property is set
         internal bool IsSetEventTypeIds()
         {
-            return this._eventTypeIds != null && this._eventTypeIds.Count > 0; 
+            return this._eventTypeIds != null && (this._eventTypeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace Amazon.CodeStarNotifications.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

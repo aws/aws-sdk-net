@@ -63,6 +63,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Overrides/member", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateOverridesUnmarshaller.Instance;
+                        if (unmarshalledObject.Overrides == null)
+                        {
+                            unmarshalledObject.Overrides = new List<LaunchTemplateOverrides>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Overrides.Add(item);
                         continue;

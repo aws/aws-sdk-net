@@ -45,7 +45,7 @@ namespace Amazon.MedicalImaging.Model
         /// Enumerable containing all of the JobSummaries
         /// </summary>
         public IPaginatedEnumerable<DICOMImportJobSummary> JobSummaries => 
-            new PaginatedResultKeyResponse<ListDICOMImportJobsResponse, DICOMImportJobSummary>(this, (i) => i.JobSummaries);
+            new PaginatedResultKeyResponse<ListDICOMImportJobsResponse, DICOMImportJobSummary>(this, (i) => i.JobSummaries ?? new List<DICOMImportJobSummary>());
 
         internal ListDICOMImportJobsPaginator(IAmazonMedicalImaging client, ListDICOMImportJobsRequest request)
         {

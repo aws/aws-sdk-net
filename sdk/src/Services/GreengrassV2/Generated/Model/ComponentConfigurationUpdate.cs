@@ -36,7 +36,7 @@ namespace Amazon.GreengrassV2.Model
     public partial class ComponentConfigurationUpdate
     {
         private string _merge;
-        private List<string> _reset = new List<string>();
+        private List<string> _reset = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Merge. 
@@ -83,7 +83,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if Reset property is set
         internal bool IsSetReset()
         {
-            return this._reset != null && this._reset.Count > 0; 
+            return this._reset != null && (this._reset.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

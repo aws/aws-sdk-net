@@ -37,8 +37,8 @@ namespace Amazon.IoTWireless.Model
     public partial class UpdateLogLevelsByResourceTypesRequest : AmazonIoTWirelessRequest
     {
         private LogLevel _defaultLogLevel;
-        private List<WirelessDeviceLogOption> _wirelessDeviceLogOptions = new List<WirelessDeviceLogOption>();
-        private List<WirelessGatewayLogOption> _wirelessGatewayLogOptions = new List<WirelessGatewayLogOption>();
+        private List<WirelessDeviceLogOption> _wirelessDeviceLogOptions = AWSConfigs.InitializeCollections ? new List<WirelessDeviceLogOption>() : null;
+        private List<WirelessGatewayLogOption> _wirelessGatewayLogOptions = AWSConfigs.InitializeCollections ? new List<WirelessGatewayLogOption>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultLogLevel.
@@ -67,7 +67,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if WirelessDeviceLogOptions property is set
         internal bool IsSetWirelessDeviceLogOptions()
         {
-            return this._wirelessDeviceLogOptions != null && this._wirelessDeviceLogOptions.Count > 0; 
+            return this._wirelessDeviceLogOptions != null && (this._wirelessDeviceLogOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if WirelessGatewayLogOptions property is set
         internal bool IsSetWirelessGatewayLogOptions()
         {
-            return this._wirelessGatewayLogOptions != null && this._wirelessGatewayLogOptions.Count > 0; 
+            return this._wirelessGatewayLogOptions != null && (this._wirelessGatewayLogOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeEffectiveInstanceAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<InstanceAssociation> _associations = new List<InstanceAssociation>();
+        private List<InstanceAssociation> _associations = AWSConfigs.InitializeCollections ? new List<InstanceAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Associations property is set
         internal bool IsSetAssociations()
         {
-            return this._associations != null && this._associations.Count > 0; 
+            return this._associations != null && (this._associations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

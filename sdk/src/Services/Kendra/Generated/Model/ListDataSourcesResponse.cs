@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model
     public partial class ListDataSourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<DataSourceSummary> _summaryItems = new List<DataSourceSummary>();
+        private List<DataSourceSummary> _summaryItems = AWSConfigs.InitializeCollections ? new List<DataSourceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SummaryItems property is set
         internal bool IsSetSummaryItems()
         {
-            return this._summaryItems != null && this._summaryItems.Count > 0; 
+            return this._summaryItems != null && (this._summaryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

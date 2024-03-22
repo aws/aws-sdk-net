@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model
     public partial class SearchSkillGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SkillGroupData> _skillGroups = new List<SkillGroupData>();
+        private List<SkillGroupData> _skillGroups = AWSConfigs.InitializeCollections ? new List<SkillGroupData>() : null;
         private int? _totalCount;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if SkillGroups property is set
         internal bool IsSetSkillGroups()
         {
-            return this._skillGroups != null && this._skillGroups.Count > 0; 
+            return this._skillGroups != null && (this._skillGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

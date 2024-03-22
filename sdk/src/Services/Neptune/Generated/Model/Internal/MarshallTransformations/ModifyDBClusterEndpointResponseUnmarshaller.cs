@@ -126,6 +126,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ExcludedMembers/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.ExcludedMembers == null)
+                        {
+                            response.ExcludedMembers = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ExcludedMembers.Add(item);
                         continue;
@@ -133,6 +137,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("StaticMembers/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.StaticMembers == null)
+                        {
+                            response.StaticMembers = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.StaticMembers.Add(item);
                         continue;

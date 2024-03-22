@@ -33,7 +33,7 @@ namespace Amazon.Snowball.Model
     /// </summary>
     public partial class ListClusterJobsResponse : AmazonWebServiceResponse
     {
-        private List<JobListEntry> _jobListEntries = new List<JobListEntry>();
+        private List<JobListEntry> _jobListEntries = AWSConfigs.InitializeCollections ? new List<JobListEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Snowball.Model
         // Check to see if JobListEntries property is set
         internal bool IsSetJobListEntries()
         {
-            return this._jobListEntries != null && this._jobListEntries.Count > 0; 
+            return this._jobListEntries != null && (this._jobListEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

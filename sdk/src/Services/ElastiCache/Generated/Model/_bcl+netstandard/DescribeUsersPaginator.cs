@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the Users
         /// </summary>
         public IPaginatedEnumerable<User> Users => 
-            new PaginatedResultKeyResponse<DescribeUsersResponse, User>(this, (i) => i.Users);
+            new PaginatedResultKeyResponse<DescribeUsersResponse, User>(this, (i) => i.Users ?? new List<User>());
 
         internal DescribeUsersPaginator(IAmazonElastiCache client, DescribeUsersRequest request)
         {

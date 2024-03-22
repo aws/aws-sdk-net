@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribePlacementGroupsResponse : AmazonWebServiceResponse
     {
-        private List<PlacementGroup> _placementGroups = new List<PlacementGroup>();
+        private List<PlacementGroup> _placementGroups = AWSConfigs.InitializeCollections ? new List<PlacementGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property PlacementGroups. 
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         // Check to see if PlacementGroups property is set
         internal bool IsSetPlacementGroups()
         {
-            return this._placementGroups != null && this._placementGroups.Count > 0; 
+            return this._placementGroups != null && (this._placementGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.TrustedAdvisor.Model
     public partial class ListOrganizationRecommendationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OrganizationRecommendationSummary> _organizationRecommendationSummaries = new List<OrganizationRecommendationSummary>();
+        private List<OrganizationRecommendationSummary> _organizationRecommendationSummaries = AWSConfigs.InitializeCollections ? new List<OrganizationRecommendationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.TrustedAdvisor.Model
         // Check to see if OrganizationRecommendationSummaries property is set
         internal bool IsSetOrganizationRecommendationSummaries()
         {
-            return this._organizationRecommendationSummaries != null && this._organizationRecommendationSummaries.Count > 0; 
+            return this._organizationRecommendationSummaries != null && (this._organizationRecommendationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

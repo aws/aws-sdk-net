@@ -40,7 +40,7 @@ namespace Amazon.SSMIncidents.Model
         private bool? _deletionProtected;
         private string _lastModifiedBy;
         private DateTime? _lastModifiedTime;
-        private Dictionary<string, RegionInfo> _regionMap = new Dictionary<string, RegionInfo>();
+        private Dictionary<string, RegionInfo> _regionMap = AWSConfigs.InitializeCollections ? new Dictionary<string, RegionInfo>() : null;
         private ReplicationSetStatus _status;
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if RegionMap property is set
         internal bool IsSetRegionMap()
         {
-            return this._regionMap != null && this._regionMap.Count > 0; 
+            return this._regionMap != null && (this._regionMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

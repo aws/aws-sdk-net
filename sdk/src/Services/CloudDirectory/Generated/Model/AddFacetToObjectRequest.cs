@@ -36,7 +36,7 @@ namespace Amazon.CloudDirectory.Model
     public partial class AddFacetToObjectRequest : AmazonCloudDirectoryRequest
     {
         private string _directoryArn;
-        private List<AttributeKeyAndValue> _objectAttributeList = new List<AttributeKeyAndValue>();
+        private List<AttributeKeyAndValue> _objectAttributeList = AWSConfigs.InitializeCollections ? new List<AttributeKeyAndValue>() : null;
         private ObjectReference _objectReference;
         private SchemaFacet _schemaFacet;
 
@@ -75,7 +75,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if ObjectAttributeList property is set
         internal bool IsSetObjectAttributeList()
         {
-            return this._objectAttributeList != null && this._objectAttributeList.Count > 0; 
+            return this._objectAttributeList != null && (this._objectAttributeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

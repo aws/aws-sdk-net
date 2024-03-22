@@ -45,7 +45,7 @@ namespace Amazon.KinesisVideo.Model
         /// Enumerable containing all of the MappedResourceConfigurationList
         /// </summary>
         public IPaginatedEnumerable<MappedResourceConfigurationListItem> MappedResourceConfigurationList => 
-            new PaginatedResultKeyResponse<DescribeMappedResourceConfigurationResponse, MappedResourceConfigurationListItem>(this, (i) => i.MappedResourceConfigurationList);
+            new PaginatedResultKeyResponse<DescribeMappedResourceConfigurationResponse, MappedResourceConfigurationListItem>(this, (i) => i.MappedResourceConfigurationList ?? new List<MappedResourceConfigurationListItem>());
 
         internal DescribeMappedResourceConfigurationPaginator(IAmazonKinesisVideo client, DescribeMappedResourceConfigurationRequest request)
         {

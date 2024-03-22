@@ -33,8 +33,8 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class DeleteTaskDefinitionsResponse : AmazonWebServiceResponse
     {
-        private List<Failure> _failures = new List<Failure>();
-        private List<TaskDefinition> _taskDefinitions = new List<TaskDefinition>();
+        private List<Failure> _failures = AWSConfigs.InitializeCollections ? new List<Failure>() : null;
+        private List<TaskDefinition> _taskDefinitions = AWSConfigs.InitializeCollections ? new List<TaskDefinition>() : null;
 
         /// <summary>
         /// Gets and sets the property Failures. 
@@ -51,7 +51,7 @@ namespace Amazon.ECS.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.ECS.Model
         // Check to see if TaskDefinitions property is set
         internal bool IsSetTaskDefinitions()
         {
-            return this._taskDefinitions != null && this._taskDefinitions.Count > 0; 
+            return this._taskDefinitions != null && (this._taskDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

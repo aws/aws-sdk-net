@@ -33,7 +33,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class ResourceServerConfig
     {
-        private Dictionary<string, ResourceServerScopeDetails> _scopes = new Dictionary<string, ResourceServerScopeDetails>();
+        private Dictionary<string, ResourceServerScopeDetails> _scopes = AWSConfigs.InitializeCollections ? new Dictionary<string, ResourceServerScopeDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property Scopes. 
@@ -51,7 +51,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if Scopes property is set
         internal bool IsSetScopes()
         {
-            return this._scopes != null && this._scopes.Count > 0; 
+            return this._scopes != null && (this._scopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

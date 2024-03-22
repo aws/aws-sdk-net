@@ -33,25 +33,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var result = Client.ListQueues(new ListQueuesRequest());
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.QueueUrls);
+            if (result.QueueUrls == null)
+                Assert.IsFalse(AWSConfigs.InitializeCollections);
+            else
+                Assert.IsNotNull(result.QueueUrls);
         }
 
         [TestCleanup]
         public void SQSCleanup()
         {
             var result = Client.ListQueues(new ListQueuesRequest());
-            foreach (string queue in result.QueueUrls)
+            if (result.QueueUrls != null)
             {
-                Console.WriteLine("Queue: {0}", queue);
-                if (queue.Contains("TestQueue"))
+                foreach (string queue in result.QueueUrls)
                 {
-                    try
+                    Console.WriteLine("Queue: {0}", queue);
+                    if (queue.Contains("TestQueue"))
                     {
-                        Client.DeleteQueue(new DeleteQueueRequest() { QueueUrl = queue });
-                    }
-                    catch (Exception)
-                    {
-                        Console.Write("Failed to clean up queue {0}", queue);
+                        try
+                        {
+                            Client.DeleteQueue(new DeleteQueueRequest() { QueueUrl = queue });
+                        }
+                        catch (Exception)
+                        {
+                            Console.Write("Failed to clean up queue {0}", queue);
+                        }
                     }
                 }
             }
@@ -216,7 +222,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             for (int i = 0; i < 10; i++)
             {
                 listResult = Client.ListQueues(new ListQueuesRequest() { QueueNamePrefix = prefix });
-                if (count - 1 == listResult.QueueUrls.Count)
+                if (listResult.QueueUrls == null || count - 1 == listResult.QueueUrls.Count)
                 {
                     return;
                 }

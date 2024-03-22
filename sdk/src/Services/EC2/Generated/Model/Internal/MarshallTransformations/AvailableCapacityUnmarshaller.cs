@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("availableInstanceCapacity/item", targetDepth))
                     {
                         var unmarshaller = InstanceCapacityUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailableInstanceCapacity == null)
+                        {
+                            unmarshalledObject.AvailableInstanceCapacity = new List<InstanceCapacity>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AvailableInstanceCapacity.Add(item);
                         continue;

@@ -37,8 +37,8 @@ namespace Amazon.FinSpaceData.Model
         private string _changesetId;
         private string _clientToken;
         private string _datasetId;
-        private Dictionary<string, string> _formatParams = new Dictionary<string, string>();
-        private Dictionary<string, string> _sourceParams = new Dictionary<string, string>();
+        private Dictionary<string, string> _formatParams = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _sourceParams = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ChangesetId. 
@@ -158,7 +158,7 @@ namespace Amazon.FinSpaceData.Model
         // Check to see if FormatParams property is set
         internal bool IsSetFormatParams()
         {
-            return this._formatParams != null && this._formatParams.Count > 0; 
+            return this._formatParams != null && (this._formatParams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace Amazon.FinSpaceData.Model
         // Check to see if SourceParams property is set
         internal bool IsSetSourceParams()
         {
-            return this._sourceParams != null && this._sourceParams.Count > 0; 
+            return this._sourceParams != null && (this._sourceParams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

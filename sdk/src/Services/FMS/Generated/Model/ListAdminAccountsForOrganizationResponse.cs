@@ -33,7 +33,7 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class ListAdminAccountsForOrganizationResponse : AmazonWebServiceResponse
     {
-        private List<AdminAccountSummary> _adminAccounts = new List<AdminAccountSummary>();
+        private List<AdminAccountSummary> _adminAccounts = AWSConfigs.InitializeCollections ? new List<AdminAccountSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.FMS.Model
         // Check to see if AdminAccounts property is set
         internal bool IsSetAdminAccounts()
         {
-            return this._adminAccounts != null && this._adminAccounts.Count > 0; 
+            return this._adminAccounts != null && (this._adminAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

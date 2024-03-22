@@ -84,6 +84,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MaintenanceTracks/MaintenanceTrack", targetDepth))
                     {
                         var unmarshaller = MaintenanceTrackUnmarshaller.Instance;
+                        if (response.MaintenanceTracks == null)
+                        {
+                            response.MaintenanceTracks = new List<MaintenanceTrack>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.MaintenanceTracks.Add(item);
                         continue;

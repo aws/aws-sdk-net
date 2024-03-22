@@ -43,7 +43,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeConfigurationRecordersRequest : AmazonConfigServiceRequest
     {
-        private List<string> _configurationRecorderNames = new List<string>();
+        private List<string> _configurationRecorderNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationRecorderNames. 
@@ -60,7 +60,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConfigurationRecorderNames property is set
         internal bool IsSetConfigurationRecorderNames()
         {
-            return this._configurationRecorderNames != null && this._configurationRecorderNames.Count > 0; 
+            return this._configurationRecorderNames != null && (this._configurationRecorderNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

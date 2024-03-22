@@ -37,10 +37,10 @@ namespace Amazon.Transfer.Model
     {
         private bool? _fips;
         private string _securityPolicyName;
-        private List<string> _sshCiphers = new List<string>();
-        private List<string> _sshKexs = new List<string>();
-        private List<string> _sshMacs = new List<string>();
-        private List<string> _tlsCiphers = new List<string>();
+        private List<string> _sshCiphers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _sshKexs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _sshMacs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _tlsCiphers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Fips. 
@@ -95,7 +95,7 @@ namespace Amazon.Transfer.Model
         // Check to see if SshCiphers property is set
         internal bool IsSetSshCiphers()
         {
-            return this._sshCiphers != null && this._sshCiphers.Count > 0; 
+            return this._sshCiphers != null && (this._sshCiphers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.Transfer.Model
         // Check to see if SshKexs property is set
         internal bool IsSetSshKexs()
         {
-            return this._sshKexs != null && this._sshKexs.Count > 0; 
+            return this._sshKexs != null && (this._sshKexs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.Transfer.Model
         // Check to see if SshMacs property is set
         internal bool IsSetSshMacs()
         {
-            return this._sshMacs != null && this._sshMacs.Count > 0; 
+            return this._sshMacs != null && (this._sshMacs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Amazon.Transfer.Model
         // Check to see if TlsCiphers property is set
         internal bool IsSetTlsCiphers()
         {
-            return this._tlsCiphers != null && this._tlsCiphers.Count > 0; 
+            return this._tlsCiphers != null && (this._tlsCiphers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

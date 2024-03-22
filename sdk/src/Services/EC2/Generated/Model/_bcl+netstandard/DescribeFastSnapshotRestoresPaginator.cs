@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the FastSnapshotRestores
         /// </summary>
         public IPaginatedEnumerable<DescribeFastSnapshotRestoreSuccessItem> FastSnapshotRestores => 
-            new PaginatedResultKeyResponse<DescribeFastSnapshotRestoresResponse, DescribeFastSnapshotRestoreSuccessItem>(this, (i) => i.FastSnapshotRestores);
+            new PaginatedResultKeyResponse<DescribeFastSnapshotRestoresResponse, DescribeFastSnapshotRestoreSuccessItem>(this, (i) => i.FastSnapshotRestores ?? new List<DescribeFastSnapshotRestoreSuccessItem>());
 
         internal DescribeFastSnapshotRestoresPaginator(IAmazonEC2 client, DescribeFastSnapshotRestoresRequest request)
         {

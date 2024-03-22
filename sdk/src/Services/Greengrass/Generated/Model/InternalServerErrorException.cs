@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
     #endif
     public partial class InternalServerErrorException : AmazonGreengrassException
     {
-        private List<ErrorDetail> _errorDetails = new List<ErrorDetail>();
+        private List<ErrorDetail> _errorDetails = AWSConfigs.InitializeCollections ? new List<ErrorDetail>() : null;
 
         /// <summary>
         /// Constructs a new InternalServerErrorException with the specified error
@@ -130,7 +130,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if ErrorDetails property is set
         internal bool IsSetErrorDetails()
         {
-            return this._errorDetails != null && this._errorDetails.Count > 0; 
+            return this._errorDetails != null && (this._errorDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

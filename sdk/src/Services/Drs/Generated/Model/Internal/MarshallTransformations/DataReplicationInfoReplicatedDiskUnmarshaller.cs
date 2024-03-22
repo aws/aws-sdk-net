@@ -93,6 +93,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.TotalStorageBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("volumeStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

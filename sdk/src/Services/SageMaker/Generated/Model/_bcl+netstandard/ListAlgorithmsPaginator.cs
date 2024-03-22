@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the AlgorithmSummaryList
         /// </summary>
         public IPaginatedEnumerable<AlgorithmSummary> AlgorithmSummaryList => 
-            new PaginatedResultKeyResponse<ListAlgorithmsResponse, AlgorithmSummary>(this, (i) => i.AlgorithmSummaryList);
+            new PaginatedResultKeyResponse<ListAlgorithmsResponse, AlgorithmSummary>(this, (i) => i.AlgorithmSummaryList ?? new List<AlgorithmSummary>());
 
         internal ListAlgorithmsPaginator(IAmazonSageMaker client, ListAlgorithmsRequest request)
         {

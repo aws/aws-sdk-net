@@ -33,7 +33,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class SearchTypesResponse : AmazonWebServiceResponse
     {
-        private List<SearchTypesResultItem> _items = new List<SearchTypesResultItem>();
+        private List<SearchTypesResultItem> _items = AWSConfigs.InitializeCollections ? new List<SearchTypesResultItem>() : null;
         private string _nextToken;
         private int? _totalMatchCount;
 
@@ -52,7 +52,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

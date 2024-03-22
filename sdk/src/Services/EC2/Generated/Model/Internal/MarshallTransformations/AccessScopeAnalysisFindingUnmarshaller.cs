@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("findingComponentSet/item", targetDepth))
                     {
                         var unmarshaller = PathComponentUnmarshaller.Instance;
+                        if (unmarshalledObject.FindingComponents == null)
+                        {
+                            unmarshalledObject.FindingComponents = new List<PathComponent>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.FindingComponents.Add(item);
                         continue;

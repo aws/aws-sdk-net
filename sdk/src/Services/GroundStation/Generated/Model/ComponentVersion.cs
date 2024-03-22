@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model
     public partial class ComponentVersion
     {
         private string _componentType;
-        private List<string> _versions = new List<string>();
+        private List<string> _versions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ComponentType. 
@@ -71,7 +71,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

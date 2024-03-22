@@ -40,7 +40,7 @@ namespace Amazon.IoTWireless.Model
         private int? _rscp;
         private int? _utranCid;
         private WcdmaLocalId _wcdmaLocalId;
-        private List<WcdmaNmrObj> _wcdmaNmr = new List<WcdmaNmrObj>();
+        private List<WcdmaNmrObj> _wcdmaNmr = AWSConfigs.InitializeCollections ? new List<WcdmaNmrObj>() : null;
 
         /// <summary>
         /// Gets and sets the property Lac. 
@@ -191,7 +191,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if WcdmaNmr property is set
         internal bool IsSetWcdmaNmr()
         {
-            return this._wcdmaNmr != null && this._wcdmaNmr.Count > 0; 
+            return this._wcdmaNmr != null && (this._wcdmaNmr.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

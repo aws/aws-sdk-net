@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model
     public partial class AddFlowOutputsResponse : AmazonWebServiceResponse
     {
         private string _flowArn;
-        private List<Output> _outputs = new List<Output>();
+        private List<Output> _outputs = AWSConfigs.InitializeCollections ? new List<Output>() : null;
 
         /// <summary>
         /// Gets and sets the property FlowArn. The ARN of the flow that these outputs were added
@@ -64,7 +64,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

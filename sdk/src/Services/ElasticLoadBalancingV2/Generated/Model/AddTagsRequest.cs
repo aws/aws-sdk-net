@@ -42,8 +42,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class AddTagsRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<string> _resourceArns = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArns. 
@@ -61,7 +61,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

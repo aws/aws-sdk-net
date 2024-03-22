@@ -34,13 +34,13 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class SearchRequest : AmazonDataZoneRequest
     {
-        private List<string> _additionalAttributes = new List<string>();
+        private List<string> _additionalAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _domainIdentifier;
         private FilterClause _filters;
         private int? _maxResults;
         private string _nextToken;
         private string _owningProjectIdentifier;
-        private List<SearchInItem> _searchIn = new List<SearchInItem>();
+        private List<SearchInItem> _searchIn = AWSConfigs.InitializeCollections ? new List<SearchInItem>() : null;
         private InventorySearchScope _searchScope;
         private string _searchText;
         private SearchSort _sort;
@@ -60,7 +60,7 @@ namespace Amazon.DataZone.Model
         // Check to see if AdditionalAttributes property is set
         internal bool IsSetAdditionalAttributes()
         {
-            return this._additionalAttributes != null && this._additionalAttributes.Count > 0; 
+            return this._additionalAttributes != null && (this._additionalAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.DataZone.Model
         // Check to see if SearchIn property is set
         internal bool IsSetSearchIn()
         {
-            return this._searchIn != null && this._searchIn.Count > 0; 
+            return this._searchIn != null && (this._searchIn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

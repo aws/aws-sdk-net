@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("capacityBlockOfferingSet/item", targetDepth))
                     {
                         var unmarshaller = CapacityBlockOfferingUnmarshaller.Instance;
+                        if (response.CapacityBlockOfferings == null)
+                        {
+                            response.CapacityBlockOfferings = new List<CapacityBlockOffering>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CapacityBlockOfferings.Add(item);
                         continue;

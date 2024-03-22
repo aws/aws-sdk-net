@@ -33,7 +33,7 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class ListComponentsResponse : AmazonWebServiceResponse
     {
-        private List<Component> _components = new List<Component>();
+        private List<Component> _components = AWSConfigs.InitializeCollections ? new List<Component>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if Components property is set
         internal bool IsSetComponents()
         {
-            return this._components != null && this._components.Count > 0; 
+            return this._components != null && (this._components.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

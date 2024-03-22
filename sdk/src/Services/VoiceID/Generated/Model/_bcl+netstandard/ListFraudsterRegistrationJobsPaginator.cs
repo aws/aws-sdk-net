@@ -45,7 +45,7 @@ namespace Amazon.VoiceID.Model
         /// Enumerable containing all of the JobSummaries
         /// </summary>
         public IPaginatedEnumerable<FraudsterRegistrationJobSummary> JobSummaries => 
-            new PaginatedResultKeyResponse<ListFraudsterRegistrationJobsResponse, FraudsterRegistrationJobSummary>(this, (i) => i.JobSummaries);
+            new PaginatedResultKeyResponse<ListFraudsterRegistrationJobsResponse, FraudsterRegistrationJobSummary>(this, (i) => i.JobSummaries ?? new List<FraudsterRegistrationJobSummary>());
 
         internal ListFraudsterRegistrationJobsPaginator(IAmazonVoiceID client, ListFraudsterRegistrationJobsRequest request)
         {

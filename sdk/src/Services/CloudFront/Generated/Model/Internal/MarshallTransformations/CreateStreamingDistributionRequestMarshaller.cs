@@ -69,7 +69,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("Aliases", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                         var publicRequestStreamingDistributionConfigAliasesItems = publicRequest.StreamingDistributionConfig.Aliases.Items;
-                        if (publicRequestStreamingDistributionConfigAliasesItems != null && publicRequestStreamingDistributionConfigAliasesItems.Count > 0) 
+                        if (publicRequestStreamingDistributionConfigAliasesItems != null && (publicRequestStreamingDistributionConfigAliasesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
                         {                        
                             xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                             foreach (var publicRequestStreamingDistributionConfigAliasesItemsValue in publicRequestStreamingDistributionConfigAliasesItems) 
@@ -132,7 +132,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.TrustedSigners.Enabled.Value));                 
 
                         var publicRequestStreamingDistributionConfigTrustedSignersItems = publicRequest.StreamingDistributionConfig.TrustedSigners.Items;
-                        if (publicRequestStreamingDistributionConfigTrustedSignersItems != null && publicRequestStreamingDistributionConfigTrustedSignersItems.Count > 0) 
+                        if (publicRequestStreamingDistributionConfigTrustedSignersItems != null && (publicRequestStreamingDistributionConfigTrustedSignersItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
                         {                        
                             xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                             foreach (var publicRequestStreamingDistributionConfigTrustedSignersItemsValue in publicRequestStreamingDistributionConfigTrustedSignersItems) 

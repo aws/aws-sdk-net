@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the AssetModelSummaries
         /// </summary>
         public IPaginatedEnumerable<AssetModelSummary> AssetModelSummaries => 
-            new PaginatedResultKeyResponse<ListAssetModelsResponse, AssetModelSummary>(this, (i) => i.AssetModelSummaries);
+            new PaginatedResultKeyResponse<ListAssetModelsResponse, AssetModelSummary>(this, (i) => i.AssetModelSummaries ?? new List<AssetModelSummary>());
 
         internal ListAssetModelsPaginator(IAmazonIoTSiteWise client, ListAssetModelsRequest request)
         {

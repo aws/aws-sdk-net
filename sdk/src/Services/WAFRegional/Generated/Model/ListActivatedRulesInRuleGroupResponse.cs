@@ -33,7 +33,7 @@ namespace Amazon.WAFRegional.Model
     /// </summary>
     public partial class ListActivatedRulesInRuleGroupResponse : AmazonWebServiceResponse
     {
-        private List<ActivatedRule> _activatedRules = new List<ActivatedRule>();
+        private List<ActivatedRule> _activatedRules = AWSConfigs.InitializeCollections ? new List<ActivatedRule>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if ActivatedRules property is set
         internal bool IsSetActivatedRules()
         {
-            return this._activatedRules != null && this._activatedRules.Count > 0; 
+            return this._activatedRules != null && (this._activatedRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

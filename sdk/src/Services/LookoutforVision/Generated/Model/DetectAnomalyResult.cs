@@ -38,7 +38,7 @@ namespace Amazon.LookoutforVision.Model
     /// </summary>
     public partial class DetectAnomalyResult
     {
-        private List<Anomaly> _anomalies = new List<Anomaly>();
+        private List<Anomaly> _anomalies = AWSConfigs.InitializeCollections ? new List<Anomaly>() : null;
         private MemoryStream _anomalyMask;
         private float? _confidence;
         private bool? _isAnomalous;
@@ -73,7 +73,7 @@ namespace Amazon.LookoutforVision.Model
         // Check to see if Anomalies property is set
         internal bool IsSetAnomalies()
         {
-            return this._anomalies != null && this._anomalies.Count > 0; 
+            return this._anomalies != null && (this._anomalies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

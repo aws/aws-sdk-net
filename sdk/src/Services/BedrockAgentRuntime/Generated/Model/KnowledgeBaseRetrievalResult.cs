@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Result item returned from a knowledge base retrieval.
+    /// Details about a result from querying the knowledge base.
     /// </summary>
     public partial class KnowledgeBaseRetrievalResult
     {
@@ -38,9 +38,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         private double? _score;
 
         /// <summary>
-        /// Gets and sets the property Content.
+        /// Gets and sets the property Content. 
+        /// <para>
+        /// Contains a chunk of text from a data source in the knowledge base.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public RetrievalResultContent Content
         {
             get { return this._content; }
@@ -54,8 +57,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location.
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// Contains information about the location of the data source.
+        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RetrievalResultLocation Location
         {
             get { return this._location; }
@@ -71,7 +78,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        /// The relevance score of a result.
+        /// The level of relevance of the result to the query.
         /// </para>
         /// </summary>
         public double? Score

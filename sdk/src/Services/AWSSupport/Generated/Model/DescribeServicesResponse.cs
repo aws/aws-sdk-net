@@ -33,7 +33,7 @@ namespace Amazon.AWSSupport.Model
     /// </summary>
     public partial class DescribeServicesResponse : AmazonWebServiceResponse
     {
-        private List<Service> _services = new List<Service>();
+        private List<Service> _services = AWSConfigs.InitializeCollections ? new List<Service>() : null;
 
         /// <summary>
         /// Gets and sets the property Services. 
@@ -50,7 +50,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

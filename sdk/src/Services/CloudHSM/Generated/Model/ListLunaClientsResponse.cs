@@ -33,7 +33,7 @@ namespace Amazon.CloudHSM.Model
     /// </summary>
     public partial class ListLunaClientsResponse : AmazonWebServiceResponse
     {
-        private List<string> _clientList = new List<string>();
+        private List<string> _clientList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudHSM.Model
         // Check to see if ClientList property is set
         internal bool IsSetClientList()
         {
-            return this._clientList != null && this._clientList.Count > 0; 
+            return this._clientList != null && (this._clientList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

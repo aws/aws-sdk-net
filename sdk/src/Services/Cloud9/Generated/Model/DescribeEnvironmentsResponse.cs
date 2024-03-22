@@ -33,7 +33,7 @@ namespace Amazon.Cloud9.Model
     /// </summary>
     public partial class DescribeEnvironmentsResponse : AmazonWebServiceResponse
     {
-        private List<Environment> _environments = new List<Environment>();
+        private List<Environment> _environments = AWSConfigs.InitializeCollections ? new List<Environment>() : null;
 
         /// <summary>
         /// Gets and sets the property Environments. 
@@ -50,7 +50,7 @@ namespace Amazon.Cloud9.Model
         // Check to see if Environments property is set
         internal bool IsSetEnvironments()
         {
-            return this._environments != null && this._environments.Count > 0; 
+            return this._environments != null && (this._environments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

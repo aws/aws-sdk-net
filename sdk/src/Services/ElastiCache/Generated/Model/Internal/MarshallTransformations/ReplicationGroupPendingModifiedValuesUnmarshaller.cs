@@ -75,6 +75,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LogDeliveryConfigurations/member", targetDepth))
                     {
                         var unmarshaller = PendingLogDeliveryConfigurationUnmarshaller.Instance;
+                        if (unmarshalledObject.LogDeliveryConfigurations == null)
+                        {
+                            unmarshalledObject.LogDeliveryConfigurations = new List<PendingLogDeliveryConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LogDeliveryConfigurations.Add(item);
                         continue;

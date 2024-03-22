@@ -45,7 +45,7 @@ namespace Amazon.ARCZonalShift.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ManagedResourceSummary> Items => 
-            new PaginatedResultKeyResponse<ListManagedResourcesResponse, ManagedResourceSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListManagedResourcesResponse, ManagedResourceSummary>(this, (i) => i.Items ?? new List<ManagedResourceSummary>());
 
         internal ListManagedResourcesPaginator(IAmazonARCZonalShift client, ListManagedResourcesRequest request)
         {

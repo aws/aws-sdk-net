@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// Enumerable containing all of the Samples
         /// </summary>
         public IPaginatedEnumerable<Sample> Samples => 
-            new PaginatedResultKeyResponse<ListSamplesResponse, Sample>(this, (i) => i.Samples);
+            new PaginatedResultKeyResponse<ListSamplesResponse, Sample>(this, (i) => i.Samples ?? new List<Sample>());
 
         internal ListSamplesPaginator(IAmazonDeviceFarm client, ListSamplesRequest request)
         {

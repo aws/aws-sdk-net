@@ -45,7 +45,7 @@ namespace Amazon.FSx.Model
         /// Enumerable containing all of the StorageVirtualMachines
         /// </summary>
         public IPaginatedEnumerable<StorageVirtualMachine> StorageVirtualMachines => 
-            new PaginatedResultKeyResponse<DescribeStorageVirtualMachinesResponse, StorageVirtualMachine>(this, (i) => i.StorageVirtualMachines);
+            new PaginatedResultKeyResponse<DescribeStorageVirtualMachinesResponse, StorageVirtualMachine>(this, (i) => i.StorageVirtualMachines ?? new List<StorageVirtualMachine>());
 
         internal DescribeStorageVirtualMachinesPaginator(IAmazonFSx client, DescribeStorageVirtualMachinesRequest request)
         {

@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("blockDeviceMapping/item", targetDepth))
                     {
                         var unmarshaller = BlockDeviceMappingUnmarshaller.Instance;
+                        if (unmarshalledObject.BlockDeviceMappings == null)
+                        {
+                            unmarshalledObject.BlockDeviceMappings = new List<BlockDeviceMapping>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
@@ -118,6 +122,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("networkInterfaceSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceNetworkInterfaceSpecificationUnmarshaller.Instance;
+                        if (unmarshalledObject.NetworkInterfaces == null)
+                        {
+                            unmarshalledObject.NetworkInterfaces = new List<InstanceNetworkInterfaceSpecification>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NetworkInterfaces.Add(item);
                         continue;
@@ -137,6 +145,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("groupSet/item", targetDepth))
                     {
                         var unmarshaller = GroupIdentifierUnmarshaller.Instance;
+                        if (unmarshalledObject.SecurityGroups == null)
+                        {
+                            unmarshalledObject.SecurityGroups = new List<GroupIdentifier>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SecurityGroups.Add(item);
                         continue;
@@ -156,6 +168,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSpecificationSet/item", targetDepth))
                     {
                         var unmarshaller = SpotFleetTagSpecificationUnmarshaller.Instance;
+                        if (unmarshalledObject.TagSpecifications == null)
+                        {
+                            unmarshalledObject.TagSpecifications = new List<SpotFleetTagSpecification>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TagSpecifications.Add(item);
                         continue;

@@ -44,7 +44,7 @@ namespace Amazon.Pinpoint.Model
         private string _name;
         private SegmentGroupList _segmentGroups;
         private SegmentType _segmentType;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _version;
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

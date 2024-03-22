@@ -33,8 +33,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchStopJobRunResponse : AmazonWebServiceResponse
     {
-        private List<BatchStopJobRunError> _errors = new List<BatchStopJobRunError>();
-        private List<BatchStopJobRunSuccessfulSubmission> _successfulSubmissions = new List<BatchStopJobRunSuccessfulSubmission>();
+        private List<BatchStopJobRunError> _errors = AWSConfigs.InitializeCollections ? new List<BatchStopJobRunError>() : null;
+        private List<BatchStopJobRunSuccessfulSubmission> _successfulSubmissions = AWSConfigs.InitializeCollections ? new List<BatchStopJobRunSuccessfulSubmission>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if SuccessfulSubmissions property is set
         internal bool IsSetSuccessfulSubmissions()
         {
-            return this._successfulSubmissions != null && this._successfulSubmissions.Count > 0; 
+            return this._successfulSubmissions != null && (this._successfulSubmissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

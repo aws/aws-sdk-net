@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ListViolationEventsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ViolationEvent> _violationEvents = new List<ViolationEvent>();
+        private List<ViolationEvent> _violationEvents = AWSConfigs.InitializeCollections ? new List<ViolationEvent>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.IoT.Model
         // Check to see if ViolationEvents property is set
         internal bool IsSetViolationEvents()
         {
-            return this._violationEvents != null && this._violationEvents.Count > 0; 
+            return this._violationEvents != null && (this._violationEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

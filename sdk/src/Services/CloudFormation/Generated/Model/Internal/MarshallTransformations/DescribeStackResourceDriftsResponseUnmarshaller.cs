@@ -90,6 +90,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("StackResourceDrifts/member", targetDepth))
                     {
                         var unmarshaller = StackResourceDriftUnmarshaller.Instance;
+                        if (response.StackResourceDrifts == null)
+                        {
+                            response.StackResourceDrifts = new List<StackResourceDrift>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.StackResourceDrifts.Add(item);
                         continue;

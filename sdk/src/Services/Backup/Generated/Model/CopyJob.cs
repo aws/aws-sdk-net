@@ -35,7 +35,7 @@ namespace Amazon.Backup.Model
     {
         private string _accountId;
         private long? _backupSizeInBytes;
-        private Dictionary<string, long> _childJobsInState = new Dictionary<string, long>();
+        private Dictionary<string, long> _childJobsInState = AWSConfigs.InitializeCollections ? new Dictionary<string, long>() : null;
         private DateTime? _completionDate;
         private string _compositeMemberIdentifier;
         private string _copyJobId;
@@ -107,7 +107,7 @@ namespace Amazon.Backup.Model
         // Check to see if ChildJobsInState property is set
         internal bool IsSetChildJobsInState()
         {
-            return this._childJobsInState != null && this._childJobsInState.Count > 0; 
+            return this._childJobsInState != null && (this._childJobsInState.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

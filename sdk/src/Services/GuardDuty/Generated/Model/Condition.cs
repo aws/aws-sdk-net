@@ -33,8 +33,8 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class Condition
     {
-        private List<string> _eq = new List<string>();
-        private List<string> _equals = new List<string>();
+        private List<string> _eq = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _equals = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _greaterThan;
         private long? _greaterThanOrEqual;
         private int? _gt;
@@ -43,8 +43,8 @@ namespace Amazon.GuardDuty.Model
         private long? _lessThanOrEqual;
         private int? _lt;
         private int? _lte;
-        private List<string> _neq = new List<string>();
-        private List<string> _notEquals = new List<string>();
+        private List<string> _neq = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _notEquals = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Eq. 
@@ -63,7 +63,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Eq property is set
         internal bool IsSetEq()
         {
-            return this._eq != null && this._eq.Count > 0; 
+            return this._eq != null && (this._eq.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Equals property is set
         internal bool IsSetEquals()
         {
-            return this._equals != null && this._equals.Count > 0; 
+            return this._equals != null && (this._equals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -258,7 +258,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Neq property is set
         internal bool IsSetNeq()
         {
-            return this._neq != null && this._neq.Count > 0; 
+            return this._neq != null && (this._neq.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if NotEquals property is set
         internal bool IsSetNotEquals()
         {
-            return this._notEquals != null && this._notEquals.Count > 0; 
+            return this._notEquals != null && (this._notEquals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

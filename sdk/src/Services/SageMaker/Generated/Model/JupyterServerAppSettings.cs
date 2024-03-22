@@ -33,9 +33,9 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class JupyterServerAppSettings
     {
-        private List<CodeRepository> _codeRepositories = new List<CodeRepository>();
+        private List<CodeRepository> _codeRepositories = AWSConfigs.InitializeCollections ? new List<CodeRepository>() : null;
         private ResourceSpec _defaultResourceSpec;
-        private List<string> _lifecycleConfigArns = new List<string>();
+        private List<string> _lifecycleConfigArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CodeRepositories. 
@@ -54,7 +54,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CodeRepositories property is set
         internal bool IsSetCodeRepositories()
         {
-            return this._codeRepositories != null && this._codeRepositories.Count > 0; 
+            return this._codeRepositories != null && (this._codeRepositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if LifecycleConfigArns property is set
         internal bool IsSetLifecycleConfigArns()
         {
-            return this._lifecycleConfigArns != null && this._lifecycleConfigArns.Count > 0; 
+            return this._lifecycleConfigArns != null && (this._lifecycleConfigArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.DeviceFarm.Model
         private string _description;
         private string _id;
         private DevicePlatform _platform;
-        private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
+        private List<RecurringCharge> _recurringCharges = AWSConfigs.InitializeCollections ? new List<RecurringCharge>() : null;
         private OfferingType _type;
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if RecurringCharges property is set
         internal bool IsSetRecurringCharges()
         {
-            return this._recurringCharges != null && this._recurringCharges.Count > 0; 
+            return this._recurringCharges != null && (this._recurringCharges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Enumerable containing all of the FileSystems
         /// </summary>
         public IPaginatedEnumerable<FileSystemDescription> FileSystems => 
-            new PaginatedResultKeyResponse<DescribeFileSystemsResponse, FileSystemDescription>(this, (i) => i.FileSystems);
+            new PaginatedResultKeyResponse<DescribeFileSystemsResponse, FileSystemDescription>(this, (i) => i.FileSystems ?? new List<FileSystemDescription>());
 
         internal DescribeFileSystemsPaginator(IAmazonElasticFileSystem client, DescribeFileSystemsRequest request)
         {

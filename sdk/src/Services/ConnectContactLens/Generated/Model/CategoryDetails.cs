@@ -33,7 +33,7 @@ namespace Amazon.ConnectContactLens.Model
     /// </summary>
     public partial class CategoryDetails
     {
-        private List<PointOfInterest> _pointsOfInterest = new List<PointOfInterest>();
+        private List<PointOfInterest> _pointsOfInterest = AWSConfigs.InitializeCollections ? new List<PointOfInterest>() : null;
 
         /// <summary>
         /// Gets and sets the property PointsOfInterest. 
@@ -51,7 +51,7 @@ namespace Amazon.ConnectContactLens.Model
         // Check to see if PointsOfInterest property is set
         internal bool IsSetPointsOfInterest()
         {
-            return this._pointsOfInterest != null && this._pointsOfInterest.Count > 0; 
+            return this._pointsOfInterest != null && (this._pointsOfInterest.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

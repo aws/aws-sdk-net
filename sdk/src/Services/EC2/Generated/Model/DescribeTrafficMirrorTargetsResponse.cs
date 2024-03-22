@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeTrafficMirrorTargetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TrafficMirrorTarget> _trafficMirrorTargets = new List<TrafficMirrorTarget>();
+        private List<TrafficMirrorTarget> _trafficMirrorTargets = AWSConfigs.InitializeCollections ? new List<TrafficMirrorTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if TrafficMirrorTargets property is set
         internal bool IsSetTrafficMirrorTargets()
         {
-            return this._trafficMirrorTargets != null && this._trafficMirrorTargets.Count > 0; 
+            return this._trafficMirrorTargets != null && (this._trafficMirrorTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.BackupGateway.Model
     public partial class ListVirtualMachinesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VirtualMachine> _virtualMachines = new List<VirtualMachine>();
+        private List<VirtualMachine> _virtualMachines = AWSConfigs.InitializeCollections ? new List<VirtualMachine>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.BackupGateway.Model
         // Check to see if VirtualMachines property is set
         internal bool IsSetVirtualMachines()
         {
-            return this._virtualMachines != null && this._virtualMachines.Count > 0; 
+            return this._virtualMachines != null && (this._virtualMachines.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -13,6 +13,7 @@ using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
 using Amazon.S3.Transfer;
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using Amazon;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -199,8 +200,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 BucketName = destinationbucketName
             });
 
-            Assert.IsTrue(response.S3Objects.Count == 0);
-
+            if (AWSConfigs.InitializeCollections)
+                Assert.IsTrue(response.S3Objects.Count == 0);
+            else
+                Assert.IsNull(response.S3Objects);
 
             Client.DeleteBucket(destinationbucketName);
 
@@ -256,7 +259,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 BucketName = newRegularBucket
             });
 
-            Assert.IsTrue(listObjectsResponse.S3Objects.Count == 0);
+            if (AWSConfigs.InitializeCollections)
+                Assert.IsTrue(listObjectsResponse.S3Objects.Count == 0);
+            else
+                Assert.IsNull(listObjectsResponse.S3Objects);
 
 
             // Add new object to regular bucket

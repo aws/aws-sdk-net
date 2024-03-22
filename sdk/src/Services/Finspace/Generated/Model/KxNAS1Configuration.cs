@@ -43,7 +43,7 @@ namespace Amazon.Finspace.Model
         ///  The size of the network attached storage.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1200, Max=33600)]
+        [AWSProperty(Min=1200)]
         public int? Size
         {
             get { return this._size; }

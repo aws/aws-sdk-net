@@ -33,14 +33,14 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class EffectiveRecommendationPreferences
     {
-        private List<string> _cpuVendorArchitectures = new List<string>();
+        private List<string> _cpuVendorArchitectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EnhancedInfrastructureMetrics _enhancedInfrastructureMetrics;
         private ExternalMetricsPreference _externalMetricsPreference;
         private InferredWorkloadTypesPreference _inferredWorkloadTypes;
         private LookBackPeriodPreference _lookBackPeriod;
-        private List<EffectivePreferredResource> _preferredResources = new List<EffectivePreferredResource>();
+        private List<EffectivePreferredResource> _preferredResources = AWSConfigs.InitializeCollections ? new List<EffectivePreferredResource>() : null;
         private InstanceSavingsEstimationMode _savingsEstimationMode;
-        private List<UtilizationPreference> _utilizationPreferences = new List<UtilizationPreference>();
+        private List<UtilizationPreference> _utilizationPreferences = AWSConfigs.InitializeCollections ? new List<UtilizationPreference>() : null;
 
         /// <summary>
         /// Gets and sets the property CpuVendorArchitectures. 
@@ -79,7 +79,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if CpuVendorArchitectures property is set
         internal bool IsSetCpuVendorArchitectures()
         {
-            return this._cpuVendorArchitectures != null && this._cpuVendorArchitectures.Count > 0; 
+            return this._cpuVendorArchitectures != null && (this._cpuVendorArchitectures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if PreferredResources property is set
         internal bool IsSetPreferredResources()
         {
-            return this._preferredResources != null && this._preferredResources.Count > 0; 
+            return this._preferredResources != null && (this._preferredResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if UtilizationPreferences property is set
         internal bool IsSetUtilizationPreferences()
         {
-            return this._utilizationPreferences != null && this._utilizationPreferences.Count > 0; 
+            return this._utilizationPreferences != null && (this._utilizationPreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

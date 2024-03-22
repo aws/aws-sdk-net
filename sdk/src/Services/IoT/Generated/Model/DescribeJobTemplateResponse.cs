@@ -36,14 +36,14 @@ namespace Amazon.IoT.Model
         private AbortConfig _abortConfig;
         private DateTime? _createdAt;
         private string _description;
-        private List<string> _destinationPackageVersions = new List<string>();
+        private List<string> _destinationPackageVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _document;
         private string _documentSource;
         private JobExecutionsRetryConfig _jobExecutionsRetryConfig;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobTemplateArn;
         private string _jobTemplateId;
-        private List<MaintenanceWindow> _maintenanceWindows = new List<MaintenanceWindow>();
+        private List<MaintenanceWindow> _maintenanceWindows = AWSConfigs.InitializeCollections ? new List<MaintenanceWindow>() : null;
         private PresignedUrlConfig _presignedUrlConfig;
         private TimeoutConfig _timeoutConfig;
 
@@ -122,7 +122,7 @@ namespace Amazon.IoT.Model
         // Check to see if DestinationPackageVersions property is set
         internal bool IsSetDestinationPackageVersions()
         {
-            return this._destinationPackageVersions != null && this._destinationPackageVersions.Count > 0; 
+            return this._destinationPackageVersions != null && (this._destinationPackageVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -251,7 +251,7 @@ namespace Amazon.IoT.Model
         // Check to see if MaintenanceWindows property is set
         internal bool IsSetMaintenanceWindows()
         {
-            return this._maintenanceWindows != null && this._maintenanceWindows.Count > 0; 
+            return this._maintenanceWindows != null && (this._maintenanceWindows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

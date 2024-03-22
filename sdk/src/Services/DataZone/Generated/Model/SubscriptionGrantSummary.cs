@@ -33,7 +33,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class SubscriptionGrantSummary
     {
-        private List<SubscribedAsset> _assets = new List<SubscribedAsset>();
+        private List<SubscribedAsset> _assets = AWSConfigs.InitializeCollections ? new List<SubscribedAsset>() : null;
         private DateTime? _createdAt;
         private string _createdBy;
         private string _domainId;
@@ -60,7 +60,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Assets property is set
         internal bool IsSetAssets()
         {
-            return this._assets != null && this._assets.Count > 0; 
+            return this._assets != null && (this._assets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -80,7 +80,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("And", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                             var publicRequestStorageLensGroupFilterAndMatchAnyPrefix = publicRequest.StorageLensGroup.Filter.And.MatchAnyPrefix;
-                            if (publicRequestStorageLensGroupFilterAndMatchAnyPrefix != null && publicRequestStorageLensGroupFilterAndMatchAnyPrefix.Count > 0) 
+                            if (publicRequestStorageLensGroupFilterAndMatchAnyPrefix != null && (publicRequestStorageLensGroupFilterAndMatchAnyPrefix.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {                        
                                 xmlWriter.WriteStartElement("MatchAnyPrefix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                                 foreach (var publicRequestStorageLensGroupFilterAndMatchAnyPrefixValue in publicRequestStorageLensGroupFilterAndMatchAnyPrefix) 
@@ -92,7 +92,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             var publicRequestStorageLensGroupFilterAndMatchAnySuffix = publicRequest.StorageLensGroup.Filter.And.MatchAnySuffix;
-                            if (publicRequestStorageLensGroupFilterAndMatchAnySuffix != null && publicRequestStorageLensGroupFilterAndMatchAnySuffix.Count > 0) 
+                            if (publicRequestStorageLensGroupFilterAndMatchAnySuffix != null && (publicRequestStorageLensGroupFilterAndMatchAnySuffix.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {                        
                                 xmlWriter.WriteStartElement("MatchAnySuffix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                                 foreach (var publicRequestStorageLensGroupFilterAndMatchAnySuffixValue in publicRequestStorageLensGroupFilterAndMatchAnySuffix) 
@@ -104,7 +104,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             var publicRequestStorageLensGroupFilterAndMatchAnyTag = publicRequest.StorageLensGroup.Filter.And.MatchAnyTag;
-                            if (publicRequestStorageLensGroupFilterAndMatchAnyTag != null && publicRequestStorageLensGroupFilterAndMatchAnyTag.Count > 0) 
+                            if (publicRequestStorageLensGroupFilterAndMatchAnyTag != null && (publicRequestStorageLensGroupFilterAndMatchAnyTag.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {                        
                                 xmlWriter.WriteStartElement("MatchAnyTag", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                                 foreach (var publicRequestStorageLensGroupFilterAndMatchAnyTagValue in publicRequestStorageLensGroupFilterAndMatchAnyTag) 
@@ -151,7 +151,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();
                         }
                         var publicRequestStorageLensGroupFilterMatchAnyPrefix = publicRequest.StorageLensGroup.Filter.MatchAnyPrefix;
-                        if (publicRequestStorageLensGroupFilterMatchAnyPrefix != null && publicRequestStorageLensGroupFilterMatchAnyPrefix.Count > 0) 
+                        if (publicRequestStorageLensGroupFilterMatchAnyPrefix != null && (publicRequestStorageLensGroupFilterMatchAnyPrefix.Count > 0 || !AWSConfigs.InitializeCollections)) 
                         {                        
                             xmlWriter.WriteStartElement("MatchAnyPrefix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                             foreach (var publicRequestStorageLensGroupFilterMatchAnyPrefixValue in publicRequestStorageLensGroupFilterMatchAnyPrefix) 
@@ -163,7 +163,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         var publicRequestStorageLensGroupFilterMatchAnySuffix = publicRequest.StorageLensGroup.Filter.MatchAnySuffix;
-                        if (publicRequestStorageLensGroupFilterMatchAnySuffix != null && publicRequestStorageLensGroupFilterMatchAnySuffix.Count > 0) 
+                        if (publicRequestStorageLensGroupFilterMatchAnySuffix != null && (publicRequestStorageLensGroupFilterMatchAnySuffix.Count > 0 || !AWSConfigs.InitializeCollections)) 
                         {                        
                             xmlWriter.WriteStartElement("MatchAnySuffix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                             foreach (var publicRequestStorageLensGroupFilterMatchAnySuffixValue in publicRequestStorageLensGroupFilterMatchAnySuffix) 
@@ -175,7 +175,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         var publicRequestStorageLensGroupFilterMatchAnyTag = publicRequest.StorageLensGroup.Filter.MatchAnyTag;
-                        if (publicRequestStorageLensGroupFilterMatchAnyTag != null && publicRequestStorageLensGroupFilterMatchAnyTag.Count > 0) 
+                        if (publicRequestStorageLensGroupFilterMatchAnyTag != null && (publicRequestStorageLensGroupFilterMatchAnyTag.Count > 0 || !AWSConfigs.InitializeCollections)) 
                         {                        
                             xmlWriter.WriteStartElement("MatchAnyTag", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                             foreach (var publicRequestStorageLensGroupFilterMatchAnyTagValue in publicRequestStorageLensGroupFilterMatchAnyTag) 
@@ -224,7 +224,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("Or", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                             var publicRequestStorageLensGroupFilterOrMatchAnyPrefix = publicRequest.StorageLensGroup.Filter.Or.MatchAnyPrefix;
-                            if (publicRequestStorageLensGroupFilterOrMatchAnyPrefix != null && publicRequestStorageLensGroupFilterOrMatchAnyPrefix.Count > 0) 
+                            if (publicRequestStorageLensGroupFilterOrMatchAnyPrefix != null && (publicRequestStorageLensGroupFilterOrMatchAnyPrefix.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {                        
                                 xmlWriter.WriteStartElement("MatchAnyPrefix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                                 foreach (var publicRequestStorageLensGroupFilterOrMatchAnyPrefixValue in publicRequestStorageLensGroupFilterOrMatchAnyPrefix) 
@@ -236,7 +236,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             var publicRequestStorageLensGroupFilterOrMatchAnySuffix = publicRequest.StorageLensGroup.Filter.Or.MatchAnySuffix;
-                            if (publicRequestStorageLensGroupFilterOrMatchAnySuffix != null && publicRequestStorageLensGroupFilterOrMatchAnySuffix.Count > 0) 
+                            if (publicRequestStorageLensGroupFilterOrMatchAnySuffix != null && (publicRequestStorageLensGroupFilterOrMatchAnySuffix.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {                        
                                 xmlWriter.WriteStartElement("MatchAnySuffix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                                 foreach (var publicRequestStorageLensGroupFilterOrMatchAnySuffixValue in publicRequestStorageLensGroupFilterOrMatchAnySuffix) 
@@ -248,7 +248,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             var publicRequestStorageLensGroupFilterOrMatchAnyTag = publicRequest.StorageLensGroup.Filter.Or.MatchAnyTag;
-                            if (publicRequestStorageLensGroupFilterOrMatchAnyTag != null && publicRequestStorageLensGroupFilterOrMatchAnyTag.Count > 0) 
+                            if (publicRequestStorageLensGroupFilterOrMatchAnyTag != null && (publicRequestStorageLensGroupFilterOrMatchAnyTag.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {                        
                                 xmlWriter.WriteStartElement("MatchAnyTag", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                                 foreach (var publicRequestStorageLensGroupFilterOrMatchAnyTagValue in publicRequestStorageLensGroupFilterOrMatchAnyTag) 
@@ -305,7 +305,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 var publicRequestTags = publicRequest.Tags;
-                if (publicRequestTags != null && publicRequestTags.Count > 0) 
+                if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
                 {                        
                     xmlWriter.WriteStartElement("Tags", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     foreach (var publicRequestTagsValue in publicRequestTags) 

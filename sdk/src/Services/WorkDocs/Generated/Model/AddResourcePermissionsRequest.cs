@@ -37,7 +37,7 @@ namespace Amazon.WorkDocs.Model
     {
         private string _authenticationToken;
         private NotificationOptions _notificationOptions;
-        private List<SharePrincipal> _principals = new List<SharePrincipal>();
+        private List<SharePrincipal> _principals = AWSConfigs.InitializeCollections ? new List<SharePrincipal>() : null;
         private string _resourceId;
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

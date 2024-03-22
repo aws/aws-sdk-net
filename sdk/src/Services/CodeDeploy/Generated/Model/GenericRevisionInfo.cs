@@ -33,7 +33,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class GenericRevisionInfo
     {
-        private List<string> _deploymentGroups = new List<string>();
+        private List<string> _deploymentGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private DateTime? _firstUsedTime;
         private DateTime? _lastUsedTime;
@@ -54,7 +54,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if DeploymentGroups property is set
         internal bool IsSetDeploymentGroups()
         {
-            return this._deploymentGroups != null && this._deploymentGroups.Count > 0; 
+            return this._deploymentGroups != null && (this._deploymentGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

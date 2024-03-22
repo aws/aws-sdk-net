@@ -34,7 +34,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class DescribeOptOutListsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OptOutListInformation> _optOutLists = new List<OptOutListInformation>();
+        private List<OptOutListInformation> _optOutLists = AWSConfigs.InitializeCollections ? new List<OptOutListInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if OptOutLists property is set
         internal bool IsSetOptOutLists()
         {
-            return this._optOutLists != null && this._optOutLists.Count > 0; 
+            return this._optOutLists != null && (this._optOutLists.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -35,7 +35,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class UserSettings
     {
-        private List<string> _associatedPortalArns = new List<string>();
+        private List<string> _associatedPortalArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CookieSynchronizationConfiguration _cookieSynchronizationConfiguration;
         private EnabledType _copyAllowed;
         private int? _disconnectTimeoutInMinutes;
@@ -61,7 +61,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if AssociatedPortalArns property is set
         internal bool IsSetAssociatedPortalArns()
         {
-            return this._associatedPortalArns != null && this._associatedPortalArns.Count > 0; 
+            return this._associatedPortalArns != null && (this._associatedPortalArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeRaidArraysResponse : AmazonWebServiceResponse
     {
-        private List<RaidArray> _raidArrays = new List<RaidArray>();
+        private List<RaidArray> _raidArrays = AWSConfigs.InitializeCollections ? new List<RaidArray>() : null;
 
         /// <summary>
         /// Gets and sets the property RaidArrays. 
@@ -50,7 +50,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if RaidArrays property is set
         internal bool IsSetRaidArrays()
         {
-            return this._raidArrays != null && this._raidArrays.Count > 0; 
+            return this._raidArrays != null && (this._raidArrays.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

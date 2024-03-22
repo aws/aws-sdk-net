@@ -33,7 +33,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ListDocumentsResponse : AmazonWebServiceResponse
     {
-        private List<DocumentDetails> _documentDetailList = new List<DocumentDetails>();
+        private List<DocumentDetails> _documentDetailList = AWSConfigs.InitializeCollections ? new List<DocumentDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if DocumentDetailList property is set
         internal bool IsSetDocumentDetailList()
         {
-            return this._documentDetailList != null && this._documentDetailList.Count > 0; 
+            return this._documentDetailList != null && (this._documentDetailList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

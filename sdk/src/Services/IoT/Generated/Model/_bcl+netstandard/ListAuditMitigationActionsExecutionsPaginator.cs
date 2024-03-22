@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the ActionsExecutions
         /// </summary>
         public IPaginatedEnumerable<AuditMitigationActionExecutionMetadata> ActionsExecutions => 
-            new PaginatedResultKeyResponse<ListAuditMitigationActionsExecutionsResponse, AuditMitigationActionExecutionMetadata>(this, (i) => i.ActionsExecutions);
+            new PaginatedResultKeyResponse<ListAuditMitigationActionsExecutionsResponse, AuditMitigationActionExecutionMetadata>(this, (i) => i.ActionsExecutions ?? new List<AuditMitigationActionExecutionMetadata>());
 
         internal ListAuditMitigationActionsExecutionsPaginator(IAmazonIoT client, ListAuditMitigationActionsExecutionsRequest request)
         {

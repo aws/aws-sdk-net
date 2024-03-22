@@ -45,7 +45,7 @@ namespace Amazon.MachineLearning.Model
         /// Enumerable containing all of the Results
         /// </summary>
         public IPaginatedEnumerable<DataSource> Results => 
-            new PaginatedResultKeyResponse<DescribeDataSourcesResponse, DataSource>(this, (i) => i.Results);
+            new PaginatedResultKeyResponse<DescribeDataSourcesResponse, DataSource>(this, (i) => i.Results ?? new List<DataSource>());
 
         internal DescribeDataSourcesPaginator(IAmazonMachineLearning client, DescribeDataSourcesRequest request)
         {

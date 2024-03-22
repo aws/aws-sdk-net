@@ -34,9 +34,9 @@ namespace Amazon.DataExchange.Model
     public partial class S3DataAccessAsset
     {
         private string _bucket;
-        private List<string> _keyPrefixes = new List<string>();
-        private List<string> _keys = new List<string>();
-        private List<KmsKeyToGrant> _kmsKeysToGrant = new List<KmsKeyToGrant>();
+        private List<string> _keyPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _keys = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<KmsKeyToGrant> _kmsKeysToGrant = AWSConfigs.InitializeCollections ? new List<KmsKeyToGrant>() : null;
         private string _s3AccessPointAlias;
         private string _s3AccessPointArn;
 
@@ -74,7 +74,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if KeyPrefixes property is set
         internal bool IsSetKeyPrefixes()
         {
-            return this._keyPrefixes != null && this._keyPrefixes.Count > 0; 
+            return this._keyPrefixes != null && (this._keyPrefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if KmsKeysToGrant property is set
         internal bool IsSetKmsKeysToGrant()
         {
-            return this._kmsKeysToGrant != null && this._kmsKeysToGrant.Count > 0; 
+            return this._kmsKeysToGrant != null && (this._kmsKeysToGrant.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

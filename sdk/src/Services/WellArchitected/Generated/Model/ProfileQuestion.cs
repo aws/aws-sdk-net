@@ -35,11 +35,11 @@ namespace Amazon.WellArchitected.Model
     {
         private int? _maxSelectedChoices;
         private int? _minSelectedChoices;
-        private List<ProfileChoice> _questionChoices = new List<ProfileChoice>();
+        private List<ProfileChoice> _questionChoices = AWSConfigs.InitializeCollections ? new List<ProfileChoice>() : null;
         private string _questionDescription;
         private string _questionId;
         private string _questionTitle;
-        private List<string> _selectedChoiceIds = new List<string>();
+        private List<string> _selectedChoiceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxSelectedChoices. 
@@ -94,7 +94,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if QuestionChoices property is set
         internal bool IsSetQuestionChoices()
         {
-            return this._questionChoices != null && this._questionChoices.Count > 0; 
+            return this._questionChoices != null && (this._questionChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if SelectedChoiceIds property is set
         internal bool IsSetSelectedChoiceIds()
         {
-            return this._selectedChoiceIds != null && this._selectedChoiceIds.Count > 0; 
+            return this._selectedChoiceIds != null && (this._selectedChoiceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

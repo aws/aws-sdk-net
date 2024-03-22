@@ -33,8 +33,8 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class DataConfig
     {
-        private List<AdditionalDataset> _additionalDatasets = new List<AdditionalDataset>();
-        private List<AttributeConfig> _attributeConfigs = new List<AttributeConfig>();
+        private List<AdditionalDataset> _additionalDatasets = AWSConfigs.InitializeCollections ? new List<AdditionalDataset>() : null;
+        private List<AttributeConfig> _attributeConfigs = AWSConfigs.InitializeCollections ? new List<AttributeConfig>() : null;
         private string _datasetGroupArn;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if AdditionalDatasets property is set
         internal bool IsSetAdditionalDatasets()
         {
-            return this._additionalDatasets != null && this._additionalDatasets.Count > 0; 
+            return this._additionalDatasets != null && (this._additionalDatasets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if AttributeConfigs property is set
         internal bool IsSetAttributeConfigs()
         {
-            return this._attributeConfigs != null && this._attributeConfigs.Count > 0; 
+            return this._attributeConfigs != null && (this._attributeConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

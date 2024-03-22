@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the ConfigurationItems
         /// </summary>
         public IPaginatedEnumerable<ConfigurationItem> ConfigurationItems => 
-            new PaginatedResultKeyResponse<GetResourceConfigHistoryResponse, ConfigurationItem>(this, (i) => i.ConfigurationItems);
+            new PaginatedResultKeyResponse<GetResourceConfigHistoryResponse, ConfigurationItem>(this, (i) => i.ConfigurationItems ?? new List<ConfigurationItem>());
 
         internal GetResourceConfigHistoryPaginator(IAmazonConfigService client, GetResourceConfigHistoryRequest request)
         {

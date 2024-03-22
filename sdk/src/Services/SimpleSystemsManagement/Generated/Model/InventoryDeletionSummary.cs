@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class InventoryDeletionSummary
     {
         private int? _remainingCount;
-        private List<InventoryDeletionSummaryItem> _summaryItems = new List<InventoryDeletionSummaryItem>();
+        private List<InventoryDeletionSummaryItem> _summaryItems = AWSConfigs.InitializeCollections ? new List<InventoryDeletionSummaryItem>() : null;
         private int? _totalCount;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if SummaryItems property is set
         internal bool IsSetSummaryItems()
         {
-            return this._summaryItems != null && this._summaryItems.Count > 0; 
+            return this._summaryItems != null && (this._summaryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

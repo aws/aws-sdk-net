@@ -37,7 +37,7 @@ namespace Amazon.AppConfig.Model
         private string _extensionArn;
         private int? _extensionVersionNumber;
         private string _id;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceArn;
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.AppConfig.Model
         /// The parameter names and values defined in the association.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Min=0, Max=10)]
         public Dictionary<string, string> Parameters
         {
             get { return this._parameters; }
@@ -131,7 +131,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

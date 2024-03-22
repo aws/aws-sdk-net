@@ -45,7 +45,7 @@ namespace Amazon.SSMContacts.Model
         /// Enumerable containing all of the PageResolutions
         /// </summary>
         public IPaginatedEnumerable<ResolutionContact> PageResolutions => 
-            new PaginatedResultKeyResponse<ListPageResolutionsResponse, ResolutionContact>(this, (i) => i.PageResolutions);
+            new PaginatedResultKeyResponse<ListPageResolutionsResponse, ResolutionContact>(this, (i) => i.PageResolutions ?? new List<ResolutionContact>());
 
         internal ListPageResolutionsPaginator(IAmazonSSMContacts client, ListPageResolutionsRequest request)
         {

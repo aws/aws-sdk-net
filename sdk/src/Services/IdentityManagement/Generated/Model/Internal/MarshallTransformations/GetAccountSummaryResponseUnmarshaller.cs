@@ -84,6 +84,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SummaryMap/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                        if (response.SummaryMap == null)
+                        {
+                            response.SummaryMap = new Dictionary<string, int>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SummaryMap.Add(item);
                         continue;

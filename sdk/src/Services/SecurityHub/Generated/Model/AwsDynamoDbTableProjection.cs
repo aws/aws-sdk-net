@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsDynamoDbTableProjection
     {
-        private List<string> _nonKeyAttributes = new List<string>();
+        private List<string> _nonKeyAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _projectionType;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if NonKeyAttributes property is set
         internal bool IsSetNonKeyAttributes()
         {
-            return this._nonKeyAttributes != null && this._nonKeyAttributes.Count > 0; 
+            return this._nonKeyAttributes != null && (this._nonKeyAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

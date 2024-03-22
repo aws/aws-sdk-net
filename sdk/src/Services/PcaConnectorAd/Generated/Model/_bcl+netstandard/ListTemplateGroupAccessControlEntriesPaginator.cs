@@ -45,7 +45,7 @@ namespace Amazon.PcaConnectorAd.Model
         /// Enumerable containing all of the AccessControlEntries
         /// </summary>
         public IPaginatedEnumerable<AccessControlEntrySummary> AccessControlEntries => 
-            new PaginatedResultKeyResponse<ListTemplateGroupAccessControlEntriesResponse, AccessControlEntrySummary>(this, (i) => i.AccessControlEntries);
+            new PaginatedResultKeyResponse<ListTemplateGroupAccessControlEntriesResponse, AccessControlEntrySummary>(this, (i) => i.AccessControlEntries ?? new List<AccessControlEntrySummary>());
 
         internal ListTemplateGroupAccessControlEntriesPaginator(IAmazonPcaConnectorAd client, ListTemplateGroupAccessControlEntriesRequest request)
         {

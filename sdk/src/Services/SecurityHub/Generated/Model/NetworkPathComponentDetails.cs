@@ -33,8 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class NetworkPathComponentDetails
     {
-        private List<string> _address = new List<string>();
-        private List<PortRange> _portRanges = new List<PortRange>();
+        private List<string> _address = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<PortRange> _portRanges = AWSConfigs.InitializeCollections ? new List<PortRange>() : null;
 
         /// <summary>
         /// Gets and sets the property Address. 
@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Address property is set
         internal bool IsSetAddress()
         {
-            return this._address != null && this._address.Count > 0; 
+            return this._address != null && (this._address.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PortRanges property is set
         internal bool IsSetPortRanges()
         {
-            return this._portRanges != null && this._portRanges.Count > 0; 
+            return this._portRanges != null && (this._portRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

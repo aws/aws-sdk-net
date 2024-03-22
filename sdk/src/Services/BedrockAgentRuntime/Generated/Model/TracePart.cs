@@ -33,7 +33,11 @@ using Amazon.Runtime.EventStreams.Utils;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Trace Part which contains intermidate response for customer
+    /// Contains information about the agent and session, alongside the agent's reasoning
+    /// process and results from calling API actions and querying knowledge bases and metadata
+    /// about the trace. You can use the trace to understand how the agent arrived at the
+    /// response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace
+    /// enablement</a>.
     /// </summary>
     public partial class TracePart
         : IEventStreamEvent
@@ -44,7 +48,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private Trace _trace;
 
         /// <summary>
-        /// Gets and sets the property AgentAliasId.
+        /// Gets and sets the property AgentAliasId. 
+        /// <para>
+        /// The unique identifier of the alias of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public string AgentAliasId
@@ -60,7 +67,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentId.
+        /// Gets and sets the property AgentId. 
+        /// <para>
+        /// The unique identifier of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public string AgentId
@@ -76,7 +86,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SessionId.
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The unique identifier of the session with the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=100)]
         public string SessionId
@@ -92,7 +105,13 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Trace.
+        /// Gets and sets the property Trace. 
+        /// <para>
+        /// Contains one part of the agent's reasoning process and results from calling API actions
+        /// and querying knowledge bases. You can use the trace to understand how the agent arrived
+        /// at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace
+        /// enablement</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Trace Trace

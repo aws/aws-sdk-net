@@ -39,7 +39,7 @@ namespace Amazon.IoTWireless.Model
         private Gnss _gnss;
         private Ip _ip;
         private DateTime? _timestamp;
-        private List<WiFiAccessPoint> _wiFiAccessPoints = new List<WiFiAccessPoint>();
+        private List<WiFiAccessPoint> _wiFiAccessPoints = AWSConfigs.InitializeCollections ? new List<WiFiAccessPoint>() : null;
 
         /// <summary>
         /// Gets and sets the property CellTowers. 
@@ -135,7 +135,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if WiFiAccessPoints property is set
         internal bool IsSetWiFiAccessPoints()
         {
-            return this._wiFiAccessPoints != null && this._wiFiAccessPoints.Count > 0; 
+            return this._wiFiAccessPoints != null && (this._wiFiAccessPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

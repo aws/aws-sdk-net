@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetNetworkInsightsAccessScopeAnalysisFindingsResponse : AmazonWebServiceResponse
     {
-        private List<AccessScopeAnalysisFinding> _analysisFindings = new List<AccessScopeAnalysisFinding>();
+        private List<AccessScopeAnalysisFinding> _analysisFindings = AWSConfigs.InitializeCollections ? new List<AccessScopeAnalysisFinding>() : null;
         private AnalysisStatus _analysisStatus;
         private string _networkInsightsAccessScopeAnalysisId;
         private string _nextToken;
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if AnalysisFindings property is set
         internal bool IsSetAnalysisFindings()
         {
-            return this._analysisFindings != null && this._analysisFindings.Count > 0; 
+            return this._analysisFindings != null && (this._analysisFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.MigrationHub.Model
     /// </summary>
     public partial class ListCreatedArtifactsResponse : AmazonWebServiceResponse
     {
-        private List<CreatedArtifact> _createdArtifactList = new List<CreatedArtifact>();
+        private List<CreatedArtifact> _createdArtifactList = AWSConfigs.InitializeCollections ? new List<CreatedArtifact>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.MigrationHub.Model
         // Check to see if CreatedArtifactList property is set
         internal bool IsSetCreatedArtifactList()
         {
-            return this._createdArtifactList != null && this._createdArtifactList.Count > 0; 
+            return this._createdArtifactList != null && (this._createdArtifactList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

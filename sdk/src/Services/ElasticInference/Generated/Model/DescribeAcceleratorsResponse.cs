@@ -33,7 +33,7 @@ namespace Amazon.ElasticInference.Model
     /// </summary>
     public partial class DescribeAcceleratorsResponse : AmazonWebServiceResponse
     {
-        private List<ElasticInferenceAccelerator> _acceleratorSet = new List<ElasticInferenceAccelerator>();
+        private List<ElasticInferenceAccelerator> _acceleratorSet = AWSConfigs.InitializeCollections ? new List<ElasticInferenceAccelerator>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ElasticInference.Model
         // Check to see if AcceleratorSet property is set
         internal bool IsSetAcceleratorSet()
         {
-            return this._acceleratorSet != null && this._acceleratorSet.Count > 0; 
+            return this._acceleratorSet != null && (this._acceleratorSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

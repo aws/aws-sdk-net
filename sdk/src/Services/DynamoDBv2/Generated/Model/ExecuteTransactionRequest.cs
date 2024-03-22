@@ -47,7 +47,7 @@ namespace Amazon.DynamoDBv2.Model
     {
         private string _clientRequestToken;
         private ReturnConsumedCapacity _returnConsumedCapacity;
-        private List<ParameterizedStatement> _transactStatements = new List<ParameterizedStatement>();
+        private List<ParameterizedStatement> _transactStatements = AWSConfigs.InitializeCollections ? new List<ParameterizedStatement>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -105,7 +105,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if TransactStatements property is set
         internal bool IsSetTransactStatements()
         {
-            return this._transactStatements != null && this._transactStatements.Count > 0; 
+            return this._transactStatements != null && (this._transactStatements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

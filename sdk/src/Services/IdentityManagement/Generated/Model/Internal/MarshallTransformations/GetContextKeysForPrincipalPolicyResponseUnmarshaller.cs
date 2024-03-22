@@ -84,6 +84,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ContextKeyNames/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.ContextKeyNames == null)
+                        {
+                            response.ContextKeyNames = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ContextKeyNames.Add(item);
                         continue;

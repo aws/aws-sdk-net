@@ -35,7 +35,7 @@ namespace Amazon.CloudTrail.Model
     {
         private string _errorMessage;
         private string _nextToken;
-        private List<List<Dictionary<string, string>>> _queryResultRows = new List<List<Dictionary<string, string>>>();
+        private List<List<Dictionary<string, string>>> _queryResultRows = AWSConfigs.InitializeCollections ? new List<List<Dictionary<string, string>>>() : null;
         private QueryStatistics _queryStatistics;
         private QueryStatus _queryStatus;
 
@@ -92,7 +92,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if QueryResultRows property is set
         internal bool IsSetQueryResultRows()
         {
-            return this._queryResultRows != null && this._queryResultRows.Count > 0; 
+            return this._queryResultRows != null && (this._queryResultRows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

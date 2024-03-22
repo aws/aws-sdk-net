@@ -123,6 +123,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRuntimeEnvironmentUpdate())
+                {
+                    context.Writer.WritePropertyName("RuntimeEnvironmentUpdate");
+                    context.Writer.Write(publicRequest.RuntimeEnvironmentUpdate);
+                }
+
                 if(publicRequest.IsSetServiceExecutionRoleUpdate())
                 {
                     context.Writer.WritePropertyName("ServiceExecutionRoleUpdate");

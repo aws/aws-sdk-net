@@ -34,7 +34,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class EksSource
     {
         private string _eksClusterArn;
-        private List<string> _namespaces = new List<string>();
+        private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EksClusterArn. 
@@ -75,7 +75,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if Namespaces property is set
         internal bool IsSetNamespaces()
         {
-            return this._namespaces != null && this._namespaces.Count > 0; 
+            return this._namespaces != null && (this._namespaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class ListForecastExportJobsResponse : AmazonWebServiceResponse
     {
-        private List<ForecastExportJobSummary> _forecastExportJobs = new List<ForecastExportJobSummary>();
+        private List<ForecastExportJobSummary> _forecastExportJobs = AWSConfigs.InitializeCollections ? new List<ForecastExportJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if ForecastExportJobs property is set
         internal bool IsSetForecastExportJobs()
         {
-            return this._forecastExportJobs != null && this._forecastExportJobs.Count > 0; 
+            return this._forecastExportJobs != null && (this._forecastExportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

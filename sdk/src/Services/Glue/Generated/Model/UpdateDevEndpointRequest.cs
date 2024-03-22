@@ -34,11 +34,11 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class UpdateDevEndpointRequest : AmazonGlueRequest
     {
-        private Dictionary<string, string> _addArguments = new Dictionary<string, string>();
-        private List<string> _addPublicKeys = new List<string>();
+        private Dictionary<string, string> _addArguments = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _addPublicKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DevEndpointCustomLibraries _customLibraries;
-        private List<string> _deleteArguments = new List<string>();
-        private List<string> _deletePublicKeys = new List<string>();
+        private List<string> _deleteArguments = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _deletePublicKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _endpointName;
         private string _publicKey;
         private bool? _updateEtlLibraries;
@@ -73,7 +73,7 @@ namespace Amazon.Glue.Model
         // Check to see if AddArguments property is set
         internal bool IsSetAddArguments()
         {
-            return this._addArguments != null && this._addArguments.Count > 0; 
+            return this._addArguments != null && (this._addArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.Glue.Model
         // Check to see if AddPublicKeys property is set
         internal bool IsSetAddPublicKeys()
         {
-            return this._addPublicKeys != null && this._addPublicKeys.Count > 0; 
+            return this._addPublicKeys != null && (this._addPublicKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.Glue.Model
         // Check to see if DeleteArguments property is set
         internal bool IsSetDeleteArguments()
         {
-            return this._deleteArguments != null && this._deleteArguments.Count > 0; 
+            return this._deleteArguments != null && (this._deleteArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.Glue.Model
         // Check to see if DeletePublicKeys property is set
         internal bool IsSetDeletePublicKeys()
         {
-            return this._deletePublicKeys != null && this._deletePublicKeys.Count > 0; 
+            return this._deletePublicKeys != null && (this._deletePublicKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

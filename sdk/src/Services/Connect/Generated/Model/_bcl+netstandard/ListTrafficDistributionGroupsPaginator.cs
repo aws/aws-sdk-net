@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the TrafficDistributionGroupSummaryList
         /// </summary>
         public IPaginatedEnumerable<TrafficDistributionGroupSummary> TrafficDistributionGroupSummaryList => 
-            new PaginatedResultKeyResponse<ListTrafficDistributionGroupsResponse, TrafficDistributionGroupSummary>(this, (i) => i.TrafficDistributionGroupSummaryList);
+            new PaginatedResultKeyResponse<ListTrafficDistributionGroupsResponse, TrafficDistributionGroupSummary>(this, (i) => i.TrafficDistributionGroupSummaryList ?? new List<TrafficDistributionGroupSummary>());
 
         internal ListTrafficDistributionGroupsPaginator(IAmazonConnect client, ListTrafficDistributionGroupsRequest request)
         {

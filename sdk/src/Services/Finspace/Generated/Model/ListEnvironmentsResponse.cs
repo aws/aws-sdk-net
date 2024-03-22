@@ -33,7 +33,7 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class ListEnvironmentsResponse : AmazonWebServiceResponse
     {
-        private List<Environment> _environments = new List<Environment>();
+        private List<Environment> _environments = AWSConfigs.InitializeCollections ? new List<Environment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Environments property is set
         internal bool IsSetEnvironments()
         {
-            return this._environments != null && this._environments.Count > 0; 
+            return this._environments != null && (this._environments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

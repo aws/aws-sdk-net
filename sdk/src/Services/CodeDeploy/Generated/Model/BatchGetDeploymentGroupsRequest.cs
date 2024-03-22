@@ -35,7 +35,7 @@ namespace Amazon.CodeDeploy.Model
     public partial class BatchGetDeploymentGroupsRequest : AmazonCodeDeployRequest
     {
         private string _applicationName;
-        private List<string> _deploymentGroupNames = new List<string>();
+        private List<string> _deploymentGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -73,7 +73,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if DeploymentGroupNames property is set
         internal bool IsSetDeploymentGroupNames()
         {
-            return this._deploymentGroupNames != null && this._deploymentGroupNames.Count > 0; 
+            return this._deploymentGroupNames != null && (this._deploymentGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

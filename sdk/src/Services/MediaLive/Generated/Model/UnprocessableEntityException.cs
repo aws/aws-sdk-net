@@ -36,7 +36,7 @@ namespace Amazon.MediaLive.Model
     #endif
     public partial class UnprocessableEntityException : AmazonMediaLiveException
     {
-        private List<ValidationError> _validationErrors = new List<ValidationError>();
+        private List<ValidationError> _validationErrors = AWSConfigs.InitializeCollections ? new List<ValidationError>() : null;
 
         /// <summary>
         /// Constructs a new UnprocessableEntityException with the specified error
@@ -130,7 +130,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if ValidationErrors property is set
         internal bool IsSetValidationErrors()
         {
-            return this._validationErrors != null && this._validationErrors.Count > 0; 
+            return this._validationErrors != null && (this._validationErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

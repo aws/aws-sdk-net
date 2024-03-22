@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the EventTrackers
         /// </summary>
         public IPaginatedEnumerable<EventTrackerSummary> EventTrackers => 
-            new PaginatedResultKeyResponse<ListEventTrackersResponse, EventTrackerSummary>(this, (i) => i.EventTrackers);
+            new PaginatedResultKeyResponse<ListEventTrackersResponse, EventTrackerSummary>(this, (i) => i.EventTrackers ?? new List<EventTrackerSummary>());
 
         internal ListEventTrackersPaginator(IAmazonPersonalize client, ListEventTrackersRequest request)
         {

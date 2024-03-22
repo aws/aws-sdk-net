@@ -63,6 +63,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DkimTokens/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.DkimTokens == null)
+                        {
+                            unmarshalledObject.DkimTokens = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DkimTokens.Add(item);
                         continue;

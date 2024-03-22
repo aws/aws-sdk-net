@@ -45,7 +45,7 @@ namespace Amazon.ServerMigrationService.Model
         /// Enumerable containing all of the ServerList
         /// </summary>
         public IPaginatedEnumerable<Server> ServerList => 
-            new PaginatedResultKeyResponse<GetServersResponse, Server>(this, (i) => i.ServerList);
+            new PaginatedResultKeyResponse<GetServersResponse, Server>(this, (i) => i.ServerList ?? new List<Server>());
 
         internal GetServersPaginator(IAmazonServerMigrationService client, GetServersRequest request)
         {

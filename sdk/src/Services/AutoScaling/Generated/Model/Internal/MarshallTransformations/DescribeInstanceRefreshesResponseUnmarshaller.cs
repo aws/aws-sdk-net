@@ -84,6 +84,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("InstanceRefreshes/member", targetDepth))
                     {
                         var unmarshaller = InstanceRefreshUnmarshaller.Instance;
+                        if (response.InstanceRefreshes == null)
+                        {
+                            response.InstanceRefreshes = new List<InstanceRefresh>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.InstanceRefreshes.Add(item);
                         continue;

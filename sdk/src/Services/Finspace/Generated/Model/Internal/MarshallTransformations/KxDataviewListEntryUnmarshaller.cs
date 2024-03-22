@@ -129,6 +129,12 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("readWrite", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.ReadWrite = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("segmentConfigurations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<KxDataviewSegmentConfiguration, KxDataviewSegmentConfigurationUnmarshaller>(KxDataviewSegmentConfigurationUnmarshaller.Instance);

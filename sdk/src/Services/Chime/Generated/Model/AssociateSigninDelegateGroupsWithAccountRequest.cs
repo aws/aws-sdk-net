@@ -35,7 +35,7 @@ namespace Amazon.Chime.Model
     public partial class AssociateSigninDelegateGroupsWithAccountRequest : AmazonChimeRequest
     {
         private string _accountId;
-        private List<SigninDelegateGroup> _signinDelegateGroups = new List<SigninDelegateGroup>();
+        private List<SigninDelegateGroup> _signinDelegateGroups = AWSConfigs.InitializeCollections ? new List<SigninDelegateGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -72,7 +72,7 @@ namespace Amazon.Chime.Model
         // Check to see if SigninDelegateGroups property is set
         internal bool IsSetSigninDelegateGroups()
         {
-            return this._signinDelegateGroups != null && this._signinDelegateGroups.Count > 0; 
+            return this._signinDelegateGroups != null && (this._signinDelegateGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

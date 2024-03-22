@@ -290,7 +290,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
 
             var successFlag = true;
-            if (response.S3Objects.Count > 0)
+            if (response.S3Objects != null && response.S3Objects.Count > 0)
             {
                 successFlag = false;
             }

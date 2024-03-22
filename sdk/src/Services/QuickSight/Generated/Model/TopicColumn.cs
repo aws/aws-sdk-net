@@ -34,20 +34,20 @@ namespace Amazon.QuickSight.Model
     public partial class TopicColumn
     {
         private DefaultAggregation _aggregation;
-        private List<string> _allowedAggregations = new List<string>();
-        private List<CellValueSynonym> _cellValueSynonyms = new List<CellValueSynonym>();
+        private List<string> _allowedAggregations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<CellValueSynonym> _cellValueSynonyms = AWSConfigs.InitializeCollections ? new List<CellValueSynonym>() : null;
         private ColumnDataRole _columnDataRole;
         private string _columnDescription;
         private string _columnFriendlyName;
         private string _columnName;
-        private List<string> _columnSynonyms = new List<string>();
+        private List<string> _columnSynonyms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ComparativeOrder _comparativeOrder;
         private DefaultFormatting _defaultFormatting;
         private bool? _disableIndexing;
         private bool? _isIncludedInTopic;
         private bool? _neverAggregateInFilter;
         private bool? _nonAdditive;
-        private List<string> _notAllowedAggregations = new List<string>();
+        private List<string> _notAllowedAggregations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SemanticType _semanticType;
         private TopicTimeGranularity _timeGranularity;
 
@@ -87,7 +87,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AllowedAggregations property is set
         internal bool IsSetAllowedAggregations()
         {
-            return this._allowedAggregations != null && this._allowedAggregations.Count > 0; 
+            return this._allowedAggregations != null && (this._allowedAggregations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if CellValueSynonyms property is set
         internal bool IsSetCellValueSynonyms()
         {
-            return this._cellValueSynonyms != null && this._cellValueSynonyms.Count > 0; 
+            return this._cellValueSynonyms != null && (this._cellValueSynonyms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ColumnSynonyms property is set
         internal bool IsSetColumnSynonyms()
         {
-            return this._columnSynonyms != null && this._columnSynonyms.Count > 0; 
+            return this._columnSynonyms != null && (this._columnSynonyms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -329,7 +329,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if NotAllowedAggregations property is set
         internal bool IsSetNotAllowedAggregations()
         {
-            return this._notAllowedAggregations != null && this._notAllowedAggregations.Count > 0; 
+            return this._notAllowedAggregations != null && (this._notAllowedAggregations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

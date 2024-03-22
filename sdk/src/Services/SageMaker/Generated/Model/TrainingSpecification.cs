@@ -34,12 +34,12 @@ namespace Amazon.SageMaker.Model
     public partial class TrainingSpecification
     {
         private AdditionalS3DataSource _additionalS3DataSource;
-        private List<MetricDefinition> _metricDefinitions = new List<MetricDefinition>();
-        private List<HyperParameterSpecification> _supportedHyperParameters = new List<HyperParameterSpecification>();
-        private List<string> _supportedTrainingInstanceTypes = new List<string>();
-        private List<HyperParameterTuningJobObjective> _supportedTuningJobObjectiveMetrics = new List<HyperParameterTuningJobObjective>();
+        private List<MetricDefinition> _metricDefinitions = AWSConfigs.InitializeCollections ? new List<MetricDefinition>() : null;
+        private List<HyperParameterSpecification> _supportedHyperParameters = AWSConfigs.InitializeCollections ? new List<HyperParameterSpecification>() : null;
+        private List<string> _supportedTrainingInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<HyperParameterTuningJobObjective> _supportedTuningJobObjectiveMetrics = AWSConfigs.InitializeCollections ? new List<HyperParameterTuningJobObjective>() : null;
         private bool? _supportsDistributedTraining;
-        private List<ChannelSpecification> _trainingChannels = new List<ChannelSpecification>();
+        private List<ChannelSpecification> _trainingChannels = AWSConfigs.InitializeCollections ? new List<ChannelSpecification>() : null;
         private string _trainingImage;
         private string _trainingImageDigest;
 
@@ -78,7 +78,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MetricDefinitions property is set
         internal bool IsSetMetricDefinitions()
         {
-            return this._metricDefinitions != null && this._metricDefinitions.Count > 0; 
+            return this._metricDefinitions != null && (this._metricDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SupportedHyperParameters property is set
         internal bool IsSetSupportedHyperParameters()
         {
-            return this._supportedHyperParameters != null && this._supportedHyperParameters.Count > 0; 
+            return this._supportedHyperParameters != null && (this._supportedHyperParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SupportedTrainingInstanceTypes property is set
         internal bool IsSetSupportedTrainingInstanceTypes()
         {
-            return this._supportedTrainingInstanceTypes != null && this._supportedTrainingInstanceTypes.Count > 0; 
+            return this._supportedTrainingInstanceTypes != null && (this._supportedTrainingInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SupportedTuningJobObjectiveMetrics property is set
         internal bool IsSetSupportedTuningJobObjectiveMetrics()
         {
-            return this._supportedTuningJobObjectiveMetrics != null && this._supportedTuningJobObjectiveMetrics.Count > 0; 
+            return this._supportedTuningJobObjectiveMetrics != null && (this._supportedTuningJobObjectiveMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if TrainingChannels property is set
         internal bool IsSetTrainingChannels()
         {
-            return this._trainingChannels != null && this._trainingChannels.Count > 0; 
+            return this._trainingChannels != null && (this._trainingChannels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

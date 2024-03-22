@@ -34,13 +34,13 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class CreateIpAccessSettingsRequest : AmazonWorkSpacesWebRequest
     {
-        private Dictionary<string, string> _additionalEncryptionContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _clientToken;
         private string _customerManagedKey;
         private string _description;
         private string _displayName;
-        private List<IpRule> _ipRules = new List<IpRule>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<IpRule> _ipRules = AWSConfigs.InitializeCollections ? new List<IpRule>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalEncryptionContext. 
@@ -57,7 +57,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if AdditionalEncryptionContext property is set
         internal bool IsSetAdditionalEncryptionContext()
         {
-            return this._additionalEncryptionContext != null && this._additionalEncryptionContext.Count > 0; 
+            return this._additionalEncryptionContext != null && (this._additionalEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if IpRules property is set
         internal bool IsSetIpRules()
         {
-            return this._ipRules != null && this._ipRules.Count > 0; 
+            return this._ipRules != null && (this._ipRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

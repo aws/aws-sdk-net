@@ -36,9 +36,9 @@ namespace Amazon.SecurityLake.Model
     public partial class DataLakeSource
     {
         private string _account;
-        private List<string> _eventClasses = new List<string>();
+        private List<string> _eventClasses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sourceName;
-        private List<DataLakeSourceStatus> _sourceStatuses = new List<DataLakeSourceStatus>();
+        private List<DataLakeSourceStatus> _sourceStatuses = AWSConfigs.InitializeCollections ? new List<DataLakeSourceStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property Account. 
@@ -192,7 +192,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if EventClasses property is set
         internal bool IsSetEventClasses()
         {
-            return this._eventClasses != null && this._eventClasses.Count > 0; 
+            return this._eventClasses != null && (this._eventClasses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if SourceStatuses property is set
         internal bool IsSetSourceStatuses()
         {
-            return this._sourceStatuses != null && this._sourceStatuses.Count > 0; 
+            return this._sourceStatuses != null && (this._sourceStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

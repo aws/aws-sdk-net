@@ -45,7 +45,7 @@ namespace Amazon.FMS.Model
         /// Enumerable containing all of the AdminAccounts
         /// </summary>
         public IPaginatedEnumerable<string> AdminAccounts => 
-            new PaginatedResultKeyResponse<ListAdminsManagingAccountResponse, string>(this, (i) => i.AdminAccounts);
+            new PaginatedResultKeyResponse<ListAdminsManagingAccountResponse, string>(this, (i) => i.AdminAccounts ?? new List<string>());
 
         internal ListAdminsManagingAccountPaginator(IAmazonFMS client, ListAdminsManagingAccountRequest request)
         {

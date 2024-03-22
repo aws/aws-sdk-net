@@ -34,8 +34,8 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class LayerVersionsListItem
     {
-        private List<string> _compatibleArchitectures = new List<string>();
-        private List<string> _compatibleRuntimes = new List<string>();
+        private List<string> _compatibleArchitectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _compatibleRuntimes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _createdDate;
         private string _description;
         private string _layerVersionArn;
@@ -59,7 +59,7 @@ namespace Amazon.Lambda.Model
         // Check to see if CompatibleArchitectures property is set
         internal bool IsSetCompatibleArchitectures()
         {
-            return this._compatibleArchitectures != null && this._compatibleArchitectures.Count > 0; 
+            return this._compatibleArchitectures != null && (this._compatibleArchitectures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.Lambda.Model
         // Check to see if CompatibleRuntimes property is set
         internal bool IsSetCompatibleRuntimes()
         {
-            return this._compatibleRuntimes != null && this._compatibleRuntimes.Count > 0; 
+            return this._compatibleRuntimes != null && (this._compatibleRuntimes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

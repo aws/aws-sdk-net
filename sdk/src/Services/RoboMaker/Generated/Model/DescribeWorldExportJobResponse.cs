@@ -41,8 +41,8 @@ namespace Amazon.RoboMaker.Model
         private string _iamRole;
         private OutputLocation _outputLocation;
         private WorldExportJobStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<string> _worlds = new List<string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _worlds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -256,7 +256,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Worlds property is set
         internal bool IsSetWorlds()
         {
-            return this._worlds != null && this._worlds.Count > 0; 
+            return this._worlds != null && (this._worlds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

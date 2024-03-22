@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// Enumerable containing all of the UpdateActivities
         /// </summary>
         public IPaginatedEnumerable<UpdateInfoEntry> UpdateActivities => 
-            new PaginatedResultKeyResponse<DescribeUpdateDirectoryResponse, UpdateInfoEntry>(this, (i) => i.UpdateActivities);
+            new PaginatedResultKeyResponse<DescribeUpdateDirectoryResponse, UpdateInfoEntry>(this, (i) => i.UpdateActivities ?? new List<UpdateInfoEntry>());
 
         internal DescribeUpdateDirectoryPaginator(IAmazonDirectoryService client, DescribeUpdateDirectoryRequest request)
         {

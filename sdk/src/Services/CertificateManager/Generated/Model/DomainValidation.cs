@@ -36,7 +36,7 @@ namespace Amazon.CertificateManager.Model
         private string _domainName;
         private ResourceRecord _resourceRecord;
         private string _validationDomain;
-        private List<string> _validationEmails = new List<string>();
+        private List<string> _validationEmails = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ValidationMethod _validationMethod;
         private DomainStatus _validationStatus;
 
@@ -121,7 +121,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if ValidationEmails property is set
         internal bool IsSetValidationEmails()
         {
-            return this._validationEmails != null && this._validationEmails.Count > 0; 
+            return this._validationEmails != null && (this._validationEmails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

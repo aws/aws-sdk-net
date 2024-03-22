@@ -35,7 +35,7 @@ namespace Amazon.S3Control.Model
     {
         private string _functionArn;
         private string _invocationSchemaVersion;
-        private Dictionary<string, string> _userArguments = new Dictionary<string, string>();
+        private Dictionary<string, string> _userArguments = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property FunctionArn. 
@@ -115,7 +115,7 @@ namespace Amazon.S3Control.Model
         // Check to see if UserArguments property is set
         internal bool IsSetUserArguments()
         {
-            return this._userArguments != null && this._userArguments.Count > 0; 
+            return this._userArguments != null && (this._userArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

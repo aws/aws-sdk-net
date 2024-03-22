@@ -35,11 +35,11 @@ namespace Amazon.GuardDuty.Model
     {
         private string _addressFamily;
         private string _fileSystemType;
-        private List<string> _flags = new List<string>();
+        private List<string> _flags = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _ianaProtocolNumber;
         private string _ldPreloadValue;
         private string _libraryPath;
-        private List<string> _memoryRegions = new List<string>();
+        private List<string> _memoryRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _modifiedAt;
         private ProcessDetails _modifyingProcess;
         private string _moduleFilePath;
@@ -107,7 +107,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Flags property is set
         internal bool IsSetFlags()
         {
-            return this._flags != null && this._flags.Count > 0; 
+            return this._flags != null && (this._flags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if MemoryRegions property is set
         internal bool IsSetMemoryRegions()
         {
-            return this._memoryRegions != null && this._memoryRegions.Count > 0; 
+            return this._memoryRegions != null && (this._memoryRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

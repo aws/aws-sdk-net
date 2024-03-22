@@ -65,7 +65,7 @@ namespace Amazon.Organizations.Model
     public partial class InviteAccountToOrganizationRequest : AmazonOrganizationsRequest
     {
         private string _notes;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private HandshakeParty _target;
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.Organizations.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

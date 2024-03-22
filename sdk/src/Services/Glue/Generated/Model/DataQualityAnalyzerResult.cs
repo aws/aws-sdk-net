@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     public partial class DataQualityAnalyzerResult
     {
         private string _description;
-        private Dictionary<string, double> _evaluatedMetrics = new Dictionary<string, double>();
+        private Dictionary<string, double> _evaluatedMetrics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
         private string _evaluationMessage;
         private string _name;
 
@@ -72,7 +72,7 @@ namespace Amazon.Glue.Model
         // Check to see if EvaluatedMetrics property is set
         internal bool IsSetEvaluatedMetrics()
         {
-            return this._evaluatedMetrics != null && this._evaluatedMetrics.Count > 0; 
+            return this._evaluatedMetrics != null && (this._evaluatedMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

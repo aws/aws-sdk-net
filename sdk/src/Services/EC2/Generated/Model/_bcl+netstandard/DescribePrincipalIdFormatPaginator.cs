@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Principals
         /// </summary>
         public IPaginatedEnumerable<PrincipalIdFormat> Principals => 
-            new PaginatedResultKeyResponse<DescribePrincipalIdFormatResponse, PrincipalIdFormat>(this, (i) => i.Principals);
+            new PaginatedResultKeyResponse<DescribePrincipalIdFormatResponse, PrincipalIdFormat>(this, (i) => i.Principals ?? new List<PrincipalIdFormat>());
 
         internal DescribePrincipalIdFormatPaginator(IAmazonEC2 client, DescribePrincipalIdFormatRequest request)
         {
