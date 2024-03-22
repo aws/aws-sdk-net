@@ -248,6 +248,8 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Gets users and groups from IAM Identity Center identity source. To configure this,
         /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+        /// This is useful for user context filtering, where search results are filtered based
+        /// on the user or their group access to documents.
         /// </para>
         /// </summary>
         public UserGroupResolutionConfiguration UserGroupResolutionConfiguration

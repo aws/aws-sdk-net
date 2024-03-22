@@ -30,6 +30,29 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Provides the configuration information to connect to GitHub as your data source.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Amazon Kendra now supports an upgraded GitHub connector.
+    /// </para>
+    ///  
+    /// <para>
+    /// You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+    /// object instead of the <c>GitHubConfiguration</c> object to configure your connector.
+    /// </para>
+    ///  
+    /// <para>
+    /// Connectors configured using the older console and API architecture will continue to
+    /// function as configured. However, you won’t be able to edit or update them. If you
+    /// want to edit or update your connector configuration, you must create a new connector.
+    /// </para>
+    ///  
+    /// <para>
+    /// We recommended migrating your connector workflow to the upgraded version. Support
+    /// for connectors configured using the older architecture is scheduled to end by June
+    /// 2024.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GitHubConfiguration
     {

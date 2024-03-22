@@ -231,7 +231,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission
-        /// to write to your Amazon Cloudwatch logs.
+        /// to write to your Amazon CloudWatch logs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -250,7 +250,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionConfiguration. 
         /// <para>
-        /// The identifier of the KMScustomer master key (CMK) that is used to encrypt your data.
+        /// The identifier of the KMS customer master key (CMK) that is used to encrypt your data.
         /// Amazon Kendra doesn't support asymmetric CMKs.
         /// </para>
         /// </summary>
@@ -289,7 +289,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix when the index was last updated.
+        /// The Unix timestamp when the index was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt
@@ -325,8 +325,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UserGroupResolutionConfiguration. 
         /// <para>
-        /// Whether you have enabled the configuration for fetching access levels of groups and
-        /// users from an IAM Identity Center identity source.
+        /// Whether you have enabled IAM Identity Center identity source for your users and groups.
+        /// This is useful for user context filtering, where search results are filtered based
+        /// on the user or their group access to documents.
         /// </para>
         /// </summary>
         public UserGroupResolutionConfiguration UserGroupResolutionConfiguration

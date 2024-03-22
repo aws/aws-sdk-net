@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataSource operation.
-    /// Updates an existing Amazon Kendra data source connector.
+    /// Updates an Amazon Kendra data source connector.
     /// </summary>
     public partial class UpdateDataSourceRequest : AmazonKendraRequest
     {

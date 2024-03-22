@@ -231,7 +231,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the query result.
+        /// The unique identifier for the query result item id (<c>Id</c>) and the query result
+        /// item document id (<c>DocumentId</c>) combined. The value of this field changes with
+        /// every request, even when you have the same documents.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=73)]

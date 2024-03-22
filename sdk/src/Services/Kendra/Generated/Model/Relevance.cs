@@ -75,8 +75,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Indicates that this field determines how "fresh" a document is. For example, if document
         /// 1 was created on November 5, and document 2 was created on October 31, document 1
-        /// is "fresher" than document 2. You can only set the <c>Freshness</c> field on one <c>DATE</c>
-        /// type field. Only applies to <c>DATE</c> fields.
+        /// is "fresher" than document 2. Only applies to <c>DATE</c> fields.
         /// </para>
         /// </summary>
         public bool Freshness
@@ -130,7 +129,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// Only applies to <c>LONG</c> and <c>DOUBLE</c> fields.
+        /// Only applies to <c>LONG</c> fields.
         /// </para>
         /// </summary>
         public Order RankOrder
@@ -149,7 +148,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ValueImportanceMap. 
         /// <para>
         /// A list of values that should be given a different boost when they appear in the result
-        /// list. For example, if you are boosting a field called "department," query terms that
+        /// list. For example, if you are boosting a field called "department", query terms that
         /// match the department field are boosted in the result. However, you can add entries
         /// from the department field to boost documents with those values higher. 
         /// </para>

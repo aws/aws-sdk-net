@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIndex operation.
-    /// Updates an existing Amazon Kendra index.
+    /// Updates an Amazon Kendra index.
     /// </summary>
     public partial class UpdateIndexRequest : AmazonKendraRequest
     {
@@ -131,7 +131,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the index you want to update.
+        /// A new name for the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -188,8 +188,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UserGroupResolutionConfiguration. 
         /// <para>
-        /// Enables fetching access levels of groups and users from an IAM Identity Center identity
-        /// source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+        /// Gets users and groups from IAM Identity Center identity source. To configure this,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+        /// This is useful for user context filtering, where search results are filtered based
+        /// on the user or their group access to documents.
         /// </para>
         /// </summary>
         public UserGroupResolutionConfiguration UserGroupResolutionConfiguration

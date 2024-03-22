@@ -57,12 +57,13 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Provides the configuration information to connect to Alfresco as your data source.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
         /// Support for <c>AlfrescoConfiguration</c> ended May 2023. We recommend migrating to
         /// or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
         /// API.
         /// </para>
+        ///  </note>
         /// </summary>
         [Obsolete("Deprecated AlfrescoConfiguration in favor of TemplateConfiguration")]
         public AlfrescoConfiguration AlfrescoConfiguration
@@ -136,6 +137,28 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Provides the configuration information to connect to Amazon FSx as your data source.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Kendra now supports an upgraded Amazon FSx Windows connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+        /// object instead of the <c>FsxConfiguration</c> object to configure your connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// Connectors configured using the older console and API architecture will continue to
+        /// function as configured. However, you won't be able to edit or update them. If you
+        /// want to edit or update your connector configuration, you must create a new connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommended migrating your connector workflow to the upgraded version. Support
+        /// for connectors configured using the older architecture is scheduled to end by June
+        /// 2024.
+        /// </para>
+        ///  </note>
         /// </summary>
         public FsxConfiguration FsxConfiguration
         {
@@ -154,6 +177,28 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Provides the configuration information to connect to GitHub as your data source.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Kendra now supports an upgraded GitHub connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+        /// object instead of the <c>GitHubConfiguration</c> object to configure your connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// Connectors configured using the older console and API architecture will continue to
+        /// function as configured. However, you won’t be able to edit or update them. If you
+        /// want to edit or update your connector configuration, you must create a new connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommended migrating your connector workflow to the upgraded version. Support
+        /// for connectors configured using the older architecture is scheduled to end by June
+        /// 2024.
+        /// </para>
+        ///  </note>
         /// </summary>
         public GitHubConfiguration GitHubConfiguration
         {
@@ -246,6 +291,28 @@ namespace Amazon.Kendra.Model
         /// Provides the configuration information to connect to an Amazon S3 bucket as your data
         /// source.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Kendra now supports an upgraded Amazon S3 connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+        /// object instead of the <c>S3DataSourceConfiguration</c> object to configure your connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// Connectors configured using the older console and API architecture will continue to
+        /// function as configured. However, you won't be able to edit or update them. If you
+        /// want to edit or update your connector configuration, you must create a new connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommended migrating your connector workflow to the upgraded version. Support
+        /// for connectors configured using the older architecture is scheduled to end by June
+        /// 2024.
+        /// </para>
+        ///  </note>
         /// </summary>
         public S3DataSourceConfiguration S3Configuration
         {
@@ -319,6 +386,28 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Provides the configuration information to connect to Slack as your data source.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Kendra now supports an upgraded Slack connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+        /// object instead of the <c>SlackConfiguration</c> object to configure your connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// Connectors configured using the older console and API architecture will continue to
+        /// function as configured. However, you won't be able to edit or update them. If you
+        /// want to edit or update your connector configuration, you must create a new connector.
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommended migrating your connector workflow to the upgraded version. Support
+        /// for connectors configured using the older architecture is scheduled to end by June
+        /// 2024.
+        /// </para>
+        ///  </note>
         /// </summary>
         public SlackConfiguration SlackConfiguration
         {
