@@ -423,6 +423,29 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// You can specify up to 50 tags when creating a delivery stream.
         /// </para>
+        ///  
+        /// <para>
+        /// If you specify tags in the <c>CreateDeliveryStream</c> action, Amazon Data Firehose
+        /// performs an additional authorization on the <c>firehose:TagDeliveryStream</c> action
+        /// to verify if users have permissions to create tags. If you do not provide this permission,
+        /// requests to create new Firehose delivery streams with IAM resource tags will fail
+        /// with an <c>AccessDeniedException</c> such as following.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>AccessDeniedException</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// User: arn:aws:sts::x:assumed-role/x/x is not authorized to perform: firehose:TagDeliveryStream
+        /// on resource: arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in
+        /// an identity-based policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example IAM policy, see <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples">Tag
+        /// example.</a> 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
