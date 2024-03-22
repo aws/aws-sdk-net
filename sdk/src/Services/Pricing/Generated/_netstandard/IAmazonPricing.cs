@@ -195,6 +195,9 @@ namespace Amazon.Pricing
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
         /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
         /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
         /// You've made too many requests exceeding service quotas.
         /// </exception>
@@ -283,6 +286,9 @@ namespace Amazon.Pricing
         /// One or more parameters had an invalid value.
         /// </exception>
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
