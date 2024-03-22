@@ -12,24 +12,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using Amazon;
+using System.Diagnostics.CodeAnalysis;
 using Amazon.Runtime;
-
-using Amazon.Extensions.NETCore.Setup;
 
 namespace Amazon.Extensions.NETCore.Setup
 {
     /// <summary>
     /// The options used to construct AWS service clients like the Amazon.S3.AmazonS3Client.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.Extensions.NETCore.Setup.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class AWSOptions
     {
         /// <summary>
@@ -103,10 +93,30 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <typeparam name="T">The service interface that a service client will be created for.</typeparam>
         /// <returns>The service client that implements the service interface.</returns>
+#if NET8_0_OR_GREATER
+        [RequiresUnreferencedCode(InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public T CreateServiceClient<T>() where T : IAmazonService
         {
             return (T)ClientFactory.CreateServiceClient(null, typeof(T), this);
         }
+
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Create a service client for the specified service using the specified options.
+        /// For example if T is set to AmazonS3 then the AmazonS3ServiceClient which implements IAmazonS3 is created
+        /// and returned.
+        /// </summary>
+        /// <typeparam name="TClient">The service interface that a service client will be created for.</typeparam>
+        /// <typeparam name="TConfiguration">The type of the service configuration the client will be created with.</typeparam>
+        /// <returns>The service client of the specified type.</returns>
+        public TClient CreateServiceClient<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TClient, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TConfiguration>()
+            where TClient : class, IAmazonService
+            where TConfiguration : ClientConfig, new()
+        {
+            return ClientFactory.CreateServiceClient<TClient, TConfiguration>(null, this);
+        }
+#endif
 
         /// <summary>
         /// Container for logging settings of the SDK

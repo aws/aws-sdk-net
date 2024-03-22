@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
@@ -26,9 +27,6 @@ namespace Amazon.Extensions.NETCore.Setup
     /// <summary>
     /// The factory class for creating AWS service clients from the AWS SDK for .NET.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.Extensions.NETCore.Setup.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class ClientFactory
     {
         private static readonly Type[] EMPTY_TYPES = Array.Empty<Type>();
@@ -53,9 +51,12 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <param name="provider">The dependency injection provider.</param>
         /// <returns>The AWS service client</returns>
+#if NET8_0_OR_GREATER
+        [RequiresUnreferencedCode(InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         internal object CreateServiceClient(IServiceProvider provider)
         {
-            var loggerFactory = provider.GetService<Microsoft.Extensions.Logging.ILoggerFactory>();
+            var loggerFactory = provider.GetService<ILoggerFactory>();
             var logger = loggerFactory?.CreateLogger("AWSSDK");
 
             var options = _awsOptions ?? provider.GetService<AWSOptions>();
@@ -79,6 +80,9 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <param name="provider">The dependency injection provider.</param>
         /// <returns>The AWS service client</returns>
+#if NET8_0_OR_GREATER
+        [RequiresUnreferencedCode(InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         internal static IAmazonService CreateServiceClient(ILogger logger, Type serviceInterfaceType, AWSOptions options)
         {
             PerformGlobalConfig(logger, options);
@@ -93,6 +97,47 @@ namespace Amazon.Extensions.NETCore.Setup
             var client = CreateClient(serviceInterfaceType, credentials, config);
             return client as IAmazonService;
         }
+
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Creates the AWS service client that implements the service client interface. The AWSOptions object
+        /// will be searched for in the IServiceProvider.
+        /// </summary>
+        /// <param name="provider">The dependency injection provider.</param>
+        /// <returns>The AWS service client</returns>
+        internal static TClient CreateServiceClient<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TClient, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TConfiguration>(
+            IServiceProvider provider,
+            AWSOptions options)
+            where TClient : class, IAmazonService
+            where TConfiguration : ClientConfig, new()
+        {
+            var loggerFactory = provider?.GetService<ILoggerFactory>();
+            var logger = loggerFactory?.CreateLogger("AWSSDK");
+
+            options ??= provider.GetService<AWSOptions>();
+            if (options == null)
+            {
+                var configuration = provider.GetService<IConfiguration>();
+                if (configuration != null)
+                {
+                    options = configuration.GetAWSOptions();
+                    if (options != null)
+                        logger?.LogInformation("Found AWS options in IConfiguration");
+                }
+            }
+
+            PerformGlobalConfig(logger, options);
+            var credentials = CreateCredentials(logger, options);
+
+            if (!string.IsNullOrEmpty(options?.SessionRoleArn))
+            {
+                credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName);
+            }
+
+            var config = CreateConfig<TConfiguration>(options);
+            return CreateClient<TClient, TConfiguration>(credentials, config);
+        }
+#endif
 
         /// <summary>
         /// Performs all of the global settings that have been specified in AWSOptions.
@@ -135,6 +180,9 @@ namespace Amazon.Extensions.NETCore.Setup
         /// <param name="credentials"></param>
         /// <param name="config"></param>
         /// <returns></returns>
+#if NET8_0_OR_GREATER
+        [RequiresUnreferencedCode(InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         private static AmazonServiceClient CreateClient(Type serviceInterfaceType, AWSCredentials credentials, ClientConfig config)
         {
             var clientTypeName = serviceInterfaceType.Namespace + "." + serviceInterfaceType.Name.Substring(1) + "Client";
@@ -152,6 +200,40 @@ namespace Amazon.Extensions.NETCore.Setup
 
             return constructor.Invoke(new object[] { credentials, config }) as AmazonServiceClient;
         }
+
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Creates the service client using the credentials and client config.
+        /// </summary>
+        /// <param name="credentials">The AWS credentials to use.</param>
+        /// <param name="config">The client configuration to use.</param>
+        /// <returns>
+        /// The created instance of <typeparamref name="TClient"/>TClient.
+        /// </returns>
+        private static TClient CreateClient<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TClient, TConfiguration>(
+            AWSCredentials credentials,
+            TConfiguration config)
+            where TClient : class, IAmazonService
+            where TConfiguration : ClientConfig, new()
+        {
+            if (typeof(TClient).IsInterface)
+            {
+                throw new AmazonClientException($"Service client {typeof(TClient)} is an interface and cannot be instantiated.");
+            }
+            else if (typeof(TClient).IsAbstract)
+            {
+                throw new AmazonClientException($"Service client {typeof(TClient)} is an abstract class and cannot be instantiated.");
+            }
+
+            var constructor = typeof(TClient).GetConstructor(new Type[] { typeof(AWSCredentials), typeof(TConfiguration) });
+            if (constructor == null)
+            {
+                throw new AmazonClientException($"Service client {typeof(TClient)} missing a constructor with parameters AWSCredentials and {typeof(TConfiguration).FullName}.");
+            }
+
+            return (TClient)constructor.Invoke(new object[] { credentials, config });
+        }
+#endif
 
         /// <summary>
         /// Creates the AWSCredentials using either the profile indicated from the AWSOptions object
@@ -203,6 +285,9 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
+#if NET8_0_OR_GREATER
+        [RequiresUnreferencedCode(InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         private static ClientConfig CreateConfig(Type serviceInterfaceType, AWSOptions options)
         {
             var configTypeName = serviceInterfaceType.Namespace + "." + serviceInterfaceType.Name.Substring(1) + "Config";
@@ -222,7 +307,7 @@ namespace Amazon.Extensions.NETCore.Setup
             }
 
             var defaultConfig = options.DefaultClientConfig;
-            var emptyArray = new object[0];
+            var emptyArray = Array.Empty<object>();
             var singleArray = new object[1];
 
             var clientConfigTypeInfo = options.DefaultClientConfig.GetType();
@@ -265,5 +350,72 @@ namespace Amazon.Extensions.NETCore.Setup
 
             return config;
         }
+
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Creates the ClientConfig object for the service client.
+        /// </summary>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        private static TConfiguration CreateConfig<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TConfiguration>(AWSOptions options)
+            where TConfiguration : ClientConfig, new()
+        {
+            var config = new TConfiguration();
+
+            if (options == null)
+            {
+                options = new AWSOptions();
+            }
+
+            if (options.DefaultConfigurationMode.HasValue)
+            {
+                config.DefaultConfigurationMode = options.DefaultConfigurationMode.Value;
+            }
+
+            var defaultConfig = options.DefaultClientConfig;
+            var emptyArray = Array.Empty<object>();
+            var singleArray = new object[1];
+
+            var clientConfigTypeInfo = options.DefaultClientConfig.GetType();
+            var properties = clientConfigTypeInfo.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            foreach (var property in properties)
+            {
+                if (property.GetMethod != null && property.SetMethod != null)
+                {
+                    // Skip RegionEndpoint because it is set below and calling the get method on the
+                    // property triggers the default region fallback mechanism.
+                    if (string.Equals(property.Name, "RegionEndpoint", StringComparison.Ordinal))
+                        continue;
+
+                    // DefaultConfigurationMode is skipped from the DefaultClientConfig because it is expected to be set
+                    // at the top level of AWSOptions which is done before this loop.
+                    if (string.Equals(property.Name, "DefaultConfigurationMode", StringComparison.Ordinal))
+                        continue;
+
+                    // Skip setting RetryMode if it is set to legacy but the DefaultConfigurationMode is not legacy.
+                    // This will allow the retry mode to be configured from the DefaultConfiguration.
+                    // This is a workaround to handle the inability to tell if RetryMode was explicitly set.
+                    if (string.Equals(property.Name, "RetryMode", StringComparison.Ordinal) &&
+                        defaultConfig.RetryMode == RequestRetryMode.Legacy &&
+                        config.DefaultConfigurationMode != DefaultConfigurationMode.Legacy)
+                        continue;
+
+                    singleArray[0] = property.GetMethod.Invoke(defaultConfig, emptyArray);
+                    if (singleArray[0] != null)
+                    {
+                        property.SetMethod.Invoke(config, singleArray);
+                    }
+                }
+            }
+
+            // Setting RegionEndpoint only if ServiceURL was not set, because ServiceURL value will be lost otherwise
+            if (options.Region != null && string.IsNullOrEmpty(defaultConfig.ServiceURL))
+            {
+                config.RegionEndpoint = options.Region;
+            }
+
+            return config;
+        }
+#endif
     }
 }

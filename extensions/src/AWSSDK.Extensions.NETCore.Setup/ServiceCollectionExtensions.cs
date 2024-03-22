@@ -14,13 +14,9 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using Microsoft.Extensions.DependencyInjection;
-
-using Amazon.Runtime;
+using System.Diagnostics.CodeAnalysis;
 using Amazon.Extensions.NETCore.Setup;
+using Amazon.Runtime;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -29,9 +25,6 @@ namespace Microsoft.Extensions.DependencyInjection
     /// This class adds extension methods to IServiceCollection making it easier to add Amazon service clients
     /// to the NET Core dependency injection framework.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.Extensions.NETCore.Setup.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public static class ServiceCollectionExtensions
     {
         /// <summary>
@@ -75,6 +68,9 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="collection"></param>
         /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+#if NET8_0_OR_GREATER
+        [RequiresUnreferencedCode(InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static IServiceCollection AddAWSService<T>(this IServiceCollection collection, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
             return AddAWSService<T>(collection, null, lifetime);
@@ -90,6 +86,9 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
         /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+#if NET8_0_OR_GREATER
+        [RequiresUnreferencedCode(InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static IServiceCollection AddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
             Func<IServiceProvider, object> factory =
@@ -109,6 +108,9 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="collection"></param>
         /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+#if NET8_0_OR_GREATER
+        [RequiresUnreferencedCode(InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static IServiceCollection TryAddAWSService<T>(this IServiceCollection collection, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
             return TryAddAWSService<T>(collection, null, lifetime);
@@ -124,6 +126,9 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
         /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+#if NET8_0_OR_GREATER
+        [RequiresUnreferencedCode(InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static IServiceCollection TryAddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
             Func<IServiceProvider, object> factory =
@@ -133,5 +138,166 @@ namespace Microsoft.Extensions.DependencyInjection
             collection.TryAdd(descriptor);
             return collection;
         }
+
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework. The Amazon service client is not
+        /// created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
+        /// instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection AddAWSService<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TClient, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TConfiguration>(
+            this IServiceCollection collection,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+            where TClient : class, IAmazonService
+            where TConfiguration : ClientConfig, new()
+        {
+            return AddAWSService<TClient, TConfiguration>(collection, null, lifetime);
+        }
+
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework. The Amazon service client is not
+        /// created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
+        /// instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection AddAWSService<TClient, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TConfiguration>(
+            this IServiceCollection collection,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+            where TClient : IAmazonService
+            where TImplementation : class, IAmazonService
+            where TConfiguration : ClientConfig, new()
+        {
+            return AddAWSService<TClient, TImplementation, TConfiguration>(collection, null, lifetime);
+        }
+
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework. The Amazon service client is not
+        /// created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
+        /// instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection AddAWSService<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TClient, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TConfiguration>(
+            this IServiceCollection collection,
+            AWSOptions options,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+            where TClient : class, IAmazonService
+            where TConfiguration : ClientConfig, new()
+        {
+            Func<IServiceProvider, object> factory = (provider) =>
+                ClientFactory.CreateServiceClient<TClient, TConfiguration>(provider, options);
+
+            var descriptor = new ServiceDescriptor(typeof(TClient), factory, lifetime);
+            collection.Add(descriptor);
+            return collection;
+        }
+
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework. The Amazon service client is not
+        /// created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
+        /// instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection AddAWSService<TClient, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TConfiguration>(
+            this IServiceCollection collection,
+            AWSOptions options,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+            where TClient : IAmazonService
+            where TImplementation : class, IAmazonService
+            where TConfiguration : ClientConfig, new()
+        {
+            Func<IServiceProvider, object> factory = (provider) =>
+                ClientFactory.CreateServiceClient<TImplementation, TConfiguration>(provider, options);
+
+            var descriptor = new ServiceDescriptor(typeof(TClient), factory, lifetime);
+            collection.Add(descriptor);
+            return collection;
+        }
+
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework if the service type hasn't already been registered.
+        /// The Amazon service client is not created until it is requested. If the ServiceLifetime property is set to Singleton,
+        /// the default, then the same instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection TryAddAWSService<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TClient, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TConfiguration>(
+            this IServiceCollection collection,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+            where TClient : class, IAmazonService
+            where TConfiguration : ClientConfig, new()
+        {
+            return TryAddAWSService<TClient, TConfiguration>(collection, null, lifetime);
+        }
+
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework if the service type hasn't already been registered.
+        /// The Amazon service client is not created until it is requested. If the ServiceLifetime property is set to Singleton,
+        /// the default, then the same instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection TryAddAWSService<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TClient, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TConfiguration>(
+            this IServiceCollection collection,
+            AWSOptions options,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+            where TClient : class, IAmazonService
+            where TConfiguration : ClientConfig, new()
+        {
+            Func<IServiceProvider, object> factory = (provider) =>
+                ClientFactory.CreateServiceClient<TClient, TConfiguration>(provider, options);
+
+            var descriptor = new ServiceDescriptor(typeof(TClient), factory, lifetime);
+            collection.TryAdd(descriptor);
+            return collection;
+        }
+
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework if the service type hasn't already been registered.
+        /// The Amazon service client is not created until it is requested. If the ServiceLifetime property is set to Singleton,
+        /// the default, then the same instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="TClient">The AWS service interface, like IAmazonS3.</typeparam>
+        /// <typeparam name="TImplementation">The AWS service implementation, like AmazonS3Client.</typeparam>
+        /// <typeparam name="TConfiguration"></typeparam>
+        /// <param name="collection"></param>
+        /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection TryAddAWSService<TClient, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TConfiguration>(
+            this IServiceCollection collection,
+            AWSOptions options,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+            where TClient : IAmazonService
+            where TImplementation : class, IAmazonService
+            where TConfiguration : ClientConfig, new()
+        {
+            Func<IServiceProvider, object> factory = (provider) =>
+                ClientFactory.CreateServiceClient<TImplementation, TConfiguration>(provider, options);
+
+            var descriptor = new ServiceDescriptor(typeof(TClient), factory, lifetime);
+            collection.TryAdd(descriptor);
+            return collection;
+        }
+#endif
     }
 }
