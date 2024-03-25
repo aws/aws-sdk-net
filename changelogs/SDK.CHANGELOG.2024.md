@@ -1,3 +1,22 @@
+### 3.7.775.0 (2024-03-25 18:28 UTC)
+* CodeBuild (3.7.304.0)
+	* Supporting GitLab and GitLab Self Managed as source types in AWS CodeBuild.
+* EC2 (3.7.319.0)
+	* Added support for ModifyInstanceMetadataDefaults and GetInstanceMetadataDefaults to set Instance Metadata Service account defaults
+* ECS (3.7.305.23)
+	* Documentation only update for Amazon ECS.
+* EMRContainers (3.7.301.0)
+	* This release increases the number of supported job template parameters from 20 to 100.
+* GlobalAccelerator (3.7.301.0)
+	* AWS Global Accelerator now supports cross-account sharing for bring your own IP addresses.
+* MediaLive (3.7.305.0)
+	* Exposing TileMedia H265 options
+* SageMaker (3.7.316.0)
+	* Introduced support for the following new instance types on SageMaker Studio for JupyterLab and CodeEditor applications: m6i, m6id, m7i, c6i, c6id, c7i, r6i, r6id, r7i, and p5
+* Core 3.7.303.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.774.0 (2024-03-22 18:19 UTC)
 * IAMRolesAnywhere (3.7.301.0)
 	* This release relaxes constraints on the durationSeconds request parameter for the *Profile APIs that support it. This parameter can now take on values that go up to 43200.
