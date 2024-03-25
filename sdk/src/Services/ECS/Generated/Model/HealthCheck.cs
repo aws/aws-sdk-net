@@ -55,6 +55,11 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
+    /// Amazon ECS performs health checks on containers with the default that launched the
+    /// container instance or the task.
+    /// </para>
+    ///  
+    /// <para>
     /// The following describes the possible <c>healthStatus</c> values for a container:
     /// </para>
     ///  <ul> <li> 

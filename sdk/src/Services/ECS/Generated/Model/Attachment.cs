@@ -55,9 +55,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For elastic block storage, this includes <c>roleArn</c>, <c>encrypted</c>, <c>filesystemType</c>,
-        /// <c>iops</c>, <c>kmsKeyId</c>, <c>sizeInGiB</c>, <c>snapshotId</c>, <c>tagSpecifications</c>,
-        /// <c>throughput</c>, and <c>volumeType</c>.
+        /// For Elastic Block Storage, this includes <c>roleArn</c>, <c>deleteOnTermination</c>,
+        /// <c>volumeName</c>, <c>volumeId</c>, and <c>statusReason</c> (only when the attachment
+        /// fails to create or attach).
         /// </para>
         /// </summary>
         public List<KeyValuePair> Details

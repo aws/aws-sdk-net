@@ -35,7 +35,13 @@ namespace Amazon.ECS.Model
     /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
     /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// The following change began on March 21, 2024. When the task definition revision is
+    /// not specified, Amazon ECS resolves the task definition revision before it authorizes
+    /// the task definition.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For information about the maximum number of task sets and otther quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
     /// ECS service quotas</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.

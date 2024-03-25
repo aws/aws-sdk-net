@@ -32,7 +32,13 @@ namespace Amazon.ECS.Model
     /// Container for the parameters to the UpdateService operation.
     /// Modifies the parameters of a service.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// The following change began on March 21, 2024. When the task definition revision is
+    /// not specified, Amazon ECS resolves the task definition revision before it authorizes
+    /// the task definition.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For services using the rolling update (<c>ECS</c>) you can update the desired count,
     /// deployment configuration, network configuration, load balancers, service registries,

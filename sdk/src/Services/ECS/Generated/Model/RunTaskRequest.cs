@@ -32,7 +32,13 @@ namespace Amazon.ECS.Model
     /// Container for the parameters to the RunTask operation.
     /// Starts a new task using the specified task definition.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// The following change began on March 21, 2024. When the task definition revision is
+    /// not specified, Amazon ECS resolves the task definition revision before it authorizes
+    /// the task definition.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS
     /// places tasks using placement constraints and placement strategies. For more information,
@@ -44,7 +50,7 @@ namespace Amazon.ECS.Model
     /// Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks
     /// manually on specific container instances.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
     /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
     /// Elastic Inference (EI), and will help current customers migrate their workloads to
@@ -54,7 +60,7 @@ namespace Amazon.ECS.Model
     /// during the past 30-day period are considered current customers and will be able to
     /// continue using the service. 
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
     /// creating or updating a service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon

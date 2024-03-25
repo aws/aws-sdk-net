@@ -35,6 +35,12 @@ namespace Amazon.ECS.Model
     /// 
     ///  <note> 
     /// <para>
+    /// The following change began on March 21, 2024. When the task definition revision is
+    /// not specified, Amazon ECS resolves the task definition revision before it authorizes
+    /// the task definition.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
     /// Elastic Inference (EI), and will help current customers migrate their workloads to
     /// options that offer better price and performance. After April 15, 2023, new customers
@@ -43,7 +49,7 @@ namespace Amazon.ECS.Model
     /// during the past 30-day period are considered current customers and will be able to
     /// continue using the service. 
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
