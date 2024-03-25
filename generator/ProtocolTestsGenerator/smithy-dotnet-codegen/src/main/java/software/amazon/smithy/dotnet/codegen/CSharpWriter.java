@@ -76,8 +76,9 @@ public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportC
         popState();
         return this;
     }
+
     public CSharpWriter writeSingleLineComment(String comment){
-        write("//" + comment);
+        write("// " + comment);
         return this;
     }
 
@@ -130,6 +131,7 @@ public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportC
         getImportContainer().addProtocolTestImports(namespace);
         return this;
     }
+
     /**
      * The Factory class for creating CSharpWriters
      *

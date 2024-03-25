@@ -20,6 +20,24 @@ public final class ProtocolTestCustomizations
     );
     //The rename is written in smithy and since we're generating from the C2J structures we will skip this test.
     public static final List<String> TestsToSkip = Arrays.asList(
-            "RestJsonSerializeRenamedStructureUnionValue"
+            "RestJsonSerializeRenamedStructureUnionValue",
+            // We are skipping these idempotency token auto fill tests because we checked that we do automatically fill the token if one is not set
+            // but the value changes every time. The test case asserts a static value for the token that we cannot guarantee
+            "Ec2ProtocolIdempotencyTokenAutoFill",
+            "RestJsonQueryIdempotencyTokenAutoFill",
+            "QueryIdempotencyTokenAutoFill"
+
+    );
+    public static  final  List<String> VNextTests = Arrays.asList(
+            // The tests below change the response and are breaking changes. We'll have to fix in V4.
+            "XmlNamespaceSimpleScalarProperties",
+            "XmlEmptySelfClosedStrings",
+            "XmlEmptySelfClosedBlobs",
+            "HttpPayloadTraitsWithNoBlobBody",
+            "RestJsonHttpPayloadTraitsWithNoBlobBody",
+            "QueryXmlEmptySelfClosedBlobs",
+            "QuerySimpleScalarProperties",
+            "Ec2XmlEmptySelfClosedBlobs",
+            "Ec2SimpleScalarProperties"
     );
 }

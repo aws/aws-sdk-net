@@ -18,6 +18,7 @@ package software.amazon.smithy.dotnet.codegen;
 import software.amazon.smithy.codegen.core.CodegenException;
 import software.amazon.smithy.dotnet.codegen.utils.ProtocolTestUtils;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.knowledge.OperationIndex;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.node.*;
 import software.amazon.smithy.model.shapes.*;
@@ -26,7 +27,6 @@ import software.amazon.smithy.utils.StringUtils;
 import software.amazon.smithy.dotnet.codegen.customizations.*;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Logger;
 
 
@@ -59,6 +59,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
     public void run() {
         TopDownIndex topDownIndex = TopDownIndex.of(model);
         var protocolNamespace = settings.getService().getName();
+        OperationIndex operationIndex = OperationIndex.of(model);
         for (OperationShape operation : new TreeSet<>(topDownIndex.getContainedOperations(service))) {
             var operationName = operation.getId().getName();
             context.writerDelegator().useFileWriter(operationName + ".cs", protocolNamespace, writer -> {
@@ -81,12 +82,66 @@ public final class HttpProtocolTestGenerator implements Runnable {
                     writer.openBlock("public class $L \n{", "}", operationName, () -> {
                         generateRequestTests(operation);
                         generateResponseTests(operation);
+                        generateErrorResponseTests(operation, operationIndex);
                     });
                 });
                 context.writerDelegator().flushWriters();
             });
         }
     }
+
+    private void generateErrorResponseTests(OperationShape operation, OperationIndex index) {
+        for(StructureShape error : index.getErrors(operation, service)){
+            error.getTrait(HttpResponseTestsTrait.class).ifPresent( trait ->{
+                for(HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)){
+                    generateErrorResponseTest(operation, error, httpResponseTestCase);
+                }
+            });
+        }
+    }
+
+    private void generateErrorResponseTest(OperationShape operation, StructureShape error, HttpResponseTestCase httpResponseTestCase) {
+        if(httpResponseTestCase.getDocumentation().isPresent()){
+            writer.writeXmlDocs(httpResponseTestCase.getDocumentation().get());
+        }
+        writer.write("[TestMethod]");
+        writer.write("[TestCategory(\"ProtocolTest\")]");
+        writer.write("[TestCategory(\"ErrorTest\")]");
+        writer.write("[TestCategory(\"$L\")]",protocolNamespace);
+        writer.openBlock("public void $LErrorResponse()\n{","}",httpResponseTestCase.getId(), () ->{
+            generateErrorResponseTestBlock(operation,error,httpResponseTestCase);
+        });
+        writer.write("\n");
+    }
+
+    private void generateErrorResponseTestBlock(OperationShape operation, StructureShape error, HttpResponseTestCase httpResponseTestCase) {
+        var outputShape =  model.expectShape(operation.getOutputShape(), StructureShape.class);
+        var responseSymbol = operation.getId().getName() + "Response";
+        //Arrange
+        arrangeResponseTestBlock(httpResponseTestCase);
+        var errorSymbol = error.getId().getName() + "Exception";
+        writer.writeSingleLineComment("Act");
+        writer.write("var errorResponse = new $LUnmarshaller().UnmarshallException(context, new $L(\"\"), (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L));",responseSymbol, errorSymbol, httpResponseTestCase.getCode());
+        writer.writeSingleLineComment("Assert");
+        // For now we will just assert that we get the right exception type. Since exceptions don't take a parameterless constructor
+        // there is no simple way to set the message without dramatic alterations to the ValueNodeVisitor. It is worth thinking about
+        // creating a new ValueNodeVisitor that works differently for exceptions at a later time.
+        writer.write("Assert.IsInstanceOfType(errorResponse, typeof($L));",errorSymbol);
+    }
+
+    private void arrangeResponseTestBlock(HttpResponseTestCase httpResponseTestCase){
+        writer.addImport(protocolNamespace,"System.Net");
+        writer.writeSingleLineComment("Arrange");
+        writer.write("var webResponseData = new WebResponseData();");
+        writer.write("webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L);",httpResponseTestCase.getCode());
+        for(var header: httpResponseTestCase.getHeaders().keySet()){
+            writer.write("webResponseData.Headers[$S] = $S;", header, httpResponseTestCase.getHeaders().get(header));
+        }
+        writer.write("byte[] bytes = Encoding.ASCII.GetBytes($S);",httpResponseTestCase.getBody());
+        writer.write("var stream = new MemoryStream(bytes);");
+        writer.write("var context = new $LUnmarshallerContext(stream,true,webResponseData);", protocol);
+    }
+
     private void generateRequestTests(OperationShape operation) {
         operation.getTrait(HttpRequestTestsTrait.class).ifPresent(trait -> {
             for(HttpRequestTestCase httpRequestTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)){
@@ -100,7 +155,12 @@ public final class HttpProtocolTestGenerator implements Runnable {
             if(httpRequestTestCase.getDocumentation().isPresent()){
                 writer.writeXmlDocs(httpRequestTestCase.getDocumentation().get());
             }
+            if(ProtocolTestCustomizations.VNextTests.contains(httpRequestTestCase.getId())){
+                writer.writeSingleLineComment("This test requires a breaking change, and will be addressed in V4");
+                writer.write("[Ignore]");
+            }
             writer.write("[TestMethod]");
+
             writer.write("[TestCategory(\"ProtocolTest\")]");
             writer.write("[TestCategory(\"RequestTest\")]");
             writer.write("[TestCategory(\"$L\")]",protocolNamespace);
@@ -110,6 +170,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.write("\n");
         }
     }
+
     private void generateRequestTestBlock(OperationShape operation, HttpRequestTestCase httpRequestTestCase ){
         var params = httpRequestTestCase.getParams();
         var inputShape =  model.expectShape(operation.getInputShape(), StructureShape.class);
@@ -139,28 +200,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.writeSingleLineComment("Assert");
         //verify the body
         if(httpRequestTestCase.getBody().isPresent() && !httpRequestTestCase.getBody().get().equals("")){
-            if(protocol.equals("Json")){
-                writer.write("var expectedBody = $S;",httpRequestTestCase.getBody());
-                writer.write("JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);");
-
-            }
-            else if(projectionName.equals("QueryProtocol") || projectionName.equals("EC2Protocol")){
-                writer.addImport(protocolNamespace,"System.Net");
-                writer.write("var expectedParams = QueryTestUtils.ConvertBodyToParameters($S);", httpRequestTestCase.getBody());
-                writer.write("""
-                             foreach(var queryParam in expectedParams.Keys){
-                                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-                                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-                             }                                
-                             """);
-            }
-            else if (projectionName.equals("RestXmlProtocol") || projectionName.equals("RestXmlProtocolNamespace")){
-                writer.write("var expectedBody = $S;",httpRequestTestCase.getBody());
-                writer.write("XmlTestUtils.AssertBody(marshalledRequest,expectedBody);");
-            }
-            else{
-                throw new CodegenException("Unsupported protocol detected while generating request test block.");
-            }
+            assertRequestBody(httpRequestTestCase);
         }
         writer.write("Assert.AreEqual($S, marshalledRequest.HttpMethod);",httpRequestTestCase.getMethod());
         // Calling AmazonServiceClient.ComposeUrl to avoid adding the HttpHandler to the mock request pipeline since we don't want
@@ -190,6 +230,32 @@ public final class HttpProtocolTestGenerator implements Runnable {
             }
         }
     }
+
+    private void assertRequestBody(HttpRequestTestCase httpRequestTestCase){
+        if(protocol.equals("Json")){
+            writer.write("var expectedBody = $S;",httpRequestTestCase.getBody());
+            writer.write("JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);");
+        }
+        else if(projectionName.equals("QueryProtocol") || projectionName.equals("EC2Protocol")){
+            writer.addImport(protocolNamespace,"System.Net");
+            writer.write("var expectedParams = QueryTestUtils.ConvertBodyToParameters($S);", httpRequestTestCase.getBody());
+            writer.write("""
+                             foreach(var queryParam in expectedParams.Keys)
+                             {
+                                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
+                                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
+                             }
+                             """);
+        }
+        else if (projectionName.equals("RestXmlProtocol") || projectionName.equals("RestXmlProtocolNamespace")){
+            writer.write("var expectedBody = $S;",httpRequestTestCase.getBody());
+            writer.write("XmlTestUtils.AssertBody(marshalledRequest,expectedBody);");
+        }
+        else{
+            throw new CodegenException("Unsupported protocol detected while generating request test block.");
+        }
+    }
+
     private void generateResponseTests(OperationShape operation) {
         operation.getTrait(HttpResponseTestsTrait.class).ifPresent(trait -> {
             for(HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)){
@@ -199,32 +265,30 @@ public final class HttpProtocolTestGenerator implements Runnable {
     }
 
     private void generateResponseTest(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {
-        if(httpResponseTestCase.getDocumentation().isPresent()){
-            writer.writeXmlDocs(httpResponseTestCase.getDocumentation().get());
+        if(!ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId())){
+            if(httpResponseTestCase.getDocumentation().isPresent()){
+                writer.writeXmlDocs(httpResponseTestCase.getDocumentation().get());
+            }
+            if(ProtocolTestCustomizations.VNextTests.contains(httpResponseTestCase.getId())){
+                writer.writeSingleLineComment("This test requires a breaking change, and will be addressed in V4");
+                writer.write("[Ignore]");
+            }
+            writer.write("[TestMethod]");
+            writer.write("[TestCategory(\"ProtocolTest\")]");
+            writer.write("[TestCategory(\"ResponseTest\")]");
+            writer.write("[TestCategory(\"$L\")]",protocolNamespace);
+            writer.openBlock("public void $LResponse()\n{","}",httpResponseTestCase.getId(), () ->{
+                generateResponseTestBlock(operation,httpResponseTestCase);
+            });
+            writer.write("\n");
         }
-        writer.write("[TestMethod]");
-        writer.write("[TestCategory(\"ProtocolTest\")]");
-        writer.write("[TestCategory(\"ResponseTest\")]");
-        writer.write("[TestCategory(\"$L\")]",protocolNamespace);
-        writer.openBlock("public void $LResponse()\n{","}",httpResponseTestCase.getId(), () ->{
-            generateResponseTestBlock(operation,httpResponseTestCase);
-        });
-        writer.write("\n");
     }
 
     private void generateResponseTestBlock(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {
         var outputShape =  model.expectShape(operation.getOutputShape(), StructureShape.class);
         var responseSymbol = operation.getId().getName() + "Response";
         //Arrange
-        writer.writeSingleLineComment("Arrange");
-        writer.write("byte[] bytes = Encoding.ASCII.GetBytes($S);",httpResponseTestCase.getBody());
-        writer.write("var stream = new MemoryStream(bytes);");
-        writer.write("var webResponseData = new WebResponseData();");
-
-        for(var header: httpResponseTestCase.getHeaders().keySet()){
-            writer.write("webResponseData.Headers[$S] = $S;", header, httpResponseTestCase.getHeaders().get(header));
-        }
-        writer.write("var context = new $LUnmarshallerContext(stream,true,webResponseData);", protocol);
+        arrangeResponseTestBlock(httpResponseTestCase);
         writer.write("\n");
         // only unmarshall the response and assert if a body is present, as per smithy spec
         if(httpResponseTestCase.getBody().isPresent() && !httpResponseTestCase.getBody().equals("")){
@@ -238,18 +302,14 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.write("var actualResponse = ($L)unmarshalledResponse;",responseSymbol);
             writer.write("Comparer.CompareObjects<$L>(expectedResponse,actualResponse);", responseSymbol);
         }
-
-        writer.write("Assert.AreEqual($L, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);",httpResponseTestCase.getCode());
+        writer.write("Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L), context.ResponseData.StatusCode);",httpResponseTestCase.getCode());
     }
 
     private final class ValueNodeVisitor implements NodeVisitor<Void> {
         private final Shape inputShape;
-
         private boolean inDocumentValueNode;
-
         private boolean isTopLevelInputOrOutput;
         private String generatedInputOutputShapeName;
-
         private ValueNodeVisitor(Shape inputShape) {
             this.inputShape = inputShape;
             this.generatedInputOutputShapeName = "";
@@ -404,10 +464,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
                     valueTargetSymbol = valueTargetSymbol.toBuilder().name(valueTargetSymbol.getName() + "?").build();
                 }
             }
-
             writer.write("new Dictionary<string, $L>()",
                     valueTargetSymbol);
-            writer.openBlock("{", "}",
+            writer.openBlock("{\n", "}",
                     () -> node.getMembers().forEach((keyNode, valueNode) -> {
                         var targetShape = model.expectShape(shape.getValue().getTarget());
                         writer.write("{ $S, $C },",

@@ -55,7 +55,7 @@ public class DotnetClientCodegenPlugin implements SmithyBuildPlugin {
         DotnetSettings dotnetSettings = DotnetSettings.from(context.getSettings());
         ModelTransformer transformer = ModelTransformer.create();
         Model transformedModel = transformer.flattenAndRemoveMixins(model);
-        SymbolVisitor visitor = new SymbolVisitor(model, dotnetSettings);
+        SymbolVisitor visitor = new SymbolVisitor(transformedModel, dotnetSettings);
         DotnetGenerationContext generationContext = DotnetGenerationContext.builder().model(transformedModel)
                 .settings(dotnetSettings)
                 .delegator(new DotnetDelegator(context.getFileManifest(), visitor, dotnetSettings))
