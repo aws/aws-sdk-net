@@ -194,12 +194,6 @@ namespace AWSSDK.UnitTests
         private static readonly string BasicProfileCredentialsText =
             BasicProfileConfigText.Replace("[profile ", "[");
 
-        private static readonly string LegacyBasicProfileCredentialsText = new StringBuilder()
-            .AppendLine("[basic_profile]")
-            .AppendLine("aws_access_key_id=basic_aws_access_key_id")
-            .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
-            .ToString();
-
         private static readonly string BasicProfileTextConfigPartial = new StringBuilder()
             .AppendLine("[profile basic_profile]")
             .Append("aws_secret_access_key=basic_aws_secret_access_key")
@@ -304,11 +298,6 @@ namespace AWSSDK.UnitTests
         private static readonly string AlwaysDisableRequestCompressionOnlyProfileText_Invalid = new StringBuilder()
             .AppendLine("[any_disable_request_compression]")
             .AppendLine("disable_request_compression=always")
-            .ToString();
-
-        private static readonly string RetriesLegacyModeProfileText = new StringBuilder()
-            .AppendLine("[retries_legacymode_profile_text]")
-            .Append("retry_mode=legacy")
             .ToString();
 
         private static readonly string RetriesStandardModeProfileText = new StringBuilder()
@@ -847,24 +836,6 @@ namespace AWSSDK.UnitTests
             {
                 CredentialProfile profile1;
                 Assert.IsFalse(tester.CredentialsFile.TryGetProfile("any_disable_request_compression", out profile1));
-            }
-        }
-
-        [TestMethod]
-        public void ReadRetriesLegacyModeProfile()
-        {
-            using (var tester = new SharedCredentialsFileTestFixture(RetriesLegacyModeProfileText))
-            {
-                tester.TestTryGetProfile("retries_legacymode_profile_text", true, false);
-            }
-        }
-
-        [TestMethod]
-        public void WriteRetriesLegacyModeProfile()
-        {
-            using (var tester = new SharedCredentialsFileTestFixture())
-            {
-                tester.AssertWriteProfileRetryMode("retries_legacymode_profile_text", RetriesOnlyProfileOptions, RequestRetryMode.Legacy, RetriesLegacyModeProfileText);
             }
         }
 

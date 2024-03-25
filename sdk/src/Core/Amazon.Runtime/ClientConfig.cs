@@ -89,7 +89,6 @@ namespace Amazon.Runtime
         private RequestRetryMode? retryMode = null;
         private int? maxRetries = null;
         private const int MaxRetriesDefault = 2;
-        private const int MaxRetriesLegacyDefault = 4;
         private const long DefaultMinCompressionSizeBytes = 10240;
         private bool didProcessServiceURL = false;
         private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
@@ -462,8 +461,7 @@ namespace Amazon.Runtime
         }
         /// <summary>
         /// Returns the flag indicating how many retry HTTP requests an SDK should
-        /// make for a single SDK operation invocation before giving up. This flag will 
-        /// return 4 when the RetryMode is set to "Legacy" which is the default. For
+        /// make for a single SDK operation invocation before giving up. For
         /// RetryMode values of "Standard" or "Adaptive" this flag will return 2. In 
         /// addition to the values returned that are dependent on the RetryMode, the
         /// value can be set to a specific value by using the AWS_MAX_ATTEMPTS environment
@@ -480,13 +478,6 @@ namespace Amazon.Runtime
             {
                 if (!this.maxRetries.HasValue)
                 {
-                    //For legacy mode there was no MaxAttempts shared config or 
-                    //environment variables so use the legacy default value.
-                    if (RetryMode == RequestRetryMode.Legacy)
-                    {
-                        return MaxRetriesLegacyDefault;
-                    }
-
                     //For standard and adaptive modes first check the environment variables
                     //and shared config for a value. Otherwise default to the new default value.
                     //In the shared config or environment variable MaxAttempts is the total number 
@@ -720,33 +711,6 @@ namespace Amazon.Runtime
             Initialize();
         }
 
-        public ClientConfig() : this(new LegacyOnlyDefaultConfigurationProvider())
-        {
-            this.defaultConfigurationBackingField = _defaultConfigurationProvider.GetDefaultConfiguration(null, null);
-            this.defaultConfigurationMode = this.defaultConfigurationBackingField.Name;
-        }
-
-        /// <summary>
-        /// Specialized <see cref="IDefaultConfigurationProvider"/> that is only meant to provide backwards
-        /// compatibility for the obsolete <see cref="ClientConfig"/> constructor.
-        /// </summary>
-        private class LegacyOnlyDefaultConfigurationProvider : IDefaultConfigurationProvider
-        {
-            public IDefaultConfiguration GetDefaultConfiguration(RegionEndpoint clientRegion, DefaultConfigurationMode? requestedConfigurationMode = null)
-            {
-                if (requestedConfigurationMode.HasValue &&
-                    requestedConfigurationMode.Value != Runtime.DefaultConfigurationMode.Legacy)
-                    throw new AmazonClientException($"This ClientConfig only supports {Runtime.DefaultConfigurationMode.Legacy}");
-
-                return new DefaultConfiguration
-                {
-                    Name = Runtime.DefaultConfigurationMode.Legacy,
-                    RetryMode = RequestRetryMode.Legacy,
-                    S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Legacy,
-                    StsRegionalEndpoints = StsRegionalEndpointsValue.Legacy
-                };
-            }
-        }
         #endregion
 
         protected virtual void Initialize()
@@ -801,10 +765,6 @@ namespace Amazon.Runtime
         /// </summary>
         internal CancellationToken BuildDefaultCancellationToken()
         {
-            // legacy mode never had a working cancellation token, so keep it to default()
-            if (DefaultConfiguration.Name == Runtime.DefaultConfigurationMode.Legacy)
-                return default(CancellationToken);
-
             // TimeToFirstByteTimeout is not a perfect match with HttpWebRequest/HttpClient.Timeout.  However, given
             // that both are configured to only use Timeout until the Response Headers are downloaded, this value
             // provides a reasonable default value.
@@ -815,7 +775,6 @@ namespace Amazon.Runtime
                 : default(CancellationToken);
         }
 #endif
-
 
         /// <summary>
         /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint
@@ -1080,7 +1039,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Returns the flag indicating the current mode in use for request 
         /// retries and influences the value returned from <see cref="MaxErrorRetry"/>.
-        /// The default value is RequestRetryMode.Legacy. This flag can be configured
+        /// The default value is <see cref="RequestRetryMode.Standard"/>. This flag can be configured
         /// by using the AWS_RETRY_MODE environment variable, retry_mode in the
         /// shared configuration file, or by setting this value directly.
         /// </summary>

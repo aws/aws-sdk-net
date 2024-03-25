@@ -13,11 +13,10 @@ namespace ServiceClientGeneratorTests
     public class DefaultConfigurationControllerTests
     {
         /// <summary>
-        /// Controller should find the 'Legacy' Default Configuration Mode
-        /// and explicitly set timeouts.
+        /// Controller should ignore the 'Legacy' Default Configuration Mode.
         /// </summary>
         [Fact]
-        public void ControllerEnrichesLegacyDefaultConfigurationMode()
+        public void ControllerIgnoresLegacyDefaultConfigurationMode()
         {
             var fakeJson = "fakeJson";
             var fakeDocumentation = "fakeDocumentation";
@@ -51,10 +50,7 @@ namespace ServiceClientGeneratorTests
                     .Modes
                     .FirstOrDefault(x => x.Name == "Legacy");
 
-            legacyMode.ShouldNotBeNull();
-            legacyMode.Documentation.ShouldEqual(fakeDocumentation);
-            // Controller should have modified timeout
-            legacyMode.TimeToFirstByteTimeout.ShouldBeGreaterThan(TimeSpan.Zero);
+            legacyMode.ShouldBeNull();
         }
     }
 }

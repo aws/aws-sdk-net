@@ -389,9 +389,6 @@ namespace Amazon.Runtime
                 case RequestRetryMode.Standard:
                     retryPolicy = new StandardRetryPolicy(this.Config);
                     break;
-                case RequestRetryMode.Legacy:
-                    retryPolicy = new DefaultRetryPolicy(this.Config);
-                    break;
                 default:
                     throw new InvalidOperationException("Unknown retry mode");
             }

@@ -28,7 +28,7 @@ namespace ServiceClientGenerator.DefaultConfiguration
     public class DefaultConfigurationMode
     {
         /// <summary>
-        /// Identifies a specific configuration mode. Example legacy, mobile, cross-region, etc
+        /// Identifies a specific configuration mode. Example mobile, cross-region, etc
         /// </summary>
         public string Name { get; set; }
         /// <summary>
@@ -79,10 +79,6 @@ namespace ServiceClientGenerator.DefaultConfiguration
     /// <remarks>This is a copy of Amazon.Runtime.RequestRetryMode</remarks>
     public enum RequestRetryMode
     {
-        /// <summary>
-        /// Legacy request retry strategy.
-        /// </summary>
-        Legacy,
         /// <summary>
         /// Standardized request retry strategy that is consistent across all SDKs.
         /// </summary>

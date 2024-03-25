@@ -736,7 +736,7 @@ namespace Amazon.Runtime.CredentialManagement
                 {
                     if (!Enum.TryParse<RequestRetryMode>(retryModeString, true, out var retryModeTemp))
                     {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string legacy/standard/adaptive is expected.", retryModeString, RetryModeField, profileName);
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string standard/adaptive is expected.", retryModeString, RetryModeField, profileName);
                         profile = null;
                         return false;
                     }

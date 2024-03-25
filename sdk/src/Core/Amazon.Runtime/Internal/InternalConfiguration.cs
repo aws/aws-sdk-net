@@ -37,7 +37,7 @@ namespace Amazon.Runtime.Internal
         public bool? EndpointDiscoveryEnabled { get; set; }
         
         /// <summary>
-        /// The retry mode to use: Legacy, Standard, or Adaptive.
+        /// The retry mode to use: Standard or Adaptive.
         /// </summary>
         public RequestRetryMode? RetryMode { get; set; }
         

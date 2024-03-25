@@ -50,7 +50,7 @@ namespace AWSSDK.UnitTests
             },
             new DefaultConfiguration
             {
-                Name = DefaultConfigurationMode.Legacy,
+                Name = DefaultConfigurationMode.Standard,
                 TimeToFirstByteTimeout = TimeSpan.FromMilliseconds(40000)
             }
         };
@@ -81,9 +81,9 @@ namespace AWSSDK.UnitTests
         // Shared Config/Credential wins
         [DataRow(
             null, null, DefaultConfigurationMode.Mobile, DefaultConfigurationMode.Mobile)]
-        // Legacy (default) wins
+        // Standard (default) wins
         [DataRow(
-            null, null, null, DefaultConfigurationMode.Legacy)]
+            null, null, null, DefaultConfigurationMode.Standard)]
         public void OrderOfOperationsTest(
             DefaultConfigurationMode? clientConfigDefaultMode,
             DefaultConfigurationMode? environmentVariableDefaultMode,
@@ -122,8 +122,7 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// Make sure wan error is thrown if <see cref="SharedCredentialsFile.DefaultConfigurationModeField"/>
-        /// has an invalid <inheritdoc cref="DefaultConfigurationMode"/>
+        /// Make sure wan error is thrown if the shared credentials file has an invalid <inheritdoc cref="DefaultConfigurationMode"/>
         /// </summary>
         [TestMethod]
         public void UnknownDefaultConfigurationModeThrowsAnError()

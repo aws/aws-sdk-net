@@ -13,12 +13,26 @@
  * permissions and limitations under the License.
  */
 
+using Amazon;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace AWSSDK.UnitTests
 {
     public class MockClientConfig : ClientConfig
     {
+        public MockClientConfig() : base(new MockConfigurationProvider()) { }
+
+        private class MockConfigurationProvider : IDefaultConfigurationProvider
+        {
+            public IDefaultConfiguration GetDefaultConfiguration(
+                RegionEndpoint clientRegion,
+                DefaultConfigurationMode? requestedConfigurationMode = null)
+            {
+                return new DefaultConfiguration();
+            }
+        }
+
         public override string RegionEndpointServiceName { get; } = nameof(MockClientConfig);
         public override string ServiceVersion { get; } = "UnitTest";
         public override string UserAgent { get; } = "UnitTest";

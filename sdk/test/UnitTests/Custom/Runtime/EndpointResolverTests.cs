@@ -19,7 +19,8 @@ namespace AWSSDK.UnitTests
         private const string AwsStsRegionalEndpointsEnvironmentVariable = "AWS_STS_REGIONAL_ENDPOINTS";
         private const string DefaultStsEndpoint = @"https://sts.amazonaws.com/";
 
-        [TestMethod][TestCategory("UnitTest")]
+        [TestMethod]
+        [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public void TestSuccessfulCall()
         {
@@ -27,7 +28,7 @@ namespace AWSSDK.UnitTests
             var executionContext = CreateExecutionContext(SetupConfig());
             Uri endpoint = endpointResolver.DetermineEndpoint(executionContext.RequestContext);
 
-            Assert.AreEqual(@"https://testprefix.test123-s3.amazonaws.com/", endpoint.ToString());
+            Assert.AreEqual(@"https://testprefix.test123-s3.us-east-1.amazonaws.com/", endpoint.ToString());
         }
 
         [DataTestMethod]
@@ -68,7 +69,7 @@ namespace AWSSDK.UnitTests
             var executionContext = CreateExecutionContext(config);
             Uri endpoint = endpointResolver.DetermineEndpoint(executionContext.RequestContext);
 
-            Assert.AreEqual(@"https://s3.amazonaws.com/", endpoint.ToString());
+            Assert.AreEqual(@"https://s3.us-east-1.amazonaws.com/", endpoint.ToString());
         }
 
         [TestMethod]
@@ -84,7 +85,7 @@ namespace AWSSDK.UnitTests
             executionContext.RequestContext.Request.HostPrefix = string.Empty;
             Uri endpoint = endpointResolver.DetermineEndpoint(executionContext.RequestContext);
 
-            Assert.AreEqual(@"https://s3.amazonaws.com/", endpoint.ToString());
+            Assert.AreEqual(@"https://s3.us-east-1.amazonaws.com/", endpoint.ToString());
         }
 
         private ExecutionContext CreateExecutionContext(IClientConfig config)
