@@ -38,7 +38,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property ByoipCidr. 
         /// <para>
-        /// Information about the address pool.
+        /// Information about the BYOIP address pool.
         /// </para>
         /// </summary>
         public ByoipCidr ByoipCidr

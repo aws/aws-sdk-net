@@ -45,6 +45,12 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Resource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCidr())
+            {
+                context.Writer.WritePropertyName("Cidr");
+                context.Writer.Write(requestObject.Cidr);
+            }
+
             if(requestObject.IsSetEndpointId())
             {
                 context.Writer.WritePropertyName("EndpointId");

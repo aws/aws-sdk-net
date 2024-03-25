@@ -69,6 +69,12 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                     unmarshalledObject.AttachmentArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Cidr", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Cidr = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndpointId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

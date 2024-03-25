@@ -39,7 +39,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property CrossAccountResources. 
         /// <para>
-        /// The endpoints attached to an accelerator in a cross-account attachment.
+        /// The cross-account resources used with an accelerator.
         /// </para>
         /// </summary>
         public List<CrossAccountResource> CrossAccountResources

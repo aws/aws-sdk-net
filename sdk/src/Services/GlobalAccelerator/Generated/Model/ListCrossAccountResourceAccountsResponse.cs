@@ -39,7 +39,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Gets and sets the property ResourceOwnerAwsAccountIds. 
         /// <para>
         /// The account IDs of principals (resource owners) in a cross-account attachment who
-        /// can add endpoints (resources) listed in the same attachment.
+        /// can work with resources listed in the same attachment.
         /// </para>
         /// </summary>
         public List<string> ResourceOwnerAwsAccountIds
