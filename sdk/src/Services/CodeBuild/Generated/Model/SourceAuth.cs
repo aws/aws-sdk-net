@@ -62,14 +62,9 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. <note> 
+        /// Gets and sets the property Type. 
         /// <para>
-        ///  This data type is deprecated and is no longer accurate or used. 
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// The authorization type to use. The only valid value is <c>OAUTH</c>, which represents
-        /// the OAuth authorization type.
+        /// The authorization type to use. Valid options are OAUTH or CODECONNECTIONS.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

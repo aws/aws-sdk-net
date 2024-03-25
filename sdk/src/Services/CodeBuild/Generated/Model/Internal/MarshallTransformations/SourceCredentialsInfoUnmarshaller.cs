@@ -75,6 +75,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.AuthType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serverType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

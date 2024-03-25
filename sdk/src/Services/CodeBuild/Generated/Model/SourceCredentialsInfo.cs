@@ -29,12 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository.
+    /// Information about the credentials for a GitHub, GitHub Enterprise, GitLab, GitLab
+    /// Self Managed, or Bitbucket repository.
     /// </summary>
     public partial class SourceCredentialsInfo
     {
         private string _arn;
         private AuthType _authType;
+        private string _resource;
         private ServerType _serverType;
 
         /// <summary>
@@ -60,7 +62,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property AuthType. 
         /// <para>
         ///  The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH,
-        /// or PERSONAL_ACCESS_TOKEN. 
+        /// PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS. 
         /// </para>
         /// </summary>
         public AuthType AuthType
@@ -76,10 +78,29 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Resource. 
+        /// <para>
+        /// The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your
+        /// authType is CODECONNECTIONS.
+        /// </para>
+        /// </summary>
+        public string Resource
+        {
+            get { return this._resource; }
+            set { this._resource = value; }
+        }
+
+        // Check to see if Resource property is set
+        internal bool IsSetResource()
+        {
+            return this._resource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerType. 
         /// <para>
-        ///  The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or
-        /// BITBUCKET. 
+        ///  The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, GITLAB,
+        /// GITLAB_SELF_MANAGED, or BITBUCKET. 
         /// </para>
         /// </summary>
         public ServerType ServerType
