@@ -32,6 +32,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.RestJson
@@ -48,7 +49,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("RestJson")]
         public void RestJsonSimpleScalarPropertiesRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleScalarPropertiesRequest
             {
                 Foo = "Foo",
@@ -68,17 +69,17 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedBody = "{\n    \"stringValue\": \"string\",\n    \"trueBooleanValue\": true,\n    \"falseBooleanValue\": false,\n    \"byteValue\": 1,\n    \"shortValue\": 2,\n    \"integerValue\": 3,\n    \"longValue\": 4,\n    \"floatValue\": 5.5,\n    \"DoubleDribble\": 6.5\n}";
             JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/SimpleScalarProperties", actualUri.AbsolutePath);
-            Assert.AreEqual( "application/json", marshalledRequest.Headers["Content-Type"]);
-            Assert.AreEqual( "Foo", marshalledRequest.Headers["X-Foo"]);
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("Foo".Replace(" ",""), marshalledRequest.Headers["X-Foo"].Replace(" ",""));
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("RestJson")]
         public void RestJsonDoesntSerializeNullStructureValuesRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleScalarPropertiesRequest
             {
                 StringValue = null,
@@ -101,16 +102,16 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedBody = "{}";
             JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/SimpleScalarProperties", actualUri.AbsolutePath);
-            Assert.AreEqual( "application/json", marshalledRequest.Headers["Content-Type"]);
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("RestJson")]
         public void RestJsonSupportsNaNFloatInputsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleScalarPropertiesRequest
             {
                 FloatValue = float.NaN,
@@ -134,16 +135,16 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedBody = "{\n    \"floatValue\": \"NaN\",\n    \"DoubleDribble\": \"NaN\"\n}";
             JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/SimpleScalarProperties", actualUri.AbsolutePath);
-            Assert.AreEqual( "application/json", marshalledRequest.Headers["Content-Type"]);
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("RestJson")]
         public void RestJsonSupportsInfinityFloatInputsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleScalarPropertiesRequest
             {
                 FloatValue = float.PositiveInfinity,
@@ -167,16 +168,16 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedBody = "{\n    \"floatValue\": \"Infinity\",\n    \"DoubleDribble\": \"Infinity\"\n}";
             JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/SimpleScalarProperties", actualUri.AbsolutePath);
-            Assert.AreEqual( "application/json", marshalledRequest.Headers["Content-Type"]);
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -188,7 +189,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("RestJson")]
         public void RestJsonSupportsNegativeInfinityFloatInputsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleScalarPropertiesRequest
             {
                 FloatValue = float.NegativeInfinity,
@@ -200,16 +201,16 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedBody = "{\n    \"floatValue\": \"-Infinity\",\n    \"DoubleDribble\": \"-Infinity\"\n}";
             JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/SimpleScalarProperties", actualUri.AbsolutePath);
-            Assert.AreEqual( "application/json", marshalledRequest.Headers["Content-Type"]);
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>
@@ -221,15 +222,16 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("RestJson")]
         public void RestJsonSimpleScalarPropertiesResponse()
         {
-            //Arrange
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"stringValue\": \"string\",\n    \"trueBooleanValue\": true,\n    \"falseBooleanValue\": false,\n    \"byteValue\": 1,\n    \"shortValue\": 2,\n    \"integerValue\": 3,\n    \"longValue\": 4,\n    \"floatValue\": 5.5,\n    \"DoubleDribble\": 6.5\n}");
-            var stream = new MemoryStream(bytes);
+            // Arrange
             var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
             webResponseData.Headers["Content-Type"] = "application/json";
             webResponseData.Headers["X-Foo"] = "Foo";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"stringValue\": \"string\",\n    \"trueBooleanValue\": true,\n    \"falseBooleanValue\": false,\n    \"byteValue\": 1,\n    \"shortValue\": 2,\n    \"integerValue\": 3,\n    \"longValue\": 4,\n    \"floatValue\": 5.5,\n    \"DoubleDribble\": 6.5\n}");
+            var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
-            //Act
+            // Act
             var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new SimpleScalarPropertiesResponse
             {
@@ -245,10 +247,10 @@ namespace AWSSDK.ProtocolTests.RestJson
                 DoubleValue = 6.5,
             };
 
-            //Assert
+            // Assert
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
         /// <summary>
@@ -260,23 +262,24 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("RestJson")]
         public void RestJsonDoesntDeserializeNullStructureValuesResponse()
         {
-            //Arrange
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/json";
             byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"stringValue\": null\n}");
             var stream = new MemoryStream(bytes);
-            var webResponseData = new WebResponseData();
-            webResponseData.Headers["Content-Type"] = "application/json";
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
-            //Act
+            // Act
             var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new SimpleScalarPropertiesResponse
             {
             };
 
-            //Assert
+            // Assert
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
         /// <summary>
@@ -288,14 +291,15 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("RestJson")]
         public void RestJsonSupportsNaNFloatInputsResponse()
         {
-            //Arrange
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/json";
             byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"floatValue\": \"NaN\",\n    \"DoubleDribble\": \"NaN\"\n}");
             var stream = new MemoryStream(bytes);
-            var webResponseData = new WebResponseData();
-            webResponseData.Headers["Content-Type"] = "application/json";
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
-            //Act
+            // Act
             var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new SimpleScalarPropertiesResponse
             {
@@ -303,10 +307,10 @@ namespace AWSSDK.ProtocolTests.RestJson
                 DoubleValue = double.NaN,
             };
 
-            //Assert
+            // Assert
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
         /// <summary>
@@ -318,14 +322,15 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("RestJson")]
         public void RestJsonSupportsInfinityFloatInputsResponse()
         {
-            //Arrange
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/json";
             byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"floatValue\": \"Infinity\",\n    \"DoubleDribble\": \"Infinity\"\n}");
             var stream = new MemoryStream(bytes);
-            var webResponseData = new WebResponseData();
-            webResponseData.Headers["Content-Type"] = "application/json";
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
-            //Act
+            // Act
             var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new SimpleScalarPropertiesResponse
             {
@@ -333,10 +338,10 @@ namespace AWSSDK.ProtocolTests.RestJson
                 DoubleValue = double.PositiveInfinity,
             };
 
-            //Assert
+            // Assert
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
         /// <summary>
@@ -348,14 +353,15 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("RestJson")]
         public void RestJsonSupportsNegativeInfinityFloatInputsResponse()
         {
-            //Arrange
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/json";
             byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"floatValue\": \"-Infinity\",\n    \"DoubleDribble\": \"-Infinity\"\n}");
             var stream = new MemoryStream(bytes);
-            var webResponseData = new WebResponseData();
-            webResponseData.Headers["Content-Type"] = "application/json";
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
-            //Act
+            // Act
             var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new SimpleScalarPropertiesResponse
             {
@@ -363,10 +369,10 @@ namespace AWSSDK.ProtocolTests.RestJson
                 DoubleValue = double.NegativeInfinity,
             };
 
-            //Assert
+            // Assert
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
     }

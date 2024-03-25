@@ -47,7 +47,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2SimpleInputParamsStringsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 Foo = "val1",
@@ -59,12 +59,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&Foo=val1&Bar=val2");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -84,7 +85,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2SimpleInputParamsStringAndBooleanTrueRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 Foo = "val1",
@@ -96,12 +97,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&Foo=val1&Baz=true");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -121,7 +123,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2SimpleInputParamsStringsAndBooleanFalseRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 Baz = false,
@@ -132,12 +134,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&Baz=false");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -157,7 +160,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2SimpleInputParamsIntegerRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 Bam = 10,
@@ -168,12 +171,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&Bam=10");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -193,7 +197,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2SimpleInputParamsFloatRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 Boo = 10.8,
@@ -204,12 +208,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&Boo=10.8");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -229,7 +234,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2SimpleInputParamsBlobRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 Qux = new MemoryStream(Encoding.UTF8.GetBytes("value")),
@@ -240,12 +245,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&Qux=dmFsdWU%3D");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -265,7 +271,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2EnumsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 FooEnum = "Foo",
@@ -276,12 +282,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&FooEnum=Foo");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -301,7 +308,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2QueryRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 HasQueryName = "Hi",
@@ -312,12 +319,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&A=Hi");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -337,7 +345,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2QueryIsPreferredRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 HasQueryAndXmlName = "Hi",
@@ -348,12 +356,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&B=Hi");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -374,7 +383,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2XmlNameIsUppercasedRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 UsesXmlName = "Hi",
@@ -385,12 +394,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&C=Hi");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -410,7 +420,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2QuerySupportsNaNFloatInputsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 FloatValue = float.NaN,
@@ -422,12 +432,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&FloatValue=NaN&Boo=NaN");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -447,7 +458,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2QuerySupportsInfinityFloatInputsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 FloatValue = float.PositiveInfinity,
@@ -459,12 +470,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&FloatValue=Infinity&Boo=Infinity");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -484,7 +496,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestCategory("AwsEc2")]
         public void Ec2QuerySupportsNegativeInfinityFloatInputsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleInputParamsRequest
             {
                 FloatValue = float.NegativeInfinity,
@@ -496,12 +508,13 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             };
 
             var marshaller = new SimpleInputParamsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&FloatValue=-Infinity&Boo=-Infinity");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }

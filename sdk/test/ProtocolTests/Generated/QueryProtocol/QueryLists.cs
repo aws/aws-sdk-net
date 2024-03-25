@@ -47,7 +47,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("AwsQuery")]
         public void QueryListsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new QueryListsRequest
             {
                 ListArg =  new List<string>()
@@ -58,10 +58,12 @@ namespace AWSSDK.ProtocolTests.AwsQuery
                 },
                 ComplexListArg =  new List<GreetingStruct>()
                 {
-                    new GreetingStruct{
+                    new GreetingStruct
+                    {
                         Hi = "hello",
                     },
-                    new GreetingStruct{
+                    new GreetingStruct
+                    {
                         Hi = "hola",
                     },
                 },
@@ -72,12 +74,13 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             var marshaller = new QueryListsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08&ListArg.member.1=foo&ListArg.member.2=bar&ListArg.member.3=baz&ComplexListArg.member.1.hi=hello&ComplexListArg.member.2.hi=hola");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -97,7 +100,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("AwsQuery")]
         public void EmptyQueryListsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new QueryListsRequest
             {
                 ListArg =  new List<string>()
@@ -110,12 +113,13 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             var marshaller = new QueryListsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08&ListArg=");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -136,7 +140,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("AwsQuery")]
         public void FlattenedQueryListsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new QueryListsRequest
             {
                 FlattenedListArg =  new List<string>()
@@ -151,12 +155,13 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             var marshaller = new QueryListsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08&FlattenedListArg.1=A&FlattenedListArg.2=B");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -176,7 +181,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("AwsQuery")]
         public void QueryListArgWithXmlNameMemberRequest()
         {
-            //Arrange
+            // Arrange
             var request = new QueryListsRequest
             {
                 ListArgWithXmlNameMember =  new List<string>()
@@ -191,12 +196,13 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             var marshaller = new QueryListsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08&ListArgWithXmlNameMember.item.1=A&ListArgWithXmlNameMember.item.2=B");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -217,7 +223,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("AwsQuery")]
         public void QueryFlattenedListArgWithXmlNameRequest()
         {
-            //Arrange
+            // Arrange
             var request = new QueryListsRequest
             {
                 FlattenedListArgWithXmlName =  new List<string>()
@@ -232,12 +238,13 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             var marshaller = new QueryListsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08&Hi.1=A&Hi.2=B");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }
@@ -257,10 +264,11 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         [TestCategory("AwsQuery")]
         public void QueryNestedStructWithListRequest()
         {
-            //Arrange
+            // Arrange
             var request = new QueryListsRequest
             {
-                NestedWithList = new NestedStructWithList{
+                NestedWithList = new NestedStructWithList
+                {
                     ListArg =  new List<string>()
                     {
                         "A",
@@ -274,12 +282,13 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             };
 
             var marshaller = new QueryListsRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=QueryLists&Version=2020-01-08&NestedWithList.ListArg.member.1=A&NestedWithList.ListArg.member.2=B");
-            foreach(var queryParam in expectedParams.Keys){
+            foreach(var queryParam in expectedParams.Keys)
+            {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
                Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
             }

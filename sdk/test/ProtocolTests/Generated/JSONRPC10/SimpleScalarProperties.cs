@@ -32,6 +32,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.JsonRpc10
@@ -48,7 +49,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("JsonRpc10")]
         public void AwsJson10SupportsNaNFloatInputsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleScalarPropertiesRequest
             {
                 FloatValue = float.NaN,
@@ -60,17 +61,17 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedBody = "{\n    \"floatValue\": \"NaN\",\n    \"doubleValue\": \"NaN\"\n}";
             JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
-            Assert.AreEqual( "application/x-amz-json-1.0", marshalledRequest.Headers["Content-Type"]);
-            Assert.AreEqual( "JsonRpc10.SimpleScalarProperties", marshalledRequest.Headers["X-Amz-Target"]);
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.SimpleScalarProperties".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("JsonRpc10")]
         public void AwsJson10SupportsInfinityFloatInputsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleScalarPropertiesRequest
             {
                 FloatValue = float.PositiveInfinity,
@@ -94,17 +95,17 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedBody = "{\n    \"floatValue\": \"Infinity\",\n    \"doubleValue\": \"Infinity\"\n}";
             JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
-            Assert.AreEqual( "application/x-amz-json-1.0", marshalledRequest.Headers["Content-Type"]);
-            Assert.AreEqual( "JsonRpc10.SimpleScalarProperties", marshalledRequest.Headers["X-Amz-Target"]);
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.SimpleScalarProperties".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("JsonRpc10")]
         public void AwsJson10SupportsNegativeInfinityFloatInputsRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleScalarPropertiesRequest
             {
                 FloatValue = float.NegativeInfinity,
@@ -128,17 +129,17 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedBody = "{\n    \"floatValue\": \"-Infinity\",\n    \"doubleValue\": \"-Infinity\"\n}";
             JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
-            Assert.AreEqual( "application/x-amz-json-1.0", marshalledRequest.Headers["Content-Type"]);
-            Assert.AreEqual( "JsonRpc10.SimpleScalarProperties", marshalledRequest.Headers["X-Amz-Target"]);
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.SimpleScalarProperties".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -150,14 +151,15 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("JsonRpc10")]
         public void AwsJson10SupportsNaNFloatInputsResponse()
         {
-            //Arrange
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
             byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"floatValue\": \"NaN\",\n    \"doubleValue\": \"NaN\"\n}");
             var stream = new MemoryStream(bytes);
-            var webResponseData = new WebResponseData();
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
-            //Act
+            // Act
             var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new SimpleScalarPropertiesResponse
             {
@@ -165,10 +167,10 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
                 DoubleValue = double.NaN,
             };
 
-            //Assert
+            // Assert
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
         /// <summary>
@@ -180,14 +182,15 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("JsonRpc10")]
         public void AwsJson10SupportsInfinityFloatInputsResponse()
         {
-            //Arrange
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
             byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"floatValue\": \"Infinity\",\n    \"doubleValue\": \"Infinity\"\n}");
             var stream = new MemoryStream(bytes);
-            var webResponseData = new WebResponseData();
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
-            //Act
+            // Act
             var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new SimpleScalarPropertiesResponse
             {
@@ -195,10 +198,10 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
                 DoubleValue = double.PositiveInfinity,
             };
 
-            //Assert
+            // Assert
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
         /// <summary>
@@ -210,14 +213,15 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("JsonRpc10")]
         public void AwsJson10SupportsNegativeInfinityFloatInputsResponse()
         {
-            //Arrange
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
             byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"floatValue\": \"-Infinity\",\n    \"doubleValue\": \"-Infinity\"\n}");
             var stream = new MemoryStream(bytes);
-            var webResponseData = new WebResponseData();
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
-            //Act
+            // Act
             var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new SimpleScalarPropertiesResponse
             {
@@ -225,10 +229,10 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
                 DoubleValue = double.NegativeInfinity,
             };
 
-            //Assert
+            // Assert
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
     }

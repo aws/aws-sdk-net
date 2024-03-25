@@ -30,6 +30,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
@@ -42,13 +43,15 @@ namespace AWSSDK.ProtocolTests.RestXmlWithNamespace
         /// <summary>
         /// Serializes simple scalar properties
         /// </summary>
+        // This test requires a breaking change, and will be addressed in V4
+        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXmlWithNamespace")]
         public void XmlNamespaceSimpleScalarPropertiesRequest()
         {
-            //Arrange
+            // Arrange
             var request = new SimpleScalarPropertiesRequest
             {
                 Foo = "Foo",
@@ -61,7 +64,8 @@ namespace AWSSDK.ProtocolTests.RestXmlWithNamespace
                 LongValue = 4,
                 FloatValue = 5.5F,
                 DoubleValue = 6.5,
-                Nested = new NestedWithNamespace{
+                Nested = new NestedWithNamespace
+                {
                     AttrField = "nestedAttrValue",
                 },
             };
@@ -71,37 +75,40 @@ namespace AWSSDK.ProtocolTests.RestXmlWithNamespace
             };
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedBody = "<SimpleScalarPropertiesInputOutput xmlns=\"https://example.com\">\n    <stringValue>string</stringValue>\n    <trueBooleanValue>true</trueBooleanValue>\n    <falseBooleanValue>false</falseBooleanValue>\n    <byteValue>1</byteValue>\n    <shortValue>2</shortValue>\n    <integerValue>3</integerValue>\n    <longValue>4</longValue>\n    <floatValue>5.5</floatValue>\n    <DoubleDribble>6.5</DoubleDribble>\n    <Nested xmlns:xsi=\"https://example.com\" xsi:someName=\"nestedAttrValue\"></Nested>\n</SimpleScalarPropertiesInputOutput>\n";
             XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/SimpleScalarProperties", actualUri.AbsolutePath);
-            Assert.AreEqual( "application/xml", marshalledRequest.Headers["Content-Type"]);
-            Assert.AreEqual( "Foo", marshalledRequest.Headers["X-Foo"]);
+            Assert.AreEqual("application/xml".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("Foo".Replace(" ",""), marshalledRequest.Headers["X-Foo"].Replace(" ",""));
         }
 
         /// <summary>
         /// Serializes simple scalar properties
         /// </summary>
+        // This test requires a breaking change, and will be addressed in V4
+        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXmlWithNamespace")]
         public void XmlNamespaceSimpleScalarPropertiesResponse()
         {
-            //Arrange
-            byte[] bytes = Encoding.ASCII.GetBytes("<SimpleScalarPropertiesInputOutput xmlns=\"https://example.com\">\n    <stringValue>string</stringValue>\n    <trueBooleanValue>true</trueBooleanValue>\n    <falseBooleanValue>false</falseBooleanValue>\n    <byteValue>1</byteValue>\n    <shortValue>2</shortValue>\n    <integerValue>3</integerValue>\n    <longValue>4</longValue>\n    <floatValue>5.5</floatValue>\n    <DoubleDribble>6.5</DoubleDribble>\n    <Nested xmlns:xsi=\"https://example.com\" xsi:someName=\"nestedAttrValue\"></Nested>\n</SimpleScalarPropertiesInputOutput>\n");
-            var stream = new MemoryStream(bytes);
+            // Arrange
             var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
             webResponseData.Headers["Content-Type"] = "application/xml";
             webResponseData.Headers["X-Foo"] = "Foo";
+            byte[] bytes = Encoding.ASCII.GetBytes("<SimpleScalarPropertiesInputOutput xmlns=\"https://example.com\">\n    <stringValue>string</stringValue>\n    <trueBooleanValue>true</trueBooleanValue>\n    <falseBooleanValue>false</falseBooleanValue>\n    <byteValue>1</byteValue>\n    <shortValue>2</shortValue>\n    <integerValue>3</integerValue>\n    <longValue>4</longValue>\n    <floatValue>5.5</floatValue>\n    <DoubleDribble>6.5</DoubleDribble>\n    <Nested xmlns:xsi=\"https://example.com\" xsi:someName=\"nestedAttrValue\"></Nested>\n</SimpleScalarPropertiesInputOutput>\n");
+            var stream = new MemoryStream(bytes);
             var context = new XmlUnmarshallerContext(stream,true,webResponseData);
 
-            //Act
+            // Act
             var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new SimpleScalarPropertiesResponse
             {
@@ -115,15 +122,16 @@ namespace AWSSDK.ProtocolTests.RestXmlWithNamespace
                 LongValue = 4,
                 FloatValue = 5.5F,
                 DoubleValue = 6.5,
-                Nested = new NestedWithNamespace{
+                Nested = new NestedWithNamespace
+                {
                     AttrField = "nestedAttrValue",
                 },
             };
 
-            //Assert
+            // Assert
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
     }

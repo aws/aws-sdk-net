@@ -30,6 +30,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
@@ -45,7 +46,7 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("RestXml")]
         public void RestXmlStringPayloadRequestRequest()
         {
-            //Arrange
+            // Arrange
             var request = new HttpStringPayloadRequest
             {
                 Payload = "rawstring",
@@ -56,10 +57,10 @@ namespace AWSSDK.ProtocolTests.RestXml
             };
 
             var marshaller = new HttpStringPayloadRequestMarshaller();
-            //Act
+            // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
-            //Assert
+            // Assert
             var expectedBody = "rawstring";
             XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
@@ -73,23 +74,24 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("RestXml")]
         public void RestXmlStringPayloadResponseResponse()
         {
-            //Arrange
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
             byte[] bytes = Encoding.ASCII.GetBytes("rawstring");
             var stream = new MemoryStream(bytes);
-            var webResponseData = new WebResponseData();
             var context = new XmlUnmarshallerContext(stream,true,webResponseData);
 
-            //Act
+            // Act
             var unmarshalledResponse = new HttpStringPayloadResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new HttpStringPayloadResponse
             {
                 Payload = "rawstring",
             };
 
-            //Assert
+            // Assert
             var actualResponse = (HttpStringPayloadResponse)unmarshalledResponse;
             Comparer.CompareObjects<HttpStringPayloadResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
     }
