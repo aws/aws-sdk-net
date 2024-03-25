@@ -29,28 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The metadata options for the instance.
+    /// Container for the parameters to the ModifyInstanceMetadataDefaults operation.
+    /// Modifies the default instance metadata service (IMDS) settings at the account level
+    /// in the specified Amazon Web Services&#x2028; Region.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To remove a parameter's account-level default setting, specify <c>no-preference</c>.
+    /// At instance launch, the value will come from the AMI, or from the launch parameter
+    /// if specified. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+    /// of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class InstanceMetadataOptionsResponse
+    public partial class ModifyInstanceMetadataDefaultsRequest : AmazonEC2Request
     {
-        private InstanceMetadataEndpointState _httpEndpoint;
-        private InstanceMetadataProtocolState _httpProtocolIpv6;
+        private DefaultInstanceMetadataEndpointState _httpEndpoint;
         private int? _httpPutResponseHopLimit;
-        private HttpTokensState _httpTokens;
-        private InstanceMetadataTagsState _instanceMetadataTags;
-        private InstanceMetadataOptionsState _state;
+        private MetadataDefaultHttpTokensState _httpTokens;
+        private DefaultInstanceMetadataTagsState _instanceMetadataTags;
 
         /// <summary>
         /// Gets and sets the property HttpEndpoint. 
         /// <para>
-        /// Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the value is <c>disabled</c>, you cannot access your instance metadata.
+        /// Enables or disables the IMDS endpoint on an instance. When disabled, the instance
+        /// metadata can't be accessed.
         /// </para>
         /// </summary>
-        public InstanceMetadataEndpointState HttpEndpoint
+        public DefaultInstanceMetadataEndpointState HttpEndpoint
         {
             get { return this._httpEndpoint; }
             set { this._httpEndpoint = value; }
@@ -63,36 +69,17 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HttpProtocolIpv6. 
-        /// <para>
-        /// Indicates whether the IPv6 endpoint for the instance metadata service is enabled or
-        /// disabled.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <c>disabled</c> 
-        /// </para>
-        /// </summary>
-        public InstanceMetadataProtocolState HttpProtocolIpv6
-        {
-            get { return this._httpProtocolIpv6; }
-            set { this._httpProtocolIpv6 = value; }
-        }
-
-        // Check to see if HttpProtocolIpv6 property is set
-        internal bool IsSetHttpProtocolIpv6()
-        {
-            return this._httpProtocolIpv6 != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property HttpPutResponseHopLimit. 
         /// <para>
         /// The maximum number of hops that the metadata token can travel.
         /// </para>
         ///  
         /// <para>
-        /// Possible values: Integers from <c>1</c> to <c>64</c> 
+        /// Minimum: <c>1</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Maximum: <c>64</c> 
         /// </para>
         /// </summary>
         public int HttpPutResponseHopLimit
@@ -114,17 +101,17 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>optional</c> - IMDSv2 is optional, which means that you can use either IMDSv2
+        ///  <c>optional</c> – IMDSv2 is optional, which means that you can use either IMDSv2
         /// or IMDSv1.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>required</c> - IMDSv2 is required, which means that IMDSv1 is disabled, and you
+        ///  <c>required</c> – IMDSv2 is required, which means that IMDSv1 is disabled, and you
         /// must use IMDSv2.
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public HttpTokensState HttpTokens
+        public MetadataDefaultHttpTokensState HttpTokens
         {
             get { return this._httpTokens; }
             set { this._httpTokens = value; }
@@ -139,12 +126,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceMetadataTags. 
         /// <para>
-        /// Indicates whether access to instance tags from the instance metadata is enabled or
-        /// disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-        /// with instance tags using the instance metadata</a>.
+        /// Enables or disables access to an instance's tags from the instance metadata. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+        /// with instance tags using the instance metadata</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
-        public InstanceMetadataTagsState InstanceMetadataTags
+        public DefaultInstanceMetadataTagsState InstanceMetadataTags
         {
             get { return this._instanceMetadataTags; }
             set { this._instanceMetadataTags = value; }
@@ -154,33 +141,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceMetadataTags()
         {
             return this._instanceMetadataTags != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property State. 
-        /// <para>
-        /// The state of the metadata option changes.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>pending</c> - The metadata options are being updated and the instance is not ready
-        /// to process metadata traffic with the new selection.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>applied</c> - The metadata options have been successfully applied on the instance.
-        /// </para>
-        /// </summary>
-        public InstanceMetadataOptionsState State
-        {
-            get { return this._state; }
-            set { this._state = value; }
-        }
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this._state != null;
         }
 
     }

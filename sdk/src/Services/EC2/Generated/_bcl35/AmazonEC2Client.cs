@@ -28337,6 +28337,67 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetInstanceMetadataDefaults
+
+        /// <summary>
+        /// Gets the default instance metadata service (IMDS) settings that are set at the account
+        /// level in the specified Amazon Web Services&#x2028; Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+        /// of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceMetadataDefaults service method.</param>
+        /// 
+        /// <returns>The response from the GetInstanceMetadataDefaults service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceMetadataDefaults">REST API Reference for GetInstanceMetadataDefaults Operation</seealso>
+        public virtual GetInstanceMetadataDefaultsResponse GetInstanceMetadataDefaults(GetInstanceMetadataDefaultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstanceMetadataDefaultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstanceMetadataDefaultsResponseUnmarshaller.Instance;
+
+            return Invoke<GetInstanceMetadataDefaultsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInstanceMetadataDefaults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceMetadataDefaults operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstanceMetadataDefaults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceMetadataDefaults">REST API Reference for GetInstanceMetadataDefaults Operation</seealso>
+        public virtual IAsyncResult BeginGetInstanceMetadataDefaults(GetInstanceMetadataDefaultsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstanceMetadataDefaultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstanceMetadataDefaultsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInstanceMetadataDefaults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstanceMetadataDefaults.</param>
+        /// 
+        /// <returns>Returns a  GetInstanceMetadataDefaultsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceMetadataDefaults">REST API Reference for GetInstanceMetadataDefaults Operation</seealso>
+        public virtual GetInstanceMetadataDefaultsResponse EndGetInstanceMetadataDefaults(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetInstanceMetadataDefaultsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetInstanceTypesFromInstanceRequirements
 
         /// <summary>
@@ -32108,6 +32169,70 @@ namespace Amazon.EC2
         public virtual ModifyInstanceMaintenanceOptionsResponse EndModifyInstanceMaintenanceOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyInstanceMaintenanceOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyInstanceMetadataDefaults
+
+        /// <summary>
+        /// Modifies the default instance metadata service (IMDS) settings at the account level
+        /// in the specified Amazon Web Services&#x2028; Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To remove a parameter's account-level default setting, specify <c>no-preference</c>.
+        /// At instance launch, the value will come from the AMI, or from the launch parameter
+        /// if specified. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+        /// of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMetadataDefaults service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceMetadataDefaults service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataDefaults">REST API Reference for ModifyInstanceMetadataDefaults Operation</seealso>
+        public virtual ModifyInstanceMetadataDefaultsResponse ModifyInstanceMetadataDefaults(ModifyInstanceMetadataDefaultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceMetadataDefaultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceMetadataDefaultsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceMetadataDefaultsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceMetadataDefaults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMetadataDefaults operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceMetadataDefaults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataDefaults">REST API Reference for ModifyInstanceMetadataDefaults Operation</seealso>
+        public virtual IAsyncResult BeginModifyInstanceMetadataDefaults(ModifyInstanceMetadataDefaultsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceMetadataDefaultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceMetadataDefaultsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstanceMetadataDefaults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceMetadataDefaults.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstanceMetadataDefaultsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataDefaults">REST API Reference for ModifyInstanceMetadataDefaults Operation</seealso>
+        public virtual ModifyInstanceMetadataDefaultsResponse EndModifyInstanceMetadataDefaults(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyInstanceMetadataDefaultsResponse>(asyncResult);
         }
 
         #endregion

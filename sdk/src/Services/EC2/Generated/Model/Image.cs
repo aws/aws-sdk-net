@@ -252,8 +252,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageOwnerAlias. 
         /// <para>
-        /// The Amazon Web Services account alias (for example, <c>amazon</c>, <c>self</c>) or
-        /// the Amazon Web Services account ID of the AMI owner.
+        /// The owner alias (<c>amazon</c> | <c>aws-marketplace</c>).
         /// </para>
         /// </summary>
         public string ImageOwnerAlias

@@ -20917,6 +20917,48 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetInstanceMetadataDefaults
+
+
+        /// <summary>
+        /// Gets the default instance metadata service (IMDS) settings that are set at the account
+        /// level in the specified Amazon Web Services&#x2028; Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+        /// of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceMetadataDefaults service method.</param>
+        /// 
+        /// <returns>The response from the GetInstanceMetadataDefaults service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceMetadataDefaults">REST API Reference for GetInstanceMetadataDefaults Operation</seealso>
+        GetInstanceMetadataDefaultsResponse GetInstanceMetadataDefaults(GetInstanceMetadataDefaultsRequest request);
+
+
+
+        /// <summary>
+        /// Gets the default instance metadata service (IMDS) settings that are set at the account
+        /// level in the specified Amazon Web Services&#x2028; Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+        /// of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceMetadataDefaults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInstanceMetadataDefaults service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceMetadataDefaults">REST API Reference for GetInstanceMetadataDefaults Operation</seealso>
+        Task<GetInstanceMetadataDefaultsResponse> GetInstanceMetadataDefaultsAsync(GetInstanceMetadataDefaultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetInstanceTypesFromInstanceRequirements
 
 
@@ -23584,6 +23626,54 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyInstanceMaintenanceOptions service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMaintenanceOptions">REST API Reference for ModifyInstanceMaintenanceOptions Operation</seealso>
         Task<ModifyInstanceMaintenanceOptionsResponse> ModifyInstanceMaintenanceOptionsAsync(ModifyInstanceMaintenanceOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyInstanceMetadataDefaults
+
+
+        /// <summary>
+        /// Modifies the default instance metadata service (IMDS) settings at the account level
+        /// in the specified Amazon Web Services&#x2028; Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To remove a parameter's account-level default setting, specify <c>no-preference</c>.
+        /// At instance launch, the value will come from the AMI, or from the launch parameter
+        /// if specified. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+        /// of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMetadataDefaults service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceMetadataDefaults service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataDefaults">REST API Reference for ModifyInstanceMetadataDefaults Operation</seealso>
+        ModifyInstanceMetadataDefaultsResponse ModifyInstanceMetadataDefaults(ModifyInstanceMetadataDefaultsRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the default instance metadata service (IMDS) settings at the account level
+        /// in the specified Amazon Web Services&#x2028; Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To remove a parameter's account-level default setting, specify <c>no-preference</c>.
+        /// At instance launch, the value will come from the AMI, or from the launch parameter
+        /// if specified. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+        /// of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMetadataDefaults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyInstanceMetadataDefaults service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataDefaults">REST API Reference for ModifyInstanceMetadataDefaults Operation</seealso>
+        Task<ModifyInstanceMetadataDefaultsResponse> ModifyInstanceMetadataDefaultsAsync(ModifyInstanceMetadataDefaultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

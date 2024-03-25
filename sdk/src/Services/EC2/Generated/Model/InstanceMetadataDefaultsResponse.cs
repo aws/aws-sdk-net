@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The metadata options for the instance.
+    /// The default instance metadata service (IMDS) settings that were set at the account
+    /// level in the specified Amazon Web Services&#x2028; Region.
     /// </summary>
-    public partial class InstanceMetadataOptionsRequest
+    public partial class InstanceMetadataDefaultsResponse
     {
         private InstanceMetadataEndpointState _httpEndpoint;
-        private InstanceMetadataProtocolState _httpProtocolIpv6;
         private int? _httpPutResponseHopLimit;
         private HttpTokensState _httpTokens;
         private InstanceMetadataTagsState _instanceMetadataTags;
@@ -42,15 +42,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HttpEndpoint. 
         /// <para>
-        /// Enables or disables the HTTP metadata endpoint on your instances.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you specify a value of <c>disabled</c>, you cannot access your instance metadata.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <c>enabled</c> 
+        /// Indicates whether the IMDS endpoint for an instance is enabled or disabled. When disabled,
+        /// the instance metadata can't be accessed.
         /// </para>
         /// </summary>
         public InstanceMetadataEndpointState HttpEndpoint
@@ -66,35 +59,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HttpProtocolIpv6. 
-        /// <para>
-        /// Enables or disables the IPv6 endpoint for the instance metadata service.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <c>disabled</c> 
-        /// </para>
-        /// </summary>
-        public InstanceMetadataProtocolState HttpProtocolIpv6
-        {
-            get { return this._httpProtocolIpv6; }
-            set { this._httpProtocolIpv6 = value; }
-        }
-
-        // Check to see if HttpProtocolIpv6 property is set
-        internal bool IsSetHttpProtocolIpv6()
-        {
-            return this._httpProtocolIpv6 != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property HttpPutResponseHopLimit. 
         /// <para>
         /// The maximum number of hops that the metadata token can travel.
-        /// </para>
-        ///  
-        /// <para>
-        /// Possible values: Integers from 1 to 64
         /// </para>
         /// </summary>
         public int HttpPutResponseHopLimit
@@ -116,36 +83,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>optional</c> - IMDSv2 is optional, which means that you can use either IMDSv2
+        ///  <c>optional</c> – IMDSv2 is optional, which means that you can use either IMDSv2
         /// or IMDSv1.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>required</c> - IMDSv2 is required, which means that IMDSv1 is disabled, and you
+        ///  <c>required</c> – IMDSv2 is required, which means that IMDSv1 is disabled, and you
         /// must use IMDSv2.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Default:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// If the value of <c>ImdsSupport</c> for the Amazon Machine Image (AMI) for your instance
-        /// is <c>v2.0</c> and the account level default is set to <c>no-preference</c>, the default
-        /// is <c>required</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the value of <c>ImdsSupport</c> for the Amazon Machine Image (AMI) for your instance
-        /// is <c>v2.0</c>, but the account level default is set to <c>V1 or V2</c>, the default
-        /// is <c>optional</c>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The default value can also be affected by other combinations of parameters. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
-        /// of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public HttpTokensState HttpTokens
         {
@@ -162,14 +108,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceMetadataTags. 
         /// <para>
-        /// Set to <c>enabled</c> to allow access to instance tags from the instance metadata.
-        /// Set to <c>disabled</c> to turn off access to instance tags from the instance metadata.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-        /// with instance tags using the instance metadata</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <c>disabled</c> 
+        /// Indicates whether access to instance tags from the instance metadata is enabled or
+        /// disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+        /// with instance tags using the instance metadata</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public InstanceMetadataTagsState InstanceMetadataTags
