@@ -146,7 +146,7 @@ namespace Amazon.EMRContainers.Model
         /// The values of job template parameters to start a job run.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Max=100)]
         public Dictionary<string, string> JobTemplateParameters
         {
             get { return this._jobTemplateParameters; }

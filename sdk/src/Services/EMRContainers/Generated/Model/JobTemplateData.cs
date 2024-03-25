@@ -118,7 +118,7 @@ namespace Amazon.EMRContainers.Model
         /// The configuration of parameters existing in the job template.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Max=100)]
         public Dictionary<string, TemplateParameterConfiguration> ParameterConfiguration
         {
             get { return this._parameterConfiguration; }
