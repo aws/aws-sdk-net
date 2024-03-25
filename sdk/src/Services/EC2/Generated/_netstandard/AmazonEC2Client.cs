@@ -246,10 +246,6 @@ namespace Amazon.EC2
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.EC2.Internal.AmazonEC2PreMarshallHandler(this.Credentials));
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.EC2.Internal.AmazonEC2PostMarshallHandler());
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.EC2.Internal.AmazonEC2ResponseHandler());
-            if(this.Config.RetryMode == RequestRetryMode.Legacy)
-            {
-                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.EC2.Internal.EC2RetryPolicy(this.Config)));
-            }
             if(this.Config.RetryMode == RequestRetryMode.Standard)
             {
                 pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.EC2.Internal.EC2StandardRetryPolicy(this.Config)));
