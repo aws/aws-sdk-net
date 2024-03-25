@@ -419,6 +419,16 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.TileHeight</property>
+    <min>64</min>
+    <max>2160</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.TileWidth</property>
+    <min>256</min>
+    <max>3840</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.Hdr10Settings.MaxCll</property>
     <min>0</min>
     <max>32768</max>

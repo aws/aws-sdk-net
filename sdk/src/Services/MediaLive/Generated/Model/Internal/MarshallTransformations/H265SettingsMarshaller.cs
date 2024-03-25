@@ -169,6 +169,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinIInterval);
             }
 
+            if(requestObject.IsSetMvOverPictureBoundaries())
+            {
+                context.Writer.WritePropertyName("mvOverPictureBoundaries");
+                context.Writer.Write(requestObject.MvOverPictureBoundaries);
+            }
+
+            if(requestObject.IsSetMvTemporalPredictor())
+            {
+                context.Writer.WritePropertyName("mvTemporalPredictor");
+                context.Writer.Write(requestObject.MvTemporalPredictor);
+            }
+
             if(requestObject.IsSetParDenominator())
             {
                 context.Writer.WritePropertyName("parDenominator");
@@ -223,6 +235,24 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Tier);
             }
 
+            if(requestObject.IsSetTileHeight())
+            {
+                context.Writer.WritePropertyName("tileHeight");
+                context.Writer.Write(requestObject.TileHeight);
+            }
+
+            if(requestObject.IsSetTilePadding())
+            {
+                context.Writer.WritePropertyName("tilePadding");
+                context.Writer.Write(requestObject.TilePadding);
+            }
+
+            if(requestObject.IsSetTileWidth())
+            {
+                context.Writer.WritePropertyName("tileWidth");
+                context.Writer.Write(requestObject.TileWidth);
+            }
+
             if(requestObject.IsSetTimecodeBurninSettings())
             {
                 context.Writer.WritePropertyName("timecodeBurninSettings");
@@ -238,6 +268,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("timecodeInsertion");
                 context.Writer.Write(requestObject.TimecodeInsertion);
+            }
+
+            if(requestObject.IsSetTreeblockSize())
+            {
+                context.Writer.WritePropertyName("treeblockSize");
+                context.Writer.Write(requestObject.TreeblockSize);
             }
 
         }
