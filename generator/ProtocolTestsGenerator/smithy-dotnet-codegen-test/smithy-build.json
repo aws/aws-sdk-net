@@ -3,8 +3,9 @@
       "plugins": {
         "dotnet-codegen": {
           "service": "aws.protocoltests.restjson#JsonListsService",
-          "module": "document",
-          "moduleVersion": "0.0.1"
+          "package": "AWSSDK.TestPackage",
+          "packageNamespace": "Amazon.CodegenTest",
+          "packageVersion": "0.0.1"
         }
       }
 }

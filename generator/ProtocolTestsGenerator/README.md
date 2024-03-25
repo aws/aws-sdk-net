@@ -16,10 +16,9 @@ Simply clone the repository and `cd` into the `ProtocolTestsGenerator` folder. T
 of gradle or download it beforehand if necessary.
 
 ## Running the Protocol Test Generator
-Once in the `ProtocolTestsGenerator` folder.
-1. Navigate to `smithy-dotnet-protocol-test` directory
+1. Navigate to the `ProtocolTestsGenerator` directory
 ```
-cd smithy-dotnet-protocol-test
+cd ProtocolTestsGenerator
 ```
 2. Build the project
 ```
@@ -27,13 +26,14 @@ cd smithy-dotnet-protocol-test
 ```
 
 ## Running the Test Project
-1. Navigate to `smithy-dotnet-codegen-test`
+1. Navigate to the `ProtocolTestsGenerator` directory
 ```
-cd smithy-dotnet-codegen-test
+cd ProtocolTestsGenerator
 ```
 2. Build the project
 ```
 ./gradlew :smithy-dotnet-codegen-test:build
 ```
-**Note:** For the `smithy-dotnet-codegen-test` project you may need to tweak the `smithy-build.json` file to point to the right
-smithy model.
+**Note:** Since the core smithy code generator is set up to generate protocol tests only, 
+the `smithy-dotnet-codegen-test` project will not build. If you want to use the test project,
+make sure to include a projection.
