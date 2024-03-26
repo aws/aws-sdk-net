@@ -52,6 +52,14 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Paginator for ListCostAllocationTagBackfillHistory operation
+        ///</summary>
+        public IListCostAllocationTagBackfillHistoryPaginator ListCostAllocationTagBackfillHistory(ListCostAllocationTagBackfillHistoryRequest request) 
+        {
+            return new ListCostAllocationTagBackfillHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCostAllocationTags operation
         ///</summary>
         public IListCostAllocationTagsPaginator ListCostAllocationTags(ListCostAllocationTagsRequest request) 

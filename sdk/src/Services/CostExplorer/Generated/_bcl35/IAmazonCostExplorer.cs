@@ -1579,6 +1579,52 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  ListCostAllocationTagBackfillHistory
+
+
+        /// <summary>
+        /// Retrieves a list of your historical cost allocation tag backfill requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCostAllocationTagBackfillHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListCostAllocationTagBackfillHistory service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTagBackfillHistory">REST API Reference for ListCostAllocationTagBackfillHistory Operation</seealso>
+        ListCostAllocationTagBackfillHistoryResponse ListCostAllocationTagBackfillHistory(ListCostAllocationTagBackfillHistoryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCostAllocationTagBackfillHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCostAllocationTagBackfillHistory operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCostAllocationTagBackfillHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTagBackfillHistory">REST API Reference for ListCostAllocationTagBackfillHistory Operation</seealso>
+        IAsyncResult BeginListCostAllocationTagBackfillHistory(ListCostAllocationTagBackfillHistoryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCostAllocationTagBackfillHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCostAllocationTagBackfillHistory.</param>
+        /// 
+        /// <returns>Returns a  ListCostAllocationTagBackfillHistoryResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTagBackfillHistory">REST API Reference for ListCostAllocationTagBackfillHistory Operation</seealso>
+        ListCostAllocationTagBackfillHistoryResponse EndListCostAllocationTagBackfillHistory(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListCostAllocationTags
 
 
@@ -1812,6 +1858,60 @@ namespace Amazon.CostExplorer
         /// <returns>Returns a  ProvideAnomalyFeedbackResult from CostExplorer.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback">REST API Reference for ProvideAnomalyFeedback Operation</seealso>
         ProvideAnomalyFeedbackResponse EndProvideAnomalyFeedback(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartCostAllocationTagBackfill
+
+
+        /// <summary>
+        /// Request a cost allocation tag backfill. This will backfill the activation status
+        /// (either <c>active</c> or <c>inactive</c>) for all tag keys from <c>para:BackfillFrom</c>
+        /// up to the when this request is made.
+        /// 
+        ///  
+        /// <para>
+        /// You can request a backfill once every 24 hours. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCostAllocationTagBackfill service method.</param>
+        /// 
+        /// <returns>The response from the StartCostAllocationTagBackfill service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BackfillLimitExceededException">
+        /// A request to backfill is already in progress. Once the previous request is complete,
+        /// you can create another request.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCostAllocationTagBackfill">REST API Reference for StartCostAllocationTagBackfill Operation</seealso>
+        StartCostAllocationTagBackfillResponse StartCostAllocationTagBackfill(StartCostAllocationTagBackfillRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartCostAllocationTagBackfill operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartCostAllocationTagBackfill operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartCostAllocationTagBackfill
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCostAllocationTagBackfill">REST API Reference for StartCostAllocationTagBackfill Operation</seealso>
+        IAsyncResult BeginStartCostAllocationTagBackfill(StartCostAllocationTagBackfillRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartCostAllocationTagBackfill operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartCostAllocationTagBackfill.</param>
+        /// 
+        /// <returns>Returns a  StartCostAllocationTagBackfillResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCostAllocationTagBackfill">REST API Reference for StartCostAllocationTagBackfill Operation</seealso>
+        StartCostAllocationTagBackfillResponse EndStartCostAllocationTagBackfill(IAsyncResult asyncResult);
 
         #endregion
         
