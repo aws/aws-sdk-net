@@ -89,10 +89,6 @@ namespace Amazon.Runtime
     public enum RequestRetryMode
     {
         /// <summary>
-        /// Legacy request retry strategy.
-        /// </summary>
-        Legacy,
-        /// <summary>
         /// Standardized request retry strategy that is consistent across all SDKs.
         /// </summary>
         Standard,

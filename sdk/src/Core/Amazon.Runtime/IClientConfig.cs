@@ -191,10 +191,9 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// Returns the flag indicating how many retry HTTP requests an SDK should
-        /// make for a single SDK operation invocation before giving up. This flag will 
-        /// return 4 when the RetryMode is set to "Legacy" which is the default. For
+        /// make for a single SDK operation invocation before giving up. For
         /// RetryMode values of "Standard" or "Adaptive" this flag will return 2. In 
-        /// addition to the values returned that are dependant on the RetryMode, the
+        /// addition to the values returned that are dependent on the RetryMode, the
         /// value can be set to a specific value by using the AWS_MAX_ATTEMPTS environment
         /// variable, max_attempts in the shared configuration file, or by setting a
         /// value directly on this property. When using AWS_MAX_ATTEMPTS or max_attempts

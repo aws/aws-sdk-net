@@ -43,8 +43,7 @@ namespace Amazon.MigrationHubRefactorSpaces
                 InRegion,
                 CrossRegion,
                 Mobile,
-                Auto,
-                Legacy
+                Auto
             });
         }
 
@@ -125,20 +124,6 @@ namespace Amazon.MigrationHubRefactorSpaces
             ConnectTimeout = TimeSpan.FromMilliseconds(1100L),
             // 0:00:01.1
             TlsNegotiationTimeout = TimeSpan.FromMilliseconds(1100L),
-            TimeToFirstByteTimeout = null,
-            HttpRequestTimeout = null
-        };
-        /// <summary>
-        /// <p>The LEGACY mode provides default settings that vary per SDK and were used prior to establishment of defaults_mode</p>
-        /// </summary>
-        public static IDefaultConfiguration Legacy {get;} = new DefaultConfiguration
-        {
-            Name = DefaultConfigurationMode.Legacy,
-            RetryMode = RequestRetryMode.Legacy,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Legacy,
-            S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Legacy,
-            ConnectTimeout = null,
-            TlsNegotiationTimeout = null,
             TimeToFirstByteTimeout = null,
             HttpRequestTimeout = null
         };

@@ -381,21 +381,11 @@ namespace AWSSDK.UnitTests
             RetryHandler handler;
             var credentials = new BasicAWSCredentials("access_key", "secret_key");
 
-            //Test that DefaultRetryPolicy is selected for no specified RetryMode which defaults to Legacy
+            //Test that StandardRetryPolicy is selected for no specified RetryMode which defaults to Standard
             client = new MockServicePipelineValueClient(credentials, new AmazonS3Config());
 
             handler = (RetryHandler)client.Pipeline.Handlers.Find(h => h is RetryHandler);
-            Assert.IsTrue(handler.RetryPolicy is DefaultRetryPolicy);
-
-            //Test that DefaultRetryPolicy is selected for Legacy
-            client = new MockServicePipelineValueClient(credentials,
-                new AmazonS3Config
-                {
-                    RetryMode = RequestRetryMode.Legacy
-                });
-
-            handler = (RetryHandler)client.Pipeline.Handlers.Find(h => h is RetryHandler);
-            Assert.IsTrue(handler.RetryPolicy is DefaultRetryPolicy);
+            Assert.IsTrue(handler.RetryPolicy is StandardRetryPolicy);
 
             //Test that StandardRetryPolicy is selected for Standard
             client = new MockServicePipelineValueClient(credentials,
