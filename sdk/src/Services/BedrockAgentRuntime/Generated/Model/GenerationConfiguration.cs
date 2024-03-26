@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains metadata about a part of the generated response that is accompanied by a
-    /// citation.
+    /// Contains configurations for response generation based on the knowledge base query
+    /// results.
     /// 
     ///  
     /// <para>
@@ -38,38 +38,31 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
-    /// response</a> – in the <c>generatedResponsePart</c> field
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
-    /// response</a> – in the <c>generatedResponsePart</c> field
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+    /// request</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class GeneratedResponsePart
+    public partial class GenerationConfiguration
     {
-        private TextResponsePart _textResponsePart;
+        private PromptTemplate _promptTemplate;
 
         /// <summary>
-        /// Gets and sets the property TextResponsePart. 
+        /// Gets and sets the property PromptTemplate. 
         /// <para>
-        /// Contains metadata about a textual part of the generated response that is accompanied
-        /// by a citation.
+        /// Contains the template for the prompt that's sent to the model for response generation.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public TextResponsePart TextResponsePart
+        public PromptTemplate PromptTemplate
         {
-            get { return this._textResponsePart; }
-            set { this._textResponsePart = value; }
+            get { return this._promptTemplate; }
+            set { this._promptTemplate = value; }
         }
 
-        // Check to see if TextResponsePart property is set
-        internal bool IsSetTextResponsePart()
+        // Check to see if PromptTemplate property is set
+        internal bool IsSetPromptTemplate()
         {
-            return this._textResponsePart != null;
+            return this._promptTemplate != null;
         }
 
     }

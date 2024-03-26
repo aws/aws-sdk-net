@@ -33,14 +33,6 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// Queries a knowledge base and generates responses based on the retrieved results. The
     /// response cites up to five sources but only selects the ones that are relevant to the
     /// query.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The <c>numberOfResults</c> field is currently unsupported for <c>RetrieveAndGenerate</c>.
-    /// Don't include it in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_KnowledgeBaseVectorSearchConfiguration.html">vectorSearchConfiguration</a>
-    /// object.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class RetrieveAndGenerateRequest : AmazonBedrockAgentRuntimeRequest
     {
@@ -52,7 +44,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// Contains the query made to the knowledge base.
+        /// Contains the query to be made to the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -71,8 +63,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property RetrieveAndGenerateConfiguration. 
         /// <para>
-        /// Contains details about the resource being queried and the foundation model used for
-        /// generation.
+        /// Contains configurations for the knowledge base query and retrieval process. For more
+        /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+        /// configurations</a>.
         /// </para>
         /// </summary>
         public RetrieveAndGenerateConfiguration RetrieveAndGenerateConfiguration

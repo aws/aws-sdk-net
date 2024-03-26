@@ -35,8 +35,8 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// function</a> for an action group or pass them when making an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
     /// request. Use session state attributes to control and provide conversational context
     /// for your agent and to help customize your agent's behavior. For more information,
-    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessionstate.html">Session
-    /// context</a>.
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+    /// session context</a>.
     /// </summary>
     public partial class SessionState
     {

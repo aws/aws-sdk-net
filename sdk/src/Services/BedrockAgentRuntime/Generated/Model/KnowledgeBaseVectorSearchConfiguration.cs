@@ -29,7 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Configurations for how to carry out the search.
+    /// Configurations for how to perform the search query and return results. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+    /// configurations</a>.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+    /// request</a> – in the <c>vectorSearchConfiguration</c> field
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+    /// request</a> – in the <c>vectorSearchConfiguration</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class KnowledgeBaseVectorSearchConfiguration
     {
@@ -39,16 +57,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property NumberOfResults. 
         /// <para>
-        /// The number of results to return.
+        /// The number of source chunks to retrieve.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The <c>numberOfResults</c> field is currently unsupported for <c>RetrieveAndGenerate</c>.
-        /// Don't include it in this field if you are sending a <c>RetrieveAndGenerate</c> request.
-        /// </para>
-        ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=100)]
         public int NumberOfResults
         {
             get { return this._numberOfResults.GetValueOrDefault(); }

@@ -481,14 +481,6 @@ namespace Amazon.BedrockAgentRuntime
         /// Queries a knowledge base and generates responses based on the retrieved results. The
         /// response cites up to five sources but only selects the ones that are relevant to the
         /// query.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The <c>numberOfResults</c> field is currently unsupported for <c>RetrieveAndGenerate</c>.
-        /// Don't include it in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_KnowledgeBaseVectorSearchConfiguration.html">vectorSearchConfiguration</a>
-        /// object.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveAndGenerate service method.</param>
         /// 

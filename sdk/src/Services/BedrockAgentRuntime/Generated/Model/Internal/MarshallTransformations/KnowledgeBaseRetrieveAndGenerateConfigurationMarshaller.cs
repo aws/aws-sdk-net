@@ -45,6 +45,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KnowledgeBaseRetrieveAndGenerateConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetGenerationConfiguration())
+            {
+                context.Writer.WritePropertyName("generationConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GenerationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GenerationConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetKnowledgeBaseId())
             {
                 context.Writer.WritePropertyName("knowledgeBaseId");

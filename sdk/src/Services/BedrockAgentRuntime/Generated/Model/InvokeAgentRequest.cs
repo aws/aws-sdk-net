@@ -204,7 +204,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property SessionState. 
         /// <para>
-        /// Contains parameters that specify various attributes of the session.
+        /// Contains parameters that specify various attributes of the session. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+        /// session context</a>.
         /// </para>
         /// </summary>
         public SessionState SessionState
