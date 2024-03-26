@@ -221,10 +221,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
             // We are relaxing our assert here so that "1, 2, 3" = "1,2,3" There is nothing in the smithy docs that says whitespace matters.
             writer.write("Assert.AreEqual($S.Replace(\" \",\"\"), marshalledRequest.Headers[$S].Replace(\" \",\"\"));", headers.get(header), header);
         }
-        //Verify the query Params
+        // Verify the query Params.
         if(!httpRequestTestCase.getQueryParams().isEmpty()){
-            writer.write("var querySegment = actualUri.Query.Substring(1);");
-            writer.write("var actualQuerySegments = querySegment.Split('&');");
+            writer.write("var actualQuerySegments = ProtocolTestUtils.GetQuerySegmentsFromOriginalString(actualUri);");
             for(var queryParam : httpRequestTestCase.getQueryParams()){
                 writer.write("Assert.IsTrue(actualQuerySegments.Contains($S));",queryParam);
             }

@@ -83,6 +83,19 @@ namespace AWSSDK.ProtocolTests.Utils
             return actualBody;
         }
 
+        /// <summary>
+        /// This takes a uri and returns the querySegments from the original string. We don't use
+        /// uri.Query because .NET automatically decodes some characters when returning the URI.
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <returns>An array of query segments</returns>
+        public static string[] GetQuerySegmentsFromOriginalString(Uri uri)
+        {
+            var originalString = uri.OriginalString;
+            var questionIndex = originalString.IndexOf('?');
+            string query = originalString.Substring(questionIndex + 1);
+            return query.Split('&');
+        }
         public class NoopPipelineHandler : IPipelineHandler
         {
             public ILogger Logger { get; set; }
