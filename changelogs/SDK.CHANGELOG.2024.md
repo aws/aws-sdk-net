@@ -1,3 +1,18 @@
+### 3.7.776.0 (2024-03-26 18:25 UTC)
+* BedrockAgentRuntime (3.7.302.0)
+	* This release adds support to customize prompts sent through the RetrieveAndGenerate API in Agents for Amazon Bedrock.
+* CostExplorer (3.7.302.0)
+	* Adds support for backfill of cost allocation tags, with new StartCostAllocationTagBackfill and ListCostAllocationTagBackfillHistory API.
+* EC2 (3.7.320.0)
+	* Documentation updates for Elastic Compute Cloud (EC2).
+* ECS (3.7.305.24)
+	* This is a documentation update for Amazon ECS.
+* Finspace (3.7.306.0)
+	* Add new operation delete-kx-cluster-node and add status parameter to list-kx-cluster-node operation.
+* Core 3.7.303.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.775.0 (2024-03-25 18:28 UTC)
 * CodeBuild (3.7.304.0)
 	* Supporting GitLab and GitLab Self Managed as source types in AWS CodeBuild.
