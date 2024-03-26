@@ -95,7 +95,7 @@ namespace Amazon.Runtime.CredentialManagement
         public bool? S3DisableMultiRegionAccessPoints { get; set; }
         
         /// <summary>
-        /// The Sts Regional Endpoints Value as either legacy or regional
+        /// The Sts Regional Endpoints Value (the only allowed value is regional)
         /// </summary>
         public StsRegionalEndpointsValue? StsRegionalEndpoints { get; set; }
 

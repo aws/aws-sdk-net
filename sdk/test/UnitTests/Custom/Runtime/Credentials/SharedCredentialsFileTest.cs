@@ -320,7 +320,6 @@ namespace AWSSDK.UnitTests
             .Append("max_attempts=100")
             .ToString();
 
-
         private static readonly CredentialProfileOptions SAMLRoleProfileOptions = new CredentialProfileOptions
         {
             EndpointName = "endpoint_name",
@@ -460,9 +459,8 @@ namespace AWSSDK.UnitTests
             .AppendLine(" name2 = value2")
             .ToString();
 
-        /// in reality a services section would not have aws_access_key and aws_secret_access_key
-        /// but for the purposes of testing we include it since the testFixture expects ProfileOptions
-        ///
+        // In reality a services section would not have aws_access_key and aws_secret_access_key
+        // but for the purposes of testing we include it since the testFixture expects ProfileOptions
         private static readonly string ServicesConfigurationWithMultipleProperties = new StringBuilder()
             .AppendLine("[profile bar]")
             .AppendLine("aws_access_key_id=basic_aws_access_key_id")
@@ -472,6 +470,43 @@ namespace AWSSDK.UnitTests
             .AppendLine("name = value")
             .AppendLine("name2 = value2")
             .ToString();
+
+        private static readonly string ValidRegionalStsEndpoint = new StringBuilder()
+            .AppendLine("[profile_regional_sts_option]")
+            .AppendLine("region=us-west-2")
+            .AppendLine("aws_access_key_id=basic_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
+            .AppendLine("sts_regional_endpoints=regional")
+            .ToString();
+
+        private static readonly string InvalidLegacyStsEndpoint = new StringBuilder()
+            .AppendLine("[profile_legacy_sts_option]")
+            .AppendLine("region=us-west-2")
+            .AppendLine("aws_access_key_id=basic_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
+            .AppendLine("sts_regional_endpoints=legacy")
+            .ToString();
+
+        [TestMethod]
+        public void ProfileWithStsRegionalOptionShouldSucceed()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(ValidRegionalStsEndpoint))
+            {
+                var profile = tester.TestTryGetProfile("profile_regional_sts_option", true, true);
+                Assert.IsNotNull(profile);
+                Assert.AreEqual(profile.StsRegionalEndpoints, StsRegionalEndpointsValue.Regional);
+            }
+        }
+
+        [TestMethod]
+        public void ProfileWithStsLegacyOptionShouldFail()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(InvalidLegacyStsEndpoint))
+            {
+                var profile = tester.TestTryGetProfile("profile_legacy_sts_option", false, false);
+                Assert.IsNull(profile);
+            }
+        }
 
         [TestMethod]
         public void ReadProfileWithSubproperties()

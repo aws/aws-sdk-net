@@ -16,9 +16,6 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class EndpointResolverTests
     {
-        private const string AwsStsRegionalEndpointsEnvironmentVariable = "AWS_STS_REGIONAL_ENDPOINTS";
-        private const string DefaultStsEndpoint = @"https://sts.amazonaws.com/";
-
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -32,23 +29,12 @@ namespace AWSSDK.UnitTests
         }
 
         [DataTestMethod]
-        [DataRow(StsRegionalEndpointsValue.Legacy, "us-east-1", DefaultStsEndpoint)]
-        [DataRow(StsRegionalEndpointsValue.Legacy, "us-west-2", DefaultStsEndpoint)]
-        [DataRow(StsRegionalEndpointsValue.Legacy, "cn-north-1", @"https://sts.cn-north-1.amazonaws.com.cn/")]
-        [DataRow(StsRegionalEndpointsValue.Legacy, "ap-east-1", @"https://sts.ap-east-1.amazonaws.com/")]
         [DataRow(StsRegionalEndpointsValue.Regional, "us-east-1", @"https://sts.us-east-1.amazonaws.com/")]
         [DataRow(StsRegionalEndpointsValue.Regional, "us-west-2", @"https://sts.us-west-2.amazonaws.com/")]
         [DataRow(StsRegionalEndpointsValue.Regional, "cn-north-1", @"https://sts.cn-north-1.amazonaws.com.cn/")]
         [DataRow(StsRegionalEndpointsValue.Regional, "ap-east-1", @"https://sts.ap-east-1.amazonaws.com/")]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        ///
-        /// If the STS regional endpoints environment variable is set to
-        /// regional, then the endpoint created by DetermineEndpoint
-        /// should always be specific to the customer's region
-        /// If it is set to legacy, it should be the default sts
-        /// endpoint for legacy global regions
-        ///
         public void TestDetermineEndpointStsFlag(StsRegionalEndpointsValue stsRegionalFlag, string region, string expected)
         {
             var endpointResolver = new EndpointResolver();
@@ -132,6 +118,5 @@ namespace AWSSDK.UnitTests
             config.StsRegionalEndpoints = stsRegionalEndpoints;
             return config;
         }
-
     }
 }

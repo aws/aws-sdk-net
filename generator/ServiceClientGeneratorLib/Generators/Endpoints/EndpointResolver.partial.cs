@@ -24,7 +24,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
                 case "AWS::S3Control::UseArnRegion": return "config.UseArnRegion";
                 case "AWS::S3::DisableMultiRegionAccessPoints": return "config.DisableMultiregionAccessPoints";
                 case "AWS::S3::UseGlobalEndpoint": return "config.USEast1RegionalEndpointValue == S3UsEast1RegionalEndpointValue.Legacy";
-                case "AWS::STS::UseGlobalEndpoint": return "config.StsRegionalEndpoints == StsRegionalEndpointsValue.Legacy";
+                case "AWS::STS::UseGlobalEndpoint": return "false";
                 default: throw new Exception("Unknown builtIn");
             }
         }

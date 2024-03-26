@@ -671,7 +671,7 @@ namespace Amazon.Runtime.CredentialManagement
                 {
                     if (!Enum.TryParse<StsRegionalEndpointsValue>(stsRegionalEndpointsString, true, out var stsRegionalEndpointsTemp))
                     {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional/legacy is expected.", stsRegionalEndpointsString, StsRegionalEndpointsField, profileName);
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional is expected.", stsRegionalEndpointsString, StsRegionalEndpointsField, profileName);
                         profile = null;
                         return false;
                     }
