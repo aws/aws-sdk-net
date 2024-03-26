@@ -105,8 +105,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of routes to return. If a value is not provided, the default is
-        /// 1000.
+        /// The maximum number of routes to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]
