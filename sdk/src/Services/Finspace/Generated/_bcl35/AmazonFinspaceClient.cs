@@ -1102,6 +1102,75 @@ namespace Amazon.Finspace
 
         #endregion
         
+        #region  DeleteKxClusterNode
+
+        /// <summary>
+        /// Deletes the specified nodes from a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKxClusterNode service method.</param>
+        /// 
+        /// <returns>The response from the DeleteKxClusterNode service method, as returned by Finspace.</returns>
+        /// <exception cref="Amazon.Finspace.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxClusterNode">REST API Reference for DeleteKxClusterNode Operation</seealso>
+        public virtual DeleteKxClusterNodeResponse DeleteKxClusterNode(DeleteKxClusterNodeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKxClusterNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKxClusterNodeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteKxClusterNodeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteKxClusterNode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKxClusterNode operation on AmazonFinspaceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteKxClusterNode
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxClusterNode">REST API Reference for DeleteKxClusterNode Operation</seealso>
+        public virtual IAsyncResult BeginDeleteKxClusterNode(DeleteKxClusterNodeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKxClusterNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKxClusterNodeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteKxClusterNode operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteKxClusterNode.</param>
+        /// 
+        /// <returns>Returns a  DeleteKxClusterNodeResult from Finspace.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxClusterNode">REST API Reference for DeleteKxClusterNode Operation</seealso>
+        public virtual DeleteKxClusterNodeResponse EndDeleteKxClusterNode(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteKxClusterNodeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteKxDatabase
 
         /// <summary>

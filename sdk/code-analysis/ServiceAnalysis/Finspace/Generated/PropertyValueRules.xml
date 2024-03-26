@@ -517,6 +517,23 @@
     <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Finspace.Model.DeleteKxClusterNodeRequest.ClusterName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.DeleteKxClusterNodeRequest.EnvironmentId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.DeleteKxClusterNodeRequest.NodeId</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Finspace.Model.DeleteKxDatabaseRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>

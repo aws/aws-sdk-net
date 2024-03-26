@@ -81,6 +81,12 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                     unmarshalledObject.NodeId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

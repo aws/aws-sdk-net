@@ -44,7 +44,7 @@ namespace Amazon.Finspace.Model
         /// Gets and sets the property ChangeRequests. 
         /// <para>
         /// A list of change request objects that are run in order. A change request object consists
-        /// of <c>changeType</c> , <c>s3Path</c>, and <c>dbPath</c>. A changeType can has the
+        /// of <c>changeType</c> , <c>s3Path</c>, and <c>dbPath</c>. A changeType can have the
         /// following values: 
         /// </para>
         ///  <ul> <li> 
