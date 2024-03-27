@@ -206,7 +206,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
         // Calling AmazonServiceClient.ComposeUrl to avoid adding the HttpHandler to the mock request pipeline since we don't want
         // to make a network call
         writer.write("Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);");
-        writer.write("Assert.AreEqual($S, actualUri.AbsolutePath);", httpRequestTestCase.getUri());
+        // We compare with the OriginalString here because in .NET the Uri class sends some special characters decoded. We're only
+        // interested in the original encoded string that the sdk internals calculated
+        writer.write("Assert.AreEqual($S, ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));", httpRequestTestCase.getUri());
 
         var headers = httpRequestTestCase.getHeaders();
         for(var header : httpRequestTestCase.getHeaders().keySet()){

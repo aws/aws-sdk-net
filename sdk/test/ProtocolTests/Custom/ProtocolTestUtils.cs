@@ -26,6 +26,7 @@ using Amazon.Runtime.Internal.Util;
 using AWSSDK.UnitTests;
 using System.IO;
 using System.Net;
+using System.Data.SqlTypes;
 
 namespace AWSSDK.ProtocolTests.Utils
 {
@@ -95,6 +96,28 @@ namespace AWSSDK.ProtocolTests.Utils
             var questionIndex = originalString.IndexOf('?');
             string query = originalString.Substring(questionIndex + 1);
             return query.Split('&');
+        }
+        /// <summary>
+        /// Similar to <seealso cref="GetQuerySegmentsFromOriginalString(Uri)"/> this function takes
+        /// a uri and resource path from the uri's original string. We want the encoded version.
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <returns>The resource path of the uri</returns>
+        public static string GetEncodedResourcePathFromOriginalString(Uri uri)
+        {
+            var originalString = uri.OriginalString;
+            int doubleSlashIndex = originalString.IndexOf("//");
+            int firstSlashAfterDoubleSlash = originalString.IndexOf('/', doubleSlashIndex + 2);
+            var questionIndex = originalString.IndexOf('?');
+            if (questionIndex > 0)
+            {
+                return originalString.Substring(firstSlashAfterDoubleSlash, questionIndex - firstSlashAfterDoubleSlash);
+            }
+            else
+            {
+                return originalString.Substring(firstSlashAfterDoubleSlash);
+            }
+
         }
         public class NoopPipelineHandler : IPipelineHandler
         {

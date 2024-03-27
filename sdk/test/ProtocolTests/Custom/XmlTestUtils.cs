@@ -38,6 +38,12 @@ namespace AWSSDK.ProtocolTests.Utils
             else 
             {
                 actualBody = Encoding.UTF8.GetString(actualRequest.Content);
+                //if it's a raw string, just compare raw string values
+                if (!actualBody.StartsWith("<"))
+                {
+                    Assert.AreEqual(expectedBody,actualBody);
+                    return;
+                }
                 XDocument actualDoc = XDocument.Parse(actualBody);
                 XDocument expectedDoc = XDocument.Parse(expectedBody);
                 Assert.IsTrue(AreDocumentsEqual(expectedDoc, actualDoc));
