@@ -1,3 +1,18 @@
+### 3.7.777.0 (2024-03-27 18:35 UTC)
+* Batch (3.7.304.0)
+	* This feature allows AWS Batch to support configuration of imagePullSecrets and allowPrivilegeEscalation for jobs running on EKS
+* BedrockAgent (3.7.303.0)
+	* This changes introduces metadata documents statistics and also updates the documentation for bedrock agent.
+* BedrockAgentRuntime (3.7.303.0)
+	* This release introduces filtering support on Retrieve and RetrieveAndGenerate APIs.
+* ElastiCache (3.7.302.0)
+	* Added minimum capacity to  Amazon ElastiCache Serverless. This feature allows customer to ensure minimum capacity even without current load
+* SecretsManager (3.7.302.38)
+	* Documentation updates for Secrets Manager
+* Core 3.7.303.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.776.0 (2024-03-26 18:25 UTC)
 * BedrockAgentRuntime (3.7.302.0)
 	* This release adds support to customize prompts sent through the RetrieveAndGenerate API in Agents for Amazon Bedrock.
