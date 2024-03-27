@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+      "plugins": {
+        "dotnet-codegen": {
+          "service": "aws.protocoltests.restjson#JsonListsService",
+          "package": "AWSSDK.TestPackage",
+          "packageNamespace": "Amazon.CodegenTest",
+          "packageVersion": "0.0.1"
+        }
+      }
+}
