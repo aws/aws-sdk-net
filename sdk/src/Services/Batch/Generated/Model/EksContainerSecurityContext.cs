@@ -34,11 +34,31 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EksContainerSecurityContext
     {
+        private bool? _allowPrivilegeEscalation;
         private bool? _privileged;
         private bool? _readOnlyRootFilesystem;
         private long? _runAsGroup;
         private bool? _runAsNonRoot;
         private long? _runAsUser;
+
+        /// <summary>
+        /// Gets and sets the property AllowPrivilegeEscalation. 
+        /// <para>
+        /// Whether or not a container or a Kubernetes pod is allowed to gain more privileges
+        /// than its parent process. The default value is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool AllowPrivilegeEscalation
+        {
+            get { return this._allowPrivilegeEscalation.GetValueOrDefault(); }
+            set { this._allowPrivilegeEscalation = value; }
+        }
+
+        // Check to see if AllowPrivilegeEscalation property is set
+        internal bool IsSetAllowPrivilegeEscalation()
+        {
+            return this._allowPrivilegeEscalation.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Privileged. 

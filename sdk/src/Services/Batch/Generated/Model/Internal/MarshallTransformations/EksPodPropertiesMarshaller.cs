@@ -73,6 +73,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HostNetwork);
             }
 
+            if(requestObject.IsSetImagePullSecrets())
+            {
+                context.Writer.WritePropertyName("imagePullSecrets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectImagePullSecretsListValue in requestObject.ImagePullSecrets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ImagePullSecretMarshaller.Instance;
+                    marshaller.Marshall(requestObjectImagePullSecretsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetInitContainers())
             {
                 context.Writer.WritePropertyName("initContainers");

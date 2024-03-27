@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
         private List<EksContainerDetail> _containers = AWSConfigs.InitializeCollections ? new List<EksContainerDetail>() : null;
         private string _dnsPolicy;
         private bool? _hostNetwork;
+        private List<ImagePullSecret> _imagePullSecrets = AWSConfigs.InitializeCollections ? new List<ImagePullSecret>() : null;
         private List<EksContainerDetail> _initContainers = AWSConfigs.InitializeCollections ? new List<EksContainerDetail>() : null;
         private EksMetadata _metadata;
         private string _nodeName;
@@ -117,6 +118,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetHostNetwork()
         {
             return this._hostNetwork.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImagePullSecrets. 
+        /// <para>
+        /// Displays the reference pointer to the Kubernetes secret resource.
+        /// </para>
+        /// </summary>
+        public List<ImagePullSecret> ImagePullSecrets
+        {
+            get { return this._imagePullSecrets; }
+            set { this._imagePullSecrets = value; }
+        }
+
+        // Check to see if ImagePullSecrets property is set
+        internal bool IsSetImagePullSecrets()
+        {
+            return this._imagePullSecrets != null && (this._imagePullSecrets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

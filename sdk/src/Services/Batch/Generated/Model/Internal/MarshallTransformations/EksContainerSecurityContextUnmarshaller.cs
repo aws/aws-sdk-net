@@ -63,6 +63,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("allowPrivilegeEscalation", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AllowPrivilegeEscalation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("privileged", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

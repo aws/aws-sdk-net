@@ -81,6 +81,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.HostNetwork = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imagePullSecrets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ImagePullSecret, ImagePullSecretUnmarshaller>(ImagePullSecretUnmarshaller.Instance);
+                    unmarshalledObject.ImagePullSecrets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("initContainers", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EksContainerDetail, EksContainerDetailUnmarshaller>(EksContainerDetailUnmarshaller.Instance);
