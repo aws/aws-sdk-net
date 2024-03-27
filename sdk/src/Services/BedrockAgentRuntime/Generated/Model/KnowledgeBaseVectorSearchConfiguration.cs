@@ -51,8 +51,30 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class KnowledgeBaseVectorSearchConfiguration
     {
+        private RetrievalFilter _filter;
         private int? _numberOfResults;
         private SearchType _overrideSearchType;
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// Specifies the filters to use on the metadata in the knowledge base data sources before
+        /// returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+        /// configurations</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public RetrievalFilter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NumberOfResults. 

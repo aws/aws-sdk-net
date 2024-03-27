@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// KnowledgeBaseVectorSearchConfiguration Marshaller
+    /// FilterAttribute Marshaller
     /// </summary>
-    public class KnowledgeBaseVectorSearchConfigurationMarshaller : IRequestMarshaller<KnowledgeBaseVectorSearchConfiguration, JsonMarshallerContext> 
+    public class FilterAttributeMarshaller : IRequestMarshaller<FilterAttribute, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,18 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(KnowledgeBaseVectorSearchConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(FilterAttribute requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFilter())
+            if(requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("filter");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RetrievalFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.Filter, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("key");
+                context.Writer.Write(requestObject.Key);
             }
 
-            if(requestObject.IsSetNumberOfResults())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("numberOfResults");
-                context.Writer.Write(requestObject.NumberOfResults);
-            }
-
-            if(requestObject.IsSetOverrideSearchType())
-            {
-                context.Writer.WritePropertyName("overrideSearchType");
-                context.Writer.Write(requestObject.OverrideSearchType);
+                context.Writer.WritePropertyName("value");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.Value);
             }
 
         }
@@ -73,7 +62,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static KnowledgeBaseVectorSearchConfigurationMarshaller Instance = new KnowledgeBaseVectorSearchConfigurationMarshaller();
+        public readonly static FilterAttributeMarshaller Instance = new FilterAttributeMarshaller();
 
     }
 }

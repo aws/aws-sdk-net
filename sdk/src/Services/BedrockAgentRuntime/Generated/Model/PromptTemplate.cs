@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
-    /// request</a> 
+    /// request</a> – in the <c>filter</c> field
     /// </para>
     ///  </li> </ul>
     /// </summary>

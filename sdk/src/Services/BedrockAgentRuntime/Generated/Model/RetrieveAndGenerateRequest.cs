@@ -31,8 +31,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <summary>
     /// Container for the parameters to the RetrieveAndGenerate operation.
     /// Queries a knowledge base and generates responses based on the retrieved results. The
-    /// response cites up to five sources but only selects the ones that are relevant to the
-    /// query.
+    /// response only cites sources that are relevant to the query.
     /// </summary>
     public partial class RetrieveAndGenerateRequest : AmazonBedrockAgentRuntimeRequest
     {

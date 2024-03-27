@@ -73,6 +73,11 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FilterAttribute.Key</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.InferenceConfiguration.MaximumLength</property>
     <min>0</min>
     <max>4096</max>

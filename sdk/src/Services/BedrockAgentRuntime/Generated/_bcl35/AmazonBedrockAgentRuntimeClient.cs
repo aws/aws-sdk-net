@@ -479,8 +479,7 @@ namespace Amazon.BedrockAgentRuntime
 
         /// <summary>
         /// Queries a knowledge base and generates responses based on the retrieved results. The
-        /// response cites up to five sources but only selects the ones that are relevant to the
-        /// query.
+        /// response only cites sources that are relevant to the query.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveAndGenerate service method.</param>
         /// 

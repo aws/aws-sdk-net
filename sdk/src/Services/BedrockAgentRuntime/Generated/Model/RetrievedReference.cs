@@ -51,6 +51,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private RetrievalResultContent _content;
         private RetrievalResultLocation _location;
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
 
         /// <summary>
         /// Gets and sets the property Content. 
@@ -88,6 +89,27 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Contains metadata attributes and their values for the file in the data source. For
+        /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+        /// and filtering</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1)]
+        public Dictionary<string, Amazon.Runtime.Documents.Document> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
