@@ -60,6 +60,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.Maximum = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Minimum", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Minimum = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Unit", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

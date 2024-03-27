@@ -66,6 +66,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("CacheUsageLimits" + "." + "DataStorage" + "." + "Maximum", StringUtils.FromInt(publicRequest.CacheUsageLimits.DataStorage.Maximum));
                         }
+                        if(publicRequest.CacheUsageLimits.DataStorage.IsSetMinimum())
+                        {
+                            request.Parameters.Add("CacheUsageLimits" + "." + "DataStorage" + "." + "Minimum", StringUtils.FromInt(publicRequest.CacheUsageLimits.DataStorage.Minimum));
+                        }
                         if(publicRequest.CacheUsageLimits.DataStorage.IsSetUnit())
                         {
                             request.Parameters.Add("CacheUsageLimits" + "." + "DataStorage" + "." + "Unit", StringUtils.FromString(publicRequest.CacheUsageLimits.DataStorage.Unit));
@@ -76,6 +80,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         if(publicRequest.CacheUsageLimits.ECPUPerSecond.IsSetMaximum())
                         {
                             request.Parameters.Add("CacheUsageLimits" + "." + "ECPUPerSecond" + "." + "Maximum", StringUtils.FromInt(publicRequest.CacheUsageLimits.ECPUPerSecond.Maximum));
+                        }
+                        if(publicRequest.CacheUsageLimits.ECPUPerSecond.IsSetMinimum())
+                        {
+                            request.Parameters.Add("CacheUsageLimits" + "." + "ECPUPerSecond" + "." + "Minimum", StringUtils.FromInt(publicRequest.CacheUsageLimits.ECPUPerSecond.Minimum));
                         }
                     }
                 }
