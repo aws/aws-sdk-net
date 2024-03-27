@@ -45,6 +45,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListCustomLineItemVersionsBillingPeriodRangeFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndBillingPeriod())
             {
                 context.Writer.WritePropertyName("EndBillingPeriod");

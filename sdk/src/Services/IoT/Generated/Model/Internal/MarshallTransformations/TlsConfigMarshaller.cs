@@ -45,6 +45,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TlsConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSecurityPolicy())
             {
                 context.Writer.WritePropertyName("securityPolicy");

@@ -45,6 +45,8 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HandshakeParty requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");

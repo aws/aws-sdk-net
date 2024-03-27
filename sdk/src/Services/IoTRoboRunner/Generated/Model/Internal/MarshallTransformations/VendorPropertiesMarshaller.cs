@@ -45,6 +45,8 @@ namespace Amazon.IoTRoboRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VendorProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetVendorAdditionalFixedProperties())
             {
                 context.Writer.WritePropertyName("vendorAdditionalFixedProperties");

@@ -45,6 +45,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EndpointNetworkConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIpAddresses())
             {
                 context.Writer.WritePropertyName("IpAddresses");

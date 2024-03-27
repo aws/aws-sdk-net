@@ -45,6 +45,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Association requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("arn");

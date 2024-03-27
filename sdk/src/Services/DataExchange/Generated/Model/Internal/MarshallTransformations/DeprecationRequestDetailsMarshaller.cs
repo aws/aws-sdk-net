@@ -45,6 +45,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeprecationRequestDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeprecationAt())
             {
                 context.Writer.WritePropertyName("DeprecationAt");

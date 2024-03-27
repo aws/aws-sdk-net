@@ -45,6 +45,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoMLConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("metricName");

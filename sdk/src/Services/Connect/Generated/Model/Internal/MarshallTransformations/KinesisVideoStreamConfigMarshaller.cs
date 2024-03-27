@@ -45,6 +45,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KinesisVideoStreamConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEncryptionConfig())
             {
                 context.Writer.WritePropertyName("EncryptionConfig");

@@ -45,6 +45,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Configuration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClassification())
             {
                 context.Writer.WritePropertyName("Classification");

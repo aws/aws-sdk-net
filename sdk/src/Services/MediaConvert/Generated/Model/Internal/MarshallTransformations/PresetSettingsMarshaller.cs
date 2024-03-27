@@ -45,6 +45,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PresetSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAudioDescriptions())
             {
                 context.Writer.WritePropertyName("audioDescriptions");

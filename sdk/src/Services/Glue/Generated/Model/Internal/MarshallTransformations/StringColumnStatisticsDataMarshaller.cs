@@ -45,6 +45,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StringColumnStatisticsData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAverageLength())
             {
                 context.Writer.WritePropertyName("AverageLength");

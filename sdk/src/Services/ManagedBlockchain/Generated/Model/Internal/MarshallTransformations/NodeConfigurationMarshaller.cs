@@ -45,6 +45,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NodeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("AvailabilityZone");

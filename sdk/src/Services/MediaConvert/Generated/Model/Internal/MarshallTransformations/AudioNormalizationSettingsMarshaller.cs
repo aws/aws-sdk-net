@@ -45,6 +45,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioNormalizationSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("algorithm");

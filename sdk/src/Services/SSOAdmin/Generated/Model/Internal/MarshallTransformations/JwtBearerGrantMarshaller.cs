@@ -45,6 +45,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JwtBearerGrant requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthorizedTokenIssuers())
             {
                 context.Writer.WritePropertyName("AuthorizedTokenIssuers");

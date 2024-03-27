@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VolumeMount requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMountPath())
             {
                 context.Writer.WritePropertyName("MountPath");

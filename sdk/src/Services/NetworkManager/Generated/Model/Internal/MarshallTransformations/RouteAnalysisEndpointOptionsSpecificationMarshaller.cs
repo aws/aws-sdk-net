@@ -45,6 +45,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RouteAnalysisEndpointOptionsSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIpAddress())
             {
                 context.Writer.WritePropertyName("IpAddress");

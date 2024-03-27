@@ -45,6 +45,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OnlineAbConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetControlTreatmentName())
             {
                 context.Writer.WritePropertyName("controlTreatmentName");

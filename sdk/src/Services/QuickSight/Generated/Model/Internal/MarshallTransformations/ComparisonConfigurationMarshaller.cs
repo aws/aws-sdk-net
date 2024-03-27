@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ComparisonConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComparisonFormat())
             {
                 context.Writer.WritePropertyName("ComparisonFormat");

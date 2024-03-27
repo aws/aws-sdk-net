@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TopicNamedEntity requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDefinition())
             {
                 context.Writer.WritePropertyName("Definition");

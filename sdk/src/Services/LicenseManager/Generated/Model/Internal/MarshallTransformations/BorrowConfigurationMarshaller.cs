@@ -45,6 +45,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BorrowConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowEarlyCheckIn())
             {
                 context.Writer.WritePropertyName("AllowEarlyCheckIn");

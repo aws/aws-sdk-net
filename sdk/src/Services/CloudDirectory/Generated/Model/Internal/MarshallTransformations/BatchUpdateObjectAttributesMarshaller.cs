@@ -45,6 +45,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchUpdateObjectAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributeUpdates())
             {
                 context.Writer.WritePropertyName("AttributeUpdates");

@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PortProbeAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBlocked())
             {
                 context.Writer.WritePropertyName("Blocked");

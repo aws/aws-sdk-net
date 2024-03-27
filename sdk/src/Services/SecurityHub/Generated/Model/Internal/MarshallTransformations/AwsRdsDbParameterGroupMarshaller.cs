@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsRdsDbParameterGroup requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDbParameterGroupName())
             {
                 context.Writer.WritePropertyName("DbParameterGroupName");

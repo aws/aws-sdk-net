@@ -45,6 +45,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TargetConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTargetValue())
             {
                 context.Writer.WritePropertyName("TargetValue");

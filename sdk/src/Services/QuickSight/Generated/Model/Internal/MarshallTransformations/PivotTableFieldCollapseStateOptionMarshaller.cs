@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PivotTableFieldCollapseStateOption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");

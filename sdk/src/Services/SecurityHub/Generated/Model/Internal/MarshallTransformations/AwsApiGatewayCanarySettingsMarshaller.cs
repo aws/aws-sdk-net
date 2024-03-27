@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsApiGatewayCanarySettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeploymentId())
             {
                 context.Writer.WritePropertyName("DeploymentId");

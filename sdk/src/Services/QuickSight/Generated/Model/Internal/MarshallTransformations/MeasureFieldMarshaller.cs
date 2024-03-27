@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MeasureField requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCalculatedMeasureField())
             {
                 context.Writer.WritePropertyName("CalculatedMeasureField");

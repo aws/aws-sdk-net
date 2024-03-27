@@ -45,6 +45,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TrackingOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomRedirectDomain())
             {
                 context.Writer.WritePropertyName("CustomRedirectDomain");

@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeVulnerabilitiesFilePath requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndLine())
             {
                 context.Writer.WritePropertyName("EndLine");

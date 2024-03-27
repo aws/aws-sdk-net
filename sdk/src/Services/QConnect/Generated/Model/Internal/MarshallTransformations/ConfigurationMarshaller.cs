@@ -45,6 +45,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Configuration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectConfiguration())
             {
                 context.Writer.WritePropertyName("connectConfiguration");

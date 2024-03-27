@@ -45,6 +45,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkflowSortCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
         }
 
         /// <summary>

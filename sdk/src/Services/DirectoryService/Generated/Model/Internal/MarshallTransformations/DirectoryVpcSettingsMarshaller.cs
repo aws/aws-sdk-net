@@ -45,6 +45,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DirectoryVpcSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSubnetIds())
             {
                 context.Writer.WritePropertyName("SubnetIds");

@@ -45,6 +45,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AgentAliasRoutingConfigurationListItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAgentVersion())
             {
                 context.Writer.WritePropertyName("agentVersion");

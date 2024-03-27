@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ChannelMembershipPreferences requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPushNotifications())
             {
                 context.Writer.WritePropertyName("PushNotifications");

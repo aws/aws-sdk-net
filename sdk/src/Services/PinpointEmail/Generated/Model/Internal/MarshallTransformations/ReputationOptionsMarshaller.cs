@@ -45,6 +45,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReputationOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLastFreshStart())
             {
                 context.Writer.WritePropertyName("LastFreshStart");

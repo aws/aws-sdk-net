@@ -45,6 +45,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StaticIpConnectionInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDefaultGateway())
             {
                 context.Writer.WritePropertyName("DefaultGateway");

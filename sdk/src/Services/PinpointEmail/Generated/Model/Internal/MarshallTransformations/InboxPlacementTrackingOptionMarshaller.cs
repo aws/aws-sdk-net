@@ -45,6 +45,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InboxPlacementTrackingOption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGlobal())
             {
                 context.Writer.WritePropertyName("Global");

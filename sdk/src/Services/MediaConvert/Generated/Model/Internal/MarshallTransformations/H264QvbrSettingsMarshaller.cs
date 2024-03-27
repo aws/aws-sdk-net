@@ -45,6 +45,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(H264QvbrSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxAverageBitrate())
             {
                 context.Writer.WritePropertyName("maxAverageBitrate");

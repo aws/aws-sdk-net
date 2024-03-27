@@ -45,6 +45,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioCodecSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAacSettings())
             {
                 context.Writer.WritePropertyName("aacSettings");

@@ -45,6 +45,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FieldValueUnion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");

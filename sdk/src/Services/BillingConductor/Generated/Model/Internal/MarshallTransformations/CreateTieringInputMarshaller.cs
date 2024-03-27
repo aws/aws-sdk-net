@@ -45,6 +45,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateTieringInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFreeTier())
             {
                 context.Writer.WritePropertyName("FreeTier");

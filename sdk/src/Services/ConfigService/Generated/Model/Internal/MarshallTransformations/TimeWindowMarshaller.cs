@@ -45,6 +45,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimeWindow requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("EndTime");

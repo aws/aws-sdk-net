@@ -45,6 +45,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CognitoUserPoolConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAppIdClientRegex())
             {
                 context.Writer.WritePropertyName("appIdClientRegex");

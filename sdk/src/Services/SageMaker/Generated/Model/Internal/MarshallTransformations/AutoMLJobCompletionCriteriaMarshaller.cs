@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoMLJobCompletionCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxAutoMLJobRuntimeInSeconds())
             {
                 context.Writer.WritePropertyName("MaxAutoMLJobRuntimeInSeconds");

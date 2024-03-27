@@ -45,6 +45,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KeyProviderSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStaticKeySettings())
             {
                 context.Writer.WritePropertyName("staticKeySettings");

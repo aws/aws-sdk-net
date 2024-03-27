@@ -45,6 +45,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatasetExportJobOutput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3DataDestination())
             {
                 context.Writer.WritePropertyName("s3DataDestination");

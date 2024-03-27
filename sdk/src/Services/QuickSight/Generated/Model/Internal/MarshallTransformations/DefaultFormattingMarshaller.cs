@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DefaultFormatting requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDisplayFormat())
             {
                 context.Writer.WritePropertyName("DisplayFormat");

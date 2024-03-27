@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LambdaConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInvocationType())
             {
                 context.Writer.WritePropertyName("InvocationType");

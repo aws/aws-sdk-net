@@ -45,6 +45,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Ec2Configuration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetImageIdOverride())
             {
                 context.Writer.WritePropertyName("imageIdOverride");

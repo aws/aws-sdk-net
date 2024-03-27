@@ -45,6 +45,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoDetectionS3SourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHistoricalDataPathList())
             {
                 context.Writer.WritePropertyName("HistoricalDataPathList");

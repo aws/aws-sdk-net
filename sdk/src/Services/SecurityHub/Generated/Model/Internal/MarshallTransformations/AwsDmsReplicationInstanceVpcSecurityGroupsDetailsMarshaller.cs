@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsDmsReplicationInstanceVpcSecurityGroupsDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetVpcSecurityGroupId())
             {
                 context.Writer.WritePropertyName("VpcSecurityGroupId");

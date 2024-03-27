@@ -45,6 +45,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddColumnName())
             {
                 context.Writer.WritePropertyName("AddColumnName");

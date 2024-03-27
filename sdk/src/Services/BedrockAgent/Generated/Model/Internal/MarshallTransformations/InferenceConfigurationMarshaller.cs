@@ -45,6 +45,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InferenceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximumLength())
             {
                 context.Writer.WritePropertyName("maximumLength");

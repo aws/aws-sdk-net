@@ -45,6 +45,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConnectionDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMtu())
             {
                 context.Writer.WritePropertyName("mtu");

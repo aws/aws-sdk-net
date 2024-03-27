@@ -45,6 +45,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataUpdateRequestDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataUpdatedAt())
             {
                 context.Writer.WritePropertyName("DataUpdatedAt");

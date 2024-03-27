@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OidcConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthorizationEndpoint())
             {
                 context.Writer.WritePropertyName("AuthorizationEndpoint");

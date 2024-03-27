@@ -45,6 +45,8 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeviceTemplate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCallbackOverrides())
             {
                 context.Writer.WritePropertyName("callbackOverrides");

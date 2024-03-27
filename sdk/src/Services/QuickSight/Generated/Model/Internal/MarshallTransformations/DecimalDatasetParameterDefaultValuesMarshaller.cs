@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DecimalDatasetParameterDefaultValues requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStaticValues())
             {
                 context.Writer.WritePropertyName("StaticValues");

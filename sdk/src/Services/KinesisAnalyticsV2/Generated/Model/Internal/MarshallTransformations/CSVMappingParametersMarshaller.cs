@@ -45,6 +45,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CSVMappingParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRecordColumnDelimiter())
             {
                 context.Writer.WritePropertyName("RecordColumnDelimiter");

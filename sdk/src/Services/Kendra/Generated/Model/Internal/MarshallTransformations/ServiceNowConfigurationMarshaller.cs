@@ -45,6 +45,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServiceNowConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthenticationType())
             {
                 context.Writer.WritePropertyName("AuthenticationType");

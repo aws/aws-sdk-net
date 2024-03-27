@@ -45,6 +45,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnswerMachineDetectionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAwaitAnswerMachinePrompt())
             {
                 context.Writer.WritePropertyName("AwaitAnswerMachinePrompt");

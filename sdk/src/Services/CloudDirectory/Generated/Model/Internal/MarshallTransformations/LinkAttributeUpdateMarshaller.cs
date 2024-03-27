@@ -45,6 +45,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LinkAttributeUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributeAction())
             {
                 context.Writer.WritePropertyName("AttributeAction");

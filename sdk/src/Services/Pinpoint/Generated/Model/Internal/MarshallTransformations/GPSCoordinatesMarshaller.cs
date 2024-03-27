@@ -45,6 +45,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GPSCoordinates requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLatitude())
             {
                 context.Writer.WritePropertyName("Latitude");

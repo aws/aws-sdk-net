@@ -45,6 +45,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConnectorDefinitionVersion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectors())
             {
                 context.Writer.WritePropertyName("Connectors");

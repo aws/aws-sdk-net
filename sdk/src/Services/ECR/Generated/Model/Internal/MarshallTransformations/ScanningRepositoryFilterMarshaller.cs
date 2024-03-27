@@ -45,6 +45,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScanningRepositoryFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilter())
             {
                 context.Writer.WritePropertyName("filter");

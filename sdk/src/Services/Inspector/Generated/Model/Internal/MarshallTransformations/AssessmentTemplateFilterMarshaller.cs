@@ -45,6 +45,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AssessmentTemplateFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDurationRange())
             {
                 context.Writer.WritePropertyName("durationRange");

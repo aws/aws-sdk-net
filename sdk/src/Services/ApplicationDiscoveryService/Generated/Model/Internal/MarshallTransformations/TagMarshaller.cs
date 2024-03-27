@@ -45,6 +45,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public void Marshall(Tag requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");

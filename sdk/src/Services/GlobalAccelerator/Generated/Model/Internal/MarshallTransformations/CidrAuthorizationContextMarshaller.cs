@@ -45,6 +45,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CidrAuthorizationContext requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMessage())
             {
                 context.Writer.WritePropertyName("Message");

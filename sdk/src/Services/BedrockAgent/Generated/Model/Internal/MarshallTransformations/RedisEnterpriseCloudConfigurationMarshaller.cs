@@ -45,6 +45,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RedisEnterpriseCloudConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCredentialsSecretArn())
             {
                 context.Writer.WritePropertyName("credentialsSecretArn");

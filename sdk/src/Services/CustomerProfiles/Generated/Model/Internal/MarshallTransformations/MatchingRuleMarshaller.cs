@@ -45,6 +45,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MatchingRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRule())
             {
                 context.Writer.WritePropertyName("Rule");

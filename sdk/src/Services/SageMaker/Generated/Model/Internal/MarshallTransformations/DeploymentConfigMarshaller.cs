@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeploymentConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoRollbackConfiguration())
             {
                 context.Writer.WritePropertyName("AutoRollbackConfiguration");

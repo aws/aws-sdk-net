@@ -45,6 +45,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SubscriptionDefinitionVersion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSubscriptions())
             {
                 context.Writer.WritePropertyName("Subscriptions");

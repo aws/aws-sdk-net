@@ -45,6 +45,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VideoBlackFailoverSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBlackDetectThreshold())
             {
                 context.Writer.WritePropertyName("blackDetectThreshold");

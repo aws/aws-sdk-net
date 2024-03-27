@@ -45,6 +45,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DocumentReviews requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");

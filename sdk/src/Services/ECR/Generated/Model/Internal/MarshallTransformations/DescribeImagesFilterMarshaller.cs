@@ -45,6 +45,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DescribeImagesFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTagStatus())
             {
                 context.Writer.WritePropertyName("tagStatus");

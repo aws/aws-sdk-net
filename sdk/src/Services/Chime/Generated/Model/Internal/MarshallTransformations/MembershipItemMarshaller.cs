@@ -45,6 +45,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MembershipItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMemberId())
             {
                 context.Writer.WritePropertyName("MemberId");

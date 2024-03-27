@@ -45,6 +45,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KinesisStreamingSourceOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddIdleTimeBetweenReads())
             {
                 context.Writer.WritePropertyName("AddIdleTimeBetweenReads");

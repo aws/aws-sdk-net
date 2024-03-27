@@ -45,6 +45,8 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GrantConstraints requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEncryptionContextEquals())
             {
                 context.Writer.WritePropertyName("EncryptionContextEquals");

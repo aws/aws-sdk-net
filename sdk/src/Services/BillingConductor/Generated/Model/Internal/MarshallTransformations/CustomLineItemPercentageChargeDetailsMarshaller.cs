@@ -45,6 +45,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomLineItemPercentageChargeDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssociatedValues())
             {
                 context.Writer.WritePropertyName("AssociatedValues");

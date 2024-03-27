@@ -45,6 +45,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SqsAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetQueueUrl())
             {
                 context.Writer.WritePropertyName("queueUrl");

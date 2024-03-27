@@ -45,6 +45,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PlayerLatencyPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximumIndividualPlayerLatencyMilliseconds())
             {
                 context.Writer.WritePropertyName("MaximumIndividualPlayerLatencyMilliseconds");

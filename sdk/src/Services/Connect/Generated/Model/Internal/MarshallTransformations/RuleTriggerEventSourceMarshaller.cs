@@ -45,6 +45,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RuleTriggerEventSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEventSourceName())
             {
                 context.Writer.WritePropertyName("EventSourceName");

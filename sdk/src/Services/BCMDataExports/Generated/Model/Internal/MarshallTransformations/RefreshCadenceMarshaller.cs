@@ -45,6 +45,8 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RefreshCadence requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFrequency())
             {
                 context.Writer.WritePropertyName("Frequency");

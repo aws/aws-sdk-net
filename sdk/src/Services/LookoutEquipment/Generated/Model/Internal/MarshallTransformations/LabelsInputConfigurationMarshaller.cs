@@ -45,6 +45,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LabelsInputConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLabelGroupName())
             {
                 context.Writer.WritePropertyName("LabelGroupName");

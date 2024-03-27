@@ -45,6 +45,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UserIdentityConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIdentityAttributeName())
             {
                 context.Writer.WritePropertyName("IdentityAttributeName");

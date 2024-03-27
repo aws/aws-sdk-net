@@ -45,6 +45,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeploymentLaunchConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnvironmentVariables())
             {
                 context.Writer.WritePropertyName("environmentVariables");

@@ -45,6 +45,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SparkConnectorSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalOptions())
             {
                 context.Writer.WritePropertyName("AdditionalOptions");

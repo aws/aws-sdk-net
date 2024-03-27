@@ -45,6 +45,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MacAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("Algorithm");

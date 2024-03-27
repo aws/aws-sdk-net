@@ -45,6 +45,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoMerging requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConflictResolution())
             {
                 context.Writer.WritePropertyName("ConflictResolution");

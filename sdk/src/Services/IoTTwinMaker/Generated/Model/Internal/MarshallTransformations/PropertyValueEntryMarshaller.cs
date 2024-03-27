@@ -45,6 +45,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PropertyValueEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEntityPropertyReference())
             {
                 context.Writer.WritePropertyName("entityPropertyReference");

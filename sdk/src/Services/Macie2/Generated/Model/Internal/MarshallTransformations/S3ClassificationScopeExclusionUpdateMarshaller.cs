@@ -45,6 +45,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3ClassificationScopeExclusionUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucketNames())
             {
                 context.Writer.WritePropertyName("bucketNames");

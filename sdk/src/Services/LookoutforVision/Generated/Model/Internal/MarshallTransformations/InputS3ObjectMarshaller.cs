@@ -45,6 +45,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputS3Object requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucket())
             {
                 context.Writer.WritePropertyName("Bucket");

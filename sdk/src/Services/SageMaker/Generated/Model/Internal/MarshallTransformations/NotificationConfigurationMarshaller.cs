@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotificationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNotificationTopicArn())
             {
                 context.Writer.WritePropertyName("NotificationTopicArn");

@@ -45,6 +45,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatetimeRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBegin())
             {
                 context.Writer.WritePropertyName("Begin");

@@ -45,6 +45,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ActiveDirectoryConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComputerAttributes())
             {
                 context.Writer.WritePropertyName("computerAttributes");

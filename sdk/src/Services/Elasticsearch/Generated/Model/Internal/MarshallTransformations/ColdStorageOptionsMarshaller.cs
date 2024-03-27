@@ -45,6 +45,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ColdStorageOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");

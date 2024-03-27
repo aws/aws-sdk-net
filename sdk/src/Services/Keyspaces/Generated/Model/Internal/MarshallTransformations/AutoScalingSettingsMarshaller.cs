@@ -45,6 +45,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoScalingSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoScalingDisabled())
             {
                 context.Writer.WritePropertyName("autoScalingDisabled");

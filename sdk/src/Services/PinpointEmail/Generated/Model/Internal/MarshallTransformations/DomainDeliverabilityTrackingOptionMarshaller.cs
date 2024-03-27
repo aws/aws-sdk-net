@@ -45,6 +45,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DomainDeliverabilityTrackingOption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDomain())
             {
                 context.Writer.WritePropertyName("Domain");

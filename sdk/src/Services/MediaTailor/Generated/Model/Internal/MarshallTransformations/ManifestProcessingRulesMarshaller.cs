@@ -45,6 +45,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ManifestProcessingRules requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdMarkerPassthrough())
             {
                 context.Writer.WritePropertyName("AdMarkerPassthrough");

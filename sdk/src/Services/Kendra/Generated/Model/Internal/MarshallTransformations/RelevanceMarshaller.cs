@@ -45,6 +45,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Relevance requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("Duration");

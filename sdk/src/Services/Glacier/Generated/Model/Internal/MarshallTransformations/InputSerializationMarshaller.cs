@@ -45,6 +45,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputSerialization requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCsv())
             {
                 context.Writer.WritePropertyName("csv");

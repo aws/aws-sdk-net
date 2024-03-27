@@ -45,6 +45,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudTrailDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccessRole())
             {
                 context.Writer.WritePropertyName("accessRole");

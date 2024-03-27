@@ -45,6 +45,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceDefinitionVersion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetResources())
             {
                 context.Writer.WritePropertyName("Resources");

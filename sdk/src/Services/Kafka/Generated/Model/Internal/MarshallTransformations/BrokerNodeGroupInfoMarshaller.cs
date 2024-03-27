@@ -45,6 +45,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BrokerNodeGroupInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBrokerAZDistribution())
             {
                 context.Writer.WritePropertyName("brokerAZDistribution");

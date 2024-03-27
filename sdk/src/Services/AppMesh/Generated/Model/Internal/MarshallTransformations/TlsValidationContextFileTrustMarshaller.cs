@@ -45,6 +45,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TlsValidationContextFileTrust requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCertificateChain())
             {
                 context.Writer.WritePropertyName("certificateChain");

@@ -45,6 +45,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KinesisStreamConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStreamArn())
             {
                 context.Writer.WritePropertyName("StreamArn");

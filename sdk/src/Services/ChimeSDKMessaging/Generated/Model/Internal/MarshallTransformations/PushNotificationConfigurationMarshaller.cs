@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PushNotificationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");

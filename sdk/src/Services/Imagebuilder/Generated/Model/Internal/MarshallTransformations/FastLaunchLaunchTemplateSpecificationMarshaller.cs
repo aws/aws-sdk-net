@@ -45,6 +45,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FastLaunchLaunchTemplateSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLaunchTemplateId())
             {
                 context.Writer.WritePropertyName("launchTemplateId");

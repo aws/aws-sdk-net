@@ -45,6 +45,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AggregateStatus requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSignatureMap())
             {
                 context.Writer.WritePropertyName("signatureMap");

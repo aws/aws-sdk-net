@@ -45,6 +45,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WebCrawlerConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthenticationConfiguration())
             {
                 context.Writer.WritePropertyName("AuthenticationConfiguration");

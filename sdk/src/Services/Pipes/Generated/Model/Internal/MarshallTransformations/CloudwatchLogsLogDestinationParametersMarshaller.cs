@@ -45,6 +45,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudwatchLogsLogDestinationParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLogGroupArn())
             {
                 context.Writer.WritePropertyName("LogGroupArn");

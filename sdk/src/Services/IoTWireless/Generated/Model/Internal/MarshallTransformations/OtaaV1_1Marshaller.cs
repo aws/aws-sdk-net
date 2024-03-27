@@ -45,6 +45,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OtaaV1_1 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAppKey())
             {
                 context.Writer.WritePropertyName("AppKey");

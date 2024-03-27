@@ -45,6 +45,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SftpConnectorConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTrustedHostKeys())
             {
                 context.Writer.WritePropertyName("TrustedHostKeys");

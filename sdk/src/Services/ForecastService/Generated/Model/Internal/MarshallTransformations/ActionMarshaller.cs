@@ -45,6 +45,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Action requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributeName())
             {
                 context.Writer.WritePropertyName("AttributeName");

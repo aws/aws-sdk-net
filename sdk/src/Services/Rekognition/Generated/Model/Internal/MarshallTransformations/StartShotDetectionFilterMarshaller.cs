@@ -45,6 +45,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StartShotDetectionFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMinSegmentConfidence())
             {
                 context.Writer.WritePropertyName("MinSegmentConfidence");

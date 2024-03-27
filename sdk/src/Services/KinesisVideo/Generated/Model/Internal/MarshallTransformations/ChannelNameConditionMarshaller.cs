@@ -45,6 +45,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ChannelNameCondition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComparisonOperator())
             {
                 context.Writer.WritePropertyName("ComparisonOperator");

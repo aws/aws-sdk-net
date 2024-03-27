@@ -45,6 +45,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ComplianceExecutionSummary requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExecutionId())
             {
                 context.Writer.WritePropertyName("ExecutionId");

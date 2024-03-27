@@ -45,6 +45,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ChannelMapping requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOutputChannels())
             {
                 context.Writer.WritePropertyName("outputChannels");

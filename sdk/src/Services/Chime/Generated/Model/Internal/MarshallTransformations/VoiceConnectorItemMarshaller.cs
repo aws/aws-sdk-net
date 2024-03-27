@@ -45,6 +45,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VoiceConnectorItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");

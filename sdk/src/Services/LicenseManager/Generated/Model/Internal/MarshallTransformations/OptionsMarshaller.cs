@@ -45,6 +45,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Options requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActivationOverrideBehavior())
             {
                 context.Writer.WritePropertyName("ActivationOverrideBehavior");

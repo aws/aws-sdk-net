@@ -45,6 +45,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchRestrictions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComputeTypesAllowed())
             {
                 context.Writer.WritePropertyName("computeTypesAllowed");

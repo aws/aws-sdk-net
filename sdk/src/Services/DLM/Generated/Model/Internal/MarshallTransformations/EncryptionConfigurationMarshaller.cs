@@ -45,6 +45,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncryptionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCmkArn())
             {
                 context.Writer.WritePropertyName("CmkArn");

@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchTransformInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataCapturedDestinationS3Uri())
             {
                 context.Writer.WritePropertyName("DataCapturedDestinationS3Uri");

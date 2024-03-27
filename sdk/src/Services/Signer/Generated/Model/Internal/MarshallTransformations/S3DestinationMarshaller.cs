@@ -45,6 +45,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3Destination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("bucketName");

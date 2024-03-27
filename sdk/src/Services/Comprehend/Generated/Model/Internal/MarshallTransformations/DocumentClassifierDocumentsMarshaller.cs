@@ -45,6 +45,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DocumentClassifierDocuments requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");

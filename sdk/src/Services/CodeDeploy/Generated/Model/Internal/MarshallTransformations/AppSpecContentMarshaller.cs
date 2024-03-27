@@ -45,6 +45,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AppSpecContent requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("content");

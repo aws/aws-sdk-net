@@ -45,6 +45,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Validator requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("s3Uri");

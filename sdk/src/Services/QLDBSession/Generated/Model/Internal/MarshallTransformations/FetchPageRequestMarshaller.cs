@@ -45,6 +45,8 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FetchPageRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNextPageToken())
             {
                 context.Writer.WritePropertyName("NextPageToken");

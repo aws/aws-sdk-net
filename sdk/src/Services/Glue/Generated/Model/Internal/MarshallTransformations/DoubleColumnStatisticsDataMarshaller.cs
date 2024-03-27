@@ -45,6 +45,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DoubleColumnStatisticsData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximumValue())
             {
                 context.Writer.WritePropertyName("MaximumValue");

@@ -45,6 +45,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(QueryCondition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSingle())
             {
                 context.Writer.WritePropertyName("single");

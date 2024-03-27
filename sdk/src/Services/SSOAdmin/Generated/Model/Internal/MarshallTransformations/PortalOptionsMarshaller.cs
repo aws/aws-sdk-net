@@ -45,6 +45,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PortalOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSignInOptions())
             {
                 context.Writer.WritePropertyName("SignInOptions");

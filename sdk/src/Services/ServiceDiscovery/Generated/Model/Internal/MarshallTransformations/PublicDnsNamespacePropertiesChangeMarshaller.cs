@@ -45,6 +45,8 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PublicDnsNamespacePropertiesChange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDnsProperties())
             {
                 context.Writer.WritePropertyName("DnsProperties");

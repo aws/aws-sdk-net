@@ -45,6 +45,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LogConfigurationType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchLogsConfiguration())
             {
                 context.Writer.WritePropertyName("CloudWatchLogsConfiguration");

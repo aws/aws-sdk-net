@@ -45,6 +45,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FilterRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilterType())
             {
                 context.Writer.WritePropertyName("FilterType");

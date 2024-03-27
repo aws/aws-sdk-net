@@ -45,6 +45,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeConfigurationValues requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBuildCommand())
             {
                 context.Writer.WritePropertyName("BuildCommand");

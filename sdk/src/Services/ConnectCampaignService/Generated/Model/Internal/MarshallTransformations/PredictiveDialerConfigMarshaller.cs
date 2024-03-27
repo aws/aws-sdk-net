@@ -45,6 +45,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PredictiveDialerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBandwidthAllocation())
             {
                 context.Writer.WritePropertyName("bandwidthAllocation");

@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsRedshiftClusterRestoreStatus requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCurrentRestoreRateInMegaBytesPerSecond())
             {
                 context.Writer.WritePropertyName("CurrentRestoreRateInMegaBytesPerSecond");

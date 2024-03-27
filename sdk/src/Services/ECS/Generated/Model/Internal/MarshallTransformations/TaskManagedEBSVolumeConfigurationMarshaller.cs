@@ -45,6 +45,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TaskManagedEBSVolumeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("encrypted");

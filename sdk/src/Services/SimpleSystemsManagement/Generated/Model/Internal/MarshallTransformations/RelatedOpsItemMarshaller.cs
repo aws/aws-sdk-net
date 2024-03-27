@@ -45,6 +45,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RelatedOpsItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOpsItemId())
             {
                 context.Writer.WritePropertyName("OpsItemId");

@@ -45,6 +45,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFileName())
             {
                 context.Writer.WritePropertyName("fileName");

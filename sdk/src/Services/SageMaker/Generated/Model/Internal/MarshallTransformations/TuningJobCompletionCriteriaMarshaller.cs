@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TuningJobCompletionCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBestObjectiveNotImproving())
             {
                 context.Writer.WritePropertyName("BestObjectiveNotImproving");

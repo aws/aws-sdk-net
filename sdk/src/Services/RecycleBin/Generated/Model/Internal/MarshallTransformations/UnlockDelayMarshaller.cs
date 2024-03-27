@@ -45,6 +45,8 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UnlockDelay requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUnlockDelayUnit())
             {
                 context.Writer.WritePropertyName("UnlockDelayUnit");

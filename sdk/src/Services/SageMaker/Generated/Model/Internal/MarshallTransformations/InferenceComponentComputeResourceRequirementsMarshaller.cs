@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InferenceComponentComputeResourceRequirements requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxMemoryRequiredInMb())
             {
                 context.Writer.WritePropertyName("MaxMemoryRequiredInMb");

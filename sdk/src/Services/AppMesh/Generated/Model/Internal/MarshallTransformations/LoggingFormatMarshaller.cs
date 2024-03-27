@@ -45,6 +45,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoggingFormat requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetJson())
             {
                 context.Writer.WritePropertyName("json");

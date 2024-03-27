@@ -45,6 +45,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GrantEntitlementRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataTransferSubscriberFeePercent())
             {
                 context.Writer.WritePropertyName("dataTransferSubscriberFeePercent");

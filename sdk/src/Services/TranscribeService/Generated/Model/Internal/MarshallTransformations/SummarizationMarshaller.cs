@@ -45,6 +45,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Summarization requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGenerateAbstractiveSummary())
             {
                 context.Writer.WritePropertyName("GenerateAbstractiveSummary");

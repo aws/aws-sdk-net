@@ -45,6 +45,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoScalingThresholds requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlarms())
             {
                 context.Writer.WritePropertyName("Alarms");

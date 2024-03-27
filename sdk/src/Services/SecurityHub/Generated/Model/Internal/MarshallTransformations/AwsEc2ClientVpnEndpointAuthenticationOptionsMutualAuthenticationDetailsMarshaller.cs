@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClientRootCertificateChain())
             {
                 context.Writer.WritePropertyName("ClientRootCertificateChain");

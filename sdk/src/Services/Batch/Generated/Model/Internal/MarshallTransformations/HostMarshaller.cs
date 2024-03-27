@@ -45,6 +45,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Host requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSourcePath())
             {
                 context.Writer.WritePropertyName("sourcePath");

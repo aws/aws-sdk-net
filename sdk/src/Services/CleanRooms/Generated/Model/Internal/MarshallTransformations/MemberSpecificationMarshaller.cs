@@ -45,6 +45,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MemberSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("accountId");

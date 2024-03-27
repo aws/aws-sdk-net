@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WaterfallChartFieldWells requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetWaterfallChartAggregatedFieldWells())
             {
                 context.Writer.WritePropertyName("WaterfallChartAggregatedFieldWells");

@@ -45,6 +45,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TableReference requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGlue())
             {
                 context.Writer.WritePropertyName("glue");

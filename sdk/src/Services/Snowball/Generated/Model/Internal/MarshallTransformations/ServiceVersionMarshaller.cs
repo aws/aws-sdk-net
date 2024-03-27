@@ -45,6 +45,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServiceVersion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");

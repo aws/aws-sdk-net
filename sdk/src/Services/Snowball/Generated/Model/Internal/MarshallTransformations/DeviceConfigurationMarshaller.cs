@@ -45,6 +45,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeviceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSnowconeDeviceConfiguration())
             {
                 context.Writer.WritePropertyName("SnowconeDeviceConfiguration");

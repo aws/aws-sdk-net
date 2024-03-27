@@ -45,6 +45,8 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FlexibleTimeWindow requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximumWindowInMinutes())
             {
                 context.Writer.WritePropertyName("MaximumWindowInMinutes");

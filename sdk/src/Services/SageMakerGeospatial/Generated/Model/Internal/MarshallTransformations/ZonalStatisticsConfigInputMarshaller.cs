@@ -45,6 +45,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ZonalStatisticsConfigInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStatistics())
             {
                 context.Writer.WritePropertyName("Statistics");

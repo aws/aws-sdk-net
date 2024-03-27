@@ -45,6 +45,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkflowStep requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCopyStepDetails())
             {
                 context.Writer.WritePropertyName("CopyStepDetails");

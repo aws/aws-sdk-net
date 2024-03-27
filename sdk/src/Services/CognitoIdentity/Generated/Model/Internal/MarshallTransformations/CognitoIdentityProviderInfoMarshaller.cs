@@ -45,6 +45,8 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CognitoIdentityProviderInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClientId())
             {
                 context.Writer.WritePropertyName("ClientId");

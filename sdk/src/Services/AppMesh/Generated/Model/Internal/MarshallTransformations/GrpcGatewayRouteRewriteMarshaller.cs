@@ -45,6 +45,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GrpcGatewayRouteRewrite requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHostname())
             {
                 context.Writer.WritePropertyName("hostname");

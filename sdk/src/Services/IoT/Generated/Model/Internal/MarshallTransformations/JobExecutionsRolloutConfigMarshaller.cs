@@ -45,6 +45,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobExecutionsRolloutConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExponentialRate())
             {
                 context.Writer.WritePropertyName("exponentialRate");

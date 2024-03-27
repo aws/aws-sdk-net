@@ -45,6 +45,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3LogDestinationParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("BucketName");

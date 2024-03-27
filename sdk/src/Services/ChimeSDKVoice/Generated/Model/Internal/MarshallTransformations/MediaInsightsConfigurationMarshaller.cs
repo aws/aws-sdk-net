@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MediaInsightsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConfigurationArn())
             {
                 context.Writer.WritePropertyName("ConfigurationArn");

@@ -45,6 +45,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CrossChannelBehavior requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBehaviorType())
             {
                 context.Writer.WritePropertyName("BehaviorType");

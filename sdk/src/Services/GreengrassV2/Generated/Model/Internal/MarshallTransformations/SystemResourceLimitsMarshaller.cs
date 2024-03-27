@@ -45,6 +45,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SystemResourceLimits requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCpus())
             {
                 context.Writer.WritePropertyName("cpus");

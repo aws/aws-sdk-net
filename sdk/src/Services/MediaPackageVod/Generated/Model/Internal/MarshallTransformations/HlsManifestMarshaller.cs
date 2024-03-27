@@ -45,6 +45,8 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HlsManifest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdMarkers())
             {
                 context.Writer.WritePropertyName("adMarkers");

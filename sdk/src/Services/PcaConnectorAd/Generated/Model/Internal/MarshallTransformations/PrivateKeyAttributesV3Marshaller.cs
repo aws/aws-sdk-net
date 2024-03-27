@@ -45,6 +45,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PrivateKeyAttributesV3 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("Algorithm");

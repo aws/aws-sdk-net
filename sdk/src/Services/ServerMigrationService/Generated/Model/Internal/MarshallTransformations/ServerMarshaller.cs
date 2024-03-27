@@ -45,6 +45,8 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Server requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetReplicationJobId())
             {
                 context.Writer.WritePropertyName("replicationJobId");

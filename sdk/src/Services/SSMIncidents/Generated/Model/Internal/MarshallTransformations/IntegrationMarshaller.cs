@@ -45,6 +45,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Integration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPagerDutyConfiguration())
             {
                 context.Writer.WritePropertyName("pagerDutyConfiguration");

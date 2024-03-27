@@ -45,6 +45,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Resource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndpointId())
             {
                 context.Writer.WritePropertyName("EndpointId");

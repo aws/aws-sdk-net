@@ -45,6 +45,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Location requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLatitude())
             {
                 context.Writer.WritePropertyName("latitude");

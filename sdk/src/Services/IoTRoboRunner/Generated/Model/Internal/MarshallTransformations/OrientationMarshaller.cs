@@ -45,6 +45,8 @@ namespace Amazon.IoTRoboRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Orientation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDegrees())
             {
                 context.Writer.WritePropertyName("degrees");

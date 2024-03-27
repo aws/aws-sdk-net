@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NumberDisplayFormatConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDecimalPlacesConfiguration())
             {
                 context.Writer.WritePropertyName("DecimalPlacesConfiguration");

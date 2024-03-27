@@ -45,6 +45,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AggregationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAggregationType())
             {
                 context.Writer.WritePropertyName("aggregationType");

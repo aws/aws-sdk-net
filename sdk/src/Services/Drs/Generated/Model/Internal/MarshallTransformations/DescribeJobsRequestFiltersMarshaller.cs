@@ -45,6 +45,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DescribeJobsRequestFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFromDate())
             {
                 context.Writer.WritePropertyName("fromDate");

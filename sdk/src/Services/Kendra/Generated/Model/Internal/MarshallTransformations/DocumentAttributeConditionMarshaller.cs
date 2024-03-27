@@ -45,6 +45,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DocumentAttributeCondition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConditionDocumentAttributeKey())
             {
                 context.Writer.WritePropertyName("ConditionDocumentAttributeKey");

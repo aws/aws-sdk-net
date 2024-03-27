@@ -45,6 +45,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DifferentialPrivacyColumn requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

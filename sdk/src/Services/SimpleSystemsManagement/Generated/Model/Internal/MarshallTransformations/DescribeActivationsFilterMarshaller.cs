@@ -45,6 +45,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DescribeActivationsFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilterKey())
             {
                 context.Writer.WritePropertyName("FilterKey");

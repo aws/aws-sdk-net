@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ChannelMessageCallback requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("Content");

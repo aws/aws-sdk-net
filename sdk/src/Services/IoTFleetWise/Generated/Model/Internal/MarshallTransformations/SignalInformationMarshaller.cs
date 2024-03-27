@@ -45,6 +45,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SignalInformation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxSampleCount())
             {
                 context.Writer.WritePropertyName("maxSampleCount");

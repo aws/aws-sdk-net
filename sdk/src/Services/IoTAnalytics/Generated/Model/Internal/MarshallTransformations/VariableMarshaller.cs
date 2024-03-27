@@ -45,6 +45,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Variable requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDatasetContentVersionValue())
             {
                 context.Writer.WritePropertyName("datasetContentVersionValue");

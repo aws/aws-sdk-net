@@ -45,6 +45,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncryptionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetProvider())
             {
                 context.Writer.WritePropertyName("provider");

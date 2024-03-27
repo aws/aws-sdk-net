@@ -45,6 +45,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LayoutConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDefaultLayout())
             {
                 context.Writer.WritePropertyName("defaultLayout");

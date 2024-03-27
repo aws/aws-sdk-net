@@ -45,6 +45,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeStarParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArtifactPath())
             {
                 context.Writer.WritePropertyName("ArtifactPath");

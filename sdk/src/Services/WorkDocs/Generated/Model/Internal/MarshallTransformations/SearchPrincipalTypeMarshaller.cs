@@ -45,6 +45,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SearchPrincipalType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");

@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ChannelDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChannelId())
             {
                 context.Writer.WritePropertyName("ChannelId");

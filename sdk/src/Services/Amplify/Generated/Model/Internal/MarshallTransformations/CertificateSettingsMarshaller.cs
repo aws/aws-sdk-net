@@ -45,6 +45,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CertificateSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomCertificateArn())
             {
                 context.Writer.WritePropertyName("customCertificateArn");

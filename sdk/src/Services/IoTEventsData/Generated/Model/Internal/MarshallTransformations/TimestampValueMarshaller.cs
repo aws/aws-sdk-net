@@ -45,6 +45,8 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimestampValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTimeInMillis())
             {
                 context.Writer.WritePropertyName("timeInMillis");

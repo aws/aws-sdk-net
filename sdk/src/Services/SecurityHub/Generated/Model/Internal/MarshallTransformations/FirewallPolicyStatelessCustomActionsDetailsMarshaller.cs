@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FirewallPolicyStatelessCustomActionsDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActionDefinition())
             {
                 context.Writer.WritePropertyName("ActionDefinition");

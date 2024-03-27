@@ -45,6 +45,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VaultLockPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPolicy())
             {
                 context.Writer.WritePropertyName("Policy");

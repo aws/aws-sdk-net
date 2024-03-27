@@ -45,6 +45,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MessageTemplateType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEmailMessage())
             {
                 context.Writer.WritePropertyName("EmailMessage");

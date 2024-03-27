@@ -45,6 +45,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DynamoDBTarget requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");

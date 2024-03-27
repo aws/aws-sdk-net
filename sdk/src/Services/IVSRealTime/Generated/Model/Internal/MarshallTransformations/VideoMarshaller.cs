@@ -45,6 +45,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Video requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");

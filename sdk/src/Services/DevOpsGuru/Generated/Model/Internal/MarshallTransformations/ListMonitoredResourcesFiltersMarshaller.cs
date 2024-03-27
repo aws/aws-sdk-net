@@ -45,6 +45,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListMonitoredResourcesFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetResourcePermission())
             {
                 context.Writer.WritePropertyName("ResourcePermission");

@@ -45,6 +45,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AcceptRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRule())
             {
                 context.Writer.WritePropertyName("rule");

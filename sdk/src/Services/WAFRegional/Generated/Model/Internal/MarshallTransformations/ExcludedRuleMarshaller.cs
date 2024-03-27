@@ -45,6 +45,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExcludedRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRuleId())
             {
                 context.Writer.WritePropertyName("RuleId");

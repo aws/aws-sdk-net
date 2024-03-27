@@ -45,6 +45,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RetryStrategy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttempts())
             {
                 context.Writer.WritePropertyName("attempts");

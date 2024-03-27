@@ -45,6 +45,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateBackendAuthPasswordPolicyConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalConstraints())
             {
                 context.Writer.WritePropertyName("additionalConstraints");

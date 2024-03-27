@@ -45,6 +45,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3ExportConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDiskImageFormat())
             {
                 context.Writer.WritePropertyName("diskImageFormat");

@@ -45,6 +45,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VirtualRouterSpec requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetListeners())
             {
                 context.Writer.WritePropertyName("listeners");

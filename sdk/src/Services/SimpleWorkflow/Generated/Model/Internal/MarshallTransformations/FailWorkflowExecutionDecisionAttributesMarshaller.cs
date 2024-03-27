@@ -45,6 +45,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FailWorkflowExecutionDecisionAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDetails())
             {
                 context.Writer.WritePropertyName("details");

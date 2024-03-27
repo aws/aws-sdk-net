@@ -45,6 +45,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CaptchaConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetImmunityTimeProperty())
             {
                 context.Writer.WritePropertyName("ImmunityTimeProperty");

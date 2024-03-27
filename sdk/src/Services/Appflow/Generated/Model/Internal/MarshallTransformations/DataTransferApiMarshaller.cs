@@ -45,6 +45,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataTransferApi requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

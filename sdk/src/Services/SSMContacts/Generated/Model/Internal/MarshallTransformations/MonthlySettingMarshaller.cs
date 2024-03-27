@@ -45,6 +45,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MonthlySetting requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDayOfMonth())
             {
                 context.Writer.WritePropertyName("DayOfMonth");

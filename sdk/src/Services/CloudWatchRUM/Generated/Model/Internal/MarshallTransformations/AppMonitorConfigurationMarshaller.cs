@@ -45,6 +45,8 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AppMonitorConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowCookies())
             {
                 context.Writer.WritePropertyName("AllowCookies");

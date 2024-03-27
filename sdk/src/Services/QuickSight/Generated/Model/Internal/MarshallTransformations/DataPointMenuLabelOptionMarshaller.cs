@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataPointMenuLabelOption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityStatus())
             {
                 context.Writer.WritePropertyName("AvailabilityStatus");

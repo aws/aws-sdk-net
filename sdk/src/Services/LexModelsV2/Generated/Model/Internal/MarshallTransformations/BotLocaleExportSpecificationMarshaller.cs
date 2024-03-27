@@ -45,6 +45,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BotLocaleExportSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBotId())
             {
                 context.Writer.WritePropertyName("botId");

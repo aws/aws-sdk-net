@@ -45,6 +45,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConfigRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConfigRuleArn())
             {
                 context.Writer.WritePropertyName("ConfigRuleArn");

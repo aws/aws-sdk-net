@@ -45,6 +45,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Tenant requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTenantDisplayName())
             {
                 context.Writer.WritePropertyName("tenantDisplayName");

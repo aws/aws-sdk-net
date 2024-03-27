@@ -45,6 +45,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReplicaConfigurationRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetReplicaCount())
             {
                 context.Writer.WritePropertyName("ReplicaCount");

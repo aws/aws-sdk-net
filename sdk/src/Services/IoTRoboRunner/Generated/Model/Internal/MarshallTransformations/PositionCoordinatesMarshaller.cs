@@ -45,6 +45,8 @@ namespace Amazon.IoTRoboRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PositionCoordinates requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCartesianCoordinates())
             {
                 context.Writer.WritePropertyName("cartesianCoordinates");

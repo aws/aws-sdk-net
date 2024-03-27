@@ -45,6 +45,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TargetTrackingMetricDataQuery requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("Expression");

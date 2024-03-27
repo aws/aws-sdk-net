@@ -45,6 +45,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AttributeDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");

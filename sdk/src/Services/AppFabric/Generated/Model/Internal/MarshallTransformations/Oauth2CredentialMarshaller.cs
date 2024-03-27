@@ -45,6 +45,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Oauth2Credential requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClientId())
             {
                 context.Writer.WritePropertyName("clientId");

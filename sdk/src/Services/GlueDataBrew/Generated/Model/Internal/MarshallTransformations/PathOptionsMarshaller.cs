@@ -45,6 +45,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PathOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilesLimit())
             {
                 context.Writer.WritePropertyName("FilesLimit");

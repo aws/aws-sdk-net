@@ -45,6 +45,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProtocolsListData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCreateTime())
             {
                 context.Writer.WritePropertyName("CreateTime");

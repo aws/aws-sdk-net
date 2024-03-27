@@ -45,6 +45,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExponentialRolloutRate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBaseRatePerMinute())
             {
                 context.Writer.WritePropertyName("baseRatePerMinute");

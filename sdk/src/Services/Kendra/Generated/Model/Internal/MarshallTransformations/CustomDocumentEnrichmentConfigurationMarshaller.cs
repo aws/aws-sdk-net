@@ -45,6 +45,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomDocumentEnrichmentConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInlineConfigurations())
             {
                 context.Writer.WritePropertyName("InlineConfigurations");

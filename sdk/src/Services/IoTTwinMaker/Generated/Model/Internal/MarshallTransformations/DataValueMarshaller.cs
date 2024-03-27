@@ -45,6 +45,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");

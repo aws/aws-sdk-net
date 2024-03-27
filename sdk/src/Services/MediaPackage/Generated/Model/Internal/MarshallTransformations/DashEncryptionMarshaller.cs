@@ -45,6 +45,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DashEncryption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKeyRotationIntervalSeconds())
             {
                 context.Writer.WritePropertyName("keyRotationIntervalSeconds");

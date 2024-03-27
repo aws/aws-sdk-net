@@ -45,6 +45,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Filter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetResourceArns())
             {
                 context.Writer.WritePropertyName("resourceArns");

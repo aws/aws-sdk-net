@@ -45,6 +45,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FastRestoreRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityZones())
             {
                 context.Writer.WritePropertyName("AvailabilityZones");

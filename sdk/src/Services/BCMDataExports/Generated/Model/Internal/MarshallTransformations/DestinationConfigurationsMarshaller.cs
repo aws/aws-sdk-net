@@ -45,6 +45,8 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DestinationConfigurations requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Destination())
             {
                 context.Writer.WritePropertyName("S3Destination");

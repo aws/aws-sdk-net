@@ -45,6 +45,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SearchExpression requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("filters");

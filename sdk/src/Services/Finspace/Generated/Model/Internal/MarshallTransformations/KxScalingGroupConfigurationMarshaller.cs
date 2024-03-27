@@ -45,6 +45,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KxScalingGroupConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("cpu");

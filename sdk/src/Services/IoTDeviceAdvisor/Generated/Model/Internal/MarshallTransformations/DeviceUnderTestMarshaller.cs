@@ -45,6 +45,8 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeviceUnderTest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCertificateArn())
             {
                 context.Writer.WritePropertyName("certificateArn");

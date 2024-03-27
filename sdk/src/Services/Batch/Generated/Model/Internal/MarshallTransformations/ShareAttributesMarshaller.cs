@@ -45,6 +45,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ShareAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetShareIdentifier())
             {
                 context.Writer.WritePropertyName("shareIdentifier");

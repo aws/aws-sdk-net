@@ -45,6 +45,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TestExecutionTarget requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBotAliasTarget())
             {
                 context.Writer.WritePropertyName("botAliasTarget");

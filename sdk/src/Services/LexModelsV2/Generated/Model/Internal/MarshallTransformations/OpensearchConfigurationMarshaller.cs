@@ -45,6 +45,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OpensearchConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDomainEndpoint())
             {
                 context.Writer.WritePropertyName("domainEndpoint");

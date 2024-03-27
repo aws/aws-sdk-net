@@ -45,6 +45,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ShrinkPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDecommissionTimeout())
             {
                 context.Writer.WritePropertyName("DecommissionTimeout");

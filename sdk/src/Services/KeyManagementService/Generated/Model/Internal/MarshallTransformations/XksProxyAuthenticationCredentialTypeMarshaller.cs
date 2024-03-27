@@ -45,6 +45,8 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(XksProxyAuthenticationCredentialType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccessKeyId())
             {
                 context.Writer.WritePropertyName("AccessKeyId");

@@ -45,6 +45,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServiceCollection requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetServiceNames())
             {
                 context.Writer.WritePropertyName("ServiceNames");

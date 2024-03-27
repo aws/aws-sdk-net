@@ -45,6 +45,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSourceConfigurations requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKubernetes())
             {
                 context.Writer.WritePropertyName("kubernetes");

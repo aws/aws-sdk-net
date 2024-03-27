@@ -45,6 +45,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchInferenceJobConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetItemExplorationConfig())
             {
                 context.Writer.WritePropertyName("itemExplorationConfig");

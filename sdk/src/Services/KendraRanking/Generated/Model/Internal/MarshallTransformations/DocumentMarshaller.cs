@@ -45,6 +45,8 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Document requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");

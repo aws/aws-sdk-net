@@ -45,6 +45,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeploymentConfigurationValidationPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("timeoutInSeconds");

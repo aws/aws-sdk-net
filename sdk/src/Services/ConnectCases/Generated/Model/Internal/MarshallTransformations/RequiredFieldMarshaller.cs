@@ -45,6 +45,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RequiredField requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFieldId())
             {
                 context.Writer.WritePropertyName("fieldId");

@@ -45,6 +45,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IPSetForwardedIPConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFallbackBehavior())
             {
                 context.Writer.WritePropertyName("FallbackBehavior");

@@ -45,6 +45,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PersistentStorageConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSizeInGiB())
             {
                 context.Writer.WritePropertyName("sizeInGiB");

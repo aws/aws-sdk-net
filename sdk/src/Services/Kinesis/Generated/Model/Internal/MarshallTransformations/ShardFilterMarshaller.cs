@@ -45,6 +45,8 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ShardFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetShardId())
             {
                 context.Writer.WritePropertyName("ShardId");

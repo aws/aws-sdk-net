@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsWafv2VisibilityConfigDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("CloudWatchMetricsEnabled");

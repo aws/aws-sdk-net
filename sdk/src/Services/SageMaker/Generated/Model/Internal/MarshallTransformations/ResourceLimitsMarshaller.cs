@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceLimits requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxNumberOfTrainingJobs())
             {
                 context.Writer.WritePropertyName("MaxNumberOfTrainingJobs");

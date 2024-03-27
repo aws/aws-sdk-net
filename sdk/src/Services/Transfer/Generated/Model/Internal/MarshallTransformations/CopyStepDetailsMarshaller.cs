@@ -45,6 +45,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CopyStepDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationFileLocation())
             {
                 context.Writer.WritePropertyName("DestinationFileLocation");

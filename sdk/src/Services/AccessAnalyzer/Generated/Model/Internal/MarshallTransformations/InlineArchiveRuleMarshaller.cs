@@ -45,6 +45,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InlineArchiveRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilter())
             {
                 context.Writer.WritePropertyName("filter");

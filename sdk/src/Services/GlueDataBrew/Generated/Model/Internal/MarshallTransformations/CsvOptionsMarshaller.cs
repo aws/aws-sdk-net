@@ -45,6 +45,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CsvOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDelimiter())
             {
                 context.Writer.WritePropertyName("Delimiter");

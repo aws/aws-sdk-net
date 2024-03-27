@@ -45,6 +45,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AdvancedEventSelector requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFieldSelectors())
             {
                 context.Writer.WritePropertyName("FieldSelectors");

@@ -45,6 +45,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ComponentStatusData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBytesReceived())
             {
                 context.Writer.WritePropertyName("bytesReceived");

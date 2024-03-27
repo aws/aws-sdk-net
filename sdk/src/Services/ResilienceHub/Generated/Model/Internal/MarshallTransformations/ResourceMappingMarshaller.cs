@@ -45,6 +45,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceMapping requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAppRegistryAppName())
             {
                 context.Writer.WritePropertyName("appRegistryAppName");

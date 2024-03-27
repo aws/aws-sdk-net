@@ -45,6 +45,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateBillingGroupAccountGrouping requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoAssociate())
             {
                 context.Writer.WritePropertyName("AutoAssociate");

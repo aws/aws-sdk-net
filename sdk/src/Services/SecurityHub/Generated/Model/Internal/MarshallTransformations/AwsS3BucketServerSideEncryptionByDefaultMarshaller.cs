@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsS3BucketServerSideEncryptionByDefault requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKMSMasterKeyID())
             {
                 context.Writer.WritePropertyName("KMSMasterKeyID");

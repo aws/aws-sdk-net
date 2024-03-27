@@ -45,6 +45,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScanEc2InstanceWithFindings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEbsVolumes())
             {
                 context.Writer.WritePropertyName("ebsVolumes");

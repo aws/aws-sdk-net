@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsRedshiftClusterClusterSnapshotCopyStatus requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationRegion())
             {
                 context.Writer.WritePropertyName("DestinationRegion");

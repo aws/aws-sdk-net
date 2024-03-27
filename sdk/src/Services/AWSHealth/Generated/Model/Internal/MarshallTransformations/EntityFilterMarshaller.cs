@@ -45,6 +45,8 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EntityFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEntityArns())
             {
                 context.Writer.WritePropertyName("entityArns");

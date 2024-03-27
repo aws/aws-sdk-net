@@ -45,6 +45,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomPlugin requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomPluginArn())
             {
                 context.Writer.WritePropertyName("customPluginArn");

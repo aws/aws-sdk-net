@@ -45,6 +45,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AppFlowConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFlowName())
             {
                 context.Writer.WritePropertyName("FlowName");

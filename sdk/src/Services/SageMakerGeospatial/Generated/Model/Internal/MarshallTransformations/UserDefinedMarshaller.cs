@@ -45,6 +45,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UserDefined requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("Unit");

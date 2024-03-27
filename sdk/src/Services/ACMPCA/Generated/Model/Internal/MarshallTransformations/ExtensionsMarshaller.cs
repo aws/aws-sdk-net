@@ -45,6 +45,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Extensions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCertificatePolicies())
             {
                 context.Writer.WritePropertyName("CertificatePolicies");

@@ -45,6 +45,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SidewalkUpdateImportInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeviceCreationFile())
             {
                 context.Writer.WritePropertyName("DeviceCreationFile");

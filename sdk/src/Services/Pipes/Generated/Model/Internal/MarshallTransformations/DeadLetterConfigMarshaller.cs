@@ -45,6 +45,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeadLetterConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");

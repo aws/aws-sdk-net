@@ -45,6 +45,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IdMappingTechniques requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIdMappingType())
             {
                 context.Writer.WritePropertyName("idMappingType");

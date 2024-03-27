@@ -45,6 +45,8 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RawMetricData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("MetricName");

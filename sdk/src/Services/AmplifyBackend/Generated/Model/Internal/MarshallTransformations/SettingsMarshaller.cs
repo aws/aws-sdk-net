@@ -45,6 +45,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMfaTypes())
             {
                 context.Writer.WritePropertyName("mfaTypes");

@@ -45,6 +45,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Input requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDatabaseInputDefinition())
             {
                 context.Writer.WritePropertyName("DatabaseInputDefinition");

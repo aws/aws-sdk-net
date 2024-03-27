@@ -45,6 +45,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Authorization requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCdnIdentifierSecret())
             {
                 context.Writer.WritePropertyName("cdnIdentifierSecret");

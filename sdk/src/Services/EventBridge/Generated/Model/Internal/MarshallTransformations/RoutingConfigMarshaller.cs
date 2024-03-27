@@ -45,6 +45,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RoutingConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFailoverConfig())
             {
                 context.Writer.WritePropertyName("FailoverConfig");

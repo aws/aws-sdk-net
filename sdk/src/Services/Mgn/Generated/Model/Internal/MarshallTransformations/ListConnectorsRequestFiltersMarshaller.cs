@@ -45,6 +45,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListConnectorsRequestFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectorIDs())
             {
                 context.Writer.WritePropertyName("connectorIDs");

@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClientBroker())
             {
                 context.Writer.WritePropertyName("ClientBroker");

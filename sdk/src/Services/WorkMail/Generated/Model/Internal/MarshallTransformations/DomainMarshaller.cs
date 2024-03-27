@@ -45,6 +45,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Domain requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");

@@ -45,6 +45,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FacetAttribute requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributeDefinition())
             {
                 context.Writer.WritePropertyName("AttributeDefinition");

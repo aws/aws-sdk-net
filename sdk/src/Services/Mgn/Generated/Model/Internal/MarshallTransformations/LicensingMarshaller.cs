@@ -45,6 +45,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Licensing requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOsByol())
             {
                 context.Writer.WritePropertyName("osByol");

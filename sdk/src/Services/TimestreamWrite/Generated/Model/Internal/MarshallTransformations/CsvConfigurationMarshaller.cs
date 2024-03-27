@@ -45,6 +45,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CsvConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetColumnSeparator())
             {
                 context.Writer.WritePropertyName("ColumnSeparator");

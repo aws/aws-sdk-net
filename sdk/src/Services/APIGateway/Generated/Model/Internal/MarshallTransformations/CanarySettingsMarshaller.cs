@@ -45,6 +45,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CanarySettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeploymentId())
             {
                 context.Writer.WritePropertyName("deploymentId");

@@ -45,6 +45,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServiceNowSourceProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetObject())
             {
                 context.Writer.WritePropertyName("Object");

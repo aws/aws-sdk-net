@@ -45,6 +45,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Rule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");

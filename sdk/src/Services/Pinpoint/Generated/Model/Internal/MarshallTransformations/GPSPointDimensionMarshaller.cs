@@ -45,6 +45,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GPSPointDimension requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCoordinates())
             {
                 context.Writer.WritePropertyName("Coordinates");

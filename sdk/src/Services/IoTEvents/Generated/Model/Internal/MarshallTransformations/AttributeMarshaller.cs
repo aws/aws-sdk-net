@@ -45,6 +45,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Attribute requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetJsonPath())
             {
                 context.Writer.WritePropertyName("jsonPath");

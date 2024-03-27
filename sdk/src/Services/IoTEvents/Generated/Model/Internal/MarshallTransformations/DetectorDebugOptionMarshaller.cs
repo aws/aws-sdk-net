@@ -45,6 +45,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DetectorDebugOption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDetectorModelName())
             {
                 context.Writer.WritePropertyName("detectorModelName");

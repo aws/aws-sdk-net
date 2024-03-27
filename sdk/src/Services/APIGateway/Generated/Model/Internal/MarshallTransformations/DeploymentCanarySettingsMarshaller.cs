@@ -45,6 +45,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeploymentCanarySettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPercentTraffic())
             {
                 context.Writer.WritePropertyName("percentTraffic");

@@ -45,6 +45,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudWatchLoggingOptionUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchLoggingOptionId())
             {
                 context.Writer.WritePropertyName("CloudWatchLoggingOptionId");

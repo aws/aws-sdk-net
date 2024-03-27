@@ -45,6 +45,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GdgAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLimit())
             {
                 context.Writer.WritePropertyName("limit");

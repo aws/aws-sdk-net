@@ -45,6 +45,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MagneticStoreRejectedDataLocation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Configuration())
             {
                 context.Writer.WritePropertyName("S3Configuration");

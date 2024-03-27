@@ -45,6 +45,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TypedLinkSchemaAndFacetName requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSchemaArn())
             {
                 context.Writer.WritePropertyName("SchemaArn");
