@@ -69,7 +69,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", actualUri.AbsolutePath);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
             Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
             Assert.AreEqual("JsonRpc10.SimpleScalarProperties".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
@@ -103,7 +103,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", actualUri.AbsolutePath);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
             Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
             Assert.AreEqual("JsonRpc10.SimpleScalarProperties".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
@@ -137,7 +137,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", actualUri.AbsolutePath);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
             Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
             Assert.AreEqual("JsonRpc10.SimpleScalarProperties".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }

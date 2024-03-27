@@ -65,7 +65,7 @@ namespace AWSSDK.ProtocolTests.RestXml
             XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/StringPayload", actualUri.AbsolutePath);
+            Assert.AreEqual("/StringPayload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
         }
 
         [TestMethod]
