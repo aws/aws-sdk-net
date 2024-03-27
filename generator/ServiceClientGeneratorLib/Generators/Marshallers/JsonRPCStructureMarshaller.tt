@@ -25,6 +25,8 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
         /// <returns></returns>
 		public void Marshall(<#=this.Structure.Name #> requestObject, JsonMarshallerContext context)
 		{
+			if(requestObject == null)
+				return;
 <#
     ProcessMembers(0, "requestObject", this.Structure.Members);
 #>
