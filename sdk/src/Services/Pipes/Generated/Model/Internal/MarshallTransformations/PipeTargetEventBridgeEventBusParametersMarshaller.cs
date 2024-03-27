@@ -45,6 +45,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PipeTargetEventBridgeEventBusParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDetailType())
             {
                 context.Writer.WritePropertyName("DetailType");

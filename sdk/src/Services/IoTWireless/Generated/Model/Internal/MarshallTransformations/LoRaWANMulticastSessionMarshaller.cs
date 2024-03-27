@@ -45,6 +45,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoRaWANMulticastSession requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDlDr())
             {
                 context.Writer.WritePropertyName("DlDr");

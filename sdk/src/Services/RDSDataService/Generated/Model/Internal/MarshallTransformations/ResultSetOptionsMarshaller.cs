@@ -45,6 +45,8 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResultSetOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDecimalReturnType())
             {
                 context.Writer.WritePropertyName("decimalReturnType");

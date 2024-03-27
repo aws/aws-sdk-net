@@ -45,6 +45,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobConfigInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBandMathConfig())
             {
                 context.Writer.WritePropertyName("BandMathConfig");

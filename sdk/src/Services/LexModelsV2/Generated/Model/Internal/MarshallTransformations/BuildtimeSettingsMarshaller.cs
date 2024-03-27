@@ -45,6 +45,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BuildtimeSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDescriptiveBotBuilder())
             {
                 context.Writer.WritePropertyName("descriptiveBotBuilder");

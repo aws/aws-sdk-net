@@ -45,6 +45,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServiceAccountCredentials requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccountName())
             {
                 context.Writer.WritePropertyName("AccountName");

@@ -45,6 +45,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VirtualGatewayGrpcConnectionPool requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxRequests())
             {
                 context.Writer.WritePropertyName("maxRequests");

@@ -45,6 +45,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoadBalancerInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetElbInfoList())
             {
                 context.Writer.WritePropertyName("elbInfoList");

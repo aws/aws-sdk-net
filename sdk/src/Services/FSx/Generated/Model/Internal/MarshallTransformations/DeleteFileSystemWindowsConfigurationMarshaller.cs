@@ -45,6 +45,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeleteFileSystemWindowsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFinalBackupTags())
             {
                 context.Writer.WritePropertyName("FinalBackupTags");

@@ -45,6 +45,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListBillingGroupCostReportsFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBillingGroupArns())
             {
                 context.Writer.WritePropertyName("BillingGroupArns");

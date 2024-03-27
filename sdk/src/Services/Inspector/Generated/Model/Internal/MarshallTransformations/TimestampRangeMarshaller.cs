@@ -45,6 +45,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimestampRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBeginDate())
             {
                 context.Writer.WritePropertyName("beginDate");

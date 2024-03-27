@@ -45,6 +45,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListApplicationAssignmentsFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApplicationArn())
             {
                 context.Writer.WritePropertyName("ApplicationArn");

@@ -45,6 +45,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContainerLogRotationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxFilesToKeep())
             {
                 context.Writer.WritePropertyName("maxFilesToKeep");

@@ -45,6 +45,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GreengrassV2 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCoreDeviceThingName())
             {
                 context.Writer.WritePropertyName("coreDeviceThingName");

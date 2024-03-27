@@ -45,6 +45,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImageLayerAggregation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLayerHashes())
             {
                 context.Writer.WritePropertyName("layerHashes");

@@ -45,6 +45,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VectorEnrichmentJobDataSourceConfigInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Data())
             {
                 context.Writer.WritePropertyName("S3Data");

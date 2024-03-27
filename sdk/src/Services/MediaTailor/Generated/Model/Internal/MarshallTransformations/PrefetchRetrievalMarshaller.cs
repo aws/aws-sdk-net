@@ -45,6 +45,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PrefetchRetrieval requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDynamicVariables())
             {
                 context.Writer.WritePropertyName("DynamicVariables");

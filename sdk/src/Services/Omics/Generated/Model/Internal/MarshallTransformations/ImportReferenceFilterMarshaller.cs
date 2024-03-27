@@ -45,6 +45,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImportReferenceFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCreatedAfter())
             {
                 context.Writer.WritePropertyName("createdAfter");

@@ -45,6 +45,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomDNSServer requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomDNSServerIP())
             {
                 context.Writer.WritePropertyName("customDNSServerIP");

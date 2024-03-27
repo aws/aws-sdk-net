@@ -45,6 +45,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeploymentConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConcurrentDeploymentPercentage())
             {
                 context.Writer.WritePropertyName("concurrentDeploymentPercentage");

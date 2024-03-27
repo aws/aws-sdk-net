@@ -45,6 +45,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OAuthProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthCodeUrl())
             {
                 context.Writer.WritePropertyName("authCodeUrl");

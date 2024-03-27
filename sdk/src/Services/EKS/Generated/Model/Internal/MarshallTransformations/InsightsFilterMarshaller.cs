@@ -45,6 +45,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InsightsFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCategories())
             {
                 context.Writer.WritePropertyName("categories");

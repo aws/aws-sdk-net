@@ -45,6 +45,8 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Slot requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetShape())
             {
                 context.Writer.WritePropertyName("shape");

@@ -45,6 +45,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OracleDataProviderSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAsmServer())
             {
                 context.Writer.WritePropertyName("AsmServer");

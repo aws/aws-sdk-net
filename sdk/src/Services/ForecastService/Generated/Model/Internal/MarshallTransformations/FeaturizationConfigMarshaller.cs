@@ -45,6 +45,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FeaturizationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFeaturizations())
             {
                 context.Writer.WritePropertyName("Featurizations");

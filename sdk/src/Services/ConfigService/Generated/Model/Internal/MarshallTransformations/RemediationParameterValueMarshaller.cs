@@ -45,6 +45,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RemediationParameterValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetResourceValue())
             {
                 context.Writer.WritePropertyName("ResourceValue");

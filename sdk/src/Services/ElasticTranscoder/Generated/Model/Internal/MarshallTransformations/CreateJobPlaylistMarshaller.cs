@@ -45,6 +45,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateJobPlaylist requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("Format");

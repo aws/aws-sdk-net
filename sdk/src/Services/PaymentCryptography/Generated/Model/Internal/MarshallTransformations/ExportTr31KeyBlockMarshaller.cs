@@ -45,6 +45,8 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExportTr31KeyBlock requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetWrappingKeyIdentifier())
             {
                 context.Writer.WritePropertyName("WrappingKeyIdentifier");

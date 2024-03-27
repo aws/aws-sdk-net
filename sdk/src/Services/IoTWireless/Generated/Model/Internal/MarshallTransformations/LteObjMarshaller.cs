@@ -45,6 +45,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LteObj requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEutranCid())
             {
                 context.Writer.WritePropertyName("EutranCid");

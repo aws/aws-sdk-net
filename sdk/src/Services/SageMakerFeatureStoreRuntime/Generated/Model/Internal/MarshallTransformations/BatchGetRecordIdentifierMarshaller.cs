@@ -45,6 +45,8 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
         /// <returns></returns>
         public void Marshall(BatchGetRecordIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFeatureGroupName())
             {
                 context.Writer.WritePropertyName("FeatureGroupName");

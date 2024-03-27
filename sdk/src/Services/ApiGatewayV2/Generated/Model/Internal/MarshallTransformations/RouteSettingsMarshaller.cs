@@ -45,6 +45,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RouteSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataTraceEnabled())
             {
                 context.Writer.WritePropertyName("dataTraceEnabled");

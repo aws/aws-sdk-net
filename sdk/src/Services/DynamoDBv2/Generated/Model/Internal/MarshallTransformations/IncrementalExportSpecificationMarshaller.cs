@@ -45,6 +45,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IncrementalExportSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExportFromTime())
             {
                 context.Writer.WritePropertyName("ExportFromTime");

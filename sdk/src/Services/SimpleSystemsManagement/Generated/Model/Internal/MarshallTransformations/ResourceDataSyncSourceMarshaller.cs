@@ -45,6 +45,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceDataSyncSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAwsOrganizationsSource())
             {
                 context.Writer.WritePropertyName("AwsOrganizationsSource");

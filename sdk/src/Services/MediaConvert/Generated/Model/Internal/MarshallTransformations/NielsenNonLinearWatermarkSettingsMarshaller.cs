@@ -45,6 +45,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NielsenNonLinearWatermarkSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActiveWatermarkProcess())
             {
                 context.Writer.WritePropertyName("activeWatermarkProcess");

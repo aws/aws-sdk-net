@@ -45,6 +45,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NetworkAccessConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPrefixListIds())
             {
                 context.Writer.WritePropertyName("prefixListIds");

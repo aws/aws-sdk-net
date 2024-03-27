@@ -45,6 +45,8 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Position requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetElevation())
             {
                 context.Writer.WritePropertyName("elevation");

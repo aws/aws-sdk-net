@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioFeatures requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEchoReduction())
             {
                 context.Writer.WritePropertyName("EchoReduction");

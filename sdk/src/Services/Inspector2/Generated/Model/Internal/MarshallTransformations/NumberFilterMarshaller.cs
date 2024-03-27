@@ -45,6 +45,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NumberFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLowerInclusive())
             {
                 context.Writer.WritePropertyName("lowerInclusive");

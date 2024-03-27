@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnnotationConsolidationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnnotationConsolidationLambdaArn())
             {
                 context.Writer.WritePropertyName("AnnotationConsolidationLambdaArn");

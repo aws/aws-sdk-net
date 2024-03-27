@@ -45,6 +45,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Deserializer requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHiveJsonSerDe())
             {
                 context.Writer.WritePropertyName("HiveJsonSerDe");

@@ -45,6 +45,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StartTechnicalCueDetectionFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBlackFrame())
             {
                 context.Writer.WritePropertyName("BlackFrame");

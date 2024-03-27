@@ -45,6 +45,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateDataSecurityConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetModelKmsKeyId())
             {
                 context.Writer.WritePropertyName("ModelKmsKeyId");

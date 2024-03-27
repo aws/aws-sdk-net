@@ -45,6 +45,8 @@ namespace Amazon.Pricing.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Filter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetField())
             {
                 context.Writer.WritePropertyName("Field");

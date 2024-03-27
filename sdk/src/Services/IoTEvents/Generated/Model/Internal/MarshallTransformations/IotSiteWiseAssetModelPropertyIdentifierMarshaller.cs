@@ -45,6 +45,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IotSiteWiseAssetModelPropertyIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssetModelId())
             {
                 context.Writer.WritePropertyName("assetModelId");

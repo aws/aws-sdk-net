@@ -45,6 +45,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CdmaNmrObj requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBaseStationId())
             {
                 context.Writer.WritePropertyName("BaseStationId");

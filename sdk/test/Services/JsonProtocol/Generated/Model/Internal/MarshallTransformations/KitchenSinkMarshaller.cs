@@ -45,6 +45,8 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KitchenSink requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBlob())
             {
                 context.Writer.WritePropertyName("Blob");

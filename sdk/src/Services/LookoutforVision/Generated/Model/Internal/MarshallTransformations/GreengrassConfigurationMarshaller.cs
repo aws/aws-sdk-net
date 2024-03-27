@@ -45,6 +45,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GreengrassConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCompilerOptions())
             {
                 context.Writer.WritePropertyName("CompilerOptions");

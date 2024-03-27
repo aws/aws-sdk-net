@@ -45,6 +45,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OnDemandResizingSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTimeoutDurationMinutes())
             {
                 context.Writer.WritePropertyName("TimeoutDurationMinutes");

@@ -45,6 +45,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkflowDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOnPartialUpload())
             {
                 context.Writer.WritePropertyName("OnPartialUpload");

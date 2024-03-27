@@ -45,6 +45,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrganizationAggregationSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllAwsRegions())
             {
                 context.Writer.WritePropertyName("AllAwsRegions");

@@ -45,6 +45,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceTypeConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBidPrice())
             {
                 context.Writer.WritePropertyName("BidPrice");

@@ -45,6 +45,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExportAssetsToS3RequestDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssetDestinations())
             {
                 context.Writer.WritePropertyName("AssetDestinations");

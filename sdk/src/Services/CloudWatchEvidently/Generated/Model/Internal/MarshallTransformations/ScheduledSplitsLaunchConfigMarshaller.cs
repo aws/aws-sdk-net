@@ -45,6 +45,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScheduledSplitsLaunchConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSteps())
             {
                 context.Writer.WritePropertyName("steps");

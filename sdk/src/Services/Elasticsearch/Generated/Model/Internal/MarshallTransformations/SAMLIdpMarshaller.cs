@@ -45,6 +45,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SAMLIdp requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEntityId())
             {
                 context.Writer.WritePropertyName("EntityId");

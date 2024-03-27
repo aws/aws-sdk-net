@@ -45,6 +45,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceDataSyncS3Destination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAWSKMSKeyARN())
             {
                 context.Writer.WritePropertyName("AWSKMSKeyARN");

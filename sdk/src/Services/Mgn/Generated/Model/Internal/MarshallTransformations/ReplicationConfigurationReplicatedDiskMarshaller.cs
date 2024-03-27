@@ -45,6 +45,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReplicationConfigurationReplicatedDisk requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeviceName())
             {
                 context.Writer.WritePropertyName("deviceName");

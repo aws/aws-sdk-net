@@ -45,6 +45,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EventSubscription requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEventType())
             {
                 context.Writer.WritePropertyName("eventType");

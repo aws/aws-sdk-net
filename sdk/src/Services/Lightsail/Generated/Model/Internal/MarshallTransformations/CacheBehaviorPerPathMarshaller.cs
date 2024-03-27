@@ -45,6 +45,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CacheBehaviorPerPath requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBehavior())
             {
                 context.Writer.WritePropertyName("behavior");

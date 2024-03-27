@@ -45,6 +45,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CdnConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdSegmentUrlPrefix())
             {
                 context.Writer.WritePropertyName("AdSegmentUrlPrefix");

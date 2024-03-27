@@ -45,6 +45,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Bandwidth requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDownloadSpeed())
             {
                 context.Writer.WritePropertyName("DownloadSpeed");

@@ -45,6 +45,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SpectrumConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBandwidth())
             {
                 context.Writer.WritePropertyName("bandwidth");

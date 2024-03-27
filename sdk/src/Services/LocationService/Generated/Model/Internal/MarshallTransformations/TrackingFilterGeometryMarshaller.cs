@@ -45,6 +45,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TrackingFilterGeometry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPolygon())
             {
                 context.Writer.WritePropertyName("Polygon");

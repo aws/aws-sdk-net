@@ -45,6 +45,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BackendAPIConflictResolution requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetResolutionStrategy())
             {
                 context.Writer.WritePropertyName("resolutionStrategy");

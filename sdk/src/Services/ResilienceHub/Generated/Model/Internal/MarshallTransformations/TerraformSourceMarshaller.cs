@@ -45,6 +45,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TerraformSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3StateFileUrl())
             {
                 context.Writer.WritePropertyName("s3StateFileUrl");

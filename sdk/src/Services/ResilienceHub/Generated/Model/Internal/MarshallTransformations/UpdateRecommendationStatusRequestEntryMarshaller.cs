@@ -45,6 +45,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateRecommendationStatusRequestEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEntryId())
             {
                 context.Writer.WritePropertyName("entryId");

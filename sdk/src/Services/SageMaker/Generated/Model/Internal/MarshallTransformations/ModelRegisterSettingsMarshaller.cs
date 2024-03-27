@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ModelRegisterSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCrossAccountModelRegisterRoleArn())
             {
                 context.Writer.WritePropertyName("CrossAccountModelRegisterRoleArn");

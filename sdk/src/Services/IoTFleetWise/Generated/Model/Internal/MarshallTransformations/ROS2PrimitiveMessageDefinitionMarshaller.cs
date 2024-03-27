@@ -45,6 +45,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ROS2PrimitiveMessageDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");

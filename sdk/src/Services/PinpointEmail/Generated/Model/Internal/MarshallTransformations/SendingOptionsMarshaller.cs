@@ -45,6 +45,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SendingOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSendingEnabled())
             {
                 context.Writer.WritePropertyName("SendingEnabled");

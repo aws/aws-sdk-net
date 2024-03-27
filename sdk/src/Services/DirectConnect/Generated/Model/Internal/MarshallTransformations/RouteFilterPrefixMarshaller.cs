@@ -45,6 +45,8 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RouteFilterPrefix requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCidr())
             {
                 context.Writer.WritePropertyName("cidr");

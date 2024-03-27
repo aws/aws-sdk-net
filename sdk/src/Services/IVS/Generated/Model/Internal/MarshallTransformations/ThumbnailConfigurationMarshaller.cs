@@ -45,6 +45,8 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ThumbnailConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRecordingMode())
             {
                 context.Writer.WritePropertyName("recordingMode");

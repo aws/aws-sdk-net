@@ -45,6 +45,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OpenSearchServerlessConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCollectionArn())
             {
                 context.Writer.WritePropertyName("collectionArn");

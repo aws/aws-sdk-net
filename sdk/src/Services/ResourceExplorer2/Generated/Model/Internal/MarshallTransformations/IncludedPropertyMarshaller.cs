@@ -45,6 +45,8 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IncludedProperty requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

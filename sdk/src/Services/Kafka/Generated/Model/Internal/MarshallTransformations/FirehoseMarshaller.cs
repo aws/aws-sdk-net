@@ -45,6 +45,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Firehose requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeliveryStream())
             {
                 context.Writer.WritePropertyName("deliveryStream");

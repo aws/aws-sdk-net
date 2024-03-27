@@ -45,6 +45,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EgressConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEgressType())
             {
                 context.Writer.WritePropertyName("EgressType");

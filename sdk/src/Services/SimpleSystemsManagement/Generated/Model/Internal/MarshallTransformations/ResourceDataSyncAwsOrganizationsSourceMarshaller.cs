@@ -45,6 +45,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceDataSyncAwsOrganizationsSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOrganizationalUnits())
             {
                 context.Writer.WritePropertyName("OrganizationalUnits");

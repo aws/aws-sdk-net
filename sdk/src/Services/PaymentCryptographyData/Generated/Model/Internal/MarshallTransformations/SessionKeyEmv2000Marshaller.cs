@@ -45,6 +45,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SessionKeyEmv2000 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApplicationTransactionCounter())
             {
                 context.Writer.WritePropertyName("ApplicationTransactionCounter");

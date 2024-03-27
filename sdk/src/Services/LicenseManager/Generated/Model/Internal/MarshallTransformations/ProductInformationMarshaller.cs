@@ -45,6 +45,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProductInformation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetProductInformationFilterList())
             {
                 context.Writer.WritePropertyName("ProductInformationFilterList");

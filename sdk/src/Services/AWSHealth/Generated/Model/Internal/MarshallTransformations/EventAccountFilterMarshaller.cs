@@ -45,6 +45,8 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EventAccountFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAwsAccountId())
             {
                 context.Writer.WritePropertyName("awsAccountId");

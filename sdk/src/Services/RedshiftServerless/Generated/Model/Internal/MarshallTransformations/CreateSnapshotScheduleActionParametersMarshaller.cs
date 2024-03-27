@@ -45,6 +45,8 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateSnapshotScheduleActionParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNamespaceName())
             {
                 context.Writer.WritePropertyName("namespaceName");

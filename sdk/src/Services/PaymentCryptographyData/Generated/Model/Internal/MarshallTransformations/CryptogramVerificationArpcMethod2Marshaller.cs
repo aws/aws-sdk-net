@@ -45,6 +45,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CryptogramVerificationArpcMethod2 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCardStatusUpdate())
             {
                 context.Writer.WritePropertyName("CardStatusUpdate");

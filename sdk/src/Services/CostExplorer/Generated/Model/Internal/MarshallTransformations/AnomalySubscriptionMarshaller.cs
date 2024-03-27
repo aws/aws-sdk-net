@@ -45,6 +45,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnomalySubscription requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("AccountId");

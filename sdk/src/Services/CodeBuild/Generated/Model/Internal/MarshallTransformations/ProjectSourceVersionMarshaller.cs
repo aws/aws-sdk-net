@@ -45,6 +45,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProjectSourceVersion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSourceIdentifier())
             {
                 context.Writer.WritePropertyName("sourceIdentifier");

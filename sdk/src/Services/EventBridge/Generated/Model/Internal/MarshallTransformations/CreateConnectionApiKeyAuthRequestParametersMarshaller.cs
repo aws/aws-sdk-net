@@ -45,6 +45,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateConnectionApiKeyAuthRequestParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApiKeyName())
             {
                 context.Writer.WritePropertyName("ApiKeyName");

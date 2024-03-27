@@ -45,6 +45,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateProgramTransition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDurationMillis())
             {
                 context.Writer.WritePropertyName("DurationMillis");

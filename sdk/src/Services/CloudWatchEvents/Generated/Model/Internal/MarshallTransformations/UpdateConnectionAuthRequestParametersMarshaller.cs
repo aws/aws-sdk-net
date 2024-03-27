@@ -45,6 +45,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateConnectionAuthRequestParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApiKeyAuthParameters())
             {
                 context.Writer.WritePropertyName("ApiKeyAuthParameters");

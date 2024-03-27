@@ -45,6 +45,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncodingParametersRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCompressionFactor())
             {
                 context.Writer.WritePropertyName("compressionFactor");

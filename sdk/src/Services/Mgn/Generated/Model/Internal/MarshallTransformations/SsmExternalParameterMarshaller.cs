@@ -45,6 +45,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SsmExternalParameter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDynamicPath())
             {
                 context.Writer.WritePropertyName("dynamicPath");

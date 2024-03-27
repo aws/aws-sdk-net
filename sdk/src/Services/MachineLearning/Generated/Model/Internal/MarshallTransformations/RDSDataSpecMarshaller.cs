@@ -45,6 +45,8 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RDSDataSpec requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDatabaseCredentials())
             {
                 context.Writer.WritePropertyName("DatabaseCredentials");

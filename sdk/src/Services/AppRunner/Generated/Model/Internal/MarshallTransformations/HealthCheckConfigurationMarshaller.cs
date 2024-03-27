@@ -45,6 +45,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HealthCheckConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHealthyThreshold())
             {
                 context.Writer.WritePropertyName("HealthyThreshold");

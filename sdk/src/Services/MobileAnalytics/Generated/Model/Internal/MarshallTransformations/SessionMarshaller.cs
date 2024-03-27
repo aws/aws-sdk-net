@@ -45,6 +45,8 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Session requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("duration");

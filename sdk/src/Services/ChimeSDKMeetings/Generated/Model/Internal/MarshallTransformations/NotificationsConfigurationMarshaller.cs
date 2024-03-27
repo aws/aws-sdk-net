@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotificationsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLambdaFunctionArn())
             {
                 context.Writer.WritePropertyName("LambdaFunctionArn");

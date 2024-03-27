@@ -45,6 +45,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ThemeGenerationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFieldsForThemeGeneration())
             {
                 context.Writer.WritePropertyName("fieldsForThemeGeneration");

@@ -45,6 +45,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FulfillmentActivity requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCodeHook())
             {
                 context.Writer.WritePropertyName("codeHook");

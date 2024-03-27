@@ -45,6 +45,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateReplicationSetAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddRegionAction())
             {
                 context.Writer.WritePropertyName("addRegionAction");

@@ -45,6 +45,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ActionThreshold requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActionThresholdType())
             {
                 context.Writer.WritePropertyName("ActionThresholdType");

@@ -45,6 +45,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AWSLocation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSubnetArn())
             {
                 context.Writer.WritePropertyName("SubnetArn");

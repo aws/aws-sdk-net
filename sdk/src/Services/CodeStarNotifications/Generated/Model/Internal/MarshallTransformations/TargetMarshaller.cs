@@ -45,6 +45,8 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Target requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTargetAddress())
             {
                 context.Writer.WritePropertyName("TargetAddress");

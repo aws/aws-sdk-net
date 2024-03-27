@@ -45,6 +45,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RequestCancelExternalWorkflowExecutionDecisionAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetControl())
             {
                 context.Writer.WritePropertyName("control");

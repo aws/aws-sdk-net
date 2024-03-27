@@ -45,6 +45,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FilterConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowedLocations())
             {
                 context.Writer.WritePropertyName("AllowedLocations");

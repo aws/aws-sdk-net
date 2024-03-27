@@ -45,6 +45,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TemporalStatisticsConfigInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGroupBy())
             {
                 context.Writer.WritePropertyName("GroupBy");

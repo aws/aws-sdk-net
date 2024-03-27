@@ -45,6 +45,8 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LaunchOverrides requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLaunchCommands())
             {
                 context.Writer.WritePropertyName("LaunchCommands");

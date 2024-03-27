@@ -45,6 +45,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(XssMatchTuple requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFieldToMatch())
             {
                 context.Writer.WritePropertyName("FieldToMatch");

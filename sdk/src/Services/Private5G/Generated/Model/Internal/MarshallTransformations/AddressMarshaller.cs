@@ -45,6 +45,8 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Address requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCity())
             {
                 context.Writer.WritePropertyName("city");

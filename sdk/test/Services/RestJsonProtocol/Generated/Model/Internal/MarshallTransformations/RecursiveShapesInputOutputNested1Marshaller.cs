@@ -45,6 +45,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecursiveShapesInputOutputNested1 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFoo())
             {
                 context.Writer.WritePropertyName("foo");

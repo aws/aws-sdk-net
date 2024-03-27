@@ -45,6 +45,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AccessDescription requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccessLocation())
             {
                 context.Writer.WritePropertyName("AccessLocation");

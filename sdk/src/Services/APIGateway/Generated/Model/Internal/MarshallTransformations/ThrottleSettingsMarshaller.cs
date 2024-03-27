@@ -45,6 +45,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ThrottleSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBurstLimit())
             {
                 context.Writer.WritePropertyName("burstLimit");

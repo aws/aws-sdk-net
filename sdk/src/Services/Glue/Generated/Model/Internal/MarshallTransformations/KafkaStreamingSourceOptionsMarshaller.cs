@@ -45,6 +45,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KafkaStreamingSourceOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddRecordTimestamp())
             {
                 context.Writer.WritePropertyName("AddRecordTimestamp");

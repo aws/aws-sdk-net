@@ -45,6 +45,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GlueRunConfigurationInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataAccessRole())
             {
                 context.Writer.WritePropertyName("dataAccessRole");

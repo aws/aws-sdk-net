@@ -45,6 +45,8 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricDatum requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("Dimensions");

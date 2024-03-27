@@ -45,6 +45,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3Identifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3BucketName())
             {
                 context.Writer.WritePropertyName("s3BucketName");

@@ -45,6 +45,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CrossRegionCopyDeprecateRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("Interval");

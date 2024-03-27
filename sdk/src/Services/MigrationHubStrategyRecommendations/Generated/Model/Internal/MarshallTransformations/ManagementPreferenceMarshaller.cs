@@ -45,6 +45,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// <returns></returns>
         public void Marshall(ManagementPreference requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAwsManagedResources())
             {
                 context.Writer.WritePropertyName("awsManagedResources");

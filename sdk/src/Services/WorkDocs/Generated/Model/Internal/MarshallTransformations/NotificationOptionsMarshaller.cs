@@ -45,6 +45,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotificationOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEmailMessage())
             {
                 context.Writer.WritePropertyName("EmailMessage");

@@ -45,6 +45,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HighAvailabilityConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDesiredCapacity())
             {
                 context.Writer.WritePropertyName("desiredCapacity");

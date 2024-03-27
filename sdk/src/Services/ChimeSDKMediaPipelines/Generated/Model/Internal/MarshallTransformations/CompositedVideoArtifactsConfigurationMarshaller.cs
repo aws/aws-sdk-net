@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CompositedVideoArtifactsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGridViewConfiguration())
             {
                 context.Writer.WritePropertyName("GridViewConfiguration");

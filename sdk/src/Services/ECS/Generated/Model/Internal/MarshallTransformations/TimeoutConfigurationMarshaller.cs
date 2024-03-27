@@ -45,6 +45,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimeoutConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIdleTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("idleTimeoutSeconds");

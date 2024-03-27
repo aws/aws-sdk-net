@@ -45,6 +45,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DevicePositionUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccuracy())
             {
                 context.Writer.WritePropertyName("Accuracy");

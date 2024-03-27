@@ -45,6 +45,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PathMatchType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExact())
             {
                 context.Writer.WritePropertyName("exact");

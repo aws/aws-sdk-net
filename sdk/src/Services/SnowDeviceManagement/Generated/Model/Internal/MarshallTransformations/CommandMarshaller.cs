@@ -45,6 +45,8 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Command requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetReboot())
             {
                 context.Writer.WritePropertyName("reboot");

@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEcsClusterConfigurationDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExecuteCommandConfiguration())
             {
                 context.Writer.WritePropertyName("ExecuteCommandConfiguration");

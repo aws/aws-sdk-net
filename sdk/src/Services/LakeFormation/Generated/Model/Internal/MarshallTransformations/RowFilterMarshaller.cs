@@ -45,6 +45,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RowFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllRowsWildcard())
             {
                 context.Writer.WritePropertyName("AllRowsWildcard");

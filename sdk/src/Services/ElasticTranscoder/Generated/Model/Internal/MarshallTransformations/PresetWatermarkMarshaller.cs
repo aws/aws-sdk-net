@@ -45,6 +45,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PresetWatermark requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHorizontalAlign())
             {
                 context.Writer.WritePropertyName("HorizontalAlign");

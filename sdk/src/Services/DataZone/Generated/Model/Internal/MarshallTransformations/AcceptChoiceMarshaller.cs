@@ -45,6 +45,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AcceptChoice requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPredictionChoice())
             {
                 context.Writer.WritePropertyName("predictionChoice");

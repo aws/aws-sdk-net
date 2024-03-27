@@ -45,6 +45,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AccountRecoverySettingType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRecoveryMechanisms())
             {
                 context.Writer.WritePropertyName("RecoveryMechanisms");

@@ -45,6 +45,8 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StatisticSet requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximum())
             {
                 context.Writer.WritePropertyName("Maximum");

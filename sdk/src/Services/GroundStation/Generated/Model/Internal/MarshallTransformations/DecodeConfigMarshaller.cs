@@ -45,6 +45,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DecodeConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUnvalidatedJSON())
             {
                 context.Writer.WritePropertyName("unvalidatedJSON");

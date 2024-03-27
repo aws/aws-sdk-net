@@ -45,6 +45,8 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExperimentTemplateS3LogConfigurationInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("bucketName");

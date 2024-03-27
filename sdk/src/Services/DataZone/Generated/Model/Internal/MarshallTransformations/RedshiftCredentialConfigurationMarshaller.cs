@@ -45,6 +45,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RedshiftCredentialConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSecretManagerArn())
             {
                 context.Writer.WritePropertyName("secretManagerArn");

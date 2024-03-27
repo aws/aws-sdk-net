@@ -45,6 +45,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AmazonMskCluster requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMskClusterArn())
             {
                 context.Writer.WritePropertyName("mskClusterArn");

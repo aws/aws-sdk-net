@@ -45,6 +45,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PluginAuthConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBasicAuthConfiguration())
             {
                 context.Writer.WritePropertyName("basicAuthConfiguration");

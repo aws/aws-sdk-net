@@ -45,6 +45,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JsonFormatDescriptor requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCharset())
             {
                 context.Writer.WritePropertyName("Charset");

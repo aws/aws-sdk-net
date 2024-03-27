@@ -45,6 +45,8 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KinesisConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAggregationEnabled())
             {
                 context.Writer.WritePropertyName("AggregationEnabled");

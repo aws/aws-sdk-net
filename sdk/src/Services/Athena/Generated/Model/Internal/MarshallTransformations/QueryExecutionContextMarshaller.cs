@@ -45,6 +45,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(QueryExecutionContext requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCatalog())
             {
                 context.Writer.WritePropertyName("Catalog");

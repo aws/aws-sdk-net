@@ -45,6 +45,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AttributeSuggestionsGetConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalResponseAttributes())
             {
                 context.Writer.WritePropertyName("AdditionalResponseAttributes");

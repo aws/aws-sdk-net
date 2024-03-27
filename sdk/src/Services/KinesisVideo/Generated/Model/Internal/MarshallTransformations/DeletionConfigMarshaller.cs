@@ -45,6 +45,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeletionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeleteAfterUpload())
             {
                 context.Writer.WritePropertyName("DeleteAfterUpload");

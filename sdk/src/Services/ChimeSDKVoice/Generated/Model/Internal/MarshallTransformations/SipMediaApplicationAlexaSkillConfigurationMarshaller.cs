@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SipMediaApplicationAlexaSkillConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlexaSkillIds())
             {
                 context.Writer.WritePropertyName("AlexaSkillIds");

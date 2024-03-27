@@ -45,6 +45,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FailureDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExternalExecutionId())
             {
                 context.Writer.WritePropertyName("externalExecutionId");

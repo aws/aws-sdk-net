@@ -45,6 +45,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RateIncreaseCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNumberOfNotifiedThings())
             {
                 context.Writer.WritePropertyName("numberOfNotifiedThings");

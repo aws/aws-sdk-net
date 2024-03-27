@@ -45,6 +45,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoTuneMaintenanceSchedule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCronExpressionForRecurrence())
             {
                 context.Writer.WritePropertyName("CronExpressionForRecurrence");

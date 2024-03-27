@@ -45,6 +45,8 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LocalHealthEventsConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHealthScoreThreshold())
             {
                 context.Writer.WritePropertyName("HealthScoreThreshold");

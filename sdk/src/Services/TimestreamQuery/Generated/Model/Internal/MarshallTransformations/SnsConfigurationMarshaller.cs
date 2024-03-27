@@ -45,6 +45,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SnsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTopicArn())
             {
                 context.Writer.WritePropertyName("TopicArn");

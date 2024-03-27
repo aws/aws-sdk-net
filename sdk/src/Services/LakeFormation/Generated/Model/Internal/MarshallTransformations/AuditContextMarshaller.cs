@@ -45,6 +45,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AuditContext requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalAuditContext())
             {
                 context.Writer.WritePropertyName("AdditionalAuditContext");

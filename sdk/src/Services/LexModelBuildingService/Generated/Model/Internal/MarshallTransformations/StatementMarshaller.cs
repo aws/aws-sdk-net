@@ -45,6 +45,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Statement requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMessages())
             {
                 context.Writer.WritePropertyName("messages");

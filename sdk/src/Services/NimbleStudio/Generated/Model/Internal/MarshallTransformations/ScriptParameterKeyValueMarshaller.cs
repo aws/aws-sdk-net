@@ -45,6 +45,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScriptParameterKeyValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");

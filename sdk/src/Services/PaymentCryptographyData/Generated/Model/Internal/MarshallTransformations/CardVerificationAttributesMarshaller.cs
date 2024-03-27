@@ -45,6 +45,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CardVerificationAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAmexCardSecurityCodeVersion1())
             {
                 context.Writer.WritePropertyName("AmexCardSecurityCodeVersion1");

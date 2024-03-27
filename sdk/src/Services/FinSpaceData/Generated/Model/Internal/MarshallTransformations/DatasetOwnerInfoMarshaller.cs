@@ -45,6 +45,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatasetOwnerInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEmail())
             {
                 context.Writer.WritePropertyName("email");

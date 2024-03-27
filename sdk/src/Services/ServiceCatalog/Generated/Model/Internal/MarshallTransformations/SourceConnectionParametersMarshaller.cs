@@ -45,6 +45,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourceConnectionParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCodeStar())
             {
                 context.Writer.WritePropertyName("CodeStar");

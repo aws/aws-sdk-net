@@ -45,6 +45,8 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SaaSProductEntityIdFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetValueList())
             {
                 context.Writer.WritePropertyName("ValueList");

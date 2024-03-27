@@ -45,6 +45,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AssessmentRunFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCompletionTimeRange())
             {
                 context.Writer.WritePropertyName("completionTimeRange");

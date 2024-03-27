@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SectionBasedLayoutCanvasSizeOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPaperCanvasSizeOptions())
             {
                 context.Writer.WritePropertyName("PaperCanvasSizeOptions");

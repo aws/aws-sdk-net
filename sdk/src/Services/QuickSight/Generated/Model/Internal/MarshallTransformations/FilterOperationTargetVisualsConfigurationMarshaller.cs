@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FilterOperationTargetVisualsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSameSheetTargetVisualConfiguration())
             {
                 context.Writer.WritePropertyName("SameSheetTargetVisualConfiguration");

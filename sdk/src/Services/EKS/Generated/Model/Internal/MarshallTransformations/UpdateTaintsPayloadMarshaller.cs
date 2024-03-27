@@ -45,6 +45,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateTaintsPayload requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddOrUpdateTaints())
             {
                 context.Writer.WritePropertyName("addOrUpdateTaints");

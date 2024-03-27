@@ -45,6 +45,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoScalingGroupProviderUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetManagedDraining())
             {
                 context.Writer.WritePropertyName("managedDraining");

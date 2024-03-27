@@ -45,6 +45,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MappingParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCSVMappingParameters())
             {
                 context.Writer.WritePropertyName("CSVMappingParameters");

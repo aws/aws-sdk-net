@@ -45,6 +45,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NewStudioMember requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPersona())
             {
                 context.Writer.WritePropertyName("persona");

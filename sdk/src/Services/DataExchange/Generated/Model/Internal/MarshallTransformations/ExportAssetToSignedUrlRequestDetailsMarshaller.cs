@@ -45,6 +45,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExportAssetToSignedUrlRequestDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssetId())
             {
                 context.Writer.WritePropertyName("AssetId");

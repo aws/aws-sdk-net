@@ -45,6 +45,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CrossRegionCopyTarget requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTargetRegion())
             {
                 context.Writer.WritePropertyName("TargetRegion");

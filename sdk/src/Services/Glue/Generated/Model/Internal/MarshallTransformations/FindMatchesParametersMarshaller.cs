@@ -45,6 +45,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FindMatchesParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccuracyCostTradeoff())
             {
                 context.Writer.WritePropertyName("AccuracyCostTradeoff");

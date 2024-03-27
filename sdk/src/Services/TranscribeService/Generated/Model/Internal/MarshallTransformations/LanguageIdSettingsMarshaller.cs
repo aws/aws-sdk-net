@@ -45,6 +45,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LanguageIdSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLanguageModelName())
             {
                 context.Writer.WritePropertyName("LanguageModelName");

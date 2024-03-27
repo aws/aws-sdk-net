@@ -45,6 +45,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Comment requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMessage())
             {
                 context.Writer.WritePropertyName("message");

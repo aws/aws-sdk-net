@@ -45,6 +45,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DateFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndInclusive())
             {
                 context.Writer.WritePropertyName("EndInclusive");

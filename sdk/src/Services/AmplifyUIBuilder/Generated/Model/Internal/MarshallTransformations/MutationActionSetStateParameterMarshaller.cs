@@ -45,6 +45,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MutationActionSetStateParameter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComponentName())
             {
                 context.Writer.WritePropertyName("componentName");

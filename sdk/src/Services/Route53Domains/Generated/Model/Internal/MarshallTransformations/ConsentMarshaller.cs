@@ -45,6 +45,8 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Consent requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCurrency())
             {
                 context.Writer.WritePropertyName("Currency");

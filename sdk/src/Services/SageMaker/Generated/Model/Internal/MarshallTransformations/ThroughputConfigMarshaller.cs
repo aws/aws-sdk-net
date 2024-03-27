@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ThroughputConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetProvisionedReadCapacityUnits())
             {
                 context.Writer.WritePropertyName("ProvisionedReadCapacityUnits");

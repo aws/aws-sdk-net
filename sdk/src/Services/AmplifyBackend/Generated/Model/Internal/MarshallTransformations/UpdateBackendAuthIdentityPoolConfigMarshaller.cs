@@ -45,6 +45,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateBackendAuthIdentityPoolConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUnauthenticatedLogin())
             {
                 context.Writer.WritePropertyName("unauthenticatedLogin");

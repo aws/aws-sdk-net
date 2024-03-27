@@ -45,6 +45,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RemoveAttributesActivity requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("attributes");

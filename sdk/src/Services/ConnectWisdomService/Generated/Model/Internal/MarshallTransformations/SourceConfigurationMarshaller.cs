@@ -45,6 +45,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAppIntegrations())
             {
                 context.Writer.WritePropertyName("appIntegrations");

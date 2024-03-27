@@ -45,6 +45,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IpRoute requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCidrIp())
             {
                 context.Writer.WritePropertyName("CidrIp");

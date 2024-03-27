@@ -45,6 +45,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IncrementalRunConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIncrementalRunType())
             {
                 context.Writer.WritePropertyName("incrementalRunType");

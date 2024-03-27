@@ -45,6 +45,8 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3Location requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("bucketName");

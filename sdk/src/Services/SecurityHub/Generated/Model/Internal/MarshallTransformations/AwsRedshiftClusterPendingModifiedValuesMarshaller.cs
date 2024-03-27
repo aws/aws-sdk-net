@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsRedshiftClusterPendingModifiedValues requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutomatedSnapshotRetentionPeriod())
             {
                 context.Writer.WritePropertyName("AutomatedSnapshotRetentionPeriod");

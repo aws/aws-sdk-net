@@ -45,6 +45,8 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SseConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKmsEncryptionConfig())
             {
                 context.Writer.WritePropertyName("KmsEncryptionConfig");

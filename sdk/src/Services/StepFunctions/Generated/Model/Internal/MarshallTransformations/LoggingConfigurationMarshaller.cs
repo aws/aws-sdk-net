@@ -45,6 +45,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoggingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinations())
             {
                 context.Writer.WritePropertyName("destinations");

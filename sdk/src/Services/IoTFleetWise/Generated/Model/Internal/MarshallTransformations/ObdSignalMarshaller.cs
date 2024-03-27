@@ -45,6 +45,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ObdSignal requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBitMaskLength())
             {
                 context.Writer.WritePropertyName("bitMaskLength");

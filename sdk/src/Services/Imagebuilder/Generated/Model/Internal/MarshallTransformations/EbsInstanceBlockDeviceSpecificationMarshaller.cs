@@ -45,6 +45,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EbsInstanceBlockDeviceSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeleteOnTermination())
             {
                 context.Writer.WritePropertyName("deleteOnTermination");

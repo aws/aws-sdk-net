@@ -45,6 +45,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Logging requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClusterLogging())
             {
                 context.Writer.WritePropertyName("clusterLogging");

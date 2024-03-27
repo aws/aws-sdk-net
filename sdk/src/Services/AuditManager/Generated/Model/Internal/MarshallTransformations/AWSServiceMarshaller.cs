@@ -45,6 +45,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AWSService requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetServiceName())
             {
                 context.Writer.WritePropertyName("serviceName");

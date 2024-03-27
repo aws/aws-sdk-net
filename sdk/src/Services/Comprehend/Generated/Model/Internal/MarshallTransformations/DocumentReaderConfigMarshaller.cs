@@ -45,6 +45,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DocumentReaderConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDocumentReadAction())
             {
                 context.Writer.WritePropertyName("DocumentReadAction");

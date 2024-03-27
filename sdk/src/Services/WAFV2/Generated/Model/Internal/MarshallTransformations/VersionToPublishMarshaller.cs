@@ -45,6 +45,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VersionToPublish requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssociatedRuleGroupArn())
             {
                 context.Writer.WritePropertyName("AssociatedRuleGroupArn");

@@ -45,6 +45,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ChatParticipantRoleConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetParticipantTimerConfigList())
             {
                 context.Writer.WritePropertyName("ParticipantTimerConfigList");

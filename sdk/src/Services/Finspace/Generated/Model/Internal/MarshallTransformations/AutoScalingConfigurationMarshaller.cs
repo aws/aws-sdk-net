@@ -45,6 +45,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoScalingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoScalingMetric())
             {
                 context.Writer.WritePropertyName("autoScalingMetric");

@@ -45,6 +45,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudFormationCollection requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStackNames())
             {
                 context.Writer.WritePropertyName("StackNames");

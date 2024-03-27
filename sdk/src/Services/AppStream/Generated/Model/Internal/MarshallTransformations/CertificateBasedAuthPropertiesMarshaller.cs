@@ -45,6 +45,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CertificateBasedAuthProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCertificateAuthorityArn())
             {
                 context.Writer.WritePropertyName("CertificateAuthorityArn");

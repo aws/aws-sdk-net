@@ -45,6 +45,8 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateRowData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBatchItemId())
             {
                 context.Writer.WritePropertyName("batchItemId");

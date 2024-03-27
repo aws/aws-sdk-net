@@ -45,6 +45,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CmafPackageCreateOrUpdateParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("encryption");
