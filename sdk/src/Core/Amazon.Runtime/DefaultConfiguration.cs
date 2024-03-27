@@ -46,11 +46,6 @@ namespace Amazon.Runtime
         /// </summary>
         RequestRetryMode RetryMode { get; }
         /// <summary>
-        /// Specifies how the SDK determines the AWS service endpoint that it uses to talk to the AWS Security Token Service (AWS STS).
-        /// See https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-sts_regional_endpoints.html
-        /// </summary>
-        StsRegionalEndpointsValue StsRegionalEndpoints { get; }
-        /// <summary>
         /// Specifies how the SDK determines the AWS service endpoint that it uses to talk to the Amazon S3 for the us-east-1 region
         /// </summary>
         S3UsEast1RegionalEndpointValue S3UsEast1RegionalEndpoint { get; }
@@ -85,8 +80,6 @@ namespace Amazon.Runtime
         public DefaultConfigurationMode Name { get; set; }
         /// <inheritdoc />
         public RequestRetryMode RetryMode { get; set; }
-        /// <inheritdoc />
-        public StsRegionalEndpointsValue StsRegionalEndpoints { get; set; }
         /// <inheritdoc />
         public S3UsEast1RegionalEndpointValue S3UsEast1RegionalEndpoint { get; set; }
         /// <inheritdoc />

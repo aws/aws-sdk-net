@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+    #line 1 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class DefaultConfiguration : BaseGenerator
     {
@@ -33,7 +33,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n");
             this.Write("\r\n");
             
-            #line 10 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 10 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
 
     AddLicenseHeader();
 
@@ -43,21 +43,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing System.Collections.Ob" +
                     "jectModel;\r\n\r\nusing Amazon.Runtime;\r\n\r\nnamespace ");
             
-            #line 21 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 21 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(base.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// Configuration for accessing Amazon ");
             
-            #line 24 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 24 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(base.Config.ClassName));
             
             #line default
             #line hidden
             this.Write(" service\r\n    /// </summary>\r\n    public static class Amazon");
             
-            #line 26 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 26 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(base.Config.ClassName));
             
             #line default
@@ -65,7 +65,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("DefaultConfiguration\r\n    {\r\n        /// <summary>\r\n        /// Collection of all" +
                     " <see cref=\"DefaultConfiguration\"/>s supported by\r\n        /// ");
             
-            #line 30 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 30 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(base.Config.ClassName));
             
             #line default
@@ -75,14 +75,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ction<IDefaultConfiguration>(new List<IDefaultConfiguration>\r\n            {\r\n   " +
                     "             ");
             
-            #line 36 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 36 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(",\r\n                ", base.DefaultConfigurationModel.Modes.Select(x => x.Name).ToArray())));
             
             #line default
             #line hidden
             this.Write("\r\n            });\r\n        }\r\n\r\n");
             
-            #line 40 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 40 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
 
     foreach (var mode in base.DefaultConfigurationModel.Modes)
     {
@@ -92,14 +92,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        /// <summary>\r\n        /// ");
             
-            #line 45 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 45 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.Documentation));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        public static IDefaultConfiguration ");
             
-            #line 47 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 47 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.Name));
             
             #line default
@@ -107,56 +107,42 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write(" {get;} = new DefaultConfiguration\r\n        {\r\n            Name = DefaultConfigur" +
                     "ationMode.");
             
-            #line 49 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 49 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.Name));
             
             #line default
             #line hidden
             this.Write(",\r\n            RetryMode = ");
             
-            #line 50 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 50 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(nameof(RequestRetryMode)));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 50 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 50 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.RetryMode));
-            
-            #line default
-            #line hidden
-            this.Write(",\r\n            StsRegionalEndpoints = ");
-            
-            #line 51 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(nameof(StsRegionalEndpointsValue)));
-            
-            #line default
-            #line hidden
-            this.Write(".");
-            
-            #line 51 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(mode.StsRegionalEndpoints));
             
             #line default
             #line hidden
             this.Write(",\r\n            S3UsEast1RegionalEndpoint = ");
             
-            #line 52 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 51 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(nameof(S3UsEast1RegionalEndpointValue)));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 52 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 51 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.S3UsEast1RegionalEndpoint));
             
             #line default
             #line hidden
             this.Write(",\r\n");
             
-            #line 53 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 52 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
 
             if (mode.ConnectTimeout.HasValue)
             {
@@ -166,21 +152,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            // ");
             
-            #line 57 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 56 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.ConnectTimeout.Value.ToString("g")));
             
             #line default
             #line hidden
             this.Write("\r\n            ConnectTimeout = TimeSpan.FromMilliseconds(");
             
-            #line 58 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 57 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.ConnectTimeout.Value.TotalMilliseconds));
             
             #line default
             #line hidden
             this.Write("L),\r\n");
             
-            #line 59 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 58 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
 
             }
             else
@@ -191,7 +177,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            ConnectTimeout = null,\r\n");
             
-            #line 65 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 64 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
  
             }
 
@@ -203,21 +189,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            // ");
             
-            #line 71 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 70 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.TlsNegotiationTimeout.Value.ToString("g")));
             
             #line default
             #line hidden
             this.Write("\r\n            TlsNegotiationTimeout = TimeSpan.FromMilliseconds(");
             
-            #line 72 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 71 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.TlsNegotiationTimeout.Value.TotalMilliseconds));
             
             #line default
             #line hidden
             this.Write("L),\r\n");
             
-            #line 73 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 72 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
 
             }
             else
@@ -228,7 +214,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            TlsNegotiationTimeout = null,\r\n");
             
-            #line 79 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 78 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
  
             }
 
@@ -240,21 +226,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            // ");
             
-            #line 85 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 84 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.TimeToFirstByteTimeout.Value.ToString("g")));
             
             #line default
             #line hidden
             this.Write("\r\n            TimeToFirstByteTimeout = TimeSpan.FromMilliseconds(");
             
-            #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 85 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.TimeToFirstByteTimeout.Value.TotalMilliseconds));
             
             #line default
             #line hidden
             this.Write("L),\r\n");
             
-            #line 87 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 86 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
 
             }
             else
@@ -265,7 +251,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            TimeToFirstByteTimeout = null,\r\n");
             
-            #line 93 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 92 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
 
             }
 
@@ -277,21 +263,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            // ");
             
-            #line 99 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 98 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.HttpRequestTimeout.Value.ToString("g")));
             
             #line default
             #line hidden
             this.Write("\r\n            HttpRequestTimeout = TimeSpan.FromMilliseconds(");
             
-            #line 100 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 99 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.HttpRequestTimeout.Value.TotalMilliseconds));
             
             #line default
             #line hidden
             this.Write("L)\r\n");
             
-            #line 101 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 100 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
 
             }
             else
@@ -302,7 +288,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            HttpRequestTimeout = null\r\n");
             
-            #line 107 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 106 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
 
             }
 
@@ -311,7 +297,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        };\r\n");
             
-            #line 111 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
+            #line 110 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfiguration.tt"
 
     }
 

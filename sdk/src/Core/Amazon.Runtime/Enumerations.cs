@@ -48,17 +48,6 @@ namespace Amazon.Runtime
     }
 
     /// <summary>
-    /// StsRegionalEndpointsValue determines the service endpoint used to talk to STS.
-    /// </summary>
-    public enum StsRegionalEndpointsValue
-    {
-        /// <summary>
-        /// Send the request to the regional endpoint
-        /// </summary>
-        Regional
-    }
-
-    /// <summary>
     /// S3 US East 1 endpoint value determines wheter or not
     /// to send the us-east-1 s3 requests to the regional endpoint or to
     /// the legacy global endpoint

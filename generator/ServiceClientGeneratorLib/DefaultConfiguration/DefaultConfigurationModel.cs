@@ -41,11 +41,6 @@ namespace ServiceClientGenerator.DefaultConfiguration
         /// </summary>
         public RequestRetryMode RetryMode { get; set; }
         /// <summary>
-        /// Specifies how the SDK determines the AWS service endpoint that it uses to talk to the AWS Security Token Service (AWS STS).
-        /// See https://docs.aws.amazon.com/sdkref/latest/guide/feature-sts-regionalized-endpoints.html
-        /// </summary>
-        public StsRegionalEndpointsValue StsRegionalEndpoints { get; set; }
-        /// <summary>
         /// Specifies how the SDK determines the AWS service endpoint that it uses to talk to the Amazon S3 for the us-east-1 region
         /// </summary>
         public S3UsEast1RegionalEndpointValue S3UsEast1RegionalEndpoint { get; set; }
@@ -88,18 +83,6 @@ namespace ServiceClientGenerator.DefaultConfiguration
         /// and introduces congestion control through client side rate limiting.
         /// </summary>
         Adaptive
-    }
-
-    /// <summary>
-    /// StsRegionalEndpointsValue determines the service endpoint used to talk to STS.
-    /// </summary>
-    /// <remarks>This is a copy of Amazon.Runtime.StsRegionalEndpointsValue</remarks>
-    public enum StsRegionalEndpointsValue
-    {
-        /// <summary>
-        /// Send the request to the regional endpoint
-        /// </summary>
-        Regional
     }
 
     /// <summary>
