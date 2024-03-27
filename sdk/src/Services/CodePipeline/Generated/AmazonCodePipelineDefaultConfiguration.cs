@@ -54,7 +54,6 @@ namespace Amazon.CodePipeline
         {
             Name = DefaultConfigurationMode.Standard,
             RetryMode = RequestRetryMode.Standard,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Regional,
             S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Regional,
             // 0:00:03.1
             ConnectTimeout = TimeSpan.FromMilliseconds(3100L),
@@ -70,7 +69,6 @@ namespace Amazon.CodePipeline
         {
             Name = DefaultConfigurationMode.InRegion,
             RetryMode = RequestRetryMode.Standard,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Regional,
             S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Regional,
             // 0:00:01.1
             ConnectTimeout = TimeSpan.FromMilliseconds(1100L),
@@ -86,7 +84,6 @@ namespace Amazon.CodePipeline
         {
             Name = DefaultConfigurationMode.CrossRegion,
             RetryMode = RequestRetryMode.Standard,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Regional,
             S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Regional,
             // 0:00:03.1
             ConnectTimeout = TimeSpan.FromMilliseconds(3100L),
@@ -102,7 +99,6 @@ namespace Amazon.CodePipeline
         {
             Name = DefaultConfigurationMode.Mobile,
             RetryMode = RequestRetryMode.Standard,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Regional,
             S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Regional,
             // 0:00:30
             ConnectTimeout = TimeSpan.FromMilliseconds(30000L),
@@ -118,7 +114,6 @@ namespace Amazon.CodePipeline
         {
             Name = DefaultConfigurationMode.Auto,
             RetryMode = RequestRetryMode.Standard,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Regional,
             S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Regional,
             // 0:00:01.1
             ConnectTimeout = TimeSpan.FromMilliseconds(1100L),
