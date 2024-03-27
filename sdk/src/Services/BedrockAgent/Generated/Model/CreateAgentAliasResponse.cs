@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Create Agent Alias Response
+    /// This is the response object from the CreateAgentAlias operation.
     /// </summary>
     public partial class CreateAgentAliasResponse : AmazonWebServiceResponse
     {
         private AgentAlias _agentAlias;
 
         /// <summary>
-        /// Gets and sets the property AgentAlias.
+        /// Gets and sets the property AgentAlias. 
+        /// <para>
+        /// Contains details about the alias that was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentAlias AgentAlias

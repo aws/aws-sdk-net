@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Summary of agent version.
+    /// Contains details about a version of an agent.
     /// </summary>
     public partial class AgentVersionSummary
     {
@@ -41,7 +41,10 @@ namespace Amazon.BedrockAgent.Model
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property AgentName.
+        /// Gets and sets the property AgentName. 
+        /// <para>
+        /// The name of the agent to which the version belongs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentName
@@ -57,7 +60,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentStatus.
+        /// Gets and sets the property AgentStatus. 
+        /// <para>
+        /// The status of the agent to which the version belongs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentStatus AgentStatus
@@ -73,7 +79,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentVersion.
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The version of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
         public string AgentVersion
@@ -89,7 +98,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The time at which the version was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime CreatedAt
@@ -105,7 +117,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the version of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -121,7 +136,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The time at which the version was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime UpdatedAt

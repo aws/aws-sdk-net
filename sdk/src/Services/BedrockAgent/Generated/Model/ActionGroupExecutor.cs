@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Type of Executors for an Action Group
+    /// Contains details about the Lambda function containing the business logic that is carried
+    /// out upon invoking the action.
     /// </summary>
     public partial class ActionGroupExecutor
     {
         private string _lambda;
 
         /// <summary>
-        /// Gets and sets the property Lambda.
+        /// Gets and sets the property Lambda. 
+        /// <para>
+        /// The ARN of the Lambda function containing the business logic that is carried out upon
+        /// invoking the action.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public string Lambda

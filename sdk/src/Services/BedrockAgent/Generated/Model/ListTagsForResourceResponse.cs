@@ -36,7 +36,10 @@ namespace Amazon.BedrockAgent.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The key-value pairs for the tags associated with the resource.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

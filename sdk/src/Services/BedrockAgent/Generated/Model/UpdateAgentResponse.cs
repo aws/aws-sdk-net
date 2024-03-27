@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Update Agent Response
+    /// This is the response object from the UpdateAgent operation.
     /// </summary>
     public partial class UpdateAgentResponse : AmazonWebServiceResponse
     {
         private Agent _agent;
 
         /// <summary>
-        /// Gets and sets the property Agent.
+        /// Gets and sets the property Agent. 
+        /// <para>
+        /// Contains details about the agent that was updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Agent Agent

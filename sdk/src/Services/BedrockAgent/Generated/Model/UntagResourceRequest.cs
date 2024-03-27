@@ -30,7 +30,7 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Untag a resource
+    /// Remove tags from a resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonBedrockAgentRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.BedrockAgent.Model
         private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN of the resource from which to remove tags.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]
         public string ResourceArn
@@ -54,7 +57,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys.
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// A list of keys of the tags to remove from the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]
         public List<string> TagKeys

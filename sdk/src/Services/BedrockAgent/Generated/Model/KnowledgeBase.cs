@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the information of a knowledge base.
+    /// Contains information about a knowledge base.
     /// </summary>
     public partial class KnowledgeBase
     {
@@ -46,7 +46,10 @@ namespace Amazon.BedrockAgent.Model
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The time at which the knowledge base was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime CreatedAt
@@ -62,7 +65,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -78,7 +84,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FailureReasons.
+        /// Gets and sets the property FailureReasons. 
+        /// <para>
+        /// A list of reasons that the API operation on the knowledge base failed.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public List<string> FailureReasons
@@ -94,7 +103,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseArn.
+        /// Gets and sets the property KnowledgeBaseArn. 
+        /// <para>
+        /// The ARN of the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]
         public string KnowledgeBaseArn
@@ -110,7 +122,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseConfiguration.
+        /// Gets and sets the property KnowledgeBaseConfiguration. 
+        /// <para>
+        /// Contains details about the embeddings configuration of the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public KnowledgeBaseConfiguration KnowledgeBaseConfiguration
@@ -126,7 +141,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId
@@ -142,7 +160,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -158,7 +179,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn.
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The ARN of the IAM role with permissions to invoke API operations on the knowledge
+        /// base. The ARN must begin with <c>AmazonBedrockExecutionRoleForKnowledgeBase_</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string RoleArn
@@ -174,7 +199,31 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the knowledge base. The following statuses are possible:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATING – The knowledge base is being created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACTIVE – The knowledge base is ready to be queried.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELETING – The knowledge base is being deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UPDATING – The knowledge base is being updated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FAILED – The knowledge base API operation failed.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public KnowledgeBaseStatus Status
@@ -190,7 +239,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageConfiguration.
+        /// Gets and sets the property StorageConfiguration. 
+        /// <para>
+        /// Contains details about the storage configuration of the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public StorageConfiguration StorageConfiguration
@@ -206,7 +258,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The time at which the knowledge base was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime UpdatedAt

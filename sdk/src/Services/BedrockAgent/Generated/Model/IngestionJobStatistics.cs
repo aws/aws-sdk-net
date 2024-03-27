@@ -29,20 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// The document level statistics of an ingestion job
+    /// Contains the statistics for the ingestion job.
     /// </summary>
     public partial class IngestionJobStatistics
     {
         private long? _numberOfDocumentsDeleted;
         private long? _numberOfDocumentsFailed;
         private long? _numberOfDocumentsScanned;
+        private long? _numberOfMetadataDocumentsModified;
+        private long? _numberOfMetadataDocumentsScanned;
         private long? _numberOfModifiedDocumentsIndexed;
         private long? _numberOfNewDocumentsIndexed;
 
         /// <summary>
         /// Gets and sets the property NumberOfDocumentsDeleted. 
         /// <para>
-        /// Number of deleted documents
+        /// The number of source documents that was deleted.
         /// </para>
         /// </summary>
         public long NumberOfDocumentsDeleted
@@ -60,7 +62,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property NumberOfDocumentsFailed. 
         /// <para>
-        /// Number of failed documents
+        /// The number of source documents that failed to be ingested.
         /// </para>
         /// </summary>
         public long NumberOfDocumentsFailed
@@ -78,7 +80,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property NumberOfDocumentsScanned. 
         /// <para>
-        /// Number of scanned documents
+        /// The total number of source documents that were scanned. Includes new, updated, and
+        /// unchanged documents.
         /// </para>
         /// </summary>
         public long NumberOfDocumentsScanned
@@ -94,9 +97,47 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NumberOfMetadataDocumentsModified. 
+        /// <para>
+        /// The number of metadata files that were updated or deleted.
+        /// </para>
+        /// </summary>
+        public long NumberOfMetadataDocumentsModified
+        {
+            get { return this._numberOfMetadataDocumentsModified.GetValueOrDefault(); }
+            set { this._numberOfMetadataDocumentsModified = value; }
+        }
+
+        // Check to see if NumberOfMetadataDocumentsModified property is set
+        internal bool IsSetNumberOfMetadataDocumentsModified()
+        {
+            return this._numberOfMetadataDocumentsModified.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfMetadataDocumentsScanned. 
+        /// <para>
+        /// The total number of metadata files that were scanned. Includes new, updated, and unchanged
+        /// files.
+        /// </para>
+        /// </summary>
+        public long NumberOfMetadataDocumentsScanned
+        {
+            get { return this._numberOfMetadataDocumentsScanned.GetValueOrDefault(); }
+            set { this._numberOfMetadataDocumentsScanned = value; }
+        }
+
+        // Check to see if NumberOfMetadataDocumentsScanned property is set
+        internal bool IsSetNumberOfMetadataDocumentsScanned()
+        {
+            return this._numberOfMetadataDocumentsScanned.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NumberOfModifiedDocumentsIndexed. 
         /// <para>
-        /// Number of modified documents indexed
+        /// The number of modified source documents in the data source that were successfully
+        /// indexed.
         /// </para>
         /// </summary>
         public long NumberOfModifiedDocumentsIndexed
@@ -114,7 +155,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property NumberOfNewDocumentsIndexed. 
         /// <para>
-        /// Number of indexed documents
+        /// The number of new source documents in the data source that were successfully indexed.
         /// </para>
         /// </summary>
         public long NumberOfNewDocumentsIndexed

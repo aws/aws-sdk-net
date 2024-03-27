@@ -30,7 +30,7 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataSource operation.
-    /// Delete an existing data source
+    /// Deletes a data source from a knowledge base.
     /// </summary>
     public partial class DeleteDataSourceRequest : AmazonBedrockAgentRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.BedrockAgent.Model
         private string _knowledgeBaseId;
 
         /// <summary>
-        /// Gets and sets the property DataSourceId.
+        /// Gets and sets the property DataSourceId. 
+        /// <para>
+        /// The unique identifier of the data source to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DataSourceId
@@ -54,7 +57,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base from which to delete the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId

@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the configurations to use Pinecone to store knowledge base data.
+    /// Contains details about the storage configuration of the knowledge base in Pinecone.
+    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-pinecone.html">Create
+    /// a vector index in Pinecone</a>.
     /// </summary>
     public partial class PineconeConfiguration
     {
@@ -39,7 +41,10 @@ namespace Amazon.BedrockAgent.Model
         private string _awsNamespace;
 
         /// <summary>
-        /// Gets and sets the property ConnectionString.
+        /// Gets and sets the property ConnectionString. 
+        /// <para>
+        /// The endpoint URL for your index management page.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string ConnectionString
@@ -55,7 +60,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CredentialsSecretArn.
+        /// Gets and sets the property CredentialsSecretArn. 
+        /// <para>
+        /// The ARN of the secret that you created in Secrets Manager that is linked to your Pinecone
+        /// API key.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CredentialsSecretArn
@@ -71,7 +80,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FieldMapping.
+        /// Gets and sets the property FieldMapping. 
+        /// <para>
+        /// Contains the names of the fields to which to map information about the vector store.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PineconeFieldMapping FieldMapping
@@ -87,7 +99,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Namespace.
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The namespace to be used to write new data to your database.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public string Namespace

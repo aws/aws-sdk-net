@@ -30,7 +30,61 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateKnowledgeBase operation.
-    /// Create a new knowledge base
+    /// Creates a knowledge base that contains data sources from which information can be
+    /// queried and used by LLMs. To create a knowledge base, you must first set up your data
+    /// sources and configure a supported vector store. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html">Set
+    /// up your data for ingestion</a>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you prefer to let Amazon Bedrock create and manage a vector store for you in Amazon
+    /// OpenSearch Service, use the console. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create">Create
+    /// a knowledge base</a>.
+    /// </para>
+    ///  </note> <ul> <li> 
+    /// <para>
+    /// Provide the <c>name</c> and an optional <c>description</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Provide the ARN with permissions to create a knowledge base in the <c>roleArn</c>
+    /// field.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Provide the embedding model to use in the <c>embeddingModelArn</c> field in the <c>knowledgeBaseConfiguration</c>
+    /// object.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Provide the configuration for your vector store in the <c>storageConfiguration</c>
+    /// object.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For an Amazon OpenSearch Service database, use the <c>opensearchServerlessConfiguration</c>
+    /// object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-oss.html">Create
+    /// a vector store in Amazon OpenSearch Service</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For an Amazon Aurora database, use the <c>RdsConfiguration</c> object. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-rds.html">Create
+    /// a vector store in Amazon Aurora</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a Pinecone database, use the <c>pineconeConfiguration</c> object. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-pinecone.html">Create
+    /// a vector store in Pinecone</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a Redis Enterprise Cloud database, use the <c>redisEnterpriseCloudConfiguration</c>
+    /// object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-redis.html">Create
+    /// a vector store in Redis Enterprise Cloud</a>.
+    /// </para>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class CreateKnowledgeBaseRequest : AmazonBedrockAgentRequest
     {
@@ -43,7 +97,13 @@ namespace Amazon.BedrockAgent.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
+        /// request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
         public string ClientToken
@@ -59,7 +119,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -75,7 +138,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseConfiguration.
+        /// Gets and sets the property KnowledgeBaseConfiguration. 
+        /// <para>
+        /// Contains details about the embeddings model used for the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public KnowledgeBaseConfiguration KnowledgeBaseConfiguration
@@ -91,7 +157,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// A name for the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -107,7 +176,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn.
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The ARN of the IAM role with permissions to create the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string RoleArn
@@ -123,7 +195,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageConfiguration.
+        /// Gets and sets the property StorageConfiguration. 
+        /// <para>
+        /// Contains details about the configuration of the vector database used for the knowledge
+        /// base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public StorageConfiguration StorageConfiguration
@@ -139,7 +215,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Specify the key-value pairs for the tags that you want to attach to your knowledge
+        /// base in this object.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

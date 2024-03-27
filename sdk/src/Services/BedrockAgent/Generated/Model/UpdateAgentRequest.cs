@@ -30,7 +30,7 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAgent operation.
-    /// Updates an existing Amazon Bedrock Agent
+    /// Updates the configuration of an agent.
     /// </summary>
     public partial class UpdateAgentRequest : AmazonBedrockAgentRequest
     {
@@ -47,7 +47,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +64,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentName.
+        /// Gets and sets the property AgentName. 
+        /// <para>
+        /// Specifies a new name for the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentName
@@ -80,7 +83,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentResourceRoleArn.
+        /// Gets and sets the property AgentResourceRoleArn. 
+        /// <para>
+        /// The ARN of the IAM role with permissions to update the agent. The ARN must begin with
+        /// <c>AmazonBedrockExecutionRoleForAgents_</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string AgentResourceRoleArn
@@ -96,7 +103,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomerEncryptionKeyArn.
+        /// Gets and sets the property CustomerEncryptionKeyArn. 
+        /// <para>
+        /// The ARN of the KMS key with which to encrypt the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string CustomerEncryptionKeyArn
@@ -112,7 +122,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Specifies a new description of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -128,9 +141,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FoundationModel.
+        /// Gets and sets the property FoundationModel. 
+        /// <para>
+        /// Specifies a new foundation model to be used for orchestration by the agent.
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string FoundationModel
         {
             get { return this._foundationModel; }
@@ -144,7 +160,17 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IdleSessionTTLInSeconds.
+        /// Gets and sets the property IdleSessionTTLInSeconds. 
+        /// <para>
+        /// The number of seconds for which Amazon Bedrock keeps information about a user's conversation
+        /// with the agent.
+        /// </para>
+        ///  
+        /// <para>
+        /// A user interaction remains active for the amount of time specified. If no conversation
+        /// occurs during this time, the session expires and Amazon Bedrock deletes any data provided
+        /// before the timeout.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=3600)]
         public int IdleSessionTTLInSeconds
@@ -160,7 +186,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Instruction.
+        /// Gets and sets the property Instruction. 
+        /// <para>
+        /// Specifies new instructions that tell the agent what it should do and how it should
+        /// interact with users.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=40, Max=1200)]
         public string Instruction
@@ -176,7 +206,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PromptOverrideConfiguration.
+        /// Gets and sets the property PromptOverrideConfiguration. 
+        /// <para>
+        /// Contains configurations to override prompts in different parts of an agent sequence.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+        /// prompts</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public PromptOverrideConfiguration PromptOverrideConfiguration

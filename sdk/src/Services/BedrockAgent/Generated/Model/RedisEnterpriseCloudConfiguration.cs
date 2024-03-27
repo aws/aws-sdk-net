@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the configurations to use Redis Enterprise Cloud to store knowledge base
-    /// data.
+    /// Contains details about the storage configuration of the knowledge base in Redis Enterprise
+    /// Cloud. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-oss.html">Create
+    /// a vector index in Redis Enterprise Cloud</a>.
     /// </summary>
     public partial class RedisEnterpriseCloudConfiguration
     {
@@ -40,7 +41,11 @@ namespace Amazon.BedrockAgent.Model
         private string _vectorIndexName;
 
         /// <summary>
-        /// Gets and sets the property CredentialsSecretArn.
+        /// Gets and sets the property CredentialsSecretArn. 
+        /// <para>
+        /// The ARN of the secret that you created in Secrets Manager that is linked to your Redis
+        /// Enterprise Cloud database.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CredentialsSecretArn
@@ -56,7 +61,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Endpoint.
+        /// Gets and sets the property Endpoint. 
+        /// <para>
+        /// The endpoint URL of the Redis Enterprise Cloud database.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string Endpoint
@@ -72,7 +80,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FieldMapping.
+        /// Gets and sets the property FieldMapping. 
+        /// <para>
+        /// Contains the names of the fields to which to map information about the vector store.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public RedisEnterpriseCloudFieldMapping FieldMapping
@@ -88,7 +99,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VectorIndexName.
+        /// Gets and sets the property VectorIndexName. 
+        /// <para>
+        /// The name of the vector index.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string VectorIndexName

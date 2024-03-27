@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Get Agent Knowledge Base Response
+    /// This is the response object from the GetAgentKnowledgeBase operation.
     /// </summary>
     public partial class GetAgentKnowledgeBaseResponse : AmazonWebServiceResponse
     {
         private AgentKnowledgeBase _agentKnowledgeBase;
 
         /// <summary>
-        /// Gets and sets the property AgentKnowledgeBase.
+        /// Gets and sets the property AgentKnowledgeBase. 
+        /// <para>
+        /// Contains details about a knowledge base attached to an agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentKnowledgeBase AgentKnowledgeBase

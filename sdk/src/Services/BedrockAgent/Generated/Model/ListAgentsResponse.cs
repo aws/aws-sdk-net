@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// List Agent Response
+    /// This is the response object from the ListAgents operation.
     /// </summary>
     public partial class ListAgentsResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,10 @@ namespace Amazon.BedrockAgent.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property AgentSummaries.
+        /// Gets and sets the property AgentSummaries. 
+        /// <para>
+        /// A list of objects, each of which contains information about an agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
         public List<AgentSummary> AgentSummaries
@@ -53,7 +56,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the total number of results is greater than the <c>maxResults</c> value provided
+        /// in the request, use this token when making another request in the <c>nextToken</c>
+        /// field to return the next batch of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string NextToken

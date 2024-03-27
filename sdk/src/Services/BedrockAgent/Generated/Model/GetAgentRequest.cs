@@ -30,7 +30,7 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAgent operation.
-    /// Gets an Agent for existing Amazon Bedrock Agent
+    /// Gets information about an agent.
     /// </summary>
     public partial class GetAgentRequest : AmazonBedrockAgentRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

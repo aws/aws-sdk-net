@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// History event for an alias for an Agent.
+    /// Contains details about the history of the alias.
     /// </summary>
     public partial class AgentAliasHistoryEvent
     {
@@ -38,7 +38,11 @@ namespace Amazon.BedrockAgent.Model
         private DateTime? _startDate;
 
         /// <summary>
-        /// Gets and sets the property EndDate.
+        /// Gets and sets the property EndDate. 
+        /// <para>
+        /// The date that the alias stopped being associated to the version in the <c>routingConfiguration</c>
+        /// object
+        /// </para>
         /// </summary>
         public DateTime EndDate
         {
@@ -53,7 +57,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoutingConfiguration.
+        /// Gets and sets the property RoutingConfiguration. 
+        /// <para>
+        /// Contains details about the version of the agent with which the alias is associated.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<AgentAliasRoutingConfigurationListItem> RoutingConfiguration
@@ -69,7 +76,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartDate.
+        /// Gets and sets the property StartDate. 
+        /// <para>
+        /// The date that the alias began being associated to the version in the <c>routingConfiguration</c>
+        /// object.
+        /// </para>
         /// </summary>
         public DateTime StartDate
         {

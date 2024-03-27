@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Disassociate Agent Knowledge Base Response
+    /// This is the response object from the DisassociateAgentKnowledgeBase operation.
     /// </summary>
     public partial class DisassociateAgentKnowledgeBaseResponse : AmazonWebServiceResponse
     {

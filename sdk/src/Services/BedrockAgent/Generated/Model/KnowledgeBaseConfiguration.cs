@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Configures a bedrock knowledge base.
+    /// Contains details about the embeddings configuration of the knowledge base.
     /// </summary>
     public partial class KnowledgeBaseConfiguration
     {
@@ -37,7 +37,10 @@ namespace Amazon.BedrockAgent.Model
         private VectorKnowledgeBaseConfiguration _vectorKnowledgeBaseConfiguration;
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of data that the data source is converted into for the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public KnowledgeBaseType Type
@@ -53,7 +56,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VectorKnowledgeBaseConfiguration.
+        /// Gets and sets the property VectorKnowledgeBaseConfiguration. 
+        /// <para>
+        /// Contains details about the embeddings model that'sused to convert the data source.
+        /// </para>
         /// </summary>
         public VectorKnowledgeBaseConfiguration VectorKnowledgeBaseConfiguration
         {

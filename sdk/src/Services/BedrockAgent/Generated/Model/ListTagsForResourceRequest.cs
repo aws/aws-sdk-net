@@ -30,14 +30,17 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List tags for a resource
+    /// List all the tags for the resource you specify.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonBedrockAgentRequest
     {
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN of the resource for which to list tags.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]
         public string ResourceArn

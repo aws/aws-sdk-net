@@ -30,7 +30,7 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAgentVersion operation.
-    /// Gets an Agent version for existing Amazon Bedrock Agent
+    /// Gets details about a version of an agent.
     /// </summary>
     public partial class GetAgentVersionRequest : AmazonBedrockAgentRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -57,7 +57,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentVersion.
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The version of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentVersion

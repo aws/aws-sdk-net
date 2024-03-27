@@ -30,7 +30,33 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateKnowledgeBase operation.
-    /// Update an existing knowledge base
+    /// Updates the configuration of a knowledge base with the fields that you specify. Because
+    /// all fields will be overwritten, you must include the same values for fields that you
+    /// want to keep the same.
+    /// 
+    ///  
+    /// <para>
+    /// You can change the following fields:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>name</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>description</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>roleArn</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can't change the <c>knowledgeBaseConfiguration</c> or <c>storageConfiguration</c>
+    /// fields, so you must specify the same configurations as when you created the knowledge
+    /// base. You can send a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetKnowledgeBase.html">GetKnowledgeBase</a>
+    /// request and copy the same configurations.
+    /// </para>
     /// </summary>
     public partial class UpdateKnowledgeBaseRequest : AmazonBedrockAgentRequest
     {
@@ -42,7 +68,10 @@ namespace Amazon.BedrockAgent.Model
         private StorageConfiguration _storageConfiguration;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Specifies a new description for the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -58,7 +87,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseConfiguration.
+        /// Gets and sets the property KnowledgeBaseConfiguration. 
+        /// <para>
+        /// Specifies the configuration for the embeddings model used for the knowledge base.
+        /// You must use the same configuration as when the knowledge base was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public KnowledgeBaseConfiguration KnowledgeBaseConfiguration
@@ -74,7 +107,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId
@@ -90,7 +126,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Specifies a new name for the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -106,7 +145,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn.
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// Specifies a different Amazon Resource Name (ARN) of the IAM role with permissions
+        /// to modify the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string RoleArn
@@ -122,7 +165,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageConfiguration.
+        /// Gets and sets the property StorageConfiguration. 
+        /// <para>
+        /// Specifies the configuration for the vector store used for the knowledge base. You
+        /// must use the same configuration as when the knowledge base was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public StorageConfiguration StorageConfiguration

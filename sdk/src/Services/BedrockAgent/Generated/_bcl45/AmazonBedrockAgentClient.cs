@@ -38,8 +38,7 @@ namespace Amazon.BedrockAgent
     /// <summary>
     /// <para>Implementation for accessing BedrockAgent</para>
     ///
-    /// An example service, deployed with the Octane Service creator, which will echo the
-    /// string
+    /// Describes the API operations for creating and managing Amazon Bedrock agents.
     /// </summary>
     public partial class AmazonBedrockAgentClient : AmazonServiceClient, IAmazonBedrockAgent
     {
@@ -268,31 +267,33 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Associate a Knowledge Base to an existing Amazon Bedrock Agent
+        /// Associates a knowledge base with an agent. If a knowledge base is associated and its
+        /// <c>indexState</c> is set to <c>Enabled</c>, the agent queries the knowledge base for
+        /// information to augment its response to the user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAgentKnowledgeBase service method.</param>
         /// 
         /// <returns>The response from the AssociateAgentKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/AssociateAgentKnowledgeBase">REST API Reference for AssociateAgentKnowledgeBase Operation</seealso>
         public virtual AssociateAgentKnowledgeBaseResponse AssociateAgentKnowledgeBase(AssociateAgentKnowledgeBaseRequest request)
@@ -306,7 +307,9 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Associate a Knowledge Base to an existing Amazon Bedrock Agent
+        /// Associates a knowledge base with an agent. If a knowledge base is associated and its
+        /// <c>indexState</c> is set to <c>Enabled</c>, the agent queries the knowledge base for
+        /// information to augment its response to the user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAgentKnowledgeBase service method.</param>
         /// <param name="cancellationToken">
@@ -315,25 +318,25 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the AssociateAgentKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/AssociateAgentKnowledgeBase">REST API Reference for AssociateAgentKnowledgeBase Operation</seealso>
         public virtual Task<AssociateAgentKnowledgeBaseResponse> AssociateAgentKnowledgeBaseAsync(AssociateAgentKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -351,28 +354,62 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Creates an Amazon Bedrock Agent
+        /// Creates an agent that orchestrates interactions between foundation models, data sources,
+        /// software applications, user conversations, and APIs to carry out tasks to help customers.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify the following fields for security purposes.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>agentResourceRoleArn</c> – The ARN of the role with permissions to create an agent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) <c>customerEncryptionKeyArn</c> – The ARN of a KMS key to encrypt the creation
+        /// of the agent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) <c>idleSessionTTLinSeconds</c> – Specify the number of seconds for which
+        /// the agent should maintain session information. After this time expires, the subsequent
+        /// <c>InvokeAgent</c> request begins a new session.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// To override the default prompt behavior for agent orchestration and to use advanced
+        /// prompts, include a <c>promptOverrideConfiguration</c> object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+        /// prompts</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you agent fails to be created, the response returns a list of <c>failureReasons</c>
+        /// alongside a list of <c>recommendedActions</c> for you to troubleshoot.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgent service method.</param>
         /// 
         /// <returns>The response from the CreateAgent service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateAgent">REST API Reference for CreateAgent Operation</seealso>
         public virtual CreateAgentResponse CreateAgent(CreateAgentRequest request)
@@ -386,7 +423,41 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Creates an Amazon Bedrock Agent
+        /// Creates an agent that orchestrates interactions between foundation models, data sources,
+        /// software applications, user conversations, and APIs to carry out tasks to help customers.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify the following fields for security purposes.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>agentResourceRoleArn</c> – The ARN of the role with permissions to create an agent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) <c>customerEncryptionKeyArn</c> – The ARN of a KMS key to encrypt the creation
+        /// of the agent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) <c>idleSessionTTLinSeconds</c> – Specify the number of seconds for which
+        /// the agent should maintain session information. After this time expires, the subsequent
+        /// <c>InvokeAgent</c> request begins a new session.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// To override the default prompt behavior for agent orchestration and to use advanced
+        /// prompts, include a <c>promptOverrideConfiguration</c> object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+        /// prompts</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you agent fails to be created, the response returns a list of <c>failureReasons</c>
+        /// alongside a list of <c>recommendedActions</c> for you to troubleshoot.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgent service method.</param>
         /// <param name="cancellationToken">
@@ -395,22 +466,22 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the CreateAgent service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateAgent">REST API Reference for CreateAgent Operation</seealso>
         public virtual Task<CreateAgentResponse> CreateAgentAsync(CreateAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -428,31 +499,45 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Creates an Action Group for existing Amazon Bedrock Agent
+        /// Creates an action group for an agent. An action group represents the actions that
+        /// an agent can carry out for the customer by defining the APIs that an agent can call
+        /// and the logic for calling them.
+        /// 
+        ///  
+        /// <para>
+        /// To allow your agent to request the user for additional information when trying to
+        /// complete a task, add an action group with the <c>parentActionGroupSignature</c> field
+        /// set to <c>AMAZON.UserInput</c>. You must leave the <c>description</c>, <c>apiSchema</c>,
+        /// and <c>actionGroupExecutor</c> fields blank for this action group. During orchestration,
+        /// if your agent determines that it needs to invoke an API in an action group, but doesn't
+        /// have enough information to complete the API request, it will invoke this action group
+        /// instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
+        /// reprompting the user for more information.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentActionGroup service method.</param>
         /// 
         /// <returns>The response from the CreateAgentActionGroup service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateAgentActionGroup">REST API Reference for CreateAgentActionGroup Operation</seealso>
         public virtual CreateAgentActionGroupResponse CreateAgentActionGroup(CreateAgentActionGroupRequest request)
@@ -466,7 +551,21 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Creates an Action Group for existing Amazon Bedrock Agent
+        /// Creates an action group for an agent. An action group represents the actions that
+        /// an agent can carry out for the customer by defining the APIs that an agent can call
+        /// and the logic for calling them.
+        /// 
+        ///  
+        /// <para>
+        /// To allow your agent to request the user for additional information when trying to
+        /// complete a task, add an action group with the <c>parentActionGroupSignature</c> field
+        /// set to <c>AMAZON.UserInput</c>. You must leave the <c>description</c>, <c>apiSchema</c>,
+        /// and <c>actionGroupExecutor</c> fields blank for this action group. During orchestration,
+        /// if your agent determines that it needs to invoke an API in an action group, but doesn't
+        /// have enough information to complete the API request, it will invoke this action group
+        /// instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
+        /// reprompting the user for more information.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentActionGroup service method.</param>
         /// <param name="cancellationToken">
@@ -475,25 +574,25 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the CreateAgentActionGroup service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateAgentActionGroup">REST API Reference for CreateAgentActionGroup Operation</seealso>
         public virtual Task<CreateAgentActionGroupResponse> CreateAgentActionGroupAsync(CreateAgentActionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -511,31 +610,31 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Creates an Alias for an existing Amazon Bedrock Agent
+        /// Creates an alias of an agent that can be used to deploy the agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentAlias service method.</param>
         /// 
         /// <returns>The response from the CreateAgentAlias service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateAgentAlias">REST API Reference for CreateAgentAlias Operation</seealso>
         public virtual CreateAgentAliasResponse CreateAgentAlias(CreateAgentAliasRequest request)
@@ -549,7 +648,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Creates an Alias for an existing Amazon Bedrock Agent
+        /// Creates an alias of an agent that can be used to deploy the agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentAlias service method.</param>
         /// <param name="cancellationToken">
@@ -558,25 +657,25 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the CreateAgentAlias service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateAgentAlias">REST API Reference for CreateAgentAlias Operation</seealso>
         public virtual Task<CreateAgentAliasResponse> CreateAgentAliasAsync(CreateAgentAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -594,31 +693,37 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Create a new data source
+        /// Sets up a data source to be added to a knowledge base.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You can't change the <c>chunkingConfiguration</c> after you create the data source.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSource service method.</param>
         /// 
         /// <returns>The response from the CreateDataSource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual CreateDataSourceResponse CreateDataSource(CreateDataSourceRequest request)
@@ -632,7 +737,13 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Create a new data source
+        /// Sets up a data source to be added to a knowledge base.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You can't change the <c>chunkingConfiguration</c> after you create the data source.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -641,25 +752,25 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the CreateDataSource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual Task<CreateDataSourceResponse> CreateDataSourceAsync(CreateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -677,28 +788,82 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Create a new knowledge base
+        /// Creates a knowledge base that contains data sources from which information can be
+        /// queried and used by LLMs. To create a knowledge base, you must first set up your data
+        /// sources and configure a supported vector store. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html">Set
+        /// up your data for ingestion</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you prefer to let Amazon Bedrock create and manage a vector store for you in Amazon
+        /// OpenSearch Service, use the console. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create">Create
+        /// a knowledge base</a>.
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        /// Provide the <c>name</c> and an optional <c>description</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provide the ARN with permissions to create a knowledge base in the <c>roleArn</c>
+        /// field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provide the embedding model to use in the <c>embeddingModelArn</c> field in the <c>knowledgeBaseConfiguration</c>
+        /// object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provide the configuration for your vector store in the <c>storageConfiguration</c>
+        /// object.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For an Amazon OpenSearch Service database, use the <c>opensearchServerlessConfiguration</c>
+        /// object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-oss.html">Create
+        /// a vector store in Amazon OpenSearch Service</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an Amazon Aurora database, use the <c>RdsConfiguration</c> object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-rds.html">Create
+        /// a vector store in Amazon Aurora</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a Pinecone database, use the <c>pineconeConfiguration</c> object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-pinecone.html">Create
+        /// a vector store in Pinecone</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a Redis Enterprise Cloud database, use the <c>redisEnterpriseCloudConfiguration</c>
+        /// object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-redis.html">Create
+        /// a vector store in Redis Enterprise Cloud</a>.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKnowledgeBase service method.</param>
         /// 
         /// <returns>The response from the CreateKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateKnowledgeBase">REST API Reference for CreateKnowledgeBase Operation</seealso>
         public virtual CreateKnowledgeBaseResponse CreateKnowledgeBase(CreateKnowledgeBaseRequest request)
@@ -712,7 +877,61 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Create a new knowledge base
+        /// Creates a knowledge base that contains data sources from which information can be
+        /// queried and used by LLMs. To create a knowledge base, you must first set up your data
+        /// sources and configure a supported vector store. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html">Set
+        /// up your data for ingestion</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you prefer to let Amazon Bedrock create and manage a vector store for you in Amazon
+        /// OpenSearch Service, use the console. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create">Create
+        /// a knowledge base</a>.
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        /// Provide the <c>name</c> and an optional <c>description</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provide the ARN with permissions to create a knowledge base in the <c>roleArn</c>
+        /// field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provide the embedding model to use in the <c>embeddingModelArn</c> field in the <c>knowledgeBaseConfiguration</c>
+        /// object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provide the configuration for your vector store in the <c>storageConfiguration</c>
+        /// object.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For an Amazon OpenSearch Service database, use the <c>opensearchServerlessConfiguration</c>
+        /// object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-oss.html">Create
+        /// a vector store in Amazon OpenSearch Service</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an Amazon Aurora database, use the <c>RdsConfiguration</c> object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-rds.html">Create
+        /// a vector store in Amazon Aurora</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a Pinecone database, use the <c>pineconeConfiguration</c> object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-pinecone.html">Create
+        /// a vector store in Pinecone</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a Redis Enterprise Cloud database, use the <c>redisEnterpriseCloudConfiguration</c>
+        /// object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-redis.html">Create
+        /// a vector store in Redis Enterprise Cloud</a>.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKnowledgeBase service method.</param>
         /// <param name="cancellationToken">
@@ -721,22 +940,22 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the CreateKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateKnowledgeBase">REST API Reference for CreateKnowledgeBase Operation</seealso>
         public virtual Task<CreateKnowledgeBaseResponse> CreateKnowledgeBaseAsync(CreateKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -754,28 +973,28 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Deletes an Agent for existing Amazon Bedrock Agent
+        /// Deletes an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgent service method.</param>
         /// 
         /// <returns>The response from the DeleteAgent service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgent">REST API Reference for DeleteAgent Operation</seealso>
         public virtual DeleteAgentResponse DeleteAgent(DeleteAgentRequest request)
@@ -789,7 +1008,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Deletes an Agent for existing Amazon Bedrock Agent
+        /// Deletes an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgent service method.</param>
         /// <param name="cancellationToken">
@@ -798,22 +1017,22 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the DeleteAgent service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgent">REST API Reference for DeleteAgent Operation</seealso>
         public virtual Task<DeleteAgentResponse> DeleteAgentAsync(DeleteAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -831,28 +1050,28 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Deletes an Action Group for existing Amazon Bedrock Agent.
+        /// Deletes an action group in an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentActionGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteAgentActionGroup service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgentActionGroup">REST API Reference for DeleteAgentActionGroup Operation</seealso>
         public virtual DeleteAgentActionGroupResponse DeleteAgentActionGroup(DeleteAgentActionGroupRequest request)
@@ -866,7 +1085,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Deletes an Action Group for existing Amazon Bedrock Agent.
+        /// Deletes an action group in an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentActionGroup service method.</param>
         /// <param name="cancellationToken">
@@ -875,22 +1094,22 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the DeleteAgentActionGroup service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgentActionGroup">REST API Reference for DeleteAgentActionGroup Operation</seealso>
         public virtual Task<DeleteAgentActionGroupResponse> DeleteAgentActionGroupAsync(DeleteAgentActionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -908,25 +1127,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Deletes an Alias for a Amazon Bedrock Agent
+        /// Deletes an alias of an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentAlias service method.</param>
         /// 
         /// <returns>The response from the DeleteAgentAlias service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgentAlias">REST API Reference for DeleteAgentAlias Operation</seealso>
         public virtual DeleteAgentAliasResponse DeleteAgentAlias(DeleteAgentAliasRequest request)
@@ -940,7 +1159,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Deletes an Alias for a Amazon Bedrock Agent
+        /// Deletes an alias of an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentAlias service method.</param>
         /// <param name="cancellationToken">
@@ -949,19 +1168,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the DeleteAgentAlias service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgentAlias">REST API Reference for DeleteAgentAlias Operation</seealso>
         public virtual Task<DeleteAgentAliasResponse> DeleteAgentAliasAsync(DeleteAgentAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -979,28 +1198,28 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Deletes an Agent version for existing Amazon Bedrock Agent
+        /// Deletes a version of an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentVersion service method.</param>
         /// 
         /// <returns>The response from the DeleteAgentVersion service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgentVersion">REST API Reference for DeleteAgentVersion Operation</seealso>
         public virtual DeleteAgentVersionResponse DeleteAgentVersion(DeleteAgentVersionRequest request)
@@ -1014,7 +1233,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Deletes an Agent version for existing Amazon Bedrock Agent
+        /// Deletes a version of an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentVersion service method.</param>
         /// <param name="cancellationToken">
@@ -1023,22 +1242,22 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the DeleteAgentVersion service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgentVersion">REST API Reference for DeleteAgentVersion Operation</seealso>
         public virtual Task<DeleteAgentVersionResponse> DeleteAgentVersionAsync(DeleteAgentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1056,28 +1275,28 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Delete an existing data source
+        /// Deletes a data source from a knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
         /// 
         /// <returns>The response from the DeleteDataSource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request)
@@ -1091,7 +1310,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Delete an existing data source
+        /// Deletes a data source from a knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -1100,22 +1319,22 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the DeleteDataSource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1133,28 +1352,30 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Delete an existing knowledge base
+        /// Deletes a knowledge base. Before deleting a knowledge base, you should disassociate
+        /// the knowledge base from any agents that it is associated with by making a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DisassociateAgentKnowledgeBase.html">DisassociateAgentKnowledgeBase</a>
+        /// request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBase service method.</param>
         /// 
         /// <returns>The response from the DeleteKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteKnowledgeBase">REST API Reference for DeleteKnowledgeBase Operation</seealso>
         public virtual DeleteKnowledgeBaseResponse DeleteKnowledgeBase(DeleteKnowledgeBaseRequest request)
@@ -1168,7 +1389,9 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Delete an existing knowledge base
+        /// Deletes a knowledge base. Before deleting a knowledge base, you should disassociate
+        /// the knowledge base from any agents that it is associated with by making a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DisassociateAgentKnowledgeBase.html">DisassociateAgentKnowledgeBase</a>
+        /// request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBase service method.</param>
         /// <param name="cancellationToken">
@@ -1177,22 +1400,22 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the DeleteKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteKnowledgeBase">REST API Reference for DeleteKnowledgeBase Operation</seealso>
         public virtual Task<DeleteKnowledgeBaseResponse> DeleteKnowledgeBaseAsync(DeleteKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1210,28 +1433,28 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Disassociate an existing Knowledge Base from an Amazon Bedrock Agent
+        /// Disassociates a knowledge base from an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAgentKnowledgeBase service method.</param>
         /// 
         /// <returns>The response from the DisassociateAgentKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DisassociateAgentKnowledgeBase">REST API Reference for DisassociateAgentKnowledgeBase Operation</seealso>
         public virtual DisassociateAgentKnowledgeBaseResponse DisassociateAgentKnowledgeBase(DisassociateAgentKnowledgeBaseRequest request)
@@ -1245,7 +1468,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Disassociate an existing Knowledge Base from an Amazon Bedrock Agent
+        /// Disassociates a knowledge base from an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAgentKnowledgeBase service method.</param>
         /// <param name="cancellationToken">
@@ -1254,22 +1477,22 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the DisassociateAgentKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DisassociateAgentKnowledgeBase">REST API Reference for DisassociateAgentKnowledgeBase Operation</seealso>
         public virtual Task<DisassociateAgentKnowledgeBaseResponse> DisassociateAgentKnowledgeBaseAsync(DisassociateAgentKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1287,25 +1510,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets an Agent for existing Amazon Bedrock Agent
+        /// Gets information about an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgent service method.</param>
         /// 
         /// <returns>The response from the GetAgent service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgent">REST API Reference for GetAgent Operation</seealso>
         public virtual GetAgentResponse GetAgent(GetAgentRequest request)
@@ -1319,7 +1542,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets an Agent for existing Amazon Bedrock Agent
+        /// Gets information about an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgent service method.</param>
         /// <param name="cancellationToken">
@@ -1328,19 +1551,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the GetAgent service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgent">REST API Reference for GetAgent Operation</seealso>
         public virtual Task<GetAgentResponse> GetAgentAsync(GetAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1358,25 +1581,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets an Action Group for existing Amazon Bedrock Agent Version
+        /// Gets information about an action group for an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentActionGroup service method.</param>
         /// 
         /// <returns>The response from the GetAgentActionGroup service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentActionGroup">REST API Reference for GetAgentActionGroup Operation</seealso>
         public virtual GetAgentActionGroupResponse GetAgentActionGroup(GetAgentActionGroupRequest request)
@@ -1390,7 +1613,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets an Action Group for existing Amazon Bedrock Agent Version
+        /// Gets information about an action group for an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentActionGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1399,19 +1622,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the GetAgentActionGroup service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentActionGroup">REST API Reference for GetAgentActionGroup Operation</seealso>
         public virtual Task<GetAgentActionGroupResponse> GetAgentActionGroupAsync(GetAgentActionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1429,25 +1652,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Describes an Alias for a Amazon Bedrock Agent
+        /// Gets information about an alias of an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentAlias service method.</param>
         /// 
         /// <returns>The response from the GetAgentAlias service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentAlias">REST API Reference for GetAgentAlias Operation</seealso>
         public virtual GetAgentAliasResponse GetAgentAlias(GetAgentAliasRequest request)
@@ -1461,7 +1684,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Describes an Alias for a Amazon Bedrock Agent
+        /// Gets information about an alias of an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentAlias service method.</param>
         /// <param name="cancellationToken">
@@ -1470,19 +1693,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the GetAgentAlias service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentAlias">REST API Reference for GetAgentAlias Operation</seealso>
         public virtual Task<GetAgentAliasResponse> GetAgentAliasAsync(GetAgentAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1500,25 +1723,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets a knowledge base associated to an existing Amazon Bedrock Agent Version
+        /// Gets information about a knowledge base associated with an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentKnowledgeBase service method.</param>
         /// 
         /// <returns>The response from the GetAgentKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentKnowledgeBase">REST API Reference for GetAgentKnowledgeBase Operation</seealso>
         public virtual GetAgentKnowledgeBaseResponse GetAgentKnowledgeBase(GetAgentKnowledgeBaseRequest request)
@@ -1532,7 +1755,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets a knowledge base associated to an existing Amazon Bedrock Agent Version
+        /// Gets information about a knowledge base associated with an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentKnowledgeBase service method.</param>
         /// <param name="cancellationToken">
@@ -1541,19 +1764,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the GetAgentKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentKnowledgeBase">REST API Reference for GetAgentKnowledgeBase Operation</seealso>
         public virtual Task<GetAgentKnowledgeBaseResponse> GetAgentKnowledgeBaseAsync(GetAgentKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1571,25 +1794,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets an Agent version for existing Amazon Bedrock Agent
+        /// Gets details about a version of an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentVersion service method.</param>
         /// 
         /// <returns>The response from the GetAgentVersion service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentVersion">REST API Reference for GetAgentVersion Operation</seealso>
         public virtual GetAgentVersionResponse GetAgentVersion(GetAgentVersionRequest request)
@@ -1603,7 +1826,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets an Agent version for existing Amazon Bedrock Agent
+        /// Gets details about a version of an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentVersion service method.</param>
         /// <param name="cancellationToken">
@@ -1612,19 +1835,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the GetAgentVersion service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentVersion">REST API Reference for GetAgentVersion Operation</seealso>
         public virtual Task<GetAgentVersionResponse> GetAgentVersionAsync(GetAgentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1642,25 +1865,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Get an existing data source
+        /// Gets information about a data source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataSource service method.</param>
         /// 
         /// <returns>The response from the GetDataSource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         public virtual GetDataSourceResponse GetDataSource(GetDataSourceRequest request)
@@ -1674,7 +1897,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Get an existing data source
+        /// Gets information about a data source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -1683,19 +1906,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the GetDataSource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         public virtual Task<GetDataSourceResponse> GetDataSourceAsync(GetDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1713,25 +1936,26 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Get an ingestion job
+        /// Gets information about a ingestion job, in which a data source is added to a knowledge
+        /// base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIngestionJob service method.</param>
         /// 
         /// <returns>The response from the GetIngestionJob service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetIngestionJob">REST API Reference for GetIngestionJob Operation</seealso>
         public virtual GetIngestionJobResponse GetIngestionJob(GetIngestionJobRequest request)
@@ -1745,7 +1969,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Get an ingestion job
+        /// Gets information about a ingestion job, in which a data source is added to a knowledge
+        /// base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIngestionJob service method.</param>
         /// <param name="cancellationToken">
@@ -1754,19 +1979,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the GetIngestionJob service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetIngestionJob">REST API Reference for GetIngestionJob Operation</seealso>
         public virtual Task<GetIngestionJobResponse> GetIngestionJobAsync(GetIngestionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1784,25 +2009,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Get an existing knowledge base
+        /// Gets information about a knoweldge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKnowledgeBase service method.</param>
         /// 
         /// <returns>The response from the GetKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetKnowledgeBase">REST API Reference for GetKnowledgeBase Operation</seealso>
         public virtual GetKnowledgeBaseResponse GetKnowledgeBase(GetKnowledgeBaseRequest request)
@@ -1816,7 +2041,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Get an existing knowledge base
+        /// Gets information about a knoweldge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKnowledgeBase service method.</param>
         /// <param name="cancellationToken">
@@ -1825,19 +2050,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the GetKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetKnowledgeBase">REST API Reference for GetKnowledgeBase Operation</seealso>
         public virtual Task<GetKnowledgeBaseResponse> GetKnowledgeBaseAsync(GetKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1855,25 +2080,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists an Action Group for existing Amazon Bedrock Agent Version
+        /// Lists the action groups for an agent and information about each one.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentActionGroups service method.</param>
         /// 
         /// <returns>The response from the ListAgentActionGroups service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentActionGroups">REST API Reference for ListAgentActionGroups Operation</seealso>
         public virtual ListAgentActionGroupsResponse ListAgentActionGroups(ListAgentActionGroupsRequest request)
@@ -1887,7 +2112,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists an Action Group for existing Amazon Bedrock Agent Version
+        /// Lists the action groups for an agent and information about each one.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentActionGroups service method.</param>
         /// <param name="cancellationToken">
@@ -1896,19 +2121,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the ListAgentActionGroups service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentActionGroups">REST API Reference for ListAgentActionGroups Operation</seealso>
         public virtual Task<ListAgentActionGroupsResponse> ListAgentActionGroupsAsync(ListAgentActionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1926,25 +2151,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists all the Aliases for an Amazon Bedrock Agent
+        /// Lists the aliases of an agent and information about each one.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentAliases service method.</param>
         /// 
         /// <returns>The response from the ListAgentAliases service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentAliases">REST API Reference for ListAgentAliases Operation</seealso>
         public virtual ListAgentAliasesResponse ListAgentAliases(ListAgentAliasesRequest request)
@@ -1958,7 +2183,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists all the Aliases for an Amazon Bedrock Agent
+        /// Lists the aliases of an agent and information about each one.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentAliases service method.</param>
         /// <param name="cancellationToken">
@@ -1967,19 +2192,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the ListAgentAliases service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentAliases">REST API Reference for ListAgentAliases Operation</seealso>
         public virtual Task<ListAgentAliasesResponse> ListAgentAliasesAsync(ListAgentAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1997,25 +2222,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// List of Knowledge Bases associated to an existing Amazon Bedrock Agent Version
+        /// Lists knowledge bases associated with an agent and information about each one.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentKnowledgeBases service method.</param>
         /// 
         /// <returns>The response from the ListAgentKnowledgeBases service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentKnowledgeBases">REST API Reference for ListAgentKnowledgeBases Operation</seealso>
         public virtual ListAgentKnowledgeBasesResponse ListAgentKnowledgeBases(ListAgentKnowledgeBasesRequest request)
@@ -2029,7 +2254,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// List of Knowledge Bases associated to an existing Amazon Bedrock Agent Version
+        /// Lists knowledge bases associated with an agent and information about each one.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentKnowledgeBases service method.</param>
         /// <param name="cancellationToken">
@@ -2038,19 +2263,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the ListAgentKnowledgeBases service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentKnowledgeBases">REST API Reference for ListAgentKnowledgeBases Operation</seealso>
         public virtual Task<ListAgentKnowledgeBasesResponse> ListAgentKnowledgeBasesAsync(ListAgentKnowledgeBasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2068,22 +2293,22 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists Agents
+        /// Lists the agents belonging to an account and information about each agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgents service method.</param>
         /// 
         /// <returns>The response from the ListAgents service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgents">REST API Reference for ListAgents Operation</seealso>
         public virtual ListAgentsResponse ListAgents(ListAgentsRequest request)
@@ -2097,7 +2322,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists Agents
+        /// Lists the agents belonging to an account and information about each agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgents service method.</param>
         /// <param name="cancellationToken">
@@ -2106,16 +2331,16 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the ListAgents service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgents">REST API Reference for ListAgents Operation</seealso>
         public virtual Task<ListAgentsResponse> ListAgentsAsync(ListAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2133,25 +2358,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists Agent Versions
+        /// Lists the versions of an agent and information about each version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentVersions service method.</param>
         /// 
         /// <returns>The response from the ListAgentVersions service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentVersions">REST API Reference for ListAgentVersions Operation</seealso>
         public virtual ListAgentVersionsResponse ListAgentVersions(ListAgentVersionsRequest request)
@@ -2165,7 +2390,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists Agent Versions
+        /// Lists the versions of an agent and information about each version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentVersions service method.</param>
         /// <param name="cancellationToken">
@@ -2174,19 +2399,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the ListAgentVersions service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentVersions">REST API Reference for ListAgentVersions Operation</seealso>
         public virtual Task<ListAgentVersionsResponse> ListAgentVersionsAsync(ListAgentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2204,25 +2429,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// List data sources
+        /// Lists the data sources in a knowledge base and information about each one.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSources service method.</param>
         /// 
         /// <returns>The response from the ListDataSources service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual ListDataSourcesResponse ListDataSources(ListDataSourcesRequest request)
@@ -2236,7 +2461,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// List data sources
+        /// Lists the data sources in a knowledge base and information about each one.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSources service method.</param>
         /// <param name="cancellationToken">
@@ -2245,19 +2470,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the ListDataSources service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual Task<ListDataSourcesResponse> ListDataSourcesAsync(ListDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2275,25 +2500,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// List ingestion jobs
+        /// Lists the ingestion jobs for a data source and information about each of them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIngestionJobs service method.</param>
         /// 
         /// <returns>The response from the ListIngestionJobs service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListIngestionJobs">REST API Reference for ListIngestionJobs Operation</seealso>
         public virtual ListIngestionJobsResponse ListIngestionJobs(ListIngestionJobsRequest request)
@@ -2307,7 +2532,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// List ingestion jobs
+        /// Lists the ingestion jobs for a data source and information about each of them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIngestionJobs service method.</param>
         /// <param name="cancellationToken">
@@ -2316,19 +2541,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the ListIngestionJobs service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListIngestionJobs">REST API Reference for ListIngestionJobs Operation</seealso>
         public virtual Task<ListIngestionJobsResponse> ListIngestionJobsAsync(ListIngestionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2346,22 +2571,22 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// List Knowledge Bases
+        /// Lists the knowledge bases in an account and information about each of them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBases service method.</param>
         /// 
         /// <returns>The response from the ListKnowledgeBases service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListKnowledgeBases">REST API Reference for ListKnowledgeBases Operation</seealso>
         public virtual ListKnowledgeBasesResponse ListKnowledgeBases(ListKnowledgeBasesRequest request)
@@ -2375,7 +2600,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// List Knowledge Bases
+        /// Lists the knowledge bases in an account and information about each of them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBases service method.</param>
         /// <param name="cancellationToken">
@@ -2384,16 +2609,16 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the ListKnowledgeBases service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListKnowledgeBases">REST API Reference for ListKnowledgeBases Operation</seealso>
         public virtual Task<ListKnowledgeBasesResponse> ListKnowledgeBasesAsync(ListKnowledgeBasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2411,25 +2636,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// List tags for a resource
+        /// List all the tags for the resource you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -2443,7 +2668,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// List tags for a resource
+        /// List all the tags for the resource you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2452,19 +2677,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2482,31 +2707,31 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Prepares an existing Amazon Bedrock Agent to receive runtime requests
+        /// Creates a <c>DRAFT</c> version of the agent that can be used for internal testing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PrepareAgent service method.</param>
         /// 
         /// <returns>The response from the PrepareAgent service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/PrepareAgent">REST API Reference for PrepareAgent Operation</seealso>
         public virtual PrepareAgentResponse PrepareAgent(PrepareAgentRequest request)
@@ -2520,7 +2745,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Prepares an existing Amazon Bedrock Agent to receive runtime requests
+        /// Creates a <c>DRAFT</c> version of the agent that can be used for internal testing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PrepareAgent service method.</param>
         /// <param name="cancellationToken">
@@ -2529,25 +2754,25 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the PrepareAgent service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/PrepareAgent">REST API Reference for PrepareAgent Operation</seealso>
         public virtual Task<PrepareAgentResponse> PrepareAgentAsync(PrepareAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2565,31 +2790,31 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Start a new ingestion job
+        /// Begins an ingestion job, in which a data source is added to a knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartIngestionJob service method.</param>
         /// 
         /// <returns>The response from the StartIngestionJob service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/StartIngestionJob">REST API Reference for StartIngestionJob Operation</seealso>
         public virtual StartIngestionJobResponse StartIngestionJob(StartIngestionJobRequest request)
@@ -2603,7 +2828,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Start a new ingestion job
+        /// Begins an ingestion job, in which a data source is added to a knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartIngestionJob service method.</param>
         /// <param name="cancellationToken">
@@ -2612,25 +2837,25 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the StartIngestionJob service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/StartIngestionJob">REST API Reference for StartIngestionJob Operation</seealso>
         public virtual Task<StartIngestionJobResponse> StartIngestionJobAsync(StartIngestionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2648,28 +2873,29 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Tag a resource
+        /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
+        /// resources</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -2683,7 +2909,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Tag a resource
+        /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
+        /// resources</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2692,22 +2919,22 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the TagResource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2725,25 +2952,25 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Untag a resource
+        /// Remove tags from a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -2757,7 +2984,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Untag a resource
+        /// Remove tags from a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2766,19 +2993,19 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the UntagResource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2796,31 +3023,31 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Updates an existing Amazon Bedrock Agent
+        /// Updates the configuration of an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgent service method.</param>
         /// 
         /// <returns>The response from the UpdateAgent service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgent">REST API Reference for UpdateAgent Operation</seealso>
         public virtual UpdateAgentResponse UpdateAgent(UpdateAgentRequest request)
@@ -2834,7 +3061,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Updates an existing Amazon Bedrock Agent
+        /// Updates the configuration of an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgent service method.</param>
         /// <param name="cancellationToken">
@@ -2843,25 +3070,25 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the UpdateAgent service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgent">REST API Reference for UpdateAgent Operation</seealso>
         public virtual Task<UpdateAgentResponse> UpdateAgentAsync(UpdateAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2879,31 +3106,31 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Updates an existing Action Group for Amazon Bedrock Agent
+        /// Updates the configuration for an action group for an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentActionGroup service method.</param>
         /// 
         /// <returns>The response from the UpdateAgentActionGroup service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentActionGroup">REST API Reference for UpdateAgentActionGroup Operation</seealso>
         public virtual UpdateAgentActionGroupResponse UpdateAgentActionGroup(UpdateAgentActionGroupRequest request)
@@ -2917,7 +3144,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Updates an existing Action Group for Amazon Bedrock Agent
+        /// Updates the configuration for an action group for an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentActionGroup service method.</param>
         /// <param name="cancellationToken">
@@ -2926,25 +3153,25 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the UpdateAgentActionGroup service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentActionGroup">REST API Reference for UpdateAgentActionGroup Operation</seealso>
         public virtual Task<UpdateAgentActionGroupResponse> UpdateAgentActionGroupAsync(UpdateAgentActionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2962,31 +3189,31 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Updates an existing Alias for an Amazon Bedrock Agent
+        /// Updates configurations for an alias of an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentAlias service method.</param>
         /// 
         /// <returns>The response from the UpdateAgentAlias service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentAlias">REST API Reference for UpdateAgentAlias Operation</seealso>
         public virtual UpdateAgentAliasResponse UpdateAgentAlias(UpdateAgentAliasRequest request)
@@ -3000,7 +3227,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Updates an existing Alias for an Amazon Bedrock Agent
+        /// Updates configurations for an alias of an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentAlias service method.</param>
         /// <param name="cancellationToken">
@@ -3009,25 +3236,25 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the UpdateAgentAlias service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentAlias">REST API Reference for UpdateAgentAlias Operation</seealso>
         public virtual Task<UpdateAgentAliasResponse> UpdateAgentAliasAsync(UpdateAgentAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3045,28 +3272,28 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Updates an existing Knowledge Base associated to an Amazon Bedrock Agent
+        /// Updates the configuration for a knowledge base that has been associated with an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentKnowledgeBase service method.</param>
         /// 
         /// <returns>The response from the UpdateAgentKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentKnowledgeBase">REST API Reference for UpdateAgentKnowledgeBase Operation</seealso>
         public virtual UpdateAgentKnowledgeBaseResponse UpdateAgentKnowledgeBase(UpdateAgentKnowledgeBaseRequest request)
@@ -3080,7 +3307,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Updates an existing Knowledge Base associated to an Amazon Bedrock Agent
+        /// Updates the configuration for a knowledge base that has been associated with an agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentKnowledgeBase service method.</param>
         /// <param name="cancellationToken">
@@ -3089,22 +3316,22 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the UpdateAgentKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentKnowledgeBase">REST API Reference for UpdateAgentKnowledgeBase Operation</seealso>
         public virtual Task<UpdateAgentKnowledgeBaseResponse> UpdateAgentKnowledgeBaseAsync(UpdateAgentKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3122,28 +3349,35 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Update an existing data source
+        /// Updates configurations for a data source.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You can't change the <c>chunkingConfiguration</c> after you create the data source.
+        /// Specify the existing <c>chunkingConfiguration</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource service method.</param>
         /// 
         /// <returns>The response from the UpdateDataSource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request)
@@ -3157,7 +3391,14 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Update an existing data source
+        /// Updates configurations for a data source.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You can't change the <c>chunkingConfiguration</c> after you create the data source.
+        /// Specify the existing <c>chunkingConfiguration</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -3166,22 +3407,22 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the UpdateDataSource service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3199,28 +3440,54 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Update an existing knowledge base
+        /// Updates the configuration of a knowledge base with the fields that you specify. Because
+        /// all fields will be overwritten, you must include the same values for fields that you
+        /// want to keep the same.
+        /// 
+        ///  
+        /// <para>
+        /// You can change the following fields:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>name</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>description</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>roleArn</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't change the <c>knowledgeBaseConfiguration</c> or <c>storageConfiguration</c>
+        /// fields, so you must specify the same configurations as when you created the knowledge
+        /// base. You can send a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetKnowledgeBase.html">GetKnowledgeBase</a>
+        /// request and copy the same configurations.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateKnowledgeBase service method.</param>
         /// 
         /// <returns>The response from the UpdateKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateKnowledgeBase">REST API Reference for UpdateKnowledgeBase Operation</seealso>
         public virtual UpdateKnowledgeBaseResponse UpdateKnowledgeBase(UpdateKnowledgeBaseRequest request)
@@ -3234,7 +3501,33 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Update an existing knowledge base
+        /// Updates the configuration of a knowledge base with the fields that you specify. Because
+        /// all fields will be overwritten, you must include the same values for fields that you
+        /// want to keep the same.
+        /// 
+        ///  
+        /// <para>
+        /// You can change the following fields:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>name</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>description</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>roleArn</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't change the <c>knowledgeBaseConfiguration</c> or <c>storageConfiguration</c>
+        /// fields, so you must specify the same configurations as when you created the knowledge
+        /// base. You can send a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetKnowledgeBase.html">GetKnowledgeBase</a>
+        /// request and copy the same configurations.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateKnowledgeBase service method.</param>
         /// <param name="cancellationToken">
@@ -3243,22 +3536,22 @@ namespace Amazon.BedrockAgent
         /// 
         /// <returns>The response from the UpdateKnowledgeBase service method, as returned by BedrockAgent.</returns>
         /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateKnowledgeBase">REST API Reference for UpdateKnowledgeBase Operation</seealso>
         public virtual Task<UpdateKnowledgeBaseResponse> UpdateKnowledgeBaseAsync(UpdateKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

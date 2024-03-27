@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// ActionGroup Summary
+    /// Contains details about an action group.
     /// </summary>
     public partial class ActionGroupSummary
     {
@@ -40,7 +40,10 @@ namespace Amazon.BedrockAgent.Model
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property ActionGroupId.
+        /// Gets and sets the property ActionGroupId. 
+        /// <para>
+        /// The unique identifier of the action group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ActionGroupId
@@ -56,7 +59,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActionGroupName.
+        /// Gets and sets the property ActionGroupName. 
+        /// <para>
+        /// The name of the action group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ActionGroupName
@@ -72,7 +78,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActionGroupState.
+        /// Gets and sets the property ActionGroupState. 
+        /// <para>
+        /// Specifies whether the action group is available for the agent to invoke or not when
+        /// sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
+        /// request.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ActionGroupState ActionGroupState
@@ -88,7 +99,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the action group.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -104,7 +118,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The time at which the action group was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime UpdatedAt

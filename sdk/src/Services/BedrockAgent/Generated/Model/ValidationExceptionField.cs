@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Stores information about a field passed inside a request that resulted in an exception
+    /// Stores information about a field passed inside a request that resulted in an validation
+    /// error.
     /// </summary>
     public partial class ValidationExceptionField
     {
@@ -37,7 +38,10 @@ namespace Amazon.BedrockAgent.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// A message describing why this field failed validation.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Message
@@ -53,7 +57,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the field.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name

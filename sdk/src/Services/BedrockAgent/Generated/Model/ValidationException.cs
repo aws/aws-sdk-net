@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// This exception is thrown when the request's input validation fails
+    /// Input validation failed. Check your request parameters and retry the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -124,7 +124,11 @@ namespace Amazon.BedrockAgent.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property FieldList.
+        /// Gets and sets the property FieldList. 
+        /// <para>
+        /// A list of objects containing fields that caused validation errors and their corresponding
+        /// validation error messages.
+        /// </para>
         /// </summary>
         public List<ValidationExceptionField> FieldList
         {

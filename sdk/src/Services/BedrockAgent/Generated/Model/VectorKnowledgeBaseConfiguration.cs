@@ -29,14 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Configurations for a vector knowledge base.
+    /// Contains details about the model used to create vector embeddings for the knowledge
+    /// base.
     /// </summary>
     public partial class VectorKnowledgeBaseConfiguration
     {
         private string _embeddingModelArn;
 
         /// <summary>
-        /// Gets and sets the property EmbeddingModelArn.
+        /// Gets and sets the property EmbeddingModelArn. 
+        /// <para>
+        /// The ARN of the model used to create vector embeddings for the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]
         public string EmbeddingModelArn

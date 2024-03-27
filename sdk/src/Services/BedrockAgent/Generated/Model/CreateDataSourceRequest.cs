@@ -30,7 +30,13 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataSource operation.
-    /// Create a new data source
+    /// Sets up a data source to be added to a knowledge base.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// You can't change the <c>chunkingConfiguration</c> after you create the data source.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateDataSourceRequest : AmazonBedrockAgentRequest
     {
@@ -43,7 +49,13 @@ namespace Amazon.BedrockAgent.Model
         private VectorIngestionConfiguration _vectorIngestionConfiguration;
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
+        /// request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
         public string ClientToken
@@ -59,7 +71,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSourceConfiguration.
+        /// Gets and sets the property DataSourceConfiguration. 
+        /// <para>
+        /// Contains metadata about where the data source is stored.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataSourceConfiguration DataSourceConfiguration
@@ -75,7 +90,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -91,7 +109,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base to which to add the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId
@@ -107,7 +128,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -123,7 +147,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerSideEncryptionConfiguration.
+        /// Gets and sets the property ServerSideEncryptionConfiguration. 
+        /// <para>
+        /// Contains details about the server-side encryption for the data source.
+        /// </para>
         /// </summary>
         public ServerSideEncryptionConfiguration ServerSideEncryptionConfiguration
         {
@@ -138,7 +165,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VectorIngestionConfiguration.
+        /// Gets and sets the property VectorIngestionConfiguration. 
+        /// <para>
+        /// Contains details about how to ingest the documents in the data source.
+        /// </para>
         /// </summary>
         public VectorIngestionConfiguration VectorIngestionConfiguration
         {
