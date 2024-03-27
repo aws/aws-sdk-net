@@ -1,0 +1,11 @@
+{
+  "services": [
+      {
+          "serviceName": "S3",
+          "type": "patch",
+          "changeLogMessages": [
+              "Fix: Update CopyObjectRequestMarshaller to throw ArgumentException for missing properties"
+          ]
+      }
+  ]
+}

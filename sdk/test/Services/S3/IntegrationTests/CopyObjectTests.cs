@@ -98,5 +98,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.AreEqual(testContent, actualText);
             }
         }
+
+        [DataRow(testKey, true, "/destinationTestKey1.txt", true, null)]
+        [DataRow(null, true, "/destinationTestKey1.txt", true, "CopyObjectRequest.SourceKey")]
+        [DataRow(testKey, false, "/destinationTestKey1.txt", true, "CopyObjectRequest.SourceBucket")]
+        [DataRow(testKey, true, null, true, "CopyObjectRequest.DestinationKey")]
+        [DataRow(testKey, true, "/destinationTestKey1.txt", false, "CopyObjectRequest.DestinationBucket")]
+        [DataTestMethod]
+        [TestCategory("S3")]
+        public void TestCopyObjectWithMissingParameters(string sourceKey, bool includeSourceBucket, string destinationKey, bool includeDestinationBucket, string expectedMissingParameter)
+        {
+            string missingParameter = null;
+            try
+            {
+                var copyObjectResponse = usEastClient.CopyObject(new CopyObjectRequest
+                {
+                    SourceKey = sourceKey,
+                    SourceBucket = includeSourceBucket ? eastBucketName : null,
+
+                    DestinationKey = destinationKey,
+                    DestinationBucket = includeDestinationBucket ? eastBucketName : null,
+                });
+            }
+            catch (ArgumentException ex)
+            {
+                missingParameter = ex.ParamName;
+            }
+            Assert.AreEqual(missingParameter, expectedMissingParameter);
+        }
     }
 }
