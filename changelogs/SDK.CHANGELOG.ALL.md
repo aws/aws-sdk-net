@@ -1,3 +1,24 @@
+### 3.7.778.0 (2024-03-28 18:27 UTC)
+* CodeCatalyst (3.7.303.0)
+	* This release adds support for understanding pending changes to subscriptions by including two new response parameters for the GetSubscription API for Amazon CodeCatalyst.
+* ComputeOptimizer (3.7.302.0)
+	* This release enables AWS Compute Optimizer to analyze and generate recommendations with a new customization preference, Memory Utilization.
+* EC2 (3.7.321.0)
+	* Amazon EC2 C7gd, M7gd and R7gd metal instances with up to 3.8 TB of local NVMe-based SSD block-level storage have up to 45% improved real-time NVMe storage performance than comparable Graviton2-based instances.
+* EKS (3.7.305.0)
+	* Add multiple customer error code to handle customer caused failure when managing EKS node groups
+* GuardDuty (3.7.305.0)
+	* Add EC2 support for GuardDuty Runtime Monitoring auto management.
+* NeptuneGraph (3.7.304.0)
+	* Update ImportTaskCancelled waiter to evaluate task state correctly and minor documentation changes.
+* OAM (3.7.301.0)
+	* This release adds support for sharing AWS::InternetMonitor::Monitor resources.
+* QuickSight (3.7.307.0)
+	* Amazon QuickSight: Adds support for setting up VPC Endpoint restrictions for accessing QuickSight Website.
+* Core 3.7.303.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.777.0 (2024-03-27 18:35 UTC)
 * Batch (3.7.304.0)
 	* This feature allows AWS Batch to support configuration of imagePullSecrets and allowPrivilegeEscalation for jobs running on EKS
