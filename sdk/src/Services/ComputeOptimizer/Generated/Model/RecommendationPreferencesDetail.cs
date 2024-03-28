@@ -236,8 +236,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property UtilizationPreferences. 
         /// <para>
-        ///  The preference to control the resource’s CPU utilization thresholds - threshold and
-        /// headroom. If the preference isn’t set, this object is null. 
+        ///  The preference to control the resource’s CPU utilization threshold, CPU utilization
+        /// headroom, and memory utilization headroom. If the preference isn’t set, this object
+        /// is null. 
         /// </para>
         ///  <note> 
         /// <para>

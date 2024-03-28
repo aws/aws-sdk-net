@@ -40,9 +40,21 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Headroom. 
         /// <para>
-        ///  The headroom threshold value in percentage used for the specified metric parameter.
-        /// 
+        ///  The headroom value in percentage used for the specified metric parameter. 
         /// </para>
+        ///  
+        /// <para>
+        /// The following lists the valid values for CPU and memory utilization.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CPU utilization: <c>PERCENT_30 | PERCENT_20 | PERCENT_0</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Memory utilization: <c>PERCENT_30 | PERCENT_20 | PERCENT_10</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public CustomizableMetricHeadroom Headroom
         {
@@ -61,6 +73,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  The threshold value used for the specified metric parameter. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can only specify the threshold value for CPU utilization.
+        /// </para>
+        ///  </note>
         /// </summary>
         public CustomizableMetricThreshold Threshold
         {

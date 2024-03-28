@@ -48,11 +48,6 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  The name of the resource utilization metric name to customize. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Compute Optimizer only supports <c>CpuUtilization</c>.
-        /// </para>
-        ///  </note>
         /// </summary>
         public CustomizableMetricName MetricName
         {
