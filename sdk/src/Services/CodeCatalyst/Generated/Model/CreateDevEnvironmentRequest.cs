@@ -249,7 +249,7 @@ namespace Amazon.CodeCatalyst.Model
         /// <summary>
         /// Gets and sets the property VpcConnectionName. 
         /// <para>
-        /// The name of the connection to use connect to a Amazon VPC.
+        /// The name of the connection that will be used to connect to Amazon VPC, if any.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]

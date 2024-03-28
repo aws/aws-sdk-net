@@ -57,6 +57,18 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                     response.AwsAccountName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pendingSubscriptionStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.PendingSubscriptionStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pendingSubscriptionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PendingSubscriptionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("subscriptionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
