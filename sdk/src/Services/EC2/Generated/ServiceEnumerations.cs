@@ -8453,6 +8453,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C7gdMedium = new InstanceType("c7gd.medium");
         /// <summary>
+        /// Constant C7gdMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gdMetal = new InstanceType("c7gd.metal");
+        /// <summary>
         /// Constant C7gdXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C7gdXlarge = new InstanceType("c7gd.xlarge");
@@ -9725,6 +9729,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M7gdMedium = new InstanceType("m7gd.medium");
         /// <summary>
+        /// Constant M7gdMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gdMetal = new InstanceType("m7gd.metal");
+        /// <summary>
         /// Constant M7gdXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M7gdXlarge = new InstanceType("m7gd.xlarge");
@@ -10524,6 +10532,10 @@ namespace Amazon.EC2
         /// Constant R7gdMedium for InstanceType
         /// </summary>
         public static readonly InstanceType R7gdMedium = new InstanceType("r7gd.medium");
+        /// <summary>
+        /// Constant R7gdMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gdMetal = new InstanceType("r7gd.metal");
         /// <summary>
         /// Constant R7gdXlarge for InstanceType
         /// </summary>
