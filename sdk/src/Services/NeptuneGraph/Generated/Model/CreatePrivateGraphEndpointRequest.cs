@@ -31,8 +31,13 @@ namespace Amazon.NeptuneGraph.Model
     /// <summary>
     /// Container for the parameters to the CreatePrivateGraphEndpoint operation.
     /// Create a private graph endpoint to allow private access from to the graph from within
-    /// a VPC. You can attach security groups to the private graph endpoint. VPC endpoint
-    /// charges apply.
+    /// a VPC. You can attach security groups to the private graph endpoint.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// VPC endpoint charges apply.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreatePrivateGraphEndpointRequest : AmazonNeptuneGraphRequest
     {

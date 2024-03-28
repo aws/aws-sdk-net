@@ -90,6 +90,9 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property ProvisionedMemory. 
         /// <para>
         /// The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.
+        /// </para>
+        ///  
+        /// <para>
         /// Min = 128
         /// </para>
         /// </summary>
