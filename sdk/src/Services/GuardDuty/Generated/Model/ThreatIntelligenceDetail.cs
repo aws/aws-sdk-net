@@ -33,8 +33,27 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class ThreatIntelligenceDetail
     {
+        private string _threatFileSha256;
         private string _threatListName;
         private List<string> _threatNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ThreatFileSha256. 
+        /// <para>
+        /// SHA256 of the file that generated the finding.
+        /// </para>
+        /// </summary>
+        public string ThreatFileSha256
+        {
+            get { return this._threatFileSha256; }
+            set { this._threatFileSha256 = value; }
+        }
+
+        // Check to see if ThreatFileSha256 property is set
+        internal bool IsSetThreatFileSha256()
+        {
+            return this._threatFileSha256 != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ThreatListName. 

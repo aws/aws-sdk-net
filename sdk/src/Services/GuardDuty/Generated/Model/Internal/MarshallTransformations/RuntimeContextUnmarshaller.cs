@@ -69,6 +69,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.AddressFamily = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("commandLineExample", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CommandLineExample = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fileSystemType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -165,6 +171,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScriptPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serviceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("shellHistoryFilePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -181,6 +193,24 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProcessDetailsUnmarshaller.Instance;
                     unmarshalledObject.TargetProcess = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("threatFilePath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ThreatFilePath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("toolCategory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ToolCategory = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("toolName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ToolName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
