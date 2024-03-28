@@ -61,11 +61,6 @@ namespace ServiceClientGenerator.DefaultConfiguration
                                     EnumParse<S3UsEast1RegionalEndpointValue>(dataModel.@base.s3UsEast1RegionalEndpoints),
                                     x.ModeModel.ModifiersForConfiguration(nameof(SdkDefaultConfigurationJsonDataModel.BaseConfig.s3UsEast1RegionalEndpoints))),
 
-                            StsRegionalEndpoints =
-                                ApplyModifiersEnum(
-                                    EnumParse<StsRegionalEndpointsValue>(dataModel.@base.stsRegionalEndpoints),
-                                    x.ModeModel.ModifiersForConfiguration(nameof(SdkDefaultConfigurationJsonDataModel.BaseConfig.stsRegionalEndpoints))),
-
                             ConnectTimeout =
                                 ApplyModifiersTimeSpan(
                                     dataModel.@base.connectTimeoutInMillis,

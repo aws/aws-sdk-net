@@ -320,7 +320,6 @@ namespace AWSSDK.UnitTests
             .Append("max_attempts=100")
             .ToString();
 
-
         private static readonly CredentialProfileOptions SAMLRoleProfileOptions = new CredentialProfileOptions
         {
             EndpointName = "endpoint_name",
@@ -460,9 +459,8 @@ namespace AWSSDK.UnitTests
             .AppendLine(" name2 = value2")
             .ToString();
 
-        /// in reality a services section would not have aws_access_key and aws_secret_access_key
-        /// but for the purposes of testing we include it since the testFixture expects ProfileOptions
-        ///
+        // In reality a services section would not have aws_access_key and aws_secret_access_key
+        // but for the purposes of testing we include it since the testFixture expects ProfileOptions
         private static readonly string ServicesConfigurationWithMultipleProperties = new StringBuilder()
             .AppendLine("[profile bar]")
             .AppendLine("aws_access_key_id=basic_aws_access_key_id")
