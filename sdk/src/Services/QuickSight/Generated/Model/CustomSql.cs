@@ -101,7 +101,7 @@ namespace Amazon.QuickSight.Model
         /// The SQL query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65536)]
+        [AWSProperty(Required=true, Min=1, Max=168000)]
         public string SqlQuery
         {
             get { return this._sqlQuery; }

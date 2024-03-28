@@ -75,6 +75,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     response.RequestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcEndpointIdRestrictionRuleMap", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.VpcEndpointIdRestrictionRuleMap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcIdRestrictionRuleMap", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.VpcIdRestrictionRuleMap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             response.Status = (int)context.ResponseData.StatusCode;
 

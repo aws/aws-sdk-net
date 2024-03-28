@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A dataset parameter.
+    /// A parameter that is created in a dataset. The parameter can be a string, integer,
+    /// decimal, or datetime data type.
     /// </summary>
     public partial class DatasetParameter
     {

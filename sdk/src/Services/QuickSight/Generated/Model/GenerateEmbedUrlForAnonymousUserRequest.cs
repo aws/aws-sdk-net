@@ -116,7 +116,12 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// Currently, you can pass up to 25 dashboard ARNs in each API call.
+        /// If you want to make changes to the theme of your embedded content, pass a list of
+        /// theme ARNs that the anonymous users need access to.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently, you can pass up to 25 theme ARNs in each API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

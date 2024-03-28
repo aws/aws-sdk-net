@@ -13234,9 +13234,11 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates the content and status of IP rules. To use this operation, you must provide
-        /// the entire map of rules. You can use the <c>DescribeIpRestriction</c> operation to
-        /// get the current rule map.
+        /// Updates the content and status of IP rules. Traffic from a source is allowed when
+        /// the source satisfies either the <c>IpRestrictionRule</c>, <c>VpcIdRestrictionRule</c>,
+        /// or <c>VpcEndpointIdRestrictionRule</c>. To use this operation, you must provide the
+        /// entire map of rules. You can use the <c>DescribeIpRestriction</c> operation to get
+        /// the current rule map.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIpRestriction service method.</param>
         /// 
@@ -13268,9 +13270,11 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates the content and status of IP rules. To use this operation, you must provide
-        /// the entire map of rules. You can use the <c>DescribeIpRestriction</c> operation to
-        /// get the current rule map.
+        /// Updates the content and status of IP rules. Traffic from a source is allowed when
+        /// the source satisfies either the <c>IpRestrictionRule</c>, <c>VpcIdRestrictionRule</c>,
+        /// or <c>VpcEndpointIdRestrictionRule</c>. To use this operation, you must provide the
+        /// entire map of rules. You can use the <c>DescribeIpRestriction</c> operation to get
+        /// the current rule map.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIpRestriction service method.</param>
         /// <param name="cancellationToken">

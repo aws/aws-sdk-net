@@ -88,6 +88,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetVpcEndpointIdRestrictionRuleMap())
+                {
+                    context.Writer.WritePropertyName("VpcEndpointIdRestrictionRuleMap");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestVpcEndpointIdRestrictionRuleMapKvp in publicRequest.VpcEndpointIdRestrictionRuleMap)
+                    {
+                        context.Writer.WritePropertyName(publicRequestVpcEndpointIdRestrictionRuleMapKvp.Key);
+                        var publicRequestVpcEndpointIdRestrictionRuleMapValue = publicRequestVpcEndpointIdRestrictionRuleMapKvp.Value;
+
+                            context.Writer.Write(publicRequestVpcEndpointIdRestrictionRuleMapValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVpcIdRestrictionRuleMap())
+                {
+                    context.Writer.WritePropertyName("VpcIdRestrictionRuleMap");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestVpcIdRestrictionRuleMapKvp in publicRequest.VpcIdRestrictionRuleMap)
+                    {
+                        context.Writer.WritePropertyName(publicRequestVpcIdRestrictionRuleMapKvp.Key);
+                        var publicRequestVpcIdRestrictionRuleMapValue = publicRequestVpcIdRestrictionRuleMapKvp.Value;
+
+                            context.Writer.Write(publicRequestVpcIdRestrictionRuleMapValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
