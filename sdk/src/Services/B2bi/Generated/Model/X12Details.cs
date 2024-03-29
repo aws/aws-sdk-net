@@ -67,9 +67,8 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Returns the version to use for the specified X12 transaction set. Supported versions
-        /// are <c>4010</c>, <c>4030</c>, and <c>5010</c>.
-        /// </para>
+        /// Returns the version to use for the specified X12 transaction set. <pre><c> &lt;/p&gt;
+        /// </c></pre>
         /// </summary>
         public X12Version Version
         {
