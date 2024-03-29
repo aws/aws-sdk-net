@@ -1944,6 +1944,76 @@ namespace Amazon.NeptuneGraph
 
         #endregion
         
+        #region  StartImportTask
+
+        /// <summary>
+        /// Import data into existing Neptune Analytics graph from Amazon Simple Storage Service
+        /// (S3). The graph needs to be empty and in the AVAILABLE state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImportTask service method.</param>
+        /// 
+        /// <returns>The response from the StartImportTask service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartImportTask">REST API Reference for StartImportTask Operation</seealso>
+        public virtual StartImportTaskResponse StartImportTask(StartImportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImportTask operation on AmazonNeptuneGraphClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartImportTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartImportTask">REST API Reference for StartImportTask Operation</seealso>
+        public virtual IAsyncResult BeginStartImportTask(StartImportTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartImportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartImportTask.</param>
+        /// 
+        /// <returns>Returns a  StartImportTaskResult from NeptuneGraph.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartImportTask">REST API Reference for StartImportTask Operation</seealso>
+        public virtual StartImportTaskResponse EndStartImportTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartImportTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
