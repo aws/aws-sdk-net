@@ -57,6 +57,12 @@ namespace Amazon.IoTWireless
     /// a session to update the firmware of individual devices or an entire group of devices
     /// in a multicast group.
     /// </para>
+    ///  
+    /// <para>
+    /// To connect to the AWS IoT Wireless Service, use the Service endpoints as described
+    /// in <a href="https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region">IoT
+    /// Wireless Service endpoints</a> in the <i>AWS General Reference</i>.
+    /// </para>
     /// </summary>
     public partial class AmazonIoTWirelessClient : AmazonServiceClient, IAmazonIoTWireless
     {
@@ -2452,6 +2458,110 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = GetLogLevelsByResourceTypesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLogLevelsByResourceTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMetricConfiguration
+
+        internal virtual GetMetricConfigurationResponse GetMetricConfiguration(GetMetricConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetricConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the metric configuration status for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMetricConfiguration service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetricConfiguration">REST API Reference for GetMetricConfiguration Operation</seealso>
+        public virtual Task<GetMetricConfigurationResponse> GetMetricConfigurationAsync(GetMetricConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMetricConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMetrics
+
+        internal virtual GetMetricsResponse GetMetrics(GetMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetricsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get metrics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMetrics service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetrics">REST API Reference for GetMetrics Operation</seealso>
+        public virtual Task<GetMetricsResponse> GetMetricsAsync(GetMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMetricsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5280,6 +5390,58 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = UpdateLogLevelsByResourceTypesResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateLogLevelsByResourceTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMetricConfiguration
+
+        internal virtual UpdateMetricConfigurationResponse UpdateMetricConfiguration(UpdateMetricConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMetricConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetricConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMetricConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update the metric configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetricConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMetricConfiguration service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMetricConfiguration">REST API Reference for UpdateMetricConfiguration Operation</seealso>
+        public virtual Task<UpdateMetricConfigurationResponse> UpdateMetricConfigurationAsync(UpdateMetricConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMetricConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetricConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMetricConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
