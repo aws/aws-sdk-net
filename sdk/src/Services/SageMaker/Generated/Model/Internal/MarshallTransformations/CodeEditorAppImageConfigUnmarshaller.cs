@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CodeEditorAppSettings Object
+    /// Response Unmarshaller for CodeEditorAppImageConfig Object
     /// </summary>  
-    public class CodeEditorAppSettingsUnmarshaller : IUnmarshaller<CodeEditorAppSettings, XmlUnmarshallerContext>, IUnmarshaller<CodeEditorAppSettings, JsonUnmarshallerContext>
+    public class CodeEditorAppImageConfigUnmarshaller : IUnmarshaller<CodeEditorAppImageConfig, XmlUnmarshallerContext>, IUnmarshaller<CodeEditorAppImageConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CodeEditorAppSettings IUnmarshaller<CodeEditorAppSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CodeEditorAppImageConfig IUnmarshaller<CodeEditorAppImageConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CodeEditorAppSettings Unmarshall(JsonUnmarshallerContext context)
+        public CodeEditorAppImageConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            CodeEditorAppSettings unmarshalledObject = new CodeEditorAppSettings();
+            CodeEditorAppImageConfig unmarshalledObject = new CodeEditorAppImageConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,22 +63,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CustomImages", targetDepth))
+                if (context.TestExpression("ContainerConfig", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CustomImage, CustomImageUnmarshaller>(CustomImageUnmarshaller.Instance);
-                    unmarshalledObject.CustomImages = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ContainerConfigUnmarshaller.Instance;
+                    unmarshalledObject.ContainerConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DefaultResourceSpec", targetDepth))
+                if (context.TestExpression("FileSystemConfig", targetDepth))
                 {
-                    var unmarshaller = ResourceSpecUnmarshaller.Instance;
-                    unmarshalledObject.DefaultResourceSpec = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LifecycleConfigArns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.LifecycleConfigArns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FileSystemConfigUnmarshaller.Instance;
+                    unmarshalledObject.FileSystemConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -86,12 +80,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static CodeEditorAppSettingsUnmarshaller _instance = new CodeEditorAppSettingsUnmarshaller();        
+        private static CodeEditorAppImageConfigUnmarshaller _instance = new CodeEditorAppImageConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CodeEditorAppSettingsUnmarshaller Instance
+        public static CodeEditorAppImageConfigUnmarshaller Instance
         {
             get
             {

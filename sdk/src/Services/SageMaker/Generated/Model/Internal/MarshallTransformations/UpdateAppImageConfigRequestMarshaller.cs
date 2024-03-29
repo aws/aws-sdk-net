@@ -73,6 +73,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AppImageConfigName);
                 }
 
+                if(publicRequest.IsSetCodeEditorAppImageConfig())
+                {
+                    context.Writer.WritePropertyName("CodeEditorAppImageConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CodeEditorAppImageConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CodeEditorAppImageConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetJupyterLabAppImageConfig())
                 {
                     context.Writer.WritePropertyName("JupyterLabAppImageConfig");

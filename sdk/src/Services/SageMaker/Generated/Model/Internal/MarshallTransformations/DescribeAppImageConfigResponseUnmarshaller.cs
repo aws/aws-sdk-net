@@ -63,6 +63,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.AppImageConfigName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CodeEditorAppImageConfig", targetDepth))
+                {
+                    var unmarshaller = CodeEditorAppImageConfigUnmarshaller.Instance;
+                    response.CodeEditorAppImageConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

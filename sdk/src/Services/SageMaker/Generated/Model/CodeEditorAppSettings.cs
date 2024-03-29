@@ -39,8 +39,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CodeEditorAppSettings
     {
+        private List<CustomImage> _customImages = AWSConfigs.InitializeCollections ? new List<CustomImage>() : null;
         private ResourceSpec _defaultResourceSpec;
         private List<string> _lifecycleConfigArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CustomImages. 
+        /// <para>
+        /// A list of custom SageMaker images that are configured to run as a Code Editor app.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public List<CustomImage> CustomImages
+        {
+            get { return this._customImages; }
+            set { this._customImages = value; }
+        }
+
+        // Check to see if CustomImages property is set
+        internal bool IsSetCustomImages()
+        {
+            return this._customImages != null && (this._customImages.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultResourceSpec.
