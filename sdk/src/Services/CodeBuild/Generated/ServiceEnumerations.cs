@@ -1171,6 +1171,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly FleetStatusCode DELETING = new FleetStatusCode("DELETING");
         /// <summary>
+        /// Constant PENDING_DELETION for FleetStatusCode
+        /// </summary>
+        public static readonly FleetStatusCode PENDING_DELETION = new FleetStatusCode("PENDING_DELETION");
+        /// <summary>
         /// Constant ROTATING for FleetStatusCode
         /// </summary>
         public static readonly FleetStatusCode ROTATING = new FleetStatusCode("ROTATING");
