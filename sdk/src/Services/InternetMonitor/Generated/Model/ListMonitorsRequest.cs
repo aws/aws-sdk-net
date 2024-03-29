@@ -35,9 +35,28 @@ namespace Amazon.InternetMonitor.Model
     /// </summary>
     public partial class ListMonitorsRequest : AmazonInternetMonitorRequest
     {
+        private bool? _includeLinkedAccounts;
         private int? _maxResults;
         private string _monitorStatus;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property IncludeLinkedAccounts. 
+        /// <para>
+        /// TBD 
+        /// </para>
+        /// </summary>
+        public bool IncludeLinkedAccounts
+        {
+            get { return this._includeLinkedAccounts.GetValueOrDefault(); }
+            set { this._includeLinkedAccounts = value; }
+        }
+
+        // Check to see if IncludeLinkedAccounts property is set
+        internal bool IsSetIncludeLinkedAccounts()
+        {
+            return this._includeLinkedAccounts.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

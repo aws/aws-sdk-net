@@ -46,6 +46,7 @@ namespace Amazon.InternetMonitor.Model
     {
         private DateTime? _endTime;
         private List<FilterParameter> _filterParameters = AWSConfigs.InitializeCollections ? new List<FilterParameter>() : null;
+        private string _linkedAccountId;
         private string _monitorName;
         private QueryType _queryType;
         private DateTime? _startTime;
@@ -95,6 +96,25 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetFilterParameters()
         {
             return this._filterParameters != null && (this._filterParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedAccountId. 
+        /// <para>
+        /// TBD 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string LinkedAccountId
+        {
+            get { return this._linkedAccountId; }
+            set { this._linkedAccountId = value; }
+        }
+
+        // Check to see if LinkedAccountId property is set
+        internal bool IsSetLinkedAccountId()
+        {
+            return this._linkedAccountId != null;
         }
 
         /// <summary>

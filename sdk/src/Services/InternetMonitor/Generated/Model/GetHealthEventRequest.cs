@@ -48,6 +48,7 @@ namespace Amazon.InternetMonitor.Model
     public partial class GetHealthEventRequest : AmazonInternetMonitorRequest
     {
         private string _eventId;
+        private string _linkedAccountId;
         private string _monitorName;
 
         /// <summary>
@@ -69,6 +70,25 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetEventId()
         {
             return this._eventId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedAccountId. 
+        /// <para>
+        /// TBD 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string LinkedAccountId
+        {
+            get { return this._linkedAccountId; }
+            set { this._linkedAccountId = value; }
+        }
+
+        // Check to see if LinkedAccountId property is set
+        internal bool IsSetLinkedAccountId()
+        {
+            return this._linkedAccountId != null;
         }
 
         /// <summary>

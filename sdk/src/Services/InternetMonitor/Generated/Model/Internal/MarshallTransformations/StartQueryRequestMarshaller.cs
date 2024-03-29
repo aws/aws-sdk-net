@@ -90,6 +90,12 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetLinkedAccountId())
+                {
+                    context.Writer.WritePropertyName("LinkedAccountId");
+                    context.Writer.Write(publicRequest.LinkedAccountId);
+                }
+
                 if(publicRequest.IsSetQueryType())
                 {
                     context.Writer.WritePropertyName("QueryType");

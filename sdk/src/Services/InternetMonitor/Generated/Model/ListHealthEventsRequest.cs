@@ -44,6 +44,7 @@ namespace Amazon.InternetMonitor.Model
     {
         private DateTime? _endTime;
         private HealthEventStatus _eventStatus;
+        private string _linkedAccountId;
         private int? _maxResults;
         private string _monitorName;
         private string _nextToken;
@@ -84,6 +85,25 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetEventStatus()
         {
             return this._eventStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedAccountId. 
+        /// <para>
+        /// TBD 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string LinkedAccountId
+        {
+            get { return this._linkedAccountId; }
+            set { this._linkedAccountId = value; }
+        }
+
+        // Check to see if LinkedAccountId property is set
+        internal bool IsSetLinkedAccountId()
+        {
+            return this._linkedAccountId != null;
         }
 
         /// <summary>

@@ -36,7 +36,27 @@ namespace Amazon.InternetMonitor.Model
     /// </summary>
     public partial class GetMonitorRequest : AmazonInternetMonitorRequest
     {
+        private string _linkedAccountId;
         private string _monitorName;
+
+        /// <summary>
+        /// Gets and sets the property LinkedAccountId. 
+        /// <para>
+        /// TBD 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string LinkedAccountId
+        {
+            get { return this._linkedAccountId; }
+            set { this._linkedAccountId = value; }
+        }
+
+        // Check to see if LinkedAccountId property is set
+        internal bool IsSetLinkedAccountId()
+        {
+            return this._linkedAccountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MonitorName. 

@@ -68,6 +68,9 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetEventStatus())
                 request.Parameters.Add("EventStatus", StringUtils.FromString(publicRequest.EventStatus));
             
+            if (publicRequest.IsSetLinkedAccountId())
+                request.Parameters.Add("LinkedAccountId", StringUtils.FromString(publicRequest.LinkedAccountId));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

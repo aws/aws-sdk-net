@@ -35,6 +35,11 @@
     <pattern>[a-zA-Z0-9/_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.GetHealthEventRequest.LinkedAccountId</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetHealthEventRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
@@ -56,6 +61,11 @@
     <property>Amazon.InternetMonitor.Model.GetHealthEventResponse.HealthScoreThreshold</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.GetMonitorRequest.LinkedAccountId</property>
+    <min>12</min>
+    <max>12</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetMonitorRequest.MonitorName</property>
@@ -103,6 +113,11 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.ListHealthEventsRequest.LinkedAccountId</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.InternetMonitor.Model.ListHealthEventsRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
@@ -123,6 +138,11 @@
     <min>20</min>
     <max>512</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.StartQueryRequest.LinkedAccountId</property>
+    <min>12</min>
+    <max>12</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.StartQueryRequest.MonitorName</property>
