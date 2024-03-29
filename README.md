@@ -256,6 +256,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This release adds operations that support customers using the AWS Toolkits and Amazon CodeCatalyst, a unified software development service that helps developers develop, deploy, and maintain applications in the cloud. For more information, see the documentation.
 * [AWSSDK.CodeCommit](https://www.nuget.org/packages/AWSSDK.CodeCommit/)
 	* AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.
+* [AWSSDK.CodeConnections](https://www.nuget.org/packages/AWSSDK.CodeConnections/)
+	* Duplicating the CodeStar Connections service into the new, rebranded AWS CodeConnections service.
 * [AWSSDK.CodeDeploy](https://www.nuget.org/packages/AWSSDK.CodeDeploy/)
 	* AWS CodeDeploy is a service that automates code deployments. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications.
 * [AWSSDK.CodeGuruProfiler](https://www.nuget.org/packages/AWSSDK.CodeGuruProfiler/)
