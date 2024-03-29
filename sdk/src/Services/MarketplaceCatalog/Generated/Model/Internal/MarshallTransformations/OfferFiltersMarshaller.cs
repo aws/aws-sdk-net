@@ -122,6 +122,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetResaleAuthorizationId())
+            {
+                context.Writer.WritePropertyName("ResaleAuthorizationId");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OfferResaleAuthorizationIdFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.ResaleAuthorizationId, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");

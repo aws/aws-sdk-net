@@ -38,6 +38,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _name;
         private string _productId;
         private string _releaseDate;
+        private string _resaleAuthorizationId;
         private OfferStateString _state;
         private List<string> _targeting = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -134,6 +135,25 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetReleaseDate()
         {
             return this._releaseDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResaleAuthorizationId. 
+        /// <para>
+        /// The ResaleAuthorizationId of the offer.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ResaleAuthorizationId
+        {
+            get { return this._resaleAuthorizationId; }
+            set { this._resaleAuthorizationId = value; }
+        }
+
+        // Check to see if ResaleAuthorizationId property is set
+        internal bool IsSetResaleAuthorizationId()
+        {
+            return this._resaleAuthorizationId != null;
         }
 
         /// <summary>
