@@ -1,3 +1,26 @@
+### 3.7.779.0 (2024-03-29 18:21 UTC)
+* B2bi (3.7.302.0)
+	* Supporting new EDI X12 transaction sets for X12 versions 4010, 4030, and 5010.
+* CodeBuild (3.7.305.0)
+	* Add new fleet status code for Reserved Capacity.
+* CodeConnections (3.7.300.0)
+	* Duplicating the CodeStar Connections service into the new, rebranded AWS CodeConnections service.
+* InternetMonitor (3.7.303.0)
+	* This release adds support to allow customers to track cross account monitors through ListMonitor, GetMonitor, ListHealthEvents, GetHealthEvent, StartQuery APIs.
+* IoTWireless (3.7.301.0)
+	* Add support for retrieving key historical and live metrics for LoRaWAN devices and gateways
+* MarketplaceCatalog (3.7.304.0)
+	* This release enhances the ListEntities API to support ResaleAuthorizationId filter and sort for OfferEntity in the request and the addition of a ResaleAuthorizationId field in the response of OfferSummary.
+* NeptuneGraph (3.7.305.0)
+	* Add the new API Start-Import-Task for Amazon Neptune Analytics.
+* S3 (3.7.307.6)
+	* Fix: Update CopyObjectRequestMarshaller to throw ArgumentException for missing properties
+* SageMaker (3.7.317.0)
+	* This release adds support for custom images for the CodeEditor App on SageMaker Studio
+* Core 3.7.303.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.778.0 (2024-03-28 18:27 UTC)
 * CodeCatalyst (3.7.303.0)
 	* This release adds support for understanding pending changes to subscriptions by including two new response parameters for the GetSubscription API for Amazon CodeCatalyst.
