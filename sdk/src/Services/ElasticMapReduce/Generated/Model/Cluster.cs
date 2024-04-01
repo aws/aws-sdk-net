@@ -382,7 +382,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the cluster.
+        /// The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $,
+        /// |, or ` (backtick).
         /// </para>
         /// </summary>
         public string Name
