@@ -63,6 +63,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RegionName);
             }
 
+            if(requestObject.IsSetResponseTimeout())
+            {
+                context.Writer.WritePropertyName("responseTimeout");
+                context.Writer.Write(requestObject.ResponseTimeout);
+            }
+
         }
 
         /// <summary>

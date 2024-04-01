@@ -53,6 +53,7 @@ namespace Amazon.Lightsail.Model
         private string _status;
         private string _supportCode;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private string _viewerMinimumTlsProtocolVersion;
 
         /// <summary>
         /// Gets and sets the property AbleToUpdateBundle. 
@@ -439,6 +440,25 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViewerMinimumTlsProtocolVersion. 
+        /// <para>
+        /// The minimum TLS protocol version that the distribution can use to communicate with
+        /// viewers.
+        /// </para>
+        /// </summary>
+        public string ViewerMinimumTlsProtocolVersion
+        {
+            get { return this._viewerMinimumTlsProtocolVersion; }
+            set { this._viewerMinimumTlsProtocolVersion = value; }
+        }
+
+        // Check to see if ViewerMinimumTlsProtocolVersion property is set
+        internal bool IsSetViewerMinimumTlsProtocolVersion()
+        {
+            return this._viewerMinimumTlsProtocolVersion != null;
         }
 
     }

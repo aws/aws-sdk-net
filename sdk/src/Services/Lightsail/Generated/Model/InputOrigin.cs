@@ -44,6 +44,7 @@ namespace Amazon.Lightsail.Model
         private string _name;
         private OriginProtocolPolicyEnum _protocolPolicy;
         private RegionName _regionName;
+        private int? _responseTimeout;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -98,6 +99,26 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetRegionName()
         {
             return this._regionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseTimeout. 
+        /// <para>
+        /// The amount of time, in seconds, that the distribution waits for a response after forwarding
+        /// a request to the origin. The minimum timeout is 1 second, the maximum is 60 seconds,
+        /// and the default (if you don't specify otherwise) is 30 seconds.
+        /// </para>
+        /// </summary>
+        public int ResponseTimeout
+        {
+            get { return this._responseTimeout.GetValueOrDefault(); }
+            set { this._responseTimeout = value; }
+        }
+
+        // Check to see if ResponseTimeout property is set
+        internal bool IsSetResponseTimeout()
+        {
+            return this._responseTimeout.HasValue; 
         }
 
     }

@@ -94,6 +94,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCertificateName())
+                {
+                    context.Writer.WritePropertyName("certificateName");
+                    context.Writer.Write(publicRequest.CertificateName);
+                }
+
                 if(publicRequest.IsSetDefaultCacheBehavior())
                 {
                     context.Writer.WritePropertyName("defaultCacheBehavior");
@@ -126,6 +132,18 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Origin, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetUseDefaultCertificate())
+                {
+                    context.Writer.WritePropertyName("useDefaultCertificate");
+                    context.Writer.Write(publicRequest.UseDefaultCertificate);
+                }
+
+                if(publicRequest.IsSetViewerMinimumTlsProtocolVersion())
+                {
+                    context.Writer.WritePropertyName("viewerMinimumTlsProtocolVersion");
+                    context.Writer.Write(publicRequest.ViewerMinimumTlsProtocolVersion);
                 }
 
                 writer.WriteObjectEnd();
