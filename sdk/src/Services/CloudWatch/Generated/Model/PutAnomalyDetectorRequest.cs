@@ -35,6 +35,13 @@ namespace Amazon.CloudWatch.Model
     /// 
     ///  
     /// <para>
+    /// If you have enabled unified cross-account observability, and this account is a monitoring
+    /// account, the metric can be in the same account or a source account. You can specify
+    /// the account ID in the object you specify in the <c>SingleMetricAnomalyDetector</c>
+    /// parameter.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch
     /// Anomaly Detection</a>.
     /// </para>
@@ -210,7 +217,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// the <c>MetricMatchAnomalyDetector</c> parameters of <c>PutAnomalyDetectorInput</c>
+        /// the <c>MetricMathAnomalyDetector</c> parameters of <c>PutAnomalyDetectorInput</c>
         /// 
         /// </para>
         ///  </li> </ul> 

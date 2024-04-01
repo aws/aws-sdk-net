@@ -39,10 +39,10 @@ namespace Amazon.CloudWatch.Model
     /// <para>
     /// You can publish either individual data points in the <c>Value</c> field, or arrays
     /// of values and the number of times each value occurred during the period by using the
-    /// <c>Values</c> and <c>Counts</c> fields in the <c>MetricDatum</c> structure. Using
-    /// the <c>Values</c> and <c>Counts</c> method enables you to publish up to 150 values
-    /// per metric with one <c>PutMetricData</c> request, and supports retrieving percentile
-    /// statistics on this data.
+    /// <c>Values</c> and <c>Counts</c> fields in the <c>MetricData</c> structure. Using the
+    /// <c>Values</c> and <c>Counts</c> method enables you to publish up to 150 values per
+    /// metric with one <c>PutMetricData</c> request, and supports retrieving percentile statistics
+    /// on this data.
     /// </para>
     ///  
     /// <para>

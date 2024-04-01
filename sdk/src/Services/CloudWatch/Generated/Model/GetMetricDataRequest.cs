@@ -245,6 +245,10 @@ namespace Amazon.CloudWatch.Model
         /// <c>TimestampAscending</c> returns the oldest data first and paginates when the <c>MaxDatapoints</c>
         /// limit is reached.
         /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the default of <c>TimestampDescending</c> is used.
+        /// </para>
         /// </summary>
         public ScanBy ScanBy
         {

@@ -161,6 +161,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSingleMetricAnomalyDetector())
                 {
+                    if(publicRequest.SingleMetricAnomalyDetector.IsSetAccountId())
+                    {
+                        request.Parameters.Add("SingleMetricAnomalyDetector" + "." + "AccountId", StringUtils.FromString(publicRequest.SingleMetricAnomalyDetector.AccountId));
+                    }
                     if(publicRequest.SingleMetricAnomalyDetector.IsSetDimensions())
                     {
                         int publicRequestSingleMetricAnomalyDetectorlistValueIndex = 1;

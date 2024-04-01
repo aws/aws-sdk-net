@@ -32,6 +32,12 @@ namespace Amazon.CloudWatch.Model
     /// An anomaly detection model associated with a particular CloudWatch metric, statistic,
     /// or metric math expression. You can use the model to display a band of expected, normal
     /// values when the metric is graphed.
+    /// 
+    ///  
+    /// <para>
+    /// If you have enabled unified cross-account observability, and this account is a monitoring
+    /// account, the metric can be in the same account or a source account.
+    /// </para>
     /// </summary>
     public partial class AnomalyDetector
     {
