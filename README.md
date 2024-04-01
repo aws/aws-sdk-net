@@ -322,6 +322,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Initial release of Amazon DataZone
 * [AWSSDK.DAX](https://www.nuget.org/packages/AWSSDK.DAX/)
 	* Amazon DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for DynamoDB that delivers up to a 10x performance improvement - from milliseconds to microseconds - even at millions of requests per second. DAX does all the heavy lifting required to add in-memory acceleration to your DynamoDB tables, without requiring developers to manage cache invalidation, data population, or cluster management.
+* [AWSSDK.Deadline](https://www.nuget.org/packages/AWSSDK.Deadline/)
+	* AWS Deadline Cloud is a new fully managed service that helps customers set up, deploy, and scale rendering projects in minutes, so they can improve the efficiency of their rendering pipelines and take on more projects.
 * [AWSSDK.Detective](https://www.nuget.org/packages/AWSSDK.Detective/)
 	* This is the initial release of Amazon Detective.
 * [AWSSDK.DeviceFarm](https://www.nuget.org/packages/AWSSDK.DeviceFarm/)
