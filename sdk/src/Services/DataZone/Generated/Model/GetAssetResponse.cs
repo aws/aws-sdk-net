@@ -126,7 +126,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExternalIdentifier.
+        /// Gets and sets the property ExternalIdentifier. 
+        /// <para>
+        /// The external ID of the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string ExternalIdentifier
@@ -235,7 +238,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Listing.
+        /// Gets and sets the property Listing. 
+        /// <para>
+        /// The listing of the asset.
+        /// </para>
         /// </summary>
         public AssetListingDetails Listing
         {
@@ -331,7 +337,7 @@ namespace Amazon.DataZone.Model
         /// The ID of the asset type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=385)]
+        [AWSProperty(Required=true, Min=1, Max=513)]
         public string TypeIdentifier
         {
             get { return this._typeIdentifier; }

@@ -30,7 +30,7 @@ namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the GetListing operation.
-    /// 
+    /// Gets a listing (a record of an asset at a given time).
     /// </summary>
     public partial class GetListingRequest : AmazonDataZoneRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.DataZone.Model
         private string _listingRevision;
 
         /// <summary>
-        /// Gets and sets the property DomainIdentifier.
+        /// Gets and sets the property DomainIdentifier. 
+        /// <para>
+        /// The ID of the Amazon DataZone domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DomainIdentifier
@@ -55,7 +58,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Identifier.
+        /// Gets and sets the property Identifier. 
+        /// <para>
+        /// The ID of the listing.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Identifier
@@ -71,7 +77,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ListingRevision.
+        /// Gets and sets the property ListingRevision. 
+        /// <para>
+        /// The revision of the listing.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string ListingRevision

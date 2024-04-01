@@ -101,7 +101,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the project.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string Name

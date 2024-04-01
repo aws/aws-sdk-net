@@ -83,7 +83,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Managed.
+        /// Gets and sets the property Managed. 
+        /// <para>
+        /// Specifies whether the search is managed.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool Managed
@@ -144,7 +147,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SearchIn.
+        /// Gets and sets the property SearchIn. 
+        /// <para>
+        /// The details of the search.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<SearchInItem> SearchIn

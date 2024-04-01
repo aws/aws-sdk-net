@@ -43,7 +43,11 @@ namespace Amazon.DataZone.Model
         private string _revision;
 
         /// <summary>
-        /// Gets and sets the property AcceptChoices.
+        /// Gets and sets the property AcceptChoices. 
+        /// <para>
+        /// Specifies the prediction (aka, the automatically generated piece of metadata) and
+        /// the target (for example, a column name) that can be accepted.
+        /// </para>
         /// </summary>
         public List<AcceptChoice> AcceptChoices
         {
@@ -115,7 +119,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Identifier.
+        /// Gets and sets the property Identifier. 
+        /// <para>
+        /// The identifier of the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Identifier
@@ -131,7 +138,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision.
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// The revision that is to be made to the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string Revision

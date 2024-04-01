@@ -122,7 +122,8 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property FailureReasons. 
         /// <para>
-        /// Reasons for failed project deletion
+        /// Specifies the error message that is returned if the operation cannot be successfully
+        /// completed.
         /// </para>
         /// </summary>
         public List<ProjectDeletionError> FailureReasons
@@ -215,7 +216,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property ProjectStatus. 
         /// <para>
-        /// Status of the project
+        /// The status of the project.
         /// </para>
         /// </summary>
         public ProjectStatus ProjectStatus

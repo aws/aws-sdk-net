@@ -1331,6 +1331,160 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type MetadataGenerationRunStatus.
+    /// </summary>
+    public class MetadataGenerationRunStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELED for MetadataGenerationRunStatus
+        /// </summary>
+        public static readonly MetadataGenerationRunStatus CANCELED = new MetadataGenerationRunStatus("CANCELED");
+        /// <summary>
+        /// Constant FAILED for MetadataGenerationRunStatus
+        /// </summary>
+        public static readonly MetadataGenerationRunStatus FAILED = new MetadataGenerationRunStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for MetadataGenerationRunStatus
+        /// </summary>
+        public static readonly MetadataGenerationRunStatus IN_PROGRESS = new MetadataGenerationRunStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUBMITTED for MetadataGenerationRunStatus
+        /// </summary>
+        public static readonly MetadataGenerationRunStatus SUBMITTED = new MetadataGenerationRunStatus("SUBMITTED");
+        /// <summary>
+        /// Constant SUCCEEDED for MetadataGenerationRunStatus
+        /// </summary>
+        public static readonly MetadataGenerationRunStatus SUCCEEDED = new MetadataGenerationRunStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetadataGenerationRunStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetadataGenerationRunStatus FindValue(string value)
+        {
+            return FindValue<MetadataGenerationRunStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetadataGenerationRunStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetadataGenerationRunType.
+    /// </summary>
+    public class MetadataGenerationRunType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUSINESS_DESCRIPTIONS for MetadataGenerationRunType
+        /// </summary>
+        public static readonly MetadataGenerationRunType BUSINESS_DESCRIPTIONS = new MetadataGenerationRunType("BUSINESS_DESCRIPTIONS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetadataGenerationRunType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetadataGenerationRunType FindValue(string value)
+        {
+            return FindValue<MetadataGenerationRunType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetadataGenerationRunType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetadataGenerationTargetType.
+    /// </summary>
+    public class MetadataGenerationTargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSET for MetadataGenerationTargetType
+        /// </summary>
+        public static readonly MetadataGenerationTargetType ASSET = new MetadataGenerationTargetType("ASSET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetadataGenerationTargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetadataGenerationTargetType FindValue(string value)
+        {
+            return FindValue<MetadataGenerationTargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetadataGenerationTargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NotificationResourceType.
     /// </summary>
     public class NotificationResourceType : ConstantClass

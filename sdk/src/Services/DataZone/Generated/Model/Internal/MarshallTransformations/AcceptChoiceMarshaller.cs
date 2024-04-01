@@ -45,6 +45,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AcceptChoice requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEditedValue())
+            {
+                context.Writer.WritePropertyName("editedValue");
+                context.Writer.Write(requestObject.EditedValue);
+            }
+
             if(requestObject.IsSetPredictionChoice())
             {
                 context.Writer.WritePropertyName("predictionChoice");

@@ -63,7 +63,7 @@ namespace Amazon.DataZone.Model
         /// The ID of the asset type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=385)]
+        [AWSProperty(Required=true, Min=1, Max=513)]
         public string Identifier
         {
             get { return this._identifier; }

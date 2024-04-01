@@ -60,6 +60,7 @@ namespace Amazon.DataZone.Model
         /// Specifies the target (for example, a column name) where a prediction can be rejected.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PredictionTarget
         {
             get { return this._predictionTarget; }

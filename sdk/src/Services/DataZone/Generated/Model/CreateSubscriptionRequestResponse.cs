@@ -198,7 +198,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubscribedListings.
+        /// Gets and sets the property SubscribedListings. 
+        /// <para>
+        /// The published asset for which the subscription grant is to be created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
         public List<SubscribedListing> SubscribedListings

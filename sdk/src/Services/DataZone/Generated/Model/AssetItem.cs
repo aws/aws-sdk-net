@@ -277,7 +277,7 @@ namespace Amazon.DataZone.Model
         /// The identifier of the asset type of the specified Amazon DataZone inventory asset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=385)]
+        [AWSProperty(Required=true, Min=1, Max=513)]
         public string TypeIdentifier
         {
             get { return this._typeIdentifier; }

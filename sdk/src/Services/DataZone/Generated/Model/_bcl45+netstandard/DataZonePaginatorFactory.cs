@@ -108,6 +108,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListMetadataGenerationRuns operation
+        ///</summary>
+        public IListMetadataGenerationRunsPaginator ListMetadataGenerationRuns(ListMetadataGenerationRunsRequest request) 
+        {
+            return new ListMetadataGenerationRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNotifications operation
         ///</summary>
         public IListNotificationsPaginator ListNotifications(ListNotificationsRequest request) 

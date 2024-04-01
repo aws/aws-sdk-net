@@ -79,7 +79,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property SkipDeletionCheck. 
         /// <para>
-        /// Optional flag to delete all child entities within the domain
+        /// Specifies the optional flag to delete all child entities within the domain.
         /// </para>
         /// </summary>
         public bool SkipDeletionCheck

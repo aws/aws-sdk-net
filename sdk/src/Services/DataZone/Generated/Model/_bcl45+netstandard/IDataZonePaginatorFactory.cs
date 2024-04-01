@@ -71,6 +71,11 @@ namespace Amazon.DataZone.Model
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
 
         /// <summary>
+        /// Paginator for ListMetadataGenerationRuns operation
+        ///</summary>
+        IListMetadataGenerationRunsPaginator ListMetadataGenerationRuns(ListMetadataGenerationRunsRequest request);
+
+        /// <summary>
         /// Paginator for ListNotifications operation
         ///</summary>
         IListNotificationsPaginator ListNotifications(ListNotificationsRequest request);

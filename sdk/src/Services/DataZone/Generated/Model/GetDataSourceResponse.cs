@@ -354,7 +354,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Recommendation.
+        /// Gets and sets the property Recommendation. 
+        /// <para>
+        /// The recommendation configuration of the data source.
+        /// </para>
         /// </summary>
         public RecommendationConfiguration Recommendation
         {
