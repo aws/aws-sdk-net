@@ -811,7 +811,13 @@ namespace ServiceClientGenerator
             if (this.IsDateTime)
             {
                 var timestampFormat = GetTimestampFormat(marshallLocation);
-                return "StringUtils.FromDateTimeTo" + timestampFormat;
+                string formatAppend = string.Empty;
+                if(timestampFormat == TimestampFormat.ISO8601
+                    && (marshallLocation == MarshallLocation.Uri || marshallLocation == MarshallLocation.QueryString))
+                {
+                    formatAppend = "Minimal";
+                }
+                return "StringUtils.FromDateTimeTo" + timestampFormat + formatAppend;
             }
             else
             {

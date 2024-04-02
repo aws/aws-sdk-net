@@ -1116,18 +1116,18 @@ namespace ServiceClientGenerator
         {
             // Rules used to default the format if timestampFormat is not specified.
             // 1. All timestamp values serialized in HTTP headers are formatted using rfc822 by default.
-            // 2. All timestamp values serialized in query strings are formatted using iso8601 by default.
+            // 2. All timestamp values serialized in uri and query strings are formatted using iso8601 by default.
             if (marshallLocation == MarshallLocation.Header)
             {
                 return TimestampFormat.RFC822;
             }
-            else if (marshallLocation == MarshallLocation.QueryString)
+            else if (marshallLocation == MarshallLocation.QueryString || marshallLocation == MarshallLocation.Uri)
             {
                 return TimestampFormat.ISO8601;
             }
             else
             {
-                // Return protocol defaults if marshall location is not header or querystring.
+                // Return protocol defaults if marshall location is not header, querystring, or Uri.
                 // The default timestamp formats per protocol for structured payload shapes are as follows. 
                 //     rest-json: unixTimestamp
                 //     jsonrpc: unixTimestamp

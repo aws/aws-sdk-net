@@ -136,13 +136,13 @@ using Amazon.Runtime.Internal.Util;
 				if(isGreedy)
 				{
 #>
-			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')) : string.Empty);
+			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')) : string.Empty);
 <#+
 				}
 				else
 				{
 #>
-			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
+			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
 <#+
 				}
 
@@ -156,13 +156,13 @@ using Amazon.Runtime.Internal.Util;
 			if(isGreedy)
 				{
 #>
-			request.AddPathResource("<#=marshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')));
+			request.AddPathResource("<#=marshallLocationName#>", <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')));
 <#+
 				}
 				else
 				{
 #>
-			request.AddPathResource("<#=marshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+			request.AddPathResource("<#=marshallLocationName#>", <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>));
 <#+
 				}
             }
