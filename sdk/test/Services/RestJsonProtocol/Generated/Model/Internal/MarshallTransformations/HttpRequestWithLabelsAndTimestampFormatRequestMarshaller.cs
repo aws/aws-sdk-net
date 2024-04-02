@@ -60,10 +60,10 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetDefaultFormat())
                 throw new AmazonRestJsonProtocolException("Request object does not have required field DefaultFormat set");
-            request.AddPathResource("{defaultFormat}", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.DefaultFormat));
+            request.AddPathResource("{defaultFormat}", StringUtils.FromDateTimeToISO8601Minimal(publicRequest.DefaultFormat));
             if (!publicRequest.IsSetMemberDateTime())
                 throw new AmazonRestJsonProtocolException("Request object does not have required field MemberDateTime set");
-            request.AddPathResource("{memberDateTime}", StringUtils.FromDateTimeToISO8601(publicRequest.MemberDateTime));
+            request.AddPathResource("{memberDateTime}", StringUtils.FromDateTimeToISO8601Minimal(publicRequest.MemberDateTime));
             if (!publicRequest.IsSetMemberEpochSeconds())
                 throw new AmazonRestJsonProtocolException("Request object does not have required field MemberEpochSeconds set");
             request.AddPathResource("{memberEpochSeconds}", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.MemberEpochSeconds));
@@ -72,7 +72,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.AddPathResource("{memberHttpDate}", StringUtils.FromDateTimeToRFC822(publicRequest.MemberHttpDate));
             if (!publicRequest.IsSetTargetDateTime())
                 throw new AmazonRestJsonProtocolException("Request object does not have required field TargetDateTime set");
-            request.AddPathResource("{targetDateTime}", StringUtils.FromDateTimeToISO8601(publicRequest.TargetDateTime));
+            request.AddPathResource("{targetDateTime}", StringUtils.FromDateTimeToISO8601Minimal(publicRequest.TargetDateTime));
             if (!publicRequest.IsSetTargetEpochSeconds())
                 throw new AmazonRestJsonProtocolException("Request object does not have required field TargetEpochSeconds set");
             request.AddPathResource("{targetEpochSeconds}", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.TargetEpochSeconds));
