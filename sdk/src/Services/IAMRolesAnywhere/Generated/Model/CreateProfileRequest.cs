@@ -54,7 +54,8 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <para>
         ///  Used to determine how long sessions vended using this profile are valid for. See
         /// the <c>Expiration</c> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
-        /// API documentation</a> page for more details. 
+        /// API documentation</a> page for more details. In requests, if this value is not provided,
+        /// the default value will be 3600. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=900, Max=43200)]
@@ -151,7 +152,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// A list of IAM roles that this profile can assume in a temporary credential request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=50)]
+        [AWSProperty(Required=true, Min=0, Max=250)]
         public List<string> RoleArns
         {
             get { return this._roleArns; }
