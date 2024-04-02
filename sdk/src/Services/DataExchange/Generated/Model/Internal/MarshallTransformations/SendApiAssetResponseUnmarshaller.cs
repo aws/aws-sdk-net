@@ -60,11 +60,11 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     keyToUse = keyToUse.Substring("".Length);
                 }
 
-                if (context.ResponseData.IsHeaderPresent($"{nameResponseHeaders}"))
+                if (context.ResponseData.IsHeaderPresent($"{keyToUse}"))
                 {
                     headersForResponseHeaders.Add(
                         keyToUse,
-                        context.ResponseData.GetHeaderValue($"{nameResponseHeaders}")
+                        context.ResponseData.GetHeaderValue($"{keyToUse}")
                     );
                 }
             }
