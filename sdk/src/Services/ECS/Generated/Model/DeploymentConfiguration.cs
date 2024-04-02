@@ -178,6 +178,19 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// The default value for a replica service for <c>minimumHealthyPercent</c> is 100%.
+        /// The default <c>minimumHealthyPercent</c> value for a service using the <c>DAEMON</c>
+        /// service schedule is 0% for the CLI, the Amazon Web Services SDKs, and the APIs and
+        /// 50% for the Amazon Web Services Management Console.
+        /// </para>
+        ///  
+        /// <para>
+        /// The minimum number of healthy tasks during a deployment is the <c>desiredCount</c>
+        /// multiplied by the <c>minimumHealthyPercent</c>/100, rounded up to the nearest integer
+        /// value.
+        /// </para>
+        ///  
+        /// <para>
         /// If a service is using either the blue/green (<c>CODE_DEPLOY</c>) or <c>EXTERNAL</c>
         /// deployment types and is running tasks that use the EC2 launch type, the <b>minimum
         /// healthy percent</b> value is set to the default value and is used to define the lower
