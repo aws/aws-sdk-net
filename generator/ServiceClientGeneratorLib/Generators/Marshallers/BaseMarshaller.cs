@@ -815,8 +815,8 @@ this.Write("() ? ");
         #line default
         #line hidden
         
-        #line 139 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
+        #line 131 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)));
 
         
         #line default
@@ -916,8 +916,8 @@ this.Write("() ? ");
         #line default
         #line hidden
         
-        #line 145 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
+        #line 137 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)));
 
         
         #line default
@@ -1063,8 +1063,8 @@ this.Write("\", ");
         #line default
         #line hidden
         
-        #line 159 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
+        #line 151 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)));
 
         
         #line default
@@ -1136,8 +1136,8 @@ this.Write("\", ");
         #line default
         #line hidden
         
-        #line 165 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
+        #line 157 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)));
 
         
         #line default
