@@ -35,6 +35,8 @@ namespace Amazon.Glue.Model
     {
         private List<string> _authorizedColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<ColumnRowFilter> _cellFilters = AWSConfigs.InitializeCollections ? new List<ColumnRowFilter>() : null;
+        private bool? _isMultiDialectView;
+        private bool? _isProtected;
         private bool? _isRegisteredWithLakeFormation;
         private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _queryAuthorizationId;
@@ -75,6 +77,46 @@ namespace Amazon.Glue.Model
         internal bool IsSetCellFilters()
         {
             return this._cellFilters != null && (this._cellFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsMultiDialectView. 
+        /// <para>
+        /// Specifies whether the view supports the SQL dialects of one or more different query
+        /// engines and can therefore be read by those engines.
+        /// </para>
+        /// </summary>
+        public bool IsMultiDialectView
+        {
+            get { return this._isMultiDialectView.GetValueOrDefault(); }
+            set { this._isMultiDialectView = value; }
+        }
+
+        // Check to see if IsMultiDialectView property is set
+        internal bool IsSetIsMultiDialectView()
+        {
+            return this._isMultiDialectView.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsProtected. 
+        /// <para>
+        /// A flag that instructs the engine not to push user-provided operations into the logical
+        /// plan of the view during query planning. However, if set this flag does not guarantee
+        /// that the engine will comply. Refer to the engine's documentation to understand the
+        /// guarantees provided, if any.
+        /// </para>
+        /// </summary>
+        public bool IsProtected
+        {
+            get { return this._isProtected.GetValueOrDefault(); }
+            set { this._isProtected = value; }
+        }
+
+        // Check to see if IsProtected property is set
+        internal bool IsSetIsProtected()
+        {
+            return this._isProtected.HasValue; 
         }
 
         /// <summary>

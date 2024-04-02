@@ -99,6 +99,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.FederatedTable = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsMultiDialectView", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsMultiDialectView = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsRegisteredWithLakeFormation", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -175,6 +181,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VersionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ViewDefinition", targetDepth))
+                {
+                    var unmarshaller = ViewDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.ViewDefinition = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ViewExpandedText", targetDepth))
