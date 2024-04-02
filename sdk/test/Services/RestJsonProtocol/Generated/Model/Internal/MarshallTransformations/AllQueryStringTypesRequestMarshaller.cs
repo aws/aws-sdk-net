@@ -125,7 +125,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 request.Parameters.Add("Timestamp", StringUtils.FromDateTimeToISO8601(publicRequest.QueryTimestamp));
             
             if (publicRequest.IsSetQueryTimestampList())
-                request.ParameterCollection.Add("TimestampList", publicRequest.QueryTimestampList.ConvertAll<string>(item => StringUtils.FromDateTimeToISO8601(item)));
+                request.ParameterCollection.Add("TimestampList", publicRequest.QueryTimestampList.ConvertAll<string>(item => StringUtils.FromDateTimeToISO8601Minimal(item)));
             request.ResourcePath = "/AllQueryStringTypesInput";
             request.UseQueryString = true;
 
