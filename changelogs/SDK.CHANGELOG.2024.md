@@ -1,3 +1,20 @@
+### 3.7.781.0 (2024-04-02 18:21 UTC)
+* ECS (3.7.305.29)
+	* Documentation only update for Amazon ECS.
+* Glue (3.7.308.0)
+	* Adding View related fields to responses of read-only Table APIs.
+* IAMRolesAnywhere (3.7.302.0)
+	* This release increases the limit on the roleArns request parameter for the *Profile APIs that support it. This parameter can now take up to 250 role ARNs.
+* Ivschat (3.7.301.62)
+	* Doc-only update. Changed "Resources" to "Key Concepts" in docs and updated text.
+* SecurityHub (3.7.304.7)
+	* Documentation updates for AWS Security Hub
+* Core 3.7.303.7
+	* Enable treat warnings as errors for Core
+	* Remove CLS complaint warnings when building the SDK
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.780.0 (2024-04-01 18:59 UTC)
 * CloudWatch (3.7.303.0)
 	* This release adds support for CloudWatch Anomaly Detection on cross-account metrics. SingleMetricAnomalyDetector and MetricDataQuery inputs to Anomaly Detection APIs now take an optional AccountId field.
