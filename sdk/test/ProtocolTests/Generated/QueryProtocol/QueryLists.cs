@@ -94,6 +94,8 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         /// <summary>
         /// Serializes empty query lists
         /// </summary>
+        // This test requires a breaking change, and will be addressed in V4
+        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]

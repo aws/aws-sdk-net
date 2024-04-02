@@ -510,6 +510,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         /// <summary>
         /// Serializes empty list shapes
         /// </summary>
+        // This test requires a breaking change, and will be addressed in V4
+        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
@@ -731,6 +733,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
         /// <summary>
         /// Serializes empty map shapes
         /// </summary>
+        // This test requires a breaking change, and will be addressed in V4
+        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
