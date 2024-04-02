@@ -56,11 +56,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     keyToUse = keyToUse.Substring("X-Foo-".Length);
                 }
 
-                if (context.ResponseData.IsHeaderPresent($"X-Foo-{nameFooMap}"))
+                if (context.ResponseData.IsHeaderPresent($"X-Foo-{keyToUse}"))
                 {
                     headersForFooMap.Add(
                         keyToUse,
-                        context.ResponseData.GetHeaderValue($"X-Foo-{nameFooMap}")
+                        context.ResponseData.GetHeaderValue($"X-Foo-{keyToUse}")
                     );
                 }
             }
