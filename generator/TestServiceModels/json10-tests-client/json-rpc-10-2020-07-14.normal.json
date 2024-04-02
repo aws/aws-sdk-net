@@ -93,32 +93,6 @@
       "output":{"shape":"NoInputAndOutputOutput"},
       "documentation":"<p>The example tests how requests and responses are serialized when there's no request or response payload because the operation has no input and the output is empty. While this should be rare, code generators must support this.</p>"
     },
-    "OperationWithDefaults":{
-      "name":"OperationWithDefaults",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"OperationWithDefaultsInput"},
-      "output":{"shape":"OperationWithDefaultsOutput"}
-    },
-    "OperationWithNestedStructure":{
-      "name":"OperationWithNestedStructure",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"OperationWithNestedStructureInput"},
-      "output":{"shape":"OperationWithNestedStructureOutput"}
-    },
-    "OperationWithRequiredMembers":{
-      "name":"OperationWithRequiredMembers",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "output":{"shape":"OperationWithRequiredMembersOutput"}
-    },
     "PutWithContentEncoding":{
       "name":"PutWithContentEncoding",
       "http":{
@@ -144,12 +118,6 @@
       "type":"boolean",
       "box":true
     },
-    "ClientOptionalDefaults":{
-      "type":"structure",
-      "members":{
-        "member":{"shape":"Integer"}
-      }
-    },
     "ComplexError":{
       "type":"structure",
       "members":{
@@ -167,62 +135,6 @@
           "locationName":"Fooooo"
         }
       }
-    },
-    "Defaults":{
-      "type":"structure",
-      "members":{
-        "defaultString":{"shape":"String"},
-        "defaultBoolean":{"shape":"Boolean"},
-        "defaultList":{"shape":"TestStringList"},
-        "defaultDocumentMap":{"shape":"Document"},
-        "defaultDocumentString":{"shape":"Document"},
-        "defaultDocumentBoolean":{"shape":"Document"},
-        "defaultDocumentList":{"shape":"Document"},
-        "defaultNullDocument":{"shape":"Document"},
-        "defaultTimestamp":{"shape":"Timestamp"},
-        "defaultBlob":{"shape":"Blob"},
-        "defaultByte":{"shape":"Integer"},
-        "defaultShort":{"shape":"Integer"},
-        "defaultInteger":{"shape":"Integer"},
-        "defaultLong":{"shape":"Long"},
-        "defaultFloat":{"shape":"Float"},
-        "defaultDouble":{"shape":"Double"},
-        "defaultMap":{"shape":"TestStringMap"},
-        "defaultEnum":{"shape":"TestEnum"},
-        "defaultIntEnum":{"shape":"TestIntEnum"},
-        "emptyString":{"shape":"String"},
-        "falseBoolean":{"shape":"Boolean"},
-        "emptyBlob":{"shape":"Blob"},
-        "zeroByte":{"shape":"Integer"},
-        "zeroShort":{"shape":"Integer"},
-        "zeroInteger":{"shape":"Integer"},
-        "zeroLong":{"shape":"Long"},
-        "zeroFloat":{"shape":"Float"},
-        "zeroDouble":{"shape":"Double"}
-      }
-    },
-    "Dialog":{
-      "type":"structure",
-      "members":{
-        "language":{"shape":"String"},
-        "greeting":{"shape":"String"},
-        "farewell":{"shape":"Farewell"}
-      }
-    },
-    "DialogList":{
-      "type":"list",
-      "member":{"shape":"Dialog"}
-    },
-    "DialogMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"Dialog"}
-    },
-    "Document":{
-      "type":"structure",
-      "members":{
-      },
-      "document":true
     },
     "Double":{
       "type":"double",
@@ -246,12 +158,6 @@
           "shape":"String",
           "hostLabel":true
         }
-      }
-    },
-    "Farewell":{
-      "type":"structure",
-      "members":{
-        "phrase":{"shape":"String"}
       }
     },
     "Float":{
@@ -322,10 +228,6 @@
         "contents":{"shape":"MyUnion"}
       }
     },
-    "Long":{
-      "type":"long",
-      "box":true
-    },
     "MyUnion":{
       "type":"structure",
       "members":{
@@ -348,110 +250,12 @@
       "members":{
       }
     },
-    "OperationWithDefaultsInput":{
-      "type":"structure",
-      "members":{
-        "defaults":{"shape":"Defaults"},
-        "clientOptionalDefaults":{"shape":"ClientOptionalDefaults"},
-        "topLevelDefault":{"shape":"String"},
-        "otherTopLevelDefault":{"shape":"Integer"}
-      }
-    },
-    "OperationWithDefaultsOutput":{
-      "type":"structure",
-      "members":{
-        "defaultString":{"shape":"String"},
-        "defaultBoolean":{"shape":"Boolean"},
-        "defaultList":{"shape":"TestStringList"},
-        "defaultDocumentMap":{"shape":"Document"},
-        "defaultDocumentString":{"shape":"Document"},
-        "defaultDocumentBoolean":{"shape":"Document"},
-        "defaultDocumentList":{"shape":"Document"},
-        "defaultNullDocument":{"shape":"Document"},
-        "defaultTimestamp":{"shape":"Timestamp"},
-        "defaultBlob":{"shape":"Blob"},
-        "defaultByte":{"shape":"Integer"},
-        "defaultShort":{"shape":"Integer"},
-        "defaultInteger":{"shape":"Integer"},
-        "defaultLong":{"shape":"Long"},
-        "defaultFloat":{"shape":"Float"},
-        "defaultDouble":{"shape":"Double"},
-        "defaultMap":{"shape":"TestStringMap"},
-        "defaultEnum":{"shape":"TestEnum"},
-        "defaultIntEnum":{"shape":"TestIntEnum"},
-        "emptyString":{"shape":"String"},
-        "falseBoolean":{"shape":"Boolean"},
-        "emptyBlob":{"shape":"Blob"},
-        "zeroByte":{"shape":"Integer"},
-        "zeroShort":{"shape":"Integer"},
-        "zeroInteger":{"shape":"Integer"},
-        "zeroLong":{"shape":"Long"},
-        "zeroFloat":{"shape":"Float"},
-        "zeroDouble":{"shape":"Double"}
-      }
-    },
-    "OperationWithNestedStructureInput":{
-      "type":"structure",
-      "required":["topLevel"],
-      "members":{
-        "topLevel":{"shape":"TopLevel"}
-      }
-    },
-    "OperationWithNestedStructureOutput":{
-      "type":"structure",
-      "required":["dialog"],
-      "members":{
-        "dialog":{"shape":"Dialog"},
-        "dialogList":{"shape":"DialogList"},
-        "dialogMap":{"shape":"DialogMap"}
-      }
-    },
-    "OperationWithRequiredMembersOutput":{
-      "type":"structure",
-      "required":[
-        "requiredString",
-        "requiredBoolean",
-        "requiredList",
-        "requiredTimestamp",
-        "requiredBlob",
-        "requiredByte",
-        "requiredShort",
-        "requiredInteger",
-        "requiredLong",
-        "requiredFloat",
-        "requiredDouble",
-        "requiredMap"
-      ],
-      "members":{
-        "requiredString":{"shape":"String"},
-        "requiredBoolean":{"shape":"Boolean"},
-        "requiredList":{"shape":"RequiredStringList"},
-        "requiredTimestamp":{"shape":"Timestamp"},
-        "requiredBlob":{"shape":"Blob"},
-        "requiredByte":{"shape":"Integer"},
-        "requiredShort":{"shape":"Integer"},
-        "requiredInteger":{"shape":"Integer"},
-        "requiredLong":{"shape":"Long"},
-        "requiredFloat":{"shape":"Float"},
-        "requiredDouble":{"shape":"Double"},
-        "requiredMap":{"shape":"RequiredStringMap"}
-      }
-    },
     "PutWithContentEncodingInput":{
       "type":"structure",
       "members":{
         "encoding":{"shape":"String"},
         "data":{"shape":"String"}
       }
-    },
-    "RequiredStringList":{
-      "type":"list",
-      "member":{"shape":"String"}
-    },
-    "RequiredStringMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"String"}
     },
     "SimpleScalarPropertiesInput":{
       "type":"structure",
@@ -477,36 +281,6 @@
       "key":{"shape":"String"},
       "value":{"shape":"String"}
     },
-    "TestEnum":{
-      "type":"string",
-      "enum":[
-        "FOO",
-        "BAR",
-        "BAZ"
-      ]
-    },
-    "TestIntEnum":{
-      "type":"integer",
-      "box":true
-    },
-    "TestStringList":{
-      "type":"list",
-      "member":{"shape":"String"}
-    },
-    "TestStringMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"String"}
-    },
-    "Timestamp":{"type":"timestamp"},
-    "TopLevel":{
-      "type":"structure",
-      "required":["dialog"],
-      "members":{
-        "dialog":{"shape":"Dialog"},
-        "dialogList":{"shape":"DialogList"},
-        "dialogMap":{"shape":"DialogMap"}
-      }
-    }
+    "Timestamp":{"type":"timestamp"}
   }
 }

@@ -112,15 +112,6 @@
         {"shape":"ErrorWithoutMembers"}
       ]
     },
-    "NullOperation":{
-      "name":"NullOperation",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"NullOperationInputOutput"},
-      "output":{"shape":"NullOperationInputOutput"}
-    },
     "OperationWithOptionalInputOutput":{
       "name":"OperationWithOptionalInputOutput",
       "http":{
@@ -417,14 +408,6 @@
       "documentation":"<p>A union with a representative set of types for members.</p>",
       "union":true
     },
-    "NullOperationInputOutput":{
-      "type":"structure",
-      "members":{
-        "string":{"shape":"String"},
-        "sparseStringList":{"shape":"SparseStringList"},
-        "sparseStringMap":{"shape":"SparseStringMap"}
-      }
-    },
     "OperationWithOptionalInputOutputInput":{
       "type":"structure",
       "members":{
@@ -462,15 +445,6 @@
       "members":{
         "Value":{"shape":"String"}
       }
-    },
-    "SparseStringList":{
-      "type":"list",
-      "member":{"shape":"String"}
-    },
-    "SparseStringMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"String"}
     },
     "String":{"type":"string"},
     "StringList":{
