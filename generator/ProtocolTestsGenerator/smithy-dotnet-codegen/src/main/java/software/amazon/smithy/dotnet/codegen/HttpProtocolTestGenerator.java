@@ -308,7 +308,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
 
     private final class ValueNodeVisitor implements NodeVisitor<Void> {
         private final Shape inputShape;
-        private boolean inDocumentValueNode;
+        private boolean inNestedDocument;
         private boolean isTopLevelInputOrOutput;
         private String generatedInputOutputShapeName;
         private ValueNodeVisitor(Shape inputShape) {
@@ -322,10 +322,14 @@ public final class HttpProtocolTestGenerator implements Runnable {
             this.generatedInputOutputShapeName = generatedInputOutputShapeName;
         }
 
+        private ValueNodeVisitor(Shape inputShape, boolean inNestedDocument){
+            this.inputShape = inputShape;
+            this.inNestedDocument = inNestedDocument;
+        }
+
         @Override
         public Void arrayNode(ArrayNode node) {
-            if(inputShape.isDocumentShape()){
-                inDocumentValueNode = true;
+            if(inputShape.isDocumentShape() && !inNestedDocument){
                 writer.openBlock("new Document\n{", "}",
                         () -> node.getElements().forEach((valueNode) -> {
                             writer.write("$C,",
@@ -340,10 +344,31 @@ public final class HttpProtocolTestGenerator implements Runnable {
                     var target = model.expectShape(((CollectionShape) inputShape).getMember().getTarget());
                     targetVisitor = new ValueNodeVisitor(target);
                 }
+                else if(inNestedDocument){
+                    var type = node.getElements().getFirst().getType();
+                    String listType = null;
+                    switch (type){
+                        case NUMBER:
+                            if(node.getElements().getFirst().toString().contains("."))
+                                listType = "double";
+                            else
+                                listType = "int";
+                            break;
+                        case STRING:
+                            listType = "string";
+                            break;
+                        case BOOLEAN:
+                            listType = "bool";
+                            break;
+                        default:
+                            throw new CodegenException("Unsupported array type encountered for a nested document.");
+                    }
+                    writer.write("new $L[]",listType);
+                    targetVisitor = this;
+                }
                 else{
                     targetVisitor = this;
                 }
-
                 writer.openBlock("{","}", () -> {
                     node.getElements().forEach(elementNode -> {
                         writer.write("$C, ", (Runnable) () -> elementNode.accept(targetVisitor));
@@ -355,32 +380,19 @@ public final class HttpProtocolTestGenerator implements Runnable {
 
         @Override
         public Void booleanNode(BooleanNode node) {
-            if(!inDocumentValueNode && inputShape.isDocumentShape()){
-                writer.write("new Document($L)",node.getValue());
-            }
-            else{
-                writer.writeInline("$L", node.getValue());
-            }
+            writer.writeInline("$L", node.getValue());
             return null;
         }
 
         @Override
         public Void nullNode(NullNode node) {
-            if(!inDocumentValueNode && inputShape.isDocumentShape()){
-                writer.writeInline("new Document()");
-            }
-            else{
-                writer.writeInline("null");
-            }
+            writer.writeInline("null");
             return  null;
         }
 
         @Override
         public Void numberNode(NumberNode node) {
-            if(!inDocumentValueNode && inputShape.isDocumentShape()){
-                writer.write("new Document($L)",node.getValue());
-            }
-            else if(inputShape.isTimestampShape()){
+            if(inputShape.isTimestampShape()){
                 writer.write("ProtocolTestConstants.epoch.AddSeconds($L)", node.getValue());
             }
             else if(inputShape.isFloatShape()){
@@ -481,31 +493,27 @@ public final class HttpProtocolTestGenerator implements Runnable {
 
         private Void getDocument(DocumentShape shape, ObjectNode node) {
             writer.addImport(protocolNamespace,"Amazon.Runtime.Documents");
-            writer.openBlock("new Document{", "}",
-                    () -> node.getMembers().forEach((keyNode, valueNode) -> {
-                        if (!inDocumentValueNode) {
-                            writer.write("{ $S, $C },",
-                                    keyNode.getValue(),
-                                    //the keyNode's shape is the new input shape for the value node
-                                    (Runnable) () -> valueNode.accept(this)
-                            );
-                        }
-                        else{
-                            writer.write("$S, $C",
-                                    keyNode.getValue(),
-                                    (Runnable) () -> valueNode.accept(this));
-                        }
-                    })
-            );
+            if(!inNestedDocument){
+                writer.openBlock("Document.FromObject(new\n{","})", () -> node.getMembers().forEach((keyNode, valueNode) ->{
+                    var targetShape = model.expectShape(shape.getId());
+                    writer.write("$L = $C,",
+                            keyNode.getValue(),
+                            (Runnable) () -> valueNode.accept(new ValueNodeVisitor(targetShape,inNestedDocument = true)));
+                }));
+            }
+            else{
+                writer.openBlock("new\n{","}", () -> node.getMembers().forEach((keyNode,valueNode) -> {
+                    writer.write("$L = $C",
+                            keyNode.getValue(),
+                            (Runnable) () -> valueNode.accept(this));
+                }));
+            }
             return null;
         }
 
         @Override
         public Void stringNode(StringNode node) {
-            if(!inDocumentValueNode && inputShape.isDocumentShape()){
-                writer.write("new Document($S)", node.getValue());
-            }
-            else if(inputShape.isFloatShape() || inputShape.isDoubleShape()){
+            if(inputShape.isFloatShape() || inputShape.isDoubleShape()){
                 var value = switch (node.getValue()) {
                     case "NaN" -> "NaN";
                     case "Infinity" -> "PositiveInfinity";
