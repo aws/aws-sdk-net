@@ -520,6 +520,8 @@ namespace ServiceClientGenerator
             if (typeNode == null)
                 throw new Exception("Type is missing for shape " + extendsNode.ToString());
 
+            var nullable = UseNullable ? "?" : "";
+
             switch (typeNode.ToString())
             {
                 case "string":
@@ -533,17 +535,17 @@ namespace ServiceClientGenerator
                         return "Stream";
                     return "MemoryStream";
                 case "boolean":
-                    return "bool";
+                    return $"bool{nullable}";
                 case "double":
                     return "double";
                 case "float":
                     return "float";
                 case "integer":
-                    return "int";
+                    return $"int{nullable}";
                 case "long":
                     return "long";
                 case "timestamp":
-                    return "DateTime";
+                    return $"DateTime{nullable}";
                 case "structure":
                     return emitAsShapeName ?? renameShape ?? extendsNode.ToString();
                 case "map":
@@ -612,12 +614,20 @@ namespace ServiceClientGenerator
                 case "blob":
                     return "MemoryStreamUnmarshaller";
                 case "boolean":
+                    if(UseNullable)
+                    {
+                        return "NullableBoolUnmarshaller";
+                    }
                     return "BoolUnmarshaller";
                 case "double":
                     return "DoubleUnmarshaller";
                 case "float":
                     return "FloatUnmarshaller";
                 case "integer":
+                    if (UseNullable)
+                    {
+                        return "NullableIntUnmarshaller";
+                    }
                     return "IntUnmarshaller";
                 case "long":
                     return "LongUnmarshaller";
@@ -707,6 +717,10 @@ namespace ServiceClientGenerator
                 case "blob":
                     return "MemoryStreamUnmarshaller.Instance";
                 case "boolean":
+                    if (UseNullable)
+                    {
+                        return "NullableBoolUnmarshaller.Instance";
+                    }
                     return "BoolUnmarshaller.Instance";
                 case "double":
                     return "DoubleUnmarshaller.Instance";
@@ -714,13 +728,17 @@ namespace ServiceClientGenerator
                     return "FloatUnmarshaller.Instance";
                 case "integer":
                     if (this.UseNullable)
+                    {
                         return "NullableIntUnmarshaller.Instance";
+                    }
                     return "IntUnmarshaller.Instance";
                 case "long":
                     return "LongUnmarshaller.Instance";
                 case "timestamp":
                     if (this.UseNullable)
+                    {
                         return "NullableDateTimeUnmarshaller.Instance";
+                    }
                     return "DateTimeUnmarshaller.Instance";
                 case "structure":
                     return (renameShape ?? extendsNode) + "Unmarshaller.Instance";

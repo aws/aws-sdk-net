@@ -152,7 +152,7 @@ namespace <#=this.Config.Namespace#>.Model
                     if (member.IsExcluded)
                         continue;
 #>
-        private <#=member.DetermineType()#><#= member.IsNullable ? "?" : "" #> <#=member.VariableName#><#= member.ShouldInstantiate ? string.Format(" = new {0}();", member.DetermineType()) : ";"#>
+        private <#=member.DetermineType()#><#= member.IsNullable && !member.UseNullable ? "?" : "" #> <#=member.VariableName#><#= member.ShouldInstantiate ? string.Format(" = new {0}();", member.DetermineType()) : ";"#>
 <#
                 }
 #>
@@ -215,7 +215,7 @@ namespace <#=this.Config.Namespace#>.Model
 <#
                     }
 #>
-        <#=member.AccessModifier#> <#=member.DetermineType()#><#=member.UseNullable ? "?" : ""#> <#=member.PropertyName#>
+        <#=member.AccessModifier#> <#=member.DetermineType()#> <#=member.PropertyName#>
         {
 <#
                     if(member.IsNullable && !member.UseNullable)
