@@ -63,6 +63,18 @@
       "documentation":"<p>This example serializes a document as part of the payload.</p>",
       "idempotent":true
     },
+    "DocumentTypeAsMapValue":{
+      "name":"DocumentTypeAsMapValue",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/DocumentTypeAsMapValue",
+        "responseCode":200
+      },
+      "input":{"shape":"DocumentTypeAsMapValueInputOutput"},
+      "output":{"shape":"DocumentTypeAsMapValueInputOutput"},
+      "documentation":"<p>This example serializes documents as the value of maps.</p>",
+      "idempotent":true
+    },
     "DocumentTypeAsPayload":{
       "name":"DocumentTypeAsPayload",
       "http":{
@@ -172,17 +184,6 @@
       "input":{"shape":"HttpPayloadTraitsInputOutput"},
       "output":{"shape":"HttpPayloadTraitsInputOutput"},
       "documentation":"<p>This example serializes a blob shape in the payload.</p> <p>In this example, no JSON document is synthesized because the payload is not a structure or a union type.</p>"
-    },
-    "HttpPayloadTraitsWithMediaType":{
-      "name":"HttpPayloadTraitsWithMediaType",
-      "http":{
-        "method":"POST",
-        "requestUri":"/HttpPayloadTraitsWithMediaType",
-        "responseCode":200
-      },
-      "input":{"shape":"HttpPayloadTraitsWithMediaTypeInputOutput"},
-      "output":{"shape":"HttpPayloadTraitsWithMediaTypeInputOutput"},
-      "documentation":"<p>This example uses a <code>@mediaType</code> trait on the payload to force a custom content-type to be serialized.</p>"
     },
     "HttpPayloadWithStructure":{
       "name":"HttpPayloadWithStructure",
@@ -353,29 +354,6 @@
       "documentation":"<p>This example serializes intEnums as top level properties, in lists, sets, and maps.</p>",
       "idempotent":true
     },
-    "JsonLists":{
-      "name":"JsonLists",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/JsonLists",
-        "responseCode":200
-      },
-      "input":{"shape":"JsonListsInputOutput"},
-      "output":{"shape":"JsonListsInputOutput"},
-      "documentation":"<p>This test case serializes JSON lists for the following cases for both input and output:</p> <ol> <li>Normal JSON lists.</li> <li>Normal JSON sets.</li> <li>JSON lists of lists.</li> <li>Lists of structures.</li> </ol>",
-      "idempotent":true
-    },
-    "JsonMaps":{
-      "name":"JsonMaps",
-      "http":{
-        "method":"POST",
-        "requestUri":"/JsonMaps",
-        "responseCode":200
-      },
-      "input":{"shape":"JsonMapsInputOutput"},
-      "output":{"shape":"JsonMapsInputOutput"},
-      "documentation":"<p>The example tests basic map serialization.</p>"
-    },
     "JsonTimestamps":{
       "name":"JsonTimestamps",
       "http":{
@@ -542,38 +520,6 @@
       "input":{"shape":"SimpleScalarPropertiesInputOutput"},
       "output":{"shape":"SimpleScalarPropertiesInputOutput"},
       "idempotent":true
-    },
-    "StreamingTraits":{
-      "name":"StreamingTraits",
-      "http":{
-        "method":"POST",
-        "requestUri":"/StreamingTraits",
-        "responseCode":200
-      },
-      "input":{"shape":"StreamingTraitsInputOutput"},
-      "output":{"shape":"StreamingTraitsInputOutput"},
-      "documentation":"<p>This examples serializes a streaming blob shape in the request body.</p> <p>In this example, no JSON document is synthesized because the payload is not a structure or a union type.</p>"
-    },
-    "StreamingTraitsRequireLength":{
-      "name":"StreamingTraitsRequireLength",
-      "http":{
-        "method":"POST",
-        "requestUri":"/StreamingTraitsRequireLength",
-        "responseCode":200
-      },
-      "input":{"shape":"StreamingTraitsRequireLengthInput"},
-      "documentation":"<p>This examples serializes a streaming blob shape with a required content length in the request body.</p> <p>In this example, no JSON document is synthesized because the payload is not a structure or a union type.</p>"
-    },
-    "StreamingTraitsWithMediaType":{
-      "name":"StreamingTraitsWithMediaType",
-      "http":{
-        "method":"POST",
-        "requestUri":"/StreamingTraitsWithMediaType",
-        "responseCode":200
-      },
-      "input":{"shape":"StreamingTraitsWithMediaTypeInputOutput"},
-      "output":{"shape":"StreamingTraitsWithMediaTypeInputOutput"},
-      "documentation":"<p>This examples serializes a streaming media-typed blob shape in the request body.</p> <p>This examples uses a <code>@mediaType</code> trait on the payload to force a custom content-type to be serialized.</p>"
     },
     "TestBodyStructure":{
       "name":"TestBodyStructure",
@@ -825,36 +771,17 @@
         "datetime":{"shape":"DateTime"}
       }
     },
-    "DenseBooleanMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"Boolean"}
-    },
-    "DenseNumberMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"Integer"}
-    },
-    "DenseSetMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"StringSet"}
-    },
-    "DenseStringMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"String"}
-    },
-    "DenseStructMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"GreetingStruct"}
-    },
     "Document":{
       "type":"structure",
       "members":{
       },
       "document":true
+    },
+    "DocumentTypeAsMapValueInputOutput":{
+      "type":"structure",
+      "members":{
+        "docValuedMap":{"shape":"DocumentValuedMap"}
+      }
     },
     "DocumentTypeAsPayloadInputOutput":{
       "type":"structure",
@@ -869,6 +796,11 @@
         "stringValue":{"shape":"String"},
         "documentValue":{"shape":"Document"}
       }
+    },
+    "DocumentValuedMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"Document"}
     },
     "Double":{
       "type":"double",
@@ -898,11 +830,6 @@
     "EpochSeconds":{
       "type":"timestamp",
       "timestampFormat":"unixTimestamp"
-    },
-    "FiniteStreamingBlob":{
-      "type":"blob",
-      "requiresLength":true,
-      "streaming":true
     },
     "Float":{
       "type":"float",
@@ -991,18 +918,6 @@
           "locationName":"X-Foo"
         },
         "blob":{"shape":"Blob"}
-      },
-      "payload":"blob"
-    },
-    "HttpPayloadTraitsWithMediaTypeInputOutput":{
-      "type":"structure",
-      "members":{
-        "foo":{
-          "shape":"String",
-          "location":"header",
-          "locationName":"X-Foo"
-        },
-        "blob":{"shape":"TextPlainBlob"}
       },
       "payload":"blob"
     },
@@ -1403,39 +1318,6 @@
         "integerEnumMap":{"shape":"IntegerEnumMap"}
       }
     },
-    "JsonListsInputOutput":{
-      "type":"structure",
-      "members":{
-        "stringList":{"shape":"StringList"},
-        "sparseStringList":{"shape":"SparseStringList"},
-        "stringSet":{"shape":"StringSet"},
-        "integerList":{"shape":"IntegerList"},
-        "booleanList":{"shape":"BooleanList"},
-        "timestampList":{"shape":"TimestampList"},
-        "enumList":{"shape":"FooEnumList"},
-        "intEnumList":{"shape":"IntegerEnumList"},
-        "nestedStringList":{"shape":"NestedStringList"},
-        "structureList":{
-          "shape":"StructureList",
-          "locationName":"myStructureList"
-        }
-      }
-    },
-    "JsonMapsInputOutput":{
-      "type":"structure",
-      "members":{
-        "denseStructMap":{"shape":"DenseStructMap"},
-        "sparseStructMap":{"shape":"SparseStructMap"},
-        "denseNumberMap":{"shape":"DenseNumberMap"},
-        "denseBooleanMap":{"shape":"DenseBooleanMap"},
-        "denseStringMap":{"shape":"DenseStringMap"},
-        "sparseNumberMap":{"shape":"SparseNumberMap"},
-        "sparseBooleanMap":{"shape":"SparseBooleanMap"},
-        "sparseStringMap":{"shape":"SparseStringMap"},
-        "denseSetMap":{"shape":"DenseSetMap"},
-        "sparseSetMap":{"shape":"SparseSetMap"}
-      }
-    },
     "JsonTimestampsInputOutput":{
       "type":"structure",
       "members":{
@@ -1498,11 +1380,6 @@
         "greeting":{"shape":"String"},
         "name":{"shape":"String"}
       }
-    },
-    "NestedStringList":{
-      "type":"list",
-      "member":{"shape":"StringList"},
-      "documentation":"<p>A list of lists of strings.</p>"
     },
     "NoInputAndOutputOutput":{
       "type":"structure",
@@ -1701,79 +1578,6 @@
         }
       }
     },
-    "SparseBooleanMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"Boolean"}
-    },
-    "SparseNumberMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"Integer"}
-    },
-    "SparseSetMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"StringSet"}
-    },
-    "SparseStringList":{
-      "type":"list",
-      "member":{"shape":"String"}
-    },
-    "SparseStringMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"String"}
-    },
-    "SparseStructMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"GreetingStruct"}
-    },
-    "StreamingBlob":{
-      "type":"blob",
-      "streaming":true
-    },
-    "StreamingTextPlainBlob":{
-      "type":"blob",
-      "streaming":true
-    },
-    "StreamingTraitsInputOutput":{
-      "type":"structure",
-      "members":{
-        "foo":{
-          "shape":"String",
-          "location":"header",
-          "locationName":"X-Foo"
-        },
-        "blob":{"shape":"StreamingBlob"}
-      },
-      "payload":"blob"
-    },
-    "StreamingTraitsRequireLengthInput":{
-      "type":"structure",
-      "members":{
-        "foo":{
-          "shape":"String",
-          "location":"header",
-          "locationName":"X-Foo"
-        },
-        "blob":{"shape":"FiniteStreamingBlob"}
-      },
-      "payload":"blob"
-    },
-    "StreamingTraitsWithMediaTypeInputOutput":{
-      "type":"structure",
-      "members":{
-        "foo":{
-          "shape":"String",
-          "location":"header",
-          "locationName":"X-Foo"
-        },
-        "blob":{"shape":"StreamingTextPlainBlob"}
-      },
-      "payload":"blob"
-    },
     "String":{"type":"string"},
     "StringEnum":{
       "type":"string",
@@ -1803,23 +1607,6 @@
     "StringSet":{
       "type":"list",
       "member":{"shape":"String"}
-    },
-    "StructureList":{
-      "type":"list",
-      "member":{"shape":"StructureListMember"}
-    },
-    "StructureListMember":{
-      "type":"structure",
-      "members":{
-        "a":{
-          "shape":"String",
-          "locationName":"value"
-        },
-        "b":{
-          "shape":"String",
-          "locationName":"other"
-        }
-      }
     },
     "SyntheticTimestamp_date_time":{
       "type":"timestamp",
@@ -1884,7 +1671,6 @@
       },
       "payload":"payloadConfig"
     },
-    "TextPlainBlob":{"type":"blob"},
     "Timestamp":{"type":"timestamp"},
     "TimestampFormatHeadersIO":{
       "type":"structure",
