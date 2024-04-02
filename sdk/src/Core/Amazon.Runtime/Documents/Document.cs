@@ -133,7 +133,7 @@ namespace Amazon.Runtime.Documents
         /// </summary>
         public bool IsDictionary() => Type == DocumentType.Dictionary;
         /// <summary>
-        /// Returns the Document's backing value as a <see cref="Dictionary{string,Document}"/>.
+        /// Returns the Document's backing value.
         /// </summary>
         /// <exception cref="InvalidDocumentTypeConversionException">Thrown if <see cref="Type"/> is not <see cref="DocumentType.Dictionary"/></exception>
         public Dictionary<string, Document> AsDictionary()

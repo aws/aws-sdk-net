@@ -73,7 +73,6 @@ namespace Amazon.Util
         private static int
             DEFAULT_RETRIES = 3,
             MIN_PAUSE_MS = 250,
-            MAX_RETRIES = 3,
             DEFAULT_APITOKEN_TTL = 21600;
 
         private static Dictionary<string, string> _cache = new Dictionary<string, string>();

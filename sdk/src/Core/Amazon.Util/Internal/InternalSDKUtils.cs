@@ -32,7 +32,6 @@ namespace Amazon.Util.Internal
         static string _versionNumber;
         static string _customSdkUserAgent;
         static string _customData;
-        static string _customString;
         const string USER_AGENT_VERSION = "ua/2.0";
 
         // Define a regular expression to match disallowed characters
@@ -118,7 +117,7 @@ namespace Amazon.Util.Internal
 
         /// <summary>
         /// Build user agent string statically. This method is currently used by the .NET SDK.
-        /// <summary>
+        /// </summary>
         /// <param name="serviceId"> Service id of the service being called </param>
         /// <param name="serviceSdkVersion"> Version of the service </param>
         /// <returns> User agent header string </returns>

@@ -504,7 +504,6 @@ namespace ThirdParty.Json.LitJson
             return unchecked((long)data.inst_number);
         }
 
-        [CLSCompliant(false)]
         public static explicit operator UInt64(JsonData data)
         {
             if (data.type != JsonType.UInt && data.type != JsonType.ULong)

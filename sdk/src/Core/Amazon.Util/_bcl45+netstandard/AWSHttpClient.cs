@@ -130,6 +130,7 @@ namespace Amazon.Util
         /// </summary>
         /// <param name="requestUri"></param>
         /// <param name="content"></param>
+        /// <param name="requestHeaders"></param>
         public Task PutRequestUriAsync(string requestUri, AWSStreamContent content, IDictionary<string, string> requestHeaders)
         {
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Put, requestUri);

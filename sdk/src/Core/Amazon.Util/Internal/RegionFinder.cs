@@ -51,15 +51,18 @@ namespace Amazon.Util.Internal
         private readonly EndpointSegment _root;
         private readonly Logger _logger;
         private readonly Dictionary<string, IRegionEndpoint> _regionEndpoints;
+#pragma warning disable CS0612,CS0618
         private readonly RegionEndpointProviderV3 _regionEndpointProviderV3;
-
+#pragma warning restore CS0612,CS0618
         #endregion
 
         #region Constructors
 
         internal RegionFinder()
         {
+#pragma warning disable CS0612,CS0618
             _regionEndpointProviderV3 = new RegionEndpointProviderV3();
+#pragma warning restore CS0612,CS0618
             _regionEndpoints = BuildRegionEndpoints();
             _root = BuildRoot();
             _logger = Logger.GetLogger(typeof(RegionFinder));
@@ -151,7 +154,9 @@ namespace Amazon.Util.Internal
                 var match = Regex.Match(endpoint, trimmedRegionRegex, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.RightToLeft);
                 if (match.Success)
                 {
+#pragma warning disable CS0612,CS0618
                     return new RegionEndpointProviderV2.RegionEndpoint(match.Value, "Unknown");
+#pragma warning restore CS0612,CS0618
                 }
             }
 

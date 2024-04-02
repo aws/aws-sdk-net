@@ -534,9 +534,9 @@ namespace Amazon.Runtime.Internal.Util
         public MetricError(Metric metric, string messageFormat, params object[] args) : this(metric, null, messageFormat, args) { }
         public MetricError(Metric metric, Exception exception, string messageFormat, params object[] args)
         {
-#pragma warning disable CS0612 // Type or member is obsolete
+#pragma warning disable CS0612,CS0618 // Type or member is obsolete
             Time = AWSSDKUtils.CorrectedUtcNow;
-#pragma warning restore CS0612 // Type or member is obsolete
+#pragma warning restore CS0612,CS0618 // Type or member is obsolete
             try
             {
                 Message = string.Format(CultureInfo.InvariantCulture, messageFormat, args);

@@ -117,10 +117,12 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// </summary>
         protected IEventStreamDecoder Decoder { get; }
 
+#pragma warning disable CS0067 // Compiler thinks this event is not being used but it is referenced by subclasses.
         /// <summary>
         /// Fires when an event is recieved.
         /// </summary>
         public virtual event EventHandler<EventStreamEventReceivedArgs<T>> EventReceived;
+#pragma warning restore CS0067
 
         /// <summary>
         /// Fired when an exception or error is raised.

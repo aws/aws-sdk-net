@@ -12,7 +12,6 @@
     <Rule Id="CA1008" Action="Error" />
     <Rule Id="CA1010" Action="Error" />
     <Rule Id="CA1012" Action="None" />
-    <Rule Id="CA1014" Action="Error" />
     <Rule Id="CA1016" Action="Error" />
     <Rule Id="CA1017" Action="Error" />
     <Rule Id="CA1018" Action="Error" />

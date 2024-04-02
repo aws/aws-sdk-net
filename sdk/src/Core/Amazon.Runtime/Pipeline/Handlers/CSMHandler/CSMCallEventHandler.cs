@@ -73,7 +73,7 @@ namespace Amazon.Runtime.Internal
             finally
             {
                 CSMCallEventMetricsCapture(executionContext);
-                CSMUtilities.SerializetoJsonAndPostOverUDPAsync(executionContext.RequestContext.CSMCallEvent).ConfigureAwait(false);
+                _ = CSMUtilities.SerializetoJsonAndPostOverUDPAsync(executionContext.RequestContext.CSMCallEvent);
             }            
         }
 

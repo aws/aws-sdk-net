@@ -409,7 +409,6 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>True if the section was found, false otherwise</returns>
         public bool TryGetSection(Regex sectionNameRegex, out Dictionary<string, string> properties)
         {
-            string dummy = null;
             return TryGetSection(sectionNameRegex, out _, out properties);
         }
         /// <summary>
@@ -421,7 +420,6 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns></returns>
         public bool TryGetSection(Regex sectionNameRegex, out Dictionary<string,string> properties, out Dictionary<string,Dictionary<string,string>> nestedProperties)
         {
-            string dummy = null;
             return TryGetSection(sectionNameRegex, out _, out properties, out nestedProperties);
         }
         /// <summary>

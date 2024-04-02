@@ -31,7 +31,7 @@ namespace Amazon.Runtime
     {
         /// <summary>
         /// These constants should not be consumed by client code.  They are only relevant
-        /// in the context of ECS container and, especially, AWS_CONTAINER_CREDENTIALS_RELATIVE_URI, AWS_CONTAINER_CREDENTIALS_FULL_URI & AWS_CONTAINER_AUTHORIZATION_TOKEN
+        /// in the context of ECS container and, especially, AWS_CONTAINER_CREDENTIALS_RELATIVE_URI, AWS_CONTAINER_CREDENTIALS_FULL_URI &amp; AWS_CONTAINER_AUTHORIZATION_TOKEN
         /// environment variable should not be overriden by the client code.
         /// </summary>
         public const string ContainerCredentialsURIEnvVariable = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI";

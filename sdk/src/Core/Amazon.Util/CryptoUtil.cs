@@ -50,7 +50,10 @@ namespace Amazon.Util
             switch (algorithm)
             {
                 case CoreChecksumAlgorithm.SHA1:
+                    // Disable this warning of SHA1 being obsolete because we have some use cases we need it.
+#pragma warning disable SYSLIB0021
                     return new SHA1Managed();
+#pragma warning restore
 
                 case CoreChecksumAlgorithm.SHA256:
                     return CryptoUtil.CreateSHA256Instance();
@@ -131,10 +134,13 @@ namespace Amazon.Util
             /// <returns>Computed hash code</returns>
             public byte[] ComputeSHA1Hash(byte[] data)
             {
+// Disable this warning of SHA1 being obsolete because we have some use cases we need it.
+#pragma warning disable SYSLIB0021
                 using (var sha1 = new SHA1Managed())
                 {
                     return sha1.ComputeHash(data);
                 }
+#pragma warning restore SYSLIB0021
             }
 
             /// <summary>

@@ -117,8 +117,7 @@ using System.Runtime.CompilerServices;
             
             #line default
             #line hidden
-            this.Write("\")]\r\n\r\n[assembly: System.CLSCompliant(true)]\r\n\r\n#if BCL\r\n[assembly: System.Securi" +
-                    "ty.AllowPartiallyTrustedCallers]\r\n#endif");
+            this.Write("\")]\r\n\r\n#if BCL\r\n[assembly: System.Security.AllowPartiallyTrustedCallers]\r\n#endif");
             return this.GenerationEnvironment.ToString();
         }
     }

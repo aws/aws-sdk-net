@@ -1,0 +1,10 @@
+{
+	"core": {
+      "changeLogMessages": [
+        "Remove CLS complaint warnings when building the SDK",
+		"Enable treat warnings as errors for Core"
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+}

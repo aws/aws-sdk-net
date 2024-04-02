@@ -386,17 +386,17 @@ namespace Amazon.Runtime.Internal.Settings
 
 
 
-#endregion
+        #endregion
 
 
-#region Events
-
+        #region Events
+#pragma warning disable CS0067 // Disable not used warning because it is used in .NET Framework.
         public event EventHandler SettingsChanged;
+#pragma warning restore CS0067
+        #endregion
 
-#endregion
 
-
-#region IDisposable Members
+        #region IDisposable Members
 
         public void Dispose()
         {
