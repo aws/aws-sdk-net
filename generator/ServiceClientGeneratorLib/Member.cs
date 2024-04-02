@@ -333,9 +333,16 @@ namespace ServiceClientGenerator
             get
             {
                 var metadata = data[ServiceModel.MetadataKey];
-                if (metadata == null) return false;
-                var flattened = metadata[FlattenedKey];
-                if (flattened == null || !flattened.IsBoolean) return false;
+                var flattenedMember = data[FlattenedKey];
+                if (metadata == null && flattenedMember == null)
+                {
+                    return false;
+                }
+                var flattened = metadata?[FlattenedKey] ?? flattenedMember;
+                if (flattened == null || !flattened.IsBoolean)
+                {
+                    return false;
+                }
                 return (bool)flattened;
             }
         }
