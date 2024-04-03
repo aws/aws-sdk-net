@@ -73,6 +73,53 @@ namespace Amazon.Runtime.Internal.Util
             return value.ToString(CultureInfo.InvariantCulture);
         }
 
+        public static string FromSpecialFloatValue(float value)
+        {
+            if (float.IsPositiveInfinity(value))
+            {
+                return "Infinity";
+            }
+            else if (float.IsNegativeInfinity(value))
+            {
+                return "-Infinity";
+            }
+            else if (float.IsNaN(value))
+            {
+                return "NaN";
+            }
+            else
+            {
+                throw new ArgumentException("Only float.PositiveInfinity, float.NegativeInfinity, or float.Nan are valid");
+            }
+        }
+        public static bool IsSpecialFloatValue(float value)
+        {
+            return float.IsInfinity(value) || float.IsNaN(value);
+        }
+        public static bool IsSpecialDoubleValue(double value)
+        {
+            return double.IsInfinity(value) || double.IsNaN(value);
+        }
+
+        public static string FromSpecialDoubleValue(double value)
+        {
+            if (double.IsPositiveInfinity(value))
+            {
+                return "Infinity";
+            }
+            else if (double.IsNegativeInfinity(value))
+            {
+                return "-Infinity";
+            }
+            else if (double.IsNaN(value))
+            {
+                return "NaN";
+            }
+            else
+            {
+                throw new ArgumentException("Only double.PositiveInfinity, double.NegativeInfinity, or double.Nan are valid");
+            }
+        }
         public static string FromBool(bool value)
         {
             return value ? "true" : "false";
