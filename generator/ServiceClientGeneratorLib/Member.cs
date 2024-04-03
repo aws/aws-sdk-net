@@ -1087,11 +1087,16 @@ namespace ServiceClientGenerator
             {
                 if (this.IsDateTime)
                 {
-                    return "StringUtils.FromDateTimeTo" + this.TimestampFormat;
+                    string formatAppend = string.Empty;
+                    if (this.TimestampFormat == TimestampFormat.ISO8601)
+                    {
+                        formatAppend = "WithOptionalMs";
+                    }
+                    return $"StringUtils.FromDateTimeTo{this.TimestampFormat}{formatAppend}";
                 }
                 else
                 {
-                    return "StringUtils.From" + this.GetPrimitiveType();
+                    return $"StringUtils.From{this.GetPrimitiveType()}";
                 }
 
             }
