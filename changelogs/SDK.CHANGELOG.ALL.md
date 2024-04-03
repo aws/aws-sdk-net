@@ -1,3 +1,26 @@
+### 3.7.782.0 (2024-04-03 18:24 UTC)
+* CleanRoomsML (3.7.302.0)
+	* The release includes a public SDK for AWS Clean Rooms ML APIs, making them globally available to developers worldwide.
+* CloudFormation (3.7.306.0)
+	* This release would return a new field - PolicyAction in cloudformation's existed DescribeChangeSetResponse, showing actions we are going to apply on the physical resource (e.g., Delete, Retain) according to the user's template
+* DataZone (3.7.303.0)
+	* This release supports the feature of dataQuality to enrich asset with dataQualityResult in Amazon DataZone.
+* DocDB (3.7.303.0)
+	* This release adds Global Cluster Switchover capability which enables you to change your global cluster's primary AWS Region, the region that serves writes, while preserving the replication between all regions in the global cluster.
+* GroundStation (3.7.301.0)
+	* This release adds visibilityStartTime and visibilityEndTime to DescribeContact and ListContacts responses.
+* Lambda (3.7.305.0)
+	* Add Ruby 3.3 (ruby3.3) support to AWS Lambda
+* MediaLive (3.7.306.0)
+	* Cmaf Ingest outputs are now supported in Media Live
+* MedicalImaging (3.7.301.0)
+	* SearchImageSets API now supports following enhancements - Additional support for searching on UpdatedAt and SeriesInstanceUID - Support for searching existing filters between dates/times - Support for sorting the search result by Ascending/Descending - Additional parameters returned in the response
+* Transfer (3.7.304.0)
+	* Add ability to specify Security Policies for SFTP Connectors
+* Core 3.7.303.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.781.0 (2024-04-02 18:21 UTC)
 * ECS (3.7.305.29)
 	* Documentation only update for Amazon ECS.
