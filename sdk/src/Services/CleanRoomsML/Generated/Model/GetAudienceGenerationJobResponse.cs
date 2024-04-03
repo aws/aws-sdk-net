@@ -170,7 +170,8 @@ namespace Amazon.CleanRoomsML.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// The relevance scores for different audience sizes. 
+        /// The relevance scores for different audience sizes and the recall score of the generated
+        /// audience. 
         /// </para>
         /// </summary>
         public AudienceQualityMetrics Metrics

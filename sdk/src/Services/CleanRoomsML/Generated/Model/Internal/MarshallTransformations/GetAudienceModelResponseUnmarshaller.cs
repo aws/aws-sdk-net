@@ -75,12 +75,6 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     response.KmsKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("metrics", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AudienceModelMetric, AudienceModelMetricUnmarshaller>(AudienceModelMetricUnmarshaller.Instance);
-                    response.Metrics = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
