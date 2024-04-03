@@ -116,7 +116,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
 	}
 #>
-
+            if(context.Stream.Length == 0)
+            {
+                return;
+            }
             while (context.Read())
             {
 				if (context.IsStartElement || context.IsAttribute)
