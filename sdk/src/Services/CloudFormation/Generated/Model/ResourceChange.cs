@@ -40,6 +40,7 @@ namespace Amazon.CloudFormation.Model
         private string _logicalResourceId;
         private ModuleInfo _moduleInfo;
         private string _physicalResourceId;
+        private PolicyAction _policyAction;
         private Replacement _replacement;
         private string _resourceType;
         private List<string> _scope = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -157,6 +158,50 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetPhysicalResourceId()
         {
             return this._physicalResourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyAction. 
+        /// <para>
+        /// The action that will be taken on the physical resource when the change set is executed.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Delete</c> The resource will be deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Retain</c> The resource will be retained.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Snapshot</c> The resource will have a snapshot taken.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ReplaceAndDelete</c> The resource will be replaced and then deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ReplaceAndRetain</c> The resource will be replaced and then retained.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ReplaceAndSnapshot</c> The resource will be replaced and then have a snapshot
+        /// taken.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PolicyAction PolicyAction
+        {
+            get { return this._policyAction; }
+            set { this._policyAction = value; }
+        }
+
+        // Check to see if PolicyAction property is set
+        internal bool IsSetPolicyAction()
+        {
+            return this._policyAction != null;
         }
 
         /// <summary>
