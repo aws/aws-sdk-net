@@ -668,11 +668,11 @@
                 },
                 "HasQueryAndXmlName": {
                     "shape": "String",
-                    "locationName": "IgnoreMe"
+                    "locationName": "hasQueryAndXmlName"
                 },
                 "UsesXmlName": {
                     "shape": "String",
-                    "locationName": "c"
+                    "locationName": "usesXmlName"
                 }
             }
         },

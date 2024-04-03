@@ -112,6 +112,15 @@
         {"shape":"ErrorWithoutMembers"}
       ]
     },
+    "NullOperation":{
+      "name":"NullOperation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"NullOperationInputOutput"},
+      "output":{"shape":"NullOperationInputOutput"}
+    },
     "OperationWithOptionalInputOutput":{
       "name":"OperationWithOptionalInputOutput",
       "http":{
@@ -168,10 +177,7 @@
     "ComplexNestedErrorData":{
       "type":"structure",
       "members":{
-        "Foo":{
-          "shape":"String",
-          "locationName":"Fooooo"
-        }
+        "Foo":{"shape":"String"}
       }
     },
     "DateTime":{
@@ -408,6 +414,12 @@
       "documentation":"<p>A union with a representative set of types for members.</p>",
       "union":true
     },
+    "NullOperationInputOutput":{
+      "type":"structure",
+      "members":{
+        "string":{"shape":"String"}
+      }
+    },
     "OperationWithOptionalInputOutputInput":{
       "type":"structure",
       "members":{
@@ -459,10 +471,7 @@
     "StructWithJsonName":{
       "type":"structure",
       "members":{
-        "Value":{
-          "shape":"String",
-          "locationName":"RenamedMember"
-        }
+        "Value":{"shape":"String"}
       }
     },
     "SyntheticTimestamp_date_time":{

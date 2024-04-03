@@ -130,10 +130,7 @@
     "ComplexNestedErrorData":{
       "type":"structure",
       "members":{
-        "Foo":{
-          "shape":"String",
-          "locationName":"Fooooo"
-        }
+        "Foo":{"shape":"String"}
       }
     },
     "Double":{

@@ -57,7 +57,8 @@
             "members": {
                 "attrField": {
                     "shape": "String",
-                    "locationName": "xsi:someName"
+                    "locationName": "xsi:someName",
+                    "xmlAttribute": true
                 }
             }
         },
