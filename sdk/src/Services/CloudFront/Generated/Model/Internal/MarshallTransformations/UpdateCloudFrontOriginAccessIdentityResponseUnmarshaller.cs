@@ -56,7 +56,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-
+            if(context.Stream.Length == 0)
+            {
+                return;
+            }
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)

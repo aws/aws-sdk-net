@@ -58,7 +58,10 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
             int targetDepth = originalDepth + 1;
             if (context.IsStartOfDocument) 
                    targetDepth += 1;
-
+            if(context.Stream.Length == 0)
+            {
+                return;
+            }
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
