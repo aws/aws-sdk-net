@@ -63,6 +63,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	{
 		ProcessRequestBodyMembers("publicRequest", this.Operation);		
 	}
+	if(payload != null && !payload.Shape.IsStructure)
+	{
+		ProcessNonStructurePayload(payload, 3);
+	}
 #>
 
 <#
@@ -367,5 +371,25 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#=new string(' ', level * 4)#>					}			
 <#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();				
 <#+				
+	}
+#>
+<#+
+	//
+	protected void ProcessNonStructurePayload(Member payload, int level)
+	{
+		if(payload.Shape.IsString)
+		{
+#>
+<#=new string(' ', level * 4)#>request.Content = Encoding.UTF8.GetBytes(<#=this.Operation.RequestPayloadMember.PrimitiveMarshaller#>(publicRequest.<#=this.Operation.RequestPayloadMember.PropertyName#>));
+<#=new string(' ', level * 4)#>request.Headers["Content-Type"] = "text/plain";
+<#+
+		}
+		else if(payload.Shape.IsMemoryStream)
+		{
+#>
+<#=new string(' ', level * 4)#>request.ContentStream = publicRequest.<#=this.Operation.RequestPayloadMember.PropertyName#>;
+<#=new string(' ', level * 4)#>request.Headers["Content-Type"] = "application/octet-stream";
+<#+
+		}
 	}
 #>
