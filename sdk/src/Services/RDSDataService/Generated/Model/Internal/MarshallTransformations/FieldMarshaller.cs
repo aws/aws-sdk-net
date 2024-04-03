@@ -71,7 +71,14 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDoubleValue())
             {
                 context.Writer.WritePropertyName("doubleValue");
-                context.Writer.Write(requestObject.DoubleValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DoubleValue);
+                }
             }
 
             if(requestObject.IsSetIsNull())

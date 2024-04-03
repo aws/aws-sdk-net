@@ -82,7 +82,14 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDouble())
                 {
                     context.Writer.WritePropertyName("Double");
-                    context.Writer.Write(publicRequest.Double);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Double))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Double));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.Double);
+                    }
                 }
 
                 if(publicRequest.IsSetEmptyStruct())
@@ -99,7 +106,14 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFloat())
                 {
                     context.Writer.WritePropertyName("Float");
-                    context.Writer.Write(publicRequest.Float);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.Float))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.Float));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.Float);
+                    }
                 }
 
                 if(publicRequest.IsSetHttpdateTimestamp())

@@ -89,13 +89,27 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("maxValue");
-                context.Writer.Write(requestObject.MaxValue);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MaxValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxValue);
+                }
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("minValue");
-                context.Writer.Write(requestObject.MinValue);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinValue);
+                }
             }
 
             if(requestObject.IsSetName())
@@ -125,7 +139,14 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStep())
             {
                 context.Writer.WritePropertyName("step");
-                context.Writer.Write(requestObject.Step);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Step))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Step));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Step);
+                }
             }
 
             if(requestObject.IsSetType())

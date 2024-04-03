@@ -94,13 +94,27 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampleFraction())
             {
                 context.Writer.WritePropertyName("SampleFraction");
-                context.Writer.Write(requestObject.SampleFraction);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SampleFraction))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SampleFraction));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.SampleFraction);
+                }
             }
 
             if(requestObject.IsSetThresholdFraction())
             {
                 context.Writer.WritePropertyName("ThresholdFraction");
-                context.Writer.Write(requestObject.ThresholdFraction);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdFraction))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdFraction));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThresholdFraction);
+                }
             }
 
         }

@@ -134,7 +134,14 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThreshold())
                 {
                     context.Writer.WritePropertyName("threshold");
-                    context.Writer.Write(publicRequest.Threshold);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.Threshold);
+                    }
                 }
 
                 if(publicRequest.IsSetTreatMissingData())

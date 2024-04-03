@@ -54,7 +54,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumericValue())
             {
                 context.Writer.WritePropertyName("NumericValue");
-                context.Writer.Write(requestObject.NumericValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.NumericValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NumericValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NumericValue);
+                }
             }
 
             if(requestObject.IsSetStringValue())

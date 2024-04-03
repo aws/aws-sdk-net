@@ -48,7 +48,14 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompressionFactor())
             {
                 context.Writer.WritePropertyName("compressionFactor");
-                context.Writer.Write(requestObject.CompressionFactor);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CompressionFactor))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CompressionFactor));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CompressionFactor);
+                }
             }
 
             if(requestObject.IsSetEncoderProfile())

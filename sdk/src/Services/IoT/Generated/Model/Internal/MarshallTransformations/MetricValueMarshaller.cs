@@ -65,7 +65,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumber())
             {
                 context.Writer.WritePropertyName("number");
-                context.Writer.Write(requestObject.Number);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Number))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Number));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Number);
+                }
             }
 
             if(requestObject.IsSetNumbers())

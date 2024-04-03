@@ -74,7 +74,14 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDoubleValue())
                 {
                     context.Writer.WritePropertyName("DoubleDribble");
-                    context.Writer.Write(publicRequest.DoubleValue);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.DoubleValue))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DoubleValue));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.DoubleValue);
+                    }
                 }
 
                 if(publicRequest.IsSetFalseBooleanValue())
@@ -86,7 +93,14 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFloatValue())
                 {
                     context.Writer.WritePropertyName("floatValue");
-                    context.Writer.Write(publicRequest.FloatValue);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.FloatValue))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.FloatValue));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.FloatValue);
+                    }
                 }
 
                 if(publicRequest.IsSetIntegerValue())

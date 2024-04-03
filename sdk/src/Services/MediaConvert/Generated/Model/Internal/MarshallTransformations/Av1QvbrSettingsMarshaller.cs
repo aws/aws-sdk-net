@@ -54,7 +54,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQvbrQualityLevelFineTune())
             {
                 context.Writer.WritePropertyName("qvbrQualityLevelFineTune");
-                context.Writer.Write(requestObject.QvbrQualityLevelFineTune);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.QvbrQualityLevelFineTune))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.QvbrQualityLevelFineTune));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.QvbrQualityLevelFineTune);
+                }
             }
 
         }

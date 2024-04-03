@@ -105,7 +105,14 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSessionSampleRate())
             {
                 context.Writer.WritePropertyName("SessionSampleRate");
-                context.Writer.Write(requestObject.SessionSampleRate);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SessionSampleRate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SessionSampleRate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.SessionSampleRate);
+                }
             }
 
             if(requestObject.IsSetTelemetries())

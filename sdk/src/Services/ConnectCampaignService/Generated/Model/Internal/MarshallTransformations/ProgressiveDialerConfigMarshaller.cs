@@ -48,13 +48,27 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBandwidthAllocation())
             {
                 context.Writer.WritePropertyName("bandwidthAllocation");
-                context.Writer.Write(requestObject.BandwidthAllocation);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BandwidthAllocation))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BandwidthAllocation));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BandwidthAllocation);
+                }
             }
 
             if(requestObject.IsSetDialingCapacity())
             {
                 context.Writer.WritePropertyName("dialingCapacity");
-                context.Writer.Write(requestObject.DialingCapacity);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DialingCapacity))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DialingCapacity));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DialingCapacity);
+                }
             }
 
         }

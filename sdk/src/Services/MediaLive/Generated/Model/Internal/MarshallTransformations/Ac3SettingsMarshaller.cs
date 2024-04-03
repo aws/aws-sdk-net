@@ -54,7 +54,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Bitrate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Bitrate);
+                }
             }
 
             if(requestObject.IsSetBitstreamMode())

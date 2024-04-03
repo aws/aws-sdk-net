@@ -48,7 +48,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Bitrate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Bitrate);
+                }
             }
 
             if(requestObject.IsSetCodingMode())
@@ -84,7 +91,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
-                context.Writer.Write(requestObject.SampleRate);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SampleRate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SampleRate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.SampleRate);
+                }
             }
 
             if(requestObject.IsSetSpec())

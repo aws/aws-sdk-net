@@ -92,7 +92,14 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinConfidence())
                 {
                     context.Writer.WritePropertyName("MinConfidence");
-                    context.Writer.Write(publicRequest.MinConfidence);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.MinConfidence))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MinConfidence));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MinConfidence);
+                    }
                 }
 
                 if(publicRequest.IsSetProjectVersion())

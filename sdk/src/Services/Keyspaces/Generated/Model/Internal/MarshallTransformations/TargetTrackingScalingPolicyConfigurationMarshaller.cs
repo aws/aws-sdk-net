@@ -66,7 +66,14 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetValue())
             {
                 context.Writer.WritePropertyName("targetValue");
-                context.Writer.Write(requestObject.TargetValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TargetValue);
+                }
             }
 
         }

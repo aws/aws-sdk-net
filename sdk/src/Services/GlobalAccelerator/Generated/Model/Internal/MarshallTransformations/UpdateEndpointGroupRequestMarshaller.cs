@@ -138,7 +138,14 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTrafficDialPercentage())
                 {
                     context.Writer.WritePropertyName("TrafficDialPercentage");
-                    context.Writer.Write(publicRequest.TrafficDialPercentage);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.TrafficDialPercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.TrafficDialPercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.TrafficDialPercentage);
+                    }
                 }
 
                 writer.WriteObjectEnd();

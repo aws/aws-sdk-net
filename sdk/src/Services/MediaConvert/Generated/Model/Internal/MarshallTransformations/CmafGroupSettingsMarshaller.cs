@@ -157,7 +157,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinFinalSegmentLength())
             {
                 context.Writer.WritePropertyName("minFinalSegmentLength");
-                context.Writer.Write(requestObject.MinFinalSegmentLength);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinFinalSegmentLength))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinFinalSegmentLength));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinFinalSegmentLength);
+                }
             }
 
             if(requestObject.IsSetMpdManifestBandwidthType())

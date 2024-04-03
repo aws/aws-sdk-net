@@ -54,7 +54,14 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Value);
+                }
             }
 
         }

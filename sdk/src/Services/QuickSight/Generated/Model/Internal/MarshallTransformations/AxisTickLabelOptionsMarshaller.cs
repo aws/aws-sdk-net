@@ -59,7 +59,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRotationAngle())
             {
                 context.Writer.WritePropertyName("RotationAngle");
-                context.Writer.Write(requestObject.RotationAngle);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.RotationAngle))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.RotationAngle));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.RotationAngle);
+                }
             }
 
         }

@@ -48,7 +48,14 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssistAltitude())
             {
                 context.Writer.WritePropertyName("AssistAltitude");
-                context.Writer.Write(requestObject.AssistAltitude);
+                if(StringUtils.IsSpecialFloatValue(requestObject.AssistAltitude))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.AssistAltitude));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.AssistAltitude);
+                }
             }
 
             if(requestObject.IsSetAssistPosition())
@@ -65,13 +72,27 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptureTime())
             {
                 context.Writer.WritePropertyName("CaptureTime");
-                context.Writer.Write(requestObject.CaptureTime);
+                if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTime))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTime));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CaptureTime);
+                }
             }
 
             if(requestObject.IsSetCaptureTimeAccuracy())
             {
                 context.Writer.WritePropertyName("CaptureTimeAccuracy");
-                context.Writer.Write(requestObject.CaptureTimeAccuracy);
+                if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTimeAccuracy))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTimeAccuracy));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CaptureTimeAccuracy);
+                }
             }
 
             if(requestObject.IsSetPayload())
