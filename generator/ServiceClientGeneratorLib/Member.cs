@@ -314,18 +314,6 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// If defined, specifies the namespace for the xml constructed
-        /// </summary>
-        public string XmlNamespace
-        {
-            get
-            {
-                return data[ServiceModel.XmlNamespaceKey] == null ? string.Empty :
-                    (string)data[ServiceModel.XmlNamespaceKey][ServiceModel.XmlNamespaceUriKey];
-            }
-        }
-
-        /// <summary>
         /// Determines if the member is flattened for the marshaller/unmarshaller
         /// </summary>
         public bool IsFlattened
