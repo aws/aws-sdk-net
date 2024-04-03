@@ -63,7 +63,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("EndpointWithHostLabelOperationRequest", "");    
                 if(publicRequest.IsSetLabel())
-                    xmlWriter.WriteElementString("label", "", StringUtils.FromString(publicRequest.Label));                    
+                    xmlWriter.WriteElementString("label", StringUtils.FromString(publicRequest.Label));                    
 
 
                 xmlWriter.WriteEndElement();

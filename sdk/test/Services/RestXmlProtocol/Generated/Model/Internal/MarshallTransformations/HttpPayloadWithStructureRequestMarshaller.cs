@@ -63,12 +63,12 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetNested())
                 {
-                    xmlWriter.WriteStartElement("nested", "");
+                    xmlWriter.WriteStartElement("NestedPayload", "");
                     if(publicRequest.Nested.IsSetGreeting())
-                        xmlWriter.WriteElementString("greeting", "", StringUtils.FromString(publicRequest.Nested.Greeting));                    
+                        xmlWriter.WriteElementString("greeting", StringUtils.FromString(publicRequest.Nested.Greeting));                    
 
                     if(publicRequest.Nested.IsSetName())
-                        xmlWriter.WriteElementString("name", "", StringUtils.FromString(publicRequest.Nested.Name));                    
+                        xmlWriter.WriteElementString("name", StringUtils.FromString(publicRequest.Nested.Name));                    
 
 
                     xmlWriter.WriteEndElement();

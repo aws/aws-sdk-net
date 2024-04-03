@@ -63,42 +63,42 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("XmlEnumsRequest", "");    
                 if(publicRequest.IsSetFooEnum1())
-                    xmlWriter.WriteElementString("fooEnum1", "", StringUtils.FromString(publicRequest.FooEnum1));                    
+                    xmlWriter.WriteElementString("fooEnum1", StringUtils.FromString(publicRequest.FooEnum1));                    
 
                 if(publicRequest.IsSetFooEnum2())
-                    xmlWriter.WriteElementString("fooEnum2", "", StringUtils.FromString(publicRequest.FooEnum2));                    
+                    xmlWriter.WriteElementString("fooEnum2", StringUtils.FromString(publicRequest.FooEnum2));                    
 
                 if(publicRequest.IsSetFooEnum3())
-                    xmlWriter.WriteElementString("fooEnum3", "", StringUtils.FromString(publicRequest.FooEnum3));                    
+                    xmlWriter.WriteElementString("fooEnum3", StringUtils.FromString(publicRequest.FooEnum3));                    
 
                 var publicRequestFooEnumList = publicRequest.FooEnumList;
                 if (publicRequestFooEnumList != null && publicRequestFooEnumList.Count > 0) 
                 {                        
-                    xmlWriter.WriteStartElement("fooEnumList", "");
+                    xmlWriter.WriteStartElement("fooEnumList");
                     foreach (var publicRequestFooEnumListValue in publicRequestFooEnumList) 
                     {
-                        xmlWriter.WriteStartElement("member", "");
+                        xmlWriter.WriteStartElement("member");
                         xmlWriter.WriteValue(publicRequestFooEnumListValue);
                         xmlWriter.WriteEndElement();
                     }            
                     xmlWriter.WriteEndElement();            
                 }
-                    xmlWriter.WriteStartElement("fooEnumMap", "");
+                    xmlWriter.WriteStartElement("fooEnumMap");
                     foreach (var kvp in publicRequest.FooEnumMap) 
                     {
-                        xmlWriter.WriteStartElement("entry", "");
-                        xmlWriter.WriteElementString("key", "", kvp.Key);
-                        xmlWriter.WriteElementString("value", "", kvp.Value);
+                        xmlWriter.WriteStartElement("entry");
+                        xmlWriter.WriteElementString("key", kvp.Key);
+                        xmlWriter.WriteElementString("value", kvp.Value);
                         xmlWriter.WriteEndElement();
                     }            
                     xmlWriter.WriteEndElement();                
                 var publicRequestFooEnumSet = publicRequest.FooEnumSet;
                 if (publicRequestFooEnumSet != null && publicRequestFooEnumSet.Count > 0) 
                 {                        
-                    xmlWriter.WriteStartElement("fooEnumSet", "");
+                    xmlWriter.WriteStartElement("fooEnumSet");
                     foreach (var publicRequestFooEnumSetValue in publicRequestFooEnumSet) 
                     {
-                        xmlWriter.WriteStartElement("member", "");
+                        xmlWriter.WriteStartElement("member");
                         xmlWriter.WriteValue(publicRequestFooEnumSetValue);
                         xmlWriter.WriteEndElement();
                     }            

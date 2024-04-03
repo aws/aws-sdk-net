@@ -66,42 +66,42 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("SimpleScalarPropertiesRequest", "https://example.com");    
+                xmlWriter.WriteStartElement("SimpleScalarPropertiesInputOutput", "https://example.com");    
                 if(publicRequest.IsSetByteValue())
-                    xmlWriter.WriteElementString("byteValue", "https://example.com", StringUtils.FromInt(publicRequest.ByteValue));                    
+                    xmlWriter.WriteElementString("byteValue", StringUtils.FromInt(publicRequest.ByteValue));                    
 
                 if(publicRequest.IsSetDoubleValue())
-                    xmlWriter.WriteElementString("DoubleDribble", "https://example.com", StringUtils.FromDouble(publicRequest.DoubleValue));                    
+                    xmlWriter.WriteElementString("DoubleDribble", StringUtils.FromDouble(publicRequest.DoubleValue));                    
 
                 if(publicRequest.IsSetFalseBooleanValue())
-                    xmlWriter.WriteElementString("falseBooleanValue", "https://example.com", StringUtils.FromBool(publicRequest.FalseBooleanValue));                    
+                    xmlWriter.WriteElementString("falseBooleanValue", StringUtils.FromBool(publicRequest.FalseBooleanValue));                    
 
                 if(publicRequest.IsSetFloatValue())
-                    xmlWriter.WriteElementString("floatValue", "https://example.com", StringUtils.FromFloat(publicRequest.FloatValue));                    
+                    xmlWriter.WriteElementString("floatValue", StringUtils.FromFloat(publicRequest.FloatValue));                    
 
                 if(publicRequest.IsSetIntegerValue())
-                    xmlWriter.WriteElementString("integerValue", "https://example.com", StringUtils.FromInt(publicRequest.IntegerValue));                    
+                    xmlWriter.WriteElementString("integerValue", StringUtils.FromInt(publicRequest.IntegerValue));                    
 
                 if(publicRequest.IsSetLongValue())
-                    xmlWriter.WriteElementString("longValue", "https://example.com", StringUtils.FromLong(publicRequest.LongValue));                    
+                    xmlWriter.WriteElementString("longValue", StringUtils.FromLong(publicRequest.LongValue));                    
 
                 
                 if (publicRequest.Nested != null) 
                 {
-                    xmlWriter.WriteStartElement("Nested", "https://example.com");            
+                    xmlWriter.WriteStartElement("Nested");            
                     if(publicRequest.Nested.IsSetAttrField())
-                        xmlWriter.WriteElementString("xsi:someName", "https://example.com", StringUtils.FromString(publicRequest.Nested.AttrField));                 
+                        xmlWriter.WriteElementString("xsi:someName", StringUtils.FromString(publicRequest.Nested.AttrField));                 
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetShortValue())
-                    xmlWriter.WriteElementString("shortValue", "https://example.com", StringUtils.FromInt(publicRequest.ShortValue));                    
+                    xmlWriter.WriteElementString("shortValue", StringUtils.FromInt(publicRequest.ShortValue));                    
 
                 if(publicRequest.IsSetStringValue())
-                    xmlWriter.WriteElementString("stringValue", "https://example.com", StringUtils.FromString(publicRequest.StringValue));                    
+                    xmlWriter.WriteElementString("stringValue", StringUtils.FromString(publicRequest.StringValue));                    
 
                 if(publicRequest.IsSetTrueBooleanValue())
-                    xmlWriter.WriteElementString("trueBooleanValue", "https://example.com", StringUtils.FromBool(publicRequest.TrueBooleanValue));                    
+                    xmlWriter.WriteElementString("trueBooleanValue", StringUtils.FromBool(publicRequest.TrueBooleanValue));                    
 
 
                 xmlWriter.WriteEndElement();

@@ -68,10 +68,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 var publicRequestResourceIds = publicRequest.ResourceIds;
                 if (publicRequestResourceIds != null && publicRequestResourceIds.Count > 0) 
                 {                        
-                    xmlWriter.WriteStartElement("ResourceIds", "https://route53.amazonaws.com/doc/2013-04-01/");
+                    xmlWriter.WriteStartElement("ResourceIds");
                     foreach (var publicRequestResourceIdsValue in publicRequestResourceIds) 
                     {
-                        xmlWriter.WriteStartElement("ResourceId", "https://route53.amazonaws.com/doc/2013-04-01/");
+                        xmlWriter.WriteStartElement("ResourceId");
                         xmlWriter.WriteValue(publicRequestResourceIdsValue);
                         xmlWriter.WriteEndElement();
                     }            

@@ -61,21 +61,21 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("XmlNamespacesRequest", "");    
+                xmlWriter.WriteStartElement("XmlNamespacesRequest", "http://foo.com");    
                 
                 if (publicRequest.Nested != null) 
                 {
-                    xmlWriter.WriteStartElement("nested", "");            
+                    xmlWriter.WriteStartElement("nested");            
                     if(publicRequest.Nested.IsSetFoo())
-                        xmlWriter.WriteElementString("foo", "", StringUtils.FromString(publicRequest.Nested.Foo));                 
+                        xmlWriter.WriteElementString("foo", StringUtils.FromString(publicRequest.Nested.Foo));                 
 
                     var publicRequestNestedValues = publicRequest.Nested.Values;
                     if (publicRequestNestedValues != null && publicRequestNestedValues.Count > 0) 
                     {                        
-                        xmlWriter.WriteStartElement("values", "");
+                        xmlWriter.WriteStartElement("values");
                         foreach (var publicRequestNestedValuesValue in publicRequestNestedValues) 
                         {
-                            xmlWriter.WriteStartElement("member", "");
+                            xmlWriter.WriteStartElement("member");
                             xmlWriter.WriteValue(publicRequestNestedValuesValue);
                             xmlWriter.WriteEndElement();
                         }            

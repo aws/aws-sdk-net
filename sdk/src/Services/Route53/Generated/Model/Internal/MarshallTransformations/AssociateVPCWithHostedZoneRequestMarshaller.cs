@@ -68,17 +68,17 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 
                 if (publicRequest.VPC != null) 
                 {
-                    xmlWriter.WriteStartElement("VPC", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                    xmlWriter.WriteStartElement("VPC");            
                     if(publicRequest.VPC.IsSetVPCRegion())
-                        xmlWriter.WriteElementString("VPCRegion", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.VPC.VPCRegion));                 
+                        xmlWriter.WriteElementString("VPCRegion", StringUtils.FromString(publicRequest.VPC.VPCRegion));                 
 
                     if(publicRequest.VPC.IsSetVPCId())
-                        xmlWriter.WriteElementString("VPCId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.VPC.VPCId));                 
+                        xmlWriter.WriteElementString("VPCId", StringUtils.FromString(publicRequest.VPC.VPCId));                 
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetComment())
-                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Comment));                    
+                    xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.Comment));                    
 
 
                 xmlWriter.WriteEndElement();

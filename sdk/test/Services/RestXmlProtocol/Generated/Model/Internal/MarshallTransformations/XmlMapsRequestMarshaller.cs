@@ -62,18 +62,18 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("XmlMapsRequest", "");    
-                    xmlWriter.WriteStartElement("myMap", "");
+                    xmlWriter.WriteStartElement("myMap");
                     foreach (var kvp in publicRequest.MyMap) 
                     {
-                        xmlWriter.WriteStartElement("entry", "");
-                        xmlWriter.WriteElementString("key", "", kvp.Key);
-                        xmlWriter.WriteStartElement("value", "");
+                        xmlWriter.WriteStartElement("entry");
+                        xmlWriter.WriteElementString("key", kvp.Key);
+                        xmlWriter.WriteStartElement("value");
                 
                         if (kvp.Value != null) 
                         {
-                            xmlWriter.WriteStartElement("GreetingStruct", "");            
+                            xmlWriter.WriteStartElement("GreetingStruct");            
                             if(kvp.Value.IsSetHi())
-                                xmlWriter.WriteElementString("hi", "", StringUtils.FromString(kvp.Value.Hi));                 
+                                xmlWriter.WriteElementString("hi", StringUtils.FromString(kvp.Value.Hi));                 
 
                             xmlWriter.WriteEndElement();
                         }

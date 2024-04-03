@@ -63,10 +63,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("GetRealtimeLogConfigRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
                 if(publicRequest.IsSetARN())
-                    xmlWriter.WriteElementString("ARN", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ARN));                    
+                    xmlWriter.WriteElementString("ARN", StringUtils.FromString(publicRequest.ARN));                    
 
                 if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Name));                    
+                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));                    
 
 
                 xmlWriter.WriteEndElement();

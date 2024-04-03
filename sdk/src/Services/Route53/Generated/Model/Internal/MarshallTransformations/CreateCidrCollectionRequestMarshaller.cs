@@ -63,10 +63,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateCidrCollectionRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
                 if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Name));                    
+                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));                    
 
                 if(publicRequest.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.CallerReference));                    
+                    xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CallerReference));                    
 
 
                 xmlWriter.WriteEndElement();
