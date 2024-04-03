@@ -812,16 +812,15 @@ namespace ServiceClientGenerator
             {
                 var timestampFormat = GetTimestampFormat(marshallLocation);
                 string formatAppend = string.Empty;
-                if(timestampFormat == TimestampFormat.ISO8601
-                    && (marshallLocation == MarshallLocation.Uri || marshallLocation == MarshallLocation.QueryString))
+                if(timestampFormat == TimestampFormat.ISO8601)
                 {
                     formatAppend = "WithOptionalMs";
                 }
-                return "StringUtils.FromDateTimeTo" + timestampFormat + formatAppend;
+                return $"StringUtils.FromDateTimeTo{timestampFormat}{formatAppend}";
             }
             else
             {
-                return "StringUtils.From" + this.GetPrimitiveType();
+                return $"StringUtils.From{this.GetPrimitiveType()}";
             }
         }
 
