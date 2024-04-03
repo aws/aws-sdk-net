@@ -321,15 +321,38 @@ namespace ServiceClientGenerator
         /// <summary>
         /// Gets the namespace of the payload for an XML object
         /// </summary>
-        public string XmlNamespace
+        public new string XmlNamespace
         {
             get
             {
                 if (this.RequestPayloadMember != null)
                 {
-                    return RequestPayloadMember.XmlNamespace;
+                    return !string.IsNullOrEmpty(RequestPayloadMember.XmlNamespace) 
+                        ? RequestPayloadMember.XmlNamespace
+                        : RequestPayloadMember.Shape.XmlNamespace;
                 }
-                return this.Input.XmlNamespace;
+                return !string.IsNullOrEmpty(this.Input.XmlNamespace)
+                    ? this.Input.XmlNamespace 
+                    : RequestStructure.XmlNamespace;
+            }
+        }
+
+        /// <summary>
+        /// Gets the namespace prefix of the payload for an XML object
+        /// </summary>
+        public new string XmlNamespacePrefix
+        {
+            get
+            {
+                if (this.RequestPayloadMember != null)
+                {
+                    return !string.IsNullOrEmpty(RequestPayloadMember.XmlNamespacePrefix)
+                        ? RequestPayloadMember.XmlNamespacePrefix
+                        : RequestPayloadMember.Shape.XmlNamespacePrefix;
+                }
+                return !string.IsNullOrEmpty(this.Input.XmlNamespacePrefix)
+                    ? this.Input.XmlNamespacePrefix
+                    : RequestStructure.XmlNamespacePrefix;
             }
         }
 
