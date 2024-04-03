@@ -73,21 +73,21 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 var publicRequestRouteUpdates = publicRequest.RouteUpdates;
                 if (publicRequestRouteUpdates != null && publicRequestRouteUpdates.Count > 0) 
                 {                        
-                    xmlWriter.WriteStartElement("RouteUpdates", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                    xmlWriter.WriteStartElement("RouteUpdates");
                     foreach (var publicRequestRouteUpdatesValue in publicRequestRouteUpdates) 
                     {
                 
                     if (publicRequestRouteUpdatesValue != null) 
                     {
-                        xmlWriter.WriteStartElement("Route", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        xmlWriter.WriteStartElement("Route");            
                         if(publicRequestRouteUpdatesValue.IsSetBucket())
-                            xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestRouteUpdatesValue.Bucket));                 
+                            xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestRouteUpdatesValue.Bucket));                 
 
                         if(publicRequestRouteUpdatesValue.IsSetRegion())
-                            xmlWriter.WriteElementString("Region", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestRouteUpdatesValue.Region));                 
+                            xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequestRouteUpdatesValue.Region));                 
 
                         if(publicRequestRouteUpdatesValue.IsSetTrafficDialPercentage())
-                            xmlWriter.WriteElementString("TrafficDialPercentage", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage));                 
+                            xmlWriter.WriteElementString("TrafficDialPercentage", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage));                 
 
                         xmlWriter.WriteEndElement();
                     }

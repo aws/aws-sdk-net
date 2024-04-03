@@ -63,7 +63,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("XmlEmptyStringsRequest", "");    
                 if(publicRequest.IsSetEmptyString())
-                    xmlWriter.WriteElementString("emptyString", "", StringUtils.FromString(publicRequest.EmptyString));                    
+                    xmlWriter.WriteElementString("emptyString", StringUtils.FromString(publicRequest.EmptyString));                    
 
 
                 xmlWriter.WriteEndElement();

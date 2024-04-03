@@ -67,9 +67,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("PutWithContentEncodingRequest", "");    
+                xmlWriter.WriteStartElement("PutWithContentEncodingInput", "");    
                 if(publicRequest.IsSetData())
-                    xmlWriter.WriteElementString("data", "", StringUtils.FromString(publicRequest.Data));                    
+                    xmlWriter.WriteElementString("data", StringUtils.FromString(publicRequest.Data));                    
 
 
                 xmlWriter.WriteEndElement();

@@ -63,31 +63,31 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateFunctionRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
                 if(publicRequest.IsSetFunctionCode())
-                    xmlWriter.WriteElementString("FunctionCode", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromMemoryStream(publicRequest.FunctionCode));                    
+                    xmlWriter.WriteElementString("FunctionCode", StringUtils.FromMemoryStream(publicRequest.FunctionCode));                    
 
                 
                 if (publicRequest.FunctionConfig != null) 
                 {
-                    xmlWriter.WriteStartElement("FunctionConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                    xmlWriter.WriteStartElement("FunctionConfig");            
                     if(publicRequest.FunctionConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FunctionConfig.Comment));                 
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.FunctionConfig.Comment));                 
 
                 
                     if (publicRequest.FunctionConfig.KeyValueStoreAssociations != null) 
                     {
-                        xmlWriter.WriteStartElement("KeyValueStoreAssociations", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                        xmlWriter.WriteStartElement("KeyValueStoreAssociations");            
                         var publicRequestFunctionConfigKeyValueStoreAssociationsItems = publicRequest.FunctionConfig.KeyValueStoreAssociations.Items;
                         if (publicRequestFunctionConfigKeyValueStoreAssociationsItems != null && publicRequestFunctionConfigKeyValueStoreAssociationsItems.Count > 0) 
                         {                        
-                            xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                            xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue in publicRequestFunctionConfigKeyValueStoreAssociationsItems) 
                             {
                 
                             if (publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue != null) 
                             {
-                                xmlWriter.WriteStartElement("KeyValueStoreAssociation", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                                xmlWriter.WriteStartElement("KeyValueStoreAssociation");            
                                 if(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.IsSetKeyValueStoreARN())
-                                    xmlWriter.WriteElementString("KeyValueStoreARN", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));                 
+                                    xmlWriter.WriteElementString("KeyValueStoreARN", StringUtils.FromString(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));                 
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -95,17 +95,17 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.FunctionConfig.KeyValueStoreAssociations.IsSetQuantity())
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.FunctionConfig.KeyValueStoreAssociations.Quantity));                 
+                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.FunctionConfig.KeyValueStoreAssociations.Quantity));                 
 
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.FunctionConfig.IsSetRuntime())
-                        xmlWriter.WriteElementString("Runtime", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FunctionConfig.Runtime));                 
+                        xmlWriter.WriteElementString("Runtime", StringUtils.FromString(publicRequest.FunctionConfig.Runtime));                 
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Name));                    
+                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));                    
 
 
                 xmlWriter.WriteEndElement();

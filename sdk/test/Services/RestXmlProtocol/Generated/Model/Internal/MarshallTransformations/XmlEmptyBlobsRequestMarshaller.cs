@@ -63,7 +63,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("XmlEmptyBlobsRequest", "");    
                 if(publicRequest.IsSetData())
-                    xmlWriter.WriteElementString("data", "", StringUtils.FromMemoryStream(publicRequest.Data));                    
+                    xmlWriter.WriteElementString("data", StringUtils.FromMemoryStream(publicRequest.Data));                    
 
 
                 xmlWriter.WriteEndElement();

@@ -63,25 +63,25 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("XmlTimestampsRequest", "");    
                 if(publicRequest.IsSetDateTime())
-                    xmlWriter.WriteElementString("dateTime", "", StringUtils.FromDateTimeToISO8601(publicRequest.DateTime));                    
+                    xmlWriter.WriteElementString("dateTime", StringUtils.FromDateTimeToISO8601(publicRequest.DateTime));                    
 
                 if(publicRequest.IsSetDateTimeOnTarget())
-                    xmlWriter.WriteElementString("dateTimeOnTarget", "", StringUtils.FromDateTimeToISO8601(publicRequest.DateTimeOnTarget));                    
+                    xmlWriter.WriteElementString("dateTimeOnTarget", StringUtils.FromDateTimeToISO8601(publicRequest.DateTimeOnTarget));                    
 
                 if(publicRequest.IsSetEpochSeconds())
-                    xmlWriter.WriteElementString("epochSeconds", "", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochSeconds));                    
+                    xmlWriter.WriteElementString("epochSeconds", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochSeconds));                    
 
                 if(publicRequest.IsSetEpochSecondsOnTarget())
-                    xmlWriter.WriteElementString("epochSecondsOnTarget", "", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochSecondsOnTarget));                    
+                    xmlWriter.WriteElementString("epochSecondsOnTarget", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochSecondsOnTarget));                    
 
                 if(publicRequest.IsSetHttpDate())
-                    xmlWriter.WriteElementString("httpDate", "", StringUtils.FromDateTimeToRFC822(publicRequest.HttpDate));                    
+                    xmlWriter.WriteElementString("httpDate", StringUtils.FromDateTimeToRFC822(publicRequest.HttpDate));                    
 
                 if(publicRequest.IsSetHttpDateOnTarget())
-                    xmlWriter.WriteElementString("httpDateOnTarget", "", StringUtils.FromDateTimeToRFC822(publicRequest.HttpDateOnTarget));                    
+                    xmlWriter.WriteElementString("httpDateOnTarget", StringUtils.FromDateTimeToRFC822(publicRequest.HttpDateOnTarget));                    
 
                 if(publicRequest.IsSetNormal())
-                    xmlWriter.WriteElementString("normal", "", StringUtils.FromDateTimeToISO8601(publicRequest.Normal));                    
+                    xmlWriter.WriteElementString("normal", StringUtils.FromDateTimeToISO8601(publicRequest.Normal));                    
 
 
                 xmlWriter.WriteEndElement();
