@@ -354,6 +354,29 @@
       "documentation":"<p>This example serializes intEnums as top level properties, in lists, sets, and maps.</p>",
       "idempotent":true
     },
+    "JsonLists":{
+      "name":"JsonLists",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/JsonLists",
+        "responseCode":200
+      },
+      "input":{"shape":"JsonListsInputOutput"},
+      "output":{"shape":"JsonListsInputOutput"},
+      "documentation":"<p>This test case serializes JSON lists for the following cases for both input and output:</p> <ol> <li>Normal JSON lists.</li> <li>Normal JSON sets.</li> <li>JSON lists of lists.</li> <li>Lists of structures.</li> </ol>",
+      "idempotent":true
+    },
+    "JsonMaps":{
+      "name":"JsonMaps",
+      "http":{
+        "method":"POST",
+        "requestUri":"/JsonMaps",
+        "responseCode":200
+      },
+      "input":{"shape":"JsonMapsInputOutput"},
+      "output":{"shape":"JsonMapsInputOutput"},
+      "documentation":"<p>The example tests basic map serialization.</p>"
+    },
     "JsonTimestamps":{
       "name":"JsonTimestamps",
       "http":{
@@ -770,6 +793,31 @@
       "members":{
         "datetime":{"shape":"DateTime"}
       }
+    },
+    "DenseBooleanMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"Boolean"}
+    },
+    "DenseNumberMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"Integer"}
+    },
+    "DenseSetMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"StringSet"}
+    },
+    "DenseStringMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"String"}
+    },
+    "DenseStructMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"GreetingStruct"}
     },
     "Document":{
       "type":"structure",
@@ -1318,6 +1366,33 @@
         "integerEnumMap":{"shape":"IntegerEnumMap"}
       }
     },
+    "JsonListsInputOutput":{
+      "type":"structure",
+      "members":{
+        "stringList":{"shape":"StringList"},
+        "stringSet":{"shape":"StringSet"},
+        "integerList":{"shape":"IntegerList"},
+        "booleanList":{"shape":"BooleanList"},
+        "timestampList":{"shape":"TimestampList"},
+        "enumList":{"shape":"FooEnumList"},
+        "intEnumList":{"shape":"IntegerEnumList"},
+        "nestedStringList":{"shape":"NestedStringList"},
+        "structureList":{
+          "shape":"StructureList",
+          "locationName":"myStructureList"
+        }
+      }
+    },
+    "JsonMapsInputOutput":{
+      "type":"structure",
+      "members":{
+        "denseStructMap":{"shape":"DenseStructMap"},
+        "denseNumberMap":{"shape":"DenseNumberMap"},
+        "denseBooleanMap":{"shape":"DenseBooleanMap"},
+        "denseStringMap":{"shape":"DenseStringMap"},
+        "denseSetMap":{"shape":"DenseSetMap"}
+      }
+    },
     "JsonTimestampsInputOutput":{
       "type":"structure",
       "members":{
@@ -1380,6 +1455,11 @@
         "greeting":{"shape":"String"},
         "name":{"shape":"String"}
       }
+    },
+    "NestedStringList":{
+      "type":"list",
+      "member":{"shape":"StringList"},
+      "documentation":"<p>A list of lists of strings.</p>"
     },
     "NoInputAndOutputOutput":{
       "type":"structure",
@@ -1607,6 +1687,23 @@
     "StringSet":{
       "type":"list",
       "member":{"shape":"String"}
+    },
+    "StructureList":{
+      "type":"list",
+      "member":{"shape":"StructureListMember"}
+    },
+    "StructureListMember":{
+      "type":"structure",
+      "members":{
+        "a":{
+          "shape":"String",
+          "locationName":"value"
+        },
+        "b":{
+          "shape":"String",
+          "locationName":"other"
+        }
+      }
     },
     "SyntheticTimestamp_date_time":{
       "type":"timestamp",
