@@ -206,7 +206,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRestoreTimeUtc())
                 {
-                    request.Parameters.Add("RestoreTime", StringUtils.FromDateTimeToISO8601(publicRequest.RestoreTimeUtc));
+                    request.Parameters.Add("RestoreTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.RestoreTimeUtc));
                 }
                 if(publicRequest.IsSetSourceDBInstanceAutomatedBackupsArn())
                 {

@@ -66,7 +66,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateUploadDate())
             {
                 context.Writer.WritePropertyName("certificateUploadDate");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.CertificateUploadDate));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CertificateUploadDate));
             }
 
             if(requestObject.IsSetDomainNameStatus())

@@ -96,7 +96,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("Expiration");            
                                 if(publicRequestLifecycleConfigurationRulesValue.Expiration.IsSetDate())
-                                    xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601(publicRequestLifecycleConfigurationRulesValue.Expiration.Date));                 
+                                    xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestLifecycleConfigurationRulesValue.Expiration.Date));                 
 
                                 if(publicRequestLifecycleConfigurationRulesValue.Expiration.IsSetDays())
                                     xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.Expiration.Days));                 
@@ -219,7 +219,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("Transition");            
                                     if(publicRequestLifecycleConfigurationRulesValueTransitionsValue.IsSetDate())
-                                        xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601(publicRequestLifecycleConfigurationRulesValueTransitionsValue.Date));                 
+                                        xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestLifecycleConfigurationRulesValueTransitionsValue.Date));                 
 
                                     if(publicRequestLifecycleConfigurationRulesValueTransitionsValue.IsSetDays())
                                         xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValueTransitionsValue.Days));                 

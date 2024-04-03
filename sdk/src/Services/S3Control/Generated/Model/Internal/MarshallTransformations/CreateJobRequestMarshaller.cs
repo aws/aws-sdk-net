@@ -139,10 +139,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("Filter");            
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetCreatedAfter())
-                                xmlWriter.WriteElementString("CreatedAfter", StringUtils.FromDateTimeToISO8601(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedAfter));                 
+                                xmlWriter.WriteElementString("CreatedAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedAfter));                 
 
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetCreatedBefore())
-                                xmlWriter.WriteElementString("CreatedBefore", StringUtils.FromDateTimeToISO8601(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedBefore));                 
+                                xmlWriter.WriteElementString("CreatedBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedBefore));                 
 
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetEligibleForReplication())
                                 xmlWriter.WriteElementString("EligibleForReplication", StringUtils.FromBool(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.EligibleForReplication));                 
@@ -426,7 +426,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("MetadataDirective", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.MetadataDirective));                 
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetModifiedSinceConstraint())
-                            xmlWriter.WriteElementString("ModifiedSinceConstraint", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectCopy.ModifiedSinceConstraint));                 
+                            xmlWriter.WriteElementString("ModifiedSinceConstraint", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectCopy.ModifiedSinceConstraint));                 
 
                 
                         if (publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata != null) 
@@ -454,7 +454,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("ContentType", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentType));                 
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetHttpExpiresDate())
-                                xmlWriter.WriteElementString("HttpExpiresDate", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.HttpExpiresDate));                 
+                                xmlWriter.WriteElementString("HttpExpiresDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.HttpExpiresDate));                 
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetRequesterCharged())
                                 xmlWriter.WriteElementString("RequesterCharged", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.RequesterCharged));                 
@@ -501,7 +501,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("ObjectLockMode", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.ObjectLockMode));                 
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetObjectLockRetainUntilDate())
-                            xmlWriter.WriteElementString("ObjectLockRetainUntilDate", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectCopy.ObjectLockRetainUntilDate));                 
+                            xmlWriter.WriteElementString("ObjectLockRetainUntilDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectCopy.ObjectLockRetainUntilDate));                 
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetRedirectLocation())
                             xmlWriter.WriteElementString("RedirectLocation", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.RedirectLocation));                 
@@ -522,7 +522,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("TargetResource", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.TargetResource));                 
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetUnModifiedSinceConstraint())
-                            xmlWriter.WriteElementString("UnModifiedSinceConstraint", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectCopy.UnModifiedSinceConstraint));                 
+                            xmlWriter.WriteElementString("UnModifiedSinceConstraint", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectCopy.UnModifiedSinceConstraint));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -556,7 +556,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Operation.S3PutObjectRetention.Retention.Mode));                 
 
                             if(publicRequest.Operation.S3PutObjectRetention.Retention.IsSetRetainUntilDate())
-                                xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectRetention.Retention.RetainUntilDate));                 
+                                xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectRetention.Retention.RetainUntilDate));                 
 
                             xmlWriter.WriteEndElement();
                         }

@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetExpirationDate())
                 {
-                    request.Parameters.Add("ExpirationDate", StringUtils.FromDateTimeToISO8601(publicRequest.ExpirationDate));
+                    request.Parameters.Add("ExpirationDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpirationDate));
                 }
                 if(publicRequest.IsSetLockDuration())
                 {

@@ -131,7 +131,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIso8601Timestamp())
                 {
                     context.Writer.WritePropertyName("Iso8601Timestamp");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.Iso8601Timestamp));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Iso8601Timestamp));
                 }
 
                 if(publicRequest.IsSetJsonValue())

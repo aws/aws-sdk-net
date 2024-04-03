@@ -63,10 +63,10 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("XmlTimestampsRequest", "");    
                 if(publicRequest.IsSetDateTime())
-                    xmlWriter.WriteElementString("dateTime", StringUtils.FromDateTimeToISO8601(publicRequest.DateTime));                    
+                    xmlWriter.WriteElementString("dateTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTime));                    
 
                 if(publicRequest.IsSetDateTimeOnTarget())
-                    xmlWriter.WriteElementString("dateTimeOnTarget", StringUtils.FromDateTimeToISO8601(publicRequest.DateTimeOnTarget));                    
+                    xmlWriter.WriteElementString("dateTimeOnTarget", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTimeOnTarget));                    
 
                 if(publicRequest.IsSetEpochSeconds())
                     xmlWriter.WriteElementString("epochSeconds", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochSeconds));                    
@@ -81,7 +81,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("httpDateOnTarget", StringUtils.FromDateTimeToRFC822(publicRequest.HttpDateOnTarget));                    
 
                 if(publicRequest.IsSetNormal())
-                    xmlWriter.WriteElementString("normal", StringUtils.FromDateTimeToISO8601(publicRequest.Normal));                    
+                    xmlWriter.WriteElementString("normal", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Normal));                    
 
 
                 xmlWriter.WriteEndElement();

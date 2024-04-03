@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetEndDateRange())
                 {
-                    request.Parameters.Add("EndDateRange", StringUtils.FromDateTimeToISO8601(publicRequest.EndDateRange));
+                    request.Parameters.Add("EndDateRange", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDateRange));
                 }
                 if(publicRequest.IsSetInstanceCount())
                 {
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetStartDateRange())
                 {
-                    request.Parameters.Add("StartDateRange", StringUtils.FromDateTimeToISO8601(publicRequest.StartDateRange));
+                    request.Parameters.Add("StartDateRange", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDateRange));
                 }
             }
             return request;

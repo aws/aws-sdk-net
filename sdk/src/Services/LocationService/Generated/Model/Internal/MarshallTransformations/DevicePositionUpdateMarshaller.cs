@@ -90,7 +90,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampleTime())
             {
                 context.Writer.WritePropertyName("SampleTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.SampleTime));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.SampleTime));
             }
 
         }

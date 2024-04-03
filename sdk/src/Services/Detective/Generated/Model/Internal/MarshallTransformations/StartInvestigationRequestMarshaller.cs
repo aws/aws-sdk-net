@@ -80,13 +80,13 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScopeEndTime())
                 {
                     context.Writer.WritePropertyName("ScopeEndTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.ScopeEndTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ScopeEndTime));
                 }
 
                 if(publicRequest.IsSetScopeStartTime())
                 {
                     context.Writer.WritePropertyName("ScopeStartTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.ScopeStartTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ScopeStartTime));
                 }
 
                 writer.WriteObjectEnd();

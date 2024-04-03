@@ -48,7 +48,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataUpdatedAt())
             {
                 context.Writer.WritePropertyName("DataUpdatedAt");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.DataUpdatedAt));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.DataUpdatedAt));
             }
 
         }

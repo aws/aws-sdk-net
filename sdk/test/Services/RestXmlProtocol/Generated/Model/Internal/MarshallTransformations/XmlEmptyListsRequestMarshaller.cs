@@ -255,7 +255,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     foreach (var publicRequestTimestampListValue in publicRequestTimestampList) 
                     {
                         xmlWriter.WriteStartElement("member");
-                        xmlWriter.WriteValue(StringUtils.FromDateTimeToISO8601(publicRequestTimestampListValue));
+                        xmlWriter.WriteValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestTimestampListValue));
                         xmlWriter.WriteEndElement();
                     }            
                     xmlWriter.WriteEndElement();            

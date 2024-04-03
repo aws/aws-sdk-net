@@ -107,7 +107,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDepartureTime())
                 {
                     context.Writer.WritePropertyName("DepartureTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.DepartureTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DepartureTime));
                 }
 
                 if(publicRequest.IsSetDestinationPositions())

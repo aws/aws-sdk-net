@@ -68,7 +68,7 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpirationTime())
             {
                 context.Writer.WritePropertyName("expirationTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.ExpirationTime));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.ExpirationTime));
             }
 
             if(requestObject.IsSetPhoneNumber())

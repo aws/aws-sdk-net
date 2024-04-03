@@ -101,7 +101,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRestoreToTimeUtc())
                 {
-                    request.Parameters.Add("RestoreToTime", StringUtils.FromDateTimeToISO8601(publicRequest.RestoreToTimeUtc));
+                    request.Parameters.Add("RestoreToTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.RestoreToTimeUtc));
                 }
                 if(publicRequest.IsSetRestoreType())
                 {
