@@ -58,11 +58,12 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-13";
             request.HttpMethod = "GET";
 
-            
             if (publicRequest.IsSetQueryParamsMapOfIntegerList())
             {
                 foreach(var kvp in publicRequest.QueryParamsMapOfIntegerList)
                 {
+                    if(request.ParameterCollection.ContainsKey(kvp.Key))
+                       request.ParameterCollection.Remove(kvp.Key);
                     request.ParameterCollection.Add(kvp.Key, kvp.Value.ConvertAll<string>(item => StringUtils.FromInt(item)));
                 }
             }

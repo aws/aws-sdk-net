@@ -58,20 +58,25 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";
             request.HttpMethod = "GET";
 
-            
             if (publicRequest.IsSetFilters())
             {
                 foreach(var kvp in publicRequest.Filters)
                 {
+                    if(request.ParameterCollection.ContainsKey(kvp.Key))
+                       request.ParameterCollection.Remove(kvp.Key);
                     request.ParameterCollection.Add(kvp.Key, kvp.Value);
                 }
             }
-            
             if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
+            {
+                if(!request.Parameters.ContainsKey("maxResults"))
+                   request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            }
             if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            {
+                if(!request.Parameters.ContainsKey("nextToken"))
+                   request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            }
             request.ResourcePath = "/scrapers";
             request.UseQueryString = true;
 
