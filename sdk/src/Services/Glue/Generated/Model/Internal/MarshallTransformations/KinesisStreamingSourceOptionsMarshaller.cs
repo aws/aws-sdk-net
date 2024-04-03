@@ -156,7 +156,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartingTimestamp())
             {
                 context.Writer.WritePropertyName("StartingTimestamp");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.StartingTimestamp));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartingTimestamp));
             }
 
             if(requestObject.IsSetStreamArn())

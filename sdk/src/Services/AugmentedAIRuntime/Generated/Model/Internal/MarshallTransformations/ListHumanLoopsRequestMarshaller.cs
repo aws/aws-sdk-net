@@ -60,10 +60,10 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
 
             
             if (publicRequest.IsSetCreationTimeAfter())
-                request.Parameters.Add("CreationTimeAfter", StringUtils.FromDateTimeToISO8601(publicRequest.CreationTimeAfter));
+                request.Parameters.Add("CreationTimeAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreationTimeAfter));
             
             if (publicRequest.IsSetCreationTimeBefore())
-                request.Parameters.Add("CreationTimeBefore", StringUtils.FromDateTimeToISO8601(publicRequest.CreationTimeBefore));
+                request.Parameters.Add("CreationTimeBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreationTimeBefore));
             
             if (publicRequest.IsSetFlowDefinitionArn())
                 request.Parameters.Add("FlowDefinitionArn", StringUtils.FromString(publicRequest.FlowDefinitionArn));

@@ -74,7 +74,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpireTime())
                 {
                     context.Writer.WritePropertyName("ExpireTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.ExpireTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpireTime));
                 }
 
                 if(publicRequest.IsSetKeyName())

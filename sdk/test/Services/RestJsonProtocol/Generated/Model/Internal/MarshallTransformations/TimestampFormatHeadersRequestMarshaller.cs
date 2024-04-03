@@ -67,7 +67,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         
             if (publicRequest.IsSetMemberDateTime()) 
             {
-                request.Headers["X-memberDateTime"] = StringUtils.FromDateTimeToISO8601(publicRequest.MemberDateTime);
+                request.Headers["X-memberDateTime"] = StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.MemberDateTime);
             }
         
             if (publicRequest.IsSetMemberEpochSeconds()) 
@@ -82,7 +82,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         
             if (publicRequest.IsSetTargetDateTime()) 
             {
-                request.Headers["X-targetDateTime"] = StringUtils.FromDateTimeToISO8601(publicRequest.TargetDateTime);
+                request.Headers["X-targetDateTime"] = StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.TargetDateTime);
             }
         
             if (publicRequest.IsSetTargetEpochSeconds()) 

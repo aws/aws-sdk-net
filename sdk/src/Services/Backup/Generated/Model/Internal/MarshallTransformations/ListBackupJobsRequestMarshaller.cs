@@ -66,16 +66,16 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 request.Parameters.Add("backupVaultName", StringUtils.FromString(publicRequest.ByBackupVaultName));
             
             if (publicRequest.IsSetByCompleteAfter())
-                request.Parameters.Add("completeAfter", StringUtils.FromDateTimeToISO8601(publicRequest.ByCompleteAfter));
+                request.Parameters.Add("completeAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ByCompleteAfter));
             
             if (publicRequest.IsSetByCompleteBefore())
-                request.Parameters.Add("completeBefore", StringUtils.FromDateTimeToISO8601(publicRequest.ByCompleteBefore));
+                request.Parameters.Add("completeBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ByCompleteBefore));
             
             if (publicRequest.IsSetByCreatedAfter())
-                request.Parameters.Add("createdAfter", StringUtils.FromDateTimeToISO8601(publicRequest.ByCreatedAfter));
+                request.Parameters.Add("createdAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ByCreatedAfter));
             
             if (publicRequest.IsSetByCreatedBefore())
-                request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601(publicRequest.ByCreatedBefore));
+                request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ByCreatedBefore));
             
             if (publicRequest.IsSetByMessageCategory())
                 request.Parameters.Add("messageCategory", StringUtils.FromString(publicRequest.ByMessageCategory));

@@ -71,7 +71,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.EndTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
                 }
 
                 if(publicRequest.IsSetFilterParameters())
@@ -99,7 +99,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
                 }
 
                 writer.WriteObjectEnd();

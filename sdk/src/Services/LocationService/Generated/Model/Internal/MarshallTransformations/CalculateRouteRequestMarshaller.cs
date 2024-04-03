@@ -74,7 +74,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetArrivalTime())
                 {
                     context.Writer.WritePropertyName("ArrivalTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.ArrivalTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ArrivalTime));
                 }
 
                 if(publicRequest.IsSetCarModeOptions())
@@ -108,7 +108,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDepartureTime())
                 {
                     context.Writer.WritePropertyName("DepartureTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.DepartureTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DepartureTime));
                 }
 
                 if(publicRequest.IsSetDestinationPosition())

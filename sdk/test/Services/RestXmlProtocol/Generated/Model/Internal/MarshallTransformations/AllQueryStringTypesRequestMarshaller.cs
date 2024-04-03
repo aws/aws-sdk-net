@@ -120,7 +120,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 request.ParameterCollection.Add("StringSet", publicRequest.QueryStringSet);
             
             if (publicRequest.IsSetQueryTimestamp())
-                request.Parameters.Add("Timestamp", StringUtils.FromDateTimeToISO8601(publicRequest.QueryTimestamp));
+                request.Parameters.Add("Timestamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.QueryTimestamp));
             
             if (publicRequest.IsSetQueryTimestampList())
                 request.ParameterCollection.Add("TimestampList", publicRequest.QueryTimestampList.ConvertAll<string>(item => StringUtils.FromDateTimeToISO8601WithOptionalMs(item)));

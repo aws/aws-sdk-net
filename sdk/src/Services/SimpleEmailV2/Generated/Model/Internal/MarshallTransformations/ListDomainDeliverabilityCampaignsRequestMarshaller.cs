@@ -63,7 +63,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.AddPathResource("{SubscribedDomain}", StringUtils.FromString(publicRequest.SubscribedDomain));
             
             if (publicRequest.IsSetEndDate())
-                request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDate));
+                request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
@@ -72,7 +72,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
             
             if (publicRequest.IsSetStartDate())
-                request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDate));
+                request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));
             request.ResourcePath = "/v2/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns";
             request.UseQueryString = true;
 

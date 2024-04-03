@@ -89,7 +89,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRestoreToTime())
                 {
-                    request.Parameters.Add("RestoreToTime", StringUtils.FromDateTimeToISO8601(publicRequest.RestoreToTime));
+                    request.Parameters.Add("RestoreToTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.RestoreToTime));
                 }
                 if(publicRequest.IsSetRestoreType())
                 {

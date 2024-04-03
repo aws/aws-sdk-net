@@ -68,7 +68,7 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpiresTime())
                 {
                     context.Writer.WritePropertyName("expiresTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.ExpiresTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpiresTime));
                 }
 
                 if(publicRequest.IsSetName())

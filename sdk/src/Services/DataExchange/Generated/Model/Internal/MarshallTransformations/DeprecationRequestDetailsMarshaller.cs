@@ -48,7 +48,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeprecationAt())
             {
                 context.Writer.WritePropertyName("DeprecationAt");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.DeprecationAt));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.DeprecationAt));
             }
 
         }

@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             }
                             if(publicRequestIntegrateServiceslistValue.IsSetPartitionEndDate())
                             {
-                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionEndDate", StringUtils.FromDateTimeToISO8601(publicRequestIntegrateServiceslistValue.PartitionEndDate));
+                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionEndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestIntegrateServiceslistValue.PartitionEndDate));
                             }
                             if(publicRequestIntegrateServiceslistValue.IsSetPartitionLoadFrequency())
                             {
@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             }
                             if(publicRequestIntegrateServiceslistValue.IsSetPartitionStartDate())
                             {
-                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionStartDate", StringUtils.FromDateTimeToISO8601(publicRequestIntegrateServiceslistValue.PartitionStartDate));
+                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionStartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestIntegrateServiceslistValue.PartitionStartDate));
                             }
                             publicRequestIntegrateServiceslistValueIndex++;
                         }

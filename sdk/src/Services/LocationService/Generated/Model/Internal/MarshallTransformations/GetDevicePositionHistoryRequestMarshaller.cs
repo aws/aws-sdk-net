@@ -74,7 +74,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndTimeExclusive())
                 {
                     context.Writer.WritePropertyName("EndTimeExclusive");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeExclusive));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeExclusive));
                 }
 
                 if(publicRequest.IsSetMaxResults())
@@ -92,7 +92,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartTimeInclusive())
                 {
                     context.Writer.WritePropertyName("StartTimeInclusive");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeInclusive));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeInclusive));
                 }
 
                 writer.WriteObjectEnd();

@@ -67,11 +67,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             if(publicRequestConfigurationlistValue.IsSetEndTime())
                             {
-                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601(publicRequestConfigurationlistValue.EndTime));
+                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationlistValue.EndTime));
                             }
                             if(publicRequestConfigurationlistValue.IsSetStartTime())
                             {
-                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601(publicRequestConfigurationlistValue.StartTime));
+                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationlistValue.StartTime));
                             }
                             publicRequestConfigurationlistValueIndex++;
                         }

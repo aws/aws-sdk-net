@@ -102,7 +102,7 @@ namespace Amazon.MarketplaceDeployment.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpirationDate())
                 {
                     context.Writer.WritePropertyName("expirationDate");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.ExpirationDate));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpirationDate));
                 }
 
                 if(publicRequest.IsSetTags())

@@ -82,7 +82,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetIncludedDeletedBackToUtc())
                 {
-                    request.Parameters.Add("IncludedDeletedBackTo", StringUtils.FromDateTimeToISO8601(publicRequest.IncludedDeletedBackToUtc));
+                    request.Parameters.Add("IncludedDeletedBackTo", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.IncludedDeletedBackToUtc));
                 }
                 if(publicRequest.IsSetIncludeDeleted())
                 {

@@ -48,13 +48,13 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndInclusive())
             {
                 context.Writer.WritePropertyName("EndInclusive");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.EndInclusive));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.EndInclusive));
             }
 
             if(requestObject.IsSetStartInclusive())
             {
                 context.Writer.WritePropertyName("StartInclusive");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.StartInclusive));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartInclusive));
             }
 
         }

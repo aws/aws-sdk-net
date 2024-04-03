@@ -68,7 +68,7 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetNormalFormat())
                 {
-                    request.Parameters.Add("NormalFormat", StringUtils.FromDateTimeToISO8601(publicRequest.NormalFormat));
+                    request.Parameters.Add("NormalFormat", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.NormalFormat));
                 }
             }
             return request;
