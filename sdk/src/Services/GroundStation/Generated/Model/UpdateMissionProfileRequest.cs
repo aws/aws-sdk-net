@@ -53,8 +53,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ContactPostPassDurationSeconds. 
         /// <para>
-        /// Amount of time after a contact ends that you’d like to receive a CloudWatch event
-        /// indicating the pass has finished.
+        /// Amount of time after a contact ends that you’d like to receive a Ground Station Contact
+        /// State Change event indicating the pass has finished.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=21600)]
@@ -73,8 +73,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ContactPrePassDurationSeconds. 
         /// <para>
-        /// Amount of time after a contact ends that you’d like to receive a CloudWatch event
-        /// indicating the pass has finished.
+        /// Amount of time after a contact ends that you’d like to receive a Ground Station Contact
+        /// State Change event indicating the pass has finished.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=21600)]

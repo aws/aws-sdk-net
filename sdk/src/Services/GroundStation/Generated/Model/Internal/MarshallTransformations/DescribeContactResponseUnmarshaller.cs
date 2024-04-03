@@ -135,6 +135,18 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("visibilityEndTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.VisibilityEndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("visibilityStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.VisibilityStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
