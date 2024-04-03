@@ -104,7 +104,7 @@ namespace Amazon.Runtime.Internal.Util
         /// Converts a DateTime to ISO8601 formatted string with milliseconds
         /// if they are not zero.
         /// </summary>
-        public static string FromDateTimeToISO8601Minimal(DateTime value)
+        public static string FromDateTimeToISO8601WithOptionalMs(DateTime value)
         {
             var format = value.Millisecond == 0
                 ? AWSSDKUtils.ISO8601DateFormatNoMS

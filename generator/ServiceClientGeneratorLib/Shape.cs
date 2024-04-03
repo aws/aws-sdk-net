@@ -815,7 +815,7 @@ namespace ServiceClientGenerator
                 if(timestampFormat == TimestampFormat.ISO8601
                     && (marshallLocation == MarshallLocation.Uri || marshallLocation == MarshallLocation.QueryString))
                 {
-                    formatAppend = "Minimal";
+                    formatAppend = "WithOptionalMs";
                 }
                 return "StringUtils.FromDateTimeTo" + timestampFormat + formatAppend;
             }
