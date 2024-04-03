@@ -74,6 +74,32 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#>                context.Writer.Write(<#=member.PrimitiveMarshaller#>(<#=variableName + "." + member.PropertyName#>));
 <#+
 				}
+				else if(member.Shape.IsDouble)
+				{
+#>
+<#=new string(' ', level * 4)#>				if(StringUtils.IsSpecialDoubleValue(<#=memberProperty#>))
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					context.Writer.Write(StringUtils.FromSpecialDoubleValue(<#=memberProperty#>));
+<#=new string(' ', level * 4)#>				}
+<#=new string(' ', level * 4)#>				else
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					context.Writer.Write(<#=memberProperty#>);
+<#=new string(' ', level * 4)#>				}
+<#+
+				}
+				else if(member.Shape.IsFloat)
+				{
+#>
+<#=new string(' ', level * 4)#>				if(StringUtils.IsSpecialFloatValue(<#=memberProperty#>))
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					context.Writer.Write(StringUtils.FromSpecialFloatValue(<#=memberProperty#>));
+<#=new string(' ', level * 4)#>				}
+<#=new string(' ', level * 4)#>				else
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					context.Writer.Write(<#=memberProperty#>);
+<#=new string(' ', level * 4)#>				}
+<#+
+				}
 				else
 				{
 #>

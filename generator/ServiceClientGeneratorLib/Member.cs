@@ -120,7 +120,7 @@ namespace ServiceClientGenerator
             get
             {
                 string memberName = null;
-
+                
                 // Follow any property renaming for this member for consistent viewing
                 if (!IsInjected)
                 {
