@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CaptionDescription Object
+    /// Response Unmarshaller for CmafIngestGroupSettings Object
     /// </summary>  
-    public class CaptionDescriptionUnmarshaller : IUnmarshaller<CaptionDescription, XmlUnmarshallerContext>, IUnmarshaller<CaptionDescription, JsonUnmarshallerContext>
+    public class CmafIngestGroupSettingsUnmarshaller : IUnmarshaller<CmafIngestGroupSettings, XmlUnmarshallerContext>, IUnmarshaller<CmafIngestGroupSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CaptionDescription IUnmarshaller<CaptionDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CmafIngestGroupSettings IUnmarshaller<CmafIngestGroupSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CaptionDescription Unmarshall(JsonUnmarshallerContext context)
+        public CmafIngestGroupSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            CaptionDescription unmarshalledObject = new CaptionDescription();
+            CmafIngestGroupSettings unmarshalledObject = new CmafIngestGroupSettings();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,52 +63,40 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessibility", targetDepth))
+                if (context.TestExpression("destination", targetDepth))
+                {
+                    var unmarshaller = OutputLocationRefUnmarshaller.Instance;
+                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nielsenId3Behavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Accessibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NielsenId3Behavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("captionDashRoles", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.CaptionDashRoles = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("captionSelectorName", targetDepth))
+                if (context.TestExpression("scte35Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CaptionSelectorName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte35Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("destinationSettings", targetDepth))
+                if (context.TestExpression("segmentLength", targetDepth))
                 {
-                    var unmarshaller = CaptionDestinationSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DestinationSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SegmentLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("dvbDashAccessibility", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DvbDashAccessibility = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("languageCode", targetDepth))
+                if (context.TestExpression("segmentLengthUnits", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentLengthUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("languageDescription", targetDepth))
+                if (context.TestExpression("sendDelayMs", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SendDelayMs = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -116,12 +104,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static CaptionDescriptionUnmarshaller _instance = new CaptionDescriptionUnmarshaller();        
+        private static CmafIngestGroupSettingsUnmarshaller _instance = new CmafIngestGroupSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CaptionDescriptionUnmarshaller Instance
+        public static CmafIngestGroupSettingsUnmarshaller Instance
         {
             get
             {

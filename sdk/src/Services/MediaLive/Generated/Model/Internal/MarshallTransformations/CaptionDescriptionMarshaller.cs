@@ -51,6 +51,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Accessibility);
             }
 
+            if(requestObject.IsSetCaptionDashRoles())
+            {
+                context.Writer.WritePropertyName("captionDashRoles");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCaptionDashRolesListValue in requestObject.CaptionDashRoles)
+                {
+                        context.Writer.Write(requestObjectCaptionDashRolesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetCaptionSelectorName())
             {
                 context.Writer.WritePropertyName("captionSelectorName");
@@ -66,6 +77,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.DestinationSettings, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDvbDashAccessibility())
+            {
+                context.Writer.WritePropertyName("dvbDashAccessibility");
+                context.Writer.Write(requestObject.DvbDashAccessibility);
             }
 
             if(requestObject.IsSetLanguageCode())

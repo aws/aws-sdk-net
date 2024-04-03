@@ -63,6 +63,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("audioDashRoles", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AudioDashRoles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("audioNormalizationSettings", targetDepth))
                 {
                     var unmarshaller = AudioNormalizationSettingsUnmarshaller.Instance;
@@ -97,6 +103,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AudioCodecSettingsUnmarshaller.Instance;
                     unmarshalledObject.CodecSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dvbDashAccessibility", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DvbDashAccessibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("languageCode", targetDepth))

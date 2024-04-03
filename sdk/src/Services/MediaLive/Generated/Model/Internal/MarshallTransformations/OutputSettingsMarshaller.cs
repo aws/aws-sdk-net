@@ -56,6 +56,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCmafIngestOutputSettings())
+            {
+                context.Writer.WritePropertyName("cmafIngestOutputSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CmafIngestOutputSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CmafIngestOutputSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFrameCaptureOutputSettings())
             {
                 context.Writer.WritePropertyName("frameCaptureOutputSettings");

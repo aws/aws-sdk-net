@@ -69,6 +69,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArchiveOutputSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cmafIngestOutputSettings", targetDepth))
+                {
+                    var unmarshaller = CmafIngestOutputSettingsUnmarshaller.Instance;
+                    unmarshalledObject.CmafIngestOutputSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("frameCaptureOutputSettings", targetDepth))
                 {
                     var unmarshaller = FrameCaptureOutputSettingsUnmarshaller.Instance;

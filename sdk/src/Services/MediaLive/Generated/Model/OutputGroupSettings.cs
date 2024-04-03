@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     public partial class OutputGroupSettings
     {
         private ArchiveGroupSettings _archiveGroupSettings;
+        private CmafIngestGroupSettings _cmafIngestGroupSettings;
         private FrameCaptureGroupSettings _frameCaptureGroupSettings;
         private HlsGroupSettings _hlsGroupSettings;
         private MediaPackageGroupSettings _mediaPackageGroupSettings;
@@ -55,6 +56,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetArchiveGroupSettings()
         {
             return this._archiveGroupSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CmafIngestGroupSettings.
+        /// </summary>
+        public CmafIngestGroupSettings CmafIngestGroupSettings
+        {
+            get { return this._cmafIngestGroupSettings; }
+            set { this._cmafIngestGroupSettings = value; }
+        }
+
+        // Check to see if CmafIngestGroupSettings property is set
+        internal bool IsSetCmafIngestGroupSettings()
+        {
+            return this._cmafIngestGroupSettings != null;
         }
 
         /// <summary>

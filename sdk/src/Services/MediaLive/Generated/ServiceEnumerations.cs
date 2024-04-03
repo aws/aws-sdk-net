@@ -2131,6 +2131,106 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type CmafIngestSegmentLengthUnits.
+    /// </summary>
+    public class CmafIngestSegmentLengthUnits : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MILLISECONDS for CmafIngestSegmentLengthUnits
+        /// </summary>
+        public static readonly CmafIngestSegmentLengthUnits MILLISECONDS = new CmafIngestSegmentLengthUnits("MILLISECONDS");
+        /// <summary>
+        /// Constant SECONDS for CmafIngestSegmentLengthUnits
+        /// </summary>
+        public static readonly CmafIngestSegmentLengthUnits SECONDS = new CmafIngestSegmentLengthUnits("SECONDS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafIngestSegmentLengthUnits(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafIngestSegmentLengthUnits FindValue(string value)
+        {
+            return FindValue<CmafIngestSegmentLengthUnits>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafIngestSegmentLengthUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafNielsenId3Behavior.
+    /// </summary>
+    public class CmafNielsenId3Behavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_PASSTHROUGH for CmafNielsenId3Behavior
+        /// </summary>
+        public static readonly CmafNielsenId3Behavior NO_PASSTHROUGH = new CmafNielsenId3Behavior("NO_PASSTHROUGH");
+        /// <summary>
+        /// Constant PASSTHROUGH for CmafNielsenId3Behavior
+        /// </summary>
+        public static readonly CmafNielsenId3Behavior PASSTHROUGH = new CmafNielsenId3Behavior("PASSTHROUGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafNielsenId3Behavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafNielsenId3Behavior FindValue(string value)
+        {
+            return FindValue<CmafNielsenId3Behavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafNielsenId3Behavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ColorSpace.
     /// </summary>
     public class ColorSpace : ConstantClass
@@ -2228,6 +2328,178 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DashRoleAudio.
+    /// </summary>
+    public class DashRoleAudio : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALTERNATE for DashRoleAudio
+        /// </summary>
+        public static readonly DashRoleAudio ALTERNATE = new DashRoleAudio("ALTERNATE");
+        /// <summary>
+        /// Constant COMMENTARY for DashRoleAudio
+        /// </summary>
+        public static readonly DashRoleAudio COMMENTARY = new DashRoleAudio("COMMENTARY");
+        /// <summary>
+        /// Constant DESCRIPTION for DashRoleAudio
+        /// </summary>
+        public static readonly DashRoleAudio DESCRIPTION = new DashRoleAudio("DESCRIPTION");
+        /// <summary>
+        /// Constant DUB for DashRoleAudio
+        /// </summary>
+        public static readonly DashRoleAudio DUB = new DashRoleAudio("DUB");
+        /// <summary>
+        /// Constant EMERGENCY for DashRoleAudio
+        /// </summary>
+        public static readonly DashRoleAudio EMERGENCY = new DashRoleAudio("EMERGENCY");
+        /// <summary>
+        /// Constant ENHANCEDAUDIOINTELLIGIBILITY for DashRoleAudio
+        /// </summary>
+        public static readonly DashRoleAudio ENHANCEDAUDIOINTELLIGIBILITY = new DashRoleAudio("ENHANCED-AUDIO-INTELLIGIBILITY");
+        /// <summary>
+        /// Constant KARAOKE for DashRoleAudio
+        /// </summary>
+        public static readonly DashRoleAudio KARAOKE = new DashRoleAudio("KARAOKE");
+        /// <summary>
+        /// Constant MAIN for DashRoleAudio
+        /// </summary>
+        public static readonly DashRoleAudio MAIN = new DashRoleAudio("MAIN");
+        /// <summary>
+        /// Constant SUPPLEMENTARY for DashRoleAudio
+        /// </summary>
+        public static readonly DashRoleAudio SUPPLEMENTARY = new DashRoleAudio("SUPPLEMENTARY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashRoleAudio(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashRoleAudio FindValue(string value)
+        {
+            return FindValue<DashRoleAudio>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashRoleAudio(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DashRoleCaption.
+    /// </summary>
+    public class DashRoleCaption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALTERNATE for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption ALTERNATE = new DashRoleCaption("ALTERNATE");
+        /// <summary>
+        /// Constant CAPTION for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption CAPTION = new DashRoleCaption("CAPTION");
+        /// <summary>
+        /// Constant COMMENTARY for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption COMMENTARY = new DashRoleCaption("COMMENTARY");
+        /// <summary>
+        /// Constant DESCRIPTION for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption DESCRIPTION = new DashRoleCaption("DESCRIPTION");
+        /// <summary>
+        /// Constant DUB for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption DUB = new DashRoleCaption("DUB");
+        /// <summary>
+        /// Constant EASYREADER for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption EASYREADER = new DashRoleCaption("EASYREADER");
+        /// <summary>
+        /// Constant EMERGENCY for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption EMERGENCY = new DashRoleCaption("EMERGENCY");
+        /// <summary>
+        /// Constant FORCEDSUBTITLE for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption FORCEDSUBTITLE = new DashRoleCaption("FORCED-SUBTITLE");
+        /// <summary>
+        /// Constant KARAOKE for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption KARAOKE = new DashRoleCaption("KARAOKE");
+        /// <summary>
+        /// Constant MAIN for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption MAIN = new DashRoleCaption("MAIN");
+        /// <summary>
+        /// Constant METADATA for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption METADATA = new DashRoleCaption("METADATA");
+        /// <summary>
+        /// Constant SUBTITLE for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption SUBTITLE = new DashRoleCaption("SUBTITLE");
+        /// <summary>
+        /// Constant SUPPLEMENTARY for DashRoleCaption
+        /// </summary>
+        public static readonly DashRoleCaption SUPPLEMENTARY = new DashRoleCaption("SUPPLEMENTARY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashRoleCaption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashRoleCaption FindValue(string value)
+        {
+            return FindValue<DashRoleCaption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashRoleCaption(string value)
         {
             return FindValue(value);
         }
@@ -2410,6 +2682,76 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DolbyEProgramSelection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DvbDashAccessibility.
+    /// </summary>
+    public class DvbDashAccessibility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DVBDASH_1_VISUALLY_IMPAIRED for DvbDashAccessibility
+        /// </summary>
+        public static readonly DvbDashAccessibility DVBDASH_1_VISUALLY_IMPAIRED = new DvbDashAccessibility("DVBDASH_1_VISUALLY_IMPAIRED");
+        /// <summary>
+        /// Constant DVBDASH_2_HARD_OF_HEARING for DvbDashAccessibility
+        /// </summary>
+        public static readonly DvbDashAccessibility DVBDASH_2_HARD_OF_HEARING = new DvbDashAccessibility("DVBDASH_2_HARD_OF_HEARING");
+        /// <summary>
+        /// Constant DVBDASH_3_SUPPLEMENTAL_COMMENTARY for DvbDashAccessibility
+        /// </summary>
+        public static readonly DvbDashAccessibility DVBDASH_3_SUPPLEMENTAL_COMMENTARY = new DvbDashAccessibility("DVBDASH_3_SUPPLEMENTAL_COMMENTARY");
+        /// <summary>
+        /// Constant DVBDASH_4_DIRECTORS_COMMENTARY for DvbDashAccessibility
+        /// </summary>
+        public static readonly DvbDashAccessibility DVBDASH_4_DIRECTORS_COMMENTARY = new DvbDashAccessibility("DVBDASH_4_DIRECTORS_COMMENTARY");
+        /// <summary>
+        /// Constant DVBDASH_5_EDUCATIONAL_NOTES for DvbDashAccessibility
+        /// </summary>
+        public static readonly DvbDashAccessibility DVBDASH_5_EDUCATIONAL_NOTES = new DvbDashAccessibility("DVBDASH_5_EDUCATIONAL_NOTES");
+        /// <summary>
+        /// Constant DVBDASH_6_MAIN_PROGRAM for DvbDashAccessibility
+        /// </summary>
+        public static readonly DvbDashAccessibility DVBDASH_6_MAIN_PROGRAM = new DvbDashAccessibility("DVBDASH_6_MAIN_PROGRAM");
+        /// <summary>
+        /// Constant DVBDASH_7_CLEAN_FEED for DvbDashAccessibility
+        /// </summary>
+        public static readonly DvbDashAccessibility DVBDASH_7_CLEAN_FEED = new DvbDashAccessibility("DVBDASH_7_CLEAN_FEED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DvbDashAccessibility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DvbDashAccessibility FindValue(string value)
+        {
+            return FindValue<DvbDashAccessibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DvbDashAccessibility(string value)
         {
             return FindValue(value);
         }
@@ -13896,6 +14238,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Scte35SpliceInsertWebDeliveryAllowedBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Scte35Type.
+    /// </summary>
+    public class Scte35Type : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for Scte35Type
+        /// </summary>
+        public static readonly Scte35Type NONE = new Scte35Type("NONE");
+        /// <summary>
+        /// Constant SCTE_35_WITHOUT_SEGMENTATION for Scte35Type
+        /// </summary>
+        public static readonly Scte35Type SCTE_35_WITHOUT_SEGMENTATION = new Scte35Type("SCTE_35_WITHOUT_SEGMENTATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Scte35Type(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Scte35Type FindValue(string value)
+        {
+            return FindValue<Scte35Type>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Scte35Type(string value)
         {
             return FindValue(value);
         }
