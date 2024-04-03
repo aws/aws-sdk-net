@@ -70,7 +70,14 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxLineCoveragePercentage())
                 {
                     context.Writer.WritePropertyName("maxLineCoveragePercentage");
-                    context.Writer.Write(publicRequest.MaxLineCoveragePercentage);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MaxLineCoveragePercentage);
+                    }
                 }
 
                 if(publicRequest.IsSetMaxResults())
@@ -82,7 +89,14 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinLineCoveragePercentage())
                 {
                     context.Writer.WritePropertyName("minLineCoveragePercentage");
-                    context.Writer.Write(publicRequest.MinLineCoveragePercentage);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MinLineCoveragePercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MinLineCoveragePercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MinLineCoveragePercentage);
+                    }
                 }
 
                 if(publicRequest.IsSetNextToken())

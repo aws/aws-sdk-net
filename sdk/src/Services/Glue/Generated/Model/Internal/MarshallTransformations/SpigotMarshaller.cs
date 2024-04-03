@@ -71,7 +71,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProb())
             {
                 context.Writer.WritePropertyName("Prob");
-                context.Writer.Write(requestObject.Prob);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Prob))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Prob));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Prob);
+                }
             }
 
             if(requestObject.IsSetTopk())

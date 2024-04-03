@@ -48,13 +48,27 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseLat())
             {
                 context.Writer.WritePropertyName("BaseLat");
-                context.Writer.Write(requestObject.BaseLat);
+                if(StringUtils.IsSpecialFloatValue(requestObject.BaseLat))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.BaseLat));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BaseLat);
+                }
             }
 
             if(requestObject.IsSetBaseLng())
             {
                 context.Writer.WritePropertyName("BaseLng");
-                context.Writer.Write(requestObject.BaseLng);
+                if(StringUtils.IsSpecialFloatValue(requestObject.BaseLng))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.BaseLng));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BaseLng);
+                }
             }
 
             if(requestObject.IsSetBaseStationId())

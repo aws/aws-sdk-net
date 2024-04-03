@@ -48,7 +48,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlackDetectThreshold())
             {
                 context.Writer.WritePropertyName("blackDetectThreshold");
-                context.Writer.Write(requestObject.BlackDetectThreshold);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BlackDetectThreshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BlackDetectThreshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BlackDetectThreshold);
+                }
             }
 
             if(requestObject.IsSetVideoBlackThresholdMsec())

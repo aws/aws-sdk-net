@@ -108,7 +108,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxCapacity())
                 {
                     context.Writer.WritePropertyName("MaxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MaxCapacity);
+                    }
                 }
 
                 if(publicRequest.IsSetNotificationProperty())

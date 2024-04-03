@@ -54,7 +54,14 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("threshold");
-                context.Writer.Write(requestObject.Threshold);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Threshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Threshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Threshold);
+                }
             }
 
         }

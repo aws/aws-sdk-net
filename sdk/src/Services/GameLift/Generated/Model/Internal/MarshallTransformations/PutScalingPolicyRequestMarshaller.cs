@@ -129,7 +129,14 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThreshold())
                 {
                     context.Writer.WritePropertyName("Threshold");
-                    context.Writer.Write(publicRequest.Threshold);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.Threshold);
+                    }
                 }
 
                 writer.WriteObjectEnd();

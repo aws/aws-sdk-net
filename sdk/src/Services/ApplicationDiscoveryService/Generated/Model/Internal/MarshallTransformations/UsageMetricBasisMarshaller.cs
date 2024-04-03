@@ -54,7 +54,14 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             if(requestObject.IsSetPercentageAdjust())
             {
                 context.Writer.WritePropertyName("percentageAdjust");
-                context.Writer.Write(requestObject.PercentageAdjust);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentageAdjust))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentageAdjust));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PercentageAdjust);
+                }
             }
 
         }

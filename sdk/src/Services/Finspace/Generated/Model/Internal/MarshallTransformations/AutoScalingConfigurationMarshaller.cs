@@ -60,7 +60,14 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricTarget())
             {
                 context.Writer.WritePropertyName("metricTarget");
-                context.Writer.Write(requestObject.MetricTarget);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricTarget))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricTarget));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MetricTarget);
+                }
             }
 
             if(requestObject.IsSetMinNodeCount())
@@ -72,13 +79,27 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScaleInCooldownSeconds())
             {
                 context.Writer.WritePropertyName("scaleInCooldownSeconds");
-                context.Writer.Write(requestObject.ScaleInCooldownSeconds);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ScaleInCooldownSeconds))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScaleInCooldownSeconds));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ScaleInCooldownSeconds);
+                }
             }
 
             if(requestObject.IsSetScaleOutCooldownSeconds())
             {
                 context.Writer.WritePropertyName("scaleOutCooldownSeconds");
-                context.Writer.Write(requestObject.ScaleOutCooldownSeconds);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ScaleOutCooldownSeconds);
+                }
             }
 
         }

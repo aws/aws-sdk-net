@@ -54,7 +54,14 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionThresholdValue())
             {
                 context.Writer.WritePropertyName("ActionThresholdValue");
-                context.Writer.Write(requestObject.ActionThresholdValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ActionThresholdValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ActionThresholdValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ActionThresholdValue);
+                }
             }
 
         }

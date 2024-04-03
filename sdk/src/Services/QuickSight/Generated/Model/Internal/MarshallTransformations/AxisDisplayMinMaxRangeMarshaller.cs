@@ -48,13 +48,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximum())
             {
                 context.Writer.WritePropertyName("Maximum");
-                context.Writer.Write(requestObject.Maximum);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Maximum))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Maximum));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Maximum);
+                }
             }
 
             if(requestObject.IsSetMinimum())
             {
                 context.Writer.WritePropertyName("Minimum");
-                context.Writer.Write(requestObject.Minimum);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Minimum))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Minimum));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Minimum);
+                }
             }
 
         }

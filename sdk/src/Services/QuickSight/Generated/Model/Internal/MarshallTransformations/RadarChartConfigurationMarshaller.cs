@@ -177,7 +177,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartAngle())
             {
                 context.Writer.WritePropertyName("StartAngle");
-                context.Writer.Write(requestObject.StartAngle);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StartAngle))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StartAngle));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.StartAngle);
+                }
             }
 
             if(requestObject.IsSetVisualPalette())

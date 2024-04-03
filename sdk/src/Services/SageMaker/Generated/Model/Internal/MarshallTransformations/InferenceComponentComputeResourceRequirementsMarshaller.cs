@@ -60,13 +60,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfAcceleratorDevicesRequired())
             {
                 context.Writer.WritePropertyName("NumberOfAcceleratorDevicesRequired");
-                context.Writer.Write(requestObject.NumberOfAcceleratorDevicesRequired);
+                if(StringUtils.IsSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NumberOfAcceleratorDevicesRequired);
+                }
             }
 
             if(requestObject.IsSetNumberOfCpuCoresRequired())
             {
                 context.Writer.WritePropertyName("NumberOfCpuCoresRequired");
-                context.Writer.Write(requestObject.NumberOfCpuCoresRequired);
+                if(StringUtils.IsSpecialFloatValue(requestObject.NumberOfCpuCoresRequired))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.NumberOfCpuCoresRequired));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NumberOfCpuCoresRequired);
+                }
             }
 
         }

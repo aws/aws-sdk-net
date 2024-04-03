@@ -48,7 +48,14 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDialingCapacity())
             {
                 context.Writer.WritePropertyName("dialingCapacity");
-                context.Writer.Write(requestObject.DialingCapacity);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DialingCapacity))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DialingCapacity));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DialingCapacity);
+                }
             }
 
         }

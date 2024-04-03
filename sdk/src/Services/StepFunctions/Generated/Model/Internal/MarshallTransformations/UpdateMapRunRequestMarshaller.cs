@@ -88,7 +88,14 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetToleratedFailurePercentage())
                 {
                     context.Writer.WritePropertyName("toleratedFailurePercentage");
-                    context.Writer.Write(publicRequest.ToleratedFailurePercentage);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.ToleratedFailurePercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ToleratedFailurePercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.ToleratedFailurePercentage);
+                    }
                 }
 
                 writer.WriteObjectEnd();

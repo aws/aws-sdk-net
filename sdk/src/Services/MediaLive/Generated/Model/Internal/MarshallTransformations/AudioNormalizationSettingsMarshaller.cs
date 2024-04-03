@@ -60,7 +60,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetLkfs())
             {
                 context.Writer.WritePropertyName("targetLkfs");
-                context.Writer.Write(requestObject.TargetLkfs);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetLkfs))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetLkfs));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TargetLkfs);
+                }
             }
 
         }

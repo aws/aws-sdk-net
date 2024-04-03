@@ -48,25 +48,53 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
-                context.Writer.Write(requestObject.Height);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Height))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Height));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Height);
+                }
             }
 
             if(requestObject.IsSetLeftOffset())
             {
                 context.Writer.WritePropertyName("leftOffset");
-                context.Writer.Write(requestObject.LeftOffset);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LeftOffset))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LeftOffset));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LeftOffset);
+                }
             }
 
             if(requestObject.IsSetTopOffset())
             {
                 context.Writer.WritePropertyName("topOffset");
-                context.Writer.Write(requestObject.TopOffset);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TopOffset))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TopOffset));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TopOffset);
+                }
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("width");
-                context.Writer.Write(requestObject.Width);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Width))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Width));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Width);
+                }
             }
 
         }

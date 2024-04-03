@@ -54,7 +54,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThresholdValue())
             {
                 context.Writer.WritePropertyName("ThresholdValue");
-                context.Writer.Write(requestObject.ThresholdValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThresholdValue);
+                }
             }
 
         }

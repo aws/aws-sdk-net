@@ -60,7 +60,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLevel())
             {
                 context.Writer.WritePropertyName("Level");
-                context.Writer.Write(requestObject.Level);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Level))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Level));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Level);
+                }
             }
 
         }

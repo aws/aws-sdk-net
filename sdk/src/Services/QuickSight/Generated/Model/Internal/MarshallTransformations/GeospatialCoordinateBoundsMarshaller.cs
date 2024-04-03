@@ -48,25 +48,53 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEast())
             {
                 context.Writer.WritePropertyName("East");
-                context.Writer.Write(requestObject.East);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.East))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.East));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.East);
+                }
             }
 
             if(requestObject.IsSetNorth())
             {
                 context.Writer.WritePropertyName("North");
-                context.Writer.Write(requestObject.North);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.North))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.North));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.North);
+                }
             }
 
             if(requestObject.IsSetSouth())
             {
                 context.Writer.WritePropertyName("South");
-                context.Writer.Write(requestObject.South);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.South))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.South));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.South);
+                }
             }
 
             if(requestObject.IsSetWest())
             {
                 context.Writer.WritePropertyName("West");
-                context.Writer.Write(requestObject.West);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.West))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.West));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.West);
+                }
             }
 
         }

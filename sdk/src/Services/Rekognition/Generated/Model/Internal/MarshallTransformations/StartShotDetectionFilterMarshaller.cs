@@ -48,7 +48,14 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinSegmentConfidence())
             {
                 context.Writer.WritePropertyName("MinSegmentConfidence");
-                context.Writer.Write(requestObject.MinSegmentConfidence);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinSegmentConfidence))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinSegmentConfidence));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinSegmentConfidence);
+                }
             }
 
         }

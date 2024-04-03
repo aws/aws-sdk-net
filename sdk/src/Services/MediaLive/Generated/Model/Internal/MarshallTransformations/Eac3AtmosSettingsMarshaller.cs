@@ -48,7 +48,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Bitrate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Bitrate);
+                }
             }
 
             if(requestObject.IsSetCodingMode())
@@ -78,13 +85,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeightTrim())
             {
                 context.Writer.WritePropertyName("heightTrim");
-                context.Writer.Write(requestObject.HeightTrim);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.HeightTrim))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.HeightTrim));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.HeightTrim);
+                }
             }
 
             if(requestObject.IsSetSurroundTrim())
             {
                 context.Writer.WritePropertyName("surroundTrim");
-                context.Writer.Write(requestObject.SurroundTrim);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SurroundTrim))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SurroundTrim));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.SurroundTrim);
+                }
             }
 
         }

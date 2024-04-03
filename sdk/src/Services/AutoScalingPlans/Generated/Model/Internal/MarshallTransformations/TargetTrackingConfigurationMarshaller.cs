@@ -94,7 +94,14 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetValue())
             {
                 context.Writer.WritePropertyName("TargetValue");
-                context.Writer.Write(requestObject.TargetValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TargetValue);
+                }
             }
 
         }

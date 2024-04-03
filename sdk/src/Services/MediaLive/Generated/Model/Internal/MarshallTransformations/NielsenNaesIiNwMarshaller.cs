@@ -54,7 +54,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSid())
             {
                 context.Writer.WritePropertyName("sid");
-                context.Writer.Write(requestObject.Sid);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Sid))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Sid));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Sid);
+                }
             }
 
             if(requestObject.IsSetTimezone())

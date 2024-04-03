@@ -93,7 +93,14 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinAllowedConfidenceScoreForMerging())
                 {
                     context.Writer.WritePropertyName("MinAllowedConfidenceScoreForMerging");
-                    context.Writer.Write(publicRequest.MinAllowedConfidenceScoreForMerging);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MinAllowedConfidenceScoreForMerging))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MinAllowedConfidenceScoreForMerging));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MinAllowedConfidenceScoreForMerging);
+                    }
                 }
 
                 writer.WriteObjectEnd();

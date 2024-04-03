@@ -48,7 +48,14 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpus())
             {
                 context.Writer.WritePropertyName("cpus");
-                context.Writer.Write(requestObject.Cpus);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Cpus))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Cpus));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Cpus);
+                }
             }
 
             if(requestObject.IsSetMemory())

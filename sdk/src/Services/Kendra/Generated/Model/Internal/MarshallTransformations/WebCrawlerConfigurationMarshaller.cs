@@ -65,7 +65,14 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxContentSizePerPageInMegaBytes())
             {
                 context.Writer.WritePropertyName("MaxContentSizePerPageInMegaBytes");
-                context.Writer.Write(requestObject.MaxContentSizePerPageInMegaBytes);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxContentSizePerPageInMegaBytes);
+                }
             }
 
             if(requestObject.IsSetMaxLinksPerPage())

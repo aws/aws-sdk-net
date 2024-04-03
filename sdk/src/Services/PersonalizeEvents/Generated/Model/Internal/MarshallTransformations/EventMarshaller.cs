@@ -60,7 +60,14 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventValue())
             {
                 context.Writer.WritePropertyName("eventValue");
-                context.Writer.Write(requestObject.EventValue);
+                if(StringUtils.IsSpecialFloatValue(requestObject.EventValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.EventValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.EventValue);
+                }
             }
 
             if(requestObject.IsSetImpression())
