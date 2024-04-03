@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SearchCriteria Marshaller
+    /// Sort Marshaller
     /// </summary>
-    public class SearchCriteriaMarshaller : IRequestMarshaller<SearchCriteria, JsonMarshallerContext> 
+    public class SortMarshaller : IRequestMarshaller<Sort, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,33 +43,18 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SearchCriteria requestObject, JsonMarshallerContext context)
+        public void Marshall(Sort requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFilters())
+            if(requestObject.IsSetSortField())
             {
-                context.Writer.WritePropertyName("filters");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectFiltersListValue in requestObject.Filters)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SearchFilterMarshaller.Instance;
-                    marshaller.Marshall(requestObjectFiltersListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("sortField");
+                context.Writer.Write(requestObject.SortField);
             }
 
-            if(requestObject.IsSetSort())
+            if(requestObject.IsSetSortOrder())
             {
-                context.Writer.WritePropertyName("sort");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SortMarshaller.Instance;
-                marshaller.Marshall(requestObject.Sort, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("sortOrder");
+                context.Writer.Write(requestObject.SortOrder);
             }
 
         }
@@ -77,7 +62,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SearchCriteriaMarshaller Instance = new SearchCriteriaMarshaller();
+        public readonly static SortMarshaller Instance = new SortMarshaller();
 
     }
 }

@@ -63,6 +63,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DICOMPatientId);
             }
 
+            if(requestObject.IsSetDICOMSeriesInstanceUID())
+            {
+                context.Writer.WritePropertyName("DICOMSeriesInstanceUID");
+                context.Writer.Write(requestObject.DICOMSeriesInstanceUID);
+            }
+
             if(requestObject.IsSetDICOMStudyDateAndTime())
             {
                 context.Writer.WritePropertyName("DICOMStudyDateAndTime");
@@ -84,6 +90,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("DICOMStudyInstanceUID");
                 context.Writer.Write(requestObject.DICOMStudyInstanceUID);
+            }
+
+            if(requestObject.IsSetUpdatedAt())
+            {
+                context.Writer.WritePropertyName("updatedAt");
+                context.Writer.Write(requestObject.UpdatedAt);
             }
 
         }

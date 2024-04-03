@@ -36,9 +36,11 @@ namespace Amazon.MedicalImaging.Model
         private DateTime? _createdAt;
         private string _dicomAccessionNumber;
         private string _dicomPatientId;
+        private string _dicomSeriesInstanceUID;
         private DICOMStudyDateAndTime _dicomStudyDateAndTime;
         private string _dicomStudyId;
         private string _dicomStudyInstanceUID;
+        private DateTime? _updatedAt;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -97,6 +99,25 @@ namespace Amazon.MedicalImaging.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DICOMSeriesInstanceUID. 
+        /// <para>
+        /// The Series Instance UID input for search.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
+        public string DICOMSeriesInstanceUID
+        {
+            get { return this._dicomSeriesInstanceUID; }
+            set { this._dicomSeriesInstanceUID = value; }
+        }
+
+        // Check to see if DICOMSeriesInstanceUID property is set
+        internal bool IsSetDICOMSeriesInstanceUID()
+        {
+            return this._dicomSeriesInstanceUID != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DICOMStudyDateAndTime. 
         /// <para>
         /// The aggregated structure containing DICOM study date and study time for search.
@@ -150,6 +171,24 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetDICOMStudyInstanceUID()
         {
             return this._dicomStudyInstanceUID != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The timestamp input for search.
+        /// </para>
+        /// </summary>
+        public DateTime UpdatedAt
+        {
+            get { return this._updatedAt.GetValueOrDefault(); }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
         }
 
     }

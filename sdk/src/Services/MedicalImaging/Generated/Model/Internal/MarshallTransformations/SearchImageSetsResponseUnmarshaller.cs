@@ -63,6 +63,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                     response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sort", targetDepth))
+                {
+                    var unmarshaller = SortUnmarshaller.Instance;
+                    response.Sort = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

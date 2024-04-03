@@ -29,48 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
-    /// The search criteria.
+    /// Sort search results.
     /// </summary>
-    public partial class SearchCriteria
+    public partial class Sort
     {
-        private List<SearchFilter> _filters = AWSConfigs.InitializeCollections ? new List<SearchFilter>() : null;
-        private Sort _sort;
+        private SortField _sortField;
+        private SortOrder _sortOrder;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property SortField. 
         /// <para>
-        /// The filters for the search criteria.
+        /// The sort field for search criteria.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
-        public List<SearchFilter> Filters
+        [AWSProperty(Required=true)]
+        public SortField SortField
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._sortField; }
+            set { this._sortField = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if SortField property is set
+        internal bool IsSetSortField()
         {
-            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._sortField != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Sort. 
+        /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort input for search criteria.
+        /// The sort order for search criteria.
         /// </para>
         /// </summary>
-        public Sort Sort
+        [AWSProperty(Required=true)]
+        public SortOrder SortOrder
         {
-            get { return this._sort; }
-            set { this._sort = value; }
+            get { return this._sortOrder; }
+            set { this._sortOrder = value; }
         }
 
-        // Check to see if Sort property is set
-        internal bool IsSetSort()
+        // Check to see if SortOrder property is set
+        internal bool IsSetSortOrder()
         {
-            return this._sort != null;
+            return this._sortOrder != null;
         }
 
     }

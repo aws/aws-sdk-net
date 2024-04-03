@@ -38,10 +38,10 @@ namespace Amazon.MedicalImaging
     /// <summary>
     /// <para>Implementation for accessing MedicalImaging</para>
     ///
-    /// This is the <i>AWS HealthImaging API Reference</i>. AWS HealthImaging is a HIPAA-eligible
-    /// service that helps health care providers and their medical imaging ISV partners store,
-    /// transform, and apply machine learning to medical images. For an introduction to the
-    /// service, see the <a href="https://docs.aws.amazon.com/healthimaging/latest/devguide/what-is.html">
+    /// This is the <i>AWS HealthImaging API Reference</i>. AWS HealthImaging is a HIPAA eligible
+    /// service that empowers healthcare providers, life science organizations, and their
+    /// software partners to store, analyze, and share medical images in the cloud at petabyte
+    /// scale. For an introduction to the service, see the <a href="https://docs.aws.amazon.com/healthimaging/latest/devguide/what-is.html">
     /// <i>AWS HealthImaging Developer Guide</i> </a>.
     /// 
     ///  <note> 
@@ -51,18 +51,12 @@ namespace Amazon.MedicalImaging
     /// management. For more information, see <a href="http://aws.amazon.com/developer/tools">Tools
     /// to build on AWS</a>.
     /// </para>
-    ///  
-    /// <para>
-    /// For information about using HealthImaging API actions in one of the language-specific
-    /// AWS SDKs, refer to the <i>See Also</i> link at the end of each section that describes
-    /// an API action or data type.
-    /// </para>
     ///  </note> 
     /// <para>
     /// The following sections list AWS HealthImaging API actions categorized according to
     /// functionality. Links are provided to actions within this Reference, along with links
     /// back to corresponding sections in the <i>AWS HealthImaging Developer Guide</i> where
-    /// you can view console procedures and CLI/SDK code examples.
+    /// you can view tested code examples.
     /// </para>
     ///  
     /// <para>
@@ -177,23 +171,20 @@ namespace Amazon.MedicalImaging
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_TagResource.html">TagResource</a>
-    /// – See <a href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-data-store.html">Tagging
-    /// a data store</a> and <a href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-image-set.html">Tagging
-    /// an image set</a>.
+    /// – See <a href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-resource.html">Tagging
+    /// a resource</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
-    /// – See <a href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-data-store.html">Tagging
-    /// a data store</a> and <a href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-image-set.html">Tagging
-    /// an image set</a>.
+    /// – See <a href="https://docs.aws.amazon.com/healthimaging/latest/devguide/list-tag-resource.html">Listing
+    /// tags for a resource</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_UntagResource.html">UntagResource</a>
-    /// – See <a href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-data-store.html">Tagging
-    /// a data store</a> and <a href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-image-set.html">Tagging
-    /// an image set</a>.
+    /// – See <a href="https://docs.aws.amazon.com/healthimaging/latest/devguide/untag-resource.html">Untagging
+    /// a resource</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -705,6 +696,16 @@ namespace Amazon.MedicalImaging
 
         /// <summary>
         /// Get the import job properties to learn more about the job or job progress.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>jobStatus</c> refers to the execution of the import job. Therefore, an import
+        /// job can return a <c>jobStatus</c> as <c>COMPLETED</c> even if validation issues are
+        /// discovered during the import process. If a <c>jobStatus</c> returns as <c>COMPLETED</c>,
+        /// we still recommend you review the output manifests written to S3, as they provide
+        /// details on the success or failure of individual P10 object imports.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDICOMImportJob service method.</param>
         /// <param name="cancellationToken">

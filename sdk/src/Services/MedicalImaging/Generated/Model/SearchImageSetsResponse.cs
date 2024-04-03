@@ -35,6 +35,7 @@ namespace Amazon.MedicalImaging.Model
     {
         private List<ImageSetsMetadataSummary> _imageSetsMetadataSummaries = AWSConfigs.InitializeCollections ? new List<ImageSetsMetadataSummary>() : null;
         private string _nextToken;
+        private Sort _sort;
 
         /// <summary>
         /// Gets and sets the property ImageSetsMetadataSummaries. 
@@ -72,6 +73,24 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sort. 
+        /// <para>
+        /// The sort order for image set search results.
+        /// </para>
+        /// </summary>
+        public Sort Sort
+        {
+            get { return this._sort; }
+            set { this._sort = value; }
+        }
+
+        // Check to see if Sort property is set
+        internal bool IsSetSort()
+        {
+            return this._sort != null;
         }
 
     }

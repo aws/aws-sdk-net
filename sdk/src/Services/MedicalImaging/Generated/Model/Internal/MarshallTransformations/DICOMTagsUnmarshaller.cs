@@ -105,6 +105,30 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.DICOMPatientSex = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DICOMSeriesBodyPart", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DICOMSeriesBodyPart = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DICOMSeriesInstanceUID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DICOMSeriesInstanceUID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DICOMSeriesModality", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DICOMSeriesModality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DICOMSeriesNumber", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DICOMSeriesNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DICOMStudyDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
