@@ -99,6 +99,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.GlossaryTerms = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("latestTimeSeriesDataPointForms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TimeSeriesDataPointSummaryFormOutput, TimeSeriesDataPointSummaryFormOutputUnmarshaller>(TimeSeriesDataPointSummaryFormOutputUnmarshaller.Instance);
+                    unmarshalledObject.LatestTimeSeriesDataPointForms = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("owningProjectId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

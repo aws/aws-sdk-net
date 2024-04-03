@@ -111,6 +111,11 @@ namespace Amazon.DataZone.Model
         IListSubscriptionTargetsPaginator ListSubscriptionTargets(ListSubscriptionTargetsRequest request);
 
         /// <summary>
+        /// Paginator for ListTimeSeriesDataPoints operation
+        ///</summary>
+        IListTimeSeriesDataPointsPaginator ListTimeSeriesDataPoints(ListTimeSeriesDataPointsRequest request);
+
+        /// <summary>
         /// Paginator for Search operation
         ///</summary>
         ISearchPaginator Search(SearchRequest request);

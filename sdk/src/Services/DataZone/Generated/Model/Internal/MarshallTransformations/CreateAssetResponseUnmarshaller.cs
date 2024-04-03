@@ -111,6 +111,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("latestTimeSeriesDataPointFormsOutput", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TimeSeriesDataPointSummaryFormOutput, TimeSeriesDataPointSummaryFormOutputUnmarshaller>(TimeSeriesDataPointSummaryFormOutputUnmarshaller.Instance);
+                    response.LatestTimeSeriesDataPointFormsOutput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("listing", targetDepth))
                 {
                     var unmarshaller = AssetListingDetailsUnmarshaller.Instance;

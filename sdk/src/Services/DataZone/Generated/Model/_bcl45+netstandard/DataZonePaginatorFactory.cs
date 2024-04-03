@@ -172,6 +172,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListTimeSeriesDataPoints operation
+        ///</summary>
+        public IListTimeSeriesDataPointsPaginator ListTimeSeriesDataPoints(ListTimeSeriesDataPointsRequest request) 
+        {
+            return new ListTimeSeriesDataPointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for Search operation
         ///</summary>
         public ISearchPaginator Search(SearchRequest request) 

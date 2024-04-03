@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GlueRunConfigurationOutput Object
+    /// Response Unmarshaller for TimeSeriesDataPointSummaryFormOutput Object
     /// </summary>  
-    public class GlueRunConfigurationOutputUnmarshaller : IUnmarshaller<GlueRunConfigurationOutput, XmlUnmarshallerContext>, IUnmarshaller<GlueRunConfigurationOutput, JsonUnmarshallerContext>
+    public class TimeSeriesDataPointSummaryFormOutputUnmarshaller : IUnmarshaller<TimeSeriesDataPointSummaryFormOutput, XmlUnmarshallerContext>, IUnmarshaller<TimeSeriesDataPointSummaryFormOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GlueRunConfigurationOutput IUnmarshaller<GlueRunConfigurationOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TimeSeriesDataPointSummaryFormOutput IUnmarshaller<TimeSeriesDataPointSummaryFormOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GlueRunConfigurationOutput Unmarshall(JsonUnmarshallerContext context)
+        public TimeSeriesDataPointSummaryFormOutput Unmarshall(JsonUnmarshallerContext context)
         {
-            GlueRunConfigurationOutput unmarshalledObject = new GlueRunConfigurationOutput();
+            TimeSeriesDataPointSummaryFormOutput unmarshalledObject = new TimeSeriesDataPointSummaryFormOutput();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,34 +63,40 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("contentSummary", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContentSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("autoImportDataQualityResult", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.AutoImportDataQualityResult = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dataAccessRole", targetDepth))
+                if (context.TestExpression("formName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataAccessRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FormName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("region", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("relationalFilterConfigurations", targetDepth))
+                if (context.TestExpression("timestamp", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RelationalFilterConfiguration, RelationalFilterConfigurationUnmarshaller>(RelationalFilterConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.RelationalFilterConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("typeIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TypeIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("typeRevision", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TypeRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -98,12 +104,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static GlueRunConfigurationOutputUnmarshaller _instance = new GlueRunConfigurationOutputUnmarshaller();        
+        private static TimeSeriesDataPointSummaryFormOutputUnmarshaller _instance = new TimeSeriesDataPointSummaryFormOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GlueRunConfigurationOutputUnmarshaller Instance
+        public static TimeSeriesDataPointSummaryFormOutputUnmarshaller Instance
         {
             get
             {

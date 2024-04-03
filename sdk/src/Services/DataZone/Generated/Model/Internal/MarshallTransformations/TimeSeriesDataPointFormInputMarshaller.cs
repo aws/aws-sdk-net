@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GlueRunConfigurationInput Marshaller
+    /// TimeSeriesDataPointFormInput Marshaller
     /// </summary>
-    public class GlueRunConfigurationInputMarshaller : IRequestMarshaller<GlueRunConfigurationInput, JsonMarshallerContext> 
+    public class TimeSeriesDataPointFormInputMarshaller : IRequestMarshaller<TimeSeriesDataPointFormInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,36 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GlueRunConfigurationInput requestObject, JsonMarshallerContext context)
+        public void Marshall(TimeSeriesDataPointFormInput requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAutoImportDataQualityResult())
+            if(requestObject.IsSetContent())
             {
-                context.Writer.WritePropertyName("autoImportDataQualityResult");
-                context.Writer.Write(requestObject.AutoImportDataQualityResult);
+                context.Writer.WritePropertyName("content");
+                context.Writer.Write(requestObject.Content);
             }
 
-            if(requestObject.IsSetDataAccessRole())
+            if(requestObject.IsSetFormName())
             {
-                context.Writer.WritePropertyName("dataAccessRole");
-                context.Writer.Write(requestObject.DataAccessRole);
+                context.Writer.WritePropertyName("formName");
+                context.Writer.Write(requestObject.FormName);
             }
 
-            if(requestObject.IsSetRelationalFilterConfigurations())
+            if(requestObject.IsSetTimestamp())
             {
-                context.Writer.WritePropertyName("relationalFilterConfigurations");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectRelationalFilterConfigurationsListValue in requestObject.RelationalFilterConfigurations)
-                {
-                    context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("timestamp");
+                context.Writer.Write(requestObject.Timestamp);
+            }
 
-                    var marshaller = RelationalFilterConfigurationMarshaller.Instance;
-                    marshaller.Marshall(requestObjectRelationalFilterConfigurationsListValue, context);
+            if(requestObject.IsSetTypeIdentifier())
+            {
+                context.Writer.WritePropertyName("typeIdentifier");
+                context.Writer.Write(requestObject.TypeIdentifier);
+            }
 
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+            if(requestObject.IsSetTypeRevision())
+            {
+                context.Writer.WritePropertyName("typeRevision");
+                context.Writer.Write(requestObject.TypeRevision);
             }
 
         }
@@ -78,7 +80,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static GlueRunConfigurationInputMarshaller Instance = new GlueRunConfigurationInputMarshaller();
+        public readonly static TimeSeriesDataPointFormInputMarshaller Instance = new TimeSeriesDataPointFormInputMarshaller();
 
     }
 }

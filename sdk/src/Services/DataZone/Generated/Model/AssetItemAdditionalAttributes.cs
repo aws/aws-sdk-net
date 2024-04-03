@@ -34,6 +34,7 @@ namespace Amazon.DataZone.Model
     public partial class AssetItemAdditionalAttributes
     {
         private List<FormOutput> _formsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
+        private List<TimeSeriesDataPointSummaryFormOutput> _latestTimeSeriesDataPointFormsOutput = AWSConfigs.InitializeCollections ? new List<TimeSeriesDataPointSummaryFormOutput>() : null;
         private List<FormOutput> _readOnlyFormsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetFormsOutput()
         {
             return this._formsOutput != null && (this._formsOutput.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestTimeSeriesDataPointFormsOutput. 
+        /// <para>
+        /// The latest time series data points forms included in the additional attributes of
+        /// an asset.
+        /// </para>
+        /// </summary>
+        public List<TimeSeriesDataPointSummaryFormOutput> LatestTimeSeriesDataPointFormsOutput
+        {
+            get { return this._latestTimeSeriesDataPointFormsOutput; }
+            set { this._latestTimeSeriesDataPointFormsOutput = value; }
+        }
+
+        // Check to see if LatestTimeSeriesDataPointFormsOutput property is set
+        internal bool IsSetLatestTimeSeriesDataPointFormsOutput()
+        {
+            return this._latestTimeSeriesDataPointFormsOutput != null && (this._latestTimeSeriesDataPointFormsOutput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

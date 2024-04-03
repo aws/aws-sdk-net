@@ -39,6 +39,7 @@ namespace Amazon.DataZone.Model
         private DateTime? _createdAt;
         private string _forms;
         private List<DetailedGlossaryTerm> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<DetailedGlossaryTerm>() : null;
+        private List<TimeSeriesDataPointSummaryFormOutput> _latestTimeSeriesDataPointForms = AWSConfigs.InitializeCollections ? new List<TimeSeriesDataPointSummaryFormOutput>() : null;
         private string _owningProjectId;
 
         /// <summary>
@@ -150,6 +151,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetGlossaryTerms()
         {
             return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestTimeSeriesDataPointForms. 
+        /// <para>
+        /// The latest time series data points forms included in the additional attributes of
+        /// an asset.
+        /// </para>
+        /// </summary>
+        public List<TimeSeriesDataPointSummaryFormOutput> LatestTimeSeriesDataPointForms
+        {
+            get { return this._latestTimeSeriesDataPointForms; }
+            set { this._latestTimeSeriesDataPointForms = value; }
+        }
+
+        // Check to see if LatestTimeSeriesDataPointForms property is set
+        internal bool IsSetLatestTimeSeriesDataPointForms()
+        {
+            return this._latestTimeSeriesDataPointForms != null && (this._latestTimeSeriesDataPointForms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

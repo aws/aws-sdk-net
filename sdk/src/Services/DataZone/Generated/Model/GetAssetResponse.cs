@@ -43,6 +43,7 @@ namespace Amazon.DataZone.Model
         private List<FormOutput> _formsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
+        private List<TimeSeriesDataPointSummaryFormOutput> _latestTimeSeriesDataPointFormsOutput = AWSConfigs.InitializeCollections ? new List<TimeSeriesDataPointSummaryFormOutput>() : null;
         private AssetListingDetails _listing;
         private string _name;
         private string _owningProjectId;
@@ -235,6 +236,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestTimeSeriesDataPointFormsOutput. 
+        /// <para>
+        /// The latest data point that was imported into the time series form for the asset. 
+        /// </para>
+        /// </summary>
+        public List<TimeSeriesDataPointSummaryFormOutput> LatestTimeSeriesDataPointFormsOutput
+        {
+            get { return this._latestTimeSeriesDataPointFormsOutput; }
+            set { this._latestTimeSeriesDataPointFormsOutput = value; }
+        }
+
+        // Check to see if LatestTimeSeriesDataPointFormsOutput property is set
+        internal bool IsSetLatestTimeSeriesDataPointFormsOutput()
+        {
+            return this._latestTimeSeriesDataPointFormsOutput != null && (this._latestTimeSeriesDataPointFormsOutput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

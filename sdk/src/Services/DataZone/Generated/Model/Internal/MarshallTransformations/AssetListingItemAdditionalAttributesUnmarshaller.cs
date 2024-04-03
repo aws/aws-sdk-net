@@ -69,6 +69,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.Forms = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("latestTimeSeriesDataPointForms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TimeSeriesDataPointSummaryFormOutput, TimeSeriesDataPointSummaryFormOutputUnmarshaller>(TimeSeriesDataPointSummaryFormOutputUnmarshaller.Instance);
+                    unmarshalledObject.LatestTimeSeriesDataPointForms = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

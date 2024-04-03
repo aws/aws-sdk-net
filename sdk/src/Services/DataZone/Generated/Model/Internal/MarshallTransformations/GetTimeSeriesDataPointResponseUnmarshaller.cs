@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetAsset operation
+    /// Response Unmarshaller for GetTimeSeriesDataPoint operation
     /// </summary>  
-    public class GetAssetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetTimeSeriesDataPointResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,118 +45,40 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetAssetResponse response = new GetAssetResponse();
+            GetTimeSeriesDataPointResponse response = new GetTimeSeriesDataPointResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdBy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreatedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("domainId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("externalIdentifier", targetDepth))
+                if (context.TestExpression("entityId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ExternalIdentifier = unmarshaller.Unmarshall(context);
+                    response.EntityId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("firstRevisionCreatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.FirstRevisionCreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("firstRevisionCreatedBy", targetDepth))
+                if (context.TestExpression("entityType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FirstRevisionCreatedBy = unmarshaller.Unmarshall(context);
+                    response.EntityType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("formsOutput", targetDepth))
+                if (context.TestExpression("form", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FormOutput, FormOutputUnmarshaller>(FormOutputUnmarshaller.Instance);
-                    response.FormsOutput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = TimeSeriesDataPointFormOutputUnmarshaller.Instance;
+                    response.Form = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("glossaryTerms", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.GlossaryTerms = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("formName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestTimeSeriesDataPointFormsOutput", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<TimeSeriesDataPointSummaryFormOutput, TimeSeriesDataPointSummaryFormOutputUnmarshaller>(TimeSeriesDataPointSummaryFormOutputUnmarshaller.Instance);
-                    response.LatestTimeSeriesDataPointFormsOutput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("listing", targetDepth))
-                {
-                    var unmarshaller = AssetListingDetailsUnmarshaller.Instance;
-                    response.Listing = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("owningProjectId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.OwningProjectId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("readOnlyFormsOutput", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<FormOutput, FormOutputUnmarshaller>(FormOutputUnmarshaller.Instance);
-                    response.ReadOnlyFormsOutput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("revision", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Revision = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("typeIdentifier", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TypeIdentifier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("typeRevision", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TypeRevision = unmarshaller.Unmarshall(context);
+                    response.FormName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -210,9 +132,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             return new AmazonDataZoneException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetAssetResponseUnmarshaller _instance = new GetAssetResponseUnmarshaller();        
+        private static GetTimeSeriesDataPointResponseUnmarshaller _instance = new GetTimeSeriesDataPointResponseUnmarshaller();        
 
-        internal static GetAssetResponseUnmarshaller GetInstance()
+        internal static GetTimeSeriesDataPointResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -220,7 +142,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetAssetResponseUnmarshaller Instance
+        public static GetTimeSeriesDataPointResponseUnmarshaller Instance
         {
             get
             {

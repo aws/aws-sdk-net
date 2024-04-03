@@ -1756,6 +1756,10 @@ namespace Amazon.DataZone
         /// Constant FORMS for SearchOutputAdditionalAttribute
         /// </summary>
         public static readonly SearchOutputAdditionalAttribute FORMS = new SearchOutputAdditionalAttribute("FORMS");
+        /// <summary>
+        /// Constant TIME_SERIES_DATA_POINT_FORMS for SearchOutputAdditionalAttribute
+        /// </summary>
+        public static readonly SearchOutputAdditionalAttribute TIME_SERIES_DATA_POINT_FORMS = new SearchOutputAdditionalAttribute("TIME_SERIES_DATA_POINT_FORMS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2234,6 +2238,56 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimeSeriesEntityType.
+    /// </summary>
+    public class TimeSeriesEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSET for TimeSeriesEntityType
+        /// </summary>
+        public static readonly TimeSeriesEntityType ASSET = new TimeSeriesEntityType("ASSET");
+        /// <summary>
+        /// Constant LISTING for TimeSeriesEntityType
+        /// </summary>
+        public static readonly TimeSeriesEntityType LISTING = new TimeSeriesEntityType("LISTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimeSeriesEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimeSeriesEntityType FindValue(string value)
+        {
+            return FindValue<TimeSeriesEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimeSeriesEntityType(string value)
         {
             return FindValue(value);
         }
