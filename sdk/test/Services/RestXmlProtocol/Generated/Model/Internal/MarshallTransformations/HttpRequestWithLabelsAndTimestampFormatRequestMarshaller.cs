@@ -58,10 +58,10 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetDefaultFormat())
                 throw new AmazonRestXmlProtocolException("Request object does not have required field DefaultFormat set");
-            request.AddPathResource("{defaultFormat}", StringUtils.FromDateTimeToISO8601Minimal(publicRequest.DefaultFormat));
+            request.AddPathResource("{defaultFormat}", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DefaultFormat));
             if (!publicRequest.IsSetMemberDateTime())
                 throw new AmazonRestXmlProtocolException("Request object does not have required field MemberDateTime set");
-            request.AddPathResource("{memberDateTime}", StringUtils.FromDateTimeToISO8601Minimal(publicRequest.MemberDateTime));
+            request.AddPathResource("{memberDateTime}", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.MemberDateTime));
             if (!publicRequest.IsSetMemberEpochSeconds())
                 throw new AmazonRestXmlProtocolException("Request object does not have required field MemberEpochSeconds set");
             request.AddPathResource("{memberEpochSeconds}", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.MemberEpochSeconds));
@@ -70,7 +70,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.AddPathResource("{memberHttpDate}", StringUtils.FromDateTimeToRFC822(publicRequest.MemberHttpDate));
             if (!publicRequest.IsSetTargetDateTime())
                 throw new AmazonRestXmlProtocolException("Request object does not have required field TargetDateTime set");
-            request.AddPathResource("{targetDateTime}", StringUtils.FromDateTimeToISO8601Minimal(publicRequest.TargetDateTime));
+            request.AddPathResource("{targetDateTime}", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.TargetDateTime));
             if (!publicRequest.IsSetTargetEpochSeconds())
                 throw new AmazonRestXmlProtocolException("Request object does not have required field TargetEpochSeconds set");
             request.AddPathResource("{targetEpochSeconds}", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.TargetEpochSeconds));

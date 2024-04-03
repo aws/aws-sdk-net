@@ -79,7 +79,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.AddPathResource("{string}", StringUtils.FromString(publicRequest.String));
             if (!publicRequest.IsSetTimestamp())
                 throw new AmazonRestXmlProtocolException("Request object does not have required field Timestamp set");
-            request.AddPathResource("{timestamp}", StringUtils.FromDateTimeToISO8601Minimal(publicRequest.Timestamp));
+            request.AddPathResource("{timestamp}", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Timestamp));
             request.ResourcePath = "/HttpRequestWithLabels/{string}/{short}/{integer}/{long}/{float}/{double}/{boolean}/{timestamp}";
 
 

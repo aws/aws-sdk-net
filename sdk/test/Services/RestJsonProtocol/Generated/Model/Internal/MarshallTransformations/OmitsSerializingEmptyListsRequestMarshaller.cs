@@ -78,7 +78,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 request.ParameterCollection.Add("StringList", publicRequest.QueryStringList);
             
             if (publicRequest.IsSetQueryTimestampList())
-                request.ParameterCollection.Add("TimestampList", publicRequest.QueryTimestampList.ConvertAll<string>(item => StringUtils.FromDateTimeToISO8601Minimal(item)));
+                request.ParameterCollection.Add("TimestampList", publicRequest.QueryTimestampList.ConvertAll<string>(item => StringUtils.FromDateTimeToISO8601WithOptionalMs(item)));
             request.ResourcePath = "/OmitsSerializingEmptyLists";
             request.UseQueryString = true;
 
