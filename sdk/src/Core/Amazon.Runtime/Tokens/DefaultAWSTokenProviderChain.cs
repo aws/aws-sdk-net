@@ -61,7 +61,7 @@ namespace Amazon.Runtime
         // default providers constructor parameters flattened to properties
 
         /// <summary>
-        /// Used to initialize <see cref="ProfileTokenProvider"/>.
+        /// Used to initialize ProfileTokenProvider.
         /// </summary>
         public string ProfileName { get; set; }
 

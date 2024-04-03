@@ -38,7 +38,9 @@ namespace Amazon.SimpleNotificationService
         private static void AddSQSPermission(Policy policy, string topicArn, string sqsQueueArn)
         {
             Statement statement = new Statement(Statement.StatementEffect.Allow);
+#pragma warning disable CS0612,CS0618
             statement.Actions.Add(SQSActionIdentifiers.SendMessage);
+#pragma warning restore CS0612,CS0618
             statement.Resources.Add(new Resource(sqsQueueArn));
             statement.Conditions.Add(ConditionFactory.NewSourceArnCondition(topicArn));
             statement.Principals.Add(new Principal("*"));
@@ -136,7 +138,9 @@ namespace Amazon.SimpleNotificationService
             var sourceArn = string.Format(CultureInfo.InvariantCulture, "arn:aws:s3:*:*:{0}", bucket);
 
             statement = new Statement(Statement.StatementEffect.Allow);
+#pragma warning disable CS0612,CS0618
             statement.Actions.Add(SNSActionIdentifiers.Publish);
+#pragma warning restore CS0612,CS0618
             statement.Resources.Add(new Resource(topicArn));
             statement.Principals.Add(new Principal("*"));
             statement.Conditions.Add(ConditionFactory.NewSourceArnCondition(sourceArn));

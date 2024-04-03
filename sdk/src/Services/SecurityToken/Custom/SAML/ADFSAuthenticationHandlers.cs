@@ -82,7 +82,9 @@ namespace Amazon.SecurityToken.SAML
                     WebException webRequestException = null;
                     try
                     {
+#pragma warning disable SYSLIB0014 // Disable obsolete warning for WebRequest.Create because we can't switch to HttpClient while we still target .NET Framework 3.5
                         request = (HttpWebRequest)WebRequest.Create(uri);
+#pragma warning disable SYSLIB0014
                         request.CookieContainer = cookieContainer;
                         request.ConnectionGroupName = connectionGroup;
                         request.KeepAlive = true; //KeepAlive = false doesn't work on .NET Core 2.1+

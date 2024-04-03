@@ -140,6 +140,7 @@ namespace Amazon.SecurityToken
         /// and the region is a legacy global region
         /// </summary>
         /// <returns> url: A string url for the request </returns>
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         public override string DetermineServiceURL()
         {
             if (this.ServiceURL != null)
@@ -161,10 +162,12 @@ namespace Amazon.SecurityToken
 
         internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
         {
+#pragma warning disable CS0612,CS0618
             var endpoint =
                 regionEndpoint.GetEndpointForService(
                     config.RegionEndpointServiceName,
                     config.ToGetEndpointForServiceOptions());
+#pragma warning restore CS0612,CS0618
 
             string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", config.UseHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
             return url;

@@ -9,6 +9,7 @@
     AddCommonUsingStatements();
 #>
 
+#pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -237,3 +238,4 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
     }
 }
+#pragma warning restore CS0612,CS0618
