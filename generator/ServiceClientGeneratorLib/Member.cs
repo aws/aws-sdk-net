@@ -753,8 +753,7 @@ namespace ServiceClientGenerator
 
                     if (this.model.Type == ServiceType.Json 
                         || this.model.Type == ServiceType.Rest_Json 
-                        || this.model.Type == ServiceType.Rest_Xml
-                        || (this.model.Type == ServiceType.Query && this.model.IsEC2Protocol))
+                        || this.model.Type == ServiceType.Rest_Xml)
                         return string.Format("new DictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                     else
