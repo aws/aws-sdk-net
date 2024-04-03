@@ -67,11 +67,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetStageName())
                 throw new AmazonAPIGatewayException("Request object does not have required field StageName set");
             request.AddPathResource("{stage_name}", StringUtils.FromString(publicRequest.StageName));
-            
             if (publicRequest.IsSetParameters())
             {
                 foreach(var kvp in publicRequest.Parameters)
                 {
+                    if(request.Parameters.ContainsKey(kvp.Key))
+                       request.Parameters.Remove(kvp.Key);
                     request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
                 }
             }

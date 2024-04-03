@@ -59,11 +59,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
-            
             if (publicRequest.IsSetQueryStringParameters())
             {
                 foreach(var kvp in publicRequest.QueryStringParameters)
                 {
+                    if(request.Parameters.ContainsKey(kvp.Key))
+                       request.Parameters.Remove(kvp.Key);
                     request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
                 }
             }

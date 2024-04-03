@@ -58,17 +58,20 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-16";
             request.HttpMethod = "POST";
 
-            
             if (publicRequest.IsSetBaz())
             {
                 foreach(var kvp in publicRequest.Baz)
                 {
+                    if(request.Parameters.ContainsKey(kvp.Key))
+                       request.Parameters.Remove(kvp.Key);
                     request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
                 }
             }
-            
             if (publicRequest.IsSetFoo())
-                request.Parameters.Add("bar", StringUtils.FromString(publicRequest.Foo));
+            {
+                if(!request.Parameters.ContainsKey("bar"))
+                   request.Parameters.Add("bar", StringUtils.FromString(publicRequest.Foo));
+            }
             request.ResourcePath = "/Precedence";
             request.UseQueryString = true;
 
