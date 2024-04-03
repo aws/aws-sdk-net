@@ -96,6 +96,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LoggingRole);
                 }
 
+                if(publicRequest.IsSetSecurityPolicyName())
+                {
+                    context.Writer.WritePropertyName("SecurityPolicyName");
+                    context.Writer.Write(publicRequest.SecurityPolicyName);
+                }
+
                 if(publicRequest.IsSetSftpConfig())
                 {
                     context.Writer.WritePropertyName("SftpConfig");

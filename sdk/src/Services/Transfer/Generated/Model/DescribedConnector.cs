@@ -38,6 +38,7 @@ namespace Amazon.Transfer.Model
         private As2ConnectorConfig _as2Config;
         private string _connectorId;
         private string _loggingRole;
+        private string _securityPolicyName;
         private List<string> _serviceManagedEgressIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SftpConnectorConfig _sftpConfig;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -174,6 +175,25 @@ namespace Amazon.Transfer.Model
         internal bool IsSetLoggingRole()
         {
             return this._loggingRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityPolicyName. 
+        /// <para>
+        /// The text name of the security policy for the specified connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public string SecurityPolicyName
+        {
+            get { return this._securityPolicyName; }
+            set { this._securityPolicyName = value; }
+        }
+
+        // Check to see if SecurityPolicyName property is set
+        internal bool IsSetSecurityPolicyName()
+        {
+            return this._securityPolicyName != null;
         }
 
         /// <summary>

@@ -1654,10 +1654,11 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Describes the security policy that is attached to your file transfer protocol-enabled
-        /// server. The response contains a description of the security policy's properties. For
-        /// more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
-        /// with security policies</a>.
+        /// Describes the security policy that is attached to your server or SFTP connector. The
+        /// response contains a description of the security policy's properties. For more information
+        /// about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+        /// with security policies for servers</a> or <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working
+        /// with security policies for SFTP connectors</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityPolicy service method.</param>
         /// 
@@ -1682,10 +1683,11 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Describes the security policy that is attached to your file transfer protocol-enabled
-        /// server. The response contains a description of the security policy's properties. For
-        /// more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
-        /// with security policies</a>.
+        /// Describes the security policy that is attached to your server or SFTP connector. The
+        /// response contains a description of the security policy's properties. For more information
+        /// about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+        /// with security policies for servers</a> or <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working
+        /// with security policies for SFTP connectors</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2598,8 +2600,10 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Lists the security policies that are attached to your file transfer protocol-enabled
-        /// servers.
+        /// Lists the security policies that are attached to your servers and SFTP connectors.
+        /// For more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+        /// with security policies for servers</a> or <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working
+        /// with security policies for SFTP connectors</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityPolicies service method.</param>
         /// 
@@ -2623,8 +2627,10 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Lists the security policies that are attached to your file transfer protocol-enabled
-        /// servers.
+        /// Lists the security policies that are attached to your servers and SFTP connectors.
+        /// For more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+        /// with security policies for servers</a> or <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working
+        /// with security policies for SFTP connectors</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityPolicies service method.</param>
         /// <param name="cancellationToken">
