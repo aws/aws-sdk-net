@@ -516,7 +516,7 @@ this.Write("                    }\r\n");
             else if(member.IsMap)
             {
                 string context = ComposeContext(parameterContext, marshallName);
-                string mapItemContext = ComposeContext(context, member.Shape.IsFlattened ? "" : "entry", "mapIndex");
+                string mapItemContext = ComposeContext(context, member.IsFlattened ? "" : "entry", "mapIndex");
                 string mapKeyContext = ComposeContext(mapItemContext, member.Shape.KeyMarshallName);
                 string mapValueContext = ComposeContext(mapItemContext, member.Shape.ValueMarshallName);
                 string mapListValueContext = ComposeContext(mapValueContext, "member", "valueIndex");
