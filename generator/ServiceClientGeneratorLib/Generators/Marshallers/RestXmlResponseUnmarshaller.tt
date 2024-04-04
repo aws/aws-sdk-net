@@ -156,6 +156,31 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
 			    }
             }
+            else if(member.Shape.IsMap)
+			{
+                if(member.IsFlattened)
+                {
+#>
+					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+					{
+						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+						response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
+						continue;
+					}
+<#
+                }
+                else
+                {
+#>
+					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+					{
+						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+						continue;
+					}
+<#
+                }                  
+			}
 			else
 			{
 #>

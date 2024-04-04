@@ -670,7 +670,7 @@ namespace ServiceClientGenerator
         /// <returns>A string that can be used as a proper name for the unmarshaller</returns>
         public string DetermineTypeUnmarshallerInstantiate()
         {
-            return this.DetermineTypeUnmarshallerInstantiate(this.data);
+            return this.DetermineTypeUnmarshallerInstantiate(this.data, string.Empty);
         }
 
         /// <summary>
@@ -679,7 +679,7 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="extendedData"></param>
         /// <returns></returns>
-        public string DetermineTypeUnmarshallerInstantiate(JsonData extendedData)
+        public string DetermineTypeUnmarshallerInstantiate(JsonData extendedData, string parentTypeNode)
         {
             // Check to see if customizations is overriding.
             var overrideType = this.model.Customizations.OverrideDataType(OwningShape.Name, this._name);
@@ -740,15 +740,22 @@ namespace ServiceClientGenerator
                 case "map":
                     var keyType = DetermineType(memberShape[Shape.KeyKey], true);
                     var keyTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.KeyKey]);
-                    var keyTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.KeyKey]);
+                    var keyTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.KeyKey], typeNode.ToString());
 
                     var valueType = DetermineType(memberShape[Shape.ValueKey], true);
                     var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey]);
-                    var valueTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.ValueKey]);
+                    var valueTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.ValueKey], typeNode.ToString());
+
+                    //Direct sub maps can not be flattened. If the parent was a map then force the sub map to not be flat.
+                    var isFlat = IsFlattened;
+                    if (parentTypeNode == "map")
+                    {
+                        isFlat = false;
+                    }
 
                     if (this.model.Type == ServiceType.Json 
                         || this.model.Type == ServiceType.Rest_Json 
-                        || this.model.Type == ServiceType.Rest_Xml)
+                        || (this.model.Type == ServiceType.Rest_Xml && !isFlat))
                         return string.Format("new DictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                     else
@@ -757,7 +764,7 @@ namespace ServiceClientGenerator
                 case "list":
                     var listType = DetermineType(memberShape[Shape.MemberKey], true);
                     var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.MemberKey]);
-                    var listTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.MemberKey]);
+                    var listTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.MemberKey], typeNode.ToString());
 
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
                         return string.Format("new ListUnmarshaller<{0}, {1}>({2})",
