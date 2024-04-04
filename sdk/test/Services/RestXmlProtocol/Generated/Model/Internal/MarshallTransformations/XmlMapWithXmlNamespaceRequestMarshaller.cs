@@ -62,6 +62,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("XmlMapWithXmlNamespaceRequest", "");    
+                if(publicRequest.IsSetMyMap())
+                {
                     xmlWriter.WriteStartElement("KVP");
                     foreach (var kvp in publicRequest.MyMap) 
                     {
@@ -69,8 +71,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("key", kvp.Key);
                         xmlWriter.WriteElementString("value", kvp.Value);
                         xmlWriter.WriteEndElement();
-                    }            
-                    xmlWriter.WriteEndElement();                
+                    }
+                    xmlWriter.WriteEndElement();
+                }
 
                 xmlWriter.WriteEndElement();
             }

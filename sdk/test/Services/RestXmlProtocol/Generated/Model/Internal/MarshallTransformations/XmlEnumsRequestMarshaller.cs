@@ -83,6 +83,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     }            
                     xmlWriter.WriteEndElement();            
                 }
+                if(publicRequest.IsSetFooEnumMap())
+                {
                     xmlWriter.WriteStartElement("fooEnumMap");
                     foreach (var kvp in publicRequest.FooEnumMap) 
                     {
@@ -90,8 +92,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("key", kvp.Key);
                         xmlWriter.WriteElementString("value", kvp.Value);
                         xmlWriter.WriteEndElement();
-                    }            
-                    xmlWriter.WriteEndElement();                
+                    }
+                    xmlWriter.WriteEndElement();
+                }
                 var publicRequestFooEnumSet = publicRequest.FooEnumSet;
                 if (publicRequestFooEnumSet != null && publicRequestFooEnumSet.Count > 0) 
                 {                        
