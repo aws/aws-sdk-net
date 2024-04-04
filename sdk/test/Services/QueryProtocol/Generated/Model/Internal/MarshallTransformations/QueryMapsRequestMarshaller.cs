@@ -83,10 +83,10 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                     {
                         String value;
                         bool hasValue = publicRequest.FlattenedMap.TryGetValue(key, out value);
-                        request.Parameters.Add("FlattenedMap" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
+                        request.Parameters.Add("FlattenedMap" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
                         if (hasValue)
                         {
-                            request.Parameters.Add("FlattenedMap" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
+                            request.Parameters.Add("FlattenedMap" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
                         }
                         mapIndex++;
                     }
@@ -98,10 +98,10 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                     {
                         String value;
                         bool hasValue = publicRequest.FlattenedMapWithXmlName.TryGetValue(key, out value);
-                        request.Parameters.Add("Hi" + "." + "entry" + "." + mapIndex + "." + "K", StringUtils.FromString(key));
+                        request.Parameters.Add("Hi" + "." + mapIndex + "." + "K", StringUtils.FromString(key));
                         if (hasValue)
                         {
-                            request.Parameters.Add("Hi" + "." + "entry" + "." + mapIndex + "." + "V", StringUtils.FromString(value));
+                            request.Parameters.Add("Hi" + "." + mapIndex + "." + "V", StringUtils.FromString(value));
                         }
                         mapIndex++;
                     }
