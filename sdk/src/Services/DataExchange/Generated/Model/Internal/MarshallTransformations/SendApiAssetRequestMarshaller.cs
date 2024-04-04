@@ -64,8 +64,9 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 foreach(var kvp in publicRequest.QueryStringParameters)
                 {
                     if(request.Parameters.ContainsKey(kvp.Key))
-                       request.Parameters.Remove(kvp.Key);
-                    request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
+                       continue;
+                    else
+                       request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
                 }
             }
             request.ResourcePath = "/v1";

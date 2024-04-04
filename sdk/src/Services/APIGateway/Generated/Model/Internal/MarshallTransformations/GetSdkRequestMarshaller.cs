@@ -72,8 +72,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 foreach(var kvp in publicRequest.Parameters)
                 {
                     if(request.Parameters.ContainsKey(kvp.Key))
-                       request.Parameters.Remove(kvp.Key);
-                    request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
+                       continue;
+                    else
+                       request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
                 }
             }
             request.ResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/sdks/{sdk_type}";

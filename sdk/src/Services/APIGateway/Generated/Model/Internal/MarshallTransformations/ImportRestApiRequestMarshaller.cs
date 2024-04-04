@@ -62,16 +62,18 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.AddSubResource("mode", "import");
             if (publicRequest.IsSetFailOnWarnings())
             {
-                if(!request.Parameters.ContainsKey("failonwarnings"))
-                   request.Parameters.Add("failonwarnings", StringUtils.FromBool(publicRequest.FailOnWarnings));
+                if(request.Parameters.ContainsKey("failonwarnings"))
+                   request.Parameters.Remove("failonwarnings");
+                request.Parameters.Add("failonwarnings", StringUtils.FromBool(publicRequest.FailOnWarnings));
             }
             if (publicRequest.IsSetParameters())
             {
                 foreach(var kvp in publicRequest.Parameters)
                 {
                     if(request.Parameters.ContainsKey(kvp.Key))
-                       request.Parameters.Remove(kvp.Key);
-                    request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
+                       continue;
+                    else
+                       request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
                 }
             }
             request.ResourcePath = "/restapis";
