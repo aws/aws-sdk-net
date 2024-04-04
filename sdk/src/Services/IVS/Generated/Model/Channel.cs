@@ -43,6 +43,7 @@ namespace Amazon.IVS.Model
         private string _playbackUrl;
         private TranscodePreset _preset;
         private string _recordingConfigurationArn;
+        private Srt _srt;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ChannelType _type;
 
@@ -236,6 +237,24 @@ namespace Amazon.IVS.Model
         internal bool IsSetRecordingConfigurationArn()
         {
             return this._recordingConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Srt. 
+        /// <para>
+        /// Specifies the endpoint and optional passphrase for streaming with the SRT protocol.
+        /// </para>
+        /// </summary>
+        public Srt Srt
+        {
+            get { return this._srt; }
+            set { this._srt = value; }
+        }
+
+        // Check to see if Srt property is set
+        internal bool IsSetSrt()
+        {
+            return this._srt != null;
         }
 
         /// <summary>

@@ -124,6 +124,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecordingConfigurationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("srt", targetDepth))
+                {
+                    var unmarshaller = SrtUnmarshaller.Instance;
+                    unmarshalledObject.Srt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

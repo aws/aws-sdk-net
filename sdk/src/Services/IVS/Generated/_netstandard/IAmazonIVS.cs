@@ -72,45 +72,42 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Resources</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// The following resources contain information about your IVS live stream (see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html">
-    /// Getting Started with Amazon IVS</a>):
+    ///  <b>Key Concepts</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <b>Channel</b> — Stores configuration data related to your live stream. You first
     /// create a channel and then use the channel’s stream key to start your live stream.
-    /// See the Channel endpoints for more information. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>Stream key</b> — An identifier assigned by Amazon IVS when you create a channel,
-    /// which is then used to authorize streaming. See the StreamKey endpoints for more information.
-    /// <i> <b>Treat the stream key like a secret, since it allows anyone to stream to the
-    /// channel.</b> </i> 
+    /// which is then used to authorize streaming. <i> <b>Treat the stream key like a secret,
+    /// since it allows anyone to stream to the channel.</b> </i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>Playback key pair</b> — Video playback may be restricted using playback-authorization
     /// tokens, which use public-key encryption. A playback key pair is the public-private
-    /// pair of keys used to sign and validate the playback-authorization token. See the PlaybackKeyPair
-    /// endpoints for more information.
+    /// pair of keys used to sign and validate the playback-authorization token.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>Recording configuration</b> — Stores configuration related to recording a live
     /// stream and where to store the recorded content. Multiple channels can reference the
-    /// same recording configuration. See the Recording Configuration endpoints for more information.
+    /// same recording configuration.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>Playback restriction policy</b> — Restricts playback by countries and/or origin
-    /// sites. See the Playback Restriction Policy endpoints for more information.
+    /// sites.
     /// </para>
     ///  </li> </ul> 
+    /// <para>
+    /// For more information about your IVS live stream, also see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/getting-started.html">Getting
+    /// Started with IVS Low-Latency Streaming</a>.
+    /// </para>
+    ///  
     /// <para>
     ///  <b>Tagging</b> 
     /// </para>
@@ -312,7 +309,7 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>RecordingConfiguration Endpoints</b> 
+    ///  <b>Recording Configuration Endpoints</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -373,7 +370,7 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>StreamKey Endpoints</b> 
+    ///  <b>Stream Key Endpoints</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
