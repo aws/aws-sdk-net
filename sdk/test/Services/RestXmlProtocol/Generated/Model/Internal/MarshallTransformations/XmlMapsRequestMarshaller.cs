@@ -70,20 +70,16 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("entry");
                         xmlWriter.WriteElementString("key", kvp.Key);
                         xmlWriter.WriteStartElement("value");
-                
+
                         if (kvp.Value != null) 
                         {
-                            xmlWriter.WriteStartElement("GreetingStruct");            
                             if(kvp.Value.IsSetHi())
                                 xmlWriter.WriteElementString("hi", StringUtils.FromString(kvp.Value.Hi));                 
-
-                            xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
-                }
 
                 xmlWriter.WriteEndElement();
             }
