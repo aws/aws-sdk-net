@@ -57,6 +57,17 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetGroupConfiguration())
+            {
+                context.Writer.WritePropertyName("groupConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UpdateCognitoGroupConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GroupConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUserPoolArn())
             {
                 context.Writer.WritePropertyName("userPoolArn");

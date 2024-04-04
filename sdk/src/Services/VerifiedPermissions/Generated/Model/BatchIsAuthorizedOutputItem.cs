@@ -85,8 +85,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// Errors that occurred while making an authorization decision, for example, a policy
-        /// references an Entity or entity Attribute that does not exist in the slice.
+        /// Errors that occurred while making an authorization decision. For example, a policy
+        /// might reference an entity or attribute that doesn't exist in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

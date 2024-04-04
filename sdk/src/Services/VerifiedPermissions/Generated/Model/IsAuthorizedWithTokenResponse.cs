@@ -36,6 +36,7 @@ namespace Amazon.VerifiedPermissions.Model
         private Decision _decision;
         private List<DeterminingPolicyItem> _determiningPolicies = AWSConfigs.InitializeCollections ? new List<DeterminingPolicyItem>() : null;
         private List<EvaluationErrorItem> _errors = AWSConfigs.InitializeCollections ? new List<EvaluationErrorItem>() : null;
+        private EntityIdentifier _principal;
 
         /// <summary>
         /// Gets and sets the property Decision. 
@@ -99,6 +100,24 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetErrors()
         {
             return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Principal. 
+        /// <para>
+        /// The identifier of the principal in the ID or access token.
+        /// </para>
+        /// </summary>
+        public EntityIdentifier Principal
+        {
+            get { return this._principal; }
+            set { this._principal = value; }
+        }
+
+        // Check to see if Principal property is set
+        internal bool IsSetPrincipal()
+        {
+            return this._principal != null;
         }
 
     }

@@ -70,6 +70,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     response.Errors = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("principal", targetDepth))
+                {
+                    var unmarshaller = EntityIdentifierUnmarshaller.Instance;
+                    response.Principal = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

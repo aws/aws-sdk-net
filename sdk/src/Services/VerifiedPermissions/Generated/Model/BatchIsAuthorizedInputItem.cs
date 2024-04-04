@@ -41,8 +41,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Specifies the requested action to be authorized. For example, is the principal authorized
-        /// to perform this action on the resource?
+        /// Specifies the requested action to be authorized. For example, <c>PhotoFlash::ReadPhoto</c>.
         /// </para>
         /// </summary>
         public ActionIdentifier Action
@@ -97,7 +96,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// Specifies the resource for which the authorization decision is to be made.
+        /// Specifies the resource that you want an authorization decision for. For example, <c>PhotoFlash::Photo</c>.
         /// </para>
         /// </summary>
         public EntityIdentifier Resource

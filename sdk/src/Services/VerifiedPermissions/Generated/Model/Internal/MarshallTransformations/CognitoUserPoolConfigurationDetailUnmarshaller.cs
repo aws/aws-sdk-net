@@ -70,6 +70,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClientIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("groupConfiguration", targetDepth))
+                {
+                    var unmarshaller = CognitoGroupConfigurationDetailUnmarshaller.Instance;
+                    unmarshalledObject.GroupConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("issuer", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

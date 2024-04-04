@@ -77,7 +77,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// per response. You can specify a maximum of 200 identity sources per response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

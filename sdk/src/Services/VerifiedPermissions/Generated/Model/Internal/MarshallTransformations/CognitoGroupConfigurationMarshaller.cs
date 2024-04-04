@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CognitoUserPoolConfiguration Marshaller
+    /// CognitoGroupConfiguration Marshaller
     /// </summary>
-    public class CognitoUserPoolConfigurationMarshaller : IRequestMarshaller<CognitoUserPoolConfiguration, JsonMarshallerContext> 
+    public class CognitoGroupConfigurationMarshaller : IRequestMarshaller<CognitoGroupConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,34 +44,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CognitoUserPoolConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(CognitoGroupConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetClientIds())
+            if(requestObject.IsSetGroupEntityType())
             {
-                context.Writer.WritePropertyName("clientIds");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectClientIdsListValue in requestObject.ClientIds)
-                {
-                        context.Writer.Write(requestObjectClientIdsListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetGroupConfiguration())
-            {
-                context.Writer.WritePropertyName("groupConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CognitoGroupConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.GroupConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetUserPoolArn())
-            {
-                context.Writer.WritePropertyName("userPoolArn");
-                context.Writer.Write(requestObject.UserPoolArn);
+                context.Writer.WritePropertyName("groupEntityType");
+                context.Writer.Write(requestObject.GroupEntityType);
             }
 
         }
@@ -79,7 +57,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CognitoUserPoolConfigurationMarshaller Instance = new CognitoUserPoolConfigurationMarshaller();
+        public readonly static CognitoGroupConfigurationMarshaller Instance = new CognitoGroupConfigurationMarshaller();
 
     }
 }

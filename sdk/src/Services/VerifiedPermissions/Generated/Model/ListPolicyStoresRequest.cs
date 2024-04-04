@@ -54,7 +54,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// response. You can specify a maximum of 50 policy stores per response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

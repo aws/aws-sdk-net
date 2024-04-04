@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CognitoUserPoolConfigurationItem Object
+    /// Response Unmarshaller for CognitoGroupConfigurationDetail Object
     /// </summary>  
-    public class CognitoUserPoolConfigurationItemUnmarshaller : IUnmarshaller<CognitoUserPoolConfigurationItem, XmlUnmarshallerContext>, IUnmarshaller<CognitoUserPoolConfigurationItem, JsonUnmarshallerContext>
+    public class CognitoGroupConfigurationDetailUnmarshaller : IUnmarshaller<CognitoGroupConfigurationDetail, XmlUnmarshallerContext>, IUnmarshaller<CognitoGroupConfigurationDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CognitoUserPoolConfigurationItem IUnmarshaller<CognitoUserPoolConfigurationItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CognitoGroupConfigurationDetail IUnmarshaller<CognitoGroupConfigurationDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CognitoUserPoolConfigurationItem Unmarshall(JsonUnmarshallerContext context)
+        public CognitoGroupConfigurationDetail Unmarshall(JsonUnmarshallerContext context)
         {
-            CognitoUserPoolConfigurationItem unmarshalledObject = new CognitoUserPoolConfigurationItem();
+            CognitoGroupConfigurationDetail unmarshalledObject = new CognitoGroupConfigurationDetail();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,28 +64,10 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("clientIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ClientIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("groupConfiguration", targetDepth))
-                {
-                    var unmarshaller = CognitoGroupConfigurationItemUnmarshaller.Instance;
-                    unmarshalledObject.GroupConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("issuer", targetDepth))
+                if (context.TestExpression("groupEntityType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Issuer = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("userPoolArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserPoolArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupEntityType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,12 +75,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         }
 
 
-        private static CognitoUserPoolConfigurationItemUnmarshaller _instance = new CognitoUserPoolConfigurationItemUnmarshaller();        
+        private static CognitoGroupConfigurationDetailUnmarshaller _instance = new CognitoGroupConfigurationDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CognitoUserPoolConfigurationItemUnmarshaller Instance
+        public static CognitoGroupConfigurationDetailUnmarshaller Instance
         {
             get
             {

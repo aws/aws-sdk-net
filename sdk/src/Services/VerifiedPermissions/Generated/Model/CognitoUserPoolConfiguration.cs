@@ -40,12 +40,14 @@ namespace Amazon.VerifiedPermissions.Model
     ///  
     /// <para>
     /// Example:<c>"CognitoUserPoolConfiguration":{"UserPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","ClientIds":
-    /// ["a1b2c3d4e5f6g7h8i9j0kalbmc"]}</c> 
+    /// ["a1b2c3d4e5f6g7h8i9j0kalbmc"],"groupConfiguration": {"groupEntityType": "MyCorp::Group"}}</c>
+    /// 
     /// </para>
     /// </summary>
     public partial class CognitoUserPoolConfiguration
     {
         private List<string> _clientIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private CognitoGroupConfiguration _groupConfiguration;
         private string _userPoolArn;
 
         /// <summary>
@@ -70,6 +72,25 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetClientIds()
         {
             return this._clientIds != null && (this._clientIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupConfiguration. 
+        /// <para>
+        /// The type of entity that a policy store maps to groups from an Amazon Cognito user
+        /// pool identity source.
+        /// </para>
+        /// </summary>
+        public CognitoGroupConfiguration GroupConfiguration
+        {
+            get { return this._groupConfiguration; }
+            set { this._groupConfiguration = value; }
+        }
+
+        // Check to see if GroupConfiguration property is set
+        internal bool IsSetGroupConfiguration()
+        {
+            return this._groupConfiguration != null;
         }
 
         /// <summary>
