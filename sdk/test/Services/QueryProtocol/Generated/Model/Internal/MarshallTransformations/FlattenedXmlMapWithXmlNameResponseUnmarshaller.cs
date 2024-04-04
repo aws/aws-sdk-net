@@ -81,7 +81,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("KVP/entry", targetDepth))
+                    if (context.TestExpression("KVP", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         var item = unmarshaller.Unmarshall(context);
