@@ -63,19 +63,22 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                 foreach(var kvp in publicRequest.Filters)
                 {
                     if(request.ParameterCollection.ContainsKey(kvp.Key))
-                       request.ParameterCollection.Remove(kvp.Key);
-                    request.ParameterCollection.Add(kvp.Key, kvp.Value);
+                       continue;
+                    else
+                       request.ParameterCollection.Add(kvp.Key, kvp.Value);
                 }
             }
             if (publicRequest.IsSetMaxResults())
             {
-                if(!request.Parameters.ContainsKey("maxResults"))
-                   request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+                if(request.Parameters.ContainsKey("maxResults"))
+                   request.Parameters.Remove("maxResults");
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             }
             if (publicRequest.IsSetNextToken())
             {
-                if(!request.Parameters.ContainsKey("nextToken"))
-                   request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+                if(request.Parameters.ContainsKey("nextToken"))
+                   request.Parameters.Remove("nextToken");
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             }
             request.ResourcePath = "/scrapers";
             request.UseQueryString = true;

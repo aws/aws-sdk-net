@@ -63,8 +63,9 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
                 foreach(var kvp in publicRequest.QueryParamsMapOfStringList)
                 {
                     if(request.ParameterCollection.ContainsKey(kvp.Key))
-                       request.ParameterCollection.Remove(kvp.Key);
-                    request.ParameterCollection.Add(kvp.Key, kvp.Value);
+                       continue;
+                    else
+                       request.ParameterCollection.Add(kvp.Key, kvp.Value);
                 }
             }
             request.ResourcePath = "/path";

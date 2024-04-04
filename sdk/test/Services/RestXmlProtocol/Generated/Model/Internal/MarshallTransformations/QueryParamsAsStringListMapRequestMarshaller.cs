@@ -61,14 +61,16 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 foreach(var kvp in publicRequest.Foo)
                 {
                     if(request.ParameterCollection.ContainsKey(kvp.Key))
-                       request.ParameterCollection.Remove(kvp.Key);
-                    request.ParameterCollection.Add(kvp.Key, kvp.Value);
+                       continue;
+                    else
+                       request.ParameterCollection.Add(kvp.Key, kvp.Value);
                 }
             }
             if (publicRequest.IsSetQux())
             {
-                if(!request.Parameters.ContainsKey("corge"))
-                   request.Parameters.Add("corge", StringUtils.FromString(publicRequest.Qux));
+                if(request.Parameters.ContainsKey("corge"))
+                   request.Parameters.Remove("corge");
+                request.Parameters.Add("corge", StringUtils.FromString(publicRequest.Qux));
             }
             request.ResourcePath = "/StringListMap";
 

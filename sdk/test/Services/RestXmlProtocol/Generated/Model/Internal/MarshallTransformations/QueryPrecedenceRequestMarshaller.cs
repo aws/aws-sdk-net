@@ -61,14 +61,16 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 foreach(var kvp in publicRequest.Baz)
                 {
                     if(request.Parameters.ContainsKey(kvp.Key))
-                       request.Parameters.Remove(kvp.Key);
-                    request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
+                       continue;
+                    else
+                       request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
                 }
             }
             if (publicRequest.IsSetFoo())
             {
-                if(!request.Parameters.ContainsKey("bar"))
-                   request.Parameters.Add("bar", StringUtils.FromString(publicRequest.Foo));
+                if(request.Parameters.ContainsKey("bar"))
+                   request.Parameters.Remove("bar");
+                request.Parameters.Add("bar", StringUtils.FromString(publicRequest.Foo));
             }
             request.ResourcePath = "/Precedence";
 
