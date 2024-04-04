@@ -43,6 +43,7 @@ namespace Amazon.CleanRooms.Model
         private string _description;
         private string _name;
         private List<Column> _partitionKeys = AWSConfigs.InitializeCollections ? new List<Column>() : null;
+        private List<SchemaStatusDetail> _schemaStatusDetails = AWSConfigs.InitializeCollections ? new List<SchemaStatusDetail>() : null;
         private SchemaType _type;
         private DateTime? _updateTime;
 
@@ -234,6 +235,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetPartitionKeys()
         {
             return this._partitionKeys != null && (this._partitionKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaStatusDetails. 
+        /// <para>
+        /// Details about the status of the schema. Currently, only one entry is present.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<SchemaStatusDetail> SchemaStatusDetails
+        {
+            get { return this._schemaStatusDetails; }
+            set { this._schemaStatusDetails = value; }
+        }
+
+        // Check to see if SchemaStatusDetails property is set
+        internal bool IsSetSchemaStatusDetails()
+        {
+            return this._schemaStatusDetails != null && (this._schemaStatusDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

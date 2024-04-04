@@ -29,19 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchGetSchema operation.
-    /// Retrieves multiple schemas by their identifiers.
+    /// Container for the parameters to the BatchGetSchemaAnalysisRule operation.
+    /// Retrieves multiple analysis rule schemas.
     /// </summary>
-    public partial class BatchGetSchemaRequest : AmazonCleanRoomsRequest
+    public partial class BatchGetSchemaAnalysisRuleRequest : AmazonCleanRoomsRequest
     {
         private string _collaborationIdentifier;
-        private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<SchemaAnalysisRuleRequest> _schemaAnalysisRuleRequests = AWSConfigs.InitializeCollections ? new List<SchemaAnalysisRuleRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property CollaborationIdentifier. 
         /// <para>
-        /// A unique identifier for the collaboration that the schemas belong to. Currently accepts
-        /// collaboration ID.
+        /// The unique identifier of the collaboration that contains the schema analysis rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -58,22 +57,22 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Names. 
+        /// Gets and sets the property SchemaAnalysisRuleRequests. 
         /// <para>
-        /// The names for the schema objects to retrieve.
+        /// The information that's necessary to retrieve a schema analysis rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]
-        public List<string> Names
+        public List<SchemaAnalysisRuleRequest> SchemaAnalysisRuleRequests
         {
-            get { return this._names; }
-            set { this._names = value; }
+            get { return this._schemaAnalysisRuleRequests; }
+            set { this._schemaAnalysisRuleRequests = value; }
         }
 
-        // Check to see if Names property is set
-        internal bool IsSetNames()
+        // Check to see if SchemaAnalysisRuleRequests property is set
+        internal bool IsSetSchemaAnalysisRuleRequests()
         {
-            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._schemaAnalysisRuleRequests != null && (this._schemaAnalysisRuleRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

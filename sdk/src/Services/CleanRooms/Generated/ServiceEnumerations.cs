@@ -1347,9 +1347,29 @@ namespace Amazon.CleanRooms
         /// </summary>
         public static readonly ScalarFunctions COALESCE = new ScalarFunctions("COALESCE");
         /// <summary>
+        /// Constant CONVERT for ScalarFunctions
+        /// </summary>
+        public static readonly ScalarFunctions CONVERT = new ScalarFunctions("CONVERT");
+        /// <summary>
+        /// Constant CURRENT_DATE for ScalarFunctions
+        /// </summary>
+        public static readonly ScalarFunctions CURRENT_DATE = new ScalarFunctions("CURRENT_DATE");
+        /// <summary>
+        /// Constant DATEADD for ScalarFunctions
+        /// </summary>
+        public static readonly ScalarFunctions DATEADD = new ScalarFunctions("DATEADD");
+        /// <summary>
+        /// Constant EXTRACT for ScalarFunctions
+        /// </summary>
+        public static readonly ScalarFunctions EXTRACT = new ScalarFunctions("EXTRACT");
+        /// <summary>
         /// Constant FLOOR for ScalarFunctions
         /// </summary>
         public static readonly ScalarFunctions FLOOR = new ScalarFunctions("FLOOR");
+        /// <summary>
+        /// Constant GETDATE for ScalarFunctions
+        /// </summary>
+        public static readonly ScalarFunctions GETDATE = new ScalarFunctions("GETDATE");
         /// <summary>
         /// Constant LN for ScalarFunctions
         /// </summary>
@@ -1374,6 +1394,30 @@ namespace Amazon.CleanRooms
         /// Constant SQRT for ScalarFunctions
         /// </summary>
         public static readonly ScalarFunctions SQRT = new ScalarFunctions("SQRT");
+        /// <summary>
+        /// Constant SUBSTRING for ScalarFunctions
+        /// </summary>
+        public static readonly ScalarFunctions SUBSTRING = new ScalarFunctions("SUBSTRING");
+        /// <summary>
+        /// Constant TO_CHAR for ScalarFunctions
+        /// </summary>
+        public static readonly ScalarFunctions TO_CHAR = new ScalarFunctions("TO_CHAR");
+        /// <summary>
+        /// Constant TO_DATE for ScalarFunctions
+        /// </summary>
+        public static readonly ScalarFunctions TO_DATE = new ScalarFunctions("TO_DATE");
+        /// <summary>
+        /// Constant TO_NUMBER for ScalarFunctions
+        /// </summary>
+        public static readonly ScalarFunctions TO_NUMBER = new ScalarFunctions("TO_NUMBER");
+        /// <summary>
+        /// Constant TO_TIMESTAMP for ScalarFunctions
+        /// </summary>
+        public static readonly ScalarFunctions TO_TIMESTAMP = new ScalarFunctions("TO_TIMESTAMP");
+        /// <summary>
+        /// Constant TRIM for ScalarFunctions
+        /// </summary>
+        public static readonly ScalarFunctions TRIM = new ScalarFunctions("TRIM");
         /// <summary>
         /// Constant TRUNC for ScalarFunctions
         /// </summary>
@@ -1412,6 +1456,160 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScalarFunctions(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SchemaConfiguration.
+    /// </summary>
+    public class SchemaConfiguration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIFFERENTIAL_PRIVACY for SchemaConfiguration
+        /// </summary>
+        public static readonly SchemaConfiguration DIFFERENTIAL_PRIVACY = new SchemaConfiguration("DIFFERENTIAL_PRIVACY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SchemaConfiguration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SchemaConfiguration FindValue(string value)
+        {
+            return FindValue<SchemaConfiguration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SchemaConfiguration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SchemaStatus.
+    /// </summary>
+    public class SchemaStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_READY for SchemaStatus
+        /// </summary>
+        public static readonly SchemaStatus NOT_READY = new SchemaStatus("NOT_READY");
+        /// <summary>
+        /// Constant READY for SchemaStatus
+        /// </summary>
+        public static readonly SchemaStatus READY = new SchemaStatus("READY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SchemaStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SchemaStatus FindValue(string value)
+        {
+            return FindValue<SchemaStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SchemaStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SchemaStatusReasonCode.
+    /// </summary>
+    public class SchemaStatusReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANALYSIS_PROVIDERS_NOT_CONFIGURED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode ANALYSIS_PROVIDERS_NOT_CONFIGURED = new SchemaStatusReasonCode("ANALYSIS_PROVIDERS_NOT_CONFIGURED");
+        /// <summary>
+        /// Constant ANALYSIS_RULE_MISSING for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode ANALYSIS_RULE_MISSING = new SchemaStatusReasonCode("ANALYSIS_RULE_MISSING");
+        /// <summary>
+        /// Constant ANALYSIS_TEMPLATES_NOT_CONFIGURED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode ANALYSIS_TEMPLATES_NOT_CONFIGURED = new SchemaStatusReasonCode("ANALYSIS_TEMPLATES_NOT_CONFIGURED");
+        /// <summary>
+        /// Constant DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED = new SchemaStatusReasonCode("DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SchemaStatusReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SchemaStatusReasonCode FindValue(string value)
+        {
+            return FindValue<SchemaStatusReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SchemaStatusReasonCode(string value)
         {
             return FindValue(value);
         }
