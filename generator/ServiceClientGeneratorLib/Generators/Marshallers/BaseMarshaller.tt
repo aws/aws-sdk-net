@@ -200,8 +200,9 @@ using Amazon.Runtime.Internal.Util;
             if(!containsQueryParamMap)
             {
                 // Most services don't contain a query param map, and since the smithy spec specifies that if a query param map
-                // exists it must be used over a normal query param, we will separate these two cases out to different functions
-                // since handling queryparam maps + overwriting previous normal query param entries requires a lot more generated code.
+                // exists and a normal query param exists, we must ignore the query param map,
+                // we will separate these two cases out to different functions since handling queryparam maps + overwriting previous
+                // normal query param entries requires a lot more generated code.
                 ProcessQueryStringMembersNoMap(variableName,operation);
             }
             else
@@ -289,8 +290,9 @@ using Amazon.Runtime.Internal.Util;
         if (member.CustomMarshallerTransformation != null)
         {
 #>
-<#=new string(' ', (level + 1) * 4)#>if (!request.Parameters.ContainsKey("<#=member.MarshallLocationName#>"))
-<#=new string(' ', (level + 1) * 4)#>   request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>));
+<#=new string(' ', (level + 1) * 4)#>if (request.Parameters.ContainsKey("<#=member.MarshallLocationName#>"))
+<#=new string(' ', (level + 1) * 4)#>   request.Parameters.Remove("<#=member.MarshallLocationName#>"));
+<#=new string(' ', (level + 1) * 4)#>request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>));
 <#=new string(' ', level * 4)#>}
 <#+
         } //end curly brace for if(member.CustomMarshallerTransformation!=null
@@ -314,15 +316,17 @@ using Amazon.Runtime.Internal.Util;
                 {
 #>
 <#=new string(' ', (level + 2) * 4)#>if(request.ParameterCollection.ContainsKey(kvp.Key))
-<#=new string(' ', (level + 2) * 4)#>   request.ParameterCollection.Remove(kvp.Key);
-<#=new string(' ', (level + 2) * 4)#>request.ParameterCollection.Add(kvp.Key, kvp.Value);
+<#=new string(' ', (level + 2) * 4)#>   continue;
+<#=new string(' ', (level + 2) * 4)#>else
+<#=new string(' ', (level + 2) * 4)#>   request.ParameterCollection.Add(kvp.Key, kvp.Value);
 <#+             }//ending closing brace for (if(member.Shape.ValueShape.ListShape.IsString)
                 else
                 {
 #>
 <#=new string(' ', (level + 2) * 4)#>if(request.ParameterCollection.ContainsKey(kvp.Key))
-<#=new string(' ', (level + 2) * 4)#>   request.ParameterCollection.Remove(kvp.Key);
-<#=new string(' ', (level + 2) * 4)#>request.ParameterCollection.Add(kvp.Key, kvp.Value.ConvertAll<string>(item => <#=member.Shape.ValueShape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(item)));
+<#=new string(' ', (level + 2) * 4)#>   continue;
+<#=new string(' ', (level + 2) * 4)#>else
+<#=new string(' ', (level + 2) * 4)#>   request.ParameterCollection.Add(kvp.Key, kvp.Value.ConvertAll<string>(item => <#=member.Shape.ValueShape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(item)));
 <#+             }//ending closing brace for else
 
             }//ending closing brach for if(member.Shape.ValueShape.IsList
@@ -330,8 +334,9 @@ using Amazon.Runtime.Internal.Util;
             {
 #>
 <#=new string(' ', (level + 2) * 4)#>if(request.Parameters.ContainsKey(kvp.Key))
-<#=new string(' ', (level + 2) * 4)#>   request.Parameters.Remove(kvp.Key);
-<#=new string(' ', (level + 2) * 4)#>request.Parameters.Add(kvp.Key, <#=member.Shape.ValueShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(kvp.Value));
+<#=new string(' ', (level + 2) * 4)#>   continue;
+<#=new string(' ', (level + 2) * 4)#>else
+<#=new string(' ', (level + 2) * 4)#>   request.Parameters.Add(kvp.Key, <#=member.Shape.ValueShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(kvp.Value));
 <#+
             }//closing brace for else
 #>
@@ -352,14 +357,16 @@ using Amazon.Runtime.Internal.Util;
             if(member.Shape.ListShape.IsString)
             {
 #>
-<#=new string(' ', (level + 1) * 4)#>if(!request.ParameterCollection.ContainsKey("<#=member.MarshallLocationName#>"))
-<#=new string(' ', (level + 1) * 4)#>   request.ParameterCollection.Add("<#=member.MarshallLocationName#>", <#=variableName#>.<#=member.PropertyName#>);
+<#=new string(' ', (level + 1) * 4)#>if(request.ParameterCollection.ContainsKey("<#=member.MarshallLocationName#>"))
+<#=new string(' ', (level + 1) * 4)#>   request.ParameterCollection.Remove("<#=member.MarshallLocationName#>");
+<#=new string(' ', (level + 1) * 4)#>request.ParameterCollection.Add("<#=member.MarshallLocationName#>", <#=variableName#>.<#=member.PropertyName#>);
 <#+         }//end of member.Shape.ListShape.IsString
             else
             {
 #>
-<#=new string(' ', (level + 1) * 4)#>if(!request.ParameterCollection.ContainsKey("<#=member.MarshallLocationName#>"))
-<#=new string(' ', (level + 1) * 4)#>   request.ParameterCollection.Add("<#=member.MarshallLocationName#>", <#=variableName#>.<#=member.PropertyName#>.ConvertAll<string>(item => <#=member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(item)));
+<#=new string(' ', (level + 1) * 4)#>if(request.ParameterCollection.ContainsKey("<#=member.MarshallLocationName#>"))
+<#=new string(' ', (level + 1) * 4)#>   request.ParameterCollection.Remove("<#=member.MarshallLocationName#>");
+<#=new string(' ', (level + 1) * 4)#>request.ParameterCollection.Add("<#=member.MarshallLocationName#>", <#=variableName#>.<#=member.PropertyName#>.ConvertAll<string>(item => <#=member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(item)));
 
 <#+         }//end of else
 #>
@@ -369,8 +376,9 @@ using Amazon.Runtime.Internal.Util;
         else // not a map or a list
         {
 #>
-<#=new string(' ', (level + 1) * 4)#>if(!request.Parameters.ContainsKey("<#=member.MarshallLocationName#>"))
-<#=new string(' ', (level + 1) * 4)#>   request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+<#=new string(' ', (level + 1) * 4)#>if(request.Parameters.ContainsKey("<#=member.MarshallLocationName#>"))
+<#=new string(' ', (level + 1) * 4)#>   request.Parameters.Remove("<#=member.MarshallLocationName#>");
+<#=new string(' ', (level + 1) * 4)#>request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
 <#=new string(' ', level * 4)#>}
 <#+
         }//end of else
