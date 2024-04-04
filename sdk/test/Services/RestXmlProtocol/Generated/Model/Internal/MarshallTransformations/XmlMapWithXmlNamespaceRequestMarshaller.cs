@@ -68,12 +68,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     foreach (var kvp in publicRequest.MyMap) 
                     {
                         xmlWriter.WriteStartElement("entry");
-                        xmlWriter.WriteElementString("key", kvp.Key);
-                        xmlWriter.WriteElementString("value", kvp.Value);
+                        xmlWriter.WriteElementString("K", kvp.Key);
+                        xmlWriter.WriteElementString("V", kvp.Value);
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
-                }
 
                 xmlWriter.WriteEndElement();
             }
