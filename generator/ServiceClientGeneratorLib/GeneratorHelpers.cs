@@ -281,7 +281,7 @@ namespace ServiceClientGenerator
             }
             else if (member.IsMap)
             {
-                if (!member.Shape.IsFlattened)
+                if (!member.IsFlattened)
                     testExpression += "/entry";
             }
             else
