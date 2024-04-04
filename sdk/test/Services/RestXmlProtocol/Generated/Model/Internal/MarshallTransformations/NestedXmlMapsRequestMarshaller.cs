@@ -62,10 +62,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("NestedXmlMapsRequest", "");    
-                    xmlWriter.WriteStartElement("flatNestedMap");
-                    foreach (var kvp in publicRequest.FlatNestedMap) 
+                if(publicRequest.IsSetFlatNestedMap())
+                {
+                    foreach (var kvp in publicRequest.FlatNestedMap)
                     {
-                        xmlWriter.WriteStartElement("entry");
+                        xmlWriter.WriteStartElement("flatNestedMap");
                         xmlWriter.WriteElementString("key", kvp.Key);
                         xmlWriter.WriteStartElement("value");
                         foreach (var kvp1 in kvp.Value) 
@@ -76,9 +77,10 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();
                         }            
                         xmlWriter.WriteEndElement();                
-                        xmlWriter.WriteEndElement();
-                    }            
-                    xmlWriter.WriteEndElement();                
+                    }    
+                }
+                if(publicRequest.IsSetNestedMap())
+                {
                     xmlWriter.WriteStartElement("nestedMap");
                     foreach (var kvp in publicRequest.NestedMap) 
                     {
@@ -94,8 +96,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         }            
                         xmlWriter.WriteEndElement();                
                         xmlWriter.WriteEndElement();
-                    }            
-                    xmlWriter.WriteEndElement();                
+                    }
+                    xmlWriter.WriteEndElement();
+                }
 
                 xmlWriter.WriteEndElement();
             }

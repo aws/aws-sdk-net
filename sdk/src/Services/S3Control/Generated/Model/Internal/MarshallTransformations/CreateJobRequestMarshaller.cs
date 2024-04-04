@@ -288,8 +288,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("key", kvp.Key);
                                 xmlWriter.WriteElementString("value", kvp.Value);
                                 xmlWriter.WriteEndElement();
-                            }            
-                            xmlWriter.WriteEndElement();                
+                            }
+                            xmlWriter.WriteEndElement();
                         xmlWriter.WriteEndElement();
                     }
                 
@@ -469,8 +469,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("key", kvp.Key);
                                     xmlWriter.WriteElementString("value", kvp.Value);
                                     xmlWriter.WriteEndElement();
-                                }            
-                                xmlWriter.WriteEndElement();                
+                                }
+                                xmlWriter.WriteEndElement();
                             xmlWriter.WriteEndElement();
                         }
                         var publicRequestOperationS3PutObjectCopyNewObjectTagging = publicRequest.Operation.S3PutObjectCopy.NewObjectTagging;
