@@ -8773,6 +8773,46 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType G5Xlarge = new InstanceType("g5.xlarge");
         /// <summary>
+        /// Constant G612xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G612xlarge = new InstanceType("g6.12xlarge");
+        /// <summary>
+        /// Constant G616xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G616xlarge = new InstanceType("g6.16xlarge");
+        /// <summary>
+        /// Constant G624xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G624xlarge = new InstanceType("g6.24xlarge");
+        /// <summary>
+        /// Constant G62xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G62xlarge = new InstanceType("g6.2xlarge");
+        /// <summary>
+        /// Constant G648xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G648xlarge = new InstanceType("g6.48xlarge");
+        /// <summary>
+        /// Constant G64xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G64xlarge = new InstanceType("g6.4xlarge");
+        /// <summary>
+        /// Constant G68xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G68xlarge = new InstanceType("g6.8xlarge");
+        /// <summary>
+        /// Constant G6Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6Xlarge = new InstanceType("g6.xlarge");
+        /// <summary>
+        /// Constant Gr64xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Gr64xlarge = new InstanceType("gr6.4xlarge");
+        /// <summary>
+        /// Constant Gr68xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Gr68xlarge = new InstanceType("gr6.8xlarge");
+        /// <summary>
         /// Constant H116xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType H116xlarge = new InstanceType("h1.16xlarge");
