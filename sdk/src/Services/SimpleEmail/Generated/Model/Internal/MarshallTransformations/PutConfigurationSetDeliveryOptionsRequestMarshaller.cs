@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,13 +63,16 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConfigurationSetName", StringUtils.FromString(publicRequest.ConfigurationSetName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeliveryOptions())
                 {
                     if(publicRequest.DeliveryOptions.IsSetTlsPolicy())
                     {
                         request.Parameters.Add("DeliveryOptions" + "." + "TlsPolicy", StringUtils.FromString(publicRequest.DeliveryOptions.TlsPolicy));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

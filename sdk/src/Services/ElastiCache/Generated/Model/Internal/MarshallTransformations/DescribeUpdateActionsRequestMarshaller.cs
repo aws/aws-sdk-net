@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,18 +68,22 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngine())
                 {
                     request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReplicationGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -88,10 +93,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServiceUpdateName())
                 {
                     request.Parameters.Add("ServiceUpdateName", StringUtils.FromString(publicRequest.ServiceUpdateName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServiceUpdateStatus())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -101,21 +108,26 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServiceUpdateTimeRange())
                 {
                     if(publicRequest.ServiceUpdateTimeRange.IsSetEndTime())
                     {
                         request.Parameters.Add("ServiceUpdateTimeRange" + "." + "EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.ServiceUpdateTimeRange.EndTime));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.ServiceUpdateTimeRange.IsSetStartTime())
                     {
                         request.Parameters.Add("ServiceUpdateTimeRange" + "." + "StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.ServiceUpdateTimeRange.StartTime));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetShowNodeLevelUpdateStatus())
                 {
                     request.Parameters.Add("ShowNodeLevelUpdateStatus", StringUtils.FromBool(publicRequest.ShowNodeLevelUpdateStatus));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUpdateActionStatus())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -125,6 +137,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

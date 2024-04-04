@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -72,17 +73,21 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetNamespace())
                         {
                             request.Parameters.Add("ExcludeFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFirehoseArn())
                 {
                     request.Parameters.Add("FirehoseArn", StringUtils.FromString(publicRequest.FirehoseArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIncludeFilters())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -97,29 +102,36 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetNamespace())
                         {
                             request.Parameters.Add("IncludeFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIncludeLinkedAccountsMetrics())
                 {
                     request.Parameters.Add("IncludeLinkedAccountsMetrics", StringUtils.FromBool(publicRequest.IncludeLinkedAccountsMetrics));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOutputFormat())
                 {
                     request.Parameters.Add("OutputFormat", StringUtils.FromString(publicRequest.OutputFormat));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRoleArn())
                 {
                     request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStatisticsConfigurations())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -134,6 +146,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetIncludeMetrics())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -143,16 +156,20 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("StatisticsConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IncludeMetrics" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "MetricName", StringUtils.FromString(publicRequestlistValuelistValue.MetricName));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetNamespace())
                                 {
                                     request.Parameters.Add("StatisticsConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IncludeMetrics" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValuelistValue.Namespace));
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -162,13 +179,16 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

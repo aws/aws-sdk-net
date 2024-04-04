@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,14 +63,17 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NewPath", StringUtils.FromString(publicRequest.NewPath));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewUserName())
                 {
                     request.Parameters.Add("NewUserName", StringUtils.FromString(publicRequest.NewUserName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserName())
                 {
                     request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

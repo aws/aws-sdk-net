@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndTimeUtc())
                 {
                     request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstances())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,6 +78,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReasonCodes())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -84,14 +88,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartTimeUtc())
                 {
                     request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStatus())
                 {
                     request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

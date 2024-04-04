@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,38 +63,47 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterExists", StringUtils.FromBool(publicRequest.ClusterExists));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClusterIdentifier())
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndTimeUtc())
                 {
                     request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOwnerAccount())
                 {
                     request.Parameters.Add("OwnerAccount", StringUtils.FromString(publicRequest.OwnerAccount));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotArn())
                 {
                     request.Parameters.Add("SnapshotArn", StringUtils.FromString(publicRequest.SnapshotArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotIdentifier())
                 {
                     request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotType())
                 {
                     request.Parameters.Add("SnapshotType", StringUtils.FromString(publicRequest.SnapshotType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSortingEntities())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -103,17 +113,21 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("SortingEntities" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Attribute", StringUtils.FromString(publicRequestlistValue.Attribute));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetSortOrder())
                         {
                             request.Parameters.Add("SortingEntities" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SortOrder", StringUtils.FromString(publicRequestlistValue.SortOrder));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartTimeUtc())
                 {
                     request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagKeys())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -123,6 +137,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagValues())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -132,6 +147,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("HttpEndpoint", StringUtils.FromString(publicRequest.HttpEndpoint));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHttpPutResponseHopLimit())
                 {
                     request.Parameters.Add("HttpPutResponseHopLimit", StringUtils.FromInt(publicRequest.HttpPutResponseHopLimit));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHttpTokens())
                 {
                     request.Parameters.Add("HttpTokens", StringUtils.FromString(publicRequest.HttpTokens));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceMetadataTags())
                 {
                     request.Parameters.Add("InstanceMetadataTags", StringUtils.FromString(publicRequest.InstanceMetadataTags));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

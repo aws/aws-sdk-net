@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConfigurationSetName", StringUtils.FromString(publicRequest.ConfigurationSetName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinations())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -71,29 +73,36 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFromArn())
                 {
                     request.Parameters.Add("FromArn", StringUtils.FromString(publicRequest.FromArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRawMessage())
                 {
                     if(publicRequest.RawMessage.IsSetData())
                     {
                         request.Parameters.Add("RawMessage" + "." + "Data", StringUtils.FromMemoryStream(publicRequest.RawMessage.Data));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReturnPathArn())
                 {
                     request.Parameters.Add("ReturnPathArn", StringUtils.FromString(publicRequest.ReturnPathArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSource())
                 {
                     request.Parameters.Add("Source", StringUtils.FromString(publicRequest.Source));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceArn())
                 {
                     request.Parameters.Add("SourceArn", StringUtils.FromString(publicRequest.SourceArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -103,13 +112,16 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

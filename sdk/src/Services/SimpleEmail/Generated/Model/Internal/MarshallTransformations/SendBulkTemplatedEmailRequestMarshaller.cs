@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConfigurationSetName", StringUtils.FromString(publicRequest.ConfigurationSetName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDefaultTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -71,17 +73,21 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("DefaultTags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("DefaultTags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDefaultTemplateData())
                 {
                     request.Parameters.Add("DefaultTemplateData", StringUtils.FromString(publicRequest.DefaultTemplateData));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinations())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -98,6 +104,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                                     publicRequestlistValueDestinationlistValueIndex++;
                                 }
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.Destination.IsSetCcAddresses())
                             {
                                 int publicRequestlistValueDestinationlistValueIndex = 1;
@@ -107,6 +114,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                                     publicRequestlistValueDestinationlistValueIndex++;
                                 }
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.Destination.IsSetToAddresses())
                             {
                                 int publicRequestlistValueDestinationlistValueIndex = 1;
@@ -116,7 +124,9 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                                     publicRequestlistValueDestinationlistValueIndex++;
                                 }
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetReplacementTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -126,20 +136,25 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplacementTags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplacementTags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetReplacementTemplateData())
                         {
                             request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplacementTemplateData", StringUtils.FromString(publicRequestlistValue.ReplacementTemplateData));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReplyToAddresses())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -149,30 +164,37 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReturnPath())
                 {
                     request.Parameters.Add("ReturnPath", StringUtils.FromString(publicRequest.ReturnPath));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReturnPathArn())
                 {
                     request.Parameters.Add("ReturnPathArn", StringUtils.FromString(publicRequest.ReturnPathArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSource())
                 {
                     request.Parameters.Add("Source", StringUtils.FromString(publicRequest.Source));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceArn())
                 {
                     request.Parameters.Add("SourceArn", StringUtils.FromString(publicRequest.SourceArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplate())
                 {
                     request.Parameters.Add("Template", StringUtils.FromString(publicRequest.Template));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateArn())
                 {
                     request.Parameters.Add("TemplateArn", StringUtils.FromString(publicRequest.TemplateArn));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

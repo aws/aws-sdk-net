@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("APIVersion", StringUtils.FromString(publicRequest.APIVersion));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCity())
                 {
                     request.Parameters.Add("city", StringUtils.FromString(publicRequest.City));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCompany())
                 {
                     request.Parameters.Add("company", StringUtils.FromString(publicRequest.Company));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCountry())
                 {
                     request.Parameters.Add("country", StringUtils.FromString(publicRequest.Country));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetJobIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -83,34 +88,42 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("name", StringUtils.FromString(publicRequest.Name));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPhoneNumber())
                 {
                     request.Parameters.Add("phoneNumber", StringUtils.FromString(publicRequest.PhoneNumber));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPostalCode())
                 {
                     request.Parameters.Add("postalCode", StringUtils.FromString(publicRequest.PostalCode));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStateOrProvince())
                 {
                     request.Parameters.Add("stateOrProvince", StringUtils.FromString(publicRequest.StateOrProvince));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStreet1())
                 {
                     request.Parameters.Add("street1", StringUtils.FromString(publicRequest.Street1));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStreet2())
                 {
                     request.Parameters.Add("street2", StringUtils.FromString(publicRequest.Street2));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStreet3())
                 {
                     request.Parameters.Add("street3", StringUtils.FromString(publicRequest.Street3));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

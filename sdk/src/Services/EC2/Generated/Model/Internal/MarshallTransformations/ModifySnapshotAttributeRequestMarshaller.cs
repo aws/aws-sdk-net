@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Attribute", StringUtils.FromString(publicRequest.Attribute));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCreateVolumePermission())
                 {
                     if(publicRequest.CreateVolumePermission.IsSetAdd())
@@ -73,13 +75,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("CreateVolumePermission" + "." + "Add" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.Group));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestCreateVolumePermissionlistValue.IsSetUserId())
                             {
                                 request.Parameters.Add("CreateVolumePermission" + "." + "Add" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.UserId));
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestCreateVolumePermissionlistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.CreateVolumePermission.IsSetRemove())
                     {
                         int publicRequestCreateVolumePermissionlistValueIndex = 1;
@@ -89,14 +94,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("CreateVolumePermission" + "." + "Remove" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.Group));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestCreateVolumePermissionlistValue.IsSetUserId())
                             {
                                 request.Parameters.Add("CreateVolumePermission" + "." + "Remove" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.UserId));
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestCreateVolumePermissionlistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGroupNames())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -106,14 +115,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOperationType())
                 {
                     request.Parameters.Add("OperationType", StringUtils.FromString(publicRequest.OperationType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotId())
                 {
                     request.Parameters.Add("SnapshotId", StringUtils.FromString(publicRequest.SnapshotId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -123,6 +135,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

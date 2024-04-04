@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,25 +63,31 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceReusePolicy())
                 {
                     if(publicRequest.InstanceReusePolicy.IsSetReuseOnScaleIn())
                     {
                         request.Parameters.Add("InstanceReusePolicy" + "." + "ReuseOnScaleIn", StringUtils.FromBool(publicRequest.InstanceReusePolicy.ReuseOnScaleIn));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxGroupPreparedCapacity())
                 {
                     request.Parameters.Add("MaxGroupPreparedCapacity", StringUtils.FromInt(publicRequest.MaxGroupPreparedCapacity));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMinSize())
                 {
                     request.Parameters.Add("MinSize", StringUtils.FromInt(publicRequest.MinSize));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPoolState())
                 {
                     request.Parameters.Add("PoolState", StringUtils.FromString(publicRequest.PoolState));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

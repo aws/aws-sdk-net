@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,30 +68,37 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExportTaskIdentifier())
                 {
                     request.Parameters.Add("ExportTaskIdentifier", StringUtils.FromString(publicRequest.ExportTaskIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIamRoleArn())
                 {
                     request.Parameters.Add("IamRoleArn", StringUtils.FromString(publicRequest.IamRoleArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetS3BucketName())
                 {
                     request.Parameters.Add("S3BucketName", StringUtils.FromString(publicRequest.S3BucketName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetS3Prefix())
                 {
                     request.Parameters.Add("S3Prefix", StringUtils.FromString(publicRequest.S3Prefix));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceArn())
                 {
                     request.Parameters.Add("SourceArn", StringUtils.FromString(publicRequest.SourceArn));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

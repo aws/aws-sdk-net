@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,10 +68,12 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         {
                             request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetMessage())
                         {
                             request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Message", StringUtils.FromString(publicRequestlistValue.Message));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetMessageAttributes())
                         {
                             int mapIndex = 1;
@@ -85,41 +88,51 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                                     {
                                         request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
                                     }
+#pragma warning restore CS0612,CS0618
                                     if(value.IsSetDataType())
                                     {
                                         request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
                                     }
+#pragma warning restore CS0612,CS0618
                                     if(value.IsSetStringValue())
                                     {
                                         request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
                                     }
+#pragma warning restore CS0612,CS0618
                                 }
                                 mapIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetMessageDeduplicationId())
                         {
                             request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageDeduplicationId", StringUtils.FromString(publicRequestlistValue.MessageDeduplicationId));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetMessageGroupId())
                         {
                             request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageGroupId", StringUtils.FromString(publicRequestlistValue.MessageGroupId));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetMessageStructure())
                         {
                             request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageStructure", StringUtils.FromString(publicRequestlistValue.MessageStructure));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetSubject())
                         {
                             request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Subject", StringUtils.FromString(publicRequestlistValue.Subject));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTopicArn())
                 {
                     request.Parameters.Add("TopicArn", StringUtils.FromString(publicRequest.TopicArn));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

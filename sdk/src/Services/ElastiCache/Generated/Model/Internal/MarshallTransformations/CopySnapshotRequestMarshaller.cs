@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceSnapshotName())
                 {
                     request.Parameters.Add("SourceSnapshotName", StringUtils.FromString(publicRequest.SourceSnapshotName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,21 +78,26 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetBucket())
                 {
                     request.Parameters.Add("TargetBucket", StringUtils.FromString(publicRequest.TargetBucket));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetSnapshotName())
                 {
                     request.Parameters.Add("TargetSnapshotName", StringUtils.FromString(publicRequest.TargetSnapshotName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

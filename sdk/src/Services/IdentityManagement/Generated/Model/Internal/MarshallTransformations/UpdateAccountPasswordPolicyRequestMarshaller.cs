@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,38 +63,47 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllowUsersToChangePassword", StringUtils.FromBool(publicRequest.AllowUsersToChangePassword));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHardExpiry())
                 {
                     request.Parameters.Add("HardExpiry", StringUtils.FromBool(publicRequest.HardExpiry));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxPasswordAge())
                 {
                     request.Parameters.Add("MaxPasswordAge", StringUtils.FromInt(publicRequest.MaxPasswordAge));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMinimumPasswordLength())
                 {
                     request.Parameters.Add("MinimumPasswordLength", StringUtils.FromInt(publicRequest.MinimumPasswordLength));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPasswordReusePrevention())
                 {
                     request.Parameters.Add("PasswordReusePrevention", StringUtils.FromInt(publicRequest.PasswordReusePrevention));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRequireLowercaseCharacters())
                 {
                     request.Parameters.Add("RequireLowercaseCharacters", StringUtils.FromBool(publicRequest.RequireLowercaseCharacters));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRequireNumbers())
                 {
                     request.Parameters.Add("RequireNumbers", StringUtils.FromBool(publicRequest.RequireNumbers));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRequireSymbols())
                 {
                     request.Parameters.Add("RequireSymbols", StringUtils.FromBool(publicRequest.RequireSymbols));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRequireUppercaseCharacters())
                 {
                     request.Parameters.Add("RequireUppercaseCharacters", StringUtils.FromBool(publicRequest.RequireUppercaseCharacters));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

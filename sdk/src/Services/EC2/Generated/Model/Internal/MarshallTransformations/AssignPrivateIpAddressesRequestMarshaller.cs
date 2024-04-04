@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllowReassignment", StringUtils.FromBool(publicRequest.AllowReassignment));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv4PrefixCount())
                 {
                     request.Parameters.Add("Ipv4PrefixCount", StringUtils.FromInt(publicRequest.Ipv4PrefixCount));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv4Prefixes())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,10 +78,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkInterfaceId())
                 {
                     request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrivateIpAddresses())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -88,10 +93,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSecondaryPrivateIpAddressCount())
                 {
                     request.Parameters.Add("SecondaryPrivateIpAddressCount", StringUtils.FromInt(publicRequest.SecondaryPrivateIpAddressCount));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptionGroupName())
                 {
                     request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptionsToInclude())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -80,10 +83,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetOptionName())
                         {
                             request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetOptionSettings())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -93,49 +98,61 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "AllowedValues", StringUtils.FromString(publicRequestlistValuelistValue.AllowedValues));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetApplyType())
                                 {
                                     request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "ApplyType", StringUtils.FromString(publicRequestlistValuelistValue.ApplyType));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetDataType())
                                 {
                                     request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "DataType", StringUtils.FromString(publicRequestlistValuelistValue.DataType));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetDefaultValue())
                                 {
                                     request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "DefaultValue", StringUtils.FromString(publicRequestlistValuelistValue.DefaultValue));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetDescription())
                                 {
                                     request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetIsCollection())
                                 {
                                     request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "IsCollection", StringUtils.FromBool(publicRequestlistValuelistValue.IsCollection));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetIsModifiable())
                                 {
                                     request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "IsModifiable", StringUtils.FromBool(publicRequestlistValuelistValue.IsModifiable));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetName())
                                 {
                                     request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetOptionVersion())
                         {
                             request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionVersion", StringUtils.FromString(publicRequestlistValue.OptionVersion));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPort())
                         {
                             request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Port", StringUtils.FromInt(publicRequestlistValue.Port));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetVpcSecurityGroupMemberships())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -145,9 +162,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptionsToRemove())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -157,6 +176,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

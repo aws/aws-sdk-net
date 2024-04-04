@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DocDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,50 +63,62 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
                     request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(publicRequest.AutoMinorVersionUpgrade));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCACertificateIdentifier())
                 {
                     request.Parameters.Add("CACertificateIdentifier", StringUtils.FromString(publicRequest.CACertificateIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCertificateRotationRestart())
                 {
                     request.Parameters.Add("CertificateRotationRestart", StringUtils.FromBool(publicRequest.CertificateRotationRestart));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCopyTagsToSnapshot())
                 {
                     request.Parameters.Add("CopyTagsToSnapshot", StringUtils.FromBool(publicRequest.CopyTagsToSnapshot));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBInstanceClass())
                 {
                     request.Parameters.Add("DBInstanceClass", StringUtils.FromString(publicRequest.DBInstanceClass));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBInstanceIdentifier())
                 {
                     request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnablePerformanceInsights())
                 {
                     request.Parameters.Add("EnablePerformanceInsights", StringUtils.FromBool(publicRequest.EnablePerformanceInsights));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewDBInstanceIdentifier())
                 {
                     request.Parameters.Add("NewDBInstanceIdentifier", StringUtils.FromString(publicRequest.NewDBInstanceIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPerformanceInsightsKMSKeyId())
                 {
                     request.Parameters.Add("PerformanceInsightsKMSKeyId", StringUtils.FromString(publicRequest.PerformanceInsightsKMSKeyId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPromotionTier())
                 {
                     request.Parameters.Add("PromotionTier", StringUtils.FromInt(publicRequest.PromotionTier));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

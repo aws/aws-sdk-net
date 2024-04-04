@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,14 +63,17 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("BucketName", StringUtils.FromString(publicRequest.BucketName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClusterIdentifier())
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLogDestinationType())
                 {
                     request.Parameters.Add("LogDestinationType", StringUtils.FromString(publicRequest.LogDestinationType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLogExports())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -79,10 +83,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetS3KeyPrefix())
                 {
                     request.Parameters.Add("S3KeyPrefix", StringUtils.FromString(publicRequest.S3KeyPrefix));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

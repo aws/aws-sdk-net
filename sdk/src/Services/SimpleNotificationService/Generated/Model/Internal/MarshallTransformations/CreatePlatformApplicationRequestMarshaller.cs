@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,14 +74,17 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         mapIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPlatform())
                 {
                     request.Parameters.Add("Platform", StringUtils.FromString(publicRequest.Platform));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

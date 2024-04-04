@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptions())
                 {
                     if(publicRequest.Options.IsSetAddTransitGatewayCidrBlocks())
@@ -73,34 +75,42 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestOptionslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetAmazonSideAsn())
                     {
                         request.Parameters.Add("Options" + "." + "AmazonSideAsn", StringUtils.FromLong(publicRequest.Options.AmazonSideAsn));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetAssociationDefaultRouteTableId())
                     {
                         request.Parameters.Add("Options" + "." + "AssociationDefaultRouteTableId", StringUtils.FromString(publicRequest.Options.AssociationDefaultRouteTableId));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetAutoAcceptSharedAttachments())
                     {
                         request.Parameters.Add("Options" + "." + "AutoAcceptSharedAttachments", StringUtils.FromString(publicRequest.Options.AutoAcceptSharedAttachments));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetDefaultRouteTableAssociation())
                     {
                         request.Parameters.Add("Options" + "." + "DefaultRouteTableAssociation", StringUtils.FromString(publicRequest.Options.DefaultRouteTableAssociation));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetDefaultRouteTablePropagation())
                     {
                         request.Parameters.Add("Options" + "." + "DefaultRouteTablePropagation", StringUtils.FromString(publicRequest.Options.DefaultRouteTablePropagation));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetDnsSupport())
                     {
                         request.Parameters.Add("Options" + "." + "DnsSupport", StringUtils.FromString(publicRequest.Options.DnsSupport));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetPropagationDefaultRouteTableId())
                     {
                         request.Parameters.Add("Options" + "." + "PropagationDefaultRouteTableId", StringUtils.FromString(publicRequest.Options.PropagationDefaultRouteTableId));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetRemoveTransitGatewayCidrBlocks())
                     {
                         int publicRequestOptionslistValueIndex = 1;
@@ -110,19 +120,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestOptionslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetSecurityGroupReferencingSupport())
                     {
                         request.Parameters.Add("Options" + "." + "SecurityGroupReferencingSupport", StringUtils.FromString(publicRequest.Options.SecurityGroupReferencingSupport));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetVpnEcmpSupport())
                     {
                         request.Parameters.Add("Options" + "." + "VpnEcmpSupport", StringUtils.FromString(publicRequest.Options.VpnEcmpSupport));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransitGatewayId())
                 {
                     request.Parameters.Add("TransitGatewayId", StringUtils.FromString(publicRequest.TransitGatewayId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFinalDBSnapshotIdentifier())
                 {
                     request.Parameters.Add("FinalDBSnapshotIdentifier", StringUtils.FromString(publicRequest.FinalDBSnapshotIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSkipFinalSnapshot())
                 {
                     request.Parameters.Add("SkipFinalSnapshot", StringUtils.FromBool(publicRequest.SkipFinalSnapshot));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTenantDBName())
                 {
                     request.Parameters.Add("TenantDBName", StringUtils.FromString(publicRequest.TenantDBName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

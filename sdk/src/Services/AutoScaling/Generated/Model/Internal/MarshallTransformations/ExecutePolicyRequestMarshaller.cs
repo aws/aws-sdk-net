@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,22 +63,27 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetBreachThreshold())
                 {
                     request.Parameters.Add("BreachThreshold", StringUtils.FromDouble(publicRequest.BreachThreshold));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHonorCooldown())
                 {
                     request.Parameters.Add("HonorCooldown", StringUtils.FromBool(publicRequest.HonorCooldown));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMetricValue())
                 {
                     request.Parameters.Add("MetricValue", StringUtils.FromDouble(publicRequest.MetricValue));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyName())
                 {
                     request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

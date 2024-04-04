@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetItems())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -76,28 +78,35 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "AlternateNameEncoding", StringUtils.FromString(publicRequestlistValuelistValue.AlternateNameEncoding));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetAlternateValueEncoding())
                                 {
                                     request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "AlternateValueEncoding", StringUtils.FromString(publicRequestlistValuelistValue.AlternateValueEncoding));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetName())
                                 {
                                     request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetName())
                         {
                             request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "ItemName", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

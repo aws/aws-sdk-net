@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExpressionName())
                 {
                     request.Parameters.Add("ExpressionName", StringUtils.FromString(publicRequest.ExpressionName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

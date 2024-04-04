@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DashboardBody", StringUtils.FromString(publicRequest.DashboardBody));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDashboardName())
                 {
                     request.Parameters.Add("DashboardName", StringUtils.FromString(publicRequest.DashboardName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

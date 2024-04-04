@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CronExpression", StringUtils.FromString(publicRequest.CronExpression));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,6 +78,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -84,16 +88,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTimeRanges())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -103,21 +111,26 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TimeRange" + "." + publicRequestlistValueIndex + "." + "EndHour", StringUtils.FromInt(publicRequestlistValue.EndHour));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetEndWeekDay())
                         {
                             request.Parameters.Add("TimeRange" + "." + publicRequestlistValueIndex + "." + "EndWeekDay", StringUtils.FromString(publicRequestlistValue.EndWeekDay));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetStartHour())
                         {
                             request.Parameters.Add("TimeRange" + "." + publicRequestlistValueIndex + "." + "StartHour", StringUtils.FromInt(publicRequestlistValue.StartHour));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetStartWeekDay())
                         {
                             request.Parameters.Add("TimeRange" + "." + publicRequestlistValueIndex + "." + "StartWeekDay", StringUtils.FromString(publicRequestlistValue.StartWeekDay));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

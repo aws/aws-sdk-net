@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CIDRIP", StringUtils.FromString(publicRequest.CIDRIP));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClusterSecurityGroupName())
                 {
                     request.Parameters.Add("ClusterSecurityGroupName", StringUtils.FromString(publicRequest.ClusterSecurityGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEC2SecurityGroupName())
                 {
                     request.Parameters.Add("EC2SecurityGroupName", StringUtils.FromString(publicRequest.EC2SecurityGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEC2SecurityGroupOwnerId())
                 {
                     request.Parameters.Add("EC2SecurityGroupOwnerId", StringUtils.FromString(publicRequest.EC2SecurityGroupOwnerId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

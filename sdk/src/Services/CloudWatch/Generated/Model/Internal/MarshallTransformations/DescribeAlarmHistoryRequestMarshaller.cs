@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AlarmName", StringUtils.FromString(publicRequest.AlarmName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAlarmTypes())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -71,30 +73,37 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndDateUtc())
                 {
                     request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDateUtc));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHistoryItemType())
                 {
                     request.Parameters.Add("HistoryItemType", StringUtils.FromString(publicRequest.HistoryItemType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScanBy())
                 {
                     request.Parameters.Add("ScanBy", StringUtils.FromString(publicRequest.ScanBy));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartDateUtc())
                 {
                     request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDateUtc));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

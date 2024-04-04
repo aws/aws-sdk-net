@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,30 +63,37 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAutomaticFailoverEnabled())
                 {
                     request.Parameters.Add("AutomaticFailoverEnabled", StringUtils.FromBool(publicRequest.AutomaticFailoverEnabled));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCacheNodeType())
                 {
                     request.Parameters.Add("CacheNodeType", StringUtils.FromString(publicRequest.CacheNodeType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCacheParameterGroupName())
                 {
                     request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(publicRequest.CacheParameterGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngineVersion())
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGlobalReplicationGroupDescription())
                 {
                     request.Parameters.Add("GlobalReplicationGroupDescription", StringUtils.FromString(publicRequest.GlobalReplicationGroupDescription));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGlobalReplicationGroupId())
                 {
                     request.Parameters.Add("GlobalReplicationGroupId", StringUtils.FromString(publicRequest.GlobalReplicationGroupId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

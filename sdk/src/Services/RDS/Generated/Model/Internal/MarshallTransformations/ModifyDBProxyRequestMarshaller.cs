@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,53 +68,66 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthScheme", StringUtils.FromString(publicRequestlistValue.AuthScheme));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetClientPasswordAuthType())
                         {
                             request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ClientPasswordAuthType", StringUtils.FromString(publicRequestlistValue.ClientPasswordAuthType));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetDescription())
                         {
                             request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetIAMAuth())
                         {
                             request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IAMAuth", StringUtils.FromString(publicRequestlistValue.IAMAuth));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetSecretArn())
                         {
                             request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SecretArn", StringUtils.FromString(publicRequestlistValue.SecretArn));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetUserName())
                         {
                             request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UserName", StringUtils.FromString(publicRequestlistValue.UserName));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBProxyName())
                 {
                     request.Parameters.Add("DBProxyName", StringUtils.FromString(publicRequest.DBProxyName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDebugLogging())
                 {
                     request.Parameters.Add("DebugLogging", StringUtils.FromBool(publicRequest.DebugLogging));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIdleClientTimeout())
                 {
                     request.Parameters.Add("IdleClientTimeout", StringUtils.FromInt(publicRequest.IdleClientTimeout));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewDBProxyName())
                 {
                     request.Parameters.Add("NewDBProxyName", StringUtils.FromString(publicRequest.NewDBProxyName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRequireTLS())
                 {
                     request.Parameters.Add("RequireTLS", StringUtils.FromBool(publicRequest.RequireTLS));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRoleArn())
                 {
                     request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSecurityGroups())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -123,6 +137,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

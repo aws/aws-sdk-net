@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,26 +63,32 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CurrentIpamScopeId", StringUtils.FromString(publicRequest.CurrentIpamScopeId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinationIpamScopeId())
                 {
                     request.Parameters.Add("DestinationIpamScopeId", StringUtils.FromString(publicRequest.DestinationIpamScopeId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMonitored())
                 {
                     request.Parameters.Add("Monitored", StringUtils.FromBool(publicRequest.Monitored));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceCidr())
                 {
                     request.Parameters.Add("ResourceCidr", StringUtils.FromString(publicRequest.ResourceCidr));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceId())
                 {
                     request.Parameters.Add("ResourceId", StringUtils.FromString(publicRequest.ResourceId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceRegion())
                 {
                     request.Parameters.Add("ResourceRegion", StringUtils.FromString(publicRequest.ResourceRegion));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

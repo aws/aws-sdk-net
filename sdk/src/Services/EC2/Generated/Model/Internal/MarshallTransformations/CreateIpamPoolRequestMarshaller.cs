@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AddressFamily", StringUtils.FromString(publicRequest.AddressFamily));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAllocationDefaultNetmaskLength())
                 {
                     request.Parameters.Add("AllocationDefaultNetmaskLength", StringUtils.FromInt(publicRequest.AllocationDefaultNetmaskLength));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAllocationMaxNetmaskLength())
                 {
                     request.Parameters.Add("AllocationMaxNetmaskLength", StringUtils.FromInt(publicRequest.AllocationMaxNetmaskLength));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAllocationMinNetmaskLength())
                 {
                     request.Parameters.Add("AllocationMinNetmaskLength", StringUtils.FromInt(publicRequest.AllocationMinNetmaskLength));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAllocationResourceTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -83,21 +88,26 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("AllocationResourceTag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("AllocationResourceTag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAutoImport())
                 {
                     request.Parameters.Add("AutoImport", StringUtils.FromBool(publicRequest.AutoImport));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAwsService())
                 {
                     request.Parameters.Add("AwsService", StringUtils.FromString(publicRequest.AwsService));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
@@ -106,49 +116,61 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpamScopeId())
                 {
                     request.Parameters.Add("IpamScopeId", StringUtils.FromString(publicRequest.IpamScopeId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLocale())
                 {
                     request.Parameters.Add("Locale", StringUtils.FromString(publicRequest.Locale));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPublicIpSource())
                 {
                     request.Parameters.Add("PublicIpSource", StringUtils.FromString(publicRequest.PublicIpSource));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPubliclyAdvertisable())
                 {
                     request.Parameters.Add("PubliclyAdvertisable", StringUtils.FromBool(publicRequest.PubliclyAdvertisable));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceIpamPoolId())
                 {
                     request.Parameters.Add("SourceIpamPoolId", StringUtils.FromString(publicRequest.SourceIpamPoolId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceResource())
                 {
                     if(publicRequest.SourceResource.IsSetResourceId())
                     {
                         request.Parameters.Add("SourceResource" + "." + "ResourceId", StringUtils.FromString(publicRequest.SourceResource.ResourceId));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.SourceResource.IsSetResourceOwner())
                     {
                         request.Parameters.Add("SourceResource" + "." + "ResourceOwner", StringUtils.FromString(publicRequest.SourceResource.ResourceOwner));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.SourceResource.IsSetResourceRegion())
                     {
                         request.Parameters.Add("SourceResource" + "." + "ResourceRegion", StringUtils.FromString(publicRequest.SourceResource.ResourceRegion));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.SourceResource.IsSetResourceType())
                     {
                         request.Parameters.Add("SourceResource" + "." + "ResourceType", StringUtils.FromString(publicRequest.SourceResource.ResourceType));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -158,6 +180,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -167,16 +190,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

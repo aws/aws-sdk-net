@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AccessGroupId", StringUtils.FromString(publicRequest.AccessGroupId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAuthorizeAllGroups())
                 {
                     request.Parameters.Add("AuthorizeAllGroups", StringUtils.FromBool(publicRequest.AuthorizeAllGroups));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
@@ -74,18 +77,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientVpnEndpointId())
                 {
                     request.Parameters.Add("ClientVpnEndpointId", StringUtils.FromString(publicRequest.ClientVpnEndpointId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetNetworkCidr())
                 {
                     request.Parameters.Add("TargetNetworkCidr", StringUtils.FromString(publicRequest.TargetNetworkCidr));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -64,27 +65,34 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("HealthCheck" + "." + "HealthyThreshold", StringUtils.FromInt(publicRequest.HealthCheck.HealthyThreshold));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.HealthCheck.IsSetInterval())
                     {
                         request.Parameters.Add("HealthCheck" + "." + "Interval", StringUtils.FromInt(publicRequest.HealthCheck.Interval));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.HealthCheck.IsSetTarget())
                     {
                         request.Parameters.Add("HealthCheck" + "." + "Target", StringUtils.FromString(publicRequest.HealthCheck.Target));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.HealthCheck.IsSetTimeout())
                     {
                         request.Parameters.Add("HealthCheck" + "." + "Timeout", StringUtils.FromInt(publicRequest.HealthCheck.Timeout));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.HealthCheck.IsSetUnhealthyThreshold())
                     {
                         request.Parameters.Add("HealthCheck" + "." + "UnhealthyThreshold", StringUtils.FromInt(publicRequest.HealthCheck.UnhealthyThreshold));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoadBalancerName())
                 {
                     request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

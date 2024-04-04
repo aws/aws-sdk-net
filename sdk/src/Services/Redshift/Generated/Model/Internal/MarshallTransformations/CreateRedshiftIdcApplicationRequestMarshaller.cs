@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -72,33 +73,41 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTrustedTokenIssuerArn())
                         {
                             request.Parameters.Add("AuthorizedTokenIssuerList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TrustedTokenIssuerArn", StringUtils.FromString(publicRequestlistValue.TrustedTokenIssuerArn));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIamRoleArn())
                 {
                     request.Parameters.Add("IamRoleArn", StringUtils.FromString(publicRequest.IamRoleArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIdcDisplayName())
                 {
                     request.Parameters.Add("IdcDisplayName", StringUtils.FromString(publicRequest.IdcDisplayName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIdcInstanceArn())
                 {
                     request.Parameters.Add("IdcInstanceArn", StringUtils.FromString(publicRequest.IdcInstanceArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIdentityNamespace())
                 {
                     request.Parameters.Add("IdentityNamespace", StringUtils.FromString(publicRequest.IdentityNamespace));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRedshiftIdcApplicationName())
                 {
                     request.Parameters.Add("RedshiftIdcApplicationName", StringUtils.FromString(publicRequest.RedshiftIdcApplicationName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServiceIntegrations())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -115,13 +124,17 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("ServiceIntegrations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LakeFormation" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "LakeFormationQuery" + "." + "Authorization", StringUtils.FromString(publicRequestlistValuelistValue.LakeFormationQuery.Authorization));
                                     }
+#pragma warning restore CS0612,CS0618
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

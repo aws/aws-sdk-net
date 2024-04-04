@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,26 +74,32 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         mapIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDataFilter())
                 {
                     request.Parameters.Add("DataFilter", StringUtils.FromString(publicRequest.DataFilter));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIntegrationName())
                 {
                     request.Parameters.Add("IntegrationName", StringUtils.FromString(publicRequest.IntegrationName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetKMSKeyId())
                 {
                     request.Parameters.Add("KMSKeyId", StringUtils.FromString(publicRequest.KMSKeyId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceArn())
                 {
                     request.Parameters.Add("SourceArn", StringUtils.FromString(publicRequest.SourceArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -102,17 +109,21 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetArn())
                 {
                     request.Parameters.Add("TargetArn", StringUtils.FromString(publicRequest.TargetArn));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

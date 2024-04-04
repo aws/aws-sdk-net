@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GroupId", StringUtils.FromString(publicRequest.GroupId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSecurityGroupRules())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,42 +75,53 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "CidrIpv4", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.CidrIpv4));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.SecurityGroupRule.IsSetCidrIpv6())
                             {
                                 request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "CidrIpv6", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.CidrIpv6));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.SecurityGroupRule.IsSetDescription())
                             {
                                 request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "Description", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.Description));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.SecurityGroupRule.IsSetFromPort())
                             {
                                 request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "FromPort", StringUtils.FromInt(publicRequestlistValue.SecurityGroupRule.FromPort));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.SecurityGroupRule.IsSetIpProtocol())
                             {
                                 request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "IpProtocol", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.IpProtocol));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.SecurityGroupRule.IsSetPrefixListId())
                             {
                                 request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "PrefixListId", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.PrefixListId));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.SecurityGroupRule.IsSetReferencedGroupId())
                             {
                                 request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "ReferencedGroupId", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.ReferencedGroupId));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.SecurityGroupRule.IsSetToPort())
                             {
                                 request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "ToPort", StringUtils.FromInt(publicRequestlistValue.SecurityGroupRule.ToPort));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetSecurityGroupRuleId())
                         {
                             request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRuleId", StringUtils.FromString(publicRequestlistValue.SecurityGroupRuleId));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

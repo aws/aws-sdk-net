@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,52 +63,65 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CidrBlock", StringUtils.FromString(publicRequest.CidrBlock));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEgress())
                 {
                     request.Parameters.Add("Egress", StringUtils.FromBool(publicRequest.Egress));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIcmpTypeCode())
                 {
                     if(publicRequest.IcmpTypeCode.IsSetCode())
                     {
                         request.Parameters.Add("Icmp" + "." + "Code", StringUtils.FromInt(publicRequest.IcmpTypeCode.Code));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.IcmpTypeCode.IsSetType())
                     {
                         request.Parameters.Add("Icmp" + "." + "Type", StringUtils.FromInt(publicRequest.IcmpTypeCode.Type));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv6CidrBlock())
                 {
                     request.Parameters.Add("Ipv6CidrBlock", StringUtils.FromString(publicRequest.Ipv6CidrBlock));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkAclId())
                 {
                     request.Parameters.Add("NetworkAclId", StringUtils.FromString(publicRequest.NetworkAclId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPortRange())
                 {
                     if(publicRequest.PortRange.IsSetFrom())
                     {
                         request.Parameters.Add("PortRange" + "." + "From", StringUtils.FromInt(publicRequest.PortRange.From));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.PortRange.IsSetTo())
                     {
                         request.Parameters.Add("PortRange" + "." + "To", StringUtils.FromInt(publicRequest.PortRange.To));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetProtocol())
                 {
                     request.Parameters.Add("Protocol", StringUtils.FromString(publicRequest.Protocol));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRuleAction())
                 {
                     request.Parameters.Add("RuleAction", StringUtils.FromString(publicRequest.RuleAction));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRuleNumber())
                 {
                     request.Parameters.Add("RuleNumber", StringUtils.FromInt(publicRequest.RuleNumber));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

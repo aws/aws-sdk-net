@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,14 +63,17 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("APIVersion", StringUtils.FromString(publicRequest.APIVersion));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxJobs())
                 {
                     request.Parameters.Add("MaxJobs", StringUtils.FromInt(publicRequest.MaxJobs));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

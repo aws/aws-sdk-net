@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ActionsEnabled", StringUtils.FromBool(publicRequest.ActionsEnabled));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAlarmActions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -71,22 +73,27 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAlarmDescription())
                 {
                     request.Parameters.Add("AlarmDescription", StringUtils.FromString(publicRequest.AlarmDescription));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAlarmName())
                 {
                     request.Parameters.Add("AlarmName", StringUtils.FromString(publicRequest.AlarmName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetComparisonOperator())
                 {
                     request.Parameters.Add("ComparisonOperator", StringUtils.FromString(publicRequest.ComparisonOperator));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDatapointsToAlarm())
                 {
                     request.Parameters.Add("DatapointsToAlarm", StringUtils.FromInt(publicRequest.DatapointsToAlarm));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDimensions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -96,25 +103,31 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEvaluateLowSampleCountPercentile())
                 {
                     request.Parameters.Add("EvaluateLowSampleCountPercentile", StringUtils.FromString(publicRequest.EvaluateLowSampleCountPercentile));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEvaluationPeriods())
                 {
                     request.Parameters.Add("EvaluationPeriods", StringUtils.FromInt(publicRequest.EvaluationPeriods));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExtendedStatistic())
                 {
                     request.Parameters.Add("ExtendedStatistic", StringUtils.FromString(publicRequest.ExtendedStatistic));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInsufficientDataActions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -124,10 +137,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMetricName())
                 {
                     request.Parameters.Add("MetricName", StringUtils.FromString(publicRequest.MetricName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMetrics())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -137,18 +152,22 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AccountId", StringUtils.FromString(publicRequestlistValue.AccountId));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetExpression())
                         {
                             request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Expression", StringUtils.FromString(publicRequestlistValue.Expression));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetId())
                         {
                             request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetLabel())
                         {
                             request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Label", StringUtils.FromString(publicRequestlistValue.Label));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetMetricStat())
                         {
                             if(publicRequestlistValue.MetricStat.IsSetMetric())
@@ -162,50 +181,64 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                                         {
                                             request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestlistValueMetricStatMetriclistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValueMetricStatMetriclistValue.Name));
                                         }
+#pragma warning restore CS0612,CS0618
                                         if(publicRequestlistValueMetricStatMetriclistValue.IsSetValue())
                                         {
                                             request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestlistValueMetricStatMetriclistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValueMetricStatMetriclistValue.Value));
                                         }
+#pragma warning restore CS0612,CS0618
                                         publicRequestlistValueMetricStatMetriclistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.MetricStat.Metric.IsSetMetricName())
                                 {
                                     request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "MetricName", StringUtils.FromString(publicRequestlistValue.MetricStat.Metric.MetricName));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.MetricStat.Metric.IsSetNamespace())
                                 {
                                     request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.MetricStat.Metric.Namespace));
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.MetricStat.IsSetPeriod())
                             {
                                 request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Period", StringUtils.FromInt(publicRequestlistValue.MetricStat.Period));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.MetricStat.IsSetStat())
                             {
                                 request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Stat", StringUtils.FromString(publicRequestlistValue.MetricStat.Stat));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.MetricStat.IsSetUnit())
                             {
                                 request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestlistValue.MetricStat.Unit));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPeriod())
                         {
                             request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Period", StringUtils.FromInt(publicRequestlistValue.Period));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetReturnData())
                         {
                             request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReturnData", StringUtils.FromBool(publicRequestlistValue.ReturnData));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNamespace())
                 {
                     request.Parameters.Add("Namespace", StringUtils.FromString(publicRequest.Namespace));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOKActions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -215,14 +248,17 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPeriod())
                 {
                     request.Parameters.Add("Period", StringUtils.FromInt(publicRequest.Period));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStatistic())
                 {
                     request.Parameters.Add("Statistic", StringUtils.FromString(publicRequest.Statistic));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -232,29 +268,36 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetThreshold())
                 {
                     request.Parameters.Add("Threshold", StringUtils.FromDouble(publicRequest.Threshold));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetThresholdMetricId())
                 {
                     request.Parameters.Add("ThresholdMetricId", StringUtils.FromString(publicRequest.ThresholdMetricId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTreatMissingData())
                 {
                     request.Parameters.Add("TreatMissingData", StringUtils.FromString(publicRequest.TreatMissingData));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUnit())
                 {
                     request.Parameters.Add("Unit", StringUtils.FromString(publicRequest.Unit));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

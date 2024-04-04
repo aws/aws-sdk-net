@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,14 +63,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllocationId", StringUtils.FromString(publicRequest.AllocationId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkBorderGroup())
                 {
                     request.Parameters.Add("NetworkBorderGroup", StringUtils.FromString(publicRequest.NetworkBorderGroup));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPublicIp())
                 {
                     request.Parameters.Add("PublicIp", StringUtils.FromString(publicRequest.PublicIp));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

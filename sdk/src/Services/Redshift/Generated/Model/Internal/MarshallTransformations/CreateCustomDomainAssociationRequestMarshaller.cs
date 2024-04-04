@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,14 +63,17 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCustomDomainCertificateArn())
                 {
                     request.Parameters.Add("CustomDomainCertificateArn", StringUtils.FromString(publicRequest.CustomDomainCertificateArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCustomDomainName())
                 {
                     request.Parameters.Add("CustomDomainName", StringUtils.FromString(publicRequest.CustomDomainName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

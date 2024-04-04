@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStorage())
                 {
                     if(publicRequest.Storage.IsSetS3())
@@ -70,24 +72,31 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Storage" + "." + "S3" + "." + "AWSAccessKeyId", StringUtils.FromString(publicRequest.Storage.S3.AWSAccessKeyId));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.Storage.S3.IsSetBucket())
                         {
                             request.Parameters.Add("Storage" + "." + "S3" + "." + "Bucket", StringUtils.FromString(publicRequest.Storage.S3.Bucket));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.Storage.S3.IsSetPrefix())
                         {
                             request.Parameters.Add("Storage" + "." + "S3" + "." + "Prefix", StringUtils.FromString(publicRequest.Storage.S3.Prefix));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.Storage.S3.IsSetUploadPolicy())
                         {
                             request.Parameters.Add("Storage" + "." + "S3" + "." + "UploadPolicy", StringUtils.FromString(publicRequest.Storage.S3.UploadPolicy));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.Storage.S3.IsSetUploadPolicySignature())
                         {
                             request.Parameters.Add("Storage" + "." + "S3" + "." + "UploadPolicySignature", StringUtils.FromString(publicRequest.Storage.S3.UploadPolicySignature));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

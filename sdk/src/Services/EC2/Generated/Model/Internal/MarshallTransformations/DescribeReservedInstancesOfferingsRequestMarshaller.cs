@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFilters())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -71,6 +73,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -80,53 +83,66 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIncludeMarketplace())
                 {
                     request.Parameters.Add("IncludeMarketplace", StringUtils.FromBool(publicRequest.IncludeMarketplace));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceTenancy())
                 {
                     request.Parameters.Add("InstanceTenancy", StringUtils.FromString(publicRequest.InstanceTenancy));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceType())
                 {
                     request.Parameters.Add("InstanceType", StringUtils.FromString(publicRequest.InstanceType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxDuration())
                 {
                     request.Parameters.Add("MaxDuration", StringUtils.FromLong(publicRequest.MaxDuration));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxInstanceCount())
                 {
                     request.Parameters.Add("MaxInstanceCount", StringUtils.FromInt(publicRequest.MaxInstanceCount));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMinDuration())
                 {
                     request.Parameters.Add("MinDuration", StringUtils.FromLong(publicRequest.MinDuration));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOfferingClass())
                 {
                     request.Parameters.Add("OfferingClass", StringUtils.FromString(publicRequest.OfferingClass));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOfferingType())
                 {
                     request.Parameters.Add("OfferingType", StringUtils.FromString(publicRequest.OfferingType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetProductDescription())
                 {
                     request.Parameters.Add("ProductDescription", StringUtils.FromString(publicRequest.ProductDescription));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReservedInstancesOfferingIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -136,6 +152,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

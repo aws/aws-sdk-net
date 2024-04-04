@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -64,45 +65,57 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("ClientConnectOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.ClientConnectOptions.Enabled));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.ClientConnectOptions.IsSetLambdaFunctionArn())
                     {
                         request.Parameters.Add("ClientConnectOptions" + "." + "LambdaFunctionArn", StringUtils.FromString(publicRequest.ClientConnectOptions.LambdaFunctionArn));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientLoginBannerOptions())
                 {
                     if(publicRequest.ClientLoginBannerOptions.IsSetBannerText())
                     {
                         request.Parameters.Add("ClientLoginBannerOptions" + "." + "BannerText", StringUtils.FromString(publicRequest.ClientLoginBannerOptions.BannerText));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.ClientLoginBannerOptions.IsSetEnabled())
                     {
                         request.Parameters.Add("ClientLoginBannerOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.ClientLoginBannerOptions.Enabled));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientVpnEndpointId())
                 {
                     request.Parameters.Add("ClientVpnEndpointId", StringUtils.FromString(publicRequest.ClientVpnEndpointId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetConnectionLogOptions())
                 {
                     if(publicRequest.ConnectionLogOptions.IsSetCloudwatchLogGroup())
                     {
                         request.Parameters.Add("ConnectionLogOptions" + "." + "CloudwatchLogGroup", StringUtils.FromString(publicRequest.ConnectionLogOptions.CloudwatchLogGroup));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.ConnectionLogOptions.IsSetCloudwatchLogStream())
                     {
                         request.Parameters.Add("ConnectionLogOptions" + "." + "CloudwatchLogStream", StringUtils.FromString(publicRequest.ConnectionLogOptions.CloudwatchLogStream));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.ConnectionLogOptions.IsSetEnabled())
                     {
                         request.Parameters.Add("ConnectionLogOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.ConnectionLogOptions.Enabled));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDnsServers())
                 {
                     if(publicRequest.DnsServers.IsSetCustomDnsServers())
@@ -114,11 +127,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestDnsServerslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.DnsServers.IsSetEnabled())
                     {
                         request.Parameters.Add("DnsServers" + "." + "Enabled", StringUtils.FromBool(publicRequest.DnsServers.Enabled));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -128,30 +144,37 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSelfServicePortal())
                 {
                     request.Parameters.Add("SelfServicePortal", StringUtils.FromString(publicRequest.SelfServicePortal));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServerCertificateArn())
                 {
                     request.Parameters.Add("ServerCertificateArn", StringUtils.FromString(publicRequest.ServerCertificateArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSessionTimeoutHours())
                 {
                     request.Parameters.Add("SessionTimeoutHours", StringUtils.FromInt(publicRequest.SessionTimeoutHours));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSplitTunnel())
                 {
                     request.Parameters.Add("SplitTunnel", StringUtils.FromBool(publicRequest.SplitTunnel));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcId())
                 {
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpnPort())
                 {
                     request.Parameters.Add("VpnPort", StringUtils.FromInt(publicRequest.VpnPort));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

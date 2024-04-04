@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("BlueGreenDeploymentIdentifier", StringUtils.FromString(publicRequest.BlueGreenDeploymentIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSwitchoverTimeout())
                 {
                     request.Parameters.Add("SwitchoverTimeout", StringUtils.FromInt(publicRequest.SwitchoverTimeout));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

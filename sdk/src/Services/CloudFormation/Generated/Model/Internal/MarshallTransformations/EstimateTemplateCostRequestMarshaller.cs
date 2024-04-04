@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,29 +68,36 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterKey", StringUtils.FromString(publicRequestlistValue.ParameterKey));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetParameterValue())
                         {
                             request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResolvedValue())
                         {
                             request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResolvedValue", StringUtils.FromString(publicRequestlistValue.ResolvedValue));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetUsePreviousValue())
                         {
                             request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UsePreviousValue", StringUtils.FromBool(publicRequestlistValue.UsePreviousValue));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateBody())
                 {
                     request.Parameters.Add("TemplateBody", StringUtils.FromString(publicRequest.TemplateBody));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateURL())
                 {
                     request.Parameters.Add("TemplateURL", StringUtils.FromString(publicRequest.TemplateURL));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

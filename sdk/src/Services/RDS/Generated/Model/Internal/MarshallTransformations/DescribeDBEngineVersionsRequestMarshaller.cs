@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBParameterGroupFamily", StringUtils.FromString(publicRequest.DBParameterGroupFamily));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDefaultOnly())
                 {
                     request.Parameters.Add("DefaultOnly", StringUtils.FromBool(publicRequest.DefaultOnly));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngine())
                 {
                     request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngineVersion())
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFilters())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -83,6 +88,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -92,29 +98,36 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIncludeAll())
                 {
                     request.Parameters.Add("IncludeAll", StringUtils.FromBool(publicRequest.IncludeAll));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetListSupportedCharacterSets())
                 {
                     request.Parameters.Add("ListSupportedCharacterSets", StringUtils.FromBool(publicRequest.ListSupportedCharacterSets));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetListSupportedTimezones())
                 {
                     request.Parameters.Add("ListSupportedTimezones", StringUtils.FromBool(publicRequest.ListSupportedTimezones));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GeneratedTemplateName", StringUtils.FromString(publicRequest.GeneratedTemplateName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResources())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -71,6 +73,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Resources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LogicalResourceId", StringUtils.FromString(publicRequestlistValue.LogicalResourceId));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResourceIdentifier())
                         {
                             int mapIndex = 1;
@@ -86,28 +89,35 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                                 mapIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResourceType())
                         {
                             request.Parameters.Add("Resources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackName())
                 {
                     request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateConfiguration())
                 {
                     if(publicRequest.TemplateConfiguration.IsSetDeletionPolicy())
                     {
                         request.Parameters.Add("TemplateConfiguration" + "." + "DeletionPolicy", StringUtils.FromString(publicRequest.TemplateConfiguration.DeletionPolicy));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.TemplateConfiguration.IsSetUpdateReplacePolicy())
                     {
                         request.Parameters.Add("TemplateConfiguration" + "." + "UpdateReplacePolicy", StringUtils.FromString(publicRequest.TemplateConfiguration.UpdateReplacePolicy));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

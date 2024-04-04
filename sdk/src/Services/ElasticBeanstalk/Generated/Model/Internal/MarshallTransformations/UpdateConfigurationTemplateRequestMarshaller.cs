@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptionSettings())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,21 +78,26 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetOptionName())
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResourceName())
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptionsToRemove())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -99,21 +107,26 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetOptionName())
                         {
                             request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResourceName())
                         {
                             request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateName())
                 {
                     request.Parameters.Add("TemplateName", StringUtils.FromString(publicRequest.TemplateName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

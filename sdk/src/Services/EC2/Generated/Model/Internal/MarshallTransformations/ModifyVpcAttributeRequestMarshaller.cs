@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnableDnsHostnames.Value", StringUtils.FromBool(publicRequest.EnableDnsHostnames));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableDnsSupport())
                 {
                     request.Parameters.Add("EnableDnsSupport.Value", StringUtils.FromBool(publicRequest.EnableDnsSupport));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableNetworkAddressUsageMetrics())
                 {
                     request.Parameters.Add("EnableNetworkAddressUsageMetrics.Value", StringUtils.FromBool(publicRequest.EnableNetworkAddressUsageMetrics));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcId())
                 {
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

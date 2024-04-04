@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,14 +63,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Attribute", StringUtils.FromString(publicRequest.Attribute));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFpgaImageId())
                 {
                     request.Parameters.Add("FpgaImageId", StringUtils.FromString(publicRequest.FpgaImageId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoadPermission())
                 {
                     if(publicRequest.LoadPermission.IsSetAdd())
@@ -81,13 +85,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LoadPermission" + "." + "Add" + "." + publicRequestLoadPermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestLoadPermissionlistValue.Group));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLoadPermissionlistValue.IsSetUserId())
                             {
                                 request.Parameters.Add("LoadPermission" + "." + "Add" + "." + publicRequestLoadPermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestLoadPermissionlistValue.UserId));
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestLoadPermissionlistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LoadPermission.IsSetRemove())
                     {
                         int publicRequestLoadPermissionlistValueIndex = 1;
@@ -97,22 +104,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LoadPermission" + "." + "Remove" + "." + publicRequestLoadPermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestLoadPermissionlistValue.Group));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLoadPermissionlistValue.IsSetUserId())
                             {
                                 request.Parameters.Add("LoadPermission" + "." + "Remove" + "." + publicRequestLoadPermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestLoadPermissionlistValue.UserId));
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestLoadPermissionlistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOperationType())
                 {
                     request.Parameters.Add("OperationType", StringUtils.FromString(publicRequest.OperationType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetProductCodes())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -122,6 +135,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserGroups())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -131,6 +145,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -140,6 +155,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

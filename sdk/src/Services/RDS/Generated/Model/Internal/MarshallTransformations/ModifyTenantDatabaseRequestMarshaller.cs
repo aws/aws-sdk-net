@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMasterUserPassword())
                 {
                     request.Parameters.Add("MasterUserPassword", StringUtils.FromString(publicRequest.MasterUserPassword));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewTenantDBName())
                 {
                     request.Parameters.Add("NewTenantDBName", StringUtils.FromString(publicRequest.NewTenantDBName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTenantDBName())
                 {
                     request.Parameters.Add("TenantDBName", StringUtils.FromString(publicRequest.TenantDBName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

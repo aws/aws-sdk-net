@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AccessString", StringUtils.FromString(publicRequest.AccessString));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAuthenticationMode())
                 {
                     if(publicRequest.AuthenticationMode.IsSetPasswords())
@@ -73,19 +75,24 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                             publicRequestAuthenticationModelistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.AuthenticationMode.IsSetType())
                     {
                         request.Parameters.Add("AuthenticationMode" + "." + "Type", StringUtils.FromString(publicRequest.AuthenticationMode.Type));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngine())
                 {
                     request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNoPasswordRequired())
                 {
                     request.Parameters.Add("NoPasswordRequired", StringUtils.FromBool(publicRequest.NoPasswordRequired));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPasswords())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -95,6 +102,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -104,21 +112,26 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserId())
                 {
                     request.Parameters.Add("UserId", StringUtils.FromString(publicRequest.UserId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserName())
                 {
                     request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }
