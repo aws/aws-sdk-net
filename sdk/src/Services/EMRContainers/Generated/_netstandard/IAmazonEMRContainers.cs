@@ -36,7 +36,7 @@ namespace Amazon.EMRContainers
     /// With this deployment option, you can focus on running analytics workloads while Amazon
     /// EMR on EKS builds, configures, and manages containers for open-source applications.
     /// For more information about Amazon EMR on EKS concepts and tasks, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/emr-eks.html">What
-    /// is shared id="EMR-EKS"/&gt;</a>.
+    /// is Amazon EMR on EKS</a>.
     /// 
     ///  
     /// <para>
@@ -172,6 +172,9 @@ namespace Amazon.EMRContainers
         /// </param>
         /// 
         /// <returns>The response from the CreateVirtualCluster service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.EKSRequestThrottledException">
+        /// The request exceeded the Amazon EKS API operation limits.
+        /// </exception>
         /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
         /// This is an internal server exception.
         /// </exception>

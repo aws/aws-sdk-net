@@ -72,6 +72,9 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetCreatedBefore())
                 request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601(publicRequest.CreatedBefore));
             
+            if (publicRequest.IsSetEksAccessEntryIntegrated())
+                request.Parameters.Add("eksAccessEntryIntegrated", StringUtils.FromBool(publicRequest.EksAccessEntryIntegrated));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

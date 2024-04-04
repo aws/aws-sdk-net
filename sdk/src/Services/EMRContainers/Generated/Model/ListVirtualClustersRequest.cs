@@ -42,6 +42,7 @@ namespace Amazon.EMRContainers.Model
         private ContainerProviderType _containerProviderType;
         private DateTime? _createdAfter;
         private DateTime? _createdBefore;
+        private bool? _eksAccessEntryIntegrated;
         private int? _maxResults;
         private string _nextToken;
         private List<string> _states = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -118,6 +119,26 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetCreatedBefore()
         {
             return this._createdBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EksAccessEntryIntegrated. 
+        /// <para>
+        /// Optional Boolean that specifies whether the operation should return the virtual clusters
+        /// that have the access entry integration enabled or disabled. If not specified, the
+        /// operation returns all applicable virtual clusters.
+        /// </para>
+        /// </summary>
+        public bool EksAccessEntryIntegrated
+        {
+            get { return this._eksAccessEntryIntegrated.GetValueOrDefault(); }
+            set { this._eksAccessEntryIntegrated = value; }
+        }
+
+        // Check to see if EksAccessEntryIntegrated property is set
+        internal bool IsSetEksAccessEntryIntegrated()
+        {
+            return this._eksAccessEntryIntegrated.HasValue; 
         }
 
         /// <summary>
