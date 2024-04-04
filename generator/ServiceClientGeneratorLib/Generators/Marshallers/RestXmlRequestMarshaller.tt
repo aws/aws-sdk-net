@@ -63,7 +63,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	{
 		ProcessRequestBodyMembers("publicRequest", this.Operation);		
 	}
-	if(payload != null && !payload.Shape.IsStructure)
+	else if(payload != null && !payload.Shape.IsStructure)
 	{
 		ProcessNonStructurePayload(payload, 3);
 	}
@@ -374,7 +374,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	}
 #>
 <#+
-	//
 	protected void ProcessNonStructurePayload(Member payload, int level)
 	{
 		if(payload.Shape.IsString)
