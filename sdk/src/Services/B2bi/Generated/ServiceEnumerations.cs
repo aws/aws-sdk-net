@@ -329,9 +329,17 @@ namespace Amazon.B2bi
         /// </summary>
         public static readonly X12TransactionSet X12_270 = new X12TransactionSet("X12_270");
         /// <summary>
+        /// Constant X12_270_X279 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_270_X279 = new X12TransactionSet("X12_270_X279");
+        /// <summary>
         /// Constant X12_271 for X12TransactionSet
         /// </summary>
         public static readonly X12TransactionSet X12_271 = new X12TransactionSet("X12_271");
+        /// <summary>
+        /// Constant X12_271_X279 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_271_X279 = new X12TransactionSet("X12_271_X279");
         /// <summary>
         /// Constant X12_274 for X12TransactionSet
         /// </summary>
@@ -341,17 +349,45 @@ namespace Amazon.B2bi
         /// </summary>
         public static readonly X12TransactionSet X12_275 = new X12TransactionSet("X12_275");
         /// <summary>
+        /// Constant X12_275_X210 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_275_X210 = new X12TransactionSet("X12_275_X210");
+        /// <summary>
+        /// Constant X12_275_X211 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_275_X211 = new X12TransactionSet("X12_275_X211");
+        /// <summary>
         /// Constant X12_276 for X12TransactionSet
         /// </summary>
         public static readonly X12TransactionSet X12_276 = new X12TransactionSet("X12_276");
+        /// <summary>
+        /// Constant X12_276_X212 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_276_X212 = new X12TransactionSet("X12_276_X212");
         /// <summary>
         /// Constant X12_277 for X12TransactionSet
         /// </summary>
         public static readonly X12TransactionSet X12_277 = new X12TransactionSet("X12_277");
         /// <summary>
+        /// Constant X12_277_X212 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_277_X212 = new X12TransactionSet("X12_277_X212");
+        /// <summary>
+        /// Constant X12_277_X214 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_277_X214 = new X12TransactionSet("X12_277_X214");
+        /// <summary>
+        /// Constant X12_277_X364 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_277_X364 = new X12TransactionSet("X12_277_X364");
+        /// <summary>
         /// Constant X12_278 for X12TransactionSet
         /// </summary>
         public static readonly X12TransactionSet X12_278 = new X12TransactionSet("X12_278");
+        /// <summary>
+        /// Constant X12_278_X217 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_278_X217 = new X12TransactionSet("X12_278_X217");
         /// <summary>
         /// Constant X12_310 for X12TransactionSet
         /// </summary>
@@ -393,9 +429,21 @@ namespace Amazon.B2bi
         /// </summary>
         public static readonly X12TransactionSet X12_820 = new X12TransactionSet("X12_820");
         /// <summary>
+        /// Constant X12_820_X218 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_820_X218 = new X12TransactionSet("X12_820_X218");
+        /// <summary>
+        /// Constant X12_820_X306 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_820_X306 = new X12TransactionSet("X12_820_X306");
+        /// <summary>
         /// Constant X12_824 for X12TransactionSet
         /// </summary>
         public static readonly X12TransactionSet X12_824 = new X12TransactionSet("X12_824");
+        /// <summary>
+        /// Constant X12_824_X186 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_824_X186 = new X12TransactionSet("X12_824_X186");
         /// <summary>
         /// Constant X12_830 for X12TransactionSet
         /// </summary>
@@ -409,13 +457,53 @@ namespace Amazon.B2bi
         /// </summary>
         public static readonly X12TransactionSet X12_834 = new X12TransactionSet("X12_834");
         /// <summary>
+        /// Constant X12_834_X220 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_834_X220 = new X12TransactionSet("X12_834_X220");
+        /// <summary>
+        /// Constant X12_834_X307 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_834_X307 = new X12TransactionSet("X12_834_X307");
+        /// <summary>
+        /// Constant X12_834_X318 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_834_X318 = new X12TransactionSet("X12_834_X318");
+        /// <summary>
         /// Constant X12_835 for X12TransactionSet
         /// </summary>
         public static readonly X12TransactionSet X12_835 = new X12TransactionSet("X12_835");
         /// <summary>
+        /// Constant X12_835_X221 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_835_X221 = new X12TransactionSet("X12_835_X221");
+        /// <summary>
         /// Constant X12_837 for X12TransactionSet
         /// </summary>
         public static readonly X12TransactionSet X12_837 = new X12TransactionSet("X12_837");
+        /// <summary>
+        /// Constant X12_837_X222 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_837_X222 = new X12TransactionSet("X12_837_X222");
+        /// <summary>
+        /// Constant X12_837_X223 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_837_X223 = new X12TransactionSet("X12_837_X223");
+        /// <summary>
+        /// Constant X12_837_X224 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_837_X224 = new X12TransactionSet("X12_837_X224");
+        /// <summary>
+        /// Constant X12_837_X291 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_837_X291 = new X12TransactionSet("X12_837_X291");
+        /// <summary>
+        /// Constant X12_837_X292 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_837_X292 = new X12TransactionSet("X12_837_X292");
+        /// <summary>
+        /// Constant X12_837_X298 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_837_X298 = new X12TransactionSet("X12_837_X298");
         /// <summary>
         /// Constant X12_844 for X12TransactionSet
         /// </summary>
@@ -488,6 +576,10 @@ namespace Amazon.B2bi
         /// Constant X12_999 for X12TransactionSet
         /// </summary>
         public static readonly X12TransactionSet X12_999 = new X12TransactionSet("X12_999");
+        /// <summary>
+        /// Constant X12_999_X231 for X12TransactionSet
+        /// </summary>
+        public static readonly X12TransactionSet X12_999_X231 = new X12TransactionSet("X12_999_X231");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -542,6 +634,10 @@ namespace Amazon.B2bi
         /// Constant VERSION_5010 for X12Version
         /// </summary>
         public static readonly X12Version VERSION_5010 = new X12Version("VERSION_5010");
+        /// <summary>
+        /// Constant VERSION_5010_HIPAA for X12Version
+        /// </summary>
+        public static readonly X12Version VERSION_5010_HIPAA = new X12Version("VERSION_5010_HIPAA");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
