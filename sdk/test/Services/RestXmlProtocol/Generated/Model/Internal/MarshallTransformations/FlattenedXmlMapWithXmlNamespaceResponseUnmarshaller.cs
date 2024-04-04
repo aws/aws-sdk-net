@@ -66,8 +66,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("KVP", targetDepth))
                     {
-                        var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                        response.MyMap = unmarshaller.Unmarshall(context);
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        response.MyMap.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                 }
