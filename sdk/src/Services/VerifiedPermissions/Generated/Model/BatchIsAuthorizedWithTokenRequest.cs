@@ -29,48 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
-    /// Container for the parameters to the IsAuthorizedWithToken operation.
-    /// Makes an authorization decision about a service request described in the parameters.
-    /// The principal in this request comes from an external identity source in the form of
-    /// an identity token formatted as a <a href="https://wikipedia.org/wiki/JSON_Web_Token">JSON
+    /// Container for the parameters to the BatchIsAuthorizedWithToken operation.
+    /// Makes a series of decisions about multiple authorization requests for one token. The
+    /// principal in this request comes from an external identity source in the form of an
+    /// identity or access token, formatted as a <a href="https://wikipedia.org/wiki/JSON_Web_Token">JSON
     /// web token (JWT)</a>. The information in the parameters can also define additional
-    /// context that Verified Permissions can include in the evaluation. The request is evaluated
-    /// against all matching policies in the specified policy store. The result of the decision
-    /// is either <c>Allow</c> or <c>Deny</c>, along with a list of the policies that resulted
-    /// in the decision.
+    /// context that Verified Permissions can include in the evaluations.
     /// 
     ///  
     /// <para>
-    /// At this time, Verified Permissions accepts tokens from only Amazon Cognito.
+    /// The request is evaluated against all policies in the specified policy store that match
+    /// the entities that you provide in the entities declaration and in the token. The result
+    /// of the decisions is a series of <c>Allow</c> or <c>Deny</c> responses, along with
+    /// the IDs of the policies that produced each decision.
     /// </para>
     ///  
     /// <para>
-    /// Verified Permissions validates each token that is specified in a request by checking
-    /// its expiration date and its signature.
+    /// The <c>entities</c> of a <c>BatchIsAuthorizedWithToken</c> API request can contain
+    /// up to 100 resources and up to 99 user groups. The <c>requests</c> of a <c>BatchIsAuthorizedWithToken</c>
+    /// API request can contain up to 30 requests.
     /// </para>
-    ///  <important> 
+    ///  <note> 
     /// <para>
-    /// If you delete a Amazon Cognito user pool or user, tokens from that deleted pool or
-    /// that deleted user continue to be usable until they expire.
+    /// The <c>BatchIsAuthorizedWithToken</c> operation doesn't have its own IAM permission.
+    /// To authorize this operation for Amazon Web Services principals, include the permission
+    /// <c>verifiedpermissions:IsAuthorizedWithToken</c> in their IAM policies.
     /// </para>
-    ///  </important>
+    ///  </note>
     /// </summary>
-    public partial class IsAuthorizedWithTokenRequest : AmazonVerifiedPermissionsRequest
+    public partial class BatchIsAuthorizedWithTokenRequest : AmazonVerifiedPermissionsRequest
     {
         private string _accessToken;
-        private ActionIdentifier _action;
-        private ContextDefinition _context;
         private EntitiesDefinition _entities;
         private string _identityToken;
         private string _policyStoreId;
-        private EntityIdentifier _resource;
+        private List<BatchIsAuthorizedWithTokenInputItem> _requests = AWSConfigs.InitializeCollections ? new List<BatchIsAuthorizedWithTokenInputItem>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// Specifies an access token for the principal to be authorized. This token is provided
-        /// to you by the identity provider (IdP) associated with the specified identity source.
-        /// You must specify either an <c>accessToken</c>, an <c>identityToken</c>, or both.
+        /// Specifies an access token for the principal that you want to authorize in each request.
+        /// This token is provided to you by the identity provider (IdP) associated with the specified
+        /// identity source. You must specify either an <c>accessToken</c>, an <c>identityToken</c>,
+        /// or both.
         /// </para>
         ///  
         /// <para>
@@ -92,44 +93,6 @@ namespace Amazon.VerifiedPermissions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Action. 
-        /// <para>
-        /// Specifies the requested action to be authorized. Is the specified principal authorized
-        /// to perform this action on the specified resource.
-        /// </para>
-        /// </summary>
-        public ActionIdentifier Action
-        {
-            get { return this._action; }
-            set { this._action = value; }
-        }
-
-        // Check to see if Action property is set
-        internal bool IsSetAction()
-        {
-            return this._action != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Context. 
-        /// <para>
-        /// Specifies additional context that can be used to make more granular authorization
-        /// decisions.
-        /// </para>
-        /// </summary>
-        public ContextDefinition Context
-        {
-            get { return this._context; }
-            set { this._context = value; }
-        }
-
-        // Check to see if Context property is set
-        internal bool IsSetContext()
-        {
-            return this._context != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Entities. 
         /// <para>
         /// Specifies the list of resources and their associated attributes that Verified Permissions
@@ -143,8 +106,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <c>IsAuthorizedWithToken</c> operation takes principal attributes from <b> <i>only</i>
-        /// </b> the <c>identityToken</c> or <c>accessToken</c> passed to the operation.
+        /// The <c>BatchIsAuthorizedWithToken</c> operation takes principal attributes from <b>
+        /// <i>only</i> </b> the <c>identityToken</c> or <c>accessToken</c> passed to the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -168,9 +131,10 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property IdentityToken. 
         /// <para>
-        /// Specifies an identity token for the principal to be authorized. This token is provided
-        /// to you by the identity provider (IdP) associated with the specified identity source.
-        /// You must specify either an <c>accessToken</c>, an <c>identityToken</c>, or both.
+        /// Specifies an identity (ID) token for the principal that you want to authorize in each
+        /// request. This token is provided to you by the identity provider (IdP) associated with
+        /// the specified identity source. You must specify either an <c>accessToken</c>, an <c>identityToken</c>,
+        /// or both.
         /// </para>
         ///  
         /// <para>
@@ -212,22 +176,22 @@ namespace Amazon.VerifiedPermissions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Resource. 
+        /// Gets and sets the property Requests. 
         /// <para>
-        /// Specifies the resource for which the authorization decision is made. For example,
-        /// is the principal allowed to perform the action on the resource?
+        /// An array of up to 30 requests that you want Verified Permissions to evaluate.
         /// </para>
         /// </summary>
-        public EntityIdentifier Resource
+        [AWSProperty(Required=true, Min=1)]
+        public List<BatchIsAuthorizedWithTokenInputItem> Requests
         {
-            get { return this._resource; }
-            set { this._resource = value; }
+            get { return this._requests; }
+            set { this._requests = value; }
         }
 
-        // Check to see if Resource property is set
-        internal bool IsSetResource()
+        // Check to see if Requests property is set
+        internal bool IsSetRequests()
         {
-            return this._resource != null;
+            return this._requests != null && (this._requests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
