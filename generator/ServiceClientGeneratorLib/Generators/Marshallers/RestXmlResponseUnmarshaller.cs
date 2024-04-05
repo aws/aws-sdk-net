@@ -576,27 +576,22 @@ namespace ServiceClientGenerator.Generators.Marshallers
         #line 261 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlResponseUnmarshaller.tt"
 
     /* The rules for determining the marshallName for xml services is different than json services
-        *  1. Use the member locationName if the value doesn't match the member's name
+        1. Use the member locationName if the value doesn't match the member's name
         2. Use the value of the locationName on the member's target if present
         3. Use the name of the member's target
     */
     protected string DetermineXmlMarshallName(Member member)
     {
         var locationName = member.data[ServiceModel.LocationNameKey];
-        if(locationName == null)
+        if (locationName == null)
             return member.MarshallName;
         if (!string.Equals(locationName.ToString(), member.ModeledName, StringComparison.Ordinal))
         {
             return locationName.ToString();
         }
         var memberTarget = member.Shape.data[ServiceModel.LocationNameKey];
-        if(member.Shape.data != null && memberTarget != null)
-        {
-            return memberTarget.ToString();
-        }
-        else{
-            return member.Shape.Name;
-        }
+
+        return memberTarget != null ? memberTarget.ToString() : member.Shape.Name;
     }
 
         
