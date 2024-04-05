@@ -203,6 +203,10 @@ namespace ServiceClientGenerator
              */
             get
             {
+                if (!this.IsMap)
+                {
+                    return null;
+                }
                 var keyNode = this.data[KeyKey];
                 if (keyNode == null || keyNode[ServiceModel.XmlNamespaceKey] == null)
                     return "";
@@ -216,6 +220,10 @@ namespace ServiceClientGenerator
         {
             get
             {
+                if (!this.IsMap) 
+                {
+                    return null; 
+                }
                 var valueNode = this.data[ValueKey];
                 if (valueNode == null || valueNode[ServiceModel.XmlNamespaceKey] == null)
                     return "";
