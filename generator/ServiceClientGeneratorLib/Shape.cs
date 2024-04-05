@@ -188,7 +188,40 @@ namespace ServiceClientGenerator
                 return this.model.FindShape(extendsNode.ToString());
             }
         }
-
+        /// <summary>
+        /// Gets the map's key node's xmlnamespace.
+        /// </summary>
+        public string KeyShapeXmlNamespace
+        {
+            /*
+            "type": "map",
+            "key": {
+                "shape": "String",
+                "locationName": "K",
+                "xmlNamespace": "https://the-key.example.com"
+            },
+             */
+            get
+            {
+                var keyNode = this.data[KeyKey];
+                if (keyNode == null || keyNode[ServiceModel.XmlNamespaceKey] == null)
+                    return "";
+                return (string)keyNode[ServiceModel.XmlNamespaceKey];
+            }
+        }
+        /// <summary>
+        /// Gets the map's value node's xmlnamespace
+        /// </summary>
+        public string ValueShapeXmlNamespace
+        {
+            get
+            {
+                var valueNode = this.data[ValueKey];
+                if (valueNode == null || valueNode[ServiceModel.XmlNamespaceKey] == null)
+                    return "";
+                return (string)valueNode[ServiceModel.XmlNamespaceKey];
+            }
+        }
         /// <summary>
         /// The marshall name used for the key part of a dictionary.
         /// </summary>
