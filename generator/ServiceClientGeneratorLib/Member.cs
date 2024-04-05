@@ -247,6 +247,15 @@ namespace ServiceClientGenerator
         {
             get
             {
+                // For Json11 and Json10 protocols the name of the member is always the MarshallName because these protocols don't support
+                // the JsonName trait. See https://smithy.io/2.0/aws/protocols/aws-json-1_0-protocol.html#supported-traits.
+                if (string.Equals(this.model.Protocol, "json", StringComparison.Ordinal))
+                {
+                    // if a shape modifier exists, do not change the marshall name
+                    if (this.model.Customizations.GetShapeModifier(this.OwningShape.Name) != null)
+                        return LocationName ?? _defaultMarshallName;
+                    return this.ModeledName;
+                }
                 return LocationName ?? _defaultMarshallName;
             }
         }
