@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("securityGroupForVpcSet/item", targetDepth))
                     {
                         var unmarshaller = SecurityGroupForVpcUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.SecurityGroupForVpcs.Add(item);
                         continue;

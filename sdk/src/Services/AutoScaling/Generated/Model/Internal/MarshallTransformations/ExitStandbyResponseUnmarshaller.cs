@@ -84,6 +84,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Activities/member", targetDepth))
                     {
                         var unmarshaller = ActivityUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Activities.Add(item);
                         continue;

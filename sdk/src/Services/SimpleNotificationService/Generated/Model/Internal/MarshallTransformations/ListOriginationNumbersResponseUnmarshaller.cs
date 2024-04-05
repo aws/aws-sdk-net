@@ -90,6 +90,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     if (context.TestExpression("PhoneNumbers/member", targetDepth))
                     {
                         var unmarshaller = PhoneNumberInformationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.PhoneNumbers.Add(item);
                         continue;

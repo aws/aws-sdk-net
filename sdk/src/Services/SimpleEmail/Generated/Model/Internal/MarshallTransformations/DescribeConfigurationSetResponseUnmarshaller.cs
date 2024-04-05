@@ -96,6 +96,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EventDestinations/member", targetDepth))
                     {
                         var unmarshaller = EventDestinationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.EventDestinations.Add(item);
                         continue;

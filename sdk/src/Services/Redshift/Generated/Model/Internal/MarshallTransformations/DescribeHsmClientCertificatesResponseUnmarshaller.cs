@@ -84,6 +84,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("HsmClientCertificates/HsmClientCertificate", targetDepth))
                     {
                         var unmarshaller = HsmClientCertificateUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.HsmClientCertificates.Add(item);
                         continue;

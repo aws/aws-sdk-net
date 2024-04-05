@@ -84,6 +84,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ClusterVersions/ClusterVersion", targetDepth))
                     {
                         var unmarshaller = ClusterVersionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ClusterVersions.Add(item);
                         continue;

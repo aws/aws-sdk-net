@@ -90,6 +90,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TenantDatabases/TenantDatabase", targetDepth))
                     {
                         var unmarshaller = TenantDatabaseUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.TenantDatabases.Add(item);
                         continue;

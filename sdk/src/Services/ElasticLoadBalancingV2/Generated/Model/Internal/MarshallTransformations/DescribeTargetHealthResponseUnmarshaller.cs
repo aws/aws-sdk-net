@@ -84,6 +84,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TargetHealthDescriptions/member", targetDepth))
                     {
                         var unmarshaller = TargetHealthDescriptionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.TargetHealthDescriptions.Add(item);
                         continue;

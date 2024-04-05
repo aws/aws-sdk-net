@@ -90,6 +90,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ScheduledUpdateGroupActions/member", targetDepth))
                     {
                         var unmarshaller = ScheduledUpdateGroupActionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ScheduledUpdateGroupActions.Add(item);
                         continue;

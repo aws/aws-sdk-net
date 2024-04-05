@@ -84,6 +84,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Metrics/member", targetDepth))
                     {
                         var unmarshaller = MetricUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Metrics.Add(item);
                         continue;
@@ -97,6 +99,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OwningAccounts/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.OwningAccounts.Add(item);
                         continue;

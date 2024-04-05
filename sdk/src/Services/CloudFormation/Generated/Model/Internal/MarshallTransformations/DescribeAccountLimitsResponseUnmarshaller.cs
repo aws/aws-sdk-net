@@ -84,6 +84,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AccountLimits/member", targetDepth))
                     {
                         var unmarshaller = AccountLimitUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.AccountLimits.Add(item);
                         continue;

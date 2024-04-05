@@ -84,6 +84,8 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ArtifactList/member", targetDepth))
                     {
                         var unmarshaller = ArtifactUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ArtifactList.Add(item);
                         continue;

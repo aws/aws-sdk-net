@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("createVolumePermission/item", targetDepth))
                     {
                         var unmarshaller = CreateVolumePermissionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.CreateVolumePermissions.Add(item);
                         continue;
@@ -65,6 +67,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("productCodes/item", targetDepth))
                     {
                         var unmarshaller = ProductCodeUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ProductCodes.Add(item);
                         continue;

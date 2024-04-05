@@ -84,6 +84,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("InstanceStates/member", targetDepth))
                     {
                         var unmarshaller = InstanceStateUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.InstanceStates.Add(item);
                         continue;

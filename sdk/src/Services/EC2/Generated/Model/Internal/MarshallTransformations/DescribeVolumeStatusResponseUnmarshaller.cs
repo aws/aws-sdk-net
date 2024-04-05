@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("volumeStatusSet/item", targetDepth))
                     {
                         var unmarshaller = VolumeStatusItemUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.VolumeStatuses.Add(item);
                         continue;

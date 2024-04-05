@@ -84,6 +84,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("GlobalReplicationGroups/GlobalReplicationGroup", targetDepth))
                     {
                         var unmarshaller = GlobalReplicationGroupUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.GlobalReplicationGroups.Add(item);
                         continue;

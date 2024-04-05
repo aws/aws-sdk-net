@@ -84,6 +84,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AccessKeyMetadata/member", targetDepth))
                     {
                         var unmarshaller = AccessKeyMetadataUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.AccessKeyMetadata.Add(item);
                         continue;

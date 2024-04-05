@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("networkInsightsAccessScopeSet/item", targetDepth))
                     {
                         var unmarshaller = NetworkInsightsAccessScopeUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.NetworkInsightsAccessScopes.Add(item);
                         continue;

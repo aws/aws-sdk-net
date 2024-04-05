@@ -96,6 +96,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Roles/member", targetDepth))
                     {
                         var unmarshaller = RoleUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Roles.Add(item);
                         continue;

@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("failedFleetCancellationSet/item", targetDepth))
                     {
                         var unmarshaller = FailedCapacityReservationFleetCancellationResultUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.FailedFleetCancellations.Add(item);
                         continue;
@@ -65,6 +67,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("successfulFleetCancellationSet/item", targetDepth))
                     {
                         var unmarshaller = CapacityReservationFleetCancellationStateUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.SuccessfulFleetCancellations.Add(item);
                         continue;

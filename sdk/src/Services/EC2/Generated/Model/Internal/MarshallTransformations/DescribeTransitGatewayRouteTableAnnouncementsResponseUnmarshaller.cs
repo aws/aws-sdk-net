@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("transitGatewayRouteTableAnnouncements/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayRouteTableAnnouncementUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.TransitGatewayRouteTableAnnouncements.Add(item);
                         continue;

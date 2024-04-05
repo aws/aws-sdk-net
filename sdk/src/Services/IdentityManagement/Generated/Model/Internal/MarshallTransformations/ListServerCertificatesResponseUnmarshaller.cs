@@ -96,6 +96,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ServerCertificateMetadataList/member", targetDepth))
                     {
                         var unmarshaller = ServerCertificateMetadataUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ServerCertificateMetadataList.Add(item);
                         continue;

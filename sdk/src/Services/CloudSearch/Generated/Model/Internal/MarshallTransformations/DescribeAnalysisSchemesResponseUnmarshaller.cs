@@ -84,6 +84,8 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AnalysisSchemes/member", targetDepth))
                     {
                         var unmarshaller = AnalysisSchemeStatusUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.AnalysisSchemes.Add(item);
                         continue;

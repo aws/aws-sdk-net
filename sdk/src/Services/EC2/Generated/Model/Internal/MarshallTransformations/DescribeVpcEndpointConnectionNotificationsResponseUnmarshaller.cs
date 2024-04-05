@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("connectionNotificationSet/item", targetDepth))
                     {
                         var unmarshaller = ConnectionNotificationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ConnectionNotificationSet.Add(item);
                         continue;

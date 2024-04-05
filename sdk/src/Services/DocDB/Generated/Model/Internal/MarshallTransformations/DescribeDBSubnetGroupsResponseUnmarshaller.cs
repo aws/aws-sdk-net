@@ -84,6 +84,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBSubnetGroups/DBSubnetGroup", targetDepth))
                     {
                         var unmarshaller = DBSubnetGroupUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.DBSubnetGroups.Add(item);
                         continue;

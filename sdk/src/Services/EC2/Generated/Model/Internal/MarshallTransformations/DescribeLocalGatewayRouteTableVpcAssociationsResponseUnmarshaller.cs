@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("localGatewayRouteTableVpcAssociationSet/item", targetDepth))
                     {
                         var unmarshaller = LocalGatewayRouteTableVpcAssociationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.LocalGatewayRouteTableVpcAssociations.Add(item);
                         continue;

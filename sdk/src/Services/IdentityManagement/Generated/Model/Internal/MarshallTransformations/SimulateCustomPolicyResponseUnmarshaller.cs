@@ -84,6 +84,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EvaluationResults/member", targetDepth))
                     {
                         var unmarshaller = EvaluationResultUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.EvaluationResults.Add(item);
                         continue;

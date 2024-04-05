@@ -84,6 +84,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Errors/member", targetDepth))
                     {
                         var unmarshaller = BatchDescribeTypeConfigurationsErrorUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Errors.Add(item);
                         continue;
@@ -91,6 +93,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TypeConfigurations/member", targetDepth))
                     {
                         var unmarshaller = TypeConfigurationDetailsUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.TypeConfigurations.Add(item);
                         continue;
@@ -98,6 +102,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UnprocessedTypeConfigurations/member", targetDepth))
                     {
                         var unmarshaller = TypeConfigurationIdentifierUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.UnprocessedTypeConfigurations.Add(item);
                         continue;

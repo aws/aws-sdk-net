@@ -84,6 +84,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ServiceSpecificCredentials/member", targetDepth))
                     {
                         var unmarshaller = ServiceSpecificCredentialMetadataUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ServiceSpecificCredentials.Add(item);
                         continue;

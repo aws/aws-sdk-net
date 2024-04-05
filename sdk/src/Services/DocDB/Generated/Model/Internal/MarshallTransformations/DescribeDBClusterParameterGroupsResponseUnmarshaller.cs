@@ -84,6 +84,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBClusterParameterGroups/DBClusterParameterGroup", targetDepth))
                     {
                         var unmarshaller = DBClusterParameterGroupUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.DBClusterParameterGroups.Add(item);
                         continue;

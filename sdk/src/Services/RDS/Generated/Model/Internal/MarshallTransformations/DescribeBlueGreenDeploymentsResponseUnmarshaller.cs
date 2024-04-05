@@ -84,6 +84,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("BlueGreenDeployments/member", targetDepth))
                     {
                         var unmarshaller = BlueGreenDeploymentUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.BlueGreenDeployments.Add(item);
                         continue;

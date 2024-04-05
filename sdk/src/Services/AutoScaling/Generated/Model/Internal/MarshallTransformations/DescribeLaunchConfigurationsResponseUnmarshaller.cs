@@ -84,6 +84,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LaunchConfigurations/member", targetDepth))
                     {
                         var unmarshaller = LaunchConfigurationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.LaunchConfigurations.Add(item);
                         continue;

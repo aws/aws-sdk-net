@@ -84,6 +84,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DashboardValidationMessages/member", targetDepth))
                     {
                         var unmarshaller = DashboardValidationMessageUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.DashboardValidationMessages.Add(item);
                         continue;

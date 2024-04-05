@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("unassignedIpv6Addresses/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.UnassignedIpv6Addresses.Add(item);
                         continue;
@@ -71,6 +73,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("unassignedIpv6PrefixSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.UnassignedIpv6Prefixes.Add(item);
                         continue;

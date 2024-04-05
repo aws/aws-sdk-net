@@ -84,6 +84,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBRecommendations/member", targetDepth))
                     {
                         var unmarshaller = DBRecommendationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.DBRecommendations.Add(item);
                         continue;

@@ -90,6 +90,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("StackResourceDrifts/member", targetDepth))
                     {
                         var unmarshaller = StackResourceDriftUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.StackResourceDrifts.Add(item);
                         continue;

@@ -84,6 +84,8 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Attribute", targetDepth))
                     {
                         var unmarshaller = AttributeUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Attributes.Add(item);
                         continue;

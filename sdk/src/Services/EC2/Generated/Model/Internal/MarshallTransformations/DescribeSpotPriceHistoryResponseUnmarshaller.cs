@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("spotPriceHistorySet/item", targetDepth))
                     {
                         var unmarshaller = SpotPriceUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.SpotPriceHistory.Add(item);
                         continue;

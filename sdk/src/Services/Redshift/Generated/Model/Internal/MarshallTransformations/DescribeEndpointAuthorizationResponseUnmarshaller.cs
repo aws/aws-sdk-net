@@ -84,6 +84,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EndpointAuthorizationList/member", targetDepth))
                     {
                         var unmarshaller = EndpointAuthorizationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.EndpointAuthorizationList.Add(item);
                         continue;

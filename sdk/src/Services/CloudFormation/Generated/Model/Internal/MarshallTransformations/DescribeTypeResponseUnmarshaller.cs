@@ -192,6 +192,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RequiredActivatedTypes/member", targetDepth))
                     {
                         var unmarshaller = RequiredActivatedTypeUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.RequiredActivatedTypes.Add(item);
                         continue;

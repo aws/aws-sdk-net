@@ -84,6 +84,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PolicyTypeDescriptions/member", targetDepth))
                     {
                         var unmarshaller = PolicyTypeDescriptionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.PolicyTypeDescriptions.Add(item);
                         continue;

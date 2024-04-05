@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("networkInterfacePermissions/item", targetDepth))
                     {
                         var unmarshaller = NetworkInterfacePermissionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.NetworkInterfacePermissions.Add(item);
                         continue;

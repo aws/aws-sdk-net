@@ -84,6 +84,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheClusters/CacheCluster", targetDepth))
                     {
                         var unmarshaller = CacheClusterUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.CacheClusters.Add(item);
                         continue;

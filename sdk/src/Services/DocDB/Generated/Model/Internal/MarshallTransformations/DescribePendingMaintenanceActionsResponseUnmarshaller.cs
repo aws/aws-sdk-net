@@ -90,6 +90,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PendingMaintenanceActions/ResourcePendingMaintenanceActions", targetDepth))
                     {
                         var unmarshaller = ResourcePendingMaintenanceActionsUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.PendingMaintenanceActions.Add(item);
                         continue;

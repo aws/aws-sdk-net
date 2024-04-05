@@ -84,6 +84,8 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("KVP", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        context.KeyXmlName = "K";
+                        context.ValueXmlName = "V";
                         var item = unmarshaller.Unmarshall(context);
                         response.MyMap.Add(item);
                         continue;

@@ -84,6 +84,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OpenIDConnectProviderList/member", targetDepth))
                     {
                         var unmarshaller = OpenIDConnectProviderListEntryUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.OpenIDConnectProviderList.Add(item);
                         continue;

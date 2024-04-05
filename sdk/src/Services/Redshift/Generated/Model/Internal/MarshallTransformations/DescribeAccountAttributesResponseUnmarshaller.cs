@@ -84,6 +84,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AccountAttributes/AccountAttribute", targetDepth))
                     {
                         var unmarshaller = AccountAttributeUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.AccountAttributes.Add(item);
                         continue;

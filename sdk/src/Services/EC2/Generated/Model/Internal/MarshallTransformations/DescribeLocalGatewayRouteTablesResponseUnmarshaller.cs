@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("localGatewayRouteTableSet/item", targetDepth))
                     {
                         var unmarshaller = LocalGatewayRouteTableUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.LocalGatewayRouteTables.Add(item);
                         continue;

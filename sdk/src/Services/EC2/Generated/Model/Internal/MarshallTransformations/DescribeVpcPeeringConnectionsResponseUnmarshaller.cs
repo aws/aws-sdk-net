@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("vpcPeeringConnectionSet/item", targetDepth))
                     {
                         var unmarshaller = VpcPeeringConnectionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.VpcPeeringConnections.Add(item);
                         continue;

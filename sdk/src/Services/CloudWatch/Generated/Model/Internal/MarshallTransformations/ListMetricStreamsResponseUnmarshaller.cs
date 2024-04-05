@@ -84,6 +84,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Entries/member", targetDepth))
                     {
                         var unmarshaller = MetricStreamEntryUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Entries.Add(item);
                         continue;

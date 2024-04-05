@@ -84,6 +84,8 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Applications/member", targetDepth))
                     {
                         var unmarshaller = ApplicationDescriptionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Applications.Add(item);
                         continue;

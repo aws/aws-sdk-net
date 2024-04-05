@@ -96,6 +96,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Endpoints", targetDepth))
                     {
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         response.Endpoints = unmarshaller.Unmarshall(context);
                         continue;

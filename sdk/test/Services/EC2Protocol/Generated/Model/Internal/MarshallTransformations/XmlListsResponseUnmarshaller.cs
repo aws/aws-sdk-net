@@ -58,6 +58,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("booleanList/member", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.BooleanList.Add(item);
                         continue;
@@ -65,6 +67,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("enumList/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.EnumList.Add(item);
                         continue;
@@ -72,6 +76,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("flattenedList/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.FlattenedList.Add(item);
                         continue;
@@ -79,6 +85,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("customName/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.FlattenedList2.Add(item);
                         continue;
@@ -86,6 +94,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("flattenedListWithMemberNamespace/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.FlattenedListWithMemberNamespace.Add(item);
                         continue;
@@ -93,6 +103,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("flattenedListWithNamespace/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.FlattenedListWithNamespace.Add(item);
                         continue;
@@ -100,6 +112,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("integerList/member", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.IntegerList.Add(item);
                         continue;
@@ -107,6 +121,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("intEnumList/member", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.IntEnumList.Add(item);
                         continue;
@@ -114,6 +130,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("nestedStringList/member", targetDepth))
                     {
                         var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.NestedStringList.Add(item);
                         continue;
@@ -121,6 +139,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("renamed/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.RenamedListMembers.Add(item);
                         continue;
@@ -128,6 +148,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("stringList/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.StringList.Add(item);
                         continue;
@@ -135,6 +157,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("stringSet/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.StringSet.Add(item);
                         continue;
@@ -142,6 +166,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("myStructureList/item", targetDepth))
                     {
                         var unmarshaller = StructureListMemberUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.StructureList.Add(item);
                         continue;
@@ -149,6 +175,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("timestampList/member", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.TimestampList.Add(item);
                         continue;

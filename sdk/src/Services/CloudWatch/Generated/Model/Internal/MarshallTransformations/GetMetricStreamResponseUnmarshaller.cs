@@ -96,6 +96,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ExcludeFilters/member", targetDepth))
                     {
                         var unmarshaller = MetricStreamFilterUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ExcludeFilters.Add(item);
                         continue;
@@ -109,6 +111,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("IncludeFilters/member", targetDepth))
                     {
                         var unmarshaller = MetricStreamFilterUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.IncludeFilters.Add(item);
                         continue;
@@ -152,6 +156,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("StatisticsConfigurations/member", targetDepth))
                     {
                         var unmarshaller = MetricStreamStatisticsConfigurationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.StatisticsConfigurations.Add(item);
                         continue;

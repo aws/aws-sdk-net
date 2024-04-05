@@ -90,6 +90,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReservedNodeConfigurationOptionList/ReservedNodeConfigurationOption", targetDepth))
                     {
                         var unmarshaller = ReservedNodeConfigurationOptionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ReservedNodeConfigurationOptionList.Add(item);
                         continue;

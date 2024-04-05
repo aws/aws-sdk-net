@@ -102,6 +102,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Contributors/member", targetDepth))
                     {
                         var unmarshaller = InsightRuleContributorUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Contributors.Add(item);
                         continue;
@@ -109,6 +111,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("KeyLabels/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.KeyLabels.Add(item);
                         continue;
@@ -116,6 +120,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MetricDatapoints/member", targetDepth))
                     {
                         var unmarshaller = InsightRuleMetricDatapointUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.MetricDatapoints.Add(item);
                         continue;

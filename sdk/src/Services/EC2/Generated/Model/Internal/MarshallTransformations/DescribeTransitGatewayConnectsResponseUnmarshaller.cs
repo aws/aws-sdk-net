@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("transitGatewayConnectSet/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayConnectUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.TransitGatewayConnects.Add(item);
                         continue;

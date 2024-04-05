@@ -90,6 +90,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TemplatesMetadata/member", targetDepth))
                     {
                         var unmarshaller = TemplateMetadataUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.TemplatesMetadata.Add(item);
                         continue;

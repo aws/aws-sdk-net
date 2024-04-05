@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("multicastGroups/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayMulticastGroupUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.MulticastGroups.Add(item);
                         continue;

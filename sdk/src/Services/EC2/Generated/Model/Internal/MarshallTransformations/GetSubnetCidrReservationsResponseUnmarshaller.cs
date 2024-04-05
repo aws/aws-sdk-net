@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("subnetIpv4CidrReservationSet/item", targetDepth))
                     {
                         var unmarshaller = SubnetCidrReservationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.SubnetIpv4CidrReservations.Add(item);
                         continue;
@@ -71,6 +73,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("subnetIpv6CidrReservationSet/item", targetDepth))
                     {
                         var unmarshaller = SubnetCidrReservationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.SubnetIpv6CidrReservations.Add(item);
                         continue;

@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("launchTemplateVersionSet/item", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateVersionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.LaunchTemplateVersions.Add(item);
                         continue;

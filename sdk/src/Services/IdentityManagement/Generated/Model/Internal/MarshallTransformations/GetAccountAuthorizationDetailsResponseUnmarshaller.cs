@@ -84,6 +84,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("GroupDetailList/member", targetDepth))
                     {
                         var unmarshaller = GroupDetailUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.GroupDetailList.Add(item);
                         continue;
@@ -103,6 +105,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Policies/member", targetDepth))
                     {
                         var unmarshaller = ManagedPolicyDetailUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Policies.Add(item);
                         continue;
@@ -110,6 +114,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RoleDetailList/member", targetDepth))
                     {
                         var unmarshaller = RoleDetailUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.RoleDetailList.Add(item);
                         continue;
@@ -117,6 +123,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UserDetailList/member", targetDepth))
                     {
                         var unmarshaller = UserDetailUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.UserDetailList.Add(item);
                         continue;

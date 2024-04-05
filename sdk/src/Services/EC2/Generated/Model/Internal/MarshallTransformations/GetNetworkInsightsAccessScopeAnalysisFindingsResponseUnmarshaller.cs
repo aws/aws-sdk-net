@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("analysisFindingSet/item", targetDepth))
                     {
                         var unmarshaller = AccessScopeAnalysisFindingUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.AnalysisFindings.Add(item);
                         continue;

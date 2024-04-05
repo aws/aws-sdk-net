@@ -84,6 +84,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("InstanceProfiles/member", targetDepth))
                     {
                         var unmarshaller = InstanceProfileUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.InstanceProfiles.Add(item);
                         continue;

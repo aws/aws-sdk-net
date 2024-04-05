@@ -90,6 +90,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ParameterGroups/ClusterParameterGroup", targetDepth))
                     {
                         var unmarshaller = ClusterParameterGroupUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ParameterGroups.Add(item);
                         continue;

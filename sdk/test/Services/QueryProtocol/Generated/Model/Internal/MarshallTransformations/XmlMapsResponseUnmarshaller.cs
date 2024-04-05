@@ -84,6 +84,8 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("myMap/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, GreetingStruct, StringUnmarshaller, GreetingStructUnmarshaller>(StringUnmarshaller.Instance, GreetingStructUnmarshaller.Instance);
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.MyMap.Add(item);
                         continue;

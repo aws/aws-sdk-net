@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("fastLaunchImageSet/item", targetDepth))
                     {
                         var unmarshaller = DescribeFastLaunchImagesSuccessItemUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.FastLaunchImages.Add(item);
                         continue;

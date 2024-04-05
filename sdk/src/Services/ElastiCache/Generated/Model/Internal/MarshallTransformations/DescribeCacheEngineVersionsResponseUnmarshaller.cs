@@ -84,6 +84,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheEngineVersions/CacheEngineVersion", targetDepth))
                     {
                         var unmarshaller = CacheEngineVersionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.CacheEngineVersions.Add(item);
                         continue;

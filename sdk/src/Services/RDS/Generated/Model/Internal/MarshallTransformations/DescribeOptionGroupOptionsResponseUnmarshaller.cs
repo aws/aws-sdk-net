@@ -90,6 +90,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OptionGroupOptions/OptionGroupOption", targetDepth))
                     {
                         var unmarshaller = OptionGroupOptionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.OptionGroupOptions.Add(item);
                         continue;

@@ -76,6 +76,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("intEnumList/member", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.IntEnumList.Add(item);
                         continue;
@@ -83,6 +85,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("intEnumMap/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.IntEnumMap.Add(item);
                         continue;
@@ -90,6 +94,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     if (context.TestExpression("intEnumSet/member", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.IntEnumSet.Add(item);
                         continue;

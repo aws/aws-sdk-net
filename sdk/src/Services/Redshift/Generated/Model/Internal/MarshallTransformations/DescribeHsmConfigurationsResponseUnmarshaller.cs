@@ -84,6 +84,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("HsmConfigurations/HsmConfiguration", targetDepth))
                     {
                         var unmarshaller = HsmConfigurationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.HsmConfigurations.Add(item);
                         continue;

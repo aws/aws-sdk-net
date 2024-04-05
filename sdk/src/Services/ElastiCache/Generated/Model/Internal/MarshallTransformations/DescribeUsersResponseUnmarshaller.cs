@@ -90,6 +90,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Users/member", targetDepth))
                     {
                         var unmarshaller = UserUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Users.Add(item);
                         continue;

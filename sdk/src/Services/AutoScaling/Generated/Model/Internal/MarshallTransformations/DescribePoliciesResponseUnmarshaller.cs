@@ -90,6 +90,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ScalingPolicies/member", targetDepth))
                     {
                         var unmarshaller = ScalingPolicyUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ScalingPolicies.Add(item);
                         continue;

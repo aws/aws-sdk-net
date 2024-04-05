@@ -94,6 +94,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
+                }
                 var publicRequestFooEnumSet = publicRequest.FooEnumSet;
                 if (publicRequestFooEnumSet != null && publicRequestFooEnumSet.Count > 0) 
                 {                        

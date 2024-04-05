@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("securityGroupRuleSet/item", targetDepth))
                     {
                         var unmarshaller = SecurityGroupRuleUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.SecurityGroupRules.Add(item);
                         continue;

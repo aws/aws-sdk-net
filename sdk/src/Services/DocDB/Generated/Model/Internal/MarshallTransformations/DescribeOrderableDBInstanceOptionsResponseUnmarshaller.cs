@@ -90,6 +90,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OrderableDBInstanceOptions/OrderableDBInstanceOption", targetDepth))
                     {
                         var unmarshaller = OrderableDBInstanceOptionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.OrderableDBInstanceOptions.Add(item);
                         continue;

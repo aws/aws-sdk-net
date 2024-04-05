@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("egressOnlyInternetGatewaySet/item", targetDepth))
                     {
                         var unmarshaller = EgressOnlyInternetGatewayUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.EgressOnlyInternetGateways.Add(item);
                         continue;

@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("capacityReservationGroupSet/item", targetDepth))
                     {
                         var unmarshaller = CapacityReservationGroupUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.CapacityReservationGroups.Add(item);
                         continue;

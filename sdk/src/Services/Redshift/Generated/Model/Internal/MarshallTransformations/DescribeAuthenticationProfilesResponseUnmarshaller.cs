@@ -84,6 +84,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AuthenticationProfiles/member", targetDepth))
                     {
                         var unmarshaller = AuthenticationProfileUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.AuthenticationProfiles.Add(item);
                         continue;

@@ -90,6 +90,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReservedDBInstances/ReservedDBInstance", targetDepth))
                     {
                         var unmarshaller = ReservedDBInstanceUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ReservedDBInstances.Add(item);
                         continue;

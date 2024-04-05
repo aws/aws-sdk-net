@@ -90,6 +90,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OrderableClusterOptions/OrderableClusterOption", targetDepth))
                     {
                         var unmarshaller = OrderableClusterOptionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.OrderableClusterOptions.Add(item);
                         continue;

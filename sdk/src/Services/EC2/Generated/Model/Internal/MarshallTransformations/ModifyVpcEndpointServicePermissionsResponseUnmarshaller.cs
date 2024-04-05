@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("addedPrincipalSet/item", targetDepth))
                     {
                         var unmarshaller = AddedPrincipalUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.AddedPrincipals.Add(item);
                         continue;

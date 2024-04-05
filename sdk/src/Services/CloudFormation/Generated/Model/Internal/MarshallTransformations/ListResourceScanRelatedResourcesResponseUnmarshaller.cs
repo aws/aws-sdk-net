@@ -90,6 +90,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RelatedResources/member", targetDepth))
                     {
                         var unmarshaller = ScannedResourceUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.RelatedResources.Add(item);
                         continue;

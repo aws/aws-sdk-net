@@ -84,6 +84,8 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ManagedRules/member", targetDepth))
                     {
                         var unmarshaller = ManagedRuleDescriptionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ManagedRules.Add(item);
                         continue;

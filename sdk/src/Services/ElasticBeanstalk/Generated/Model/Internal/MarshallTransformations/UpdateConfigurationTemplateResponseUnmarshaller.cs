@@ -120,6 +120,8 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OptionSettings/member", targetDepth))
                     {
                         var unmarshaller = ConfigurationOptionSettingUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.OptionSettings.Add(item);
                         continue;

@@ -90,6 +90,8 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PlatformSummaryList/member", targetDepth))
                     {
                         var unmarshaller = PlatformSummaryUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.PlatformSummaryList.Add(item);
                         continue;

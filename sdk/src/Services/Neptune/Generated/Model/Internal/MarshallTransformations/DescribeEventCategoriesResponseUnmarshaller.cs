@@ -84,6 +84,8 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EventCategoriesMapList/EventCategoriesMap", targetDepth))
                     {
                         var unmarshaller = EventCategoriesMapUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.EventCategoriesMapList.Add(item);
                         continue;

@@ -90,6 +90,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ServiceUpdates/ServiceUpdate", targetDepth))
                     {
                         var unmarshaller = ServiceUpdateUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ServiceUpdates.Add(item);
                         continue;

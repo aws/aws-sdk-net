@@ -90,6 +90,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     if (context.TestExpression("PlatformApplications/member", targetDepth))
                     {
                         var unmarshaller = PlatformApplicationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.PlatformApplications.Add(item);
                         continue;

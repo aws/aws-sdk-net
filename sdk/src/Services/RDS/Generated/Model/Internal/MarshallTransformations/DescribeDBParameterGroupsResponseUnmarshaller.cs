@@ -84,6 +84,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBParameterGroups/DBParameterGroup", targetDepth))
                     {
                         var unmarshaller = DBParameterGroupUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.DBParameterGroups.Add(item);
                         continue;

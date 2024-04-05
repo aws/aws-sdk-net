@@ -84,6 +84,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBSnapshots/DBSnapshot", targetDepth))
                     {
                         var unmarshaller = DBSnapshotUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.DBSnapshots.Add(item);
                         continue;

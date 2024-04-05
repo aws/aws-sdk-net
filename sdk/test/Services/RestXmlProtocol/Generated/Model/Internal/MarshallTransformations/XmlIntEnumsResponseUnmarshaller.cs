@@ -90,6 +90,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("intEnumMap", targetDepth))
                     {
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
                         response.IntEnumMap = unmarshaller.Unmarshall(context);
                         continue;

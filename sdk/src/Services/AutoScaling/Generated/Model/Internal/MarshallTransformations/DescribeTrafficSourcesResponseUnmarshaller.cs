@@ -90,6 +90,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TrafficSources/member", targetDepth))
                     {
                         var unmarshaller = TrafficSourceStateUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.TrafficSources.Add(item);
                         continue;

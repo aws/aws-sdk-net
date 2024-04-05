@@ -84,6 +84,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ClusterSubnetGroups/ClusterSubnetGroup", targetDepth))
                     {
                         var unmarshaller = ClusterSubnetGroupUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ClusterSubnetGroups.Add(item);
                         continue;

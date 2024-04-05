@@ -84,6 +84,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LifecycleHooks/member", targetDepth))
                     {
                         var unmarshaller = LifecycleHookUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.LifecycleHooks.Add(item);
                         continue;

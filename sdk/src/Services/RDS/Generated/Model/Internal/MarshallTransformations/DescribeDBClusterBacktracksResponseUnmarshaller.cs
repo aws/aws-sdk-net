@@ -84,6 +84,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBClusterBacktracks/DBClusterBacktrack", targetDepth))
                     {
                         var unmarshaller = DBClusterBacktrackUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.DBClusterBacktracks.Add(item);
                         continue;

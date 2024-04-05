@@ -90,6 +90,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     if (context.TestExpression("Subscriptions/member", targetDepth))
                     {
                         var unmarshaller = SubscriptionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Subscriptions.Add(item);
                         continue;

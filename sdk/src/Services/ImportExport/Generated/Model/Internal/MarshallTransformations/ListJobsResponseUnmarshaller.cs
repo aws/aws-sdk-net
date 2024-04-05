@@ -90,6 +90,8 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Jobs/member", targetDepth))
                     {
                         var unmarshaller = JobUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Jobs.Add(item);
                         continue;

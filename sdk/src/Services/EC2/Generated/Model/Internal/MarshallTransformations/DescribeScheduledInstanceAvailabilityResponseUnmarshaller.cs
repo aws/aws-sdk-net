@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("scheduledInstanceAvailabilitySet/item", targetDepth))
                     {
                         var unmarshaller = ScheduledInstanceAvailabilityUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ScheduledInstanceAvailabilitySet.Add(item);
                         continue;

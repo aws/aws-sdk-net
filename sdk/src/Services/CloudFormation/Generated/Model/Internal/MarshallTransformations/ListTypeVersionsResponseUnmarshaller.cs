@@ -90,6 +90,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TypeVersionSummaries/member", targetDepth))
                     {
                         var unmarshaller = TypeVersionSummaryUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.TypeVersionSummaries.Add(item);
                         continue;

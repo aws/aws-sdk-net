@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("verifiedAccessInstanceSet/item", targetDepth))
                     {
                         var unmarshaller = VerifiedAccessInstanceUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.VerifiedAccessInstances.Add(item);
                         continue;

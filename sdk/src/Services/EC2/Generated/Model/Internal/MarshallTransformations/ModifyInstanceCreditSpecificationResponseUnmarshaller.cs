@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("successfulInstanceCreditSpecificationSet/item", targetDepth))
                     {
                         var unmarshaller = SuccessfulInstanceCreditSpecificationItemUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.SuccessfulInstanceCreditSpecifications.Add(item);
                         continue;
@@ -65,6 +67,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("unsuccessfulInstanceCreditSpecificationSet/item", targetDepth))
                     {
                         var unmarshaller = UnsuccessfulInstanceCreditSpecificationItemUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.UnsuccessfulInstanceCreditSpecifications.Add(item);
                         continue;

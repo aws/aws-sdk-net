@@ -84,6 +84,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBProxyEndpoints/member", targetDepth))
                     {
                         var unmarshaller = DBProxyEndpointUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.DBProxyEndpoints.Add(item);
                         continue;

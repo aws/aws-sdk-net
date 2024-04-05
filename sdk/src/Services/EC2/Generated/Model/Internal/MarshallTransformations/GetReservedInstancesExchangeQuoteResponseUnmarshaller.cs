@@ -88,6 +88,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("reservedInstanceValueSet/item", targetDepth))
                     {
                         var unmarshaller = ReservedInstanceReservationValueUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ReservedInstanceValueSet.Add(item);
                         continue;
@@ -101,6 +103,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("targetConfigurationValueSet/item", targetDepth))
                     {
                         var unmarshaller = TargetReservationValueUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.TargetConfigurationValueSet.Add(item);
                         continue;

@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instanceTypeOfferingSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceTypeOfferingUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.InstanceTypeOfferings.Add(item);
                         continue;

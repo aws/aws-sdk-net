@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("loggingConfigurationSet/item", targetDepth))
                     {
                         var unmarshaller = VerifiedAccessInstanceLoggingConfigurationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.LoggingConfigurations.Add(item);
                         continue;

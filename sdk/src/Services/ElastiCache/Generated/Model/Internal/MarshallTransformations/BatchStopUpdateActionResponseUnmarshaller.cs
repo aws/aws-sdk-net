@@ -84,6 +84,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ProcessedUpdateActions/ProcessedUpdateAction", targetDepth))
                     {
                         var unmarshaller = ProcessedUpdateActionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ProcessedUpdateActions.Add(item);
                         continue;
@@ -91,6 +93,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UnprocessedUpdateActions/UnprocessedUpdateAction", targetDepth))
                     {
                         var unmarshaller = UnprocessedUpdateActionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.UnprocessedUpdateActions.Add(item);
                         continue;

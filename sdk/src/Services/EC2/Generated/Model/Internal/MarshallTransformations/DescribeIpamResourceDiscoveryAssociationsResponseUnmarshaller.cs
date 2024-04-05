@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipamResourceDiscoveryAssociationSet/item", targetDepth))
                     {
                         var unmarshaller = IpamResourceDiscoveryAssociationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.IpamResourceDiscoveryAssociations.Add(item);
                         continue;

@@ -84,6 +84,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LoadBalancerTargetGroups/member", targetDepth))
                     {
                         var unmarshaller = LoadBalancerTargetGroupStateUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.LoadBalancerTargetGroups.Add(item);
                         continue;

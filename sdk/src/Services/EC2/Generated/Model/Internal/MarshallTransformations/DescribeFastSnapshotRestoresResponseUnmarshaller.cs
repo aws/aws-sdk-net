@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("fastSnapshotRestoreSet/item", targetDepth))
                     {
                         var unmarshaller = DescribeFastSnapshotRestoreSuccessItemUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.FastSnapshotRestores.Add(item);
                         continue;

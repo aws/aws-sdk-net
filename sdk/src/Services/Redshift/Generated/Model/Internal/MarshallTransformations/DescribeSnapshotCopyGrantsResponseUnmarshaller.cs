@@ -90,6 +90,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SnapshotCopyGrants/SnapshotCopyGrant", targetDepth))
                     {
                         var unmarshaller = SnapshotCopyGrantUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.SnapshotCopyGrants.Add(item);
                         continue;

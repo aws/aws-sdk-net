@@ -84,6 +84,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBSecurityGroups/DBSecurityGroup", targetDepth))
                     {
                         var unmarshaller = DBSecurityGroupUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.DBSecurityGroups.Add(item);
                         continue;

@@ -84,6 +84,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBEngineVersions/DBEngineVersion", targetDepth))
                     {
                         var unmarshaller = DBEngineVersionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.DBEngineVersions.Add(item);
                         continue;

@@ -90,6 +90,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TaggedResources/TaggedResource", targetDepth))
                     {
                         var unmarshaller = TaggedResourceUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.TaggedResources.Add(item);
                         continue;

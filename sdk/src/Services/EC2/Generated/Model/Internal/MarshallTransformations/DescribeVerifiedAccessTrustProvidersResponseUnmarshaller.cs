@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("verifiedAccessTrustProviderSet/item", targetDepth))
                     {
                         var unmarshaller = VerifiedAccessTrustProviderUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.VerifiedAccessTrustProviders.Add(item);
                         continue;

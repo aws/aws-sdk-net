@@ -84,6 +84,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ClusterSecurityGroups/ClusterSecurityGroup", targetDepth))
                     {
                         var unmarshaller = ClusterSecurityGroupUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ClusterSecurityGroups.Add(item);
                         continue;

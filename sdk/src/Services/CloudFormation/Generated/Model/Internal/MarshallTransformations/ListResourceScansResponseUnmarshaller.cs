@@ -90,6 +90,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ResourceScanSummaries/member", targetDepth))
                     {
                         var unmarshaller = ResourceScanSummaryUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ResourceScanSummaries.Add(item);
                         continue;

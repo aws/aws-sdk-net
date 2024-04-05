@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("interfaceAssociationSet/item", targetDepth))
                     {
                         var unmarshaller = TrunkInterfaceAssociationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.InterfaceAssociations.Add(item);
                         continue;

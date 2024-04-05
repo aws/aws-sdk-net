@@ -84,6 +84,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     if (context.TestExpression("Failed/member", targetDepth))
                     {
                         var unmarshaller = BatchResultErrorEntryUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Failed.Add(item);
                         continue;
@@ -91,6 +93,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     if (context.TestExpression("Successful/member", targetDepth))
                     {
                         var unmarshaller = PublishBatchResultEntryUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Successful.Add(item);
                         continue;

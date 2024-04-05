@@ -90,6 +90,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReservedCacheNodesOfferings/ReservedCacheNodesOffering", targetDepth))
                     {
                         var unmarshaller = ReservedCacheNodesOfferingUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ReservedCacheNodesOfferings.Add(item);
                         continue;

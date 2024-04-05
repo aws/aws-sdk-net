@@ -84,6 +84,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Limits/member", targetDepth))
                     {
                         var unmarshaller = LimitUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.Limits.Add(item);
                         continue;

@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("multicastDomainAssociations/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayMulticastDomainAssociationUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.MulticastDomainAssociations.Add(item);
                         continue;

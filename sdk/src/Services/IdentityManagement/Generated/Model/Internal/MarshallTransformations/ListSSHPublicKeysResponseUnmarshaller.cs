@@ -96,6 +96,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SSHPublicKeys/member", targetDepth))
                     {
                         var unmarshaller = SSHPublicKeyMetadataUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.SSHPublicKeys.Add(item);
                         continue;

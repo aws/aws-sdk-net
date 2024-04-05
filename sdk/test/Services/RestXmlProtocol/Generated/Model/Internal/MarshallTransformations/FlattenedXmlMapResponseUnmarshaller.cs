@@ -66,6 +66,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("myMap", targetDepth))
                     {
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         response.MyMap.Add(unmarshaller.Unmarshall(context));
                         continue;

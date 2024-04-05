@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("failedQueuedPurchaseDeletionSet/item", targetDepth))
                     {
                         var unmarshaller = FailedQueuedPurchaseDeletionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.FailedQueuedPurchaseDeletions.Add(item);
                         continue;
@@ -65,6 +67,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("successfulQueuedPurchaseDeletionSet/item", targetDepth))
                     {
                         var unmarshaller = SuccessfulQueuedPurchaseDeletionUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.SuccessfulQueuedPurchaseDeletions.Add(item);
                         continue;

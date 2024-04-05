@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("clientVpnEndpoint/item", targetDepth))
                     {
                         var unmarshaller = ClientVpnEndpointUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.ClientVpnEndpoints.Add(item);
                         continue;

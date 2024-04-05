@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipamDiscoveredPublicAddressSet/item", targetDepth))
                     {
                         var unmarshaller = IpamDiscoveredPublicAddressUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.IpamDiscoveredPublicAddresses.Add(item);
                         continue;

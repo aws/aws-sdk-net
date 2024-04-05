@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("publicIpv4PoolSet/item", targetDepth))
                     {
                         var unmarshaller = PublicIpv4PoolUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.PublicIpv4Pools.Add(item);
                         continue;

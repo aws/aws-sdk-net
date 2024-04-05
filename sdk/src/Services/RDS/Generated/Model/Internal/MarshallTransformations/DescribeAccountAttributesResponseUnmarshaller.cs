@@ -84,6 +84,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AccountQuotas/AccountQuota", targetDepth))
                     {
                         var unmarshaller = AccountQuotaUnmarshaller.Instance;
+                        context.KeyXmlName = "key";
+                        context.ValueXmlName = "value";
                         var item = unmarshaller.Unmarshall(context);
                         response.AccountQuotas.Add(item);
                         continue;
