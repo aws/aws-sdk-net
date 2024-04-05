@@ -1,3 +1,14 @@
+### 3.7.784.0 (2024-04-05 18:14 UTC)
+* QuickSight (3.7.308.0)
+	* Adding IAMIdentityCenterInstanceArn parameter to CreateAccountSubscription
+* ResourceGroups (3.7.301.0)
+	* Added a new QueryErrorCode RESOURCE_TYPE_NOT_SUPPORTED that is returned by the ListGroupResources operation if the group query contains unsupported resource types.
+* VerifiedPermissions (3.7.305.0)
+	* Adding BatchIsAuthorizedWithToken API which supports multiple authorization requests against a PolicyStore given a bearer token.
+* Core 3.7.303.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.783.0 (2024-04-04 18:24 UTC)
 * B2bi (3.7.303.0)
 	* Adding support for X12 5010 HIPAA EDI version and associated transaction sets.
