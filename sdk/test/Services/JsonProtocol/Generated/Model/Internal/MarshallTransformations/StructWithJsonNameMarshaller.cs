@@ -49,7 +49,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 return;
             if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("RenamedMember");
+                context.Writer.WritePropertyName("Value");
                 context.Writer.Write(requestObject.Value);
             }
 

@@ -70,8 +70,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("key", kvp.Key);
                         xmlWriter.WriteElementString("value", kvp.Value);
                         xmlWriter.WriteEndElement();
-                    }
-                    xmlWriter.WriteEndElement();
+                    }    
+                }
 
                 xmlWriter.WriteEndElement();
             }

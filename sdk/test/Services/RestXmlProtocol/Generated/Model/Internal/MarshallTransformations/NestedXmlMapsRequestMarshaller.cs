@@ -77,9 +77,10 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();
                         }            
                         xmlWriter.WriteEndElement();                
-                        xmlWriter.WriteEndElement();
-                    }
-                    xmlWriter.WriteEndElement();
+                    }    
+                }
+                if(publicRequest.IsSetNestedMap())
+                {
                     xmlWriter.WriteStartElement("nestedMap");
                     foreach (var kvp in publicRequest.NestedMap) 
                     {
@@ -97,6 +98,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
+                }
 
                 xmlWriter.WriteEndElement();
             }
