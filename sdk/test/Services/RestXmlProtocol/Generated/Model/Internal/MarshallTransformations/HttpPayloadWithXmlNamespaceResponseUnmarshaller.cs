@@ -62,7 +62,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("nested", targetDepth))
+                    if (context.TestExpression("PayloadWithXmlNamespace", targetDepth))
                     {
                         var unmarshaller = PayloadWithXmlNamespaceUnmarshaller.Instance;
                         response.Nested = unmarshaller.Unmarshall(context);
