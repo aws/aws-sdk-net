@@ -69,17 +69,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
+                xmlWriter.WriteStartElement("CreateAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetBucket())
-                    xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.Bucket));                    
+                    xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.Bucket));
 
                 if(publicRequest.IsSetBucketAccountId())
-                    xmlWriter.WriteElementString("BucketAccountId", StringUtils.FromString(publicRequest.BucketAccountId));                    
+                    xmlWriter.WriteElementString("BucketAccountId", StringUtils.FromString(publicRequest.BucketAccountId));
 
-                
-                if (publicRequest.PublicAccessBlockConfiguration != null) 
+                if (publicRequest.PublicAccessBlockConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("PublicAccessBlockConfiguration");            
+                    xmlWriter.WriteStartElement("PublicAccessBlockConfiguration");
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicAcls())
                         xmlWriter.WriteElementString("BlockPublicAcls", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicAcls));                 
 
@@ -94,10 +93,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                     xmlWriter.WriteEndElement();
                 }
-                
-                if (publicRequest.VpcConfiguration != null) 
+                if (publicRequest.VpcConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("VpcConfiguration");            
+                    xmlWriter.WriteStartElement("VpcConfiguration");
                     if(publicRequest.VpcConfiguration.IsSetVpcId())
                         xmlWriter.WriteElementString("VpcId", StringUtils.FromString(publicRequest.VpcConfiguration.VpcId));                 
 

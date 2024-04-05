@@ -73,32 +73,29 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("FieldLevelEncryptionProfileConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetCallerReference())
-                        xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.CallerReference));                    
+                        xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.CallerReference));
 
                     if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Comment));
 
-                
-                    if (publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities != null) 
+                    if (publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities != null)
                     {
-                        xmlWriter.WriteStartElement("EncryptionEntities");            
+                        xmlWriter.WriteStartElement("EncryptionEntities");
                         var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems = publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.Items;
                         if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems != null && publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems.Count > 0) 
-                        {                        
+                        {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue in publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems) 
                             {
-                
-                            if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue != null) 
+                            if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue != null)
                             {
-                                xmlWriter.WriteStartElement("EncryptionEntity");            
-                
-                                if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns != null) 
+                                xmlWriter.WriteStartElement("EncryptionEntity");
+                                if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns != null)
                                 {
-                                    xmlWriter.WriteStartElement("FieldPatterns");            
+                                    xmlWriter.WriteStartElement("FieldPatterns");
                                     var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems = publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Items;
                                     if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems != null && publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems.Count > 0) 
-                                    {                        
+                                    {
                                         xmlWriter.WriteStartElement("Items");
                                         foreach (var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItemsValue in publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems) 
                                         {
@@ -130,7 +127,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetName())
-                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Name));                    
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Name));
 
 
                     xmlWriter.WriteEndElement();

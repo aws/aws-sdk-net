@@ -64,11 +64,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("DeleteVPCAssociationAuthorizationRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
-                
-                if (publicRequest.VPC != null) 
+                xmlWriter.WriteStartElement("DeleteVPCAssociationAuthorizationRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
+                if (publicRequest.VPC != null)
                 {
-                    xmlWriter.WriteStartElement("VPC");            
+                    xmlWriter.WriteStartElement("VPC");
                     if(publicRequest.VPC.IsSetVPCRegion())
                         xmlWriter.WriteElementString("VPCRegion", StringUtils.FromString(publicRequest.VPC.VPCRegion));                 
 

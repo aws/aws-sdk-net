@@ -61,14 +61,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateHealthCheckRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
+                xmlWriter.WriteStartElement("CreateHealthCheckRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CallerReference));                    
+                    xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CallerReference));
 
-                
-                if (publicRequest.HealthCheckConfig != null) 
+                if (publicRequest.HealthCheckConfig != null)
                 {
-                    xmlWriter.WriteStartElement("HealthCheckConfig");            
+                    xmlWriter.WriteStartElement("HealthCheckConfig");
                     if(publicRequest.HealthCheckConfig.IsSetIPAddress())
                         xmlWriter.WriteElementString("IPAddress", StringUtils.FromString(publicRequest.HealthCheckConfig.IPAddress));                 
 
@@ -107,7 +106,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                     var publicRequestHealthCheckConfigChildHealthChecks = publicRequest.HealthCheckConfig.ChildHealthChecks;
                     if (publicRequestHealthCheckConfigChildHealthChecks != null && publicRequestHealthCheckConfigChildHealthChecks.Count > 0) 
-                    {                        
+                    {
                         xmlWriter.WriteStartElement("ChildHealthChecks");
                         foreach (var publicRequestHealthCheckConfigChildHealthChecksValue in publicRequestHealthCheckConfigChildHealthChecks) 
                         {
@@ -122,7 +121,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                     var publicRequestHealthCheckConfigRegions = publicRequest.HealthCheckConfig.Regions;
                     if (publicRequestHealthCheckConfigRegions != null && publicRequestHealthCheckConfigRegions.Count > 0) 
-                    {                        
+                    {
                         xmlWriter.WriteStartElement("Regions");
                         foreach (var publicRequestHealthCheckConfigRegionsValue in publicRequestHealthCheckConfigRegions) 
                         {
@@ -132,10 +131,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         }            
                         xmlWriter.WriteEndElement();            
                     }
-                
-                    if (publicRequest.HealthCheckConfig.AlarmIdentifier != null) 
+                    if (publicRequest.HealthCheckConfig.AlarmIdentifier != null)
                     {
-                        xmlWriter.WriteStartElement("AlarmIdentifier");            
+                        xmlWriter.WriteStartElement("AlarmIdentifier");
                         if(publicRequest.HealthCheckConfig.AlarmIdentifier.IsSetRegion())
                             xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequest.HealthCheckConfig.AlarmIdentifier.Region));                 
 

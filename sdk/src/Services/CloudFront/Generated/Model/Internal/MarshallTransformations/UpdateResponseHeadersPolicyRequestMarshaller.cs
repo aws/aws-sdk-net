@@ -73,22 +73,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("ResponseHeadersPolicyConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.ResponseHeadersPolicyConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.Comment));
 
-                
-                    if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig != null) 
+                    if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig != null)
                     {
-                        xmlWriter.WriteStartElement("CorsConfig");            
+                        xmlWriter.WriteStartElement("CorsConfig");
                         if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.IsSetAccessControlAllowCredentials())
                             xmlWriter.WriteElementString("AccessControlAllowCredentials", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowCredentials));                 
 
-                
-                        if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowHeaders != null) 
+                        if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowHeaders != null)
                         {
-                            xmlWriter.WriteStartElement("AccessControlAllowHeaders");            
+                            xmlWriter.WriteStartElement("AccessControlAllowHeaders");
                             var publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowHeadersItems = publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowHeaders.Items;
                             if (publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowHeadersItems != null && publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowHeadersItems.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowHeadersItemsValue in publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowHeadersItems) 
                                 {
@@ -103,13 +101,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowMethods != null) 
+                        if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowMethods != null)
                         {
-                            xmlWriter.WriteStartElement("AccessControlAllowMethods");            
+                            xmlWriter.WriteStartElement("AccessControlAllowMethods");
                             var publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowMethodsItems = publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowMethods.Items;
                             if (publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowMethodsItems != null && publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowMethodsItems.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowMethodsItemsValue in publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowMethodsItems) 
                                 {
@@ -124,13 +121,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowOrigins != null) 
+                        if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowOrigins != null)
                         {
-                            xmlWriter.WriteStartElement("AccessControlAllowOrigins");            
+                            xmlWriter.WriteStartElement("AccessControlAllowOrigins");
                             var publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowOriginsItems = publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowOrigins.Items;
                             if (publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowOriginsItems != null && publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowOriginsItems.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowOriginsItemsValue in publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlAllowOriginsItems) 
                                 {
@@ -145,13 +141,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlExposeHeaders != null) 
+                        if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlExposeHeaders != null)
                         {
-                            xmlWriter.WriteStartElement("AccessControlExposeHeaders");            
+                            xmlWriter.WriteStartElement("AccessControlExposeHeaders");
                             var publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlExposeHeadersItems = publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlExposeHeaders.Items;
                             if (publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlExposeHeadersItems != null && publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlExposeHeadersItems.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlExposeHeadersItemsValue in publicRequestResponseHeadersPolicyConfigCorsConfigAccessControlExposeHeadersItems) 
                                 {
@@ -174,20 +169,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                         xmlWriter.WriteEndElement();
                     }
-                
-                    if (publicRequest.ResponseHeadersPolicyConfig.CustomHeadersConfig != null) 
+                    if (publicRequest.ResponseHeadersPolicyConfig.CustomHeadersConfig != null)
                     {
-                        xmlWriter.WriteStartElement("CustomHeadersConfig");            
+                        xmlWriter.WriteStartElement("CustomHeadersConfig");
                         var publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItems = publicRequest.ResponseHeadersPolicyConfig.CustomHeadersConfig.Items;
                         if (publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItems != null && publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItems.Count > 0) 
-                        {                        
+                        {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue in publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItems) 
                             {
-                
-                            if (publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue != null) 
+                            if (publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue != null)
                             {
-                                xmlWriter.WriteStartElement("ResponseHeadersPolicyCustomHeader");            
+                                xmlWriter.WriteStartElement("ResponseHeadersPolicyCustomHeader");
                                 if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetHeader())
                                     xmlWriter.WriteElementString("Header", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Header));                 
 
@@ -208,22 +201,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.ResponseHeadersPolicyConfig.IsSetName())
-                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.Name));                    
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.Name));
 
-                
-                    if (publicRequest.ResponseHeadersPolicyConfig.RemoveHeadersConfig != null) 
+                    if (publicRequest.ResponseHeadersPolicyConfig.RemoveHeadersConfig != null)
                     {
-                        xmlWriter.WriteStartElement("RemoveHeadersConfig");            
+                        xmlWriter.WriteStartElement("RemoveHeadersConfig");
                         var publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItems = publicRequest.ResponseHeadersPolicyConfig.RemoveHeadersConfig.Items;
                         if (publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItems != null && publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItems.Count > 0) 
-                        {                        
+                        {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue in publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItems) 
                             {
-                
-                            if (publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue != null) 
+                            if (publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue != null)
                             {
-                                xmlWriter.WriteStartElement("ResponseHeadersPolicyRemoveHeader");            
+                                xmlWriter.WriteStartElement("ResponseHeadersPolicyRemoveHeader");
                                 if(publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue.IsSetHeader())
                                     xmlWriter.WriteElementString("Header", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue.Header));                 
 
@@ -237,14 +228,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                         xmlWriter.WriteEndElement();
                     }
-                
-                    if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig != null) 
+                    if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig != null)
                     {
-                        xmlWriter.WriteStartElement("SecurityHeadersConfig");            
-                
-                        if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy != null) 
+                        xmlWriter.WriteStartElement("SecurityHeadersConfig");
+                        if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy != null)
                         {
-                            xmlWriter.WriteStartElement("ContentSecurityPolicy");            
+                            xmlWriter.WriteStartElement("ContentSecurityPolicy");
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.IsSetContentSecurityPolicy())
                                 xmlWriter.WriteElementString("ContentSecurityPolicy", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.ContentSecurityPolicy));                 
 
@@ -253,19 +242,17 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentTypeOptions != null) 
+                        if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentTypeOptions != null)
                         {
-                            xmlWriter.WriteStartElement("ContentTypeOptions");            
+                            xmlWriter.WriteStartElement("ContentTypeOptions");
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentTypeOptions.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentTypeOptions.Override));                 
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions != null) 
+                        if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions != null)
                         {
-                            xmlWriter.WriteStartElement("FrameOptions");            
+                            xmlWriter.WriteStartElement("FrameOptions");
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions.IsSetFrameOption())
                                 xmlWriter.WriteElementString("FrameOption", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions.FrameOption));                 
 
@@ -274,10 +261,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy != null) 
+                        if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy != null)
                         {
-                            xmlWriter.WriteStartElement("ReferrerPolicy");            
+                            xmlWriter.WriteStartElement("ReferrerPolicy");
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy.Override));                 
 
@@ -286,10 +272,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity != null) 
+                        if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity != null)
                         {
-                            xmlWriter.WriteStartElement("StrictTransportSecurity");            
+                            xmlWriter.WriteStartElement("StrictTransportSecurity");
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.IsSetAccessControlMaxAgeSec())
                                 xmlWriter.WriteElementString("AccessControlMaxAgeSec", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.AccessControlMaxAgeSec));                 
 
@@ -304,10 +289,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection != null) 
+                        if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection != null)
                         {
-                            xmlWriter.WriteStartElement("XSSProtection");            
+                            xmlWriter.WriteStartElement("XSSProtection");
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.IsSetModeBlock())
                                 xmlWriter.WriteElementString("ModeBlock", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.ModeBlock));                 
 
@@ -324,10 +308,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         xmlWriter.WriteEndElement();
                     }
-                
-                    if (publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig != null) 
+                    if (publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig != null)
                     {
-                        xmlWriter.WriteStartElement("ServerTimingHeadersConfig");            
+                        xmlWriter.WriteStartElement("ServerTimingHeadersConfig");
                         if(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.IsSetEnabled())
                             xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.Enabled));                 
 

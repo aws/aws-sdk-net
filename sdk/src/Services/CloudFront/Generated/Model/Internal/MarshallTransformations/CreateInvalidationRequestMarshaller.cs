@@ -68,15 +68,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.InvalidationBatch.IsSetCallerReference())
-                        xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));                    
+                        xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));
 
-                
-                    if (publicRequest.InvalidationBatch.Paths != null) 
+                    if (publicRequest.InvalidationBatch.Paths != null)
                     {
-                        xmlWriter.WriteStartElement("Paths");            
+                        xmlWriter.WriteStartElement("Paths");
                         var publicRequestInvalidationBatchPathsItems = publicRequest.InvalidationBatch.Paths.Items;
                         if (publicRequestInvalidationBatchPathsItems != null && publicRequestInvalidationBatchPathsItems.Count > 0) 
-                        {                        
+                        {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestInvalidationBatchPathsItemsValue in publicRequestInvalidationBatchPathsItems) 
                             {

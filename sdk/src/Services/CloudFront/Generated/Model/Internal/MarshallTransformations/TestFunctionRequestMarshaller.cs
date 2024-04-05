@@ -69,12 +69,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("TestFunctionRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
+                xmlWriter.WriteStartElement("TestFunctionRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 if(publicRequest.IsSetEventObject())
-                    xmlWriter.WriteElementString("EventObject", StringUtils.FromMemoryStream(publicRequest.EventObject));                    
+                    xmlWriter.WriteElementString("EventObject", StringUtils.FromMemoryStream(publicRequest.EventObject));
 
                 if(publicRequest.IsSetStage())
-                    xmlWriter.WriteElementString("Stage", StringUtils.FromString(publicRequest.Stage));                    
+                    xmlWriter.WriteElementString("Stage", StringUtils.FromString(publicRequest.Stage));
 
 
                 xmlWriter.WriteEndElement();

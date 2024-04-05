@@ -66,12 +66,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("PutAccessGrantsInstanceResourcePolicyRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
+                xmlWriter.WriteStartElement("PutAccessGrantsInstanceResourcePolicyRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetOrganization())
-                    xmlWriter.WriteElementString("Organization", StringUtils.FromString(publicRequest.Organization));                    
+                    xmlWriter.WriteElementString("Organization", StringUtils.FromString(publicRequest.Organization));
 
                 if(publicRequest.IsSetPolicy())
-                    xmlWriter.WriteElementString("Policy", StringUtils.FromString(publicRequest.Policy));                    
+                    xmlWriter.WriteElementString("Policy", StringUtils.FromString(publicRequest.Policy));
 
 
                 xmlWriter.WriteEndElement();

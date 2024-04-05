@@ -69,14 +69,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("PutAccessPointConfigurationForObjectLambdaRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
-                
-                if (publicRequest.Configuration != null) 
+                xmlWriter.WriteStartElement("PutAccessPointConfigurationForObjectLambdaRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                if (publicRequest.Configuration != null)
                 {
-                    xmlWriter.WriteStartElement("Configuration");            
+                    xmlWriter.WriteStartElement("Configuration");
                     var publicRequestConfigurationAllowedFeatures = publicRequest.Configuration.AllowedFeatures;
                     if (publicRequestConfigurationAllowedFeatures != null && publicRequestConfigurationAllowedFeatures.Count > 0) 
-                    {                        
+                    {
                         xmlWriter.WriteStartElement("AllowedFeatures");
                         foreach (var publicRequestConfigurationAllowedFeaturesValue in publicRequestConfigurationAllowedFeatures) 
                         {
@@ -94,17 +93,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                     var publicRequestConfigurationTransformationConfigurations = publicRequest.Configuration.TransformationConfigurations;
                     if (publicRequestConfigurationTransformationConfigurations != null && publicRequestConfigurationTransformationConfigurations.Count > 0) 
-                    {                        
+                    {
                         xmlWriter.WriteStartElement("TransformationConfigurations");
                         foreach (var publicRequestConfigurationTransformationConfigurationsValue in publicRequestConfigurationTransformationConfigurations) 
                         {
-                
-                        if (publicRequestConfigurationTransformationConfigurationsValue != null) 
+                        if (publicRequestConfigurationTransformationConfigurationsValue != null)
                         {
-                            xmlWriter.WriteStartElement("TransformationConfiguration");            
+                            xmlWriter.WriteStartElement("TransformationConfiguration");
                             var publicRequestConfigurationTransformationConfigurationsValueActions = publicRequestConfigurationTransformationConfigurationsValue.Actions;
                             if (publicRequestConfigurationTransformationConfigurationsValueActions != null && publicRequestConfigurationTransformationConfigurationsValueActions.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Actions");
                                 foreach (var publicRequestConfigurationTransformationConfigurationsValueActionsValue in publicRequestConfigurationTransformationConfigurationsValueActions) 
                                 {
@@ -114,14 +112,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
-                
-                            if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation != null) 
+                            if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation != null)
                             {
-                                xmlWriter.WriteStartElement("ContentTransformation");            
-                
-                                if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda != null) 
+                                xmlWriter.WriteStartElement("ContentTransformation");
+                                if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda != null)
                                 {
-                                    xmlWriter.WriteStartElement("AwsLambda");            
+                                    xmlWriter.WriteStartElement("AwsLambda");
                                     if(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.IsSetFunctionArn())
                                         xmlWriter.WriteElementString("FunctionArn", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionArn));                 
 

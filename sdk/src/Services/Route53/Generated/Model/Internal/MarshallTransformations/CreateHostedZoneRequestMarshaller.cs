@@ -61,14 +61,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
+                xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));                    
+                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
-                
-                if (publicRequest.VPC != null) 
+                if (publicRequest.VPC != null)
                 {
-                    xmlWriter.WriteStartElement("VPC");            
+                    xmlWriter.WriteStartElement("VPC");
                     if(publicRequest.VPC.IsSetVPCRegion())
                         xmlWriter.WriteElementString("VPCRegion", StringUtils.FromString(publicRequest.VPC.VPCRegion));                 
 
@@ -78,12 +77,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CallerReference));                    
+                    xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CallerReference));
 
-                
-                if (publicRequest.HostedZoneConfig != null) 
+                if (publicRequest.HostedZoneConfig != null)
                 {
-                    xmlWriter.WriteStartElement("HostedZoneConfig");            
+                    xmlWriter.WriteStartElement("HostedZoneConfig");
                     if(publicRequest.HostedZoneConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.HostedZoneConfig.Comment));                 
 
@@ -93,7 +91,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetDelegationSetId())
-                    xmlWriter.WriteElementString("DelegationSetId", StringUtils.FromString(publicRequest.DelegationSetId));                    
+                    xmlWriter.WriteElementString("DelegationSetId", StringUtils.FromString(publicRequest.DelegationSetId));
 
 
                 xmlWriter.WriteEndElement();

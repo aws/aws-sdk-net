@@ -69,9 +69,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("UpdateKeyValueStoreRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
+                xmlWriter.WriteStartElement("UpdateKeyValueStoreRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 if(publicRequest.IsSetComment())
-                    xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.Comment));                    
+                    xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.Comment));
 
 
                 xmlWriter.WriteEndElement();

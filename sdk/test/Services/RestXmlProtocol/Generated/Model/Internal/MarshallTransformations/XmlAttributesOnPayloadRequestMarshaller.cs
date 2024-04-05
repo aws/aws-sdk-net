@@ -65,10 +65,10 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("XmlAttributesPayloadRequest", "");
                     if(publicRequest.Payload.IsSetAttr())
-                        xmlWriter.WriteElementString("test", StringUtils.FromString(publicRequest.Payload.Attr));                    
+                        xmlWriter.WriteElementString("test", StringUtils.FromString(publicRequest.Payload.Attr));
 
                     if(publicRequest.Payload.IsSetFoo())
-                        xmlWriter.WriteElementString("foo", StringUtils.FromString(publicRequest.Payload.Foo));                    
+                        xmlWriter.WriteElementString("foo", StringUtils.FromString(publicRequest.Payload.Foo));
 
 
                     xmlWriter.WriteEndElement();

@@ -72,13 +72,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetStreamingDistributionConfig())
                 {
                     xmlWriter.WriteStartElement("StreamingDistributionConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
-                
-                    if (publicRequest.StreamingDistributionConfig.Aliases != null) 
+                    if (publicRequest.StreamingDistributionConfig.Aliases != null)
                     {
-                        xmlWriter.WriteStartElement("Aliases");            
+                        xmlWriter.WriteStartElement("Aliases");
                         var publicRequestStreamingDistributionConfigAliasesItems = publicRequest.StreamingDistributionConfig.Aliases.Items;
                         if (publicRequestStreamingDistributionConfigAliasesItems != null && publicRequestStreamingDistributionConfigAliasesItems.Count > 0) 
-                        {                        
+                        {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestStreamingDistributionConfigAliasesItemsValue in publicRequestStreamingDistributionConfigAliasesItems) 
                             {
@@ -94,18 +93,17 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.StreamingDistributionConfig.IsSetCallerReference())
-                        xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.StreamingDistributionConfig.CallerReference));                    
+                        xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.StreamingDistributionConfig.CallerReference));
 
                     if(publicRequest.StreamingDistributionConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Comment));
 
                     if(publicRequest.StreamingDistributionConfig.IsSetEnabled())
-                        xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Enabled));                    
+                        xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Enabled));
 
-                
-                    if (publicRequest.StreamingDistributionConfig.Logging != null) 
+                    if (publicRequest.StreamingDistributionConfig.Logging != null)
                     {
-                        xmlWriter.WriteStartElement("Logging");            
+                        xmlWriter.WriteStartElement("Logging");
                         if(publicRequest.StreamingDistributionConfig.Logging.IsSetBucket())
                             xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Logging.Bucket));                 
 
@@ -118,12 +116,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.StreamingDistributionConfig.IsSetPriceClass())
-                        xmlWriter.WriteElementString("PriceClass", StringUtils.FromString(publicRequest.StreamingDistributionConfig.PriceClass));                    
+                        xmlWriter.WriteElementString("PriceClass", StringUtils.FromString(publicRequest.StreamingDistributionConfig.PriceClass));
 
-                
-                    if (publicRequest.StreamingDistributionConfig.S3Origin != null) 
+                    if (publicRequest.StreamingDistributionConfig.S3Origin != null)
                     {
-                        xmlWriter.WriteStartElement("S3Origin");            
+                        xmlWriter.WriteStartElement("S3Origin");
                         if(publicRequest.StreamingDistributionConfig.S3Origin.IsSetDomainName())
                             xmlWriter.WriteElementString("DomainName", StringUtils.FromString(publicRequest.StreamingDistributionConfig.S3Origin.DomainName));                 
 
@@ -132,16 +129,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                         xmlWriter.WriteEndElement();
                     }
-                
-                    if (publicRequest.StreamingDistributionConfig.TrustedSigners != null) 
+                    if (publicRequest.StreamingDistributionConfig.TrustedSigners != null)
                     {
-                        xmlWriter.WriteStartElement("TrustedSigners");            
+                        xmlWriter.WriteStartElement("TrustedSigners");
                         if(publicRequest.StreamingDistributionConfig.TrustedSigners.IsSetEnabled())
                             xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.TrustedSigners.Enabled));                 
 
                         var publicRequestStreamingDistributionConfigTrustedSignersItems = publicRequest.StreamingDistributionConfig.TrustedSigners.Items;
                         if (publicRequestStreamingDistributionConfigTrustedSignersItems != null && publicRequestStreamingDistributionConfigTrustedSignersItems.Count > 0) 
-                        {                        
+                        {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestStreamingDistributionConfigTrustedSignersItemsValue in publicRequestStreamingDistributionConfigTrustedSignersItems) 
                             {
