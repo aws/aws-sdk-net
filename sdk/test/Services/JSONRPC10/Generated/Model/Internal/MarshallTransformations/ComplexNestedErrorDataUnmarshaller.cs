@@ -63,7 +63,7 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Fooooo", targetDepth))
+                if (context.TestExpression("Foo", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Foo = unmarshaller.Unmarshall(context);
