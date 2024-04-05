@@ -64,40 +64,40 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("UpdateHealthCheckRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
+                xmlWriter.WriteStartElement("UpdateHealthCheckRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetHealthCheckVersion())
-                    xmlWriter.WriteElementString("HealthCheckVersion", StringUtils.FromLong(publicRequest.HealthCheckVersion));                    
+                    xmlWriter.WriteElementString("HealthCheckVersion", StringUtils.FromLong(publicRequest.HealthCheckVersion));
 
                 if(publicRequest.IsSetIPAddress())
-                    xmlWriter.WriteElementString("IPAddress", StringUtils.FromString(publicRequest.IPAddress));                    
+                    xmlWriter.WriteElementString("IPAddress", StringUtils.FromString(publicRequest.IPAddress));
 
                 if(publicRequest.IsSetPort())
-                    xmlWriter.WriteElementString("Port", StringUtils.FromInt(publicRequest.Port));                    
+                    xmlWriter.WriteElementString("Port", StringUtils.FromInt(publicRequest.Port));
 
                 if(publicRequest.IsSetResourcePath())
-                    xmlWriter.WriteElementString("ResourcePath", StringUtils.FromString(publicRequest.ResourcePath));                    
+                    xmlWriter.WriteElementString("ResourcePath", StringUtils.FromString(publicRequest.ResourcePath));
 
                 if(publicRequest.IsSetFullyQualifiedDomainName())
-                    xmlWriter.WriteElementString("FullyQualifiedDomainName", StringUtils.FromString(publicRequest.FullyQualifiedDomainName));                    
+                    xmlWriter.WriteElementString("FullyQualifiedDomainName", StringUtils.FromString(publicRequest.FullyQualifiedDomainName));
 
                 if(publicRequest.IsSetSearchString())
-                    xmlWriter.WriteElementString("SearchString", StringUtils.FromString(publicRequest.SearchString));                    
+                    xmlWriter.WriteElementString("SearchString", StringUtils.FromString(publicRequest.SearchString));
 
                 if(publicRequest.IsSetFailureThreshold())
-                    xmlWriter.WriteElementString("FailureThreshold", StringUtils.FromInt(publicRequest.FailureThreshold));                    
+                    xmlWriter.WriteElementString("FailureThreshold", StringUtils.FromInt(publicRequest.FailureThreshold));
 
                 if(publicRequest.IsSetInverted())
-                    xmlWriter.WriteElementString("Inverted", StringUtils.FromBool(publicRequest.Inverted));                    
+                    xmlWriter.WriteElementString("Inverted", StringUtils.FromBool(publicRequest.Inverted));
 
                 if(publicRequest.IsSetDisabled())
-                    xmlWriter.WriteElementString("Disabled", StringUtils.FromBool(publicRequest.Disabled));                    
+                    xmlWriter.WriteElementString("Disabled", StringUtils.FromBool(publicRequest.Disabled));
 
                 if(publicRequest.IsSetHealthThreshold())
-                    xmlWriter.WriteElementString("HealthThreshold", StringUtils.FromInt(publicRequest.HealthThreshold));                    
+                    xmlWriter.WriteElementString("HealthThreshold", StringUtils.FromInt(publicRequest.HealthThreshold));
 
                 var publicRequestChildHealthChecks = publicRequest.ChildHealthChecks;
                 if (publicRequestChildHealthChecks != null && publicRequestChildHealthChecks.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("ChildHealthChecks");
                     foreach (var publicRequestChildHealthChecksValue in publicRequestChildHealthChecks) 
                     {
@@ -108,11 +108,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 if(publicRequest.IsSetEnableSNI())
-                    xmlWriter.WriteElementString("EnableSNI", StringUtils.FromBool(publicRequest.EnableSNI));                    
+                    xmlWriter.WriteElementString("EnableSNI", StringUtils.FromBool(publicRequest.EnableSNI));
 
                 var publicRequestRegions = publicRequest.Regions;
                 if (publicRequestRegions != null && publicRequestRegions.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("Regions");
                     foreach (var publicRequestRegionsValue in publicRequestRegions) 
                     {
@@ -122,10 +122,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }            
                     xmlWriter.WriteEndElement();            
                 }
-                
-                if (publicRequest.AlarmIdentifier != null) 
+                if (publicRequest.AlarmIdentifier != null)
                 {
-                    xmlWriter.WriteStartElement("AlarmIdentifier");            
+                    xmlWriter.WriteStartElement("AlarmIdentifier");
                     if(publicRequest.AlarmIdentifier.IsSetRegion())
                         xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequest.AlarmIdentifier.Region));                 
 
@@ -135,11 +134,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetInsufficientDataHealthStatus())
-                    xmlWriter.WriteElementString("InsufficientDataHealthStatus", StringUtils.FromString(publicRequest.InsufficientDataHealthStatus));                    
+                    xmlWriter.WriteElementString("InsufficientDataHealthStatus", StringUtils.FromString(publicRequest.InsufficientDataHealthStatus));
 
                 var publicRequestResetElements = publicRequest.ResetElements;
                 if (publicRequestResetElements != null && publicRequestResetElements.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("ResetElements");
                     foreach (var publicRequestResetElementsValue in publicRequestResetElements) 
                     {

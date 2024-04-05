@@ -65,17 +65,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetDistributionConfigWithTags())
                 {
                     xmlWriter.WriteStartElement("DistributionConfigWithTags", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
-                
-                    if (publicRequest.DistributionConfigWithTags.DistributionConfig != null) 
+                    if (publicRequest.DistributionConfigWithTags.DistributionConfig != null)
                     {
-                        xmlWriter.WriteStartElement("DistributionConfig");            
-                
-                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.Aliases != null) 
+                        xmlWriter.WriteStartElement("DistributionConfig");
+                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.Aliases != null)
                         {
-                            xmlWriter.WriteStartElement("Aliases");            
+                            xmlWriter.WriteStartElement("Aliases");
                             var publicRequestDistributionConfigWithTagsDistributionConfigAliasesItems = publicRequest.DistributionConfigWithTags.DistributionConfig.Aliases.Items;
                             if (publicRequestDistributionConfigWithTagsDistributionConfigAliasesItems != null && publicRequestDistributionConfigWithTagsDistributionConfigAliasesItems.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigAliasesItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigAliasesItems) 
                                 {
@@ -90,31 +88,27 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.CacheBehaviors != null) 
+                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.CacheBehaviors != null)
                         {
-                            xmlWriter.WriteStartElement("CacheBehaviors");            
+                            xmlWriter.WriteStartElement("CacheBehaviors");
                             var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItems = publicRequest.DistributionConfigWithTags.DistributionConfig.CacheBehaviors.Items;
                             if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItems.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItems) 
                                 {
-                
-                                if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue != null) 
+                                if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue != null)
                                 {
-                                    xmlWriter.WriteStartElement("CacheBehavior");            
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods != null) 
+                                    xmlWriter.WriteStartElement("CacheBehavior");
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods != null)
                                     {
-                                        xmlWriter.WriteStartElement("AllowedMethods");            
-                
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods != null) 
+                                        xmlWriter.WriteStartElement("AllowedMethods");
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods != null)
                                         {
-                                            xmlWriter.WriteStartElement("CachedMethods");            
+                                            xmlWriter.WriteStartElement("CachedMethods");
                                             var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods.Items;
                                             if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItems.Count > 0) 
-                                            {                        
+                                            {
                                                 xmlWriter.WriteStartElement("Items");
                                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsCachedMethodsItems) 
                                                 {
@@ -131,7 +125,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         }
                                         var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.Items;
                                         if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItems.Count > 0) 
-                                        {                        
+                                        {
                                             xmlWriter.WriteStartElement("Items");
                                             foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItems) 
                                             {
@@ -158,24 +152,21 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetFieldLevelEncryptionId())
                                         xmlWriter.WriteElementString("FieldLevelEncryptionId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FieldLevelEncryptionId));                 
 
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues != null) 
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues != null)
                                     {
-                                        xmlWriter.WriteStartElement("ForwardedValues");            
-                
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies != null) 
+                                        xmlWriter.WriteStartElement("ForwardedValues");
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies != null)
                                         {
-                                            xmlWriter.WriteStartElement("Cookies");            
+                                            xmlWriter.WriteStartElement("Cookies");
                                             if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.IsSetForward())
                                                 xmlWriter.WriteElementString("Forward", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.Forward));                 
 
-                
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames != null) 
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames != null)
                                             {
-                                                xmlWriter.WriteStartElement("WhitelistedNames");            
+                                                xmlWriter.WriteStartElement("WhitelistedNames");
                                                 var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.Items;
                                                 if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItems != null && publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItems.Count > 0) 
-                                                {                        
+                                                {
                                                     xmlWriter.WriteStartElement("Items");
                                                     foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItems) 
                                                     {
@@ -192,13 +183,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                             }
                                             xmlWriter.WriteEndElement();
                                         }
-                
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers != null) 
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers != null)
                                         {
-                                            xmlWriter.WriteStartElement("Headers");            
+                                            xmlWriter.WriteStartElement("Headers");
                                             var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.Items;
                                             if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItems != null && publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItems.Count > 0) 
-                                            {                        
+                                            {
                                                 xmlWriter.WriteStartElement("Items");
                                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItems) 
                                                 {
@@ -216,13 +206,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.IsSetQueryString())
                                             xmlWriter.WriteElementString("QueryString", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryString));                 
 
-                
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys != null) 
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys != null)
                                         {
-                                            xmlWriter.WriteStartElement("QueryStringCacheKeys");            
+                                            xmlWriter.WriteStartElement("QueryStringCacheKeys");
                                             var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys.Items;
                                             if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItems != null && publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItems.Count > 0) 
-                                            {                        
+                                            {
                                                 xmlWriter.WriteStartElement("Items");
                                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueForwardedValuesQueryStringCacheKeysItems) 
                                                 {
@@ -239,20 +228,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         }
                                         xmlWriter.WriteEndElement();
                                     }
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations != null) 
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations != null)
                                     {
-                                        xmlWriter.WriteStartElement("FunctionAssociations");            
+                                        xmlWriter.WriteStartElement("FunctionAssociations");
                                         var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.Items;
                                         if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItems.Count > 0) 
-                                        {                        
+                                        {
                                             xmlWriter.WriteStartElement("Items");
                                             foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItems) 
                                             {
-                
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue != null) 
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue != null)
                                             {
-                                                xmlWriter.WriteStartElement("FunctionAssociation");            
+                                                xmlWriter.WriteStartElement("FunctionAssociation");
                                                 if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue.IsSetEventType())
                                                     xmlWriter.WriteElementString("EventType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueFunctionAssociationsItemsValue.EventType));                 
 
@@ -269,20 +256,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                                         xmlWriter.WriteEndElement();
                                     }
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations != null) 
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations != null)
                                     {
-                                        xmlWriter.WriteStartElement("LambdaFunctionAssociations");            
+                                        xmlWriter.WriteStartElement("LambdaFunctionAssociations");
                                         var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations.Items;
                                         if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItems.Count > 0) 
-                                        {                        
+                                        {
                                             xmlWriter.WriteStartElement("Items");
                                             foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItems) 
                                             {
-                
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue != null) 
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue != null)
                                             {
-                                                xmlWriter.WriteStartElement("LambdaFunctionAssociation");            
+                                                xmlWriter.WriteStartElement("LambdaFunctionAssociation");
                                                 if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IsSetEventType())
                                                     xmlWriter.WriteElementString("EventType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.EventType));                 
 
@@ -326,16 +311,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.IsSetTargetOriginId())
                                         xmlWriter.WriteElementString("TargetOriginId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TargetOriginId));                 
 
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups != null) 
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups != null)
                                     {
-                                        xmlWriter.WriteStartElement("TrustedKeyGroups");            
+                                        xmlWriter.WriteStartElement("TrustedKeyGroups");
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.IsSetEnabled())
                                             xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Enabled));                 
 
                                         var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Items;
                                         if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItems.Count > 0) 
-                                        {                        
+                                        {
                                             xmlWriter.WriteStartElement("Items");
                                             foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItems) 
                                             {
@@ -350,16 +334,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                                         xmlWriter.WriteEndElement();
                                     }
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners != null) 
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners != null)
                                     {
-                                        xmlWriter.WriteStartElement("TrustedSigners");            
+                                        xmlWriter.WriteStartElement("TrustedSigners");
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.IsSetEnabled())
                                             xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Enabled));                 
 
                                         var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems = publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Items;
                                         if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems != null && publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems.Count > 0) 
-                                        {                        
+                                        {
                                             xmlWriter.WriteStartElement("Items");
                                             foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems) 
                                             {
@@ -396,20 +379,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetContinuousDeploymentPolicyId())
                             xmlWriter.WriteElementString("ContinuousDeploymentPolicyId", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.ContinuousDeploymentPolicyId));                 
 
-                
-                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.CustomErrorResponses != null) 
+                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.CustomErrorResponses != null)
                         {
-                            xmlWriter.WriteStartElement("CustomErrorResponses");            
+                            xmlWriter.WriteStartElement("CustomErrorResponses");
                             var publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItems = publicRequest.DistributionConfigWithTags.DistributionConfig.CustomErrorResponses.Items;
                             if (publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItems != null && publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItems.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItems) 
                                 {
-                
-                                if (publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue != null) 
+                                if (publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue != null)
                                 {
-                                    xmlWriter.WriteStartElement("CustomErrorResponse");            
+                                    xmlWriter.WriteStartElement("CustomErrorResponse");
                                     if(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.IsSetErrorCachingMinTTL())
                                         xmlWriter.WriteElementString("ErrorCachingMinTTL", StringUtils.FromLong(publicRequestDistributionConfigWithTagsDistributionConfigCustomErrorResponsesItemsValue.ErrorCachingMinTTL));                 
 
@@ -432,21 +413,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior != null) 
+                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior != null)
                         {
-                            xmlWriter.WriteStartElement("DefaultCacheBehavior");            
-                
-                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.AllowedMethods != null) 
+                            xmlWriter.WriteStartElement("DefaultCacheBehavior");
+                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.AllowedMethods != null)
                             {
-                                xmlWriter.WriteStartElement("AllowedMethods");            
-                
-                                if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.AllowedMethods.CachedMethods != null) 
+                                xmlWriter.WriteStartElement("AllowedMethods");
+                                if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.AllowedMethods.CachedMethods != null)
                                 {
-                                    xmlWriter.WriteStartElement("CachedMethods");            
+                                    xmlWriter.WriteStartElement("CachedMethods");
                                     var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorAllowedMethodsCachedMethodsItems = publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.AllowedMethods.CachedMethods.Items;
                                     if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorAllowedMethodsCachedMethodsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorAllowedMethodsCachedMethodsItems.Count > 0) 
-                                    {                        
+                                    {
                                         xmlWriter.WriteStartElement("Items");
                                         foreach (var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorAllowedMethodsCachedMethodsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorAllowedMethodsCachedMethodsItems) 
                                         {
@@ -463,7 +441,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 }
                                 var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorAllowedMethodsItems = publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.AllowedMethods.Items;
                                 if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorAllowedMethodsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorAllowedMethodsItems.Count > 0) 
-                                {                        
+                                {
                                     xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorAllowedMethodsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorAllowedMethodsItems) 
                                     {
@@ -490,24 +468,21 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             if(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.IsSetFieldLevelEncryptionId())
                                 xmlWriter.WriteElementString("FieldLevelEncryptionId", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.FieldLevelEncryptionId));                 
 
-                
-                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues != null) 
+                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues != null)
                             {
-                                xmlWriter.WriteStartElement("ForwardedValues");            
-                
-                                if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies != null) 
+                                xmlWriter.WriteStartElement("ForwardedValues");
+                                if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies != null)
                                 {
-                                    xmlWriter.WriteStartElement("Cookies");            
+                                    xmlWriter.WriteStartElement("Cookies");
                                     if(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.IsSetForward())
                                         xmlWriter.WriteElementString("Forward", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.Forward));                 
 
-                
-                                    if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.WhitelistedNames != null) 
+                                    if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.WhitelistedNames != null)
                                     {
-                                        xmlWriter.WriteStartElement("WhitelistedNames");            
+                                        xmlWriter.WriteStartElement("WhitelistedNames");
                                         var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesCookiesWhitelistedNamesItems = publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.WhitelistedNames.Items;
                                         if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesCookiesWhitelistedNamesItems != null && publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesCookiesWhitelistedNamesItems.Count > 0) 
-                                        {                        
+                                        {
                                             xmlWriter.WriteStartElement("Items");
                                             foreach (var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesCookiesWhitelistedNamesItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesCookiesWhitelistedNamesItems) 
                                             {
@@ -524,13 +499,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
-                
-                                if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Headers != null) 
+                                if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Headers != null)
                                 {
-                                    xmlWriter.WriteStartElement("Headers");            
+                                    xmlWriter.WriteStartElement("Headers");
                                     var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesHeadersItems = publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Headers.Items;
                                     if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesHeadersItems != null && publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesHeadersItems.Count > 0) 
-                                    {                        
+                                    {
                                         xmlWriter.WriteStartElement("Items");
                                         foreach (var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesHeadersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesHeadersItems) 
                                         {
@@ -548,13 +522,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 if(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.IsSetQueryString())
                                     xmlWriter.WriteElementString("QueryString", StringUtils.FromBool(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.QueryString));                 
 
-                
-                                if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.QueryStringCacheKeys != null) 
+                                if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.QueryStringCacheKeys != null)
                                 {
-                                    xmlWriter.WriteStartElement("QueryStringCacheKeys");            
+                                    xmlWriter.WriteStartElement("QueryStringCacheKeys");
                                     var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesQueryStringCacheKeysItems = publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.ForwardedValues.QueryStringCacheKeys.Items;
                                     if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesQueryStringCacheKeysItems != null && publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesQueryStringCacheKeysItems.Count > 0) 
-                                    {                        
+                                    {
                                         xmlWriter.WriteStartElement("Items");
                                         foreach (var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesQueryStringCacheKeysItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorForwardedValuesQueryStringCacheKeysItems) 
                                         {
@@ -571,20 +544,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 }
                                 xmlWriter.WriteEndElement();
                             }
-                
-                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.FunctionAssociations != null) 
+                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.FunctionAssociations != null)
                             {
-                                xmlWriter.WriteStartElement("FunctionAssociations");            
+                                xmlWriter.WriteStartElement("FunctionAssociations");
                                 var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItems = publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.FunctionAssociations.Items;
                                 if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItems.Count > 0) 
-                                {                        
+                                {
                                     xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItems) 
                                     {
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue != null) 
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue != null)
                                     {
-                                        xmlWriter.WriteStartElement("FunctionAssociation");            
+                                        xmlWriter.WriteStartElement("FunctionAssociation");
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue.IsSetEventType())
                                             xmlWriter.WriteElementString("EventType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorFunctionAssociationsItemsValue.EventType));                 
 
@@ -601,20 +572,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                                 xmlWriter.WriteEndElement();
                             }
-                
-                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.LambdaFunctionAssociations != null) 
+                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.LambdaFunctionAssociations != null)
                             {
-                                xmlWriter.WriteStartElement("LambdaFunctionAssociations");            
+                                xmlWriter.WriteStartElement("LambdaFunctionAssociations");
                                 var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItems = publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.LambdaFunctionAssociations.Items;
                                 if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItems.Count > 0) 
-                                {                        
+                                {
                                     xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItems) 
                                     {
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue != null) 
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue != null)
                                     {
-                                        xmlWriter.WriteStartElement("LambdaFunctionAssociation");            
+                                        xmlWriter.WriteStartElement("LambdaFunctionAssociation");
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IsSetEventType())
                                             xmlWriter.WriteElementString("EventType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.EventType));                 
 
@@ -655,16 +624,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             if(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.IsSetTargetOriginId())
                                 xmlWriter.WriteElementString("TargetOriginId", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.TargetOriginId));                 
 
-                
-                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.TrustedKeyGroups != null) 
+                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.TrustedKeyGroups != null)
                             {
-                                xmlWriter.WriteStartElement("TrustedKeyGroups");            
+                                xmlWriter.WriteStartElement("TrustedKeyGroups");
                                 if(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.TrustedKeyGroups.IsSetEnabled())
                                     xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.TrustedKeyGroups.Enabled));                 
 
                                 var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorTrustedKeyGroupsItems = publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.TrustedKeyGroups.Items;
                                 if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorTrustedKeyGroupsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorTrustedKeyGroupsItems.Count > 0) 
-                                {                        
+                                {
                                     xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorTrustedKeyGroupsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorTrustedKeyGroupsItems) 
                                     {
@@ -679,16 +647,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                                 xmlWriter.WriteEndElement();
                             }
-                
-                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.TrustedSigners != null) 
+                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.TrustedSigners != null)
                             {
-                                xmlWriter.WriteStartElement("TrustedSigners");            
+                                xmlWriter.WriteStartElement("TrustedSigners");
                                 if(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.TrustedSigners.IsSetEnabled())
                                     xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.TrustedSigners.Enabled));                 
 
                                 var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorTrustedSignersItems = publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.TrustedSigners.Items;
                                 if (publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorTrustedSignersItems != null && publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorTrustedSignersItems.Count > 0) 
-                                {                        
+                                {
                                     xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorTrustedSignersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigDefaultCacheBehaviorTrustedSignersItems) 
                                     {
@@ -720,10 +687,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetIsIPV6Enabled())
                             xmlWriter.WriteElementString("IsIPV6Enabled", StringUtils.FromBool(publicRequest.DistributionConfigWithTags.DistributionConfig.IsIPV6Enabled));                 
 
-                
-                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.Logging != null) 
+                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.Logging != null)
                         {
-                            xmlWriter.WriteStartElement("Logging");            
+                            xmlWriter.WriteStartElement("Logging");
                             if(publicRequest.DistributionConfigWithTags.DistributionConfig.Logging.IsSetBucket())
                                 xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.Logging.Bucket));                 
 
@@ -738,31 +704,27 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.OriginGroups != null) 
+                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.OriginGroups != null)
                         {
-                            xmlWriter.WriteStartElement("OriginGroups");            
+                            xmlWriter.WriteStartElement("OriginGroups");
                             var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItems = publicRequest.DistributionConfigWithTags.DistributionConfig.OriginGroups.Items;
                             if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItems.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItems) 
                                 {
-                
-                                if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue != null) 
+                                if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue != null)
                                 {
-                                    xmlWriter.WriteStartElement("OriginGroup");            
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria != null) 
+                                    xmlWriter.WriteStartElement("OriginGroup");
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria != null)
                                     {
-                                        xmlWriter.WriteStartElement("FailoverCriteria");            
-                
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes != null) 
+                                        xmlWriter.WriteStartElement("FailoverCriteria");
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes != null)
                                         {
-                                            xmlWriter.WriteStartElement("StatusCodes");            
+                                            xmlWriter.WriteStartElement("StatusCodes");
                                             var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItems = publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes.Items;
                                             if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItems != null && publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItems.Count > 0) 
-                                            {                        
+                                            {
                                                 xmlWriter.WriteStartElement("Items");
                                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueFailoverCriteriaStatusCodesItems) 
                                                 {
@@ -782,20 +744,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.IsSetId())
                                         xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Id));                 
 
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Members != null) 
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Members != null)
                                     {
-                                        xmlWriter.WriteStartElement("Members");            
+                                        xmlWriter.WriteStartElement("Members");
                                         var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItems = publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Members.Items;
                                         if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItems != null && publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItems.Count > 0) 
-                                        {                        
+                                        {
                                             xmlWriter.WriteStartElement("Items");
                                             foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItems) 
                                             {
-                
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue != null) 
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue != null)
                                             {
-                                                xmlWriter.WriteStartElement("OriginGroupMember");            
+                                                xmlWriter.WriteStartElement("OriginGroupMember");
                                                 if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue.IsSetOriginId())
                                                     xmlWriter.WriteElementString("OriginId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValueMembersItemsValue.OriginId));                 
 
@@ -819,40 +779,36 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.Origins != null) 
+                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.Origins != null)
                         {
-                            xmlWriter.WriteStartElement("Origins");            
+                            xmlWriter.WriteStartElement("Origins");
                             var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItems = publicRequest.DistributionConfigWithTags.DistributionConfig.Origins.Items;
                             if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigOriginsItems.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginsItems) 
                                 {
-                
-                                if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue != null) 
+                                if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue != null)
                                 {
-                                    xmlWriter.WriteStartElement("Origin");            
+                                    xmlWriter.WriteStartElement("Origin");
                                     if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetConnectionAttempts())
                                         xmlWriter.WriteElementString("ConnectionAttempts", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.ConnectionAttempts));                 
 
                                     if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetConnectionTimeout())
                                         xmlWriter.WriteElementString("ConnectionTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.ConnectionTimeout));                 
 
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomHeaders != null) 
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomHeaders != null)
                                     {
-                                        xmlWriter.WriteStartElement("CustomHeaders");            
+                                        xmlWriter.WriteStartElement("CustomHeaders");
                                         var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItems = publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomHeaders.Items;
                                         if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItems != null && publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItems.Count > 0) 
-                                        {                        
+                                        {
                                             xmlWriter.WriteStartElement("Items");
                                             foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItems) 
                                             {
-                
-                                            if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue != null) 
+                                            if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue != null)
                                             {
-                                                xmlWriter.WriteStartElement("OriginCustomHeader");            
+                                                xmlWriter.WriteStartElement("OriginCustomHeader");
                                                 if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue.IsSetHeaderName())
                                                     xmlWriter.WriteElementString("HeaderName", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomHeadersItemsValue.HeaderName));                 
 
@@ -869,10 +825,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                                         xmlWriter.WriteEndElement();
                                     }
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig != null) 
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig != null)
                                     {
-                                        xmlWriter.WriteStartElement("CustomOriginConfig");            
+                                        xmlWriter.WriteStartElement("CustomOriginConfig");
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetHTTPPort())
                                             xmlWriter.WriteElementString("HTTPPort", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPPort));                 
 
@@ -888,13 +843,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginReadTimeout())
                                             xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginReadTimeout));                 
 
-                
-                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols != null) 
+                                        if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols != null)
                                         {
-                                            xmlWriter.WriteStartElement("OriginSslProtocols");            
+                                            xmlWriter.WriteStartElement("OriginSslProtocols");
                                             var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItems = publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols.Items;
                                             if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItems != null && publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItems.Count > 0) 
-                                            {                        
+                                            {
                                                 xmlWriter.WriteStartElement("Items");
                                                 foreach (var publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValueCustomOriginConfigOriginSslProtocolsItems) 
                                                 {
@@ -923,10 +877,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetOriginPath())
                                         xmlWriter.WriteElementString("OriginPath", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginPath));                 
 
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield != null) 
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield != null)
                                     {
-                                        xmlWriter.WriteStartElement("OriginShield");            
+                                        xmlWriter.WriteStartElement("OriginShield");
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield.IsSetEnabled())
                                             xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield.Enabled));                 
 
@@ -935,10 +888,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                                         xmlWriter.WriteEndElement();
                                     }
-                
-                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig != null) 
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig != null)
                                     {
-                                        xmlWriter.WriteStartElement("S3OriginConfig");            
+                                        xmlWriter.WriteStartElement("S3OriginConfig");
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginAccessIdentity())
                                             xmlWriter.WriteElementString("OriginAccessIdentity", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.OriginAccessIdentity));                 
 
@@ -957,17 +909,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetPriceClass())
                             xmlWriter.WriteElementString("PriceClass", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.PriceClass));                 
 
-                
-                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.Restrictions != null) 
+                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.Restrictions != null)
                         {
-                            xmlWriter.WriteStartElement("Restrictions");            
-                
-                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.Restrictions.GeoRestriction != null) 
+                            xmlWriter.WriteStartElement("Restrictions");
+                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.Restrictions.GeoRestriction != null)
                             {
-                                xmlWriter.WriteStartElement("GeoRestriction");            
+                                xmlWriter.WriteStartElement("GeoRestriction");
                                 var publicRequestDistributionConfigWithTagsDistributionConfigRestrictionsGeoRestrictionItems = publicRequest.DistributionConfigWithTags.DistributionConfig.Restrictions.GeoRestriction.Items;
                                 if (publicRequestDistributionConfigWithTagsDistributionConfigRestrictionsGeoRestrictionItems != null && publicRequestDistributionConfigWithTagsDistributionConfigRestrictionsGeoRestrictionItems.Count > 0) 
-                                {                        
+                                {
                                     xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestDistributionConfigWithTagsDistributionConfigRestrictionsGeoRestrictionItemsValue in publicRequestDistributionConfigWithTagsDistributionConfigRestrictionsGeoRestrictionItems) 
                                     {
@@ -990,10 +940,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetStaging())
                             xmlWriter.WriteElementString("Staging", StringUtils.FromBool(publicRequest.DistributionConfigWithTags.DistributionConfig.Staging));                 
 
-                
-                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerCertificate != null) 
+                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerCertificate != null)
                         {
-                            xmlWriter.WriteStartElement("ViewerCertificate");            
+                            xmlWriter.WriteStartElement("ViewerCertificate");
                             if(publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerCertificate.IsSetACMCertificateArn())
                                 xmlWriter.WriteElementString("ACMCertificateArn", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerCertificate.ACMCertificateArn));                 
 
@@ -1022,20 +971,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                         xmlWriter.WriteEndElement();
                     }
-                
-                    if (publicRequest.DistributionConfigWithTags.Tags != null) 
+                    if (publicRequest.DistributionConfigWithTags.Tags != null)
                     {
-                        xmlWriter.WriteStartElement("Tags");            
+                        xmlWriter.WriteStartElement("Tags");
                         var publicRequestDistributionConfigWithTagsTagsItems = publicRequest.DistributionConfigWithTags.Tags.Items;
                         if (publicRequestDistributionConfigWithTagsTagsItems != null && publicRequestDistributionConfigWithTagsTagsItems.Count > 0) 
-                        {                        
+                        {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestDistributionConfigWithTagsTagsItemsValue in publicRequestDistributionConfigWithTagsTagsItems) 
                             {
-                
-                            if (publicRequestDistributionConfigWithTagsTagsItemsValue != null) 
+                            if (publicRequestDistributionConfigWithTagsTagsItemsValue != null)
                             {
-                                xmlWriter.WriteStartElement("Tag");            
+                                xmlWriter.WriteStartElement("Tag");
                                 if(publicRequestDistributionConfigWithTagsTagsItemsValue.IsSetKey())
                                     xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestDistributionConfigWithTagsTagsItemsValue.Key));                 
 

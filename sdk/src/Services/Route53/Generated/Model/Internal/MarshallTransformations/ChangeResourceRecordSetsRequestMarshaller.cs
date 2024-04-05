@@ -64,31 +64,28 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("ChangeResourceRecordSetsRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
-                
-                if (publicRequest.ChangeBatch != null) 
+                xmlWriter.WriteStartElement("ChangeResourceRecordSetsRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
+                if (publicRequest.ChangeBatch != null)
                 {
-                    xmlWriter.WriteStartElement("ChangeBatch");            
+                    xmlWriter.WriteStartElement("ChangeBatch");
                     if(publicRequest.ChangeBatch.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.ChangeBatch.Comment));                 
 
                     var publicRequestChangeBatchChanges = publicRequest.ChangeBatch.Changes;
                     if (publicRequestChangeBatchChanges != null && publicRequestChangeBatchChanges.Count > 0) 
-                    {                        
+                    {
                         xmlWriter.WriteStartElement("Changes");
                         foreach (var publicRequestChangeBatchChangesValue in publicRequestChangeBatchChanges) 
                         {
-                
-                        if (publicRequestChangeBatchChangesValue != null) 
+                        if (publicRequestChangeBatchChangesValue != null)
                         {
-                            xmlWriter.WriteStartElement("Change");            
+                            xmlWriter.WriteStartElement("Change");
                             if(publicRequestChangeBatchChangesValue.IsSetAction())
                                 xmlWriter.WriteElementString("Action", StringUtils.FromString(publicRequestChangeBatchChangesValue.Action));                 
 
-                
-                            if (publicRequestChangeBatchChangesValue.ResourceRecordSet != null) 
+                            if (publicRequestChangeBatchChangesValue.ResourceRecordSet != null)
                             {
-                                xmlWriter.WriteStartElement("ResourceRecordSet");            
+                                xmlWriter.WriteStartElement("ResourceRecordSet");
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetName())
                                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.Name));                 
 
@@ -104,10 +101,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetRegion())
                                     xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.Region));                 
 
-                
-                                if (publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoLocation != null) 
+                                if (publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoLocation != null)
                                 {
-                                    xmlWriter.WriteStartElement("GeoLocation");            
+                                    xmlWriter.WriteStartElement("GeoLocation");
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoLocation.IsSetContinentCode())
                                         xmlWriter.WriteElementString("ContinentCode", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoLocation.ContinentCode));                 
 
@@ -130,14 +126,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                                 var publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords = publicRequestChangeBatchChangesValue.ResourceRecordSet.ResourceRecords;
                                 if (publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords != null && publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords.Count > 0) 
-                                {                        
+                                {
                                     xmlWriter.WriteStartElement("ResourceRecords");
                                     foreach (var publicRequestChangeBatchChangesValueResourceRecordSetResourceRecordsValue in publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords) 
                                     {
-                
-                                    if (publicRequestChangeBatchChangesValueResourceRecordSetResourceRecordsValue != null) 
+                                    if (publicRequestChangeBatchChangesValueResourceRecordSetResourceRecordsValue != null)
                                     {
-                                        xmlWriter.WriteStartElement("ResourceRecord");            
+                                        xmlWriter.WriteStartElement("ResourceRecord");
                                         if(publicRequestChangeBatchChangesValueResourceRecordSetResourceRecordsValue.IsSetValue())
                                             xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestChangeBatchChangesValueResourceRecordSetResourceRecordsValue.Value));                 
 
@@ -146,10 +141,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                     }            
                                     xmlWriter.WriteEndElement();            
                                 }
-                
-                                if (publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget != null) 
+                                if (publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget != null)
                                 {
-                                    xmlWriter.WriteStartElement("AliasTarget");            
+                                    xmlWriter.WriteStartElement("AliasTarget");
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget.IsSetHostedZoneId())
                                         xmlWriter.WriteElementString("HostedZoneId", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget.HostedZoneId));                 
 
@@ -167,10 +161,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetTrafficPolicyInstanceId())
                                     xmlWriter.WriteElementString("TrafficPolicyInstanceId", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.TrafficPolicyInstanceId));                 
 
-                
-                                if (publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig != null) 
+                                if (publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig != null)
                                 {
-                                    xmlWriter.WriteStartElement("CidrRoutingConfig");            
+                                    xmlWriter.WriteStartElement("CidrRoutingConfig");
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig.IsSetCollectionId())
                                         xmlWriter.WriteElementString("CollectionId", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig.CollectionId));                 
 
@@ -179,20 +172,18 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                                     xmlWriter.WriteEndElement();
                                 }
-                
-                                if (publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation != null) 
+                                if (publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation != null)
                                 {
-                                    xmlWriter.WriteStartElement("GeoProximityLocation");            
+                                    xmlWriter.WriteStartElement("GeoProximityLocation");
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.IsSetAWSRegion())
                                         xmlWriter.WriteElementString("AWSRegion", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.AWSRegion));                 
 
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.IsSetLocalZoneGroup())
                                         xmlWriter.WriteElementString("LocalZoneGroup", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.LocalZoneGroup));                 
 
-                
-                                    if (publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.Coordinates != null) 
+                                    if (publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.Coordinates != null)
                                     {
-                                        xmlWriter.WriteStartElement("Coordinates");            
+                                        xmlWriter.WriteStartElement("Coordinates");
                                         if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.Coordinates.IsSetLatitude())
                                             xmlWriter.WriteElementString("Latitude", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.Coordinates.Latitude));                 
 

@@ -74,27 +74,24 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("LifecycleConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     var publicRequestLifecycleConfigurationRules = publicRequest.LifecycleConfiguration.Rules;
                     if (publicRequestLifecycleConfigurationRules != null && publicRequestLifecycleConfigurationRules.Count > 0) 
-                    {                        
+                    {
                         xmlWriter.WriteStartElement("Rules");
                         foreach (var publicRequestLifecycleConfigurationRulesValue in publicRequestLifecycleConfigurationRules) 
                         {
-                
-                        if (publicRequestLifecycleConfigurationRulesValue != null) 
+                        if (publicRequestLifecycleConfigurationRulesValue != null)
                         {
-                            xmlWriter.WriteStartElement("Rule");            
-                
-                            if (publicRequestLifecycleConfigurationRulesValue.AbortIncompleteMultipartUpload != null) 
+                            xmlWriter.WriteStartElement("Rule");
+                            if (publicRequestLifecycleConfigurationRulesValue.AbortIncompleteMultipartUpload != null)
                             {
-                                xmlWriter.WriteStartElement("AbortIncompleteMultipartUpload");            
+                                xmlWriter.WriteStartElement("AbortIncompleteMultipartUpload");
                                 if(publicRequestLifecycleConfigurationRulesValue.AbortIncompleteMultipartUpload.IsSetDaysAfterInitiation())
                                     xmlWriter.WriteElementString("DaysAfterInitiation", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.AbortIncompleteMultipartUpload.DaysAfterInitiation));                 
 
                                 xmlWriter.WriteEndElement();
                             }
-                
-                            if (publicRequestLifecycleConfigurationRulesValue.Expiration != null) 
+                            if (publicRequestLifecycleConfigurationRulesValue.Expiration != null)
                             {
-                                xmlWriter.WriteStartElement("Expiration");            
+                                xmlWriter.WriteStartElement("Expiration");
                                 if(publicRequestLifecycleConfigurationRulesValue.Expiration.IsSetDate())
                                     xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestLifecycleConfigurationRulesValue.Expiration.Date));                 
 
@@ -106,14 +103,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                                 xmlWriter.WriteEndElement();
                             }
-                
-                            if (publicRequestLifecycleConfigurationRulesValue.Filter != null) 
+                            if (publicRequestLifecycleConfigurationRulesValue.Filter != null)
                             {
-                                xmlWriter.WriteStartElement("Filter");            
-                
-                                if (publicRequestLifecycleConfigurationRulesValue.Filter.And != null) 
+                                xmlWriter.WriteStartElement("Filter");
+                                if (publicRequestLifecycleConfigurationRulesValue.Filter.And != null)
                                 {
-                                    xmlWriter.WriteStartElement("And");            
+                                    xmlWriter.WriteStartElement("And");
                                     if(publicRequestLifecycleConfigurationRulesValue.Filter.And.IsSetObjectSizeGreaterThan())
                                         xmlWriter.WriteElementString("ObjectSizeGreaterThan", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.And.ObjectSizeGreaterThan));                 
 
@@ -125,14 +120,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                                     var publicRequestLifecycleConfigurationRulesValueFilterAndTags = publicRequestLifecycleConfigurationRulesValue.Filter.And.Tags;
                                     if (publicRequestLifecycleConfigurationRulesValueFilterAndTags != null && publicRequestLifecycleConfigurationRulesValueFilterAndTags.Count > 0) 
-                                    {                        
+                                    {
                                         xmlWriter.WriteStartElement("Tags");
                                         foreach (var publicRequestLifecycleConfigurationRulesValueFilterAndTagsValue in publicRequestLifecycleConfigurationRulesValueFilterAndTags) 
                                         {
-                
-                                        if (publicRequestLifecycleConfigurationRulesValueFilterAndTagsValue != null) 
+                                        if (publicRequestLifecycleConfigurationRulesValueFilterAndTagsValue != null)
                                         {
-                                            xmlWriter.WriteStartElement("member");            
+                                            xmlWriter.WriteStartElement("member");
                                             if(publicRequestLifecycleConfigurationRulesValueFilterAndTagsValue.IsSetKey())
                                                 xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValueFilterAndTagsValue.Key));                 
 
@@ -155,10 +149,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 if(publicRequestLifecycleConfigurationRulesValue.Filter.IsSetPrefix())
                                     xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.Filter.Prefix));                 
 
-                
-                                if (publicRequestLifecycleConfigurationRulesValue.Filter.Tag != null) 
+                                if (publicRequestLifecycleConfigurationRulesValue.Filter.Tag != null)
                                 {
-                                    xmlWriter.WriteStartElement("Tag");            
+                                    xmlWriter.WriteStartElement("Tag");
                                     if(publicRequestLifecycleConfigurationRulesValue.Filter.Tag.IsSetKey())
                                         xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.Filter.Tag.Key));                 
 
@@ -172,10 +165,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             if(publicRequestLifecycleConfigurationRulesValue.IsSetID())
                                 xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.ID));                 
 
-                
-                            if (publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration != null) 
+                            if (publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration != null)
                             {
-                                xmlWriter.WriteStartElement("NoncurrentVersionExpiration");            
+                                xmlWriter.WriteStartElement("NoncurrentVersionExpiration");
                                 if(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.IsSetNewerNoncurrentVersions())
                                     xmlWriter.WriteElementString("NewerNoncurrentVersions", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.NewerNoncurrentVersions));                 
 
@@ -186,14 +178,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }
                             var publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions = publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionTransitions;
                             if (publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions != null && publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("NoncurrentVersionTransitions");
                                 foreach (var publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitionsValue in publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitions) 
                                 {
-                
-                                if (publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitionsValue != null) 
+                                if (publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitionsValue != null)
                                 {
-                                    xmlWriter.WriteStartElement("NoncurrentVersionTransition");            
+                                    xmlWriter.WriteStartElement("NoncurrentVersionTransition");
                                     if(publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitionsValue.IsSetNoncurrentDays())
                                         xmlWriter.WriteElementString("NoncurrentDays", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitionsValue.NoncurrentDays));                 
 
@@ -210,14 +201,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                             var publicRequestLifecycleConfigurationRulesValueTransitions = publicRequestLifecycleConfigurationRulesValue.Transitions;
                             if (publicRequestLifecycleConfigurationRulesValueTransitions != null && publicRequestLifecycleConfigurationRulesValueTransitions.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Transitions");
                                 foreach (var publicRequestLifecycleConfigurationRulesValueTransitionsValue in publicRequestLifecycleConfigurationRulesValueTransitions) 
                                 {
-                
-                                if (publicRequestLifecycleConfigurationRulesValueTransitionsValue != null) 
+                                if (publicRequestLifecycleConfigurationRulesValueTransitionsValue != null)
                                 {
-                                    xmlWriter.WriteStartElement("Transition");            
+                                    xmlWriter.WriteStartElement("Transition");
                                     if(publicRequestLifecycleConfigurationRulesValueTransitionsValue.IsSetDate())
                                         xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestLifecycleConfigurationRulesValueTransitionsValue.Date));                 
 

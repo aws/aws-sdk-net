@@ -61,7 +61,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("NestedXmlMapsRequest", "");    
+                xmlWriter.WriteStartElement("NestedXmlMapsRequest", "");
                 if(publicRequest.IsSetFlatNestedMap())
                 {
                     foreach (var kvp in publicRequest.FlatNestedMap)
@@ -77,13 +77,15 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();
                         }            
                         xmlWriter.WriteEndElement();                
-                        xmlWriter.WriteEndElement();
-                    }
-                    xmlWriter.WriteEndElement();
+                    }    
+                }
+                if(publicRequest.IsSetNestedMap())
+                {
                     xmlWriter.WriteStartElement("nestedMap");
-                    foreach (var kvp in publicRequest.NestedMap) 
+                    foreach (var kvp in publicRequest.NestedMap)
                     {
                         xmlWriter.WriteStartElement("entry");
+
                         xmlWriter.WriteElementString("key", kvp.Key);
                         xmlWriter.WriteStartElement("value");
                         foreach (var kvp1 in kvp.Value) 
@@ -97,6 +99,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
+                }
 
                 xmlWriter.WriteEndElement();
             }

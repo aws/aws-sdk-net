@@ -65,7 +65,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("UnionPayload", "");
                     if(publicRequest.Nested.IsSetGreeting())
-                        xmlWriter.WriteElementString("greeting", StringUtils.FromString(publicRequest.Nested.Greeting));                    
+                        xmlWriter.WriteElementString("greeting", StringUtils.FromString(publicRequest.Nested.Greeting));
 
 
                     xmlWriter.WriteEndElement();

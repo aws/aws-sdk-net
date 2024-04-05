@@ -74,14 +74,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("Tagging", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     var publicRequestTaggingTagSet = publicRequest.Tagging.TagSet;
                     if (publicRequestTaggingTagSet != null && publicRequestTaggingTagSet.Count > 0) 
-                    {                        
+                    {
                         xmlWriter.WriteStartElement("TagSet");
                         foreach (var publicRequestTaggingTagSetValue in publicRequestTaggingTagSet) 
                         {
-                
-                        if (publicRequestTaggingTagSetValue != null) 
+                        if (publicRequestTaggingTagSetValue != null)
                         {
-                            xmlWriter.WriteStartElement("member");            
+                            xmlWriter.WriteStartElement("member");
                             if(publicRequestTaggingTagSetValue.IsSetKey())
                                 xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTaggingTagSetValue.Key));                 
 

@@ -66,33 +66,33 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("SimpleScalarPropertiesRequest", "");    
+                xmlWriter.WriteStartElement("SimpleScalarPropertiesRequest", "");
                 if(publicRequest.IsSetByteValue())
-                    xmlWriter.WriteElementString("byteValue", StringUtils.FromInt(publicRequest.ByteValue));                    
+                    xmlWriter.WriteElementString("byteValue", StringUtils.FromInt(publicRequest.ByteValue));
 
                 if(publicRequest.IsSetDoubleValue())
-                    xmlWriter.WriteElementString("DoubleDribble", StringUtils.FromDouble(publicRequest.DoubleValue));                    
+                    xmlWriter.WriteElementString("DoubleDribble", StringUtils.FromDouble(publicRequest.DoubleValue));
 
                 if(publicRequest.IsSetFalseBooleanValue())
-                    xmlWriter.WriteElementString("falseBooleanValue", StringUtils.FromBool(publicRequest.FalseBooleanValue));                    
+                    xmlWriter.WriteElementString("falseBooleanValue", StringUtils.FromBool(publicRequest.FalseBooleanValue));
 
                 if(publicRequest.IsSetFloatValue())
-                    xmlWriter.WriteElementString("floatValue", StringUtils.FromFloat(publicRequest.FloatValue));                    
+                    xmlWriter.WriteElementString("floatValue", StringUtils.FromFloat(publicRequest.FloatValue));
 
                 if(publicRequest.IsSetIntegerValue())
-                    xmlWriter.WriteElementString("integerValue", StringUtils.FromInt(publicRequest.IntegerValue));                    
+                    xmlWriter.WriteElementString("integerValue", StringUtils.FromInt(publicRequest.IntegerValue));
 
                 if(publicRequest.IsSetLongValue())
-                    xmlWriter.WriteElementString("longValue", StringUtils.FromLong(publicRequest.LongValue));                    
+                    xmlWriter.WriteElementString("longValue", StringUtils.FromLong(publicRequest.LongValue));
 
                 if(publicRequest.IsSetShortValue())
-                    xmlWriter.WriteElementString("shortValue", StringUtils.FromInt(publicRequest.ShortValue));                    
+                    xmlWriter.WriteElementString("shortValue", StringUtils.FromInt(publicRequest.ShortValue));
 
                 if(publicRequest.IsSetStringValue())
-                    xmlWriter.WriteElementString("stringValue", StringUtils.FromString(publicRequest.StringValue));                    
+                    xmlWriter.WriteElementString("stringValue", StringUtils.FromString(publicRequest.StringValue));
 
                 if(publicRequest.IsSetTrueBooleanValue())
-                    xmlWriter.WriteElementString("trueBooleanValue", StringUtils.FromBool(publicRequest.TrueBooleanValue));                    
+                    xmlWriter.WriteElementString("trueBooleanValue", StringUtils.FromBool(publicRequest.TrueBooleanValue));
 
 
                 xmlWriter.WriteEndElement();

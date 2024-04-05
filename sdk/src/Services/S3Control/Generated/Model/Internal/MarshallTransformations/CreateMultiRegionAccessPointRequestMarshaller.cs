@@ -66,23 +66,21 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateMultiRegionAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
+                xmlWriter.WriteStartElement("CreateMultiRegionAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetClientToken())
-                    xmlWriter.WriteElementString("ClientToken", StringUtils.FromString(publicRequest.ClientToken));                    
+                    xmlWriter.WriteElementString("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 else                
                     xmlWriter.WriteElementString("ClientToken", Guid.NewGuid().ToString());                
 
-                
-                if (publicRequest.Details != null) 
+                if (publicRequest.Details != null)
                 {
-                    xmlWriter.WriteStartElement("Details");            
+                    xmlWriter.WriteStartElement("Details");
                     if(publicRequest.Details.IsSetName())
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Details.Name));                 
 
-                
-                    if (publicRequest.Details.PublicAccessBlock != null) 
+                    if (publicRequest.Details.PublicAccessBlock != null)
                     {
-                        xmlWriter.WriteStartElement("PublicAccessBlock");            
+                        xmlWriter.WriteStartElement("PublicAccessBlock");
                         if(publicRequest.Details.PublicAccessBlock.IsSetBlockPublicAcls())
                             xmlWriter.WriteElementString("BlockPublicAcls", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.BlockPublicAcls));                 
 
@@ -99,14 +97,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     var publicRequestDetailsRegions = publicRequest.Details.Regions;
                     if (publicRequestDetailsRegions != null && publicRequestDetailsRegions.Count > 0) 
-                    {                        
+                    {
                         xmlWriter.WriteStartElement("Regions");
                         foreach (var publicRequestDetailsRegionsValue in publicRequestDetailsRegions) 
                         {
-                
-                        if (publicRequestDetailsRegionsValue != null) 
+                        if (publicRequestDetailsRegionsValue != null)
                         {
-                            xmlWriter.WriteStartElement("Region");            
+                            xmlWriter.WriteStartElement("Region");
                             if(publicRequestDetailsRegionsValue.IsSetBucket())
                                 xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestDetailsRegionsValue.Bucket));                 
 

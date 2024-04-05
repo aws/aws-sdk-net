@@ -66,26 +66,24 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateAccessGrantRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
-                
-                if (publicRequest.AccessGrantsLocationConfiguration != null) 
+                xmlWriter.WriteStartElement("CreateAccessGrantRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                if (publicRequest.AccessGrantsLocationConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("AccessGrantsLocationConfiguration");            
+                    xmlWriter.WriteStartElement("AccessGrantsLocationConfiguration");
                     if(publicRequest.AccessGrantsLocationConfiguration.IsSetS3SubPrefix())
                         xmlWriter.WriteElementString("S3SubPrefix", StringUtils.FromString(publicRequest.AccessGrantsLocationConfiguration.S3SubPrefix));                 
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetAccessGrantsLocationId())
-                    xmlWriter.WriteElementString("AccessGrantsLocationId", StringUtils.FromString(publicRequest.AccessGrantsLocationId));                    
+                    xmlWriter.WriteElementString("AccessGrantsLocationId", StringUtils.FromString(publicRequest.AccessGrantsLocationId));
 
                 if(publicRequest.IsSetApplicationArn())
-                    xmlWriter.WriteElementString("ApplicationArn", StringUtils.FromString(publicRequest.ApplicationArn));                    
+                    xmlWriter.WriteElementString("ApplicationArn", StringUtils.FromString(publicRequest.ApplicationArn));
 
-                
-                if (publicRequest.Grantee != null) 
+                if (publicRequest.Grantee != null)
                 {
-                    xmlWriter.WriteStartElement("Grantee");            
+                    xmlWriter.WriteStartElement("Grantee");
                     if(publicRequest.Grantee.IsSetGranteeIdentifier())
                         xmlWriter.WriteElementString("GranteeIdentifier", StringUtils.FromString(publicRequest.Grantee.GranteeIdentifier));                 
 
@@ -95,21 +93,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetPermission())
-                    xmlWriter.WriteElementString("Permission", StringUtils.FromString(publicRequest.Permission));                    
+                    xmlWriter.WriteElementString("Permission", StringUtils.FromString(publicRequest.Permission));
 
                 if(publicRequest.IsSetS3PrefixType())
-                    xmlWriter.WriteElementString("S3PrefixType", StringUtils.FromString(publicRequest.S3PrefixType));                    
+                    xmlWriter.WriteElementString("S3PrefixType", StringUtils.FromString(publicRequest.S3PrefixType));
 
                 var publicRequestTags = publicRequest.Tags;
                 if (publicRequestTags != null && publicRequestTags.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 
                     {
-                
-                    if (publicRequestTagsValue != null) 
+                    if (publicRequestTagsValue != null)
                     {
-                        xmlWriter.WriteStartElement("Tag");            
+                        xmlWriter.WriteStartElement("Tag");
                         if(publicRequestTagsValue.IsSetKey())
                             xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));                 
 

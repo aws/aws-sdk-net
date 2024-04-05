@@ -61,21 +61,19 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateRealtimeLogConfigRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
+                xmlWriter.WriteStartElement("CreateRealtimeLogConfigRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 var publicRequestEndPoints = publicRequest.EndPoints;
                 if (publicRequestEndPoints != null && publicRequestEndPoints.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("EndPoints");
                     foreach (var publicRequestEndPointsValue in publicRequestEndPoints) 
                     {
-                
-                    if (publicRequestEndPointsValue != null) 
+                    if (publicRequestEndPointsValue != null)
                     {
-                        xmlWriter.WriteStartElement("member");            
-                
-                        if (publicRequestEndPointsValue.KinesisStreamConfig != null) 
+                        xmlWriter.WriteStartElement("member");
+                        if (publicRequestEndPointsValue.KinesisStreamConfig != null)
                         {
-                            xmlWriter.WriteStartElement("KinesisStreamConfig");            
+                            xmlWriter.WriteStartElement("KinesisStreamConfig");
                             if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetRoleARN())
                                 xmlWriter.WriteElementString("RoleARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.RoleARN));                 
 
@@ -94,7 +92,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
                 var publicRequestFields = publicRequest.Fields;
                 if (publicRequestFields != null && publicRequestFields.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("Fields");
                     foreach (var publicRequestFieldsValue in publicRequestFields) 
                     {
@@ -105,10 +103,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));                    
+                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
                 if(publicRequest.IsSetSamplingRate())
-                    xmlWriter.WriteElementString("SamplingRate", StringUtils.FromLong(publicRequest.SamplingRate));                    
+                    xmlWriter.WriteElementString("SamplingRate", StringUtils.FromLong(publicRequest.SamplingRate));
 
 
                 xmlWriter.WriteEndElement();

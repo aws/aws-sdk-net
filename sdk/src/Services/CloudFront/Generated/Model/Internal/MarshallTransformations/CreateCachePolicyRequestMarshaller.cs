@@ -65,38 +65,35 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("CachePolicyConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.CachePolicyConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.CachePolicyConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.CachePolicyConfig.Comment));
 
                     if(publicRequest.CachePolicyConfig.IsSetDefaultTTL())
-                        xmlWriter.WriteElementString("DefaultTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.DefaultTTL));                    
+                        xmlWriter.WriteElementString("DefaultTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.DefaultTTL));
 
                     if(publicRequest.CachePolicyConfig.IsSetMaxTTL())
-                        xmlWriter.WriteElementString("MaxTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MaxTTL));                    
+                        xmlWriter.WriteElementString("MaxTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MaxTTL));
 
                     if(publicRequest.CachePolicyConfig.IsSetMinTTL())
-                        xmlWriter.WriteElementString("MinTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MinTTL));                    
+                        xmlWriter.WriteElementString("MinTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MinTTL));
 
                     if(publicRequest.CachePolicyConfig.IsSetName())
-                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.CachePolicyConfig.Name));                    
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.CachePolicyConfig.Name));
 
-                
-                    if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin != null) 
+                    if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin != null)
                     {
-                        xmlWriter.WriteStartElement("ParametersInCacheKeyAndForwardedToOrigin");            
-                
-                        if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig != null) 
+                        xmlWriter.WriteStartElement("ParametersInCacheKeyAndForwardedToOrigin");
+                        if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig != null)
                         {
-                            xmlWriter.WriteStartElement("CookiesConfig");            
+                            xmlWriter.WriteStartElement("CookiesConfig");
                             if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.IsSetCookieBehavior())
                                 xmlWriter.WriteElementString("CookieBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.CookieBehavior));                 
 
-                
-                            if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies != null) 
+                            if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies != null)
                             {
-                                xmlWriter.WriteStartElement("Cookies");            
+                                xmlWriter.WriteStartElement("Cookies");
                                 var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems = publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.Items;
                                 if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems != null && publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems.Count > 0) 
-                                {                        
+                                {
                                     xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItemsValue in publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems) 
                                     {
@@ -119,20 +116,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.IsSetEnableAcceptEncodingGzip())
                             xmlWriter.WriteElementString("EnableAcceptEncodingGzip", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingGzip));                 
 
-                
-                        if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig != null) 
+                        if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig != null)
                         {
-                            xmlWriter.WriteStartElement("HeadersConfig");            
+                            xmlWriter.WriteStartElement("HeadersConfig");
                             if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.IsSetHeaderBehavior())
                                 xmlWriter.WriteElementString("HeaderBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.HeaderBehavior));                 
 
-                
-                            if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers != null) 
+                            if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers != null)
                             {
-                                xmlWriter.WriteStartElement("Headers");            
+                                xmlWriter.WriteStartElement("Headers");
                                 var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems = publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.Items;
                                 if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems != null && publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems.Count > 0) 
-                                {                        
+                                {
                                     xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItemsValue in publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems) 
                                     {
@@ -149,20 +144,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig != null) 
+                        if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig != null)
                         {
-                            xmlWriter.WriteStartElement("QueryStringsConfig");            
+                            xmlWriter.WriteStartElement("QueryStringsConfig");
                             if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.IsSetQueryStringBehavior())
                                 xmlWriter.WriteElementString("QueryStringBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStringBehavior));                 
 
-                
-                            if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings != null) 
+                            if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings != null)
                             {
-                                xmlWriter.WriteStartElement("QueryStrings");            
+                                xmlWriter.WriteStartElement("QueryStrings");
                                 var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems = publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.Items;
                                 if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems != null && publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems.Count > 0) 
-                                {                        
+                                {
                                     xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItemsValue in publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems) 
                                     {

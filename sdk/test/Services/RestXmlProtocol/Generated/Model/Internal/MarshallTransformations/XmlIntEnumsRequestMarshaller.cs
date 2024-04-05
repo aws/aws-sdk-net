@@ -61,19 +61,19 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("XmlIntEnumsRequest", "");    
+                xmlWriter.WriteStartElement("XmlIntEnumsRequest", "");
                 if(publicRequest.IsSetIntEnum1())
-                    xmlWriter.WriteElementString("intEnum1", StringUtils.FromInt(publicRequest.IntEnum1));                    
+                    xmlWriter.WriteElementString("intEnum1", StringUtils.FromInt(publicRequest.IntEnum1));
 
                 if(publicRequest.IsSetIntEnum2())
-                    xmlWriter.WriteElementString("intEnum2", StringUtils.FromInt(publicRequest.IntEnum2));                    
+                    xmlWriter.WriteElementString("intEnum2", StringUtils.FromInt(publicRequest.IntEnum2));
 
                 if(publicRequest.IsSetIntEnum3())
-                    xmlWriter.WriteElementString("intEnum3", StringUtils.FromInt(publicRequest.IntEnum3));                    
+                    xmlWriter.WriteElementString("intEnum3", StringUtils.FromInt(publicRequest.IntEnum3));
 
                 var publicRequestIntEnumList = publicRequest.IntEnumList;
                 if (publicRequestIntEnumList != null && publicRequestIntEnumList.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("intEnumList");
                     foreach (var publicRequestIntEnumListValue in publicRequestIntEnumList) 
                     {
@@ -86,17 +86,19 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIntEnumMap())
                 {
                     xmlWriter.WriteStartElement("intEnumMap");
-                    foreach (var kvp in publicRequest.IntEnumMap) 
+                    foreach (var kvp in publicRequest.IntEnumMap)
                     {
                         xmlWriter.WriteStartElement("entry");
+
                         xmlWriter.WriteElementString("key", kvp.Key);
                         xmlWriter.WriteElementString("value", kvp.Value.ToString());
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
+                }
                 var publicRequestIntEnumSet = publicRequest.IntEnumSet;
                 if (publicRequestIntEnumSet != null && publicRequestIntEnumSet.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("intEnumSet");
                     foreach (var publicRequestIntEnumSetValue in publicRequestIntEnumSet) 
                     {

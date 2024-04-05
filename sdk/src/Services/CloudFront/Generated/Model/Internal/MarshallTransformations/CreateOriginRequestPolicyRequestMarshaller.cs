@@ -65,22 +65,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("OriginRequestPolicyConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.OriginRequestPolicyConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Comment));
 
-                
-                    if (publicRequest.OriginRequestPolicyConfig.CookiesConfig != null) 
+                    if (publicRequest.OriginRequestPolicyConfig.CookiesConfig != null)
                     {
-                        xmlWriter.WriteStartElement("CookiesConfig");            
+                        xmlWriter.WriteStartElement("CookiesConfig");
                         if(publicRequest.OriginRequestPolicyConfig.CookiesConfig.IsSetCookieBehavior())
                             xmlWriter.WriteElementString("CookieBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.CookiesConfig.CookieBehavior));                 
 
-                
-                        if (publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies != null) 
+                        if (publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies != null)
                         {
-                            xmlWriter.WriteStartElement("Cookies");            
+                            xmlWriter.WriteStartElement("Cookies");
                             var publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems = publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.Items;
                             if (publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems != null && publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItemsValue in publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems) 
                                 {
@@ -97,20 +95,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         xmlWriter.WriteEndElement();
                     }
-                
-                    if (publicRequest.OriginRequestPolicyConfig.HeadersConfig != null) 
+                    if (publicRequest.OriginRequestPolicyConfig.HeadersConfig != null)
                     {
-                        xmlWriter.WriteStartElement("HeadersConfig");            
+                        xmlWriter.WriteStartElement("HeadersConfig");
                         if(publicRequest.OriginRequestPolicyConfig.HeadersConfig.IsSetHeaderBehavior())
                             xmlWriter.WriteElementString("HeaderBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.HeadersConfig.HeaderBehavior));                 
 
-                
-                        if (publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers != null) 
+                        if (publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers != null)
                         {
-                            xmlWriter.WriteStartElement("Headers");            
+                            xmlWriter.WriteStartElement("Headers");
                             var publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems = publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.Items;
                             if (publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems != null && publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItemsValue in publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems) 
                                 {
@@ -128,22 +124,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.OriginRequestPolicyConfig.IsSetName())
-                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Name));                    
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Name));
 
-                
-                    if (publicRequest.OriginRequestPolicyConfig.QueryStringsConfig != null) 
+                    if (publicRequest.OriginRequestPolicyConfig.QueryStringsConfig != null)
                     {
-                        xmlWriter.WriteStartElement("QueryStringsConfig");            
+                        xmlWriter.WriteStartElement("QueryStringsConfig");
                         if(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.IsSetQueryStringBehavior())
                             xmlWriter.WriteElementString("QueryStringBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStringBehavior));                 
 
-                
-                        if (publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings != null) 
+                        if (publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings != null)
                         {
-                            xmlWriter.WriteStartElement("QueryStrings");            
+                            xmlWriter.WriteStartElement("QueryStrings");
                             var publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems = publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.Items;
                             if (publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems != null && publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems.Count > 0) 
-                            {                        
+                            {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItemsValue in publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems) 
                                 {

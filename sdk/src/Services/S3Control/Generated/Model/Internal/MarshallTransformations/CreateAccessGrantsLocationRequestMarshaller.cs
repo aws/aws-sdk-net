@@ -66,23 +66,22 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateAccessGrantsLocationRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
+                xmlWriter.WriteStartElement("CreateAccessGrantsLocationRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetIAMRoleArn())
-                    xmlWriter.WriteElementString("IAMRoleArn", StringUtils.FromString(publicRequest.IAMRoleArn));                    
+                    xmlWriter.WriteElementString("IAMRoleArn", StringUtils.FromString(publicRequest.IAMRoleArn));
 
                 if(publicRequest.IsSetLocationScope())
-                    xmlWriter.WriteElementString("LocationScope", StringUtils.FromString(publicRequest.LocationScope));                    
+                    xmlWriter.WriteElementString("LocationScope", StringUtils.FromString(publicRequest.LocationScope));
 
                 var publicRequestTags = publicRequest.Tags;
                 if (publicRequestTags != null && publicRequestTags.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 
                     {
-                
-                    if (publicRequestTagsValue != null) 
+                    if (publicRequestTagsValue != null)
                     {
-                        xmlWriter.WriteStartElement("Tag");            
+                        xmlWriter.WriteStartElement("Tag");
                         if(publicRequestTagsValue.IsSetKey())
                             xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));                 
 

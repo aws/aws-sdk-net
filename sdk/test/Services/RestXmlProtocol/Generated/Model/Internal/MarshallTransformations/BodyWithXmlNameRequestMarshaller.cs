@@ -61,11 +61,10 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("Ahoy", "");    
-                
-                if (publicRequest.Nested != null) 
+                xmlWriter.WriteStartElement("Ahoy", "");
+                if (publicRequest.Nested != null)
                 {
-                    xmlWriter.WriteStartElement("nested");            
+                    xmlWriter.WriteStartElement("nested");
                     if(publicRequest.Nested.IsSetName())
                         xmlWriter.WriteElementString("name", StringUtils.FromString(publicRequest.Nested.Name));                 
 

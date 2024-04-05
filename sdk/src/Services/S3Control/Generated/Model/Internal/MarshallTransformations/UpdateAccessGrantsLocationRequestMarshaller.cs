@@ -69,9 +69,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("UpdateAccessGrantsLocationRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
+                xmlWriter.WriteStartElement("UpdateAccessGrantsLocationRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetIAMRoleArn())
-                    xmlWriter.WriteElementString("IAMRoleArn", StringUtils.FromString(publicRequest.IAMRoleArn));                    
+                    xmlWriter.WriteElementString("IAMRoleArn", StringUtils.FromString(publicRequest.IAMRoleArn));
 
 
                 xmlWriter.WriteEndElement();

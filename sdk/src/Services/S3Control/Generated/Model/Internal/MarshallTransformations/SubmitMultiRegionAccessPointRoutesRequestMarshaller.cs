@@ -69,17 +69,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("SubmitMultiRegionAccessPointRoutesRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
+                xmlWriter.WriteStartElement("SubmitMultiRegionAccessPointRoutesRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 var publicRequestRouteUpdates = publicRequest.RouteUpdates;
                 if (publicRequestRouteUpdates != null && publicRequestRouteUpdates.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("RouteUpdates");
                     foreach (var publicRequestRouteUpdatesValue in publicRequestRouteUpdates) 
                     {
-                
-                    if (publicRequestRouteUpdatesValue != null) 
+                    if (publicRequestRouteUpdatesValue != null)
                     {
-                        xmlWriter.WriteStartElement("Route");            
+                        xmlWriter.WriteStartElement("Route");
                         if(publicRequestRouteUpdatesValue.IsSetBucket())
                             xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestRouteUpdatesValue.Bucket));                 
 

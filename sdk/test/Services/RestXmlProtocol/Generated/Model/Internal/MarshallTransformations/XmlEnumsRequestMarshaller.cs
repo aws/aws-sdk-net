@@ -61,19 +61,19 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("XmlEnumsRequest", "");    
+                xmlWriter.WriteStartElement("XmlEnumsRequest", "");
                 if(publicRequest.IsSetFooEnum1())
-                    xmlWriter.WriteElementString("fooEnum1", StringUtils.FromString(publicRequest.FooEnum1));                    
+                    xmlWriter.WriteElementString("fooEnum1", StringUtils.FromString(publicRequest.FooEnum1));
 
                 if(publicRequest.IsSetFooEnum2())
-                    xmlWriter.WriteElementString("fooEnum2", StringUtils.FromString(publicRequest.FooEnum2));                    
+                    xmlWriter.WriteElementString("fooEnum2", StringUtils.FromString(publicRequest.FooEnum2));
 
                 if(publicRequest.IsSetFooEnum3())
-                    xmlWriter.WriteElementString("fooEnum3", StringUtils.FromString(publicRequest.FooEnum3));                    
+                    xmlWriter.WriteElementString("fooEnum3", StringUtils.FromString(publicRequest.FooEnum3));
 
                 var publicRequestFooEnumList = publicRequest.FooEnumList;
                 if (publicRequestFooEnumList != null && publicRequestFooEnumList.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("fooEnumList");
                     foreach (var publicRequestFooEnumListValue in publicRequestFooEnumList) 
                     {
@@ -86,17 +86,19 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFooEnumMap())
                 {
                     xmlWriter.WriteStartElement("fooEnumMap");
-                    foreach (var kvp in publicRequest.FooEnumMap) 
+                    foreach (var kvp in publicRequest.FooEnumMap)
                     {
                         xmlWriter.WriteStartElement("entry");
+
                         xmlWriter.WriteElementString("key", kvp.Key);
                         xmlWriter.WriteElementString("value", kvp.Value);
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
+                }
                 var publicRequestFooEnumSet = publicRequest.FooEnumSet;
                 if (publicRequestFooEnumSet != null && publicRequestFooEnumSet.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("fooEnumSet");
                     foreach (var publicRequestFooEnumSetValue in publicRequestFooEnumSet) 
                     {

@@ -61,9 +61,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("XmlEmptyStringsRequest", "");    
+                xmlWriter.WriteStartElement("XmlEmptyStringsRequest", "");
                 if(publicRequest.IsSetEmptyString())
-                    xmlWriter.WriteElementString("emptyString", StringUtils.FromString(publicRequest.EmptyString));                    
+                    xmlWriter.WriteElementString("emptyString", StringUtils.FromString(publicRequest.EmptyString));
 
 
                 xmlWriter.WriteEndElement();

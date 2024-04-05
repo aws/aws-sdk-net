@@ -65,15 +65,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("ContinuousDeploymentPolicyConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.ContinuousDeploymentPolicyConfig.IsSetEnabled())
-                        xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.ContinuousDeploymentPolicyConfig.Enabled));                    
+                        xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.ContinuousDeploymentPolicyConfig.Enabled));
 
-                
-                    if (publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames != null) 
+                    if (publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames != null)
                     {
-                        xmlWriter.WriteStartElement("StagingDistributionDnsNames");            
+                        xmlWriter.WriteStartElement("StagingDistributionDnsNames");
                         var publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItems = publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames.Items;
                         if (publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItems != null && publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItems.Count > 0) 
-                        {                        
+                        {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItemsValue in publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItems) 
                             {
@@ -88,14 +87,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                         xmlWriter.WriteEndElement();
                     }
-                
-                    if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig != null) 
+                    if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig != null)
                     {
-                        xmlWriter.WriteStartElement("TrafficConfig");            
-                
-                        if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig != null) 
+                        xmlWriter.WriteStartElement("TrafficConfig");
+                        if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig != null)
                         {
-                            xmlWriter.WriteStartElement("SingleHeaderConfig");            
+                            xmlWriter.WriteStartElement("SingleHeaderConfig");
                             if(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig.IsSetHeader())
                                 xmlWriter.WriteElementString("Header", StringUtils.FromString(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig.Header));                 
 
@@ -104,14 +101,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig != null) 
+                        if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig != null)
                         {
-                            xmlWriter.WriteStartElement("SingleWeightConfig");            
-                
-                            if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig != null) 
+                            xmlWriter.WriteStartElement("SingleWeightConfig");
+                            if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig != null)
                             {
-                                xmlWriter.WriteStartElement("SessionStickinessConfig");            
+                                xmlWriter.WriteStartElement("SessionStickinessConfig");
                                 if(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig.IsSetIdleTTL())
                                     xmlWriter.WriteElementString("IdleTTL", StringUtils.FromInt(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig.IdleTTL));                 
 

@@ -61,16 +61,16 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("XmlMapsXmlNameRequest", "");    
+                xmlWriter.WriteStartElement("XmlMapsXmlNameRequest", "");
                 if(publicRequest.IsSetMyMap())
                 {
                     xmlWriter.WriteStartElement("myMap");
-                    foreach (var kvp in publicRequest.MyMap) 
+                    foreach (var kvp in publicRequest.MyMap)
                     {
                         xmlWriter.WriteStartElement("entry");
+
                         xmlWriter.WriteElementString("Attribute", kvp.Key);
                         xmlWriter.WriteStartElement("Setting");
-
                         if (kvp.Value != null) 
                         {
                             if(kvp.Value.IsSetHi())
@@ -80,6 +80,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
+                }
 
                 xmlWriter.WriteEndElement();
             }

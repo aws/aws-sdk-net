@@ -64,10 +64,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("ListTagsForResourcesRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
+                xmlWriter.WriteStartElement("ListTagsForResourcesRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 var publicRequestResourceIds = publicRequest.ResourceIds;
                 if (publicRequestResourceIds != null && publicRequestResourceIds.Count > 0) 
-                {                        
+                {
                     xmlWriter.WriteStartElement("ResourceIds");
                     foreach (var publicRequestResourceIdsValue in publicRequestResourceIds) 
                     {
