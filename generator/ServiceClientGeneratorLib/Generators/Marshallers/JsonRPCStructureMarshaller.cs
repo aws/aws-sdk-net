@@ -115,7 +115,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
 	protected void ProcessMembers(int level, string variableName, IEnumerable<Member> members)
 	{
 		foreach(var member in members)
-		{	
+		{
 
         
         #line default

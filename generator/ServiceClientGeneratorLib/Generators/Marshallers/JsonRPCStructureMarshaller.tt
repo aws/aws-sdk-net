@@ -44,7 +44,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 	protected void ProcessMembers(int level, string variableName, IEnumerable<Member> members)
 	{
 		foreach(var member in members)
-		{	
+		{
 #>
 <#=new string(' ', level * 4)#>            if(<#=variableName#>.IsSet<#=member.PropertyName#>())
 <#=new string(' ', level * 4)#>            {
