@@ -163,6 +163,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
 					{
+                        context.KeyXmlName = "<#=member.Shape.KeyMarshallName#>";
+                        context.ValueXmlName = "<#=member.Shape.ValueMarshallName#>";
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
 						continue;
@@ -174,6 +176,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
 					{
+                        context.KeyXmlName = "<#=member.Shape.KeyMarshallName#>";
+                        context.ValueXmlName = "<#=member.Shape.ValueMarshallName#>";
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
 						continue;

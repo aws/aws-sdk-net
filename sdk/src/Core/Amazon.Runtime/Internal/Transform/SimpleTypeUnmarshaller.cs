@@ -651,7 +651,7 @@ namespace Amazon.Runtime.Internal.Transform
 
             while (context.Read())
             {
-                if (context.TestExpression("key", targetDepth))
+                if (context.TestExpression(context.KeyXmlName, targetDepth))
                 {
                     key = this.keyUnmarshaller.Unmarshall(context);
                 }
@@ -659,7 +659,7 @@ namespace Amazon.Runtime.Internal.Transform
                 {
                     key = this.keyUnmarshaller.Unmarshall(context);
                 }
-                else if (context.TestExpression("value", targetDepth))
+                else if (context.TestExpression(context.ValueXmlName, targetDepth))
                 {
                     value = this.valueUnmarshaller.Unmarshall(context);
                 }

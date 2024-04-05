@@ -352,6 +352,8 @@ namespace Amazon.Runtime.Internal.Transform
         private bool disposed = false;
         private bool currentlyProcessingEmptyElement;
         private bool processEmptyElements = false; //Flip to true in v4
+        private string valueXmlName = "";
+        private string keyXmlName = "";
 
         public Stream Stream
         {
@@ -361,6 +363,39 @@ namespace Amazon.Runtime.Internal.Transform
             }
         }
 
+        /// <summary>
+        /// For map shapes the KeyXmlName represents the "locationName" on the map shape's key member. This can be changed
+        /// via the @xmlName trait. This ensures that we don't check for a hardcoded "key" value, if the key's name was changed.
+        /// </summary>
+        public string KeyXmlName
+        {
+            set
+            {
+                keyXmlName = value;
+            }
+            get
+            {
+                return keyXmlName;
+            }
+        }
+
+        /// <summary>
+        /// For map shapes the ValueXmlName represents the "locationName" on the map shape's value member. This can be changed
+        /// via the @xmlName trait. If the value is a structure type, we want to also check for the ValueXmlName when reading
+        /// the expression, since the map's value may define a different locationName for the structure other than the structure's
+        /// default locationName.
+        /// </summary>
+        public string ValueXmlName
+        {
+            set
+            {
+                valueXmlName = value;
+            }
+            get
+            {
+                return valueXmlName;
+            }
+        }
         /// <summary>
         /// Lookup of element names that are not skipped if empty within the XML response structure.
         /// </summary>

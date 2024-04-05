@@ -72,6 +72,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 					if (member.IsMap || member.IsList)
 					{
 #>
+                        context.KeyXmlName = "<#=member.Shape.KeyMarshallName#>";
+                        context.ValueXmlName = "<#=member.Shape.ValueMarshallName#>";
                         var item = unmarshaller.Unmarshall(context);
                         response.<#=MemberAccessorFor(member.PropertyName)#>.Add(item);
 <#
