@@ -3,6 +3,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Json.LitJson" #>
 <#
     AddLicenseHeader();
 
@@ -147,7 +148,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 else
                 {
 #>
-				    if (context.TestExpression("<#=member.MarshallName#>/<#=listMarshallName#>", targetDepth))
+				    if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>/<#=listMarshallName#>", targetDepth))
 				    {
 					    var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 					    response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
@@ -161,7 +162,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 if(member.IsFlattened)
                 {
 #>
-					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
 					{
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
@@ -172,7 +173,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 else
                 {
 #>
-					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
 					{
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
@@ -184,7 +185,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			else
 			{
 #>
-					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
 					{
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
@@ -197,7 +198,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         if (shouldMarshallPayload)
         {
 #>
-					if (context.TestExpression("<#=payload.MarshallName#>", targetDepth))
+					if (context.TestExpression("<#=DetermineXmlMarshallName(payload)#>", targetDepth))
 					{
 						var unmarshaller = <#= payload.DetermineTypeUnmarshallerInstantiate() #>;
 						response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context);
@@ -257,3 +258,28 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
     }
 }
+<#+
+    /* The rules for determining the marshallName for xml services is different than json services
+        *  1. Use the member locationName if the value doesn't match the member's name
+        2. Use the value of the locationName on the member's target if present
+        3. Use the name of the member's target
+    */
+    protected string DetermineXmlMarshallName(Member member)
+    {
+        var locationName = member.data[ServiceModel.LocationNameKey];
+        if(locationName == null)
+            return member.MarshallName;
+        if (!string.Equals(locationName.ToString(), member.ModeledName, StringComparison.Ordinal))
+        {
+            return locationName.ToString();
+        }
+        var memberTarget = member.Shape.data[ServiceModel.LocationNameKey];
+        if(member.Shape.data != null && memberTarget != null)
+        {
+            return memberTarget.ToString();
+        }
+        else{
+            return member.Shape.Name;
+        }
+    }
+#>
