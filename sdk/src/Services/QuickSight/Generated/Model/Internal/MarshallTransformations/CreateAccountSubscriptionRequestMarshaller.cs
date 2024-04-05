@@ -139,6 +139,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FirstName);
                 }
 
+                if(publicRequest.IsSetIAMIdentityCenterInstanceArn())
+                {
+                    context.Writer.WritePropertyName("IAMIdentityCenterInstanceArn");
+                    context.Writer.Write(publicRequest.IAMIdentityCenterInstanceArn);
+                }
+
                 if(publicRequest.IsSetLastName())
                 {
                     context.Writer.WritePropertyName("LastName");

@@ -81,6 +81,7 @@ namespace Amazon.QuickSight.Model
         private Edition _edition;
         private string _emailAddress;
         private string _firstName;
+        private string _iamIdentityCenterInstanceArn;
         private string _lastName;
         private string _notificationEmail;
         private List<string> _readerGroup = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -350,6 +351,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFirstName()
         {
             return this._firstName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IAMIdentityCenterInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the IAM Identity Center instance.
+        /// </para>
+        /// </summary>
+        public string IAMIdentityCenterInstanceArn
+        {
+            get { return this._iamIdentityCenterInstanceArn; }
+            set { this._iamIdentityCenterInstanceArn = value; }
+        }
+
+        // Check to see if IAMIdentityCenterInstanceArn property is set
+        internal bool IsSetIAMIdentityCenterInstanceArn()
+        {
+            return this._iamIdentityCenterInstanceArn != null;
         }
 
         /// <summary>

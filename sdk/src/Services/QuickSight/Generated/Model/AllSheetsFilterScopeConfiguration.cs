@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration for applying a filter to all sheets. You can apply this filter to
-    /// all visuals on every sheet.
+    /// An empty object that represents that the <c>AllSheets</c> option is the chosen value
+    /// for the <c>FilterScopeConfiguration</c> parameter. This structure applies the filter
+    /// to all visuals on all sheets of an Analysis, Dashboard, or Template.
     /// 
     ///  
     /// <para>
