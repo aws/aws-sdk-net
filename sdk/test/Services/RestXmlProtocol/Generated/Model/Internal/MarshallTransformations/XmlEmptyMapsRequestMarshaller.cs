@@ -80,6 +80,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
+                }
 
                 xmlWriter.WriteEndElement();
             }
