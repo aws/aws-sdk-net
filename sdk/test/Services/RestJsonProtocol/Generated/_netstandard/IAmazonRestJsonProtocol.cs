@@ -652,6 +652,45 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
                 
+        #region  JsonLists
+
+
+
+        /// <summary>
+        /// This test case serializes JSON lists for the following cases for both input and output:
+        /// 
+        ///  <ol> <li>Normal JSON lists.</li> <li>Normal JSON sets.</li> <li>JSON lists of lists.</li>
+        /// <li>Lists of structures.</li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the JsonLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the JsonLists service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonLists">REST API Reference for JsonLists Operation</seealso>
+        Task<JsonListsResponse> JsonListsAsync(JsonListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  JsonMaps
+
+
+
+        /// <summary>
+        /// The example tests basic map serialization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the JsonMaps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the JsonMaps service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonMaps">REST API Reference for JsonMaps Operation</seealso>
+        Task<JsonMapsResponse> JsonMapsAsync(JsonMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  JsonTimestamps
 
 

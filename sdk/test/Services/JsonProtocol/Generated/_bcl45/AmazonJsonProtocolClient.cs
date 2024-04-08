@@ -694,6 +694,47 @@ namespace Amazon.JsonProtocol
 
         #endregion
         
+        #region  NullOperation
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NullOperation service method.</param>
+        /// 
+        /// <returns>The response from the NullOperation service method, as returned by JsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/NullOperation">REST API Reference for NullOperation Operation</seealso>
+        public virtual NullOperationResponse NullOperation(NullOperationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NullOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NullOperationResponseUnmarshaller.Instance;
+
+            return Invoke<NullOperationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NullOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the NullOperation service method, as returned by JsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/NullOperation">REST API Reference for NullOperation Operation</seealso>
+        public virtual Task<NullOperationResponse> NullOperationAsync(NullOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NullOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NullOperationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<NullOperationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  OperationWithOptionalInputOutput
 
 

@@ -428,6 +428,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("JsonProtocol")]
+        public void NullOperationMarshallTest()
+        {
+            var operation = service_model.FindOperation("NullOperation");
+
+            var request = InstantiateClassGenerator.Execute<NullOperationRequest>(operation);
+            var marshaller = new NullOperationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<NullOperationRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = NullOperationResponseUnmarshaller.Instance.Unmarshall(context) as NullOperationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("JsonProtocol")]
         public void OperationWithOptionalInputOutputMarshallTest()
         {
             var operation = service_model.FindOperation("OperationWithOptionalInputOutput");

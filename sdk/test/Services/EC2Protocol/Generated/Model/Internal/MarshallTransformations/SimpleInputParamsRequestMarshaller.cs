@@ -88,7 +88,7 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetHasQueryAndXmlName())
                 {
-                    request.Parameters.Add("IgnoreMe", StringUtils.FromString(publicRequest.HasQueryAndXmlName));
+                    request.Parameters.Add("HasQueryAndXmlName", StringUtils.FromString(publicRequest.HasQueryAndXmlName));
                 }
                 if(publicRequest.IsSetHasQueryName())
                 {
@@ -100,7 +100,7 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetUsesXmlName())
                 {
-                    request.Parameters.Add("C", StringUtils.FromString(publicRequest.UsesXmlName));
+                    request.Parameters.Add("UsesXmlName", StringUtils.FromString(publicRequest.UsesXmlName));
                 }
             }
             return request;
