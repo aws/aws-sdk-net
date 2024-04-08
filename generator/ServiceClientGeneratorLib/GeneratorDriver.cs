@@ -534,8 +534,14 @@ namespace ServiceClientGenerator
             generator.Operation = operation;
 
             this.ExecuteGenerator(generator, operation.Name + "RequestMarshaller.cs", "Model.Internal.MarshallTransformations");
-            if (hasRequest)
+            // Mark the shape as processed if it's being referred only as operation's
+            // input shape and not being referred directly by any other shape or via an
+            // operation modifier generating an artifical structure not in the service model.
+            if (hasRequest && !IsShapeReferred(operation.RequestStructure.Name, this.Configuration.ServiceModel)
+                && !operation.WrapsResultShape(operation.RequestStructure.Name))
+            {
                 this._processedMarshallers.Add(operation.RequestStructure.Name);
+            }
 
             if (normalizeMarshallers && hasRequest)
             {
@@ -824,13 +830,24 @@ namespace ServiceClientGenerator
         /// <summary>
         /// Adding Method to create/update service specific unit test projects
         /// </summary>
-        public static void UpdateUnitTestProjects(GenerationManifest generationManifest, GeneratorOptions options, string serviceTestFilesRoot, ServiceConfiguration serviceConfiguration)
+        public static List<string> UpdateUnitTestProjects(GenerationManifest generationManifest, GeneratorOptions options, string serviceTestFilesRoot, ServiceConfiguration serviceConfiguration)
         {
             Console.WriteLine("Updating unit test project files.");
             string unitTestRoot = Utils.PathCombineAlt(serviceTestFilesRoot, "UnitTests");
             var creator = new UnitTestProjectFileCreator(options, generationManifest.UnitTestProjectFileConfigurations, serviceConfiguration.ServiceFolderName);
-
+            
             UpdateUnitTestProjects(new[] { serviceConfiguration }, options, unitTestRoot, creator);
+
+            List<string> generatedTestFiles = new List<string>();
+            foreach (var file in Directory.GetFiles(unitTestRoot, "*.cs", SearchOption.AllDirectories).OrderBy(f => f))
+            {
+                var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
+                if (fullPath.IndexOf($"/{GeneratedCodeFoldername}/", StringComparison.OrdinalIgnoreCase) < 0)
+                    continue;
+                generatedTestFiles.Add(fullPath);
+            }
+
+            return generatedTestFiles;
         }
 
         private static void UpdateUnitTestProjects(IEnumerable<ServiceConfiguration> serviceConfigurations, GeneratorOptions options, string unitTestRoot, UnitTestProjectFileCreator creator)
@@ -1419,19 +1436,26 @@ namespace ServiceClientGenerator
             command.Execute(CodeAnalysisRoot, this.Configuration);
         }
 
-        public static void RemoveOrphanedShapesAndServices(HashSet<string> generatedFiles, string sdkRootFolder)
+        public static void RemoveOrphanedShapesAndServices(HashSet<string> generatedFiles, HashSet<string> generatedTestFolders, string sdkRootFolder)
         {
             var codeGeneratedServiceList = codeGeneratedServiceNames.Distinct();
+
+            // Cleanup services within the main sdk/services folder
             var srcFolder = Utils.PathCombineAlt(sdkRootFolder, SourceSubFoldername, ServicesSubFoldername);
-            RemoveOrphanedShapes(generatedFiles, srcFolder);
+            RemoveOrphanedShapes(generatedFiles, null, srcFolder);
+
+            // Cleanup services within the sdk/test folder where it is a generated test service
+            var testSrcFolder = Utils.PathCombineAlt(sdkRootFolder, TestsSubFoldername, ServicesSubFoldername);
+            RemoveOrphanedShapes(generatedFiles, generatedTestFolders, testSrcFolder);
+                        
             // Cleanup orphaned Service src artifacts. This is encountered when the service identifier is modified.
             RemoveOrphanedServices(srcFolder, codeGeneratedServiceList);
             // Cleanup orphaned Service test artifacts. This is encountered when the service identifier is modified.
-            RemoveOrphanedServices(Utils.PathCombineAlt(sdkRootFolder, TestsSubFoldername, ServicesSubFoldername), codeGeneratedServiceList);
+            RemoveOrphanedServices(testSrcFolder, codeGeneratedServiceList);
             // Cleanup orphaned Service code analysis artifacts. This is encountered when the service identifier is modified.
             RemoveOrphanedServices(Utils.PathCombineAlt(sdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName), codeGeneratedServiceList);
         }
-        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, string srcFolder)
+        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, HashSet<string> generatedTestFolders, string srcFolder)
         {
             // Remove orphaned shapes. Most likely due to taking in a model that was still under development.
             foreach (var file in Directory.GetFiles(srcFolder, "*.cs", SearchOption.AllDirectories).OrderBy(f => f))
@@ -1440,7 +1464,7 @@ namespace ServiceClientGenerator
                 if (fullPath.IndexOf($"/{GeneratedCodeFoldername}/", StringComparison.OrdinalIgnoreCase) < 0)
                     continue;
 
-                if (!generatedFiles.Contains(fullPath))
+                if (!generatedFiles.Contains(fullPath) && generatedTestFolders?.Contains(fullPath) == false)
                 {
                     Console.Error.WriteLine("**** Warning: Removing orphaned generated code " + Path.GetFileName(file));
                     File.Delete(file);
