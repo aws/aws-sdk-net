@@ -300,6 +300,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This release adds 5 new APIs: CreateParticipantConnection, DisconnectParticipant, GetTranscript, SendEvent, and SendMessage. For Amazon Connect chat, you can use them to programmatically perform participant actions on the configured Amazon Connect instance. Learn more here: https://docs.aws.amazon.com/connect-participant/latest/APIReference/Welcome.html
 * [AWSSDK.ConnectWisdomService](https://www.nuget.org/packages/AWSSDK.ConnectWisdomService/)
 	* Released Amazon Connect Wisdom, a feature of Amazon Connect, which provides real-time recommendations and search functionality in general availability (GA).  For more information, see https://docs.aws.amazon.com/wisdom/latest/APIReference/Welcome.html.
+* [AWSSDK.ControlCatalog](https://www.nuget.org/packages/AWSSDK.ControlCatalog/)
+	* This is the initial SDK release for AWS Control Catalog, a central catalog for AWS managed controls. This release includes 3 new APIs - ListDomains, ListObjectives, and ListCommonControls - that vend high-level data to categorize controls across the AWS platform.
 * [AWSSDK.ControlTower](https://www.nuget.org/packages/AWSSDK.ControlTower/)
 	* This release contains the first SDK for AWS Control Tower. It introduces  a new set of APIs: EnableControl, DisableControl, GetControlOperation, and ListEnabledControls.
 * [AWSSDK.CostAndUsageReport](https://www.nuget.org/packages/AWSSDK.CostAndUsageReport/)
