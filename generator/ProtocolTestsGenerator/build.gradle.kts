@@ -1,18 +1,16 @@
 plugins {
-    id("java")
-    `java-library`
+    id("java-library")
 }
 
 version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-    mavenLocal()
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.9.1"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation(platform(test.junit.bom))
+    testImplementation(test.junit.jupiter)
 }
 
 tasks.test {

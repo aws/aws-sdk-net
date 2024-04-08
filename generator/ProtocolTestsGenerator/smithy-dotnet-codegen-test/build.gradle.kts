@@ -14,23 +14,23 @@
  */
 
 plugins {
-    id("software.amazon.smithy") version "0.6.0"
+    id("java-library")
+    id("software.amazon.smithy.gradle.smithy-base").version("1.0.0")
 }
 
 
 buildscript {
-    val smithyVersion: String by project
     dependencies {
-        classpath("software.amazon.smithy:smithy-model:$smithyVersion")
-        classpath("software.amazon.smithy:smithy-aws-traits:$smithyVersion")
-        classpath("software.amazon.smithy:smithy-protocol-test-traits:$smithyVersion")
+        classpath(codegen.model)
+        classpath(codegen.aws.traits)
+        classpath(codegen.protocol.tests.traits)
     }
 }
 
 repositories {
     mavenCentral()
 }
-val smithyVersion: String by project
+
 dependencies {
     implementation(project(":smithy-dotnet-codegen"))
 }
