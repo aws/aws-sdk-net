@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+    #line 1 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class RestMarshallingTests : Generators.BaseGenerator
     {
@@ -30,7 +30,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
         public override string TransformText()
         {
             
-            #line 7 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 7 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 	AddLicenseHeader();
 
@@ -41,21 +41,21 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "nq;\r\nusing System.Text;\r\nusing Microsoft.VisualStudio.TestTools.UnitTesting;\r\n\r\n" +
                     "using ");
             
-            #line 19 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 19 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(";\r\nusing ");
             
-            #line 20 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 20 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\nusing ");
             
-            #line 21 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 21 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -72,7 +72,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class ");
             
-            #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 31 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -80,14 +80,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             this.Write("MarshallingTests\r\n    {\r\n        static readonly ServiceModel service_model = Uti" +
                     "ls.LoadServiceModel(\"");
             
-            #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 33 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceDirectoryName));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t");
             
-            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 34 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 		foreach(var operation in this.Config.ServiceModel.Operations)
 		{
@@ -97,42 +97,42 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             #line hidden
             this.Write("\r\n        [TestMethod]\r\n\t\t[TestCategory(\"UnitTest\")]\r\n\t\t[TestCategory(\"");
             
-            #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 41 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Type));
             
             #line default
             #line hidden
             this.Write("\")]\r\n\t\t[TestCategory(\"");
             
-            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 42 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.TestCategory));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        public void ");
             
-            #line 43 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 43 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("MarshallTest()\r\n        {\r\n\t\t\tvar operation = service_model.FindOperation(\"");
             
-            #line 45 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 45 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\r\n            var request = InstantiateClassGenerator.Execute<");
             
-            #line 47 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 47 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request>(operation);\r\n            var marshaller = new ");
             
-            #line 48 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 48 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -140,14 +140,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             this.Write("RequestMarshaller();\r\n\r\n            var internalRequest = marshaller.Marshall(req" +
                     "uest);\r\n            TestTools.RequestValidator.Validate(\"");
             
-            #line 51 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 51 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\", request, internalRequest, service_model);\r\n\r\n");
             
-            #line 53 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 53 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
 {
@@ -161,35 +161,35 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("            // Validate request headers in ");
             
-            #line 61 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 61 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" (prefix \'");
             
-            #line 61 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 61 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\')\r\n            foreach (var kvp");
             
-            #line 62 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 62 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" in request.");
             
-            #line 62 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 62 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(")\r\n            {\r\n");
             
-            #line 64 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 64 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             // Dictionary<string, string>
             if (member.ModelShape.ValueShape.IsString)
@@ -200,28 +200,28 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                Assert.AreEqual(kvp");
             
-            #line 69 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 69 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Value, internalRequest.Headers[$\"");
             
-            #line 69 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 69 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("{kvp");
             
-            #line 69 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 69 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Key}\"]);\r\n");
             
-            #line 70 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 70 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             }
             // Dictionary<string, List<string>>
@@ -233,7 +233,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                var flattenedHeader = string.Join(\",\", kvp");
             
-            #line 76 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 76 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -241,21 +241,21 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write(".Value);\r\n\r\n                Assert.AreEqual(flattenedHeader, internalRequest.Head" +
                     "ers[$\"");
             
-            #line 78 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 78 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("{kvp");
             
-            #line 78 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 78 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Key}\"]);\r\n");
             
-            #line 79 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 79 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             }
 
@@ -264,7 +264,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("            }\r\n");
             
-            #line 83 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 83 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
         }
     }
@@ -274,7 +274,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line default
             #line hidden
             
-            #line 88 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 88 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             if(operation.ResponseStructure != null)
             {
@@ -284,7 +284,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("\t\t\tvar webResponse = new WebResponseData\r\n\t\t\t{\r\n\t\t\t\tHeaders = {\r\n");
             
-            #line 95 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 95 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 
         if (operation.ResponseHeaderMembers.Count() > 0 )
@@ -301,21 +301,21 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("\t\t\t\t\t{\"");
             
-            #line 106 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 106 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",Convert.ToBase64String(Encoding.UTF8.GetBytes(\"");
             
-            #line 106 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 106 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("_Value\"))},\r\n");
             
-            #line 107 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 107 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 	
 					}
 					else
@@ -326,21 +326,21 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("\t\t\t\t\t{\"");
             
-            #line 112 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 112 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",\"");
             
-            #line 112 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 112 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("_Value\"},\r\n");
             
-            #line 113 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 113 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 	
 					}
 				}
@@ -351,7 +351,158 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
                     //inline.
                     continue;
 				}
-				else if (member.Shape.IsInt)
+                else if (member.Shape.IsList)
+				{
+                    if(member.Shape.ListShape.IsMap || member.Shape.ListShape.IsList)
+                    {
+                        throw new Exception("Member ListShape " + member.Shape.ListShape.Name + " cannot be handled because its type, " + member.Shape.ListShape.Type + ", is not handled because it is a sub Map or List.  Please Update RestMarshallingTests.tt.");
+                    }
+                    else if(member.Shape.ListShape.IsString)
+                    {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t{\"");
+            
+            #line 132 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("\",\"");
+            
+            #line 132 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("_Value1, ");
+            
+            #line 132 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("_Value2\"},\r\n");
+            
+            #line 133 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+                 
+                    }
+                    else if(member.Shape.ListShape.IsDateTime)
+                    {
+                        var timestampFormat = member.Shape.ListShape.GetTimestampFormat(MarshallLocation.Headers);
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t{\"");
+            
+            #line 139 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("\",$\"{ValidatorUtils.GetTestDate(TimestampFormat.");
+            
+            #line 139 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(timestampFormat));
+            
+            #line default
+            #line hidden
+            this.Write(")}, {ValidatorUtils.GetTestDate(TimestampFormat.");
+            
+            #line 139 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(timestampFormat));
+            
+            #line default
+            #line hidden
+            this.Write(")}\"},\r\n");
+            
+            #line 140 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+                 
+                    }
+                    else if(member.Shape.ListShape.IsBoolean)
+                    {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t{\"");
+            
+            #line 145 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("\",$\"{bool.TrueString}, {bool.TrueString}\"},\r\n");
+            
+            #line 146 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+                 
+                    }
+                    else if(member.Shape.ListShape.IsPrimitiveType)
+                    {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t{\"");
+            
+            #line 151 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("\",$\"{");
+            
+            #line 151 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.GetPrimitiveType().ToLower()));
+            
+            #line default
+            #line hidden
+            this.Write(".MaxValue.ToString(CultureInfo.InvariantCulture)}, {");
+            
+            #line 151 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.GetPrimitiveType().ToLower()));
+            
+            #line default
+            #line hidden
+            this.Write(".MaxValue.ToString(CultureInfo.InvariantCulture)}\"},\r\n");
+            
+            #line 152 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+                 
+                    }
+                    else
+                    {
+                        throw new Exception("Member ListShape " + member.Shape.ListShape.Name + " cannot be handled because its type, " + member.Shape.ListShape.Type + ", is not handled.  Please Update RestMarshallingTests.tt.");
+                    }
+				}
+                else if (member.Shape.IsDateTime)
+                {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t{\"");
+            
+            #line 162 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+            
+            #line default
+            #line hidden
+            this.Write("\",ValidatorUtils.GetTestDate(TimestampFormat.");
+            
+            #line 162 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.TimestampFormat));
+            
+            #line default
+            #line hidden
+            this.Write(")},\r\n");
+            
+            #line 163 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+	
+                }
+                else if (member.Shape.IsBoolean)
 				{
 
             
@@ -359,59 +510,41 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("\t\t\t\t\t{\"");
             
-            #line 126 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 168 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
-            this.Write("\",int.MaxValue.ToString(CultureInfo.InvariantCulture)},\r\n");
+            this.Write("\",bool.TrueString},\r\n");
             
-            #line 127 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 169 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 	
 				}
-                else if (member.Shape.IsLong)
-                {
+				else if (member.Shape.IsPrimitiveType)
+				{
 
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\t{\"");
             
-            #line 132 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 174 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
-            this.Write("\",long.MaxValue.ToString(CultureInfo.InvariantCulture)},\r\n");
+            this.Write("\",");
             
-            #line 133 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 174 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.GetPrimitiveType().ToLower()));
+            
+            #line default
+            #line hidden
+            this.Write(".MaxValue.ToString(CultureInfo.InvariantCulture)},\r\n");
+            
+            #line 175 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 	
-                }
-				else if (member.Shape.IsDateTime)
-                {
-
-            
-            #line default
-            #line hidden
-            this.Write("\t\t\t\t\t{\"");
-            
-            #line 138 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
-            
-            #line default
-            #line hidden
-            this.Write("\",ValidatorUtils.GetTestDate(TimestampFormat.");
-            
-            #line 138 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(member.TimestampFormat));
-            
-            #line default
-            #line hidden
-            this.Write(")},\r\n");
-            
-            #line 139 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
-	
-                }
+				}
 				else
 				{
 					throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt.");
@@ -425,7 +558,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("\t\t\t\t\t{\"x-amzn-RequestId\", Guid.NewGuid().ToString()},\r\n\t\t\t\t\t{\"x-amz-crc32\",\"0\"}\r\n" +
                     "\t\t\t\t}\r\n\t\t\t};\r\n");
             
-            #line 151 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 187 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
    
         if (operation.ResponseHeaderMembers.Count(m => m.Shape.IsMap) > 0)
         {
@@ -436,14 +569,14 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("\r\n            // populate a dummy response object so we can copy the headers\r\n   " +
                     "         var dummyResponse = InstantiateClassGenerator.Execute<");
             
-            #line 157 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 193 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>();\r\n\r\n");
             
-            #line 159 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 195 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             foreach (var member in operation.ResponseHeaderMembers)
             {
@@ -455,35 +588,35 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("            // Populate map of response headers for ");
             
-            #line 165 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 201 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" with prefix \"");
             
-            #line 165 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 201 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\".\r\n            foreach (var kvp");
             
-            #line 166 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 202 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" in dummyResponse.");
             
-            #line 166 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 202 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(")\r\n            {\r\n");
             
-            #line 168 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 204 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             // Dictionary<string, string>
             if (member.ModelShape.ValueShape.IsString)
@@ -494,28 +627,28 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                webResponse.Headers.Add($\"");
             
-            #line 173 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 209 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("{kvp");
             
-            #line 173 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 209 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Key}\", kvp");
             
-            #line 173 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 209 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Value);\r\n");
             
-            #line 174 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 210 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             }
             // Dictionary<string, List<string>>
@@ -527,28 +660,28 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                webResponse.Headers.Add($\"");
             
-            #line 180 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 216 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("{kvp");
             
-            #line 180 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 216 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Key}\", string.Join(\",\", kvp");
             
-            #line 180 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 216 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Value.ToArray()));\r\n");
             
-            #line 181 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 217 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             }
 
@@ -557,7 +690,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("            }\r\n");
             
-            #line 185 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 221 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
                 }
             }
@@ -575,7 +708,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ");
             
-            #line 197 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 233 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -583,7 +716,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("ResponseUnmarshaller.Instance;\r\n            var response = unmarshaller.Unmarshal" +
                     "l(context) as ");
             
-            #line 198 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 234 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -591,7 +724,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("Response;\r\n            InstantiateClassGenerator.ValidateObjectFullyInstantiated(" +
                     "response);\r\n");
             
-            #line 200 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 236 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 				}
 				else
@@ -606,7 +739,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
 			ResponseUnmarshaller unmarshaller = ");
             
-            #line 209 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 245 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -614,7 +747,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("ResponseUnmarshaller.Instance;\r\n            var response = unmarshaller.Unmarshal" +
                     "l(context) as ");
             
-            #line 210 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 246 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -622,7 +755,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("Response;\r\n            InstantiateClassGenerator.ValidateObjectFullyInstantiated(" +
                     "response);\r\n");
             
-            #line 212 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 248 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
  
        if (operation.ResponseHeaderMembers.Count(m => m.Shape.IsMap) > 0)
        {
@@ -636,35 +769,35 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("            // Validate response headers for ");
             
-            #line 220 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 256 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" with prefix \"");
             
-            #line 220 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 256 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\".\r\n            foreach (var kvp");
             
-            #line 221 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 257 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" in dummyResponse.");
             
-            #line 221 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 257 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(")\r\n            {\r\n");
             
-            #line 223 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 259 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             // Dictionary<string, string>
             if (member.ModelShape.ValueShape.IsString)
@@ -673,23 +806,30 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             
             #line default
             #line hidden
-            this.Write("                Assert.AreEqual(response.ResponseHeaders[kvp");
+            this.Write("                Assert.AreEqual(response.");
             
-            #line 228 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 264 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+            
+            #line default
+            #line hidden
+            this.Write("[kvp");
+            
+            #line 264 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Key], kvp");
             
-            #line 228 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 264 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Value);\r\n");
             
-            #line 229 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 265 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             }
             // Dictionary<string, List<string>>
@@ -701,14 +841,14 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                Assert.AreEqual(response.ResponseHeaders[kvp");
             
-            #line 235 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 271 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Key].Count(),  kvp");
             
-            #line 235 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 271 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -716,7 +856,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write(".Value.Count());\r\n\r\n                for (var i = 0; i < response.ResponseHeaders[" +
                     "kvp");
             
-            #line 237 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 273 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -724,21 +864,21 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write(".Key].Count(); i++)\r\n                    Assert.AreEqual(response.ResponseHeaders" +
                     "[kvp");
             
-            #line 238 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 274 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Key][i], kvp");
             
-            #line 238 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 274 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Value[i]);\r\n");
             
-            #line 239 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 275 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             }
 
@@ -747,7 +887,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("            }\r\n");
             
-            #line 243 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 279 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 				
                 }
             }
@@ -760,7 +900,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("        }\r\n");
             
-            #line 251 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 287 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             foreach (var exception in operation.Exceptions)
             {
@@ -771,28 +911,28 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("\r\n        [TestMethod]\r\n        [TestCategory(\"UnitTest\")]\r\n        [TestCategory" +
                     "(\"");
             
-            #line 258 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 294 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Type));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        [TestCategory(\"");
             
-            #line 259 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 295 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.TestCategory));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        public void ");
             
-            #line 260 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 296 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 260 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 296 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -800,21 +940,21 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("MarshallTest()\r\n        {\r\n            var operation = service_model.FindOperatio" +
                     "n(\"");
             
-            #line 262 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 298 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\r\n            var request = InstantiateClassGenerator.Execute<");
             
-            #line 264 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 300 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request>(operation);\r\n            var marshaller = new ");
             
-            #line 265 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 301 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -822,7 +962,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("RequestMarshaller();\r\n            var internalRequest = marshaller.Marshall(reque" +
                     "st);\r\n\r\n            TestTools.RequestValidator.Validate(\"");
             
-            #line 268 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 304 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -830,7 +970,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("\", request, internalRequest, service_model);\r\n\r\n            var exception = opera" +
                     "tion.Exceptions.First(e => e.Name.Equals(\"");
             
-            #line 270 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 306 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -838,7 +978,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("\"));\r\n            var webResponse = new WebResponseData\r\n            {\r\n         " +
                     "       Headers = {\r\n");
             
-            #line 274 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 310 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             if( operation.ResponseHeaderMembers.Count() > 0 )
             {
@@ -854,21 +994,21 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                    {\"");
             
-            #line 284 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 320 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",Convert.ToBase64String(Encoding.UTF8.GetBytes(\"");
             
-            #line 284 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 320 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("_Value\"))},\r\n");
             
-            #line 285 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 321 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
                         }
                         else
@@ -879,21 +1019,21 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                    {\"");
             
-            #line 290 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 326 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",\"");
             
-            #line 290 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 326 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("_Value\"},\r\n");
             
-            #line 291 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 327 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
                         }
 
@@ -913,14 +1053,14 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                    {\"");
             
-            #line 305 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 341 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",int.MaxValue.ToString(CultureInfo.InvariantCulture)},\r\n");
             
-            #line 306 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 342 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
                     }
                     else if (member.Shape.IsLong)
@@ -931,14 +1071,14 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                    {\"");
             
-            #line 311 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 347 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",long.MaxValue.ToString(CultureInfo.InvariantCulture)},\r\n");
             
-            #line 312 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 348 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
                     }
                     else if (member.Shape.IsDateTime)
@@ -949,26 +1089,26 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                    {\"");
             
-            #line 317 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 353 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\",ValidatorUtils.GetTestDate(TimestampFormat.");
             
-            #line 317 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 353 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.TimestampFormat));
             
             #line default
             #line hidden
             this.Write(")},\r\n");
             
-            #line 318 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 354 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
                     }
                     else
                     {
-                        throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt.");
+                        throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt - exception case.");
                     }
                 }
             }
@@ -979,7 +1119,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("                    {\"x-amzn-RequestId\", Guid.NewGuid().ToString()},\r\n           " +
                     "         {\"x-amz-crc32\",\"0\"},\r\n");
             
-            #line 329 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 365 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
                 if(this.Config.ServiceModel.Type != ServiceType.Rest_Xml)
                 {
@@ -989,14 +1129,14 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                    {\"x-amzn-ErrorType\",\"");
             
-            #line 333 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 369 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
             #line hidden
             this.Write("\"},\r\n");
             
-            #line 334 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 370 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
                 }
 
@@ -1005,7 +1145,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                }\r\n            };\r\n\r\n");
             
-            #line 340 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 376 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
    
         if (operation.ResponseHeaderMembers.Count(m => m.Shape.IsMap) > 0)
 		{
@@ -1016,14 +1156,14 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             this.Write("            // populate a dummy response object so we can copy the headers\r\n     " +
                     "       var dummyResponse = InstantiateClassGenerator.Execute<");
             
-            #line 345 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 381 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>();\r\n");
             
-            #line 346 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 382 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
 
 			foreach (var member in operation.ResponseHeaderMembers)
@@ -1036,35 +1176,35 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("            // Populate map of response headers for ");
             
-            #line 353 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 389 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" with prefix \"");
             
-            #line 353 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 389 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("\".\r\n            foreach (var kvp");
             
-            #line 354 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 390 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" in dummyResponse.");
             
-            #line 354 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 390 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(")\r\n            {\r\n");
             
-            #line 356 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 392 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             // Dictionary<string, string>
             if (member.ModelShape.ValueShape.IsString)
@@ -1075,28 +1215,28 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                webResponse.Headers.Add($\"");
             
-            #line 361 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 397 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("{kvp");
             
-            #line 361 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 397 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Key}\", kvp");
             
-            #line 361 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 397 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Value);\r\n");
             
-            #line 362 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 398 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             }
             // Dictionary<string, List<string>>
@@ -1108,28 +1248,28 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("                webResponse.Headers.Add($\"");
             
-            #line 368 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 404 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
             
             #line default
             #line hidden
             this.Write("{kvp");
             
-            #line 368 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 404 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Key}\", string.Join(\",\", kvp");
             
-            #line 368 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 404 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Value.ToArray()));\r\n");
             
-            #line 369 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 405 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             }
 
@@ -1138,7 +1278,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("            }\r\n\r\n");
             
-            #line 374 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 410 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
                 }
             }
@@ -1155,7 +1295,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = ");
             
-            #line 385 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 421 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -1164,7 +1304,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
                     "tatusCode.OK);\r\n\r\n            InstantiateClassGenerator.ValidateObjectFullyInsta" +
                     "ntiated(response);\r\n");
             
-            #line 388 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 424 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
                 }
                 else
@@ -1178,7 +1318,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = ");
             
-            #line 396 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 432 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -1187,7 +1327,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
                     "tatusCode.OK);\r\n\r\n            InstantiateClassGenerator.ValidateObjectFullyInsta" +
                     "ntiated(response);\r\n");
             
-            #line 399 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 435 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
                 }
 
@@ -1196,7 +1336,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             #line hidden
             this.Write("        }\r\n");
             
-            #line 403 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
+            #line 439 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
             }
         }
