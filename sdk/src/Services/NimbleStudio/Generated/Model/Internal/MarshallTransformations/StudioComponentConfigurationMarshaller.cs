@@ -45,6 +45,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StudioComponentConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActiveDirectoryConfiguration())
             {
                 context.Writer.WritePropertyName("activeDirectoryConfiguration");

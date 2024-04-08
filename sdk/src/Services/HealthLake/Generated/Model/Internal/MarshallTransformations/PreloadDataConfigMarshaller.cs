@@ -45,6 +45,8 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PreloadDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPreloadDataType())
             {
                 context.Writer.WritePropertyName("PreloadDataType");

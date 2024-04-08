@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdd())
             {
                 context.Writer.WritePropertyName("Add");

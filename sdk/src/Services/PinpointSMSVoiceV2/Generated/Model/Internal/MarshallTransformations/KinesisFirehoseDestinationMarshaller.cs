@@ -45,6 +45,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KinesisFirehoseDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeliveryStreamArn())
             {
                 context.Writer.WritePropertyName("DeliveryStreamArn");

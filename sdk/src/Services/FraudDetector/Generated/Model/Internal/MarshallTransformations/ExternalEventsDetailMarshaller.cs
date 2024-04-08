@@ -45,6 +45,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExternalEventsDetail requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataAccessRoleArn())
             {
                 context.Writer.WritePropertyName("dataAccessRoleArn");

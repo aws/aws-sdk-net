@@ -45,6 +45,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataProviderDescriptorDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataProviderIdentifier())
             {
                 context.Writer.WritePropertyName("DataProviderIdentifier");

@@ -45,6 +45,8 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ApplicationSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudFormationStackARN())
             {
                 context.Writer.WritePropertyName("CloudFormationStackARN");

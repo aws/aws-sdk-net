@@ -177,10 +177,7 @@
     "ComplexNestedErrorData":{
       "type":"structure",
       "members":{
-        "Foo":{
-          "shape":"String",
-          "locationName":"Fooooo"
-        }
+        "Foo":{"shape":"String"}
       }
     },
     "DateTime":{
@@ -420,9 +417,7 @@
     "NullOperationInputOutput":{
       "type":"structure",
       "members":{
-        "string":{"shape":"String"},
-        "sparseStringList":{"shape":"SparseStringList"},
-        "sparseStringMap":{"shape":"SparseStringMap"}
+        "string":{"shape":"String"}
       }
     },
     "OperationWithOptionalInputOutputInput":{
@@ -463,15 +458,6 @@
         "Value":{"shape":"String"}
       }
     },
-    "SparseStringList":{
-      "type":"list",
-      "member":{"shape":"String"}
-    },
-    "SparseStringMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"String"}
-    },
     "String":{"type":"string"},
     "StringList":{
       "type":"list",
@@ -485,10 +471,7 @@
     "StructWithJsonName":{
       "type":"structure",
       "members":{
-        "Value":{
-          "shape":"String",
-          "locationName":"RenamedMember"
-        }
+        "Value":{"shape":"String"}
       }
     },
     "SyntheticTimestamp_date_time":{

@@ -45,6 +45,8 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Address requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddressLine1())
             {
                 context.Writer.WritePropertyName("AddressLine1");

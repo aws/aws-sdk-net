@@ -45,6 +45,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LaunchPermissionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOrganizationalUnitArns())
             {
                 context.Writer.WritePropertyName("organizationalUnitArns");

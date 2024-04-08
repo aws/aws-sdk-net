@@ -45,6 +45,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrcSerDe requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBlockSizeBytes())
             {
                 context.Writer.WritePropertyName("BlockSizeBytes");
@@ -65,7 +67,14 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBloomFilterFalsePositiveProbability())
             {
                 context.Writer.WritePropertyName("BloomFilterFalsePositiveProbability");
-                context.Writer.Write(requestObject.BloomFilterFalsePositiveProbability);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BloomFilterFalsePositiveProbability))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BloomFilterFalsePositiveProbability));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BloomFilterFalsePositiveProbability);
+                }
             }
 
             if(requestObject.IsSetCompression())
@@ -77,7 +86,14 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDictionaryKeyThreshold())
             {
                 context.Writer.WritePropertyName("DictionaryKeyThreshold");
-                context.Writer.Write(requestObject.DictionaryKeyThreshold);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DictionaryKeyThreshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DictionaryKeyThreshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DictionaryKeyThreshold);
+                }
             }
 
             if(requestObject.IsSetEnablePadding())
@@ -95,7 +111,14 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPaddingTolerance())
             {
                 context.Writer.WritePropertyName("PaddingTolerance");
-                context.Writer.Write(requestObject.PaddingTolerance);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PaddingTolerance))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PaddingTolerance));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PaddingTolerance);
+                }
             }
 
             if(requestObject.IsSetRowIndexStride())

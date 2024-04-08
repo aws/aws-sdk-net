@@ -45,6 +45,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MultiLayerStorage requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomerManagedS3Storage())
             {
                 context.Writer.WritePropertyName("customerManagedS3Storage");

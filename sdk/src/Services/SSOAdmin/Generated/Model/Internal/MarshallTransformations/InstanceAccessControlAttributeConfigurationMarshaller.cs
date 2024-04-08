@@ -45,6 +45,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceAccessControlAttributeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccessControlAttributes())
             {
                 context.Writer.WritePropertyName("AccessControlAttributes");

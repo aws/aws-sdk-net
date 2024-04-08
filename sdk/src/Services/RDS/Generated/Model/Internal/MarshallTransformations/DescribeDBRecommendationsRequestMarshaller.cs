@@ -81,11 +81,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetLastUpdatedAfter())
                 {
-                    request.Parameters.Add("LastUpdatedAfter", StringUtils.FromDateTimeToISO8601(publicRequest.LastUpdatedAfter));
+                    request.Parameters.Add("LastUpdatedAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LastUpdatedAfter));
                 }
                 if(publicRequest.IsSetLastUpdatedBefore())
                 {
-                    request.Parameters.Add("LastUpdatedBefore", StringUtils.FromDateTimeToISO8601(publicRequest.LastUpdatedBefore));
+                    request.Parameters.Add("LastUpdatedBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LastUpdatedBefore));
                 }
                 if(publicRequest.IsSetLocale())
                 {

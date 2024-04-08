@@ -45,6 +45,8 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MyUnion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBlobValue())
             {
                 context.Writer.WritePropertyName("blobValue");

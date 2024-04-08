@@ -45,6 +45,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KinesisStreamsOutput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetResourceARN())
             {
                 context.Writer.WritePropertyName("ResourceARN");

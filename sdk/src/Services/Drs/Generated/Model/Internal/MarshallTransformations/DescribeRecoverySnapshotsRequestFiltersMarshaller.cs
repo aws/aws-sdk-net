@@ -45,6 +45,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DescribeRecoverySnapshotsRequestFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFromDateTime())
             {
                 context.Writer.WritePropertyName("fromDateTime");

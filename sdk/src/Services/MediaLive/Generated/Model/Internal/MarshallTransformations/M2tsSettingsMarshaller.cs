@@ -45,6 +45,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(M2tsSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAbsentInputAudioBehavior())
             {
                 context.Writer.WritePropertyName("absentInputAudioBehavior");
@@ -207,7 +209,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFragmentTime())
             {
                 context.Writer.WritePropertyName("fragmentTime");
-                context.Writer.Write(requestObject.FragmentTime);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.FragmentTime))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FragmentTime));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.FragmentTime);
+                }
             }
 
             if(requestObject.IsSetKlv())
@@ -231,7 +240,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNullPacketBitrate())
             {
                 context.Writer.WritePropertyName("nullPacketBitrate");
-                context.Writer.Write(requestObject.NullPacketBitrate);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.NullPacketBitrate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NullPacketBitrate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NullPacketBitrate);
+                }
             }
 
             if(requestObject.IsSetPatInterval())
@@ -303,7 +319,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScte35PrerollPullupMilliseconds())
             {
                 context.Writer.WritePropertyName("scte35PrerollPullupMilliseconds");
-                context.Writer.Write(requestObject.Scte35PrerollPullupMilliseconds);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Scte35PrerollPullupMilliseconds))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scte35PrerollPullupMilliseconds));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Scte35PrerollPullupMilliseconds);
+                }
             }
 
             if(requestObject.IsSetSegmentationMarkers())
@@ -321,7 +344,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentationTime())
             {
                 context.Writer.WritePropertyName("segmentationTime");
-                context.Writer.Write(requestObject.SegmentationTime);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SegmentationTime))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SegmentationTime));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.SegmentationTime);
+                }
             }
 
             if(requestObject.IsSetTimedMetadataBehavior())

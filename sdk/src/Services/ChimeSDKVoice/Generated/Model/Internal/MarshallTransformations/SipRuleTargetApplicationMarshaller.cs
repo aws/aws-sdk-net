@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SipRuleTargetApplication requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAwsRegion())
             {
                 context.Writer.WritePropertyName("AwsRegion");

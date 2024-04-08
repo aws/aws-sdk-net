@@ -45,6 +45,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Budget requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoAdjustData())
             {
                 context.Writer.WritePropertyName("AutoAdjustData");

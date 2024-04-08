@@ -65,6 +65,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetBlob())
@@ -82,7 +83,14 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDouble())
                 {
                     context.Writer.WritePropertyName("Double");
-                    context.Writer.Write(publicRequest.Double);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Double))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Double));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.Double);
+                    }
                 }
 
                 if(publicRequest.IsSetEmptyStruct())
@@ -99,7 +107,14 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFloat())
                 {
                     context.Writer.WritePropertyName("Float");
-                    context.Writer.Write(publicRequest.Float);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.Float))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.Float));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.Float);
+                    }
                 }
 
                 if(publicRequest.IsSetHttpdateTimestamp())
@@ -117,7 +132,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIso8601Timestamp())
                 {
                     context.Writer.WritePropertyName("Iso8601Timestamp");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.Iso8601Timestamp));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Iso8601Timestamp));
                 }
 
                 if(publicRequest.IsSetJsonValue())

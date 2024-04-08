@@ -45,6 +45,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InsightSelector requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInsightType())
             {
                 context.Writer.WritePropertyName("InsightType");

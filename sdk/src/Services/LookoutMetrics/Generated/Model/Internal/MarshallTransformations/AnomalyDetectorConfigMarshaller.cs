@@ -45,6 +45,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnomalyDetectorConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnomalyDetectorFrequency())
             {
                 context.Writer.WritePropertyName("AnomalyDetectorFrequency");

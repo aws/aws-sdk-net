@@ -45,6 +45,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Projection requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNonKeyAttributes())
             {
                 context.Writer.WritePropertyName("NonKeyAttributes");

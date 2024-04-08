@@ -45,6 +45,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServiceUpdateRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetServiceUpdateNameToApply())
             {
                 context.Writer.WritePropertyName("ServiceUpdateNameToApply");

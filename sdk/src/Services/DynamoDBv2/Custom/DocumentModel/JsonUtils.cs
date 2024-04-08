@@ -352,7 +352,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var ddbNull = entry as DynamoDBNull;
             if (ddbNull != null)
             {
-                writer.Write(null);
+                writer.Write((string)null);
                 return;
             }
 

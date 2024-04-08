@@ -45,6 +45,8 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransfo
         /// <returns></returns>
         public void Marshall(LinuxSubscriptionsDiscoverySettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOrganizationIntegration())
             {
                 context.Writer.WritePropertyName("OrganizationIntegration");

@@ -45,6 +45,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceDataSyncDestinationDataSharing requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationDataSharingType())
             {
                 context.Writer.WritePropertyName("DestinationDataSharingType");

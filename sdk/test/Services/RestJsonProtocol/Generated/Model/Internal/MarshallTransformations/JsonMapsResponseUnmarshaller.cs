@@ -81,36 +81,6 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                     response.DenseStructMap = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sparseBooleanMap", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, bool, StringUnmarshaller, BoolUnmarshaller>(StringUnmarshaller.Instance, BoolUnmarshaller.Instance);
-                    response.SparseBooleanMap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sparseNumberMap", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
-                    response.SparseNumberMap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sparseSetMap", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
-                    response.SparseSetMap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sparseStringMap", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.SparseStringMap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sparseStructMap", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, GreetingStruct, StringUnmarshaller, GreetingStructUnmarshaller>(StringUnmarshaller.Instance, GreetingStructUnmarshaller.Instance);
-                    response.SparseStructMap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
 
             return response;

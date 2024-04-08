@@ -45,6 +45,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PostgreSQLSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAfterConnectScript())
             {
                 context.Writer.WritePropertyName("AfterConnectScript");

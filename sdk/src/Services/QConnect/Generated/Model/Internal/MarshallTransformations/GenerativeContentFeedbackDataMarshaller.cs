@@ -45,6 +45,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GenerativeContentFeedbackData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRelevance())
             {
                 context.Writer.WritePropertyName("relevance");

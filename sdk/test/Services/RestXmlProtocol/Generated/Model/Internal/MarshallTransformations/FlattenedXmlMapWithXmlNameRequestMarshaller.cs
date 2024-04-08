@@ -61,16 +61,17 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("FlattenedXmlMapWithXmlNameRequest", "");    
-                    xmlWriter.WriteStartElement("KVP", "");
-                    foreach (var kvp in publicRequest.MyMap) 
+                xmlWriter.WriteStartElement("FlattenedXmlMapWithXmlNameRequest", "");
+                if(publicRequest.IsSetMyMap())
+                {
+                    foreach (var kvp in publicRequest.MyMap)
                     {
-                        xmlWriter.WriteStartElement("entry", "");
-                        xmlWriter.WriteElementString("key", "", kvp.Key);
-                        xmlWriter.WriteElementString("value", "", kvp.Value);
+                        xmlWriter.WriteStartElement("KVP");
+                        xmlWriter.WriteElementString("K", kvp.Key);
+                        xmlWriter.WriteElementString("V", kvp.Value);
                         xmlWriter.WriteEndElement();
-                    }            
-                    xmlWriter.WriteEndElement();                
+                    }    
+                }
 
                 xmlWriter.WriteEndElement();
             }

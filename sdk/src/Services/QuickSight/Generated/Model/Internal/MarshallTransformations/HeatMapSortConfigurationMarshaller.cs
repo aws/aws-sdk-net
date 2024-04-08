@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HeatMapSortConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHeatMapColumnItemsLimitConfiguration())
             {
                 context.Writer.WritePropertyName("HeatMapColumnItemsLimitConfiguration");

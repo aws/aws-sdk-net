@@ -45,6 +45,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsJobTimeoutConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInProgressTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("inProgressTimeoutInMinutes");

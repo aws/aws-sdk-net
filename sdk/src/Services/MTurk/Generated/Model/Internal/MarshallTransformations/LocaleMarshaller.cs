@@ -45,6 +45,8 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Locale requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCountry())
             {
                 context.Writer.WritePropertyName("Country");

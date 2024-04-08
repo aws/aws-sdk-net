@@ -45,6 +45,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContainerServiceHealthCheckConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHealthyThreshold())
             {
                 context.Writer.WritePropertyName("healthyThreshold");

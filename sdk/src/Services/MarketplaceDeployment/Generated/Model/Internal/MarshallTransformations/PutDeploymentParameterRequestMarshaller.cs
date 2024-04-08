@@ -69,6 +69,7 @@ namespace Amazon.MarketplaceDeployment.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAgreementId())
@@ -102,7 +103,7 @@ namespace Amazon.MarketplaceDeployment.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpirationDate())
                 {
                     context.Writer.WritePropertyName("expirationDate");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.ExpirationDate));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpirationDate));
                 }
 
                 if(publicRequest.IsSetTags())

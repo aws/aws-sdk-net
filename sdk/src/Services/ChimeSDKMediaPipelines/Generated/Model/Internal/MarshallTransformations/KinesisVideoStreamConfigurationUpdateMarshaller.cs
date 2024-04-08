@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KinesisVideoStreamConfigurationUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataRetentionInHours())
             {
                 context.Writer.WritePropertyName("DataRetentionInHours");

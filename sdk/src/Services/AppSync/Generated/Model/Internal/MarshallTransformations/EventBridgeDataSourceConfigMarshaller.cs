@@ -45,6 +45,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EventBridgeDataSourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEventBusArn())
             {
                 context.Writer.WritePropertyName("eventBusArn");

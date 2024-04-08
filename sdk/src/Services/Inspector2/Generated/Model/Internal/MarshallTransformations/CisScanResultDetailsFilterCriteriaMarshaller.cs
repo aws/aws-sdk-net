@@ -45,6 +45,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CisScanResultDetailsFilterCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCheckIdFilters())
             {
                 context.Writer.WritePropertyName("checkIdFilters");

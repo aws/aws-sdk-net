@@ -45,6 +45,8 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateExperimentTemplateLogConfigurationInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchLogsConfiguration())
             {
                 context.Writer.WritePropertyName("cloudWatchLogsConfiguration");

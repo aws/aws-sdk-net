@@ -45,6 +45,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TableToReload requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSchemaName())
             {
                 context.Writer.WritePropertyName("SchemaName");

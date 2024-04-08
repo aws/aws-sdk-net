@@ -63,7 +63,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             request.AddPathResource("{profilingGroupName}", StringUtils.FromString(publicRequest.ProfilingGroupName));
             
             if (publicRequest.IsSetEndTime())
-                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTime));
+                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
             
             if (publicRequest.IsSetMaxDepth())
                 request.Parameters.Add("maxDepth", StringUtils.FromInt(publicRequest.MaxDepth));
@@ -72,7 +72,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 request.Parameters.Add("period", StringUtils.FromString(publicRequest.Period));
             
             if (publicRequest.IsSetStartTime())
-                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
+                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
             request.ResourcePath = "/profilingGroups/{profilingGroupName}/profile";
         
             if (publicRequest.IsSetAccept()) 

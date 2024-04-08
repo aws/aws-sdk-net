@@ -45,6 +45,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TranscriptionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEngineTranscribeMedicalSettings())
             {
                 context.Writer.WritePropertyName("EngineTranscribeMedicalSettings");

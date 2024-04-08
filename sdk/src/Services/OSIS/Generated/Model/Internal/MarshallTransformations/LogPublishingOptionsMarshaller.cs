@@ -45,6 +45,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LogPublishingOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchLogDestination())
             {
                 context.Writer.WritePropertyName("CloudWatchLogDestination");

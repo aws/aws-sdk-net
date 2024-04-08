@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StreamingTraits operation
+    /// Response Unmarshaller for DocumentTypeAsMapValue operation
     /// </summary>  
-    public class StreamingTraitsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DocumentTypeAsMapValueResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,11 +45,19 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StreamingTraitsResponse response = new StreamingTraitsResponse();
+            DocumentTypeAsMapValueResponse response = new DocumentTypeAsMapValueResponse();
 
-            response.Blob = context.Stream;
-            if (context.ResponseData.IsHeaderPresent("X-Foo"))
-                response.Foo = context.ResponseData.GetHeaderValue("X-Foo");
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("docValuedMap", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(StringUnmarshaller.Instance, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
+                    response.DocValuedMap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -76,20 +84,9 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             return new AmazonRestJsonProtocolException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        /// <summary>
-        /// Overriden to return true indicating the response contains streaming data.
-        /// </summary>
-        public override bool HasStreamingProperty
-        {
-            get
-            {
-                return true;
-            }
-        }
+        private static DocumentTypeAsMapValueResponseUnmarshaller _instance = new DocumentTypeAsMapValueResponseUnmarshaller();        
 
-        private static StreamingTraitsResponseUnmarshaller _instance = new StreamingTraitsResponseUnmarshaller();        
-
-        internal static StreamingTraitsResponseUnmarshaller GetInstance()
+        internal static DocumentTypeAsMapValueResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +94,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StreamingTraitsResponseUnmarshaller Instance
+        public static DocumentTypeAsMapValueResponseUnmarshaller Instance
         {
             get
             {

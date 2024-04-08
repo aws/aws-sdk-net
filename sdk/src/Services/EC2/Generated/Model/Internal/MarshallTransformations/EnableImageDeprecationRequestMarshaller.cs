@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetDeprecateAt())
                 {
-                    request.Parameters.Add("DeprecateAt", StringUtils.FromDateTimeToISO8601(publicRequest.DeprecateAt));
+                    request.Parameters.Add("DeprecateAt", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DeprecateAt));
                 }
                 if(publicRequest.IsSetImageId())
                 {

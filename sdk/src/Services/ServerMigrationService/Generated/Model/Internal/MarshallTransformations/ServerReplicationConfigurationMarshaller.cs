@@ -45,6 +45,8 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServerReplicationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetServer())
             {
                 context.Writer.WritePropertyName("server");

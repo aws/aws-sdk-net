@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LiveConnectorRTMPConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAudioChannels())
             {
                 context.Writer.WritePropertyName("AudioChannels");

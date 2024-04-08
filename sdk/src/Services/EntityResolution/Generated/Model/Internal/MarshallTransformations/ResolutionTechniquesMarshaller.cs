@@ -45,6 +45,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResolutionTechniques requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetProviderProperties())
             {
                 context.Writer.WritePropertyName("providerProperties");

@@ -61,26 +61,26 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("XmlMapsRequest", "");    
-                    xmlWriter.WriteStartElement("myMap", "");
-                    foreach (var kvp in publicRequest.MyMap) 
+                xmlWriter.WriteStartElement("XmlMapsRequest", "");
+                if(publicRequest.IsSetMyMap())
+                {
+                    xmlWriter.WriteStartElement("myMap");
+                    foreach (var kvp in publicRequest.MyMap)
                     {
-                        xmlWriter.WriteStartElement("entry", "");
-                        xmlWriter.WriteElementString("key", "", kvp.Key);
-                        xmlWriter.WriteStartElement("value", "");
-                
+                        xmlWriter.WriteStartElement("entry");
+
+                        xmlWriter.WriteElementString("key", kvp.Key);
+                        xmlWriter.WriteStartElement("value");
                         if (kvp.Value != null) 
                         {
-                            xmlWriter.WriteStartElement("GreetingStruct", "");            
                             if(kvp.Value.IsSetHi())
-                                xmlWriter.WriteElementString("hi", "", StringUtils.FromString(kvp.Value.Hi));                 
-
-                            xmlWriter.WriteEndElement();
+                                xmlWriter.WriteElementString("hi", StringUtils.FromString(kvp.Value.Hi));                 
                         }
                         xmlWriter.WriteEndElement();
                         xmlWriter.WriteEndElement();
-                    }            
-                    xmlWriter.WriteEndElement();                
+                    }
+                    xmlWriter.WriteEndElement();
+                }
 
                 xmlWriter.WriteEndElement();
             }

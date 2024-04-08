@@ -45,6 +45,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Matcher requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHttpCode())
             {
                 context.Writer.WritePropertyName("httpCode");

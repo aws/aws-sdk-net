@@ -45,6 +45,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputTransformer requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputPathsMap())
             {
                 context.Writer.WritePropertyName("InputPathsMap");

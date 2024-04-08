@@ -45,6 +45,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Stage requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDurationInMinutes())
             {
                 context.Writer.WritePropertyName("DurationInMinutes");

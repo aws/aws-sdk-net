@@ -45,6 +45,8 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Document requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");
@@ -66,7 +68,14 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOriginalScore())
             {
                 context.Writer.WritePropertyName("OriginalScore");
-                context.Writer.Write(requestObject.OriginalScore);
+                if(StringUtils.IsSpecialFloatValue(requestObject.OriginalScore))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.OriginalScore));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.OriginalScore);
+                }
             }
 
             if(requestObject.IsSetTitle())

@@ -45,6 +45,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NestedPayload requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGreeting())
             {
                 context.Writer.WritePropertyName("greeting");

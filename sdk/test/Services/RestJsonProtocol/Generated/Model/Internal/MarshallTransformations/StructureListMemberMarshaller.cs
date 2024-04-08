@@ -45,6 +45,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StructureListMember requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetA())
             {
                 context.Writer.WritePropertyName("value");

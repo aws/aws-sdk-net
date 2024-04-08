@@ -45,6 +45,8 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SystemInstanceFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

@@ -45,6 +45,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PolicyQualifierInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPolicyQualifierId())
             {
                 context.Writer.WritePropertyName("PolicyQualifierId");

@@ -166,11 +166,11 @@ using Amazon.Runtime.Internal.Util;
 					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
 				}
 
-				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{keyToUse}"))
 				{
 					headersFor<#=member.PropertyName#>.Add(
 						keyToUse,
-						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}")
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{keyToUse}")
 					);
 				}
 			}
@@ -190,11 +190,11 @@ using Amazon.Runtime.Internal.Util;
 					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
 				}
 
-				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{keyToUse}"))
 				{
 					headersFor<#=member.PropertyName#>.Add(
 						keyToUse,
-						context.ResponseData.GetHeaderValue($"{nameResponseHeaders}").Split(',').ToList()
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{keyToUse}").Split(',').ToList()
 					);
 				}
 			}
@@ -249,11 +249,11 @@ using Amazon.Runtime.Internal.Util;
 					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
 				}
 
-				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{keyToUse}"))
 				{
 					headersFor<#=member.PropertyName#>.Add(
 						keyToUse,
-						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}")
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{keyToUse}")
 					);
 				}
 			}
@@ -273,11 +273,11 @@ using Amazon.Runtime.Internal.Util;
 					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
 				}
 
-				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{keyToUse}"))
 				{
 					headersFor<#=member.PropertyName#>.Add(
 						keyToUse,
-						context.ResponseData.GetHeaderValue($"{nameResponseHeaders}").Split(',').ToList()
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{keyToUse}").Split(',').ToList()
 					);
 				}
 			}

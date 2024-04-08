@@ -45,6 +45,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateOpenZFSVolumeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataCompressionType())
             {
                 context.Writer.WritePropertyName("DataCompressionType");

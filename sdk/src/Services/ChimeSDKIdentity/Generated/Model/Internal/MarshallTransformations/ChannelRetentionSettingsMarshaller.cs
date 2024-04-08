@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ChannelRetentionSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRetentionDays())
             {
                 context.Writer.WritePropertyName("RetentionDays");

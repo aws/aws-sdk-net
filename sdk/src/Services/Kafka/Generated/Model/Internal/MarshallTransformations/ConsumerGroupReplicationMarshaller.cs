@@ -45,6 +45,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConsumerGroupReplication requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConsumerGroupsToExclude())
             {
                 context.Writer.WritePropertyName("consumerGroupsToExclude");

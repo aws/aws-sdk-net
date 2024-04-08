@@ -45,6 +45,8 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExternalId requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");

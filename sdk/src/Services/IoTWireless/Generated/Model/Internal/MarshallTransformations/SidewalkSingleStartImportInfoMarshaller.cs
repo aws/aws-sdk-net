@@ -45,6 +45,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SidewalkSingleStartImportInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSidewalkManufacturingSn())
             {
                 context.Writer.WritePropertyName("SidewalkManufacturingSn");

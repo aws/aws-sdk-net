@@ -45,6 +45,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DocumentAttributeBoostingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDateConfiguration())
             {
                 context.Writer.WritePropertyName("dateConfiguration");

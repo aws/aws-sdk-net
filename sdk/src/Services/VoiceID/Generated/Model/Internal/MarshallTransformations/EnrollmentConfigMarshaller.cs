@@ -45,6 +45,8 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EnrollmentConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExistingEnrollmentAction())
             {
                 context.Writer.WritePropertyName("ExistingEnrollmentAction");

@@ -45,6 +45,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScaleOutPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCpuUtilizationPercentage())
             {
                 context.Writer.WritePropertyName("cpuUtilizationPercentage");

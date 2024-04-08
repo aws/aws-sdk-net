@@ -45,6 +45,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkspaceRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBundleId())
             {
                 context.Writer.WritePropertyName("BundleId");

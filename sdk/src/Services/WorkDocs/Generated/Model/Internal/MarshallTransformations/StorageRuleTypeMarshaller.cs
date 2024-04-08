@@ -45,6 +45,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StorageRuleType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStorageAllocatedInBytes())
             {
                 context.Writer.WritePropertyName("StorageAllocatedInBytes");

@@ -45,6 +45,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AdvancedFieldSelector requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndsWith())
             {
                 context.Writer.WritePropertyName("EndsWith");

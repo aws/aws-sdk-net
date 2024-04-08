@@ -45,6 +45,8 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Item requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetItemId())
             {
                 context.Writer.WritePropertyName("itemId");

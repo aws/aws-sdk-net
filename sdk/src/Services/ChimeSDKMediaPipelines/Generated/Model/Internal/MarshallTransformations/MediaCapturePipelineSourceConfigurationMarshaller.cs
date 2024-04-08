@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MediaCapturePipelineSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChimeSdkMeetingConfiguration())
             {
                 context.Writer.WritePropertyName("ChimeSdkMeetingConfiguration");

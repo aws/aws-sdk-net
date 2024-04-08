@@ -45,6 +45,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ThrottleSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBurstLimit())
             {
                 context.Writer.WritePropertyName("burstLimit");
@@ -54,7 +56,14 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRateLimit())
             {
                 context.Writer.WritePropertyName("rateLimit");
-                context.Writer.Write(requestObject.RateLimit);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.RateLimit))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.RateLimit));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.RateLimit);
+                }
             }
 
         }

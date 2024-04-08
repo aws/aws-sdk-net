@@ -45,6 +45,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EventOrchestration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEventBridgeEnabled())
             {
                 context.Writer.WritePropertyName("eventBridgeEnabled");

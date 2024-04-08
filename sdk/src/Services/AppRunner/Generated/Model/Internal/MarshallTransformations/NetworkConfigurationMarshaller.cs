@@ -45,6 +45,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NetworkConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEgressConfiguration())
             {
                 context.Writer.WritePropertyName("EgressConfiguration");

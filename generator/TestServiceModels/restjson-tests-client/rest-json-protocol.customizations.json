@@ -10,5 +10,11 @@
                 }
             ]
         }
-    }
+    },
+  "useNullableType": {
+    "JsonMapsInputOutput": [
+      "sparseBooleanMap",
+      "sparseNumberMap"
+    ]
+  }
 }

@@ -847,7 +847,7 @@ namespace ThirdParty.Json.LitJson
         private static void WriteJson (IJsonWrapper obj, JsonWriter writer)
         {
             if (obj == null) {
-                writer.Write(null);
+                writer.Write((string)null);
                 return;
             }
 

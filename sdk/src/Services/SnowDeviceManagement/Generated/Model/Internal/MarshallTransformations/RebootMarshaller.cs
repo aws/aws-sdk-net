@@ -45,6 +45,8 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Reboot requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
         }
 
         /// <summary>

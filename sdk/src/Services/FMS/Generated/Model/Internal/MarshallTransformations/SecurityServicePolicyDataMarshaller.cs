@@ -45,6 +45,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SecurityServicePolicyData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetManagedServiceData())
             {
                 context.Writer.WritePropertyName("ManagedServiceData");

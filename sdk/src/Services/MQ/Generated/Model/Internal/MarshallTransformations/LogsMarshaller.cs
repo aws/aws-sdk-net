@@ -45,6 +45,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Logs requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAudit())
             {
                 context.Writer.WritePropertyName("audit");

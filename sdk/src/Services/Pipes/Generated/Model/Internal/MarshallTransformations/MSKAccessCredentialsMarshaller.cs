@@ -45,6 +45,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MSKAccessCredentials requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClientCertificateTlsAuth())
             {
                 context.Writer.WritePropertyName("ClientCertificateTlsAuth");

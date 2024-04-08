@@ -45,6 +45,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InferenceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximumLength())
             {
                 context.Writer.WritePropertyName("maximumLength");
@@ -65,7 +67,14 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTemperature())
             {
                 context.Writer.WritePropertyName("temperature");
-                context.Writer.Write(requestObject.Temperature);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Temperature))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Temperature));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Temperature);
+                }
             }
 
             if(requestObject.IsSetTopK())
@@ -77,7 +86,14 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTopP())
             {
                 context.Writer.WritePropertyName("topP");
-                context.Writer.Write(requestObject.TopP);
+                if(StringUtils.IsSpecialFloatValue(requestObject.TopP))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TopP));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TopP);
+                }
             }
 
         }

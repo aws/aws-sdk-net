@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchTransformInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataCapturedDestinationS3Uri())
             {
                 context.Writer.WritePropertyName("DataCapturedDestinationS3Uri");
@@ -101,7 +103,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProbabilityThresholdAttribute())
             {
                 context.Writer.WritePropertyName("ProbabilityThresholdAttribute");
-                context.Writer.Write(requestObject.ProbabilityThresholdAttribute);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ProbabilityThresholdAttribute))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ProbabilityThresholdAttribute));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ProbabilityThresholdAttribute);
+                }
             }
 
             if(requestObject.IsSetS3DataDistributionType())

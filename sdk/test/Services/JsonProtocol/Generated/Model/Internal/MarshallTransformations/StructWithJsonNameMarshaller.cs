@@ -45,9 +45,11 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StructWithJsonName requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("RenamedMember");
+                context.Writer.WritePropertyName("Value");
                 context.Writer.Write(requestObject.Value);
             }
 

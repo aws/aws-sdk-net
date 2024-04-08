@@ -45,6 +45,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public void Marshall(ReservedInstanceOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOfferingClass())
             {
                 context.Writer.WritePropertyName("offeringClass");

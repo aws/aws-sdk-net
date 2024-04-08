@@ -45,6 +45,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BackendAuthSocialProviderConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClientId())
             {
                 context.Writer.WritePropertyName("client_id");

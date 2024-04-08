@@ -45,6 +45,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReportDeliveryChannel requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFormats())
             {
                 context.Writer.WritePropertyName("Formats");

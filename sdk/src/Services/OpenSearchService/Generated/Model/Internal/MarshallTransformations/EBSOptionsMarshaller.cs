@@ -45,6 +45,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EBSOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEBSEnabled())
             {
                 context.Writer.WritePropertyName("EBSEnabled");

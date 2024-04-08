@@ -45,6 +45,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TagCostEstimationResourceCollectionFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAppBoundaryKey())
             {
                 context.Writer.WritePropertyName("AppBoundaryKey");

@@ -45,6 +45,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InferenceInputConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInferenceInputNameConfiguration())
             {
                 context.Writer.WritePropertyName("InferenceInputNameConfiguration");

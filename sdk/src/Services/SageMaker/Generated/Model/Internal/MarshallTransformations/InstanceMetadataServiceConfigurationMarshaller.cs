@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceMetadataServiceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMinimumInstanceMetadataServiceVersion())
             {
                 context.Writer.WritePropertyName("MinimumInstanceMetadataServiceVersion");

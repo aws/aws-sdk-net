@@ -45,6 +45,8 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SSMLMessageType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("LanguageCode");

@@ -58,17 +58,22 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-16";
             request.HttpMethod = "POST";
 
-            
             if (publicRequest.IsSetFoo())
             {
                 foreach(var kvp in publicRequest.Foo)
                 {
-                    request.ParameterCollection.Add(kvp.Key, kvp.Value);
+                    if(request.ParameterCollection.ContainsKey(kvp.Key))
+                       continue;
+                    else
+                       request.ParameterCollection.Add(kvp.Key, kvp.Value);
                 }
             }
-            
             if (publicRequest.IsSetQux())
+            {
+                if(request.Parameters.ContainsKey("corge"))
+                   request.Parameters.Remove("corge");
                 request.Parameters.Add("corge", StringUtils.FromString(publicRequest.Qux));
+            }
             request.ResourcePath = "/StringListMap";
             request.UseQueryString = true;
 

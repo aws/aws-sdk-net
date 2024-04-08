@@ -45,6 +45,8 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BaseScreenshot requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIgnoreCoordinates())
             {
                 context.Writer.WritePropertyName("IgnoreCoordinates");

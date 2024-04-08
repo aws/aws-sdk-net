@@ -45,6 +45,8 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IntentSummary requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCheckpointLabel())
             {
                 context.Writer.WritePropertyName("checkpointLabel");

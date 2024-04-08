@@ -45,6 +45,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VoiceConnectorSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCdrBucket())
             {
                 context.Writer.WritePropertyName("CdrBucket");

@@ -45,6 +45,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceDataContainer requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLocalDeviceResourceData())
             {
                 context.Writer.WritePropertyName("LocalDeviceResourceData");

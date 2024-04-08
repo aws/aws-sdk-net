@@ -45,6 +45,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ObdSignal requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBitMaskLength())
             {
                 context.Writer.WritePropertyName("bitMaskLength");
@@ -66,7 +68,14 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Offset))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Offset);
+                }
             }
 
             if(requestObject.IsSetPid())
@@ -84,7 +93,14 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScaling())
             {
                 context.Writer.WritePropertyName("scaling");
-                context.Writer.Write(requestObject.Scaling);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Scaling))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scaling));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Scaling);
+                }
             }
 
             if(requestObject.IsSetServiceMode())

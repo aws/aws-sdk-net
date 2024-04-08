@@ -45,6 +45,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MaximumAllowedResources requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("cpu");

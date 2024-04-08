@@ -45,6 +45,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DomainJoinInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDirectoryName())
             {
                 context.Writer.WritePropertyName("DirectoryName");

@@ -45,6 +45,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         /// <returns></returns>
         public void Marshall(DefaultRouteInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActivationState())
             {
                 context.Writer.WritePropertyName("ActivationState");

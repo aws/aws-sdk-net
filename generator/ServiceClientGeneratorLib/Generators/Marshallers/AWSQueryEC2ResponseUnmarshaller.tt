@@ -69,7 +69,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 <#
-					if (member.IsList)
+					if (member.IsMap || member.IsList)
 					{
 #>
                         var item = unmarshaller.Unmarshall(context);

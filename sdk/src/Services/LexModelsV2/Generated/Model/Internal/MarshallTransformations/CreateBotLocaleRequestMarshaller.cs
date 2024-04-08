@@ -69,6 +69,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDescription())
@@ -97,7 +98,14 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNluIntentConfidenceThreshold())
                 {
                     context.Writer.WritePropertyName("nluIntentConfidenceThreshold");
-                    context.Writer.Write(publicRequest.NluIntentConfidenceThreshold);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.NluIntentConfidenceThreshold);
+                    }
                 }
 
                 if(publicRequest.IsSetVoiceSettings())

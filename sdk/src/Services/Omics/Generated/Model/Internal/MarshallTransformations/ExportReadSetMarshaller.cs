@@ -45,6 +45,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExportReadSet requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetReadSetId())
             {
                 context.Writer.WritePropertyName("readSetId");

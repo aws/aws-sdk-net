@@ -45,6 +45,8 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateProactiveJoin requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnabledByMotion())
             {
                 context.Writer.WritePropertyName("EnabledByMotion");

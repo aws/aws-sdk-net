@@ -540,36 +540,6 @@ namespace Amazon.RestXmlProtocol
 
         #endregion
         
-        #region  HttpPayloadTraitsWithMediaType
-
-
-        /// <summary>
-        /// This example uses a <c>@mediaType</c> trait on the payload to force a custom content-type
-        /// to be serialized.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the HttpPayloadTraitsWithMediaType service method.</param>
-        /// 
-        /// <returns>The response from the HttpPayloadTraitsWithMediaType service method, as returned by RestXmlProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPayloadTraitsWithMediaType">REST API Reference for HttpPayloadTraitsWithMediaType Operation</seealso>
-        HttpPayloadTraitsWithMediaTypeResponse HttpPayloadTraitsWithMediaType(HttpPayloadTraitsWithMediaTypeRequest request);
-
-
-
-        /// <summary>
-        /// This example uses a <c>@mediaType</c> trait on the payload to force a custom content-type
-        /// to be serialized.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the HttpPayloadTraitsWithMediaType service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the HttpPayloadTraitsWithMediaType service method, as returned by RestXmlProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPayloadTraitsWithMediaType">REST API Reference for HttpPayloadTraitsWithMediaType Operation</seealso>
-        Task<HttpPayloadTraitsWithMediaTypeResponse> HttpPayloadTraitsWithMediaTypeAsync(HttpPayloadTraitsWithMediaTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
         #region  HttpPayloadWithMemberXmlName
 
 

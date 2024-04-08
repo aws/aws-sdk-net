@@ -45,6 +45,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UserProficiency requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributeName())
             {
                 context.Writer.WritePropertyName("AttributeName");
@@ -60,7 +62,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLevel())
             {
                 context.Writer.WritePropertyName("Level");
-                context.Writer.Write(requestObject.Level);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Level))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Level));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Level);
+                }
             }
 
         }

@@ -42,7 +42,6 @@ namespace Amazon.RestJsonProtocol.Model
         private List<int> _integerList = new List<int>();
         private List<int> _intEnumList = new List<int>();
         private List<List<string>> _nestedStringList = new List<List<string>>();
-        private List<string> _sparseStringList = new List<string>();
         private List<string> _stringList = new List<string>();
         private List<string> _stringSet = new List<string>();
         private List<StructureListMember> _structureList = new List<StructureListMember>();
@@ -121,21 +120,6 @@ namespace Amazon.RestJsonProtocol.Model
         internal bool IsSetNestedStringList()
         {
             return this._nestedStringList != null && this._nestedStringList.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SparseStringList.
-        /// </summary>
-        public List<string> SparseStringList
-        {
-            get { return this._sparseStringList; }
-            set { this._sparseStringList = value; }
-        }
-
-        // Check to see if SparseStringList property is set
-        internal bool IsSetSparseStringList()
-        {
-            return this._sparseStringList != null && this._sparseStringList.Count > 0; 
         }
 
         /// <summary>

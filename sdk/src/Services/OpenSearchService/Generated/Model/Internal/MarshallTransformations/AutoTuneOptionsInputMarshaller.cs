@@ -45,6 +45,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoTuneOptionsInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDesiredState())
             {
                 context.Writer.WritePropertyName("DesiredState");

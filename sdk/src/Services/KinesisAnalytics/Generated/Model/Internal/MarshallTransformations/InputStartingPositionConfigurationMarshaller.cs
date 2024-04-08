@@ -45,6 +45,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputStartingPositionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputStartingPosition())
             {
                 context.Writer.WritePropertyName("InputStartingPosition");

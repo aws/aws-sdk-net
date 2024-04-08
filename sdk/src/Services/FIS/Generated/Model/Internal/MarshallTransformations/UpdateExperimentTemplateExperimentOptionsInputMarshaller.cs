@@ -45,6 +45,8 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateExperimentTemplateExperimentOptionsInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEmptyTargetResolutionMode())
             {
                 context.Writer.WritePropertyName("emptyTargetResolutionMode");

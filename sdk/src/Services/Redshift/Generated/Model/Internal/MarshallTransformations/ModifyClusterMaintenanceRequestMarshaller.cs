@@ -72,7 +72,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDeferMaintenanceEndTime())
                 {
-                    request.Parameters.Add("DeferMaintenanceEndTime", StringUtils.FromDateTimeToISO8601(publicRequest.DeferMaintenanceEndTime));
+                    request.Parameters.Add("DeferMaintenanceEndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DeferMaintenanceEndTime));
                 }
                 if(publicRequest.IsSetDeferMaintenanceIdentifier())
                 {
@@ -80,7 +80,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDeferMaintenanceStartTime())
                 {
-                    request.Parameters.Add("DeferMaintenanceStartTime", StringUtils.FromDateTimeToISO8601(publicRequest.DeferMaintenanceStartTime));
+                    request.Parameters.Add("DeferMaintenanceStartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DeferMaintenanceStartTime));
                 }
             }
             return request;

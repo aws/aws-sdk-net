@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDayOfWeek())
             {
                 context.Writer.WritePropertyName("DayOfWeek");

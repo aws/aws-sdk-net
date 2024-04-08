@@ -45,6 +45,8 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NewTransitVirtualInterface requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddressFamily())
             {
                 context.Writer.WritePropertyName("addressFamily");

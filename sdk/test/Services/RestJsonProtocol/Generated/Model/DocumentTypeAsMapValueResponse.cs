@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the json-rpc-10-2020-07-14.normal.json service model.
+ * Do not modify this file. This file is generated from the rest-json-protocol-2019-12-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -26,30 +26,28 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
-namespace Amazon.JSONRPC10.Model
+namespace Amazon.RestJsonProtocol.Model
 {
     /// <summary>
-    /// Container for the parameters to the OperationWithNestedStructure operation.
-    /// 
+    /// This is the response object from the DocumentTypeAsMapValue operation.
     /// </summary>
-    public partial class OperationWithNestedStructureRequest : AmazonJSONRPC10Request
+    public partial class DocumentTypeAsMapValueResponse : AmazonWebServiceResponse
     {
-        private TopLevel _topLevel;
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _docValuedMap = new Dictionary<string, Amazon.Runtime.Documents.Document>();
 
         /// <summary>
-        /// Gets and sets the property TopLevel.
+        /// Gets and sets the property DocValuedMap.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public TopLevel TopLevel
+        public Dictionary<string, Amazon.Runtime.Documents.Document> DocValuedMap
         {
-            get { return this._topLevel; }
-            set { this._topLevel = value; }
+            get { return this._docValuedMap; }
+            set { this._docValuedMap = value; }
         }
 
-        // Check to see if TopLevel property is set
-        internal bool IsSetTopLevel()
+        // Check to see if DocValuedMap property is set
+        internal bool IsSetDocValuedMap()
         {
-            return this._topLevel != null;
+            return this._docValuedMap != null && this._docValuedMap.Count > 0; 
         }
 
     }

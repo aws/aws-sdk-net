@@ -45,6 +45,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FirewallPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPolicyVariables())
             {
                 context.Writer.WritePropertyName("PolicyVariables");

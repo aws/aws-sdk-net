@@ -45,6 +45,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TargetTrackingScalingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMetricType())
             {
                 context.Writer.WritePropertyName("metricType");
@@ -54,7 +56,14 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetValue())
             {
                 context.Writer.WritePropertyName("targetValue");
-                context.Writer.Write(requestObject.TargetValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TargetValue);
+                }
             }
 
         }

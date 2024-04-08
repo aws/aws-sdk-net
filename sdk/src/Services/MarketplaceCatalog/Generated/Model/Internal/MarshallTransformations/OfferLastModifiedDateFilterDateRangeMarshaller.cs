@@ -45,6 +45,8 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OfferLastModifiedDateFilterDateRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAfterValue())
             {
                 context.Writer.WritePropertyName("AfterValue");

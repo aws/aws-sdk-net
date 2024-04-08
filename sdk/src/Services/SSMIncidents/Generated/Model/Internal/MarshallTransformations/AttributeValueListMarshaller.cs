@@ -45,6 +45,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AttributeValueList requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIntegerValues())
             {
                 context.Writer.WritePropertyName("integerValues");

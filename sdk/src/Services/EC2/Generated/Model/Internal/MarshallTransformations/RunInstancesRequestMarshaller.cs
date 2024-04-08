@@ -272,7 +272,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.InstanceMarketOptions.SpotOptions.IsSetValidUntilUtc())
                         {
-                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTimeToISO8601(publicRequest.InstanceMarketOptions.SpotOptions.ValidUntilUtc));
+                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.InstanceMarketOptions.SpotOptions.ValidUntilUtc));
                         }
                     }
                 }

@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FunnelChartFieldWells requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFunnelChartAggregatedFieldWells())
             {
                 context.Writer.WritePropertyName("FunnelChartAggregatedFieldWells");

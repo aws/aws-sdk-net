@@ -45,6 +45,8 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateRowData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCellsToUpdate())
             {
                 context.Writer.WritePropertyName("cellsToUpdate");

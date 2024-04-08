@@ -45,6 +45,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ControlScope requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComplianceResourceIds())
             {
                 context.Writer.WritePropertyName("ComplianceResourceIds");

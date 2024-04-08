@@ -78,10 +78,10 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 request.Parameters.Add("requestedBy", StringUtils.FromString(publicRequest.RequestedBy));
             
             if (publicRequest.IsSetSignatureExpiresAfter())
-                request.Parameters.Add("signatureExpiresAfter", StringUtils.FromDateTimeToISO8601(publicRequest.SignatureExpiresAfter));
+                request.Parameters.Add("signatureExpiresAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.SignatureExpiresAfter));
             
             if (publicRequest.IsSetSignatureExpiresBefore())
-                request.Parameters.Add("signatureExpiresBefore", StringUtils.FromDateTimeToISO8601(publicRequest.SignatureExpiresBefore));
+                request.Parameters.Add("signatureExpiresBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.SignatureExpiresBefore));
             
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));

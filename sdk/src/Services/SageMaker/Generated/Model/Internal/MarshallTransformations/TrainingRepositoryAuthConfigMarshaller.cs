@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TrainingRepositoryAuthConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTrainingRepositoryCredentialsProviderArn())
             {
                 context.Writer.WritePropertyName("TrainingRepositoryCredentialsProviderArn");

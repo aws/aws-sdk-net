@@ -45,6 +45,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Prompt requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxAttempts())
             {
                 context.Writer.WritePropertyName("maxAttempts");

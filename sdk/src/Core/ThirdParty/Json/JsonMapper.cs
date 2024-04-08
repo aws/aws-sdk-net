@@ -779,7 +779,7 @@ namespace ThirdParty.Json.LitJson
                                    obj.GetType ()));
 
             if (obj == null) {
-                writer.Write (null);
+                writer.Write ((string)null);
                 return;
             }
 

@@ -65,6 +65,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetMLModelId())
@@ -82,7 +83,14 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScoreThreshold())
                 {
                     context.Writer.WritePropertyName("ScoreThreshold");
-                    context.Writer.Write(publicRequest.ScoreThreshold);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.ScoreThreshold))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ScoreThreshold));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.ScoreThreshold);
+                    }
                 }
 
                 writer.WriteObjectEnd();

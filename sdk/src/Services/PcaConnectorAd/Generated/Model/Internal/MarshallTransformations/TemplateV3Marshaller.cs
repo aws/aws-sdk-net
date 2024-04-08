@@ -45,6 +45,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TemplateV3 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCertificateValidity())
             {
                 context.Writer.WritePropertyName("CertificateValidity");

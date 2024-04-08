@@ -45,6 +45,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DiscoveryServerConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetServerHostname())
             {
                 context.Writer.WritePropertyName("ServerHostname");

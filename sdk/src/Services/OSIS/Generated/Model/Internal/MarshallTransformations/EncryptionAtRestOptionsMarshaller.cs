@@ -45,6 +45,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncryptionAtRestOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("KmsKeyArn");

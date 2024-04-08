@@ -45,6 +45,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeregistrationPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeleteResources())
             {
                 context.Writer.WritePropertyName("deleteResources");

@@ -45,6 +45,8 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PSTNDialIn requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCountryCode())
             {
                 context.Writer.WritePropertyName("CountryCode");

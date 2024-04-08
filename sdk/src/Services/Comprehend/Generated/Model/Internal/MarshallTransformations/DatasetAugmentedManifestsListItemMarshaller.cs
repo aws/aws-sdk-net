@@ -45,6 +45,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatasetAugmentedManifestsListItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnnotationDataS3Uri())
             {
                 context.Writer.WritePropertyName("AnnotationDataS3Uri");

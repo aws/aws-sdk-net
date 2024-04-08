@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceConfigForUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKeepAlivePeriodInSeconds())
             {
                 context.Writer.WritePropertyName("KeepAlivePeriodInSeconds");

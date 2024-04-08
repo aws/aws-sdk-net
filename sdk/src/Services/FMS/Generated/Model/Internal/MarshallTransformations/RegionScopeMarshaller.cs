@@ -45,6 +45,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RegionScope requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllRegionsEnabled())
             {
                 context.Writer.WritePropertyName("AllRegionsEnabled");

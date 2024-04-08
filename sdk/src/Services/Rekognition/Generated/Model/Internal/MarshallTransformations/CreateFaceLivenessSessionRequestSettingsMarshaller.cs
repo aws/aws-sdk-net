@@ -45,6 +45,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateFaceLivenessSessionRequestSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuditImagesLimit())
             {
                 context.Writer.WritePropertyName("AuditImagesLimit");

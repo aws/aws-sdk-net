@@ -45,6 +45,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KinesisStreamingSourceOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddIdleTimeBetweenReads())
             {
                 context.Writer.WritePropertyName("AddIdleTimeBetweenReads");
@@ -156,7 +158,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartingTimestamp())
             {
                 context.Writer.WritePropertyName("StartingTimestamp");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.StartingTimestamp));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartingTimestamp));
             }
 
             if(requestObject.IsSetStreamArn())

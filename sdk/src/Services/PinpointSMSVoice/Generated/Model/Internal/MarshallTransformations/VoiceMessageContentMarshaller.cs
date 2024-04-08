@@ -45,6 +45,8 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VoiceMessageContent requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCallInstructionsMessage())
             {
                 context.Writer.WritePropertyName("CallInstructionsMessage");

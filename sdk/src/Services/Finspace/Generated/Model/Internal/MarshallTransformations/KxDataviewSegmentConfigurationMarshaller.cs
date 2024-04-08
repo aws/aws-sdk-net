@@ -45,6 +45,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KxDataviewSegmentConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDbPaths())
             {
                 context.Writer.WritePropertyName("dbPaths");

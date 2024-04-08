@@ -45,6 +45,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ClientProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLogUploadEnabled())
             {
                 context.Writer.WritePropertyName("LogUploadEnabled");

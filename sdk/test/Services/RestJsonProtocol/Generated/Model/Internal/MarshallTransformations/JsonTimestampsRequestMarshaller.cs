@@ -63,18 +63,19 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDateTime())
                 {
                     context.Writer.WritePropertyName("dateTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.DateTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTime));
                 }
 
                 if(publicRequest.IsSetDateTimeOnTarget())
                 {
                     context.Writer.WritePropertyName("dateTimeOnTarget");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.DateTimeOnTarget));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTimeOnTarget));
                 }
 
                 if(publicRequest.IsSetEpochSeconds())

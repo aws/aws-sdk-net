@@ -45,6 +45,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StringFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");

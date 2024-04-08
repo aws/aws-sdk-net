@@ -45,6 +45,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomerArtifactPaths requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAndroidPaths())
             {
                 context.Writer.WritePropertyName("androidPaths");

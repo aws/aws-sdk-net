@@ -54,13 +54,13 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("", targetDepth))
+                    if (context.TestExpression("foo", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Foo = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("/", targetDepth))
+                    if (context.TestExpression("values/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);

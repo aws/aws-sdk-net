@@ -45,6 +45,8 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReplicaRegionType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");

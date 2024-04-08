@@ -45,6 +45,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCognitoUserPoolConfiguration())
             {
                 context.Writer.WritePropertyName("cognitoUserPoolConfiguration");

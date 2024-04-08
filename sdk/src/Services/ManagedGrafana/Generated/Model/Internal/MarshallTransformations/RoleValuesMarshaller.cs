@@ -45,6 +45,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RoleValues requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdmin())
             {
                 context.Writer.WritePropertyName("admin");

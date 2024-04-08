@@ -45,6 +45,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IosImportClientBrandingAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetForgotPasswordLink())
             {
                 context.Writer.WritePropertyName("ForgotPasswordLink");

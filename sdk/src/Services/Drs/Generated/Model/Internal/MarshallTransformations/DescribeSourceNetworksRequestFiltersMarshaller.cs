@@ -45,6 +45,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DescribeSourceNetworksRequestFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOriginAccountID())
             {
                 context.Writer.WritePropertyName("originAccountID");

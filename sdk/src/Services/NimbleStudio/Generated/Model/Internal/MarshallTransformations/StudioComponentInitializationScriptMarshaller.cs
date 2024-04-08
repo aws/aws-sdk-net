@@ -45,6 +45,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StudioComponentInitializationScript requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLaunchProfileProtocolVersion())
             {
                 context.Writer.WritePropertyName("launchProfileProtocolVersion");

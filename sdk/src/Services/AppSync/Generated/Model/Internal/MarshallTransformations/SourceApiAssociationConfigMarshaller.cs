@@ -45,6 +45,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourceApiAssociationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMergeType())
             {
                 context.Writer.WritePropertyName("mergeType");

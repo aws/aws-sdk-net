@@ -45,6 +45,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoggingConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApplicationLogLevel())
             {
                 context.Writer.WritePropertyName("ApplicationLogLevel");

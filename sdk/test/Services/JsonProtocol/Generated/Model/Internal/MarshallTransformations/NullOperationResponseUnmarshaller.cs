@@ -51,18 +51,6 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("sparseStringList", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.SparseStringList = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sparseStringMap", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.SparseStringMap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("string", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

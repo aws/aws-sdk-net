@@ -45,6 +45,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BackendAPIAppSyncAuthSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCognitoUserPoolId())
             {
                 context.Writer.WritePropertyName("cognitoUserPoolId");
@@ -60,7 +62,14 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpirationTime())
             {
                 context.Writer.WritePropertyName("expirationTime");
-                context.Writer.Write(requestObject.ExpirationTime);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ExpirationTime))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ExpirationTime));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ExpirationTime);
+                }
             }
 
             if(requestObject.IsSetOpenIDAuthTTL())

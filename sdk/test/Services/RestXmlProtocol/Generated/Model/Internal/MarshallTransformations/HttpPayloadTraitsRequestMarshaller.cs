@@ -63,6 +63,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             request.ResourcePath = "/HttpPayloadTraits";
 
+            request.ContentStream = publicRequest.Blob;
+            request.Headers["Content-Type"] = "application/octet-stream";
 
             return request;
         }

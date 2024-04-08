@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsRedshiftClusterDeferredMaintenanceWindow requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeferMaintenanceEndTime())
             {
                 context.Writer.WritePropertyName("DeferMaintenanceEndTime");

@@ -45,6 +45,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InsightsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInsightsEnabled())
             {
                 context.Writer.WritePropertyName("InsightsEnabled");

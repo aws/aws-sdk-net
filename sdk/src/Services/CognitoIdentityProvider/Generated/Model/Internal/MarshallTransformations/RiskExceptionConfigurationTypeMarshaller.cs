@@ -45,6 +45,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RiskExceptionConfigurationType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBlockedIPRangeList())
             {
                 context.Writer.WritePropertyName("BlockedIPRangeList");

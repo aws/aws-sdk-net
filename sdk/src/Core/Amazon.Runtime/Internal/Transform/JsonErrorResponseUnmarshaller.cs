@@ -65,12 +65,7 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         // The error type can contain additional information, with ":" as a delimiter
                         // We are only interested in the initial part which is the error type
-                        var index = errorType.IndexOf(":", StringComparison.Ordinal);
-                        if(index != -1)
-                        {
-                            errorType = errorType.Substring(0, index);
-                        }
-                        type = errorType;
+                        type = ParseType(errorType);
                     }
                 }
 
@@ -92,8 +87,7 @@ namespace Amazon.Runtime.Internal.Transform
                 }
 
                 // strip extra data from type, leaving only the exception type name
-                type = type == null ? null : type.Substring(type.LastIndexOf("#", StringComparison.Ordinal) + 1);
-
+                type = type == null ? null : ParseType(type.Substring(type.LastIndexOf("#", StringComparison.Ordinal) + 1));
                 // if no message was found create a generic message
                 if (string.IsNullOrEmpty(message))
                 {
@@ -131,6 +125,19 @@ namespace Amazon.Runtime.Internal.Transform
             }
             
             return response;
+        }
+
+        // Parses the __type key returned in an error response by taking the first index of ":" and returning everything up to that index if it exists
+        // see https://smithy.io/2.0/aws/protocols/aws-json-1_1-protocol.html#operation-error-serialization
+        private static string ParseType(string type)
+        {
+            var index = type.IndexOf(":", StringComparison.Ordinal);
+            if (index != -1)
+            {
+                type = type.Substring(0, index);
+            }
+            return type;
+
         }
 
         private static void GetValuesFromJsonIfPossible(JsonUnmarshallerContext context, out string type, out string message, out string code)

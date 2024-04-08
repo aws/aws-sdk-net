@@ -45,6 +45,8 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BlockchainInstant requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTime())
             {
                 context.Writer.WritePropertyName("time");

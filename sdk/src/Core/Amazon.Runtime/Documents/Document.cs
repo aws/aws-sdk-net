@@ -440,7 +440,7 @@ namespace Amazon.Runtime.Documents
                 case JsonType.String:
                     return new Document(jsonData.GetString());
                 case JsonType.Array:
-                    return new Document(jsonData.Values.OfType<object>().Select(FromObject).ToArray());
+                    return new Document(jsonData.Cast<JsonData>().Select(FromObject).ToArray());
                 case JsonType.Object:
                     var dictionary = new Dictionary<string, Document>();
                     Copy(jsonData, dictionary);

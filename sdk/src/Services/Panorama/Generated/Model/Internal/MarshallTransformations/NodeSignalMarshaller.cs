@@ -45,6 +45,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NodeSignal requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNodeInstanceId())
             {
                 context.Writer.WritePropertyName("NodeInstanceId");

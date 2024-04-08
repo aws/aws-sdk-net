@@ -45,6 +45,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AllowedPublishers requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSigningProfileVersionArns())
             {
                 context.Writer.WritePropertyName("SigningProfileVersionArns");

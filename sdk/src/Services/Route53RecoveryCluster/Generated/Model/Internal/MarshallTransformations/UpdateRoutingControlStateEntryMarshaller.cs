@@ -45,6 +45,8 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateRoutingControlStateEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRoutingControlArn())
             {
                 context.Writer.WritePropertyName("RoutingControlArn");

@@ -45,10 +45,19 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomLineItemFlatChargeDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChargeValue())
             {
                 context.Writer.WritePropertyName("ChargeValue");
-                context.Writer.Write(requestObject.ChargeValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ChargeValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ChargeValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ChargeValue);
+                }
             }
 
         }

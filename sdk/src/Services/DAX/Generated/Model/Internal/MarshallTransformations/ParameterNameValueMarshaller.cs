@@ -45,6 +45,8 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ParameterNameValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetParameterName())
             {
                 context.Writer.WritePropertyName("ParameterName");

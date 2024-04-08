@@ -45,6 +45,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGlueDataSource())
             {
                 context.Writer.WritePropertyName("glueDataSource");

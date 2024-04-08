@@ -45,6 +45,8 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReportStatus requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLastDelivery())
             {
                 context.Writer.WritePropertyName("lastDelivery");

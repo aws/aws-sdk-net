@@ -34,6 +34,59 @@ namespace ServiceClientGenerator
                 return docNode.ToString();
             }
         }
+
+        /// <summary>
+        /// If defined, specifies the namespace uri for the xml constructed
+        /// </summary>
+        public string XmlNamespace
+        {
+            get
+            {
+                var namespaceData = data[ServiceModel.XmlNamespaceKey];
+                if (namespaceData == null)
+                {
+                    return string.Empty;
+                }
+
+                //"xmlNamespace": {
+                //    "prefix": "baz",
+                //    "uri": "http://foo.com"
+                //}                
+                if (namespaceData.IsObject)
+                {
+                    return namespaceData[ServiceModel.XmlNamespaceUriKey]?.ToString() ?? string.Empty;
+                }
+
+                //"xmlNamespace": "http://foo.com"
+                return (string)namespaceData;
+            }
+        }
+
+        /// <summary>
+        /// If defined, specifies the namespace prefix the xml constructed
+        /// </summary>
+        public string XmlNamespacePrefix
+        {
+            get
+            {
+                var namespaceData = data[ServiceModel.XmlNamespaceKey];
+                if (namespaceData == null)
+                {
+                    return string.Empty;
+                }
+
+                //"xmlNamespace": {
+                //    "prefix": "baz",
+                //    "uri": "http://foo.com"
+                //}                
+                if (namespaceData.IsObject)
+                {
+                    return namespaceData[ServiceModel.XmlNamespacePrefixKey]?.ToString() ?? string.Empty;
+                }
+
+                return string.Empty;
+            }
+        }
     }
 
     #endregion
@@ -68,24 +121,6 @@ namespace ServiceClientGenerator
                     return string.Empty;
 
                 return node.ToString();
-            }
-        }
-
-        /// <summary>
-        /// The namespace for the xml
-        /// </summary>
-        public string XmlNamespace
-        {
-            get
-            {
-                return data[ServiceModel.XmlNamespaceKey] == null ? string.Empty :
-                    (string)data[ServiceModel.XmlNamespaceKey][ServiceModel.XmlNamespaceUriKey];
-
-                //var node = this.data[ServiceModel.XmlNamespaceKey];
-                //if (node == null)
-                //    return string.Empty;
-
-                //return node.ToString();
             }
         }
     }

@@ -61,14 +61,14 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("XmlListsRequest", "");    
+                xmlWriter.WriteStartElement("XmlListsRequest", "");
                 var publicRequestBooleanList = publicRequest.BooleanList;
                 if (publicRequestBooleanList != null && publicRequestBooleanList.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("booleanList", "");
+                {
+                    xmlWriter.WriteStartElement("booleanList");
                     foreach (var publicRequestBooleanListValue in publicRequestBooleanList) 
                     {
-                        xmlWriter.WriteStartElement("member", "");
+                        xmlWriter.WriteStartElement("member");
                         xmlWriter.WriteValue(publicRequestBooleanListValue);
                         xmlWriter.WriteEndElement();
                     }            
@@ -76,11 +76,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestEnumList = publicRequest.EnumList;
                 if (publicRequestEnumList != null && publicRequestEnumList.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("enumList", "");
+                {
+                    xmlWriter.WriteStartElement("enumList");
                     foreach (var publicRequestEnumListValue in publicRequestEnumList) 
                     {
-                        xmlWriter.WriteStartElement("member", "");
+                        xmlWriter.WriteStartElement("member");
                         xmlWriter.WriteValue(publicRequestEnumListValue);
                         xmlWriter.WriteEndElement();
                     }            
@@ -88,11 +88,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestFlattenedList = publicRequest.FlattenedList;
                 if (publicRequestFlattenedList != null && publicRequestFlattenedList.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("flattenedList", "");
+                {
+                    xmlWriter.WriteStartElement("flattenedList");
                     foreach (var publicRequestFlattenedListValue in publicRequestFlattenedList) 
                     {
-                        xmlWriter.WriteStartElement("item", "");
+                        xmlWriter.WriteStartElement("item");
                         xmlWriter.WriteValue(publicRequestFlattenedListValue);
                         xmlWriter.WriteEndElement();
                     }            
@@ -100,11 +100,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestFlattenedList2 = publicRequest.FlattenedList2;
                 if (publicRequestFlattenedList2 != null && publicRequestFlattenedList2.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("customName", "");
+                {
+                    xmlWriter.WriteStartElement("customName");
                     foreach (var publicRequestFlattenedList2Value in publicRequestFlattenedList2) 
                     {
-                        xmlWriter.WriteStartElement("item", "");
+                        xmlWriter.WriteStartElement("item");
                         xmlWriter.WriteValue(publicRequestFlattenedList2Value);
                         xmlWriter.WriteEndElement();
                     }            
@@ -112,11 +112,12 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestFlattenedListWithMemberNamespace = publicRequest.FlattenedListWithMemberNamespace;
                 if (publicRequestFlattenedListWithMemberNamespace != null && publicRequestFlattenedListWithMemberNamespace.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("flattenedListWithMemberNamespace", "");
+                {
+                    xmlWriter.WriteStartElement("flattenedListWithMemberNamespace");
                     foreach (var publicRequestFlattenedListWithMemberNamespaceValue in publicRequestFlattenedListWithMemberNamespace) 
                     {
-                        xmlWriter.WriteStartElement("", "");
+                        xmlWriter.WriteStartElement("member", "https://xml-member.example.com");
+
                         xmlWriter.WriteValue(publicRequestFlattenedListWithMemberNamespaceValue);
                         xmlWriter.WriteEndElement();
                     }            
@@ -124,11 +125,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestFlattenedListWithNamespace = publicRequest.FlattenedListWithNamespace;
                 if (publicRequestFlattenedListWithNamespace != null && publicRequestFlattenedListWithNamespace.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("flattenedListWithNamespace", "");
+                {
+                    xmlWriter.WriteStartElement("flattenedListWithNamespace");
                     foreach (var publicRequestFlattenedListWithNamespaceValue in publicRequestFlattenedListWithNamespace) 
                     {
-                        xmlWriter.WriteStartElement("member", "");
+                        xmlWriter.WriteStartElement("member");
                         xmlWriter.WriteValue(publicRequestFlattenedListWithNamespaceValue);
                         xmlWriter.WriteEndElement();
                     }            
@@ -136,19 +137,18 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestFlattenedStructureList = publicRequest.FlattenedStructureList;
                 if (publicRequestFlattenedStructureList != null && publicRequestFlattenedStructureList.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("flattenedStructureList", "");
+                {
+                    xmlWriter.WriteStartElement("flattenedStructureList");
                     foreach (var publicRequestFlattenedStructureListValue in publicRequestFlattenedStructureList) 
                     {
-                
-                    if (publicRequestFlattenedStructureListValue != null) 
+                    if (publicRequestFlattenedStructureListValue != null)
                     {
-                        xmlWriter.WriteStartElement("item", "");            
+                        xmlWriter.WriteStartElement("item");
                         if(publicRequestFlattenedStructureListValue.IsSetA())
-                            xmlWriter.WriteElementString("value", "", StringUtils.FromString(publicRequestFlattenedStructureListValue.A));                 
+                            xmlWriter.WriteElementString("value", StringUtils.FromString(publicRequestFlattenedStructureListValue.A));                 
 
                         if(publicRequestFlattenedStructureListValue.IsSetB())
-                            xmlWriter.WriteElementString("other", "", StringUtils.FromString(publicRequestFlattenedStructureListValue.B));                 
+                            xmlWriter.WriteElementString("other", StringUtils.FromString(publicRequestFlattenedStructureListValue.B));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -157,11 +157,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestIntegerList = publicRequest.IntegerList;
                 if (publicRequestIntegerList != null && publicRequestIntegerList.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("integerList", "");
+                {
+                    xmlWriter.WriteStartElement("integerList");
                     foreach (var publicRequestIntegerListValue in publicRequestIntegerList) 
                     {
-                        xmlWriter.WriteStartElement("member", "");
+                        xmlWriter.WriteStartElement("member");
                         xmlWriter.WriteValue(publicRequestIntegerListValue);
                         xmlWriter.WriteEndElement();
                     }            
@@ -169,11 +169,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestIntEnumList = publicRequest.IntEnumList;
                 if (publicRequestIntEnumList != null && publicRequestIntEnumList.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("intEnumList", "");
+                {
+                    xmlWriter.WriteStartElement("intEnumList");
                     foreach (var publicRequestIntEnumListValue in publicRequestIntEnumList) 
                     {
-                        xmlWriter.WriteStartElement("member", "");
+                        xmlWriter.WriteStartElement("member");
                         xmlWriter.WriteValue(publicRequestIntEnumListValue);
                         xmlWriter.WriteEndElement();
                     }            
@@ -181,11 +181,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestNestedStringList = publicRequest.NestedStringList;
                 if (publicRequestNestedStringList != null && publicRequestNestedStringList.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("nestedStringList", "");
+                {
+                    xmlWriter.WriteStartElement("nestedStringList");
                     foreach (var publicRequestNestedStringListValue in publicRequestNestedStringList) 
                     {
-                        xmlWriter.WriteStartElement("member", "");
+                        xmlWriter.WriteStartElement("member");
                         xmlWriter.WriteValue(publicRequestNestedStringListValue);
                         xmlWriter.WriteEndElement();
                     }            
@@ -193,11 +193,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestRenamedListMembers = publicRequest.RenamedListMembers;
                 if (publicRequestRenamedListMembers != null && publicRequestRenamedListMembers.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("renamed", "");
+                {
+                    xmlWriter.WriteStartElement("renamed");
                     foreach (var publicRequestRenamedListMembersValue in publicRequestRenamedListMembers) 
                     {
-                        xmlWriter.WriteStartElement("item", "");
+                        xmlWriter.WriteStartElement("item");
                         xmlWriter.WriteValue(publicRequestRenamedListMembersValue);
                         xmlWriter.WriteEndElement();
                     }            
@@ -205,11 +205,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestStringList = publicRequest.StringList;
                 if (publicRequestStringList != null && publicRequestStringList.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("stringList", "");
+                {
+                    xmlWriter.WriteStartElement("stringList");
                     foreach (var publicRequestStringListValue in publicRequestStringList) 
                     {
-                        xmlWriter.WriteStartElement("member", "");
+                        xmlWriter.WriteStartElement("member");
                         xmlWriter.WriteValue(publicRequestStringListValue);
                         xmlWriter.WriteEndElement();
                     }            
@@ -217,11 +217,11 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestStringSet = publicRequest.StringSet;
                 if (publicRequestStringSet != null && publicRequestStringSet.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("stringSet", "");
+                {
+                    xmlWriter.WriteStartElement("stringSet");
                     foreach (var publicRequestStringSetValue in publicRequestStringSet) 
                     {
-                        xmlWriter.WriteStartElement("member", "");
+                        xmlWriter.WriteStartElement("member");
                         xmlWriter.WriteValue(publicRequestStringSetValue);
                         xmlWriter.WriteEndElement();
                     }            
@@ -229,19 +229,18 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestStructureList = publicRequest.StructureList;
                 if (publicRequestStructureList != null && publicRequestStructureList.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("myStructureList", "");
+                {
+                    xmlWriter.WriteStartElement("myStructureList");
                     foreach (var publicRequestStructureListValue in publicRequestStructureList) 
                     {
-                
-                    if (publicRequestStructureListValue != null) 
+                    if (publicRequestStructureListValue != null)
                     {
-                        xmlWriter.WriteStartElement("item", "");            
+                        xmlWriter.WriteStartElement("item");
                         if(publicRequestStructureListValue.IsSetA())
-                            xmlWriter.WriteElementString("value", "", StringUtils.FromString(publicRequestStructureListValue.A));                 
+                            xmlWriter.WriteElementString("value", StringUtils.FromString(publicRequestStructureListValue.A));                 
 
                         if(publicRequestStructureListValue.IsSetB())
-                            xmlWriter.WriteElementString("other", "", StringUtils.FromString(publicRequestStructureListValue.B));                 
+                            xmlWriter.WriteElementString("other", StringUtils.FromString(publicRequestStructureListValue.B));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -250,12 +249,12 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 }
                 var publicRequestTimestampList = publicRequest.TimestampList;
                 if (publicRequestTimestampList != null && publicRequestTimestampList.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("timestampList", "");
+                {
+                    xmlWriter.WriteStartElement("timestampList");
                     foreach (var publicRequestTimestampListValue in publicRequestTimestampList) 
                     {
-                        xmlWriter.WriteStartElement("member", "");
-                        xmlWriter.WriteValue(StringUtils.FromDateTimeToISO8601(publicRequestTimestampListValue));
+                        xmlWriter.WriteStartElement("member");
+                        xmlWriter.WriteValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestTimestampListValue));
                         xmlWriter.WriteEndElement();
                     }            
                     xmlWriter.WriteEndElement();            

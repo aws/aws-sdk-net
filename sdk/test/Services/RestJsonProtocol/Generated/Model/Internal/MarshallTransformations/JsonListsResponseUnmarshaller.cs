@@ -81,12 +81,6 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                     response.NestedStringList = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sparseStringList", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.SparseStringList = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("stringList", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

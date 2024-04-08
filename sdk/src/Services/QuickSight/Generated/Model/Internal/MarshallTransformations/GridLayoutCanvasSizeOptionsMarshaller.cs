@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GridLayoutCanvasSizeOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetScreenCanvasSizeOptions())
             {
                 context.Writer.WritePropertyName("ScreenCanvasSizeOptions");

@@ -45,6 +45,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StandbyWorkspace requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataReplication())
             {
                 context.Writer.WritePropertyName("DataReplication");

@@ -45,6 +45,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DescribeRecoveryInstancesRequestFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRecoveryInstanceIDs())
             {
                 context.Writer.WritePropertyName("recoveryInstanceIDs");

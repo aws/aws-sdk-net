@@ -69,6 +69,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCarModeOptions())
@@ -107,7 +108,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDepartureTime())
                 {
                     context.Writer.WritePropertyName("DepartureTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.DepartureTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DepartureTime));
                 }
 
                 if(publicRequest.IsSetDestinationPositions())

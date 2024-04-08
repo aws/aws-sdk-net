@@ -45,6 +45,8 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceTag requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetResourceTagKey())
             {
                 context.Writer.WritePropertyName("ResourceTagKey");

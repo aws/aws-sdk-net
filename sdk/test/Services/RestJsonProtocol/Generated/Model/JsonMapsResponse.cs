@@ -38,11 +38,6 @@ namespace Amazon.RestJsonProtocol.Model
         private Dictionary<string, List<string>> _denseSetMap = new Dictionary<string, List<string>>();
         private Dictionary<string, string> _denseStringMap = new Dictionary<string, string>();
         private Dictionary<string, GreetingStruct> _denseStructMap = new Dictionary<string, GreetingStruct>();
-        private Dictionary<string, bool> _sparseBooleanMap = new Dictionary<string, bool>();
-        private Dictionary<string, int> _sparseNumberMap = new Dictionary<string, int>();
-        private Dictionary<string, List<string>> _sparseSetMap = new Dictionary<string, List<string>>();
-        private Dictionary<string, string> _sparseStringMap = new Dictionary<string, string>();
-        private Dictionary<string, GreetingStruct> _sparseStructMap = new Dictionary<string, GreetingStruct>();
 
         /// <summary>
         /// Gets and sets the property DenseBooleanMap.
@@ -117,81 +112,6 @@ namespace Amazon.RestJsonProtocol.Model
         internal bool IsSetDenseStructMap()
         {
             return this._denseStructMap != null && this._denseStructMap.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SparseBooleanMap.
-        /// </summary>
-        public Dictionary<string, bool> SparseBooleanMap
-        {
-            get { return this._sparseBooleanMap; }
-            set { this._sparseBooleanMap = value; }
-        }
-
-        // Check to see if SparseBooleanMap property is set
-        internal bool IsSetSparseBooleanMap()
-        {
-            return this._sparseBooleanMap != null && this._sparseBooleanMap.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SparseNumberMap.
-        /// </summary>
-        public Dictionary<string, int> SparseNumberMap
-        {
-            get { return this._sparseNumberMap; }
-            set { this._sparseNumberMap = value; }
-        }
-
-        // Check to see if SparseNumberMap property is set
-        internal bool IsSetSparseNumberMap()
-        {
-            return this._sparseNumberMap != null && this._sparseNumberMap.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SparseSetMap.
-        /// </summary>
-        public Dictionary<string, List<string>> SparseSetMap
-        {
-            get { return this._sparseSetMap; }
-            set { this._sparseSetMap = value; }
-        }
-
-        // Check to see if SparseSetMap property is set
-        internal bool IsSetSparseSetMap()
-        {
-            return this._sparseSetMap != null && this._sparseSetMap.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SparseStringMap.
-        /// </summary>
-        public Dictionary<string, string> SparseStringMap
-        {
-            get { return this._sparseStringMap; }
-            set { this._sparseStringMap = value; }
-        }
-
-        // Check to see if SparseStringMap property is set
-        internal bool IsSetSparseStringMap()
-        {
-            return this._sparseStringMap != null && this._sparseStringMap.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SparseStructMap.
-        /// </summary>
-        public Dictionary<string, GreetingStruct> SparseStructMap
-        {
-            get { return this._sparseStructMap; }
-            set { this._sparseStructMap = value; }
-        }
-
-        // Check to see if SparseStructMap property is set
-        internal bool IsSetSparseStructMap()
-        {
-            return this._sparseStructMap != null && this._sparseStructMap.Count > 0; 
         }
 
     }

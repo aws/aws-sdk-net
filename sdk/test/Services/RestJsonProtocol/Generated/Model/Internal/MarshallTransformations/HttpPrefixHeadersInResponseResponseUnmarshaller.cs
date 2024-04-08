@@ -56,11 +56,11 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                     keyToUse = keyToUse.Substring("".Length);
                 }
 
-                if (context.ResponseData.IsHeaderPresent($"{namePrefixHeaders}"))
+                if (context.ResponseData.IsHeaderPresent($"{keyToUse}"))
                 {
                     headersForPrefixHeaders.Add(
                         keyToUse,
-                        context.ResponseData.GetHeaderValue($"{namePrefixHeaders}")
+                        context.ResponseData.GetHeaderValue($"{keyToUse}")
                     );
                 }
             }

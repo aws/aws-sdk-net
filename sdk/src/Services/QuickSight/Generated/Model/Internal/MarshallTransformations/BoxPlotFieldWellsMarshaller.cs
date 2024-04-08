@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BoxPlotFieldWells requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBoxPlotAggregatedFieldWells())
             {
                 context.Writer.WritePropertyName("BoxPlotAggregatedFieldWells");

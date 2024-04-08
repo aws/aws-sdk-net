@@ -65,33 +65,9 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSparseStringList())
-                {
-                    context.Writer.WritePropertyName("sparseStringList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSparseStringListListValue in publicRequest.SparseStringList)
-                    {
-                            context.Writer.Write(publicRequestSparseStringListListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetSparseStringMap())
-                {
-                    context.Writer.WritePropertyName("sparseStringMap");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestSparseStringMapKvp in publicRequest.SparseStringMap)
-                    {
-                        context.Writer.WritePropertyName(publicRequestSparseStringMapKvp.Key);
-                        var publicRequestSparseStringMapValue = publicRequestSparseStringMapKvp.Value;
-
-                            context.Writer.Write(publicRequestSparseStringMapValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetString())
                 {
                     context.Writer.WritePropertyName("string");

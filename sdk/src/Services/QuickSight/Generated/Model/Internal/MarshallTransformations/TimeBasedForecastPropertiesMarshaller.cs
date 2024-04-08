@@ -45,10 +45,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimeBasedForecastProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLowerBoundary())
             {
                 context.Writer.WritePropertyName("LowerBoundary");
-                context.Writer.Write(requestObject.LowerBoundary);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LowerBoundary))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LowerBoundary));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LowerBoundary);
+                }
             }
 
             if(requestObject.IsSetPeriodsBackward())
@@ -78,7 +87,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUpperBoundary())
             {
                 context.Writer.WritePropertyName("UpperBoundary");
-                context.Writer.Write(requestObject.UpperBoundary);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.UpperBoundary))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.UpperBoundary));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.UpperBoundary);
+                }
             }
 
         }

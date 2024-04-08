@@ -63,7 +63,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 request.Parameters.Add("activityTypes", StringUtils.FromString(publicRequest.ActivityTypes));
             
             if (publicRequest.IsSetEndTimeUtc())
-                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
+                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
             
             if (publicRequest.IsSetIncludeIndirectActivities())
                 request.Parameters.Add("includeIndirectActivities", StringUtils.FromBool(publicRequest.IncludeIndirectActivities));
@@ -81,7 +81,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 request.Parameters.Add("resourceId", StringUtils.FromString(publicRequest.ResourceId));
             
             if (publicRequest.IsSetStartTimeUtc())
-                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
+                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
             
             if (publicRequest.IsSetUserId())
                 request.Parameters.Add("userId", StringUtils.FromString(publicRequest.UserId));

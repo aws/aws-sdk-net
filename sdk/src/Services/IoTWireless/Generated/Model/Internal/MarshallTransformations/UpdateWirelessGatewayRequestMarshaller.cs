@@ -66,6 +66,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDescription())
@@ -93,7 +94,14 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxEirp())
                 {
                     context.Writer.WritePropertyName("MaxEirp");
-                    context.Writer.Write(publicRequest.MaxEirp);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.MaxEirp))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MaxEirp));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MaxEirp);
+                    }
                 }
 
                 if(publicRequest.IsSetName())

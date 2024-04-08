@@ -45,6 +45,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NielsenNaesIiNw requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCheckDigitString())
             {
                 context.Writer.WritePropertyName("checkDigitString");
@@ -54,7 +56,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSid())
             {
                 context.Writer.WritePropertyName("sid");
-                context.Writer.Write(requestObject.Sid);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Sid))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Sid));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Sid);
+                }
             }
 
             if(requestObject.IsSetTimezone())

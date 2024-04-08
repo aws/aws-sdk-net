@@ -82,8 +82,9 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("intEnumMap/entry", targetDepth))
                     {
-                        var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
-                        response.IntEnumMap = unmarshaller.Unmarshall(context);
+                        var unmarshaller = new KeyValueUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                        var item = unmarshaller.Unmarshall(context);
+                        response.IntEnumMap.Add(item);
                         continue;
                     }
                     if (context.TestExpression("intEnumSet/member", targetDepth))

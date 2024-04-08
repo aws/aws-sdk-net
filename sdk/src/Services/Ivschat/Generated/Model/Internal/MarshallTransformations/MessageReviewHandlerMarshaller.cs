@@ -45,6 +45,8 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MessageReviewHandler requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFallbackResult())
             {
                 context.Writer.WritePropertyName("fallbackResult");

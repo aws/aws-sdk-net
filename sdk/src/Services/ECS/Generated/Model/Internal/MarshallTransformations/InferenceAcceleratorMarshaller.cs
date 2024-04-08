@@ -45,6 +45,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InferenceAccelerator requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeviceName())
             {
                 context.Writer.WritePropertyName("deviceName");

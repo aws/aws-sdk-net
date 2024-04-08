@@ -32,7 +32,7 @@ namespace Amazon.Runtime.Documents.Internal.Transform
             {
                 case DocumentType.Null:
                     // explicitly write null
-                    writer.Write(null);
+                    writer.Write((string)null);
                     return;
                 case DocumentType.Bool:
                     writer.Write(doc.AsBool());

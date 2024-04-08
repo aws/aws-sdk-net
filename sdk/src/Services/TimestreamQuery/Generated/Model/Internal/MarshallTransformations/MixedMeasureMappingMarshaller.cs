@@ -45,6 +45,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MixedMeasureMapping requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMeasureName())
             {
                 context.Writer.WritePropertyName("MeasureName");

@@ -63,6 +63,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetBooleanList())
@@ -121,17 +122,6 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                                 context.Writer.Write(publicRequestNestedStringListListValueListValue);
                         }
                         context.Writer.WriteArrayEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetSparseStringList())
-                {
-                    context.Writer.WritePropertyName("sparseStringList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSparseStringListListValue in publicRequest.SparseStringList)
-                    {
-                            context.Writer.Write(publicRequestSparseStringListListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }

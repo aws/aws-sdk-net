@@ -45,6 +45,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExternalFilteringConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthorizedTargets())
             {
                 context.Writer.WritePropertyName("AuthorizedTargets");

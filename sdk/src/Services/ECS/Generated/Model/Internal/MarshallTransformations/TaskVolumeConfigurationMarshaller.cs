@@ -45,6 +45,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TaskVolumeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetManagedEBSVolume())
             {
                 context.Writer.WritePropertyName("managedEBSVolume");

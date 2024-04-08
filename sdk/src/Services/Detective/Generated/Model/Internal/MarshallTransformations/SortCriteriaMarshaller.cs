@@ -45,6 +45,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SortCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetField())
             {
                 context.Writer.WritePropertyName("Field");

@@ -34,39 +34,7 @@ namespace Amazon.JsonProtocol.Model
     /// </summary>
     public partial class NullOperationRequest : AmazonJsonProtocolRequest
     {
-        private List<string> _sparseStringList = new List<string>();
-        private Dictionary<string, string> _sparseStringMap = new Dictionary<string, string>();
         private string _string;
-
-        /// <summary>
-        /// Gets and sets the property SparseStringList.
-        /// </summary>
-        public List<string> SparseStringList
-        {
-            get { return this._sparseStringList; }
-            set { this._sparseStringList = value; }
-        }
-
-        // Check to see if SparseStringList property is set
-        internal bool IsSetSparseStringList()
-        {
-            return this._sparseStringList != null && this._sparseStringList.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SparseStringMap.
-        /// </summary>
-        public Dictionary<string, string> SparseStringMap
-        {
-            get { return this._sparseStringMap; }
-            set { this._sparseStringMap = value; }
-        }
-
-        // Check to see if SparseStringMap property is set
-        internal bool IsSetSparseStringMap()
-        {
-            return this._sparseStringMap != null && this._sparseStringMap.Count > 0; 
-        }
 
         /// <summary>
         /// Gets and sets the property String.

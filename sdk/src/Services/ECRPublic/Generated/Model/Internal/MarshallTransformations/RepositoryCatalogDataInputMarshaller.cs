@@ -45,6 +45,8 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RepositoryCatalogDataInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAboutText())
             {
                 context.Writer.WritePropertyName("aboutText");

@@ -45,6 +45,8 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DialogAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFulfillmentState())
             {
                 context.Writer.WritePropertyName("fulfillmentState");

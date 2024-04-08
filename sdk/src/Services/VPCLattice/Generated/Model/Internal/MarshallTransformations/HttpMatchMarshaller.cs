@@ -45,6 +45,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HttpMatch requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHeaderMatches())
             {
                 context.Writer.WritePropertyName("headerMatches");

@@ -45,6 +45,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReplacementTemplate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetReplacementTemplateData())
             {
                 context.Writer.WritePropertyName("ReplacementTemplateData");

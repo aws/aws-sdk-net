@@ -45,6 +45,8 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TokenFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContractAddress())
             {
                 context.Writer.WritePropertyName("contractAddress");

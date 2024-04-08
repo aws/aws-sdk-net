@@ -45,6 +45,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RuleGroup requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetReferenceSets())
             {
                 context.Writer.WritePropertyName("ReferenceSets");

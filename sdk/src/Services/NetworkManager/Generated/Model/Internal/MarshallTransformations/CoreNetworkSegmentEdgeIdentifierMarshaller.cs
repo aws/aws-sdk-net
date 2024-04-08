@@ -45,6 +45,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CoreNetworkSegmentEdgeIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCoreNetworkId())
             {
                 context.Writer.WritePropertyName("CoreNetworkId");

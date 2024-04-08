@@ -45,6 +45,8 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamSelection requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxVideoBitsPerSecond())
             {
                 context.Writer.WritePropertyName("maxVideoBitsPerSecond");

@@ -45,6 +45,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ThresholdV2 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComparison())
             {
                 context.Writer.WritePropertyName("Comparison");
@@ -54,7 +56,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThresholdValue())
             {
                 context.Writer.WritePropertyName("ThresholdValue");
-                context.Writer.Write(requestObject.ThresholdValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThresholdValue);
+                }
             }
 
         }

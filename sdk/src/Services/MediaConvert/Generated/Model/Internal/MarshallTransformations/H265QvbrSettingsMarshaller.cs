@@ -45,6 +45,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(H265QvbrSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxAverageBitrate())
             {
                 context.Writer.WritePropertyName("maxAverageBitrate");
@@ -60,7 +62,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQvbrQualityLevelFineTune())
             {
                 context.Writer.WritePropertyName("qvbrQualityLevelFineTune");
-                context.Writer.Write(requestObject.QvbrQualityLevelFineTune);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.QvbrQualityLevelFineTune))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.QvbrQualityLevelFineTune));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.QvbrQualityLevelFineTune);
+                }
             }
 
         }

@@ -45,6 +45,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StatefulRuleGroupReference requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOverride())
             {
                 context.Writer.WritePropertyName("Override");

@@ -45,6 +45,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnomalySubscription requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("AccountId");
@@ -99,7 +101,14 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
-                context.Writer.Write(requestObject.Threshold);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Threshold);
+                }
             }
 
             if(requestObject.IsSetThresholdExpression())

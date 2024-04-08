@@ -45,6 +45,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamConfigurationSessionBackup requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxBackupsToRetain())
             {
                 context.Writer.WritePropertyName("maxBackupsToRetain");

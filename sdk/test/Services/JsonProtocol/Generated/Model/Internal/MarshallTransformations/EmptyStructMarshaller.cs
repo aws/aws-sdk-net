@@ -45,6 +45,8 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EmptyStruct requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
         }
 
         /// <summary>

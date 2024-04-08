@@ -45,6 +45,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AxisLinearScale requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStepCount())
             {
                 context.Writer.WritePropertyName("StepCount");
@@ -54,7 +56,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStepSize())
             {
                 context.Writer.WritePropertyName("StepSize");
-                context.Writer.Write(requestObject.StepSize);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StepSize))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StepSize));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.StepSize);
+                }
             }
 
         }

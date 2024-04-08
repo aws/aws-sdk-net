@@ -45,6 +45,8 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SearchFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilterString())
             {
                 context.Writer.WritePropertyName("FilterString");

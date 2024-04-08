@@ -45,6 +45,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScalingConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximumConcurrency())
             {
                 context.Writer.WritePropertyName("MaximumConcurrency");

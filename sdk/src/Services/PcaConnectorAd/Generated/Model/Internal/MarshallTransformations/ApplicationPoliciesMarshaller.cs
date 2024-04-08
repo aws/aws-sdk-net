@@ -45,6 +45,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ApplicationPolicies requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCritical())
             {
                 context.Writer.WritePropertyName("Critical");

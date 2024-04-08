@@ -45,6 +45,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EndpointDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAwsGroundStationAgentEndpoint())
             {
                 context.Writer.WritePropertyName("awsGroundStationAgentEndpoint");

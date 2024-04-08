@@ -45,6 +45,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HttpParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHeaderParameters())
             {
                 context.Writer.WritePropertyName("HeaderParameters");

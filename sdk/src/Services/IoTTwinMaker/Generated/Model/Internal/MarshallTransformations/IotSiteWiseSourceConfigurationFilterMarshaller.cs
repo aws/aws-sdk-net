@@ -45,6 +45,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IotSiteWiseSourceConfigurationFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilterByAsset())
             {
                 context.Writer.WritePropertyName("filterByAsset");

@@ -45,6 +45,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeArtifacts requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBuildArtifactsObjectKey())
             {
                 context.Writer.WritePropertyName("BuildArtifactsObjectKey");

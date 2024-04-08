@@ -45,6 +45,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateGlobalSecondaryIndexAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIndexName())
             {
                 context.Writer.WritePropertyName("IndexName");

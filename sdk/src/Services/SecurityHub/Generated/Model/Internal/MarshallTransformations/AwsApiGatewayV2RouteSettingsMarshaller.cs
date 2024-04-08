@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsApiGatewayV2RouteSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataTraceEnabled())
             {
                 context.Writer.WritePropertyName("DataTraceEnabled");
@@ -72,7 +74,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThrottlingRateLimit())
             {
                 context.Writer.WritePropertyName("ThrottlingRateLimit");
-                context.Writer.Write(requestObject.ThrottlingRateLimit);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThrottlingRateLimit))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThrottlingRateLimit));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThrottlingRateLimit);
+                }
             }
 
         }

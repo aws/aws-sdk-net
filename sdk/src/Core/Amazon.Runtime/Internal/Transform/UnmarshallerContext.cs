@@ -336,7 +336,8 @@ namespace Amazon.Runtime.Internal.Transform
             XmlNodeType.None,
             XmlNodeType.XmlDeclaration,
             XmlNodeType.Comment,
-            XmlNodeType.DocumentType
+            XmlNodeType.DocumentType,
+            XmlNodeType.CDATA
         };
 
         private StreamReader streamReader;
@@ -350,6 +351,7 @@ namespace Amazon.Runtime.Internal.Transform
         private string nodeContent = String.Empty;
         private bool disposed = false;
         private bool currentlyProcessingEmptyElement;
+        private bool processEmptyElements = false; //Flip to true in v4
 
         public Stream Stream
         {
@@ -490,7 +492,7 @@ namespace Amazon.Runtime.Internal.Transform
                 if (nodesToSkip.Contains(XmlReader.NodeType))
                     XmlReader.Read();
 
-                while (XmlReader.IsEmptyElement && !AllowEmptyElementLookup.Contains(XmlReader.LocalName))
+                while (XmlReader.IsEmptyElement && !AllowEmptyElementLookup.Contains(XmlReader.LocalName) && !processEmptyElements)
                 {
                     XmlReader.Read();
                 }
@@ -503,14 +505,15 @@ namespace Amazon.Runtime.Internal.Transform
                     XmlReader.Read();
                     currentlyProcessingEmptyElement = false;
                 }
-                else if(XmlReader.IsEmptyElement && AllowEmptyElementLookup.Contains(XmlReader.LocalName))
+                else if(XmlReader.IsEmptyElement && (AllowEmptyElementLookup.Contains(XmlReader.LocalName) || processEmptyElements))
                 {
                     //This is a shorthand form of an empty element <element /> and we want to allow it
                     nodeType = XmlNodeType.Element;
                     stack.Push(XmlReader.LocalName);
                     stackString = StackToPath(stack);
-                    currentlyProcessingEmptyElement = true;          
-                    
+                    currentlyProcessingEmptyElement = true;
+                    nodeContent = String.Empty;
+
                     //Defer reading so that on next pass we can treat this same element as the end element.
                 }
                 else

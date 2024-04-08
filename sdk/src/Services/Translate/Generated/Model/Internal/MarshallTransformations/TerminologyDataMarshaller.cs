@@ -45,6 +45,8 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TerminologyData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDirectionality())
             {
                 context.Writer.WritePropertyName("Directionality");

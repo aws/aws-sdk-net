@@ -45,6 +45,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AddThingsToThingGroupParams requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOverrideDynamicGroups())
             {
                 context.Writer.WritePropertyName("overrideDynamicGroups");

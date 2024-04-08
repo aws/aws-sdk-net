@@ -45,6 +45,8 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StartTransactionRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
         }
 
         /// <summary>

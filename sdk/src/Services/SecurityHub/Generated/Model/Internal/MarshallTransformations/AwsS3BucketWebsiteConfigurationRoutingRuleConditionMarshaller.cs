@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsS3BucketWebsiteConfigurationRoutingRuleCondition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHttpErrorCodeReturnedEquals())
             {
                 context.Writer.WritePropertyName("HttpErrorCodeReturnedEquals");

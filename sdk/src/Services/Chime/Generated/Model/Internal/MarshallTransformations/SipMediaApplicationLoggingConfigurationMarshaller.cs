@@ -45,6 +45,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SipMediaApplicationLoggingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnableSipMediaApplicationMessageLogs())
             {
                 context.Writer.WritePropertyName("EnableSipMediaApplicationMessageLogs");

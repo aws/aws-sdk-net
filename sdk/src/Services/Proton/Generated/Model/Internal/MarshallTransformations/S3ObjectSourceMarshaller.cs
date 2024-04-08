@@ -45,6 +45,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3ObjectSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucket())
             {
                 context.Writer.WritePropertyName("bucket");

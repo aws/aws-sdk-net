@@ -56,7 +56,10 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             int targetDepth = originalDepth + 1;
             if (context.IsStartOfDocument) 
                    targetDepth += 1;
-
+            if(context.Stream.Length == 0)
+            {
+                return;
+            }
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
@@ -85,7 +88,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         response.FlattenedList2.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
-                    if (context.TestExpression("flattenedListWithMemberNamespace/", targetDepth))
+                    if (context.TestExpression("flattenedListWithMemberNamespace/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.FlattenedListWithMemberNamespace.Add(unmarshaller.Unmarshall(context));

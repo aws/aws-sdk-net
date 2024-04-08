@@ -45,6 +45,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Channel requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEventPublishers())
             {
                 context.Writer.WritePropertyName("eventPublishers");

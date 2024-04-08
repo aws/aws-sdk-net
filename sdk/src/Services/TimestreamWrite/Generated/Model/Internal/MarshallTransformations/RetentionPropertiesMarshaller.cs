@@ -45,6 +45,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RetentionProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMagneticStoreRetentionPeriodInDays())
             {
                 context.Writer.WritePropertyName("MagneticStoreRetentionPeriodInDays");

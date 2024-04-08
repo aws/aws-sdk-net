@@ -45,6 +45,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CookieSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDomain())
             {
                 context.Writer.WritePropertyName("domain");

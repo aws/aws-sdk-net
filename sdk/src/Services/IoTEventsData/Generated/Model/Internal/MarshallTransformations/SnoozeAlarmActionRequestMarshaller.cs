@@ -45,6 +45,8 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SnoozeAlarmActionRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlarmModelName())
             {
                 context.Writer.WritePropertyName("alarmModelName");

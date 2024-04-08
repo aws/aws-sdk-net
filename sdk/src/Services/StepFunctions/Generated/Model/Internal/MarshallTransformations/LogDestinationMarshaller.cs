@@ -45,6 +45,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LogDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchLogsLogGroup())
             {
                 context.Writer.WritePropertyName("cloudWatchLogsLogGroup");

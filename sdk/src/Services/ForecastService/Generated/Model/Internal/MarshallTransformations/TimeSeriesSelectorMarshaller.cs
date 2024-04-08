@@ -45,6 +45,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimeSeriesSelector requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTimeSeriesIdentifiers())
             {
                 context.Writer.WritePropertyName("TimeSeriesIdentifiers");

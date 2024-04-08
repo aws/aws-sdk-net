@@ -45,6 +45,8 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PushSync requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApplicationArns())
             {
                 context.Writer.WritePropertyName("ApplicationArns");

@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMinimumInstanceMetadataServiceVersion())
             {
                 context.Writer.WritePropertyName("MinimumInstanceMetadataServiceVersion");

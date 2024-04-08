@@ -45,6 +45,8 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GreetingStruct requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHi())
             {
                 context.Writer.WritePropertyName("hi");

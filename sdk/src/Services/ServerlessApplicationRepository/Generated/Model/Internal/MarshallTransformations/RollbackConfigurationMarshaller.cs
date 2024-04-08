@@ -45,6 +45,8 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         /// <returns></returns>
         public void Marshall(RollbackConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMonitoringTimeInMinutes())
             {
                 context.Writer.WritePropertyName("monitoringTimeInMinutes");

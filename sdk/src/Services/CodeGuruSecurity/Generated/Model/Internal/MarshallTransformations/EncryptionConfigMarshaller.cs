@@ -45,6 +45,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncryptionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");

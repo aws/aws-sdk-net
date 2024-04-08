@@ -45,6 +45,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsCloudFrontDistributionOriginS3OriginConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOriginAccessIdentity())
             {
                 context.Writer.WritePropertyName("OriginAccessIdentity");

@@ -45,6 +45,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PrivateKeyAttributesV2 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCryptoProviders())
             {
                 context.Writer.WritePropertyName("CryptoProviders");

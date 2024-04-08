@@ -45,6 +45,8 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Code requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
