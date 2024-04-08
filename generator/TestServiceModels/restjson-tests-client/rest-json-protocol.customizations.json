@@ -1,0 +1,20 @@
+{
+    "shapeModifiers": {       
+        "FooEnum": {
+            "modify": [
+                {
+                    "0": { "emitPropertyName": "Num_0" }
+                },
+                {
+                    "1": { "emitPropertyName": "Num_1" }
+                }
+            ]
+        }
+    },
+  "useNullableType": {
+    "JsonMapsInputOutput": [
+      "sparseBooleanMap",
+      "sparseNumberMap"
+    ]
+  }
+}

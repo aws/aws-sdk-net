@@ -352,7 +352,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 Assert.IsTrue(this.MarshalledRequest.Headers.ContainsKey("Content-Type"));
                 if (!this.Operation.RequestHeaderMembers.Any(h => h.MarshallLocationName.ToLower() == "content-type"))
                 {
-                    Assert.AreEqual("binary/octet-stream", this.MarshalledRequest.Headers["Content-Type"]);
+                    Assert.AreEqual("application/octet-stream", this.MarshalledRequest.Headers["Content-Type"]);
                 }
                 Assert.IsNotNull(this.MarshalledRequest.ContentStream);
             }
