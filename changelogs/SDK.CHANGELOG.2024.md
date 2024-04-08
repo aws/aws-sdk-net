@@ -1,3 +1,16 @@
+### 3.7.785.0 (2024-04-08 18:13 UTC)
+* ControlCatalog (3.7.300.0)
+	* This is the initial SDK release for AWS Control Catalog, a central catalog for AWS managed controls. This release includes 3 new APIs - ListDomains, ListObjectives, and ListCommonControls - that vend high-level data to categorize controls across the AWS platform.
+* Mgn (3.7.302.0)
+	* Added USE_SOURCE as default option to LaunchConfigurationTemplate bootMode parameter.
+* NetworkMonitor (3.7.301.0)
+	* Updated the allowed monitorName length for CloudWatch Network Monitor.
+* S3 (3.7.307.12)
+	* Update the GetObject and GetObjectMetadata operations to handle invalid timestamp formats in the expires header; a new property ExpiresString will contain the unparsed value returned from S3 (regardless if parsing succeeds or not) and should be used instead of Expires (which has been deprecated).
+* Core 3.7.303.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.784.0 (2024-04-05 18:14 UTC)
 * QuickSight (3.7.308.0)
 	* Adding IAMIdentityCenterInstanceArn parameter to CreateAccountSubscription
