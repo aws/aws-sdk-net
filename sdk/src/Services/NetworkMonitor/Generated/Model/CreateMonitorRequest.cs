@@ -86,10 +86,10 @@ namespace Amazon.NetworkMonitor.Model
         /// Gets and sets the property MonitorName. 
         /// <para>
         /// The name identifying the monitor. It can contain only letters, underscores (_), or
-        /// dashes (-), and can be up to 255 characters.
+        /// dashes (-), and can be up to 200 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string MonitorName
         {
             get { return this._monitorName; }

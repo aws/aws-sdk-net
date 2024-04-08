@@ -44,7 +44,7 @@ namespace Amazon.NetworkMonitor.Model
         /// a list of monitor names.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string MonitorName
         {
             get { return this._monitorName; }
