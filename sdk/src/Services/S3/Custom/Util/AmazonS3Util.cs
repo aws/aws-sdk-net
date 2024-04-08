@@ -405,21 +405,15 @@ namespace Amazon.S3.Util
                 }
                 catch (FormatException e)
                 {
-                    throw new AmazonDateTimeUnmarshallingException(
-                        requestId,
-                        string.Empty,
-                        string.Empty,
-                        rawValue,
-                        message: string.Format(
-                            CultureInfo.InvariantCulture,
-                            "The value {0} cannot be converted to a DateTime instance.",
-                            rawValue),
-                        innerException: e);
+                    var logger = Logger.GetLogger(typeof(AmazonS3Util));
+                    logger.Error(e, "The value {0} cannot be converted to a DateTime instance.", rawValue);
+
+                    return null;
                 }
             }
             else
             {
-                return default(DateTime);
+                return null;
             }
         }
 
