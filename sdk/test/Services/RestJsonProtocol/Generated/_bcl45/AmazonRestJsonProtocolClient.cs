@@ -1630,6 +1630,94 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
+        #region  JsonLists
+
+
+        /// <summary>
+        /// This test case serializes JSON lists for the following cases for both input and output:
+        /// 
+        ///  <ol> <li>Normal JSON lists.</li> <li>Normal JSON sets.</li> <li>JSON lists of lists.</li>
+        /// <li>Lists of structures.</li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the JsonLists service method.</param>
+        /// 
+        /// <returns>The response from the JsonLists service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonLists">REST API Reference for JsonLists Operation</seealso>
+        public virtual JsonListsResponse JsonLists(JsonListsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = JsonListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = JsonListsResponseUnmarshaller.Instance;
+
+            return Invoke<JsonListsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This test case serializes JSON lists for the following cases for both input and output:
+        /// 
+        ///  <ol> <li>Normal JSON lists.</li> <li>Normal JSON sets.</li> <li>JSON lists of lists.</li>
+        /// <li>Lists of structures.</li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the JsonLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the JsonLists service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonLists">REST API Reference for JsonLists Operation</seealso>
+        public virtual Task<JsonListsResponse> JsonListsAsync(JsonListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = JsonListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = JsonListsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<JsonListsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  JsonMaps
+
+
+        /// <summary>
+        /// The example tests basic map serialization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the JsonMaps service method.</param>
+        /// 
+        /// <returns>The response from the JsonMaps service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonMaps">REST API Reference for JsonMaps Operation</seealso>
+        public virtual JsonMapsResponse JsonMaps(JsonMapsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = JsonMapsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = JsonMapsResponseUnmarshaller.Instance;
+
+            return Invoke<JsonMapsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// The example tests basic map serialization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the JsonMaps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the JsonMaps service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonMaps">REST API Reference for JsonMaps Operation</seealso>
+        public virtual Task<JsonMapsResponse> JsonMapsAsync(JsonMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = JsonMapsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = JsonMapsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<JsonMapsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  JsonTimestamps
 
 

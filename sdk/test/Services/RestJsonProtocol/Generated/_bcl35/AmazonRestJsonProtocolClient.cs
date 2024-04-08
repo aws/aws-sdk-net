@@ -2004,6 +2004,117 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
+        #region  JsonLists
+
+        /// <summary>
+        /// This test case serializes JSON lists for the following cases for both input and output:
+        /// 
+        ///  <ol> <li>Normal JSON lists.</li> <li>Normal JSON sets.</li> <li>JSON lists of lists.</li>
+        /// <li>Lists of structures.</li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the JsonLists service method.</param>
+        /// 
+        /// <returns>The response from the JsonLists service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonLists">REST API Reference for JsonLists Operation</seealso>
+        public virtual JsonListsResponse JsonLists(JsonListsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = JsonListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = JsonListsResponseUnmarshaller.Instance;
+
+            return Invoke<JsonListsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the JsonLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the JsonLists operation on AmazonRestJsonProtocolClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndJsonLists
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonLists">REST API Reference for JsonLists Operation</seealso>
+        public virtual IAsyncResult BeginJsonLists(JsonListsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = JsonListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = JsonListsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  JsonLists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginJsonLists.</param>
+        /// 
+        /// <returns>Returns a  JsonListsResult from RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonLists">REST API Reference for JsonLists Operation</seealso>
+        public virtual JsonListsResponse EndJsonLists(IAsyncResult asyncResult)
+        {
+            return EndInvoke<JsonListsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  JsonMaps
+
+        /// <summary>
+        /// The example tests basic map serialization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the JsonMaps service method.</param>
+        /// 
+        /// <returns>The response from the JsonMaps service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonMaps">REST API Reference for JsonMaps Operation</seealso>
+        public virtual JsonMapsResponse JsonMaps(JsonMapsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = JsonMapsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = JsonMapsResponseUnmarshaller.Instance;
+
+            return Invoke<JsonMapsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the JsonMaps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the JsonMaps operation on AmazonRestJsonProtocolClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndJsonMaps
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonMaps">REST API Reference for JsonMaps Operation</seealso>
+        public virtual IAsyncResult BeginJsonMaps(JsonMapsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = JsonMapsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = JsonMapsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  JsonMaps operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginJsonMaps.</param>
+        /// 
+        /// <returns>Returns a  JsonMapsResult from RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonMaps">REST API Reference for JsonMaps Operation</seealso>
+        public virtual JsonMapsResponse EndJsonMaps(IAsyncResult asyncResult)
+        {
+            return EndInvoke<JsonMapsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  JsonTimestamps
 
         /// <summary>
