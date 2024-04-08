@@ -14,10 +14,10 @@
  */
 
 plugins {
-    id("java")
-    id("software.amazon.smithy") version "0.6.0"
+    id("java-library")
+    id("software.amazon.smithy.gradle.smithy-base").version("1.0.0")
 }
-val smithyVersion: String by project
+
 tasks["jar"].enabled = false
 group = "org.example"
 version = "1.0-SNAPSHOT"
@@ -28,7 +28,7 @@ repositories {
 
 dependencies {
     implementation(project(":smithy-dotnet-codegen"))
-    implementation("software.amazon.smithy:smithy-aws-protocol-tests:$smithyVersion")
+    implementation(codegen.protocol.tests)
 }
 
 tasks.test {

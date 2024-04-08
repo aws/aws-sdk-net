@@ -14,24 +14,23 @@
  */
 
 plugins {
-    id("java")
-    `java-library`
+    id("java-library")
 }
 
 //group = "org.example"
 version = "1.0-SNAPSHOT"
 
 repositories {
-    mavenCentral()
     mavenLocal()
+    mavenCentral()
 }
-val smithyVersion: String by project
+
 dependencies {
-    api("software.amazon.smithy:smithy-codegen-core:$smithyVersion")
-    testImplementation(platform("org.junit:junit-bom:5.9.1"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation("software.amazon.smithy:smithy-protocol-test-traits:$smithyVersion")
-    implementation("software.amazon.smithy:smithy-aws-traits:$smithyVersion")
+    api(codegen.codegen.core)
+    testImplementation(platform(test.junit.bom))
+    testImplementation(test.junit.jupiter)
+    implementation(codegen.protocol.tests.traits)
+    implementation(codegen.aws.traits)
 }
 
 tasks.test {

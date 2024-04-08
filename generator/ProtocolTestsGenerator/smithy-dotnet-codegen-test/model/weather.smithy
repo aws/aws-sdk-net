@@ -1,26 +1,26 @@
-//$version: "1.0"
+// $version: "1.0"
 //
-//namespace example.weather.simple
+// namespace example.weather.simple
 //
-//service Weather {
+// service Weather {
 //    version: "2006-03-01",
 //    operations: [GetCurrentTemp]
-//}
+// }
 //
-//@readonly
-//@http(method: "GET", uri: "/?format", code: 200)
-//operation GetCurrentTemp {
+// @readonly
+// @http(method: "GET", uri: "/?format", code: 200)
+// operation GetCurrentTemp {
 //    input: GetCurrentTempInput,
 //    output: GetCurrentTempOutput
-//}
+// }
 //
-//structure GetCurrentTempInput {
+// structure GetCurrentTempInput {
 //    @httpQuery("/?format")
 //    @required
 //    format: String
-//}
+// }
 //
-//structure GetCurrentTempOutput {
+// structure GetCurrentTempOutput {
 //    @required
 //    temp: String
-//}
+// }
