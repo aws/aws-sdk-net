@@ -243,6 +243,14 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>Header value representing the list of T</returns>
         public static string FromValueTypeList<T>(List<T> values)  where T : struct
         {
+            // ToString() on boolean types automatically Pascal Cases. Xml-based protocols
+            // are case sensitive and accept "true" and "false" as the valid set of booleans.
+            // and we should be returning the booleans as is.
+            if ((bool)(values?.Any(x => x.GetType() == typeof(bool))))
+            {
+                return FromList(values?.Select(x => x.ToString().ToLower()));
+            }
+
             return FromList(values?.Select(x => x.ToString()));
         }
 
