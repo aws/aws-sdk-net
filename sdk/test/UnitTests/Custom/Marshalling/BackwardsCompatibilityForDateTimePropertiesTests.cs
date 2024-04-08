@@ -31,7 +31,8 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class BackwardsCompatibilityForDateTimePropertiesTests
     {
-        const string EXPECTED_MARSHALLED_STRING = "2018-07-18T00:00:00.000Z";
+        const string EXPECTED_MARSHALLED_STRING = "2018-07-18T00:00:00Z";
+        const string EXPECTED_MARSHALLED_STRING_WITH_MS = "2018-07-18T00:00:00.123Z";
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -67,6 +68,38 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        public void TestLegacyFieldsBackwardsCompatibilityWithMS()
+        {
+            PutScheduledUpdateGroupActionRequest request = new PutScheduledUpdateGroupActionRequest();
+
+            DateTime timeUtc = new DateTime(2018, 7, 18, 0, 0, 0, 123, DateTimeKind.Utc);
+            DateTime timeLocal = new DateTime(2018, 7, 18, 0, 0, 0, 123, DateTimeKind.Local);
+            DateTime timeUnspecified = new DateTime(2018, 7, 18, 0, 0, 0, 123);
+
+#pragma warning disable CS0618 // Type or member is obsolete
+            request.StartTime = timeUtc;
+            request.EndTime = timeLocal;
+            request.Time = timeUnspecified;
+
+            Assert.AreEqual(request.StartTime, timeUtc);
+            Assert.AreEqual(request.EndTime, timeLocal);
+            Assert.AreEqual(request.Time, timeUnspecified);
+#pragma warning restore CS0618 // Type or member is obsolete
+
+            Assert.AreEqual(request.StartTimeUtc, timeUtc);
+            Assert.AreEqual(request.EndTimeUtc, timeUtc);
+            Assert.AreEqual(request.TimeUtc, timeUtc);
+
+            var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
+            var marshalledRequest = marshaller.Marshall(request);
+
+            Assert.AreEqual(marshalledRequest.Parameters["StartTime"], EXPECTED_MARSHALLED_STRING_WITH_MS);
+            Assert.AreEqual(marshalledRequest.Parameters["EndTime"], EXPECTED_MARSHALLED_STRING_WITH_MS);
+            Assert.AreEqual(marshalledRequest.Parameters["Time"], EXPECTED_MARSHALLED_STRING_WITH_MS);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
         public void TestUtcFields()
         {
             PutScheduledUpdateGroupActionRequest request = new PutScheduledUpdateGroupActionRequest();
@@ -95,6 +128,38 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(marshalledRequest.Parameters["StartTime"], EXPECTED_MARSHALLED_STRING);
             Assert.AreEqual(marshalledRequest.Parameters["EndTime"], EXPECTED_MARSHALLED_STRING);
             Assert.AreEqual(marshalledRequest.Parameters["Time"], EXPECTED_MARSHALLED_STRING);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        public void TestUtcFieldsWithMS()
+        {
+            PutScheduledUpdateGroupActionRequest request = new PutScheduledUpdateGroupActionRequest();
+
+            DateTime timeUtc = new DateTime(2018, 7, 18, 0, 0, 0, 123, DateTimeKind.Utc);
+            DateTime timeLocal = new DateTime(2018, 7, 18, 0, 0, 0, 123, DateTimeKind.Utc).ToLocalTime();
+            DateTime timeUnspecified = new DateTime(timeLocal.Ticks);
+
+            request.StartTimeUtc = timeUtc;
+            request.EndTimeUtc = timeLocal;
+            request.TimeUtc = timeUnspecified;
+
+#pragma warning disable CS0618 // Type or member is obsolete
+            Assert.AreEqual(request.StartTime, timeUtc);
+            Assert.AreEqual(request.EndTime, timeLocal);
+            Assert.AreEqual(request.Time, timeUnspecified);
+#pragma warning restore CS0618 // Type or member is obsolete
+
+            Assert.AreEqual(request.StartTimeUtc, timeUtc);
+            Assert.AreEqual(request.EndTimeUtc, timeLocal);
+            Assert.AreEqual(request.TimeUtc, timeUnspecified);
+
+            var marshaller = new PutScheduledUpdateGroupActionRequestMarshaller();
+            var marshalledRequest = marshaller.Marshall(request);
+
+            Assert.AreEqual(marshalledRequest.Parameters["StartTime"], EXPECTED_MARSHALLED_STRING_WITH_MS);
+            Assert.AreEqual(marshalledRequest.Parameters["EndTime"], EXPECTED_MARSHALLED_STRING_WITH_MS);
+            Assert.AreEqual(marshalledRequest.Parameters["Time"], EXPECTED_MARSHALLED_STRING_WITH_MS);
         }
     }
 }
