@@ -96,6 +96,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
 			{
 				JsonWriter writer = new JsonWriter(stringWriter);
+				writer.Validate = false;
 <#		
 		if (shouldMarshallPayload)
 		{

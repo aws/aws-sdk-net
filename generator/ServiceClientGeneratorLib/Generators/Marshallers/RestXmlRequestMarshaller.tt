@@ -3,6 +3,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Json.LitJson"#>
 <#
 	AddLicenseHeader();
 	
@@ -64,6 +65,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	{
 		ProcessRequestBodyMembers("publicRequest", this.Operation);		
 	}
+	else if(payload != null && !payload.Shape.IsStructure)
+	{
+		ProcessNonStructurePayload(payload, 3);
+	}
 #>
 
 <#
@@ -100,17 +105,50 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#+
 		if(operation.RequestPayloadMember==null)
 		{
+			if(string.IsNullOrEmpty(operation.XmlNamespacePrefix))
+			{
 #>
-				xmlWriter.WriteStartElement("<#=operation.Input.LocationName#>", "<#=operation.XmlNamespace#>");	
+				xmlWriter.WriteStartElement("<#=operation.RequestStructure.MarshallName#>", "<#=operation.XmlNamespace#>");
 <#+
+			}
+			else
+			{
+#>
+				xmlWriter.WriteStartElement("<#=operation.RequestStructure.MarshallName#>");
+				xmlWriter.WriteAttributeString("xmlns", "<#=operation.XmlNamespacePrefix#>", null, "<#=operation.XmlNamespace#>");
+<#+
+			}
 		}
 		else
 		{
+			if(string.IsNullOrEmpty(operation.XmlNamespace))
+			{
 #>
 				if (<#=variableName + ".IsSet" + operation.RequestPayloadMember.PropertyName#>())
 				{
-					xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.MarshallName#>", "<#=operation.XmlNamespace#>");
+					xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.LocationName != operation.RequestStructure.PayloadMemberName ? operation.RequestPayloadMember.LocationName : operation.RequestPayloadMember.Shape.MarshallName#>", "<#=operation.XmlNamespace#>");
 <#+
+			}
+			else
+			{
+				if(string.IsNullOrEmpty(operation.XmlNamespacePrefix))
+				{
+#>
+				if (<#=variableName + ".IsSet" + operation.RequestPayloadMember.PropertyName#>())
+				{
+					xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.LocationName != operation.RequestStructure.PayloadMemberName ? operation.RequestPayloadMember.LocationName : operation.RequestPayloadMember.Shape.MarshallName#>", "<#=operation.XmlNamespace#>");
+<#+
+				}
+				else
+				{
+#>
+				if (<#=variableName + ".IsSet" + operation.RequestPayloadMember.PropertyName#>())
+				{
+					xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.LocationName != operation.RequestStructure.PayloadMemberName ? operation.RequestPayloadMember.LocationName : operation.RequestPayloadMember.Shape.MarshallName#>");
+					xmlWriter.WriteAttributeString("xmlns","<#=operation.XmlNamespacePrefix#>",null,"<#=operation.XmlNamespace#>");
+<#+
+				}
+			}
 			level++;
 		}
 		var childmembers = operation.RequestPayloadMember == null ? operation.RequestBodyMembers : operation.RequestPayloadMember.Shape.Members;
@@ -119,27 +157,53 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		{			
 			if(member.IsStructure)
 			{
-				ProcessStructure(level, variableName, member, operation.XmlNamespace);				
+				ProcessStructure(level, variableName, member);				
 			}
 			else if(member.IsList)
 			{
-				ProcessList(level, variableName, member, operation.XmlNamespace);
+				ProcessList(level, variableName, member);
 			}
 			else if(member.IsMap)
-			{				
-				ProcessMap(level, variableName, member, operation.XmlNamespace);
+			{
+#>
+<#=new string(' ', (level + 4) * 4)#>if(<#=variableName#>.IsSet<#=member.PropertyName#>())
+<#=new string(' ', (level + 4) * 4)#>{
+<#+
+				if(member.IsFlattened)
+				{
+					ProcessFlattenedMap(level,variableName,member);
+				}
+				else
+				{
+					ProcessMap(level, variableName, member);
+				}
+#>
+<#=new string(' ', (level + 4) * 4)#>}
+<#+
 			}
 			else
 			{
 #>
 <#=new string(' ', level * 4)#>				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
-<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));					
 <#+
+				if(string.IsNullOrEmpty(member.XmlNamespace))
+				{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));
+<#+
+				}
+				else
+				{
+					string prefix = member.XmlNamespacePrefix != null ? $"{member.XmlNamespacePrefix}" : null;
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString(<#=prefix#>,"<#=member.MarshallName#>","<#=member.XmlNamespace#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));
+<#+
+				}
 				if(member.IsIdempotent)
 				{
 #>
 				else				
-<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", Guid.NewGuid().ToString());				
+<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", Guid.NewGuid().ToString());				
 <#+					
 				}
 #>
@@ -178,67 +242,143 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#+				       
 	}
 
-	void ProcessMembers(int level, string variableName, IEnumerable<Member> members, string xmlNamespace)
+	void ProcessMembers(int level, string variableName, IEnumerable<Member> members, bool insideMap = false)
 	{
 		foreach(var member in members)
 		{
 			if(member.IsStructure)
 			{
-				ProcessStructure(level, variableName, member, xmlNamespace);				
+				ProcessStructure(level, variableName, member);
 			}
 			else if(member.IsList)
 			{
-				ProcessList(level, variableName, member, xmlNamespace);	
+				ProcessList(level, variableName, member);
 			}
 			else if(member.IsMap)
 			{				
-				ProcessMap(level, variableName, member, xmlNamespace);
+				if(member.IsFlattened)
+				{
+					ProcessFlattenedMap(level,variableName,member);
+				}
+				else
+				{
+					ProcessMap(level, variableName, member);
+				}
+			}
+			// we're processing members of a structure as a map's value
+			else if(insideMap)
+			{
+#>
+<#=new string(' ', level * 4)#>				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
+<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.ModeledName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));				 
+<#+
 			}
 			else
 			{
 #>
 <#=new string(' ', level * 4)#>				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
-<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=xmlNamespace#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));				 
+<#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));				 
 
 <#+
 			}
 		}
 	}
 
-	void ProcessStructure(int level, string variableName, Member member, string xmlNamespace)
+	void ProcessStructure(int level, string variableName, Shape shape)
+	{
+			// Use shape's ListMarshallName if the structure is a list.
+			var marshallName = shape.IsList ? shape.ListMarshallName ?? "member" : shape.MarshallName;
+#>				
+<#=new string(' ', level * 4)#>				if (<#=variableName#> != null) 
+<#=new string(' ', level * 4)#>				{
+<#+
+			if(string.IsNullOrEmpty(shape.XmlNamespace))
+			{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=marshallName#>");
+<#+			
+			}
+			else
+			{
+				if(string.IsNullOrEmpty(shape.XmlNamespacePrefix))
+				{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=marshallName#>", "<#=shape.XmlNamespace#>");
+<#+
+				}
+				else
+				{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=marshallName#>");
+<#=new string(' ', level * 4)#>					xmlWriter.WriteAttributeString("xmlns", "<#=marshallName#>",<#=shape.XmlNamespace#>, null );
+<#+
+				}
+			}
+			ProcessMembers(level + 1, variableName, shape.Members);			
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();
+<#=new string(' ', level * 4)#>				}
+<#+		
+	}
+// Only namespaces at the top level Shape matter for a structure, so there is no logic for namespaces here.
+	void ProcessStructure(int level, string variableName, Member member)
 	{
 			var shape = member.Shape.IsList ?  member.Shape.ListShape : member.Shape ;
 			variableName = member.Shape.IsList ? variableName : variableName + "." + member.PropertyName;
 
 			// Use shape's ListMarshallName if the structure is a list.
 			var marshallName = member.Shape.IsList ? member.Shape.ListMarshallName ?? "member" : member.MarshallName;
-#>				
-<#=new string(' ', level * 4)#>				if (<#=variableName#> != null) 
+#>
+<#=new string(' ', level * 4)#>				if (<#=variableName#> != null)
 <#=new string(' ', level * 4)#>				{
-<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=marshallName#>", "<#=xmlNamespace#>");			
-<#+			
-			ProcessMembers(level + 1, variableName, shape.Members, xmlNamespace);			
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=marshallName#>");
+<#+
+#>
+<#+
+			ProcessMembers(level + 1, variableName, shape.Members);
 #>
 <#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();
 <#=new string(' ', level * 4)#>				}
 <#+		
 	}
-
-	void ProcessList(int level, string variableName, Member member, string xmlNamespace)
+	void ProcessList(int level, string variableName, Member member)
 	{
 				var listVariable = (variableName + member.PropertyName).Replace(".",string.Empty);
 				var listItemVariable = (variableName + member.PropertyName).Replace(".",string.Empty) + "Value";
 #>
 <#=new string(' ', level * 4)#>				var <#=listVariable#> = <#=variableName#>.<#=member.PropertyName#>;
 <#=new string(' ', level * 4)#>				if (<#=listVariable#> != null && (<#=listVariable#>.Count > 0 || !AWSConfigs.InitializeCollections)) 
-<#=new string(' ', level * 4)#>				{						
-<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>", "<#=xmlNamespace#>");
+<#=new string(' ', level * 4)#>				{
+<#+
+				if(string.IsNullOrEmpty(member.XmlNamespace))
+				{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>");
+<#+
+				}
+				else
+				{
+					if(string.IsNullOrEmpty(member.XmlNamespacePrefix))
+					{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>", "<#=member.XmlNamespace#>");
+<#+
+					}
+					else
+					{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>");
+<#=new string(' ', level * 4)#>					xmlWriter.WriteAttributeString("xmlns","<#=member.XmlNamespacePrefix#>",null,"<#=member.XmlNamespace#>");
+<#+
+					}
+				}
+#>
 <#=new string(' ', level * 4)#>					foreach (var <#=listItemVariable#> in <#=listVariable#>) 
 <#=new string(' ', level * 4)#>					{
 <#+			
 			if(member.Shape.ListShape.IsStructure)
 			{
-					ProcessStructure(level + 1, listItemVariable, member, xmlNamespace);	
+					ProcessStructure(level + 1, listItemVariable, member);	
 			}
 			else
 			{
@@ -247,7 +387,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				{
 					// Use shape's ListMarshallName as it's a list structure.
 #>
-<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=listMarshallName#>", "<#=xmlNamespace#>");
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=listMarshallName#>");
 <#=new string(' ', level * 4)#>						xmlWriter.WriteValue(<#=member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)#>(<#=listItemVariable#>));
 <#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
 <#+				
@@ -255,9 +395,35 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				}
 				else
 				{
+					var listNode = member.Shape.data;
+					var listMemberNode = listNode[Shape.MemberKey];
 					// Use shape's ListMarshallName as it's a list structure.
+					if(listMemberNode == null || listMemberNode[ServiceModel.XmlNamespaceKey] == null || string.IsNullOrEmpty((string)listMemberNode[ServiceModel.XmlNamespaceKey]))
+					{
 #>
-<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=listMarshallName#>", "<#=xmlNamespace#>");
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=listMarshallName#>");
+<#+
+					}
+					else
+					{
+						JsonData listMemberXmlNamespaceNode = listMemberNode[ServiceModel.XmlNamespaceKey];
+						// if it's a string, it has no prefix
+						if(listMemberXmlNamespaceNode.IsString)
+						{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=listMarshallName#>", "<#=listMemberXmlNamespaceNode#>");
+
+<#+
+						}
+						else
+						{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=listMarshallName#>");
+<#=new string(' ', level * 4)#>						xmlWriter.WriteAttributeString("xmlns","<#=listMemberXmlNamespaceNode[ServiceModel.XmlNamespacePrefixKey]#>",null,"<#=listMemberXmlNamespaceNode[ServiceModel.XmlNamespaceUriKey]#>");
+<#+
+						}
+					}
+#>
 <#=new string(' ', level * 4)#>						xmlWriter.WriteValue(<#=listItemVariable#>);
 <#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
 <#+				
@@ -270,18 +436,219 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#+				
 	}
 
-	void ProcessMap(int level, string variableName, Member member, string xmlNamespace)
+	void ProcessMap(int level, string variableName, Member member)
+	{
+		if(string.IsNullOrEmpty(member.XmlNamespace))
+		{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>");
+<#+
+		}
+		else
+		{
+			if(string.IsNullOrEmpty(member.XmlNamespacePrefix))
+			{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>","<#=member.XmlNamespace#>");
+
+<#+
+			}
+			else
+			{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>");
+<#=new string(' ', level * 4)#>					xmlWriter.WriteAttributeString("xmlns","<#=member.XmlNamespacePrefix#>",null,"<#=member.XmlNamespace#>");
+<#+
+			}
+		}
+#>
+<#=new string(' ', level * 4)#>					foreach (var kvp in <#=variableName#>.<#=member.PropertyName#>)
+<#=new string(' ', level * 4)#>					{
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("entry");
+<#+
+		if(string.IsNullOrEmpty(member.Shape.KeyShapeXmlNamespace))
+		{
+#>
+
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.KeyMarshallName#>", kvp.Key);
+<#+
+		}
+		else
+		{
+			var keyNode = member.Shape.data[Shape.KeyKey];
+			if(keyNode[ServiceModel.XmlNamespaceKey].IsString)
+			{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.KeyMarshallName#>","<#=member.Shape.KeyShapeXmlNamespace#>",kvp.Key);
+<#+
+			}
+			else
+			{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=keyNode[ServiceModel.XmlNamespaceKey][ServiceModel.XmlNamespacePrefixKey]#>","<#=member.Shape.KeyMarshallName#>","<#=member.Shape.KeyShapeXmlNamespace#>",kvp.Key);
+
+<#+
+			}
+		}
+		if(member.Shape.ValueShape.IsMap)
+		{
+			ProcessSubMap(level + 1, member.Shape.ValueShape, "kvp");
+		}
+		else if(member.Shape.ValueShape.IsStructure)
+		{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=member.Shape.ValueMarshallName#>");
+<#+
+			ProcessStructureAsMapValue(level + 2, "kvp.Value", member.Shape.ValueShape);
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
+<#+
+		}
+		else
+		{
+			if(string.IsNullOrEmpty(member.Shape.ValueShapeXmlNamespace))
+			{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.ValueMarshallName#>", kvp.Value<#=member.Shape.ValueShape.IsString ? "" : ".ToString()"#>);
+<#+
+			}
+			else
+			{
+				var valueNode = member.Shape.data[Shape.ValueKey];
+				if(valueNode[ServiceModel.XmlNamespaceKey].IsString)
+				{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.ValueMarshallName#>", "<#=member.Shape.ValueShapeXmlNamespace#>",kvp.Value<#=member.Shape.ValueShape.IsString ? "" : ".ToString()"#>);
+<#+				}
+				else
+				{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=valueNode[ServiceModel.XmlNamespaceKey][ServiceModel.XmlNamespacePrefixKey]#>","<#=member.Shape.ValueMarshallName#>", "<#=member.Shape.ValueShapeXmlNamespace#>",kvp.Value<#=member.Shape.ValueShape.IsString ? "" : ".ToString()"#>);
+<#+
+				}
+			}
+		}
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
+<#=new string(' ', level * 4)#>					}
+<#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();
+<#+		
+	}
+#>
+<#+
+	// Separating the processing of a flattened map and a regular map for maintability
+	void ProcessFlattenedMap(int level, string variableName, Member member)
+	{	
+#>
+<#=new string(' ', level * 4)#>					foreach (var kvp in <#=variableName#>.<#=member.PropertyName#>)
+<#=new string(' ', level * 4)#>					{
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=member.MarshallName#>");
+<#+
+		if(string.IsNullOrEmpty(member.Shape.KeyShapeXmlNamespace))
+		{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.KeyMarshallName#>", kvp.Key);
+<#+
+		}
+		else
+		{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.KeyMarshallName#>","<#=member.Shape.KeyShapeXmlNamespace#>", kvp.Key);
+<#+
+		}
+		if(member.Shape.ValueShape.IsMap)
+		{
+			ProcessSubMap(level + 1, member.Shape.ValueShape, "kvp");
+		}
+		else if(member.Shape.ValueShape.IsStructure)
+		{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=member.Shape.ValueMarshallName#>");
+<#+
+			ProcessStructureAsMapValue(level + 2, "kvp.Value", member.Shape.ValueShape);
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
+<#+
+		}
+		else
+		{
+			if(string.IsNullOrEmpty(member.Shape.ValueShapeXmlNamespace))
+			{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.ValueMarshallName#>", kvp.Value<#=member.Shape.ValueShape.IsString ? "" : ".ToString()"#>);
+<#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
+<#+
+			}
+			else
+			{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=member.Shape.ValueMarshallName#>", "<#=member.Shape.ValueShapeXmlNamespace#>", kvp.Value<#=member.Shape.ValueShape.IsString ? "" : ".ToString()"#>);
+<#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
+<#+
+			}
+		}
+#>
+<#=new string(' ', level * 4)#>					}	
+<#+
+	}
+#>
+<#+
+	void ProcessSubMap(int level, Shape shape, string parentVariableName)
 	{				
 #>
-<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>", "<#=xmlNamespace#>");
-<#=new string(' ', level * 4)#>					foreach (var kvp in <#=variableName#>.<#=member.PropertyName#>) 
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("value");
+<#=new string(' ', level * 4)#>					foreach (var kvp<#=level#> in <#=parentVariableName#>.Value) 
 <#=new string(' ', level * 4)#>					{
-<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("entry", "<#=xmlNamespace#>");
-<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("key", "<#=xmlNamespace#>", kvp.Key);
-<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("value", "<#=xmlNamespace#>", kvp.Value);
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("entry");
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=shape.KeyMarshallName#>", kvp<#=level#>.Key);
+<#+
+		if(shape.ValueShape.IsMap)
+		{
+			ProcessSubMap(level + 1, shape.ValueShape, $"kvp{level}");
+		}
+		else
+		{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("<#=shape.ValueMarshallName#>", kvp<#=level#>.Value);
+<#+
+		}
+#>
 <#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
 <#=new string(' ', level * 4)#>					}			
 <#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();				
 <#+				
+	}
+#>
+<#+
+	protected void ProcessNonStructurePayload(Member payload, int level)
+	{
+		if(payload.Shape.IsString)
+		{
+#>
+<#=new string(' ', level * 4)#>request.Content = Encoding.UTF8.GetBytes(<#=this.Operation.RequestPayloadMember.PrimitiveMarshaller#>(publicRequest.<#=this.Operation.RequestPayloadMember.PropertyName#>));
+<#=new string(' ', level * 4)#>request.Headers["Content-Type"] = "text/plain";
+<#+
+		}
+		else if(payload.Shape.IsMemoryStream)
+		{
+#>
+<#=new string(' ', level * 4)#>request.ContentStream = publicRequest.<#=this.Operation.RequestPayloadMember.PropertyName#>;
+<#=new string(' ', level * 4)#>request.Headers["Content-Type"] = "application/octet-stream";
+<#+
+		}
+	}
+#>
+<#+
+	protected void ProcessStructureAsMapValue(int level, string variableName, Shape shape)
+	{
+		// Use shape's ListMarshallName if the structure is a list.
+#>
+<#=new string(' ', level * 4)#>				if (<#=variableName#> != null) 
+<#=new string(' ', level * 4)#>				{
+<#+
+			ProcessMembers(level + 1, variableName, shape.Members, insideMap: true);
+#>
+<#=new string(' ', level * 4)#>				}
+<#+
 	}
 #>

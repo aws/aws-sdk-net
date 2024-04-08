@@ -120,24 +120,60 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
                     //inline.
                     continue;
 				}
-				else if (member.Shape.IsInt)
+                else if (member.Shape.IsList)
 				{
+                    if(member.Shape.ListShape.IsMap || member.Shape.ListShape.IsList)
+                    {
+                        throw new Exception("Member ListShape " + member.Shape.ListShape.Name + " cannot be handled because its type, " + member.Shape.ListShape.Type + ", is not handled because it is a sub Map or List.  Please Update RestMarshallingTests.tt.");
+                    }
+                    else if(member.Shape.ListShape.IsString)
+                    {
 #>
-					{"<#=member.MarshallLocationName#>",int.MaxValue.ToString(CultureInfo.InvariantCulture)},
-<#	
+					{"<#=member.MarshallLocationName#>","<#=member.MarshallLocationName#>_Value1, <#=member.MarshallLocationName#>_Value2"},
+<#                 
+                    }
+                    else if(member.Shape.ListShape.IsDateTime)
+                    {
+                        var timestampFormat = member.Shape.ListShape.GetTimestampFormat(MarshallLocation.Headers);
+#>
+					{"<#=member.MarshallLocationName#>",$"{ValidatorUtils.GetTestDate(TimestampFormat.<#=timestampFormat#>)}, {ValidatorUtils.GetTestDate(TimestampFormat.<#=timestampFormat#>)}"},
+<#                 
+                    }
+                    else if(member.Shape.ListShape.IsBoolean)
+                    {
+#>
+					{"<#=member.MarshallLocationName#>",$"{bool.TrueString}, {bool.TrueString}"},
+<#                 
+                    }
+                    else if(member.Shape.ListShape.IsPrimitiveType)
+                    {
+#>
+					{"<#=member.MarshallLocationName#>",$"{<#=member.Shape.ListShape.GetPrimitiveType().ToLower()#>.MaxValue.ToString(CultureInfo.InvariantCulture)}, {<#=member.Shape.ListShape.GetPrimitiveType().ToLower()#>.MaxValue.ToString(CultureInfo.InvariantCulture)}"},
+<#                 
+                    }
+                    else
+                    {
+                        throw new Exception("Member ListShape " + member.Shape.ListShape.Name + " cannot be handled because its type, " + member.Shape.ListShape.Type + ", is not handled.  Please Update RestMarshallingTests.tt.");
+                    }
 				}
-                else if (member.Shape.IsLong)
-                {
-#>
-					{"<#=member.MarshallLocationName#>",long.MaxValue.ToString(CultureInfo.InvariantCulture)},
-<#	
-                }
-				else if (member.Shape.IsDateTime)
+                else if (member.Shape.IsDateTime)
                 {
 #>
 					{"<#=member.MarshallLocationName#>",ValidatorUtils.GetTestDate(TimestampFormat.<#=member.TimestampFormat#>)},
 <#	
                 }
+                else if (member.Shape.IsBoolean)
+				{
+#>
+					{"<#=member.MarshallLocationName#>",bool.TrueString},
+<#	
+				}
+				else if (member.Shape.IsPrimitiveType)
+				{
+#>
+					{"<#=member.MarshallLocationName#>",<#=member.Shape.GetPrimitiveType().ToLower()#>.MaxValue.ToString(CultureInfo.InvariantCulture)},
+<#	
+				}
 				else
 				{
 					throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt.");
@@ -225,7 +261,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             if (member.ModelShape.ValueShape.IsString)
             {
 #>
-                Assert.AreEqual(response.ResponseHeaders[kvp<#=member.PropertyName#>.Key], kvp<#=member.PropertyName#>.Value);
+                Assert.AreEqual(response.<#=member.PropertyName#>[kvp<#=member.PropertyName#>.Key], kvp<#=member.PropertyName#>.Value);
 <#
             }
             // Dictionary<string, List<string>>
@@ -319,7 +355,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
                     }
                     else
                     {
-                        throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt.");
+                        throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt - exception case.");
                     }
                 }
             }

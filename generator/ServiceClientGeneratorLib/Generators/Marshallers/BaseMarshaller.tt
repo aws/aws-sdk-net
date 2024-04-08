@@ -55,7 +55,13 @@ using Amazon.Runtime.Internal.Util;
             {
                 if (member.IsList)
                 {
-                    if (member.ModelShape.ModelListShape.IsString || member.ModelShape.ModelListShape.IsEnum)
+                    if(member.Shape.ListShape.IsMap || member.Shape.ListShape.IsList)
+                    {
+						throw new NotImplementedException(string.Format(CultureInfo.InvariantCulture,
+							"Marshalling list of {0} as header param is not implemented.",
+							member.Shape.ListShape.Type));
+					}
+                    else if (member.ModelShape.ModelListShape.IsString || member.ModelShape.ModelListShape.IsEnum)
                     {
 #>
                         request.Headers["<#=member.MarshallLocationName#>"] = StringUtils.FromList(<#=variableName#>.<#=member.PropertyName#>);
@@ -63,7 +69,9 @@ using Amazon.Runtime.Internal.Util;
                     }
                     else
                     {
-                        throw new InvalidDataException("[{member.ModelName}]: Marshalling lists as header values is only support for lists of strings or list of enums.");
+#>
+                        request.Headers["<#=member.MarshallLocationName#>"] = StringUtils.FromValueTypeList(<#=variableName#>.<#=member.PropertyName#>);
+<#+
                     }
                 }
                 else if (member.IsMap)
@@ -128,13 +136,13 @@ using Amazon.Runtime.Internal.Util;
 				if(isGreedy)
 				{
 #>
-			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')) : string.Empty);
+			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')) : string.Empty);
 <#+
 				}
 				else
 				{
 #>
-			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
+			request.AddPathResource("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
 <#+
 				}
 
@@ -148,13 +156,13 @@ using Amazon.Runtime.Internal.Util;
 			if(isGreedy)
 				{
 #>
-			request.AddPathResource("<#=marshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')));
+			request.AddPathResource("<#=marshallLocationName#>", <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')));
 <#+
 				}
 				else
 				{
 #>
-			request.AddPathResource("<#=marshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+			request.AddPathResource("<#=marshallLocationName#>", <#=member.Shape.PrimitiveMarshaller(MarshallLocation.Uri)#>(<#=variableName#>.<#=member.PropertyName#>));
 <#+
 				}
             }
@@ -179,11 +187,42 @@ using Amazon.Runtime.Internal.Util;
 			}
 		}
 	}
-
+#>
+<#+
 	// Only applicable for rest-json and rest-xml
     // Generates code to add any operation query members to the query string for the request
     // If the marshaller is customized, it marshalls the value before changing it to a string
 	protected void ProcessQueryStringMembers(string variableName, Operation operation)
+	{
+		if(operation.RequestHasQueryStringMembers)		
+		{
+            bool containsQueryParamMap = operation.RequestQueryStringMembers.Any(item => item.IsMap);
+            if(!containsQueryParamMap)
+            {
+                // Most services don't contain a query param map, and since the smithy spec specifies that if a query param map
+                // exists and a normal query param exists, we must ignore the query param map,
+                // we will separate these two cases out to different functions since handling queryparam maps + overwriting previous
+                // normal query param entries requires a lot more generated code.
+                ProcessQueryStringMembersNoMap(variableName,operation);
+            }
+            else
+            {
+
+			    foreach(var member in operation.RequestQueryStringMembers)
+			    {
+                    ProcessQueryStringMemberWithMap(3, member,variableName);
+                }
+#>
+<#+        
+			}
+		}
+	}
+#>
+<#+
+	// Only applicable for rest-json and rest-xml
+    // Generates code to add any operation query members to the query string for the request
+    // If the marshaller is customized, it marshalls the value before changing it to a string
+	protected void ProcessQueryStringMembersNoMap(string variableName, Operation operation)
 	{
 		if(operation.RequestHasQueryStringMembers)		
 		{
@@ -197,45 +236,6 @@ using Amazon.Runtime.Internal.Util;
 #>
 				request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>));
 <#+        
-                }
-                else if (member.IsMap)
-                {
-                    if(member.Shape.ValueShape.IsMap)
-					{
-						throw new NotImplementedException(string.Format(CultureInfo.InvariantCulture,
-							"Marshalling map with value type of {0} as query string param is not implemented.",
-							member.Shape.ValueShape.Type));
-					}
-#>
-            {
-                foreach(var kvp in <#=variableName#>.<#=member.PropertyName#>)
-                {
-<#+
-                if(member.Shape.ValueShape.IsList) 
-                {
-                    if(member.Shape.ValueShape.ListShape.IsString)
-                    {
-#>
-                    request.ParameterCollection.Add(kvp.Key, kvp.Value);
-<#+
-                    }
-                    else
-                    {
-#>
-                    request.ParameterCollection.Add(kvp.Key, kvp.Value.ConvertAll<string>(item => <#=member.Shape.ValueShape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(item)));
-<#+
-                    }
-                }
-                else 
-                {
-#>
-                    request.Parameters.Add(kvp.Key, <#=member.Shape.ValueShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(kvp.Value));
-<#+
-                }
-#>
-                }
-            }
-<#+
                 }
                 else if (member.IsList)
                 {
@@ -276,7 +276,125 @@ using Amazon.Runtime.Internal.Util;
 			}
 		}
 	}
+#>
 
+
+
+<#+
+    protected void ProcessQueryStringMemberWithMap(int level, Member member, string variableName)
+    {
+#>
+<#=new string(' ', level * 4)#>if (<#=variableName#>.IsSet<#=member.PropertyName#>())
+<#=new string(' ', level * 4)#>{
+<#+
+        if (member.CustomMarshallerTransformation != null)
+        {
+#>
+<#=new string(' ', (level + 1) * 4)#>if (request.Parameters.ContainsKey("<#=member.MarshallLocationName#>"))
+<#=new string(' ', (level + 1) * 4)#>   request.Parameters.Remove("<#=member.MarshallLocationName#>"));
+<#=new string(' ', (level + 1) * 4)#>request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>));
+<#=new string(' ', level * 4)#>}
+<#+
+        } //end curly brace for if(member.CustomMarshallerTransformation!=null
+#>
+<#+
+        else if (member.IsMap)
+        {
+            if(member.Shape.ValueShape.IsMap)
+			{
+			throw new NotImplementedException(string.Format(CultureInfo.InvariantCulture,
+				"Marshalling map with value type of {0} as query string param is not implemented.",
+			    member.Shape.ValueShape.Type));
+		    }
+#>
+<#=new string(' ', (level + 1) * 4)#>foreach(var kvp in <#=variableName#>.<#=member.PropertyName#>)
+<#=new string(' ', (level + 1) * 4)#>{
+<#+
+            if(member.Shape.ValueShape.IsList)
+            {
+                if(member.Shape.ValueShape.ListShape.IsString)
+                {
+#>
+<#=new string(' ', (level + 2) * 4)#>if(request.ParameterCollection.ContainsKey(kvp.Key))
+<#=new string(' ', (level + 2) * 4)#>   continue;
+<#=new string(' ', (level + 2) * 4)#>else
+<#=new string(' ', (level + 2) * 4)#>   request.ParameterCollection.Add(kvp.Key, kvp.Value);
+<#+             }//ending closing brace for (if(member.Shape.ValueShape.ListShape.IsString)
+                else
+                {
+#>
+<#=new string(' ', (level + 2) * 4)#>if(request.ParameterCollection.ContainsKey(kvp.Key))
+<#=new string(' ', (level + 2) * 4)#>   continue;
+<#=new string(' ', (level + 2) * 4)#>else
+<#=new string(' ', (level + 2) * 4)#>   request.ParameterCollection.Add(kvp.Key, kvp.Value.ConvertAll<string>(item => <#=member.Shape.ValueShape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(item)));
+<#+             }//ending closing brace for else
+
+            }//ending closing brach for if(member.Shape.ValueShape.IsList
+            else
+            {
+#>
+<#=new string(' ', (level + 2) * 4)#>if(request.Parameters.ContainsKey(kvp.Key))
+<#=new string(' ', (level + 2) * 4)#>   continue;
+<#=new string(' ', (level + 2) * 4)#>else
+<#=new string(' ', (level + 2) * 4)#>   request.Parameters.Add(kvp.Key, <#=member.Shape.ValueShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(kvp.Value));
+<#+
+            }//closing brace for else
+#>
+<#=new string(' ', (level + 1) * 4)#>}
+<#=new string(' ', level * 4)#>}
+<#+
+        } //ending closing brace for member.IsMap
+#>
+<#+
+        else if (member.IsList)
+        {
+            if(member.Shape.ListShape.IsMap || member.Shape.ListShape.IsList)
+		    {
+			    throw new NotImplementedException(string.Format(CultureInfo.InvariantCulture,
+				    "Marshalling list of {0} as query string param is not implemented.",
+					member.Shape.ListShape.Type));
+			}
+            if(member.Shape.ListShape.IsString)
+            {
+#>
+<#=new string(' ', (level + 1) * 4)#>if(request.ParameterCollection.ContainsKey("<#=member.MarshallLocationName#>"))
+<#=new string(' ', (level + 1) * 4)#>   request.ParameterCollection.Remove("<#=member.MarshallLocationName#>");
+<#=new string(' ', (level + 1) * 4)#>request.ParameterCollection.Add("<#=member.MarshallLocationName#>", <#=variableName#>.<#=member.PropertyName#>);
+<#+         }//end of member.Shape.ListShape.IsString
+            else
+            {
+#>
+<#=new string(' ', (level + 1) * 4)#>if(request.ParameterCollection.ContainsKey("<#=member.MarshallLocationName#>"))
+<#=new string(' ', (level + 1) * 4)#>   request.ParameterCollection.Remove("<#=member.MarshallLocationName#>");
+<#=new string(' ', (level + 1) * 4)#>request.ParameterCollection.Add("<#=member.MarshallLocationName#>", <#=variableName#>.<#=member.PropertyName#>.ConvertAll<string>(item => <#=member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(item)));
+
+<#+         }//end of else
+#>
+<#=new string(' ', level * 4)#>}
+<#+
+        }//end of (member.isList) 
+        else // not a map or a list
+        {
+#>
+<#=new string(' ', (level + 1) * 4)#>if(request.Parameters.ContainsKey("<#=member.MarshallLocationName#>"))
+<#=new string(' ', (level + 1) * 4)#>   request.Parameters.Remove("<#=member.MarshallLocationName#>");
+<#=new string(' ', (level + 1) * 4)#>request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+<#=new string(' ', level * 4)#>}
+<#+
+        }//end of else
+        if(member.IsIdempotent)
+        {
+#>
+<#=new string(' ', (level + 1) * 4)#> else
+<#=new string(' ', (level + 1) * 4)#>     request.Parameters.Add("<#=member.MarshallLocationName#>", System.Guid.NewGuid().ToString());
+<#+
+        }//end of member.IsIdempotent
+#>
+<#+//end of ProcessQueryStringMember function
+    }
+#>
+
+<#+
     // Only applicable for rest-json and rest-xml
     // Generates code to add the operation's hostPrefixMembers to the request's HostPrefix
 	protected void ProcessEndpointHostPrefixMembers(string variableName, Operation operation)

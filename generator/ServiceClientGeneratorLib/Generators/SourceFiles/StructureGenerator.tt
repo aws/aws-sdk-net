@@ -152,7 +152,7 @@ namespace <#=this.Config.Namespace#>.Model
                     if (member.IsExcluded)
                         continue;
 #>
-        private <#=member.DetermineType()#><#= member.IsNullable ? "?" : "" #> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
+        private <#=member.DetermineType()#><#= member.IsNullable && !member.UseNullable ? "?" : "" #> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
 <#
                 }
 #>
@@ -215,7 +215,7 @@ namespace <#=this.Config.Namespace#>.Model
 <#
                     }
 #>
-        <#=member.AccessModifier#> <#=member.DetermineType()#><#=member.UseNullable ? "?" : ""#> <#=member.PropertyName#>
+        <#=member.AccessModifier#> <#=member.DetermineType()#> <#=member.PropertyName#>
         {
 <#
                     if(member.IsNullable && !member.UseNullable)

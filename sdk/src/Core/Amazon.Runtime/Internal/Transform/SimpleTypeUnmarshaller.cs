@@ -81,7 +81,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// This unmarshaller is not implemented for XML context, as XML responses
     /// will null elements (xsi:nil='true') will be skipped by the XML parser.
     /// </summary>
-    public class NullableIntUnmarshaller : IUnmarshaller<int?, JsonUnmarshallerContext>
+    public class NullableIntUnmarshaller : IUnmarshaller<int?, JsonUnmarshallerContext>, IUnmarshaller<int?, XmlUnmarshallerContext>
     {   
         private NullableIntUnmarshaller() { }
 
@@ -110,6 +110,66 @@ namespace Amazon.Runtime.Internal.Transform
                 return null;
             }
             return int.Parse(text, CultureInfo.InvariantCulture);
+        }
+
+        public int? Unmarshall(XmlUnmarshallerContext context)
+        {
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return int.Parse(text, CultureInfo.InvariantCulture);
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for nullable bool fields. Implemented only for JSON context
+    /// to handle cases where value can be null e.g. {'Priority': null}.
+    /// This unmarshaller is not implemented for XML context, as XML responses
+    /// will null elements (xsi:nil='true') will be skipped by the XML parser.
+    /// </summary>
+    public class NullableBoolUnmarshaller : IUnmarshaller<bool?, JsonUnmarshallerContext>, IUnmarshaller<bool?, XmlUnmarshallerContext>
+    {
+        private NullableBoolUnmarshaller() { }
+
+        private static NullableBoolUnmarshaller _instance = new NullableBoolUnmarshaller();
+
+        public static NullableBoolUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public static NullableBoolUnmarshaller GetInstance()
+        {
+            return NullableBoolUnmarshaller.Instance;
+        }
+
+        public bool? Unmarshall(JsonUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return bool.Parse(text);
+        }
+
+        public bool? Unmarshall(XmlUnmarshallerContext context)
+        {
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return bool.Parse(text);
         }
     }
 
