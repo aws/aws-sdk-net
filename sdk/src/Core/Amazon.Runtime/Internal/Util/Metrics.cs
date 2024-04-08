@@ -373,7 +373,7 @@ namespace Amazon.Runtime.Internal.Util
                 foreach (var obj in properties)
                 {
                     if (obj == null)
-                        jw.Write(null);
+                        jw.Write((string)null);
                     else
                         jw.Write(obj.ToString());
                 }

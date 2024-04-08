@@ -26,6 +26,8 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
         /// <returns></returns>
 		public void Marshall(<#=this.Structure.Name #> requestObject, JsonMarshallerContext context)
 		{
+			if(requestObject == null)
+				return;
 <#
     ProcessMembers(0, "requestObject", this.Structure.Members);
 #>
@@ -44,7 +46,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 	protected void ProcessMembers(int level, string variableName, IEnumerable<Member> members)
 	{
 		foreach(var member in members)
-		{	
+		{
 #>
 <#=new string(' ', level * 4)#>            if(<#=variableName#>.IsSet<#=member.PropertyName#>())
 <#=new string(' ', level * 4)#>            {
@@ -74,6 +76,32 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 				{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.Write(<#=member.PrimitiveMarshaller#>(<#=variableName + "." + member.PropertyName#>));
+<#+
+				}
+				else if(member.Shape.IsDouble)
+				{
+#>
+<#=new string(' ', level * 4)#>				if(StringUtils.IsSpecialDoubleValue(<#=memberProperty#>))
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					context.Writer.Write(StringUtils.FromSpecialDoubleValue(<#=memberProperty#>));
+<#=new string(' ', level * 4)#>				}
+<#=new string(' ', level * 4)#>				else
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					context.Writer.Write(<#=memberProperty#>);
+<#=new string(' ', level * 4)#>				}
+<#+
+				}
+				else if(member.Shape.IsFloat)
+				{
+#>
+<#=new string(' ', level * 4)#>				if(StringUtils.IsSpecialFloatValue(<#=memberProperty#>))
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					context.Writer.Write(StringUtils.FromSpecialFloatValue(<#=memberProperty#>));
+<#=new string(' ', level * 4)#>				}
+<#=new string(' ', level * 4)#>				else
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					context.Writer.Write(<#=memberProperty#>);
+<#=new string(' ', level * 4)#>				}
 <#+
 				}
 				else
