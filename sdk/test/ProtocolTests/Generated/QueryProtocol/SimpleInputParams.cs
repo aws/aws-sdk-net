@@ -19,9 +19,9 @@
 using AWSSDK.ProtocolTests;
 using AWSSDK.ProtocolTests.Utils;
 using AWSSDK_DotNet35.UnitTests.TestTools;
-using Amazon.EC2Protocol;
-using Amazon.EC2Protocol.Model;
-using Amazon.EC2Protocol.Model.Internal.MarshallTransformations;
+using Amazon.QueryProtocol;
+using Amazon.QueryProtocol.Model;
+using Amazon.QueryProtocol.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
@@ -33,7 +33,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 
-namespace AWSSDK.ProtocolTests.AwsEc2
+namespace AWSSDK.ProtocolTests.AwsQuery
 {
     [TestClass]
     public class SimpleInputParams
@@ -44,8 +44,8 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2SimpleInputParamsStringsRequest()
+        [TestCategory("AwsQuery")]
+        public void QuerySimpleInputParamsStringsRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -53,7 +53,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
                 Foo = "val1",
                 Bar = "val2",
             };
-            var config = new AmazonEC2ProtocolConfig
+            var config = new AmazonQueryProtocolConfig
             {
               ServiceURL = "https://test.com/"
             };
@@ -82,8 +82,8 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2SimpleInputParamsStringAndBooleanTrueRequest()
+        [TestCategory("AwsQuery")]
+        public void QuerySimpleInputParamsStringAndBooleanTrueRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -91,7 +91,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
                 Foo = "val1",
                 Baz = true,
             };
-            var config = new AmazonEC2ProtocolConfig
+            var config = new AmazonQueryProtocolConfig
             {
               ServiceURL = "https://test.com/"
             };
@@ -120,15 +120,15 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2SimpleInputParamsStringsAndBooleanFalseRequest()
+        [TestCategory("AwsQuery")]
+        public void QuerySimpleInputParamsStringsAndBooleanFalseRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
             {
                 Baz = false,
             };
-            var config = new AmazonEC2ProtocolConfig
+            var config = new AmazonQueryProtocolConfig
             {
               ServiceURL = "https://test.com/"
             };
@@ -157,15 +157,15 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2SimpleInputParamsIntegerRequest()
+        [TestCategory("AwsQuery")]
+        public void QuerySimpleInputParamsIntegerRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
             {
                 Bam = 10,
             };
-            var config = new AmazonEC2ProtocolConfig
+            var config = new AmazonQueryProtocolConfig
             {
               ServiceURL = "https://test.com/"
             };
@@ -194,15 +194,15 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2SimpleInputParamsFloatRequest()
+        [TestCategory("AwsQuery")]
+        public void QuerySimpleInputParamsFloatRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
             {
                 Boo = 10.8,
             };
-            var config = new AmazonEC2ProtocolConfig
+            var config = new AmazonQueryProtocolConfig
             {
               ServiceURL = "https://test.com/"
             };
@@ -231,15 +231,15 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2SimpleInputParamsBlobRequest()
+        [TestCategory("AwsQuery")]
+        public void QuerySimpleInputParamsBlobRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
             {
                 Qux = new MemoryStream(Encoding.UTF8.GetBytes("value")),
             };
-            var config = new AmazonEC2ProtocolConfig
+            var config = new AmazonQueryProtocolConfig
             {
               ServiceURL = "https://test.com/"
             };
@@ -268,15 +268,15 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2EnumsRequest()
+        [TestCategory("AwsQuery")]
+        public void QueryEnumsRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
             {
                 FooEnum = "Foo",
             };
-            var config = new AmazonEC2ProtocolConfig
+            var config = new AmazonQueryProtocolConfig
             {
               ServiceURL = "https://test.com/"
             };
@@ -300,20 +300,20 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         }
 
         /// <summary>
-        /// Serializes query using ec2QueryName trait.
+        /// Serializes intEnums in the query string
         /// </summary>
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2QueryRequest()
+        [TestCategory("AwsQuery")]
+        public void QueryIntEnumsRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
             {
-                HasQueryName = "Hi",
+                IntegerEnum = 1,
             };
-            var config = new AmazonEC2ProtocolConfig
+            var config = new AmazonQueryProtocolConfig
             {
               ServiceURL = "https://test.com/"
             };
@@ -323,82 +323,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&HasQueryName=Hi");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
-        }
-
-        /// <summary>
-        /// ec2QueryName trait is preferred over xmlName.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2QueryIsPreferredRequest()
-        {
-            // Arrange
-            var request = new SimpleInputParamsRequest
-            {
-                HasQueryAndXmlName = "Hi",
-            };
-            var config = new AmazonEC2ProtocolConfig
-            {
-              ServiceURL = "https://test.com/"
-            };
-
-            var marshaller = new SimpleInputParamsRequestMarshaller();
-            // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-
-            // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&HasQueryAndXmlName=Hi");
-            foreach(var queryParam in expectedParams.Keys)
-            {
-               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
-               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
-            }
-
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
-        }
-
-        /// <summary>
-        /// xmlName is used with the ec2 protocol, but the first character is
-        /// uppercased
-        /// </summary>
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2XmlNameIsUppercasedRequest()
-        {
-            // Arrange
-            var request = new SimpleInputParamsRequest
-            {
-                UsesXmlName = "Hi",
-            };
-            var config = new AmazonEC2ProtocolConfig
-            {
-              ServiceURL = "https://test.com/"
-            };
-
-            var marshaller = new SimpleInputParamsRequestMarshaller();
-            // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-
-            // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&UsesXmlName=Hi");
+            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&IntegerEnum=1");
             foreach(var queryParam in expectedParams.Keys)
             {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
@@ -417,8 +342,8 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2QuerySupportsNaNFloatInputsRequest()
+        [TestCategory("AwsQuery")]
+        public void AwsQuerySupportsNaNFloatInputsRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -426,7 +351,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
                 FloatValue = float.NaN,
                 Boo = double.NaN,
             };
-            var config = new AmazonEC2ProtocolConfig
+            var config = new AmazonQueryProtocolConfig
             {
               ServiceURL = "https://test.com/"
             };
@@ -455,8 +380,8 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2QuerySupportsInfinityFloatInputsRequest()
+        [TestCategory("AwsQuery")]
+        public void AwsQuerySupportsInfinityFloatInputsRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -464,7 +389,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
                 FloatValue = float.PositiveInfinity,
                 Boo = double.PositiveInfinity,
             };
-            var config = new AmazonEC2ProtocolConfig
+            var config = new AmazonQueryProtocolConfig
             {
               ServiceURL = "https://test.com/"
             };
@@ -493,8 +418,8 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
-        [TestCategory("AwsEc2")]
-        public void Ec2QuerySupportsNegativeInfinityFloatInputsRequest()
+        [TestCategory("AwsQuery")]
+        public void AwsQuerySupportsNegativeInfinityFloatInputsRequest()
         {
             // Arrange
             var request = new SimpleInputParamsRequest
@@ -502,7 +427,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
                 FloatValue = float.NegativeInfinity,
                 Boo = double.NegativeInfinity,
             };
-            var config = new AmazonEC2ProtocolConfig
+            var config = new AmazonQueryProtocolConfig
             {
               ServiceURL = "https://test.com/"
             };
