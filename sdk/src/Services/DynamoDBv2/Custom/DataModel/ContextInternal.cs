@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
@@ -388,6 +389,11 @@ namespace Amazon.DynamoDBv2.DataModel
                         if (propertyStorage.IsVersion)
                             storage.CurrentVersion = entry as Primitive;
                     }
+                    #if NET7_0_OR_GREATER
+                    else if (Attribute.IsDefined(propertyStorage.Member, typeof(RequiredMemberAttribute))) {
+                        throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
+                    }
+                    #endif
                 }
             }
         }
@@ -785,6 +791,12 @@ namespace Amazon.DynamoDBv2.DataModel
         // Get/Set object properties
         private static bool TrySetValue(object instance, MemberInfo member, object value)
         {
+            #if NET7_0_OR_GREATER
+            if (Attribute.IsDefined(member, typeof(RequiredMemberAttribute)) && value == null) {
+                return false;
+            }
+            #endif
+
             FieldInfo fieldInfo = member as FieldInfo;
             PropertyInfo propertyInfo = member as PropertyInfo;
 
