@@ -1,3 +1,16 @@
+### 3.7.786.0 (2024-04-09 18:17 UTC)
+* CodeBuild (3.7.306.0)
+	* Add new webhook filter types for GitHub webhooks
+* MediaConvert (3.7.304.0)
+	* This release includes support for bringing your own fonts to use for burn-in or DVB-Sub captioning workflows.
+* Pinpoint (3.7.301.0)
+	* The OrchestrationSendingRoleArn has been added to the email channel and is used to send emails from campaigns or journeys.
+* RDS (3.7.311.0)
+	* This release adds support for specifying the CA certificate to use for the new db instance when restoring from db snapshot, restoring from s3, restoring to point in time, and creating a db instance read replica.
+* Core 3.7.303.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.785.0 (2024-04-08 18:13 UTC)
 * ControlCatalog (3.7.300.0)
 	* This is the initial SDK release for AWS Control Catalog, a central catalog for AWS managed controls. This release includes 3 new APIs - ListDomains, ListObjectives, and ListCommonControls - that vend high-level data to categorize controls across the AWS platform.
