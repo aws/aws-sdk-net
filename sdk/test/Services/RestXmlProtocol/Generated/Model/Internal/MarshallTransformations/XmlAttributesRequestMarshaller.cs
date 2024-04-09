@@ -62,9 +62,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("XmlAttributesRequest", "");
-                if(publicRequest.IsSetAttr())
-                    xmlWriter.WriteElementString("test", StringUtils.FromString(publicRequest.Attr));
-
+                xmlWriter.WriteAttributeString("test", "",StringUtils.FromString(publicRequest.Attr));
                 if(publicRequest.IsSetFoo())
                     xmlWriter.WriteElementString("foo", StringUtils.FromString(publicRequest.Foo));
 
