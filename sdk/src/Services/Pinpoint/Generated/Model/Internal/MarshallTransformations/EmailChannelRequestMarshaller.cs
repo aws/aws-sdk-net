@@ -70,6 +70,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Identity);
             }
 
+            if(requestObject.IsSetOrchestrationSendingRoleArn())
+            {
+                context.Writer.WritePropertyName("OrchestrationSendingRoleArn");
+                context.Writer.Write(requestObject.OrchestrationSendingRoleArn);
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
