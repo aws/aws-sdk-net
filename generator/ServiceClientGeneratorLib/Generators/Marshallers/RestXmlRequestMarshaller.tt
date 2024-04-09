@@ -117,6 +117,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				xmlWriter.WriteAttributeString("xmlns", "<#=operation.XmlNamespacePrefix#>", null, "<#=operation.XmlNamespace#>");
 <#+
 			}
+			var requestStructureAttributes = operation.RequestStructure.Members.Where(x => x.IsXmlAttribute);
+			foreach(var member in requestStructureAttributes)
+			{
+#>
+				xmlWriter.WriteAttributeString("<#=member.MarshallName#>", "<#=member.XmlNamespace#>",<#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+<#+
+			}
 		}
 		else
 		{
@@ -147,10 +154,19 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 					xmlWriter.WriteAttributeString("xmlns","<#=operation.XmlNamespacePrefix#>",null,"<#=operation.XmlNamespace#>");
 <#+
 				}
+#>
+<#+
+			}
+			var requestPayloadAttributes = operation.RequestPayloadMember.Shape.Members.Where(x => x.IsXmlAttribute);
+			foreach(var member in requestPayloadAttributes)
+			{
+#>
+					xmlWriter.WriteAttributeString("<#=member.MarshallName#>","<#=member.XmlNamespace#>",<#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=operation.RequestPayloadMember.PropertyName#>.<#=member.PropertyName#>));
+<#+
 			}
 			level++;
 		}
-		var childmembers = operation.RequestPayloadMember == null ? operation.RequestBodyMembers : operation.RequestPayloadMember.Shape.Members;
+		var childmembers = operation.RequestPayloadMember == null ? operation.RequestBodyMembers.Where(x => !x.IsXmlAttribute) : operation.RequestPayloadMember.Shape.Members.Where(x => !x.IsXmlAttribute);
 		variableName = operation.RequestPayloadMember == null ? variableName : variableName + "." + operation.RequestPayloadMember.PropertyName;
 		foreach(var member in childmembers)
 		{			
