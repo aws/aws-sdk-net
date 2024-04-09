@@ -233,6 +233,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PmtPid);
             }
 
+            if(requestObject.IsSetPreventBufferUnderflow())
+            {
+                context.Writer.WritePropertyName("preventBufferUnderflow");
+                context.Writer.Write(requestObject.PreventBufferUnderflow);
+            }
+
             if(requestObject.IsSetPrivateMetadataPid())
             {
                 context.Writer.WritePropertyName("privateMetadataPid");
