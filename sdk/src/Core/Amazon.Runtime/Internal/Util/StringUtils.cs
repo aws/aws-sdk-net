@@ -246,9 +246,11 @@ namespace Amazon.Runtime.Internal.Util
             // ToString() on boolean types automatically Pascal Cases. Xml-based protocols
             // are case sensitive and accept "true" and "false" as the valid set of booleans.
             // and we should be returning the booleans as is.
-            if ((bool)(values?.Any(x => x.GetType() == typeof(bool))))
+            if (typeof(T) == typeof(bool))
             {
-                return FromList(values?.Select(x => x.ToString().ToLower()));
+#pragma warning disable CA1308
+                return FromList(values?.Select(x => x.ToString().ToLowerInvariant()));
+#pragma warning restore CA1308
             }
 
             return FromList(values?.Select(x => x.ToString()));
