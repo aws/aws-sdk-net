@@ -2496,6 +2496,18 @@ namespace Amazon.CodeBuild
         /// Constant HEAD_REF for WebhookFilterType
         /// </summary>
         public static readonly WebhookFilterType HEAD_REF = new WebhookFilterType("HEAD_REF");
+        /// <summary>
+        /// Constant RELEASE_NAME for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType RELEASE_NAME = new WebhookFilterType("RELEASE_NAME");
+        /// <summary>
+        /// Constant TAG_NAME for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType TAG_NAME = new WebhookFilterType("TAG_NAME");
+        /// <summary>
+        /// Constant WORKFLOW_NAME for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType WORKFLOW_NAME = new WebhookFilterType("WORKFLOW_NAME");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
