@@ -325,6 +325,106 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type AnalysisTemplateValidationStatus.
+    /// </summary>
+    public class AnalysisTemplateValidationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVALID for AnalysisTemplateValidationStatus
+        /// </summary>
+        public static readonly AnalysisTemplateValidationStatus INVALID = new AnalysisTemplateValidationStatus("INVALID");
+        /// <summary>
+        /// Constant UNABLE_TO_VALIDATE for AnalysisTemplateValidationStatus
+        /// </summary>
+        public static readonly AnalysisTemplateValidationStatus UNABLE_TO_VALIDATE = new AnalysisTemplateValidationStatus("UNABLE_TO_VALIDATE");
+        /// <summary>
+        /// Constant VALID for AnalysisTemplateValidationStatus
+        /// </summary>
+        public static readonly AnalysisTemplateValidationStatus VALID = new AnalysisTemplateValidationStatus("VALID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisTemplateValidationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisTemplateValidationStatus FindValue(string value)
+        {
+            return FindValue<AnalysisTemplateValidationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisTemplateValidationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalysisTemplateValidationType.
+    /// </summary>
+    public class AnalysisTemplateValidationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIFFERENTIAL_PRIVACY for AnalysisTemplateValidationType
+        /// </summary>
+        public static readonly AnalysisTemplateValidationType DIFFERENTIAL_PRIVACY = new AnalysisTemplateValidationType("DIFFERENTIAL_PRIVACY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisTemplateValidationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisTemplateValidationType FindValue(string value)
+        {
+            return FindValue<AnalysisTemplateValidationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisTemplateValidationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CollaborationQueryLogStatus.
     /// </summary>
     public class CollaborationQueryLogStatus : ConstantClass

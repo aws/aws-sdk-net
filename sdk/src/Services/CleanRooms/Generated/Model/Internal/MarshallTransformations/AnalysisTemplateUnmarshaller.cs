@@ -148,6 +148,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("validations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AnalysisTemplateValidationStatusDetail, AnalysisTemplateValidationStatusDetailUnmarshaller>(AnalysisTemplateValidationStatusDetailUnmarshaller.Instance);
+                    unmarshalledObject.Validations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
