@@ -22,6 +22,7 @@ import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.utils.SmithyUnstableApi;
 import software.amazon.smithy.model.node.ObjectNode;
 import software.amazon.smithy.codegen.core.CodegenException;
+
 import java.util.Objects;
 
 /**
@@ -45,7 +46,8 @@ public final class DotnetSettings {
      */
     private String packageNamespace;
     private String packageVersion;
-    public static DotnetSettings from(ObjectNode config){
+
+    public static DotnetSettings from(ObjectNode config) {
         DotnetSettings settings = new DotnetSettings();
         settings.setService(config.expectStringMember(SERVICE).expectShapeId());
         settings.setPackageName(config.expectStringMember(PACKAGE_NAME).getValue());
@@ -55,39 +57,40 @@ public final class DotnetSettings {
     }
 
     /**
-     *
      * @return Returns the version of the package.
      */
     public String getPackageVersion() {
         return packageVersion;
     }
+
     private void setPackageVersion(String packageVersion) {
         this.packageVersion = Objects.requireNonNull(packageVersion);
     }
 
     /**
-     *
      * @return Returns the name of the package, which is the equivalent of the nuget package name.
      * For example S3 would be AWSSDK.S3
      */
-    public String getPackageName(){
+    public String getPackageName() {
         return packageName;
     }
+
     private void setPackageName(String packageName) {
         this.packageName = Objects.requireNonNull(packageName);
     }
 
     /**
-     *
      * @return Returns the namespace of the package. This is the namespace that is used within the package.
      * For example for S3, if the packageName is AWSSDK.S3 then the packageNamespace is Amazon.S3
      */
-    public String getPackageNamespace(){
+    public String getPackageNamespace() {
         return packageNamespace;
     }
+
     private void setPackageNamespace(String packageNamespace) {
         this.packageNamespace = Objects.requireNonNull(packageNamespace);
     }
+
     private void setService(ShapeId service) {
         this.service = Objects.requireNonNull(service);
     }
@@ -101,13 +104,14 @@ public final class DotnetSettings {
     public ShapeId getService() {
         return Objects.requireNonNull(service, SERVICE + " not set");
     }
+
     /**
      * Gets the corresponding {@link ServiceShape} from a model.
      *
      * @param model Model to search for the service shape by ID.
      * @return Returns the found {@code Service}.
      * @throws NullPointerException if the service has not been set.
-     * @throws CodegenException if the service is invalid or not found.
+     * @throws CodegenException     if the service is invalid or not found.
      */
     public ServiceShape getService(Model model) {
         return model

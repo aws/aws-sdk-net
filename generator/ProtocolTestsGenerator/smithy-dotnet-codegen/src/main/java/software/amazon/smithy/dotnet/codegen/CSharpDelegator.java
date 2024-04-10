@@ -17,17 +17,14 @@ package software.amazon.smithy.dotnet.codegen;
 
 import software.amazon.smithy.build.FileManifest;
 import software.amazon.smithy.codegen.core.SymbolProvider;
-import software.amazon.smithy.codegen.core.SymbolWriter;
 import software.amazon.smithy.codegen.core.WriterDelegator;
-
-import java.io.File;
 
 /**
  * Manages writers for C# Files
  */
-public class DotnetDelegator extends WriterDelegator<CSharpWriter> {
+public class CSharpDelegator extends WriterDelegator<CSharpWriter> {
 
-    public DotnetDelegator(FileManifest fileManifest, SymbolProvider symbolProvider,DotnetSettings settings) {
+    public CSharpDelegator(FileManifest fileManifest, SymbolProvider symbolProvider, DotnetSettings settings) {
         super(fileManifest, symbolProvider, new CSharpWriter.CSharpWriterFactory(settings));
     }
 }

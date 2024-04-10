@@ -16,10 +16,11 @@
 package software.amazon.smithy.dotnet.codegen;
 
 public final class Templates {
-    private Templates(){
+    private Templates() {
 
     }
-    public static String getCopyrightHeader(){
+
+    public static String getCopyrightHeader() {
         return
                 """
                 /*
@@ -36,15 +37,16 @@ public final class Templates {
                  * express or implied. See the License for the specific language governing
                  * permissions and limitations under the License.
                  */
-           
+                           
                 """;
     }
-    public  static  String getGeneratedWarning(){
+
+    public static String getGeneratedWarning() {
         return
-        """                         
-        /*
-         * Do not modify this file. This file is generated.
-         */  
-        """;
+                """                         
+                /*
+                 * Do not modify this file. This file is generated.
+                 */  
+                """;
     }
 }

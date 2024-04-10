@@ -39,7 +39,7 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
     private final ServiceShape service;
     private final ReservedWordSymbolProvider.Escaper escaper;
 
-    public SymbolVisitor(Model model, DotnetSettings settings){
+    public SymbolVisitor(Model model, DotnetSettings settings) {
         this.model = model;
         this.settings = settings;
         this.service = model.expectShape(settings.getService(), ServiceShape.class);
@@ -50,7 +50,6 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
     }
 
     /**
-     *
      * @param shape The smithy shape
      * @return Returns the C# Symbol
      */
@@ -58,8 +57,9 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
     public Symbol toSymbol(Shape shape) {
         Symbol symbol = shape.accept(this);
         LOGGER.info(() -> format("Creating symbol from %s: %s", shape, symbol));
-        return escaper.escapeSymbol(shape,symbol);
+        return escaper.escapeSymbol(shape, symbol);
     }
+
     @Override
     public String toMemberName(MemberShape shape) {
         return StringUtils.capitalize(SymbolProvider.super.toMemberName(shape));
@@ -89,17 +89,17 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
     public Symbol mapShape(MapShape mapShape) {
         var valueShape = model.expectShape(mapShape.getValue().getTarget());
         var valueType = valueShape.accept(this);
-        return Symbol.builder().name("Dictionary<string," + valueType + ">").putProperty("map",mapShape).build();
+        return Symbol.builder().name("Dictionary<string," + valueType + ">").putProperty("map", mapShape).build();
     }
 
     @Override
     public Symbol byteShape(ByteShape byteShape) {
-        return Symbol.builder().name("sbyte").putProperty("sbyte",byteShape).build();
+        return Symbol.builder().name("sbyte").putProperty("sbyte", byteShape).build();
     }
 
     @Override
     public Symbol shortShape(ShortShape shortShape) {
-        return Symbol.builder().name("short").putProperty("short",shortShape).build();
+        return Symbol.builder().name("short").putProperty("short", shortShape).build();
     }
 
     @Override
@@ -159,7 +159,7 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
 
     @Override
     public Symbol stringShape(StringShape stringShape) {
-        return Symbol.builder().putProperty("shape",stringShape).name("string").build();
+        return Symbol.builder().putProperty("shape", stringShape).name("string").build();
     }
 
     @Override
@@ -191,7 +191,7 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
         return Symbol.builder().name("DateTime").putProperty("shape", timestampShape).build();
     }
 
-    private String getModeledShapeName(Shape shape){
+    private String getModeledShapeName(Shape shape) {
         //Capitalize the first letter of each word
         return StringUtils.capitalize(shape.getId().getName());
     }
