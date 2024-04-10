@@ -35,7 +35,7 @@ public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportC
      * @param settings                The DotnetSettings associated with this writer
      */
     public CSharpWriter(String fullyQualifiedNamespace, DotnetSettings settings) {
-        super(new DotnetImportContainer(fullyQualifiedNamespace, settings));
+        super(new DotnetImportContainer(fullyQualifiedNamespace));
         this.fullyQualifiedNamespace = fullyQualifiedNamespace;
         trimBlankLines();
         trimTrailingSpaces();
@@ -51,6 +51,11 @@ public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportC
      */
     public CSharpWriter addImport(String namespace, String name) {
         getImportContainer().addImport(namespace, name);
+        return this;
+    }
+
+    public CSharpWriter addImport(String namespace, String name, String alias) {
+        getImportContainer().addImport(namespace, name, alias);
         return this;
     }
 
