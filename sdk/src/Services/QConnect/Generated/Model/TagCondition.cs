@@ -29,28 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// The capability configuration for an Amazon Q in Connect assistant.
+    /// A leaf node condition which can be used to specify a tag condition.
     /// </summary>
-    public partial class AssistantCapabilityConfiguration
+    public partial class TagCondition
     {
-        private AssistantCapabilityType _type;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The type of Amazon Q in Connect assistant capability. 
+        /// The tag key in the tag condition.
         /// </para>
         /// </summary>
-        public AssistantCapabilityType Type
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string Key
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._type != null;
+            return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The tag value in the tag condition.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }

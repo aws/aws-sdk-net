@@ -29,28 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// The capability configuration for an Amazon Q in Connect assistant.
+    /// This is the response object from the UpdateSession operation.
     /// </summary>
-    public partial class AssistantCapabilityConfiguration
+    public partial class UpdateSessionResponse : AmazonWebServiceResponse
     {
-        private AssistantCapabilityType _type;
+        private SessionData _session;
 
         /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of Amazon Q in Connect assistant capability. 
-        /// </para>
+        /// Gets and sets the property Session.
         /// </summary>
-        public AssistantCapabilityType Type
+        public SessionData Session
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._session; }
+            set { this._session = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if Session property is set
+        internal bool IsSetSession()
         {
-            return this._type != null;
+            return this._session != null;
         }
 
     }

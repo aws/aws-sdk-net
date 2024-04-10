@@ -50,11 +50,11 @@ namespace Amazon.QConnect
     /// </para>
     ///  
     /// <para>
-    /// Amazon Q automatically detects customer intent during calls and chats using conversational
-    /// analytics and natural language understanding (NLU). It then provides agents with immediate,
-    /// real-time generative responses and suggested actions, and links to relevant documents
-    /// and articles. Agents can also query Amazon Q directly using natural language or keywords
-    /// to answer customer requests.
+    /// Amazon Q in Connect automatically detects customer intent during calls and chats using
+    /// conversational analytics and natural language understanding (NLU). It then provides
+    /// agents with immediate, real-time generative responses and suggested actions, and links
+    /// to relevant documents and articles. Agents can also query Amazon Q in Connect directly
+    /// using natural language or keywords to answer customer requests.
     /// </para>
     ///  
     /// <para>
@@ -442,7 +442,7 @@ namespace Amazon.QConnect
         #region  CreateContent
 
         /// <summary>
-        /// Creates Amazon Q content. Before to calling this API, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
+        /// Creates Amazon Q in Connect content. Before to calling this API, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
         /// to upload an asset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContent service method.</param>
@@ -617,7 +617,7 @@ namespace Amazon.QConnect
         #region  CreateQuickResponse
 
         /// <summary>
-        /// Creates an Amazon Q quick response.
+        /// Creates an Amazon Q in Connect quick response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQuickResponse service method.</param>
         /// 
@@ -691,12 +691,15 @@ namespace Amazon.QConnect
 
         /// <summary>
         /// Creates a session. A session is a contextual container used for generating recommendations.
-        /// Amazon Connect creates a new Amazon Q session for each contact on which Amazon Q is
-        /// enabled.
+        /// Amazon Connect creates a new Amazon Q in Connect session for each contact on which
+        /// Amazon Q in Connect is enabled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSession service method.</param>
         /// 
         /// <returns>The response from the CreateSession service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
@@ -1601,11 +1604,21 @@ namespace Amazon.QConnect
         #region  GetRecommendations
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This API will be discontinued starting June 1, 2024. To receive generative responses
+        /// after March 1, 2024, you will need to create a new Assistant in the Amazon Connect
+        /// console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs)
+        /// into your applications.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Retrieves recommendations for the specified session. To avoid retrieving the same
         /// recommendations in subsequent calls, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_NotifyRecommendationsReceived.html">NotifyRecommendationsReceived</a>.
         /// This API supports long-polling behavior with the <c>waitTimeSeconds</c> parameter.
         /// Short poll is the default behavior and only returns recommendations already available.
         /// To perform a manual query against an assistant, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRecommendations service method.</param>
         /// 
@@ -2290,8 +2303,19 @@ namespace Amazon.QConnect
         #region  QueryAssistant
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This API will be discontinued starting June 1, 2024. To receive generative responses
+        /// after March 1, 2024, you will need to create a new Assistant in the Amazon Connect
+        /// console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs)
+        /// into your applications.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Performs a manual search against the specified assistant. To retrieve recommendations
         /// for an assistant, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the QueryAssistant service method.</param>
         /// 
@@ -2489,7 +2513,8 @@ namespace Amazon.QConnect
         #region  SearchQuickResponses
 
         /// <summary>
-        /// Searches existing Amazon Q quick responses in an Amazon Q knowledge base.
+        /// Searches existing Amazon Q in Connect quick responses in an Amazon Q in Connect knowledge
+        /// base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchQuickResponses service method.</param>
         /// 
@@ -2688,15 +2713,15 @@ namespace Amazon.QConnect
         #region  StartImportJob
 
         /// <summary>
-        /// Start an asynchronous job to import Amazon Q resources from an uploaded source file.
-        /// Before calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
+        /// Start an asynchronous job to import Amazon Q in Connect resources from an uploaded
+        /// source file. Before calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
         /// to upload an asset that contains the resource data.
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For importing Amazon Q quick responses, you need to upload a csv file including the
-        /// quick responses. For information about how to format the csv file for importing quick
-        /// responses, see <a href="https://docs.aws.amazon.com/console/connect/quick-responses/add-data">Import
+        /// For importing Amazon Q in Connect quick responses, you need to upload a csv file including
+        /// the quick responses. For information about how to format the csv file for importing
+        /// quick responses, see <a href="https://docs.aws.amazon.com/console/connect/quick-responses/add-data">Import
         /// quick responses</a>.
         /// </para>
         ///  </li> </ul>
@@ -2958,8 +2983,9 @@ namespace Amazon.QConnect
         /// <summary>
         /// Updates the template URI of a knowledge base. This is only supported for knowledge
         /// bases of type EXTERNAL. Include a single variable in <c>${variable}</c> format; this
-        /// interpolated by Amazon Q using ingested content. For example, if you ingest a Salesforce
-        /// article, it has an <c>Id</c> value, and you can set the template URI to <c>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</c>.
+        /// interpolated by Amazon Q in Connect using ingested content. For example, if you ingest
+        /// a Salesforce article, it has an <c>Id</c> value, and you can set the template URI
+        /// to <c>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateKnowledgeBaseTemplateUri service method.</param>
         /// 
@@ -3022,7 +3048,7 @@ namespace Amazon.QConnect
         #region  UpdateQuickResponse
 
         /// <summary>
-        /// Updates an existing Amazon Q quick response.
+        /// Updates an existing Amazon Q in Connect quick response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQuickResponse service method.</param>
         /// 
@@ -3088,6 +3114,71 @@ namespace Amazon.QConnect
         public virtual UpdateQuickResponseResponse EndUpdateQuickResponse(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateQuickResponseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSession
+
+        /// <summary>
+        /// Updates a session. A session is a contextual container used for generating recommendations.
+        /// Amazon Connect updates the existing Amazon Q in Connect session for each contact on
+        /// which Amazon Q in Connect is enabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSession service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSession service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateSession">REST API Reference for UpdateSession Operation</seealso>
+        public virtual UpdateSessionResponse UpdateSession(UpdateSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSessionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSession operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateSession">REST API Reference for UpdateSession Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSession(UpdateSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSession.</param>
+        /// 
+        /// <returns>Returns a  UpdateSessionResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateSession">REST API Reference for UpdateSession Operation</seealso>
+        public virtual UpdateSessionResponse EndUpdateSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSessionResponse>(asyncResult);
         }
 
         #endregion

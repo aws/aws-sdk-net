@@ -30,7 +30,8 @@ namespace Amazon.QConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchQuickResponses operation.
-    /// Searches existing Amazon Q quick responses in an Amazon Q knowledge base.
+    /// Searches existing Amazon Q in Connect quick responses in an Amazon Q in Connect knowledge
+    /// base.
     /// </summary>
     public partial class SearchQuickResponsesRequest : AmazonQConnectRequest
     {

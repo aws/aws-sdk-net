@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateSession Request Marshaller
+    /// UpdateSession Request Marshaller
     /// </summary>       
-    public class CreateSessionRequestMarshaller : IMarshaller<IRequest, CreateSessionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateSessionRequestMarshaller : IMarshaller<IRequest, UpdateSessionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateSessionRequest)input);
+            return this.Marshall((UpdateSessionRequest)input);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateSessionRequest publicRequest)
+        public IRequest Marshall(UpdateSessionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QConnect");
             request.Headers["Content-Type"] = "application/json";
@@ -63,33 +63,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetAssistantId())
                 throw new AmazonQConnectException("Request object does not have required field AssistantId set");
             request.AddPathResource("{assistantId}", StringUtils.FromString(publicRequest.AssistantId));
-            request.ResourcePath = "/assistants/{assistantId}/sessions";
+            if (!publicRequest.IsSetSessionId())
+                throw new AmazonQConnectException("Request object does not have required field SessionId set");
+            request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
+            request.ResourcePath = "/assistants/{assistantId}/sessions/{sessionId}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
                     context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
                 }
 
                 if(publicRequest.IsSetTagFilter())
@@ -103,20 +89,6 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -125,9 +97,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateSessionRequestMarshaller _instance = new CreateSessionRequestMarshaller();        
+        private static UpdateSessionRequestMarshaller _instance = new UpdateSessionRequestMarshaller();        
 
-        internal static CreateSessionRequestMarshaller GetInstance()
+        internal static UpdateSessionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +107,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateSessionRequestMarshaller Instance
+        public static UpdateSessionRequestMarshaller Instance
         {
             get
             {

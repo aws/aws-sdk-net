@@ -30,15 +30,15 @@ namespace Amazon.QConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the StartImportJob operation.
-    /// Start an asynchronous job to import Amazon Q resources from an uploaded source file.
-    /// Before calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
+    /// Start an asynchronous job to import Amazon Q in Connect resources from an uploaded
+    /// source file. Before calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
     /// to upload an asset that contains the resource data.
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// For importing Amazon Q quick responses, you need to upload a csv file including the
-    /// quick responses. For information about how to format the csv file for importing quick
-    /// responses, see <a href="https://docs.aws.amazon.com/console/connect/quick-responses/add-data">Import
+    /// For importing Amazon Q in Connect quick responses, you need to upload a csv file including
+    /// the quick responses. For information about how to format the csv file for importing
+    /// quick responses, see <a href="https://docs.aws.amazon.com/console/connect/quick-responses/add-data">Import
     /// quick responses</a>.
     /// </para>
     ///  </li> </ul>
@@ -117,14 +117,13 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
-        /// base if you're storing Amazon Q Content resource to it. Can be either the ID or the
-        /// ARN. URLs cannot contain the ARN.
+        /// The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot
+        /// contain the ARN.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For importing Amazon Q quick responses, this should be a <c>QUICK_RESPONSES</c> type
-        /// knowledge base.
+        /// For importing Amazon Q in Connect quick responses, this should be a <c>QUICK_RESPONSES</c>
+        /// type knowledge base.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -144,7 +143,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata fields of the imported Amazon Q resources.
+        /// The metadata fields of the imported Amazon Q in Connect resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

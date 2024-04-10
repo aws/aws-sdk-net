@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// The configuration information for the Amazon Q assistant integration.
+    /// The configuration information for the Amazon Q in Connect assistant integration.
     /// </summary>
     public partial class AssistantIntegrationConfiguration
     {

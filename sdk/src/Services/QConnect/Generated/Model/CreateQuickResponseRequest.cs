@@ -30,7 +30,7 @@ namespace Amazon.QConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateQuickResponse operation.
-    /// Creates an Amazon Q quick response.
+    /// Creates an Amazon Q in Connect quick response.
     /// </summary>
     public partial class CreateQuickResponseRequest : AmazonQConnectRequest
     {
@@ -194,9 +194,8 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
-        /// base if you're storing Amazon Q Content resource to it. Can be either the ID or the
-        /// ARN. URLs cannot contain the ARN.
+        /// The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot
+        /// contain the ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

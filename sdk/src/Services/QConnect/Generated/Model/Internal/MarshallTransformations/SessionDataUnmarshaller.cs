@@ -94,6 +94,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.SessionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("tagFilter", targetDepth))
+                {
+                    var unmarshaller = TagFilterUnmarshaller.Instance;
+                    unmarshalledObject.TagFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

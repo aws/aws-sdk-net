@@ -101,8 +101,8 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property ObjectFields. 
         /// <para>
-        /// The fields from the source that are made available to your agents in Amazon Q. Optional
-        /// if ObjectConfiguration is included in the provided DataIntegration. 
+        /// The fields from the source that are made available to your agents in Amazon Q in Connect.
+        /// Optional if ObjectConfiguration is included in the provided DataIntegration. 
         /// </para>
         ///  <ul> <li> 
         /// <para>

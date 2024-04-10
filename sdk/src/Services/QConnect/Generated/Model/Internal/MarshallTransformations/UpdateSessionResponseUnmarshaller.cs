@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateSession operation
+    /// Response Unmarshaller for UpdateSession operation
     /// </summary>  
-    public class CreateSessionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateSessionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateSessionResponse response = new CreateSessionResponse();
+            UpdateSessionResponse response = new UpdateSessionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -85,10 +85,6 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -101,9 +97,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             return new AmazonQConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateSessionResponseUnmarshaller _instance = new CreateSessionResponseUnmarshaller();        
+        private static UpdateSessionResponseUnmarshaller _instance = new UpdateSessionResponseUnmarshaller();        
 
-        internal static CreateSessionResponseUnmarshaller GetInstance()
+        internal static UpdateSessionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +107,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateSessionResponseUnmarshaller Instance
+        public static UpdateSessionResponseUnmarshaller Instance
         {
             get
             {

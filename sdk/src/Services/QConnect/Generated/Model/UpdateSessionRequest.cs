@@ -29,38 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// Summary information about the session.
+    /// Container for the parameters to the UpdateSession operation.
+    /// Updates a session. A session is a contextual container used for generating recommendations.
+    /// Amazon Connect updates the existing Amazon Q in Connect session for each contact on
+    /// which Amazon Q in Connect is enabled.
     /// </summary>
-    public partial class SessionSummary
+    public partial class UpdateSessionRequest : AmazonQConnectRequest
     {
-        private string _assistantArn;
         private string _assistantId;
-        private string _sessionArn;
+        private string _description;
         private string _sessionId;
-
-        /// <summary>
-        /// Gets and sets the property AssistantArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string AssistantArn
-        {
-            get { return this._assistantArn; }
-            set { this._assistantArn = value; }
-        }
-
-        // Check to see if AssistantArn property is set
-        internal bool IsSetAssistantArn()
-        {
-            return this._assistantArn != null;
-        }
+        private TagFilter _tagFilter;
 
         /// <summary>
         /// Gets and sets the property AssistantId. 
         /// <para>
-        /// The identifier of the Amazon Q in Connect assistant.
+        /// The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN.
+        /// URLs cannot contain the ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,28 +62,29 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SessionArn. 
+        /// Gets and sets the property Description. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the session.
+        /// The description.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string SessionArn
+        [AWSProperty(Min=1, Max=255)]
+        public string Description
         {
-            get { return this._sessionArn; }
-            set { this._sessionArn = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
-        // Check to see if SessionArn property is set
-        internal bool IsSetSessionArn()
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
         {
-            return this._sessionArn != null;
+            return this._description != null;
         }
 
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The identifier of the session.
+        /// The identifier of the session. Can be either the ID or the ARN. URLs cannot contain
+        /// the ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,6 +98,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetSessionId()
         {
             return this._sessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagFilter. 
+        /// <para>
+        /// An object that can be used to specify Tag conditions.
+        /// </para>
+        /// </summary>
+        public TagFilter TagFilter
+        {
+            get { return this._tagFilter; }
+            set { this._tagFilter = value; }
+        }
+
+        // Check to see if TagFilter property is set
+        internal bool IsSetTagFilter()
+        {
+            return this._tagFilter != null;
         }
 
     }
