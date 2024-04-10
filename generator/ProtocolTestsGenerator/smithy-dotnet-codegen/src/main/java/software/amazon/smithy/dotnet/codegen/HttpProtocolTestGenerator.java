@@ -309,6 +309,16 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.write("var actualResponse = ($L)unmarshalledResponse;", responseSymbol);
             writer.write("Comparer.CompareObjects<$L>(expectedResponse,actualResponse);", responseSymbol);
         }
+        if (!httpResponseTestCase.getForbidHeaders().isEmpty()) {
+            for (var forbidHeader : httpResponseTestCase.getForbidHeaders()) {
+                writer.write("Assert.IsFalse(context.ResponseData.IsHeaderPresent($S);", forbidHeader);
+            }
+        }
+        if (!httpResponseTestCase.getRequireHeaders().isEmpty()) {
+            for (var requireHeader : httpResponseTestCase.getRequireHeaders()) {
+                writer.write("Assert.IsTrue(context.ResponseData.IsHeaderPresent($S);", requireHeader);
+            }
+        }
         writer.write("Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L), context.ResponseData.StatusCode);", httpResponseTestCase.getCode());
     }
 
