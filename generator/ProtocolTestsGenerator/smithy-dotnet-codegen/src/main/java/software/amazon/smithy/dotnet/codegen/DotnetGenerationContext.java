@@ -25,12 +25,12 @@ import software.amazon.smithy.utils.ToSmithyBuilder;
 
 import java.util.List;
 
-public class DotnetGenerationContext implements  CodegenContext<DotnetSettings,CSharpWriter,DotnetIntegration>, ToSmithyBuilder<DotnetGenerationContext> {
+public class DotnetGenerationContext implements CodegenContext<DotnetSettings, CSharpWriter, DotnetIntegration>, ToSmithyBuilder<DotnetGenerationContext> {
     private final Model model;
     private final DotnetSettings settings;
     private final SymbolProvider symbolProvider;
     private final FileManifest fileManifest;
-    private final DotnetDelegator delegator;
+    private final CSharpDelegator delegator;
     private final List<DotnetIntegration> integrations;
 
     private DotnetGenerationContext(Builder builder) {
@@ -72,7 +72,9 @@ public class DotnetGenerationContext implements  CodegenContext<DotnetSettings,C
         return integrations;
     }
 
-    public static Builder builder(){return new Builder();}
+    public static Builder builder() {
+        return new Builder();
+    }
 
     @Override
     public SmithyBuilder<DotnetGenerationContext> toBuilder() {
@@ -84,50 +86,49 @@ public class DotnetGenerationContext implements  CodegenContext<DotnetSettings,C
                 .delegator(delegator)
                 .integrations(integrations);
     }
-    public static final class Builder implements SmithyBuilder<DotnetGenerationContext>{
+
+    public static final class Builder implements SmithyBuilder<DotnetGenerationContext> {
         private SymbolProvider symbolProvider;
         private FileManifest fileManifest;
-        private DotnetDelegator delegator;
+        private CSharpDelegator delegator;
         private List<DotnetIntegration> integrations;
         private DotnetSettings settings;
         private Model model;
 
         /**
-         *
          * @param symbolProvider The symbol provider for the generator
          * @return Returns the Builder
          */
-        public Builder symbolProvider(SymbolProvider symbolProvider){
+        public Builder symbolProvider(SymbolProvider symbolProvider) {
             this.symbolProvider = symbolProvider;
             return this;
         }
 
         /**
-         *
          * @param fileManifest The file manifest for the generator
          * @return Returns the builder
          */
-        public Builder fileManifest(FileManifest fileManifest){
+        public Builder fileManifest(FileManifest fileManifest) {
             this.fileManifest = fileManifest;
             return this;
         }
 
-        public Builder delegator(DotnetDelegator delegator){
+        public Builder delegator(CSharpDelegator delegator) {
             this.delegator = delegator;
             return this;
         }
 
-        public Builder integrations(List<DotnetIntegration> integrations){
+        public Builder integrations(List<DotnetIntegration> integrations) {
             this.integrations = integrations;
             return this;
         }
 
-        public  Builder settings(DotnetSettings settings){
+        public Builder settings(DotnetSettings settings) {
             this.settings = settings;
             return this;
         }
 
-        public Builder model(Model model){
+        public Builder model(Model model) {
             this.model = model;
             return this;
         }

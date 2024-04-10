@@ -18,7 +18,10 @@ package software.amazon.smithy.dotnet.codegen;
 import software.amazon.smithy.codegen.core.ImportContainer;
 import software.amazon.smithy.codegen.core.Symbol;
 
-import java.util.*;
+import java.util.List;
+import java.util.Arrays;
+import java.util.TreeMap;
+import java.util.Map;
 
 public final class DotnetImportContainer implements ImportContainer {
     private static final List<String> systemImports = Arrays.asList(
@@ -39,9 +42,10 @@ public final class DotnetImportContainer implements ImportContainer {
             "Amazon.Runtime.Internal.Transform",
             "AWSSDK_DotNet35.UnitTests.TestTools"
     );
-    private final Map<String, Map<String,String>> imports = new TreeMap<>();
+    private final Map<String, Map<String, String>> imports = new TreeMap<>();
     private final DotnetSettings settings;
     private final String localNamespace;
+
     public DotnetImportContainer(String namespace, DotnetSettings settings) {
         this.settings = settings;
         this.localNamespace = namespace;
@@ -60,56 +64,57 @@ public final class DotnetImportContainer implements ImportContainer {
     }
 
     public ImportContainer addImport(String namespace, String name) {
-        return addImport(namespace,name,name);
+        return addImport(namespace, name, name);
     }
+
     public ImportContainer addImport(String namespace, String name, String alias) {
-        Map<String,String> namespaceImports = imports.computeIfAbsent(namespace, ns -> new TreeMap<>());
+        Map<String, String> namespaceImports = imports.computeIfAbsent(namespace, ns -> new TreeMap<>());
         namespaceImports.put(name, alias);
         return this;
     }
 
     @Override
-    public String toString(){
-        if(imports.isEmpty()){
+    public String toString() {
+        if (imports.isEmpty()) {
             return "";
         }
         var builder = new StringBuilder();
-        for(var entry : imports.entrySet()){
-            String formattedUsingStatements = formatNamespaceEntries(entry.getKey(),entry.getValue());
+        for (var entry : imports.entrySet()) {
+            String formattedUsingStatements = formatNamespaceEntries(entry.getKey(), entry.getValue());
             builder.append(formattedUsingStatements);
         }
         builder.append("\n");
         return builder.toString();
     }
 
-    public String formatNamespaceEntries(String namespace, Map<String,String> namespaceImports){
+    public String formatNamespaceEntries(String namespace, Map<String, String> namespaceImports) {
         var builder = new StringBuilder();
-        for(var entry : namespaceImports.entrySet()){
+        for (var entry : namespaceImports.entrySet()) {
             builder.append("using ").append(entry.getKey()).append(";\n");
         }
         return builder.toString();
     }
 
     public void addSystemImport(String namespace) {
-        for(String systemImport: systemImports){
+        for (String systemImport : systemImports) {
             addImport(namespace, systemImport);
         }
     }
 
     public void addCoreImport(String namespace) {
-        for(String coreImport: coreImports){
+        for (String coreImport : coreImports) {
             addImport(namespace, coreImport);
         }
     }
 
     public void addMarshallImports(String namespace, String service) {
-        addImport(namespace,service);
+        addImport(namespace, service);
         addImport(namespace, service + ".Model");
         addImport(namespace, service + ".Model.Internal.MarshallTransformations");
     }
 
     public void addProtocolTestImports(String namespace) {
-        for(String protocolTestImport : protocolTestImports){
+        for (String protocolTestImport : protocolTestImports) {
             addImport(namespace, protocolTestImport);
         }
     }

@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 
-public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportContainer>{
+public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportContainer> {
 
     private static final Logger LOGGER = Logger.getLogger(CSharpWriter.class.getName());
     private final String fullyQualifiedNamespace;
@@ -31,9 +31,8 @@ public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportC
 
 
     /**
-     *
      * @param fullyQualifiedNamespace The fully qualified namespace that this writer belongs to
-     * @param settings The DotnetSettings associated with this writer
+     * @param settings                The DotnetSettings associated with this writer
      */
     public CSharpWriter(String fullyQualifiedNamespace, DotnetSettings settings) {
         super(new DotnetImportContainer(fullyQualifiedNamespace, settings));
@@ -46,28 +45,28 @@ public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportC
     }
 
     /**
-     *
      * @param namespace The namespace to add the import to
-     * @param name The name of the package
+     * @param name      The name of the package
      * @return Returns the CSharpWriter
      */
-    public CSharpWriter addImport(String namespace, String name){
+    public CSharpWriter addImport(String namespace, String name) {
         getImportContainer().addImport(namespace, name);
         return this;
     }
 
     /**
      * This function adds the packages in the systemImports list from DotnetImportContainer
+     *
      * @param namespace The namespace to add the package to.
-     * @see DotnetImportContainer
      * @return Returns the CSharpWriter
+     * @see DotnetImportContainer
      */
-    public CSharpWriter addSystemImport(String namespace){
+    public CSharpWriter addSystemImport(String namespace) {
         getImportContainer().addSystemImport(namespace);
         return this;
     }
 
-    public CSharpWriter writeMultiLineComment(String comment){
+    public CSharpWriter writeMultiLineComment(String comment) {
         pushState();
         write("/* ");
         setNewlinePrefix("* ");
@@ -77,12 +76,12 @@ public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportC
         return this;
     }
 
-    public CSharpWriter writeSingleLineComment(String comment){
+    public CSharpWriter writeSingleLineComment(String comment) {
         write("// " + comment);
         return this;
     }
 
-    public CSharpWriter writeXmlDocs(String comment){
+    public CSharpWriter writeXmlDocs(String comment) {
         pushState();
         setNewlinePrefix("/// ");
         write("<summary>");
@@ -96,15 +95,15 @@ public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportC
      * Refer to the following link to see why 65 was used as the line break.
      * <a href = https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions#style-guidelines>C# Style Guidelines</a>
      */
-    public String formatDocs(String docs){
-        return StringUtils.wrap(docs.replace("\n", " "),65);
+    public String formatDocs(String docs) {
+        return StringUtils.wrap(docs.replace("\n", " "), 65);
     }
 
     @Override
     public String toString() {
         String content = getImportContainer().toString() + super.toString();
         String license = Templates.getCopyrightHeader();
-        if(isCodeGen){
+        if (isCodeGen) {
             license = license + Templates.getGeneratedWarning();
         }
         content = license + content;
@@ -113,39 +112,42 @@ public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportC
 
     /**
      * This function adds the packages in the coreImports list from DotnetImportContainer
+     *
      * @param namespace The namespace to add the package to
-     * @see DotnetImportContainer
      * @return The CSharpWriter
+     * @see DotnetImportContainer
      */
     public CSharpWriter addCoreImport(String namespace) {
         getImportContainer().addCoreImport(namespace);
         return this;
     }
 
-    public CSharpWriter addMarshallImports(String namespace, String service){
-        getImportContainer().addMarshallImports(namespace,service);
+    public CSharpWriter addMarshallImports(String namespace, String service) {
+        getImportContainer().addMarshallImports(namespace, service);
         return this;
     }
 
-    public CSharpWriter addProtocolTestImports(String namespace){
+    public CSharpWriter addProtocolTestImports(String namespace) {
         getImportContainer().addProtocolTestImports(namespace);
         return this;
     }
 
     /**
      * The Factory class for creating CSharpWriters
-     *
      */
-    public static final class CSharpWriterFactory implements  SymbolWriter.Factory<CSharpWriter>{
+    public static final class CSharpWriterFactory implements SymbolWriter.Factory<CSharpWriter> {
 
         private final DotnetSettings settings;
 
         /**
          * Constructs a CSharpWriterFactory
+         *
          * @param settings The dotnet settings associated with this factory
          */
 
-        public CSharpWriterFactory(DotnetSettings settings) {this.settings =settings;}
+        public CSharpWriterFactory(DotnetSettings settings) {
+            this.settings = settings;
+        }
 
         @Override
         public CSharpWriter apply(String filename, String namespace) {
