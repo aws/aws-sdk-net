@@ -72,6 +72,7 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("foo.example.com", actualUri.Host);
             Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
         }
 

@@ -70,6 +70,7 @@ namespace AWSSDK.ProtocolTests.RestXml
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/EndpointWithHostLabelHeaderOperation", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("bar.example.com", actualUri.Host);
             Assert.AreEqual("bar".Replace(" ",""), marshalledRequest.Headers["X-Amz-Account-Id"].Replace(" ",""));
         }
 

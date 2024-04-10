@@ -214,7 +214,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         // interested in the original encoded string that the sdk internals calculated
         writer.write("Assert.AreEqual($S, ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));", httpRequestTestCase.getUri());
         if (httpRequestTestCase.getResolvedHost().isPresent()) {
-            writer.write("Assert.AreEqual($S, actualUri.Host)", resolvedHost);
+            writer.write("Assert.AreEqual($S, actualUri.Host);", resolvedHost);
         }
         var headers = httpRequestTestCase.getHeaders();
         for (var header : httpRequestTestCase.getHeaders().keySet()) {

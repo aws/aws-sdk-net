@@ -507,11 +507,11 @@ namespace AWSSDK.ProtocolTests.RestJson
                 QueryParamsMapOfStringList = new Dictionary<string, List<string>>()
                 {
 
-                    { "Integer",  new List<string>()
+                    { "queryInteger",  new List<string>()
                     {
                         "0",
                     } },
-                    { "Boolean",  new List<string>()
+                    { "queryBoolean",  new List<string>()
                     {
                         "false",
                     } },
