@@ -107,6 +107,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSubmitAutoEvaluationAction())
+            {
+                context.Writer.WritePropertyName("SubmitAutoEvaluationAction");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SubmitAutoEvaluationActionDefinitionMarshaller.Instance;
+                marshaller.Marshall(requestObject.SubmitAutoEvaluationAction, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTaskAction())
             {
                 context.Writer.WritePropertyName("TaskAction");
