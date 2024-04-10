@@ -35,7 +35,6 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
     private static final Logger LOGGER = Logger.getLogger(SymbolVisitor.class.getName());
     private final Model model;
     private final DotnetSettings settings;
-
     private final ServiceShape service;
     private final ReservedWordSymbolProvider.Escaper escaper;
 

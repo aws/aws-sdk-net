@@ -128,7 +128,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
     }
 
     private void arrangeResponseTestBlock(HttpResponseTestCase httpResponseTestCase) {
-        writer.addImport(serviceName, "System.Net");
+        writer.addImport(serviceName, "System.Net", "HttpStatusCode");
         writer.writeSingleLineComment("Arrange");
         writer.write("var webResponseData = new WebResponseData();");
         writer.write("webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L);", httpResponseTestCase.getCode());
@@ -214,7 +214,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         // interested in the original encoded string that the sdk internals calculated
         writer.write("Assert.AreEqual($S, ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));", httpRequestTestCase.getUri());
         if (httpRequestTestCase.getResolvedHost().isPresent()) {
-            writer.write("Assert.AreEqual($S, actualUri.Host)", resolvedHost);
+            writer.write("Assert.AreEqual($S, actualUri.Host);", resolvedHost);
         }
         var headers = httpRequestTestCase.getHeaders();
         for (var header : httpRequestTestCase.getHeaders().keySet()) {
@@ -243,7 +243,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.write("var expectedBody = $S;", httpRequestTestCase.getBody());
             writer.write("JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);");
         } else if (httpRequestTestCase.getProtocol().getName().equals("awsQuery") || httpRequestTestCase.getProtocol().getName().equals("ec2Query")) {
-            writer.addImport(serviceName, "System.Net");
+            writer.addImport(serviceName, "System.Net", "WebUtility");
             writer.write("var expectedParams = QueryTestUtils.ConvertBodyToParameters($S);", httpRequestTestCase.getBody());
             writer.write("""
                          foreach(var queryParam in expectedParams.Keys)
@@ -491,7 +491,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         }
 
         private Void getDocument(DocumentShape shape, ObjectNode node) {
-            writer.addImport(serviceName, "Amazon.Runtime.Documents");
+            writer.addImport(serviceName, "Amazon.Runtime.Documents", "Documents");
             writer.openBlock("new Document(new Dictionary<string,Document>\n{", "})", () -> node.getMembers().forEach((keyNode, valueNode) -> {
                 var targetShape = model.expectShape(shape.getId());
                 writer.write("{$S, $C},",

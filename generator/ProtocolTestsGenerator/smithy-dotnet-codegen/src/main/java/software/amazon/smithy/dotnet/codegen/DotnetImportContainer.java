@@ -43,11 +43,9 @@ public final class DotnetImportContainer implements ImportContainer {
             "AWSSDK_DotNet35.UnitTests.TestTools"
     );
     private final Map<String, Map<String, String>> imports = new TreeMap<>();
-    private final DotnetSettings settings;
     private final String localNamespace;
 
-    public DotnetImportContainer(String namespace, DotnetSettings settings) {
-        this.settings = settings;
+    public DotnetImportContainer(String namespace) {
         this.localNamespace = namespace;
 
     }
@@ -59,7 +57,7 @@ public final class DotnetImportContainer implements ImportContainer {
         // Only import symbols in other namespaces.
         if (!symbolNamespace.equals(localNamespace)) {
             var namespaceImports = imports.computeIfAbsent(symbolNamespace, ns -> new TreeMap<>());
-            namespaceImports.put(alias, symbol.getName());
+            namespaceImports.put(symbol.getName(), alias);
         }
     }
 
