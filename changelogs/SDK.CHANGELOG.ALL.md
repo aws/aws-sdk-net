@@ -1,3 +1,22 @@
+### 3.7.787.0 (2024-04-10 18:19 UTC)
+* CleanRooms (3.7.304.0)
+	* AWS Clean Rooms Differential Privacy is now fully available. Differential privacy protects against user-identification attempts.
+* Connect (3.7.316.0)
+	* This release adds new Submit Auto Evaluation Action for Amazon Connect Rules.
+* NetworkMonitor (3.7.301.2)
+	* Examples were added to CloudWatch Network Monitor commands.
+* QConnect (3.7.304.0)
+	* This release adds a new QiC public API updateSession and updates an existing QiC public API createSession
+* Rekognition (3.7.302.0)
+	* Added support for ContentType to content moderation detections.
+* SupplyChain (3.7.301.0)
+	* This release includes API SendDataIntegrationEvent for AWS Supply Chain
+* WorkSpacesThinClient (3.7.302.0)
+	* Adding tags field to SoftwareSet. Removing tags fields from Summary objects. Changing the list of exceptions in tagging APIs. Fixing an issue where the SDK returns empty tags in Get APIs.
+* Core 3.7.303.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.786.0 (2024-04-09 18:17 UTC)
 * CodeBuild (3.7.306.0)
 	* Add new webhook filter types for GitHub webhooks
