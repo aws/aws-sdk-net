@@ -34,11 +34,32 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class ContentModerationDetection
     {
+        private List<ContentType> _contentTypes = AWSConfigs.InitializeCollections ? new List<ContentType>() : null;
         private long? _durationMillis;
         private long? _endTimestampMillis;
         private ModerationLabel _moderationLabel;
         private long? _startTimestampMillis;
         private long? _timestamp;
+
+        /// <summary>
+        /// Gets and sets the property ContentTypes. 
+        /// <para>
+        /// A list of predicted results for the type of content an image contains. For example,
+        /// the image content might be from animation, sports, or a video game.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<ContentType> ContentTypes
+        {
+            get { return this._contentTypes; }
+            set { this._contentTypes = value; }
+        }
+
+        // Check to see if ContentTypes property is set
+        internal bool IsSetContentTypes()
+        {
+            return this._contentTypes != null && (this._contentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property DurationMillis. 
