@@ -142,12 +142,6 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                     unmarshalledObject.SoftwareSetUpdateSchedule = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = EmbeddedTagUnmarshaller.Instance;
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

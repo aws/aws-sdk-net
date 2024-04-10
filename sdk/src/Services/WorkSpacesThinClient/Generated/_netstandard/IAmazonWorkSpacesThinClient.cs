@@ -412,11 +412,17 @@ namespace Amazon.WorkSpacesThinClient
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by WorkSpacesThinClient.</returns>
-        /// <exception cref="Amazon.WorkSpacesThinClient.Model.InternalServiceException">
-        /// Request processing failed due to some unknown error, exception, or failure.
+        /// <exception cref="Amazon.WorkSpacesThinClient.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesThinClient.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesThinClient.Model.ResourceNotFoundException">
         /// The resource specified in the request was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesThinClient.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesThinClient.Model.ValidationException">
         /// The input fails to satisfy the specified constraints.
@@ -439,11 +445,21 @@ namespace Amazon.WorkSpacesThinClient
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by WorkSpacesThinClient.</returns>
-        /// <exception cref="Amazon.WorkSpacesThinClient.Model.InternalServiceException">
-        /// Request processing failed due to some unknown error, exception, or failure.
+        /// <exception cref="Amazon.WorkSpacesThinClient.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesThinClient.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesThinClient.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesThinClient.Model.ResourceNotFoundException">
         /// The resource specified in the request was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesThinClient.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesThinClient.Model.ValidationException">
         /// The input fails to satisfy the specified constraints.
@@ -466,11 +482,21 @@ namespace Amazon.WorkSpacesThinClient
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by WorkSpacesThinClient.</returns>
-        /// <exception cref="Amazon.WorkSpacesThinClient.Model.InternalServiceException">
-        /// Request processing failed due to some unknown error, exception, or failure.
+        /// <exception cref="Amazon.WorkSpacesThinClient.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesThinClient.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesThinClient.Model.InternalServerException">
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesThinClient.Model.ResourceNotFoundException">
         /// The resource specified in the request was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesThinClient.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesThinClient.Model.ValidationException">
         /// The input fails to satisfy the specified constraints.
