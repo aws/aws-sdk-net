@@ -30,7 +30,9 @@ namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the GetProbe operation.
-    /// Returns the details about a probe. You'll need both the <c>monitorName</c> and <c>probeId</c>.
+    /// Returns the details about a probe. This action requires both the <c>monitorName</c>
+    /// and <c>probeId</c> parameters. Run <c>ListMonitors</c> to get a list of monitor names.
+    /// Run <c>GetMonitor</c> to get a list of probes and probe IDs.
     /// </summary>
     public partial class GetProbeRequest : AmazonNetworkMonitorRequest
     {

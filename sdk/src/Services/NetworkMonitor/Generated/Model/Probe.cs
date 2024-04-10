@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
-    /// Describes information about a monitor probe.
+    /// Describes information about a network monitor probe.
     /// </summary>
     public partial class Probe
     {

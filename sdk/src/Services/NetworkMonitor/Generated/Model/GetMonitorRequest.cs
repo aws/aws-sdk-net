@@ -30,7 +30,13 @@ namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMonitor operation.
-    /// Returns details about a specific monitor.
+    /// Returns details about a specific monitor. 
+    /// 
+    ///  
+    /// <para>
+    /// This action requires the <c>monitorName</c> parameter. Run <c>ListMonitors</c> to
+    /// get a list of monitor names. 
+    /// </para>
     /// </summary>
     public partial class GetMonitorRequest : AmazonNetworkMonitorRequest
     {

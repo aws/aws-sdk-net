@@ -31,7 +31,9 @@ namespace Amazon.NetworkMonitor.Model
     /// <summary>
     /// Container for the parameters to the CreateProbe operation.
     /// Create a probe within a monitor. Once you create a probe, and it begins monitoring
-    /// your network traffic, you'll incur billing charges for that probe.
+    /// your network traffic, you'll incur billing charges for that probe. This action requires
+    /// the <c>monitorName</c> parameter. Run <c>ListMonitors</c> to get a list of monitor
+    /// names. Note the name of the <c>monitorName</c> you want to create the probe for.
     /// </summary>
     public partial class CreateProbeRequest : AmazonNetworkMonitorRequest
     {
@@ -62,8 +64,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property MonitorName. 
         /// <para>
-        /// The name of the monitor to associated with the probe. To get a list of available monitors,
-        /// use <c>ListMonitors</c>.
+        /// The name of the monitor to associated with the probe. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
