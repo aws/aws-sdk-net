@@ -192,8 +192,19 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			}
 			else
 			{
+                if (!member.IsXmlAttribute)
+                {
 #>
 					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
+<#
+                }
+                else
+                {
+#>
+                    if (context.TestExpression("@<#=DetermineXmlMarshallName(member)#>", targetDepth - 1))
+<#
+                }
+#>
 					{
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
@@ -208,7 +219,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 					if (context.TestExpression("<#=DetermineXmlMarshallName(payload)#>", targetDepth))
 					{
-						var unmarshaller = <#= payload.DetermineTypeUnmarshallerInstantiate() #>;
+						var unmarshaller = <#=payload.DetermineTypeUnmarshallerInstantiate()#>;
 						response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context);
 						continue;
 					}
@@ -277,7 +288,14 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     {
         var locationName = member.data[ServiceModel.LocationNameKey];
         if (locationName == null)
+        {
+            var payload = this.Operation.ResponsePayloadMember;
+            var shouldMarshallPayload = (payload != null && payload.IsStructure);
+            if(shouldMarshallPayload)
+                return member.Shape.Name;
             return member.MarshallName;
+        }
+
         if (!string.Equals(locationName.ToString(), member.ModeledName, StringComparison.Ordinal))
         {
             return locationName.ToString();

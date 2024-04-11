@@ -25,6 +25,7 @@ namespace ServiceClientGenerator
         public const string HostLabelKey = "hostLabel";
         public const string EventPayloadKey = "eventpayload";
         public const string EventHeaderKey = "eventheader";
+        public const string XmlAttributeKey = "xmlAttribute";
         private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
 
         private const string BackwardsCompatibleDateTimePropertySuffix = "Utc";
@@ -942,6 +943,16 @@ namespace ServiceClientGenerator
             get
             {
                 return OwningShape.IsFieldRequired(ModeledName);
+            }
+        }
+
+        public bool IsXmlAttribute
+        {
+            get
+            {
+                if (data[XmlAttributeKey] != null && data[XmlAttributeKey].IsBoolean)
+                    return (bool)data[XmlAttributeKey];
+                return false;
             }
         }
 

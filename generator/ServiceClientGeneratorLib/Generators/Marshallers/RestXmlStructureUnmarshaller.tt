@@ -88,8 +88,19 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			}
 			else
 			{
+            if(!member.IsXmlAttribute)
+            {
 #>
 					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+<#
+            }
+            else
+            {
+#>
+                    if (context.TestExpression("@<#=member.MarshallName#>", targetDepth - 1))
+<#
+            }
+#>
 					{
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
