@@ -148,30 +148,30 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 getMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpRequestTestCase httpRequestTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
+                if (ProtocolTestCustomizations.TestsToSkip.contains(httpRequestTestCase.getId()))
+                    continue;
                 generateRequestTest(operation, httpRequestTestCase);
             }
         });
     }
 
     private void generateRequestTest(OperationShape operation, HttpRequestTestCase httpRequestTestCase) {
-        if (!ProtocolTestCustomizations.TestsToSkip.contains(httpRequestTestCase.getId())) {
-            if (httpRequestTestCase.getDocumentation().isPresent()) {
-                writer.writeXmlDocs(httpRequestTestCase.getDocumentation().get());
-            }
-            if (ProtocolTestCustomizations.VNextTests.contains(httpRequestTestCase.getId())) {
-                writer.writeSingleLineComment("This test requires a breaking change, and will be addressed in V4");
-                writer.write("[Ignore]");
-            }
-            writer.write("[TestMethod]");
-
-            writer.write("[TestCategory(\"ProtocolTest\")]");
-            writer.write("[TestCategory(\"RequestTest\")]");
-            writer.write("[TestCategory(\"$L\")]", serviceName);
-            writer.openBlock("public void $LRequest()\n{", "}", httpRequestTestCase.getId(), () -> {
-                generateRequestTestBlock(operation, httpRequestTestCase);
-            });
-            writer.write("\n");
+        if (httpRequestTestCase.getDocumentation().isPresent()) {
+            writer.writeXmlDocs(httpRequestTestCase.getDocumentation().get());
         }
+        if (ProtocolTestCustomizations.VNextTests.contains(httpRequestTestCase.getId())) {
+            writer.writeSingleLineComment("This test requires a breaking change, and will be addressed in V4");
+            writer.write("[Ignore]");
+        }
+        writer.write("[TestMethod]");
+
+        writer.write("[TestCategory(\"ProtocolTest\")]");
+        writer.write("[TestCategory(\"RequestTest\")]");
+        writer.write("[TestCategory(\"$L\")]", serviceName);
+        writer.openBlock("public void $LRequest()\n{", "}", httpRequestTestCase.getId(), () -> {
+            generateRequestTestBlock(operation, httpRequestTestCase);
+        });
+        writer.write("\n");
     }
 
     private void generateRequestTestBlock(OperationShape operation, HttpRequestTestCase httpRequestTestCase) {
@@ -266,29 +266,29 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 getMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
+                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()))
+                    continue;
                 generateResponseTest(operation, httpResponseTestCase);
             }
         });
     }
 
     private void generateResponseTest(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {
-        if (!ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId())) {
-            if (httpResponseTestCase.getDocumentation().isPresent()) {
-                writer.writeXmlDocs(httpResponseTestCase.getDocumentation().get());
-            }
-            if (ProtocolTestCustomizations.VNextTests.contains(httpResponseTestCase.getId())) {
-                writer.writeSingleLineComment("This test requires a breaking change, and will be addressed in V4");
-                writer.write("[Ignore]");
-            }
-            writer.write("[TestMethod]");
-            writer.write("[TestCategory(\"ProtocolTest\")]");
-            writer.write("[TestCategory(\"ResponseTest\")]");
-            writer.write("[TestCategory(\"$L\")]", serviceName);
-            writer.openBlock("public void $LResponse()\n{", "}", httpResponseTestCase.getId(), () -> {
-                generateResponseTestBlock(operation, httpResponseTestCase);
-            });
-            writer.write("\n");
+        if (httpResponseTestCase.getDocumentation().isPresent()) {
+            writer.writeXmlDocs(httpResponseTestCase.getDocumentation().get());
         }
+        if (ProtocolTestCustomizations.VNextTests.contains(httpResponseTestCase.getId())) {
+            writer.writeSingleLineComment("This test requires a breaking change, and will be addressed in V4");
+            writer.write("[Ignore]");
+        }
+        writer.write("[TestMethod]");
+        writer.write("[TestCategory(\"ProtocolTest\")]");
+        writer.write("[TestCategory(\"ResponseTest\")]");
+        writer.write("[TestCategory(\"$L\")]", serviceName);
+        writer.openBlock("public void $LResponse()\n{", "}", httpResponseTestCase.getId(), () -> {
+            generateResponseTestBlock(operation, httpResponseTestCase);
+        });
+        writer.write("\n");
     }
 
     private void generateResponseTestBlock(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {

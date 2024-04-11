@@ -10,12 +10,6 @@
               "aws.protocoltests.restjson#RestJson"
             ]
           }
-        },
-        {
-          "name": "excludeShapesBySelector",
-          "args": {
-            "selector": "operation:is([id|name=PostPlayerAction], [id|name=JsonLists],[id|name=StreamingTraitsWithMediaType],[id|name=StreamingTraits],[id|name=StreamingTraitsRequireLength],[id|name=JsonMaps],[id|name=HttpPayloadTraitsWithMediaType],[id|name=ResponseCodeHttpFallback])"
-          }
         }
       ],
       "plugins": {
@@ -35,12 +29,6 @@
             "services": [
               "aws.protocoltests.json10#JsonRpc10"
             ]
-          }
-        },
-        {
-          "name": "excludeShapesBySelector",
-          "args": {
-            "selector": "operation:is([id|name=DocumentTypeAsMapValue],[id|name=NullOperation],[id|name=OperationWithDefaults],[id|name=OperationWithNestedStructure],[id|name=OperationWithRequiredMembers])"
           }
         }
       ],
@@ -62,12 +50,6 @@
               "aws.protocoltests.json#JsonProtocol"
             ]
           }
-        },
-        {
-          "name": "excludeShapesBySelector",
-          "args": {
-            "selector": "operation:is([id|name=NullOperation])"
-          }
         }
       ],
       "plugins": {
@@ -87,12 +69,6 @@
             "services": [
               "aws.protocoltests.query#AwsQuery"
             ]
-          }
-        },
-        {
-          "name": "excludeShapesBySelector",
-          "args": {
-            "selector": "operation[id|name=NestedStructures]"
           }
         }
       ],
@@ -114,12 +90,6 @@
               "aws.protocoltests.ec2#AwsEc2"
             ]
           }
-        },
-        {
-          "name": "excludeShapesBySelector",
-          "args": {
-            "selector": "operation[id|name=NestedStructures]"
-          }
         }
       ],
       "plugins": {
@@ -139,12 +109,6 @@
             "services": [
               "aws.protocoltests.restxml#RestXml"
             ]
-          }
-        },
-        {
-          "name": "excludeShapesBySelector",
-          "args": {
-            "selector": "operation:is([id|name=RecursiveShapes],[id|name=XmlUnions],[id|name=XmlUnions],[id|name=HttpPayloadTraitsWithMediaType])"
           }
         }
       ],
