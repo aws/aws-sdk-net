@@ -90,7 +90,7 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
     public Symbol mapShape(MapShape mapShape) {
         var valueShape = model.expectShape(mapShape.getValue().getTarget());
         var valueType = valueShape.accept(this);
-        return createSymbolBuilder(mapShape, "Dictionary")
+        return createSymbolBuilder(mapShape, "Dictionary<string, " + valueType + ">")
                 .addReference(valueType)
                 .build();
     }
