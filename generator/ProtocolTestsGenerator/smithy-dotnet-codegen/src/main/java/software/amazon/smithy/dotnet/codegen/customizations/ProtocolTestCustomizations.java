@@ -31,8 +31,8 @@ public final class ProtocolTestCustomizations {
             // Unit is not supported in C2J.
             "RestJsonInputUnionWithUnitMember",
             "RestJsonOutputUnionWithUnitMember",
-            // These tests, which include sparse collections were updated to a separate operation in smithy v1.47, but the smithy2c2j has not been
-            // updated yet.
+            // These tests, which include sparse collections were updated to a separate operation in smithy v1.47,
+            // but the smithy2c2j has not been updated yet.
             "RestJsonLists",
             "RestJsonListsEmpty",
             "RestJsonSparseListsSerializeNull",
@@ -61,7 +61,6 @@ public final class ProtocolTestCustomizations {
             "AwsJson11ListsSerializeNull",
             "AwsJson11MapsDeserializeNullValues",
             "AwsJson11ListsDeserializeNull",
-
             // guided by smithy team to skip operations / tests with mediaType that don't end up as json value traits in c2j
             // and to skip test that interact with default or sparse
             "RestJsonStreamingTraitsWithMediaTypeWithBlob",
@@ -91,7 +90,6 @@ public final class ProtocolTestCustomizations {
             "XmlUnionsWithBooleanMember",
             "XmlUnionsWithUnionMember"
 
-
     );
     public static final List<String> VNextTests = Arrays.asList(
             // The tests below change the response and are breaking changes. We'll have to fix in V4.
@@ -111,6 +109,14 @@ public final class ProtocolTestCustomizations {
             "Ec2EmptyQueryLists",
             "EmptyQueryLists",
             "serializes_empty_list_shapes",
-            "serializes_empty_map_shapes"
+            "serializes_empty_map_shapes",
+            // These tests are not actually breaking change but have their own backlog item to be addressed.
+            // To avoid creating yet another list to check we'll add these here so they have an ignore flag.
+            "XmlMapsXmlName",
+            "FlattenedXmlMapWithXmlName",
+            "RestXmlFlattenedXmlMapWithXmlNamespace",
+            "QueryQueryXmlMapsXmlName",
+            "QueryQueryFlattenedXmlMapWithXmlName",
+            "QueryQueryFlattenedXmlMapWithXmlNamespace"
     );
 }
