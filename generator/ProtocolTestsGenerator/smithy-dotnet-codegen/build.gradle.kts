@@ -17,14 +17,9 @@ plugins {
     id("java-library")
 }
 
-allprojects {
-    group = "software.amazon.smithy.dotnet"
-    version = "0.1.0"
-}
-
 repositories {
-    mavenCentral()
     mavenLocal()
+    mavenCentral()
 }
 
 dependencies {
