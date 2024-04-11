@@ -41,7 +41,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// For information about permissions required to use the Batch Operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Granting
+    /// For information about permissions required to use the Batch Operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-iam-role-policies.html">Granting
     /// permissions for S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </dd> </dl>  

@@ -586,7 +586,7 @@ namespace Amazon.S3Control
         /// </para>
         ///  <dl> <dt>Permissions</dt> <dd> 
         /// <para>
-        /// For information about permissions required to use the Batch Operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Granting
+        /// For information about permissions required to use the Batch Operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-iam-role-policies.html">Granting
         /// permissions for S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </dd> </dl>  
@@ -683,8 +683,8 @@ namespace Amazon.S3Control
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
-        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// about the restrictions around working with Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+        /// Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1830,8 +1830,8 @@ namespace Amazon.S3Control
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
-        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// about the restrictions around working with Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+        /// Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2227,7 +2227,7 @@ namespace Amazon.S3Control
         /// <para>
         /// Retrieves the status of an asynchronous request to manage a Multi-Region Access Point.
         /// For more information about managing Multi-Region Access Points and how asynchronous
-        /// requests work, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+        /// requests work, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MrapOperations.html">Using
         /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -3008,12 +3008,10 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
         /// Gets an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
         /// Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> 
+        /// 
+        ///  
         /// <para>
         /// If you are using an identity other than the root user of the Amazon Web Services account
         /// that owns the Outposts bucket, the calling identity must have the <c>s3-outposts:GetBucket</c>
@@ -3023,7 +3021,7 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        ///  If you don't have <c>s3-outposts:GetBucket</c> permissions or you're not using an
+        /// If you don't have <c>s3-outposts:GetBucket</c> permissions or you're not using an
         /// identity that belongs to the bucket owner's account, Amazon S3 returns a <c>403 Access
         /// Denied</c> error.
         /// </para>
@@ -3611,7 +3609,7 @@ namespace Amazon.S3Control
         /// <para>
         /// The IAM role that S3 Access Grants assumes must have the following permissions specified
         /// in the trust policy when registering the location: <c>sts:AssumeRole</c>, for directory
-        /// users or groups <c>sts:SetContext</c>, and for IAM users or roles <c>sts:SourceIdentity</c>.
+        /// users or groups <c>sts:SetContext</c>, and for IAM users or roles <c>sts:SetSourceIdentity</c>.
         /// 
         /// </para>
         ///  </dd> </dl>
@@ -3741,8 +3739,8 @@ namespace Amazon.S3Control
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
-        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// about the restrictions around working with Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+        /// Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3819,8 +3817,8 @@ namespace Amazon.S3Control
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
-        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// about the restrictions around working with Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+        /// Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3888,8 +3886,8 @@ namespace Amazon.S3Control
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
-        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// about the restrictions around working with Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+        /// Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3979,11 +3977,7 @@ namespace Amazon.S3Control
         /// <para>
         ///  <c>eu-west-1</c> 
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// Your Amazon S3 bucket does not need to be in these five Regions.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointRoutes service method.</param>
         /// 
@@ -4552,7 +4546,7 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Lists current S3 Batch Operations jobs as well as the jobs that have ended within
-        /// the last 30 days for the Amazon Web Services account making the request. For more
+        /// the last 90 days for the Amazon Web Services account making the request. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
@@ -4648,8 +4642,8 @@ namespace Amazon.S3Control
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
-        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// about the restrictions around working with Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+        /// Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5925,8 +5919,8 @@ namespace Amazon.S3Control
         ///  
         /// <para>
         /// This action will always be routed to the US West (Oregon) Region. For more information
-        /// about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-        /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// about the restrictions around working with Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+        /// Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6212,11 +6206,7 @@ namespace Amazon.S3Control
         /// <para>
         ///  <c>eu-west-1</c> 
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// Your Amazon S3 bucket does not need to be in these five Regions.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubmitMultiRegionAccessPointRoutes service method.</param>
         /// 
