@@ -58,6 +58,8 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+            
+            request.HostPrefix = $"foo.";
             }
             return request;
         }

@@ -58,6 +58,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+            
+            request.HostPrefix = $"foo.";
             }
             return request;
         }
