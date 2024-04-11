@@ -106,6 +106,15 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     }
                 }
 #pragma warning restore CS0612,CS0618
+                if(publicRequest.IsSetMetricCharacteristics())
+                {
+                    if(publicRequest.MetricCharacteristics.IsSetPeriodicSpikes())
+                    {
+                        request.Parameters.Add("MetricCharacteristics" + "." + "PeriodicSpikes", StringUtils.FromBool(publicRequest.MetricCharacteristics.PeriodicSpikes));
+                    }
+#pragma warning restore CS0612,CS0618
+                }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMetricMathAnomalyDetector())
                 {
                     if(publicRequest.MetricMathAnomalyDetector.IsSetMetricDataQueries())

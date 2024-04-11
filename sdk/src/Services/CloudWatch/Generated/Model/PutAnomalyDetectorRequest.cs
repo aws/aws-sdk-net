@@ -50,6 +50,7 @@ namespace Amazon.CloudWatch.Model
     {
         private AnomalyDetectorConfiguration _configuration;
         private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
+        private MetricCharacteristics _metricCharacteristics;
         private MetricMathAnomalyDetector _metricMathAnomalyDetector;
         private string _metricName;
         private string _awsNamespace;
@@ -98,6 +99,26 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetDimensions()
         {
             return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricCharacteristics. 
+        /// <para>
+        /// Use this object to include parameters to provide information about your metric to
+        /// CloudWatch to help it build more accurate anomaly detection models. Currently, it
+        /// includes the <c>PeriodicSpikes</c> parameter.
+        /// </para>
+        /// </summary>
+        public MetricCharacteristics MetricCharacteristics
+        {
+            get { return this._metricCharacteristics; }
+            set { this._metricCharacteristics = value; }
+        }
+
+        // Check to see if MetricCharacteristics property is set
+        internal bool IsSetMetricCharacteristics()
+        {
+            return this._metricCharacteristics != null;
         }
 
         /// <summary>
