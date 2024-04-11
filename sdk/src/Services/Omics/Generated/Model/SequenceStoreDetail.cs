@@ -36,6 +36,7 @@ namespace Amazon.Omics.Model
         private string _arn;
         private DateTime? _creationTime;
         private string _description;
+        private ETagAlgorithmFamily _eTagAlgorithmFamily;
         private string _fallbackLocation;
         private string _id;
         private string _name;
@@ -96,6 +97,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ETagAlgorithmFamily. 
+        /// <para>
+        /// The algorithm family of the ETag.
+        /// </para>
+        /// </summary>
+        public ETagAlgorithmFamily ETagAlgorithmFamily
+        {
+            get { return this._eTagAlgorithmFamily; }
+            set { this._eTagAlgorithmFamily = value; }
+        }
+
+        // Check to see if ETagAlgorithmFamily property is set
+        internal bool IsSetETagAlgorithmFamily()
+        {
+            return this._eTagAlgorithmFamily != null;
         }
 
         /// <summary>

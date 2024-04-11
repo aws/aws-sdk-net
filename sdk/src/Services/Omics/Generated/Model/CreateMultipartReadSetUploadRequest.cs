@@ -48,8 +48,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  An idempotency token that can be used to avoid triggering multiple multipart uploads.
-        /// 
+        /// An idempotency token that can be used to avoid triggering multiple multipart uploads.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -68,7 +67,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the read set. 
+        /// The description of the read set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -87,7 +86,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property GeneratedFrom. 
         /// <para>
-        ///  Where the source originated. 
+        /// Where the source originated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -106,7 +105,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the read set. 
+        /// The name of the read set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=127)]
@@ -125,7 +124,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ReferenceArn. 
         /// <para>
-        ///  The ARN of the reference. 
+        /// The ARN of the reference.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -144,7 +143,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SampleId. 
         /// <para>
-        ///  The source's sample ID. 
+        /// The source's sample ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=127)]
@@ -163,8 +162,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SequenceStoreId. 
         /// <para>
-        ///  The sequence store ID for the store that is the destination of the multipart uploads.
-        /// 
+        /// The sequence store ID for the store that is the destination of the multipart uploads.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]
@@ -183,7 +181,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SourceFileType. 
         /// <para>
-        ///  The type of file being uploaded. 
+        /// The type of file being uploaded.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -202,7 +200,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SubjectId. 
         /// <para>
-        ///  The source's subject ID. 
+        /// The source's subject ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=127)]
@@ -221,7 +219,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  Any tags to add to the read set. 
+        /// Any tags to add to the read set.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FileInformation Object
+    /// Response Unmarshaller for SequenceStoreS3Access Object
     /// </summary>  
-    public class FileInformationUnmarshaller : IUnmarshaller<FileInformation, XmlUnmarshallerContext>, IUnmarshaller<FileInformation, JsonUnmarshallerContext>
+    public class SequenceStoreS3AccessUnmarshaller : IUnmarshaller<SequenceStoreS3Access, XmlUnmarshallerContext>, IUnmarshaller<SequenceStoreS3Access, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FileInformation IUnmarshaller<FileInformation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SequenceStoreS3Access IUnmarshaller<SequenceStoreS3Access, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FileInformation Unmarshall(JsonUnmarshallerContext context)
+        public SequenceStoreS3Access Unmarshall(JsonUnmarshallerContext context)
         {
-            FileInformation unmarshalledObject = new FileInformation();
+            SequenceStoreS3Access unmarshalledObject = new SequenceStoreS3Access();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,28 +64,16 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("contentLength", targetDepth))
+                if (context.TestExpression("s3AccessPointArn", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ContentLength = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3AccessPointArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("partSize", targetDepth))
+                if (context.TestExpression("s3Uri", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.PartSize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3Access", targetDepth))
-                {
-                    var unmarshaller = ReadSetS3AccessUnmarshaller.Instance;
-                    unmarshalledObject.S3Access = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("totalParts", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TotalParts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,12 +81,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         }
 
 
-        private static FileInformationUnmarshaller _instance = new FileInformationUnmarshaller();        
+        private static SequenceStoreS3AccessUnmarshaller _instance = new SequenceStoreS3AccessUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FileInformationUnmarshaller Instance
+        public static SequenceStoreS3AccessUnmarshaller Instance
         {
             get
             {

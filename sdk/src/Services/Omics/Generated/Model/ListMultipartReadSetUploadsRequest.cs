@@ -30,9 +30,8 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMultipartReadSetUploads operation.
-    /// Lists multipart read set uploads and for in progress uploads. Once the upload is
-    /// completed, a read set is created and the upload will no longer be returned in the
-    /// respone.
+    /// Lists multipart read set uploads and for in progress uploads. Once the upload is completed,
+    /// a read set is created and the upload will no longer be returned in the response.
     /// </summary>
     public partial class ListMultipartReadSetUploadsRequest : AmazonOmicsRequest
     {
@@ -43,7 +42,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of multipart uploads returned in a page. 
+        /// The maximum number of multipart uploads returned in a page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -62,8 +61,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Next token returned in the response of a previous ListMultipartReadSetUploads call.
-        /// Used to get the next page of results. 
+        /// Next token returned in the response of a previous ListMultipartReadSetUploads call.
+        /// Used to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]
@@ -82,7 +81,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SequenceStoreId. 
         /// <para>
-        ///  The Sequence Store ID used for the multipart uploads. 
+        /// The Sequence Store ID used for the multipart uploads.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]

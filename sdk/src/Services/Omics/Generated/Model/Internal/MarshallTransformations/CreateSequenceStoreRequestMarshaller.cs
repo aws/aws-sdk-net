@@ -78,6 +78,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetETagAlgorithmFamily())
+                {
+                    context.Writer.WritePropertyName("eTagAlgorithmFamily");
+                    context.Writer.Write(publicRequest.ETagAlgorithmFamily);
+                }
+
                 if(publicRequest.IsSetFallbackLocation())
                 {
                     context.Writer.WritePropertyName("fallbackLocation");

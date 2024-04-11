@@ -29,47 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// The URI for the run log.
+    /// The S3 URI for each read set file.
     /// </summary>
-    public partial class RunLogLocation
+    public partial class ReadSetS3Access
     {
-        private string _engineLogStream;
-        private string _runLogStream;
+        private string _s3Uri;
 
         /// <summary>
-        /// Gets and sets the property EngineLogStream. 
+        /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The log stream ARN for the engine log.
+        /// The S3 URI for each read set file.
         /// </para>
         /// </summary>
-        public string EngineLogStream
+        public string S3Uri
         {
-            get { return this._engineLogStream; }
-            set { this._engineLogStream = value; }
+            get { return this._s3Uri; }
+            set { this._s3Uri = value; }
         }
 
-        // Check to see if EngineLogStream property is set
-        internal bool IsSetEngineLogStream()
+        // Check to see if S3Uri property is set
+        internal bool IsSetS3Uri()
         {
-            return this._engineLogStream != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RunLogStream. 
-        /// <para>
-        /// The log stream ARN for the run log.
-        /// </para>
-        /// </summary>
-        public string RunLogStream
-        {
-            get { return this._runLogStream; }
-            set { this._runLogStream = value; }
-        }
-
-        // Check to see if RunLogStream property is set
-        internal bool IsSetRunLogStream()
-        {
-            return this._runLogStream != null;
+            return this._s3Uri != null;
         }
 
     }

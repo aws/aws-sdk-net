@@ -66,7 +66,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Accelerators. 
         /// <para>
-        ///  The computational accelerator used to run the workflow. 
+        /// The computational accelerator used to run the workflow.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -160,7 +160,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        ///  The reason a run has failed. 
+        /// The reason a run has failed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -217,7 +217,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property LogLocation. 
         /// <para>
-        ///  The location of the run log. 
+        /// The location of the run log.
         /// </para>
         /// </summary>
         public RunLogLocation LogLocation
@@ -404,7 +404,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RunOutputUri. 
         /// <para>
-        ///  The destination for workflow outputs. 
+        /// The destination for workflow outputs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=750)]
@@ -552,7 +552,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Uuid. 
         /// <para>
-        ///  The universally unique identifier for a run. 
+        /// The universally unique identifier for a run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

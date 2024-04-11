@@ -82,6 +82,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eTagAlgorithmFamily", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ETagAlgorithmFamily = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fallbackLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

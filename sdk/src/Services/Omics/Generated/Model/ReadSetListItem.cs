@@ -127,8 +127,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Etag. 
         /// <para>
-        ///  The entity tag (ETag) is a hash of the object representing its semantic content.
-        /// 
+        /// The entity tag (ETag) is a hash of the object representing its semantic content.
         /// </para>
         /// </summary>
         public ETag Etag

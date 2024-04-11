@@ -29,47 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// The URI for the run log.
+    /// The S3 access metadata of the sequence store.
     /// </summary>
-    public partial class RunLogLocation
+    public partial class SequenceStoreS3Access
     {
-        private string _engineLogStream;
-        private string _runLogStream;
+        private string _s3AccessPointArn;
+        private string _s3Uri;
 
         /// <summary>
-        /// Gets and sets the property EngineLogStream. 
+        /// Gets and sets the property S3AccessPointArn. 
         /// <para>
-        /// The log stream ARN for the engine log.
+        /// This is ARN of the access point associated with the S3 bucket storing read sets.
         /// </para>
         /// </summary>
-        public string EngineLogStream
+        [AWSProperty(Min=1, Max=1024)]
+        public string S3AccessPointArn
         {
-            get { return this._engineLogStream; }
-            set { this._engineLogStream = value; }
+            get { return this._s3AccessPointArn; }
+            set { this._s3AccessPointArn = value; }
         }
 
-        // Check to see if EngineLogStream property is set
-        internal bool IsSetEngineLogStream()
+        // Check to see if S3AccessPointArn property is set
+        internal bool IsSetS3AccessPointArn()
         {
-            return this._engineLogStream != null;
+            return this._s3AccessPointArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RunLogStream. 
+        /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The log stream ARN for the run log.
+        /// The S3 URI of the sequence store.
         /// </para>
         /// </summary>
-        public string RunLogStream
+        public string S3Uri
         {
-            get { return this._runLogStream; }
-            set { this._runLogStream = value; }
+            get { return this._s3Uri; }
+            set { this._s3Uri = value; }
         }
 
-        // Check to see if RunLogStream property is set
-        internal bool IsSetRunLogStream()
+        // Check to see if S3Uri property is set
+        internal bool IsSetS3Uri()
         {
-            return this._runLogStream != null;
+            return this._s3Uri != null;
         }
 
     }

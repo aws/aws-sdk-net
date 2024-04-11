@@ -247,13 +247,37 @@ namespace Amazon.Omics
         /// </summary>
         public static readonly ETagAlgorithm BAM_MD5up = new ETagAlgorithm("BAM_MD5up");
         /// <summary>
+        /// Constant BAM_SHA256up for ETagAlgorithm
+        /// </summary>
+        public static readonly ETagAlgorithm BAM_SHA256up = new ETagAlgorithm("BAM_SHA256up");
+        /// <summary>
+        /// Constant BAM_SHA512up for ETagAlgorithm
+        /// </summary>
+        public static readonly ETagAlgorithm BAM_SHA512up = new ETagAlgorithm("BAM_SHA512up");
+        /// <summary>
         /// Constant CRAM_MD5up for ETagAlgorithm
         /// </summary>
         public static readonly ETagAlgorithm CRAM_MD5up = new ETagAlgorithm("CRAM_MD5up");
         /// <summary>
+        /// Constant CRAM_SHA256up for ETagAlgorithm
+        /// </summary>
+        public static readonly ETagAlgorithm CRAM_SHA256up = new ETagAlgorithm("CRAM_SHA256up");
+        /// <summary>
+        /// Constant CRAM_SHA512up for ETagAlgorithm
+        /// </summary>
+        public static readonly ETagAlgorithm CRAM_SHA512up = new ETagAlgorithm("CRAM_SHA512up");
+        /// <summary>
         /// Constant FASTQ_MD5up for ETagAlgorithm
         /// </summary>
         public static readonly ETagAlgorithm FASTQ_MD5up = new ETagAlgorithm("FASTQ_MD5up");
+        /// <summary>
+        /// Constant FASTQ_SHA256up for ETagAlgorithm
+        /// </summary>
+        public static readonly ETagAlgorithm FASTQ_SHA256up = new ETagAlgorithm("FASTQ_SHA256up");
+        /// <summary>
+        /// Constant FASTQ_SHA512up for ETagAlgorithm
+        /// </summary>
+        public static readonly ETagAlgorithm FASTQ_SHA512up = new ETagAlgorithm("FASTQ_SHA512up");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -284,6 +308,60 @@ namespace Amazon.Omics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ETagAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ETagAlgorithmFamily.
+    /// </summary>
+    public class ETagAlgorithmFamily : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MD5up for ETagAlgorithmFamily
+        /// </summary>
+        public static readonly ETagAlgorithmFamily MD5up = new ETagAlgorithmFamily("MD5up");
+        /// <summary>
+        /// Constant SHA256up for ETagAlgorithmFamily
+        /// </summary>
+        public static readonly ETagAlgorithmFamily SHA256up = new ETagAlgorithmFamily("SHA256up");
+        /// <summary>
+        /// Constant SHA512up for ETagAlgorithmFamily
+        /// </summary>
+        public static readonly ETagAlgorithmFamily SHA512up = new ETagAlgorithmFamily("SHA512up");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ETagAlgorithmFamily(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ETagAlgorithmFamily FindValue(string value)
+        {
+            return FindValue<ETagAlgorithmFamily>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ETagAlgorithmFamily(string value)
         {
             return FindValue(value);
         }

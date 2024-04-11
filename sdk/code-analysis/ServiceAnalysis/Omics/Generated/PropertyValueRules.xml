@@ -2162,6 +2162,12 @@
     <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.CompleteReadSetUploadPartListItem.Checksum</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.CompleteReadSetUploadPartListItem.PartNumber</property>
     <min>1</min>
     <max>10000</max>
@@ -2484,6 +2490,10 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.ReadSetS3Access.S3Uri</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetUploadPartListItem.PartNumber</property>
     <min>1</min>
     <max>10000</max>
@@ -2701,6 +2711,16 @@
     <min>1</min>
     <max>127</max>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.SequenceStoreS3Access.S3AccessPointArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[^:]*:s3:[^:]*:[^:]*:accesspoint/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.SequenceStoreS3Access.S3Uri</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ShareDetails.ShareName</property>

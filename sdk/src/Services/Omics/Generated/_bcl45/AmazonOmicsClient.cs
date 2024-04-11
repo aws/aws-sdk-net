@@ -4218,9 +4218,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Lists multipart read set uploads and for in progress uploads. Once the upload is
-        /// completed, a read set is created and the upload will no longer be returned in the
-        /// respone.
+        /// Lists multipart read set uploads and for in progress uploads. Once the upload is completed,
+        /// a read set is created and the upload will no longer be returned in the response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartReadSetUploads service method.</param>
         /// 
@@ -4261,9 +4260,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Lists multipart read set uploads and for in progress uploads. Once the upload is
-        /// completed, a read set is created and the upload will no longer be returned in the
-        /// respone.
+        /// Lists multipart read set uploads and for in progress uploads. Once the upload is completed,
+        /// a read set is created and the upload will no longer be returned in the response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartReadSetUploads service method.</param>
         /// <param name="cancellationToken">

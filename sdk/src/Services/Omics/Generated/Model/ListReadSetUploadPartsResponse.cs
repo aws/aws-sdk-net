@@ -39,8 +39,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Next token returned in the response of a previous ListReadSetUploadParts call. Used
-        /// to get the next page of results. 
+        /// Next token returned in the response of a previous ListReadSetUploadParts call. Used
+        /// to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]
@@ -59,7 +59,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Parts. 
         /// <para>
-        ///  An array of upload parts. 
+        /// An array of upload parts.
         /// </para>
         /// </summary>
         public List<ReadSetUploadPartListItem> Parts

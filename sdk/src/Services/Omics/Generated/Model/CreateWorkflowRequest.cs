@@ -49,7 +49,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Accelerators. 
         /// <para>
-        ///  The computational accelerator specified to run the workflow. 
+        /// The computational accelerator specified to run the workflow.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
