@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteKeyValueStore operation.
-    /// Specifies the Key Value Store to delete.
+    /// Specifies the key value store to delete.
     /// </summary>
     public partial class DeleteKeyValueStoreRequest : AmazonCloudFrontRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The Key Value Store to delete, if a match occurs.
+        /// The key value store to delete, if a match occurs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Key Value Store.
+        /// The name of the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

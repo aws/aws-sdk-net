@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The Key Value Store entity limit has been exceeded.
+    /// The key value store entity limit has been exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

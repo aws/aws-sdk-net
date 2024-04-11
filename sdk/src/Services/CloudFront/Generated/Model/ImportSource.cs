@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The import source for the Key Value Store.
+    /// The import source for the key value store.
     /// </summary>
     public partial class ImportSource
     {
@@ -39,7 +39,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property SourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the import source for the Key Value Store.
+        /// The Amazon Resource Name (ARN) of the import source for the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// The source type of the import source for the Key Value Store.
+        /// The source type of the import source for the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

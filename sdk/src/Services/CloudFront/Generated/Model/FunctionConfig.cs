@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property KeyValueStoreAssociations. 
         /// <para>
-        /// The configuration for the Key Value Store associations.
+        /// The configuration for the key value store associations.
         /// </para>
         /// </summary>
         public KeyValueStoreAssociations KeyValueStoreAssociations

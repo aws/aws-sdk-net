@@ -38,7 +38,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property KeyValueStoreList. 
         /// <para>
-        /// The resulting Key Value Stores list.
+        /// The resulting key value stores list.
         /// </para>
         /// </summary>
         public KeyValueStoreList KeyValueStoreList

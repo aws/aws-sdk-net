@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The Key Value Store association.
+    /// The key value store association.
     /// </summary>
     public partial class KeyValueStoreAssociation
     {
@@ -38,7 +38,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property KeyValueStoreARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Key Value Store association.
+        /// The Amazon Resource Name (ARN) of the key value store association.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=85)]
