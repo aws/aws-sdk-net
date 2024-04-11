@@ -769,5 +769,40 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
+        /// <summary>
+        /// Allows for `: null` to be set for all unset fields
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("JsonRpc10")]
+        public void AwsJson10DeserializeAllowNullsResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n      \"stringValue\": null,\n      \"booleanValue\": null,\n      \"numberValue\": null,\n      \"blobValue\": null,\n      \"timestampValue\": null,\n      \"enumValue\": null,\n      \"intEnumValue\": null,\n      \"listValue\": null,\n      \"mapValue\": null,\n      \"structureValue\": {\n          \"hi\": \"hello\"\n      }\n    }\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new JsonUnionsResponse
+            {
+                Contents = new MyUnion{
+                    StructureValue = new GreetingStruct
+                    {
+                        Hi = "hello",
+                    }
+                },
+            };
+
+            // Assert
+            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
     }
 }

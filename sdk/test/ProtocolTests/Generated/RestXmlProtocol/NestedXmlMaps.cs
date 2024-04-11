@@ -52,7 +52,7 @@ namespace AWSSDK.ProtocolTests.RestXml
             // Arrange
             var request = new NestedXmlMapsRequest
             {
-                NestedMap = new Dictionary<string, Dictionary<string,string>>()
+                NestedMap = new Dictionary<string, Dictionary<string, string>>()
                 {
 
                     { "foo", new Dictionary<string, string>()
@@ -94,7 +94,7 @@ namespace AWSSDK.ProtocolTests.RestXml
             // Arrange
             var request = new NestedXmlMapsRequest
             {
-                FlatNestedMap = new Dictionary<string, Dictionary<string,string>>()
+                FlatNestedMap = new Dictionary<string, Dictionary<string, string>>()
                 {
 
                     { "foo", new Dictionary<string, string>()
@@ -143,7 +143,7 @@ namespace AWSSDK.ProtocolTests.RestXml
             var unmarshalledResponse = new NestedXmlMapsResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new NestedXmlMapsResponse
             {
-                NestedMap = new Dictionary<string, Dictionary<string,string>>()
+                NestedMap = new Dictionary<string, Dictionary<string, string>>()
                 {
 
                     { "foo", new Dictionary<string, string>()
@@ -183,7 +183,7 @@ namespace AWSSDK.ProtocolTests.RestXml
             var unmarshalledResponse = new NestedXmlMapsResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new NestedXmlMapsResponse
             {
-                FlatNestedMap = new Dictionary<string, Dictionary<string,string>>()
+                FlatNestedMap = new Dictionary<string, Dictionary<string, string>>()
                 {
 
                     { "foo", new Dictionary<string, string>()
