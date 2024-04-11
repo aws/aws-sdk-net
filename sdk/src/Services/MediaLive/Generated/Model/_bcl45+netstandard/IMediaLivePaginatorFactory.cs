@@ -36,6 +36,26 @@ namespace Amazon.MediaLive.Model
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
 
         /// <summary>
+        /// Paginator for ListCloudWatchAlarmTemplateGroups operation
+        ///</summary>
+        IListCloudWatchAlarmTemplateGroupsPaginator ListCloudWatchAlarmTemplateGroups(ListCloudWatchAlarmTemplateGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCloudWatchAlarmTemplates operation
+        ///</summary>
+        IListCloudWatchAlarmTemplatesPaginator ListCloudWatchAlarmTemplates(ListCloudWatchAlarmTemplatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListEventBridgeRuleTemplateGroups operation
+        ///</summary>
+        IListEventBridgeRuleTemplateGroupsPaginator ListEventBridgeRuleTemplateGroups(ListEventBridgeRuleTemplateGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListEventBridgeRuleTemplates operation
+        ///</summary>
+        IListEventBridgeRuleTemplatesPaginator ListEventBridgeRuleTemplates(ListEventBridgeRuleTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for ListInputDevices operation
         ///</summary>
         IListInputDevicesPaginator ListInputDevices(ListInputDevicesRequest request);
@@ -74,5 +94,10 @@ namespace Amazon.MediaLive.Model
         /// Paginator for ListReservations operation
         ///</summary>
         IListReservationsPaginator ListReservations(ListReservationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSignalMaps operation
+        ///</summary>
+        IListSignalMapsPaginator ListSignalMaps(ListSignalMapsRequest request);
     }
 }

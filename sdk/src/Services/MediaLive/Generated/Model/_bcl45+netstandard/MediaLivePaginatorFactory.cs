@@ -52,6 +52,38 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Paginator for ListCloudWatchAlarmTemplateGroups operation
+        ///</summary>
+        public IListCloudWatchAlarmTemplateGroupsPaginator ListCloudWatchAlarmTemplateGroups(ListCloudWatchAlarmTemplateGroupsRequest request) 
+        {
+            return new ListCloudWatchAlarmTemplateGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCloudWatchAlarmTemplates operation
+        ///</summary>
+        public IListCloudWatchAlarmTemplatesPaginator ListCloudWatchAlarmTemplates(ListCloudWatchAlarmTemplatesRequest request) 
+        {
+            return new ListCloudWatchAlarmTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEventBridgeRuleTemplateGroups operation
+        ///</summary>
+        public IListEventBridgeRuleTemplateGroupsPaginator ListEventBridgeRuleTemplateGroups(ListEventBridgeRuleTemplateGroupsRequest request) 
+        {
+            return new ListEventBridgeRuleTemplateGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEventBridgeRuleTemplates operation
+        ///</summary>
+        public IListEventBridgeRuleTemplatesPaginator ListEventBridgeRuleTemplates(ListEventBridgeRuleTemplatesRequest request) 
+        {
+            return new ListEventBridgeRuleTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListInputDevices operation
         ///</summary>
         public IListInputDevicesPaginator ListInputDevices(ListInputDevicesRequest request) 
@@ -113,6 +145,14 @@ namespace Amazon.MediaLive.Model
         public IListReservationsPaginator ListReservations(ListReservationsRequest request) 
         {
             return new ListReservationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSignalMaps operation
+        ///</summary>
+        public IListSignalMapsPaginator ListSignalMaps(ListSignalMapsRequest request) 
+        {
+            return new ListSignalMapsPaginator(this.client, request);
         }
     }
 }
