@@ -93,7 +93,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the engine to describe DB instance options for.
+        /// The name of the database engine to describe DB instance options for.
         /// </para>
         ///  
         /// <para>
@@ -110,6 +110,18 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>custom-oracle-ee</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-ee-cdb</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-se2</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-se2-cdb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -269,7 +281,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Minimum 20, maximum 10000.
+        /// Constraints: Minimum 20, maximum 1000.
         /// </para>
         /// </summary>
         public int MaxRecords

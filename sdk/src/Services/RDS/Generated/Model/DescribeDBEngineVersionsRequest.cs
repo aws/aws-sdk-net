@@ -119,6 +119,18 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>custom-oracle-ee-cdb</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-se2</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-se2-cdb</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>db2-ae</c> 
         /// </para>
         ///  </li> <li> 
