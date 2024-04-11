@@ -123,7 +123,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ImagePullSecrets. 
         /// <para>
-        /// Displays the reference pointer to the Kubernetes secret resource.
+        /// Displays the reference pointer to the Kubernetes secret resource. These secrets help
+        /// to gain access to pull an images from a private registry.
         /// </para>
         /// </summary>
         public List<ImagePullSecret> ImagePullSecrets

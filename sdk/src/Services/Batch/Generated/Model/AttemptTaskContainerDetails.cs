@@ -29,19 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object that represents the details for an attempt for a job attempt that an Amazon
-    /// EKS container runs.
+    /// An object that represents the details of a container that's part of a job attempt.
     /// </summary>
-    public partial class EksAttemptContainerDetail
+    public partial class AttemptTaskContainerDetails
     {
         private int? _exitCode;
+        private string _logStreamName;
         private string _name;
+        private List<NetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
         private string _reason;
 
         /// <summary>
         /// Gets and sets the property ExitCode. 
         /// <para>
-        /// The exit code returned for the job attempt. A non-zero exit code is considered failed.
+        /// The exit code for the container’s attempt. A non-zero exit code is considered failed.
         /// </para>
         /// </summary>
         public int ExitCode
@@ -54,6 +55,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetExitCode()
         {
             return this._exitCode.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogStreamName. 
+        /// <para>
+        /// The name of the Amazon CloudWatch Logs log stream that's associated with the container.
+        /// The log group for Batch jobs is <c>/aws/batch/job</c>. Each container attempt receives
+        /// a log stream name when they reach the <c>RUNNING</c> status.
+        /// </para>
+        /// </summary>
+        public string LogStreamName
+        {
+            get { return this._logStreamName; }
+            set { this._logStreamName = value; }
+        }
+
+        // Check to see if LogStreamName property is set
+        internal bool IsSetLogStreamName()
+        {
+            return this._logStreamName != null;
         }
 
         /// <summary>
@@ -75,10 +96,28 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkInterfaces. 
+        /// <para>
+        /// The network interfaces that are associated with the job attempt.
+        /// </para>
+        /// </summary>
+        public List<NetworkInterface> NetworkInterfaces
+        {
+            get { return this._networkInterfaces; }
+            set { this._networkInterfaces = value; }
+        }
+
+        // Check to see if NetworkInterfaces property is set
+        internal bool IsSetNetworkInterfaces()
+        {
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// A short (255 max characters) human-readable string to provide additional details for
-        /// a running or stopped container.
+        /// A short (255 max characters) string that's easy to understand and provides additional
+        /// details for a running or stopped container.
         /// </para>
         /// </summary>
         public string Reason

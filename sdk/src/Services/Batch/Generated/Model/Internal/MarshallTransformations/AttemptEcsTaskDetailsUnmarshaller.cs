@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AttemptDetail Object
+    /// Response Unmarshaller for AttemptEcsTaskDetails Object
     /// </summary>  
-    public class AttemptDetailUnmarshaller : IUnmarshaller<AttemptDetail, XmlUnmarshallerContext>, IUnmarshaller<AttemptDetail, JsonUnmarshallerContext>
+    public class AttemptEcsTaskDetailsUnmarshaller : IUnmarshaller<AttemptEcsTaskDetails, XmlUnmarshallerContext>, IUnmarshaller<AttemptEcsTaskDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AttemptDetail IUnmarshaller<AttemptDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AttemptEcsTaskDetails IUnmarshaller<AttemptEcsTaskDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AttemptDetail Unmarshall(JsonUnmarshallerContext context)
+        public AttemptEcsTaskDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            AttemptDetail unmarshalledObject = new AttemptDetail();
+            AttemptEcsTaskDetails unmarshalledObject = new AttemptEcsTaskDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,34 +64,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("container", targetDepth))
-                {
-                    var unmarshaller = AttemptContainerDetailUnmarshaller.Instance;
-                    unmarshalledObject.Container = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("startedAt", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("statusReason", targetDepth))
+                if (context.TestExpression("containerInstanceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerInstanceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("stoppedAt", targetDepth))
+                if (context.TestExpression("containers", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.StoppedAt = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AttemptTaskContainerDetails, AttemptTaskContainerDetailsUnmarshaller>(AttemptTaskContainerDetailsUnmarshaller.Instance);
+                    unmarshalledObject.Containers = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("taskProperties", targetDepth))
+                if (context.TestExpression("taskArn", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AttemptEcsTaskDetails, AttemptEcsTaskDetailsUnmarshaller>(AttemptEcsTaskDetailsUnmarshaller.Instance);
-                    unmarshalledObject.TaskProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TaskArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -99,12 +87,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
 
 
-        private static AttemptDetailUnmarshaller _instance = new AttemptDetailUnmarshaller();        
+        private static AttemptEcsTaskDetailsUnmarshaller _instance = new AttemptEcsTaskDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttemptDetailUnmarshaller Instance
+        public static AttemptEcsTaskDetailsUnmarshaller Instance
         {
             get
             {
