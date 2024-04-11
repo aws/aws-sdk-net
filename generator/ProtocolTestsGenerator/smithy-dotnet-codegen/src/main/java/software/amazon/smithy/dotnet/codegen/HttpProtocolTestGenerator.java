@@ -121,9 +121,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.writeSingleLineComment("Act");
         writer.write("var errorResponse = new $LUnmarshaller().UnmarshallException(context, new $L(\"\"), (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L));", responseSymbol, errorSymbol, httpResponseTestCase.getCode());
         writer.writeSingleLineComment("Assert");
-        // For now we will just assert that we get the right exception type. Since exceptions don't take a parameterless constructor
-        // there is no simple way to set the message without dramatic alterations to the ValueNodeVisitor. It is worth thinking about
-        // creating a new ValueNodeVisitor that works differently for exceptions at a later time.
+        // TODO: Assert exception params. Since exceptions don't take a paramterless constructure there is not simple way to implement
+        // this without dramatic alterations to the value node visitor
         writer.write("Assert.IsInstanceOfType(errorResponse, typeof($L));", errorSymbol);
     }
 

@@ -5,9 +5,9 @@ import software.amazon.smithy.dotnet.codegen.utils.ProtocolTestUtils;
 import java.util.Arrays;
 import java.util.List;
 
-public final class ProtocolTestCustomizations
-{
-    private ProtocolTestCustomizations(){}
+public final class ProtocolTestCustomizations {
+    private ProtocolTestCustomizations() {
+    }
 
     //These contain collections with nullable values
     public static final List<String> RestJsonNullMapValueOperations = Arrays.asList(
@@ -92,9 +92,8 @@ public final class ProtocolTestCustomizations
             "XmlUnionsWithUnionMember"
 
 
-
     );
-    public static  final  List<String> VNextTests = Arrays.asList(
+    public static final List<String> VNextTests = Arrays.asList(
             // The tests below change the response and are breaking changes. We'll have to fix in V4.
             "XmlNamespaceSimpleScalarProperties",
             "XmlEmptySelfClosedStrings",
