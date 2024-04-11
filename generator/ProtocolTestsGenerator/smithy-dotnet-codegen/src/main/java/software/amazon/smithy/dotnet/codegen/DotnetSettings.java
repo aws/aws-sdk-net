@@ -91,9 +91,6 @@ public final class DotnetSettings {
         this.packageNamespace = Objects.requireNonNull(packageNamespace);
     }
 
-    private void setService(ShapeId service) {
-        this.service = Objects.requireNonNull(service);
-    }
 
     /**
      * Gets the id of the service that is being generated.
@@ -103,6 +100,10 @@ public final class DotnetSettings {
      */
     public ShapeId getService() {
         return Objects.requireNonNull(service, SERVICE + " not set");
+    }
+
+    private void setService(ShapeId service) {
+        this.service = Objects.requireNonNull(service);
     }
 
     /**

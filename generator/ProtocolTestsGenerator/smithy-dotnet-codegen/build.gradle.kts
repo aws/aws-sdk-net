@@ -17,12 +17,14 @@ plugins {
     id("java-library")
 }
 
-//group = "org.example"
-version = "1.0-SNAPSHOT"
+allprojects {
+    group = "software.amazon.smithy.dotnet"
+    version = "0.1.0"
+}
 
 repositories {
-    mavenLocal()
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
