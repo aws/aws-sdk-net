@@ -1,3 +1,30 @@
+### 3.7.788.0 (2024-04-11 18:22 UTC)
+* Batch (3.7.305.0)
+	* This release adds the task properties field to attempt details and the name field on EKS container detail.
+* CloudFront (3.7.302.0)
+	* CloudFront origin access control extends support to AWS Lambda function URLs and AWS Elemental MediaPackage v2 origins.
+* CloudWatch (3.7.304.0)
+	* This release adds support for Metric Characteristics for CloudWatch Anomaly Detection. Anomaly Detector now takes Metric Characteristics object with Periodic Spikes boolean field that tells Anomaly Detection that spikes that repeat at the same time every week are part of the expected pattern.
+* CodeBuild (3.7.306.2)
+	* Support access tokens for Bitbucket sources
+* IdentityManagement (3.7.301.0)
+	* For CreateOpenIDConnectProvider API, the ThumbprintList parameter is no longer required.
+* MediaLive (3.7.307.0)
+	* AWS Elemental MediaLive introduces workflow monitor, a new feature that enables the visualization and monitoring of your media workflows. Create signal maps of your existing workflows and monitor them by creating notification and monitoring template groups.
+* Omics (3.7.301.0)
+	* This release adds support for retrieval of S3 direct access metadata on sequence stores and read sets, and adds support for SHA256up and SHA512up HealthOmics ETags.
+* Pipes (3.7.303.0)
+	* LogConfiguration ARN validation fixes
+* RDS (3.7.311.2)
+	* Updates Amazon RDS documentation for Standard Edition 2 support in RDS Custom for Oracle.
+* S3Control (3.7.305.39)
+	* Documentation updates for Amazon S3-control.
+* WAFV2 (3.7.304.0)
+	* Adds an updated version of smoke tests, including smithy trait, for SDK testing.
+* Core 3.7.303.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.787.0 (2024-04-10 18:19 UTC)
 * CleanRooms (3.7.304.0)
 	* AWS Clean Rooms Differential Privacy is now fully available. Differential privacy protects against user-identification attempts.
