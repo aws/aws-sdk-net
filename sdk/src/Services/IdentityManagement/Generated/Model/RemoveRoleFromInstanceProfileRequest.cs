@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveRoleFromInstanceProfile operation.
-    /// Removes the specified IAM role from the specified EC2 instance profile.
+    /// Removes the specified IAM role from the specified Amazon EC2 instance profile.
     /// 
     ///  <important> 
     /// <para>
