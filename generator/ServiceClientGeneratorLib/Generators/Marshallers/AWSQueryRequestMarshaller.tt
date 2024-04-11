@@ -46,6 +46,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     var requestStructure = this.Operation.RequestStructure;
     if(requestStructure != null)
         ProcessMembers(0, "",  "publicRequest", requestStructure.Members);
+	if (!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
+	{
+		ProcessEndpointHostPrefixMembers("publicRequest", this.Operation);
+	}
 #>
             }
             return request;
