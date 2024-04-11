@@ -66,19 +66,21 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
 
     @Override
     public Symbol blobShape(BlobShape blobShape) {
-        return Symbol.builder().name("MemoryStream").putProperty("shape", blobShape).build();
+        return createSymbolBuilder(blobShape, "MemoryStream").build();
     }
 
     @Override
     public Symbol booleanShape(BooleanShape booleanShape) {
-        return Symbol.builder().name("bool").putProperty("shape", booleanShape).build();
+        return createSymbolBuilder(booleanShape, "bool").build();
     }
 
     @Override
     public Symbol listShape(ListShape listShape) {
         var targetShape = model.expectShape(listShape.getMember().getTarget());
         var targetSymbol = targetShape.accept(this);
-        return Symbol.builder().name("List<" + targetSymbol + ">").putProperty("list", listShape).build();
+        return createSymbolBuilder(listShape, "List<" + targetSymbol + ">")
+                .addReference(targetSymbol)
+                .build();
     }
 
     /**
@@ -88,22 +90,24 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
     public Symbol mapShape(MapShape mapShape) {
         var valueShape = model.expectShape(mapShape.getValue().getTarget());
         var valueType = valueShape.accept(this);
-        return Symbol.builder().name("Dictionary<string," + valueType + ">").putProperty("map", mapShape).build();
+        return createSymbolBuilder(mapShape, "Dictionary")
+                .addReference(valueType)
+                .build();
     }
 
     @Override
     public Symbol byteShape(ByteShape byteShape) {
-        return Symbol.builder().name("sbyte").putProperty("sbyte", byteShape).build();
+        return createSymbolBuilder(byteShape, "sbyte").build();
     }
 
     @Override
     public Symbol shortShape(ShortShape shortShape) {
-        return Symbol.builder().name("short").putProperty("short", shortShape).build();
+        return createSymbolBuilder(shortShape, "short").build();
     }
 
     @Override
     public Symbol integerShape(IntegerShape integerShape) {
-        return Symbol.builder().name("int").putProperty("shape", integerShape).build();
+        return createSymbolBuilder(integerShape, "int").build();
     }
 
     @Override
@@ -113,22 +117,22 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
 
     @Override
     public Symbol longShape(LongShape longShape) {
-        return Symbol.builder().name("long").putProperty("shape", longShape).build();
+        return createSymbolBuilder(longShape, "long").build();
     }
 
     @Override
     public Symbol floatShape(FloatShape floatShape) {
-        return Symbol.builder().name("float").putProperty("shape", floatShape).build();
+        return createSymbolBuilder(floatShape, "float").build();
     }
 
     @Override
     public Symbol documentShape(DocumentShape documentShape) {
-        return Symbol.builder().name("Document").putProperty("shape", documentShape).build();
+        return createSymbolBuilder(documentShape, "Document").build();
     }
 
     @Override
     public Symbol doubleShape(DoubleShape doubleShape) {
-        return Symbol.builder().name("double").putProperty("shape", doubleShape).build();
+        return createSymbolBuilder(doubleShape, "double").build();
     }
 
     @Override
@@ -158,7 +162,7 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
 
     @Override
     public Symbol stringShape(StringShape stringShape) {
-        return Symbol.builder().putProperty("shape", stringShape).name("string").build();
+        return createSymbolBuilder(stringShape, "string").build();
     }
 
     @Override
@@ -169,12 +173,12 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
     @Override
     public Symbol structureShape(StructureShape structureShape) {
         String modeledName = getModeledShapeName(structureShape);
-        return Symbol.builder().name(modeledName).putProperty("shape", structureShape).build();
+        return createSymbolBuilder(structureShape, modeledName).build();
     }
 
     @Override
     public Symbol unionShape(UnionShape unionShape) {
-        return Symbol.builder().name(getModeledShapeName(unionShape)).putProperty("shape", unionShape).build();
+        return createSymbolBuilder(unionShape, getModeledShapeName(unionShape)).build();
     }
 
     //TODO: Once a full smithy code generator is implemented, this should be updated
@@ -187,11 +191,14 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
 
     @Override
     public Symbol timestampShape(TimestampShape timestampShape) {
-        return Symbol.builder().name("DateTime").putProperty("shape", timestampShape).build();
+        return createSymbolBuilder(timestampShape, "DateTime").build();
     }
 
     private String getModeledShapeName(Shape shape) {
-        //Capitalize the first letter of each word
         return StringUtils.capitalize(shape.getId().getName());
+    }
+
+    private Symbol.Builder createSymbolBuilder(Shape shape, String typeName) {
+        return Symbol.builder().putProperty("shape", shape).name(typeName);
     }
 }
