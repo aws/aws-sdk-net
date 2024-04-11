@@ -21,8 +21,8 @@ plugins {
 tasks["jar"].enabled = false
 
 repositories {
-    mavenCentral()
     mavenLocal()
+    mavenCentral()
 }
 
 dependencies {
