@@ -20,6 +20,7 @@ using System.IO;
 
 using Amazon.Util;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -236,6 +237,7 @@ namespace Amazon.Runtime.Internal.Util
             return FromList(values?.Select(x => x.ToString()));
         }
 
+        [SuppressMessage("Microsoft.Globalization", "CA1308", Justification = "Value is not surfaced to user. Booleans have been lowercased by SDK precedent.")]
         /// <summary>
         /// Combines a List of T into a comma-separated string to be marshalled as a header.
         /// </summary>
@@ -248,9 +250,7 @@ namespace Amazon.Runtime.Internal.Util
             // and we should be returning the booleans as is.
             if (typeof(T) == typeof(bool))
             {
-#pragma warning disable CA1308
                 return FromList(values?.Select(x => x.ToString().ToLowerInvariant()));
-#pragma warning restore CA1308
             }
 
             return FromList(values?.Select(x => x.ToString()));
