@@ -326,17 +326,15 @@ public final class HttpProtocolTestGenerator implements Runnable {
         arrangeResponseTestBlock(httpResponseTestCase);
         writer.write("\n");
         // only unmarshall the response and assert if a body is present, as per smithy spec
-        if (httpResponseTestCase.getBody().isPresent() && !httpResponseTestCase.getBody().equals("") && !httpResponseTestCase.getHeaders().isEmpty()) {
-            //Act
-            writer.writeSingleLineComment("Act");
-            writer.write("var unmarshalledResponse = new $LUnmarshaller().Unmarshall(context);", responseSymbol);
-            writer.openBlock("var expectedResponse = new $L\n{", "};", responseSymbol, (Runnable) () -> httpResponseTestCase.getParams().accept(new ValueNodeVisitor(outputShape, true, responseSymbol)));
-            writer.write("\n");
-            //Assert
-            writer.writeSingleLineComment("Assert");
-            writer.write("var actualResponse = ($L)unmarshalledResponse;", responseSymbol);
-            writer.write("Comparer.CompareObjects<$L>(expectedResponse,actualResponse);", responseSymbol);
-        }
+        //Act
+        writer.writeSingleLineComment("Act");
+        writer.write("var unmarshalledResponse = new $LUnmarshaller().Unmarshall(context);", responseSymbol);
+        writer.openBlock("var expectedResponse = new $L\n{", "};", responseSymbol, (Runnable) () -> httpResponseTestCase.getParams().accept(new ValueNodeVisitor(outputShape, true, responseSymbol)));
+        writer.write("\n");
+        //Assert
+        writer.writeSingleLineComment("Assert");
+        writer.write("var actualResponse = ($L)unmarshalledResponse;", responseSymbol);
+        writer.write("Comparer.CompareObjects<$L>(expectedResponse,actualResponse);", responseSymbol);
         writer.write("Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L), context.ResponseData.StatusCode);", httpResponseTestCase.getCode());
     }
 
