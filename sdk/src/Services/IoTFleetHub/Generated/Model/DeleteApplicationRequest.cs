@@ -30,13 +30,7 @@ namespace Amazon.IoTFleetHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplication operation.
-    /// Deletes a Fleet Hub for AWS IoT Device Management web application.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
+    /// Deletes a Fleet Hub for IoT Device Management web application.
     /// </summary>
     public partial class DeleteApplicationRequest : AmazonIoTFleetHubRequest
     {

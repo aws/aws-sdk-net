@@ -31,12 +31,6 @@ namespace Amazon.IoTFleetHub.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Removes the specified tags (metadata) from the resource.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class UntagResourceRequest : AmazonIoTFleetHubRequest
     {

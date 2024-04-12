@@ -32,12 +32,6 @@ namespace Amazon.IoTFleetHub.Model
     /// Container for the parameters to the TagResource operation.
     /// Adds to or modifies the tags of the specified resource. Tags are metadata which can
     /// be used to manage a resource.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class TagResourceRequest : AmazonIoTFleetHubRequest
     {
