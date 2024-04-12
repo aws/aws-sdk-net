@@ -1,3 +1,27 @@
+### 3.7.789.0 (2024-04-12 18:23 UTC)
+* CloudFormation (3.7.307.0)
+	* Adding support for the new parameter "IncludePropertyValues" in the CloudFormation DescribeChangeSet API. When this parameter is included, the DescribeChangeSet response will include more detailed information such as before and after values for the resource properties that will change.
+* ConfigService (3.7.302.46)
+	* Updates documentation for AWS Config
+* Glue (3.7.309.0)
+	* Modifying request for GetUnfilteredTableMetadata for view-related fields.
+* HealthLake (3.7.302.0)
+	* Added new CREATE_FAILED status for data stores. Added new errorCause to DescribeFHIRDatastore API and ListFHIRDatastores API response for additional insights into data store creation and deletion workflows.
+* IoTFleetHub (3.7.300.75)
+	* Documentation updates for AWS IoT Fleet Hub to clarify that Fleet Hub supports organization instance of IAM Identity Center.
+* KeyManagementService (3.7.302.0)
+	* This feature supports the ability to specify a custom rotation period for automatic key rotations, the ability to perform on-demand key rotations, and visibility into your key material rotations.
+* MediaTailor (3.7.305.0)
+	* Added InsertionMode to PlaybackConfigurations. This setting controls whether players can use stitched or guided ad insertion. The default for players that do not specify an insertion mode is stitched.
+* NeptuneGraph (3.7.305.10)
+	* Update to API documentation to resolve customer reported issues.
+* Outposts (3.7.302.0)
+	* This release adds EXPEDITORS as a valid shipment carrier.
+* Redshift (3.7.305.0)
+	* Adds support for Amazon Redshift DescribeClusterSnapshots API to include Snapshot ARN response field.
+* Transfer (3.7.305.0)
+	* This change releases support for importing self signed certificates to the Transfer Family for sending outbound file transfers over TLS/HTTPS.
+
 ### 3.7.788.0 (2024-04-11 18:22 UTC)
 * Batch (3.7.305.0)
 	* This release adds the task properties field to attempt details and the name field on EKS container detail.
