@@ -150,6 +150,12 @@ namespace Amazon.NeptuneGraph.Model
         /// <para>
         /// The number of replicas in other AZs. Min =0, Max = 2, Default = 1.
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  Additional charges equivalent to the m-NCUs selected for the graph apply for each
+        /// replica. 
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
         public int ReplicaCount
