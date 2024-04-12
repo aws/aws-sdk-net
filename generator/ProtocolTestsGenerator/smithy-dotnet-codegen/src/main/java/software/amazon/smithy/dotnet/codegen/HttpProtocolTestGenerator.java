@@ -15,6 +15,7 @@
 
 package software.amazon.smithy.dotnet.codegen;
 
+import software.amazon.smithy.aws.traits.ServiceTrait;
 import software.amazon.smithy.codegen.core.CodegenException;
 import software.amazon.smithy.dotnet.codegen.utils.ProtocolTestUtils;
 import software.amazon.smithy.model.Model;
@@ -22,6 +23,7 @@ import software.amazon.smithy.model.knowledge.OperationIndex;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.node.*;
 import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.traits.Trait;
 import software.amazon.smithy.protocoltests.traits.*;
 import software.amazon.smithy.utils.StringUtils;
 import software.amazon.smithy.dotnet.codegen.customizations.*;
@@ -36,11 +38,10 @@ public final class HttpProtocolTestGenerator implements Runnable {
     private final Model model;
     private final ServiceShape service;
     private CSharpWriter writer;
-
     private final DotnetGenerationContext context;
     private final String serviceName;
     private String marshallerType;
-
+    private final String serviceNamespace;
 
     public HttpProtocolTestGenerator(
             DotnetGenerationContext context
@@ -50,6 +51,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         this.model = context.model();
         this.service = settings.getService(model);
         this.context = context;
+        this.serviceNamespace = service.getTrait(ServiceTrait.class).get().getSdkId().replace(" ", "");
     }
 
     @Override
@@ -61,7 +63,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             context.writerDelegator().useFileWriter(operationName + ".cs", serviceName, writer -> {
                 this.writer = writer;
                 addServiceProtocolSpecificImports();
-                writer.addMarshallImports(serviceName, settings.getPackageNamespace());
+                writer.addMarshallImports(serviceName, "Amazon." + serviceNamespace);
                 writer.addImport(serviceName, "AWSSDK.ProtocolTests.Utils");
                 writer.addSystemImport(serviceName);
                 writer.addCoreImport(serviceName);
@@ -120,11 +122,12 @@ public final class HttpProtocolTestGenerator implements Runnable {
         arrangeResponseTestBlock(httpResponseTestCase);
         var errorSymbol = error.getId().getName() + "Exception";
         writer.writeSingleLineComment("Act");
-        writer.write("var errorResponse = new $LUnmarshaller().UnmarshallException(context, new $L(\"\"), (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L));", responseSymbol, errorSymbol, httpResponseTestCase.getCode());
+        writer.write("var errorResponse = new $LUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L));", responseSymbol, httpResponseTestCase.getCode());
         writer.writeSingleLineComment("Assert");
         // TODO: Assert exception params. Since exceptions don't take a paramterless constructure there is not simple way to implement
         // this without dramatic alterations to the value node visitor
         writer.write("Assert.IsInstanceOfType(errorResponse, typeof($L));", errorSymbol);
+        writer.write("Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L));", httpResponseTestCase.getCode());
     }
 
     private void arrangeResponseTestBlock(HttpResponseTestCase httpResponseTestCase) {
@@ -196,7 +199,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                      {
                        ServiceURL = "https://$L/$L"
                      };
-                     """, ProtocolTestUtils.getProtocolConfig(settings), host, path);
+                     """, ProtocolTestUtils.getProtocolConfig(this.serviceNamespace), host, path);
         writer.write("var marshaller = new $LMarshaller();", inputShapeName);
         writer.writeSingleLineComment("Act");
         writer.write("var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);");
@@ -231,12 +234,12 @@ public final class HttpProtocolTestGenerator implements Runnable {
         }
         if (!httpRequestTestCase.getRequireHeaders().isEmpty()) {
             for (var requireHeader : httpRequestTestCase.getRequireHeaders()) {
-                writer.write("Assert.IsTrue(marshalledRequest.Headers.Contains($S));", requireHeader);
+                writer.write("Assert.IsTrue(marshalledRequest.Headers.ContainsKey($S));", requireHeader);
             }
         }
         if (!httpRequestTestCase.getForbidHeaders().isEmpty()) {
             for (var forbidHeader : httpRequestTestCase.getForbidHeaders()) {
-                writer.write("Assert.IsFalse(marshalledRequest.Headers.Contains($S));", forbidHeader);
+                writer.write("Assert.IsFalse(marshalledRequest.Headers.ContainsKey($S));", forbidHeader);
             }
         }
         // Verify the query Params.
