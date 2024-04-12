@@ -29,31 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeCustomKeyStores operation.
+    /// This is the response object from the ListKeyRotations operation.
     /// </summary>
-    public partial class DescribeCustomKeyStoresResponse : AmazonWebServiceResponse
+    public partial class ListKeyRotationsResponse : AmazonWebServiceResponse
     {
-        private List<CustomKeyStoresListEntry> _customKeyStores = AWSConfigs.InitializeCollections ? new List<CustomKeyStoresListEntry>() : null;
         private string _nextMarker;
+        private List<RotationsListEntry> _rotations = AWSConfigs.InitializeCollections ? new List<RotationsListEntry>() : null;
         private bool? _truncated;
-
-        /// <summary>
-        /// Gets and sets the property CustomKeyStores. 
-        /// <para>
-        /// Contains metadata about each custom key store.
-        /// </para>
-        /// </summary>
-        public List<CustomKeyStoresListEntry> CustomKeyStores
-        {
-            get { return this._customKeyStores; }
-            set { this._customKeyStores = value; }
-        }
-
-        // Check to see if CustomKeyStores property is set
-        internal bool IsSetCustomKeyStores()
-        {
-            return this._customKeyStores != null && (this._customKeyStores.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -73,6 +55,24 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetNextMarker()
         {
             return this._nextMarker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Rotations. 
+        /// <para>
+        /// A list of completed key material rotations.
+        /// </para>
+        /// </summary>
+        public List<RotationsListEntry> Rotations
+        {
+            get { return this._rotations; }
+            set { this._rotations = value; }
+        }
+
+        // Check to see if Rotations property is set
+        internal bool IsSetRotations()
+        {
+            return this._rotations != null && (this._rotations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EnableKeyRotation Request Marshaller
+    /// RotateKeyOnDemand Request Marshaller
     /// </summary>       
-    public class EnableKeyRotationRequestMarshaller : IMarshaller<IRequest, EnableKeyRotationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RotateKeyOnDemandRequestMarshaller : IMarshaller<IRequest, RotateKeyOnDemandRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((EnableKeyRotationRequest)input);
+            return this.Marshall((RotateKeyOnDemandRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(EnableKeyRotationRequest publicRequest)
+        public IRequest Marshall(RotateKeyOnDemandRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KeyManagementService");
-            string target = "TrentService.EnableKeyRotation";
+            string target = "TrentService.RotateKeyOnDemand";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-01";
@@ -74,12 +74,6 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KeyId);
                 }
 
-                if(publicRequest.IsSetRotationPeriodInDays())
-                {
-                    context.Writer.WritePropertyName("RotationPeriodInDays");
-                    context.Writer.Write(publicRequest.RotationPeriodInDays);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -88,9 +82,9 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static EnableKeyRotationRequestMarshaller _instance = new EnableKeyRotationRequestMarshaller();        
+        private static RotateKeyOnDemandRequestMarshaller _instance = new RotateKeyOnDemandRequestMarshaller();        
 
-        internal static EnableKeyRotationRequestMarshaller GetInstance()
+        internal static RotateKeyOnDemandRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -98,7 +92,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EnableKeyRotationRequestMarshaller Instance
+        public static RotateKeyOnDemandRequestMarshaller Instance
         {
             get
             {

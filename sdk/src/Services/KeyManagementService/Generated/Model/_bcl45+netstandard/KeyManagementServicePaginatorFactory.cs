@@ -68,6 +68,14 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Paginator for ListKeyRotations operation
+        ///</summary>
+        public IListKeyRotationsPaginator ListKeyRotations(ListKeyRotationsRequest request) 
+        {
+            return new ListKeyRotationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListKeys operation
         ///</summary>
         public IListKeysPaginator ListKeys(ListKeysRequest request) 

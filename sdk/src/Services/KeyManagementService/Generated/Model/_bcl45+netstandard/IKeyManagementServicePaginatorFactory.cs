@@ -46,6 +46,11 @@ namespace Amazon.KeyManagementService.Model
         IListKeyPoliciesPaginator ListKeyPolicies(ListKeyPoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListKeyRotations operation
+        ///</summary>
+        IListKeyRotationsPaginator ListKeyRotations(ListKeyRotationsRequest request);
+
+        /// <summary>
         /// Paginator for ListKeys operation
         ///</summary>
         IListKeysPaginator ListKeys(ListKeysRequest request);

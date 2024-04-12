@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetKeyRotationStatus operation
+    /// Response Unmarshaller for RotateKeyOnDemand operation
     /// </summary>  
-    public class GetKeyRotationStatusResponseUnmarshaller : JsonResponseUnmarshaller
+    public class RotateKeyOnDemandResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetKeyRotationStatusResponse response = new GetKeyRotationStatusResponse();
+            RotateKeyOnDemandResponse response = new RotateKeyOnDemandResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -56,30 +56,6 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KeyId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KeyRotationEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.KeyRotationEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextRotationDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.NextRotationDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OnDemandRotationStartDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.OnDemandRotationStartDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RotationPeriodInDays", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.RotationPeriodInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -105,9 +81,17 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DependencyTimeoutException"))
                 {
                     return DependencyTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DisabledException"))
+                {
+                    return DisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArnException"))
                 {
@@ -121,6 +105,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 {
                     return KMSInvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                {
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
                 {
                     return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -133,9 +121,9 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             return new AmazonKeyManagementServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetKeyRotationStatusResponseUnmarshaller _instance = new GetKeyRotationStatusResponseUnmarshaller();        
+        private static RotateKeyOnDemandResponseUnmarshaller _instance = new RotateKeyOnDemandResponseUnmarshaller();        
 
-        internal static GetKeyRotationStatusResponseUnmarshaller GetInstance()
+        internal static RotateKeyOnDemandResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -143,7 +131,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetKeyRotationStatusResponseUnmarshaller Instance
+        public static RotateKeyOnDemandResponseUnmarshaller Instance
         {
             get
             {

@@ -28,32 +28,32 @@ using Amazon.Runtime;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Base class for ListAliases paginators.
+    /// Base class for ListKeyRotations paginators.
     /// </summary>
-    internal sealed partial class ListAliasesPaginator : IPaginator<ListAliasesResponse>, IListAliasesPaginator
+    internal sealed partial class ListKeyRotationsPaginator : IPaginator<ListKeyRotationsResponse>, IListKeyRotationsPaginator
     {
         private readonly IAmazonKeyManagementService _client;
-        private readonly ListAliasesRequest _request;
+        private readonly ListKeyRotationsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<ListAliasesResponse> Responses => new PaginatedResponse<ListAliasesResponse>(this);
+        public IPaginatedEnumerable<ListKeyRotationsResponse> Responses => new PaginatedResponse<ListKeyRotationsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the Aliases
+        /// Enumerable containing all of the Rotations
         /// </summary>
-        public IPaginatedEnumerable<AliasListEntry> Aliases => 
-            new PaginatedResultKeyResponse<ListAliasesResponse, AliasListEntry>(this, (i) => i.Aliases ?? new List<AliasListEntry>());
+        public IPaginatedEnumerable<RotationsListEntry> Rotations => 
+            new PaginatedResultKeyResponse<ListKeyRotationsResponse, RotationsListEntry>(this, (i) => i.Rotations ?? new List<RotationsListEntry>());
 
-        internal ListAliasesPaginator(IAmazonKeyManagementService client, ListAliasesRequest request)
+        internal ListKeyRotationsPaginator(IAmazonKeyManagementService client, ListKeyRotationsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<ListAliasesResponse> IPaginator<ListAliasesResponse>.Paginate()
+        IEnumerable<ListKeyRotationsResponse> IPaginator<ListKeyRotationsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -61,11 +61,11 @@ namespace Amazon.KeyManagementService.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var marker = _request.Marker;
-            ListAliasesResponse response;
+            ListKeyRotationsResponse response;
             do
             {
                 _request.Marker = marker;
-                response = _client.ListAliases(_request);
+                response = _client.ListKeyRotations(_request);
                 marker = response.NextMarker;
                 yield return response;
             }
@@ -73,7 +73,7 @@ namespace Amazon.KeyManagementService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAliasesResponse> IPaginator<ListAliasesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListKeyRotationsResponse> IPaginator<ListKeyRotationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -81,11 +81,11 @@ namespace Amazon.KeyManagementService.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var marker = _request.Marker;
-            ListAliasesResponse response;
+            ListKeyRotationsResponse response;
             do
             {
                 _request.Marker = marker;
-                response = await _client.ListAliasesAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.ListKeyRotationsAsync(_request, cancellationToken).ConfigureAwait(false);
                 marker = response.NextMarker;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

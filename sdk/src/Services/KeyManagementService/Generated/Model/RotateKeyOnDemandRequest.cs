@@ -29,35 +29,54 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisableKeyRotation operation.
-    /// Disables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-    /// rotation of the key material</a> of the specified symmetric encryption KMS key.
+    /// Container for the parameters to the RotateKeyOnDemand operation.
+    /// Immediately initiates rotation of the key material of the specified symmetric encryption
+    /// KMS key.
     /// 
     ///  
     /// <para>
-    /// Automatic key rotation is supported only on symmetric encryption KMS keys. You cannot
-    /// enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
-    /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
-    /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
-    /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-    /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
-    /// keys</a>, set the property on the primary key.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
-    /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-    /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-    /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
-    /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
-    /// Web Services owned KMS keys</a> varies.
+    /// You can perform <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-on-demand">on-demand
+    /// rotation</a> of the key material in customer managed KMS keys, regardless of whether
+    /// or not <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-enable-disable">automatic
+    /// key rotation</a> is enabled. On-demand rotations do not change existing automatic
+    /// rotation schedules. For example, consider a KMS key that has automatic key rotation
+    /// enabled with a rotation period of 730 days. If the key is scheduled to automatically
+    /// rotate on April 14, 2024, and you perform an on-demand rotation on April 10, 2024,
+    /// the key will automatically rotate, as scheduled, on April 14, 2024 and every 730 days
+    /// thereafter.
     /// </para>
     ///  <note> 
     /// <para>
-    /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
-    /// from every three years to every year. For details, see <a>EnableKeyRotation</a>.
+    /// You can perform on-demand key rotation a <b>maximum of 10 times</b> per KMS key. You
+    /// can use the KMS console to view the number of remaining on-demand rotations available
+    /// for a KMS key.
     /// </para>
     ///  </note> 
+    /// <para>
+    /// You can use <a>GetKeyRotationStatus</a> to identify any in progress on-demand rotations.
+    /// You can use <a>ListKeyRotations</a> to identify the date that completed on-demand
+    /// rotations were performed. You can monitor rotation of the key material for your KMS
+    /// keys in CloudTrail and Amazon CloudWatch.
+    /// </para>
+    ///  
+    /// <para>
+    /// On-demand key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
+    /// encryption KMS keys</a>. You cannot perform on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+    /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
+    /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
+    /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+    /// key store</a>. To perform on-demand rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+    /// keys</a>, invoke the on-demand rotation on the primary key.
+    /// </para>
+    ///  
+    /// <para>
+    /// You cannot initiate on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+    /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
+    /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+    /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
+    /// owns the key.
+    /// </para>
+    ///  
     /// <para>
     /// The KMS key that you use for this operation must be in a compatible key state. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -70,7 +89,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DisableKeyRotation</a>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:RotateKeyOnDemand</a>
     /// (key policy)
     /// </para>
     ///  
@@ -83,15 +102,15 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>DisableKeyRotation</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>GetKeyRotationStatus</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>ListKeyRotations</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>RotateKeyOnDemand</a> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -100,19 +119,20 @@ namespace Amazon.KeyManagementService.Model
     /// eventual consistency</a>.
     /// </para>
     /// </summary>
-    public partial class DisableKeyRotationRequest : AmazonKeyManagementServiceRequest
+    public partial class RotateKeyOnDemandRequest : AmazonKeyManagementServiceRequest
     {
         private string _keyId;
 
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Identifies a symmetric encryption KMS key. You cannot enable or disable automatic
-        /// rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
+        /// Identifies a symmetric encryption KMS key. You cannot perform on-demand rotation of
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
         /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
         /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
         /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>.
+        /// key store</a>. To perform on-demand rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, invoke the on-demand rotation on the primary key.
         /// </para>
         ///  
         /// <para>
