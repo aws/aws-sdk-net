@@ -1129,6 +1129,10 @@ namespace Amazon.Outposts
         /// </summary>
         public static readonly ShipmentCarrier DHL = new ShipmentCarrier("DHL");
         /// <summary>
+        /// Constant EXPEDITORS for ShipmentCarrier
+        /// </summary>
+        public static readonly ShipmentCarrier EXPEDITORS = new ShipmentCarrier("EXPEDITORS");
+        /// <summary>
         /// Constant FEDEX for ShipmentCarrier
         /// </summary>
         public static readonly ShipmentCarrier FEDEX = new ShipmentCarrier("FEDEX");
