@@ -23,7 +23,7 @@ import software.amazon.smithy.model.transform.ModelTransformer;
 public class DotnetProtocolTestCodegenPlugin implements SmithyBuildPlugin {
     @Override
     public String getName() {
-        return "dotnet-protocol-test-codegen-plugin";
+        return "dotnet-protocol-test-codegen";
     }
 
     @Override

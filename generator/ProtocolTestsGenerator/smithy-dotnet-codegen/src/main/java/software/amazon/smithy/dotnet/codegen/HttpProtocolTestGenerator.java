@@ -60,7 +60,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             var operationName = operation.getId().getName();
             context.writerDelegator().useFileWriter(operationName + ".cs", serviceName, writer -> {
                 this.writer = writer;
-                getServiceImports();
+                addServiceProtocolSpecificImports();
                 writer.addMarshallImports(serviceName, settings.getPackageNamespace());
                 writer.addImport(serviceName, "AWSSDK.ProtocolTests.Utils");
                 writer.addSystemImport(serviceName);
@@ -79,7 +79,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         }
     }
 
-    private void getServiceImports() {
+    private void addServiceProtocolSpecificImports() {
         if (this.serviceName.toLowerCase().contains("json")) {
             writer.addImport(serviceName, "Newtonsoft.Json");
             writer.addImport(serviceName, "Newtonsoft.Json.Linq");
@@ -145,7 +145,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             // Marshaller only needs to be determined once and it will be the same for requests/responses/errors.
             // In case the operation doesn't have a request or response test, we will call this on the response side as well.
             if (!trait.getTestCasesFor(AppliesTo.CLIENT).isEmpty()) {
-                getMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
+                setMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpRequestTestCase httpRequestTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
                 if (ProtocolTestCustomizations.TestsToSkip.contains(httpRequestTestCase.getId()))
@@ -229,13 +229,34 @@ public final class HttpProtocolTestGenerator implements Runnable {
             // We are relaxing our assert here so that "1, 2, 3" = "1,2,3" There is nothing in the smithy docs that says whitespace matters.
             writer.write("Assert.AreEqual($S.Replace(\" \",\"\"), marshalledRequest.Headers[$S].Replace(\" \",\"\"));", headers.get(header), header);
         }
+        if (!httpRequestTestCase.getRequireHeaders().isEmpty()) {
+            for (var requireHeader : httpRequestTestCase.getRequireHeaders()) {
+                writer.write("Assert.IsTrue(marshalledRequest.Headers.Contains($S));", requireHeader);
+            }
+        }
+        if (!httpRequestTestCase.getForbidHeaders().isEmpty()) {
+            for (var forbidHeader : httpRequestTestCase.getForbidHeaders()) {
+                writer.write("Assert.IsFalse(marshalledRequest.Headers.Contains($S));", forbidHeader);
+            }
+        }
         // Verify the query Params.
         if (!httpRequestTestCase.getQueryParams().isEmpty()) {
             writer.write("var actualQuerySegments = ProtocolTestUtils.GetQuerySegmentsFromOriginalString(actualUri);");
             for (var queryParam : httpRequestTestCase.getQueryParams()) {
                 writer.write("Assert.IsTrue(actualQuerySegments.Contains($S));", queryParam);
             }
+            if (!httpRequestTestCase.getForbidQueryParams().isEmpty()) {
+                for (var forbidQueryParam : httpRequestTestCase.getForbidQueryParams()) {
+                    writer.write("Assert.IsFalse(actualQuerySegments.Contains($S));", forbidQueryParam);
+                }
+            }
+            if (!httpRequestTestCase.getRequireQueryParams().isEmpty()) {
+                for (var requireQueryParam : httpRequestTestCase.getRequireQueryParams()) {
+                    writer.write("Assert.IsTrue(actualQuerySegments.Contains($S));", requireQueryParam);
+                }
+            }
         }
+
     }
 
     private void assertRequestBody(HttpRequestTestCase httpRequestTestCase) {
@@ -263,7 +284,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
     private void generateResponseTests(OperationShape operation) {
         operation.getTrait(HttpResponseTestsTrait.class).ifPresent(trait -> {
             if (!trait.getTestCasesFor(AppliesTo.CLIENT).isEmpty()) {
-                getMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
+                setMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
                 if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()))
@@ -322,7 +343,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.write("Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L), context.ResponseData.StatusCode);", httpResponseTestCase.getCode());
     }
 
-    private void getMarshallerType(String protocol) {
+    private void setMarshallerType(String protocol) {
         if (protocol.toLowerCase().contains("json")) {
             this.marshallerType = "Json";
         } else if (protocol.toLowerCase().contains("xml") || protocol.toLowerCase().contains("query")) {
