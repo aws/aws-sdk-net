@@ -31,28 +31,14 @@ import java.util.Objects;
 @SmithyUnstableApi
 public final class DotnetSettings {
     private static final String SERVICE = "service";
-    private static final String PACKAGE_NAME = "package";
     private static final String PACKAGE_VERSION = "packageVersion";
-    private static final String PACKAGE_NAMESPACE = "packageNamespace";
     private ShapeId service;
-    /*
-    The packageName is the name of the nuget package. For example S3 is AWSSDK.S3
-     */
-    private String packageName;
-
-    /*
-    The packageNamespace is the base namespace of a service. For example, S3 would be
-    AmazonS3. It is essentially replacing the prefix for the packageName with Amazon.
-     */
-    private String packageNamespace;
     private String packageVersion;
 
     public static DotnetSettings from(ObjectNode config) {
         DotnetSettings settings = new DotnetSettings();
         settings.setService(config.expectStringMember(SERVICE).expectShapeId());
-        settings.setPackageName(config.expectStringMember(PACKAGE_NAME).getValue());
         settings.setPackageVersion(config.expectStringMember(PACKAGE_VERSION).getValue());
-        settings.setPackageNamespace(config.expectStringMember(PACKAGE_NAMESPACE).getValue());
         return settings;
     }
 
@@ -66,31 +52,6 @@ public final class DotnetSettings {
     private void setPackageVersion(String packageVersion) {
         this.packageVersion = Objects.requireNonNull(packageVersion);
     }
-
-    /**
-     * @return Returns the name of the package, which is the equivalent of the nuget package name.
-     * For example S3 would be AWSSDK.S3
-     */
-    public String getPackageName() {
-        return packageName;
-    }
-
-    private void setPackageName(String packageName) {
-        this.packageName = Objects.requireNonNull(packageName);
-    }
-
-    /**
-     * @return Returns the namespace of the package. This is the namespace that is used within the package.
-     * For example for S3, if the packageName is AWSSDK.S3 then the packageNamespace is Amazon.S3
-     */
-    public String getPackageNamespace() {
-        return packageNamespace;
-    }
-
-    private void setPackageNamespace(String packageNamespace) {
-        this.packageNamespace = Objects.requireNonNull(packageNamespace);
-    }
-
 
     /**
      * Gets the id of the service that is being generated.
