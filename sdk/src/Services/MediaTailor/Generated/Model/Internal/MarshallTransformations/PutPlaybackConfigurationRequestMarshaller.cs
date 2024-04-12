@@ -138,6 +138,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetInsertionMode())
+                {
+                    context.Writer.WritePropertyName("InsertionMode");
+                    context.Writer.Write(publicRequest.InsertionMode);
+                }
+
                 if(publicRequest.IsSetLivePreRollConfiguration())
                 {
                     context.Writer.WritePropertyName("LivePreRollConfiguration");
