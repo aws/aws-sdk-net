@@ -57,7 +57,7 @@ namespace Amazon.Util
         public const string XAmzCloudFrontIdHeader = "X-Amz-Cf-Id";
         public const string XAmzRequestIdHeader = "x-amz-request-id";
         public const string XAmzDateHeader = "X-Amz-Date";
-        public const string XAmzErrorType = "X-Amzn-Errortype";
+        public const string XAmzErrorType = "x-amzn-ErrorType";
         public const string XAmznErrorMessage = "x-amzn-error-message";
         public const string XAmzSignedHeadersHeader = "X-Amz-SignedHeaders";
         public const string XAmzContentSha256Header = "X-Amz-Content-SHA256";
@@ -77,6 +77,7 @@ namespace Amazon.Util
         public const string XAmzAlgorithm = "X-Amz-Algorithm";
         public const string XAmzCredential = "X-Amz-Credential";
         public const string XAmzTrailerHeader = "X-Amz-Trailer";
+        public const string XAmzCrc32 = "x-amz-crc32";
 
         public const string XAmzSSECustomerAlgorithmHeader = "x-amz-server-side-encryption-customer-algorithm";
         public const string XAmzSSECustomerKeyHeader = "x-amz-server-side-encryption-customer-key";

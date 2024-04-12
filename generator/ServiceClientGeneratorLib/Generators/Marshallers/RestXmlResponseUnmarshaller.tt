@@ -117,7 +117,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
 	}
 #>
-            if(context.Stream.Length == 0)
+            if (context.IsEmptyResponse)
             {
                 return;
             }

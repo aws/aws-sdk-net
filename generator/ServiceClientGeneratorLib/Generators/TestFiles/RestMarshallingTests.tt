@@ -180,8 +180,8 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
 				}
 			}
 		}				
-#>					{"x-amzn-RequestId", Guid.NewGuid().ToString()},
-					{"x-amz-crc32","0"}
+#>					{HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+					{HeaderKeys.XAmzCrc32,"0"}
 				}
 			};
 <#   
@@ -360,13 +360,13 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
                 }
             }
 #>
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
 <#
                 if(this.Config.ServiceModel.Type != ServiceType.Rest_Xml)
                 {
 #>
-                    {"x-amzn-ErrorType","<#=exception.Name#>"},
+                    {HeaderKeys.XAmzErrorType,"<#=exception.Name#>"},
 <#
                 }
 #>

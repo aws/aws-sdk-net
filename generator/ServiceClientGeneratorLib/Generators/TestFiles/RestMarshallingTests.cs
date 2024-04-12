@@ -555,8 +555,8 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\t{\"x-amzn-RequestId\", Guid.NewGuid().ToString()},\r\n\t\t\t\t\t{\"x-amz-crc32\",\"0\"}\r\n" +
-                    "\t\t\t\t}\r\n\t\t\t};\r\n");
+            this.Write("\t\t\t\t\t{HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},\r\n\t\t\t\t\t{HeaderKeys.X" +
+                    "AmzCrc32,\"0\"}\r\n\t\t\t\t}\r\n\t\t\t};\r\n");
             
             #line 187 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
    
@@ -1116,8 +1116,8 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             
             #line default
             #line hidden
-            this.Write("                    {\"x-amzn-RequestId\", Guid.NewGuid().ToString()},\r\n           " +
-                    "         {\"x-amz-crc32\",\"0\"},\r\n");
+            this.Write("                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},\r\n   " +
+                    "                 {HeaderKeys.XAmzCrc32,\"0\"},\r\n");
             
             #line 365 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
 
@@ -1127,7 +1127,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             
             #line default
             #line hidden
-            this.Write("                    {\"x-amzn-ErrorType\",\"");
+            this.Write("                    {HeaderKeys.XAmzErrorType,\"");
             
             #line 369 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));

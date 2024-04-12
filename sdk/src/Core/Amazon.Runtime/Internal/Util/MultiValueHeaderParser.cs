@@ -51,12 +51,12 @@ namespace Amazon.Runtime.Internal.Util
 
             int startAtIndex = 0;
             var bytes = System.Text.Encoding.UTF8.GetBytes(header);
-            Tuple<string, int> readResponse;
+            ReadValueIndex readResponse;
             while (startAtIndex < bytes.Length)
             {
                 readResponse = ReadValue(bytes, startAtIndex);
-                list.Add(readResponse.Item1);
-                startAtIndex = readResponse.Item2;
+                list.Add(readResponse.Value);
+                startAtIndex = readResponse.Index;
             }
 
             return list;
@@ -90,6 +90,7 @@ namespace Amazon.Runtime.Internal.Util
         ///         </description>
         ///     </item>
         /// </list>
+        /// </param>
         /// <param name="format">ISO8601, RFC822, UnixTimestamp</param>
         /// <returns>List of DateTimes processed from the comma separated string.</returns>
         public static List<DateTime> ToDateTimeList(string header, string format)
@@ -185,7 +186,7 @@ namespace Amazon.Runtime.Internal.Util
             return list.ConvertAll(item => (T)Convert.ChangeType(item.Trim(), typeof(T))).ToList();
         }
 
-        private static Tuple<string, int> ReadValue(byte[] input, int startAtIndex)
+        private static ReadValueIndex ReadValue(byte[] input, int startAtIndex)
         {
             for (int index = startAtIndex; index < input.Length; index++)
             {
@@ -202,20 +203,20 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             // We only end up here if the entire header value was whitespace or empty
-            return new Tuple<string, int>(string.Empty, input.Length);
+            return new ReadValueIndex(string.Empty, input.Length);
         }
 
-        private static Tuple<string, int> ReadUnquotedValue(byte[] input, int startIndex)
+        private static ReadValueIndex ReadUnquotedValue(byte[] input, int startIndex)
         {
             int nextDelim = Array.IndexOf(input, (byte)Delimiter, startIndex);
             int length = nextDelim != -1 ? nextDelim - startIndex : input.Length - startIndex;
             string firstStr = System.Text.Encoding.UTF8.GetString(input, startIndex, length).Trim();
             var remainingIndex = AdvanceIndexIfComma(input, startIndex + length);
 
-            return new Tuple<string, int>(firstStr, remainingIndex);
+            return new ReadValueIndex(firstStr, remainingIndex);
         }
 
-        private static Tuple<string, int> ReadQuotedValue(byte[] input, int startIndex)
+        private static ReadValueIndex ReadQuotedValue(byte[] input, int startIndex)
         {
             for (int index = startIndex; index < input.Length; index++)
             {
@@ -226,7 +227,7 @@ namespace Amazon.Runtime.Internal.Util
                     inner = inner.Replace("\\\\", "\\");
                     var remainingIndex = AdvanceIndexIfComma(input, index + 1);
 
-                    return new Tuple<string, int>(inner, remainingIndex);
+                    return new ReadValueIndex(inner, remainingIndex);
                 }
             }
 
@@ -247,6 +248,18 @@ namespace Amazon.Runtime.Internal.Util
             {
                 throw new ArgumentException($"Expected delimiter `{Delimiter}` in input data at index {index}.");
             }
+        }
+
+        private class ReadValueIndex
+        {
+            public ReadValueIndex(string value, int remainder)
+            {
+                Value = value;
+                Index = remainder;
+            }
+
+            public string Value { get; set; }
+            public int Index { get; set; }
         }
     }
 }

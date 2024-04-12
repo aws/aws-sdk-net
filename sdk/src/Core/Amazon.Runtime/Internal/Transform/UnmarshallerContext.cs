@@ -352,6 +352,19 @@ namespace Amazon.Runtime.Internal.Transform
         private bool disposed = false;
         private bool currentlyProcessingEmptyElement;
         private bool processEmptyElements = false; //Flip to true in v4
+        private bool _isEmptyResponse = false;
+
+        public bool IsEmptyResponse
+        {
+            get
+            {
+                return this._isEmptyResponse;
+            }
+            private set
+            {
+                this._isEmptyResponse = value;
+            }
+        }
 
         public Stream Stream
         {
@@ -435,6 +448,10 @@ namespace Amazon.Runtime.Internal.Transform
                 long contentLength;
                 bool parsedContentLengthHeader = long.TryParse(responseData.GetHeaderValue("Content-Length"), out contentLength);
 
+                if (parsedContentLengthHeader && contentLength == 0)
+                {
+                    _isEmptyResponse = true;
+                }
                 // Validate flexible checksums if we know the content length and the behavior was opted in to on the request
                 if (parsedContentLengthHeader && responseData.ContentLength == contentLength &&
                         string.IsNullOrEmpty(responseData.GetHeaderValue("Content-Encoding")) &&

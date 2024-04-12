@@ -235,7 +235,27 @@ namespace AWSSDK.UnitTests.RestJsonTest.Net35
             };
 
             var internalRequest = marshaller.Marshall(request);
-            Assert.AreEqual("item=1970-01-01T00%3A00%3A01.000Z&item=1970-01-01T00%3A00%3A02.000Z&item=1970-01-01T00%3A00%3A03.000Z", ToQueryString(internalRequest));
+            Assert.AreEqual("item=1970-01-01T00%3A00%3A01Z&item=1970-01-01T00%3A00%3A02Z&item=1970-01-01T00%3A00%3A03Z", ToQueryString(internalRequest));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RestJsonTest")]
+        public void TestQueryTimestampListWithMs()
+        {
+            var marshaller = new QueryTimestampListRequestMarshaller();
+            var request = new QueryTimestampListRequest
+            {
+                QueryTimestampList = new List<DateTime> {
+                    new DateTime(1970, 1, 1, 0, 0, 1, 123, DateTimeKind.Utc),
+                    new DateTime(1970, 1, 1, 0, 0, 2, 123, DateTimeKind.Utc),
+                    new DateTime(1970, 1, 1, 0, 0, 3, 123, DateTimeKind.Utc)
+                }
+            };
+
+            var internalRequest = marshaller.Marshall(request);
+            Assert.AreEqual("item=1970-01-01T00%3A00%3A01.123Z&item=1970-01-01T00%3A00%3A02.123Z&item=1970-01-01T00%3A00%3A03.123Z", ToQueryString(internalRequest));
         }
 
         [TestMethod]
