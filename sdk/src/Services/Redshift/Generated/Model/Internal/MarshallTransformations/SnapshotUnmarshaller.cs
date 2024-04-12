@@ -227,6 +227,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.RestorableNodeTypes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("SnapshotArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SnapshotCreateTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
