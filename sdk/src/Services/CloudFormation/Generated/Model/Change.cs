@@ -80,9 +80,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of entity that CloudFormation changes. Currently, the only entity type is
-        /// <c>Resource</c>.
+        /// The type of entity that CloudFormation changes.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Resource</c> This change is for a resource.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ChangeType Type
         {

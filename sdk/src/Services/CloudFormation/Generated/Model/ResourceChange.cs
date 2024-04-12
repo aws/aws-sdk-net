@@ -35,6 +35,8 @@ namespace Amazon.CloudFormation.Model
     public partial class ResourceChange
     {
         private ChangeAction _action;
+        private string _afterContext;
+        private string _beforeContext;
         private string _changeSetId;
         private List<ResourceChangeDetail> _details = AWSConfigs.InitializeCollections ? new List<ResourceChangeDetail>() : null;
         private string _logicalResourceId;
@@ -64,6 +66,44 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AfterContext. 
+        /// <para>
+        /// An encoded JSON string containing the context of the resource after the change is
+        /// executed.
+        /// </para>
+        /// </summary>
+        public string AfterContext
+        {
+            get { return this._afterContext; }
+            set { this._afterContext = value; }
+        }
+
+        // Check to see if AfterContext property is set
+        internal bool IsSetAfterContext()
+        {
+            return this._afterContext != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BeforeContext. 
+        /// <para>
+        /// An encoded JSON string containing the context of the resource before the change is
+        /// executed.
+        /// </para>
+        /// </summary>
+        public string BeforeContext
+        {
+            get { return this._beforeContext; }
+            set { this._beforeContext = value; }
+        }
+
+        // Check to see if BeforeContext property is set
+        internal bool IsSetBeforeContext()
+        {
+            return this._beforeContext != null;
         }
 
         /// <summary>
