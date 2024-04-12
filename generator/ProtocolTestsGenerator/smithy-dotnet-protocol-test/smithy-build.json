@@ -13,7 +13,7 @@
         }
       ],
       "plugins": {
-        "dotnet-protocol-test-codegen-plugin": {
+        "dotnet-protocol-test-codegen": {
           "service": "aws.protocoltests.restjson#RestJson",
           "package": "AWSSDK.RestJsonProtocol",
           "packageNamespace": "Amazon.RestJsonProtocol",
@@ -33,7 +33,7 @@
         }
       ],
       "plugins": {
-        "dotnet-protocol-test-codegen-plugin": {
+        "dotnet-protocol-test-codegen": {
           "service": "aws.protocoltests.json10#JsonRpc10",
           "package": "AWSSDK.JSONRPC10",
           "packageNamespace": "Amazon.JSONRPC10",
@@ -53,7 +53,7 @@
         }
       ],
       "plugins": {
-        "dotnet-protocol-test-codegen-plugin": {
+        "dotnet-protocol-test-codegen": {
           "service": "aws.protocoltests.json#JsonProtocol",
           "package": "AWSSDK.JsonProtocol",
           "packageNamespace": "Amazon.JsonProtocol",
@@ -73,7 +73,7 @@
         }
       ],
       "plugins": {
-        "dotnet-protocol-test-codegen-plugin": {
+        "dotnet-protocol-test-codegen": {
           "service": "aws.protocoltests.query#AwsQuery",
           "package": "AWSSDK.QueryProtocol",
           "packageNamespace": "Amazon.QueryProtocol",
@@ -93,7 +93,7 @@
         }
       ],
       "plugins": {
-        "dotnet-protocol-test-codegen-plugin": {
+        "dotnet-protocol-test-codegen": {
           "service": "aws.protocoltests.ec2#AwsEc2",
           "package": "AWSSSDK.EC2Protocol",
           "packageNamespace": "Amazon.EC2Protocol",
@@ -113,7 +113,7 @@
         }
       ],
       "plugins": {
-        "dotnet-protocol-test-codegen-plugin": {
+        "dotnet-protocol-test-codegen": {
           "service": "aws.protocoltests.restxml#RestXml",
           "package": "AWSSDK.RestXmlProtocol",
           "packageNamespace": "Amazon.RestXmlProtocol",
@@ -133,7 +133,7 @@
         }
       ],
       "plugins": {
-        "dotnet-protocol-test-codegen-plugin": {
+        "dotnet-protocol-test-codegen": {
           "service": "aws.protocoltests.restxml.xmlns#RestXmlWithNamespace",
           "package": "AWSSDK.RestXmlProtocolNamespace",
           "packageNamespace": "Amazon.RestXmlProtocolNamespace",
