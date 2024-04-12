@@ -194,8 +194,21 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Usage. 
         /// <para>
-        /// Specifies whether this certificate is used for signing or encryption.
+        /// Specifies how this certificate is used. It can be used in the following ways:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SIGNING</c>: For signing AS2 messages
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ENCRYPTION</c>: For encrypting AS2 messages
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TLS</c>: For securing AS2 communications sent over HTTPS
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public CertificateUsageType Usage
