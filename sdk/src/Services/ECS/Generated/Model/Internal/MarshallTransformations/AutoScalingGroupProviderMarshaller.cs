@@ -46,6 +46,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoScalingGroupProvider requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoScalingGroupArn())
             {
                 context.Writer.WritePropertyName("autoScalingGroupArn");

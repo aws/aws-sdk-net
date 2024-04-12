@@ -46,6 +46,8 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CellInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFact())
             {
                 context.Writer.WritePropertyName("fact");

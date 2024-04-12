@@ -46,6 +46,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FormStyle requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHorizontalGap())
             {
                 context.Writer.WritePropertyName("horizontalGap");

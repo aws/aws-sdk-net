@@ -46,6 +46,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OpenZFSNfsExport requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClientConfigurations())
             {
                 context.Writer.WritePropertyName("ClientConfigurations");

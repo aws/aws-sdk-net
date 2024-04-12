@@ -46,6 +46,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TsvStoreOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnnotationType())
             {
                 context.Writer.WritePropertyName("annotationType");

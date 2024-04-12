@@ -46,6 +46,8 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RuntimeHintDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRuntimeHintValues())
             {
                 context.Writer.WritePropertyName("runtimeHintValues");

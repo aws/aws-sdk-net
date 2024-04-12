@@ -245,7 +245,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRestoreTimeUtc())
                 {
-                    request.Parameters.Add("RestoreTime", StringUtils.FromDateTimeToISO8601(publicRequest.RestoreTimeUtc));
+                    request.Parameters.Add("RestoreTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.RestoreTimeUtc));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceDBInstanceAutomatedBackupsArn())

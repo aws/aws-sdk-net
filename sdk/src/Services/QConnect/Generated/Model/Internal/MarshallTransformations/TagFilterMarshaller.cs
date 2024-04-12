@@ -46,6 +46,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TagFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAndConditions())
             {
                 context.Writer.WritePropertyName("andConditions");

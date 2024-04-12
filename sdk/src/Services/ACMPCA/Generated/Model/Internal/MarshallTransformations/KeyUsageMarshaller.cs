@@ -46,6 +46,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KeyUsage requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCRLSign())
             {
                 context.Writer.WritePropertyName("CRLSign");

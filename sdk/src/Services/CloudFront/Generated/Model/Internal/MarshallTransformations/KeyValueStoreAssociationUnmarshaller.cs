@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeyValueStoreAssociation Object
     /// </summary>  
-    public class KeyValueStoreAssociationUnmarshaller : IUnmarshaller<KeyValueStoreAssociation, XmlUnmarshallerContext>
+    public class KeyValueStoreAssociationUnmarshaller : IUnmarshaller<KeyValueStoreAssociation, XmlUnmarshallerContext>, IUnmarshaller<KeyValueStoreAssociation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -69,6 +69,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public KeyValueStoreAssociation Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static KeyValueStoreAssociationUnmarshaller _instance = new KeyValueStoreAssociationUnmarshaller();        

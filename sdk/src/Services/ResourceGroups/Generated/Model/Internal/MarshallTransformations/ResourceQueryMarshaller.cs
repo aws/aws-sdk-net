@@ -46,6 +46,8 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceQuery requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetQuery())
             {
                 context.Writer.WritePropertyName("Query");

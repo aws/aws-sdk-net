@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DebugHookConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCollectionConfigurations())
             {
                 context.Writer.WritePropertyName("CollectionConfigurations");

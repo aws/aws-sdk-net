@@ -46,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HlsAdditionalManifest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetManifestNameModifier())
             {
                 context.Writer.WritePropertyName("manifestNameModifier");

@@ -46,6 +46,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RequestDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCreateS3DataAccessFromS3Bucket())
             {
                 context.Writer.WritePropertyName("CreateS3DataAccessFromS3Bucket");

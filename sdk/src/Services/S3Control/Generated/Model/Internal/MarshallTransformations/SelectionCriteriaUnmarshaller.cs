@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SelectionCriteria Object
     /// </summary>  
-    public class SelectionCriteriaUnmarshaller : IUnmarshaller<SelectionCriteria, XmlUnmarshallerContext>
+    public class SelectionCriteriaUnmarshaller : IUnmarshaller<SelectionCriteria, XmlUnmarshallerContext>, IUnmarshaller<SelectionCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,6 +81,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public SelectionCriteria Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static SelectionCriteriaUnmarshaller _instance = new SelectionCriteriaUnmarshaller();        

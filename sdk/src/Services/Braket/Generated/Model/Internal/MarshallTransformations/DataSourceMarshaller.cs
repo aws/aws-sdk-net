@@ -46,6 +46,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3DataSource())
             {
                 context.Writer.WritePropertyName("s3DataSource");

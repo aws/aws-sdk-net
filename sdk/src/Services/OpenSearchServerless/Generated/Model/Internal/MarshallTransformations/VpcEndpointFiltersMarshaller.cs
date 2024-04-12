@@ -46,6 +46,8 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcEndpointFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("status");

@@ -46,6 +46,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IntegerHyperParameterRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("maxValue");

@@ -46,6 +46,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConnectorProfileProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAmplitude())
             {
                 context.Writer.WritePropertyName("Amplitude");

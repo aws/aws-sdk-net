@@ -46,6 +46,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AuthenticationMode requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPasswords())
             {
                 context.Writer.WritePropertyName("Passwords");

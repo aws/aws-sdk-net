@@ -46,6 +46,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImpersonationRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");

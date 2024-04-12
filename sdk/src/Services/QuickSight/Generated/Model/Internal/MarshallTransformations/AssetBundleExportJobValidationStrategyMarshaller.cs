@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AssetBundleExportJobValidationStrategy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStrictModeForAllResources())
             {
                 context.Writer.WritePropertyName("StrictModeForAllResources");

@@ -46,6 +46,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkerConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRevision())
             {
                 context.Writer.WritePropertyName("revision");

@@ -46,6 +46,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListGroupsForEntityFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGroupNamePrefix())
             {
                 context.Writer.WritePropertyName("GroupNamePrefix");

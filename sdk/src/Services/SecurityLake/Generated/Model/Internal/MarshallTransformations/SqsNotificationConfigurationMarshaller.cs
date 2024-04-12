@@ -46,6 +46,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SqsNotificationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
         }
 
         /// <summary>

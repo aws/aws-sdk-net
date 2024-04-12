@@ -46,6 +46,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SlateSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSourceLocationName())
             {
                 context.Writer.WritePropertyName("SourceLocationName");

@@ -46,6 +46,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CompromisedCredentialsActionsType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEventAction())
             {
                 context.Writer.WritePropertyName("EventAction");

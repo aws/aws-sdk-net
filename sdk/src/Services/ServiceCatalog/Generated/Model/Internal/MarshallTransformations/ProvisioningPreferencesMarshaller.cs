@@ -46,6 +46,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProvisioningPreferences requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStackSetAccounts())
             {
                 context.Writer.WritePropertyName("StackSetAccounts");

@@ -46,6 +46,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PredictionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBusinessNameGeneration())
             {
                 context.Writer.WritePropertyName("businessNameGeneration");

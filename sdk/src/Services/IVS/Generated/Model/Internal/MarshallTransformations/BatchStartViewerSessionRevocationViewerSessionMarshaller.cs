@@ -46,6 +46,8 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchStartViewerSessionRevocationViewerSession requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChannelArn())
             {
                 context.Writer.WritePropertyName("channelArn");

@@ -614,12 +614,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetValidFromUtc())
                 {
-                    request.Parameters.Add("ValidFrom", StringUtils.FromDateTimeToISO8601(publicRequest.ValidFromUtc));
+                    request.Parameters.Add("ValidFrom", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ValidFromUtc));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetValidUntilUtc())
                 {
-                    request.Parameters.Add("ValidUntil", StringUtils.FromDateTimeToISO8601(publicRequest.ValidUntilUtc));
+                    request.Parameters.Add("ValidUntil", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ValidUntilUtc));
                 }
 #pragma warning restore CS0612,CS0618
             }

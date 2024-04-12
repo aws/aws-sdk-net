@@ -46,6 +46,8 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InternetMeasurementsLogDelivery requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Config())
             {
                 context.Writer.WritePropertyName("S3Config");

@@ -46,6 +46,8 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TranslationSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBrevity())
             {
                 context.Writer.WritePropertyName("Brevity");

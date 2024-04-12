@@ -46,6 +46,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UserAlias requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataSourceId())
             {
                 context.Writer.WritePropertyName("dataSourceId");

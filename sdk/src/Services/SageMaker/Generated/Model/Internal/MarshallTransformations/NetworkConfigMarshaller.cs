@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NetworkConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnableInterContainerTrafficEncryption())
             {
                 context.Writer.WritePropertyName("EnableInterContainerTrafficEncryption");

@@ -46,6 +46,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoScaling requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxWorkerCount())
             {
                 context.Writer.WritePropertyName("maxWorkerCount");

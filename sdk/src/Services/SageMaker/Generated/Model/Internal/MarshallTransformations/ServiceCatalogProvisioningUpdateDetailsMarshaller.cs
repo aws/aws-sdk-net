@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServiceCatalogProvisioningUpdateDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetProvisioningArtifactId())
             {
                 context.Writer.WritePropertyName("ProvisioningArtifactId");

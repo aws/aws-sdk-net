@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DashboardVisualPublishOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExportHiddenFieldsOption())
             {
                 context.Writer.WritePropertyName("ExportHiddenFieldsOption");

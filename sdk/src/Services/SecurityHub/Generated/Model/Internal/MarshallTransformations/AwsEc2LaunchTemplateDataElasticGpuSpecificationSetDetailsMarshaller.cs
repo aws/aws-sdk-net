@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");

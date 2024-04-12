@@ -46,6 +46,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SnowflakeVpcConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPrivateLinkVpceId())
             {
                 context.Writer.WritePropertyName("PrivateLinkVpceId");

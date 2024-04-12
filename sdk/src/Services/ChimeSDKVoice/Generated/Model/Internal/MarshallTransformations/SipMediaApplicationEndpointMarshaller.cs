@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SipMediaApplicationEndpoint requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLambdaArn())
             {
                 context.Writer.WritePropertyName("LambdaArn");

@@ -46,6 +46,8 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CanaryScheduleInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDurationInSeconds())
             {
                 context.Writer.WritePropertyName("DurationInSeconds");

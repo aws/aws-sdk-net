@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataCaptureConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCaptureContentTypeHeader())
             {
                 context.Writer.WritePropertyName("CaptureContentTypeHeader");

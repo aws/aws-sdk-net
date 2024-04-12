@@ -46,6 +46,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DurationRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxSeconds())
             {
                 context.Writer.WritePropertyName("maxSeconds");

@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DNISEmergencyCallingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCallingCountry())
             {
                 context.Writer.WritePropertyName("CallingCountry");

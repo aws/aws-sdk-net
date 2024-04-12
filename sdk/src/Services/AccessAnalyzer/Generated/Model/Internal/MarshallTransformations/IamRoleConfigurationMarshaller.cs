@@ -46,6 +46,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IamRoleConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTrustPolicy())
             {
                 context.Writer.WritePropertyName("trustPolicy");

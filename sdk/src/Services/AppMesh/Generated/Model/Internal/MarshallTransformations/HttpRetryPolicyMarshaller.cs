@@ -46,6 +46,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HttpRetryPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHttpRetryEvents())
             {
                 context.Writer.WritePropertyName("httpRetryEvents");

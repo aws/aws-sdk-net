@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ParameterSelectableValues requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLinkToDataSetColumn())
             {
                 context.Writer.WritePropertyName("LinkToDataSetColumn");

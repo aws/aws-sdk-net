@@ -46,6 +46,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LexTranscriptFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDateRangeFilter())
             {
                 context.Writer.WritePropertyName("dateRangeFilter");

@@ -46,6 +46,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioCodecOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBitDepth())
             {
                 context.Writer.WritePropertyName("BitDepth");

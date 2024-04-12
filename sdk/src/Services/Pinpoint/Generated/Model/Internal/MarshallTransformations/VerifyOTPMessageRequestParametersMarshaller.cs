@@ -46,6 +46,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VerifyOTPMessageRequestParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationIdentity())
             {
                 context.Writer.WritePropertyName("DestinationIdentity");

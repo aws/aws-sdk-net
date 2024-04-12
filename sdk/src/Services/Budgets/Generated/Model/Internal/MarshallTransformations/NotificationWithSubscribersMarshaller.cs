@@ -46,6 +46,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotificationWithSubscribers requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNotification())
             {
                 context.Writer.WritePropertyName("Notification");

@@ -46,6 +46,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TriggerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTriggerEvents())
             {
                 context.Writer.WritePropertyName("triggerEvents");

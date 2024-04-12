@@ -46,6 +46,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IpPermission requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFromPort())
             {
                 context.Writer.WritePropertyName("FromPort");

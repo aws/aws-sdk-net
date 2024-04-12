@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeyPairIds Object
     /// </summary>  
-    public class KeyPairIdsUnmarshaller : IUnmarshaller<KeyPairIds, XmlUnmarshallerContext>
+    public class KeyPairIdsUnmarshaller : IUnmarshaller<KeyPairIds, XmlUnmarshallerContext>, IUnmarshaller<KeyPairIds, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -79,6 +79,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public KeyPairIds Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static KeyPairIdsUnmarshaller _instance = new KeyPairIdsUnmarshaller();        

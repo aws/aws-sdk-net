@@ -46,6 +46,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ComponentUpdateRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComponentTypeId())
             {
                 context.Writer.WritePropertyName("componentTypeId");

@@ -46,6 +46,8 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricPolicyRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetObjectGroup())
             {
                 context.Writer.WritePropertyName("ObjectGroup");

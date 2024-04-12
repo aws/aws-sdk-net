@@ -46,6 +46,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ObdInterface requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDtcRequestIntervalSeconds())
             {
                 context.Writer.WritePropertyName("dtcRequestIntervalSeconds");

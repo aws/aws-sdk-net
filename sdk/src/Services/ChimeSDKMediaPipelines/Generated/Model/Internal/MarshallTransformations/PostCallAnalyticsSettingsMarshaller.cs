@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PostCallAnalyticsSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContentRedactionOutput())
             {
                 context.Writer.WritePropertyName("ContentRedactionOutput");

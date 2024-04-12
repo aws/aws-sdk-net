@@ -46,6 +46,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimePeriod requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnd())
             {
                 context.Writer.WritePropertyName("End");

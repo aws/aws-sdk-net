@@ -46,6 +46,8 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoggingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLogDestinationConfigs())
             {
                 context.Writer.WritePropertyName("LogDestinationConfigs");

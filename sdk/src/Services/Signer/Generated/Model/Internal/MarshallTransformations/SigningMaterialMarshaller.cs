@@ -46,6 +46,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SigningMaterial requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCertificateArn())
             {
                 context.Writer.WritePropertyName("certificateArn");

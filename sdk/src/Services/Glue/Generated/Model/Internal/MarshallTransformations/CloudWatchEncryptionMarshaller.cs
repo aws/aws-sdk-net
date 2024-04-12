@@ -46,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudWatchEncryption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchEncryptionMode())
             {
                 context.Writer.WritePropertyName("CloudWatchEncryptionMode");

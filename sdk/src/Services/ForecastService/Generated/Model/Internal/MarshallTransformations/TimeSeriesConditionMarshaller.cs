@@ -46,6 +46,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimeSeriesCondition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributeName())
             {
                 context.Writer.WritePropertyName("AttributeName");

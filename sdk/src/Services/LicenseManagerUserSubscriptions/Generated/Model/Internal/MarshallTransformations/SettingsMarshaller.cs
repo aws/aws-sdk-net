@@ -46,6 +46,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         /// <returns></returns>
         public void Marshall(Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSecurityGroupId())
             {
                 context.Writer.WritePropertyName("SecurityGroupId");

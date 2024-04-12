@@ -46,6 +46,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Script requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExecuteOperationOnScriptFailure())
             {
                 context.Writer.WritePropertyName("ExecuteOperationOnScriptFailure");

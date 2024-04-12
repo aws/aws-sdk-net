@@ -46,6 +46,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LifecyclePolicyResourceSelectionRecipe requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

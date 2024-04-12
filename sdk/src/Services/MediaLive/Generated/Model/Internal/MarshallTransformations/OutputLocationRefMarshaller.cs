@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputLocationRef requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationRefId())
             {
                 context.Writer.WritePropertyName("destinationRefId");

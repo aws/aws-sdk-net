@@ -46,6 +46,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ZoneAwarenessConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityZoneCount())
             {
                 context.Writer.WritePropertyName("AvailabilityZoneCount");

@@ -46,6 +46,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SubDomainSetting requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBranchName())
             {
                 context.Writer.WritePropertyName("branchName");

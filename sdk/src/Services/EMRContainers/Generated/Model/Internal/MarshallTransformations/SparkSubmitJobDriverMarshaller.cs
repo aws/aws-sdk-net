@@ -46,6 +46,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SparkSubmitJobDriver requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEntryPoint())
             {
                 context.Writer.WritePropertyName("entryPoint");

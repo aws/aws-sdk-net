@@ -46,6 +46,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EbsBlockDevice requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeleteOnTermination())
             {
                 context.Writer.WritePropertyName("DeleteOnTermination");

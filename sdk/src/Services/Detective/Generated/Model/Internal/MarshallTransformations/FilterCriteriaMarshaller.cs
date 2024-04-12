@@ -46,6 +46,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FilterCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCreatedTime())
             {
                 context.Writer.WritePropertyName("CreatedTime");

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RealtimeLogConfig Object
     /// </summary>  
-    public class RealtimeLogConfigUnmarshaller : IUnmarshaller<RealtimeLogConfig, XmlUnmarshallerContext>
+    public class RealtimeLogConfigUnmarshaller : IUnmarshaller<RealtimeLogConfig, XmlUnmarshallerContext>, IUnmarshaller<RealtimeLogConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -101,6 +101,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public RealtimeLogConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static RealtimeLogConfigUnmarshaller _instance = new RealtimeLogConfigUnmarshaller();        

@@ -46,6 +46,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomVocabularyItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDisplayAs())
             {
                 context.Writer.WritePropertyName("displayAs");

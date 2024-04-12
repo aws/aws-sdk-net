@@ -46,6 +46,8 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DNSTargetResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("domainName");

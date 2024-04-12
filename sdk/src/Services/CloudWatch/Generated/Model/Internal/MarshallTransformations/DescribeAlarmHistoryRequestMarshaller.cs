@@ -76,7 +76,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndDateUtc())
                 {
-                    request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDateUtc));
+                    request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDateUtc));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHistoryItemType())
@@ -101,7 +101,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartDateUtc())
                 {
-                    request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDateUtc));
+                    request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDateUtc));
                 }
 #pragma warning restore CS0612,CS0618
             }

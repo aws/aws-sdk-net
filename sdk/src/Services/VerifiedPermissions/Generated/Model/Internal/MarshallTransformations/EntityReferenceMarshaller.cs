@@ -46,6 +46,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EntityReference requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("identifier");

@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SankeyDiagramFieldWells requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSankeyDiagramAggregatedFieldWells())
             {
                 context.Writer.WritePropertyName("SankeyDiagramAggregatedFieldWells");

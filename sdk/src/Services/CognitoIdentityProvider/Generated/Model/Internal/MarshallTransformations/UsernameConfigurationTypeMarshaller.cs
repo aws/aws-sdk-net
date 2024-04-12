@@ -46,6 +46,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UsernameConfigurationType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCaseSensitive())
             {
                 context.Writer.WritePropertyName("CaseSensitive");

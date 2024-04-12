@@ -46,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExtendedDataServices requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCopyProtectionAction())
             {
                 context.Writer.WritePropertyName("copyProtectionAction");

@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AribSourceSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
         }
 
         /// <summary>

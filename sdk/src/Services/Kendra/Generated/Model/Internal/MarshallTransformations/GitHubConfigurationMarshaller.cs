@@ -46,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GitHubConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExclusionFileNamePatterns())
             {
                 context.Writer.WritePropertyName("ExclusionFileNamePatterns");

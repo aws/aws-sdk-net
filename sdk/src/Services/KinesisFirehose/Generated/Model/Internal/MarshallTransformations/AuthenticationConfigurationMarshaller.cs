@@ -46,6 +46,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AuthenticationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectivity())
             {
                 context.Writer.WritePropertyName("Connectivity");

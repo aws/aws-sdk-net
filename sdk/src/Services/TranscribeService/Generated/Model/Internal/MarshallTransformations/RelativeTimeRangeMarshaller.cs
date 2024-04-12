@@ -46,6 +46,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RelativeTimeRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndPercentage())
             {
                 context.Writer.WritePropertyName("EndPercentage");

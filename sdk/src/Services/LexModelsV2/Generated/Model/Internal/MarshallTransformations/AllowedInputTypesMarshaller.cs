@@ -46,6 +46,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AllowedInputTypes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowAudioInput())
             {
                 context.Writer.WritePropertyName("allowAudioInput");

@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SessionState requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPromptSessionAttributes())
             {
                 context.Writer.WritePropertyName("promptSessionAttributes");

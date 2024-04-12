@@ -46,6 +46,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BackendDefaults requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClientPolicy())
             {
                 context.Writer.WritePropertyName("clientPolicy");

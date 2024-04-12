@@ -46,6 +46,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListCustomLineItemVersionsFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBillingPeriodRange())
             {
                 context.Writer.WritePropertyName("BillingPeriodRange");

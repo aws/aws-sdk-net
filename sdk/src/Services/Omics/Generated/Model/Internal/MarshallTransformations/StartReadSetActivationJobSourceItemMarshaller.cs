@@ -46,6 +46,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StartReadSetActivationJobSourceItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetReadSetId())
             {
                 context.Writer.WritePropertyName("readSetId");

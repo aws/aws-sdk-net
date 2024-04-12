@@ -46,6 +46,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ColumnStatisticsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSelectors())
             {
                 context.Writer.WritePropertyName("Selectors");

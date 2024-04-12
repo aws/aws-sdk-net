@@ -46,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncryptionAtRest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCatalogEncryptionMode())
             {
                 context.Writer.WritePropertyName("CatalogEncryptionMode");

@@ -46,6 +46,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ManifestProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFileSystemLocationName())
             {
                 context.Writer.WritePropertyName("fileSystemLocationName");

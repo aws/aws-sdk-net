@@ -46,6 +46,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CookieObject requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCookiesAllowList())
             {
                 context.Writer.WritePropertyName("cookiesAllowList");

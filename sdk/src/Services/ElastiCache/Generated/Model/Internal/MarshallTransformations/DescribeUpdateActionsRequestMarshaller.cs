@@ -113,12 +113,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.ServiceUpdateTimeRange.IsSetEndTime())
                     {
-                        request.Parameters.Add("ServiceUpdateTimeRange" + "." + "EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.ServiceUpdateTimeRange.EndTime));
+                        request.Parameters.Add("ServiceUpdateTimeRange" + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ServiceUpdateTimeRange.EndTime));
                     }
 #pragma warning restore CS0612,CS0618
                     if(publicRequest.ServiceUpdateTimeRange.IsSetStartTime())
                     {
-                        request.Parameters.Add("ServiceUpdateTimeRange" + "." + "StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.ServiceUpdateTimeRange.StartTime));
+                        request.Parameters.Add("ServiceUpdateTimeRange" + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ServiceUpdateTimeRange.StartTime));
                     }
 #pragma warning restore CS0612,CS0618
                 }

@@ -46,6 +46,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PipeTargetStateMachineParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInvocationType())
             {
                 context.Writer.WritePropertyName("InvocationType");

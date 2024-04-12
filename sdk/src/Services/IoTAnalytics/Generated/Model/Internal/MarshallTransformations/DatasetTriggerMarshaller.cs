@@ -46,6 +46,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatasetTrigger requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataset())
             {
                 context.Writer.WritePropertyName("dataset");

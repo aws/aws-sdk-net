@@ -46,6 +46,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DocumentAttributeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

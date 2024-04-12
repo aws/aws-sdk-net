@@ -46,6 +46,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateFileSystemWindowsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuditLogConfiguration())
             {
                 context.Writer.WritePropertyName("AuditLogConfiguration");

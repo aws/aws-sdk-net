@@ -46,6 +46,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JWTConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAudience())
             {
                 context.Writer.WritePropertyName("audience");

@@ -46,6 +46,8 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UsageAllocation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllocatedUsageQuantity())
             {
                 context.Writer.WritePropertyName("AllocatedUsageQuantity");

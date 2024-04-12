@@ -46,10 +46,19 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PositionalAccuracy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHorizontal())
             {
                 context.Writer.WritePropertyName("Horizontal");
-                context.Writer.Write(requestObject.Horizontal);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Horizontal))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Horizontal));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Horizontal);
+                }
             }
 
         }

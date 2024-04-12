@@ -46,6 +46,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Principal requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGroup())
             {
                 context.Writer.WritePropertyName("group");

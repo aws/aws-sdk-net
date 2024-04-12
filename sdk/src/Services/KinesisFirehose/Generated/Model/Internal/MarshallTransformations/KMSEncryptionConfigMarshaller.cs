@@ -46,6 +46,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KMSEncryptionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAWSKMSKeyARN())
             {
                 context.Writer.WritePropertyName("AWSKMSKeyARN");

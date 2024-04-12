@@ -46,6 +46,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SidewalkAccountInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAmazonId())
             {
                 context.Writer.WritePropertyName("AmazonId");

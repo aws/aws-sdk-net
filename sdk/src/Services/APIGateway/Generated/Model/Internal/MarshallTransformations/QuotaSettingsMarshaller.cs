@@ -46,6 +46,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(QuotaSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLimit())
             {
                 context.Writer.WritePropertyName("limit");

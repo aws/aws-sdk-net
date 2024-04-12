@@ -46,6 +46,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Consolidation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMatchingAttributesList())
             {
                 context.Writer.WritePropertyName("MatchingAttributesList");

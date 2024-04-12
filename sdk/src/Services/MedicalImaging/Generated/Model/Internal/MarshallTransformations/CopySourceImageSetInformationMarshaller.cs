@@ -46,6 +46,8 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CopySourceImageSetInformation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLatestVersionId())
             {
                 context.Writer.WritePropertyName("latestVersionId");

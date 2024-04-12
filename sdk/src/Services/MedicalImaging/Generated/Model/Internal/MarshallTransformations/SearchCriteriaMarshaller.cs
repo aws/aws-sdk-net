@@ -46,6 +46,8 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SearchCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("filters");

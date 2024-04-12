@@ -46,6 +46,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CachingConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCachingKeys())
             {
                 context.Writer.WritePropertyName("cachingKeys");

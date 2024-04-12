@@ -46,6 +46,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContactListDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContactListImportAction())
             {
                 context.Writer.WritePropertyName("ContactListImportAction");

@@ -46,6 +46,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcConnectivityClientAuthentication requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSasl())
             {
                 context.Writer.WritePropertyName("sasl");

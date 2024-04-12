@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncryptionDecryptionAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAsymmetric())
             {
                 context.Writer.WritePropertyName("Asymmetric");

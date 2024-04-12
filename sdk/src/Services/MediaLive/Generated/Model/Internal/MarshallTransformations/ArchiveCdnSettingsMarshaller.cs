@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ArchiveCdnSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArchiveS3Settings())
             {
                 context.Writer.WritePropertyName("archiveS3Settings");

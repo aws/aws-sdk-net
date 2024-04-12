@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PivotTableFieldWells requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPivotTableAggregatedFieldWells())
             {
                 context.Writer.WritePropertyName("PivotTableAggregatedFieldWells");

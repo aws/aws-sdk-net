@@ -46,6 +46,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputFileUriValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFileName())
             {
                 context.Writer.WritePropertyName("fileName");

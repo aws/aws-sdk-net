@@ -46,6 +46,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VPCConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssignPublicIp())
             {
                 context.Writer.WritePropertyName("assignPublicIp");

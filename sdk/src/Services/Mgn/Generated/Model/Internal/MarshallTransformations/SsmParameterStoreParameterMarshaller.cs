@@ -46,6 +46,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SsmParameterStoreParameter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetParameterName())
             {
                 context.Writer.WritePropertyName("parameterName");

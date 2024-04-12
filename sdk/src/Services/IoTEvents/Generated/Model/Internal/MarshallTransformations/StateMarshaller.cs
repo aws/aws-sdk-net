@@ -46,6 +46,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(State requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOnEnter())
             {
                 context.Writer.WritePropertyName("onEnter");

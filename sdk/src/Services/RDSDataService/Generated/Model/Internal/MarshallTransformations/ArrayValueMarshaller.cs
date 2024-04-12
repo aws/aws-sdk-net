@@ -46,6 +46,8 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ArrayValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArrayValues())
             {
                 context.Writer.WritePropertyName("arrayValues");

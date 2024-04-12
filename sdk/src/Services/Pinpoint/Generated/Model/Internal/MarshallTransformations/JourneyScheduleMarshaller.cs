@@ -46,16 +46,18 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JourneySchedule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("EndTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.EndTime));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.EndTime));
             }
 
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("StartTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.StartTime));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartTime));
             }
 
             if(requestObject.IsSetTimezone())

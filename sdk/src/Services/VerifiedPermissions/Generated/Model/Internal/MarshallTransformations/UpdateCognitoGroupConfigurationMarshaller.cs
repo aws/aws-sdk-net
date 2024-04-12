@@ -46,6 +46,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateCognitoGroupConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGroupEntityType())
             {
                 context.Writer.WritePropertyName("groupEntityType");

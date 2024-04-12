@@ -46,6 +46,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProvisionedCapacity requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMcuCount())
             {
                 context.Writer.WritePropertyName("mcuCount");

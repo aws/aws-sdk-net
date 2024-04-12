@@ -46,6 +46,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BusinessNameGenerationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");

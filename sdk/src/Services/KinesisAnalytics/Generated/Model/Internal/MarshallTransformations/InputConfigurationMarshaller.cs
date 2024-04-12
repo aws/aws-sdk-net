@@ -46,6 +46,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");

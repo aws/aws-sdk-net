@@ -46,6 +46,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PackageOriginRestrictions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPublish())
             {
                 context.Writer.WritePropertyName("publish");

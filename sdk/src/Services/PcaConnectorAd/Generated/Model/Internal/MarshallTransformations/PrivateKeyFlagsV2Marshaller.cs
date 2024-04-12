@@ -46,6 +46,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PrivateKeyFlagsV2 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClientVersion())
             {
                 context.Writer.WritePropertyName("ClientVersion");

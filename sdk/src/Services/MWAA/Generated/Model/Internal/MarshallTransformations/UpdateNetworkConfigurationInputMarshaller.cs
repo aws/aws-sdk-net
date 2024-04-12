@@ -46,6 +46,8 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateNetworkConfigurationInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");

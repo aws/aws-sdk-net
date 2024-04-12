@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityZoneCount())
             {
                 context.Writer.WritePropertyName("AvailabilityZoneCount");

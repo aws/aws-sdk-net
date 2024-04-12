@@ -46,6 +46,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// <returns></returns>
         public void Marshall(AssessmentTarget requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCondition())
             {
                 context.Writer.WritePropertyName("condition");

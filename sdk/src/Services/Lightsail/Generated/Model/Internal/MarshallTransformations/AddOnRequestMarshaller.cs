@@ -46,6 +46,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AddOnRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddOnType())
             {
                 context.Writer.WritePropertyName("addOnType");

@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsDmsReplicationInstanceReplicationSubnetGroupDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetReplicationSubnetGroupIdentifier())
             {
                 context.Writer.WritePropertyName("ReplicationSubnetGroupIdentifier");

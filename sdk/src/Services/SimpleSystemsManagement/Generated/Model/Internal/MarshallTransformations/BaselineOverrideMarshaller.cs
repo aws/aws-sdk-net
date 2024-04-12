@@ -46,6 +46,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BaselineOverride requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApprovalRules())
             {
                 context.Writer.WritePropertyName("ApprovalRules");

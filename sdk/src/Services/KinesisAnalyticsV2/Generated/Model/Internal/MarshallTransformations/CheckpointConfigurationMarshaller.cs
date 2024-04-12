@@ -46,6 +46,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CheckpointConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCheckpointingEnabled())
             {
                 context.Writer.WritePropertyName("CheckpointingEnabled");

@@ -46,6 +46,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LifecyclePolicyDetailFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRetainAtLeast())
             {
                 context.Writer.WritePropertyName("retainAtLeast");

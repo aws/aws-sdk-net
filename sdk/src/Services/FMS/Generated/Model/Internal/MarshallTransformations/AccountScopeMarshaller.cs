@@ -46,6 +46,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AccountScope requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccounts())
             {
                 context.Writer.WritePropertyName("Accounts");

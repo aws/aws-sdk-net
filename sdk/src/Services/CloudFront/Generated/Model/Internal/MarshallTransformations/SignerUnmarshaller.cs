@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Signer Object
     /// </summary>  
-    public class SignerUnmarshaller : IUnmarshaller<Signer, XmlUnmarshallerContext>
+    public class SignerUnmarshaller : IUnmarshaller<Signer, XmlUnmarshallerContext>, IUnmarshaller<Signer, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,6 +75,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public Signer Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static SignerUnmarshaller _instance = new SignerUnmarshaller();        

@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataType())
             {
                 context.Writer.WritePropertyName("DataType");

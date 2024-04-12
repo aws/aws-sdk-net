@@ -46,6 +46,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HandOffTime requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHourOfDay())
             {
                 context.Writer.WritePropertyName("HourOfDay");

@@ -46,6 +46,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudWatchLogsDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIamRoleArn())
             {
                 context.Writer.WritePropertyName("IamRoleArn");

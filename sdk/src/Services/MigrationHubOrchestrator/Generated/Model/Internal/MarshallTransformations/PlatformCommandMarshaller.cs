@@ -46,6 +46,8 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PlatformCommand requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLinux())
             {
                 context.Writer.WritePropertyName("linux");

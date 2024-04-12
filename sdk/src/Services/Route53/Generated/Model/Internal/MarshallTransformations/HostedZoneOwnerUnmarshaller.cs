@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HostedZoneOwner Object
     /// </summary>  
-    public class HostedZoneOwnerUnmarshaller : IUnmarshaller<HostedZoneOwner, XmlUnmarshallerContext>
+    public class HostedZoneOwnerUnmarshaller : IUnmarshaller<HostedZoneOwner, XmlUnmarshallerContext>, IUnmarshaller<HostedZoneOwner, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,6 +75,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public HostedZoneOwner Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static HostedZoneOwnerUnmarshaller _instance = new HostedZoneOwnerUnmarshaller();        

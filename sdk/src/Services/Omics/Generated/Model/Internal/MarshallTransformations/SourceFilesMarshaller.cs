@@ -46,6 +46,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourceFiles requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSource1())
             {
                 context.Writer.WritePropertyName("source1");

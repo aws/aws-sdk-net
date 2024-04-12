@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LifecycleRuleAndOperator Object
     /// </summary>  
-    public class LifecycleRuleAndOperatorUnmarshaller : IUnmarshaller<LifecycleRuleAndOperator, XmlUnmarshallerContext>
+    public class LifecycleRuleAndOperatorUnmarshaller : IUnmarshaller<LifecycleRuleAndOperator, XmlUnmarshallerContext>, IUnmarshaller<LifecycleRuleAndOperator, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -91,6 +91,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public LifecycleRuleAndOperator Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static LifecycleRuleAndOperatorUnmarshaller _instance = new LifecycleRuleAndOperatorUnmarshaller();        

@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HistogramBinOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBinCount())
             {
                 context.Writer.WritePropertyName("BinCount");
@@ -77,7 +79,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartValue())
             {
                 context.Writer.WritePropertyName("StartValue");
-                context.Writer.Write(requestObject.StartValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StartValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StartValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.StartValue);
+                }
             }
 
         }

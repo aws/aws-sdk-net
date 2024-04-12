@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ParameterRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCategoricalParameterRangeSpecification())
             {
                 context.Writer.WritePropertyName("CategoricalParameterRangeSpecification");

@@ -46,6 +46,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AlarmCapabilities requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAcknowledgeFlow())
             {
                 context.Writer.WritePropertyName("acknowledgeFlow");

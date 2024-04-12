@@ -46,6 +46,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SsmActionDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActionSubType())
             {
                 context.Writer.WritePropertyName("ActionSubType");

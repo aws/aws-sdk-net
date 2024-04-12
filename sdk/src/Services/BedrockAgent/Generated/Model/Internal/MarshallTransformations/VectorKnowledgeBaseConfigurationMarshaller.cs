@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VectorKnowledgeBaseConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEmbeddingModelArn())
             {
                 context.Writer.WritePropertyName("embeddingModelArn");

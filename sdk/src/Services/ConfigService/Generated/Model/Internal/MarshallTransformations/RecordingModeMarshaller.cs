@@ -46,6 +46,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecordingMode requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRecordingFrequency())
             {
                 context.Writer.WritePropertyName("recordingFrequency");

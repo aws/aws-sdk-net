@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricMonitorConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMetricDefinition())
             {
                 context.Writer.WritePropertyName("metricDefinition");

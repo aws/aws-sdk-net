@@ -46,6 +46,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApplianceModeSupport())
             {
                 context.Writer.WritePropertyName("ApplianceModeSupport");

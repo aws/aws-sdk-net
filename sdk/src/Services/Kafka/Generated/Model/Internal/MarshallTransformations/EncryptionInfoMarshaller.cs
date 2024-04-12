@@ -46,6 +46,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncryptionInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEncryptionAtRest())
             {
                 context.Writer.WritePropertyName("encryptionAtRest");

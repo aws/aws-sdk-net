@@ -46,6 +46,8 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotificationSettingKey requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChannel())
             {
                 context.Writer.WritePropertyName("channel");

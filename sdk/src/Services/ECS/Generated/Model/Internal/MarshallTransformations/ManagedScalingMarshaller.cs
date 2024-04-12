@@ -46,6 +46,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ManagedScaling requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInstanceWarmupPeriod())
             {
                 context.Writer.WritePropertyName("instanceWarmupPeriod");

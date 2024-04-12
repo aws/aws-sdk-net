@@ -46,6 +46,8 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ValueHolder requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIonBinary())
             {
                 context.Writer.WritePropertyName("IonBinary");

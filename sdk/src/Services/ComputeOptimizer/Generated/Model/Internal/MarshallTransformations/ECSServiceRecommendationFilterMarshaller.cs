@@ -46,6 +46,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ECSServiceRecommendationFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

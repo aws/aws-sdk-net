@@ -46,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SalesforceStandardObjectAttachmentConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDocumentTitleFieldName())
             {
                 context.Writer.WritePropertyName("DocumentTitleFieldName");

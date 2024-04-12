@@ -46,6 +46,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatasetContentDeliveryDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIotEventsDestinationConfiguration())
             {
                 context.Writer.WritePropertyName("iotEventsDestinationConfiguration");

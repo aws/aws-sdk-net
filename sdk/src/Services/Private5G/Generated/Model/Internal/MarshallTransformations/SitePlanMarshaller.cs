@@ -46,6 +46,8 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SitePlan requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOptions())
             {
                 context.Writer.WritePropertyName("options");

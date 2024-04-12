@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RetrievalFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAndAll())
             {
                 context.Writer.WritePropertyName("andAll");

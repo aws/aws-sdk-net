@@ -46,6 +46,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomizableMetricParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHeadroom())
             {
                 context.Writer.WritePropertyName("headroom");

@@ -46,6 +46,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StringAttributeConstraintsType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxLength())
             {
                 context.Writer.WritePropertyName("MaxLength");

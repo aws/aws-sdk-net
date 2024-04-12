@@ -46,6 +46,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeHook requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMessageVersion())
             {
                 context.Writer.WritePropertyName("messageVersion");

@@ -46,6 +46,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FsxProtocolSmb requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDomain())
             {
                 context.Writer.WritePropertyName("Domain");

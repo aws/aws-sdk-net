@@ -46,6 +46,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RetryPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximumEventAgeInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumEventAgeInSeconds");

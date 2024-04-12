@@ -46,6 +46,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorldCount requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFloorplanCount())
             {
                 context.Writer.WritePropertyName("floorplanCount");

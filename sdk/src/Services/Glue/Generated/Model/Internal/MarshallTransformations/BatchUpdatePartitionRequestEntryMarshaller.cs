@@ -46,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchUpdatePartitionRequestEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPartitionInput())
             {
                 context.Writer.WritePropertyName("PartitionInput");

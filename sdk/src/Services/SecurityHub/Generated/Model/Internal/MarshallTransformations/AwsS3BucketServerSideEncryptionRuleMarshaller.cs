@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsS3BucketServerSideEncryptionRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApplyServerSideEncryptionByDefault())
             {
                 context.Writer.WritePropertyName("ApplyServerSideEncryptionByDefault");

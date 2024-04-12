@@ -46,10 +46,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MediaAnalysisDetectModerationLabelsConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMinConfidence())
             {
                 context.Writer.WritePropertyName("MinConfidence");
-                context.Writer.Write(requestObject.MinConfidence);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinConfidence))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinConfidence));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinConfidence);
+                }
             }
 
             if(requestObject.IsSetProjectVersion())

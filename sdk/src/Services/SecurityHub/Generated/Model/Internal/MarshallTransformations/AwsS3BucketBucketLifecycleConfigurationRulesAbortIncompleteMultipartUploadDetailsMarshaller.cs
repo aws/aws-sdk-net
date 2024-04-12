@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDaysAfterInitiation())
             {
                 context.Writer.WritePropertyName("DaysAfterInitiation");

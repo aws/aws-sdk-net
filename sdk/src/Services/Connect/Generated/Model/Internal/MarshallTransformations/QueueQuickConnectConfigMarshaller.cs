@@ -46,6 +46,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(QueueQuickConnectConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContactFlowId())
             {
                 context.Writer.WritePropertyName("ContactFlowId");

@@ -46,6 +46,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RequestOutputItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDashPlaylistSettings())
             {
                 context.Writer.WritePropertyName("DashPlaylistSettings");

@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsDynamoDbTableGlobalSecondaryIndex requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBackfilling())
             {
                 context.Writer.WritePropertyName("Backfilling");

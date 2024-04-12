@@ -46,6 +46,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataLakeLifecycleConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExpiration())
             {
                 context.Writer.WritePropertyName("expiration");

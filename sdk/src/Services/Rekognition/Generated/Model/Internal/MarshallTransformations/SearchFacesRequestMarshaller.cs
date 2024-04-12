@@ -66,6 +66,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCollectionId())
@@ -83,7 +84,14 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFaceMatchThreshold())
                 {
                     context.Writer.WritePropertyName("FaceMatchThreshold");
-                    context.Writer.Write(publicRequest.FaceMatchThreshold);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.FaceMatchThreshold))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.FaceMatchThreshold));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.FaceMatchThreshold);
+                    }
                 }
 
                 if(publicRequest.IsSetMaxFaces())

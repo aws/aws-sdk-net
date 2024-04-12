@@ -46,6 +46,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CheckCertificateRevocationStatusActions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRevokedStatusAction())
             {
                 context.Writer.WritePropertyName("RevokedStatusAction");

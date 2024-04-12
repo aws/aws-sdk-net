@@ -46,6 +46,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateUserRequestItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlexaForBusinessMetadata())
             {
                 context.Writer.WritePropertyName("AlexaForBusinessMetadata");

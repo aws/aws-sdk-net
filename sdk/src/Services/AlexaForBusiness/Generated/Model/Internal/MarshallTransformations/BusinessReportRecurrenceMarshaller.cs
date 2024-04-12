@@ -46,6 +46,8 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BusinessReportRecurrence requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStartDate())
             {
                 context.Writer.WritePropertyName("StartDate");

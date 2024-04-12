@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AppMonitorConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowCookies())
             {
                 context.Writer.WritePropertyName("AllowCookies");
@@ -106,7 +108,14 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSessionSampleRate())
             {
                 context.Writer.WritePropertyName("SessionSampleRate");
-                context.Writer.Write(requestObject.SessionSampleRate);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SessionSampleRate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SessionSampleRate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.SessionSampleRate);
+                }
             }
 
             if(requestObject.IsSetTelemetries())

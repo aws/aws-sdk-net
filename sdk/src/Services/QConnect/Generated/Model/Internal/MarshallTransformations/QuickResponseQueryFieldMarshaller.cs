@@ -46,6 +46,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(QuickResponseQueryField requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowFuzziness())
             {
                 context.Writer.WritePropertyName("allowFuzziness");

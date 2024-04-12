@@ -46,6 +46,8 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EntityTypeFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAmiProductFilters())
             {
                 context.Writer.WritePropertyName("AmiProductFilters");

@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KeyModesOfUse requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDecrypt())
             {
                 context.Writer.WritePropertyName("Decrypt");

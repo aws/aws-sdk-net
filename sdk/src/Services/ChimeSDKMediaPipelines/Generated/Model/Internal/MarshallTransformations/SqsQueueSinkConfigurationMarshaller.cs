@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SqsQueueSinkConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInsightsTarget())
             {
                 context.Writer.WritePropertyName("InsightsTarget");

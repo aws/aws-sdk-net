@@ -46,6 +46,8 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SortCondition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

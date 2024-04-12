@@ -46,6 +46,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputParallelismUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCountUpdate())
             {
                 context.Writer.WritePropertyName("CountUpdate");

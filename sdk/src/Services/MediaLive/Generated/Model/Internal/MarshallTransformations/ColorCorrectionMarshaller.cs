@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ColorCorrection requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputColorSpace())
             {
                 context.Writer.WritePropertyName("inputColorSpace");

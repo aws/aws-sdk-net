@@ -46,6 +46,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PushNotificationTemplateRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetADM())
             {
                 context.Writer.WritePropertyName("ADM");

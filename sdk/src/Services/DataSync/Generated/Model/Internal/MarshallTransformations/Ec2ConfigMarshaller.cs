@@ -46,6 +46,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Ec2Config requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSecurityGroupArns())
             {
                 context.Writer.WritePropertyName("SecurityGroupArns");

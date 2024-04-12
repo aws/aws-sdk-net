@@ -46,6 +46,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncryptionSetting requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssociatedTranscriptsPassword())
             {
                 context.Writer.WritePropertyName("associatedTranscriptsPassword");

@@ -46,6 +46,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricSetDimensionFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilterList())
             {
                 context.Writer.WritePropertyName("FilterList");

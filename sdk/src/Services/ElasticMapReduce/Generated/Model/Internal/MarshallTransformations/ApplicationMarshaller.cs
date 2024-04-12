@@ -46,6 +46,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Application requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalInfo())
             {
                 context.Writer.WritePropertyName("AdditionalInfo");

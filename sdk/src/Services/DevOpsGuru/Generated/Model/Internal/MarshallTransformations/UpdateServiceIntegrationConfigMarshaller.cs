@@ -46,6 +46,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateServiceIntegrationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKMSServerSideEncryption())
             {
                 context.Writer.WritePropertyName("KMSServerSideEncryption");

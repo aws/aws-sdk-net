@@ -46,6 +46,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WafOverrideAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");

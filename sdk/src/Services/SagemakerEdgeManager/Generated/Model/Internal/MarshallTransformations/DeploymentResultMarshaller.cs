@@ -46,6 +46,8 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeploymentResult requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeploymentEndTime())
             {
                 context.Writer.WritePropertyName("DeploymentEndTime");

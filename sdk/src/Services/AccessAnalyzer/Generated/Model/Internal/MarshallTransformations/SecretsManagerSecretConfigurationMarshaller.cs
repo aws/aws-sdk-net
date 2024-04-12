@@ -46,6 +46,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SecretsManagerSecretConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");

@@ -46,6 +46,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobScheduleFrequency requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDailySchedule())
             {
                 context.Writer.WritePropertyName("dailySchedule");

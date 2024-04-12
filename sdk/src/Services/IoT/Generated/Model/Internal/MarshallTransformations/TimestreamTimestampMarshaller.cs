@@ -46,6 +46,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimestreamTimestamp requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("unit");

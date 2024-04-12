@@ -46,6 +46,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TLEEphemeris requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Object())
             {
                 context.Writer.WritePropertyName("s3Object");

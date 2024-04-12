@@ -46,6 +46,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PointInTimeRecoverySpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPointInTimeRecoveryEnabled())
             {
                 context.Writer.WritePropertyName("PointInTimeRecoveryEnabled");

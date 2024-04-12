@@ -46,6 +46,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IdentityProviderDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDirectoryId())
             {
                 context.Writer.WritePropertyName("DirectoryId");

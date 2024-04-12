@@ -46,6 +46,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Condition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConditionKey())
             {
                 context.Writer.WritePropertyName("ConditionKey");

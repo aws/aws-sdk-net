@@ -46,6 +46,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3PublicAccessBlockConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIgnorePublicAcls())
             {
                 context.Writer.WritePropertyName("ignorePublicAcls");

@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimeFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFrom())
             {
                 context.Writer.WritePropertyName("from");

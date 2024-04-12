@@ -46,6 +46,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TelemetryConfigurationUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTelemetry())
             {
                 context.Writer.WritePropertyName("Telemetry");

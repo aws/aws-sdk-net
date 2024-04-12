@@ -46,6 +46,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RetentionSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConversationRetentionSettings())
             {
                 context.Writer.WritePropertyName("ConversationRetentionSettings");

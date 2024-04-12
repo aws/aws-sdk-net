@@ -46,6 +46,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BudgetSchedule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFixed())
             {
                 context.Writer.WritePropertyName("fixed");

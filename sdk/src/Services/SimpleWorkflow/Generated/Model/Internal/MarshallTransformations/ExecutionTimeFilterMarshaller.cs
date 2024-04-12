@@ -46,6 +46,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExecutionTimeFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLatestDate())
             {
                 context.Writer.WritePropertyName("latestDate");

@@ -46,6 +46,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MaintenanceWindowRunCommandParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchOutputConfig())
             {
                 context.Writer.WritePropertyName("CloudWatchOutputConfig");

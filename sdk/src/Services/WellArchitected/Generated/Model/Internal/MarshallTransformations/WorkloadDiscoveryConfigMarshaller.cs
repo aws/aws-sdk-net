@@ -46,6 +46,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkloadDiscoveryConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTrustedAdvisorIntegrationStatus())
             {
                 context.Writer.WritePropertyName("TrustedAdvisorIntegrationStatus");

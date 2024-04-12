@@ -46,6 +46,8 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RenditionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRenditions())
             {
                 context.Writer.WritePropertyName("renditions");

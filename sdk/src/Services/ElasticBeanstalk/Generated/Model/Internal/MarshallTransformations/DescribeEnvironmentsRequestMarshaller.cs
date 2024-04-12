@@ -86,7 +86,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIncludedDeletedBackToUtc())
                 {
-                    request.Parameters.Add("IncludedDeletedBackTo", StringUtils.FromDateTimeToISO8601(publicRequest.IncludedDeletedBackToUtc));
+                    request.Parameters.Add("IncludedDeletedBackTo", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.IncludedDeletedBackToUtc));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIncludeDeleted())

@@ -46,6 +46,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Location())
             {
                 context.Writer.WritePropertyName("S3Location");

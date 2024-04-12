@@ -46,6 +46,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpsolverS3OutputFormatConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAggregationConfig())
             {
                 context.Writer.WritePropertyName("aggregationConfig");

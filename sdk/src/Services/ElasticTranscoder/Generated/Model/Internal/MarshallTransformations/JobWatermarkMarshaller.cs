@@ -46,6 +46,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobWatermark requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("Encryption");

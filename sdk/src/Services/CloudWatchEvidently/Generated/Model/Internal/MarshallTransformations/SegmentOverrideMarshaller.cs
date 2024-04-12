@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SegmentOverride requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEvaluationOrder())
             {
                 context.Writer.WritePropertyName("evaluationOrder");

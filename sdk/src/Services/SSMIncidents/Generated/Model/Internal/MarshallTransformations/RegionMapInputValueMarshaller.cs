@@ -46,6 +46,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RegionMapInputValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSseKmsKeyId())
             {
                 context.Writer.WritePropertyName("sseKmsKeyId");
