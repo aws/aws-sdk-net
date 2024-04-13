@@ -63,7 +63,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("payload", targetDepth))
+                    if (context.TestExpression("XmlAttributesPayloadResponse", targetDepth))
                     {
                         var unmarshaller = XmlAttributesPayloadResponseUnmarshaller.Instance;
                         response.Payload = unmarshaller.Unmarshall(context);

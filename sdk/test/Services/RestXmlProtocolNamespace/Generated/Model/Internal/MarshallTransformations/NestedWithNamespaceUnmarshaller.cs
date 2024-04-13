@@ -56,7 +56,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("xsi:someName", targetDepth))
+                    if (context.TestExpression("@xsi:someName", targetDepth - 1))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AttrField = unmarshaller.Unmarshall(context);
