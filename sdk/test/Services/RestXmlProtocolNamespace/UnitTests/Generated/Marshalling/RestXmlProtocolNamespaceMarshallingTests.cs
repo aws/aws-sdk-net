@@ -59,8 +59,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             {
                 Headers = {
                     {"X-Foo","X-Foo_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             

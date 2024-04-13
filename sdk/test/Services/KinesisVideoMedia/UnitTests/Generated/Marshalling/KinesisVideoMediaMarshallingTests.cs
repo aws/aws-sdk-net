@@ -59,8 +59,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             {
                 Headers = {
                     {"Content-Type","Content-Type_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -91,9 +91,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             {
                 Headers = {
                     {"Content-Type","Content-Type_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ClientLimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ClientLimitExceededException"},
                 }
             };
 
@@ -124,9 +124,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             {
                 Headers = {
                     {"Content-Type","Content-Type_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConnectionLimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConnectionLimitExceededException"},
                 }
             };
 
@@ -157,9 +157,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             {
                 Headers = {
                     {"Content-Type","Content-Type_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidArgumentException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidArgumentException"},
                 }
             };
 
@@ -190,9 +190,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             {
                 Headers = {
                     {"Content-Type","Content-Type_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidEndpointException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidEndpointException"},
                 }
             };
 
@@ -223,9 +223,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             {
                 Headers = {
                     {"Content-Type","Content-Type_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","NotAuthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"NotAuthorizedException"},
                 }
             };
 
@@ -256,9 +256,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             {
                 Headers = {
                     {"Content-Type","Content-Type_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 

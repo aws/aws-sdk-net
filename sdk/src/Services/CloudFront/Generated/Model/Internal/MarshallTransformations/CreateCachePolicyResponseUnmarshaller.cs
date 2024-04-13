@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            if(context.Stream.Length == 0)
+            if (context.IsEmptyResponse)
             {
                 return;
             }

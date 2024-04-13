@@ -59,7 +59,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             int targetDepth = originalDepth + 1;
             if (context.IsStartOfDocument) 
                    targetDepth += 1;
-            if(context.Stream.Length == 0)
+            if (context.IsEmptyResponse)
             {
                 return;
             }
