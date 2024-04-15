@@ -32,10 +32,6 @@ namespace AWSSDK.ProtocolTests.Utils
 {
     internal class ProtocolTestUtils
     {
-        public static Dictionary<HttpStatusCode, int> StatusCodeDictionary = new Dictionary<HttpStatusCode, int>()
-        {
-            {HttpStatusCode.OK, 200 }
-        };
         // return an object since this should be able to return a request or a response
         public static IRequest RunMockRequest(AmazonWebServiceRequest request, IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, IClientConfig config)
         {
