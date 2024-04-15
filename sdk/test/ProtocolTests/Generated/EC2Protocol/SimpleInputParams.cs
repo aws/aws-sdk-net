@@ -323,7 +323,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&A=Hi");
+            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&HasQueryName=Hi");
             foreach(var queryParam in expectedParams.Keys)
             {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
@@ -360,7 +360,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&B=Hi");
+            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&HasQueryAndXmlName=Hi");
             foreach(var queryParam in expectedParams.Keys)
             {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
@@ -398,7 +398,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
             // Assert
-            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&C=Hi");
+            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&UsesXmlName=Hi");
             foreach(var queryParam in expectedParams.Keys)
             {
                Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));

@@ -87,6 +87,16 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new MediaTypeHeaderResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new MediaTypeHeaderResponse
+            {
+                Json = "true",
+            };
+
+            // Assert
+            var actualResponse = (MediaTypeHeaderResponse)unmarshalledResponse;
+            Comparer.CompareObjects<MediaTypeHeaderResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 

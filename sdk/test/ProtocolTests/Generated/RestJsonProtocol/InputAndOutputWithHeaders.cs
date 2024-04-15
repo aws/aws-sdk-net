@@ -429,6 +429,28 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new InputAndOutputWithHeadersResponse
+            {
+                HeaderString = "Hello",
+                HeaderStringList =  new List<string>()
+                {
+                    "a",
+                    "b",
+                    "c",
+                },
+                HeaderStringSet =  new List<string>()
+                {
+                    "a",
+                    "b",
+                    "c",
+                },
+            };
+
+            // Assert
+            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
+            Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
@@ -450,6 +472,21 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new InputAndOutputWithHeadersResponse
+            {
+                HeaderStringList =  new List<string>()
+                {
+                    "b,c",
+                    "\"def\"",
+                    "a",
+                },
+            };
+
+            // Assert
+            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
+            Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
@@ -476,6 +513,27 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new InputAndOutputWithHeadersResponse
+            {
+                HeaderByte = 1,
+                HeaderShort = 123,
+                HeaderInteger = 123,
+                HeaderLong = 123,
+                HeaderFloat = 1.1F,
+                HeaderDouble = 1.1,
+                HeaderIntegerList =  new List<int>()
+                {
+                    1,
+                    2,
+                    3,
+                },
+            };
+
+            // Assert
+            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
+            Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
@@ -498,6 +556,23 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new InputAndOutputWithHeadersResponse
+            {
+                HeaderTrueBool = true,
+                HeaderFalseBool = false,
+                HeaderBooleanList =  new List<bool>()
+                {
+                    true,
+                    false,
+                    true,
+                },
+            };
+
+            // Assert
+            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
+            Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
@@ -518,6 +593,20 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new InputAndOutputWithHeadersResponse
+            {
+                HeaderTimestampList =  new List<DateTime>()
+                {
+                    ProtocolTestConstants.epoch.AddSeconds(1576540098),
+                    ProtocolTestConstants.epoch.AddSeconds(1576540098),
+                },
+            };
+
+            // Assert
+            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
+            Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
@@ -539,6 +628,22 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new InputAndOutputWithHeadersResponse
+            {
+                HeaderEnum = "Foo",
+                HeaderEnumList =  new List<string>()
+                {
+                    "Foo",
+                    "Bar",
+                    "Baz",
+                },
+            };
+
+            // Assert
+            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
+            Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
@@ -560,6 +665,22 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new InputAndOutputWithHeadersResponse
+            {
+                HeaderIntegerEnum = 1,
+                HeaderIntegerEnumList =  new List<int>()
+                {
+                    1,
+                    2,
+                    3,
+                },
+            };
+
+            // Assert
+            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
+            Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
@@ -581,6 +702,17 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new InputAndOutputWithHeadersResponse
+            {
+                HeaderFloat = float.NaN,
+                HeaderDouble = double.NaN,
+            };
+
+            // Assert
+            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
+            Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
@@ -602,6 +734,17 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new InputAndOutputWithHeadersResponse
+            {
+                HeaderFloat = float.PositiveInfinity,
+                HeaderDouble = double.PositiveInfinity,
+            };
+
+            // Assert
+            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
+            Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
@@ -623,6 +766,17 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new InputAndOutputWithHeadersResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new InputAndOutputWithHeadersResponse
+            {
+                HeaderFloat = float.NegativeInfinity,
+                HeaderDouble = double.NegativeInfinity,
+            };
+
+            // Assert
+            var actualResponse = (InputAndOutputWithHeadersResponse)unmarshalledResponse;
+            Comparer.CompareObjects<InputAndOutputWithHeadersResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 

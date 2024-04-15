@@ -105,6 +105,22 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new TimestampFormatHeadersResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new TimestampFormatHeadersResponse
+            {
+                MemberEpochSeconds = ProtocolTestConstants.epoch.AddSeconds(1576540098),
+                MemberHttpDate = ProtocolTestConstants.epoch.AddSeconds(1576540098),
+                MemberDateTime = ProtocolTestConstants.epoch.AddSeconds(1576540098),
+                DefaultFormat = ProtocolTestConstants.epoch.AddSeconds(1576540098),
+                TargetEpochSeconds = ProtocolTestConstants.epoch.AddSeconds(1576540098),
+                TargetHttpDate = ProtocolTestConstants.epoch.AddSeconds(1576540098),
+                TargetDateTime = ProtocolTestConstants.epoch.AddSeconds(1576540098),
+            };
+
+            // Assert
+            var actualResponse = (TimestampFormatHeadersResponse)unmarshalledResponse;
+            Comparer.CompareObjects<TimestampFormatHeadersResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 

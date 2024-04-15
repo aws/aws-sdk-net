@@ -70,6 +70,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("foo.bar.example.com", actualUri.Host);
         }
 
     }

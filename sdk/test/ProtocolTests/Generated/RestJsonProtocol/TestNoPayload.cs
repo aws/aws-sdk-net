@@ -65,6 +65,8 @@ namespace AWSSDK.ProtocolTests.RestJson
             Assert.AreEqual("GET", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/no_payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("Content-Length"));
+            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("Content-Type"));
         }
 
         /// <summary>
@@ -95,6 +97,8 @@ namespace AWSSDK.ProtocolTests.RestJson
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/no_payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
             Assert.AreEqual("t-12345".Replace(" ",""), marshalledRequest.Headers["X-Amz-Test-Id"].Replace(" ",""));
+            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("Content-Length"));
+            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("Content-Type"));
         }
 
     }

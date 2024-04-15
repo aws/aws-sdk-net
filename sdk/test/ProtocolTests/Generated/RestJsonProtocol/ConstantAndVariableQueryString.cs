@@ -69,6 +69,7 @@ namespace AWSSDK.ProtocolTests.RestJson
             var actualQuerySegments = ProtocolTestUtils.GetQuerySegmentsFromOriginalString(actualUri);
             Assert.IsTrue(actualQuerySegments.Contains("foo=bar"));
             Assert.IsTrue(actualQuerySegments.Contains("baz=bam"));
+            Assert.IsFalse(actualQuerySegments.Contains("maybeSet"));
         }
 
         /// <summary>

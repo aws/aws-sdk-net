@@ -70,6 +70,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("foo.bar.example.com", actualUri.Host);
             Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
             Assert.AreEqual("JsonProtocol.EndpointWithHostLabelOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }

@@ -19,25 +19,23 @@
 using AWSSDK.ProtocolTests;
 using AWSSDK.ProtocolTests.Utils;
 using AWSSDK_DotNet35.UnitTests.TestTools;
-using Amazon.JSONRPC10;
-using Amazon.JSONRPC10.Model;
-using Amazon.JSONRPC10.Model.Internal.MarshallTransformations;
+using Amazon.EC2Protocol;
+using Amazon.EC2Protocol.Model;
+using Amazon.EC2Protocol.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace AWSSDK.ProtocolTests.JsonRpc10
+namespace AWSSDK.ProtocolTests.AwsEc2
 {
     [TestClass]
-    public class GreetingWithErrors
+    public class NestedStructures
     {
     }
 }

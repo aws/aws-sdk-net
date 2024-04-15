@@ -90,6 +90,15 @@ namespace AWSSDK.ProtocolTests.AwsQuery
             var stream = new MemoryStream(bytes);
             var context = new XmlUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new NoInputAndOutputResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new NoInputAndOutputResponse
+            {
+            };
+
+            // Assert
+            var actualResponse = (NoInputAndOutputResponse)unmarshalledResponse;
+            Comparer.CompareObjects<NoInputAndOutputResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 

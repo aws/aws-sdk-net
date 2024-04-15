@@ -556,7 +556,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             // Arrange
             var request = new KitchenSinkOperationRequest
             {
-                ListOfMapsOfStrings =  new List<Dictionary<string,string>>()
+                ListOfMapsOfStrings =  new List<Dictionary<string, string>>()
                 {
                     new Dictionary<string, string>()
                     {
@@ -1527,7 +1527,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new KitchenSinkOperationResponse
             {
-                ListOfMapsOfStrings =  new List<Dictionary<string,string>>()
+                ListOfMapsOfStrings =  new List<Dictionary<string, string>>()
                 {
                     new Dictionary<string, string>()
                     {
@@ -1779,7 +1779,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new KitchenSinkOperationResponse
             {
-                MapOfMaps = new Dictionary<string, Dictionary<string,string>>()
+                MapOfMaps = new Dictionary<string, Dictionary<string, string>>()
                 {
 
                     { "sizes", new Dictionary<string, string>()

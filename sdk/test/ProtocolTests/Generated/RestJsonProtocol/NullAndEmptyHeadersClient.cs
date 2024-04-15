@@ -71,6 +71,9 @@ namespace AWSSDK.ProtocolTests.RestJson
             Assert.AreEqual("GET", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/NullAndEmptyHeadersClient", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("X-A"));
+            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("X-B"));
+            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("X-C"));
         }
 
     }

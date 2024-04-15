@@ -37,37 +37,7 @@ using System.Xml.Linq;
 namespace AWSSDK.ProtocolTests.RestXml
 {
     [TestClass]
-    public class EndpointOperation
+    public class RecursiveShapes
     {
-        /// <summary>
-        /// Operations can prepend to the given host if they define the
-        /// endpoint trait.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("RequestTest")]
-        [TestCategory("RestXml")]
-        public void RestXmlEndpointTraitRequest()
-        {
-            // Arrange
-            var request = new EndpointOperationRequest
-            {
-            };
-            var config = new AmazonRestXmlProtocolConfig
-            {
-              ServiceURL = "https://example.com/"
-            };
-
-            var marshaller = new EndpointOperationRequestMarshaller();
-            // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-
-            // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/EndpointOperation", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("foo.example.com", actualUri.Host);
-        }
-
     }
 }

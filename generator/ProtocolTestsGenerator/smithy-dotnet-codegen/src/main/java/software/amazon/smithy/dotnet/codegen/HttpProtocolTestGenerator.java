@@ -74,7 +74,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                         generateRequestTests(operation);
                         generateResponseTests(operation);
                         // TODO: Due to an issue with how  we do case sensitive header matches, we will skip error response tests until this is fixed
-                        //generateErrorResponseTests(operation, operationIndex);
+                        // generateErrorResponseTests(operation, operationIndex);
                     });
                 });
             });

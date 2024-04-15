@@ -37,7 +37,7 @@ using System.Text;
 namespace AWSSDK.ProtocolTests.JsonRpc10
 {
     [TestClass]
-    public class GreetingWithErrors
+    public class OperationWithNestedStructure
     {
     }
 }

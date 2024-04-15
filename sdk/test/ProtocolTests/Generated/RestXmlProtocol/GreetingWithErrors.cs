@@ -71,47 +71,5 @@ namespace AWSSDK.ProtocolTests.RestXml
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
-        /// <summary>
-        /// Parses simple XML errors
-        /// </summary>
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("ErrorTest")]
-        [TestCategory("RestXml")]
-        public void InvalidGreetingErrorErrorResponse()
-        {
-            // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
-            webResponseData.Headers["Content-Type"] = "application/xml";
-            byte[] bytes = Encoding.ASCII.GetBytes("<ErrorResponse>\n   <Error>\n      <Type>Sender</Type>\n      <Code>InvalidGreeting</Code>\n      <Message>Hi</Message>\n      <AnotherSetting>setting</AnotherSetting>\n   </Error>\n   <RequestId>foo-id</RequestId>\n</ErrorResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
-            // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, new InvalidGreetingException(""), (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
-            // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(InvalidGreetingException));
-        }
-
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("ErrorTest")]
-        [TestCategory("RestXml")]
-        public void ComplexErrorErrorResponse()
-        {
-            // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
-            webResponseData.Headers["Content-Type"] = "application/xml";
-            webResponseData.Headers["X-Header"] = "Header";
-            byte[] bytes = Encoding.ASCII.GetBytes("<ErrorResponse>\n   <Error>\n      <Type>Sender</Type>\n      <Code>ComplexError</Code>\n      <Message>Hi</Message>\n      <TopLevel>Top level</TopLevel>\n      <Nested>\n          <Foo>bar</Foo>\n      </Nested>\n   </Error>\n   <RequestId>foo-id</RequestId>\n</ErrorResponse>\n");
-            var stream = new MemoryStream(bytes);
-            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
-            // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, new ComplexErrorException(""), (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
-            // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(ComplexErrorException));
-        }
-
     }
 }

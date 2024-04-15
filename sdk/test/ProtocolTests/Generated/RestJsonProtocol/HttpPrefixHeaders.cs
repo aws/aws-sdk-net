@@ -131,6 +131,22 @@ namespace AWSSDK.ProtocolTests.RestJson
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
 
+            // Act
+            var unmarshalledResponse = new HttpPrefixHeadersResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new HttpPrefixHeadersResponse
+            {
+                Foo = "Foo",
+                FooMap = new Dictionary<string, string>()
+                {
+
+                    { "Abc", "Abc value" },
+                    { "Def", "Def value" },
+                },
+            };
+
+            // Assert
+            var actualResponse = (HttpPrefixHeadersResponse)unmarshalledResponse;
+            Comparer.CompareObjects<HttpPrefixHeadersResponse>(expectedResponse,actualResponse);
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
