@@ -65,15 +65,15 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                 }
 #pragma warning restore CS0612,CS0618
 
-            var hostPrefixLabels = new
-            {
-                label = StringUtils.FromString(publicRequest.Label),
-            };
+                var hostPrefixLabels = new
+                {
+                    label = StringUtils.FromString(publicRequest.Label),
+                };
 
-            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.label))
-                throw new AmazonEC2ProtocolException("label can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
+                if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.label))
+                    throw new AmazonEC2ProtocolException("label can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
             
-            request.HostPrefix = $"foo.{hostPrefixLabels.label}.";
+                request.HostPrefix = $"foo.{hostPrefixLabels.label}.";
             }
             return request;
         }
