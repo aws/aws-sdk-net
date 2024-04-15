@@ -163,7 +163,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			foreach(var member in requestPayloadAttributes)
 			{
 #>
-					if(<#=variableName + ".IsSet" + member.PropertyName#>())
+					if(<#=variableName + "." + operation.RequestPayloadMember.PropertyName + ".IsSet" + member.PropertyName#>())
 						xmlWriter.WriteAttributeString("<#=member.MarshallName#>","<#=member.XmlNamespace#>",<#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=operation.RequestPayloadMember.PropertyName#>.<#=member.PropertyName#>));
 <#+
 			}

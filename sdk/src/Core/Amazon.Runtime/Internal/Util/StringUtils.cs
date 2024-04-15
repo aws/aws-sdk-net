@@ -237,12 +237,12 @@ namespace Amazon.Runtime.Internal.Util
             return FromList(values?.Select(x => x.ToString()));
         }
 
-        [SuppressMessage("Microsoft.Globalization", "CA1308", Justification = "Value is not surfaced to user. Booleans have been lowercased by SDK precedent.")]
         /// <summary>
         /// Combines a List of T into a comma-separated string to be marshalled as a header.
         /// </summary>
         /// <param name="values">List of T</param>
         /// <returns>Header value representing the list of T</returns>
+        [SuppressMessage("Microsoft.Globalization", "CA1308", Justification = "Value is not surfaced to user. Booleans have been lowercased by SDK precedent.")]
         public static string FromValueTypeList<T>(List<T> values)  where T : struct
         {
             // ToString() on boolean types automatically Pascal Cases. Xml-based protocols

@@ -51,12 +51,12 @@ namespace Amazon.Runtime.Internal.Util
 
             int startAtIndex = 0;
             var bytes = System.Text.Encoding.UTF8.GetBytes(header);
-            ReadValueIndex readResponse;
+            Tuple<string, int> readResponse;
             while (startAtIndex < bytes.Length)
             {
                 readResponse = ReadValue(bytes, startAtIndex);
-                list.Add(readResponse.Value);
-                startAtIndex = readResponse.Index;
+                list.Add(readResponse.Item1);
+                startAtIndex = readResponse.Item2;
             }
 
             return list;
@@ -186,7 +186,7 @@ namespace Amazon.Runtime.Internal.Util
             return list.ConvertAll(item => (T)Convert.ChangeType(item.Trim(), typeof(T))).ToList();
         }
 
-        private static ReadValueIndex ReadValue(byte[] input, int startAtIndex)
+        private static Tuple<string, int> ReadValue(byte[] input, int startAtIndex)
         {
             for (int index = startAtIndex; index < input.Length; index++)
             {
@@ -203,20 +203,20 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             // We only end up here if the entire header value was whitespace or empty
-            return new ReadValueIndex(string.Empty, input.Length);
+            return new Tuple<string, int>(string.Empty, input.Length);
         }
 
-        private static ReadValueIndex ReadUnquotedValue(byte[] input, int startIndex)
+        private static Tuple<string, int> ReadUnquotedValue(byte[] input, int startIndex)
         {
             int nextDelim = Array.IndexOf(input, (byte)Delimiter, startIndex);
             int length = nextDelim != -1 ? nextDelim - startIndex : input.Length - startIndex;
             string firstStr = System.Text.Encoding.UTF8.GetString(input, startIndex, length).Trim();
             var remainingIndex = AdvanceIndexIfComma(input, startIndex + length);
 
-            return new ReadValueIndex(firstStr, remainingIndex);
+            return new Tuple<string, int>(firstStr, remainingIndex);
         }
 
-        private static ReadValueIndex ReadQuotedValue(byte[] input, int startIndex)
+        private static Tuple<string, int> ReadQuotedValue(byte[] input, int startIndex)
         {
             for (int index = startIndex; index < input.Length; index++)
             {
@@ -227,7 +227,7 @@ namespace Amazon.Runtime.Internal.Util
                     inner = inner.Replace("\\\\", "\\");
                     var remainingIndex = AdvanceIndexIfComma(input, index + 1);
 
-                    return new ReadValueIndex(inner, remainingIndex);
+                    return new Tuple<string, int>(inner, remainingIndex);
                 }
             }
 
@@ -250,16 +250,17 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
-        private class ReadValueIndex
+#if BCL35
+        private class Tuple<T1, T2>
         {
-            public ReadValueIndex(string value, int remainder)
+            internal T1 Item1 { get; private set; }
+            internal T2 Item2 { get; private set; }
+            internal Tuple(T1 item1, T2 item2)
             {
-                Value = value;
-                Index = remainder;
+                Item1 = item1;
+                Item2 = item2;
             }
-
-            public string Value { get; set; }
-            public int Index { get; set; }
         }
+#endif
     }
 }
