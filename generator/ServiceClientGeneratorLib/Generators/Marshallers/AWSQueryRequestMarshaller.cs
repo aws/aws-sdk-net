@@ -137,7 +137,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         ProcessMembers(0, "",  "publicRequest", requestStructure.Members);
 	if (!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
 	{
-		ProcessEndpointHostPrefixMembers("publicRequest", this.Operation);
+		ProcessEndpointHostPrefixMembers(4, "publicRequest", this.Operation);
 	}
 
             

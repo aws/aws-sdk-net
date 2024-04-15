@@ -182,7 +182,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
 	// We skip endpoint host prefix handling for S3 and S3 Control as it's implemented by endpoint rules.
 	if(!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix) && this.Config.ServiceId != "S3" && this.Config.ServiceId != "S3 Control")
 	{
-		ProcessEndpointHostPrefixMembers("publicRequest", this.Operation);
+		ProcessEndpointHostPrefixMembers(3, "publicRequest", this.Operation);
 	}
 
             
