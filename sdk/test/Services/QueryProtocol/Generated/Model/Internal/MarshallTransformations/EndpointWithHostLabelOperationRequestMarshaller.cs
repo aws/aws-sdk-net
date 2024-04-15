@@ -64,6 +64,16 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                     request.Parameters.Add("label", StringUtils.FromString(publicRequest.Label));
                 }
 #pragma warning restore CS0612,CS0618
+
+            var hostPrefixLabels = new
+            {
+                label = StringUtils.FromString(publicRequest.Label),
+            };
+
+            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.label))
+                throw new AmazonQueryProtocolException("label can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
+            
+            request.HostPrefix = $"foo.{hostPrefixLabels.label}.";
             }
             return request;
         }
