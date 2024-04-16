@@ -29,29 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetOutpostInstanceTypes operation.
-    /// Gets the instance types for the specified Outpost.
+    /// This is the response object from the GetOutpostSupportedInstanceTypes operation.
     /// </summary>
-    public partial class GetOutpostInstanceTypesRequest : AmazonOutpostsRequest
+    public partial class GetOutpostSupportedInstanceTypesResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<InstanceTypeItem> _instanceTypes = AWSConfigs.InitializeCollections ? new List<InstanceTypeItem>() : null;
         private string _nextToken;
-        private string _outpostId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property InstanceTypes.
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public List<InstanceTypeItem> InstanceTypes
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._instanceTypes; }
+            set { this._instanceTypes = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if InstanceTypes property is set
+        internal bool IsSetInstanceTypes()
         {
-            return this._maxResults.HasValue; 
+            return this._instanceTypes != null && (this._instanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -68,25 +65,6 @@ namespace Amazon.Outposts.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OutpostId. 
-        /// <para>
-        ///  The ID or ARN of the Outpost. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=180)]
-        public string OutpostId
-        {
-            get { return this._outpostId; }
-            set { this._outpostId = value; }
-        }
-
-        // Check to see if OutpostId property is set
-        internal bool IsSetOutpostId()
-        {
-            return this._outpostId != null;
         }
 
     }

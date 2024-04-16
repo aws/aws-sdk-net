@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteOutpost operation.
-    /// Deletes the specified Outpost.
+    /// This is the response object from the CancelCapacityTask operation.
     /// </summary>
-    public partial class DeleteOutpostRequest : AmazonOutpostsRequest
+    public partial class CancelCapacityTaskResponse : AmazonWebServiceResponse
     {
-        private string _outpostId;
-
-        /// <summary>
-        /// Gets and sets the property OutpostId. 
-        /// <para>
-        ///  The ID or ARN of the Outpost. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=180)]
-        public string OutpostId
-        {
-            get { return this._outpostId; }
-            set { this._outpostId = value; }
-        }
-
-        // Check to see if OutpostId property is set
-        internal bool IsSetOutpostId()
-        {
-            return this._outpostId != null;
-        }
 
     }
 }

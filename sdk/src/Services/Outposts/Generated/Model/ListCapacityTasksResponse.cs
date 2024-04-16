@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetOutpostInstanceTypes operation.
-    /// Gets the instance types for the specified Outpost.
+    /// This is the response object from the ListCapacityTasks operation.
     /// </summary>
-    public partial class GetOutpostInstanceTypesRequest : AmazonOutpostsRequest
+    public partial class ListCapacityTasksResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<CapacityTaskSummary> _capacityTasks = AWSConfigs.InitializeCollections ? new List<CapacityTaskSummary>() : null;
         private string _nextToken;
-        private string _outpostId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property CapacityTasks. 
+        /// <para>
+        /// Lists all the capacity tasks.
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public List<CapacityTaskSummary> CapacityTasks
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._capacityTasks; }
+            set { this._capacityTasks = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if CapacityTasks property is set
+        internal bool IsSetCapacityTasks()
         {
-            return this._maxResults.HasValue; 
+            return this._capacityTasks != null && (this._capacityTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -68,25 +68,6 @@ namespace Amazon.Outposts.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OutpostId. 
-        /// <para>
-        ///  The ID or ARN of the Outpost. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=180)]
-        public string OutpostId
-        {
-            get { return this._outpostId; }
-            set { this._outpostId = value; }
-        }
-
-        // Check to see if OutpostId property is set
-        internal bool IsSetOutpostId()
-        {
-            return this._outpostId != null;
         }
 
     }

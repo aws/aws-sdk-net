@@ -29,14 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetOutpostInstanceTypes operation.
-    /// Gets the instance types for the specified Outpost.
+    /// Container for the parameters to the ListCapacityTasks operation.
+    /// Lists the capacity tasks for your Amazon Web Services account.
+    /// 
+    ///  
+    /// <para>
+    /// Use filters to return specific results. If you specify multiple filters, the results
+    /// include only the resources that match all of the specified filters. For a filter where
+    /// you can specify multiple values, the results include items that match any of the values
+    /// that you specify for the filter.
+    /// </para>
     /// </summary>
-    public partial class GetOutpostInstanceTypesRequest : AmazonOutpostsRequest
+    public partial class ListCapacityTasksRequest : AmazonOutpostsRequest
     {
+        private List<string> _capacityTaskStatusFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private string _outpostId;
+        private string _outpostIdentifierFilter;
+
+        /// <summary>
+        /// Gets and sets the property CapacityTaskStatusFilter. 
+        /// <para>
+        /// A list of statuses. For example, <c>REQUESTED</c> or <c>WAITING_FOR_EVACUATION</c>.
+        /// </para>
+        /// </summary>
+        public List<string> CapacityTaskStatusFilter
+        {
+            get { return this._capacityTaskStatusFilter; }
+            set { this._capacityTaskStatusFilter = value; }
+        }
+
+        // Check to see if CapacityTaskStatusFilter property is set
+        internal bool IsSetCapacityTaskStatusFilter()
+        {
+            return this._capacityTaskStatusFilter != null && (this._capacityTaskStatusFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults.
@@ -71,22 +98,22 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutpostId. 
+        /// Gets and sets the property OutpostIdentifierFilter. 
         /// <para>
-        ///  The ID or ARN of the Outpost. 
+        /// Filters the results by an Outpost ID or an Outpost ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=180)]
-        public string OutpostId
+        [AWSProperty(Min=1, Max=180)]
+        public string OutpostIdentifierFilter
         {
-            get { return this._outpostId; }
-            set { this._outpostId = value; }
+            get { return this._outpostIdentifierFilter; }
+            set { this._outpostIdentifierFilter = value; }
         }
 
-        // Check to see if OutpostId property is set
-        internal bool IsSetOutpostId()
+        // Check to see if OutpostIdentifierFilter property is set
+        internal bool IsSetOutpostIdentifierFilter()
         {
-            return this._outpostId != null;
+            return this._outpostIdentifierFilter != null;
         }
 
     }

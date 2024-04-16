@@ -44,11 +44,27 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
+        /// Paginator for GetOutpostSupportedInstanceTypes operation
+        ///</summary>
+        public IGetOutpostSupportedInstanceTypesPaginator GetOutpostSupportedInstanceTypes(GetOutpostSupportedInstanceTypesRequest request) 
+        {
+            return new GetOutpostSupportedInstanceTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssets operation
         ///</summary>
         public IListAssetsPaginator ListAssets(ListAssetsRequest request) 
         {
             return new ListAssetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCapacityTasks operation
+        ///</summary>
+        public IListCapacityTasksPaginator ListCapacityTasks(ListCapacityTasksRequest request) 
+        {
+            return new ListCapacityTasksPaginator(this.client, request);
         }
 
         /// <summary>

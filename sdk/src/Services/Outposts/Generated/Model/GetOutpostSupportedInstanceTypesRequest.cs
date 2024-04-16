@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetOutpostInstanceTypes operation.
-    /// Gets the instance types for the specified Outpost.
+    /// Container for the parameters to the GetOutpostSupportedInstanceTypes operation.
+    /// Gets the instance types that an Outpost can support in <c>InstanceTypeCapacity</c>.
+    /// This will generally include instance types that are not currently configured and therefore
+    /// cannot be launched with the current Outpost capacity configuration.
     /// </summary>
-    public partial class GetOutpostInstanceTypesRequest : AmazonOutpostsRequest
+    public partial class GetOutpostSupportedInstanceTypesRequest : AmazonOutpostsRequest
     {
         private int? _maxResults;
         private string _nextToken;
-        private string _outpostId;
+        private string _orderId;
+        private string _outpostIdentifier;
 
         /// <summary>
         /// Gets and sets the property MaxResults.
@@ -71,22 +74,41 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutpostId. 
+        /// Gets and sets the property OrderId. 
         /// <para>
-        ///  The ID or ARN of the Outpost. 
+        /// The ID for the Amazon Web Services Outposts order.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=20)]
+        public string OrderId
+        {
+            get { return this._orderId; }
+            set { this._orderId = value; }
+        }
+
+        // Check to see if OrderId property is set
+        internal bool IsSetOrderId()
+        {
+            return this._orderId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostIdentifier. 
+        /// <para>
+        /// The ID or ARN of the Outpost.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=180)]
-        public string OutpostId
+        public string OutpostIdentifier
         {
-            get { return this._outpostId; }
-            set { this._outpostId = value; }
+            get { return this._outpostIdentifier; }
+            set { this._outpostIdentifier = value; }
         }
 
-        // Check to see if OutpostId property is set
-        internal bool IsSetOutpostId()
+        // Check to see if OutpostIdentifier property is set
+        internal bool IsSetOutpostIdentifier()
         {
-            return this._outpostId != null;
+            return this._outpostIdentifier != null;
         }
 
     }

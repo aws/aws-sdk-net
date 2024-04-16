@@ -29,30 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteOutpost operation.
-    /// Deletes the specified Outpost.
+    /// The capacity tasks that failed.
     /// </summary>
-    public partial class DeleteOutpostRequest : AmazonOutpostsRequest
+    public partial class CapacityTaskFailure
     {
-        private string _outpostId;
+        private string _reason;
+        private CapacityTaskFailureType _type;
 
         /// <summary>
-        /// Gets and sets the property OutpostId. 
+        /// Gets and sets the property Reason. 
         /// <para>
-        ///  The ID or ARN of the Outpost. 
+        /// The reason that the specified capacity task failed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=180)]
-        public string OutpostId
+        [AWSProperty(Required=true, Max=128)]
+        public string Reason
         {
-            get { return this._outpostId; }
-            set { this._outpostId = value; }
+            get { return this._reason; }
+            set { this._reason = value; }
         }
 
-        // Check to see if OutpostId property is set
-        internal bool IsSetOutpostId()
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
         {
-            return this._outpostId != null;
+            return this._reason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of failure.
+        /// </para>
+        /// </summary>
+        public CapacityTaskFailureType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }
