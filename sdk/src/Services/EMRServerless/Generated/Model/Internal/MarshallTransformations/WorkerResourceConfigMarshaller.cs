@@ -58,6 +58,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Disk);
             }
 
+            if(requestObject.IsSetDiskType())
+            {
+                context.Writer.WritePropertyName("diskType");
+                context.Writer.Write(requestObject.DiskType);
+            }
+
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("memory");

@@ -541,6 +541,10 @@
     <pattern>[1-9][0-9]*(\s)?(GB|gb|gB|Gb)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRServerless.Model.WorkerResourceConfig.DiskType</property>
+    <pattern>(SHUFFLE_OPTIMIZED|[Ss]huffle_[Oo]ptimized|STANDARD|[Ss]tandard)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRServerless.Model.WorkerResourceConfig.Memory</property>
     <min>1</min>
     <max>15</max>
