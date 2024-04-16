@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImprovementSummary Object
+    /// Response Unmarshaller for AccountJiraConfigurationOutput Object
     /// </summary>  
-    public class ImprovementSummaryUnmarshaller : IUnmarshaller<ImprovementSummary, XmlUnmarshallerContext>, IUnmarshaller<ImprovementSummary, JsonUnmarshallerContext>
+    public class AccountJiraConfigurationOutputUnmarshaller : IUnmarshaller<AccountJiraConfigurationOutput, XmlUnmarshallerContext>, IUnmarshaller<AccountJiraConfigurationOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ImprovementSummary IUnmarshaller<ImprovementSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AccountJiraConfigurationOutput IUnmarshaller<AccountJiraConfigurationOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImprovementSummary Unmarshall(JsonUnmarshallerContext context)
+        public AccountJiraConfigurationOutput Unmarshall(JsonUnmarshallerContext context)
         {
-            ImprovementSummary unmarshalledObject = new ImprovementSummary();
+            AccountJiraConfigurationOutput unmarshalledObject = new AccountJiraConfigurationOutput();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,46 +64,40 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ImprovementPlans", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ChoiceImprovementPlan, ChoiceImprovementPlanUnmarshaller>(ChoiceImprovementPlanUnmarshaller.Instance);
-                    unmarshalledObject.ImprovementPlans = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ImprovementPlanUrl", targetDepth))
+                if (context.TestExpression("IntegrationStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImprovementPlanUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IntegrationStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("JiraConfiguration", targetDepth))
-                {
-                    var unmarshaller = JiraConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.JiraConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PillarId", targetDepth))
+                if (context.TestExpression("IssueManagementStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PillarId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IssueManagementStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("QuestionId", targetDepth))
+                if (context.TestExpression("IssueManagementType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuestionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IssueManagementType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("QuestionTitle", targetDepth))
+                if (context.TestExpression("JiraProjectKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuestionTitle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JiraProjectKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Risk", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Risk = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Subdomain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Subdomain = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -111,12 +105,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         }
 
 
-        private static ImprovementSummaryUnmarshaller _instance = new ImprovementSummaryUnmarshaller();        
+        private static AccountJiraConfigurationOutputUnmarshaller _instance = new AccountJiraConfigurationOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImprovementSummaryUnmarshaller Instance
+        public static AccountJiraConfigurationOutputUnmarshaller Instance
         {
             get
             {

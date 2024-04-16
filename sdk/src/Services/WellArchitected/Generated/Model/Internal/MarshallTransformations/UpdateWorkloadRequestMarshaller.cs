@@ -155,6 +155,17 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IsReviewOwnerUpdateAcknowledged);
                 }
 
+                if(publicRequest.IsSetJiraConfiguration())
+                {
+                    context.Writer.WritePropertyName("JiraConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WorkloadJiraConfigurationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.JiraConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetNonAwsRegions())
                 {
                     context.Writer.WritePropertyName("NonAwsRegions");

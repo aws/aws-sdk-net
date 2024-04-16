@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateGlobalSettings Request Marshaller
+    /// UpdateIntegration Request Marshaller
     /// </summary>       
-    public class UpdateGlobalSettingsRequestMarshaller : IMarshaller<IRequest, UpdateGlobalSettingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateIntegrationRequestMarshaller : IMarshaller<IRequest, UpdateIntegrationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateGlobalSettingsRequest)input);
+            return this.Marshall((UpdateIntegrationRequest)input);
         }
 
         /// <summary>
@@ -53,40 +53,37 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateGlobalSettingsRequest publicRequest)
+        public IRequest Marshall(UpdateIntegrationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WellArchitected");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";
-            request.HttpMethod = "PATCH";
+            request.HttpMethod = "POST";
 
-            request.ResourcePath = "/global-settings";
+            if (!publicRequest.IsSetWorkloadId())
+                throw new AmazonWellArchitectedException("Request object does not have required field WorkloadId set");
+            request.AddPathResource("{WorkloadId}", StringUtils.FromString(publicRequest.WorkloadId));
+            request.ResourcePath = "/workloads/{WorkloadId}/updateIntegration";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDiscoveryIntegrationStatus())
+                if(publicRequest.IsSetClientRequestToken())
                 {
-                    context.Writer.WritePropertyName("DiscoveryIntegrationStatus");
-                    context.Writer.Write(publicRequest.DiscoveryIntegrationStatus);
+                    context.Writer.WritePropertyName("ClientRequestToken");
+                    context.Writer.Write(publicRequest.ClientRequestToken);
                 }
 
-                if(publicRequest.IsSetJiraConfiguration())
+                else if(!(publicRequest.IsSetClientRequestToken()))
                 {
-                    context.Writer.WritePropertyName("JiraConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AccountJiraConfigurationInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JiraConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("ClientRequestToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
-
-                if(publicRequest.IsSetOrganizationSharingStatus())
+                if(publicRequest.IsSetIntegratingService())
                 {
-                    context.Writer.WritePropertyName("OrganizationSharingStatus");
-                    context.Writer.Write(publicRequest.OrganizationSharingStatus);
+                    context.Writer.WritePropertyName("IntegratingService");
+                    context.Writer.Write(publicRequest.IntegratingService);
                 }
 
                 writer.WriteObjectEnd();
@@ -97,9 +94,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateGlobalSettingsRequestMarshaller _instance = new UpdateGlobalSettingsRequestMarshaller();        
+        private static UpdateIntegrationRequestMarshaller _instance = new UpdateIntegrationRequestMarshaller();        
 
-        internal static UpdateGlobalSettingsRequestMarshaller GetInstance()
+        internal static UpdateIntegrationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +104,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateGlobalSettingsRequestMarshaller Instance
+        public static UpdateIntegrationRequestMarshaller Instance
         {
             get
             {

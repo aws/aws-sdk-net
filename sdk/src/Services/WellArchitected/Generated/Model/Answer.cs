@@ -39,6 +39,7 @@ namespace Amazon.WellArchitected.Model
         private string _helpfulResourceUrl;
         private string _improvementPlanUrl;
         private bool? _isApplicable;
+        private JiraConfiguration _jiraConfiguration;
         private string _notes;
         private string _pillarId;
         private string _questionDescription;
@@ -149,6 +150,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetIsApplicable()
         {
             return this._isApplicable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// Configuration of the Jira integration.
+        /// </para>
+        /// </summary>
+        public JiraConfiguration JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
         }
 
         /// <summary>

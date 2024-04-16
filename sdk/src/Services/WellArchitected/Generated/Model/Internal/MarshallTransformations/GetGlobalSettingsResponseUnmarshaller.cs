@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpgradeProfileVersion operation
+    /// Response Unmarshaller for GetGlobalSettings operation
     /// </summary>  
-    public class UpgradeProfileVersionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetGlobalSettingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,8 +46,31 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpgradeProfileVersionResponse response = new UpgradeProfileVersionResponse();
+            GetGlobalSettingsResponse response = new GetGlobalSettingsResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("DiscoveryIntegrationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DiscoveryIntegrationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JiraConfiguration", targetDepth))
+                {
+                    var unmarshaller = AccountJiraConfigurationOutputUnmarshaller.Instance;
+                    response.JiraConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OrganizationSharingStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OrganizationSharingStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -74,21 +97,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -102,9 +113,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             return new AmazonWellArchitectedException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpgradeProfileVersionResponseUnmarshaller _instance = new UpgradeProfileVersionResponseUnmarshaller();        
+        private static GetGlobalSettingsResponseUnmarshaller _instance = new GetGlobalSettingsResponseUnmarshaller();        
 
-        internal static UpgradeProfileVersionResponseUnmarshaller GetInstance()
+        internal static GetGlobalSettingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -112,7 +123,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpgradeProfileVersionResponseUnmarshaller Instance
+        public static GetGlobalSettingsResponseUnmarshaller Instance
         {
             get
             {

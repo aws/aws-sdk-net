@@ -33,6 +33,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class LensReview
     {
+        private JiraSelectedQuestionConfiguration _jiraConfiguration;
         private string _lensAlias;
         private string _lensArn;
         private string _lensName;
@@ -45,6 +46,24 @@ namespace Amazon.WellArchitected.Model
         private List<WorkloadProfile> _profiles = AWSConfigs.InitializeCollections ? new List<WorkloadProfile>() : null;
         private Dictionary<string, int> _riskCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// Jira configuration status of the Lens review.
+        /// </para>
+        /// </summary>
+        public JiraSelectedQuestionConfiguration JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LensAlias.

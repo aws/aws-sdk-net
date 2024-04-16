@@ -2178,6 +2178,58 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  GetGlobalSettings
+
+
+        /// <summary>
+        /// Global settings for all workloads.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlobalSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetGlobalSettings service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetGlobalSettings">REST API Reference for GetGlobalSettings Operation</seealso>
+        GetGlobalSettingsResponse GetGlobalSettings(GetGlobalSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Global settings for all workloads.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlobalSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGlobalSettings service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetGlobalSettings">REST API Reference for GetGlobalSettings Operation</seealso>
+        Task<GetGlobalSettingsResponse> GetGlobalSettingsAsync(GetGlobalSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetLens
 
 
@@ -3186,7 +3238,7 @@ namespace Amazon.WellArchitected
 
 
         /// <summary>
-        /// List lens review improvements.
+        /// List the improvements of a particular lens review.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLensReviewImprovements service method.</param>
         /// 
@@ -3212,7 +3264,7 @@ namespace Amazon.WellArchitected
 
 
         /// <summary>
-        /// List lens review improvements.
+        /// List the improvements of a particular lens review.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLensReviewImprovements service method.</param>
         /// <param name="cancellationToken">
@@ -4214,7 +4266,7 @@ namespace Amazon.WellArchitected
 
 
         /// <summary>
-        /// Updates whether the Amazon Web Services account is opted into organization sharing
+        /// Update whether the Amazon Web Services account is opted into organization sharing
         /// and discovery integration features.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
@@ -4241,7 +4293,7 @@ namespace Amazon.WellArchitected
 
 
         /// <summary>
-        /// Updates whether the Amazon Web Services account is opted into organization sharing
+        /// Update whether the Amazon Web Services account is opted into organization sharing
         /// and discovery integration features.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
@@ -4267,6 +4319,70 @@ namespace Amazon.WellArchitected
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
         Task<UpdateGlobalSettingsResponse> UpdateGlobalSettingsAsync(UpdateGlobalSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateIntegration
+
+
+        /// <summary>
+        /// Update integration features.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIntegration service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
+        UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request);
+
+
+
+        /// <summary>
+        /// Update integration features.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIntegration service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
+        Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4817,6 +4933,9 @@ namespace Amazon.WellArchitected
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
         /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.
         /// </exception>
@@ -4848,6 +4967,9 @@ namespace Amazon.WellArchitected
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -4881,6 +5003,9 @@ namespace Amazon.WellArchitected
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
         /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.
         /// </exception>
@@ -4912,6 +5037,9 @@ namespace Amazon.WellArchitected
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.

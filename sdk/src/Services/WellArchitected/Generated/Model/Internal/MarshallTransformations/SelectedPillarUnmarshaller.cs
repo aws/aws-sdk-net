@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImprovementSummary Object
+    /// Response Unmarshaller for SelectedPillar Object
     /// </summary>  
-    public class ImprovementSummaryUnmarshaller : IUnmarshaller<ImprovementSummary, XmlUnmarshallerContext>, IUnmarshaller<ImprovementSummary, JsonUnmarshallerContext>
+    public class SelectedPillarUnmarshaller : IUnmarshaller<SelectedPillar, XmlUnmarshallerContext>, IUnmarshaller<SelectedPillar, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ImprovementSummary IUnmarshaller<ImprovementSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SelectedPillar IUnmarshaller<SelectedPillar, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImprovementSummary Unmarshall(JsonUnmarshallerContext context)
+        public SelectedPillar Unmarshall(JsonUnmarshallerContext context)
         {
-            ImprovementSummary unmarshalledObject = new ImprovementSummary();
+            SelectedPillar unmarshalledObject = new SelectedPillar();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,46 +64,16 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ImprovementPlans", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ChoiceImprovementPlan, ChoiceImprovementPlanUnmarshaller>(ChoiceImprovementPlanUnmarshaller.Instance);
-                    unmarshalledObject.ImprovementPlans = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ImprovementPlanUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImprovementPlanUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JiraConfiguration", targetDepth))
-                {
-                    var unmarshaller = JiraConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.JiraConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("PillarId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PillarId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("QuestionId", targetDepth))
+                if (context.TestExpression("SelectedQuestionIds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuestionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("QuestionTitle", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuestionTitle = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Risk", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Risk = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SelectedQuestionIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -111,12 +81,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         }
 
 
-        private static ImprovementSummaryUnmarshaller _instance = new ImprovementSummaryUnmarshaller();        
+        private static SelectedPillarUnmarshaller _instance = new SelectedPillarUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImprovementSummaryUnmarshaller Instance
+        public static SelectedPillarUnmarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateGlobalSettings Request Marshaller
+    /// GetGlobalSettings Request Marshaller
     /// </summary>       
-    public class UpdateGlobalSettingsRequestMarshaller : IMarshaller<IRequest, UpdateGlobalSettingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetGlobalSettingsRequestMarshaller : IMarshaller<IRequest, GetGlobalSettingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateGlobalSettingsRequest)input);
+            return this.Marshall((GetGlobalSettingsRequest)input);
         }
 
         /// <summary>
@@ -53,53 +53,19 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateGlobalSettingsRequest publicRequest)
+        public IRequest Marshall(GetGlobalSettingsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WellArchitected");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";
-            request.HttpMethod = "PATCH";
+            request.HttpMethod = "GET";
 
             request.ResourcePath = "/global-settings";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDiscoveryIntegrationStatus())
-                {
-                    context.Writer.WritePropertyName("DiscoveryIntegrationStatus");
-                    context.Writer.Write(publicRequest.DiscoveryIntegrationStatus);
-                }
-
-                if(publicRequest.IsSetJiraConfiguration())
-                {
-                    context.Writer.WritePropertyName("JiraConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AccountJiraConfigurationInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JiraConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOrganizationSharingStatus())
-                {
-                    context.Writer.WritePropertyName("OrganizationSharingStatus");
-                    context.Writer.Write(publicRequest.OrganizationSharingStatus);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
 
             return request;
         }
-        private static UpdateGlobalSettingsRequestMarshaller _instance = new UpdateGlobalSettingsRequestMarshaller();        
+        private static GetGlobalSettingsRequestMarshaller _instance = new GetGlobalSettingsRequestMarshaller();        
 
-        internal static UpdateGlobalSettingsRequestMarshaller GetInstance()
+        internal static GetGlobalSettingsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +73,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateGlobalSettingsRequestMarshaller Instance
+        public static GetGlobalSettingsRequestMarshaller Instance
         {
             get
             {

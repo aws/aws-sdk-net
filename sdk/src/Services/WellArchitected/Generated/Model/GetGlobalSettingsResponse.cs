@@ -29,20 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateGlobalSettings operation.
-    /// Update whether the Amazon Web Services account is opted into organization sharing
-    /// and discovery integration features.
+    /// This is the response object from the GetGlobalSettings operation.
     /// </summary>
-    public partial class UpdateGlobalSettingsRequest : AmazonWellArchitectedRequest
+    public partial class GetGlobalSettingsResponse : AmazonWebServiceResponse
     {
         private DiscoveryIntegrationStatus _discoveryIntegrationStatus;
-        private AccountJiraConfigurationInput _jiraConfiguration;
+        private AccountJiraConfigurationOutput _jiraConfiguration;
         private OrganizationSharingStatus _organizationSharingStatus;
 
         /// <summary>
         /// Gets and sets the property DiscoveryIntegrationStatus. 
         /// <para>
-        /// The status of discovery support settings.
+        /// Discovery integration status.
         /// </para>
         /// </summary>
         public DiscoveryIntegrationStatus DiscoveryIntegrationStatus
@@ -60,10 +58,10 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property JiraConfiguration. 
         /// <para>
-        /// The status of Jira integration settings.
+        /// Jira configuration status.
         /// </para>
         /// </summary>
-        public AccountJiraConfigurationInput JiraConfiguration
+        public AccountJiraConfigurationOutput JiraConfiguration
         {
             get { return this._jiraConfiguration; }
             set { this._jiraConfiguration = value; }
@@ -78,7 +76,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property OrganizationSharingStatus. 
         /// <para>
-        /// The status of organization sharing settings.
+        /// Amazon Web Services Organizations sharing status.
         /// </para>
         /// </summary>
         public OrganizationSharingStatus OrganizationSharingStatus
