@@ -13,18 +13,15 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.DynamoDBv2.DataModel;
-using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
+using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Util;
 
 namespace Amazon.DynamoDBv2
 {
@@ -428,35 +425,35 @@ namespace Amazon.DynamoDBv2
 #endif
     internal abstract class CollectionConverter : Converter
     {
-        private IEnumerable<Type> targetTypes;
-        private static IEnumerable<Type> GetTargetTypes(IEnumerable<Type> memberTypes)
-        {
-            var listType = typeof(List<>);
-            var setType = typeof(HashSet<>);
-
-            foreach (var pt in memberTypes)
-            {
-                // typeof(T[]),
-                if (pt != typeof(byte))
-                {
-                    yield return pt.MakeArrayType();
-                }
-                // typeof(List<T>),
-                yield return listType.MakeGenericType(pt);
-                // typeof(HashSet<T>),
-                yield return setType.MakeGenericType(pt);
-            }
-        }
+        private readonly IEnumerable<Type> memberTypes;
         public CollectionConverter(IEnumerable<Type> memberTypes)
         {
-            targetTypes = GetTargetTypes(memberTypes);
+            this.memberTypes = memberTypes;
         }
 
-        public override IEnumerable<Type> GetTargetTypes()
+        public override bool IsTypeSupported(Type type)
         {
-            return targetTypes;
-        }
+            if (type.IsGenericType)
+            {
+                var definition = type.GetGenericTypeDefinition();
+                if (definition == typeof(List<>) || definition == typeof(HashSet<>))
+                {
+                    var memberType = type.GetGenericArguments()[0];
+                    return memberTypes.Contains(memberType);
+                }
+            }
+            else if (type.IsArray)
+            {
+                // byte[] is handled separately by BytesConverterV1
+                if (type == typeof(byte[]))
+                    return false;
 
+                var memberType = type.GetElementType();
+                return memberTypes.Contains(memberType);
+            }
+
+            return false;
+        }
         protected bool EntriesToCollection(Type targetType, Type elementType, IEnumerable<DynamoDBEntry> entries, out object result)
         {
             var items = Conversion.ConvertFromEntries(elementType, entries);
@@ -476,7 +473,7 @@ namespace Amazon.DynamoDBv2
         public PrimitiveCollectionConverterV1()
             : base(Utils.PrimitiveTypes)
         { }
-        
+
         public override bool TryTo(object value, out PrimitiveList pl)
         {
             var items = value as IEnumerable;
@@ -514,9 +511,9 @@ namespace Amazon.DynamoDBv2
 #endif
     internal class DictionaryConverterV1 : Converter
     {
-        public override IEnumerable<Type> GetTargetTypes()
+        public override bool IsTypeSupported(Type type)
         {
-            yield return typeof(Dictionary<string, object>);
+            return type == typeof(Dictionary<string, object>);
         }
 
         public override bool TryTo(object value, out Document d)
@@ -525,7 +522,7 @@ namespace Amazon.DynamoDBv2
             if (items != null)
             {
                 d = new Document();
-                foreach(var kvp in items)
+                foreach (var kvp in items)
                 {
                     string name = kvp.Key;
                     object item = kvp.Value;

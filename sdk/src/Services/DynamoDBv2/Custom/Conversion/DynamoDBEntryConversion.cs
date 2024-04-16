@@ -15,11 +15,11 @@
 
 using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Globalization;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.Util.Internal;
 
 #if NETSTANDARD
 using Amazon.Runtime.Internal.Util;
@@ -332,6 +332,11 @@ namespace Amazon.DynamoDBv2
             return new DynamoDBEntryConversion(this.OriginalConversion, isImmutable: false);
         }
 
+        internal bool IsConverterRegistered(Type converterType)
+        {
+            return ConverterCache.IsConverterRegistered(converterType);
+        }
+
         internal bool HasConverter(Type type)
         {
             return ConverterCache.HasConverter(type);
@@ -474,7 +479,7 @@ namespace Amazon.DynamoDBv2
         /// Returns all types for which it can be used.
         /// </summary>
         /// <returns></returns>
-        public abstract IEnumerable<Type> GetTargetTypes();
+        public abstract bool IsTypeSupported(Type type);
 
         /// <summary>
         /// Conversion that this converter is part of.
@@ -651,17 +656,15 @@ namespace Amazon.DynamoDBv2
 
     internal abstract class Converter<T> : Converter
     {
-        public override IEnumerable<Type> GetTargetTypes()
+        public override bool IsTypeSupported(Type type)
         {
-            var type = typeof(T);
-            yield return type;
+            if (type == typeof(T))
+                return true;
 
-            if (type.IsValueType)
-            {
-                //yield return typeof(Nullable<T>);
-                var nullableType = typeof(Nullable<>).MakeGenericType(type);
-                yield return nullableType;
-            }
+            if (Nullable.GetUnderlyingType(type) == typeof(T))
+                return true;
+
+            return false;
         }
 
         public override bool TryTo(object value, out DynamoDBBool b)
@@ -777,7 +780,8 @@ namespace Amazon.DynamoDBv2
     internal class ConverterCache
     {
         private static Type EnumType = typeof(Enum);
-        private Dictionary<Type, Converter> Cache = new Dictionary<Type, Converter>();
+        private readonly List<Converter> Converters = new List<Converter>();
+        private readonly ConcurrentDictionary<Type, Converter> Cache = new ConcurrentDictionary<Type, Converter>();
 
         public bool HasConverter(Type type)
         {
@@ -795,11 +799,7 @@ namespace Amazon.DynamoDBv2
                 throw new InvalidOperationException("Adding converters to immutable conversion is not supported. The conversion must be cloned first.");
 
             converter.Conversion = conversion;
-            var types = converter.GetTargetTypes();
-            foreach (var type in types)
-            {
-                Cache[type] = converter;
-            }
+            Converters.Add(converter);
         }
 
         public Converter GetConverter(Type type)
@@ -817,9 +817,27 @@ namespace Amazon.DynamoDBv2
 
             // all enums use the same converter, one for Enum
             if (type.IsEnum)
-                return Cache.TryGetValue(EnumType, out converter);
+                type = EnumType;
 
-            return Cache.TryGetValue(type, out converter);
+            if (Cache.TryGetValue(type, out converter))
+                return true;
+
+            foreach (var c in Converters)
+            {
+                if (c.IsTypeSupported(type))
+                {
+                    converter = c;
+                    Cache[type] = c;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        internal bool IsConverterRegistered(Type converterType)
+        {
+            return Converters.Exists(c => c.GetType() == converterType);
         }
     }
 }
