@@ -32,7 +32,7 @@ namespace Amazon.PrometheusService
     public partial class AmazonPrometheusServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("amp", "3.7.302.50");
+            InternalSDKUtils.BuildUserAgentString("amp", "3.7.302.51");
 
         private string _userAgent = UserAgentString;
         ///<summary>

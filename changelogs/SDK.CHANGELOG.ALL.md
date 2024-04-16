@@ -1,3 +1,26 @@
+### 3.7.790.0 (2024-04-16 18:29 UTC)
+* BedrockAgent (3.7.304.0)
+	* For Create Agent API, the agentResourceRoleArn parameter is no longer required.
+* EMRServerless (3.7.301.0)
+	* This release adds support for shuffle optimized disks that allow larger disk sizes and higher IOPS to efficiently run shuffle heavy workloads.
+* EntityResolution (3.7.301.0)
+	* Cross Account Resource Support .
+* IoTWireless (3.7.302.0)
+	* Add PublicGateways in the GetWirelessStatistics call response, indicating the LoRaWAN public network accessed by the device.
+* LakeFormation (3.7.303.0)
+	* This release adds Lake Formation managed RAM support for the 4 APIs - "DescribeLakeFormationIdentityCenterConfiguration", "CreateLakeFormationIdentityCenterConfiguration", "DescribeLakeFormationIdentityCenterConfiguration", and "DeleteLakeFormationIdentityCenterConfiguration"
+* MainframeModernization (3.7.301.0)
+	* Adding new ListBatchJobRestartPoints API and support for restart batch job.
+* MediaPackageV2 (3.7.302.0)
+	* Dash v2 is a MediaPackage V2 feature to support egressing on DASH manifest format.
+* Outposts (3.7.303.0)
+	* This release adds new APIs to allow customers to configure their Outpost capacity at order-time.
+* WellArchitected (3.7.301.0)
+	* AWS Well-Architected now has a Connector for Jira to allow customers to efficiently track workload risks and improvement efforts and create closed-loop mechanisms.
+* Core 3.7.303.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.789.0 (2024-04-12 18:23 UTC)
 * CloudFormation (3.7.307.0)
 	* Adding support for the new parameter "IncludePropertyValues" in the CloudFormation DescribeChangeSet API. When this parameter is included, the DescribeChangeSet response will include more detailed information such as before and after values for the resource properties that will change.
