@@ -43,6 +43,7 @@ namespace Amazon.MediaPackageV2.Model
         private string _channelGroupName;
         private string _channelName;
         private ContainerType _containerType;
+        private List<CreateDashManifestConfiguration> _dashManifests = AWSConfigs.InitializeCollections ? new List<CreateDashManifestConfiguration>() : null;
         private string _description;
         private string _eTag;
         private List<CreateHlsManifestConfiguration> _hlsManifests = AWSConfigs.InitializeCollections ? new List<CreateHlsManifestConfiguration>() : null;
@@ -110,6 +111,24 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetContainerType()
         {
             return this._containerType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DashManifests. 
+        /// <para>
+        /// A DASH manifest configuration.
+        /// </para>
+        /// </summary>
+        public List<CreateDashManifestConfiguration> DashManifests
+        {
+            get { return this._dashManifests; }
+            set { this._dashManifests = value; }
+        }
+
+        // Check to see if DashManifests property is set
+        internal bool IsSetDashManifests()
+        {
+            return this._dashManifests != null && (this._dashManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

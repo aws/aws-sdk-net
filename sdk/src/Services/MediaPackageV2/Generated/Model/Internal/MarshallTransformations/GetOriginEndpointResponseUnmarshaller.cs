@@ -82,6 +82,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DashManifests", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<GetDashManifestConfiguration, GetDashManifestConfigurationUnmarshaller>(GetDashManifestConfigurationUnmarshaller.Instance);
+                    response.DashManifests = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -81,6 +81,22 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ContainerType);
                 }
 
+                if(publicRequest.IsSetDashManifests())
+                {
+                    context.Writer.WritePropertyName("DashManifests");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDashManifestsListValue in publicRequest.DashManifests)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CreateDashManifestConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDashManifestsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

@@ -94,6 +94,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DashManifests", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ListDashManifestConfiguration, ListDashManifestConfigurationUnmarshaller>(ListDashManifestConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.DashManifests = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
