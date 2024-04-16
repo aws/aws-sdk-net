@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetBatchJobExecution operation
+    /// Response Unmarshaller for ListBatchJobRestartPoints operation
     /// </summary>  
-    public class GetBatchJobExecutionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListBatchJobRestartPointsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,88 +46,16 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetBatchJobExecutionResponse response = new GetBatchJobExecutionResponse();
+            ListBatchJobRestartPointsResponse response = new ListBatchJobRestartPointsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("applicationId", targetDepth))
+                if (context.TestExpression("batchJobSteps", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApplicationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("batchJobIdentifier", targetDepth))
-                {
-                    var unmarshaller = BatchJobIdentifierUnmarshaller.Instance;
-                    response.BatchJobIdentifier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("endTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.EndTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("executionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ExecutionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobStepRestartMarker", targetDepth))
-                {
-                    var unmarshaller = JobStepRestartMarkerUnmarshaller.Instance;
-                    response.JobStepRestartMarker = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobUser", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobUser = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("returnCode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ReturnCode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("startTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("statusReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StatusReason = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<JobStep, JobStepUnmarshaller>(JobStepUnmarshaller.Instance);
+                    response.BatchJobSteps = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -157,6 +85,10 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -177,9 +109,9 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             return new AmazonMainframeModernizationException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetBatchJobExecutionResponseUnmarshaller _instance = new GetBatchJobExecutionResponseUnmarshaller();        
+        private static ListBatchJobRestartPointsResponseUnmarshaller _instance = new ListBatchJobRestartPointsResponseUnmarshaller();        
 
-        internal static GetBatchJobExecutionResponseUnmarshaller GetInstance()
+        internal static ListBatchJobRestartPointsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -187,7 +119,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetBatchJobExecutionResponseUnmarshaller Instance
+        public static ListBatchJobRestartPointsResponseUnmarshaller Instance
         {
             get
             {

@@ -347,6 +347,14 @@
     <pattern>^\S{1,2000}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MainframeModernization.Model.ListBatchJobRestartPointsRequest.ApplicationId</property>
+    <pattern>^\S{1,80}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MainframeModernization.Model.ListBatchJobRestartPointsRequest.ExecutionId</property>
+    <pattern>^\S{1,80}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListDataSetImportHistoryRequest.ApplicationId</property>
     <pattern>^\S{1,80}$</pattern>
   </property-value-rule>
@@ -642,6 +650,10 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.LogGroupSummary.LogType</property>
     <pattern>^\S{1,20}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MainframeModernization.Model.RestartBatchJobIdentifier.ExecutionId</property>
+    <pattern>^\S{1,80}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.VsamDetailAttributes.Encoding</property>

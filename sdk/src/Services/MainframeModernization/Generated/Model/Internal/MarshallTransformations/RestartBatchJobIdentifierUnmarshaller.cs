@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BatchJobIdentifier Object
+    /// Response Unmarshaller for RestartBatchJobIdentifier Object
     /// </summary>  
-    public class BatchJobIdentifierUnmarshaller : IUnmarshaller<BatchJobIdentifier, XmlUnmarshallerContext>, IUnmarshaller<BatchJobIdentifier, JsonUnmarshallerContext>
+    public class RestartBatchJobIdentifierUnmarshaller : IUnmarshaller<RestartBatchJobIdentifier, XmlUnmarshallerContext>, IUnmarshaller<RestartBatchJobIdentifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BatchJobIdentifier IUnmarshaller<BatchJobIdentifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RestartBatchJobIdentifier IUnmarshaller<RestartBatchJobIdentifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchJobIdentifier Unmarshall(JsonUnmarshallerContext context)
+        public RestartBatchJobIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
-            BatchJobIdentifier unmarshalledObject = new BatchJobIdentifier();
+            RestartBatchJobIdentifier unmarshalledObject = new RestartBatchJobIdentifier();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,28 +64,16 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("fileBatchJobIdentifier", targetDepth))
+                if (context.TestExpression("executionId", targetDepth))
                 {
-                    var unmarshaller = FileBatchJobIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.FileBatchJobIdentifier = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("restartBatchJobIdentifier", targetDepth))
+                if (context.TestExpression("jobStepRestartMarker", targetDepth))
                 {
-                    var unmarshaller = RestartBatchJobIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.RestartBatchJobIdentifier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3BatchJobIdentifier", targetDepth))
-                {
-                    var unmarshaller = S3BatchJobIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.S3BatchJobIdentifier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("scriptBatchJobIdentifier", targetDepth))
-                {
-                    var unmarshaller = ScriptBatchJobIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.ScriptBatchJobIdentifier = unmarshaller.Unmarshall(context);
+                    var unmarshaller = JobStepRestartMarkerUnmarshaller.Instance;
+                    unmarshalledObject.JobStepRestartMarker = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,12 +81,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         }
 
 
-        private static BatchJobIdentifierUnmarshaller _instance = new BatchJobIdentifierUnmarshaller();        
+        private static RestartBatchJobIdentifierUnmarshaller _instance = new RestartBatchJobIdentifierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchJobIdentifierUnmarshaller Instance
+        public static RestartBatchJobIdentifierUnmarshaller Instance
         {
             get
             {

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BatchJobIdentifier Object
+    /// Response Unmarshaller for JobStepRestartMarker Object
     /// </summary>  
-    public class BatchJobIdentifierUnmarshaller : IUnmarshaller<BatchJobIdentifier, XmlUnmarshallerContext>, IUnmarshaller<BatchJobIdentifier, JsonUnmarshallerContext>
+    public class JobStepRestartMarkerUnmarshaller : IUnmarshaller<JobStepRestartMarker, XmlUnmarshallerContext>, IUnmarshaller<JobStepRestartMarker, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BatchJobIdentifier IUnmarshaller<BatchJobIdentifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        JobStepRestartMarker IUnmarshaller<JobStepRestartMarker, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchJobIdentifier Unmarshall(JsonUnmarshallerContext context)
+        public JobStepRestartMarker Unmarshall(JsonUnmarshallerContext context)
         {
-            BatchJobIdentifier unmarshalledObject = new BatchJobIdentifier();
+            JobStepRestartMarker unmarshalledObject = new JobStepRestartMarker();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,28 +64,28 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("fileBatchJobIdentifier", targetDepth))
+                if (context.TestExpression("fromProcStep", targetDepth))
                 {
-                    var unmarshaller = FileBatchJobIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.FileBatchJobIdentifier = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FromProcStep = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("restartBatchJobIdentifier", targetDepth))
+                if (context.TestExpression("fromStep", targetDepth))
                 {
-                    var unmarshaller = RestartBatchJobIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.RestartBatchJobIdentifier = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FromStep = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3BatchJobIdentifier", targetDepth))
+                if (context.TestExpression("toProcStep", targetDepth))
                 {
-                    var unmarshaller = S3BatchJobIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.S3BatchJobIdentifier = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ToProcStep = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("scriptBatchJobIdentifier", targetDepth))
+                if (context.TestExpression("toStep", targetDepth))
                 {
-                    var unmarshaller = ScriptBatchJobIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.ScriptBatchJobIdentifier = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ToStep = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,12 +93,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         }
 
 
-        private static BatchJobIdentifierUnmarshaller _instance = new BatchJobIdentifierUnmarshaller();        
+        private static JobStepRestartMarkerUnmarshaller _instance = new JobStepRestartMarkerUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchJobIdentifierUnmarshaller Instance
+        public static JobStepRestartMarkerUnmarshaller Instance
         {
             get
             {
