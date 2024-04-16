@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property BucketArn. 
         /// <para>
-        /// The ARN of the bucket that contains the data source.
+        /// The Amazon Resource Name (ARN) of the bucket that contains the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

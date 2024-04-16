@@ -53,7 +53,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentArn. 
         /// <para>
-        /// The ARN of the agent that the version belongs to.
+        /// The Amazon Resource Name (ARN) of the agent that the version belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -110,8 +110,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentResourceRoleArn. 
         /// <para>
-        /// The ARN of the IAM role with permissions to invoke API operations on the agent. The
-        /// ARN must begin with <c>AmazonBedrockExecutionRoleForAgents_</c>.
+        /// The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations
+        /// on the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -168,7 +168,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property CustomerEncryptionKeyArn. 
         /// <para>
-        /// The ARN of the KMS key that encrypts the agent.
+        /// The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

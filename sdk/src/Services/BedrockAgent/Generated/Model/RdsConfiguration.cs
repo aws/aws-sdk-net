@@ -44,8 +44,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property CredentialsSecretArn. 
         /// <para>
-        /// The ARN of the secret that you created in Secrets Manager that is linked to your Amazon
-        /// RDS database.
+        /// The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that
+        /// is linked to your Amazon RDS database.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,7 +102,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the vector store.
+        /// The Amazon Resource Name (ARN) of the vector store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

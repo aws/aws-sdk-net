@@ -62,8 +62,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property CredentialsSecretArn. 
         /// <para>
-        /// The ARN of the secret that you created in Secrets Manager that is linked to your Pinecone
-        /// API key.
+        /// The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that
+        /// is linked to your Pinecone API key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
