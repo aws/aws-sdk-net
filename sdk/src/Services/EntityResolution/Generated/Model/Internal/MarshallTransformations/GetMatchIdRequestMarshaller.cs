@@ -69,6 +69,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplyNormalization())
+                {
+                    context.Writer.WritePropertyName("applyNormalization");
+                    context.Writer.Write(publicRequest.ApplyNormalization);
+                }
+
                 if(publicRequest.IsSetRecord())
                 {
                     context.Writer.WritePropertyName("record");

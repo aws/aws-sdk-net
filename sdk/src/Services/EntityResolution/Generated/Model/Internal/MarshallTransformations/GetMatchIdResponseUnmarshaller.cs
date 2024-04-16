@@ -58,6 +58,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     response.MatchId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("matchRule", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MatchRule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

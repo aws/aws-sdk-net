@@ -58,6 +58,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SchemaName);
             }
 
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
+            }
+
         }
 
         /// <summary>
