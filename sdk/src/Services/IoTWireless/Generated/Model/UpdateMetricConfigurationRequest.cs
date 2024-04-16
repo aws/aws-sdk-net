@@ -30,7 +30,7 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMetricConfiguration operation.
-    /// Update the metric configuration.
+    /// Update the summary metric configuration.
     /// </summary>
     public partial class UpdateMetricConfigurationRequest : AmazonIoTWirelessRequest
     {

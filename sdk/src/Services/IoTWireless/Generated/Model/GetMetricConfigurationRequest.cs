@@ -30,7 +30,7 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMetricConfiguration operation.
-    /// Get the metric configuration status for this account.
+    /// Get the metric configuration status for this AWS account.
     /// </summary>
     public partial class GetMetricConfigurationRequest : AmazonIoTWirelessRequest
     {

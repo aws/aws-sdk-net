@@ -30,7 +30,7 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMetrics operation.
-    /// Get metrics.
+    /// Get the summary metrics for this AWS account.
     /// </summary>
     public partial class GetMetricsRequest : AmazonIoTWirelessRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property SummaryMetricQueries. 
         /// <para>
-        /// The list of queries to retrieve summary metrics.
+        /// The list of queries to retrieve the summary metrics.
         /// </para>
         /// </summary>
         public List<SummaryMetricQuery> SummaryMetricQueries

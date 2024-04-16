@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// The result of metrics aggregation operation.
+    /// The result of the summary metrics aggregation operation.
     /// </summary>
     public partial class SummaryMetricQueryResult
     {
@@ -84,7 +84,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property EndTimestamp. 
         /// <para>
-        /// The end timestamp for summary metric query.
+        /// The end timestamp for the summary metric query.
         /// </para>
         /// </summary>
         public DateTime EndTimestamp
@@ -102,7 +102,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// The error message for the summary metric query.
+        /// The error message for the summary metric query result.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -121,7 +121,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The name of the metric.
+        /// The name of the summary metric query result.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -140,7 +140,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        /// The id of the query.
+        /// The ID of the summary metric results query operation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -159,7 +159,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property QueryStatus. 
         /// <para>
-        /// The status of the metric query.
+        /// The status of the summary metric query result.
         /// </para>
         /// </summary>
         public MetricQueryStatus QueryStatus
@@ -177,7 +177,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property StartTimestamp. 
         /// <para>
-        /// The start timestamp for summary metric query.
+        /// The start timestamp for the summary metric query.
         /// </para>
         /// </summary>
         public DateTime StartTimestamp
@@ -232,7 +232,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The list of aggregated metrics.
+        /// The list of aggregated summary metric query results.
         /// </para>
         /// </summary>
         public List<MetricQueryValue> Values

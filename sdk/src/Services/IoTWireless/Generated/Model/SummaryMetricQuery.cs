@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// The metric query object.
+    /// The summary metric query object.
     /// </summary>
     public partial class SummaryMetricQuery
     {
@@ -43,7 +43,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property AggregationPeriod. 
         /// <para>
-        /// The aggregation period of the metric.
+        /// The aggregation period of the summary metric.
         /// </para>
         /// </summary>
         public AggregationPeriod AggregationPeriod
@@ -61,7 +61,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// The dimensions of the metric.
+        /// The dimensions of the summary metric.
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions
@@ -79,7 +79,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property EndTimestamp. 
         /// <para>
-        /// The end timestamp for summary metric query.
+        /// The end timestamp for the summary metric query.
         /// </para>
         /// </summary>
         public DateTime EndTimestamp
@@ -116,7 +116,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        /// The id of the query.
+        /// The id of the summary metric query.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -135,7 +135,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property StartTimestamp. 
         /// <para>
-        /// The start timestamp for summary metric query.
+        /// The start timestamp for the summary metric query.
         /// </para>
         /// </summary>
         public DateTime StartTimestamp

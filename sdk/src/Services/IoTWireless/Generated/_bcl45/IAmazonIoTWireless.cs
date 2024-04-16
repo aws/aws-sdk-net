@@ -1019,6 +1019,27 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Provisions a wireless gateway.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When provisioning a wireless gateway, you might run into duplication errors for the
+        /// following reasons.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you specify a <c>GatewayEui</c> value that already exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you used a <c>ClientRequestToken</c> with the same parameters within the last 10
+        /// minutes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To avoid this error, make sure that you use unique identifiers and parameters for
+        /// each request within the specified time period.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWirelessGateway service method.</param>
         /// 
@@ -1045,6 +1066,27 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Provisions a wireless gateway.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When provisioning a wireless gateway, you might run into duplication errors for the
+        /// following reasons.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you specify a <c>GatewayEui</c> value that already exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you used a <c>ClientRequestToken</c> with the same parameters within the last 10
+        /// minutes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To avoid this error, make sure that you use unique identifiers and parameters for
+        /// each request within the specified time period.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWirelessGateway service method.</param>
         /// <param name="cancellationToken">
@@ -1763,6 +1805,27 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Deletes a wireless gateway.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When deleting a wireless gateway, you might run into duplication errors for the following
+        /// reasons.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you specify a <c>GatewayEui</c> value that already exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you used a <c>ClientRequestToken</c> with the same parameters within the last 10
+        /// minutes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To avoid this error, make sure that you use unique identifiers and parameters for
+        /// each request within the specified time period.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWirelessGateway service method.</param>
         /// 
@@ -1789,6 +1852,27 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Deletes a wireless gateway.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When deleting a wireless gateway, you might run into duplication errors for the following
+        /// reasons.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you specify a <c>GatewayEui</c> value that already exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you used a <c>ClientRequestToken</c> with the same parameters within the last 10
+        /// minutes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To avoid this error, make sure that you use unique identifiers and parameters for
+        /// each request within the specified time period.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWirelessGateway service method.</param>
         /// <param name="cancellationToken">
@@ -2692,7 +2776,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Get the metric configuration status for this account.
+        /// Get the metric configuration status for this AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricConfiguration service method.</param>
         /// 
@@ -2721,7 +2805,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Get the metric configuration status for this account.
+        /// Get the metric configuration status for this AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2756,7 +2840,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Get metrics.
+        /// Get the summary metrics for this AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetrics service method.</param>
         /// 
@@ -2785,7 +2869,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Get metrics.
+        /// Get the summary metrics for this AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetrics service method.</param>
         /// <param name="cancellationToken">
@@ -6188,7 +6272,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Update the metric configuration.
+        /// Update the summary metric configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMetricConfiguration service method.</param>
         /// 
@@ -6217,7 +6301,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Update the metric configuration.
+        /// Update the summary metric configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMetricConfiguration service method.</param>
         /// <param name="cancellationToken">

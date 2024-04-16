@@ -38,7 +38,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property SummaryMetric. 
         /// <para>
-        /// The account's configuration status for summary metric aggregation.
+        /// The configuration status of the AWS account for summary metric aggregation.
         /// </para>
         /// </summary>
         public SummaryMetricConfiguration SummaryMetric

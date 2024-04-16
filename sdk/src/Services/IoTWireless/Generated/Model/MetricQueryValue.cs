@@ -43,7 +43,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Avg. 
         /// <para>
-        /// The average of the values of the all data points collected during the period.
+        /// The average of the values of all data points collected during the aggregation period.
         /// </para>
         /// </summary>
         public double Avg
@@ -61,7 +61,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Max. 
         /// <para>
-        /// The maximum of the values of the all data points collected during the period.
+        /// The maximum of the values of all the data points collected during the aggregation
+        /// period.
         /// </para>
         /// </summary>
         public double Max
@@ -79,7 +80,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Min. 
         /// <para>
-        /// The minimum of the values of the all data points collected during the period.
+        /// The minimum of the values of all data points collected during the aggregation period.
         /// </para>
         /// </summary>
         public double Min
@@ -97,7 +98,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property P90. 
         /// <para>
-        /// The 90th percentile of the values of the all data points collected during the period.
+        /// The 90th percentile of the values of all data points collected during the aggregation
+        /// period.
         /// </para>
         /// </summary>
         public double P90
@@ -115,7 +117,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Std. 
         /// <para>
-        /// The standard deviation of the values of the all data points collected during the period.
+        /// The standard deviation of the values of all data points collected during the aggregation
+        /// period.
         /// </para>
         /// </summary>
         public double Std
@@ -133,7 +136,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Sum. 
         /// <para>
-        /// The sum of the values of the all data points collected during the period.
+        /// The sum of the values of all data points collected during the aggregation period.
         /// </para>
         /// </summary>
         public double Sum

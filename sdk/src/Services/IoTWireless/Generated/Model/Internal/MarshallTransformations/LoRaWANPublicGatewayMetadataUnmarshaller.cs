@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LoRaWANDeviceMetadata Object
+    /// Response Unmarshaller for LoRaWANPublicGatewayMetadata Object
     /// </summary>  
-    public class LoRaWANDeviceMetadataUnmarshaller : IUnmarshaller<LoRaWANDeviceMetadata, XmlUnmarshallerContext>, IUnmarshaller<LoRaWANDeviceMetadata, JsonUnmarshallerContext>
+    public class LoRaWANPublicGatewayMetadataUnmarshaller : IUnmarshaller<LoRaWANPublicGatewayMetadata, XmlUnmarshallerContext>, IUnmarshaller<LoRaWANPublicGatewayMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LoRaWANDeviceMetadata IUnmarshaller<LoRaWANDeviceMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LoRaWANPublicGatewayMetadata IUnmarshaller<LoRaWANPublicGatewayMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public LoRaWANDeviceMetadata Unmarshall(JsonUnmarshallerContext context)
+        public LoRaWANPublicGatewayMetadata Unmarshall(JsonUnmarshallerContext context)
         {
-            LoRaWANDeviceMetadata unmarshalledObject = new LoRaWANDeviceMetadata();
+            LoRaWANPublicGatewayMetadata unmarshalledObject = new LoRaWANPublicGatewayMetadata();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,46 +64,40 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DataRate", targetDepth))
+                if (context.TestExpression("DlAllowed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.DataRate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DlAllowed = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DevEui", targetDepth))
+                if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DevEui = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FPort", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.FPort = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Frequency", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Frequency = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Gateways", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<LoRaWANGatewayMetadata, LoRaWANGatewayMetadataUnmarshaller>(LoRaWANGatewayMetadataUnmarshaller.Instance);
-                    unmarshalledObject.Gateways = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PublicGateways", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<LoRaWANPublicGatewayMetadata, LoRaWANPublicGatewayMetadataUnmarshaller>(LoRaWANPublicGatewayMetadataUnmarshaller.Instance);
-                    unmarshalledObject.PublicGateways = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("ProviderNetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProviderNetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RfRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RfRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Rssi", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Rssi = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Snr", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Snr = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -111,12 +105,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         }
 
 
-        private static LoRaWANDeviceMetadataUnmarshaller _instance = new LoRaWANDeviceMetadataUnmarshaller();        
+        private static LoRaWANPublicGatewayMetadataUnmarshaller _instance = new LoRaWANPublicGatewayMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LoRaWANDeviceMetadataUnmarshaller Instance
+        public static LoRaWANPublicGatewayMetadataUnmarshaller Instance
         {
             get
             {
