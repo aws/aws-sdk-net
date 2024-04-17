@@ -30,8 +30,8 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds the specified tag to the specified Amazon Q application or data source resource.
-    /// If the tag already exists, the existing value is replaced with the new value.
+    /// Adds the specified tag to the specified Amazon Q Business application or data source
+    /// resource. If the tag already exists, the existing value is replaced with the new value.
     /// </summary>
     public partial class TagResourceRequest : AmazonQBusinessRequest
     {
@@ -41,7 +41,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Q application or data source to tag.
+        /// The Amazon Resource Name (ARN) of the Amazon Q Business application or data source
+        /// to tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -60,8 +61,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tag keys to add to the Amazon Q application or data source. If a tag already
-        /// exists, the existing value is replaced with the new value.
+        /// A list of tag keys to add to the Amazon Q Business application or data source. If
+        /// a tag already exists, the existing value is replaced with the new value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

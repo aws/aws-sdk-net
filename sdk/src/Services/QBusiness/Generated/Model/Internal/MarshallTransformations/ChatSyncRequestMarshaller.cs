@@ -114,6 +114,23 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetChatMode())
+                {
+                    context.Writer.WritePropertyName("chatMode");
+                    context.Writer.Write(publicRequest.ChatMode);
+                }
+
+                if(publicRequest.IsSetChatModeConfiguration())
+                {
+                    context.Writer.WritePropertyName("chatModeConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ChatModeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ChatModeConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");

@@ -48,7 +48,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property InlineConfigurations. 
         /// <para>
         /// Configuration information to alter document attributes or metadata fields and content
-        /// when ingesting documents into Amazon Q.
+        /// when ingesting documents into Amazon Q Business.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

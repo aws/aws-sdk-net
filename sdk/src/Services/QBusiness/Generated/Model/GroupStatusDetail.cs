@@ -58,7 +58,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q application was last updated.
+        /// The Unix timestamp when the Amazon Q Business application was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt

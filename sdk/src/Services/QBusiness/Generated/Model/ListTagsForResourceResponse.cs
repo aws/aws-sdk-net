@@ -38,7 +38,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags associated with the Amazon Q application or data source.
+        /// A list of tags associated with the Amazon Q Business application or data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

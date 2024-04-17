@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ChatSync operation.
-    /// Starts or continues a non-streaming Amazon Q conversation.
+    /// Starts or continues a non-streaming Amazon Q Business conversation.
     /// </summary>
     public partial class ChatSyncRequest : AmazonQBusinessRequest
     {
@@ -38,6 +38,8 @@ namespace Amazon.QBusiness.Model
         private string _applicationId;
         private List<AttachmentInput> _attachments = AWSConfigs.InitializeCollections ? new List<AttachmentInput>() : null;
         private AttributeFilter _attributeFilter;
+        private ChatMode _chatMode;
+        private ChatModeConfiguration _chatModeConfiguration;
         private string _clientToken;
         private string _conversationId;
         private string _parentMessageId;
@@ -48,7 +50,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ActionExecution. 
         /// <para>
-        /// A request from an end user to perform an Amazon Q plugin action.
+        /// A request from an end user to perform an Amazon Q Business plugin action.
         /// </para>
         /// </summary>
         public ActionExecution ActionExecution
@@ -66,7 +68,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application linked to the Amazon Q conversation.
+        /// The identifier of the Amazon Q Business application linked to the Amazon Q Business
+        /// conversation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -105,8 +108,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property AttributeFilter. 
         /// <para>
-        /// Enables filtering of Amazon Q web experience responses based on document attributes
-        /// or metadata fields.
+        /// Enables filtering of Amazon Q Business web experience responses based on document
+        /// attributes or metadata fields.
         /// </para>
         /// </summary>
         public AttributeFilter AttributeFilter
@@ -119,6 +122,65 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetAttributeFilter()
         {
             return this._attributeFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChatMode. 
+        /// <para>
+        /// The chat modes available in an Amazon Q Business web experience.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RETRIEVAL_MODE</c> - The default chat mode for an Amazon Q Business application.
+        /// When this mode is enabled, Amazon Q Business generates responses only from data sources
+        /// connected to an Amazon Q Business application.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATOR_MODE</c> - By selecting this mode, users can choose to generate responses
+        /// only from the LLM knowledge, without consulting connected data sources, for a chat
+        /// request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PLUGIN_MODE</c> - By selecting this mode, users can choose to use plugins in chat.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin
+        /// controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>,
+        /// and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Conversation
+        /// settings</a>.
+        /// </para>
+        /// </summary>
+        public ChatMode ChatMode
+        {
+            get { return this._chatMode; }
+            set { this._chatMode = value; }
+        }
+
+        // Check to see if ChatMode property is set
+        internal bool IsSetChatMode()
+        {
+            return this._chatMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChatModeConfiguration. 
+        /// <para>
+        /// The chat mode configuration for an Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        public ChatModeConfiguration ChatModeConfiguration
+        {
+            get { return this._chatModeConfiguration; }
+            set { this._chatModeConfiguration = value; }
+        }
+
+        // Check to see if ChatModeConfiguration property is set
+        internal bool IsSetChatModeConfiguration()
+        {
+            return this._chatModeConfiguration != null;
         }
 
         /// <summary>
@@ -143,7 +205,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ConversationId. 
         /// <para>
-        /// The identifier of the Amazon Q conversation.
+        /// The identifier of the Amazon Q Business conversation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -202,7 +264,7 @@ namespace Amazon.QBusiness.Model
         /// The identifier of the user attached to the chat input.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string UserId
         {
             get { return this._userId; }

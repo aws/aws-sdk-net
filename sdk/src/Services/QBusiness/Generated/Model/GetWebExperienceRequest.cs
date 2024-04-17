@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetWebExperience operation.
-    /// Gets information about an existing Amazon Q web experience.
+    /// Gets information about an existing Amazon Q Business web experience.
     /// </summary>
     public partial class GetWebExperienceRequest : AmazonQBusinessRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application linked to the web experience.
+        /// The identifier of the Amazon Q Business application linked to the web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -59,7 +59,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property WebExperienceId. 
         /// <para>
-        /// The identifier of the Amazon Q web experience. 
+        /// The identifier of the Amazon Q Business web experience. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

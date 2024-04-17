@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-    /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+    /// An issue occurred with the internal server used for your Amazon Q Business service.
+    /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
     /// for help.
     /// </summary>
     #if !NETSTANDARD

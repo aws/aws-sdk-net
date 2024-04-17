@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataSource operation.
-    /// Updates an existing Amazon Q data source connector.
+    /// Updates an existing Amazon Q Business data source connector.
     /// </summary>
     public partial class UpdateDataSourceRequest : AmazonQBusinessRequest
     {
@@ -48,7 +48,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        ///  The identifier of the Amazon Q application the data source is attached to.
+        ///  The identifier of the Amazon Q Business application the data source is attached to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

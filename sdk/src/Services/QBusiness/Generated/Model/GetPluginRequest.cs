@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPlugin operation.
-    /// Gets information about an existing Amazon Q plugin.
+    /// Gets information about an existing Amazon Q Business plugin.
     /// </summary>
     public partial class GetPluginRequest : AmazonQBusinessRequest
     {

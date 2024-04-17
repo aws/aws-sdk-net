@@ -37,29 +37,29 @@ namespace Amazon.QBusiness
     /// </para>
     ///  </note> 
     /// <para>
-    /// This is the <i>Amazon Q (for business use)</i> API Reference. Amazon Q is a fully
-    /// managed, generative-AI powered enterprise chat assistant that you can deploy within
-    /// your organization. Amazon Q enhances employee productivity by supporting key tasks
-    /// such as question-answering, knowledge discovery, writing email messages, summarizing
-    /// text, drafting document outlines, and brainstorming ideas. Users ask questions of
-    /// Amazon Q and get answers that are presented in a conversational manner. For an introduction
-    /// to the service, see the <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/what-is.html">
-    /// <i>Amazon Q (for business use) Developer Guide</i> </a>.
+    /// This is the <i>Amazon Q Business</i> API Reference. Amazon Q Business is a fully managed,
+    /// generative-AI powered enterprise chat assistant that you can deploy within your organization.
+    /// Amazon Q Business enhances employee productivity by supporting key tasks such as question-answering,
+    /// knowledge discovery, writing email messages, summarizing text, drafting document outlines,
+    /// and brainstorming ideas. Users ask questions of Amazon Q Business and get answers
+    /// that are presented in a conversational manner. For an introduction to the service,
+    /// see the <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/what-is.html">
+    /// <i>Amazon Q Business User Guide</i> </a>.
     /// </para>
     ///  
     /// <para>
-    /// For an overview of the Amazon Q APIs, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/api-ref.html#api-overview">Overview
-    /// of Amazon Q API operations</a>.
+    /// For an overview of the Amazon Q Business APIs, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/api-ref.html#api-overview">Overview
+    /// of Amazon Q Business API operations</a>.
     /// </para>
     ///  
     /// <para>
     /// For information about the IAM access control permissions you need to use this API,
     /// see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html">IAM
-    /// roles for Amazon Q</a> in the <i>Amazon Q (for business use) Developer Guide</i>.
+    /// roles for Amazon Q Business</a> in the <i>Amazon Q Business User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// You can use the following AWS SDKs to access Amazon Q APIs:
+    /// You can use the following AWS SDKs to access Amazon Q Business APIs:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -92,17 +92,18 @@ namespace Amazon.QBusiness
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The following resources provide additional information about using the Amazon Q API:
+    /// The following resources provide additional information about using the Amazon Q Business
+    /// API:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <i> <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/setting-up.html">Setting
-    /// up for Amazon Q</a> </i> 
+    /// up for Amazon Q Business</a> </i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <i> <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/qbusiness/index.html">Amazon
-    /// Q CLI Reference</a> </i> 
+    /// Q Business CLI Reference</a> </i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -126,7 +127,7 @@ namespace Amazon.QBusiness
 
         /// <summary>
         /// Asynchronously deletes one or more documents added using the <c>BatchPutDocument</c>
-        /// API from an Amazon Q index.
+        /// API from an Amazon Q Business index.
         /// 
         ///  
         /// <para>
@@ -149,8 +150,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -161,8 +162,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/BatchDeleteDocument">REST API Reference for BatchDeleteDocument Operation</seealso>
         Task<BatchDeleteDocumentResponse> BatchDeleteDocumentAsync(BatchDeleteDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -174,7 +175,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Adds one or more documents to an Amazon Q index.
+        /// Adds one or more documents to an Amazon Q Business index.
         /// 
         ///  
         /// <para>
@@ -183,15 +184,15 @@ namespace Amazon.QBusiness
         ///  <ul> <li> 
         /// <para>
         /// ingest your structured and unstructured documents and documents stored in an Amazon
-        /// S3 bucket into an Amazon Q index.
+        /// S3 bucket into an Amazon Q Business index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// add custom attributes to documents in an Amazon Q index.
+        /// add custom attributes to documents in an Amazon Q Business index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// attach an access control list to the documents added to an Amazon Q index.
+        /// attach an access control list to the documents added to an Amazon Q Business index.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -214,8 +215,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -223,14 +224,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/BatchPutDocument">REST API Reference for BatchPutDocument Operation</seealso>
         Task<BatchPutDocumentResponse> BatchPutDocumentAsync(BatchPutDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -242,7 +243,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Starts or continues a non-streaming Amazon Q conversation.
+        /// Starts or continues a non-streaming Amazon Q Business conversation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChatSync service method.</param>
         /// <param name="cancellationToken">
@@ -259,8 +260,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
@@ -275,8 +276,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ChatSync">REST API Reference for ChatSync Operation</seealso>
         Task<ChatSyncResponse> ChatSyncAsync(ChatSyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -288,7 +289,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Creates an Amazon Q application.
+        /// Creates an Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// <param name="cancellationToken">
@@ -305,8 +306,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -314,14 +315,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -333,7 +334,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Creates a data source connector for an Amazon Q application.
+        /// Creates a data source connector for an Amazon Q Business application.
         /// 
         ///  
         /// <para>
@@ -356,8 +357,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -365,14 +366,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         Task<CreateDataSourceResponse> CreateDataSourceAsync(CreateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -384,7 +385,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Creates an Amazon Q index.
+        /// Creates an Amazon Q Business index.
         /// 
         ///  
         /// <para>
@@ -414,8 +415,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -423,14 +424,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -442,7 +443,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Creates an Amazon Q plugin.
+        /// Creates an Amazon Q Business plugin.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlugin service method.</param>
         /// <param name="cancellationToken">
@@ -459,8 +460,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -468,14 +469,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreatePlugin">REST API Reference for CreatePlugin Operation</seealso>
         Task<CreatePluginResponse> CreatePluginAsync(CreatePluginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -487,7 +488,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Adds a retriever to your Amazon Q application.
+        /// Adds a retriever to your Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRetriever service method.</param>
         /// <param name="cancellationToken">
@@ -504,8 +505,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -513,14 +514,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateRetriever">REST API Reference for CreateRetriever Operation</seealso>
         Task<CreateRetrieverResponse> CreateRetrieverAsync(CreateRetrieverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -550,8 +551,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -559,14 +560,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateUser">REST API Reference for CreateUser Operation</seealso>
         Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -578,7 +579,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Creates an Amazon Q web experience.
+        /// Creates an Amazon Q Business web experience.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebExperience service method.</param>
         /// <param name="cancellationToken">
@@ -595,8 +596,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -604,14 +605,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateWebExperience">REST API Reference for CreateWebExperience Operation</seealso>
         Task<CreateWebExperienceResponse> CreateWebExperienceAsync(CreateWebExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -623,7 +624,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Deletes an Amazon Q application.
+        /// Deletes an Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// <param name="cancellationToken">
@@ -640,8 +641,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -652,8 +653,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -665,7 +666,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Deletes chat controls configured for an existing Amazon Q application.
+        /// Deletes chat controls configured for an existing Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChatControlsConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -678,8 +679,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -690,8 +691,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteChatControlsConfiguration">REST API Reference for DeleteChatControlsConfiguration Operation</seealso>
         Task<DeleteChatControlsConfigurationResponse> DeleteChatControlsConfigurationAsync(DeleteChatControlsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -703,7 +704,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Deletes an Amazon Q web experience conversation.
+        /// Deletes an Amazon Q Business web experience conversation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConversation service method.</param>
         /// <param name="cancellationToken">
@@ -716,8 +717,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
@@ -732,8 +733,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteConversation">REST API Reference for DeleteConversation Operation</seealso>
         Task<DeleteConversationResponse> DeleteConversationAsync(DeleteConversationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -745,9 +746,9 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Deletes an Amazon Q data source connector. While the data source is being deleted,
-        /// the <c>Status</c> field returned by a call to the <c>DescribeDataSource</c> API is
-        /// set to <c>DELETING</c>.
+        /// Deletes an Amazon Q Business data source connector. While the data source is being
+        /// deleted, the <c>Status</c> field returned by a call to the <c>DescribeDataSource</c>
+        /// API is set to <c>DELETING</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -764,8 +765,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -776,8 +777,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -817,8 +818,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -829,8 +830,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -842,7 +843,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Deletes an Amazon Q index.
+        /// Deletes an Amazon Q Business index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
         /// <param name="cancellationToken">
@@ -859,8 +860,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -871,8 +872,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
         Task<DeleteIndexResponse> DeleteIndexAsync(DeleteIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -884,7 +885,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Deletes an Amazon Q plugin.
+        /// Deletes an Amazon Q Business plugin.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlugin service method.</param>
         /// <param name="cancellationToken">
@@ -901,8 +902,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -913,8 +914,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeletePlugin">REST API Reference for DeletePlugin Operation</seealso>
         Task<DeletePluginResponse> DeletePluginAsync(DeletePluginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -926,7 +927,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Deletes the retriever used by an Amazon Q application.
+        /// Deletes the retriever used by an Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRetriever service method.</param>
         /// <param name="cancellationToken">
@@ -943,8 +944,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -955,8 +956,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteRetriever">REST API Reference for DeleteRetriever Operation</seealso>
         Task<DeleteRetrieverResponse> DeleteRetrieverAsync(DeleteRetrieverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -985,8 +986,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -997,8 +998,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1010,7 +1011,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Deletes an Amazon Q web experience.
+        /// Deletes an Amazon Q Business web experience.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWebExperience service method.</param>
         /// <param name="cancellationToken">
@@ -1027,8 +1028,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1039,8 +1040,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteWebExperience">REST API Reference for DeleteWebExperience Operation</seealso>
         Task<DeleteWebExperienceResponse> DeleteWebExperienceAsync(DeleteWebExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1052,7 +1053,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Gets information about an existing Amazon Q application.
+        /// Gets information about an existing Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApplication service method.</param>
         /// <param name="cancellationToken">
@@ -1065,8 +1066,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1077,8 +1078,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetApplication">REST API Reference for GetApplication Operation</seealso>
         Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1090,7 +1091,8 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Gets information about an chat controls configured for an existing Amazon Q application.
+        /// Gets information about an chat controls configured for an existing Amazon Q Business
+        /// application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChatControlsConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1103,8 +1105,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1115,8 +1117,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetChatControlsConfiguration">REST API Reference for GetChatControlsConfiguration Operation</seealso>
         Task<GetChatControlsConfigurationResponse> GetChatControlsConfigurationAsync(GetChatControlsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1128,7 +1130,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Gets information about an existing Amazon Q data source connector.
+        /// Gets information about an existing Amazon Q Business data source connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -1141,8 +1143,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1153,8 +1155,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         Task<GetDataSourceResponse> GetDataSourceAsync(GetDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1183,8 +1185,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1195,8 +1197,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetGroup">REST API Reference for GetGroup Operation</seealso>
         Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1208,7 +1210,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Gets information about an existing Amazon Q index.
+        /// Gets information about an existing Amazon Q Business index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIndex service method.</param>
         /// <param name="cancellationToken">
@@ -1221,8 +1223,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1233,8 +1235,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetIndex">REST API Reference for GetIndex Operation</seealso>
         Task<GetIndexResponse> GetIndexAsync(GetIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1246,7 +1248,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Gets information about an existing Amazon Q plugin.
+        /// Gets information about an existing Amazon Q Business plugin.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlugin service method.</param>
         /// <param name="cancellationToken">
@@ -1259,8 +1261,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1271,8 +1273,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetPlugin">REST API Reference for GetPlugin Operation</seealso>
         Task<GetPluginResponse> GetPluginAsync(GetPluginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1284,7 +1286,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Gets information about an existing retriever used by an Amazon Q application.
+        /// Gets information about an existing retriever used by an Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRetriever service method.</param>
         /// <param name="cancellationToken">
@@ -1297,8 +1299,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1309,8 +1311,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetRetriever">REST API Reference for GetRetriever Operation</seealso>
         Task<GetRetrieverResponse> GetRetrieverAsync(GetRetrieverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1340,8 +1342,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1352,8 +1354,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetUser">REST API Reference for GetUser Operation</seealso>
         Task<GetUserResponse> GetUserAsync(GetUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1365,7 +1367,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Gets information about an existing Amazon Q web experience.
+        /// Gets information about an existing Amazon Q Business web experience.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWebExperience service method.</param>
         /// <param name="cancellationToken">
@@ -1378,8 +1380,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1390,8 +1392,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetWebExperience">REST API Reference for GetWebExperience Operation</seealso>
         Task<GetWebExperienceResponse> GetWebExperienceAsync(GetWebExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1403,7 +1405,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Lists Amazon Q applications.
+        /// Lists Amazon Q Business applications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// <param name="cancellationToken">
@@ -1416,16 +1418,16 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListApplications">REST API Reference for ListApplications Operation</seealso>
         Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1437,7 +1439,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Lists one or more Amazon Q conversations.
+        /// Lists one or more Amazon Q Business conversations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConversations service method.</param>
         /// <param name="cancellationToken">
@@ -1450,8 +1452,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
@@ -1466,8 +1468,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListConversations">REST API Reference for ListConversations Operation</seealso>
         Task<ListConversationsResponse> ListConversationsAsync(ListConversationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1479,7 +1481,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Lists the Amazon Q data source connectors that you have created.
+        /// Lists the Amazon Q Business data source connectors that you have created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSources service method.</param>
         /// <param name="cancellationToken">
@@ -1492,8 +1494,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1504,8 +1506,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         Task<ListDataSourcesResponse> ListDataSourcesAsync(ListDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1517,7 +1519,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Get information about an Amazon Q data source connector synchronization.
+        /// Get information about an Amazon Q Business data source connector synchronization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSourceSyncJobs service method.</param>
         /// <param name="cancellationToken">
@@ -1530,8 +1532,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1542,8 +1544,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDataSourceSyncJobs">REST API Reference for ListDataSourceSyncJobs Operation</seealso>
         Task<ListDataSourceSyncJobsResponse> ListDataSourceSyncJobsAsync(ListDataSourceSyncJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1568,8 +1570,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1580,8 +1582,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         Task<ListDocumentsResponse> ListDocumentsAsync(ListDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1610,8 +1612,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1622,8 +1624,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListGroups">REST API Reference for ListGroups Operation</seealso>
         Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1635,7 +1637,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Lists the Amazon Q indices you have created.
+        /// Lists the Amazon Q Business indices you have created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIndices service method.</param>
         /// <param name="cancellationToken">
@@ -1648,8 +1650,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1660,8 +1662,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListIndices">REST API Reference for ListIndices Operation</seealso>
         Task<ListIndicesResponse> ListIndicesAsync(ListIndicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1673,7 +1675,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Gets a list of messages associated with an Amazon Q web experience.
+        /// Gets a list of messages associated with an Amazon Q Business web experience.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMessages service method.</param>
         /// <param name="cancellationToken">
@@ -1686,8 +1688,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
@@ -1702,8 +1704,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListMessages">REST API Reference for ListMessages Operation</seealso>
         Task<ListMessagesResponse> ListMessagesAsync(ListMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1715,7 +1717,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Lists configured Amazon Q plugins.
+        /// Lists configured Amazon Q Business plugins.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlugins service method.</param>
         /// <param name="cancellationToken">
@@ -1728,8 +1730,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1740,8 +1742,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPlugins">REST API Reference for ListPlugins Operation</seealso>
         Task<ListPluginsResponse> ListPluginsAsync(ListPluginsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1753,7 +1755,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Lists the retriever used by an Amazon Q application.
+        /// Lists the retriever used by an Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRetrievers service method.</param>
         /// <param name="cancellationToken">
@@ -1766,8 +1768,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1778,8 +1780,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListRetrievers">REST API Reference for ListRetrievers Operation</seealso>
         Task<ListRetrieversResponse> ListRetrieversAsync(ListRetrieversRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1791,8 +1793,8 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Gets a list of tags associated with a specified resource. Amazon Q applications and
-        /// data sources can have tags associated with them.
+        /// Gets a list of tags associated with a specified resource. Amazon Q Business applications
+        /// and data sources can have tags associated with them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1805,8 +1807,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1817,8 +1819,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1830,7 +1832,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Lists one or more Amazon Q Web Experiences.
+        /// Lists one or more Amazon Q Business Web Experiences.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWebExperiences service method.</param>
         /// <param name="cancellationToken">
@@ -1843,8 +1845,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1855,8 +1857,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListWebExperiences">REST API Reference for ListWebExperiences Operation</seealso>
         Task<ListWebExperiencesResponse> ListWebExperiencesAsync(ListWebExperiencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1868,7 +1870,8 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Enables your end user to to provide feedback on their Amazon Q generated chat responses.
+        /// Enables your end user to provide feedback on their Amazon Q Business generated chat
+        /// responses.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutFeedback service method.</param>
         /// <param name="cancellationToken">
@@ -1881,8 +1884,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1893,8 +1896,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
         Task<PutFeedbackResponse> PutFeedbackAsync(PutFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1914,7 +1917,7 @@ namespace Amazon.QBusiness
         /// Property Teams" includes sub groups "Research" and "Engineering". These sub groups
         /// include their own list of users or people who work in these teams. Only users who
         /// work in research and engineering, and therefore belong in the intellectual property
-        /// group, can see top-secret company documents in their Amazon Q chat results.
+        /// group, can see top-secret company documents in their Amazon Q Business chat results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutGroup service method.</param>
@@ -1932,8 +1935,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1941,14 +1944,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/PutGroup">REST API Reference for PutGroup Operation</seealso>
         Task<PutGroupResponse> PutGroupAsync(PutGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1961,7 +1964,7 @@ namespace Amazon.QBusiness
 
         /// <summary>
         /// Starts a data source connector synchronization job. If a synchronization job is already
-        /// in progress, Amazon Q returns a <c>ConflictException</c>.
+        /// in progress, Amazon Q Business returns a <c>ConflictException</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDataSourceSyncJob service method.</param>
         /// <param name="cancellationToken">
@@ -1978,8 +1981,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -1987,14 +1990,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/StartDataSourceSyncJob">REST API Reference for StartDataSourceSyncJob Operation</seealso>
         Task<StartDataSourceSyncJobResponse> StartDataSourceSyncJobAsync(StartDataSourceSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2006,7 +2009,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Stops an Amazon Q data source connector synchronization job already in progress.
+        /// Stops an Amazon Q Business data source connector synchronization job already in progress.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopDataSourceSyncJob service method.</param>
         /// <param name="cancellationToken">
@@ -2019,8 +2022,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -2031,8 +2034,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/StopDataSourceSyncJob">REST API Reference for StopDataSourceSyncJob Operation</seealso>
         Task<StopDataSourceSyncJobResponse> StopDataSourceSyncJobAsync(StopDataSourceSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2044,8 +2047,8 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Adds the specified tag to the specified Amazon Q application or data source resource.
-        /// If the tag already exists, the existing value is replaced with the new value.
+        /// Adds the specified tag to the specified Amazon Q Business application or data source
+        /// resource. If the tag already exists, the existing value is replaced with the new value.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2062,8 +2065,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -2074,8 +2077,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2087,7 +2090,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Removes a tag from an Amazon Q application or a data source.
+        /// Removes a tag from an Amazon Q Business application or a data source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2100,8 +2103,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -2112,8 +2115,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2125,7 +2128,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Updates an existing Amazon Q application.
+        /// Updates an existing Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// <param name="cancellationToken">
@@ -2142,8 +2145,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -2154,8 +2157,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2167,7 +2170,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Updates an set of chat controls configured for an existing Amazon Q application.
+        /// Updates an set of chat controls configured for an existing Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChatControlsConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2184,8 +2187,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -2193,14 +2196,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateChatControlsConfiguration">REST API Reference for UpdateChatControlsConfiguration Operation</seealso>
         Task<UpdateChatControlsConfigurationResponse> UpdateChatControlsConfigurationAsync(UpdateChatControlsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2212,7 +2215,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Updates an existing Amazon Q data source connector.
+        /// Updates an existing Amazon Q Business data source connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -2229,8 +2232,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -2241,8 +2244,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2254,7 +2257,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Updates an Amazon Q index.
+        /// Updates an Amazon Q Business index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIndex service method.</param>
         /// <param name="cancellationToken">
@@ -2271,8 +2274,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -2280,14 +2283,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
         Task<UpdateIndexResponse> UpdateIndexAsync(UpdateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2299,7 +2302,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Updates an Amazon Q plugin.
+        /// Updates an Amazon Q Business plugin.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePlugin service method.</param>
         /// <param name="cancellationToken">
@@ -2316,8 +2319,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -2325,14 +2328,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdatePlugin">REST API Reference for UpdatePlugin Operation</seealso>
         Task<UpdatePluginResponse> UpdatePluginAsync(UpdatePluginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2344,7 +2347,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Updates the retriever used for your Amazon Q application.
+        /// Updates the retriever used for your Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRetriever service method.</param>
         /// <param name="cancellationToken">
@@ -2361,8 +2364,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -2370,14 +2373,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateRetriever">REST API Reference for UpdateRetriever Operation</seealso>
         Task<UpdateRetrieverResponse> UpdateRetrieverAsync(UpdateRetrieverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2402,8 +2405,8 @@ namespace Amazon.QBusiness
         /// policies and user accounts and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -2411,14 +2414,14 @@ namespace Amazon.QBusiness
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Q service.
+        /// You have exceeded the set limits for your Amazon Q Business service.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2430,7 +2433,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Updates an Amazon Q web experience.
+        /// Updates an Amazon Q Business web experience.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebExperience service method.</param>
         /// <param name="cancellationToken">
@@ -2447,8 +2450,8 @@ namespace Amazon.QBusiness
         /// resource. Fix any inconsistences with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
-        /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-        /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
@@ -2459,8 +2462,8 @@ namespace Amazon.QBusiness
         /// The request was denied due to throttling. Reduce the number of requests and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ValidationException">
-        /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-        /// input and try again.
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateWebExperience">REST API Reference for UpdateWebExperience Operation</seealso>
         Task<UpdateWebExperienceResponse> UpdateWebExperienceAsync(UpdateWebExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

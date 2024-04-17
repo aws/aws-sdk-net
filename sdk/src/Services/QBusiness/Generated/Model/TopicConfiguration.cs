@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// The topic specific controls configured for an Amazon Q application.
+    /// The topic specific controls configured for an Amazon Q Business application.
     /// </summary>
     public partial class TopicConfiguration
     {

@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ListApplications operation.
-    /// Lists Amazon Q applications.
+    /// Lists Amazon Q Business applications.
     /// </summary>
     public partial class ListApplicationsRequest : AmazonQBusinessRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of Amazon Q applications to return.
+        /// The maximum number of Amazon Q Business applications to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -60,8 +60,8 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the <c>maxResults</c> response was incomplete because there is more data to retrieve,
-        /// Amazon Q returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of Amazon Q applications.
+        /// Amazon Q Business returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of Amazon Q Business applications.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

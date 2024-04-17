@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataSource operation.
-    /// Creates a data source connector for an Amazon Q application.
+    /// Creates a data source connector for an Amazon Q Business application.
     /// 
     ///  
     /// <para>
@@ -55,7 +55,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        ///  The identifier of the Amazon Q application the data source will be attached to.
+        ///  The identifier of the Amazon Q Business application the data source will be attached
+        /// to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -96,7 +97,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property Configuration. 
         /// <para>
         /// Configuration information to connect to your data source repository. For configuration
-        /// templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html.html">Supported
+        /// templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported
         /// connectors</a>.
         /// </para>
         /// </summary>
@@ -208,9 +209,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property SyncSchedule. 
         /// <para>
-        /// Sets the frequency for Amazon Q to check the documents in your data source repository
-        /// and update your index. If you don't set a schedule, Amazon Q won't periodically update
-        /// the index.
+        /// Sets the frequency for Amazon Q Business to check the documents in your data source
+        /// repository and update your index. If you don't set a schedule, Amazon Q Business won't
+        /// periodically update the index.
         /// </para>
         ///  
         /// <para>
@@ -260,7 +261,7 @@ namespace Amazon.QBusiness.Model
         /// <para>
         /// Configuration information for an Amazon VPC (Virtual Private Cloud) to connect to
         /// your data source. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using
-        /// Amazon VPC with Amazon Q connectors</a>.
+        /// Amazon VPC with Amazon Q Business connectors</a>.
         /// </para>
         /// </summary>
         public DataSourceVpcConfiguration VpcConfiguration

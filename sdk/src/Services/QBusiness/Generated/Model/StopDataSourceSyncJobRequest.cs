@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the StopDataSourceSyncJob operation.
-    /// Stops an Amazon Q data source connector synchronization job already in progress.
+    /// Stops an Amazon Q Business data source connector synchronization job already in progress.
     /// </summary>
     public partial class StopDataSourceSyncJobRequest : AmazonQBusinessRequest
     {
@@ -41,7 +41,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application that the data source is connected to.
+        /// The identifier of the Amazon Q Business application that the data source is connected
+        /// to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -79,7 +80,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index used with the Amazon Q data source connector.
+        /// The identifier of the index used with the Amazon Q Business data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

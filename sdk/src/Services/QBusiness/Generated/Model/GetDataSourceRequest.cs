@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDataSource operation.
-    /// Gets information about an existing Amazon Q data source connector.
+    /// Gets information about an existing Amazon Q Business data source connector.
     /// </summary>
     public partial class GetDataSourceRequest : AmazonQBusinessRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application.
+        /// The identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

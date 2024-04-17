@@ -49,7 +49,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application associated with the index.
+        /// The identifier of the Amazon Q Business application associated with the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -68,7 +68,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property CapacityConfiguration. 
         /// <para>
-        /// The storage capacity units chosen for your Amazon Q index.
+        /// The storage capacity units chosen for your Amazon Q Business index.
         /// </para>
         /// </summary>
         public IndexCapacityConfiguration CapacityConfiguration
@@ -86,7 +86,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q index was created.
+        /// The Unix timestamp when the Amazon Q Business index was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -104,7 +104,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for the Amazon Q index.
+        /// The description for the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -123,7 +123,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the Amazon Q index.
+        /// The name of the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -183,7 +183,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the Amazon Q index. 
+        ///  The Amazon Resource Name (ARN) of the Amazon Q Business index. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -202,7 +202,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the Amazon Q index.
+        /// The identifier of the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -259,7 +259,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q index was last updated.
+        /// The Unix timestamp when the Amazon Q Business index was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

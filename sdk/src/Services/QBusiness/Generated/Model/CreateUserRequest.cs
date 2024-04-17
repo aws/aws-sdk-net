@@ -62,7 +62,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token that you provide to identify the request to create your Amazon Q user mapping.
+        /// A token that you provide to identify the request to create your Amazon Q Business
+        /// user mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

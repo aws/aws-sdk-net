@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Aliases attached to a user id within an Amazon Q application.
+    /// Aliases attached to a user id within an Amazon Q Business application.
     /// </summary>
     public partial class UserAlias
     {

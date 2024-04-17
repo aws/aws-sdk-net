@@ -349,6 +349,60 @@ namespace Amazon.QBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type ChatMode.
+    /// </summary>
+    public class ChatMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATOR_MODE for ChatMode
+        /// </summary>
+        public static readonly ChatMode CREATOR_MODE = new ChatMode("CREATOR_MODE");
+        /// <summary>
+        /// Constant PLUGIN_MODE for ChatMode
+        /// </summary>
+        public static readonly ChatMode PLUGIN_MODE = new ChatMode("PLUGIN_MODE");
+        /// <summary>
+        /// Constant RETRIEVAL_MODE for ChatMode
+        /// </summary>
+        public static readonly ChatMode RETRIEVAL_MODE = new ChatMode("RETRIEVAL_MODE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChatMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChatMode FindValue(string value)
+        {
+            return FindValue<ChatMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChatMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContentType.
     /// </summary>
     public class ContentType : ConstantClass
@@ -432,6 +486,56 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CreatorModeControl.
+    /// </summary>
+    public class CreatorModeControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CreatorModeControl
+        /// </summary>
+        public static readonly CreatorModeControl DISABLED = new CreatorModeControl("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CreatorModeControl
+        /// </summary>
+        public static readonly CreatorModeControl ENABLED = new CreatorModeControl("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CreatorModeControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CreatorModeControl FindValue(string value)
+        {
+            return FindValue<CreatorModeControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CreatorModeControl(string value)
         {
             return FindValue(value);
         }

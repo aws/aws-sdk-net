@@ -80,6 +80,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("roleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
+                }
+
                 if(publicRequest.IsSetSamplePromptsControlMode())
                 {
                     context.Writer.WritePropertyName("samplePromptsControlMode");

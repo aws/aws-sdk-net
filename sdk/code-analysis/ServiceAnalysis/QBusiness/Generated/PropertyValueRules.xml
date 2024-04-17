@@ -117,6 +117,12 @@
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.CreateApplicationRequest.IdentityCenterInstanceArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateApplicationRequest.RoleArn</property>
     <min>0</min>
     <max>1284</max>
@@ -320,6 +326,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.CreateWebExperienceRequest.RoleArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateWebExperienceRequest.Subtitle</property>
     <min>0</min>
     <max>500</max>
@@ -508,6 +520,12 @@
     <min>1</min>
     <max>1000</max>
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.GetApplicationResponse.IdentityCenterApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetApplicationResponse.RoleArn</property>
@@ -791,6 +809,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^(https?|ftp|file)://([^\s]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.GetWebExperienceResponse.RoleArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetWebExperienceResponse.Subtitle</property>
@@ -1740,6 +1764,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^(https?|ftp|file)://([^\s]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.PluginConfiguration.PluginId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.PrincipalGroup.Name</property>

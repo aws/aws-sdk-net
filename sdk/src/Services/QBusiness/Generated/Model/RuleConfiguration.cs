@@ -39,7 +39,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ContentBlockerRule. 
         /// <para>
-        /// A rule for configuring how Amazon Q responds when it encounters a a blocked topic.
+        /// A rule for configuring how Amazon Q Business responds when it encounters a a blocked
+        /// topic.
         /// </para>
         /// </summary>
         public ContentBlockerRule ContentBlockerRule

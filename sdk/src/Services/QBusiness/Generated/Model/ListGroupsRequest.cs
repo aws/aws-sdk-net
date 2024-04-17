@@ -121,8 +121,8 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Q returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of groups that are mapped to users.
+        /// Amazon Q Business returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of groups that are mapped to users.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

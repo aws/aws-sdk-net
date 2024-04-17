@@ -30,13 +30,14 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateChatControlsConfiguration operation.
-    /// Updates an set of chat controls configured for an existing Amazon Q application.
+    /// Updates an set of chat controls configured for an existing Amazon Q Business application.
     /// </summary>
     public partial class UpdateChatControlsConfigurationRequest : AmazonQBusinessRequest
     {
         private string _applicationId;
         private BlockedPhrasesConfigurationUpdate _blockedPhrasesConfigurationUpdate;
         private string _clientToken;
+        private CreatorModeConfiguration _creatorModeConfiguration;
         private ResponseScope _responseScope;
         private List<TopicConfiguration> _topicConfigurationsToCreateOrUpdate = AWSConfigs.InitializeCollections ? new List<TopicConfiguration>() : null;
         private List<TopicConfiguration> _topicConfigurationsToDelete = AWSConfigs.InitializeCollections ? new List<TopicConfiguration>() : null;
@@ -81,7 +82,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token that you provide to identify the request to update a Amazon Q application
+        /// A token that you provide to identify the request to update a Amazon Q Business application
         /// chat configuration.
         /// </para>
         /// </summary>
@@ -96,6 +97,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatorModeConfiguration. 
+        /// <para>
+        /// The configuration details for <c>CREATOR_MODE</c>.
+        /// </para>
+        /// </summary>
+        public CreatorModeConfiguration CreatorModeConfiguration
+        {
+            get { return this._creatorModeConfiguration; }
+            set { this._creatorModeConfiguration = value; }
+        }
+
+        // Check to see if CreatorModeConfiguration property is set
+        internal bool IsSetCreatorModeConfiguration()
+        {
+            return this._creatorModeConfiguration != null;
         }
 
         /// <summary>

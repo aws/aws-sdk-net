@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Updates a blocked phrases configuration in your Amazon Q application.
+    /// Updates a blocked phrases configuration in your Amazon Q Business application.
     /// </summary>
     public partial class BlockedPhrasesConfigurationUpdate
     {
@@ -40,7 +40,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property BlockedPhrasesToCreateOrUpdate. 
         /// <para>
-        /// Creates or updates a blocked phrases configuration in your Amazon Q application.
+        /// Creates or updates a blocked phrases configuration in your Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -59,7 +59,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property BlockedPhrasesToDelete. 
         /// <para>
-        /// Deletes a blocked phrases configuration in your Amazon Q application.
+        /// Deletes a blocked phrases configuration in your Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

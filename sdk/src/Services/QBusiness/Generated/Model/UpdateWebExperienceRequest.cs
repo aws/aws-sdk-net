@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWebExperience operation.
-    /// Updates an Amazon Q web experience.
+    /// Updates an Amazon Q Business web experience.
     /// </summary>
     public partial class UpdateWebExperienceRequest : AmazonQBusinessRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application attached to the web experience.
+        /// The identifier of the Amazon Q Business application attached to the web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -64,7 +64,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property AuthenticationConfiguration. 
         /// <para>
-        /// The authentication configuration of the Amazon Q web experience.
+        /// The authentication configuration of the Amazon Q Business web experience.
         /// </para>
         /// </summary>
         public WebExperienceAuthConfiguration AuthenticationConfiguration
@@ -100,7 +100,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Subtitle. 
         /// <para>
-        /// The subtitle of the Amazon Q web experience.
+        /// The subtitle of the Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -119,7 +119,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The title of the Amazon Q web experience.
+        /// The title of the Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -138,7 +138,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property WebExperienceId. 
         /// <para>
-        /// The identifier of the Amazon Q web experience.
+        /// The identifier of the Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -157,7 +157,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property WelcomeMessage. 
         /// <para>
-        /// A customized welcome message for an end user in an Amazon Q web experience.
+        /// A customized welcome message for an end user in an Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]

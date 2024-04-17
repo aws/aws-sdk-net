@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Information about the field values that an end user can use to provide to Amazon Q
-    /// for Amazon Q to perform the requested plugin action.
+    /// Business for Amazon Q Business to perform the requested plugin action.
     /// </summary>
     public partial class ActionReviewPayloadFieldAllowedValue
     {

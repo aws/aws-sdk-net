@@ -41,8 +41,8 @@ namespace Amazon.QBusiness.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information on how boosting document attributes work in Amazon Q, see <a
-    /// href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting
+    /// For more information on how boosting document attributes work in Amazon Q Business,
+    /// see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting
     /// using document attributes</a>.
     /// </para>
     /// </summary>
