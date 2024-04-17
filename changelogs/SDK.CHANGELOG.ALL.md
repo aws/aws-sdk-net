@@ -1,3 +1,12 @@
+### 3.7.791.0 (2024-04-17 18:34 UTC)
+* EC2 (3.7.323.0)
+	* Documentation updates for Elastic Compute Cloud (EC2).
+* QBusiness (3.7.302.0)
+	* This release adds support for IAM Identity Center (IDC) as the identity gateway for Q Business. It also allows users to provide an explicit intent for Q Business to identify how the Chat request should be handled.
+* Core 3.7.303.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.790.0 (2024-04-16 18:29 UTC)
 * BedrockAgent (3.7.304.0)
 	* For Create Agent API, the agentResourceRoleArn parameter is no longer required.
