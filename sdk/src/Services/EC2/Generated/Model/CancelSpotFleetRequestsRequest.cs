@@ -44,6 +44,16 @@ namespace Amazon.EC2.Model
     /// and the instances continue to run until they are interrupted or you terminate them
     /// manually.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Restrictions</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You can delete up to 100 fleets in a single request. If you exceed the specified number,
+    /// no fleets are deleted.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CancelSpotFleetRequestsRequest : AmazonEC2Request
     {
@@ -54,6 +64,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SpotFleetRequestIds. 
         /// <para>
         /// The IDs of the Spot Fleet requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraint: You can specify up to 100 IDs in a single request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

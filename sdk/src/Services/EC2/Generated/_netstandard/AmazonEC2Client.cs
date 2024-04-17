@@ -2537,6 +2537,16 @@ namespace Amazon.EC2
         /// and the instances continue to run until they are interrupted or you terminate them
         /// manually.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Restrictions</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can delete up to 100 fleets in a single request. If you exceed the specified number,
+        /// no fleets are deleted.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests service method.</param>
         /// <param name="cancellationToken">
@@ -6942,7 +6952,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For <c>instant</c> fleets, EC2 Fleet must terminate the instances when the fleet is
-        /// deleted. A deleted <c>instant</c> fleet with running instances is not supported.
+        /// deleted. Up to 1000 instances can be terminated in a single request to delete <c>instant</c>
+        /// fleets. A deleted <c>instant</c> fleet with running instances is not supported.
         /// </para>
         ///  
         /// <para>
@@ -6950,15 +6961,21 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can delete up to 25 <c>instant</c> fleets in a single request. If you exceed this
-        /// number, no <c>instant</c> fleets are deleted and an error is returned. There is no
-        /// restriction on the number of fleets of type <c>maintain</c> or <c>request</c> that
-        /// can be deleted in a single request.
+        /// You can delete up to 25 fleets of type <c>instant</c> in a single request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Up to 1000 instances can be terminated in a single request to delete <c>instant</c>
-        /// fleets.
+        /// You can delete up to 100 fleets of type <c>maintain</c> or <c>request</c> in a single
+        /// request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can delete up to 125 fleets in a single request, provided you do not exceed the
+        /// quota for each fleet type, as specified above.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you exceed the specified number of fleets to delete, no fleets are deleted.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -12346,9 +12363,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Returns a list of all instance types offered. The results can be filtered by location
-        /// (Region or Availability Zone). If no location is specified, the instance types offered
-        /// in the current Region are returned.
+        /// Lists the instance types that are offered for the specified location. If no location
+        /// is specified, the default is to list the instance types that are offered in the current
+        /// Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypeOfferings service method.</param>
         /// <param name="cancellationToken">
@@ -12382,8 +12399,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the details of the instance types that are offered in a location. The results
-        /// can be filtered by the attributes of the instance types.
+        /// Describes the specified instance types. By default, all instance types for the current
+        /// Region are described. Alternatively, you can filter the results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes service method.</param>
         /// <param name="cancellationToken">
@@ -19525,6 +19542,11 @@ namespace Amazon.EC2
         /// <para>
         /// The returned content is Base64-encoded.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/troubleshoot-unreachable-instance.html#instance-console-console-output">Instance
+        /// console output</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleScreenshot service method.</param>
         /// <param name="cancellationToken">
@@ -22461,8 +22483,9 @@ namespace Amazon.EC2
         ///  <note> 
         /// <para>
         /// To remove a parameter's account-level default setting, specify <c>no-preference</c>.
-        /// At instance launch, the value will come from the AMI, or from the launch parameter
-        /// if specified. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+        /// If an account-level setting is cleared with <c>no-preference</c>, then the instance
+        /// launch considers the other instance metadata settings. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
         /// of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>

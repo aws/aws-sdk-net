@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceTypeOfferings. 
         /// <para>
-        /// The instance types offered.
+        /// The instance types offered in the location.
         /// </para>
         /// </summary>
         public List<InstanceTypeOffering> InstanceTypeOfferings
