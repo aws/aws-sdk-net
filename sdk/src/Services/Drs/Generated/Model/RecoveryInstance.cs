@@ -46,6 +46,7 @@ namespace Amazon.Drs.Model
         private string _pointInTimeSnapshotDateTime;
         private string _recoveryInstanceID;
         private RecoveryInstanceProperties _recoveryInstanceProperties;
+        private string _sourceOutpostArn;
         private string _sourceServerID;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -289,6 +290,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetRecoveryInstanceProperties()
         {
             return this._recoveryInstanceProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceOutpostArn. 
+        /// <para>
+        /// The ARN of the source Outpost
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=255)]
+        public string SourceOutpostArn
+        {
+            get { return this._sourceOutpostArn; }
+            set { this._sourceOutpostArn = value; }
+        }
+
+        // Check to see if SourceOutpostArn property is set
+        internal bool IsSetSourceOutpostArn()
+        {
+            return this._sourceOutpostArn != null;
         }
 
         /// <summary>
