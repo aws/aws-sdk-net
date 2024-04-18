@@ -46,6 +46,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DifferentialPrivacyPreviewParametersInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEpsilon())
             {
                 context.Writer.WritePropertyName("epsilon");

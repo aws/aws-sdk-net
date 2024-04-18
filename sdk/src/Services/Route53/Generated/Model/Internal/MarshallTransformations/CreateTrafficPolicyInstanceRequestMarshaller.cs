@@ -62,21 +62,21 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateTrafficPolicyInstanceRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
+                xmlWriter.WriteStartElement("CreateTrafficPolicyInstanceRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetHostedZoneId())
-                    xmlWriter.WriteElementString("HostedZoneId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HostedZoneId));                    
+                    xmlWriter.WriteElementString("HostedZoneId", StringUtils.FromString(publicRequest.HostedZoneId));
 
                 if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Name));                    
+                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
                 if(publicRequest.IsSetTTL())
-                    xmlWriter.WriteElementString("TTL", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequest.TTL));                    
+                    xmlWriter.WriteElementString("TTL", StringUtils.FromLong(publicRequest.TTL));
 
                 if(publicRequest.IsSetTrafficPolicyId())
-                    xmlWriter.WriteElementString("TrafficPolicyId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.TrafficPolicyId));                    
+                    xmlWriter.WriteElementString("TrafficPolicyId", StringUtils.FromString(publicRequest.TrafficPolicyId));
 
                 if(publicRequest.IsSetTrafficPolicyVersion())
-                    xmlWriter.WriteElementString("TrafficPolicyVersion", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.TrafficPolicyVersion));                    
+                    xmlWriter.WriteElementString("TrafficPolicyVersion", StringUtils.FromInt(publicRequest.TrafficPolicyVersion));
 
 
                 xmlWriter.WriteEndElement();

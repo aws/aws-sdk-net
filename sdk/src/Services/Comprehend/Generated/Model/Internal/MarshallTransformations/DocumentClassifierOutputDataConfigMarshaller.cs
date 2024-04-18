@@ -46,6 +46,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DocumentClassifierOutputDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFlywheelStatsS3Prefix())
             {
                 context.Writer.WritePropertyName("FlywheelStatsS3Prefix");

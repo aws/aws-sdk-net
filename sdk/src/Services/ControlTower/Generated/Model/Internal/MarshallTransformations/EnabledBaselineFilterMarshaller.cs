@@ -46,6 +46,8 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EnabledBaselineFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBaselineIdentifiers())
             {
                 context.Writer.WritePropertyName("baselineIdentifiers");

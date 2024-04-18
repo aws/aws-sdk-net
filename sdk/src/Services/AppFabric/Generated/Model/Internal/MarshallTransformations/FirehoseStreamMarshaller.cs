@@ -46,6 +46,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FirehoseStream requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStreamName())
             {
                 context.Writer.WritePropertyName("streamName");

@@ -66,6 +66,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetQualityFilter())
@@ -77,7 +78,14 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSimilarityThreshold())
                 {
                     context.Writer.WritePropertyName("SimilarityThreshold");
-                    context.Writer.Write(publicRequest.SimilarityThreshold);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.SimilarityThreshold))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.SimilarityThreshold));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.SimilarityThreshold);
+                    }
                 }
 
                 if(publicRequest.IsSetSourceImage())

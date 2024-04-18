@@ -46,6 +46,8 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SOAChange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTTL())
             {
                 context.Writer.WritePropertyName("TTL");

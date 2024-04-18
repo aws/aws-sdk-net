@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSetUsageConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDisableUseAsDirectQuerySource())
             {
                 context.Writer.WritePropertyName("DisableUseAsDirectQuerySource");

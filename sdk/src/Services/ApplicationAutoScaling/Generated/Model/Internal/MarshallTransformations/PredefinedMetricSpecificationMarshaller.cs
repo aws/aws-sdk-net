@@ -46,6 +46,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PredefinedMetricSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPredefinedMetricType())
             {
                 context.Writer.WritePropertyName("PredefinedMetricType");

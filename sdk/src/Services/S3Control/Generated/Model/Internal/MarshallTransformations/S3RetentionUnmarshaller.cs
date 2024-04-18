@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3Retention Object
     /// </summary>  
-    public class S3RetentionUnmarshaller : IUnmarshaller<S3Retention, XmlUnmarshallerContext>
+    public class S3RetentionUnmarshaller : IUnmarshaller<S3Retention, XmlUnmarshallerContext>, IUnmarshaller<S3Retention, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,6 +75,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public S3Retention Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static S3RetentionUnmarshaller _instance = new S3RetentionUnmarshaller();        

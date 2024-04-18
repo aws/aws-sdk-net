@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CapacityProviderStrategyItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBase())
             {
                 context.Writer.WritePropertyName("base");

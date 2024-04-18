@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeyNameConstraint Object
     /// </summary>  
-    public class KeyNameConstraintUnmarshaller : IUnmarshaller<KeyNameConstraint, XmlUnmarshallerContext>
+    public class KeyNameConstraintUnmarshaller : IUnmarshaller<KeyNameConstraint, XmlUnmarshallerContext>, IUnmarshaller<KeyNameConstraint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -93,6 +93,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public KeyNameConstraint Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static KeyNameConstraintUnmarshaller _instance = new KeyNameConstraintUnmarshaller();        

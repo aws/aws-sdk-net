@@ -46,6 +46,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DateAttributeBoostingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBoostingDurationInSeconds())
             {
                 context.Writer.WritePropertyName("boostingDurationInSeconds");

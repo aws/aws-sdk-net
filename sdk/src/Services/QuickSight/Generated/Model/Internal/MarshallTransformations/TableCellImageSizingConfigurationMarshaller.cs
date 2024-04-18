@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TableCellImageSizingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTableCellImageScalingConfiguration())
             {
                 context.Writer.WritePropertyName("TableCellImageScalingConfiguration");

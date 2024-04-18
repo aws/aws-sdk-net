@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsRdsDbSubnetGroupSubnet requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSubnetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("SubnetAvailabilityZone");

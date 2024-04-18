@@ -46,6 +46,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomLogSourceProvider requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");

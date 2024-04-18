@@ -46,6 +46,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnomalyDateInterval requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("EndDate");

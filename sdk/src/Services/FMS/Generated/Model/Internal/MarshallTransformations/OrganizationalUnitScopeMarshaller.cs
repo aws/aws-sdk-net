@@ -46,6 +46,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrganizationalUnitScope requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllOrganizationalUnitsEnabled())
             {
                 context.Writer.WritePropertyName("AllOrganizationalUnitsEnabled");

@@ -46,6 +46,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VariableEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("dataSource");

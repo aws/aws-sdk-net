@@ -46,6 +46,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Captions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCaptionFormats())
             {
                 context.Writer.WritePropertyName("CaptionFormats");

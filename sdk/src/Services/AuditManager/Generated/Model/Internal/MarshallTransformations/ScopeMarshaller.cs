@@ -46,6 +46,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Scope requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAwsAccounts())
             {
                 context.Writer.WritePropertyName("awsAccounts");

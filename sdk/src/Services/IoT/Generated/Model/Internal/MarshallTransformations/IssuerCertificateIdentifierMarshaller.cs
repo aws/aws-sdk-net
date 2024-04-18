@@ -46,6 +46,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IssuerCertificateIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIssuerCertificateSerialNumber())
             {
                 context.Writer.WritePropertyName("issuerCertificateSerialNumber");

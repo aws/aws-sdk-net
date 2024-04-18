@@ -46,6 +46,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LaunchTemplateSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLaunchTemplateId())
             {
                 context.Writer.WritePropertyName("LaunchTemplateId");

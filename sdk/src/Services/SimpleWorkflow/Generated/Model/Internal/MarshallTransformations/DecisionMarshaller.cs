@@ -46,6 +46,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Decision requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCancelTimerDecisionAttributes())
             {
                 context.Writer.WritePropertyName("cancelTimerDecisionAttributes");

@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsRdsDbClusterMember requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDbClusterParameterGroupStatus())
             {
                 context.Writer.WritePropertyName("DbClusterParameterGroupStatus");

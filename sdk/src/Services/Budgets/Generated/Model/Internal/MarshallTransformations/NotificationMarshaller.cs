@@ -46,6 +46,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Notification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComparisonOperator())
             {
                 context.Writer.WritePropertyName("ComparisonOperator");
@@ -67,7 +69,14 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
-                context.Writer.Write(requestObject.Threshold);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Threshold);
+                }
             }
 
             if(requestObject.IsSetThresholdType())

@@ -46,6 +46,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateAccessConfigRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthenticationMode())
             {
                 context.Writer.WritePropertyName("authenticationMode");

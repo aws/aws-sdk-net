@@ -46,6 +46,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EventSelector requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataResources())
             {
                 context.Writer.WritePropertyName("DataResources");

@@ -46,6 +46,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CacheAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCacheStaleTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("CacheStaleTimeoutInSeconds");

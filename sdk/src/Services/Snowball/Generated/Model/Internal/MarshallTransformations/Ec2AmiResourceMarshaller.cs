@@ -46,6 +46,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Ec2AmiResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAmiId())
             {
                 context.Writer.WritePropertyName("AmiId");

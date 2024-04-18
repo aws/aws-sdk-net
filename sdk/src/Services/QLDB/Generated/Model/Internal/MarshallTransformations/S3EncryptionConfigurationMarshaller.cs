@@ -46,6 +46,8 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3EncryptionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("KmsKeyArn");

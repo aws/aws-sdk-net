@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LineChartFieldWells requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLineChartAggregatedFieldWells())
             {
                 context.Writer.WritePropertyName("LineChartAggregatedFieldWells");

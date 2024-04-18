@@ -46,6 +46,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutboundCallConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnswerMachineDetectionConfig())
             {
                 context.Writer.WritePropertyName("answerMachineDetectionConfig");

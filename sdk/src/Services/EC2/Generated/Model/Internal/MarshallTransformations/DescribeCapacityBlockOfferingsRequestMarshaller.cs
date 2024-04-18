@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndDateRange())
                 {
-                    request.Parameters.Add("EndDateRange", StringUtils.FromDateTimeToISO8601(publicRequest.EndDateRange));
+                    request.Parameters.Add("EndDateRange", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDateRange));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceCount())
@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartDateRange())
                 {
-                    request.Parameters.Add("StartDateRange", StringUtils.FromDateTimeToISO8601(publicRequest.StartDateRange));
+                    request.Parameters.Add("StartDateRange", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDateRange));
                 }
 #pragma warning restore CS0612,CS0618
             }

@@ -46,6 +46,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotificationDestinationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUri())
             {
                 context.Writer.WritePropertyName("Uri");

@@ -46,6 +46,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MultiMeasureMappings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMultiMeasureAttributeMappings())
             {
                 context.Writer.WritePropertyName("MultiMeasureAttributeMappings");

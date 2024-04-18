@@ -46,6 +46,8 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricAttribution requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEventAttributionSource())
             {
                 context.Writer.WritePropertyName("eventAttributionSource");

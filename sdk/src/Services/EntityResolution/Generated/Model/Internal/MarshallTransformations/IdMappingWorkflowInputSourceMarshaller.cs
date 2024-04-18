@@ -46,6 +46,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IdMappingWorkflowInputSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputSourceARN())
             {
                 context.Writer.WritePropertyName("inputSourceARN");

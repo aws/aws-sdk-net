@@ -46,6 +46,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataLakePrincipal requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataLakePrincipalIdentifier())
             {
                 context.Writer.WritePropertyName("DataLakePrincipalIdentifier");

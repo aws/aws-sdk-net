@@ -46,6 +46,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3ImportSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3BucketAccessRoleArn())
             {
                 context.Writer.WritePropertyName("S3BucketAccessRoleArn");

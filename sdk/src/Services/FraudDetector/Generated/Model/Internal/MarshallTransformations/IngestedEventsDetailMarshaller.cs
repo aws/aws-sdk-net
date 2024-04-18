@@ -46,6 +46,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IngestedEventsDetail requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIngestedEventsTimeWindow())
             {
                 context.Writer.WritePropertyName("ingestedEventsTimeWindow");

@@ -46,16 +46,32 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Location requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLatitude())
             {
                 context.Writer.WritePropertyName("latitude");
-                context.Writer.Write(requestObject.Latitude);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Latitude))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Latitude));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Latitude);
+                }
             }
 
             if(requestObject.IsSetLongitude())
             {
                 context.Writer.WritePropertyName("longitude");
-                context.Writer.Write(requestObject.Longitude);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Longitude))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Longitude));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Longitude);
+                }
             }
 
         }

@@ -61,7 +61,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetBacktrackToUtc())
                 {
-                    request.Parameters.Add("BacktrackTo", StringUtils.FromDateTimeToISO8601(publicRequest.BacktrackToUtc));
+                    request.Parameters.Add("BacktrackTo", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.BacktrackToUtc));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBClusterIdentifier())

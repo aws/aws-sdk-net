@@ -46,6 +46,8 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RulesConfigurationType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRules())
             {
                 context.Writer.WritePropertyName("Rules");

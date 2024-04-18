@@ -46,6 +46,8 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TargetResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNLBResource())
             {
                 context.Writer.WritePropertyName("nLBResource");

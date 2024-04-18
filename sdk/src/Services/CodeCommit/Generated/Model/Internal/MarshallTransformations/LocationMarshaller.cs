@@ -46,6 +46,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Location requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilePath())
             {
                 context.Writer.WritePropertyName("filePath");

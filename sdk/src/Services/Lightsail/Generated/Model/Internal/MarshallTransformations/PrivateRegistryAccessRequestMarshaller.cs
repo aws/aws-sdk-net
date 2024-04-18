@@ -46,6 +46,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PrivateRegistryAccessRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEcrImagePullerRole())
             {
                 context.Writer.WritePropertyName("ecrImagePullerRole");

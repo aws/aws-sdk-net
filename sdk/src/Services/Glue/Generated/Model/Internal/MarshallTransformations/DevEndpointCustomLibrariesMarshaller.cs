@@ -46,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DevEndpointCustomLibraries requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExtraJarsS3Path())
             {
                 context.Writer.WritePropertyName("ExtraJarsS3Path");

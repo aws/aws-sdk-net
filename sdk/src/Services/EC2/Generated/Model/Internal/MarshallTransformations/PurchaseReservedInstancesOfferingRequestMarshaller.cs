@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPurchaseTime())
                 {
-                    request.Parameters.Add("PurchaseTime", StringUtils.FromDateTimeToISO8601(publicRequest.PurchaseTime));
+                    request.Parameters.Add("PurchaseTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.PurchaseTime));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReservedInstancesOfferingId())

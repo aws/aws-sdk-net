@@ -46,6 +46,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NetworkFirewallPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFirewallDeploymentModel())
             {
                 context.Writer.WritePropertyName("FirewallDeploymentModel");

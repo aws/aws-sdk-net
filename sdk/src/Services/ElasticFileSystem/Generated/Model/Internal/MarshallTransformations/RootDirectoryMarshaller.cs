@@ -46,6 +46,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RootDirectory requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCreationInfo())
             {
                 context.Writer.WritePropertyName("CreationInfo");

@@ -46,6 +46,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobExecutionSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowDeferredExecution())
             {
                 context.Writer.WritePropertyName("AllowDeferredExecution");

@@ -46,6 +46,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PermissionModel requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCrossAccountRoleArns())
             {
                 context.Writer.WritePropertyName("crossAccountRoleArns");

@@ -46,6 +46,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InsightFeedback requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFeedback())
             {
                 context.Writer.WritePropertyName("Feedback");

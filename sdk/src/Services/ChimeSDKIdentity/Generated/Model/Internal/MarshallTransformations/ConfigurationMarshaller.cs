@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Configuration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLex())
             {
                 context.Writer.WritePropertyName("Lex");

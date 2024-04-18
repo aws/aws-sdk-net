@@ -46,6 +46,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamProcessorDataSharingPreference requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOptIn())
             {
                 context.Writer.WritePropertyName("OptIn");

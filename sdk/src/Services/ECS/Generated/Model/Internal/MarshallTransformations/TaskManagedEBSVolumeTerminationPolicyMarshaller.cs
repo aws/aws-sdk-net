@@ -46,6 +46,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TaskManagedEBSVolumeTerminationPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeleteOnTermination())
             {
                 context.Writer.WritePropertyName("deleteOnTermination");

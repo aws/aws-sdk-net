@@ -85,12 +85,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLastUpdatedAfter())
                 {
-                    request.Parameters.Add("LastUpdatedAfter", StringUtils.FromDateTimeToISO8601(publicRequest.LastUpdatedAfter));
+                    request.Parameters.Add("LastUpdatedAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LastUpdatedAfter));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLastUpdatedBefore())
                 {
-                    request.Parameters.Add("LastUpdatedBefore", StringUtils.FromDateTimeToISO8601(publicRequest.LastUpdatedBefore));
+                    request.Parameters.Add("LastUpdatedBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LastUpdatedBefore));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLocale())

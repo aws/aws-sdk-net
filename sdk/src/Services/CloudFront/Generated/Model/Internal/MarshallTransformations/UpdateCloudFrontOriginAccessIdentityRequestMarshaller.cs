@@ -74,10 +74,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetCallerReference())
-                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.CallerReference));                    
+                        xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.CallerReference));
 
                     if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.Comment));
 
 
                     xmlWriter.WriteEndElement();

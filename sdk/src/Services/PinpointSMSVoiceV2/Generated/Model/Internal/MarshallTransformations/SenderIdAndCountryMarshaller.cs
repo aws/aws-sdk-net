@@ -46,6 +46,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SenderIdAndCountry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIsoCountryCode())
             {
                 context.Writer.WritePropertyName("IsoCountryCode");

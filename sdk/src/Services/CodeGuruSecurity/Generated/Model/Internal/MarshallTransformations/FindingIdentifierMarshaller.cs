@@ -46,6 +46,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FindingIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFindingId())
             {
                 context.Writer.WritePropertyName("findingId");

@@ -46,6 +46,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ShareRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTargetAccounts())
             {
                 context.Writer.WritePropertyName("TargetAccounts");

@@ -46,6 +46,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsLogSourceResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSourceName())
             {
                 context.Writer.WritePropertyName("sourceName");

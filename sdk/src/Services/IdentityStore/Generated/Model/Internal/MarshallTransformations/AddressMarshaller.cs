@@ -46,6 +46,8 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Address requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCountry())
             {
                 context.Writer.WritePropertyName("Country");

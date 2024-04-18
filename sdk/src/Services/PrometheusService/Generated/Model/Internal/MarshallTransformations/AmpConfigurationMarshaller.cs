@@ -46,6 +46,8 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AmpConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetWorkspaceArn())
             {
                 context.Writer.WritePropertyName("workspaceArn");

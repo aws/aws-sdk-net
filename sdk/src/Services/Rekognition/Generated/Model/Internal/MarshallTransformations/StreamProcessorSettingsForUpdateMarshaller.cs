@@ -46,6 +46,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamProcessorSettingsForUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectedHomeForUpdate())
             {
                 context.Writer.WritePropertyName("ConnectedHomeForUpdate");

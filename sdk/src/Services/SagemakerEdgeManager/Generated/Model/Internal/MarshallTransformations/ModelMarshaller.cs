@@ -46,6 +46,8 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Model requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLatestInference())
             {
                 context.Writer.WritePropertyName("LatestInference");

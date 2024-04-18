@@ -46,6 +46,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WeeklyStartTime requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDayOfWeek())
             {
                 context.Writer.WritePropertyName("dayOfWeek");

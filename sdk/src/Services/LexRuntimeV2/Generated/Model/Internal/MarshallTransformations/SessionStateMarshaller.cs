@@ -46,6 +46,8 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SessionState requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActiveContexts())
             {
                 context.Writer.WritePropertyName("activeContexts");

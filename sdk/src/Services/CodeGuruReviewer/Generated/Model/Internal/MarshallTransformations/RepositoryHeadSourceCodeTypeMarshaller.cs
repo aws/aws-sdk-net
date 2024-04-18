@@ -46,6 +46,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RepositoryHeadSourceCodeType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBranchName())
             {
                 context.Writer.WritePropertyName("BranchName");

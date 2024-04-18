@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DiscoverDynamicCardVerificationCode requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApplicationTransactionCounter())
             {
                 context.Writer.WritePropertyName("ApplicationTransactionCounter");

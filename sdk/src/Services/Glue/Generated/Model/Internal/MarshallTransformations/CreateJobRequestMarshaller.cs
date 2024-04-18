@@ -66,6 +66,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAllocatedCapacity())
@@ -167,7 +168,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxCapacity())
                 {
                     context.Writer.WritePropertyName("MaxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MaxCapacity);
+                    }
                 }
 
                 if(publicRequest.IsSetMaxRetries())

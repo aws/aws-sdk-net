@@ -46,6 +46,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EnrollmentFlagsV2 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnableKeyReuseOnNtTokenKeysetStorageFull())
             {
                 context.Writer.WritePropertyName("EnableKeyReuseOnNtTokenKeysetStorageFull");

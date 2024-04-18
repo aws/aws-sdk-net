@@ -46,6 +46,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TlsConfigInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetServerNameToVerify())
             {
                 context.Writer.WritePropertyName("serverNameToVerify");

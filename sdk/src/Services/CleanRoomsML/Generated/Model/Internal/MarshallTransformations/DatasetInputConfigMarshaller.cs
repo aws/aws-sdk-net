@@ -46,6 +46,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatasetInputConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("dataSource");

@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FrameCaptureCdnSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFrameCaptureS3Settings())
             {
                 context.Writer.WritePropertyName("frameCaptureS3Settings");

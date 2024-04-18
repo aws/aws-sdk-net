@@ -46,6 +46,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListWavesRequestFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIsArchived())
             {
                 context.Writer.WritePropertyName("isArchived");

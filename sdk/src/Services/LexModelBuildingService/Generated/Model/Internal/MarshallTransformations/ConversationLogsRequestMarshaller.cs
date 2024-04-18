@@ -46,6 +46,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConversationLogsRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIamRoleArn())
             {
                 context.Writer.WritePropertyName("iamRoleArn");

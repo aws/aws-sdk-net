@@ -46,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UserTokenConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetJsonTokenTypeConfiguration())
             {
                 context.Writer.WritePropertyName("JsonTokenTypeConfiguration");

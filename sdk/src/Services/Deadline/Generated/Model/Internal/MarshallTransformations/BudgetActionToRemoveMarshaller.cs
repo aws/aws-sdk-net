@@ -46,10 +46,19 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BudgetActionToRemove requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetThresholdPercentage())
             {
                 context.Writer.WritePropertyName("thresholdPercentage");
-                context.Writer.Write(requestObject.ThresholdPercentage);
+                if(StringUtils.IsSpecialFloatValue(requestObject.ThresholdPercentage))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ThresholdPercentage));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThresholdPercentage);
+                }
             }
 
             if(requestObject.IsSetType())

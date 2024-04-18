@@ -46,6 +46,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ErrorReportConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Configuration())
             {
                 context.Writer.WritePropertyName("S3Configuration");

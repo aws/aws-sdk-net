@@ -46,6 +46,8 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Sort requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSortBy())
             {
                 context.Writer.WritePropertyName("sortBy");

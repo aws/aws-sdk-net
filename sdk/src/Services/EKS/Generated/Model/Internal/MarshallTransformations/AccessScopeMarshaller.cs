@@ -46,6 +46,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AccessScope requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNamespaces())
             {
                 context.Writer.WritePropertyName("namespaces");

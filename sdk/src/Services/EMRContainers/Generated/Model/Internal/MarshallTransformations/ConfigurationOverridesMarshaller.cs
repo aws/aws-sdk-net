@@ -46,6 +46,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConfigurationOverrides requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApplicationConfiguration())
             {
                 context.Writer.WritePropertyName("applicationConfiguration");

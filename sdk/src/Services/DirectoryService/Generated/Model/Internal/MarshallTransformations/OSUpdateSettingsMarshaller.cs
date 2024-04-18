@@ -46,6 +46,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OSUpdateSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOSVersion())
             {
                 context.Writer.WritePropertyName("OSVersion");

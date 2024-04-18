@@ -46,6 +46,8 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Monitor requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlarmArn())
             {
                 context.Writer.WritePropertyName("AlarmArn");

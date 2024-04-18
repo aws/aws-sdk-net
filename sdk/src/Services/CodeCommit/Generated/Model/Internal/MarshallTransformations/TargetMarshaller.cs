@@ -46,6 +46,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Target requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationReference())
             {
                 context.Writer.WritePropertyName("destinationReference");

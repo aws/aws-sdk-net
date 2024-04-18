@@ -46,10 +46,19 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TruckWeight requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTotal())
             {
                 context.Writer.WritePropertyName("Total");
-                context.Writer.Write(requestObject.Total);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Total))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Total));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Total);
+                }
             }
 
             if(requestObject.IsSetUnit())

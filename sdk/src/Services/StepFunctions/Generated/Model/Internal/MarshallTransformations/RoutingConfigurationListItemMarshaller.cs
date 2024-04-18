@@ -46,6 +46,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RoutingConfigurationListItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStateMachineVersionArn())
             {
                 context.Writer.WritePropertyName("stateMachineVersionArn");

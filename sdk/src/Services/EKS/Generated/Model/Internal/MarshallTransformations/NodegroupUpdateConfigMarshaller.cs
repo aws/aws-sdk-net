@@ -46,6 +46,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NodegroupUpdateConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxUnavailable())
             {
                 context.Writer.WritePropertyName("maxUnavailable");

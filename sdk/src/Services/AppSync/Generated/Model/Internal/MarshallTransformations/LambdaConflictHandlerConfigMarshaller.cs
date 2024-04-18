@@ -46,6 +46,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LambdaConflictHandlerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLambdaConflictHandlerArn())
             {
                 context.Writer.WritePropertyName("lambdaConflictHandlerArn");

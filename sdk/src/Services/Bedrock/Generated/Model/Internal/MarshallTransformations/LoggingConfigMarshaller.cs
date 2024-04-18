@@ -46,6 +46,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoggingConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchConfig())
             {
                 context.Writer.WritePropertyName("cloudWatchConfig");

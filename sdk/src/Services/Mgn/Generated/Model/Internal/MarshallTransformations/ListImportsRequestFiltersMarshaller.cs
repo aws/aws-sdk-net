@@ -46,6 +46,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListImportsRequestFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetImportIDs())
             {
                 context.Writer.WritePropertyName("importIDs");

@@ -46,6 +46,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobDriver requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHive())
             {
                 context.Writer.WritePropertyName("hive");

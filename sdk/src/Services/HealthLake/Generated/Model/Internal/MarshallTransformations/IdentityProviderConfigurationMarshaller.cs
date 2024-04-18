@@ -46,6 +46,8 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IdentityProviderConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthorizationStrategy())
             {
                 context.Writer.WritePropertyName("AuthorizationStrategy");

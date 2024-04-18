@@ -46,6 +46,8 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServerGroupLaunchConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLaunchOrder())
             {
                 context.Writer.WritePropertyName("launchOrder");

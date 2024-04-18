@@ -46,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SpellCorrectionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIncludeQuerySpellCheckSuggestions())
             {
                 context.Writer.WritePropertyName("IncludeQuerySpellCheckSuggestions");

@@ -46,6 +46,8 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SuiteRunConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetParallelRun())
             {
                 context.Writer.WritePropertyName("parallelRun");
