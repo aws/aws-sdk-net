@@ -73,6 +73,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDefaultFilterControlConfiguration())
+            {
+                context.Writer.WritePropertyName("DefaultFilterControlConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DefaultFilterControlConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultFilterControlConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFilterId())
             {
                 context.Writer.WritePropertyName("FilterId");

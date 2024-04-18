@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property MaximumValue. 
         /// <para>
-        /// The smaller value that is displayed at the left of the slider.
+        /// The larger value that is displayed at the right of the slider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,7 +102,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property MinimumValue. 
         /// <para>
-        /// The larger value that is displayed at the right of the slider.
+        /// The smaller value that is displayed at the left of the slider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -178,7 +178,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of <c>FilterSliderControl</c>. Choose one of the following options:
+        /// The type of the <c>FilterSliderControl</c>. Choose one of the following options:
         /// </para>
         ///  <ul> <li> 
         /// <para>

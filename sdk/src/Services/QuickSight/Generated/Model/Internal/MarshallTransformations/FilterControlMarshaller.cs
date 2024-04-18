@@ -46,6 +46,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FilterControl requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCrossSheet())
+            {
+                context.Writer.WritePropertyName("CrossSheet");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FilterCrossSheetControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.CrossSheet, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDateTimePicker())
             {
                 context.Writer.WritePropertyName("DateTimePicker");

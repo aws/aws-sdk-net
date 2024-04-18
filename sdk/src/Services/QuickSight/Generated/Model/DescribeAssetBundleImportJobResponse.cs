@@ -48,6 +48,7 @@ namespace Amazon.QuickSight.Model
         private string _requestId;
         private List<AssetBundleImportJobError> _rollbackErrors = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobError>() : null;
         private int? _status;
+        private List<AssetBundleImportJobWarning> _warnings = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobWarning>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -357,6 +358,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetStatus()
         {
             return this._status.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings. 
+        /// <para>
+        /// An array of warning records that describe all permitted errors that are encountered
+        /// during the import job.
+        /// </para>
+        /// </summary>
+        public List<AssetBundleImportJobWarning> Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
