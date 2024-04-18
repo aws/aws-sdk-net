@@ -1,3 +1,22 @@
+### 3.7.792.0 (2024-04-18 18:25 UTC)
+* Drs (3.7.304.0)
+	* Outpost ARN added to Source Server and Recovery Instance
+* EMRServerless (3.7.302.0)
+	* This release adds the capability to publish detailed Spark engine metrics to Amazon Managed Service for Prometheus (AMP) for  enhanced monitoring for Spark jobs.
+* GuardDuty (3.7.306.0)
+	* Added IPv6Address fields for local and remote IP addresses
+* IAMRolesAnywhere (3.7.303.0)
+	* This release introduces the PutAttributeMapping and DeleteAttributeMapping APIs. IAM Roles Anywhere now provides the capability to define a set of mapping rules, allowing customers to specify which data is extracted from their X.509 end-entity certificates.
+* QuickSight (3.7.309.0)
+	* This release adds support for the Cross Sheet Filter and Control features, and support for warnings in asset imports for any permitted errors encountered during execution
+* SageMaker (3.7.318.0)
+	* Removed deprecated enum values and updated API documentation.
+* WorkSpaces (3.7.303.0)
+	* Adds new APIs for managing and sharing WorkSpaces BYOL configuration across accounts.
+* Core 3.7.303.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.791.0 (2024-04-17 18:34 UTC)
 * EC2 (3.7.323.0)
 	* Documentation updates for Elastic Compute Cloud (EC2).
