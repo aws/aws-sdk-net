@@ -173,7 +173,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must start and end with an alphanumeric character.
+        /// Must start with an alphanumeric character.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -286,7 +286,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must start and end with an alphanumeric character.
+        /// Must start with an alphanumeric character.
         /// </para>
         ///  </li> <li> 
         /// <para>

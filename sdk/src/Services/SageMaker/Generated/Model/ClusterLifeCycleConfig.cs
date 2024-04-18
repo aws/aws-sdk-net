@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The LifeCycle configuration for a SageMaker HyperPod cluster.
+    /// The lifecycle configuration for a SageMaker HyperPod cluster.
     /// </summary>
     public partial class ClusterLifeCycleConfig
     {
@@ -39,8 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OnCreate. 
         /// <para>
-        /// The directory of the LifeCycle script under <c>SourceS3Uri</c>. This LifeCycle script
-        /// runs during cluster creation.
+        /// The file name of the entrypoint script of lifecycle scripts under <c>SourceS3Uri</c>.
+        /// This entrypoint script runs during cluster creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -59,8 +59,16 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SourceS3Uri. 
         /// <para>
-        /// An Amazon S3 bucket path where your LifeCycle scripts are stored.
+        /// An Amazon S3 bucket path where your lifecycle scripts are stored.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Make sure that the S3 bucket path starts with <c>s3://sagemaker-</c>. The <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-iam-role-for-hyperpod">IAM
+        /// role for SageMaker HyperPod</a> has the managed <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-cluster.html">
+        /// <c>AmazonSageMakerClusterInstanceRolePolicy</c> </a> attached, which allows access
+        /// to S3 buckets with the specific prefix <c>sagemaker-</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
         public string SourceS3Uri
