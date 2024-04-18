@@ -33,6 +33,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// </summary>
     public partial class ProfileDetail
     {
+        private List<AttributeMapping> _attributeMappings = AWSConfigs.InitializeCollections ? new List<AttributeMapping>() : null;
         private DateTime? _createdAt;
         private string _createdBy;
         private int? _durationSeconds;
@@ -45,6 +46,24 @@ namespace Amazon.IAMRolesAnywhere.Model
         private List<string> _roleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sessionPolicy;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property AttributeMappings. 
+        /// <para>
+        /// A mapping applied to the authenticating end-entity certificate.
+        /// </para>
+        /// </summary>
+        public List<AttributeMapping> AttributeMappings
+        {
+            get { return this._attributeMappings; }
+            set { this._attributeMappings = value; }
+        }
+
+        // Check to see if AttributeMappings property is set
+        internal bool IsSetAttributeMappings()
+        {
+            return this._attributeMappings != null && (this._attributeMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
