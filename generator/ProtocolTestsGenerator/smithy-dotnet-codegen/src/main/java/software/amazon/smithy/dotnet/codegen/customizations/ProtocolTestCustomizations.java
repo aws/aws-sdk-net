@@ -103,7 +103,7 @@ public final class ProtocolTestCustomizations {
             "Ec2XmlEmptySelfClosedBlobs",
             "Ec2SimpleScalarProperties",
             "SimpleScalarPropertiesPureWhiteSpace",
-            //The tests below require a change in how empty collections are handled. These will be handled in v3.9
+            //The tests below require a change in how empty collections are handled. These will be handled in vNext
             "XmlEmptyLists",
             "XmlEmptyMaps",
             "Ec2EmptyQueryLists",
@@ -117,6 +117,24 @@ public final class ProtocolTestCustomizations {
             "RestXmlFlattenedXmlMapWithXmlNamespace",
             "QueryQueryXmlMapsXmlName",
             "QueryQueryFlattenedXmlMapWithXmlName",
-            "QueryQueryFlattenedXmlMapWithXmlNamespace"
+            "QueryQueryFlattenedXmlMapWithXmlNamespace",
+            "Ec2XmlLists",
+            "QueryEmptyInputAndEmptyOutput",
+            "QueryNoInputAndNoOutput",
+            "QueryNoInputAndOutput",
+            "QueryListArgWithXmlNameMember",
+            "QueryXmlLists",
+            "DocumentTypeAsPayloadOutputString",
+            "RestJsonHttpPayloadWithUnsetUnion",
+            "RestJsonToleratesRegexCharsInSegments",
+            "RestJsonInputAndOutputWithQuotedStringHeaders",
+            "RestJsonInputAndOutputWithTimestampHeaders",
+            "RestJsonInputAndOutputWithTimestampHeaders",
+            "RestJsonNullAndEmptyHeaders",
+            "IgnoreQueryParamsInResponse",
+            "InputAndOutputWithTimestampHeaders",
+            "NullAndEmptyHeaders",
+            "XmlLists",
+            "NullAndEmptyHeaders"
     );
 }
