@@ -386,12 +386,10 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("\t\t\trequest.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = \"binary/octet-stre" +
-                    "am\"; \r\n\t\t\tif (request.ContentStream != null && request.ContentStream.Length == 0" +
-                    ")\r\n\t\t\t{\r\n\t\t\t\trequest.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);\r\n" +
-                    "\t\t\t}\r\n");
+            this.Write("\t\t\trequest.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = \"application/octet" +
+                    "-stream\";\r\n");
             
-            #line 182 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 178 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
     }
 	else if (payload?.Shape.IsPrimitiveType == true)
@@ -411,7 +409,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t\tvar content = \"{}\";\r\n            request.Content = System.Text.Encoding.UTF8.G" +
                     "etBytes(content);\r\n");
             
-            #line 197 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 193 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 				GenerateRequestChecksumHandling(this.Operation, "content");
 
@@ -419,7 +417,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             
-            #line 200 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 196 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 	}
 
@@ -437,7 +435,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.UseQueryString = true;\r\n");
             
-            #line 213 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 209 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 	}
 
 	// We skip endpoint host prefix handling for S3 and S3 Control as it's implemented by endpoint rules.
@@ -451,7 +449,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\r\n\t\t\treturn request;\r\n\t\t}\r\n");
             
-            #line 224 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 220 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 				
 		this.AddRequestSingletonMethod();
 
