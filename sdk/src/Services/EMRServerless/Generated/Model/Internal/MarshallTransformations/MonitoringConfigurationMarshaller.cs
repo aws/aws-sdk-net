@@ -68,6 +68,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPrometheusMonitoringConfiguration())
+            {
+                context.Writer.WritePropertyName("prometheusMonitoringConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PrometheusMonitoringConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PrometheusMonitoringConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3MonitoringConfiguration())
             {
                 context.Writer.WritePropertyName("s3MonitoringConfiguration");

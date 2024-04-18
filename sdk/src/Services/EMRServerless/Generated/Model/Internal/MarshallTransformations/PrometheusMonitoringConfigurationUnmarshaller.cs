@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MonitoringConfiguration Object
+    /// Response Unmarshaller for PrometheusMonitoringConfiguration Object
     /// </summary>  
-    public class MonitoringConfigurationUnmarshaller : IUnmarshaller<MonitoringConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MonitoringConfiguration, JsonUnmarshallerContext>
+    public class PrometheusMonitoringConfigurationUnmarshaller : IUnmarshaller<PrometheusMonitoringConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PrometheusMonitoringConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MonitoringConfiguration IUnmarshaller<MonitoringConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PrometheusMonitoringConfiguration IUnmarshaller<PrometheusMonitoringConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public PrometheusMonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            MonitoringConfiguration unmarshalledObject = new MonitoringConfiguration();
+            PrometheusMonitoringConfiguration unmarshalledObject = new PrometheusMonitoringConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,28 +64,10 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cloudWatchLoggingConfiguration", targetDepth))
+                if (context.TestExpression("remoteWriteUrl", targetDepth))
                 {
-                    var unmarshaller = CloudWatchLoggingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLoggingConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("managedPersistenceMonitoringConfiguration", targetDepth))
-                {
-                    var unmarshaller = ManagedPersistenceMonitoringConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ManagedPersistenceMonitoringConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("prometheusMonitoringConfiguration", targetDepth))
-                {
-                    var unmarshaller = PrometheusMonitoringConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PrometheusMonitoringConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3MonitoringConfiguration", targetDepth))
-                {
-                    var unmarshaller = S3MonitoringConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.S3MonitoringConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RemoteWriteUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,12 +75,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         }
 
 
-        private static MonitoringConfigurationUnmarshaller _instance = new MonitoringConfigurationUnmarshaller();        
+        private static PrometheusMonitoringConfigurationUnmarshaller _instance = new PrometheusMonitoringConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MonitoringConfigurationUnmarshaller Instance
+        public static PrometheusMonitoringConfigurationUnmarshaller Instance
         {
             get
             {
