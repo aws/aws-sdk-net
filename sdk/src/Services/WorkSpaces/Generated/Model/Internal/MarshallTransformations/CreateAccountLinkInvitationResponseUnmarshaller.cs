@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeAccount operation
+    /// Response Unmarshaller for CreateAccountLinkInvitation operation
     /// </summary>  
-    public class DescribeAccountResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateAccountLinkInvitationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,28 +46,16 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeAccountResponse response = new DescribeAccountResponse();
+            CreateAccountLinkInvitationResponse response = new CreateAccountLinkInvitationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DedicatedTenancyAccountType", targetDepth))
+                if (context.TestExpression("AccountLink", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DedicatedTenancyAccountType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DedicatedTenancyManagementCidrRange", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DedicatedTenancyManagementCidrRange = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DedicatedTenancySupport", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DedicatedTenancySupport = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AccountLinkUnmarshaller.Instance;
+                    response.AccountLink = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -97,13 +85,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
+                {
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonWorkSpacesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeAccountResponseUnmarshaller _instance = new DescribeAccountResponseUnmarshaller();        
+        private static CreateAccountLinkInvitationResponseUnmarshaller _instance = new CreateAccountLinkInvitationResponseUnmarshaller();        
 
-        internal static DescribeAccountResponseUnmarshaller GetInstance()
+        internal static CreateAccountLinkInvitationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +111,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeAccountResponseUnmarshaller Instance
+        public static CreateAccountLinkInvitationResponseUnmarshaller Instance
         {
             get
             {

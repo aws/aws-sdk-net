@@ -68,6 +68,78 @@ namespace Amazon.WorkSpaces
         IWorkSpacesPaginatorFactory Paginators { get; }
 
         
+        #region  AcceptAccountLinkInvitation
+
+
+        /// <summary>
+        /// Accepts the account link invitation.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// There's currently no unlinking capability after you accept the account linking invitation.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAccountLinkInvitation service method.</param>
+        /// 
+        /// <returns>The response from the AcceptAccountLinkInvitation service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ConflictException">
+        /// The <c>TargetAccountId</c> is already linked or invited.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AcceptAccountLinkInvitation">REST API Reference for AcceptAccountLinkInvitation Operation</seealso>
+        AcceptAccountLinkInvitationResponse AcceptAccountLinkInvitation(AcceptAccountLinkInvitationRequest request);
+
+
+
+        /// <summary>
+        /// Accepts the account link invitation.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// There's currently no unlinking capability after you accept the account linking invitation.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAccountLinkInvitation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptAccountLinkInvitation service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ConflictException">
+        /// The <c>TargetAccountId</c> is already linked or invited.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AcceptAccountLinkInvitation">REST API Reference for AcceptAccountLinkInvitation Operation</seealso>
+        Task<AcceptAccountLinkInvitationResponse> AcceptAccountLinkInvitationAsync(AcceptAccountLinkInvitationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssociateConnectionAlias
 
 
@@ -483,6 +555,60 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage">REST API Reference for CopyWorkspaceImage Operation</seealso>
         Task<CopyWorkspaceImageResponse> CopyWorkspaceImageAsync(CopyWorkspaceImageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAccountLinkInvitation
+
+
+        /// <summary>
+        /// Creates the account link invitation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountLinkInvitation service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccountLinkInvitation service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ConflictException">
+        /// The <c>TargetAccountId</c> is already linked or invited.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateAccountLinkInvitation">REST API Reference for CreateAccountLinkInvitation Operation</seealso>
+        CreateAccountLinkInvitationResponse CreateAccountLinkInvitation(CreateAccountLinkInvitationRequest request);
+
+
+
+        /// <summary>
+        /// Creates the account link invitation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountLinkInvitation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAccountLinkInvitation service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ConflictException">
+        /// The <c>TargetAccountId</c> is already linked or invited.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateAccountLinkInvitation">REST API Reference for CreateAccountLinkInvitation Operation</seealso>
+        Task<CreateAccountLinkInvitationResponse> CreateAccountLinkInvitationAsync(CreateAccountLinkInvitationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1155,6 +1281,66 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         Task<CreateWorkspacesResponse> CreateWorkspacesAsync(CreateWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAccountLinkInvitation
+
+
+        /// <summary>
+        /// Deletes the account link invitation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountLinkInvitation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccountLinkInvitation service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ConflictException">
+        /// The <c>TargetAccountId</c> is already linked or invited.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteAccountLinkInvitation">REST API Reference for DeleteAccountLinkInvitation Operation</seealso>
+        DeleteAccountLinkInvitationResponse DeleteAccountLinkInvitation(DeleteAccountLinkInvitationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the account link invitation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountLinkInvitation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccountLinkInvitation service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ConflictException">
+        /// The <c>TargetAccountId</c> is already linked or invited.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteAccountLinkInvitation">REST API Reference for DeleteAccountLinkInvitation Operation</seealso>
+        Task<DeleteAccountLinkInvitationResponse> DeleteAccountLinkInvitationAsync(DeleteAccountLinkInvitationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2995,6 +3181,60 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  GetAccountLink
+
+
+        /// <summary>
+        /// Retrieves account link information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountLink service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountLink service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/GetAccountLink">REST API Reference for GetAccountLink Operation</seealso>
+        GetAccountLinkResponse GetAccountLink(GetAccountLinkRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves account link information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountLink service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountLink service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/GetAccountLink">REST API Reference for GetAccountLink Operation</seealso>
+        Task<GetAccountLinkResponse> GetAccountLinkAsync(GetAccountLinkRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ImportClientBranding
 
 
@@ -3176,6 +3416,54 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">REST API Reference for ImportWorkspaceImage Operation</seealso>
         Task<ImportWorkspaceImageResponse> ImportWorkspaceImageAsync(ImportWorkspaceImageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAccountLinks
+
+
+        /// <summary>
+        /// Lists all account links.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountLinks service method.</param>
+        /// 
+        /// <returns>The response from the ListAccountLinks service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAccountLinks">REST API Reference for ListAccountLinks Operation</seealso>
+        ListAccountLinksResponse ListAccountLinks(ListAccountLinksRequest request);
+
+
+
+        /// <summary>
+        /// Lists all account links.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountLinks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccountLinks service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAccountLinks">REST API Reference for ListAccountLinks Operation</seealso>
+        Task<ListAccountLinksResponse> ListAccountLinksAsync(ListAccountLinksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4086,6 +4374,66 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RegisterWorkspaceDirectory">REST API Reference for RegisterWorkspaceDirectory Operation</seealso>
         Task<RegisterWorkspaceDirectoryResponse> RegisterWorkspaceDirectoryAsync(RegisterWorkspaceDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RejectAccountLinkInvitation
+
+
+        /// <summary>
+        /// Rejects the account link invitation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectAccountLinkInvitation service method.</param>
+        /// 
+        /// <returns>The response from the RejectAccountLinkInvitation service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ConflictException">
+        /// The <c>TargetAccountId</c> is already linked or invited.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RejectAccountLinkInvitation">REST API Reference for RejectAccountLinkInvitation Operation</seealso>
+        RejectAccountLinkInvitationResponse RejectAccountLinkInvitation(RejectAccountLinkInvitationRequest request);
+
+
+
+        /// <summary>
+        /// Rejects the account link invitation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectAccountLinkInvitation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectAccountLinkInvitation service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ConflictException">
+        /// The <c>TargetAccountId</c> is already linked or invited.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RejectAccountLinkInvitation">REST API Reference for RejectAccountLinkInvitation Operation</seealso>
+        Task<RejectAccountLinkInvitationResponse> RejectAccountLinkInvitationAsync(RejectAccountLinkInvitationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

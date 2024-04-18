@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeAccount operation
+    /// Response Unmarshaller for ListAccountLinks operation
     /// </summary>  
-    public class DescribeAccountResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListAccountLinksResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,28 +46,22 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeAccountResponse response = new DescribeAccountResponse();
+            ListAccountLinksResponse response = new ListAccountLinksResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DedicatedTenancyAccountType", targetDepth))
+                if (context.TestExpression("AccountLinks", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DedicatedTenancyAccountType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AccountLink, AccountLinkUnmarshaller>(AccountLinkUnmarshaller.Instance);
+                    response.AccountLinks = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DedicatedTenancyManagementCidrRange", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DedicatedTenancyManagementCidrRange = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DedicatedTenancySupport", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DedicatedTenancySupport = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -97,13 +91,21 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
+                {
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonWorkSpacesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeAccountResponseUnmarshaller _instance = new DescribeAccountResponseUnmarshaller();        
+        private static ListAccountLinksResponseUnmarshaller _instance = new ListAccountLinksResponseUnmarshaller();        
 
-        internal static DescribeAccountResponseUnmarshaller GetInstance()
+        internal static ListAccountLinksResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +113,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeAccountResponseUnmarshaller Instance
+        public static ListAccountLinksResponseUnmarshaller Instance
         {
             get
             {

@@ -75,6 +75,68 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type AccountLinkStatusEnum.
+    /// </summary>
+    public class AccountLinkStatusEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINK_NOT_FOUND for AccountLinkStatusEnum
+        /// </summary>
+        public static readonly AccountLinkStatusEnum LINK_NOT_FOUND = new AccountLinkStatusEnum("LINK_NOT_FOUND");
+        /// <summary>
+        /// Constant LINKED for AccountLinkStatusEnum
+        /// </summary>
+        public static readonly AccountLinkStatusEnum LINKED = new AccountLinkStatusEnum("LINKED");
+        /// <summary>
+        /// Constant LINKING_FAILED for AccountLinkStatusEnum
+        /// </summary>
+        public static readonly AccountLinkStatusEnum LINKING_FAILED = new AccountLinkStatusEnum("LINKING_FAILED");
+        /// <summary>
+        /// Constant PENDING_ACCEPTANCE_BY_TARGET_ACCOUNT for AccountLinkStatusEnum
+        /// </summary>
+        public static readonly AccountLinkStatusEnum PENDING_ACCEPTANCE_BY_TARGET_ACCOUNT = new AccountLinkStatusEnum("PENDING_ACCEPTANCE_BY_TARGET_ACCOUNT");
+        /// <summary>
+        /// Constant REJECTED for AccountLinkStatusEnum
+        /// </summary>
+        public static readonly AccountLinkStatusEnum REJECTED = new AccountLinkStatusEnum("REJECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountLinkStatusEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountLinkStatusEnum FindValue(string value)
+        {
+            return FindValue<AccountLinkStatusEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountLinkStatusEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Application.
     /// </summary>
     public class Application : ConstantClass
@@ -822,6 +884,56 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataReplication(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DedicatedTenancyAccountType.
+    /// </summary>
+    public class DedicatedTenancyAccountType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SOURCE_ACCOUNT for DedicatedTenancyAccountType
+        /// </summary>
+        public static readonly DedicatedTenancyAccountType SOURCE_ACCOUNT = new DedicatedTenancyAccountType("SOURCE_ACCOUNT");
+        /// <summary>
+        /// Constant TARGET_ACCOUNT for DedicatedTenancyAccountType
+        /// </summary>
+        public static readonly DedicatedTenancyAccountType TARGET_ACCOUNT = new DedicatedTenancyAccountType("TARGET_ACCOUNT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DedicatedTenancyAccountType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DedicatedTenancyAccountType FindValue(string value)
+        {
+            return FindValue<DedicatedTenancyAccountType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DedicatedTenancyAccountType(string value)
         {
             return FindValue(value);
         }
