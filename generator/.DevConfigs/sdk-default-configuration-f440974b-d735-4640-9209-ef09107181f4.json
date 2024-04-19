@@ -1,0 +1,14 @@
+
+{
+    "services" : null,
+    "core"     : {
+        "updateMinimum" : true,
+        "backwardIncompatibilitiesToIgnore" : [
+        ],
+        "type"                              : "Patch",
+        "changeLogMessages"                 : [
+            "Updating sdk-default-configuration.json file."
+        ]
+    },
+    "overrideVersion" : null
+}
