@@ -100,6 +100,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.ResourceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RowFilter", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RowFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Table", targetDepth))
                 {
                     var unmarshaller = TableUnmarshaller.Instance;
