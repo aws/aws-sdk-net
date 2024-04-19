@@ -112,6 +112,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.PerformAutoML = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("performAutoTraining", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PerformAutoTraining = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("performHPO", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

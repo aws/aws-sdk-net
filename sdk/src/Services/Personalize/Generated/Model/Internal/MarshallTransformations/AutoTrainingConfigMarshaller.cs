@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CampaignConfig Marshaller
+    /// AutoTrainingConfig Marshaller
     /// </summary>
-    public class CampaignConfigMarshaller : IRequestMarshaller<CampaignConfig, JsonMarshallerContext> 
+    public class AutoTrainingConfigMarshaller : IRequestMarshaller<AutoTrainingConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,32 +44,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CampaignConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AutoTrainingConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEnableMetadataWithRecommendations())
+            if(requestObject.IsSetSchedulingExpression())
             {
-                context.Writer.WritePropertyName("enableMetadataWithRecommendations");
-                context.Writer.Write(requestObject.EnableMetadataWithRecommendations);
-            }
-
-            if(requestObject.IsSetItemExplorationConfig())
-            {
-                context.Writer.WritePropertyName("itemExplorationConfig");
-                context.Writer.WriteObjectStart();
-                foreach (var requestObjectItemExplorationConfigKvp in requestObject.ItemExplorationConfig)
-                {
-                    context.Writer.WritePropertyName(requestObjectItemExplorationConfigKvp.Key);
-                    var requestObjectItemExplorationConfigValue = requestObjectItemExplorationConfigKvp.Value;
-
-                        context.Writer.Write(requestObjectItemExplorationConfigValue);
-                }
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSyncWithLatestSolutionVersion())
-            {
-                context.Writer.WritePropertyName("syncWithLatestSolutionVersion");
-                context.Writer.Write(requestObject.SyncWithLatestSolutionVersion);
+                context.Writer.WritePropertyName("schedulingExpression");
+                context.Writer.Write(requestObject.SchedulingExpression);
             }
 
         }
@@ -77,7 +57,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CampaignConfigMarshaller Instance = new CampaignConfigMarshaller();
+        public readonly static AutoTrainingConfigMarshaller Instance = new AutoTrainingConfigMarshaller();
 
     }
 }

@@ -76,6 +76,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoMLConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("autoTrainingConfig", targetDepth))
+                {
+                    var unmarshaller = AutoTrainingConfigUnmarshaller.Instance;
+                    unmarshalledObject.AutoTrainingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("eventValueThreshold", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

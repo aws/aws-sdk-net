@@ -35,6 +35,7 @@ namespace Amazon.Personalize.Model
     {
         private Dictionary<string, string> _algorithmHyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AutoMLConfig _automlConfig;
+        private AutoTrainingConfig _autoTrainingConfig;
         private string _eventValueThreshold;
         private Dictionary<string, string> _featureTransformationParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private HPOConfig _hpoConfig;
@@ -77,6 +78,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetAutoMLConfig()
         {
             return this._automlConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoTrainingConfig. 
+        /// <para>
+        /// Specifies the automatic training configuration to use.
+        /// </para>
+        /// </summary>
+        public AutoTrainingConfig AutoTrainingConfig
+        {
+            get { return this._autoTrainingConfig; }
+            set { this._autoTrainingConfig = value; }
+        }
+
+        // Check to see if AutoTrainingConfig property is set
+        internal bool IsSetAutoTrainingConfig()
+        {
+            return this._autoTrainingConfig != null;
         }
 
         /// <summary>

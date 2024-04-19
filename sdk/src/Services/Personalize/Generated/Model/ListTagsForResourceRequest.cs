@@ -40,7 +40,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The resource's Amazon Resource Name.
+        /// The resource's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

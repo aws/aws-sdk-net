@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CampaignConfig Object
+    /// Response Unmarshaller for AutoTrainingConfig Object
     /// </summary>  
-    public class CampaignConfigUnmarshaller : IUnmarshaller<CampaignConfig, XmlUnmarshallerContext>, IUnmarshaller<CampaignConfig, JsonUnmarshallerContext>
+    public class AutoTrainingConfigUnmarshaller : IUnmarshaller<AutoTrainingConfig, XmlUnmarshallerContext>, IUnmarshaller<AutoTrainingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CampaignConfig IUnmarshaller<CampaignConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutoTrainingConfig IUnmarshaller<AutoTrainingConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CampaignConfig Unmarshall(JsonUnmarshallerContext context)
+        public AutoTrainingConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            CampaignConfig unmarshalledObject = new CampaignConfig();
+            AutoTrainingConfig unmarshalledObject = new AutoTrainingConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,22 +64,10 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("enableMetadataWithRecommendations", targetDepth))
+                if (context.TestExpression("schedulingExpression", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableMetadataWithRecommendations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("itemExplorationConfig", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.ItemExplorationConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("syncWithLatestSolutionVersion", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.SyncWithLatestSolutionVersion = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SchedulingExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,12 +75,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         }
 
 
-        private static CampaignConfigUnmarshaller _instance = new CampaignConfigUnmarshaller();        
+        private static AutoTrainingConfigUnmarshaller _instance = new AutoTrainingConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CampaignConfigUnmarshaller Instance
+        public static AutoTrainingConfigUnmarshaller Instance
         {
             get
             {

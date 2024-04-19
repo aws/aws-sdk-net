@@ -94,6 +94,18 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trainingMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrainingMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("trainingType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrainingType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

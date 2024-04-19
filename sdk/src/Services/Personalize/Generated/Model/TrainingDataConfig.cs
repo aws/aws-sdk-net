@@ -41,9 +41,13 @@ namespace Amazon.Personalize.Model
         /// <para>
         /// Specifies the columns to exclude from training. Each key is a dataset type, and each
         /// value is a list of columns. Exclude columns to control what data Amazon Personalize
-        /// uses to generate recommendations. For example, you might have a column that you want
-        /// to use only to filter recommendations. You can exclude this column from training and
-        /// Amazon Personalize considers it only when filtering. 
+        /// uses to generate recommendations.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For example, you might have a column that you want to use only to filter recommendations.
+        /// You can exclude this column from training and Amazon Personalize considers it only
+        /// when filtering. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=3)]
