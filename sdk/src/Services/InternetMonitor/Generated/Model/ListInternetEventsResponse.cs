@@ -29,50 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
-    /// An internet service provider (ISP) or network (ASN) in Amazon CloudWatch Internet
-    /// Monitor.
+    /// This is the response object from the ListInternetEvents operation.
     /// </summary>
-    public partial class Network
+    public partial class ListInternetEventsResponse : AmazonWebServiceResponse
     {
-        private string _asName;
-        private long? _asNumber;
+        private List<InternetEventSummary> _internetEvents = AWSConfigs.InitializeCollections ? new List<InternetEventSummary>() : null;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ASName. 
+        /// Gets and sets the property InternetEvents. 
         /// <para>
-        /// The name of the internet service provider (ISP) or network (ASN).
+        /// A set of internet events returned for the list operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string ASName
+        public List<InternetEventSummary> InternetEvents
         {
-            get { return this._asName; }
-            set { this._asName = value; }
+            get { return this._internetEvents; }
+            set { this._internetEvents = value; }
         }
 
-        // Check to see if ASName property is set
-        internal bool IsSetASName()
+        // Check to see if InternetEvents property is set
+        internal bool IsSetInternetEvents()
         {
-            return this._asName != null;
+            return this._internetEvents != null && (this._internetEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property ASNumber. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The Autonomous System Number (ASN) of the internet provider or network.
+        /// The token for the next set of results. You receive this token from a previous call.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public long ASNumber
+        public string NextToken
         {
-            get { return this._asNumber.GetValueOrDefault(); }
-            set { this._asNumber = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if ASNumber property is set
-        internal bool IsSetASNumber()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._asNumber.HasValue; 
+            return this._nextToken != null;
         }
 
     }

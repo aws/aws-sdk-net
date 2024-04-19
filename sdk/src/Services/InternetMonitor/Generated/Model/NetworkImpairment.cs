@@ -61,7 +61,7 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property NetworkEventType. 
         /// <para>
-        /// Type of network impairment.
+        /// The type of network impairment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

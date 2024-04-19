@@ -29,33 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
-    /// Information about a location impacted by a health event in Amazon CloudWatch Internet
-    /// Monitor.
-    /// 
-    ///  
-    /// <para>
-    /// Geographic regions are hierarchically categorized into country, subdivision, metro
-    /// and city geographic granularities. The geographic region is identified based on the
-    /// IP address used at the client locations.
-    /// </para>
+    /// The impacted location, such as a city, that Amazon Web Services clients access application
+    /// resources from.
     /// </summary>
-    public partial class ImpactedLocation
+    public partial class ClientLocation
     {
         private string _asName;
         private long? _asNumber;
-        private NetworkImpairment _causedBy;
         private string _city;
         private string _country;
-        private string _countryCode;
-        private InternetHealth _internetHealth;
-        private List<string> _ipv4Prefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _latitude;
         private double? _longitude;
         private string _metro;
-        private string _serviceLocation;
-        private HealthEventStatus _status;
         private string _subdivision;
-        private string _subdivisionCode;
 
         /// <summary>
         /// Gets and sets the property ASName. 
@@ -96,31 +82,12 @@ namespace Amazon.InternetMonitor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CausedBy. 
-        /// <para>
-        /// The cause of the impairment. There are two types of network impairments: Amazon Web
-        /// Services network issues or internet issues. Internet issues are typically a problem
-        /// with a network provider, like an internet service provider (ISP).
-        /// </para>
-        /// </summary>
-        public NetworkImpairment CausedBy
-        {
-            get { return this._causedBy; }
-            set { this._causedBy = value; }
-        }
-
-        // Check to see if CausedBy property is set
-        internal bool IsSetCausedBy()
-        {
-            return this._causedBy != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property City. 
         /// <para>
-        /// The name of the city where the health event is located.
+        /// The name of the city where the internet event is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string City
         {
             get { return this._city; }
@@ -136,7 +103,7 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property Country. 
         /// <para>
-        /// The name of the country where the health event is located.
+        /// The name of the country where the internet event is located.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -153,66 +120,12 @@ namespace Amazon.InternetMonitor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CountryCode. 
-        /// <para>
-        /// The country code where the health event is located. The ISO 3166-2 codes for the country
-        /// is provided, when available. 
-        /// </para>
-        /// </summary>
-        public string CountryCode
-        {
-            get { return this._countryCode; }
-            set { this._countryCode = value; }
-        }
-
-        // Check to see if CountryCode property is set
-        internal bool IsSetCountryCode()
-        {
-            return this._countryCode != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InternetHealth. 
-        /// <para>
-        /// The calculated health at a specific location.
-        /// </para>
-        /// </summary>
-        public InternetHealth InternetHealth
-        {
-            get { return this._internetHealth; }
-            set { this._internetHealth = value; }
-        }
-
-        // Check to see if InternetHealth property is set
-        internal bool IsSetInternetHealth()
-        {
-            return this._internetHealth != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Ipv4Prefixes. 
-        /// <para>
-        /// The IPv4 prefixes at the client location that was impacted by the health event.
-        /// </para>
-        /// </summary>
-        public List<string> Ipv4Prefixes
-        {
-            get { return this._ipv4Prefixes; }
-            set { this._ipv4Prefixes = value; }
-        }
-
-        // Check to see if Ipv4Prefixes property is set
-        internal bool IsSetIpv4Prefixes()
-        {
-            return this._ipv4Prefixes != null && (this._ipv4Prefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
         /// Gets and sets the property Latitude. 
         /// <para>
-        /// The latitude where the health event is located.
+        /// The latitude where the internet event is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double Latitude
         {
             get { return this._latitude.GetValueOrDefault(); }
@@ -228,9 +141,10 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property Longitude. 
         /// <para>
-        /// The longitude where the health event is located.
+        /// The longitude where the internet event is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double Longitude
         {
             get { return this._longitude.GetValueOrDefault(); }
@@ -269,43 +183,6 @@ namespace Amazon.InternetMonitor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceLocation. 
-        /// <para>
-        /// The service location where the health event is located.
-        /// </para>
-        /// </summary>
-        public string ServiceLocation
-        {
-            get { return this._serviceLocation; }
-            set { this._serviceLocation = value; }
-        }
-
-        // Check to see if ServiceLocation property is set
-        internal bool IsSetServiceLocation()
-        {
-            return this._serviceLocation != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of the health event at an impacted location.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public HealthEventStatus Status
-        {
-            get { return this._status; }
-            set { this._status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this._status != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Subdivision. 
         /// <para>
         /// The subdivision location where the health event is located. The subdivision usually
@@ -323,25 +200,6 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetSubdivision()
         {
             return this._subdivision != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SubdivisionCode. 
-        /// <para>
-        /// The subdivision code where the health event is located. The ISO 3166-2 codes for country
-        /// subdivisions is provided, when available. 
-        /// </para>
-        /// </summary>
-        public string SubdivisionCode
-        {
-            get { return this._subdivisionCode; }
-            set { this._subdivisionCode = value; }
-        }
-
-        // Check to see if SubdivisionCode property is set
-        internal bool IsSetSubdivisionCode()
-        {
-            return this._subdivisionCode != null;
         }
 
     }

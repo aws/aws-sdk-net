@@ -43,7 +43,12 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property IncludeLinkedAccounts. 
         /// <para>
-        /// TBD 
+        /// A boolean option that you can set to <c>TRUE</c> to include monitors for linked accounts
+        /// in a list of monitors, when you've set up cross-account sharing in Amazon CloudWatch
+        /// Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability
+        /// Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+        /// Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor
+        /// User Guide.
         /// </para>
         /// </summary>
         public bool IncludeLinkedAccounts

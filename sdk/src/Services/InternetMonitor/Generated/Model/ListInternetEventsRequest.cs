@@ -29,32 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListHealthEvents operation.
-    /// Lists all health events for a monitor in Amazon CloudWatch Internet Monitor. Returns
-    /// information for health events including the event start and end times, and the status.
+    /// Container for the parameters to the ListInternetEvents operation.
+    /// Lists internet events that cause performance or availability issues for client locations.
+    /// Amazon CloudWatch Internet Monitor displays information about recent global health
+    /// events, called internet events, on a global outages map that is available to all Amazon
+    /// Web Services customers. 
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// Health events that have start times during the time frame that is requested are not
-    /// included in the list of health events.
+    /// You can constrain the list of internet events returned by providing a start time and
+    /// end time to define a total time frame for events you want to list. Both start time
+    /// and end time specify the time when an event started. End time is optional. If you
+    /// don't include it, the default end time is the current time.
     /// </para>
-    ///  </note>
+    ///  
+    /// <para>
+    /// You can also limit the events returned to a specific status (<c>ACTIVE</c> or <c>RESOLVED</c>)
+    /// or type (<c>PERFORMANCE</c> or <c>AVAILABILITY</c>).
+    /// </para>
     /// </summary>
-    public partial class ListHealthEventsRequest : AmazonInternetMonitorRequest
+    public partial class ListInternetEventsRequest : AmazonInternetMonitorRequest
     {
         private DateTime? _endTime;
-        private HealthEventStatus _eventStatus;
-        private string _linkedAccountId;
+        private string _eventStatus;
+        private string _eventType;
         private int? _maxResults;
-        private string _monitorName;
         private string _nextToken;
         private DateTime? _startTime;
 
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time when a health event ended. If the health event is still ongoing, then the
-        /// end time is not set.
+        /// The end time of the time window that you want to get a list of internet events for.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -72,10 +78,10 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property EventStatus. 
         /// <para>
-        /// The status of a health event.
+        /// The status of an internet event.
         /// </para>
         /// </summary>
-        public HealthEventStatus EventStatus
+        public string EventStatus
         {
             get { return this._eventStatus; }
             set { this._eventStatus = value; }
@@ -88,35 +94,30 @@ namespace Amazon.InternetMonitor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LinkedAccountId. 
+        /// Gets and sets the property EventType. 
         /// <para>
-        /// The account ID for an account that you've set up cross-account sharing for in Amazon
-        /// CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch
-        /// Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
-        /// Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor
-        /// User Guide.
+        /// The type of network impairment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=12, Max=12)]
-        public string LinkedAccountId
+        public string EventType
         {
-            get { return this._linkedAccountId; }
-            set { this._linkedAccountId = value; }
+            get { return this._eventType; }
+            set { this._eventType = value; }
         }
 
-        // Check to see if LinkedAccountId property is set
-        internal bool IsSetLinkedAccountId()
+        // Check to see if EventType property is set
+        internal bool IsSetEventType()
         {
-            return this._linkedAccountId != null;
+            return this._eventType != null;
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The number of health event objects that you want to return with this call. 
+        /// The number of query results that you want to return with this call.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -127,25 +128,6 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property MonitorName. 
-        /// <para>
-        /// The name of the monitor.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string MonitorName
-        {
-            get { return this._monitorName; }
-            set { this._monitorName = value; }
-        }
-
-        // Check to see if MonitorName property is set
-        internal bool IsSetMonitorName()
-        {
-            return this._monitorName != null;
         }
 
         /// <summary>
@@ -169,7 +151,7 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time when a health event started.
+        /// The start time of the time window that you want to get a list of internet events for.
         /// </para>
         /// </summary>
         public DateTime StartTime

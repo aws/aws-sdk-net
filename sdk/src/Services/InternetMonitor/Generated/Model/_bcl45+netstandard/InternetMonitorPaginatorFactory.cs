@@ -52,6 +52,14 @@ namespace Amazon.InternetMonitor.Model
         }
 
         /// <summary>
+        /// Paginator for ListInternetEvents operation
+        ///</summary>
+        public IListInternetEventsPaginator ListInternetEvents(ListInternetEventsRequest request) 
+        {
+            return new ListInternetEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMonitors operation
         ///</summary>
         public IListMonitorsPaginator ListMonitors(ListMonitorsRequest request) 
