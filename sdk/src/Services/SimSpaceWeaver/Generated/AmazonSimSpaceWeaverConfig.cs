@@ -32,7 +32,7 @@ namespace Amazon.SimSpaceWeaver
     public partial class AmazonSimSpaceWeaverConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SimSpaceWeaver", "3.7.300.77");
+            InternalSDKUtils.BuildUserAgentString("SimSpaceWeaver", "3.7.300.78");
 
         private string _userAgent = UserAgentString;
         ///<summary>

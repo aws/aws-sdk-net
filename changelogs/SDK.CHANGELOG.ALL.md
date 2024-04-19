@@ -1,3 +1,14 @@
+### 3.7.793.0 (2024-04-19 18:21 UTC)
+* Glue (3.7.310.0)
+	* Adding RowFilter in the response for GetUnfilteredTableMetadata API
+* InternetMonitor (3.7.304.0)
+	* This update introduces the GetInternetEvent and ListInternetEvents APIs, which provide access to internet events displayed on the Amazon CloudWatch Internet Weather Map.
+* Personalize (3.7.302.0)
+	* This releases auto training capability while creating a solution and automatically syncing latest solution versions when creating/updating a campaign
+* Core 3.7.303.18
+	* Updating sdk-default-configuration.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.792.0 (2024-04-18 18:25 UTC)
 * Drs (3.7.304.0)
 	* Outpost ARN added to Source Server and Recovery Instance
