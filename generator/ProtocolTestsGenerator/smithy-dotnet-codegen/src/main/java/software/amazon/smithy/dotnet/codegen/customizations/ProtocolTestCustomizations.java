@@ -135,6 +135,7 @@ public final class ProtocolTestCustomizations {
             "InputAndOutputWithTimestampHeaders",
             "NullAndEmptyHeaders",
             "XmlLists",
-            "NullAndEmptyHeaders"
+            "NullAndEmptyHeaders",
+            "RestXmlXmlMapWithXmlNamespace"
     );
 }
