@@ -26,6 +26,9 @@ namespace AWSSDK.UnitTests
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
+#if !BCL
+        [Ignore]
+#endif
         public void TestSuccessfulCall()
         {
             var factory = new MockHttpRequestFactory();
@@ -48,6 +51,9 @@ namespace AWSSDK.UnitTests
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
+#if !BCL
+        [Ignore]
+#endif
         public void TestErrorCall()
         {
             var factory = new MockHttpRequestFactory
@@ -268,9 +274,14 @@ namespace AWSSDK.UnitTests
             {
                 this.RequestUri = requestUri;
                 this.GetResponseAction = action;
+#if BCL
                 this.ResponseCreator = responseCreator ?? CreateResponse;
+#else
+                throw new NotImplementedException();
+#endif
             }
 
+#if BCL
             private HttpWebResponse CreateResponse(MockHttpRequest request)
             {
                 // Extract the last segment of the URI, this is the custom URI 
@@ -283,6 +294,7 @@ namespace AWSSDK.UnitTests
                 else                
                     throw new HttpErrorResponseException(new HttpWebRequestResponseData(response));    
             }
+#endif
             
             public void ConfigureRequest(IRequestContext requestContext)
             {
@@ -303,11 +315,15 @@ namespace AWSSDK.UnitTests
 
             public Amazon.Runtime.Internal.Transform.IWebResponseData GetResponse()
             {
+#if BCL
                 if (this.GetResponseAction!=null)                
                     this.GetResponseAction();
 
                 var response = ResponseCreator(this);
                 return new HttpWebRequestResponseData(response);
+#else
+                throw new NotImplementedException();
+#endif
             }
 
             public void WriteToRequestBody(Stream requestContent, Stream contentStream, 
@@ -423,6 +439,18 @@ namespace AWSSDK.UnitTests
             {
                 return originalStream;
             }
+
+#if !BCL
+            public Task<Stream> GetRequestContentAsync()
+            {
+                throw new NotImplementedException();
+            }
+
+            public Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
+            {
+                throw new NotImplementedException();
+            }
+#endif
         }
     }
 }
