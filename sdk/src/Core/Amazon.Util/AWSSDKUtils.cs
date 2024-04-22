@@ -904,19 +904,7 @@ namespace Amazon.Util
         /// <param name="bufferSize"></param>
         public static void CopyStream(Stream source, Stream destination, int bufferSize)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-            if (destination == null)
-                throw new ArgumentNullException("destination");
-            if (bufferSize <= 0)
-                throw new ArgumentOutOfRangeException("bufferSize");
-
-            byte[] array = new byte[bufferSize];
-            int count;
-            while ((count = source.Read(array, 0, array.Length)) != 0)
-            {
-                destination.Write(array, 0, count);
-            }
+            source.CopyTo(destination, bufferSize);
         }
 #endregion
 
