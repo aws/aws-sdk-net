@@ -40,8 +40,28 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class SessionState
     {
+        private string _invocationId;
         private Dictionary<string, string> _promptSessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<InvocationResultMember> _returnControlInvocationResults = AWSConfigs.InitializeCollections ? new List<InvocationResultMember>() : null;
         private Dictionary<string, string> _sessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property InvocationId. 
+        /// <para>
+        /// The identifier of the invocation.
+        /// </para>
+        /// </summary>
+        public string InvocationId
+        {
+            get { return this._invocationId; }
+            set { this._invocationId = value; }
+        }
+
+        // Check to see if InvocationId property is set
+        internal bool IsSetInvocationId()
+        {
+            return this._invocationId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PromptSessionAttributes. 
@@ -62,6 +82,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetPromptSessionAttributes()
         {
             return this._promptSessionAttributes != null && (this._promptSessionAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReturnControlInvocationResults. 
+        /// <para>
+        /// Contains information about the results from the action group invocation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<InvocationResultMember> ReturnControlInvocationResults
+        {
+            get { return this._returnControlInvocationResults; }
+            set { this._returnControlInvocationResults = value; }
+        }
+
+        // Check to see if ReturnControlInvocationResults property is set
+        internal bool IsSetReturnControlInvocationResults()
+        {
+            return this._returnControlInvocationResults != null && (this._returnControlInvocationResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

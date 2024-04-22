@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ActionGroupInvocationInput Object
+    /// Response Unmarshaller for ApiParameter Object
     /// </summary>  
-    public class ActionGroupInvocationInputUnmarshaller : IUnmarshaller<ActionGroupInvocationInput, XmlUnmarshallerContext>, IUnmarshaller<ActionGroupInvocationInput, JsonUnmarshallerContext>
+    public class ApiParameterUnmarshaller : IUnmarshaller<ApiParameter, XmlUnmarshallerContext>, IUnmarshaller<ApiParameter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ActionGroupInvocationInput IUnmarshaller<ActionGroupInvocationInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ApiParameter IUnmarshaller<ApiParameter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ActionGroupInvocationInput Unmarshall(JsonUnmarshallerContext context)
+        public ApiParameter Unmarshall(JsonUnmarshallerContext context)
         {
-            ActionGroupInvocationInput unmarshalledObject = new ActionGroupInvocationInput();
+            ApiParameter unmarshalledObject = new ApiParameter();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,40 +64,22 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("actionGroupName", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("apiPath", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApiPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("function", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Function = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parameters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Parameter, ParameterUnmarshaller>(ParameterUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("requestBody", targetDepth))
-                {
-                    var unmarshaller = RequestBodyUnmarshaller.Instance;
-                    unmarshalledObject.RequestBody = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("verb", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Verb = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -105,12 +87,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static ActionGroupInvocationInputUnmarshaller _instance = new ActionGroupInvocationInputUnmarshaller();        
+        private static ApiParameterUnmarshaller _instance = new ApiParameterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActionGroupInvocationInputUnmarshaller Instance
+        public static ApiParameterUnmarshaller Instance
         {
             get
             {

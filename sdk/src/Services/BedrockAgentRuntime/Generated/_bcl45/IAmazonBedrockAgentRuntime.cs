@@ -46,7 +46,8 @@ namespace Amazon.BedrockAgentRuntime
 
 
         /// <summary>
-        /// Sends a prompt for the agent to process and respond to.
+        /// Sends a prompt for the agent to process and respond to. Use return control event type
+        /// for function calling.
         /// 
         ///  <note> 
         /// <para>
@@ -71,7 +72,12 @@ namespace Amazon.BedrockAgentRuntime
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Include attributes for the session or prompt in the <c>sessionState</c> object.
+        /// In the <c>sessionState</c> object, you can include attributes for the session or prompt
+        /// or parameters returned from the action group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use return control event type for function calling.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -114,7 +120,8 @@ namespace Amazon.BedrockAgentRuntime
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -131,7 +138,8 @@ namespace Amazon.BedrockAgentRuntime
 
 
         /// <summary>
-        /// Sends a prompt for the agent to process and respond to.
+        /// Sends a prompt for the agent to process and respond to. Use return control event type
+        /// for function calling.
         /// 
         ///  <note> 
         /// <para>
@@ -156,7 +164,12 @@ namespace Amazon.BedrockAgentRuntime
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Include attributes for the session or prompt in the <c>sessionState</c> object.
+        /// In the <c>sessionState</c> object, you can include attributes for the session or prompt
+        /// or parameters returned from the action group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use return control event type for function calling.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -202,7 +215,8 @@ namespace Amazon.BedrockAgentRuntime
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -246,7 +260,8 @@ namespace Amazon.BedrockAgentRuntime
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -290,7 +305,8 @@ namespace Amazon.BedrockAgentRuntime
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -335,7 +351,8 @@ namespace Amazon.BedrockAgentRuntime
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -380,7 +397,8 @@ namespace Amazon.BedrockAgentRuntime
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.

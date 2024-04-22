@@ -29,28 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// The parameters in the API request body.
+    /// Contains the parameters in the request body.
     /// </summary>
-    public partial class RequestBody
+    public partial class PropertyParameters
     {
-        private Dictionary<string, List<Parameter>> _content = AWSConfigs.InitializeCollections ? new Dictionary<string, List<Parameter>>() : null;
+        private List<Parameter> _properties = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
 
         /// <summary>
-        /// Gets and sets the property Content. 
+        /// Gets and sets the property Properties. 
         /// <para>
-        /// The content in the request body.
+        /// A list of parameters in the request body.
         /// </para>
         /// </summary>
-        public Dictionary<string, List<Parameter>> Content
+        public List<Parameter> Properties
         {
-            get { return this._content; }
-            set { this._content = value; }
+            get { return this._properties; }
+            set { this._properties = value; }
         }
 
-        // Check to see if Content property is set
-        internal bool IsSetContent()
+        // Check to see if Properties property is set
+        internal bool IsSetProperties()
         {
-            return this._content != null && (this._content.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

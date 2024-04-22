@@ -29,19 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// The parameters in the API request body.
+    /// The request body to provide for the API request, as the agent elicited from the user.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+    /// response</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-    public partial class RequestBody
+    public partial class ApiRequestBody
     {
-        private Dictionary<string, List<Parameter>> _content = AWSConfigs.InitializeCollections ? new Dictionary<string, List<Parameter>>() : null;
+        private Dictionary<string, PropertyParameters> _content = AWSConfigs.InitializeCollections ? new Dictionary<string, PropertyParameters>() : null;
 
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content in the request body.
+        /// The content of the request body. The key of the object in this field is a media type
+        /// defining the format of the request body.
         /// </para>
         /// </summary>
-        public Dictionary<string, List<Parameter>> Content
+        public Dictionary<string, PropertyParameters> Content
         {
             get { return this._content; }
             set { this._content = value; }

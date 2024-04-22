@@ -29,9 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// A parameter for the API request or function.
+    /// Contains information about a parameter of the function.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// In the <c>returnControl</c> field of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+    /// response</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-    public partial class Parameter
+    public partial class FunctionParameter
     {
         private string _name;
         private string _type;
@@ -58,7 +69,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the parameter.
+        /// The data type of the parameter.
         /// </para>
         /// </summary>
         public string Type

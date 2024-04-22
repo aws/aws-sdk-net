@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TracePart Object
+    /// Response Unmarshaller for ApiRequestBody Object
     /// </summary>  
-    public class TracePartUnmarshaller : IUnmarshaller<TracePart, XmlUnmarshallerContext>, IUnmarshaller<TracePart, JsonUnmarshallerContext>
+    public class ApiRequestBodyUnmarshaller : IUnmarshaller<ApiRequestBody, XmlUnmarshallerContext>, IUnmarshaller<ApiRequestBody, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TracePart IUnmarshaller<TracePart, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ApiRequestBody IUnmarshaller<ApiRequestBody, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TracePart Unmarshall(JsonUnmarshallerContext context)
+        public ApiRequestBody Unmarshall(JsonUnmarshallerContext context)
         {
-            TracePart unmarshalledObject = new TracePart();
+            ApiRequestBody unmarshalledObject = new ApiRequestBody();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,34 +64,10 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("agentAliasId", targetDepth))
+                if (context.TestExpression("content", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentAliasId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("agentId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("agentVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sessionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SessionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("trace", targetDepth))
-                {
-                    var unmarshaller = TraceUnmarshaller.Instance;
-                    unmarshalledObject.Trace = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, PropertyParameters, StringUnmarshaller, PropertyParametersUnmarshaller>(StringUnmarshaller.Instance, PropertyParametersUnmarshaller.Instance);
+                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -99,12 +75,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static TracePartUnmarshaller _instance = new TracePartUnmarshaller();        
+        private static ApiRequestBodyUnmarshaller _instance = new ApiRequestBodyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TracePartUnmarshaller Instance
+        public static ApiRequestBodyUnmarshaller Instance
         {
             get
             {

@@ -29,42 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about the action group being invoked. For more information about
-    /// the possible structures, see the InvocationInput tab in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-orchestration.html">OrchestrationTrace</a>
-    /// in the Amazon Bedrock User Guide.
+    /// Contains information about the API operation that the agent predicts should be called.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// In the <c>returnControl</c> field of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+    /// response</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-    public partial class ActionGroupInvocationInput
+    public partial class ApiInvocationInput
     {
-        private string _actionGroupName;
+        private string _actionGroup;
         private string _apiPath;
-        private string _function;
-        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
-        private RequestBody _requestBody;
-        private string _verb;
+        private string _httpMethod;
+        private List<ApiParameter> _parameters = AWSConfigs.InitializeCollections ? new List<ApiParameter>() : null;
+        private ApiRequestBody _requestBody;
 
         /// <summary>
-        /// Gets and sets the property ActionGroupName. 
+        /// Gets and sets the property ActionGroup. 
         /// <para>
-        /// The name of the action group.
+        /// The action group that the API operation belongs to.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string ActionGroupName
+        [AWSProperty(Required=true)]
+        public string ActionGroup
         {
-            get { return this._actionGroupName; }
-            set { this._actionGroupName = value; }
+            get { return this._actionGroup; }
+            set { this._actionGroup = value; }
         }
 
-        // Check to see if ActionGroupName property is set
-        internal bool IsSetActionGroupName()
+        // Check to see if ActionGroup property is set
+        internal bool IsSetActionGroup()
         {
-            return this._actionGroupName != null;
+            return this._actionGroup != null;
         }
 
         /// <summary>
         /// Gets and sets the property ApiPath. 
         /// <para>
-        /// The path to the API to call, based off the action group.
+        /// The path to the API operation.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -81,31 +89,30 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Function. 
+        /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// The function in the action group to call.
+        /// The HTTP method of the API operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string Function
+        public string HttpMethod
         {
-            get { return this._function; }
-            set { this._function = value; }
+            get { return this._httpMethod; }
+            set { this._httpMethod = value; }
         }
 
-        // Check to see if Function property is set
-        internal bool IsSetFunction()
+        // Check to see if HttpMethod property is set
+        internal bool IsSetHttpMethod()
         {
-            return this._function != null;
+            return this._httpMethod != null;
         }
 
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters in the Lambda input event.
+        /// The parameters to provide for the API request, as the agent elicited from the user.
         /// </para>
         /// </summary>
-        public List<Parameter> Parameters
+        public List<ApiParameter> Parameters
         {
             get { return this._parameters; }
             set { this._parameters = value; }
@@ -120,10 +127,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property RequestBody. 
         /// <para>
-        /// The parameters in the request body for the Lambda input event.
+        /// The request body to provide for the API request, as the agent elicited from the user.
         /// </para>
         /// </summary>
-        public RequestBody RequestBody
+        public ApiRequestBody RequestBody
         {
             get { return this._requestBody; }
             set { this._requestBody = value; }
@@ -133,25 +140,6 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetRequestBody()
         {
             return this._requestBody != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Verb. 
-        /// <para>
-        /// The API method being used, based off the action group.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string Verb
-        {
-            get { return this._verb; }
-            set { this._verb = value; }
-        }
-
-        // Check to see if Verb property is set
-        internal bool IsSetVerb()
-        {
-            return this._verb != null;
         }
 
     }
