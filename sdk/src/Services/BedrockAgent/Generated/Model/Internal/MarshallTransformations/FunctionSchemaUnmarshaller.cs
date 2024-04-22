@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ActionGroupExecutor Object
+    /// Response Unmarshaller for FunctionSchema Object
     /// </summary>  
-    public class ActionGroupExecutorUnmarshaller : IUnmarshaller<ActionGroupExecutor, XmlUnmarshallerContext>, IUnmarshaller<ActionGroupExecutor, JsonUnmarshallerContext>
+    public class FunctionSchemaUnmarshaller : IUnmarshaller<FunctionSchema, XmlUnmarshallerContext>, IUnmarshaller<FunctionSchema, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ActionGroupExecutor IUnmarshaller<ActionGroupExecutor, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FunctionSchema IUnmarshaller<FunctionSchema, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ActionGroupExecutor Unmarshall(JsonUnmarshallerContext context)
+        public FunctionSchema Unmarshall(JsonUnmarshallerContext context)
         {
-            ActionGroupExecutor unmarshalledObject = new ActionGroupExecutor();
+            FunctionSchema unmarshalledObject = new FunctionSchema();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,16 +64,10 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("customControl", targetDepth))
+                if (context.TestExpression("functions", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomControl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lambda", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Lambda = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Function, FunctionUnmarshaller>(FunctionUnmarshaller.Instance);
+                    unmarshalledObject.Functions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -81,12 +75,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static ActionGroupExecutorUnmarshaller _instance = new ActionGroupExecutorUnmarshaller();        
+        private static FunctionSchemaUnmarshaller _instance = new FunctionSchemaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActionGroupExecutorUnmarshaller Instance
+        public static FunctionSchemaUnmarshaller Instance
         {
             get
             {

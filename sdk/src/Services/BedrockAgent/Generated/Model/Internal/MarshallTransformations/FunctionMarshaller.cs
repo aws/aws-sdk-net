@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ActionGroupExecutor Marshaller
+    /// Function Marshaller
     /// </summary>
-    public class ActionGroupExecutorMarshaller : IRequestMarshaller<ActionGroupExecutor, JsonMarshallerContext> 
+    public class FunctionMarshaller : IRequestMarshaller<Function, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,18 +44,37 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ActionGroupExecutor requestObject, JsonMarshallerContext context)
+        public void Marshall(Function requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCustomControl())
+            if(requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("customControl");
-                context.Writer.Write(requestObject.CustomControl);
+                context.Writer.WritePropertyName("description");
+                context.Writer.Write(requestObject.Description);
             }
 
-            if(requestObject.IsSetLambda())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("lambda");
-                context.Writer.Write(requestObject.Lambda);
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
+            }
+
+            if(requestObject.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectParametersKvp in requestObject.Parameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
+                    var requestObjectParametersValue = requestObjectParametersKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ParameterDetailMarshaller.Instance;
+                    marshaller.Marshall(requestObjectParametersValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -63,7 +82,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ActionGroupExecutorMarshaller Instance = new ActionGroupExecutorMarshaller();
+        public readonly static FunctionMarshaller Instance = new FunctionMarshaller();
 
     }
 }

@@ -123,6 +123,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetFunctionSchema())
+                {
+                    context.Writer.WritePropertyName("functionSchema");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FunctionSchemaMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FunctionSchema, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetParentActionGroupSignature())
                 {
                     context.Writer.WritePropertyName("parentActionGroupSignature");

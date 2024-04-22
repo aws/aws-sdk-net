@@ -43,6 +43,7 @@ namespace Amazon.BedrockAgent.Model
         private string _clientToken;
         private DateTime? _createdAt;
         private string _description;
+        private FunctionSchema _functionSchema;
         private ActionGroupSignature _parentActionSignature;
         private DateTime? _updatedAt;
 
@@ -241,6 +242,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FunctionSchema. 
+        /// <para>
+        /// Defines functions that each define parameters that the agent needs to invoke from
+        /// the user. Each function represents an action in an action group.
+        /// </para>
+        /// </summary>
+        public FunctionSchema FunctionSchema
+        {
+            get { return this._functionSchema; }
+            set { this._functionSchema = value; }
+        }
+
+        // Check to see if FunctionSchema property is set
+        internal bool IsSetFunctionSchema()
+        {
+            return this._functionSchema != null;
         }
 
         /// <summary>

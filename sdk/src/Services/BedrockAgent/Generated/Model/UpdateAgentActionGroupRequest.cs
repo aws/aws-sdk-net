@@ -42,6 +42,7 @@ namespace Amazon.BedrockAgent.Model
         private string _agentVersion;
         private APISchema _apiSchema;
         private string _description;
+        private FunctionSchema _functionSchema;
         private ActionGroupSignature _parentActionGroupSignature;
 
         /// <summary>
@@ -197,6 +198,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FunctionSchema. 
+        /// <para>
+        /// Contains details about the function schema for the action group or the JSON or YAML-formatted
+        /// payload defining the schema.
+        /// </para>
+        /// </summary>
+        public FunctionSchema FunctionSchema
+        {
+            get { return this._functionSchema; }
+            set { this._functionSchema = value; }
+        }
+
+        // Check to see if FunctionSchema property is set
+        internal bool IsSetFunctionSchema()
+        {
+            return this._functionSchema != null;
         }
 
         /// <summary>

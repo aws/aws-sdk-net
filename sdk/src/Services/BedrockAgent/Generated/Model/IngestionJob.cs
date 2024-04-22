@@ -48,7 +48,7 @@ namespace Amazon.BedrockAgent.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListIngestionJob.html#API_agent_ListIngestionJob_ResponseSyntax">ListIngestionJob
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListIngestionJobs.html#API_agent_ListIngestionJobs_ResponseSyntax">ListIngestionJob
     /// response</a> 
     /// </para>
     ///  </li> </ul>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ActionGroupExecutor Marshaller
+    /// FunctionSchema Marshaller
     /// </summary>
-    public class ActionGroupExecutorMarshaller : IRequestMarshaller<ActionGroupExecutor, JsonMarshallerContext> 
+    public class FunctionSchemaMarshaller : IRequestMarshaller<FunctionSchema, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,18 +44,22 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ActionGroupExecutor requestObject, JsonMarshallerContext context)
+        public void Marshall(FunctionSchema requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCustomControl())
+            if(requestObject.IsSetFunctions())
             {
-                context.Writer.WritePropertyName("customControl");
-                context.Writer.Write(requestObject.CustomControl);
-            }
+                context.Writer.WritePropertyName("functions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFunctionsListValue in requestObject.Functions)
+                {
+                    context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetLambda())
-            {
-                context.Writer.WritePropertyName("lambda");
-                context.Writer.Write(requestObject.Lambda);
+                    var marshaller = FunctionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFunctionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -63,7 +67,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ActionGroupExecutorMarshaller Instance = new ActionGroupExecutorMarshaller();
+        public readonly static FunctionSchemaMarshaller Instance = new FunctionSchemaMarshaller();
 
     }
 }

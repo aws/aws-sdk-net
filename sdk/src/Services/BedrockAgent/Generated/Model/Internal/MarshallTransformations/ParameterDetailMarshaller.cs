@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ActionGroupExecutor Marshaller
+    /// ParameterDetail Marshaller
     /// </summary>
-    public class ActionGroupExecutorMarshaller : IRequestMarshaller<ActionGroupExecutor, JsonMarshallerContext> 
+    public class ParameterDetailMarshaller : IRequestMarshaller<ParameterDetail, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,18 +44,24 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ActionGroupExecutor requestObject, JsonMarshallerContext context)
+        public void Marshall(ParameterDetail requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCustomControl())
+            if(requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("customControl");
-                context.Writer.Write(requestObject.CustomControl);
+                context.Writer.WritePropertyName("description");
+                context.Writer.Write(requestObject.Description);
             }
 
-            if(requestObject.IsSetLambda())
+            if(requestObject.IsSetRequired())
             {
-                context.Writer.WritePropertyName("lambda");
-                context.Writer.Write(requestObject.Lambda);
+                context.Writer.WritePropertyName("required");
+                context.Writer.Write(requestObject.Required);
+            }
+
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
             }
 
         }
@@ -63,7 +69,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ActionGroupExecutorMarshaller Instance = new ActionGroupExecutorMarshaller();
+        public readonly static ParameterDetailMarshaller Instance = new ParameterDetailMarshaller();
 
     }
 }
