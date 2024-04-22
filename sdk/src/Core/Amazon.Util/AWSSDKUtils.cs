@@ -39,6 +39,7 @@ using System.Threading.Tasks;
 #if NETSTANDARD
 using System.Net.Http;
 using System.Runtime.InteropServices;
+using System.Buffers;
 #endif
 
 namespace Amazon.Util
@@ -767,14 +768,30 @@ namespace Amazon.Util
                 return Convert.ToHexString(data);
             }
 #endif
-            StringBuilder sb = new StringBuilder();
+            char[] chars = ArrayPool<char>.Shared.Rent(data.Length * 2);
 
-            for (int i = 0; i < data.Length; i++)
+            try
             {
-                sb.Append(data[i].ToString(lowercase ? "x2" : "X2", CultureInfo.InvariantCulture));
-            }
+                Func<int, char> converter = lowercase ? (Func<int, char>)ToLowerHex : (Func<int, char>)ToUpperHex;
 
-            return sb.ToString();
+                for (int i = 0; i < data.Length; i++)
+                {
+                    // Break apart the byte into two four-bit components and
+                    // then convert each into their hexadecimal equivalent.
+                    byte b = data[i];
+                    int hiNibble = b >> 4;
+                    int loNibble = b & 0xF;
+
+                    chars[i * 2] = converter(hiNibble);
+                    chars[i * 2 + 1] = converter(loNibble);
+                }
+
+                return new string(chars, 0, data.Length * 2);
+            }
+            finally
+            {
+                ArrayPool<char>.Shared.Return(chars);
+            }
         }
 
         /// <summary>
@@ -1177,7 +1194,18 @@ namespace Amazon.Util
             // Maps 10-15 to the Unicode range of 'A' - 'F' (0x41 - 0x46).
             return (char)(value - 10 + 'A');
         }
-                
+
+        private static char ToLowerHex(int value)
+        {
+            // Maps 0-9 to the Unicode range of '0' - '9' (0x30 - 0x39).
+            if (value <= 9)
+            {
+                return (char)(value + '0');
+            }
+            // Maps 10-15 to the Unicode range of 'a' - 'f' (0x61 - 0x66).
+            return (char)(value - 10 + 'a');
+        }
+
         internal static string UrlEncodeSlash(string data)
         {
             if (string.IsNullOrEmpty(data))
