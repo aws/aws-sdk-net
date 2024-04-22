@@ -12,6 +12,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Encryption.Internal
 {
     /// <summary>
@@ -193,6 +194,9 @@ namespace Amazon.S3.Encryption.Internal
         /// <param name="putObjectRequest">
         /// The request whose contents are to be encrypted.
         /// </param>
+        /// <param name="instructions">
+        /// Instructions used for encrypting the object being uploaded to S3.
+        /// </param>
         private void GenerateEncryptedObjectRequestUsingMetadata(PutObjectRequest putObjectRequest, EncryptionInstructions instructions)
         {
             EncryptionUtils.AddUnencryptedContentLengthToMetadata(putObjectRequest);
@@ -210,6 +214,7 @@ namespace Amazon.S3.Encryption.Internal
         /// and the input stream contains the encrypted object contents.
         /// </summary>
         /// <param name="putObjectRequest"></param>
+        /// <param name="instructions"></param>
         private void GenerateEncryptedObjectRequestUsingInstructionFile(PutObjectRequest putObjectRequest, EncryptionInstructions instructions)
         {
             EncryptionUtils.AddUnencryptedContentLengthToMetadata(putObjectRequest);

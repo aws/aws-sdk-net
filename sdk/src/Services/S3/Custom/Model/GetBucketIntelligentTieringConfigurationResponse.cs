@@ -19,8 +19,10 @@ using System.Text;
 
 namespace Amazon.S3.Model
 {
-	
-	public partial class GetBucketIntelligentTieringConfigurationResponse : AmazonWebServiceResponse
+    /// <summary>
+    /// Response object for the GetBucketIntelligentTieringConfiguration operation.
+    /// </summary>
+    public partial class GetBucketIntelligentTieringConfigurationResponse : AmazonWebServiceResponse
 	{
         IntelligentTieringConfiguration intelligentTieringConfiguration;
 

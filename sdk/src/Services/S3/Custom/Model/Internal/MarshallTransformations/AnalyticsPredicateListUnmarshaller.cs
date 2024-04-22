@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class AnalyticsPredicateListUnmarshaller : IUnmarshaller<List<AnalyticsFilterPredicate>, XmlUnmarshallerContext>, IUnmarshaller<List<AnalyticsFilterPredicate>, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public List<AnalyticsFilterPredicate> Unmarshall(XmlUnmarshallerContext context)
         {
             List<AnalyticsFilterPredicate> filterPredicateList = new List<AnalyticsFilterPredicate>();
@@ -69,6 +74,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return filterPredicateList;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public List<AnalyticsFilterPredicate> Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -76,6 +86,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static AnalyticsPredicateListUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static AnalyticsPredicateListUnmarshaller Instance
         {
             get

@@ -22,6 +22,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class DeleteObjectTaggingResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteObjectTaggingResponse response = new DeleteObjectTaggingResponse();
@@ -40,7 +45,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         private static DeleteObjectTaggingResponseUnmarshaller _instance;
-        
+
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static DeleteObjectTaggingResponseUnmarshaller Instance
         {
             get

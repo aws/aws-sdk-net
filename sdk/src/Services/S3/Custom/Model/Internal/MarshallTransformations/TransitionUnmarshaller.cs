@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// </summary>
     public class TransitionUnmarshaller : IUnmarshaller<LifecycleTransition, XmlUnmarshallerContext>, IUnmarshaller<LifecycleTransition, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LifecycleTransition Unmarshall(XmlUnmarshallerContext context) 
         {
             LifecycleTransition transition = new LifecycleTransition();
@@ -67,6 +72,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return transition;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LifecycleTransition Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -74,6 +84,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static TransitionUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static TransitionUnmarshaller Instance
         {
             get

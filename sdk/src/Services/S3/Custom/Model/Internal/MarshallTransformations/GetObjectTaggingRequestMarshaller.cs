@@ -66,6 +66,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetObjectTaggingRequestMarshaller _instance;
 
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static GetObjectTaggingRequestMarshaller Instance
         {
             get

@@ -75,7 +75,7 @@ namespace Amazon.S3.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListObjectsV2Response> IPaginator<ListObjectsV2Response>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListObjectsV2Response> IPaginator<ListObjectsV2Response>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

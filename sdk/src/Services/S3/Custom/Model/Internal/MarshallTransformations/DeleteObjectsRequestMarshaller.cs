@@ -109,7 +109,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static DeleteObjectsRequestMarshaller _instance;
 
-	    public static DeleteObjectsRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static DeleteObjectsRequestMarshaller Instance
 	    {
 	        get
 	        {

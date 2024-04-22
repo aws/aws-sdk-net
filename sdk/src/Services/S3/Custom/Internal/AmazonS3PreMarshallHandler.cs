@@ -202,8 +202,9 @@ namespace Amazon.S3.Internal
         {
             if (config.RegionEndpoint != null && string.IsNullOrEmpty(config.ServiceURL))
                 return config.RegionEndpoint.SystemName;
-
+#pragma warning disable CS0612, CS0618
             return AWSSDKUtils.DetermineRegion(config.DetermineServiceURL());
+#pragma warning restore CS0612,CS0618
         }
     }
 }

@@ -27,6 +27,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class GetBucketRequestPaymentResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             GetBucketRequestPaymentResponse response = new GetBucketRequestPaymentResponse();
@@ -77,6 +82,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetBucketRequestPaymentResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GetBucketRequestPaymentResponseUnmarshaller Instance
         {
             get

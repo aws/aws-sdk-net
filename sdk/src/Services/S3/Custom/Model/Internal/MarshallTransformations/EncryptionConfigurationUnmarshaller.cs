@@ -19,8 +19,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// EncryptionConfiguration unmarshaller
+    /// </summary>
     public class EncryptionConfigurationUnmarshaller : IUnmarshaller<EncryptionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<EncryptionConfiguration, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public EncryptionConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
             EncryptionConfiguration EncryptionConfiguration = new EncryptionConfiguration();
@@ -50,6 +58,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return EncryptionConfiguration;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public EncryptionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -57,6 +70,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static EncryptionConfigurationUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static EncryptionConfigurationUnmarshaller Instance
         {
             get

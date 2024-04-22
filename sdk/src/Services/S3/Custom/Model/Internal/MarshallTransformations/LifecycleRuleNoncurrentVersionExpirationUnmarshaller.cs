@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class LifecycleRuleNoncurrentVersionExpirationUnmarshaller : IUnmarshaller<LifecycleRuleNoncurrentVersionExpiration, XmlUnmarshallerContext>, IUnmarshaller<LifecycleRuleNoncurrentVersionExpiration, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LifecycleRuleNoncurrentVersionExpiration Unmarshall(XmlUnmarshallerContext context)
         {
             LifecycleRuleNoncurrentVersionExpiration expiration = new LifecycleRuleNoncurrentVersionExpiration();
@@ -59,6 +64,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return expiration;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LifecycleRuleNoncurrentVersionExpiration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -66,6 +76,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static LifecycleRuleNoncurrentVersionExpirationUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static LifecycleRuleNoncurrentVersionExpirationUnmarshaller Instance
         {
             get

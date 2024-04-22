@@ -25,11 +25,18 @@ namespace Amazon.S3.Model
 	{
 		private readonly List<IntelligentTieringFilterPredicate> operands;
 
-		protected IntelligentTieringNAryOperator(List<IntelligentTieringFilterPredicate> operands)
+        /// <summary>
+        /// Construct an instance of IntelligentTieringNAryOperator
+        /// </summary>
+        /// <param name="operands"></param>
+        protected IntelligentTieringNAryOperator(List<IntelligentTieringFilterPredicate> operands)
 		{
 			this.operands = operands;
 		}
 
+		/// <summary>
+		/// The list of operands.
+		/// </summary>
 		public List<IntelligentTieringFilterPredicate> Operands
 		{
 			get { return this.operands; }

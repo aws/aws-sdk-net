@@ -57,6 +57,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ListBucketInventoryConfigurationsRequestMarshaller _instance;
 
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static ListBucketInventoryConfigurationsRequestMarshaller Instance
         {
             get

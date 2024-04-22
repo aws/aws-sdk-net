@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// </summary>
     public class MultipartUploadUnmarshaller : IUnmarshaller<MultipartUpload, XmlUnmarshallerContext>, IUnmarshaller<MultipartUpload, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public MultipartUpload Unmarshall(XmlUnmarshallerContext context) 
         {
             MultipartUpload uploadsItem = new MultipartUpload();
@@ -90,6 +95,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return uploadsItem;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public MultipartUpload Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -97,6 +107,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static MultipartUploadUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static MultipartUploadUnmarshaller Instance
         {
             get

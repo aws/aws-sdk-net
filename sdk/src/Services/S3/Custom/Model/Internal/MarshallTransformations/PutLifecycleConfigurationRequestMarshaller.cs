@@ -23,8 +23,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 
-#pragma warning disable 1591
-
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -219,7 +218,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static PutLifecycleConfigurationRequestMarshaller _instance;
 
-	    public static PutLifecycleConfigurationRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static PutLifecycleConfigurationRequestMarshaller Instance
 	    {
 	        get
 	        {

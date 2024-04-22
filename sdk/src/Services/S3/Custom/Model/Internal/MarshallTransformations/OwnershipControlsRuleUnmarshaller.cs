@@ -22,8 +22,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// OwnershipControlsRule unmarshaller
+    /// </summary>
     public class OwnershipControlsRuleUnmarshaller : IUnmarshaller<OwnershipControlsRule, XmlUnmarshallerContext>, IUnmarshaller<OwnershipControlsRule, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public OwnershipControlsRule Unmarshall(XmlUnmarshallerContext context)
         {
             OwnershipControlsRule rule = new OwnershipControlsRule();
@@ -60,6 +68,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static OwnershipControlsRuleUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static OwnershipControlsRuleUnmarshaller Instance
         {
             get

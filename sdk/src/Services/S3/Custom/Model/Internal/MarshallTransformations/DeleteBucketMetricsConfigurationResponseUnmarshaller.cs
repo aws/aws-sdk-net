@@ -27,6 +27,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class DeleteBucketMetricsConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DeleteBucketMetricsConfigurationResponse response = new DeleteBucketMetricsConfigurationResponse();
@@ -37,6 +42,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static DeleteBucketMetricsConfigurationResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static DeleteBucketMetricsConfigurationResponseUnmarshaller Instance
         {
             get

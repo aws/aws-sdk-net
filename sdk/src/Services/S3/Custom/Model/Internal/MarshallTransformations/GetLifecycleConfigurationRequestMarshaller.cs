@@ -54,7 +54,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static GetLifecycleConfigurationRequestMarshaller _instance;
 
-	    public static GetLifecycleConfigurationRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static GetLifecycleConfigurationRequestMarshaller Instance
 	    {
 	        get
 	        {

@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// </summary>
     public class RoutingRuleRedirectUnmarshaller : IUnmarshaller<RoutingRuleRedirect, XmlUnmarshallerContext>, IUnmarshaller<RoutingRuleRedirect, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public RoutingRuleRedirect Unmarshall(XmlUnmarshallerContext context) 
         {
             RoutingRuleRedirect redirect = new RoutingRuleRedirect();
@@ -79,6 +84,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return redirect;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public RoutingRuleRedirect Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -86,6 +96,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static RoutingRuleRedirectUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static RoutingRuleRedirectUnmarshaller Instance
         {
             get

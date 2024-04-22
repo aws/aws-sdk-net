@@ -19,8 +19,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// DeleteMarkerReplication unmarshaller
+    /// </summary>
     public class DeleteMarkerReplicationUnmarshaller : IUnmarshaller<DeleteMarkerReplication, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DeleteMarkerReplication Unmarshall(XmlUnmarshallerContext context)
         {
             DeleteMarkerReplication deleteMarkerReplication = new DeleteMarkerReplication();
@@ -52,6 +60,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static DeleteMarkerReplicationUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static DeleteMarkerReplicationUnmarshaller Instance
         {
             get
