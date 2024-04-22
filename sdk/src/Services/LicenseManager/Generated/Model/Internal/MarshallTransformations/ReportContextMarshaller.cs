@@ -46,6 +46,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReportContext requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLicenseConfigurationArns())
             {
                 context.Writer.WritePropertyName("licenseConfigurationArns");

@@ -46,6 +46,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SsmAutomation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDocumentName())
             {
                 context.Writer.WritePropertyName("documentName");

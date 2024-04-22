@@ -46,6 +46,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExecutorConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetJobWorkerExecutorConfiguration())
             {
                 context.Writer.WritePropertyName("jobWorkerExecutorConfiguration");

@@ -46,6 +46,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AssociateClientDeviceWithCoreDeviceEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetThingName())
             {
                 context.Writer.WritePropertyName("thingName");

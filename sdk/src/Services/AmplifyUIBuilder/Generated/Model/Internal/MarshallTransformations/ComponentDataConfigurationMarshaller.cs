@@ -46,6 +46,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ComponentDataConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIdentifiers())
             {
                 context.Writer.WritePropertyName("identifiers");

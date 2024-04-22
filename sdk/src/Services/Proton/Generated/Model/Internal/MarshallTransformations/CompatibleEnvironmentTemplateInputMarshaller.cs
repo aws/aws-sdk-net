@@ -46,6 +46,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CompatibleEnvironmentTemplateInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMajorVersion())
             {
                 context.Writer.WritePropertyName("majorVersion");

@@ -46,6 +46,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HttpEndpointRequestConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCommonAttributes())
             {
                 context.Writer.WritePropertyName("CommonAttributes");

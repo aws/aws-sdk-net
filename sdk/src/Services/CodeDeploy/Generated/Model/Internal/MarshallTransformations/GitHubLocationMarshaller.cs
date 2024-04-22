@@ -46,6 +46,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GitHubLocation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCommitId())
             {
                 context.Writer.WritePropertyName("commitId");

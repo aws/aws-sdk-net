@@ -46,6 +46,8 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
         /// <returns></returns>
         public void Marshall(AssertionRuleUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

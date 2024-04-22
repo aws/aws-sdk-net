@@ -46,6 +46,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Threshold requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
@@ -61,7 +63,14 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Value);
+                }
             }
 
         }

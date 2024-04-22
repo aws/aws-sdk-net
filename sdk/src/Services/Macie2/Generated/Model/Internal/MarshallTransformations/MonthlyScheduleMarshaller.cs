@@ -46,6 +46,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MonthlySchedule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDayOfMonth())
             {
                 context.Writer.WritePropertyName("dayOfMonth");

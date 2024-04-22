@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResponseHeadersPolicyCorsConfig Object
     /// </summary>  
-    public class ResponseHeadersPolicyCorsConfigUnmarshaller : IUnmarshaller<ResponseHeadersPolicyCorsConfig, XmlUnmarshallerContext>
+    public class ResponseHeadersPolicyCorsConfigUnmarshaller : IUnmarshaller<ResponseHeadersPolicyCorsConfig, XmlUnmarshallerContext>, IUnmarshaller<ResponseHeadersPolicyCorsConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -105,6 +105,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ResponseHeadersPolicyCorsConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static ResponseHeadersPolicyCorsConfigUnmarshaller _instance = new ResponseHeadersPolicyCorsConfigUnmarshaller();        

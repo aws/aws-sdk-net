@@ -46,6 +46,8 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScteDash requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdMarkerDash())
             {
                 context.Writer.WritePropertyName("AdMarkerDash");

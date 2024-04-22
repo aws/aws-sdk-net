@@ -46,6 +46,8 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamModeDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStreamMode())
             {
                 context.Writer.WritePropertyName("StreamMode");

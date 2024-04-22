@@ -46,6 +46,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RedshiftServerlessStorage requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetWorkgroupName())
             {
                 context.Writer.WritePropertyName("workgroupName");

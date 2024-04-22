@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginCustomHeader Object
     /// </summary>  
-    public class OriginCustomHeaderUnmarshaller : IUnmarshaller<OriginCustomHeader, XmlUnmarshallerContext>
+    public class OriginCustomHeaderUnmarshaller : IUnmarshaller<OriginCustomHeader, XmlUnmarshallerContext>, IUnmarshaller<OriginCustomHeader, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,6 +75,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public OriginCustomHeader Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static OriginCustomHeaderUnmarshaller _instance = new OriginCustomHeaderUnmarshaller();        

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResponseHeadersPolicyRemoveHeadersConfig Object
     /// </summary>  
-    public class ResponseHeadersPolicyRemoveHeadersConfigUnmarshaller : IUnmarshaller<ResponseHeadersPolicyRemoveHeadersConfig, XmlUnmarshallerContext>
+    public class ResponseHeadersPolicyRemoveHeadersConfigUnmarshaller : IUnmarshaller<ResponseHeadersPolicyRemoveHeadersConfig, XmlUnmarshallerContext>, IUnmarshaller<ResponseHeadersPolicyRemoveHeadersConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -79,6 +79,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ResponseHeadersPolicyRemoveHeadersConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static ResponseHeadersPolicyRemoveHeadersConfigUnmarshaller _instance = new ResponseHeadersPolicyRemoveHeadersConfigUnmarshaller();        

@@ -46,6 +46,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SpliceInsertMessage requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailNum())
             {
                 context.Writer.WritePropertyName("AvailNum");

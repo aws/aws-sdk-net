@@ -46,6 +46,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScalingConfigurationInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("maxCapacity");

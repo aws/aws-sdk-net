@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FunctionResult requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActionGroup())
             {
                 context.Writer.WritePropertyName("actionGroup");

@@ -46,6 +46,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RulesSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRulesSourceList())
             {
                 context.Writer.WritePropertyName("RulesSourceList");

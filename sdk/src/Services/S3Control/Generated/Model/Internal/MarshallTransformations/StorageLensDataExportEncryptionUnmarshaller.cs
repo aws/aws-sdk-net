@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StorageLensDataExportEncryption Object
     /// </summary>  
-    public class StorageLensDataExportEncryptionUnmarshaller : IUnmarshaller<StorageLensDataExportEncryption, XmlUnmarshallerContext>
+    public class StorageLensDataExportEncryptionUnmarshaller : IUnmarshaller<StorageLensDataExportEncryption, XmlUnmarshallerContext>, IUnmarshaller<StorageLensDataExportEncryption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,6 +75,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public StorageLensDataExportEncryption Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static StorageLensDataExportEncryptionUnmarshaller _instance = new StorageLensDataExportEncryptionUnmarshaller();        

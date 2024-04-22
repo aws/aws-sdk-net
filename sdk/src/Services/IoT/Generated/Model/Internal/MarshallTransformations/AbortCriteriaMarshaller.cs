@@ -46,6 +46,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AbortCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("action");
@@ -67,7 +69,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThresholdPercentage())
             {
                 context.Writer.WritePropertyName("thresholdPercentage");
-                context.Writer.Write(requestObject.ThresholdPercentage);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdPercentage))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdPercentage));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThresholdPercentage);
+                }
             }
 
         }

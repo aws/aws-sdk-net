@@ -46,6 +46,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsJobExponentialRolloutRate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBaseRatePerMinute())
             {
                 context.Writer.WritePropertyName("baseRatePerMinute");
@@ -55,7 +57,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncrementFactor())
             {
                 context.Writer.WritePropertyName("incrementFactor");
-                context.Writer.Write(requestObject.IncrementFactor);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.IncrementFactor))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.IncrementFactor));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.IncrementFactor);
+                }
             }
 
             if(requestObject.IsSetRateIncreaseCriteria())

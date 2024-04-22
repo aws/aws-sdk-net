@@ -46,6 +46,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PipeTargetBatchJobParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArrayProperties())
             {
                 context.Writer.WritePropertyName("ArrayProperties");

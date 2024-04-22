@@ -46,6 +46,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PackageAggregation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPackageNames())
             {
                 context.Writer.WritePropertyName("packageNames");

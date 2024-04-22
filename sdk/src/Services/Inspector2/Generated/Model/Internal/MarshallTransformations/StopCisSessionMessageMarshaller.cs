@@ -46,6 +46,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StopCisSessionMessage requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBenchmarkProfile())
             {
                 context.Writer.WritePropertyName("benchmarkProfile");

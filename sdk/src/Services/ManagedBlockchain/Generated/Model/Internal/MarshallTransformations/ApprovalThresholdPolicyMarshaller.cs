@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ApprovalThresholdPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetProposalDurationInHours())
             {
                 context.Writer.WritePropertyName("ProposalDurationInHours");

@@ -46,6 +46,8 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3())
             {
                 context.Writer.WritePropertyName("s3");

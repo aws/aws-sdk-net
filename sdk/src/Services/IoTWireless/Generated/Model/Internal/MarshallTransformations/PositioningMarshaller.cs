@@ -46,6 +46,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Positioning requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClockSync())
             {
                 context.Writer.WritePropertyName("ClockSync");

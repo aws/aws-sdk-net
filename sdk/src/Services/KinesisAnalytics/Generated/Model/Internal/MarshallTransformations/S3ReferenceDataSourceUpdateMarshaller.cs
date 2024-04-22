@@ -46,6 +46,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3ReferenceDataSourceUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucketARNUpdate())
             {
                 context.Writer.WritePropertyName("BucketARNUpdate");

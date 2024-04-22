@@ -46,6 +46,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExplainabilityConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTimePointGranularity())
             {
                 context.Writer.WritePropertyName("TimePointGranularity");

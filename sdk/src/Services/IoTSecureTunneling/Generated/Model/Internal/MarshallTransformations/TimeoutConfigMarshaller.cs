@@ -46,6 +46,8 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimeoutConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxLifetimeTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("maxLifetimeTimeoutMinutes");

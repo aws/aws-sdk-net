@@ -46,6 +46,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AssessmentReportsDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");

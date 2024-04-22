@@ -46,6 +46,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SelectParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("Expression");

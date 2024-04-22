@@ -46,6 +46,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SingularConnectorProfileProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
         }
 
         /// <summary>

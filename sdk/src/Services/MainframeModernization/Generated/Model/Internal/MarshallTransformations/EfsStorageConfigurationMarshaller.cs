@@ -46,6 +46,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EfsStorageConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFileSystemId())
             {
                 context.Writer.WritePropertyName("file-system-id");

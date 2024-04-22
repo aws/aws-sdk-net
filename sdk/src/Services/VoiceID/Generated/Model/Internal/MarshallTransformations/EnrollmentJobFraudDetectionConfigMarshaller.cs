@@ -46,6 +46,8 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EnrollmentJobFraudDetectionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFraudDetectionAction())
             {
                 context.Writer.WritePropertyName("FraudDetectionAction");

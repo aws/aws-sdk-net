@@ -46,6 +46,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PipeTargetRedshiftDataParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDatabase())
             {
                 context.Writer.WritePropertyName("Database");

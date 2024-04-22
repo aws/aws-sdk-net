@@ -46,6 +46,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JiraSelectedQuestionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSelectedPillars())
             {
                 context.Writer.WritePropertyName("SelectedPillars");

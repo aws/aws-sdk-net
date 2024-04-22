@@ -46,6 +46,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HdfsNameNode requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHostname())
             {
                 context.Writer.WritePropertyName("Hostname");

@@ -46,6 +46,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MedicalScribeSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChannelIdentification())
             {
                 context.Writer.WritePropertyName("ChannelIdentification");

@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsRdsDbSubnetGroup requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDbSubnetGroupArn())
             {
                 context.Writer.WritePropertyName("DbSubnetGroupArn");

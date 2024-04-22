@@ -46,6 +46,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PasswordPolicyType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMinimumLength())
             {
                 context.Writer.WritePropertyName("MinimumLength");

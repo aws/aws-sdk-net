@@ -46,6 +46,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CostAllocationTagStatusEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");

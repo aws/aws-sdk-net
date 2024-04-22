@@ -46,6 +46,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OnPremConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAgentArns())
             {
                 context.Writer.WritePropertyName("AgentArns");

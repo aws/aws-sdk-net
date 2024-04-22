@@ -46,6 +46,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CommentFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
         }
 
         /// <summary>

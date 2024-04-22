@@ -46,6 +46,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         /// <returns></returns>
         public void Marshall(LambdaEndpointInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");

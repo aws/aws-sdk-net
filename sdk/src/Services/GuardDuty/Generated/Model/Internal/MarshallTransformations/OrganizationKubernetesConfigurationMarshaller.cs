@@ -46,6 +46,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrganizationKubernetesConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuditLogs())
             {
                 context.Writer.WritePropertyName("auditLogs");

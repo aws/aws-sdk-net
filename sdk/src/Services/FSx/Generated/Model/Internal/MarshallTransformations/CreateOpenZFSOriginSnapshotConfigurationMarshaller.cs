@@ -46,6 +46,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateOpenZFSOriginSnapshotConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCopyStrategy())
             {
                 context.Writer.WritePropertyName("CopyStrategy");

@@ -46,6 +46,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateBackendAuthIdentityPoolConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIdentityPoolName())
             {
                 context.Writer.WritePropertyName("identityPoolName");

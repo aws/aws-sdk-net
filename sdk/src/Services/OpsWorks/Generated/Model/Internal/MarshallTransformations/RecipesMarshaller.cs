@@ -46,6 +46,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Recipes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConfigure())
             {
                 context.Writer.WritePropertyName("Configure");

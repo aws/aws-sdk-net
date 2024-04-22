@@ -46,6 +46,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateCisTargets requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccountIds())
             {
                 context.Writer.WritePropertyName("accountIds");

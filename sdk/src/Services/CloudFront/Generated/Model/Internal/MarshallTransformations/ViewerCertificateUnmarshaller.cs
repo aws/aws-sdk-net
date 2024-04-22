@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ViewerCertificate Object
     /// </summary>  
-    public class ViewerCertificateUnmarshaller : IUnmarshaller<ViewerCertificate, XmlUnmarshallerContext>
+    public class ViewerCertificateUnmarshaller : IUnmarshaller<ViewerCertificate, XmlUnmarshallerContext>, IUnmarshaller<ViewerCertificate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -105,6 +105,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ViewerCertificate Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static ViewerCertificateUnmarshaller _instance = new ViewerCertificateUnmarshaller();        

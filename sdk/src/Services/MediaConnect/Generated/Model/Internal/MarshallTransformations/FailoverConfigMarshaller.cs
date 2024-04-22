@@ -46,6 +46,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FailoverConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFailoverMode())
             {
                 context.Writer.WritePropertyName("failoverMode");

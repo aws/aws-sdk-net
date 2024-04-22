@@ -46,6 +46,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IoTJobAbortConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCriteriaList())
             {
                 context.Writer.WritePropertyName("criteriaList");

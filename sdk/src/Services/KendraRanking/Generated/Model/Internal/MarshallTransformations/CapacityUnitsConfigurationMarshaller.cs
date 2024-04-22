@@ -46,6 +46,8 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CapacityUnitsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRescoreCapacityUnits())
             {
                 context.Writer.WritePropertyName("RescoreCapacityUnits");

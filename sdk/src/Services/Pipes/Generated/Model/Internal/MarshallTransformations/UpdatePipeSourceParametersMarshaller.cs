@@ -46,6 +46,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdatePipeSourceParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActiveMQBrokerParameters())
             {
                 context.Writer.WritePropertyName("ActiveMQBrokerParameters");

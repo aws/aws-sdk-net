@@ -46,6 +46,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListInsightsStatusFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAny())
             {
                 context.Writer.WritePropertyName("Any");

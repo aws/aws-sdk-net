@@ -46,6 +46,8 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Field requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArrayValue())
             {
                 context.Writer.WritePropertyName("arrayValue");
@@ -72,7 +74,14 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDoubleValue())
             {
                 context.Writer.WritePropertyName("doubleValue");
-                context.Writer.Write(requestObject.DoubleValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DoubleValue);
+                }
             }
 
             if(requestObject.IsSetIsNull())

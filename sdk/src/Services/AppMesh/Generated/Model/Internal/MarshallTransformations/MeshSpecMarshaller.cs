@@ -46,6 +46,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MeshSpec requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEgressFilter())
             {
                 context.Writer.WritePropertyName("egressFilter");

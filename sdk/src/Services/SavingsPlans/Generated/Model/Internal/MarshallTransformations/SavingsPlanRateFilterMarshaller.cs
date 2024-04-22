@@ -46,6 +46,8 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SavingsPlanRateFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

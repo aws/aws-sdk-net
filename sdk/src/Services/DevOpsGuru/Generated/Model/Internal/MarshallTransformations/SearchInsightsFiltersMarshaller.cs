@@ -46,6 +46,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SearchInsightsFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetResourceCollection())
             {
                 context.Writer.WritePropertyName("ResourceCollection");

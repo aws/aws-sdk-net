@@ -46,6 +46,8 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcConfigInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");

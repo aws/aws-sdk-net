@@ -46,6 +46,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobAttachmentDetailsIdentifiers requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetJobId())
             {
                 context.Writer.WritePropertyName("jobId");

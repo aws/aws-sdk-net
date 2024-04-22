@@ -46,6 +46,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FailoverConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPrimary())
             {
                 context.Writer.WritePropertyName("Primary");

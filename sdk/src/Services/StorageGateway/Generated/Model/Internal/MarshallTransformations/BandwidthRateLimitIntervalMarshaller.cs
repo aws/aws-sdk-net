@@ -46,6 +46,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BandwidthRateLimitInterval requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAverageDownloadRateLimitInBitsPerSec())
             {
                 context.Writer.WritePropertyName("AverageDownloadRateLimitInBitsPerSec");

@@ -46,6 +46,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ShardConfigurationRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetShardCount())
             {
                 context.Writer.WritePropertyName("ShardCount");

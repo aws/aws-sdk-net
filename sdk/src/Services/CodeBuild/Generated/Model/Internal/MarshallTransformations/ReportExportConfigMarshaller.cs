@@ -46,6 +46,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReportExportConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExportConfigType())
             {
                 context.Writer.WritePropertyName("exportConfigType");

@@ -46,6 +46,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RelatedItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGeneratedId())
             {
                 context.Writer.WritePropertyName("generatedId");

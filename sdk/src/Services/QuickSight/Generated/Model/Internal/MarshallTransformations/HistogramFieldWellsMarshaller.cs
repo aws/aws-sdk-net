@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HistogramFieldWells requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHistogramAggregatedFieldWells())
             {
                 context.Writer.WritePropertyName("HistogramAggregatedFieldWells");

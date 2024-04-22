@@ -46,6 +46,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BandMathConfigInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomIndices())
             {
                 context.Writer.WritePropertyName("CustomIndices");

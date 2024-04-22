@@ -46,6 +46,8 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourceDataColumnProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetColumnIndex())
             {
                 context.Writer.WritePropertyName("columnIndex");

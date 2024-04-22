@@ -46,6 +46,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InforNexusConnectorProfileCredentials requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccessKeyId())
             {
                 context.Writer.WritePropertyName("accessKeyId");

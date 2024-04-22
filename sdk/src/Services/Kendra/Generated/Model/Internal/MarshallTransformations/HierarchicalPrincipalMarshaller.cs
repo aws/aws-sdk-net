@@ -46,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HierarchicalPrincipal requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPrincipalList())
             {
                 context.Writer.WritePropertyName("PrincipalList");

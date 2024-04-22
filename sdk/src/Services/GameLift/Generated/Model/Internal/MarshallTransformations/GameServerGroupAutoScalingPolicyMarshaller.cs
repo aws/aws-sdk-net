@@ -46,6 +46,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GameServerGroupAutoScalingPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEstimatedInstanceWarmup())
             {
                 context.Writer.WritePropertyName("EstimatedInstanceWarmup");

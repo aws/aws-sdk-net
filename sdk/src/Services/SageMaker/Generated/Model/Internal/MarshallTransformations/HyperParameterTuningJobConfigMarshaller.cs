@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HyperParameterTuningJobConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHyperParameterTuningJobObjective())
             {
                 context.Writer.WritePropertyName("HyperParameterTuningJobObjective");

@@ -46,6 +46,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SigningPlatformOverrides requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSigningConfiguration())
             {
                 context.Writer.WritePropertyName("signingConfiguration");

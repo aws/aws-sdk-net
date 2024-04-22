@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsDynamoDbTableReplica requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGlobalSecondaryIndexes())
             {
                 context.Writer.WritePropertyName("GlobalSecondaryIndexes");

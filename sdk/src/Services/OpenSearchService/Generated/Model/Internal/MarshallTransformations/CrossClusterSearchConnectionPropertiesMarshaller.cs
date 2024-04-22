@@ -46,6 +46,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CrossClusterSearchConnectionProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSkipUnavailable())
             {
                 context.Writer.WritePropertyName("SkipUnavailable");

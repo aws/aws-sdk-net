@@ -46,6 +46,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MediaStorageConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");

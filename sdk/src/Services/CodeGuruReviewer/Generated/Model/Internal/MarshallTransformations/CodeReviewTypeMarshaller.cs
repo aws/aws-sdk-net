@@ -46,6 +46,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeReviewType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnalysisTypes())
             {
                 context.Writer.WritePropertyName("AnalysisTypes");

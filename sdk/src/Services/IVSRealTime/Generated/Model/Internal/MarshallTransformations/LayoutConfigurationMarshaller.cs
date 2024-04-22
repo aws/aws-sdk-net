@@ -46,6 +46,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LayoutConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGrid())
             {
                 context.Writer.WritePropertyName("grid");

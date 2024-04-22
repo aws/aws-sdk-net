@@ -46,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Spigot requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputs())
             {
                 context.Writer.WritePropertyName("Inputs");
@@ -72,7 +74,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProb())
             {
                 context.Writer.WritePropertyName("Prob");
-                context.Writer.Write(requestObject.Prob);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Prob))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Prob));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Prob);
+                }
             }
 
             if(requestObject.IsSetTopk())

@@ -46,6 +46,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobRunAsUser requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPosix())
             {
                 context.Writer.WritePropertyName("posix");

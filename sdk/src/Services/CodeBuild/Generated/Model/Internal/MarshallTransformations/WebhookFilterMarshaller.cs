@@ -46,6 +46,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WebhookFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExcludeMatchedPattern())
             {
                 context.Writer.WritePropertyName("excludeMatchedPattern");

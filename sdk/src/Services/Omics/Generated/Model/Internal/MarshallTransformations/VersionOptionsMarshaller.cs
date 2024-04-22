@@ -46,6 +46,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VersionOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTsvVersionOptions())
             {
                 context.Writer.WritePropertyName("tsvVersionOptions");

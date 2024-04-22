@@ -46,6 +46,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Exclusions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExcludeBootVolumes())
             {
                 context.Writer.WritePropertyName("ExcludeBootVolumes");

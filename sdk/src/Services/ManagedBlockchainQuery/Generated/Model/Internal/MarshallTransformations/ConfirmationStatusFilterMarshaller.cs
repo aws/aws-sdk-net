@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConfirmationStatusFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInclude())
             {
                 context.Writer.WritePropertyName("include");

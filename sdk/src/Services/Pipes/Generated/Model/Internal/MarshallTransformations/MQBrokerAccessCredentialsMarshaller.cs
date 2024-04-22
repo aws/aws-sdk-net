@@ -46,6 +46,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MQBrokerAccessCredentials requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBasicAuth())
             {
                 context.Writer.WritePropertyName("BasicAuth");

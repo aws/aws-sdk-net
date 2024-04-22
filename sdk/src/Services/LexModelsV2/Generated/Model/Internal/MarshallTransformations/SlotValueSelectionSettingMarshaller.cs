@@ -46,6 +46,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SlotValueSelectionSetting requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdvancedRecognitionSetting())
             {
                 context.Writer.WritePropertyName("advancedRecognitionSetting");

@@ -46,6 +46,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceGroupConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoScalingPolicy())
             {
                 context.Writer.WritePropertyName("AutoScalingPolicy");

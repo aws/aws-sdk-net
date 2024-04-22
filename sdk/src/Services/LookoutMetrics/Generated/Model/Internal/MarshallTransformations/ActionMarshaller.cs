@@ -46,6 +46,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Action requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLambdaConfiguration())
             {
                 context.Writer.WritePropertyName("LambdaConfiguration");

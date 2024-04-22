@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VisaPin requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPinVerificationKeyIndex())
             {
                 context.Writer.WritePropertyName("PinVerificationKeyIndex");

@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeleteOnTermination())
             {
                 context.Writer.WritePropertyName("DeleteOnTermination");

@@ -46,6 +46,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EwsAvailabilityProvider requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEwsEndpoint())
             {
                 context.Writer.WritePropertyName("EwsEndpoint");

@@ -46,6 +46,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LambdaVolumeMount requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddGroupOwner())
             {
                 context.Writer.WritePropertyName("addGroupOwner");

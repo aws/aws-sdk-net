@@ -46,6 +46,8 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SnsDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTopicArn())
             {
                 context.Writer.WritePropertyName("TopicArn");

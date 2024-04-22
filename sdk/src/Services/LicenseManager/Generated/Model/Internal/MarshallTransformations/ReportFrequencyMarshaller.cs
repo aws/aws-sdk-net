@@ -46,6 +46,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReportFrequency requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPeriod())
             {
                 context.Writer.WritePropertyName("period");

@@ -46,6 +46,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VeevaConnectorProfileProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInstanceUrl())
             {
                 context.Writer.WritePropertyName("instanceUrl");

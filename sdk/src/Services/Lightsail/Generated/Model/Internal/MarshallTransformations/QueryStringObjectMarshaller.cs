@@ -46,6 +46,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(QueryStringObject requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOption())
             {
                 context.Writer.WritePropertyName("option");

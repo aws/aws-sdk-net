@@ -46,6 +46,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCsvConfiguration())
             {
                 context.Writer.WritePropertyName("CsvConfiguration");

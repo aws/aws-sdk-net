@@ -46,6 +46,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JourneyChannelSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectCampaignArn())
             {
                 context.Writer.WritePropertyName("ConnectCampaignArn");

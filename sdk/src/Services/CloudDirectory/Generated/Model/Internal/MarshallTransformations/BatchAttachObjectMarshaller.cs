@@ -46,6 +46,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchAttachObject requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChildReference())
             {
                 context.Writer.WritePropertyName("ChildReference");

@@ -46,6 +46,8 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceTypeCapacity requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("Count");

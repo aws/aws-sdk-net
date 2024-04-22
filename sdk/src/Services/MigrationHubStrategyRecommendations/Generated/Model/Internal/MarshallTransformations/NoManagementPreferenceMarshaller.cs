@@ -46,6 +46,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// <returns></returns>
         public void Marshall(NoManagementPreference requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTargetDestination())
             {
                 context.Writer.WritePropertyName("targetDestination");

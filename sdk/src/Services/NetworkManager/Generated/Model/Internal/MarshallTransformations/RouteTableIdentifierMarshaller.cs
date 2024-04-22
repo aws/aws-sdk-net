@@ -46,6 +46,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RouteTableIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCoreNetworkSegmentEdge())
             {
                 context.Writer.WritePropertyName("CoreNetworkSegmentEdge");

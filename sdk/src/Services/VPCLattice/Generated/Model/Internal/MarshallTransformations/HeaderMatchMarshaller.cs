@@ -46,6 +46,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HeaderMatch requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCaseSensitive())
             {
                 context.Writer.WritePropertyName("caseSensitive");

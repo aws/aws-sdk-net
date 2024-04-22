@@ -46,6 +46,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExpectedAttributeValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributeValueList())
             {
                 context.Writer.WritePropertyName("AttributeValueList");

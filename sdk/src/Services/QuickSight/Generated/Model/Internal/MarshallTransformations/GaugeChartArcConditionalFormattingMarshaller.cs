@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GaugeChartArcConditionalFormatting requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetForegroundColor())
             {
                 context.Writer.WritePropertyName("ForegroundColor");

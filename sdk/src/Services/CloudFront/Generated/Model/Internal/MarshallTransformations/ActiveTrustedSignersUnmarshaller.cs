@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ActiveTrustedSigners Object
     /// </summary>  
-    public class ActiveTrustedSignersUnmarshaller : IUnmarshaller<ActiveTrustedSigners, XmlUnmarshallerContext>
+    public class ActiveTrustedSignersUnmarshaller : IUnmarshaller<ActiveTrustedSigners, XmlUnmarshallerContext>, IUnmarshaller<ActiveTrustedSigners, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -85,6 +85,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ActiveTrustedSigners Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static ActiveTrustedSignersUnmarshaller _instance = new ActiveTrustedSignersUnmarshaller();        

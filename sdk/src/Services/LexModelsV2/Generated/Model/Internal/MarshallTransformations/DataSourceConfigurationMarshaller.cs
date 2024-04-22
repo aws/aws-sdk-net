@@ -46,6 +46,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBedrockKnowledgeStoreConfiguration())
             {
                 context.Writer.WritePropertyName("bedrockKnowledgeStoreConfiguration");

@@ -46,6 +46,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EfsFileLocation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFileSystemId())
             {
                 context.Writer.WritePropertyName("FileSystemId");

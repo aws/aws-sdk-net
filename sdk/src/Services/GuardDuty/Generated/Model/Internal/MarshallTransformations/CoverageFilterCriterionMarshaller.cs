@@ -46,6 +46,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CoverageFilterCriterion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCriterionKey())
             {
                 context.Writer.WritePropertyName("criterionKey");

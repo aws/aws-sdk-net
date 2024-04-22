@@ -46,6 +46,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PartitionKey requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnforcementInRecord())
             {
                 context.Writer.WritePropertyName("EnforcementInRecord");

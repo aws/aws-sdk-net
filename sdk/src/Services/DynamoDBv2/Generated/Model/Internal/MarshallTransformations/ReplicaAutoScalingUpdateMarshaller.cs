@@ -46,6 +46,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReplicaAutoScalingUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRegionName())
             {
                 context.Writer.WritePropertyName("RegionName");

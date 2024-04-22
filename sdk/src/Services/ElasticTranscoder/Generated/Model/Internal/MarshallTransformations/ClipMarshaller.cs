@@ -46,6 +46,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Clip requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTimeSpan())
             {
                 context.Writer.WritePropertyName("TimeSpan");

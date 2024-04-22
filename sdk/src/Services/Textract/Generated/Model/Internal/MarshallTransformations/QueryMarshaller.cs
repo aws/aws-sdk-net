@@ -46,6 +46,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Query requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlias())
             {
                 context.Writer.WritePropertyName("Alias");

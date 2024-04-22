@@ -46,6 +46,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobStepRestartMarker requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFromProcStep())
             {
                 context.Writer.WritePropertyName("fromProcStep");

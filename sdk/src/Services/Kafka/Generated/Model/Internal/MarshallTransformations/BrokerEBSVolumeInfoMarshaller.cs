@@ -46,6 +46,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BrokerEBSVolumeInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKafkaBrokerNodeId())
             {
                 context.Writer.WritePropertyName("kafkaBrokerNodeId");

@@ -46,6 +46,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodegenJobGenericDataSchema requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataSourceType())
             {
                 context.Writer.WritePropertyName("dataSourceType");

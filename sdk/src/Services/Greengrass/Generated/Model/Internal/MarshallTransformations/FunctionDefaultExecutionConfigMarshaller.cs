@@ -46,6 +46,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FunctionDefaultExecutionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIsolationMode())
             {
                 context.Writer.WritePropertyName("IsolationMode");

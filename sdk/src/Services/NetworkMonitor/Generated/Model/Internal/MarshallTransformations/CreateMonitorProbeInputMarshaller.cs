@@ -46,6 +46,8 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateMonitorProbeInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");

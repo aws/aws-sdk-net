@@ -46,6 +46,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourcePriority requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPrimarySource())
             {
                 context.Writer.WritePropertyName("primarySource");

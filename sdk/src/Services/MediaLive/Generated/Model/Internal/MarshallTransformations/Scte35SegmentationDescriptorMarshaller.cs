@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Scte35SegmentationDescriptor requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeliveryRestrictions())
             {
                 context.Writer.WritePropertyName("deliveryRestrictions");

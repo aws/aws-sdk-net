@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KeyBlockHeaders requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKeyExportability())
             {
                 context.Writer.WritePropertyName("KeyExportability");

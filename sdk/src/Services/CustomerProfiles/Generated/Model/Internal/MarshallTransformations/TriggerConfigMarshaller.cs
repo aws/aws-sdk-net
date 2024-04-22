@@ -46,6 +46,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TriggerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTriggerProperties())
             {
                 context.Writer.WritePropertyName("TriggerProperties");

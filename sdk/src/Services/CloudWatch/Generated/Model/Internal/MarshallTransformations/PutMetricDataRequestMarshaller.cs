@@ -130,7 +130,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTimestampUtc())
                         {
-                            request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Timestamp", StringUtils.FromDateTimeToISO8601(publicRequestlistValue.TimestampUtc));
+                            request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Timestamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.TimestampUtc));
                         }
 #pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetUnit())

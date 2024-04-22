@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginRequestPolicyCookiesConfig Object
     /// </summary>  
-    public class OriginRequestPolicyCookiesConfigUnmarshaller : IUnmarshaller<OriginRequestPolicyCookiesConfig, XmlUnmarshallerContext>
+    public class OriginRequestPolicyCookiesConfigUnmarshaller : IUnmarshaller<OriginRequestPolicyCookiesConfig, XmlUnmarshallerContext>, IUnmarshaller<OriginRequestPolicyCookiesConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,6 +75,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public OriginRequestPolicyCookiesConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static OriginRequestPolicyCookiesConfigUnmarshaller _instance = new OriginRequestPolicyCookiesConfigUnmarshaller();        

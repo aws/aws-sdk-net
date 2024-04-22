@@ -46,6 +46,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CapacitySpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetReadCapacityUnits())
             {
                 context.Writer.WritePropertyName("readCapacityUnits");

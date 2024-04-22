@@ -73,7 +73,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 request.Parameters.Add("profileVersionArn", StringUtils.FromString(publicRequest.ProfileVersionArn));
             
             if (publicRequest.IsSetSignatureTimestamp())
-                request.Parameters.Add("signatureTimestamp", StringUtils.FromDateTimeToISO8601(publicRequest.SignatureTimestamp));
+                request.Parameters.Add("signatureTimestamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.SignatureTimestamp));
             request.ResourcePath = "/revocations";
             request.UseQueryString = true;
             

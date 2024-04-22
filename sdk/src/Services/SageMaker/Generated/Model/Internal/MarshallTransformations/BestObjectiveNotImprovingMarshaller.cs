@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BestObjectiveNotImproving requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxNumberOfTrainingJobsNotImproving())
             {
                 context.Writer.WritePropertyName("MaxNumberOfTrainingJobsNotImproving");

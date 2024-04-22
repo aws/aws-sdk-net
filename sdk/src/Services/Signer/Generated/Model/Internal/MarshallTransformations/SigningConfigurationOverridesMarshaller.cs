@@ -46,6 +46,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SigningConfigurationOverrides requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEncryptionAlgorithm())
             {
                 context.Writer.WritePropertyName("encryptionAlgorithm");

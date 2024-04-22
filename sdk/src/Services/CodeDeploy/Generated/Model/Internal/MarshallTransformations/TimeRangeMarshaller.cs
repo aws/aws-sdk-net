@@ -46,6 +46,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimeRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnd())
             {
                 context.Writer.WritePropertyName("end");

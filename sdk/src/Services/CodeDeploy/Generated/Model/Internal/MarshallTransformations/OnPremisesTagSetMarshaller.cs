@@ -46,6 +46,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OnPremisesTagSet requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOnPremisesTagSetList())
             {
                 context.Writer.WritePropertyName("onPremisesTagSetList");

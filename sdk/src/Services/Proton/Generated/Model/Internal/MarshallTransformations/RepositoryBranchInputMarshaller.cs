@@ -46,6 +46,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RepositoryBranchInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBranch())
             {
                 context.Writer.WritePropertyName("branch");

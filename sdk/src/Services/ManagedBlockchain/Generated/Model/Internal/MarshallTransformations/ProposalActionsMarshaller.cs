@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProposalActions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInvitations())
             {
                 context.Writer.WritePropertyName("Invitations");

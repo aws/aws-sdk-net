@@ -46,6 +46,8 @@ namespace Amazon.CloudTrailData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AuditEvent requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEventData())
             {
                 context.Writer.WritePropertyName("eventData");

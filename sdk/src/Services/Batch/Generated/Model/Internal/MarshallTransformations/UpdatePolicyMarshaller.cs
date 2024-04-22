@@ -46,6 +46,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdatePolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetJobExecutionTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("jobExecutionTimeoutMinutes");

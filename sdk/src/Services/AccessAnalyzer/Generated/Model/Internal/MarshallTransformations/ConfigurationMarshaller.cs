@@ -46,6 +46,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Configuration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDynamodbStream())
             {
                 context.Writer.WritePropertyName("dynamodbStream");

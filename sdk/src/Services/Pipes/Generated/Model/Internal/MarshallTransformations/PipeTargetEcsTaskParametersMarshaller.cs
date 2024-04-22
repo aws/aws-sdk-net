@@ -46,6 +46,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PipeTargetEcsTaskParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCapacityProviderStrategy())
             {
                 context.Writer.WritePropertyName("CapacityProviderStrategy");

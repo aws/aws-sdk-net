@@ -46,6 +46,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobStoppingCondition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxRuntimeInSeconds())
             {
                 context.Writer.WritePropertyName("maxRuntimeInSeconds");

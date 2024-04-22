@@ -46,6 +46,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CanarySettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeploymentId())
             {
                 context.Writer.WritePropertyName("deploymentId");
@@ -55,7 +57,14 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentTraffic())
             {
                 context.Writer.WritePropertyName("percentTraffic");
-                context.Writer.Write(requestObject.PercentTraffic);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentTraffic))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentTraffic));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PercentTraffic);
+                }
             }
 
             if(requestObject.IsSetStageVariableOverrides())

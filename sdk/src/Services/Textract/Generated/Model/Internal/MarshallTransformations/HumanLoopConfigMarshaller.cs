@@ -46,6 +46,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HumanLoopConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataAttributes())
             {
                 context.Writer.WritePropertyName("DataAttributes");

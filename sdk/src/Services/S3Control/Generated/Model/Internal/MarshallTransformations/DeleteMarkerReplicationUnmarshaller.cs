@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteMarkerReplication Object
     /// </summary>  
-    public class DeleteMarkerReplicationUnmarshaller : IUnmarshaller<DeleteMarkerReplication, XmlUnmarshallerContext>
+    public class DeleteMarkerReplicationUnmarshaller : IUnmarshaller<DeleteMarkerReplication, XmlUnmarshallerContext>, IUnmarshaller<DeleteMarkerReplication, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -69,6 +69,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public DeleteMarkerReplication Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static DeleteMarkerReplicationUnmarshaller _instance = new DeleteMarkerReplicationUnmarshaller();        

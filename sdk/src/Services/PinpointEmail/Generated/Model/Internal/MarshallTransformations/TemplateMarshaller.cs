@@ -46,6 +46,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Template requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTemplateArn())
             {
                 context.Writer.WritePropertyName("TemplateArn");

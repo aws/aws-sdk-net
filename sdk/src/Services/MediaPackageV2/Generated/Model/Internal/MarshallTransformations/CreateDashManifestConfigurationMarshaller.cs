@@ -46,6 +46,8 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateDashManifestConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDrmSignaling())
             {
                 context.Writer.WritePropertyName("DrmSignaling");

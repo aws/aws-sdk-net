@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsIamPermissionsBoundary requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPermissionsBoundaryArn())
             {
                 context.Writer.WritePropertyName("PermissionsBoundaryArn");

@@ -46,6 +46,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceId requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCodeArtifactId())
             {
                 context.Writer.WritePropertyName("codeArtifactId");

@@ -46,6 +46,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VcfOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIgnoreFilterField())
             {
                 context.Writer.WritePropertyName("ignoreFilterField");

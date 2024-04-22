@@ -46,6 +46,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncryptionAtRest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataVolumeKMSKeyId())
             {
                 context.Writer.WritePropertyName("dataVolumeKMSKeyId");

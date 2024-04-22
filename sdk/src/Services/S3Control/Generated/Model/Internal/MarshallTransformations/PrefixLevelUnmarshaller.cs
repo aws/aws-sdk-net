@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PrefixLevel Object
     /// </summary>  
-    public class PrefixLevelUnmarshaller : IUnmarshaller<PrefixLevel, XmlUnmarshallerContext>
+    public class PrefixLevelUnmarshaller : IUnmarshaller<PrefixLevel, XmlUnmarshallerContext>, IUnmarshaller<PrefixLevel, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -69,6 +69,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public PrefixLevel Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static PrefixLevelUnmarshaller _instance = new PrefixLevelUnmarshaller();        

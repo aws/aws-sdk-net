@@ -46,6 +46,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotebookS3LocationFromInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucket())
             {
                 context.Writer.WritePropertyName("Bucket");

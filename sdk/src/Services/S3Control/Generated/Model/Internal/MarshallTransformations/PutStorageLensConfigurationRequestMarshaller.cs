@@ -70,105 +70,92 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("PutStorageLensConfigurationRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
-                
-                if (publicRequest.StorageLensConfiguration != null) 
+                xmlWriter.WriteStartElement("PutStorageLensConfigurationRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                if (publicRequest.StorageLensConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("StorageLensConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                
-                    if (publicRequest.StorageLensConfiguration.AccountLevel != null) 
+                    xmlWriter.WriteStartElement("StorageLensConfiguration");
+                    if (publicRequest.StorageLensConfiguration.AccountLevel != null)
                     {
-                        xmlWriter.WriteStartElement("AccountLevel", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.ActivityMetrics != null) 
+                        xmlWriter.WriteStartElement("AccountLevel");
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.ActivityMetrics != null)
                         {
-                            xmlWriter.WriteStartElement("ActivityMetrics", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            xmlWriter.WriteStartElement("ActivityMetrics");
                             if(publicRequest.StorageLensConfiguration.AccountLevel.ActivityMetrics.IsSetIsEnabled())
-                                xmlWriter.WriteElementString("IsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.ActivityMetrics.IsEnabled));                 
+                                xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.ActivityMetrics.IsEnabled));                 
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.AdvancedCostOptimizationMetrics != null) 
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.AdvancedCostOptimizationMetrics != null)
                         {
-                            xmlWriter.WriteStartElement("AdvancedCostOptimizationMetrics", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            xmlWriter.WriteStartElement("AdvancedCostOptimizationMetrics");
                             if(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedCostOptimizationMetrics.IsSetIsEnabled())
-                                xmlWriter.WriteElementString("IsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedCostOptimizationMetrics.IsEnabled));                 
+                                xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedCostOptimizationMetrics.IsEnabled));                 
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.AdvancedDataProtectionMetrics != null) 
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.AdvancedDataProtectionMetrics != null)
                         {
-                            xmlWriter.WriteStartElement("AdvancedDataProtectionMetrics", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            xmlWriter.WriteStartElement("AdvancedDataProtectionMetrics");
                             if(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedDataProtectionMetrics.IsSetIsEnabled())
-                                xmlWriter.WriteElementString("IsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedDataProtectionMetrics.IsEnabled));                 
+                                xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.AdvancedDataProtectionMetrics.IsEnabled));                 
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel != null) 
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel != null)
                         {
-                            xmlWriter.WriteStartElement("BucketLevel", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.ActivityMetrics != null) 
+                            xmlWriter.WriteStartElement("BucketLevel");
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.ActivityMetrics != null)
                             {
-                                xmlWriter.WriteStartElement("ActivityMetrics", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                xmlWriter.WriteStartElement("ActivityMetrics");
                                 if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.ActivityMetrics.IsSetIsEnabled())
-                                    xmlWriter.WriteElementString("IsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.ActivityMetrics.IsEnabled));                 
+                                    xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.ActivityMetrics.IsEnabled));                 
 
                                 xmlWriter.WriteEndElement();
                             }
-                
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedCostOptimizationMetrics != null) 
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedCostOptimizationMetrics != null)
                             {
-                                xmlWriter.WriteStartElement("AdvancedCostOptimizationMetrics", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                xmlWriter.WriteStartElement("AdvancedCostOptimizationMetrics");
                                 if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedCostOptimizationMetrics.IsSetIsEnabled())
-                                    xmlWriter.WriteElementString("IsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedCostOptimizationMetrics.IsEnabled));                 
+                                    xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedCostOptimizationMetrics.IsEnabled));                 
 
                                 xmlWriter.WriteEndElement();
                             }
-                
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedDataProtectionMetrics != null) 
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedDataProtectionMetrics != null)
                             {
-                                xmlWriter.WriteStartElement("AdvancedDataProtectionMetrics", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                xmlWriter.WriteStartElement("AdvancedDataProtectionMetrics");
                                 if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedDataProtectionMetrics.IsSetIsEnabled())
-                                    xmlWriter.WriteElementString("IsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedDataProtectionMetrics.IsEnabled));                 
+                                    xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.AdvancedDataProtectionMetrics.IsEnabled));                 
 
                                 xmlWriter.WriteEndElement();
                             }
-                
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.DetailedStatusCodesMetrics != null) 
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.DetailedStatusCodesMetrics != null)
                             {
-                                xmlWriter.WriteStartElement("DetailedStatusCodesMetrics", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                xmlWriter.WriteStartElement("DetailedStatusCodesMetrics");
                                 if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.DetailedStatusCodesMetrics.IsSetIsEnabled())
-                                    xmlWriter.WriteElementString("IsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.DetailedStatusCodesMetrics.IsEnabled));                 
+                                    xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.DetailedStatusCodesMetrics.IsEnabled));                 
 
                                 xmlWriter.WriteEndElement();
                             }
-                
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel != null) 
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel != null)
                             {
-                                xmlWriter.WriteStartElement("PrefixLevel", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                
-                                if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics != null) 
+                                xmlWriter.WriteStartElement("PrefixLevel");
+                                if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics != null)
                                 {
-                                    xmlWriter.WriteStartElement("StorageMetrics", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                    xmlWriter.WriteStartElement("StorageMetrics");
                                     if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.IsSetIsEnabled())
-                                        xmlWriter.WriteElementString("IsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.IsEnabled));                 
+                                        xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.IsEnabled));                 
 
-                
-                                    if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria != null) 
+                                    if (publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria != null)
                                     {
-                                        xmlWriter.WriteStartElement("SelectionCriteria", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                        xmlWriter.WriteStartElement("SelectionCriteria");
                                         if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria.IsSetDelimiter())
-                                            xmlWriter.WriteElementString("Delimiter", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria.Delimiter));                 
+                                            xmlWriter.WriteElementString("Delimiter", StringUtils.FromString(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria.Delimiter));                 
 
                                         if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria.IsSetMaxDepth())
-                                            xmlWriter.WriteElementString("MaxDepth", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria.MaxDepth));                 
+                                            xmlWriter.WriteElementString("MaxDepth", StringUtils.FromInt(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria.MaxDepth));                 
 
                                         if(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria.IsSetMinStorageBytesPercentage())
-                                            xmlWriter.WriteElementString("MinStorageBytesPercentage", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDouble(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria.MinStorageBytesPercentage));                 
+                                            xmlWriter.WriteElementString("MinStorageBytesPercentage", StringUtils.FromDouble(publicRequest.StorageLensConfiguration.AccountLevel.BucketLevel.PrefixLevel.StorageMetrics.SelectionCriteria.MinStorageBytesPercentage));                 
 
                                         xmlWriter.WriteEndElement();
                                     }
@@ -178,30 +165,27 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.DetailedStatusCodesMetrics != null) 
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.DetailedStatusCodesMetrics != null)
                         {
-                            xmlWriter.WriteStartElement("DetailedStatusCodesMetrics", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            xmlWriter.WriteStartElement("DetailedStatusCodesMetrics");
                             if(publicRequest.StorageLensConfiguration.AccountLevel.DetailedStatusCodesMetrics.IsSetIsEnabled())
-                                xmlWriter.WriteElementString("IsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.DetailedStatusCodesMetrics.IsEnabled));                 
+                                xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.AccountLevel.DetailedStatusCodesMetrics.IsEnabled));                 
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel != null) 
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel != null)
                         {
-                            xmlWriter.WriteStartElement("StorageLensGroupLevel", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                
-                            if (publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria != null) 
+                            xmlWriter.WriteStartElement("StorageLensGroupLevel");
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria != null)
                             {
-                                xmlWriter.WriteStartElement("SelectionCriteria", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                xmlWriter.WriteStartElement("SelectionCriteria");
                                 var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude = publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria.Exclude;
                                 if (publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude != null && (publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                                {                        
-                                    xmlWriter.WriteStartElement("Exclude", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                {
+                                    xmlWriter.WriteStartElement("Exclude");
                                     foreach (var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExcludeValue in publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude) 
                                     {
-                                        xmlWriter.WriteStartElement("Arn", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                        xmlWriter.WriteStartElement("Arn");
                                         xmlWriter.WriteValue(publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExcludeValue);
                                         xmlWriter.WriteEndElement();
                                     }            
@@ -209,11 +193,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 }
                                 var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaInclude = publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria.Include;
                                 if (publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaInclude != null && (publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaInclude.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                                {                        
-                                    xmlWriter.WriteStartElement("Include", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                {
+                                    xmlWriter.WriteStartElement("Include");
                                     foreach (var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaIncludeValue in publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaInclude) 
                                     {
-                                        xmlWriter.WriteStartElement("Arn", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                        xmlWriter.WriteStartElement("Arn");
                                         xmlWriter.WriteValue(publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaIncludeValue);
                                         xmlWriter.WriteEndElement();
                                     }            
@@ -225,83 +209,75 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         }
                         xmlWriter.WriteEndElement();
                     }
-                
-                    if (publicRequest.StorageLensConfiguration.AwsOrg != null) 
+                    if (publicRequest.StorageLensConfiguration.AwsOrg != null)
                     {
-                        xmlWriter.WriteStartElement("AwsOrg", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        xmlWriter.WriteStartElement("AwsOrg");
                         if(publicRequest.StorageLensConfiguration.AwsOrg.IsSetArn())
-                            xmlWriter.WriteElementString("Arn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.StorageLensConfiguration.AwsOrg.Arn));                 
+                            xmlWriter.WriteElementString("Arn", StringUtils.FromString(publicRequest.StorageLensConfiguration.AwsOrg.Arn));                 
 
                         xmlWriter.WriteEndElement();
                     }
-                
-                    if (publicRequest.StorageLensConfiguration.DataExport != null) 
+                    if (publicRequest.StorageLensConfiguration.DataExport != null)
                     {
-                        xmlWriter.WriteStartElement("DataExport", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                
-                        if (publicRequest.StorageLensConfiguration.DataExport.CloudWatchMetrics != null) 
+                        xmlWriter.WriteStartElement("DataExport");
+                        if (publicRequest.StorageLensConfiguration.DataExport.CloudWatchMetrics != null)
                         {
-                            xmlWriter.WriteStartElement("CloudWatchMetrics", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            xmlWriter.WriteStartElement("CloudWatchMetrics");
                             if(publicRequest.StorageLensConfiguration.DataExport.CloudWatchMetrics.IsSetIsEnabled())
-                                xmlWriter.WriteElementString("IsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.StorageLensConfiguration.DataExport.CloudWatchMetrics.IsEnabled));                 
+                                xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.DataExport.CloudWatchMetrics.IsEnabled));                 
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination != null) 
+                        if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination != null)
                         {
-                            xmlWriter.WriteStartElement("S3BucketDestination", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            xmlWriter.WriteStartElement("S3BucketDestination");
                             if(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.IsSetAccountId())
-                                xmlWriter.WriteElementString("AccountId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.AccountId));                 
+                                xmlWriter.WriteElementString("AccountId", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.AccountId));                 
 
                             if(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.IsSetArn())
-                                xmlWriter.WriteElementString("Arn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Arn));                 
+                                xmlWriter.WriteElementString("Arn", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Arn));                 
 
-                
-                            if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption != null) 
+                            if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption != null)
                             {
-                                xmlWriter.WriteStartElement("Encryption", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                
-                                if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.SSEKMS != null) 
+                                xmlWriter.WriteStartElement("Encryption");
+                                if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.SSEKMS != null)
                                 {
-                                    xmlWriter.WriteStartElement("SSE-KMS", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                    xmlWriter.WriteStartElement("SSE-KMS");
                                     if(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.SSEKMS.IsSetKeyId())
-                                        xmlWriter.WriteElementString("KeyId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.SSEKMS.KeyId));                 
+                                        xmlWriter.WriteElementString("KeyId", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.SSEKMS.KeyId));                 
 
                                     xmlWriter.WriteEndElement();
                                 }
-                
-                                if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.SSES3 != null) 
+                                if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Encryption.SSES3 != null)
                                 {
-                                    xmlWriter.WriteStartElement("SSE-S3", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                    xmlWriter.WriteStartElement("SSE-S3");
                                     xmlWriter.WriteEndElement();
                                 }
                                 xmlWriter.WriteEndElement();
                             }
                             if(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.IsSetFormat())
-                                xmlWriter.WriteElementString("Format", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Format));                 
+                                xmlWriter.WriteElementString("Format", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Format));                 
 
                             if(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.IsSetOutputSchemaVersion())
-                                xmlWriter.WriteElementString("OutputSchemaVersion", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.OutputSchemaVersion));                 
+                                xmlWriter.WriteElementString("OutputSchemaVersion", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.OutputSchemaVersion));                 
 
                             if(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.IsSetPrefix())
-                                xmlWriter.WriteElementString("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Prefix));                 
+                                xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination.Prefix));                 
 
                             xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();
                     }
-                
-                    if (publicRequest.StorageLensConfiguration.Exclude != null) 
+                    if (publicRequest.StorageLensConfiguration.Exclude != null)
                     {
-                        xmlWriter.WriteStartElement("Exclude", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        xmlWriter.WriteStartElement("Exclude");
                         var publicRequestStorageLensConfigurationExcludeBuckets = publicRequest.StorageLensConfiguration.Exclude.Buckets;
                         if (publicRequestStorageLensConfigurationExcludeBuckets != null && (publicRequestStorageLensConfigurationExcludeBuckets.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                        {                        
-                            xmlWriter.WriteStartElement("Buckets", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                        {
+                            xmlWriter.WriteStartElement("Buckets");
                             foreach (var publicRequestStorageLensConfigurationExcludeBucketsValue in publicRequestStorageLensConfigurationExcludeBuckets) 
                             {
-                                xmlWriter.WriteStartElement("Arn", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                xmlWriter.WriteStartElement("Arn");
                                 xmlWriter.WriteValue(publicRequestStorageLensConfigurationExcludeBucketsValue);
                                 xmlWriter.WriteEndElement();
                             }            
@@ -309,11 +285,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         }
                         var publicRequestStorageLensConfigurationExcludeRegions = publicRequest.StorageLensConfiguration.Exclude.Regions;
                         if (publicRequestStorageLensConfigurationExcludeRegions != null && (publicRequestStorageLensConfigurationExcludeRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                        {                        
-                            xmlWriter.WriteStartElement("Regions", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                        {
+                            xmlWriter.WriteStartElement("Regions");
                             foreach (var publicRequestStorageLensConfigurationExcludeRegionsValue in publicRequestStorageLensConfigurationExcludeRegions) 
                             {
-                                xmlWriter.WriteStartElement("Region", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                xmlWriter.WriteStartElement("Region");
                                 xmlWriter.WriteValue(publicRequestStorageLensConfigurationExcludeRegionsValue);
                                 xmlWriter.WriteEndElement();
                             }            
@@ -322,19 +298,18 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.StorageLensConfiguration.IsSetId())
-                        xmlWriter.WriteElementString("Id", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.StorageLensConfiguration.Id));                 
+                        xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequest.StorageLensConfiguration.Id));                 
 
-                
-                    if (publicRequest.StorageLensConfiguration.Include != null) 
+                    if (publicRequest.StorageLensConfiguration.Include != null)
                     {
-                        xmlWriter.WriteStartElement("Include", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        xmlWriter.WriteStartElement("Include");
                         var publicRequestStorageLensConfigurationIncludeBuckets = publicRequest.StorageLensConfiguration.Include.Buckets;
                         if (publicRequestStorageLensConfigurationIncludeBuckets != null && (publicRequestStorageLensConfigurationIncludeBuckets.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                        {                        
-                            xmlWriter.WriteStartElement("Buckets", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                        {
+                            xmlWriter.WriteStartElement("Buckets");
                             foreach (var publicRequestStorageLensConfigurationIncludeBucketsValue in publicRequestStorageLensConfigurationIncludeBuckets) 
                             {
-                                xmlWriter.WriteStartElement("Arn", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                xmlWriter.WriteStartElement("Arn");
                                 xmlWriter.WriteValue(publicRequestStorageLensConfigurationIncludeBucketsValue);
                                 xmlWriter.WriteEndElement();
                             }            
@@ -342,11 +317,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         }
                         var publicRequestStorageLensConfigurationIncludeRegions = publicRequest.StorageLensConfiguration.Include.Regions;
                         if (publicRequestStorageLensConfigurationIncludeRegions != null && (publicRequestStorageLensConfigurationIncludeRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                        {                        
-                            xmlWriter.WriteStartElement("Regions", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                        {
+                            xmlWriter.WriteStartElement("Regions");
                             foreach (var publicRequestStorageLensConfigurationIncludeRegionsValue in publicRequestStorageLensConfigurationIncludeRegions) 
                             {
-                                xmlWriter.WriteStartElement("Region", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                xmlWriter.WriteStartElement("Region");
                                 xmlWriter.WriteValue(publicRequestStorageLensConfigurationIncludeRegionsValue);
                                 xmlWriter.WriteEndElement();
                             }            
@@ -355,28 +330,27 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.StorageLensConfiguration.IsSetIsEnabled())
-                        xmlWriter.WriteElementString("IsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.StorageLensConfiguration.IsEnabled));                 
+                        xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.StorageLensConfiguration.IsEnabled));                 
 
                     if(publicRequest.StorageLensConfiguration.IsSetStorageLensArn())
-                        xmlWriter.WriteElementString("StorageLensArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.StorageLensConfiguration.StorageLensArn));                 
+                        xmlWriter.WriteElementString("StorageLensArn", StringUtils.FromString(publicRequest.StorageLensConfiguration.StorageLensArn));                 
 
                     xmlWriter.WriteEndElement();
                 }
                 var publicRequestTags = publicRequest.Tags;
                 if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                {                        
-                    xmlWriter.WriteStartElement("Tags", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                {
+                    xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 
                     {
-                
-                    if (publicRequestTagsValue != null) 
+                    if (publicRequestTagsValue != null)
                     {
-                        xmlWriter.WriteStartElement("Tag", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        xmlWriter.WriteStartElement("Tag");
                         if(publicRequestTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestTagsValue.Key));                 
+                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));                 
 
                         if(publicRequestTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestTagsValue.Value));                 
+                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }

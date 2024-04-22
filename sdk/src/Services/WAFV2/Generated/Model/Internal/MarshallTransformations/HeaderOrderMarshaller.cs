@@ -46,6 +46,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HeaderOrder requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOversizeHandling())
             {
                 context.Writer.WritePropertyName("OversizeHandling");

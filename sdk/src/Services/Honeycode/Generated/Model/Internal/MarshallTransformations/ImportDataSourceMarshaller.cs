@@ -46,6 +46,8 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImportDataSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataSourceConfig())
             {
                 context.Writer.WritePropertyName("dataSourceConfig");

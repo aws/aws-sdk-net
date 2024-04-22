@@ -46,6 +46,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataCellsFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetColumnNames())
             {
                 context.Writer.WritePropertyName("ColumnNames");

@@ -46,6 +46,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CalculationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCodeBlock())
             {
                 context.Writer.WritePropertyName("CodeBlock");

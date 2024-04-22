@@ -46,6 +46,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Adapter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdapterId())
             {
                 context.Writer.WritePropertyName("AdapterId");

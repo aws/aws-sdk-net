@@ -46,6 +46,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomerContentEncryptionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKmsKey())
             {
                 context.Writer.WritePropertyName("KmsKey");

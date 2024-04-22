@@ -46,6 +46,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EventInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

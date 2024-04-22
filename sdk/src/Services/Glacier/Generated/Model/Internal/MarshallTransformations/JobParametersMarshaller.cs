@@ -46,6 +46,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArchiveId())
             {
                 context.Writer.WritePropertyName("ArchiveId");

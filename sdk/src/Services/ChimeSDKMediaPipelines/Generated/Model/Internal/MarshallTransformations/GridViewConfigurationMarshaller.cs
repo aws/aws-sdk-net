@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GridViewConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActiveSpeakerOnlyConfiguration())
             {
                 context.Writer.WritePropertyName("ActiveSpeakerOnlyConfiguration");

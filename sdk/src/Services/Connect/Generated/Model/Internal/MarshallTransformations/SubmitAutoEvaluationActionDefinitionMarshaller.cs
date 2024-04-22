@@ -46,6 +46,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SubmitAutoEvaluationActionDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEvaluationFormId())
             {
                 context.Writer.WritePropertyName("EvaluationFormId");

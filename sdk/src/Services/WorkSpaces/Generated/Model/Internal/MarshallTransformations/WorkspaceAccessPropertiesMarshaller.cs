@@ -46,6 +46,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkspaceAccessProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeviceTypeAndroid())
             {
                 context.Writer.WritePropertyName("DeviceTypeAndroid");

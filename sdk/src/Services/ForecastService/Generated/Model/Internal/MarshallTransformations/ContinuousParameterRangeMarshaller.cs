@@ -46,16 +46,32 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContinuousParameterRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("MaxValue");
-                context.Writer.Write(requestObject.MaxValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxValue);
+                }
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("MinValue");
-                context.Writer.Write(requestObject.MinValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinValue);
+                }
             }
 
             if(requestObject.IsSetName())

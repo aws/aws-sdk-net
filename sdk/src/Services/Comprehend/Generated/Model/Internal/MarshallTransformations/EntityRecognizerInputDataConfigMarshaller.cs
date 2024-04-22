@@ -46,6 +46,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EntityRecognizerInputDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnnotations())
             {
                 context.Writer.WritePropertyName("Annotations");

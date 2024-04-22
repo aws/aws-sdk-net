@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsKmsKeyDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAWSAccountId())
             {
                 context.Writer.WritePropertyName("AWSAccountId");
@@ -55,7 +57,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreationDate())
             {
                 context.Writer.WritePropertyName("CreationDate");
-                context.Writer.Write(requestObject.CreationDate);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CreationDate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CreationDate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CreationDate);
+                }
             }
 
             if(requestObject.IsSetDescription())

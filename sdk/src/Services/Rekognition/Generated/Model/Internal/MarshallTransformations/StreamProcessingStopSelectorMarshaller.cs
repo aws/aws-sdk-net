@@ -46,6 +46,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamProcessingStopSelector requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxDurationInSeconds())
             {
                 context.Writer.WritePropertyName("MaxDurationInSeconds");

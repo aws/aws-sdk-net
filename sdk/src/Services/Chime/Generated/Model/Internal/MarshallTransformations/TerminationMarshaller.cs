@@ -46,6 +46,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Termination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCallingRegions())
             {
                 context.Writer.WritePropertyName("CallingRegions");

@@ -46,6 +46,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceMetadataOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHttpPutResponseHopLimit())
             {
                 context.Writer.WritePropertyName("httpPutResponseHopLimit");

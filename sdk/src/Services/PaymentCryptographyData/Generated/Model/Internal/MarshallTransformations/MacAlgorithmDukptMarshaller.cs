@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MacAlgorithmDukpt requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDukptDerivationType())
             {
                 context.Writer.WritePropertyName("DukptDerivationType");
