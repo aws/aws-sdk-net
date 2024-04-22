@@ -46,6 +46,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResponseAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBlock())
             {
                 context.Writer.WritePropertyName("Block");

@@ -46,6 +46,8 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DisableAlarmActionRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlarmModelName())
             {
                 context.Writer.WritePropertyName("alarmModelName");

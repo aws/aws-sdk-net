@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContentFeatures requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxResolution())
             {
                 context.Writer.WritePropertyName("MaxResolution");

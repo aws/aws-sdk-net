@@ -46,6 +46,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ComputeCapacity requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDesiredInstances())
             {
                 context.Writer.WritePropertyName("DesiredInstances");

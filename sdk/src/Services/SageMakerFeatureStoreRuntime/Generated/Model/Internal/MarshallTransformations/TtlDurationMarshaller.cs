@@ -46,6 +46,8 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
         /// <returns></returns>
         public void Marshall(TtlDuration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("Unit");

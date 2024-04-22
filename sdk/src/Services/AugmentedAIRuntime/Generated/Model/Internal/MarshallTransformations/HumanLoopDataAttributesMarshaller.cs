@@ -46,6 +46,8 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HumanLoopDataAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContentClassifiers())
             {
                 context.Writer.WritePropertyName("ContentClassifiers");

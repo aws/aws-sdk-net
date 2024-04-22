@@ -46,6 +46,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimeShiftConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxTimeDelaySeconds())
             {
                 context.Writer.WritePropertyName("MaxTimeDelaySeconds");

@@ -71,7 +71,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndTimeUtc())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxSize())
@@ -96,12 +96,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartTimeUtc())
                 {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTimeUtc())
                 {
-                    request.Parameters.Add("Time", StringUtils.FromDateTimeToISO8601(publicRequest.TimeUtc));
+                    request.Parameters.Add("Time", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.TimeUtc));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTimeZone())

@@ -46,6 +46,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
         /// <returns></returns>
         public void Marshall(ClipTimestampRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndTimestamp())
             {
                 context.Writer.WritePropertyName("EndTimestamp");

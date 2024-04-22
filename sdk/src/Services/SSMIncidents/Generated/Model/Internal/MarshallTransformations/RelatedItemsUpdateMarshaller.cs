@@ -46,6 +46,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RelatedItemsUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetItemToAdd())
             {
                 context.Writer.WritePropertyName("itemToAdd");

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PublicKeyConfig Object
     /// </summary>  
-    public class PublicKeyConfigUnmarshaller : IUnmarshaller<PublicKeyConfig, XmlUnmarshallerContext>
+    public class PublicKeyConfigUnmarshaller : IUnmarshaller<PublicKeyConfig, XmlUnmarshallerContext>, IUnmarshaller<PublicKeyConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,6 +87,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public PublicKeyConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static PublicKeyConfigUnmarshaller _instance = new PublicKeyConfigUnmarshaller();        

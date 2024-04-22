@@ -46,6 +46,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BlockPublicAccessConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBlockPublicSecurityGroupRules())
             {
                 context.Writer.WritePropertyName("BlockPublicSecurityGroupRules");

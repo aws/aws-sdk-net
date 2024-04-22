@@ -46,6 +46,8 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PhoneNumber requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNumber())
             {
                 context.Writer.WritePropertyName("Number");

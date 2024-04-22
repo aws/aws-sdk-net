@@ -46,6 +46,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatasetDocumentClassifierInputDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLabelDelimiter())
             {
                 context.Writer.WritePropertyName("LabelDelimiter");

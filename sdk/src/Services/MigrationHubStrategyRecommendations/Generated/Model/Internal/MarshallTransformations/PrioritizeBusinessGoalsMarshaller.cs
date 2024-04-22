@@ -46,6 +46,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// <returns></returns>
         public void Marshall(PrioritizeBusinessGoals requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBusinessGoals())
             {
                 context.Writer.WritePropertyName("businessGoals");

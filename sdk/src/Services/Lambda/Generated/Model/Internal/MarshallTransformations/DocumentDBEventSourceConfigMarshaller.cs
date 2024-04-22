@@ -46,6 +46,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DocumentDBEventSourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCollectionName())
             {
                 context.Writer.WritePropertyName("CollectionName");

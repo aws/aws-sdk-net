@@ -46,6 +46,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(INDTaxDocuments requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGSTIN())
             {
                 context.Writer.WritePropertyName("GSTIN");

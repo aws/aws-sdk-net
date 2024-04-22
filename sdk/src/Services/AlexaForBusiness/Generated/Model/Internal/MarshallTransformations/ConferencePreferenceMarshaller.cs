@@ -46,6 +46,8 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConferencePreference requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDefaultConferenceProviderArn())
             {
                 context.Writer.WritePropertyName("DefaultConferenceProviderArn");

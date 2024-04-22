@@ -99,11 +99,7 @@ namespace Amazon.BackupStorage.Model.Internal.MarshallTransformations
             {
                 request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked";
             }
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
-            if (request.ContentStream != null && request.ContentStream.Length == 0)
-            {
-                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
-            }
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";
             request.UseQueryString = true;
 
             return request;

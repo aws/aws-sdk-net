@@ -46,6 +46,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpstreamRepository requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRepositoryName())
             {
                 context.Writer.WritePropertyName("repositoryName");

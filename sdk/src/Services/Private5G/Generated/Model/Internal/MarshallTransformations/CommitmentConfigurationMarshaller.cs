@@ -46,6 +46,8 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CommitmentConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutomaticRenewal())
             {
                 context.Writer.WritePropertyName("automaticRenewal");

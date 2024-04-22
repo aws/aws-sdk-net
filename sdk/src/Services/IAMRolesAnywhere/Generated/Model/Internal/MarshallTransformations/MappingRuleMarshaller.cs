@@ -46,6 +46,8 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MappingRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSpecifier())
             {
                 context.Writer.WritePropertyName("specifier");

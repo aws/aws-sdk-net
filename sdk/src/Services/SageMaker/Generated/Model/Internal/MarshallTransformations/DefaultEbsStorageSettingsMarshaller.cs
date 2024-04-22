@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DefaultEbsStorageSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDefaultEbsVolumeSizeInGb())
             {
                 context.Writer.WritePropertyName("DefaultEbsVolumeSizeInGb");

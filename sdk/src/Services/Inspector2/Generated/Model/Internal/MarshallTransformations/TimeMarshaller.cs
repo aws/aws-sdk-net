@@ -46,6 +46,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Time requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTimeOfDay())
             {
                 context.Writer.WritePropertyName("timeOfDay");

@@ -46,6 +46,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PackageImportJobOutputConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPackageVersionOutputConfig())
             {
                 context.Writer.WritePropertyName("PackageVersionOutputConfig");

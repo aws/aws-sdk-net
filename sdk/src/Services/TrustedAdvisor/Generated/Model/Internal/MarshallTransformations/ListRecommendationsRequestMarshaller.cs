@@ -61,13 +61,13 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
 
             
             if (publicRequest.IsSetAfterLastUpdatedAt())
-                request.Parameters.Add("afterLastUpdatedAt", StringUtils.FromDateTimeToISO8601(publicRequest.AfterLastUpdatedAt));
+                request.Parameters.Add("afterLastUpdatedAt", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.AfterLastUpdatedAt));
             
             if (publicRequest.IsSetAwsService())
                 request.Parameters.Add("awsService", StringUtils.FromString(publicRequest.AwsService));
             
             if (publicRequest.IsSetBeforeLastUpdatedAt())
-                request.Parameters.Add("beforeLastUpdatedAt", StringUtils.FromDateTimeToISO8601(publicRequest.BeforeLastUpdatedAt));
+                request.Parameters.Add("beforeLastUpdatedAt", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.BeforeLastUpdatedAt));
             
             if (publicRequest.IsSetCheckIdentifier())
                 request.Parameters.Add("checkIdentifier", StringUtils.FromString(publicRequest.CheckIdentifier));

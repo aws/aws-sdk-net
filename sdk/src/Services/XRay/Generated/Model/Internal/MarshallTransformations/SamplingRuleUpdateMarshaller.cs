@@ -46,6 +46,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SamplingRuleUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");
@@ -63,7 +65,14 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFixedRate())
             {
                 context.Writer.WritePropertyName("FixedRate");
-                context.Writer.Write(requestObject.FixedRate);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.FixedRate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FixedRate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.FixedRate);
+                }
             }
 
             if(requestObject.IsSetHost())

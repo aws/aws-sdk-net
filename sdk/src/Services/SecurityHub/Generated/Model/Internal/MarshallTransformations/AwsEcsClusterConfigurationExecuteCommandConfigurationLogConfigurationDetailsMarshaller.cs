@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchEncryptionEnabled())
             {
                 context.Writer.WritePropertyName("CloudWatchEncryptionEnabled");

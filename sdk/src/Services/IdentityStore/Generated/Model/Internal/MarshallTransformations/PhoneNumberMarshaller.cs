@@ -46,6 +46,8 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PhoneNumber requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPrimary())
             {
                 context.Writer.WritePropertyName("Primary");

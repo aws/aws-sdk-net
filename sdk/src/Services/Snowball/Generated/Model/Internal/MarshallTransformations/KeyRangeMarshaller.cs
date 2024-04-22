@@ -46,6 +46,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KeyRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBeginMarker())
             {
                 context.Writer.WritePropertyName("BeginMarker");

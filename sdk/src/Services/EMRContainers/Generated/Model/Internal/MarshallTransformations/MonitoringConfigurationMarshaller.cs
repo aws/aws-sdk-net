@@ -46,6 +46,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MonitoringConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchMonitoringConfiguration())
             {
                 context.Writer.WritePropertyName("cloudWatchMonitoringConfiguration");

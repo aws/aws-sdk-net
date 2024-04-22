@@ -46,6 +46,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RelationalDatabaseDataSourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRdsHttpEndpointConfig())
             {
                 context.Writer.WritePropertyName("rdsHttpEndpointConfig");

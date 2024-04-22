@@ -46,6 +46,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReplicationDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("region");

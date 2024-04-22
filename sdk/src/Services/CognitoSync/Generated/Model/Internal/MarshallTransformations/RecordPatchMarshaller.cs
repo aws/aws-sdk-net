@@ -46,6 +46,8 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecordPatch requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeviceLastModifiedDate())
             {
                 context.Writer.WritePropertyName("DeviceLastModifiedDate");

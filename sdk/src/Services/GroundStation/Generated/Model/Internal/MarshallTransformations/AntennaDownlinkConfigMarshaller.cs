@@ -46,6 +46,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AntennaDownlinkConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSpectrumConfig())
             {
                 context.Writer.WritePropertyName("spectrumConfig");

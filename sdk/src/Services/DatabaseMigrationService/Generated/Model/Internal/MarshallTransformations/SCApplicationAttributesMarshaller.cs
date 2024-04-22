@@ -46,6 +46,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SCApplicationAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3BucketPath())
             {
                 context.Writer.WritePropertyName("S3BucketPath");

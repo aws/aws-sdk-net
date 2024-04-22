@@ -46,6 +46,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatasetSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDatasetArn())
             {
                 context.Writer.WritePropertyName("DatasetArn");

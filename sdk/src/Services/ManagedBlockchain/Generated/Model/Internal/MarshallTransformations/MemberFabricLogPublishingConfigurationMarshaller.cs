@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MemberFabricLogPublishingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCaLogs())
             {
                 context.Writer.WritePropertyName("CaLogs");

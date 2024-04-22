@@ -46,6 +46,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SamlProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRelayStateParameterName())
             {
                 context.Writer.WritePropertyName("RelayStateParameterName");

@@ -46,6 +46,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoTrainingConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSchedulingExpression())
             {
                 context.Writer.WritePropertyName("schedulingExpression");

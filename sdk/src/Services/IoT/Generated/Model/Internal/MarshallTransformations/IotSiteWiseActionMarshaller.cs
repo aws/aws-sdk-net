@@ -46,6 +46,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IotSiteWiseAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPutAssetPropertyValueEntries())
             {
                 context.Writer.WritePropertyName("putAssetPropertyValueEntries");

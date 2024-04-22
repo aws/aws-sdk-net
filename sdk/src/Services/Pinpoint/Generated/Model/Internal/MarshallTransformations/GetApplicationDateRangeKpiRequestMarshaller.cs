@@ -67,7 +67,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             request.AddPathResource("{kpi-name}", StringUtils.FromString(publicRequest.KpiName));
             
             if (publicRequest.IsSetEndTime())
-                request.Parameters.Add("end-time", StringUtils.FromDateTimeToISO8601(publicRequest.EndTime));
+                request.Parameters.Add("end-time", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
@@ -76,7 +76,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 request.Parameters.Add("page-size", StringUtils.FromString(publicRequest.PageSize));
             
             if (publicRequest.IsSetStartTime())
-                request.Parameters.Add("start-time", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
+                request.Parameters.Add("start-time", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
             request.ResourcePath = "/v1/apps/{application-id}/kpis/daterange/{kpi-name}";
             request.UseQueryString = true;
 

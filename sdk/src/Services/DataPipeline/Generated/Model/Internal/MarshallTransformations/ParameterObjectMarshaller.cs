@@ -46,6 +46,8 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ParameterObject requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("attributes");

@@ -66,6 +66,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetFrequency())
@@ -116,7 +117,14 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThreshold())
                 {
                     context.Writer.WritePropertyName("Threshold");
-                    context.Writer.Write(publicRequest.Threshold);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.Threshold);
+                    }
                 }
 
                 if(publicRequest.IsSetThresholdExpression())

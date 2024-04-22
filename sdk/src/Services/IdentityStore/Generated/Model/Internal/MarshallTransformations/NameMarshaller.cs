@@ -46,6 +46,8 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Name requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFamilyName())
             {
                 context.Writer.WritePropertyName("FamilyName");

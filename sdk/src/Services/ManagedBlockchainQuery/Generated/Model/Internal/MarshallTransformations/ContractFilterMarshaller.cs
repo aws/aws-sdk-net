@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContractFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeployerAddress())
             {
                 context.Writer.WritePropertyName("deployerAddress");

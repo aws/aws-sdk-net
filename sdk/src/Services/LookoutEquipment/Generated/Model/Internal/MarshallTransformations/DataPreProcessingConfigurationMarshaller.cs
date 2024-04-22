@@ -46,6 +46,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataPreProcessingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTargetSamplingRate())
             {
                 context.Writer.WritePropertyName("TargetSamplingRate");

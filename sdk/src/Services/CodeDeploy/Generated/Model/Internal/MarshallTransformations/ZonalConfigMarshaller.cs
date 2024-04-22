@@ -46,6 +46,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ZonalConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFirstZoneMonitorDurationInSeconds())
             {
                 context.Writer.WritePropertyName("firstZoneMonitorDurationInSeconds");

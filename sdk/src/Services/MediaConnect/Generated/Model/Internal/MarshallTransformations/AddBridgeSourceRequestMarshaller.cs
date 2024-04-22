@@ -46,6 +46,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AddBridgeSourceRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFlowSource())
             {
                 context.Writer.WritePropertyName("flowSource");

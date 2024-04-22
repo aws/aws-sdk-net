@@ -61,7 +61,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
 
             
             if (publicRequest.IsSetEndTime())
-                request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTime));
+                request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
             
             if (publicRequest.IsSetEventStatus())
                 request.Parameters.Add("EventStatus", StringUtils.FromString(publicRequest.EventStatus));
@@ -76,7 +76,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetStartTime())
-                request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
+                request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
             request.ResourcePath = "/v20210603/InternetEvents";
             request.UseQueryString = true;
 

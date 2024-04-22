@@ -46,6 +46,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatasetEntityRecognizerDocuments requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputFormat())
             {
                 context.Writer.WritePropertyName("InputFormat");

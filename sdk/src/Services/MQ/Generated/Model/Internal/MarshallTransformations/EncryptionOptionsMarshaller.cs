@@ -46,6 +46,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncryptionOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");

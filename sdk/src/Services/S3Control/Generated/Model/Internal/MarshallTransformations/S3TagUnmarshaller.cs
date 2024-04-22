@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3Tag Object
     /// </summary>  
-    public class S3TagUnmarshaller : IUnmarshaller<S3Tag, XmlUnmarshallerContext>
+    public class S3TagUnmarshaller : IUnmarshaller<S3Tag, XmlUnmarshallerContext>, IUnmarshaller<S3Tag, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,6 +75,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public S3Tag Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static S3TagUnmarshaller _instance = new S3TagUnmarshaller();        

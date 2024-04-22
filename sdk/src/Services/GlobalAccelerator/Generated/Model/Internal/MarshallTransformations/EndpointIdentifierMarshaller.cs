@@ -46,6 +46,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EndpointIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClientIPPreservationEnabled())
             {
                 context.Writer.WritePropertyName("ClientIPPreservationEnabled");

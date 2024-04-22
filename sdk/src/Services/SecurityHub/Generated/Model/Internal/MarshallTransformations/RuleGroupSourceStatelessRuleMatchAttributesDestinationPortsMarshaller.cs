@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFromPort())
             {
                 context.Writer.WritePropertyName("FromPort");

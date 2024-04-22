@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEc2ClientVpnEndpointConnectionLogOptionsDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudwatchLogGroup())
             {
                 context.Writer.WritePropertyName("CloudwatchLogGroup");

@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KPIConditionalFormatting requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConditionalFormattingOptions())
             {
                 context.Writer.WritePropertyName("ConditionalFormattingOptions");

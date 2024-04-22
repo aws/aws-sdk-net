@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3ObjectMetadata Object
     /// </summary>  
-    public class S3ObjectMetadataUnmarshaller : IUnmarshaller<S3ObjectMetadata, XmlUnmarshallerContext>
+    public class S3ObjectMetadataUnmarshaller : IUnmarshaller<S3ObjectMetadata, XmlUnmarshallerContext>, IUnmarshaller<S3ObjectMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -129,6 +129,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public S3ObjectMetadata Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static S3ObjectMetadataUnmarshaller _instance = new S3ObjectMetadataUnmarshaller();        

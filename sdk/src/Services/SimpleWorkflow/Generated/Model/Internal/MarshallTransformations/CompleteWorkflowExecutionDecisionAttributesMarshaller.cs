@@ -46,6 +46,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CompleteWorkflowExecutionDecisionAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetResult())
             {
                 context.Writer.WritePropertyName("result");

@@ -46,6 +46,8 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Filter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributePath())
             {
                 context.Writer.WritePropertyName("AttributePath");

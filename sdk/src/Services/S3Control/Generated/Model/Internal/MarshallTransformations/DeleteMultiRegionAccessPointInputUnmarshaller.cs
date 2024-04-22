@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteMultiRegionAccessPointInput Object
     /// </summary>  
-    public class DeleteMultiRegionAccessPointInputUnmarshaller : IUnmarshaller<DeleteMultiRegionAccessPointInput, XmlUnmarshallerContext>
+    public class DeleteMultiRegionAccessPointInputUnmarshaller : IUnmarshaller<DeleteMultiRegionAccessPointInput, XmlUnmarshallerContext>, IUnmarshaller<DeleteMultiRegionAccessPointInput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -69,6 +69,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public DeleteMultiRegionAccessPointInput Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static DeleteMultiRegionAccessPointInputUnmarshaller _instance = new DeleteMultiRegionAccessPointInputUnmarshaller();        

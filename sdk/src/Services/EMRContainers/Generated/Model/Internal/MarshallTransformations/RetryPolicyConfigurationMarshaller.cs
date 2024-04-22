@@ -46,6 +46,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RetryPolicyConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxAttempts())
             {
                 context.Writer.WritePropertyName("maxAttempts");

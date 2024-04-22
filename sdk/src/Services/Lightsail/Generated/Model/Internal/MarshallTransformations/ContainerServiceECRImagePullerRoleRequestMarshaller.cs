@@ -46,6 +46,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContainerServiceECRImagePullerRoleRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIsActive())
             {
                 context.Writer.WritePropertyName("isActive");

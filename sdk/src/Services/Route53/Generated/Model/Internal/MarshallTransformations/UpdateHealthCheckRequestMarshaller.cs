@@ -65,86 +65,85 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("UpdateHealthCheckRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
+                xmlWriter.WriteStartElement("UpdateHealthCheckRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetHealthCheckVersion())
-                    xmlWriter.WriteElementString("HealthCheckVersion", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequest.HealthCheckVersion));                    
+                    xmlWriter.WriteElementString("HealthCheckVersion", StringUtils.FromLong(publicRequest.HealthCheckVersion));
 
                 if(publicRequest.IsSetIPAddress())
-                    xmlWriter.WriteElementString("IPAddress", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.IPAddress));                    
+                    xmlWriter.WriteElementString("IPAddress", StringUtils.FromString(publicRequest.IPAddress));
 
                 if(publicRequest.IsSetPort())
-                    xmlWriter.WriteElementString("Port", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.Port));                    
+                    xmlWriter.WriteElementString("Port", StringUtils.FromInt(publicRequest.Port));
 
                 if(publicRequest.IsSetResourcePath())
-                    xmlWriter.WriteElementString("ResourcePath", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.ResourcePath));                    
+                    xmlWriter.WriteElementString("ResourcePath", StringUtils.FromString(publicRequest.ResourcePath));
 
                 if(publicRequest.IsSetFullyQualifiedDomainName())
-                    xmlWriter.WriteElementString("FullyQualifiedDomainName", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.FullyQualifiedDomainName));                    
+                    xmlWriter.WriteElementString("FullyQualifiedDomainName", StringUtils.FromString(publicRequest.FullyQualifiedDomainName));
 
                 if(publicRequest.IsSetSearchString())
-                    xmlWriter.WriteElementString("SearchString", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.SearchString));                    
+                    xmlWriter.WriteElementString("SearchString", StringUtils.FromString(publicRequest.SearchString));
 
                 if(publicRequest.IsSetFailureThreshold())
-                    xmlWriter.WriteElementString("FailureThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.FailureThreshold));                    
+                    xmlWriter.WriteElementString("FailureThreshold", StringUtils.FromInt(publicRequest.FailureThreshold));
 
                 if(publicRequest.IsSetInverted())
-                    xmlWriter.WriteElementString("Inverted", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.Inverted));                    
+                    xmlWriter.WriteElementString("Inverted", StringUtils.FromBool(publicRequest.Inverted));
 
                 if(publicRequest.IsSetDisabled())
-                    xmlWriter.WriteElementString("Disabled", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.Disabled));                    
+                    xmlWriter.WriteElementString("Disabled", StringUtils.FromBool(publicRequest.Disabled));
 
                 if(publicRequest.IsSetHealthThreshold())
-                    xmlWriter.WriteElementString("HealthThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthThreshold));                    
+                    xmlWriter.WriteElementString("HealthThreshold", StringUtils.FromInt(publicRequest.HealthThreshold));
 
                 var publicRequestChildHealthChecks = publicRequest.ChildHealthChecks;
                 if (publicRequestChildHealthChecks != null && (publicRequestChildHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                {                        
-                    xmlWriter.WriteStartElement("ChildHealthChecks", "https://route53.amazonaws.com/doc/2013-04-01/");
+                {
+                    xmlWriter.WriteStartElement("ChildHealthChecks");
                     foreach (var publicRequestChildHealthChecksValue in publicRequestChildHealthChecks) 
                     {
-                        xmlWriter.WriteStartElement("ChildHealthCheck", "https://route53.amazonaws.com/doc/2013-04-01/");
+                        xmlWriter.WriteStartElement("ChildHealthCheck");
                         xmlWriter.WriteValue(publicRequestChildHealthChecksValue);
                         xmlWriter.WriteEndElement();
                     }            
                     xmlWriter.WriteEndElement();            
                 }
                 if(publicRequest.IsSetEnableSNI())
-                    xmlWriter.WriteElementString("EnableSNI", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.EnableSNI));                    
+                    xmlWriter.WriteElementString("EnableSNI", StringUtils.FromBool(publicRequest.EnableSNI));
 
                 var publicRequestRegions = publicRequest.Regions;
                 if (publicRequestRegions != null && (publicRequestRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                {                        
-                    xmlWriter.WriteStartElement("Regions", "https://route53.amazonaws.com/doc/2013-04-01/");
+                {
+                    xmlWriter.WriteStartElement("Regions");
                     foreach (var publicRequestRegionsValue in publicRequestRegions) 
                     {
-                        xmlWriter.WriteStartElement("Region", "https://route53.amazonaws.com/doc/2013-04-01/");
+                        xmlWriter.WriteStartElement("Region");
                         xmlWriter.WriteValue(publicRequestRegionsValue);
                         xmlWriter.WriteEndElement();
                     }            
                     xmlWriter.WriteEndElement();            
                 }
-                
-                if (publicRequest.AlarmIdentifier != null) 
+                if (publicRequest.AlarmIdentifier != null)
                 {
-                    xmlWriter.WriteStartElement("AlarmIdentifier", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                    xmlWriter.WriteStartElement("AlarmIdentifier");
                     if(publicRequest.AlarmIdentifier.IsSetRegion())
-                        xmlWriter.WriteElementString("Region", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.AlarmIdentifier.Region));                 
+                        xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequest.AlarmIdentifier.Region));                 
 
                     if(publicRequest.AlarmIdentifier.IsSetName())
-                        xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.AlarmIdentifier.Name));                 
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.AlarmIdentifier.Name));                 
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetInsufficientDataHealthStatus())
-                    xmlWriter.WriteElementString("InsufficientDataHealthStatus", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.InsufficientDataHealthStatus));                    
+                    xmlWriter.WriteElementString("InsufficientDataHealthStatus", StringUtils.FromString(publicRequest.InsufficientDataHealthStatus));
 
                 var publicRequestResetElements = publicRequest.ResetElements;
                 if (publicRequestResetElements != null && (publicRequestResetElements.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                {                        
-                    xmlWriter.WriteStartElement("ResetElements", "https://route53.amazonaws.com/doc/2013-04-01/");
+                {
+                    xmlWriter.WriteStartElement("ResetElements");
                     foreach (var publicRequestResetElementsValue in publicRequestResetElements) 
                     {
-                        xmlWriter.WriteStartElement("ResettableElementName", "https://route53.amazonaws.com/doc/2013-04-01/");
+                        xmlWriter.WriteStartElement("ResettableElementName");
                         xmlWriter.WriteValue(publicRequestResetElementsValue);
                         xmlWriter.WriteEndElement();
                     }            

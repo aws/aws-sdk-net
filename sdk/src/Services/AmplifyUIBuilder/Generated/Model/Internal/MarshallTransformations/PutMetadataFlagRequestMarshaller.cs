@@ -73,6 +73,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 var context = new JsonMarshallerContext(request, writer);
                 context.Writer.WriteObjectStart();
 

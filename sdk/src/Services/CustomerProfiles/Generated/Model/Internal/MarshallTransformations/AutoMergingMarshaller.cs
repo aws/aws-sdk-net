@@ -46,6 +46,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoMerging requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConflictResolution())
             {
                 context.Writer.WritePropertyName("ConflictResolution");
@@ -77,7 +79,14 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinAllowedConfidenceScoreForMerging())
             {
                 context.Writer.WritePropertyName("MinAllowedConfidenceScoreForMerging");
-                context.Writer.Write(requestObject.MinAllowedConfidenceScoreForMerging);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinAllowedConfidenceScoreForMerging))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinAllowedConfidenceScoreForMerging));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinAllowedConfidenceScoreForMerging);
+                }
             }
 
         }

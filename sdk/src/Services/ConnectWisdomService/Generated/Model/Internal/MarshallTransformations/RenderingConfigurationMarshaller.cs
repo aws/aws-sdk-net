@@ -46,6 +46,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RenderingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTemplateUri())
             {
                 context.Writer.WritePropertyName("templateUri");

@@ -46,6 +46,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AccountJiraConfigurationInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIntegrationStatus())
             {
                 context.Writer.WritePropertyName("IntegrationStatus");

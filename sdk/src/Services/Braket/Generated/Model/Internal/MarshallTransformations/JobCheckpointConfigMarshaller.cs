@@ -46,6 +46,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobCheckpointConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLocalPath())
             {
                 context.Writer.WritePropertyName("localPath");

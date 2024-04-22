@@ -46,6 +46,8 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImageFrameInformation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetImageFrameId())
             {
                 context.Writer.WritePropertyName("imageFrameId");

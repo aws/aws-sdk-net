@@ -46,6 +46,8 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HealthCheckConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFailureThreshold())
             {
                 context.Writer.WritePropertyName("FailureThreshold");

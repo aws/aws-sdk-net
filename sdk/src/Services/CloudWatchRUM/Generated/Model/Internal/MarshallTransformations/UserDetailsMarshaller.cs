@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UserDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSessionId())
             {
                 context.Writer.WritePropertyName("sessionId");

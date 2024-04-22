@@ -46,16 +46,32 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StatisticSet requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximum())
             {
                 context.Writer.WritePropertyName("Maximum");
-                context.Writer.Write(requestObject.Maximum);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Maximum))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Maximum));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Maximum);
+                }
             }
 
             if(requestObject.IsSetMinimum())
             {
                 context.Writer.WritePropertyName("Minimum");
-                context.Writer.Write(requestObject.Minimum);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Minimum))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Minimum));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Minimum);
+                }
             }
 
             if(requestObject.IsSetSampleCount())
@@ -67,7 +83,14 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSum())
             {
                 context.Writer.WritePropertyName("Sum");
-                context.Writer.Write(requestObject.Sum);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Sum))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Sum));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Sum);
+                }
             }
 
         }

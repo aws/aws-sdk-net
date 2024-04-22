@@ -46,6 +46,8 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServerLaunchConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssociatePublicIpAddress())
             {
                 context.Writer.WritePropertyName("associatePublicIpAddress");

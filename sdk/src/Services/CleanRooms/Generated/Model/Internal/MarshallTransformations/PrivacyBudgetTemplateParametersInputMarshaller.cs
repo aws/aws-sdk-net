@@ -46,6 +46,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PrivacyBudgetTemplateParametersInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDifferentialPrivacy())
             {
                 context.Writer.WritePropertyName("differentialPrivacy");

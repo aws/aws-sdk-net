@@ -46,6 +46,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BackendAPIResourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalAuthTypes())
             {
                 context.Writer.WritePropertyName("additionalAuthTypes");

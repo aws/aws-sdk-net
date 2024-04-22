@@ -46,6 +46,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateBackendAuthMFAConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMFAMode())
             {
                 context.Writer.WritePropertyName("MFAMode");

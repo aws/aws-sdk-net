@@ -46,6 +46,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SnowconeDeviceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetWirelessConnection())
             {
                 context.Writer.WritePropertyName("WirelessConnection");

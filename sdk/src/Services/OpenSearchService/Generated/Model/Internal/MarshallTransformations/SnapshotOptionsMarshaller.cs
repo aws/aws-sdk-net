@@ -46,6 +46,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SnapshotOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutomatedSnapshotStartHour())
             {
                 context.Writer.WritePropertyName("AutomatedSnapshotStartHour");

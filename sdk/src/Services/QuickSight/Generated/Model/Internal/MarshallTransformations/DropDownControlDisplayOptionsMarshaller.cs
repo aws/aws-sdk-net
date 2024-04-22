@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DropDownControlDisplayOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInfoIconLabelOptions())
             {
                 context.Writer.WritePropertyName("InfoIconLabelOptions");

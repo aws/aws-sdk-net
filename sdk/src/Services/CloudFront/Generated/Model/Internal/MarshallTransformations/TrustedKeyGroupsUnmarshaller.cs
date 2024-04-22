@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrustedKeyGroups Object
     /// </summary>  
-    public class TrustedKeyGroupsUnmarshaller : IUnmarshaller<TrustedKeyGroups, XmlUnmarshallerContext>
+    public class TrustedKeyGroupsUnmarshaller : IUnmarshaller<TrustedKeyGroups, XmlUnmarshallerContext>, IUnmarshaller<TrustedKeyGroups, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -85,6 +85,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public TrustedKeyGroups Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static TrustedKeyGroupsUnmarshaller _instance = new TrustedKeyGroupsUnmarshaller();        

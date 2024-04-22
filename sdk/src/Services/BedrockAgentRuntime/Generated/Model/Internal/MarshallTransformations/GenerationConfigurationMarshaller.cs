@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GenerationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPromptTemplate())
             {
                 context.Writer.WritePropertyName("promptTemplate");

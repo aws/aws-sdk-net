@@ -46,6 +46,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CoverageTime requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnd())
             {
                 context.Writer.WritePropertyName("End");

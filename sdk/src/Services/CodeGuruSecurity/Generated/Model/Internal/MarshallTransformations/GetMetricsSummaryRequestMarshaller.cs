@@ -61,7 +61,7 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
 
             
             if (publicRequest.IsSetDate())
-                request.Parameters.Add("date", StringUtils.FromDateTimeToISO8601(publicRequest.Date));
+                request.Parameters.Add("date", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Date));
             request.ResourcePath = "/metrics/summary";
             request.UseQueryString = true;
 

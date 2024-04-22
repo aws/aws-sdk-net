@@ -46,6 +46,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoScalingTargetTrackingScalingPolicyConfigurationUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDisableScaleIn())
             {
                 context.Writer.WritePropertyName("DisableScaleIn");
@@ -67,7 +69,14 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetValue())
             {
                 context.Writer.WritePropertyName("TargetValue");
-                context.Writer.Write(requestObject.TargetValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TargetValue);
+                }
             }
 
         }

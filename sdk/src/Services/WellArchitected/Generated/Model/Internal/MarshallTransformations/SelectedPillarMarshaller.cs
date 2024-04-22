@@ -46,6 +46,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SelectedPillar requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPillarId())
             {
                 context.Writer.WritePropertyName("PillarId");

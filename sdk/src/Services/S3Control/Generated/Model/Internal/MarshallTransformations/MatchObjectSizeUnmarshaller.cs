@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MatchObjectSize Object
     /// </summary>  
-    public class MatchObjectSizeUnmarshaller : IUnmarshaller<MatchObjectSize, XmlUnmarshallerContext>
+    public class MatchObjectSizeUnmarshaller : IUnmarshaller<MatchObjectSize, XmlUnmarshallerContext>, IUnmarshaller<MatchObjectSize, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,6 +75,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public MatchObjectSize Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static MatchObjectSizeUnmarshaller _instance = new MatchObjectSizeUnmarshaller();        

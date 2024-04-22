@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProductionVariantManagedInstanceScaling requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxInstanceCount())
             {
                 context.Writer.WritePropertyName("MaxInstanceCount");

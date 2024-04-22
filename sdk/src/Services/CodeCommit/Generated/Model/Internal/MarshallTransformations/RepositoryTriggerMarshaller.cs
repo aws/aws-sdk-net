@@ -46,6 +46,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RepositoryTrigger requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBranches())
             {
                 context.Writer.WritePropertyName("branches");

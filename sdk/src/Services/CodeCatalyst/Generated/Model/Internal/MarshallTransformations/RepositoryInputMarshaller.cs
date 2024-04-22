@@ -46,6 +46,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RepositoryInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBranchName())
             {
                 context.Writer.WritePropertyName("branchName");

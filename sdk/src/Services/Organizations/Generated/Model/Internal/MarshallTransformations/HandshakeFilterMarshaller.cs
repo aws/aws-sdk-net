@@ -46,6 +46,8 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HandshakeFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActionType())
             {
                 context.Writer.WritePropertyName("ActionType");

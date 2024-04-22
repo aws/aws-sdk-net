@@ -46,6 +46,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ElasticsearchSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndpointUri())
             {
                 context.Writer.WritePropertyName("EndpointUri");

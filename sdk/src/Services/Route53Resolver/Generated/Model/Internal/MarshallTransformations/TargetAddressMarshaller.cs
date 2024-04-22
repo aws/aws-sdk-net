@@ -46,6 +46,8 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TargetAddress requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIp())
             {
                 context.Writer.WritePropertyName("Ip");
