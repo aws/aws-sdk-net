@@ -132,7 +132,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
     }
 }
-#pragma warning restore CS0612,CS0618
+
 <#+
 // if the result fields have been wrapped in a subordinate structure, wire the accessor
 // to use it when addressing a member

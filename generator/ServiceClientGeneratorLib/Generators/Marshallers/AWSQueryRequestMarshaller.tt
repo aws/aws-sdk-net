@@ -178,7 +178,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             }
 #>
 <#=new string(' ', level * 4)#>                }
-#pragma warning restore CS0612,CS0618
 <#+
         }
     }

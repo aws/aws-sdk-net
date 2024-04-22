@@ -1,0 +1,31 @@
+{
+	"core": {
+      "changeLogMessages": [
+		"Added EnumeratorCancellation attribute for IAsyncEnumerable paginator methods",
+		"Removed generated properties that were attempting to override non virtual properties from the base type. The generated properties were the same implementation as the base.",
+		"Removed the Obsolete attribute for CorrectedUtcNow. This method is needed when the corrected time without a service endpoint is used.",
+		"Removed the ` = default` from the signature in methods being implemented using explicit interface implementation. The `default` is inherited from the interface and triggers a warning when specified in the implementation."
+        "Added missing public docs"
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    },
+	"services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Added missing RequiresUnreferencedCode for ",
+				"Removed CLSCompliant(false) attributes for DynamoDB high level library converters",
+				"Fixed public documentation"
+            ]
+        },        
+		{
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Added missing public documentation"
+            ]
+        }		
+	]
+}

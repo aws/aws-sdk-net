@@ -1158,13 +1158,13 @@ this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
         #line hidden
         
         #line 180 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
-this.Write("                }\r\n#pragma warning restore CS0612,CS0618\r\n");
+this.Write("                }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 182 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 181 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
         }
     }

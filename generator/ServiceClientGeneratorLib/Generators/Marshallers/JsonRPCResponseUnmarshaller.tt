@@ -217,6 +217,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     if(isEventStreamOutput)
     {
 #>
+        /// <summary>
+        /// Return false for reading the entire response
+        /// </summary>
+        /// <param name="response"></param>
+        /// <param name="readEntireResponse"></param>
+        /// <returns></returns>
         protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
         {
             return false;
@@ -230,4 +236,3 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
     }
 }
-#pragma warning restore CS0612,CS0618

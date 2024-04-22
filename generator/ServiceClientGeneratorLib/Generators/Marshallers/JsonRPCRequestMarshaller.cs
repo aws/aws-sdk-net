@@ -457,7 +457,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("\t}\r\n}\r\n#pragma warning restore CS0612,CS0618");
+            this.Write("\t}\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }
