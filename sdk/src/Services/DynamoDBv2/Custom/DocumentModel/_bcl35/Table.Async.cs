@@ -31,7 +31,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.PutItem"/>
         /// </summary>
         /// <param name="doc">Document to save.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -46,7 +45,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.PutItem"/>
         /// </summary>
         /// <param name="doc">Document to save.</param>
         /// <param name="config">Configuration to use.</param>
@@ -62,7 +60,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Finishes the asynchronous execution of the PutItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.PutItem"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutItem.</param>
         /// <returns>Null or updated attributes, depending on config.</returns>
@@ -77,7 +74,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.GetItem"/>
         /// </summary>
         /// <param name="hashKey">Hash key element of the document.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -92,7 +88,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.GetItem"/>
         /// </summary>
         /// <param name="hashKey">Hash key element of the document.</param>
         /// <param name="rangeKey">Range key element of the document.</param>
@@ -108,7 +103,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.GetItem"/>
         /// </summary>
         /// <param name="hashKey">Hash key element of the document.</param>
         /// <param name="config">Configuration to use.</param>
@@ -124,7 +118,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.GetItem"/>
         /// </summary>
         /// <param name="hashKey">Hash key element of the document.</param>
         /// <param name="rangeKey">Range key element of the document.</param>
@@ -141,7 +134,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.GetItem"/>
         /// </summary>
         /// <param name="key">Key of the document.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -156,7 +148,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.GetItem"/>
         /// </summary>
         /// <param name="key">Ley of the document.</param>
         /// <param name="config">Configuration to use.</param>
@@ -172,7 +163,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.GetItem"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetItem.</param>
         /// <returns>Document from DynamoDB.</returns>
@@ -187,7 +177,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.UpdateItem"/>
         /// </summary>
         /// <param name="doc">Document to update.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -202,7 +191,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.UpdateItem"/>
         /// </summary>
         /// <param name="doc">Attributes to update.</param>
         /// <param name="hashKey">Hash key element of the document.</param>
@@ -218,7 +206,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.UpdateItem"/>
         /// </summary>
         /// <param name="doc">Attributes to update.</param>
         /// <param name="hashKey">Hash key element of the document.</param>
@@ -235,7 +222,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.UpdateItem"/>
         /// </summary>
         /// <param name="doc">Attributes to update.</param>
         /// <param name="key">Key of the document.</param>
@@ -251,7 +237,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.UpdateItem"/>
         /// </summary>
         /// <param name="doc">Document to update.</param>
         /// <param name="config">Configuration to use.</param>
@@ -267,7 +252,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.UpdateItem"/>
         /// </summary>
         /// <param name="doc">Attributes to update.</param>
         /// <param name="hashKey">Hash key element of the document.</param>
@@ -284,7 +268,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.UpdateItem"/>
         /// </summary>
         /// <param name="doc">Attributes to update.</param>
         /// <param name="hashKey">Hash key element of the document.</param>
@@ -302,7 +285,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.UpdateItem"/>
         /// </summary>
         /// <param name="doc">Attributes to update.</param>
         /// <param name="key">Key of the document.</param>
@@ -319,7 +301,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Finishes the asynchronous execution of the GetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.UpdateItem"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateItem.</param>
         /// <returns>Null or updated attributes, depending on config.</returns>
@@ -334,7 +315,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.DeleteItem"/>
         /// </summary>
         /// <param name="document">Document to delete.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -349,7 +329,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.DeleteItem"/>
         /// </summary>
         /// <param name="hashKey">Hash key element of the document.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -364,7 +343,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.DeleteItem"/>
         /// </summary>
         /// <param name="hashKey">Hash key element of the document.</param>
         /// <param name="rangeKey">Range key element of the document.</param>
@@ -380,7 +358,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.DeleteItem"/>
         /// </summary>
         /// <param name="key">Key of the document.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -395,7 +372,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.DeleteItem"/>
         /// </summary>
         /// <param name="document">Document to delete.</param>
         /// <param name="config">Configuration to use.</param>
@@ -411,7 +387,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.DeleteItem"/>
         /// </summary>
         /// <param name="hashKey">Hash key element of the document.</param>
         /// <param name="config">Configuration to use.</param>
@@ -427,7 +402,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.DeleteItem"/>
         /// </summary>
         /// <param name="hashKey">Hash key element of the document.</param>
         /// <param name="rangeKey">Range key element of the document.</param>
@@ -444,7 +418,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.DeleteItem"/>
         /// </summary>
         /// <param name="key">Key of the document.</param>
         /// <param name="config">Configuration to use.</param>
@@ -460,7 +433,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         
         /// <summary>
         /// Finishes the asynchronous execution of the DeleteItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.DeleteItem"/>
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteItem.</param>
         /// <returns>Null or old attributes, depending on config.</returns>

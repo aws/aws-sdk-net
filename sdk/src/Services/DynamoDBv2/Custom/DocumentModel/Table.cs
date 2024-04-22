@@ -688,7 +688,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <param name="metadataCachingMode">The document API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
         /// requests. This controls how the cache key is derived, which influences when the SDK will call 
-        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.</param>
+        /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.</param>
         /// <returns>Table object representing the specified table.</returns>
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, MetadataCachingMode metadataCachingMode)
         {
@@ -783,7 +783,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <param name="metadataCachingMode">The document API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
         /// requests. This controls how the cache key is derived, which influences when the SDK will call 
-        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.</param>
+        /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.</param>
         /// <param name="table">Loaded table.</param>
         /// <returns>
         /// True if table was successfully loaded; otherwise false.
