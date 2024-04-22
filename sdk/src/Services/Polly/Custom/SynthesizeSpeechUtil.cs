@@ -58,12 +58,14 @@ namespace Amazon.Polly
         {
             var options = new PreSignerOptions();
 
+#pragma warning disable CS0612,CS0618
             if (region.SystemName.Contains("fips-") || region.SystemName.Contains("-fips") ||
                 region.OriginalSystemName.Contains("fips-") || region.OriginalSystemName.Contains("-fips"))
             {
                 region = RegionEndpoint.GetBySystemName(region.SystemName.Replace("fips-", "").Replace("-fips", ""));
                 options.FIPS = true;
             }
+#pragma warning restore CS0612,CS0618
 
             return GeneratePresignedUrl(credentials, region, request, options);
         }
@@ -93,7 +95,9 @@ namespace Amazon.Polly
             var iRequest = marshaller.Marshall(request);
             iRequest.UseQueryString = true;
             iRequest.HttpMethod = HTTPGet;
+#pragma warning disable CS0612,CS0618
             iRequest.Endpoint = new UriBuilder(HTTPS, region.GetEndpointForService(PollyServiceName, signerOptions.ToGetEndpointForServiceOptions()).Hostname).Uri;
+#pragma warning restore CS0612,CS0618
             iRequest.Parameters[XAmzExpires] = ((int)FifteenMinutes.TotalSeconds).ToString(CultureInfo.InvariantCulture);
 
             if (request.IsSetLexiconNames())
@@ -157,6 +161,7 @@ namespace Amazon.Polly
         /// </summary>
         public bool FIPS { get; set; }
 
+#pragma warning disable CS0612,CS0618
         internal GetEndpointForServiceOptions ToGetEndpointForServiceOptions()
         {
             return new GetEndpointForServiceOptions
@@ -165,5 +170,6 @@ namespace Amazon.Polly
                 FIPS = FIPS
             };
         }
+#pragma warning restore CS0612,CS0618
     }
 }

@@ -44,7 +44,7 @@ namespace Amazon.SSO
         {
             return CoreAmazonSSO.CredentialsFromSsoAccessTokenAsync(this, accountId, roleName, accessToken, additionalProperties);
         }
-        Task ICoreAmazonSSO_Logout.LogoutAsync(string accessToken, CancellationToken cancellationToken = default)
+        Task ICoreAmazonSSO_Logout.LogoutAsync(string accessToken, CancellationToken cancellationToken)
         {
             return CoreAmazonSSO.LogoutAsync(this, accessToken, cancellationToken);
         }

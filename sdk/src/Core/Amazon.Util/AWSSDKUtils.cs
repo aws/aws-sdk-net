@@ -1374,7 +1374,6 @@ namespace Amazon.Util
         /// <seealso cref="AWSConfigs.ManualClockCorrection"/> is set.
         /// This value should be used instead of DateTime.UtcNow to factor in manual clock correction
         /// </summary>
-        [Obsolete("This property does not account for endpoint specific clock skew.  Use CorrectClockSkew.GetCorrectedUtcNowForEndpoint() instead.")]
         public static DateTime CorrectedUtcNow
         {
             get

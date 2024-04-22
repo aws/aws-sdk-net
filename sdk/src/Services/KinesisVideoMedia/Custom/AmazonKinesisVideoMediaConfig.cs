@@ -36,7 +36,9 @@ namespace Amazon.KinesisVideoMedia
             // Set Timeout and ReadWriteTimeout for Amazon KinesisVideoMedia service to max timeout as per-request
             // timeouts are not supported.
             this.Timeout = ClientConfig.MaxTimeout;
+#pragma warning disable CS0612,CS0618
             this.ReadWriteTimeout = ClientConfig.MaxTimeout;
+#pragma warning restore CS0612,CS0618
 #endif
         }
     }
