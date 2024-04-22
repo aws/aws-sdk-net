@@ -761,6 +761,12 @@ namespace Amazon.Util
         /// <returns>String version of the data</returns>
         public static string ToHex(byte[] data, bool lowercase)
         {
+#if NET8_0_OR_GREATER
+            if (!lowercase)
+            {
+                return Convert.ToHexString(data);
+            }
+#endif
             StringBuilder sb = new StringBuilder();
 
             for (int i = 0; i < data.Length; i++)
@@ -1333,12 +1339,7 @@ namespace Amazon.Util
         /// </summary>
         /// <param name="value">Bytes to convert.</param>
         /// <returns>Hexadecimal string representing the byte array.</returns>
-        public static string BytesToHexString(byte[] value)
-        {
-            string hex = BitConverter.ToString(value);
-            hex = hex.Replace("-", string.Empty);
-            return hex;
-        }
+        public static string BytesToHexString(byte[] value) => ToHex(value, false);
 
         /// <summary>
         /// Convert a hex string to bytes
