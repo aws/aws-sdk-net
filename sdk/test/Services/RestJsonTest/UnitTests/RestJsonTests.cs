@@ -105,7 +105,7 @@ namespace AWSSDK.UnitTests.RestJsonTest.Net35
             var request = new TestBlobPayloadRequest();
             var marshaller = new TestBlobPayloadRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
-            Assert.IsFalse(internalRequest.Headers.ContainsKey("Content-Type"));
+            Assert.IsTrue(internalRequest.Headers.ContainsKey("Content-Type"));
             Assert.IsNull(internalRequest.Content);
         }
 
