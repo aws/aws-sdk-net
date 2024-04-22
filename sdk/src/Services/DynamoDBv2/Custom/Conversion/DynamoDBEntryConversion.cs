@@ -384,54 +384,59 @@ namespace Amazon.DynamoDBv2
         private ConverterCache ConverterCache = new ConverterCache();
         private ConversionSchema OriginalConversion;
 
-        private void AddConverters(string suffix)
-        {
-            var typedConverterType = typeof(Converter);
-            var assembly = typeof(DynamoDBEntryConversion).Assembly;
-
-            var allTypes = assembly.GetTypes();
-
-            foreach (var type in allTypes)
-            {
-                string fullName = type.FullName;
-
-                //if (type.Namespace != typedConverterType.Namespace)
-                //    continue;
-
-                if (type.IsAbstract)
-                    continue;
-
-                if (!type.Name.EndsWith(suffix, StringComparison.Ordinal))
-                    continue;
-
-                if (!typedConverterType.IsAssignableFrom(type))
-                    continue;
-
-                AddConverter(type);
-            }
-        }
         internal void AddConverter(Converter converter)
         {
             ConverterCache.AddConverter(converter, this);
         }
 
-#if NET8_0_OR_GREATER
-        internal void AddConverter([System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicParameterlessConstructor)] Type type)
-#else
-        internal void AddConverter(Type type)
-#endif
-        {
-            var converter = Activator.CreateInstance(type) as Converter;
-            AddConverter(converter);
-        }
-
         private void SetV1Converters()
         {
-            AddConverters("ConverterV1");
+            AddConverter(new ByteConverterV1());
+            AddConverter(new SByteConverterV1());
+            AddConverter(new UInt16ConverterV1());
+            AddConverter(new Int16ConverterV1());
+            AddConverter(new UInt32ConverterV1());
+            AddConverter(new Int32ConverterV1());
+            AddConverter(new UInt64ConverterV1());
+            AddConverter(new Int64ConverterV1());
+            AddConverter(new SingleConverterV1());
+            AddConverter(new DoubleConverterV1());
+            AddConverter(new DecimalConverterV1());
+            AddConverter(new CharConverterV1());
+            AddConverter(new StringConverterV1());
+            AddConverter(new DateTimeConverterV1());
+            AddConverter(new GuidConverterV1());
+            AddConverter(new BytesConverterV1());
+            AddConverter(new MemoryStreamConverterV1());
+            AddConverter(new EnumConverterV1());
+            AddConverter(new BoolConverterV1());
+            AddConverter(new PrimitiveCollectionConverterV1());
+            AddConverter(new DictionaryConverterV1());
         }
+
         private void SetV2Converters()
         {
-            AddConverters("ConverterV2");
+            AddConverter(new ByteConverterV2());
+            AddConverter(new SByteConverterV2());
+            AddConverter(new UInt16ConverterV2());
+            AddConverter(new Int16ConverterV2());
+            AddConverter(new UInt32ConverterV2());
+            AddConverter(new Int32ConverterV2());
+            AddConverter(new UInt64ConverterV2());
+            AddConverter(new Int64ConverterV2());
+            AddConverter(new SingleConverterV2());
+            AddConverter(new DoubleConverterV2());
+            AddConverter(new DecimalConverterV2());
+            AddConverter(new CharConverterV2());
+            AddConverter(new StringConverterV2());
+            AddConverter(new DateTimeConverterV2());
+            AddConverter(new GuidConverterV2());
+            AddConverter(new BytesConverterV2());
+            AddConverter(new MemoryStreamConverterV2());
+            AddConverter(new DictionaryConverterV2());
+            AddConverter(new EnumConverterV2());
+            AddConverter(new BoolConverterV2());
+            AddConverter(new CollectionConverterV2());
         }
 
         // Converts items to Primitives.
@@ -460,7 +465,7 @@ namespace Amazon.DynamoDBv2
             }
         }
 
-#endregion
+        #endregion
     }
 
     internal abstract class Converter
