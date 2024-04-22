@@ -148,7 +148,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 if (!search.IsDone)
                 {
                     tokens.Add(token);
-                    Assert.NotEqual(0, items.Count);
+                    Assert.NotEmpty(items);
                     Assert.False(string.IsNullOrEmpty(token));
                 }
             } while (!search.IsDone);
@@ -170,13 +170,13 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             Assert.True(retrieved.TryGetValue("EmptyMap", out mapEntry));
             Assert.NotNull(mapEntry);
             Assert.NotNull(mapEntry.AsDocument());
-            Assert.Equal(0, mapEntry.AsDocument().Count);
+            Assert.Empty(mapEntry.AsDocument());
 
             DynamoDBEntry listEntry;
             Assert.True(retrieved.TryGetValue("EmptyList", out listEntry));
             Assert.NotNull(listEntry);
             Assert.NotNull(listEntry.AsDynamoDBList());
-            Assert.Equal(0, listEntry.AsDynamoDBList().Entries.Count);
+            Assert.Empty(listEntry.AsDynamoDBList().Entries);
         }
 
         private async Task TestHashTable(Table hashTable, DynamoDBEntryConversion conversion)
@@ -255,7 +255,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             doc.Remove("Garbage");
             Assert.True(AreValuesEqual(doc, retrieved, conversion));
             developers = retrieved["Developers"].AsListOfDocument();
-            Assert.Equal(1, developers.Count);
+            Assert.Single(developers);
 
             // Create new, circularly-referencing item            
             Document doc2 = doc.ForceConversion(conversion);
@@ -292,14 +292,14 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 Filter = queryFilter
             });
             items = await search.GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
             // Scan for specific tag
             var scanFilter = new ScanFilter();
             scanFilter.AddCondition("Tags", ScanOperator.Contains, "2.0");
             search = hashTable.Scan(scanFilter);
             items = await search.GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
             // Delete the item by hash key
             await hashTable.DeleteItemAsync(1);
@@ -311,7 +311,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 
             // Scan the hash-key table to confirm it is empty
             items = await hashTable.Scan(new ScanFilter()).GetRemainingAsync();
-            Assert.Equal(0, items.Count);
+            Assert.Empty(items);
 
             // Batch-put items
             var batchWrite = hashTable.CreateBatchWrite();
@@ -337,11 +337,11 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             batchGet.AddKey(1);
             batchGet.AddKey(doc2);
             await batchGet.ExecuteAsync();
-            Assert.Equal(0, batchGet.Results.Count);
+            Assert.Empty(batchGet.Results);
 
             // Scan the hash-key table to confirm it is empty
             items = await hashTable.Scan(new ScanFilter()).GetRemainingAsync();
-            Assert.Equal(0, items.Count);
+            Assert.Empty(items);
         }
         private async Task TestHashRangeTable(Table hashRangeTable, DynamoDBEntryConversion conversion)
         {
@@ -481,7 +481,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 }
             };
             items = await hashRangeTable.Query(queryConfig).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
             queryConfig = new QueryOperationConfig
             {
@@ -513,7 +513,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 }
             };
             items = await hashRangeTable.Query(queryConfig).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
 
 
@@ -533,7 +533,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 IndexName = "GlobalIndex",
                 Filter = queryFilter
             }).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
             // Scan local index
             var scanFilter = new ScanFilter();
@@ -554,7 +554,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 IndexName = "GlobalIndex",
                 Filter = queryFilter
             }).GetRemainingAsync();
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
         }
         private async Task TestLargeBatchOperations(Table hashTable)
         {
@@ -601,7 +601,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 
             // Scan table to confirm it is empty
             var items = await hashTable.Scan(new ScanFilter()).GetRemainingAsync();
-            Assert.Equal(0, items.Count);
+            Assert.Empty(items);
         }
 
         private async Task TestExpressionsOnDelete(Table hashTable)
@@ -644,7 +644,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 
             var search = hashRangeTable.Query("Gunnar", expression);
             var docs = await search.GetRemainingAsync();
-            Assert.Equal(1, docs.Count);
+            Assert.Single(docs);
             Assert.Equal(77, docs[0]["Age"].AsInt());
 
             search = hashRangeTable.Query(new QueryOperationConfig
@@ -655,8 +655,8 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 Select = SelectValues.SpecificAttributes
             });
             docs = await search.GetRemainingAsync();
-            Assert.Equal(1, docs.Count);
-            Assert.Equal(1, docs[0].Count);
+            Assert.Single(docs);
+            Assert.Single(docs[0]);
             Assert.Equal(77, docs[0]["Age"].AsInt());
 
             await hashRangeTable.DeleteItemAsync(doc1);
@@ -685,7 +685,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 
             var search = hashRangeTable.Scan(expression);
             var docs = await search.GetRemainingAsync();
-            Assert.Equal(1, docs.Count);
+            Assert.Single(docs);
             Assert.Equal("Elementary", docs[0]["School"].AsString());
 
             search = hashRangeTable.Scan(new ScanOperationConfig
@@ -695,8 +695,8 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 AttributesToGet = new List<string> { "School" }
             });
             docs = await search.GetRemainingAsync();
-            Assert.Equal(1, docs.Count);
-            Assert.Equal(1, docs[0].Count);
+            Assert.Single(docs);
+            Assert.Single(docs[0]);
             Assert.Equal("Elementary", docs[0]["School"].AsString());
 
             await hashRangeTable.DeleteItemAsync(doc1);
@@ -821,13 +821,13 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 Assert.NotNull(hashTable);
                 Assert.Equal(SharedTestFixture.hashTableName, hashTable.TableName);
                 Assert.Equal(3, hashTable.Attributes.Count);
-                Assert.Equal(1, hashTable.GlobalSecondaryIndexes.Count);
-                Assert.Equal(1, hashTable.GlobalSecondaryIndexNames.Count);
-                Assert.Equal(1, hashTable.HashKeys.Count);
-                Assert.Equal(0, hashTable.RangeKeys.Count);
-                Assert.Equal(1, hashTable.Keys.Count);
-                Assert.Equal(0, hashTable.LocalSecondaryIndexes.Count);
-                Assert.Equal(0, hashTable.LocalSecondaryIndexNames.Count);
+                Assert.Single(hashTable.GlobalSecondaryIndexes);
+                Assert.Single(hashTable.GlobalSecondaryIndexNames);
+                Assert.Single(hashTable.HashKeys);
+                Assert.Empty(hashTable.RangeKeys);
+                Assert.Single(hashTable.Keys);
+                Assert.Empty(hashTable.LocalSecondaryIndexes);
+                Assert.Empty(hashTable.LocalSecondaryIndexNames);
 
                 // Load table using LoadTable API (may throw an exception)
                 Assert.Throws<ResourceNotFoundException>(() => Table.LoadTable(Client, "FakeHashRangeTableThatShouldNotExist", conversion));
@@ -837,14 +837,14 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 Assert.NotNull(hashRangeTable);
                 Assert.Equal(SharedTestFixture.hashRangeTableName, hashRangeTable.TableName);
                 Assert.Equal(5, hashRangeTable.Attributes.Count);
-                Assert.Equal(1, hashRangeTable.GlobalSecondaryIndexes.Count);
-                Assert.Equal(1, hashRangeTable.GlobalSecondaryIndexNames.Count);
-                Assert.Equal(1, hashRangeTable.HashKeys.Count);
-                Assert.Equal(1, hashRangeTable.RangeKeys.Count);
+                Assert.Single(hashRangeTable.GlobalSecondaryIndexes);
+                Assert.Single(hashRangeTable.GlobalSecondaryIndexNames);
+                Assert.Single(hashRangeTable.HashKeys);
+                Assert.Single(hashRangeTable.RangeKeys);
                 Assert.Equal(2, hashRangeTable.Keys.Count);
-                Assert.Equal(1, hashRangeTable.LocalSecondaryIndexes.Count);
+                Assert.Single(hashRangeTable.LocalSecondaryIndexes);
                 Assert.Equal(2, hashRangeTable.LocalSecondaryIndexes["LocalIndex"].KeySchema.Count);
-                Assert.Equal(1, hashRangeTable.LocalSecondaryIndexNames.Count);
+                Assert.Single(hashRangeTable.LocalSecondaryIndexNames);
             }
         }
     }

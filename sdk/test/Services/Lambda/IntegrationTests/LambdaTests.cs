@@ -257,13 +257,13 @@ export const handler = awslambda.streamifyResponse(async (event, responseStream,
                         Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     throw;
                 }
 
             }
-            catch(Exception ex )
+            catch(Exception)
             {
                 throw;
             }

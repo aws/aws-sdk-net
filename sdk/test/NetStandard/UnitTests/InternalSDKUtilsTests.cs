@@ -13,15 +13,15 @@ namespace AWSSDK_NetStandard.UnitTests
         {
             var framework = InternalSDKUtils.DetermineFramework();
             Assert.NotEqual("Unknown", framework);
-            Assert.False(framework.Contains(" "));
+            Assert.DoesNotContain(" ", framework);
 
             var os = InternalSDKUtils.DetermineOS();
             Assert.NotEqual("Unknown", os);
-            Assert.False(os.Contains(" "));
+            Assert.DoesNotContain(" ", os);
 
             var platform = InternalSDKUtils.PlatformUserAgent();
             Assert.NotEqual("Unknown", platform);
-            Assert.True(platform.Contains("md/ARCH"));
+            Assert.Contains("md/ARCH", platform);
         }
                 
         [Theory]

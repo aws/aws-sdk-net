@@ -23,7 +23,7 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class EncryptionChangeTest
     {
-        private const string ExpectedHash = "7B226418F7D7877680A0E2C10E09AE59CA44E9BC1DBB6A2C10E7E8C0872C4489";
+        private const string ExpectedHash = "72FDEA7EB4FC50FDDA3DE002934DC8B2D4587BF9B0F68B265B96DE81B20350AF";
         private const string Message = "Manually run EncryptionInteropTest.cs and EncryptionInteropTest.java.";
 
         private static readonly List<string> SourceFiles = new List<string>

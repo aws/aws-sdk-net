@@ -29,7 +29,25 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class StsRegionalFlagTests
     {
-        private static readonly string ProfileText = @"[default]
+        private const string AwsStsRegionalEndpointsEnvironmentVariable = "AWS_STS_REGIONAL_ENDPOINTS";
+
+        /// <summary>
+        /// Ensure that the STS Regional Flag is set according to the value in the Shared Credentials File
+        /// </summary>
+        /// <param name="profile"></param>
+        /// <param name="expectedValue"></param>
+        [Ignore]
+        [DataTestMethod]
+        [DataRow("default", StsRegionalEndpointsValue.Legacy)]
+        [DataRow("other", StsRegionalEndpointsValue.Regional)]
+        [TestCategory("SecurityToken")]
+        public void TestCredentialsFileStsFlag(string profile, StsRegionalEndpointsValue expectedValue)
+        {
+            /* // This test can not currently be run because SharedCredentialsFileTestFixture
+               // is not referenced within the SecurityToken project. It causes errors when
+               // building the project individually.
+
+            const string ProfileText = @"[default]
                                                         region=us-west-2
                                                         aws_access_key_id=default_aws_access_key_id
                                                         aws_secret_access_key=default_aws_secret_access_key
@@ -41,22 +59,9 @@ namespace AWSSDK.UnitTests
                                                         sts_regional_endpoints=regional";
        
 
-        private const string AwsProfileEnvironmentVariable = "AWS_PROFILE";
-        private const string AwsStsRegionalEndpointsEnvironmentVariable = "AWS_STS_REGIONAL_ENDPOINTS";
+            const string AwsProfileEnvironmentVariable = "AWS_PROFILE";
 
-        [Ignore]
-        [DataTestMethod]
-        [DataRow("default", StsRegionalEndpointsValue.Legacy)]
-        [DataRow("other", StsRegionalEndpointsValue.Regional)]
-        [TestCategory("SecurityToken")]
-        /// Ensure that the STS Regional Flag is set according to the value
-        /// in the Shared Credentials File
-        public void TestCredentialsFileStsFlag(string profile, StsRegionalEndpointsValue expectedValue)
-        {
-            /* // This test can not currently be run because SharedCredentialsFileTestFixture
-               // is not referenced within the SecurityToken project. It causes errors when
-               // building the project individually.
-             using (var testFixture = new SharedCredentialsFileTestFixture(ProfileText))
+            using (var testFixture = new SharedCredentialsFileTestFixture(ProfileText))
             {
                 var oldProfile = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable);
                 var oldSts = Environment.GetEnvironmentVariable(AwsStsRegionalEndpointsEnvironmentVariable);
@@ -78,12 +83,15 @@ namespace AWSSDK.UnitTests
             }*/
         }
 
+        /// <summary>
+        /// Ensure that the STS Regional Flag is set according to the value in the environment
+        /// </summary>
+        /// <param name="stsFlagValue"></param>
+        /// <param name="expectedValue"></param>
         [DataTestMethod]
         [DataRow("legacy", StsRegionalEndpointsValue.Legacy)]
         [DataRow("regional", StsRegionalEndpointsValue.Regional)]
         [TestCategory("SecurityToken")]
-        /// Ensure that the STS Regional Flag is set according to the value
-        /// in the environment
         public void TestEnvStsFlag(string stsFlagValue, StsRegionalEndpointsValue expectedValue)
         {
             var oldStsEnv = Environment.GetEnvironmentVariable(AwsStsRegionalEndpointsEnvironmentVariable);
@@ -99,12 +107,14 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        /// <summary>
+        /// Ensure that the STS Regional Flag is set according to the value the customer sets in the ClientConfig
+        /// </summary>
+        /// <param name="stsFlagValue"></param>
         [DataTestMethod]
         [DataRow(StsRegionalEndpointsValue.Legacy)]
         [DataRow(StsRegionalEndpointsValue.Regional)]
         [TestCategory("SecurityToken")]
-        /// Ensure that the STS Regional Flag is set according to the value
-        /// the customer sets in the ClientConfig
         public void ClientConfigStsFlag(StsRegionalEndpointsValue stsFlagValue)
         {
             var config = new AmazonSecurityTokenServiceConfig()
@@ -114,13 +124,15 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(stsFlagValue, config.StsRegionalEndpoints);   
         }
 
+        /// <summary>
+        /// Ensure that an invalid value is not allowed for the STS Regional Flag environment variable
+        /// </summary>
+        /// <param name="invalidValue"></param>
         [DataTestMethod]
         [TestCategory("SecurityToken")]
         [DataRow("invalid")]
         [DataRow("999999999999999999999999999999999999999999999999999999999999999999")]
         [DataRow("true")]
-        /// Ensure that an invalid value is not allowed for the STS Regional
-        /// Flag environment variable
         public void TestEnvStsFlagInvalid(string invalidValue)
         {
             var oldStsEnv = Environment.GetEnvironmentVariable(AwsStsRegionalEndpointsEnvironmentVariable);

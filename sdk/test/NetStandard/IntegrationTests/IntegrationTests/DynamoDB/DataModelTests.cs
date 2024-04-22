@@ -57,7 +57,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 TimeWithCompany = TimeSpan.FromDays(300)
             };
             exception = await Assert.ThrowsAsync<InvalidOperationException>(() => SharedTestFixture.Context.SaveAsync(employee2));
-            Assert.Equal(exception.Message, "Type System.TimeSpan is unsupported, it cannot be instantiated");
+            Assert.Equal("Type System.TimeSpan is unsupported, it cannot be instantiated", exception.Message);
             var employee3 = new Employee3
             {
                 Name = "Alan",
@@ -65,14 +65,14 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 EmptyProperty = new EmptyType()
             };
             exception = await Assert.ThrowsAsync<InvalidOperationException>(() => SharedTestFixture.Context.SaveAsync(employee3));
-            Assert.Equal(exception.Message, "Type Amazon.DNXCore.IntegrationTests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members");
+            Assert.Equal("Type Amazon.DNXCore.IntegrationTests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members", exception.Message);
 
             // Verify that objects that are invalid result in exceptions
             exception = await Assert.ThrowsAsync<InvalidOperationException>(() => SharedTestFixture.Context.ScanAsync<TimeSpan>(new List<ScanCondition>(), null).GetNextSetAsync());
-            Assert.Equal(exception.Message, "Type System.TimeSpan is unsupported, it cannot be instantiated");
+            Assert.Equal("Type System.TimeSpan is unsupported, it cannot be instantiated", exception.Message);
 
             exception = await Assert.ThrowsAsync<InvalidOperationException>(() => SharedTestFixture.Context.ScanAsync<EmptyType>(new List<ScanCondition>(), null).GetNextSetAsync());
-            Assert.Equal(exception.Message, "Type Amazon.DNXCore.IntegrationTests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members");
+            Assert.Equal("Type Amazon.DNXCore.IntegrationTests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members", exception.Message);
         }
 
         private void TestContextConversions()
@@ -256,10 +256,10 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             if (!isV1)
             {
                 Assert.NotNull(retrieved.Components);
-                Assert.Equal(0, retrieved.Components.Count);
+                Assert.Empty(retrieved.Components);
             }
             Assert.NotNull(retrieved.Map);
-            Assert.Equal(0, retrieved.Map.Count);
+            Assert.Empty(retrieved.Map);
         }
         private async Task TestEnumHashKeyObjects()
         {
@@ -479,7 +479,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                             new ScanCondition("TagSet", ScanOperator.Contains, "1.0")
                         }
                     }).GetNextSetAsync();
-                Assert.Equal(1, products.Count());
+                Assert.Single(products);
 
                 // Delete first product
                 await SharedTestFixture.Context.DeleteAsync<Product>(firstId);
@@ -488,13 +488,13 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 
                 // Scan the table
                 products = await SharedTestFixture.Context.ScanAsync<Product>(new List<ScanCondition>()).GetNextSetAsync();
-                Assert.Equal(1, products.Count());
+                Assert.Single(products);
 
                 // Scan the table with consistent read
                 products = await SharedTestFixture.Context.ScanAsync<Product>(
                     new ScanCondition[] { },
                     new DynamoDBOperationConfig { ConsistentRead = true }).GetNextSetAsync();
-                Assert.Equal(1, products.Count());
+                Assert.Single(products);
 
                 // Test a versioned product
                 VersionedProduct vp = new VersionedProduct
@@ -584,12 +584,12 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             await SharedTestFixture.Context.SaveAsync(employee2);
 
             retrieved = await SharedTestFixture.Context.LoadAsync<Employee>("Alan", 31);
-            Assert.Equal(retrieved.Name, "Alan");
+            Assert.Equal("Alan", retrieved.Name);
             retrieved = await SharedTestFixture.Context.LoadAsync(employee);
-            Assert.Equal(retrieved.Name, "Chuck");
+            Assert.Equal("Chuck", retrieved.Name);
             retrieved = await SharedTestFixture.Context.LoadAsync(employee2, new DynamoDBOperationConfig { ConsistentRead = true });
-            Assert.Equal(retrieved.Name, "Diane");
-            Assert.Equal(retrieved.Age, 24);
+            Assert.Equal("Diane", retrieved.Name);
+            Assert.Equal(24, retrieved.Age);
             
 
             // Scan for all items
@@ -602,7 +602,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 
             // Query for items with Hash-Key = "Diane" and Range-Key > 30
             employees = await SharedTestFixture.Context.QueryAsync<Employee>("Diane", QueryOperator.GreaterThan, new object[]{30}).GetNextSetAsync();
-            Assert.Equal(1, employees.Count);
+            Assert.Single(employees);
 
             // Index Query
 
@@ -629,7 +629,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                         new ScanCondition("CurrentStatus", ScanOperator.Equal, Status.Active)
                     }
                 }).GetNextSetAsync();
-            Assert.Equal(1, employees.Count);
+            Assert.Single(employees);
 
 
             // Index Scan
@@ -667,7 +667,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 {
                     IndexName = "GlobalIndex"
                 }).GetNextSetAsync();
-            Assert.Equal(1, employees.Count);
+            Assert.Single(employees);
         }
 
         private async Task TestBatchOperations()

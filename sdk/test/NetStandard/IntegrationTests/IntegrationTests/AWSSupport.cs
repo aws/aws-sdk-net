@@ -57,7 +57,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 Assert.True(cases.Count > 0);
 
                 cases = (await Client.DescribeCasesAsync(new DescribeCasesRequest { Language = LANGUAGE, CaseIdList = new List<string> { caseId } })).Cases;
-                Assert.Equal(1, cases.Count);
+                Assert.Single(cases);
 
                 Assert.Equal(caseId, cases[0].CaseId);
                 Assert.Equal(CATEGORY_CODE, cases[0].CategoryCode);
@@ -104,7 +104,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 await VerifyAttachment(attachmentData, filename, attachmentId);
 
                 cases = (await Client.DescribeCasesAsync(new DescribeCasesRequest { Language = LANGUAGE, CaseIdList = new List<string> { caseId }, IncludeCommunications = true })).Cases;
-                Assert.Equal(1, cases.Count);
+                Assert.Single(cases);
                 var communications = cases[0].RecentCommunications;
                 attachmentId = GetAttachmentId(communications.Communications, attachmentId);
                 await VerifyAttachment(attachmentData, filename, attachmentId);
