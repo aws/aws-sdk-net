@@ -631,18 +631,7 @@ namespace Amazon.Util
         /// specified list together, with a comma between strings.</returns>
         public static String Join(List<String> strings)
         {
-            StringBuilder result = new StringBuilder();
-
-            Boolean first = true;
-            foreach (String s in strings)
-            {
-                if (!first) result.Append(", ");
-
-                result.Append(s);
-                first = false;
-            }
-
-            return result.ToString();
+            return string.Join(", ", strings);
         }
 
         /// <summary>
