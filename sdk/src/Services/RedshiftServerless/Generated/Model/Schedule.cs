@@ -40,7 +40,8 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property At. 
         /// <para>
         /// The timestamp of when Amazon Redshift Serverless should run the scheduled action.
-        /// Format of at expressions is "<c>at(yyyy-mm-ddThh:mm:ss)</c>". For example, "<c>at(2016-03-04T17:27:00)</c>".
+        /// Timestamp is in UTC. Format of at expression is <c>yyyy-mm-ddThh:mm:ss</c>. For example,
+        /// <c>2016-03-04T17:27:00</c>.
         /// </para>
         /// </summary>
         public DateTime At
@@ -59,13 +60,12 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property Cron. 
         /// <para>
         /// The cron expression to use to schedule a recurring scheduled action. Schedule invocations
-        /// must be separated by at least one hour.
+        /// must be separated by at least one hour. Times are in UTC.
         /// </para>
         ///  
         /// <para>
-        /// Format of cron expressions is "<c>cron(Minutes Hours Day-of-month Month Day-of-week
-        /// Year)</c>". For example, "<c>cron(0 10 ? * MON *)</c>". For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+        /// Format of cron expressions is <c>(Minutes Hours Day-of-month Month Day-of-week Year)</c>.
+        /// For example, <c>"(0 10 ? * MON *)"</c>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
         /// Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
         /// </para>
         /// </summary>
