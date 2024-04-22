@@ -51,11 +51,13 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>TagResource</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UntagResource</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UntagResource.html">UntagResource</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

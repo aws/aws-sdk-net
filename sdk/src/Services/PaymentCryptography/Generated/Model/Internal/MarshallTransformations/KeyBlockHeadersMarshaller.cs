@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ExportTr34KeyBlock Marshaller
+    /// KeyBlockHeaders Marshaller
     /// </summary>
-    public class ExportTr34KeyBlockMarshaller : IRequestMarshaller<ExportTr34KeyBlock, JsonMarshallerContext> 
+    public class KeyBlockHeadersMarshaller : IRequestMarshaller<KeyBlockHeaders, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,47 +44,43 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ExportTr34KeyBlock requestObject, JsonMarshallerContext context)
+        public void Marshall(KeyBlockHeaders requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCertificateAuthorityPublicKeyIdentifier())
+            if(requestObject.IsSetKeyExportability())
             {
-                context.Writer.WritePropertyName("CertificateAuthorityPublicKeyIdentifier");
-                context.Writer.Write(requestObject.CertificateAuthorityPublicKeyIdentifier);
+                context.Writer.WritePropertyName("KeyExportability");
+                context.Writer.Write(requestObject.KeyExportability);
             }
 
-            if(requestObject.IsSetExportToken())
+            if(requestObject.IsSetKeyModesOfUse())
             {
-                context.Writer.WritePropertyName("ExportToken");
-                context.Writer.Write(requestObject.ExportToken);
-            }
-
-            if(requestObject.IsSetKeyBlockFormat())
-            {
-                context.Writer.WritePropertyName("KeyBlockFormat");
-                context.Writer.Write(requestObject.KeyBlockFormat);
-            }
-
-            if(requestObject.IsSetKeyBlockHeaders())
-            {
-                context.Writer.WritePropertyName("KeyBlockHeaders");
+                context.Writer.WritePropertyName("KeyModesOfUse");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = KeyBlockHeadersMarshaller.Instance;
-                marshaller.Marshall(requestObject.KeyBlockHeaders, context);
+                var marshaller = KeyModesOfUseMarshaller.Instance;
+                marshaller.Marshall(requestObject.KeyModesOfUse, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetRandomNonce())
+            if(requestObject.IsSetKeyVersion())
             {
-                context.Writer.WritePropertyName("RandomNonce");
-                context.Writer.Write(requestObject.RandomNonce);
+                context.Writer.WritePropertyName("KeyVersion");
+                context.Writer.Write(requestObject.KeyVersion);
             }
 
-            if(requestObject.IsSetWrappingKeyCertificate())
+            if(requestObject.IsSetOptionalBlocks())
             {
-                context.Writer.WritePropertyName("WrappingKeyCertificate");
-                context.Writer.Write(requestObject.WrappingKeyCertificate);
+                context.Writer.WritePropertyName("OptionalBlocks");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectOptionalBlocksKvp in requestObject.OptionalBlocks)
+                {
+                    context.Writer.WritePropertyName(requestObjectOptionalBlocksKvp.Key);
+                    var requestObjectOptionalBlocksValue = requestObjectOptionalBlocksKvp.Value;
+
+                        context.Writer.Write(requestObjectOptionalBlocksValue);
+                }
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -92,7 +88,7 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ExportTr34KeyBlockMarshaller Instance = new ExportTr34KeyBlockMarshaller();
+        public readonly static KeyBlockHeadersMarshaller Instance = new KeyBlockHeadersMarshaller();
 
     }
 }
