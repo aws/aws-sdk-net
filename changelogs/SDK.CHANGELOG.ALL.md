@@ -1,3 +1,24 @@
+### 3.7.794.0 (2024-04-22 18:21 UTC)
+* BedrockAgent (3.7.305.0)
+	* Releasing the support for simplified configuration and return of control
+* BedrockAgentRuntime (3.7.304.0)
+	* Releasing the support for simplified configuration and return of control
+* PaymentCryptography (3.7.303.0)
+	* Adding support to TR-31/TR-34 exports for optional headers, allowing customers to add additional metadata (such as key version and KSN) when exporting keys from the service.
+* RedshiftServerless (3.7.302.67)
+	* Updates description of schedule field for scheduled actions.
+* Route53Profiles (3.7.300.0)
+	* Route 53 Profiles allows you to apply a central DNS configuration across many VPCs regardless of account.
+* SageMaker (3.7.319.0)
+	* This release adds support for Real-Time Collaboration and Shared Space for JupyterLab App on SageMaker Studio.
+* ServiceDiscovery (3.7.300.79)
+	* This release adds examples to several Cloud Map actions.
+* Transfer (3.7.306.0)
+	* Adding new API to support remote directory listing using SFTP connector
+* Core 3.7.303.19
+	* Updating sdk-default-configuration.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.793.0 (2024-04-19 18:21 UTC)
 * Glue (3.7.310.0)
 	* Adding RowFilter in the response for GetUnfilteredTableMetadata API
