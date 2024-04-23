@@ -238,6 +238,10 @@ namespace Amazon.Transfer
         /// Constant SIGNING for CertificateUsageType
         /// </summary>
         public static readonly CertificateUsageType SIGNING = new CertificateUsageType("SIGNING");
+        /// <summary>
+        /// Constant TLS for CertificateUsageType
+        /// </summary>
+        public static readonly CertificateUsageType TLS = new CertificateUsageType("TLS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

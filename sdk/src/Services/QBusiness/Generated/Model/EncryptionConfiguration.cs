@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Provides the identifier of the KMS key used to encrypt data indexed by Amazon Q. Amazon
-    /// Q doesn't support asymmetric keys.
+    /// Provides the identifier of the KMS key used to encrypt data indexed by Amazon Q Business.
+    /// Amazon Q Business doesn't support asymmetric keys.
     /// </summary>
     public partial class EncryptionConfiguration
     {
@@ -39,7 +39,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.
+        /// The identifier of the KMS key. Amazon Q Business doesn't support asymmetric keys.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=2048)]

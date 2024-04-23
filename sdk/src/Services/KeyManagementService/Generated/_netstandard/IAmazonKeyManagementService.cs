@@ -3081,6 +3081,14 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetKeyRotationStatus</a> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListKeyRotations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>RotateKeyOnDemand</a> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
@@ -3200,6 +3208,14 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         ///  <a>GetKeyRotationStatus</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListKeyRotations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>RotateKeyOnDemand</a> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3590,17 +3606,25 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-enable-disable">automatic
         /// rotation of the key material</a> of the specified symmetric encryption KMS key. 
         /// 
         ///  
         /// <para>
-        /// When you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
-        /// 365 days) from the enable date and every year thereafter. You can monitor rotation
-        /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
-        /// rotation of the key material in a customer managed KMS key, use the <a>DisableKeyRotation</a>
-        /// operation.
+        /// 365 days) from the enable date and every year thereafter. You can use the optional
+        /// <c>RotationPeriodInDays</c> parameter to specify a custom rotation period when you
+        /// enable key rotation, or you can use <c>RotationPeriodInDays</c> to modify the rotation
+        /// period of a key that you previously enabled automatic key rotation on.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can monitor rotation of the key material for your KMS keys in CloudTrail and Amazon
+        /// CloudWatch. To disable rotation of the key material in a customer managed KMS key,
+        /// use the <a>DisableKeyRotation</a> operation. You can use the <a>GetKeyRotationStatus</a>
+        /// operation to identify any in progress rotations. You can use the <a>ListKeyRotations</a>
+        /// operation to view the details of completed rotations.
         /// </para>
         ///  
         /// <para>
@@ -3614,10 +3638,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You cannot enable or disable automatic rotation <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
         /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
-        /// Web Services owned KMS keys</a> varies.
+        /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
+        /// owns the key.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3663,7 +3688,21 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetKeyRotationStatus</a> 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListKeyRotations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>RotateKeyOnDemand</a> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can perform on-demand (<a>RotateKeyOnDemand</a>) rotation of the key material
+        /// in customer managed KMS keys, regardless of whether or not automatic key rotation
+        /// is enabled.
+        /// </para>
+        ///  </note> </li> </ul> 
         /// <para>
         ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
         /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
@@ -3728,17 +3767,25 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-enable-disable">automatic
         /// rotation of the key material</a> of the specified symmetric encryption KMS key. 
         /// 
         ///  
         /// <para>
-        /// When you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
-        /// 365 days) from the enable date and every year thereafter. You can monitor rotation
-        /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
-        /// rotation of the key material in a customer managed KMS key, use the <a>DisableKeyRotation</a>
-        /// operation.
+        /// 365 days) from the enable date and every year thereafter. You can use the optional
+        /// <c>RotationPeriodInDays</c> parameter to specify a custom rotation period when you
+        /// enable key rotation, or you can use <c>RotationPeriodInDays</c> to modify the rotation
+        /// period of a key that you previously enabled automatic key rotation on.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can monitor rotation of the key material for your KMS keys in CloudTrail and Amazon
+        /// CloudWatch. To disable rotation of the key material in a customer managed KMS key,
+        /// use the <a>DisableKeyRotation</a> operation. You can use the <a>GetKeyRotationStatus</a>
+        /// operation to identify any in progress rotations. You can use the <a>ListKeyRotations</a>
+        /// operation to view the details of completed rotations.
         /// </para>
         ///  
         /// <para>
@@ -3752,10 +3799,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You cannot enable or disable automatic rotation <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
         /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
-        /// Web Services owned KMS keys</a> varies.
+        /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
+        /// owns the key.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3801,7 +3849,21 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <a>GetKeyRotationStatus</a> 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListKeyRotations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>RotateKeyOnDemand</a> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can perform on-demand (<a>RotateKeyOnDemand</a>) rotation of the key material
+        /// in customer managed KMS keys, regardless of whether or not automatic key rotation
+        /// is enabled.
+        /// </para>
+        ///  </note> </li> </ul> 
         /// <para>
         ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
         /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
@@ -5474,16 +5536,11 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Gets a Boolean value that indicates whether <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-        /// rotation of the key material</a> is enabled for the specified KMS key.
+        /// Provides detailed information about the rotation status for a KMS key, including whether
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// rotation of the key material</a> is enabled for the specified KMS key, the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotation-period">rotation
+        /// period</a>, and the next scheduled rotation date.
         /// 
-        ///  
-        /// <para>
-        /// When you enable automatic rotation for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed KMS keys</a>, KMS rotates the key material of the KMS key one year (approximately
-        /// 365 days) from the enable date and every year thereafter. You can monitor rotation
-        /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch.
-        /// </para>
         ///  
         /// <para>
         /// Automatic key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
@@ -5501,6 +5558,14 @@ namespace Amazon.KeyManagementService
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
         /// material in Amazon Web Services managed KMS keys every year. The key rotation status
         /// for Amazon Web Services managed KMS keys is always <c>true</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can perform on-demand (<a>RotateKeyOnDemand</a>) rotation of the key material
+        /// in customer managed KMS keys, regardless of whether or not automatic key rotation
+        /// is enabled. You can use GetKeyRotationStatus to identify the date and time that an
+        /// in progress on-demand rotation was initiated. You can use <a>ListKeyRotations</a>
+        /// to view the details of completed rotations.
         /// </para>
         ///  <note> 
         /// <para>
@@ -5550,6 +5615,14 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         ///  <a>EnableKeyRotation</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListKeyRotations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>RotateKeyOnDemand</a> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5613,16 +5686,11 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Gets a Boolean value that indicates whether <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-        /// rotation of the key material</a> is enabled for the specified KMS key.
+        /// Provides detailed information about the rotation status for a KMS key, including whether
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// rotation of the key material</a> is enabled for the specified KMS key, the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotation-period">rotation
+        /// period</a>, and the next scheduled rotation date.
         /// 
-        ///  
-        /// <para>
-        /// When you enable automatic rotation for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed KMS keys</a>, KMS rotates the key material of the KMS key one year (approximately
-        /// 365 days) from the enable date and every year thereafter. You can monitor rotation
-        /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch.
-        /// </para>
         ///  
         /// <para>
         /// Automatic key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
@@ -5640,6 +5708,14 @@ namespace Amazon.KeyManagementService
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
         /// material in Amazon Web Services managed KMS keys every year. The key rotation status
         /// for Amazon Web Services managed KMS keys is always <c>true</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can perform on-demand (<a>RotateKeyOnDemand</a>) rotation of the key material
+        /// in customer managed KMS keys, regardless of whether or not automatic key rotation
+        /// is enabled. You can use GetKeyRotationStatus to identify the date and time that an
+        /// in progress on-demand rotation was initiated. You can use <a>ListKeyRotations</a>
+        /// to view the details of completed rotations.
         /// </para>
         ///  <note> 
         /// <para>
@@ -5689,6 +5765,14 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         ///  <a>EnableKeyRotation</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListKeyRotations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>RotateKeyOnDemand</a> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6644,6 +6728,117 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyPolicies">REST API Reference for ListKeyPolicies Operation</seealso>
         Task<ListKeyPoliciesResponse> ListKeyPoliciesAsync(ListKeyPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListKeyRotations
+
+
+
+        /// <summary>
+        /// Returns information about all completed key material rotations for the specified KMS
+        /// key.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify the KMS key in all requests. You can refine the key rotations list
+        /// by limiting the number of rotations returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// For detailed information about automatic and on-demand key rotations, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Rotating
+        /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+        /// different Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListKeyRotations</a>
+        /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>EnableKeyRotation</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DisableKeyRotation</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetKeyRotationStatus</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>RotateKeyOnDemand</a> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKeyRotations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListKeyRotations service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
+        /// The request was rejected because the marker that specifies where pagination should
+        /// next begin is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// This exceptions means one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyRotations">REST API Reference for ListKeyRotations Operation</seealso>
+        Task<ListKeyRotationsResponse> ListKeyRotationsAsync(ListKeyRotationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -8175,6 +8370,167 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
         Task<RevokeGrantResponse> RevokeGrantAsync(RevokeGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RotateKeyOnDemand
+
+
+
+        /// <summary>
+        /// Immediately initiates rotation of the key material of the specified symmetric encryption
+        /// KMS key.
+        /// 
+        ///  
+        /// <para>
+        /// You can perform <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-on-demand">on-demand
+        /// rotation</a> of the key material in customer managed KMS keys, regardless of whether
+        /// or not <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-enable-disable">automatic
+        /// key rotation</a> is enabled. On-demand rotations do not change existing automatic
+        /// rotation schedules. For example, consider a KMS key that has automatic key rotation
+        /// enabled with a rotation period of 730 days. If the key is scheduled to automatically
+        /// rotate on April 14, 2024, and you perform an on-demand rotation on April 10, 2024,
+        /// the key will automatically rotate, as scheduled, on April 14, 2024 and every 730 days
+        /// thereafter.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can perform on-demand key rotation a <b>maximum of 10 times</b> per KMS key. You
+        /// can use the KMS console to view the number of remaining on-demand rotations available
+        /// for a KMS key.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can use <a>GetKeyRotationStatus</a> to identify any in progress on-demand rotations.
+        /// You can use <a>ListKeyRotations</a> to identify the date that completed on-demand
+        /// rotations were performed. You can monitor rotation of the key material for your KMS
+        /// keys in CloudTrail and Amazon CloudWatch.
+        /// </para>
+        ///  
+        /// <para>
+        /// On-demand key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
+        /// encryption KMS keys</a>. You cannot perform on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
+        /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
+        /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store</a>. To perform on-demand rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, invoke the on-demand rotation on the primary key.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot initiate on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
+        /// owns the key.
+        /// </para>
+        ///  
+        /// <para>
+        /// The KMS key that you use for this operation must be in a compatible key state. For
+        /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+        /// different Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:RotateKeyOnDemand</a>
+        /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>EnableKeyRotation</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DisableKeyRotation</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetKeyRotationStatus</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListKeyRotations</a> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RotateKeyOnDemand service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RotateKeyOnDemand service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.ConflictException">
+        /// The request was rejected because an automatic rotation of this key is currently in
+        /// progress or scheduled to begin within the next 20 minutes.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
+        /// The request was rejected because the specified KMS key is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// This exceptions means one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
+        /// The request was rejected because a quota was exceeded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a>
+        /// in the <i>Key Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RotateKeyOnDemand">REST API Reference for RotateKeyOnDemand Operation</seealso>
+        Task<RotateKeyOnDemandResponse> RotateKeyOnDemandAsync(RotateKeyOnDemandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

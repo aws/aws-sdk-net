@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataSources operation.
-    /// Lists the Amazon Q data source connectors that you have created.
+    /// Lists the Amazon Q Business data source connectors that you have created.
     /// </summary>
     public partial class ListDataSourcesRequest : AmazonQBusinessRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application linked to the data source connectors.
+        /// The identifier of the Amazon Q Business application linked to the data source connectors.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -100,8 +100,8 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the <c>maxResults</c> response was incomplete because there is more data to retrieve,
-        /// Amazon Q returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of Amazon Q data source connectors.
+        /// Amazon Q Business returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of Amazon Q Business data source connectors.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

@@ -44,8 +44,28 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class RetrieveAndGenerateConfiguration
     {
+        private ExternalSourcesRetrieveAndGenerateConfiguration _externalSourcesConfiguration;
         private KnowledgeBaseRetrieveAndGenerateConfiguration _knowledgeBaseConfiguration;
         private RetrieveAndGenerateType _type;
+
+        /// <summary>
+        /// Gets and sets the property ExternalSourcesConfiguration. 
+        /// <para>
+        /// The configuration used with the external source wrapper object in the retrieveAndGenerate
+        /// function.
+        /// </para>
+        /// </summary>
+        public ExternalSourcesRetrieveAndGenerateConfiguration ExternalSourcesConfiguration
+        {
+            get { return this._externalSourcesConfiguration; }
+            set { this._externalSourcesConfiguration = value; }
+        }
+
+        // Check to see if ExternalSourcesConfiguration property is set
+        internal bool IsSetExternalSourcesConfiguration()
+        {
+            return this._externalSourcesConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KnowledgeBaseConfiguration. 

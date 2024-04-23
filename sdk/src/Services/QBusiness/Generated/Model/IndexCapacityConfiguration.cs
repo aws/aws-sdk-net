@@ -38,7 +38,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Units. 
         /// <para>
-        /// The number of storage units configured for an Amazon Q index.
+        /// The number of storage units configured for an Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

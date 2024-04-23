@@ -109,7 +109,7 @@ namespace Amazon.EntityResolution.Model
         /// <c>OutputS3Path</c> and <c>Output</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=1)]
         public List<IdMappingWorkflowOutputSource> OutputSourceConfig
         {
             get { return this._outputSourceConfig; }
@@ -129,7 +129,7 @@ namespace Amazon.EntityResolution.Model
         /// to create resources on your behalf as part of workflow execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=32, Max=512)]
         public string RoleArn
         {
             get { return this._roleArn; }

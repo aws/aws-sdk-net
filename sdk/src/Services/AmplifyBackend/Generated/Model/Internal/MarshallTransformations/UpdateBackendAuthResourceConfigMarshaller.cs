@@ -46,6 +46,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateBackendAuthResourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthResources())
             {
                 context.Writer.WritePropertyName("authResources");

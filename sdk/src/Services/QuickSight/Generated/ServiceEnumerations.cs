@@ -577,6 +577,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly AssetBundleExportJobDataSourcePropertyToOverride Port = new AssetBundleExportJobDataSourcePropertyToOverride("Port");
         /// <summary>
+        /// Constant ProductType for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride ProductType = new AssetBundleExportJobDataSourcePropertyToOverride("ProductType");
+        /// <summary>
         /// Constant RoleArn for AssetBundleExportJobDataSourcePropertyToOverride
         /// </summary>
         public static readonly AssetBundleExportJobDataSourcePropertyToOverride RoleArn = new AssetBundleExportJobDataSourcePropertyToOverride("RoleArn");

@@ -64,6 +64,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAdDecisionServerUrl())
@@ -136,6 +137,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.DashConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetInsertionMode())
+                {
+                    context.Writer.WritePropertyName("InsertionMode");
+                    context.Writer.Write(publicRequest.InsertionMode);
                 }
 
                 if(publicRequest.IsSetLivePreRollConfiguration())

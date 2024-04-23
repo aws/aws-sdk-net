@@ -15531,6 +15531,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type M2tsPreventBufferUnderflow.
+    /// </summary>
+    public class M2tsPreventBufferUnderflow : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for M2tsPreventBufferUnderflow
+        /// </summary>
+        public static readonly M2tsPreventBufferUnderflow DISABLED = new M2tsPreventBufferUnderflow("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for M2tsPreventBufferUnderflow
+        /// </summary>
+        public static readonly M2tsPreventBufferUnderflow ENABLED = new M2tsPreventBufferUnderflow("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public M2tsPreventBufferUnderflow(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static M2tsPreventBufferUnderflow FindValue(string value)
+        {
+            return FindValue<M2tsPreventBufferUnderflow>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator M2tsPreventBufferUnderflow(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type M2tsRateMode.
     /// </summary>
     public class M2tsRateMode : ConstantClass

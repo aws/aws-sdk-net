@@ -128,6 +128,17 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For the valid values for allocated storage for each engine, see <c>CreateDBInstance</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When you increase the allocated storage for a DB instance that uses Provisioned IOPS
+        /// (<c>gp3</c>, <c>io1</c>, or <c>io2</c> storage type), you must also specify the <c>Iops</c>
+        /// parameter. You can use the current value for <c>Iops</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int AllocatedStorage
         {
@@ -1227,6 +1238,11 @@ namespace Amazon.RDS.Model
         /// supplied must be at least 10% greater than the current value. Values that are not
         /// at least 10% greater than the existing value are rounded up so that they are 10% greater
         /// than the current value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you increase the Provisioned IOPS, you must also specify the <c>AllocatedStorage</c>
+        /// parameter. You can use the current value for <c>AllocatedStorage</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

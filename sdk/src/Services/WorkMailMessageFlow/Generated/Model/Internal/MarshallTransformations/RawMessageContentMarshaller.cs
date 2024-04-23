@@ -46,6 +46,8 @@ namespace Amazon.WorkMailMessageFlow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RawMessageContent requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Reference())
             {
                 context.Writer.WritePropertyName("s3Reference");

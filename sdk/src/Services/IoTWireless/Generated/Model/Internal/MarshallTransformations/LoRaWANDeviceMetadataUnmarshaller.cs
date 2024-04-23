@@ -94,6 +94,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Gateways = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PublicGateways", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LoRaWANPublicGatewayMetadata, LoRaWANPublicGatewayMetadataUnmarshaller>(LoRaWANPublicGatewayMetadataUnmarshaller.Instance);
+                    unmarshalledObject.PublicGateways = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Timestamp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

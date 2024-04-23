@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                     if(publicRequest.ClientData.IsSetUploadEndUtc())
                     {
-                        request.Parameters.Add("ClientData" + "." + "UploadEnd", StringUtils.FromDateTimeToISO8601(publicRequest.ClientData.UploadEndUtc));
+                        request.Parameters.Add("ClientData" + "." + "UploadEnd", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ClientData.UploadEndUtc));
                     }
 #pragma warning restore CS0612,CS0618
                     if(publicRequest.ClientData.IsSetUploadSize())
@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                     if(publicRequest.ClientData.IsSetUploadStartUtc())
                     {
-                        request.Parameters.Add("ClientData" + "." + "UploadStart", StringUtils.FromDateTimeToISO8601(publicRequest.ClientData.UploadStartUtc));
+                        request.Parameters.Add("ClientData" + "." + "UploadStart", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ClientData.UploadStartUtc));
                     }
 #pragma warning restore CS0612,CS0618
                 }

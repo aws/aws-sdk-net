@@ -46,6 +46,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LambdaExecutorConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLambdaFunctionArn())
             {
                 context.Writer.WritePropertyName("lambdaFunctionArn");

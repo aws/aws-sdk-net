@@ -120,7 +120,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of a run. 
+        /// The status of a run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

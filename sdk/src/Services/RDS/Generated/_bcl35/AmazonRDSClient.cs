@@ -2119,6 +2119,9 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstanceReadReplica service method.</param>
         /// 
         /// <returns>The response from the CreateDBInstanceReadReplica service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -11669,6 +11672,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <c>DBClusterSnapshotIdentifier</c> doesn't refer to an existing DB cluster snapshot.
         /// </exception>
@@ -11814,6 +11820,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -11953,6 +11962,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.

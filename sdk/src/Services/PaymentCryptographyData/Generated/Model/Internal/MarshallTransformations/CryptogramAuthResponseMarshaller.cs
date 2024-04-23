@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CryptogramAuthResponse requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArpcMethod1())
             {
                 context.Writer.WritePropertyName("ArpcMethod1");

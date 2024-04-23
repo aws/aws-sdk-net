@@ -46,6 +46,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AntennaDownlinkDemodDecodeConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDecodeConfig())
             {
                 context.Writer.WritePropertyName("decodeConfig");

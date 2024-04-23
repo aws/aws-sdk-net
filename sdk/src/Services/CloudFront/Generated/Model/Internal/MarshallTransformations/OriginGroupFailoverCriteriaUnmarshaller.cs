@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginGroupFailoverCriteria Object
     /// </summary>  
-    public class OriginGroupFailoverCriteriaUnmarshaller : IUnmarshaller<OriginGroupFailoverCriteria, XmlUnmarshallerContext>
+    public class OriginGroupFailoverCriteriaUnmarshaller : IUnmarshaller<OriginGroupFailoverCriteria, XmlUnmarshallerContext>, IUnmarshaller<OriginGroupFailoverCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -69,6 +69,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public OriginGroupFailoverCriteria Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static OriginGroupFailoverCriteriaUnmarshaller _instance = new OriginGroupFailoverCriteriaUnmarshaller();        

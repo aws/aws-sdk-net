@@ -46,6 +46,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LabelsS3InputConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucket())
             {
                 context.Writer.WritePropertyName("Bucket");

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Performs an Amazon Q plugin action during a non-streaming chat conversation.
+    /// Performs an Amazon Q Business plugin action during a non-streaming chat conversation.
     /// </summary>
     public partial class ActionExecution
     {
@@ -41,7 +41,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property Payload. 
         /// <para>
         /// A mapping of field names to the field values in input that an end user provides to
-        /// Amazon Q requests to perform their plugin action. 
+        /// Amazon Q Business requests to perform their plugin action. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

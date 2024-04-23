@@ -323,7 +323,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                         if(publicRequest.InstanceMarketOptions.SpotOptions.IsSetValidUntilUtc())
                         {
-                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTimeToISO8601(publicRequest.InstanceMarketOptions.SpotOptions.ValidUntilUtc));
+                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.InstanceMarketOptions.SpotOptions.ValidUntilUtc));
                         }
 #pragma warning restore CS0612,CS0618
                     }

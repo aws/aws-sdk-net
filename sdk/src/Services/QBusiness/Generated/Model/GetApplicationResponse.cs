@@ -41,6 +41,7 @@ namespace Amazon.QBusiness.Model
         private string _displayName;
         private EncryptionConfiguration _encryptionConfiguration;
         private ErrorDetail _error;
+        private string _identityCenterApplicationArn;
         private string _roleArn;
         private ApplicationStatus _status;
         private DateTime? _updatedAt;
@@ -48,7 +49,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Q application.
+        /// The Amazon Resource Name (ARN) of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -67,7 +68,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application.
+        /// The identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -104,7 +105,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q application was last updated.
+        /// The Unix timestamp when the Amazon Q Business application was last updated.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -122,7 +123,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the Amazon Q application.
+        /// A description for the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -141,7 +142,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the Amazon Q application.
+        /// The name of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -161,7 +162,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
         /// The identifier of the Amazon Web Services KMS key that is used to encrypt your data.
-        /// Amazon Q doesn't support asymmetric keys.
+        /// Amazon Q Business doesn't support asymmetric keys.
         /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration
@@ -196,6 +197,26 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentityCenterApplicationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS IAM Identity Center instance attached to
+        /// your Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=1224)]
+        public string IdentityCenterApplicationArn
+        {
+            get { return this._identityCenterApplicationArn; }
+            set { this._identityCenterApplicationArn = value; }
+        }
+
+        // Check to see if IdentityCenterApplicationArn property is set
+        internal bool IsSetIdentityCenterApplicationArn()
+        {
+            return this._identityCenterApplicationArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM with permissions to access your CloudWatch
@@ -218,7 +239,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Amazon Q application.
+        /// The status of the Amazon Q Business application.
         /// </para>
         /// </summary>
         public ApplicationStatus Status
@@ -236,7 +257,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q application was last updated.
+        /// The Unix timestamp when the Amazon Q Business application was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

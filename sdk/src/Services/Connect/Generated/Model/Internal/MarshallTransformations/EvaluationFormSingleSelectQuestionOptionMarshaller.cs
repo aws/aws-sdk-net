@@ -46,6 +46,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EvaluationFormSingleSelectQuestionOption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutomaticFail())
             {
                 context.Writer.WritePropertyName("AutomaticFail");

@@ -46,6 +46,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GeneralFlagsV3 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoEnrollment())
             {
                 context.Writer.WritePropertyName("AutoEnrollment");

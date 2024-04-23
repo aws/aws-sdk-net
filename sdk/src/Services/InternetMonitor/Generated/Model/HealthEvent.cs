@@ -242,7 +242,7 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Health event list member.
+        /// The status of a health event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

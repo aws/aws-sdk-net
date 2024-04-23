@@ -30,7 +30,7 @@ namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHealthEvent operation.
-    /// Gets information the Amazon CloudWatch Internet Monitor has created and stored about
+    /// Gets information that Amazon CloudWatch Internet Monitor has created and stored about
     /// a health event for a specified monitor. This information includes the impacted locations,
     /// and all the information related to the event, by location.
     /// 
@@ -75,7 +75,11 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property LinkedAccountId. 
         /// <para>
-        /// TBD 
+        /// The account ID for an account that you've set up cross-account sharing for in Amazon
+        /// CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch
+        /// Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+        /// Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor
+        /// User Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

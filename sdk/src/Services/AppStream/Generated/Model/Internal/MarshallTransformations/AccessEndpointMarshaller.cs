@@ -46,6 +46,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AccessEndpoint requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndpointType())
             {
                 context.Writer.WritePropertyName("EndpointType");

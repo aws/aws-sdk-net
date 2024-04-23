@@ -76,6 +76,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Disk = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("diskType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DiskType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("memory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

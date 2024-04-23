@@ -161,7 +161,7 @@ namespace <#=this.Config.Namespace#>.Model
                     if (this.StructureType == StructureType.Response && member.PropertyName == "ContentLength")
                         continue;
 #>
-        private <#=member.DetermineType()#><#= member.IsNullable ? "?" : "" #> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
+        private <#=member.DetermineType()#><#= member.IsNullable && !member.UseNullable ? "?" : "" #> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
 <#
                 }
 #>
@@ -235,7 +235,7 @@ namespace <#=this.Config.Namespace#>.Model
                     // Because some services have model properties named "Equals" which conflicts with .NET's Equals operation. Add the "new" keyword to override the behavior.
                     // The Retryable is there because the CloudHsmServiceException exception from CloudHSM models Retryable with a different return then what comes from the base class.
 #>
-        <#=member.AccessModifier#> <#=member.PropertyName.Equals("Equals") || (this.Structure is ExceptionShape && member.PropertyName.Equals("Retryable")) ? "new " : ""#><#=member.DetermineType()#><#=member.UseNullable ? "?" : ""#> <#=member.PropertyName#>
+        <#=member.AccessModifier#> <#=member.PropertyName.Equals("Equals") || (this.Structure is ExceptionShape && member.PropertyName.Equals("Retryable")) ? "new " : ""#><#=member.DetermineType()#> <#=member.PropertyName#>
         {
 <#
                     if(member.IsNullable && !member.UseNullable)

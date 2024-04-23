@@ -46,6 +46,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TlsValidationContextAcmTrust requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCertificateAuthorityArns())
             {
                 context.Writer.WritePropertyName("certificateAuthorityArns");

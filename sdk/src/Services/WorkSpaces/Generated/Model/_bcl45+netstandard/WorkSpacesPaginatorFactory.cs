@@ -74,5 +74,13 @@ namespace Amazon.WorkSpaces.Model
         {
             return new DescribeWorkspacesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListAccountLinks operation
+        ///</summary>
+        public IListAccountLinksPaginator ListAccountLinks(ListAccountLinksRequest request) 
+        {
+            return new ListAccountLinksPaginator(this.client, request);
+        }
     }
 }

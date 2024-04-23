@@ -136,6 +136,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.MessagesPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OrchestrationSendingRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OrchestrationSendingRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Platform", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

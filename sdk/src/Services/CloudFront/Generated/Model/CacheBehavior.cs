@@ -49,7 +49,8 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// If you don't want to specify any cache behaviors, include only an empty <c>CacheBehaviors</c>
-    /// element. Don't include an empty <c>CacheBehavior</c> element because this is invalid.
+    /// element. For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CacheBehaviors.html">CacheBehaviors</a>.
+    /// Don't include an empty <c>CacheBehavior</c> element because this is invalid.
     /// </para>
     ///  
     /// <para>

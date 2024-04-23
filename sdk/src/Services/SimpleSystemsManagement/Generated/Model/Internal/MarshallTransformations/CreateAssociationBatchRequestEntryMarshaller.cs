@@ -46,6 +46,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateAssociationBatchRequestEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlarmConfiguration())
             {
                 context.Writer.WritePropertyName("AlarmConfiguration");

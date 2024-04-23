@@ -545,6 +545,31 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.CreateDashManifestConfiguration.ManifestName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.CreateDashManifestConfiguration.ManifestWindowSeconds</property>
+    <min>30</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.CreateDashManifestConfiguration.MinBufferTimeSeconds</property>
+    <min>0</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.CreateDashManifestConfiguration.MinUpdatePeriodSeconds</property>
+    <min>1</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.CreateDashManifestConfiguration.SuggestedPresentationDelaySeconds</property>
+    <min>0</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.CreateHlsManifestConfiguration.ChildManifestName</property>
     <min>1</min>
     <max>256</max>
@@ -587,6 +612,11 @@
     <max>1209600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.DashUtcTiming.TimingSource</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.Encryption.ConstantInitializationVector</property>
     <min>32</min>
     <max>32</max>
@@ -608,6 +638,12 @@
     <max>1209600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.GetDashManifestConfiguration.ManifestName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.GetHlsManifestConfiguration.ChildManifestName</property>
     <min>1</min>
     <max>256</max>
@@ -627,6 +663,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.GetLowLatencyHlsManifestConfiguration.ManifestName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.ListDashManifestConfiguration.ManifestName</property>
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>

@@ -46,6 +46,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CalculateRouteCarModeOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvoidFerries())
             {
                 context.Writer.WritePropertyName("AvoidFerries");

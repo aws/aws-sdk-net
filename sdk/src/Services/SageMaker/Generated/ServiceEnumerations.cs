@@ -2653,14 +2653,6 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
-        /// Constant AWSBedrockModelEvaluation for AwsManagedHumanLoopRequestSource
-        /// </summary>
-        public static readonly AwsManagedHumanLoopRequestSource AWSBedrockModelEvaluation = new AwsManagedHumanLoopRequestSource("AWS/Bedrock/ModelEvaluation");
-        /// <summary>
-        /// Constant AWSHandshakeVerifyIdentity for AwsManagedHumanLoopRequestSource
-        /// </summary>
-        public static readonly AwsManagedHumanLoopRequestSource AWSHandshakeVerifyIdentity = new AwsManagedHumanLoopRequestSource("AWS/Handshake/VerifyIdentity");
-        /// <summary>
         /// Constant AWSRekognitionDetectModerationLabelsImageV3 for AwsManagedHumanLoopRequestSource
         /// </summary>
         public static readonly AwsManagedHumanLoopRequestSource AWSRekognitionDetectModerationLabelsImageV3 = new AwsManagedHumanLoopRequestSource("AWS/Rekognition/DetectModerationLabels/Image/V3");
@@ -2668,10 +2660,6 @@ namespace Amazon.SageMaker
         /// Constant AWSTextractAnalyzeDocumentFormsV1 for AwsManagedHumanLoopRequestSource
         /// </summary>
         public static readonly AwsManagedHumanLoopRequestSource AWSTextractAnalyzeDocumentFormsV1 = new AwsManagedHumanLoopRequestSource("AWS/Textract/AnalyzeDocument/Forms/V1");
-        /// <summary>
-        /// Constant AWSTextractAnalyzeExpense for AwsManagedHumanLoopRequestSource
-        /// </summary>
-        public static readonly AwsManagedHumanLoopRequestSource AWSTextractAnalyzeExpense = new AwsManagedHumanLoopRequestSource("AWS/Textract/AnalyzeExpense");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

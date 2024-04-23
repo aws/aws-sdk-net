@@ -180,7 +180,7 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = EmbeddedTagUnmarshaller.Instance;
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }

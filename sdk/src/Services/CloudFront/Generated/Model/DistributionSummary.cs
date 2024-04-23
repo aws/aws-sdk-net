@@ -400,7 +400,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Staging. 
         /// <para>
-        /// Whether the primary distribution has a staging distribution enabled.
+        /// A Boolean that indicates whether this is a staging distribution. When this value is
+        /// <c>true</c>, this is a staging distribution. When this value is <c>false</c>, this
+        /// is not a staging distribution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

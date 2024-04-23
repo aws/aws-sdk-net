@@ -46,6 +46,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LaunchIntoInstanceProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLaunchIntoEC2InstanceID())
             {
                 context.Writer.WritePropertyName("launchIntoEC2InstanceID");

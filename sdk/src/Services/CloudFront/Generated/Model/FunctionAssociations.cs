@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// A list of CloudFront functions that are associated with a cache behavior in a CloudFront
-    /// distribution. CloudFront functions must be published to the <c>LIVE</c> stage to associate
+    /// distribution. Your functions must be published to the <c>LIVE</c> stage to associate
     /// them with a cache behavior.
     /// </summary>
     public partial class FunctionAssociations
@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Items. 
         /// <para>
         /// The CloudFront functions that are associated with a cache behavior in a CloudFront
-        /// distribution. CloudFront functions must be published to the <c>LIVE</c> stage to associate
+        /// distribution. Your functions must be published to the <c>LIVE</c> stage to associate
         /// them with a cache behavior.
         /// </para>
         /// </summary>

@@ -46,6 +46,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudWatchConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBackTestConfiguration())
             {
                 context.Writer.WritePropertyName("BackTestConfiguration");

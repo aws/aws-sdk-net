@@ -58,6 +58,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.BlockedPhrases = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("creatorModeConfiguration", targetDepth))
+                {
+                    var unmarshaller = AppliedCreatorModeConfigurationUnmarshaller.Instance;
+                    response.CreatorModeConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

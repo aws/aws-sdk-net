@@ -44,6 +44,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private string _agentAliasId;
         private string _agentId;
+        private string _agentVersion;
         private string _sessionId;
         private Trace _trace;
 
@@ -83,6 +84,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetAgentId()
         {
             return this._agentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The version of the agent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public string AgentVersion
+        {
+            get { return this._agentVersion; }
+            set { this._agentVersion = value; }
+        }
+
+        // Check to see if AgentVersion property is set
+        internal bool IsSetAgentVersion()
+        {
+            return this._agentVersion != null;
         }
 
         /// <summary>

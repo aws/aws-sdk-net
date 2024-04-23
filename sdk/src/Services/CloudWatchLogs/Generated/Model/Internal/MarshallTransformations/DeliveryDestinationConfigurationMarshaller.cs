@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeliveryDestinationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationResourceArn())
             {
                 context.Writer.WritePropertyName("destinationResourceArn");

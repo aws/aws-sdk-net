@@ -38,6 +38,7 @@ namespace Amazon.MediaPackageV2.Model
         private string _channelName;
         private ContainerType _containerType;
         private DateTime? _createdAt;
+        private List<ListDashManifestConfiguration> _dashManifests = AWSConfigs.InitializeCollections ? new List<ListDashManifestConfiguration>() : null;
         private string _description;
         private List<ListHlsManifestConfiguration> _hlsManifests = AWSConfigs.InitializeCollections ? new List<ListHlsManifestConfiguration>() : null;
         private List<ListLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = AWSConfigs.InitializeCollections ? new List<ListLowLatencyHlsManifestConfiguration>() : null;
@@ -140,6 +141,24 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DashManifests. 
+        /// <para>
+        /// A DASH manifest configuration.
+        /// </para>
+        /// </summary>
+        public List<ListDashManifestConfiguration> DashManifests
+        {
+            get { return this._dashManifests; }
+            set { this._dashManifests = value; }
+        }
+
+        // Check to see if DashManifests property is set
+        internal bool IsSetDashManifests()
+        {
+            return this._dashManifests != null && (this._dashManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -46,6 +46,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SearchSortExpression requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFieldSort())
             {
                 context.Writer.WritePropertyName("fieldSort");

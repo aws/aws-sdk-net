@@ -46,6 +46,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Notifications requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCompleted())
             {
                 context.Writer.WritePropertyName("Completed");

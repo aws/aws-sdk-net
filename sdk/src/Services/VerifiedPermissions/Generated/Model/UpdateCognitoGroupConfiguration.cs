@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
-    /// The user group entities from an Amazon Cognito user pool identity source.
+    /// A list of user groups and entities from an Amazon Cognito user pool identity source.
     /// </summary>
     public partial class UpdateCognitoGroupConfiguration
     {

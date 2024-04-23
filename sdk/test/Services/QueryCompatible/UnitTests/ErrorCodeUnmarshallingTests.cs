@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.QueryCompatible.Model.Internal.MarshallTransformations;
+using Amazon.Util;
 using ServiceClientGenerator;
 using AWSSDK_DotNet35.UnitTests.TestTools;
 
@@ -110,10 +111,10 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 StatusCode = HttpStatusCode.ServiceUnavailable,
                 Headers =
                 {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType", exceptionName},
-                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(body).Length.ToString()}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType, exceptionName},
+                    {HeaderKeys.ContentLengthHeader, UTF8Encoding.UTF8.GetBytes(body).Length.ToString()}
                 }
             };
             if (amznQueryErrorHeaderValue != null)

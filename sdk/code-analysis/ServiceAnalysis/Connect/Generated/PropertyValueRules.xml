@@ -4218,6 +4218,11 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.SubmitAutoEvaluationActionDefinition.EvaluationFormId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.SuccessfulRequest.ContactId</property>
     <min>1</min>
     <max>256</max>

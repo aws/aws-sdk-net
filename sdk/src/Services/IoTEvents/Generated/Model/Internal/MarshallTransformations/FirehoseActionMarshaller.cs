@@ -46,6 +46,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FirehoseAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeliveryStreamName())
             {
                 context.Writer.WritePropertyName("deliveryStreamName");

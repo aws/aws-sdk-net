@@ -46,6 +46,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EvaluationFormQuestion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInstructions())
             {
                 context.Writer.WritePropertyName("Instructions");
@@ -90,7 +92,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("Weight");
-                context.Writer.Write(requestObject.Weight);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Weight))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Weight));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Weight);
+                }
             }
 
         }

@@ -3077,6 +3077,12 @@ namespace Amazon.Mgn
 
         /// <summary>
         /// Updates multiple LaunchConfigurations by Source Server ID.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// bootMode valid values are <c>LEGACY_BIOS | UEFI</c> 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLaunchConfiguration service method.</param>
         /// <param name="cancellationToken">

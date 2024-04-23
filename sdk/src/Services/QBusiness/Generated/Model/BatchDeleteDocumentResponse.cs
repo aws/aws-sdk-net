@@ -38,9 +38,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property FailedDocuments. 
         /// <para>
-        /// A list of documents that couldn't be removed from the Amazon Q index. Each entry contains
-        /// an error message that indicates why the document couldn't be removed from the index.
-        /// 
+        /// A list of documents that couldn't be removed from the Amazon Q Business index. Each
+        /// entry contains an error message that indicates why the document couldn't be removed
+        /// from the index. 
         /// </para>
         /// </summary>
         public List<FailedDocument> FailedDocuments

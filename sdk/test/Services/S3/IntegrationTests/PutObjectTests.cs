@@ -181,7 +181,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             putObjectRequest.Headers["Expires"] = invalidValue;           
             Client.PutObject(putObjectRequest);
 
-            AmazonDateTimeUnmarshallingException exception = null;
             var newExpires = DateTime.Now.AddDays(1);
             var getObjectResponse = Client.GetObject(bucketName, key);
             using (getObjectResponse)
@@ -190,29 +189,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var contentRead = reader.ReadToEnd();
                 Assert.IsTrue(content.Equals(contentRead));
 
-                exception = AssertExtensions.ExpectException<AmazonDateTimeUnmarshallingException>(() =>
-                { var expires = getObjectResponse.Expires; });
-                Assert.IsTrue(exception.RequestId.Equals(getObjectResponse.ResponseMetadata.RequestId));
-                Assert.IsFalse(string.IsNullOrEmpty(exception.Message));
-                Assert.IsTrue(exception.Message.Contains(invalidValue));
-                Assert.IsTrue(invalidValue.Equals(exception.InvalidDateTimeToken));
+#pragma warning disable CS0618 // Type or member is obsolete
+                Assert.AreEqual(getObjectResponse.Expires, default(DateTime));
+#pragma warning restore CS0618 // Type or member is obsolete
+                Assert.AreEqual(getObjectResponse.ExpiresString, invalidValue);
 
+#pragma warning disable CS0618 // Type or member is obsolete
                 // Test getObjectResponse.Expires being overwritten by user code                
                 getObjectResponse.Expires = newExpires;
                 Assert.AreEqual(newExpires, getObjectResponse.Expires);
+#pragma warning restore CS0618 // Type or member is obsolete
             }
-
             var getObjectMetadataResponse = Client.GetObjectMetadata(bucketName, key);
-            exception = AssertExtensions.ExpectException<AmazonDateTimeUnmarshallingException>(() =>
-            { var expires = getObjectMetadataResponse.Expires; });
-            Assert.IsTrue(exception.RequestId.Equals(getObjectMetadataResponse.ResponseMetadata.RequestId));
-            Assert.IsFalse(string.IsNullOrEmpty(exception.Message));
-            Assert.IsTrue(exception.Message.Contains(invalidValue));
-            Assert.IsTrue(invalidValue.Equals(exception.InvalidDateTimeToken));
 
+            Assert.AreEqual(getObjectMetadataResponse.ExpiresString, invalidValue);
+
+#pragma warning disable CS0618 // Type or member is obsolete
+            Assert.AreEqual(getObjectMetadataResponse.Expires, default(DateTime));
             // Test getObjectMetadataResponse.Expires being overwritten by user code
             getObjectMetadataResponse.Expires = newExpires;
             Assert.AreEqual(newExpires, getObjectMetadataResponse.Expires);
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         [TestMethod]
@@ -470,7 +467,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 CannedACL = S3CannedACL.AuthenticatedRead,
             };
             request.Metadata.Add("Subject", "Content-As-Object");
+#pragma warning disable CS0618 // Type or member is obsolete
             request.Headers.Expires = expires;
+#pragma warning restore CS0618 // Type or member is obsolete
             PutObjectResponse response = Client.PutObject(request);
 
             Console.WriteLine("S3 generated ETag: {0}", response.ETag);
@@ -478,7 +477,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var getResponse = Client.GetObject(new GetObjectRequest { BucketName = bucketName, Key = key }))
             {
+#pragma warning disable CS0618 // Type or member is obsolete
                 Assert.IsTrue(expires.ApproximatelyEqual(getResponse.Expires));
+#pragma warning restore CS0618 // Type or member is obsolete
             }
         }
 

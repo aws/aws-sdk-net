@@ -62,12 +62,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("DeleteRealtimeLogConfigRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
+                xmlWriter.WriteStartElement("DeleteRealtimeLogConfigRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 if(publicRequest.IsSetARN())
-                    xmlWriter.WriteElementString("ARN", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ARN));                    
+                    xmlWriter.WriteElementString("ARN", StringUtils.FromString(publicRequest.ARN));
 
                 if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Name));                    
+                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
 
                 xmlWriter.WriteEndElement();

@@ -35,8 +35,8 @@ namespace Amazon.PaymentCryptography.Model
     /// 
     ///  
     /// <para>
-    /// You can use this operation instead of <a>DeleteKey</a> to deactivate a key. You can
-    /// enable the key in the future by calling <a>StartKeyUsage</a>.
+    /// You can use this operation instead of <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+    /// to deactivate a key. You can enable the key in the future by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>.
     /// </para>
     ///  
     /// <para>
@@ -49,11 +49,13 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DeleteKey</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>StartKeyUsage</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

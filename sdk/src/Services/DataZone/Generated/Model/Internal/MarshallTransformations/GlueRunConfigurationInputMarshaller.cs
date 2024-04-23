@@ -46,6 +46,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GlueRunConfigurationInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoImportDataQualityResult())
             {
                 context.Writer.WritePropertyName("autoImportDataQualityResult");

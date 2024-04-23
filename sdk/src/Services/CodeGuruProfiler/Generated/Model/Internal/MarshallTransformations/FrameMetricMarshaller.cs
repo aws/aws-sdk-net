@@ -46,6 +46,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FrameMetric requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFrameName())
             {
                 context.Writer.WritePropertyName("frameName");

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The storage settings for a private space.
+    /// The storage settings for a space.
     /// </summary>
     public partial class SpaceStorageSettings
     {
@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EbsStorageSettings. 
         /// <para>
-        /// A collection of EBS storage settings for a private space.
+        /// A collection of EBS storage settings for a space.
         /// </para>
         /// </summary>
         public EbsStorageSettings EbsStorageSettings

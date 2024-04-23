@@ -154,6 +154,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrainingMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trainingType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrainingType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tunedHPOParams", targetDepth))
                 {
                     var unmarshaller = TunedHPOParamsUnmarshaller.Instance;

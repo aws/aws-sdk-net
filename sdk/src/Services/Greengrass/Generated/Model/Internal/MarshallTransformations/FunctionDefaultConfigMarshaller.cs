@@ -46,6 +46,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FunctionDefaultConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExecution())
             {
                 context.Writer.WritePropertyName("Execution");

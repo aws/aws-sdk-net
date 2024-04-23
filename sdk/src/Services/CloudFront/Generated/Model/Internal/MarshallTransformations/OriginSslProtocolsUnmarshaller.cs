@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginSslProtocols Object
     /// </summary>  
-    public class OriginSslProtocolsUnmarshaller : IUnmarshaller<OriginSslProtocols, XmlUnmarshallerContext>
+    public class OriginSslProtocolsUnmarshaller : IUnmarshaller<OriginSslProtocols, XmlUnmarshallerContext>, IUnmarshaller<OriginSslProtocols, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -79,6 +79,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public OriginSslProtocols Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static OriginSslProtocolsUnmarshaller _instance = new OriginSslProtocolsUnmarshaller();        

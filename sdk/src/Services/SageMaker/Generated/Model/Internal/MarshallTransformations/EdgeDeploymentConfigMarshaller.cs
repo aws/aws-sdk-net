@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EdgeDeploymentConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFailureHandlingPolicy())
             {
                 context.Writer.WritePropertyName("FailureHandlingPolicy");

@@ -142,6 +142,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecoveryInstanceProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceOutpostArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceOutpostArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceServerID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

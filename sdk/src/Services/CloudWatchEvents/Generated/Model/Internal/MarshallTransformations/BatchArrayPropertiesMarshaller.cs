@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchArrayProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSize())
             {
                 context.Writer.WritePropertyName("Size");

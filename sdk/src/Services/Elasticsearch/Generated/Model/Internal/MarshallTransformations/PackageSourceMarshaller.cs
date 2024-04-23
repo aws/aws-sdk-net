@@ -46,6 +46,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PackageSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3BucketName())
             {
                 context.Writer.WritePropertyName("S3BucketName");

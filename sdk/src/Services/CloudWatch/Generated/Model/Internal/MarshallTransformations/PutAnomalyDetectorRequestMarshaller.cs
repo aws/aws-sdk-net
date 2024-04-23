@@ -68,12 +68,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             if(publicRequestConfigurationlistValue.IsSetEndTime())
                             {
-                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601(publicRequestConfigurationlistValue.EndTime));
+                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationlistValue.EndTime));
                             }
 #pragma warning restore CS0612,CS0618
                             if(publicRequestConfigurationlistValue.IsSetStartTime())
                             {
-                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601(publicRequestConfigurationlistValue.StartTime));
+                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationlistValue.StartTime));
                             }
 #pragma warning restore CS0612,CS0618
                             publicRequestConfigurationlistValueIndex++;
@@ -104,6 +104,15 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
+                }
+#pragma warning restore CS0612,CS0618
+                if(publicRequest.IsSetMetricCharacteristics())
+                {
+                    if(publicRequest.MetricCharacteristics.IsSetPeriodicSpikes())
+                    {
+                        request.Parameters.Add("MetricCharacteristics" + "." + "PeriodicSpikes", StringUtils.FromBool(publicRequest.MetricCharacteristics.PeriodicSpikes));
+                    }
+#pragma warning restore CS0612,CS0618
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMetricMathAnomalyDetector())

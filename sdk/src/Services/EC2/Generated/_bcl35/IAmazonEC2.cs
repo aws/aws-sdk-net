@@ -2572,6 +2572,16 @@ namespace Amazon.EC2
         /// and the instances continue to run until they are interrupted or you terminate them
         /// manually.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Restrictions</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can delete up to 100 fleets in a single request. If you exceed the specified number,
+        /// no fleets are deleted.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests service method.</param>
         /// 
@@ -3399,9 +3409,9 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ipv6-preferred-lease-time</c> - A value (in seconds, minutes, hours, or years)
-        /// for how frequently a running instance with an IPv6 assigned to it goes through DHCPv6
-        /// lease renewal. Acceptable values are between 140 and 2147483647 seconds (approximately
+        ///  <c>ipv6-address-preferred-lease-time</c> - A value (in seconds, minutes, hours, or
+        /// years) for how frequently a running instance with an IPv6 assigned to it goes through
+        /// DHCPv6 lease renewal. Acceptable values are between 140 and 2147483647 seconds (approximately
         /// 68 years). If no value is entered, the default lease time is 140 seconds. If you use
         /// long-term addressing for EC2 instances, you can increase the lease time and avoid
         /// frequent lease renewal requests. Lease renewal typically occurs when half of the lease
@@ -4210,9 +4220,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you want to clone an existing launch template as the basis for creating a new launch
-        /// template, you can use the Amazon EC2 console. The API, SDKs, and CLI do not support
-        /// cloning a template. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template-from-existing-launch-template">Create
+        /// To clone an existing launch template as the basis for a new launch template, use the
+        /// Amazon EC2 console. The API, SDKs, and CLI do not support cloning a template. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template-from-existing-launch-template">Create
         /// a launch template from an existing launch template</a> in the <i>Amazon Elastic Compute
         /// Cloud User Guide</i>.
         /// </para>
@@ -4255,19 +4265,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a new version of a launch template. You can specify an existing version of
-        /// launch template from which to base the new version.
+        /// Creates a new version of a launch template. You must specify an existing launch template,
+        /// either by name or ID. You can determine whether the new version inherits parameters
+        /// from a source version, and add or overwrite parameters as needed.
         /// 
         ///  
         /// <para>
         /// Launch template versions are numbered in the order in which they are created. You
-        /// cannot specify, change, or replace the numbering of launch template versions.
+        /// can't specify, change, or replace the numbering of launch template versions.
         /// </para>
         ///  
         /// <para>
         /// Launch templates are immutable; after you create a launch template, you can't modify
-        /// it. Instead, you can create a new version of the launch template that includes any
-        /// changes you require.
+        /// it. Instead, you can create a new version of the launch template that includes the
+        /// changes that you require.
         /// </para>
         ///  
         /// <para>
@@ -7542,7 +7553,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For <c>instant</c> fleets, EC2 Fleet must terminate the instances when the fleet is
-        /// deleted. A deleted <c>instant</c> fleet with running instances is not supported.
+        /// deleted. Up to 1000 instances can be terminated in a single request to delete <c>instant</c>
+        /// fleets. A deleted <c>instant</c> fleet with running instances is not supported.
         /// </para>
         ///  
         /// <para>
@@ -7550,15 +7562,21 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can delete up to 25 <c>instant</c> fleets in a single request. If you exceed this
-        /// number, no <c>instant</c> fleets are deleted and an error is returned. There is no
-        /// restriction on the number of fleets of type <c>maintain</c> or <c>request</c> that
-        /// can be deleted in a single request.
+        /// You can delete up to 25 fleets of type <c>instant</c> in a single request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Up to 1000 instances can be terminated in a single request to delete <c>instant</c>
-        /// fleets.
+        /// You can delete up to 100 fleets of type <c>maintain</c> or <c>request</c> in a single
+        /// request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can delete up to 125 fleets in a single request, provided you do not exceed the
+        /// quota for each fleet type, as specified above.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you exceed the specified number of fleets to delete, no fleets are deleted.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -12855,7 +12873,12 @@ namespace Amazon.EC2
         /// terminated, specifying the ID of the image will eventually return an error indicating
         /// that the AMI ID cannot be found.
         /// </para>
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+        /// to throttling and timeouts.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -12884,7 +12907,12 @@ namespace Amazon.EC2
         /// terminated, specifying the ID of the image will eventually return an error indicating
         /// that the AMI ID cannot be found.
         /// </para>
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+        /// to throttling and timeouts.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -13292,7 +13320,12 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+        /// to throttling and timeouts.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -13333,7 +13366,12 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+        /// to throttling and timeouts.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -13576,9 +13614,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Returns a list of all instance types offered. The results can be filtered by location
-        /// (Region or Availability Zone). If no location is specified, the instance types offered
-        /// in the current Region are returned.
+        /// Lists the instance types that are offered for the specified location. If no location
+        /// is specified, the default is to list the instance types that are offered in the current
+        /// Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypeOfferings service method.</param>
         /// 
@@ -13618,8 +13656,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the details of the instance types that are offered in a location. The results
-        /// can be filtered by the attributes of the instance types.
+        /// Describes the specified instance types. By default, all instance types for the current
+        /// Region are described. Alternatively, you can filter the results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes service method.</param>
         /// 
@@ -14904,6 +14942,12 @@ namespace Amazon.EC2
         /// pagination or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
         /// <c>private-ip-address</c>, <c>private-dns-name</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+        /// to throttling and timeouts.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by EC2.</returns>
@@ -14919,6 +14963,12 @@ namespace Amazon.EC2
         /// pagination or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
         /// <c>private-ip-address</c>, <c>private-dns-name</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+        /// to throttling and timeouts.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfaces service method.</param>
         /// 
@@ -16045,6 +16095,12 @@ namespace Amazon.EC2
         /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon
         /// EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+        /// to throttling and timeouts.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by EC2.</returns>
@@ -16122,6 +16178,12 @@ namespace Amazon.EC2
         /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon
         /// EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+        /// to throttling and timeouts.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots service method.</param>
         /// 
@@ -16722,7 +16784,12 @@ namespace Amazon.EC2
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
         /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+        /// to throttling and timeouts.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -16742,7 +16809,12 @@ namespace Amazon.EC2
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
         /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+        /// to throttling and timeouts.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -17612,7 +17684,12 @@ namespace Amazon.EC2
         /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon
         /// EBS volumes</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+        /// to throttling and timeouts.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -17637,7 +17714,12 @@ namespace Amazon.EC2
         /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon
         /// EBS volumes</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+        /// to throttling and timeouts.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// The order of the elements in the response, including those within nested structures,
         /// might vary. Applications should not assume the elements appear in a particular order.
@@ -19171,6 +19253,59 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableImageDeregistrationProtection
+
+
+        /// <summary>
+        /// Disables deregistration protection for an AMI. When deregistration protection is disabled,
+        /// the AMI can be deregistered.
+        /// 
+        ///  
+        /// <para>
+        /// If you chose to include a 24-hour cooldown period when you enabled deregistration
+        /// protection for the AMI, then, when you disable deregistration protection, you won’t
+        /// immediately be able to deregister the AMI.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect
+        /// an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableImageDeregistrationProtection service method.</param>
+        /// 
+        /// <returns>The response from the DisableImageDeregistrationProtection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection">REST API Reference for DisableImageDeregistrationProtection Operation</seealso>
+        DisableImageDeregistrationProtectionResponse DisableImageDeregistrationProtection(DisableImageDeregistrationProtectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableImageDeregistrationProtection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableImageDeregistrationProtection operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableImageDeregistrationProtection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection">REST API Reference for DisableImageDeregistrationProtection Operation</seealso>
+        IAsyncResult BeginDisableImageDeregistrationProtection(DisableImageDeregistrationProtectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableImageDeregistrationProtection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableImageDeregistrationProtection.</param>
+        /// 
+        /// <returns>Returns a  DisableImageDeregistrationProtectionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection">REST API Reference for DisableImageDeregistrationProtection Operation</seealso>
+        DisableImageDeregistrationProtectionResponse EndDisableImageDeregistrationProtection(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableIpamOrganizationAdminAccount
 
 
@@ -20579,6 +20714,58 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableImageDeregistrationProtection
+
+
+        /// <summary>
+        /// Enables deregistration protection for an AMI. When deregistration protection is enabled,
+        /// the AMI can't be deregistered.
+        /// 
+        ///  
+        /// <para>
+        /// To allow the AMI to be deregistered, you must first disable deregistration protection
+        /// using <a>DisableImageDeregistrationProtection</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect
+        /// an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableImageDeregistrationProtection service method.</param>
+        /// 
+        /// <returns>The response from the EnableImageDeregistrationProtection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection">REST API Reference for EnableImageDeregistrationProtection Operation</seealso>
+        EnableImageDeregistrationProtectionResponse EnableImageDeregistrationProtection(EnableImageDeregistrationProtectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableImageDeregistrationProtection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableImageDeregistrationProtection operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableImageDeregistrationProtection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection">REST API Reference for EnableImageDeregistrationProtection Operation</seealso>
+        IAsyncResult BeginEnableImageDeregistrationProtection(EnableImageDeregistrationProtectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableImageDeregistrationProtection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableImageDeregistrationProtection.</param>
+        /// 
+        /// <returns>Returns a  EnableImageDeregistrationProtectionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection">REST API Reference for EnableImageDeregistrationProtection Operation</seealso>
+        EnableImageDeregistrationProtectionResponse EndEnableImageDeregistrationProtection(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  EnableIpamOrganizationAdminAccount
 
 
@@ -21450,6 +21637,11 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The returned content is Base64-encoded.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/troubleshoot-unreachable-instance.html#instance-console-console-output">Instance
+        /// console output</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleScreenshot service method.</param>
@@ -24807,8 +24999,9 @@ namespace Amazon.EC2
         ///  <note> 
         /// <para>
         /// To remove a parameter's account-level default setting, specify <c>no-preference</c>.
-        /// At instance launch, the value will come from the AMI, or from the launch parameter
-        /// if specified. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+        /// If an account-level setting is cleared with <c>no-preference</c>, then the instance
+        /// launch considers the other instance metadata settings. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
         /// of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>

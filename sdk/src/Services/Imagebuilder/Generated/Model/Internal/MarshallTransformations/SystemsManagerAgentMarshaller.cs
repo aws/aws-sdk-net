@@ -46,6 +46,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SystemsManagerAgent requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUninstallAfterBuild())
             {
                 context.Writer.WritePropertyName("uninstallAfterBuild");

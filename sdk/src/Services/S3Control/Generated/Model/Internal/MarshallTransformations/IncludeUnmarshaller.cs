@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Include Object
     /// </summary>  
-    public class IncludeUnmarshaller : IUnmarshaller<Include, XmlUnmarshallerContext>
+    public class IncludeUnmarshaller : IUnmarshaller<Include, XmlUnmarshallerContext>, IUnmarshaller<Include, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -83,6 +83,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public Include Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static IncludeUnmarshaller _instance = new IncludeUnmarshaller();        

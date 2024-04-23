@@ -174,7 +174,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line 72 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryEC2ResponseUnmarshaller.tt"
 
-					if (member.IsList)
+					if (member.IsMap || member.IsList)
 					{
 
             

@@ -46,6 +46,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MeetingNotificationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSnsTopicArn())
             {
                 context.Writer.WritePropertyName("SnsTopicArn");

@@ -166,11 +166,11 @@ using Amazon.Runtime.Internal.Util;
 					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
 				}
 
-				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{keyToUse}"))
 				{
 					headersFor<#=member.PropertyName#>.Add(
 						keyToUse,
-						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}")
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{keyToUse}")
 					);
 				}
 			}
@@ -190,11 +190,11 @@ using Amazon.Runtime.Internal.Util;
 					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
 				}
 
-				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{keyToUse}"))
 				{
 					headersFor<#=member.PropertyName#>.Add(
 						keyToUse,
-						context.ResponseData.GetHeaderValue($"{nameResponseHeaders}").Split(',').ToList()
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{keyToUse}").Split(',').ToList()
 					);
 				}
 			}
@@ -249,11 +249,11 @@ using Amazon.Runtime.Internal.Util;
 					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
 				}
 
-				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{keyToUse}"))
 				{
 					headersFor<#=member.PropertyName#>.Add(
 						keyToUse,
-						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}")
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{keyToUse}")
 					);
 				}
 			}
@@ -273,11 +273,11 @@ using Amazon.Runtime.Internal.Util;
 					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
 				}
 
-				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{keyToUse}"))
 				{
 					headersFor<#=member.PropertyName#>.Add(
 						keyToUse,
-						context.ResponseData.GetHeaderValue($"{nameResponseHeaders}").Split(',').ToList()
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{keyToUse}").Split(',').ToList()
 					);
 				}
 			}
@@ -293,17 +293,43 @@ using Amazon.Runtime.Internal.Util;
 
 <#+
 				}
-				else if (member.Shape.IsInt)
+				else if (member.Shape.IsList)
 				{
+					if(member.Shape.ListShape.IsMap || member.Shape.ListShape.IsList)
+					{
+						throw new Exception(string.Format("ListShape of {0}, type {1} is not supported within a List for response headers as Map or List is invalid.", member.Shape.ListShape.Name, member.Shape.ListShape.Type));
+					}
+					else if(member.Shape.ListShape.IsString)
+					{						
 #>
-				response.<#=member.PropertyName#> = int.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture);
+				response.<#=member.PropertyName#> = MultiValueHeaderParser.ToStringList(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"));
 <#+
-				}
-				else if (member.Shape.IsLong)
-				{
+					}
+					else if(member.Shape.ListShape.IsDateTime)
+					{
+						var timestampFormat = member.Shape.ListShape.GetTimestampFormat(MarshallLocation.Headers);
+						if(timestampFormat == TimestampFormat.ISO8601 || timestampFormat == TimestampFormat.RFC822 || timestampFormat == TimestampFormat.UnixTimestamp)
+						{							
 #>
-				response.<#=member.PropertyName#> = long.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture);
+				response.<#=member.PropertyName#> = MultiValueHeaderParser.ToDateTimeList(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), "<#=timestampFormat#>");
 <#+
+						}
+						else
+						{
+							throw new Exception(string.Format("Unable to determine the TimestampFormat for member {0}, type {1}.", member.Shape.ListShape.Name, member.Shape.ListShape.Type));
+						}
+					}
+					else if(member.Shape.ListShape.IsPrimitiveType)
+					{
+						//Example: "X-IntegerList": "1, 2, 3"
+#>
+				response.<#=member.PropertyName#> = MultiValueHeaderParser.ToValueTypeList<<#=member.Shape.ListShape.GetPrimitiveType().ToLower()#>>(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"));
+<#+					
+					}
+					else
+					{
+						throw new Exception(string.Format("ListShape of {0}, type {1} is not supported within a List for response headers.", member.Shape.ListShape.Name, member.Shape.ListShape.Type));
+					}
 				}
 				else if (member.Shape.IsDateTime)
 				{
@@ -324,6 +350,12 @@ using Amazon.Runtime.Internal.Util;
 					{
 						throw new Exception(string.Format("Unable to determine the TimestampFormat for member {0}, type {1}.", member.Shape.Name, member.Shape.Type));
 					}
+				}
+				else if (member.Shape.IsPrimitiveType)
+				{
+#>
+				response.<#=member.PropertyName#> = <#=member.Shape.GetPrimitiveType().ToLower()#>.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>")<#=(member.Shape.IsBoolean)?"":", CultureInfo.InvariantCulture"#>);
+<#+
 				}
 				else
 				{

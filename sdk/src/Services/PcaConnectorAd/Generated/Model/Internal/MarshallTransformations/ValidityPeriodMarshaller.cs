@@ -46,6 +46,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ValidityPeriod requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPeriod())
             {
                 context.Writer.WritePropertyName("Period");

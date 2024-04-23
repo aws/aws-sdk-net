@@ -44,8 +44,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ActionReview. 
         /// <para>
-        /// A request from Amazon Q to the end user for information Amazon Q needs to successfully
-        /// complete a requested plugin action.
+        /// A request from Amazon Q Business to the end user for information Amazon Q Business
+        /// needs to successfully complete a requested plugin action.
         /// </para>
         /// </summary>
         public ActionReview ActionReview
@@ -63,7 +63,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ConversationId. 
         /// <para>
-        /// The identifier of the Amazon Q conversation.
+        /// The identifier of the Amazon Q Business conversation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -137,7 +137,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property SystemMessageId. 
         /// <para>
-        /// The identifier of an Amazon Q AI generated message within the conversation.
+        /// The identifier of an Amazon Q Business AI generated message within the conversation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -156,7 +156,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UserMessageId. 
         /// <para>
-        /// The identifier of an Amazon Q end user text input message within the conversation.
+        /// The identifier of an Amazon Q Business end user text input message within the conversation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

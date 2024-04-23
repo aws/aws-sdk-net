@@ -65,7 +65,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -120,12 +121,13 @@ namespace Amazon.BedrockAgent
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>agentResourceRoleArn</c> – The ARN of the role with permissions to create an agent.
+        ///  <c>agentResourceRoleArn</c> – The Amazon Resource Name (ARN) of the role with permissions
+        /// to invoke API operations on an agent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Optional) <c>customerEncryptionKeyArn</c> – The ARN of a KMS key to encrypt the creation
-        /// of the agent.
+        /// (Optional) <c>customerEncryptionKeyArn</c> – The Amazon Resource Name (ARN) of a KMS
+        /// key to encrypt the creation of the agent.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -232,7 +234,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -293,7 +296,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -360,7 +364,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -423,8 +428,8 @@ namespace Amazon.BedrockAgent
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provide the ARN with permissions to create a knowledge base in the <c>roleArn</c>
-        /// field.
+        /// Provide the Amazon Resource Name (ARN) with permissions to create a knowledge base
+        /// in the <c>roleArn</c> field.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -533,7 +538,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -591,7 +597,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -646,7 +653,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -704,7 +712,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -762,7 +771,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -822,7 +832,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -880,7 +891,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -935,7 +947,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -990,7 +1003,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1045,7 +1059,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1100,7 +1115,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1155,7 +1171,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1210,7 +1227,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1266,7 +1284,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1321,7 +1340,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1376,7 +1396,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1431,7 +1452,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1486,7 +1508,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1593,7 +1616,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1648,7 +1672,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1703,7 +1728,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1810,7 +1836,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1868,7 +1895,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -1929,7 +1957,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -1988,7 +2017,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -2046,7 +2076,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -2104,7 +2135,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -2165,7 +2197,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -2226,7 +2259,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -2287,7 +2321,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -2352,7 +2387,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -2436,7 +2472,8 @@ namespace Amazon.BedrockAgent
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// The capability configuration for an Amazon Q assistant.
+    /// The capability configuration for an Amazon Q in Connect assistant.
     /// </summary>
     public partial class AssistantCapabilityConfiguration
     {
@@ -38,7 +38,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of Amazon Q assistant capability. 
+        /// The type of Amazon Q in Connect assistant capability. 
         /// </para>
         /// </summary>
         public AssistantCapabilityType Type

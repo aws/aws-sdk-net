@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FilterSliderControl requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDisplayOptions())
             {
                 context.Writer.WritePropertyName("DisplayOptions");
@@ -66,13 +68,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumValue())
             {
                 context.Writer.WritePropertyName("MaximumValue");
-                context.Writer.Write(requestObject.MaximumValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaximumValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaximumValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaximumValue);
+                }
             }
 
             if(requestObject.IsSetMinimumValue())
             {
                 context.Writer.WritePropertyName("MinimumValue");
-                context.Writer.Write(requestObject.MinimumValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinimumValue);
+                }
             }
 
             if(requestObject.IsSetSourceFilterId())
@@ -84,7 +100,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStepSize())
             {
                 context.Writer.WritePropertyName("StepSize");
-                context.Writer.Write(requestObject.StepSize);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StepSize))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StepSize));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.StepSize);
+                }
             }
 
             if(requestObject.IsSetTitle())

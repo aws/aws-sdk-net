@@ -30,7 +30,7 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLensReviewImprovements operation.
-    /// List lens review improvements.
+    /// List the improvements of a particular lens review.
     /// </summary>
     public partial class ListLensReviewImprovementsRequest : AmazonWellArchitectedRequest
     {

@@ -36,6 +36,7 @@ namespace Amazon.Drs.Model
         private string _originAccountID;
         private string _originAvailabilityZone;
         private string _originRegion;
+        private string _sourceOutpostArn;
 
         /// <summary>
         /// Gets and sets the property OriginAccountID. 
@@ -92,6 +93,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetOriginRegion()
         {
             return this._originRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceOutpostArn. 
+        /// <para>
+        /// The ARN of the source Outpost
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=255)]
+        public string SourceOutpostArn
+        {
+            get { return this._sourceOutpostArn; }
+            set { this._sourceOutpostArn = value; }
+        }
+
+        // Check to see if SourceOutpostArn property is set
+        internal bool IsSetSourceOutpostArn()
+        {
+            return this._sourceOutpostArn != null;
         }
 
     }

@@ -2797,6 +2797,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.Snapshot.SnapshotArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.SnapshotIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>

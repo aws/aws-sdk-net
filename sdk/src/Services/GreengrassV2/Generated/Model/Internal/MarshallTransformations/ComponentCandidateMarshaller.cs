@@ -46,6 +46,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ComponentCandidate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComponentName())
             {
                 context.Writer.WritePropertyName("componentName");

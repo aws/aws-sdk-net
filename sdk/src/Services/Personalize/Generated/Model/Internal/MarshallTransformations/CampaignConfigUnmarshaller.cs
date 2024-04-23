@@ -76,6 +76,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.ItemExplorationConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("syncWithLatestSolutionVersion", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.SyncWithLatestSolutionVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

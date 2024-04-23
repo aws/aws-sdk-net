@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KinesisVideoStreamRecordingSourceRuntimeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFragmentSelector())
             {
                 context.Writer.WritePropertyName("FragmentSelector");

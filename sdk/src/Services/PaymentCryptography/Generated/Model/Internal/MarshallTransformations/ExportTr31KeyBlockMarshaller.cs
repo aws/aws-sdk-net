@@ -46,6 +46,19 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExportTr31KeyBlock requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetKeyBlockHeaders())
+            {
+                context.Writer.WritePropertyName("KeyBlockHeaders");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KeyBlockHeadersMarshaller.Instance;
+                marshaller.Marshall(requestObject.KeyBlockHeaders, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetWrappingKeyIdentifier())
             {
                 context.Writer.WritePropertyName("WrappingKeyIdentifier");

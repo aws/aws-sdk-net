@@ -46,6 +46,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CSVOutput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFieldDelimiter())
             {
                 context.Writer.WritePropertyName("FieldDelimiter");

@@ -38,9 +38,9 @@ namespace Amazon.Batch
     /// large amounts of compute resources. Batch uses the advantages of the batch computing
     /// to remove the undifferentiated heavy lifting of configuring and managing required
     /// infrastructure. At the same time, it also adopts a familiar batch computing software
-    /// approach. You can use Batch to efficiently provision resources d, and work toward
-    /// eliminating capacity constraints, reducing your overall compute costs, and delivering
-    /// results more quickly.
+    /// approach. You can use Batch to efficiently provision resources, and work toward eliminating
+    /// capacity constraints, reducing your overall compute costs, and delivering results
+    /// more quickly.
     /// </para>
     ///  
     /// <para>

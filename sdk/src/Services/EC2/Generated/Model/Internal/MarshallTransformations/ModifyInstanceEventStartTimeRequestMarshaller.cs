@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNotBefore())
                 {
-                    request.Parameters.Add("NotBefore", StringUtils.FromDateTimeToISO8601(publicRequest.NotBefore));
+                    request.Parameters.Add("NotBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.NotBefore));
                 }
 #pragma warning restore CS0612,CS0618
             }

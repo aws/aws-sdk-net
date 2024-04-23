@@ -46,6 +46,8 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CertificateOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCertificateTransparencyLoggingPreference())
             {
                 context.Writer.WritePropertyName("CertificateTransparencyLoggingPreference");

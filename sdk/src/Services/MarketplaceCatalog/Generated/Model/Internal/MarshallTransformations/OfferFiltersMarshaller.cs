@@ -46,6 +46,8 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OfferFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityEndDate())
             {
                 context.Writer.WritePropertyName("AvailabilityEndDate");

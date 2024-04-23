@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// The configuration information of the grouping of Amazon Q users.
+    /// The configuration information of the grouping of Amazon Q in Connect users.
     /// </summary>
     public partial class GroupingConfiguration
     {
@@ -39,7 +39,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property Criteria. 
         /// <para>
-        /// The criteria used for grouping Amazon Q users.
+        /// The criteria used for grouping Amazon Q in Connect users.
         /// </para>
         ///  
         /// <para>
@@ -70,7 +70,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The list of values that define different groups of Amazon Q users.
+        /// The list of values that define different groups of Amazon Q in Connect users.
         /// </para>
         ///  <ul> <li> 
         /// <para>

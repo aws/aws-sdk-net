@@ -46,6 +46,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ThirdPartySourceRepository requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectionArn())
             {
                 context.Writer.WritePropertyName("ConnectionArn");

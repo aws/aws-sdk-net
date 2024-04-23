@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLogDriver())
             {
                 context.Writer.WritePropertyName("LogDriver");

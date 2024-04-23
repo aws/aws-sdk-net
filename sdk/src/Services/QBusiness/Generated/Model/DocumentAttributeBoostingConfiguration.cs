@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Provides information on boosting supported Amazon Q document attribute types. When
-    /// an end user chat query matches document attributes that have been boosted, Amazon
-    /// Q prioritizes generating responses from content that matches the boosted document
-    /// attributes.
+    /// Provides information on boosting supported Amazon Q Business document attribute types.
+    /// When an end user chat query matches document attributes that have been boosted, Amazon
+    /// Q Business prioritizes generating responses from content that matches the boosted
+    /// document attributes.
     /// 
     ///  <note> 
     /// <para>
@@ -44,8 +44,8 @@ namespace Amazon.QBusiness.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information on how boosting document attributes work in Amazon Q, see <a
-    /// href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting
+    /// For more information on how boosting document attributes work in Amazon Q Business,
+    /// see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting
     /// using document attributes</a>.
     /// </para>
     /// </summary>

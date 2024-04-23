@@ -46,6 +46,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExecutionControls requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSsmControls())
             {
                 context.Writer.WritePropertyName("SsmControls");

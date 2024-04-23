@@ -46,6 +46,8 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CapacityLimits requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxIndexingCapacityInOCU())
             {
                 context.Writer.WritePropertyName("maxIndexingCapacityInOCU");

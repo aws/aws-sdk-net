@@ -46,6 +46,8 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateMeetingRoomConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndOfMeetingReminder())
             {
                 context.Writer.WritePropertyName("EndOfMeetingReminder");

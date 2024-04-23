@@ -76,7 +76,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetEndTimeUtc())
                         {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601(publicRequestlistValue.EndTimeUtc));
+                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.EndTimeUtc));
                         }
 #pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetMaxSize())
@@ -101,7 +101,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetStartTimeUtc())
                         {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601(publicRequestlistValue.StartTimeUtc));
+                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.StartTimeUtc));
                         }
 #pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTimeZone())

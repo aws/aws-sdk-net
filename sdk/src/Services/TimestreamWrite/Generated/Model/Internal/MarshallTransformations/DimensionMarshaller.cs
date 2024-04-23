@@ -46,6 +46,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Dimension requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDimensionValueType())
             {
                 context.Writer.WritePropertyName("DimensionValueType");

@@ -46,6 +46,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MonitoringConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchLoggingConfiguration())
             {
                 context.Writer.WritePropertyName("cloudWatchLoggingConfiguration");
@@ -64,6 +66,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 
                 var marshaller = ManagedPersistenceMonitoringConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ManagedPersistenceMonitoringConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPrometheusMonitoringConfiguration())
+            {
+                context.Writer.WritePropertyName("prometheusMonitoringConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PrometheusMonitoringConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PrometheusMonitoringConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }

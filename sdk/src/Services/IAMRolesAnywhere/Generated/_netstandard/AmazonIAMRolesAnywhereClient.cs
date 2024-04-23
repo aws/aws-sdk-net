@@ -383,6 +383,49 @@ namespace Amazon.IAMRolesAnywhere
 
         #endregion
         
+        #region  DeleteAttributeMapping
+
+        internal virtual DeleteAttributeMappingResponse DeleteAttributeMapping(DeleteAttributeMappingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAttributeMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttributeMappingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAttributeMappingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete an entry from the attribute mapping rules enforced by a given profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttributeMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAttributeMapping service method, as returned by IAMRolesAnywhere.</returns>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteAttributeMapping">REST API Reference for DeleteAttributeMapping Operation</seealso>
+        public virtual Task<DeleteAttributeMappingResponse> DeleteAttributeMappingAsync(DeleteAttributeMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAttributeMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttributeMappingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAttributeMappingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCrl
 
         internal virtual DeleteCrlResponse DeleteCrl(DeleteCrlRequest request)
@@ -1248,6 +1291,51 @@ namespace Amazon.IAMRolesAnywhere
             options.ResponseUnmarshaller = ListTrustAnchorsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTrustAnchorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAttributeMapping
+
+        internal virtual PutAttributeMappingResponse PutAttributeMapping(PutAttributeMappingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAttributeMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAttributeMappingResponseUnmarshaller.Instance;
+
+            return Invoke<PutAttributeMappingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Put an entry in the attribute mapping rules that will be enforced by a given profile.
+        /// A mapping specifies a certificate field and one or more specifiers that have contextual
+        /// meanings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAttributeMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAttributeMapping service method, as returned by IAMRolesAnywhere.</returns>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutAttributeMapping">REST API Reference for PutAttributeMapping Operation</seealso>
+        public virtual Task<PutAttributeMappingResponse> PutAttributeMappingAsync(PutAttributeMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAttributeMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAttributeMappingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAttributeMappingResponse>(request, options, cancellationToken);
         }
 
         #endregion

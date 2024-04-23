@@ -64,6 +64,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CrossSheet", targetDepth))
+                {
+                    var unmarshaller = FilterCrossSheetControlUnmarshaller.Instance;
+                    unmarshalledObject.CrossSheet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DateTimePicker", targetDepth))
                 {
                     var unmarshaller = FilterDateTimePickerControlUnmarshaller.Instance;

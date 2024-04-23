@@ -46,16 +46,32 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FleetAmountCapability requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMax())
             {
                 context.Writer.WritePropertyName("max");
-                context.Writer.Write(requestObject.Max);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Max))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Max));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Max);
+                }
             }
 
             if(requestObject.IsSetMin())
             {
                 context.Writer.WritePropertyName("min");
-                context.Writer.Write(requestObject.Min);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Min))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Min));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Min);
+                }
             }
 
             if(requestObject.IsSetName())

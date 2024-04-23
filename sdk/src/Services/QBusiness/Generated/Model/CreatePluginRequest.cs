@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlugin operation.
-    /// Creates an Amazon Q plugin.
+    /// Creates an Amazon Q Business plugin.
     /// </summary>
     public partial class CreatePluginRequest : AmazonQBusinessRequest
     {
@@ -80,7 +80,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token that you provide to identify the request to create your Amazon Q plugin.
+        /// A token that you provide to identify the request to create your Amazon Q Business
+        /// plugin.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

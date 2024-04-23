@@ -46,10 +46,19 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CanSignal requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFactor())
             {
                 context.Writer.WritePropertyName("factor");
-                context.Writer.Write(requestObject.Factor);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Factor))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Factor));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Factor);
+                }
             }
 
             if(requestObject.IsSetIsBigEndian())
@@ -85,7 +94,14 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Offset))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Offset);
+                }
             }
 
             if(requestObject.IsSetStartBit())

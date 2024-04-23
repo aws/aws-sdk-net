@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NumericRangeFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAggregationFunction())
             {
                 context.Writer.WritePropertyName("AggregationFunction");
@@ -64,6 +66,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = ColumnIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Column, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDefaultFilterControlConfiguration())
+            {
+                context.Writer.WritePropertyName("DefaultFilterControlConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DefaultFilterControlConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultFilterControlConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }

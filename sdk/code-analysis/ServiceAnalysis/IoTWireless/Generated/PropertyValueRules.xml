@@ -1688,6 +1688,18 @@
     <max>172800</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANPublicGatewayMetadata.Id</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANPublicGatewayMetadata.ProviderNetId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANPublicGatewayMetadata.RfRegion</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANSendDataToDevice.FPort</property>
     <min>1</min>
     <max>223</max>

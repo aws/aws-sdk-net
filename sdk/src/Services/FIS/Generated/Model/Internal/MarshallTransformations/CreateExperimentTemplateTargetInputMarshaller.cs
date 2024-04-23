@@ -46,6 +46,8 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateExperimentTemplateTargetInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("filters");

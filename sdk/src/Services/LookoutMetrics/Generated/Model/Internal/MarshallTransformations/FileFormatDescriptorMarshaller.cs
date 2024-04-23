@@ -46,6 +46,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FileFormatDescriptor requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCsvFormatDescriptor())
             {
                 context.Writer.WritePropertyName("CsvFormatDescriptor");

@@ -46,6 +46,8 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Tag requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");

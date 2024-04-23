@@ -46,16 +46,32 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LocalHealthEventsConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHealthScoreThreshold())
             {
                 context.Writer.WritePropertyName("HealthScoreThreshold");
-                context.Writer.Write(requestObject.HealthScoreThreshold);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.HealthScoreThreshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.HealthScoreThreshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.HealthScoreThreshold);
+                }
             }
 
             if(requestObject.IsSetMinTrafficImpact())
             {
                 context.Writer.WritePropertyName("MinTrafficImpact");
-                context.Writer.Write(requestObject.MinTrafficImpact);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinTrafficImpact))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinTrafficImpact));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinTrafficImpact);
+                }
             }
 
             if(requestObject.IsSetStatus())

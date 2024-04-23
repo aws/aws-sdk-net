@@ -57,8 +57,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Amazon Q returns this token. You can use this token
-        /// in any subsequent request to retrieve the next set of jobs.
+        /// If the response is truncated, Amazon Q Business returns this token. You can use this
+        /// token in any subsequent request to retrieve the next set of jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

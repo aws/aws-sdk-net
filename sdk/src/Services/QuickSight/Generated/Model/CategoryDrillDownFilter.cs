@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The numeric equality type drill down filter.
+    /// The category drill down filter.
     /// </summary>
     public partial class CategoryDrillDownFilter
     {

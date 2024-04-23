@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoprovision())
             {
                 context.Writer.WritePropertyName("Autoprovision");

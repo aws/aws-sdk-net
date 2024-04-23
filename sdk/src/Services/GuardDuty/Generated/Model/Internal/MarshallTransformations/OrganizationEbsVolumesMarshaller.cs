@@ -46,6 +46,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrganizationEbsVolumes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoEnable())
             {
                 context.Writer.WritePropertyName("autoEnable");

@@ -94,6 +94,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     response.HlsConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InsertionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InsertionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LivePreRollConfiguration", targetDepth))
                 {
                     var unmarshaller = LivePreRollConfigurationUnmarshaller.Instance;

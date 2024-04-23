@@ -46,6 +46,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcConfigurationUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSecurityGroupIdUpdates())
             {
                 context.Writer.WritePropertyName("SecurityGroupIdUpdates");

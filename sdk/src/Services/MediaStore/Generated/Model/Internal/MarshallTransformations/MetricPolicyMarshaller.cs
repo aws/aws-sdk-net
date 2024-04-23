@@ -46,6 +46,8 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContainerLevelMetrics())
             {
                 context.Writer.WritePropertyName("ContainerLevelMetrics");

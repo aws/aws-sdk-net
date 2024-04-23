@@ -88,6 +88,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     response.JobName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jobStepRestartMarker", targetDepth))
+                {
+                    var unmarshaller = JobStepRestartMarkerUnmarshaller.Instance;
+                    response.JobStepRestartMarker = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

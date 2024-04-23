@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SuppressionPeriod requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSuppressionUnit())
             {
                 context.Writer.WritePropertyName("suppressionUnit");

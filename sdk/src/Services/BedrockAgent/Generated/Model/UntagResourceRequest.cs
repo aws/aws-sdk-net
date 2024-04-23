@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource from which to remove tags.
+        /// The Amazon Resource Name (ARN) of the resource from which to remove tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]

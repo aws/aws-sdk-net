@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// The configuration of summary metric.
+    /// The configuration of summary metrics.
     /// </summary>
     public partial class SummaryMetricConfiguration
     {
@@ -38,7 +38,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The configuration of summary metric.
+        /// The status of the configuration of summary metrics.
         /// </para>
         /// </summary>
         public SummaryMetricConfigurationStatus Status

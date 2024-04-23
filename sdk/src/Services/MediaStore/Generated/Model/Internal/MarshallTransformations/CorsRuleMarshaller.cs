@@ -46,6 +46,8 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CorsRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowedHeaders())
             {
                 context.Writer.WritePropertyName("AllowedHeaders");

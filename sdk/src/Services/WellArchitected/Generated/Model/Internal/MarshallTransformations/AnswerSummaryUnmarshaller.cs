@@ -82,6 +82,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsApplicable = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JiraConfiguration", targetDepth))
+                {
+                    var unmarshaller = JiraConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.JiraConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PillarId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

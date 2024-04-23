@@ -46,6 +46,8 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Schedule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAt())
             {
                 context.Writer.WritePropertyName("at");

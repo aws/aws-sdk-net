@@ -29,13 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTFleetHub.Model
 {
     /// <summary>
-    /// A summary of information about a AWS IoT Device Management web application.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
+    /// A summary of information about a Fleet Hub for IoT Device Management web application.
     /// </summary>
     public partial class ApplicationSummary
     {

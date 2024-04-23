@@ -46,6 +46,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExtensionsV3 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApplicationPolicies())
             {
                 context.Writer.WritePropertyName("ApplicationPolicies");

@@ -46,6 +46,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DominantLanguageDetectionJobFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetJobName())
             {
                 context.Writer.WritePropertyName("JobName");

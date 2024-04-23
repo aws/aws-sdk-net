@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsElbLbCookieStickinessPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCookieExpirationPeriod())
             {
                 context.Writer.WritePropertyName("CookieExpirationPeriod");

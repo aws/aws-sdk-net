@@ -30,17 +30,25 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableKeyRotation operation.
-    /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+    /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-enable-disable">automatic
     /// rotation of the key material</a> of the specified symmetric encryption KMS key. 
     /// 
     ///  
     /// <para>
-    /// When you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+    /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
     /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
-    /// 365 days) from the enable date and every year thereafter. You can monitor rotation
-    /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
-    /// rotation of the key material in a customer managed KMS key, use the <a>DisableKeyRotation</a>
-    /// operation.
+    /// 365 days) from the enable date and every year thereafter. You can use the optional
+    /// <c>RotationPeriodInDays</c> parameter to specify a custom rotation period when you
+    /// enable key rotation, or you can use <c>RotationPeriodInDays</c> to modify the rotation
+    /// period of a key that you previously enabled automatic key rotation on.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can monitor rotation of the key material for your KMS keys in CloudTrail and Amazon
+    /// CloudWatch. To disable rotation of the key material in a customer managed KMS key,
+    /// use the <a>DisableKeyRotation</a> operation. You can use the <a>GetKeyRotationStatus</a>
+    /// operation to identify any in progress rotations. You can use the <a>ListKeyRotations</a>
+    /// operation to view the details of completed rotations.
     /// </para>
     ///  
     /// <para>
@@ -54,10 +62,11 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// You cannot enable or disable automatic rotation <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+    /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
     /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
     /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
-    /// Web Services owned KMS keys</a> varies.
+    /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
+    /// owns the key.
     /// </para>
     ///  <note> 
     /// <para>
@@ -103,7 +112,21 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <a>GetKeyRotationStatus</a> 
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListKeyRotations</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RotateKeyOnDemand</a> 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// You can perform on-demand (<a>RotateKeyOnDemand</a>) rotation of the key material
+    /// in customer managed KMS keys, regardless of whether or not automatic key rotation
+    /// is enabled.
+    /// </para>
+    ///  </note> </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
     /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
@@ -113,6 +136,7 @@ namespace Amazon.KeyManagementService.Model
     public partial class EnableKeyRotationRequest : AmazonKeyManagementServiceRequest
     {
         private string _keyId;
+        private int? _rotationPeriodInDays;
 
         /// <summary>
         /// Gets and sets the property KeyId. 
@@ -158,6 +182,42 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetKeyId()
         {
             return this._keyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RotationPeriodInDays. 
+        /// <para>
+        /// Use this parameter to specify a custom period of time between each rotation date.
+        /// If no value is specified, the default value is 365 days.
+        /// </para>
+        ///  
+        /// <para>
+        /// The rotation period defines the number of days after you enable automatic key rotation
+        /// that KMS will rotate your key material, and the number of days between each automatic
+        /// rotation thereafter.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-rotation-period-in-days">
+        /// <c>kms:RotationPeriodInDays</c> </a> condition key to further constrain the values
+        /// that principals can specify in the <c>RotationPeriodInDays</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=90, Max=2560)]
+        public int RotationPeriodInDays
+        {
+            get { return this._rotationPeriodInDays.GetValueOrDefault(); }
+            set { this._rotationPeriodInDays = value; }
+        }
+
+        // Check to see if RotationPeriodInDays property is set
+        internal bool IsSetRotationPeriodInDays()
+        {
+            return this._rotationPeriodInDays.HasValue; 
         }
 
     }

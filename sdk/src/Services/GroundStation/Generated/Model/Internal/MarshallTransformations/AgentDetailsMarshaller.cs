@@ -46,6 +46,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AgentDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAgentCpuCores())
             {
                 context.Writer.WritePropertyName("agentCpuCores");

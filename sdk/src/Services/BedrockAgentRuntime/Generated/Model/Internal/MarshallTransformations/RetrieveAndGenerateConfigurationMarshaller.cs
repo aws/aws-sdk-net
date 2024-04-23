@@ -46,6 +46,19 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RetrieveAndGenerateConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetExternalSourcesConfiguration())
+            {
+                context.Writer.WritePropertyName("externalSourcesConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExternalSourcesRetrieveAndGenerateConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExternalSourcesConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetKnowledgeBaseConfiguration())
             {
                 context.Writer.WritePropertyName("knowledgeBaseConfiguration");

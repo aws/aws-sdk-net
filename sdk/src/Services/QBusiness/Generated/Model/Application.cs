@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Summary information for an Amazon Q application.
+    /// Summary information for an Amazon Q Business application.
     /// </summary>
     public partial class Application
     {
@@ -42,7 +42,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier for the Amazon Q application.
+        /// The identifier for the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -61,7 +61,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q application was created.
+        /// The Unix timestamp when the Amazon Q Business application was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -79,7 +79,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the Amazon Q application.
+        /// The name of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -98,8 +98,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Amazon Q application. The application is ready to use when the status
-        /// is <c>ACTIVE</c>.
+        /// The status of the Amazon Q Business application. The application is ready to use when
+        /// the status is <c>ACTIVE</c>.
         /// </para>
         /// </summary>
         public ApplicationStatus Status
@@ -117,7 +117,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q application was last updated. 
+        /// The Unix timestamp when the Amazon Q Business application was last updated. 
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

@@ -43,7 +43,7 @@ namespace Amazon.PaymentCryptography.Model
     /// The tag value can be an empty (null) string. To add a tag, specify a new tag key and
     /// a tag value. To edit a tag, specify an existing tag key and a new tag value. You can
     /// also add tags to an Amazon Web Services Payment Cryptography key when you create it
-    /// with <a>CreateKey</a>.
+    /// with <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.
     /// </para>
     ///  
     /// <para>
@@ -56,11 +56,13 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListTagsForResource</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UntagResource</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UntagResource.html">UntagResource</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -104,7 +106,8 @@ namespace Amazon.PaymentCryptography.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// To use this parameter, you must have <a>TagResource</a> permission in an IAM policy.
+        /// To use this parameter, you must have <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// permission in an IAM policy.
         /// </para>
         ///  <important> 
         /// <para>

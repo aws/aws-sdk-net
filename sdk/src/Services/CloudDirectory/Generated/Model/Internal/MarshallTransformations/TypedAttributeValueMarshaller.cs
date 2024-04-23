@@ -46,6 +46,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TypedAttributeValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBinaryValue())
             {
                 context.Writer.WritePropertyName("BinaryValue");

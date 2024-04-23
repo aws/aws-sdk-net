@@ -100,6 +100,12 @@ namespace Amazon.EC2.Model
     /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon
     /// EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+    /// to throttling and timeouts.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DescribeSnapshotsRequest : AmazonEC2Request
     {

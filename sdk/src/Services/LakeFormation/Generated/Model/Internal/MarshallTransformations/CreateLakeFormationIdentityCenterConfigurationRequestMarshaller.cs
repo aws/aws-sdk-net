@@ -64,6 +64,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCatalogId())
@@ -87,6 +88,22 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("InstanceArn");
                     context.Writer.Write(publicRequest.InstanceArn);
+                }
+
+                if(publicRequest.IsSetShareRecipients())
+                {
+                    context.Writer.WritePropertyName("ShareRecipients");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestShareRecipientsListValue in publicRequest.ShareRecipients)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataLakePrincipalMarshaller.Instance;
+                        marshaller.Marshall(publicRequestShareRecipientsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();

@@ -64,12 +64,24 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDiscoveryIntegrationStatus())
                 {
                     context.Writer.WritePropertyName("DiscoveryIntegrationStatus");
                     context.Writer.Write(publicRequest.DiscoveryIntegrationStatus);
+                }
+
+                if(publicRequest.IsSetJiraConfiguration())
+                {
+                    context.Writer.WritePropertyName("JiraConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AccountJiraConfigurationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.JiraConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetOrganizationSharingStatus())

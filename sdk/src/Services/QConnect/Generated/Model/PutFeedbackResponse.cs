@@ -42,7 +42,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property AssistantArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Q assistant.
+        /// The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property AssistantId. 
         /// <para>
-        /// The identifier of the Amazon Q assistant.
+        /// The identifier of the Amazon Q in Connect assistant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -148,7 +148,7 @@ namespace Amazon.BedrockAgent.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// Specifies a different Amazon Resource Name (ARN) of the IAM role with permissions
-        /// to modify the knowledge base.
+        /// to invoke API operations on the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

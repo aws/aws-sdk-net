@@ -103,7 +103,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        ///  The instance type for a task. 
+        ///  The instance type for a task.
         /// </para>
         /// </summary>
         public string InstanceType

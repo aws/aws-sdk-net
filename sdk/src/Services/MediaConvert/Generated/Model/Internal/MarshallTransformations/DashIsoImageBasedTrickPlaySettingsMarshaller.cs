@@ -46,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DashIsoImageBasedTrickPlaySettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIntervalCadence())
             {
                 context.Writer.WritePropertyName("intervalCadence");
@@ -61,7 +63,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThumbnailInterval())
             {
                 context.Writer.WritePropertyName("thumbnailInterval");
-                context.Writer.Write(requestObject.ThumbnailInterval);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThumbnailInterval))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThumbnailInterval));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThumbnailInterval);
+                }
             }
 
             if(requestObject.IsSetThumbnailWidth())

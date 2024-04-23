@@ -47,8 +47,8 @@ namespace Amazon.BedrockAgent.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Provide the ARN with permissions to create a knowledge base in the <c>roleArn</c>
-    /// field.
+    /// Provide the Amazon Resource Name (ARN) with permissions to create a knowledge base
+    /// in the <c>roleArn</c> field.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -178,7 +178,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role with permissions to create the knowledge base.
+        /// The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations
+        /// on the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

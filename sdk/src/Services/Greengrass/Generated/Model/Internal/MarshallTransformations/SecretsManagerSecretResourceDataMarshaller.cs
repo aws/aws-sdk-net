@@ -46,6 +46,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SecretsManagerSecretResourceData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalStagingLabelsToDownload())
             {
                 context.Writer.WritePropertyName("AdditionalStagingLabelsToDownload");

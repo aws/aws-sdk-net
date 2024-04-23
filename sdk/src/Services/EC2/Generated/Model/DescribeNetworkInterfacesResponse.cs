@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// Information about one or more network interfaces.
+        /// Information about the network interfaces.
         /// </para>
         /// </summary>
         public List<NetworkInterface> NetworkInterfaces

@@ -38,7 +38,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The ARN of the KMS key used to encrypt the resource.
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

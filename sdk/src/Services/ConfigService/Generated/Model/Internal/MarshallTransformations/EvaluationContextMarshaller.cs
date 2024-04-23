@@ -46,6 +46,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EvaluationContext requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEvaluationContextIdentifier())
             {
                 context.Writer.WritePropertyName("EvaluationContextIdentifier");

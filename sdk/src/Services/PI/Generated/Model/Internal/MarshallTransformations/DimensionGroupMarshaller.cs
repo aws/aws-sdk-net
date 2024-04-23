@@ -46,6 +46,8 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DimensionGroup requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("Dimensions");

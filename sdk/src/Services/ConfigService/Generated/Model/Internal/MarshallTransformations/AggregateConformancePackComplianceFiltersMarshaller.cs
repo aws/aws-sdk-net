@@ -46,6 +46,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AggregateConformancePackComplianceFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("AccountId");

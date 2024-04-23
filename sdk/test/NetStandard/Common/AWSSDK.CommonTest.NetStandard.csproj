@@ -5,10 +5,24 @@
     <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
     <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants)</DefineConstants>
     <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
+	<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+	<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+	<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+	<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+	<GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+	<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+	<GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+	<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="..\..\Common\Utils\ReflectionHelpers.cs" />
+	<ItemGroup>
+		<Compile Remove="**/obj/**" />
+		<None Remove="**/obj/**" />
+	</ItemGroup>
+  
+  <ItemGroup>	  
+      <Compile Include="..\..\Common\Utils\ReflectionHelpers.cs" />
+	  <Compile Include="..\..\Common\Utils\Servlet.cs" />
   </ItemGroup>
 </Project>

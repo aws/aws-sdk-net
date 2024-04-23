@@ -46,6 +46,14 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ActionGroupExecutor requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetCustomControl())
+            {
+                context.Writer.WritePropertyName("customControl");
+                context.Writer.Write(requestObject.CustomControl);
+            }
+
             if(requestObject.IsSetLambda())
             {
                 context.Writer.WritePropertyName("lambda");

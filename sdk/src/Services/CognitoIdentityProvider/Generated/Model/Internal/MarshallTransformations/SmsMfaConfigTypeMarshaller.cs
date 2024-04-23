@@ -46,6 +46,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SmsMfaConfigType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSmsAuthenticationMessage())
             {
                 context.Writer.WritePropertyName("SmsAuthenticationMessage");

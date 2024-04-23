@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScheduleActionStartSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFixedModeScheduleActionStartSettings())
             {
                 context.Writer.WritePropertyName("fixedModeScheduleActionStartSettings");

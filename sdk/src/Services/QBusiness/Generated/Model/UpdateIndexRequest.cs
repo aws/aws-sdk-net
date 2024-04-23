@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIndex operation.
-    /// Updates an Amazon Q index.
+    /// Updates an Amazon Q Business index.
     /// </summary>
     public partial class UpdateIndexRequest : AmazonQBusinessRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application connected to the index.
+        /// The identifier of the Amazon Q Business application connected to the index.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -63,8 +63,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property CapacityConfiguration. 
         /// <para>
-        /// The storage capacity units you want to provision for your Amazon Q index. You can
-        /// add and remove capacity to fit your usage needs.
+        /// The storage capacity units you want to provision for your Amazon Q Business index.
+        /// You can add and remove capacity to fit your usage needs.
         /// </para>
         /// </summary>
         public IndexCapacityConfiguration CapacityConfiguration
@@ -82,7 +82,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the Amazon Q index.
+        /// The description of the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -101,7 +101,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the Amazon Q index.
+        /// The name of the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -142,7 +142,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the Amazon Q index.
+        /// The identifier of the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

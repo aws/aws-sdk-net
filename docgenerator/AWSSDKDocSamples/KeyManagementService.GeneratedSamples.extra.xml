@@ -675,12 +675,12 @@
         <value>
             <example>
                 <para>
-                    The following example enables automatic annual rotation of the key material for the specified KMS key.
+                    The following example enables automatic rotation with a rotation period of 365 days for the specified KMS key.
                 </para>
                 <code
                     title="To enable automatic rotation of key material"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-enable-automatic-rotation-of-key-material-1478629109677" />
+                    region="to-enable-automatic-rotation-of-key-material-1712499675853" />
             </example>
         </value>
     </doc>
@@ -922,12 +922,12 @@
         <value>
             <example>
                 <para>
-                    The following example retrieves the status of automatic annual rotation of the key material for the specified KMS key.
+                    The following example retrieves detailed information about the rotation status for a KMS key, including whether automatic key rotation is enabled for the specified KMS key, the rotation period, and the next scheduled rotation date.
                 </para>
                 <code
                     title="To retrieve the rotation status for a KMS key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-retrieve-the-rotation-status-for-a-cmk-1479172287408" />
+                    region="to-retrieve-the-rotation-status-for-a-kms-key-1712500357701" />
             </example>
         </value>
     </doc>
@@ -1123,6 +1123,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListKeyRotations(Amazon.KeyManagementService.Model.ListKeyRotationsRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListKeyRotations(Amazon.KeyManagementService.Model.ListKeyRotationsRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ListKeyRotationsRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ListKeyRotationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about all completed key material rotations for the specified KMS key.
+                </para>
+                <code
+                    title="To retrieve information about all completed key material rotations"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-retrieve-information-about-all-completed-key-material-rotations-1712585167775" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListKeys(Amazon.KeyManagementService.Model.ListKeysRequest)" />
             <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListKeys(Amazon.KeyManagementService.Model.ListKeysRequest)" />
             <member name="T:Amazon.KeyManagementService.Model.ListKeysRequest" />
@@ -1270,6 +1289,25 @@
                     title="To revoke a grant"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
                     region="to-revoke-a-grant-1481329549302" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.RotateKeyOnDemand(Amazon.KeyManagementService.Model.RotateKeyOnDemandRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.RotateKeyOnDemand(Amazon.KeyManagementService.Model.RotateKeyOnDemandRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.RotateKeyOnDemandRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.RotateKeyOnDemandResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example immediately initiates rotation of the key material for the specified KMS key.
+                </para>
+                <code
+                    title="To perform on-demand rotation of key material"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-perform-on-demand-rotation-of-key-material-1712499025700" />
             </example>
         </value>
     </doc>

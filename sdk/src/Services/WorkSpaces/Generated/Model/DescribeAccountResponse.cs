@@ -33,8 +33,27 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeAccountResponse : AmazonWebServiceResponse
     {
+        private DedicatedTenancyAccountType _dedicatedTenancyAccountType;
         private string _dedicatedTenancyManagementCidrRange;
         private DedicatedTenancySupportResultEnum _dedicatedTenancySupport;
+
+        /// <summary>
+        /// Gets and sets the property DedicatedTenancyAccountType. 
+        /// <para>
+        /// The type of linked account.
+        /// </para>
+        /// </summary>
+        public DedicatedTenancyAccountType DedicatedTenancyAccountType
+        {
+            get { return this._dedicatedTenancyAccountType; }
+            set { this._dedicatedTenancyAccountType = value; }
+        }
+
+        // Check to see if DedicatedTenancyAccountType property is set
+        internal bool IsSetDedicatedTenancyAccountType()
+        {
+            return this._dedicatedTenancyAccountType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DedicatedTenancyManagementCidrRange. 

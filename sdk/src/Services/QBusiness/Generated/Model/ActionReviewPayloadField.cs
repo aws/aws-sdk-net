@@ -44,7 +44,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property AllowedValues. 
         /// <para>
         /// Information about the field values that an end user can use to provide to Amazon Q
-        /// for Amazon Q to perform the requested plugin action.
+        /// Business for Amazon Q Business to perform the requested plugin action.
         /// </para>
         /// </summary>
         public List<ActionReviewPayloadFieldAllowedValue> AllowedValues

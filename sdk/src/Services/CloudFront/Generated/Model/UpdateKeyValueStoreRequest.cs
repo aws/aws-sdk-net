@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateKeyValueStore operation.
-    /// Specifies the Key Value Store to update.
+    /// Specifies the key value store to update.
     /// </summary>
     public partial class UpdateKeyValueStoreRequest : AmazonCloudFrontRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// The comment of the Key Value Store to update.
+        /// The comment of the key value store to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -60,7 +60,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The Key Value Store to update, if a match occurs.
+        /// The key value store to update, if a match occurs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Key Value Store to update.
+        /// The name of the key value store to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

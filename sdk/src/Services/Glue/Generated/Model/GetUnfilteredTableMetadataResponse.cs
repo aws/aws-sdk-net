@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _queryAuthorizationId;
         private string _resourceArn;
+        private string _rowFilter;
         private Table _table;
 
         /// <summary>
@@ -193,6 +194,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RowFilter. 
+        /// <para>
+        /// The filter that applies to the table. For example when applying the filter in SQL,
+        /// it would go in the <c>WHERE</c> clause and can be evaluated by using an <c>AND</c>
+        /// operator with any other predicates applied by the user querying the table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string RowFilter
+        {
+            get { return this._rowFilter; }
+            set { this._rowFilter = value; }
+        }
+
+        // Check to see if RowFilter property is set
+        internal bool IsSetRowFilter()
+        {
+            return this._rowFilter != null;
         }
 
         /// <summary>

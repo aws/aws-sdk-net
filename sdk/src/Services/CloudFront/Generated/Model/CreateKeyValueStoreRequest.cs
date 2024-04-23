@@ -30,8 +30,8 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateKeyValueStore operation.
-    /// Specifies the Key Value Store resource to add to your account. In your account, the
-    /// Key Value Store names must be unique. You can also import Key Value Store data in
+    /// Specifies the key value store resource to add to your account. In your account, the
+    /// key value store names must be unique. You can also import key value store data in
     /// JSON format from an S3 bucket by providing a valid <c>ImportSource</c> that you own.
     /// </summary>
     public partial class CreateKeyValueStoreRequest : AmazonCloudFrontRequest
@@ -43,7 +43,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// The comment of the Key Value Store.
+        /// The comment of the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -81,7 +81,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Key Value Store. The maximum length of the name is 32 characters.
+        /// The name of the key value store. The minimum length is 1 character and the maximum
+        /// length is 64 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

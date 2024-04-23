@@ -67,6 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAccountName())
@@ -137,6 +138,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("FirstName");
                     context.Writer.Write(publicRequest.FirstName);
+                }
+
+                if(publicRequest.IsSetIAMIdentityCenterInstanceArn())
+                {
+                    context.Writer.WritePropertyName("IAMIdentityCenterInstanceArn");
+                    context.Writer.Write(publicRequest.IAMIdentityCenterInstanceArn);
                 }
 
                 if(publicRequest.IsSetLastName())

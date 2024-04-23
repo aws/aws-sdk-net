@@ -46,6 +46,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalDatasets())
             {
                 context.Writer.WritePropertyName("AdditionalDatasets");

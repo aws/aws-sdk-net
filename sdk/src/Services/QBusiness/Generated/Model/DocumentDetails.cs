@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// The details of a document within an Amazon Q index.
+    /// The details of a document within an Amazon Q Business index.
     /// </summary>
     public partial class DocumentDetails
     {

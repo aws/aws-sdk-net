@@ -105,7 +105,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseArn. 
         /// <para>
-        /// The ARN of the knowledge base.
+        /// The Amazon Resource Name (ARN) of the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]
@@ -181,8 +181,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role with permissions to invoke API operations on the knowledge
-        /// base. The ARN must begin with <c>AmazonBedrockExecutionRoleForKnowledgeBase_</c>.
+        /// The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations
+        /// on the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

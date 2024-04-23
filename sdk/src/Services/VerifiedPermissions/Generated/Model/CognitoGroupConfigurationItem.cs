@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
-    /// The type of entity that a policy store maps to groups from an Amazon Cognito user
-    /// pool identity source.
+    /// A list of user groups and entities from an Amazon Cognito user pool identity source.
     /// 
     ///  
     /// <para>

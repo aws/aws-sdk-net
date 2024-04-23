@@ -72,6 +72,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         unmarshalledObject.Dimensions.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("MetricCharacteristics", targetDepth))
+                    {
+                        var unmarshaller = MetricCharacteristicsUnmarshaller.Instance;
+                        unmarshalledObject.MetricCharacteristics = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MetricMathAnomalyDetector", targetDepth))
                     {
                         var unmarshaller = MetricMathAnomalyDetectorUnmarshaller.Instance;

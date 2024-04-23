@@ -46,6 +46,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StatelessRulesAndCustomActions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomActions())
             {
                 context.Writer.WritePropertyName("CustomActions");

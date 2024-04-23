@@ -124,6 +124,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("functionSchema", targetDepth))
+                {
+                    var unmarshaller = FunctionSchemaUnmarshaller.Instance;
+                    unmarshalledObject.FunctionSchema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("parentActionSignature", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -47,7 +47,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application using the retriever. 
+        /// The identifier of the Amazon Q Business application using the retriever. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

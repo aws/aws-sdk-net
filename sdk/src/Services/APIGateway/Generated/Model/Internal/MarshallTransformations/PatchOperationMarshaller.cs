@@ -46,6 +46,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PatchOperation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFrom())
             {
                 context.Writer.WritePropertyName("from");

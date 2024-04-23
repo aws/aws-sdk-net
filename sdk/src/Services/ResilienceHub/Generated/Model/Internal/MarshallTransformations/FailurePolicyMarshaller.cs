@@ -46,6 +46,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FailurePolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRpoInSecs())
             {
                 context.Writer.WritePropertyName("rpoInSecs");

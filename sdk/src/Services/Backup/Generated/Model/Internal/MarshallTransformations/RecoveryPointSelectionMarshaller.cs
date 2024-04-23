@@ -46,6 +46,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecoveryPointSelection requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDateRange())
             {
                 context.Writer.WritePropertyName("DateRange");

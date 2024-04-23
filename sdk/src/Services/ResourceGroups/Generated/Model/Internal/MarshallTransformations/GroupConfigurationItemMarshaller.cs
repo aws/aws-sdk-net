@@ -46,6 +46,8 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GroupConfigurationItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");

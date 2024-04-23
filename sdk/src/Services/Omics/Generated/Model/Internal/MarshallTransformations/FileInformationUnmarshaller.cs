@@ -76,6 +76,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.PartSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3Access", targetDepth))
+                {
+                    var unmarshaller = ReadSetS3AccessUnmarshaller.Instance;
+                    unmarshalledObject.S3Access = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("totalParts", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

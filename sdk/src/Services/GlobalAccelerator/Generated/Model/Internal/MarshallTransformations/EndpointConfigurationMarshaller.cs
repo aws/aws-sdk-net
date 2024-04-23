@@ -46,6 +46,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EndpointConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttachmentArn())
             {
                 context.Writer.WritePropertyName("AttachmentArn");

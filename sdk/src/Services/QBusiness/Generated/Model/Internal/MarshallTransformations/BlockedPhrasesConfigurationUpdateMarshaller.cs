@@ -46,6 +46,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BlockedPhrasesConfigurationUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBlockedPhrasesToCreateOrUpdate())
             {
                 context.Writer.WritePropertyName("blockedPhrasesToCreateOrUpdate");

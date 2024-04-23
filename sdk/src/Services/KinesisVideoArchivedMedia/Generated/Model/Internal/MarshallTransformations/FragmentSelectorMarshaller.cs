@@ -46,6 +46,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
         /// <returns></returns>
         public void Marshall(FragmentSelector requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFragmentSelectorType())
             {
                 context.Writer.WritePropertyName("FragmentSelectorType");

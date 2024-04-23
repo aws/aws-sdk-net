@@ -46,6 +46,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TestCaseFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKeyword())
             {
                 context.Writer.WritePropertyName("keyword");

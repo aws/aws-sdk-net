@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The Key Value Store entity already exists. You must provide a unique Key Value Store
+    /// The key value store entity already exists. You must provide a unique key value store
     /// entity.
     /// </summary>
     #if !NETSTANDARD

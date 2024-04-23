@@ -46,6 +46,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListManagementOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContactListName())
             {
                 context.Writer.WritePropertyName("ContactListName");

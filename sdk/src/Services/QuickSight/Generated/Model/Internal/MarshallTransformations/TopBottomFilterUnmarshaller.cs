@@ -76,6 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Column = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefaultFilterControlConfiguration", targetDepth))
+                {
+                    var unmarshaller = DefaultFilterControlConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DefaultFilterControlConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FilterId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

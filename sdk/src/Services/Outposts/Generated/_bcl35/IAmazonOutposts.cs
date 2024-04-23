@@ -49,6 +49,61 @@ namespace Amazon.Outposts
 
 
         
+        #region  CancelCapacityTask
+
+
+        /// <summary>
+        /// Cancels the capacity task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelCapacityTask service method.</param>
+        /// 
+        /// <returns>The response from the CancelCapacityTask service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelCapacityTask">REST API Reference for CancelCapacityTask Operation</seealso>
+        CancelCapacityTaskResponse CancelCapacityTask(CancelCapacityTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelCapacityTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelCapacityTask operation on AmazonOutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelCapacityTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelCapacityTask">REST API Reference for CancelCapacityTask Operation</seealso>
+        IAsyncResult BeginCancelCapacityTask(CancelCapacityTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelCapacityTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelCapacityTask.</param>
+        /// 
+        /// <returns>Returns a  CancelCapacityTaskResult from Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelCapacityTask">REST API Reference for CancelCapacityTask Operation</seealso>
+        CancelCapacityTaskResponse EndCancelCapacityTask(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CancelOrder
 
 
@@ -390,6 +445,58 @@ namespace Amazon.Outposts
 
         #endregion
         
+        #region  GetCapacityTask
+
+
+        /// <summary>
+        /// Gets details of the specified capacity task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityTask service method.</param>
+        /// 
+        /// <returns>The response from the GetCapacityTask service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetCapacityTask">REST API Reference for GetCapacityTask Operation</seealso>
+        GetCapacityTaskResponse GetCapacityTask(GetCapacityTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCapacityTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityTask operation on AmazonOutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCapacityTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetCapacityTask">REST API Reference for GetCapacityTask Operation</seealso>
+        IAsyncResult BeginGetCapacityTask(GetCapacityTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCapacityTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCapacityTask.</param>
+        /// 
+        /// <returns>Returns a  GetCapacityTaskResult from Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetCapacityTask">REST API Reference for GetCapacityTask Operation</seealso>
+        GetCapacityTaskResponse EndGetCapacityTask(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetCatalogItem
 
 
@@ -659,6 +766,60 @@ namespace Amazon.Outposts
 
         #endregion
         
+        #region  GetOutpostSupportedInstanceTypes
+
+
+        /// <summary>
+        /// Gets the instance types that an Outpost can support in <c>InstanceTypeCapacity</c>.
+        /// This will generally include instance types that are not currently configured and therefore
+        /// cannot be launched with the current Outpost capacity configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOutpostSupportedInstanceTypes service method.</param>
+        /// 
+        /// <returns>The response from the GetOutpostSupportedInstanceTypes service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostSupportedInstanceTypes">REST API Reference for GetOutpostSupportedInstanceTypes Operation</seealso>
+        GetOutpostSupportedInstanceTypesResponse GetOutpostSupportedInstanceTypes(GetOutpostSupportedInstanceTypesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOutpostSupportedInstanceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOutpostSupportedInstanceTypes operation on AmazonOutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOutpostSupportedInstanceTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostSupportedInstanceTypes">REST API Reference for GetOutpostSupportedInstanceTypes Operation</seealso>
+        IAsyncResult BeginGetOutpostSupportedInstanceTypes(GetOutpostSupportedInstanceTypesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOutpostSupportedInstanceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOutpostSupportedInstanceTypes.</param>
+        /// 
+        /// <returns>Returns a  GetOutpostSupportedInstanceTypesResult from Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostSupportedInstanceTypes">REST API Reference for GetOutpostSupportedInstanceTypes Operation</seealso>
+        GetOutpostSupportedInstanceTypesResponse EndGetOutpostSupportedInstanceTypes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetSite
 
 
@@ -820,6 +981,66 @@ namespace Amazon.Outposts
         /// <returns>Returns a  ListAssetsResult from Outposts.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssets">REST API Reference for ListAssets Operation</seealso>
         ListAssetsResponse EndListAssets(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCapacityTasks
+
+
+        /// <summary>
+        /// Lists the capacity tasks for your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Use filters to return specific results. If you specify multiple filters, the results
+        /// include only the resources that match all of the specified filters. For a filter where
+        /// you can specify multiple values, the results include items that match any of the values
+        /// that you specify for the filter.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCapacityTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListCapacityTasks service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCapacityTasks">REST API Reference for ListCapacityTasks Operation</seealso>
+        ListCapacityTasksResponse ListCapacityTasks(ListCapacityTasksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCapacityTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCapacityTasks operation on AmazonOutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCapacityTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCapacityTasks">REST API Reference for ListCapacityTasks Operation</seealso>
+        IAsyncResult BeginListCapacityTasks(ListCapacityTasksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCapacityTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCapacityTasks.</param>
+        /// 
+        /// <returns>Returns a  ListCapacityTasksResult from Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCapacityTasks">REST API Reference for ListCapacityTasks Operation</seealso>
+        ListCapacityTasksResponse EndListCapacityTasks(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1093,6 +1314,61 @@ namespace Amazon.Outposts
         /// <returns>Returns a  ListTagsForResourceResult from Outposts.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartCapacityTask
+
+
+        /// <summary>
+        /// Starts the specified capacity task. You can have one active capacity task for an order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCapacityTask service method.</param>
+        /// 
+        /// <returns>The response from the StartCapacityTask service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartCapacityTask">REST API Reference for StartCapacityTask Operation</seealso>
+        StartCapacityTaskResponse StartCapacityTask(StartCapacityTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartCapacityTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartCapacityTask operation on AmazonOutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartCapacityTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartCapacityTask">REST API Reference for StartCapacityTask Operation</seealso>
+        IAsyncResult BeginStartCapacityTask(StartCapacityTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartCapacityTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartCapacityTask.</param>
+        /// 
+        /// <returns>Returns a  StartCapacityTaskResult from Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartCapacityTask">REST API Reference for StartCapacityTask Operation</seealso>
+        StartCapacityTaskResponse EndStartCapacityTask(IAsyncResult asyncResult);
 
         #endregion
         

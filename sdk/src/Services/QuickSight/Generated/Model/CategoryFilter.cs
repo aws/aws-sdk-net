@@ -41,6 +41,7 @@ namespace Amazon.QuickSight.Model
     {
         private ColumnIdentifier _column;
         private CategoryFilterConfiguration _configuration;
+        private DefaultFilterControlConfiguration _defaultFilterControlConfiguration;
         private string _filterId;
 
         /// <summary>
@@ -79,6 +80,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultFilterControlConfiguration. 
+        /// <para>
+        /// The default configurations for the associated controls. This applies only for filters
+        /// that are scoped to multiple sheets.
+        /// </para>
+        /// </summary>
+        public DefaultFilterControlConfiguration DefaultFilterControlConfiguration
+        {
+            get { return this._defaultFilterControlConfiguration; }
+            set { this._defaultFilterControlConfiguration = value; }
+        }
+
+        // Check to see if DefaultFilterControlConfiguration property is set
+        internal bool IsSetDefaultFilterControlConfiguration()
+        {
+            return this._defaultFilterControlConfiguration != null;
         }
 
         /// <summary>

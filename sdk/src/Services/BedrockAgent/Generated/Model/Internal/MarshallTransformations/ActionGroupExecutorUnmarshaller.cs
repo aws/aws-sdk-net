@@ -64,6 +64,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("customControl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomControl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lambda", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -76,6 +76,12 @@ namespace Amazon.IdentityManagement.Model
         /// to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
         /// IAM roles</a> in the <i>IAM User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// IAM role credentials provided by Amazon EC2 instances assigned to the role are not
+        /// subject to the specified maximum session duration.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=3600, Max=43200)]
         public int MaxSessionDuration

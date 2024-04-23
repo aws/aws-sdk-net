@@ -57,7 +57,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SpaceStorageSettings. 
         /// <para>
-        /// The storage settings for a private space.
+        /// The storage settings for a space.
         /// </para>
         /// </summary>
         public SpaceStorageSettings SpaceStorageSettings

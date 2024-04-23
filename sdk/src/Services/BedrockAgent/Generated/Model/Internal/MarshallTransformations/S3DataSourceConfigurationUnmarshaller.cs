@@ -70,6 +70,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.BucketArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("bucketOwnerAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BucketOwnerAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inclusionPrefixes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

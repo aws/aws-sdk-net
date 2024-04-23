@@ -41,7 +41,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ObjectSizeGreaterThan. 
         /// <para>
-        /// Minimum object size to which the rule applies.
+        /// The non-inclusive minimum object size for the lifecycle rule. Setting this property
+        /// to 7 means the rule applies to objects with a size that is greater than 7. 
         /// </para>
         /// </summary>
         public long ObjectSizeGreaterThan
@@ -59,7 +60,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ObjectSizeLessThan. 
         /// <para>
-        /// Maximum object size to which the rule applies.
+        /// The non-inclusive maximum object size for the lifecycle rule. Setting this property
+        /// to 77 means the rule applies to objects with a size that is less than 77. 
         /// </para>
         /// </summary>
         public long ObjectSizeLessThan

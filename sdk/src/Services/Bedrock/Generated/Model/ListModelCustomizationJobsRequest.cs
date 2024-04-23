@@ -36,7 +36,7 @@ namespace Amazon.Bedrock.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-    /// models</a> in the Bedrock User Guide.
+    /// models</a> in the Amazon Bedrock User Guide.
     /// </para>
     /// </summary>
     public partial class ListModelCustomizationJobsRequest : AmazonBedrockRequest

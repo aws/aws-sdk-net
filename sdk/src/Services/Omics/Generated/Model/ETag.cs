@@ -40,7 +40,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Algorithm. 
         /// <para>
-        ///  The algorithm used to calculate the read set’s ETag(s). 
+        /// The algorithm used to calculate the read set’s ETag(s).
         /// </para>
         /// </summary>
         public ETagAlgorithm Algorithm
@@ -58,7 +58,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Source1. 
         /// <para>
-        ///  The ETag hash calculated on Source1 of the read set. 
+        /// The ETag hash calculated on Source1 of the read set.
         /// </para>
         /// </summary>
         public string Source1
@@ -76,7 +76,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Source2. 
         /// <para>
-        ///  The ETag hash calculated on Source2 of the read set. 
+        /// The ETag hash calculated on Source2 of the read set.
         /// </para>
         /// </summary>
         public string Source2

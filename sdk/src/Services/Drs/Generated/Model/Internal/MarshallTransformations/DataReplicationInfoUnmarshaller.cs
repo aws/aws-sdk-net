@@ -106,6 +106,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.StagingAvailabilityZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stagingOutpostArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StagingOutpostArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

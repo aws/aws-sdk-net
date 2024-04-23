@@ -46,6 +46,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimestreamSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCdcInsertsAndUpdates())
             {
                 context.Writer.WritePropertyName("CdcInsertsAndUpdates");

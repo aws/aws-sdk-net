@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource for which to list tags.
+        /// The Amazon Resource Name (ARN) of the resource for which to list tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]

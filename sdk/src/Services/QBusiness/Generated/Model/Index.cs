@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Summary information for your Amazon Q index.
+    /// Summary information for your Amazon Q Business index.
     /// </summary>
     public partial class Index
     {

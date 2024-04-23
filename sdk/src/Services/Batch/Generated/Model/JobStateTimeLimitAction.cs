@@ -43,7 +43,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// The action to take when a job is at the head of the job queue in the specified state
-        /// for the specified period of time. The only supported value is "<c>CANCEL</c>", which
+        /// for the specified period of time. The only supported value is <c>CANCEL</c>, which
         /// will cancel the job.
         /// </para>
         /// </summary>
@@ -103,7 +103,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the job needed to trigger the action. The only supported value is "<c>RUNNABLE</c>".
+        /// The state of the job needed to trigger the action. The only supported value is <c>RUNNABLE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

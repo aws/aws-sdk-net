@@ -44,6 +44,7 @@ namespace Amazon.WellArchitected.Model
         private string _industry;
         private string _industryType;
         private bool? _isReviewOwnerUpdateAcknowledged;
+        private WorkloadJiraConfigurationOutput _jiraConfiguration;
         private List<string> _lenses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _nonAwsRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _notes;
@@ -246,6 +247,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetIsReviewOwnerUpdateAcknowledged()
         {
             return this._isReviewOwnerUpdateAcknowledged.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// Jira configuration for a specific workload.
+        /// </para>
+        /// </summary>
+        public WorkloadJiraConfigurationOutput JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
         }
 
         /// <summary>

@@ -76,6 +76,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.ManagedPersistenceMonitoringConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("prometheusMonitoringConfiguration", targetDepth))
+                {
+                    var unmarshaller = PrometheusMonitoringConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PrometheusMonitoringConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3MonitoringConfiguration", targetDepth))
                 {
                     var unmarshaller = S3MonitoringConfigurationUnmarshaller.Instance;

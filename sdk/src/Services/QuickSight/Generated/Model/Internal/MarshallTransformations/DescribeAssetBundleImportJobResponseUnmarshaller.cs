@@ -136,6 +136,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     response.RollbackErrors = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Warnings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssetBundleImportJobWarning, AssetBundleImportJobWarningUnmarshaller>(AssetBundleImportJobWarningUnmarshaller.Instance);
+                    response.Warnings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             response.Status = (int)context.ResponseData.StatusCode;
 

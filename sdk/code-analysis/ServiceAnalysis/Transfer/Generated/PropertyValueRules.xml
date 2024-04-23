@@ -787,6 +787,41 @@
     <pattern>w-([a-z0-9]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.StartDirectoryListingRequest.ConnectorId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>c-([0-9a-f]{17})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.StartDirectoryListingRequest.MaxItems</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.StartDirectoryListingRequest.OutputDirectoryPath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.StartDirectoryListingRequest.RemoteDirectoryPath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.StartDirectoryListingResponse.ListingId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[0-9a-zA-Z./-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.StartDirectoryListingResponse.OutputFileName</property>
+    <min>26</min>
+    <max>537</max>
+    <pattern>c-([0-9a-f]{17})-[0-9a-zA-Z./-]+.json</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.StartFileTransferRequest.ConnectorId</property>
     <min>19</min>
     <max>19</max>

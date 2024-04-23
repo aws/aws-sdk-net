@@ -6617,6 +6617,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ImageAttributeName BootMode = new ImageAttributeName("bootMode");
         /// <summary>
+        /// Constant DeregistrationProtection for ImageAttributeName
+        /// </summary>
+        public static readonly ImageAttributeName DeregistrationProtection = new ImageAttributeName("deregistrationProtection");
+        /// <summary>
         /// Constant Description for ImageAttributeName
         /// </summary>
         public static readonly ImageAttributeName Description = new ImageAttributeName("description");

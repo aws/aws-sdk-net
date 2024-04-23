@@ -152,7 +152,7 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  
     /// <para>
-    /// To initiate TR-34 key import, the KDH must obtain an import token by calling <a>GetParametersForImport</a>.
+    /// To initiate TR-34 key import, the KDH must obtain an import token by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>.
     /// This operation generates an encryption keypair for the purpose of key import, signs
     /// the key and returns back the wrapping key certificate (also known as KRD wrapping
     /// certificate) and the root certificate chain. The KDH must trust and install the KRD
@@ -184,7 +184,7 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>ImportToken</c>: Obtained from KRD by calling <a>GetParametersForImport</a>.
+    ///  <c>ImportToken</c>: Obtained from KRD by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -206,12 +206,12 @@ namespace Amazon.PaymentCryptography.Model
     ///  
     /// <para>
     /// Using this operation, you can import initial key using asymmetric RSA wrap and unwrap
-    /// key exchange method. To initiate import, call <a>GetParametersForImport</a> with <c>KeyMaterial</c>
-    /// set to <c>KEY_CRYPTOGRAM</c> to generate an import token. This operation also generates
-    /// an encryption keypair for the purpose of key import, signs the key and returns back
-    /// the wrapping key certificate in PEM format (base64 encoded) and its root certificate
-    /// chain. The import token and associated KRD wrapping certificate expires after 7 days.
-    /// 
+    /// key exchange method. To initiate import, call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>
+    /// with <c>KeyMaterial</c> set to <c>KEY_CRYPTOGRAM</c> to generate an import token.
+    /// This operation also generates an encryption keypair for the purpose of key import,
+    /// signs the key and returns back the wrapping key certificate in PEM format (base64
+    /// encoded) and its root certificate chain. The import token and associated KRD wrapping
+    /// certificate expires after 7 days. 
     /// </para>
     ///  
     /// <para>
@@ -228,8 +228,8 @@ namespace Amazon.PaymentCryptography.Model
     /// <para>
     /// Amazon Web Services Payment Cryptography uses TR-31 symmetric key exchange norm to
     /// import working keys. A KEK must be established within Amazon Web Services Payment
-    /// Cryptography by using TR-34 key import or by using <a>CreateKey</a>. To initiate a
-    /// TR-31 key import, set the following parameters:
+    /// Cryptography by using TR-34 key import or by using <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.
+    /// To initiate a TR-31 key import, set the following parameters:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -257,11 +257,13 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ExportKey</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetParametersForImport</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -341,7 +343,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <para>
         /// Assigns one or more tags to the Amazon Web Services Payment Cryptography key. Use
         /// this parameter to tag a key when it is imported. To tag an existing Amazon Web Services
-        /// Payment Cryptography key, use the <a>TagResource</a> operation.
+        /// Payment Cryptography key, use the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>

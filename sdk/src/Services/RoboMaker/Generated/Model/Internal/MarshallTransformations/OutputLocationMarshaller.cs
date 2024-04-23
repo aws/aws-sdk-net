@@ -46,6 +46,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputLocation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Bucket())
             {
                 context.Writer.WritePropertyName("s3Bucket");

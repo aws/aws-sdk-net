@@ -59,9 +59,14 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property EvaluationMode. 
         /// <para>
-        /// Filters all resource evaluations results based on an evaluation mode. the valid value
-        /// for this API is <c>Proactive</c>.
+        /// Filters all resource evaluations results based on an evaluation mode.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Currently, <c>DECTECTIVE</c> is not supported as a valid value. Ignore other documentation
+        /// stating otherwise.
+        /// </para>
+        ///  </important>
         /// </summary>
         public EvaluationMode EvaluationMode
         {

@@ -46,6 +46,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LogPublishingOption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchLogsLogGroupArn())
             {
                 context.Writer.WritePropertyName("CloudWatchLogsLogGroupArn");

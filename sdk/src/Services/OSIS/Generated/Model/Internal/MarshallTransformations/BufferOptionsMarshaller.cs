@@ -46,6 +46,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BufferOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPersistentBufferEnabled())
             {
                 context.Writer.WritePropertyName("PersistentBufferEnabled");

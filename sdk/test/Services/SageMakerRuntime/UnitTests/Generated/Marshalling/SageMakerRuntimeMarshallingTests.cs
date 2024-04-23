@@ -61,8 +61,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Type","Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -95,9 +95,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Type","Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalDependencyException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalDependencyException"},
                 }
             };
 
@@ -130,9 +130,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Type","Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -165,9 +165,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Type","Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ModelErrorException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ModelErrorException"},
                 }
             };
 
@@ -200,9 +200,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Type","Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ModelNotReadyException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ModelNotReadyException"},
                 }
             };
 
@@ -235,9 +235,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Type","Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -270,9 +270,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Type","Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationErrorException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationErrorException"},
                 }
             };
 
@@ -303,8 +303,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 Headers = {
                     {"X-Amzn-SageMaker-FailureLocation","X-Amzn-SageMaker-FailureLocation_Value"},
                     {"X-Amzn-SageMaker-OutputLocation","X-Amzn-SageMaker-OutputLocation_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -336,9 +336,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 Headers = {
                     {"X-Amzn-SageMaker-FailureLocation","X-Amzn-SageMaker-FailureLocation_Value"},
                     {"X-Amzn-SageMaker-OutputLocation","X-Amzn-SageMaker-OutputLocation_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -370,9 +370,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 Headers = {
                     {"X-Amzn-SageMaker-FailureLocation","X-Amzn-SageMaker-FailureLocation_Value"},
                     {"X-Amzn-SageMaker-OutputLocation","X-Amzn-SageMaker-OutputLocation_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -404,9 +404,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 Headers = {
                     {"X-Amzn-SageMaker-FailureLocation","X-Amzn-SageMaker-FailureLocation_Value"},
                     {"X-Amzn-SageMaker-OutputLocation","X-Amzn-SageMaker-OutputLocation_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationErrorException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationErrorException"},
                 }
             };
 
@@ -438,8 +438,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -472,9 +472,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -507,9 +507,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalStreamFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalStreamFailureException"},
                 }
             };
 
@@ -542,9 +542,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ModelErrorException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ModelErrorException"},
                 }
             };
 
@@ -577,9 +577,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ModelStreamErrorException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ModelStreamErrorException"},
                 }
             };
 
@@ -612,9 +612,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -647,9 +647,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"X-Amzn-SageMaker-Content-Type","X-Amzn-SageMaker-Content-Type_Value"},
                     {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationErrorException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationErrorException"},
                 }
             };
 

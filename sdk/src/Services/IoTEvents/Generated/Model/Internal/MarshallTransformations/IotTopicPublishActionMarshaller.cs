@@ -46,6 +46,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IotTopicPublishAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMqttTopic())
             {
                 context.Writer.WritePropertyName("mqttTopic");

@@ -86,8 +86,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
-        /// base if you're storing Amazon Q Content resource to it.
+        /// The identifier of the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -187,12 +186,12 @@ namespace Amazon.QConnect.Model
         /// <para>
         /// This KMS key must have a policy that allows <c>kms:CreateGrant</c>, <c>kms:DescribeKey</c>,
         /// <c>kms:Decrypt</c>, and <c>kms:GenerateDataKey*</c> permissions to the IAM identity
-        /// using the key to invoke Amazon Q. 
+        /// using the key to invoke Amazon Q in Connect. 
         /// </para>
         ///  
         /// <para>
-        /// For more information about setting up a customer managed key for Amazon Q, see <a
-        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
+        /// For more information about setting up a customer managed key for Amazon Q in Connect,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
         /// Amazon Q in Connect for your instance</a>.
         /// </para>
         /// </summary>

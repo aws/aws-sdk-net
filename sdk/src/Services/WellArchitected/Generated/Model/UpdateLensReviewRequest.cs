@@ -34,10 +34,29 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class UpdateLensReviewRequest : AmazonWellArchitectedRequest
     {
+        private JiraSelectedQuestionConfiguration _jiraConfiguration;
         private string _lensAlias;
         private string _lensNotes;
         private Dictionary<string, string> _pillarNotes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workloadId;
+
+        /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// Configuration of the Jira integration.
+        /// </para>
+        /// </summary>
+        public JiraSelectedQuestionConfiguration JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LensAlias.

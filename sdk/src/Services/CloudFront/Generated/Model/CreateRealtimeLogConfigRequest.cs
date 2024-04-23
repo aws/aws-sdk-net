@@ -116,9 +116,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property SamplingRate. 
         /// <para>
-        /// The sampling rate for this real-time log configuration. The sampling rate determines
-        /// the percentage of viewer requests that are represented in the real-time log data.
-        /// You must provide an integer between 1 and 100, inclusive.
+        /// The sampling rate for this real-time log configuration. You can specify a whole number
+        /// between 1 and 100 (inclusive) to determine the percentage of viewer requests that
+        /// are represented in the real-time log data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

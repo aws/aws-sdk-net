@@ -46,6 +46,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExtendedKeyUsage requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExtendedKeyUsageObjectIdentifier())
             {
                 context.Writer.WritePropertyName("ExtendedKeyUsageObjectIdentifier");

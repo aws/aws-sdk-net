@@ -237,6 +237,60 @@ namespace Amazon.WorkSpacesWeb
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceType.
+    /// </summary>
+    public class InstanceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant StandardLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType StandardLarge = new InstanceType("standard.large");
+        /// <summary>
+        /// Constant StandardRegular for InstanceType
+        /// </summary>
+        public static readonly InstanceType StandardRegular = new InstanceType("standard.regular");
+        /// <summary>
+        /// Constant StandardXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType StandardXlarge = new InstanceType("standard.xlarge");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceType FindValue(string value)
+        {
+            return FindValue<InstanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PortalStatus.
     /// </summary>
     public class PortalStatus : ConstantClass

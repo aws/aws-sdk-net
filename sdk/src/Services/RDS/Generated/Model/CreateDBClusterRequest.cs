@@ -870,6 +870,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The <c>serverless</c> engine mode only applies for Aurora Serverless v1 DB clusters.
+        /// Aurora Serverless v2 DB clusters use the <c>provisioned</c> engine mode.
         /// </para>
         ///  
         /// <para>

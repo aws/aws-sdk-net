@@ -46,6 +46,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputSchemaUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRecordColumnUpdates())
             {
                 context.Writer.WritePropertyName("RecordColumnUpdates");

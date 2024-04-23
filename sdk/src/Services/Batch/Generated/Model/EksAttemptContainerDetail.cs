@@ -35,6 +35,7 @@ namespace Amazon.Batch.Model
     public partial class EksAttemptContainerDetail
     {
         private int? _exitCode;
+        private string _name;
         private string _reason;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetExitCode()
         {
             return this._exitCode.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of a container.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>

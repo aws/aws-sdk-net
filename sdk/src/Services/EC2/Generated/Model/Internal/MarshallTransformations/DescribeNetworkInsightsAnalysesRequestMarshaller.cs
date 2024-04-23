@@ -61,12 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAnalysisEndTime())
                 {
-                    request.Parameters.Add("AnalysisEndTime", StringUtils.FromDateTimeToISO8601(publicRequest.AnalysisEndTime));
+                    request.Parameters.Add("AnalysisEndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.AnalysisEndTime));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAnalysisStartTime())
                 {
-                    request.Parameters.Add("AnalysisStartTime", StringUtils.FromDateTimeToISO8601(publicRequest.AnalysisStartTime));
+                    request.Parameters.Add("AnalysisStartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.AnalysisStartTime));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFilters())

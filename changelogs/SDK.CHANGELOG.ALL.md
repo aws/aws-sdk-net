@@ -1,3 +1,217 @@
+### 3.7.795.0 (2024-04-23 18:30 UTC)
+* Bedrock (3.7.302.0)
+	* This release introduces Model Evaluation and Guardrails for Amazon Bedrock.
+* BedrockAgent (3.7.306.0)
+	* Introducing the ability to create multiple data sources per knowledge base, specify S3 buckets as data sources from external accounts, and exposing levers to define the deletion behavior of the underlying vector store data.
+* BedrockAgentRuntime (3.7.305.0)
+	* This release introduces zero-setup file upload support for the RetrieveAndGenerate API. This allows you to chat with your data without setting up a Knowledge Base.
+* BedrockRuntime (3.7.302.0)
+	* This release introduces Guardrails for Amazon Bedrock.
+* CostExplorer (3.7.303.0)
+	* Added additional metadata that might be applicable to your reservation recommendations.
+* EC2 (3.7.324.0)
+	* This release introduces EC2 AMI Deregistration Protection, a new AMI property that can be enabled by customers to protect an AMI against an unintended deregistration. This release also enables the AMI owners to view the AMI 'LastLaunchedTime' in DescribeImages API.
+* PI (3.7.300.80)
+	* Clarifies how aggregation works for GetResourceMetrics in the Performance Insights API.
+* RDS (3.7.311.8)
+	* Fix the example ARN for ModifyActivityStreamRequest
+* WorkSpacesWeb (3.7.301.0)
+	* Added InstanceType and MaxConcurrentSessions parameters on CreatePortal and UpdatePortal Operations as well as the ability to read Customer Managed Key & Additional Encryption Context parameters on supported resources (Portal, BrowserSettings, UserSettings, IPAccessSettings)
+* Core 3.7.303.20
+	* Added support for Protocol Tests. This includes a new Protocol Test Generator and adjustments to the existing code generator to ensure the protocol tests are passing successfully.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.794.0 (2024-04-22 18:21 UTC)
+* BedrockAgent (3.7.305.0)
+	* Releasing the support for simplified configuration and return of control
+* BedrockAgentRuntime (3.7.304.0)
+	* Releasing the support for simplified configuration and return of control
+* PaymentCryptography (3.7.303.0)
+	* Adding support to TR-31/TR-34 exports for optional headers, allowing customers to add additional metadata (such as key version and KSN) when exporting keys from the service.
+* RedshiftServerless (3.7.302.67)
+	* Updates description of schedule field for scheduled actions.
+* Route53Profiles (3.7.300.0)
+	* Route 53 Profiles allows you to apply a central DNS configuration across many VPCs regardless of account.
+* SageMaker (3.7.319.0)
+	* This release adds support for Real-Time Collaboration and Shared Space for JupyterLab App on SageMaker Studio.
+* ServiceDiscovery (3.7.300.79)
+	* This release adds examples to several Cloud Map actions.
+* Transfer (3.7.306.0)
+	* Adding new API to support remote directory listing using SFTP connector
+* Core 3.7.303.19
+	* Updating sdk-default-configuration.json file.
+	* All services packages updated to require new Core
+
+### 3.7.793.0 (2024-04-19 18:21 UTC)
+* Glue (3.7.310.0)
+	* Adding RowFilter in the response for GetUnfilteredTableMetadata API
+* InternetMonitor (3.7.304.0)
+	* This update introduces the GetInternetEvent and ListInternetEvents APIs, which provide access to internet events displayed on the Amazon CloudWatch Internet Weather Map.
+* Personalize (3.7.302.0)
+	* This releases auto training capability while creating a solution and automatically syncing latest solution versions when creating/updating a campaign
+* Core 3.7.303.18
+	* Updating sdk-default-configuration.json file.
+	* All services packages updated to require new Core
+
+### 3.7.792.0 (2024-04-18 18:25 UTC)
+* Drs (3.7.304.0)
+	* Outpost ARN added to Source Server and Recovery Instance
+* EMRServerless (3.7.302.0)
+	* This release adds the capability to publish detailed Spark engine metrics to Amazon Managed Service for Prometheus (AMP) for  enhanced monitoring for Spark jobs.
+* GuardDuty (3.7.306.0)
+	* Added IPv6Address fields for local and remote IP addresses
+* IAMRolesAnywhere (3.7.303.0)
+	* This release introduces the PutAttributeMapping and DeleteAttributeMapping APIs. IAM Roles Anywhere now provides the capability to define a set of mapping rules, allowing customers to specify which data is extracted from their X.509 end-entity certificates.
+* QuickSight (3.7.309.0)
+	* This release adds support for the Cross Sheet Filter and Control features, and support for warnings in asset imports for any permitted errors encountered during execution
+* SageMaker (3.7.318.0)
+	* Removed deprecated enum values and updated API documentation.
+* WorkSpaces (3.7.303.0)
+	* Adds new APIs for managing and sharing WorkSpaces BYOL configuration across accounts.
+* Core 3.7.303.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.791.0 (2024-04-17 18:34 UTC)
+* EC2 (3.7.323.0)
+	* Documentation updates for Elastic Compute Cloud (EC2).
+* QBusiness (3.7.302.0)
+	* This release adds support for IAM Identity Center (IDC) as the identity gateway for Q Business. It also allows users to provide an explicit intent for Q Business to identify how the Chat request should be handled.
+* Core 3.7.303.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.790.0 (2024-04-16 18:29 UTC)
+* BedrockAgent (3.7.304.0)
+	* For Create Agent API, the agentResourceRoleArn parameter is no longer required.
+* EMRServerless (3.7.301.0)
+	* This release adds support for shuffle optimized disks that allow larger disk sizes and higher IOPS to efficiently run shuffle heavy workloads.
+* EntityResolution (3.7.301.0)
+	* Cross Account Resource Support .
+* IoTWireless (3.7.302.0)
+	* Add PublicGateways in the GetWirelessStatistics call response, indicating the LoRaWAN public network accessed by the device.
+* LakeFormation (3.7.303.0)
+	* This release adds Lake Formation managed RAM support for the 4 APIs - "DescribeLakeFormationIdentityCenterConfiguration", "CreateLakeFormationIdentityCenterConfiguration", "DescribeLakeFormationIdentityCenterConfiguration", and "DeleteLakeFormationIdentityCenterConfiguration"
+* MainframeModernization (3.7.301.0)
+	* Adding new ListBatchJobRestartPoints API and support for restart batch job.
+* MediaPackageV2 (3.7.302.0)
+	* Dash v2 is a MediaPackage V2 feature to support egressing on DASH manifest format.
+* Outposts (3.7.303.0)
+	* This release adds new APIs to allow customers to configure their Outpost capacity at order-time.
+* WellArchitected (3.7.301.0)
+	* AWS Well-Architected now has a Connector for Jira to allow customers to efficiently track workload risks and improvement efforts and create closed-loop mechanisms.
+* Core 3.7.303.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.789.0 (2024-04-12 18:23 UTC)
+* CloudFormation (3.7.307.0)
+	* Adding support for the new parameter "IncludePropertyValues" in the CloudFormation DescribeChangeSet API. When this parameter is included, the DescribeChangeSet response will include more detailed information such as before and after values for the resource properties that will change.
+* ConfigService (3.7.302.46)
+	* Updates documentation for AWS Config
+* Glue (3.7.309.0)
+	* Modifying request for GetUnfilteredTableMetadata for view-related fields.
+* HealthLake (3.7.302.0)
+	* Added new CREATE_FAILED status for data stores. Added new errorCause to DescribeFHIRDatastore API and ListFHIRDatastores API response for additional insights into data store creation and deletion workflows.
+* IoTFleetHub (3.7.300.75)
+	* Documentation updates for AWS IoT Fleet Hub to clarify that Fleet Hub supports organization instance of IAM Identity Center.
+* KeyManagementService (3.7.302.0)
+	* This feature supports the ability to specify a custom rotation period for automatic key rotations, the ability to perform on-demand key rotations, and visibility into your key material rotations.
+* MediaTailor (3.7.305.0)
+	* Added InsertionMode to PlaybackConfigurations. This setting controls whether players can use stitched or guided ad insertion. The default for players that do not specify an insertion mode is stitched.
+* NeptuneGraph (3.7.305.10)
+	* Update to API documentation to resolve customer reported issues.
+* Outposts (3.7.302.0)
+	* This release adds EXPEDITORS as a valid shipment carrier.
+* Redshift (3.7.305.0)
+	* Adds support for Amazon Redshift DescribeClusterSnapshots API to include Snapshot ARN response field.
+* Transfer (3.7.305.0)
+	* This change releases support for importing self signed certificates to the Transfer Family for sending outbound file transfers over TLS/HTTPS.
+
+### 3.7.788.0 (2024-04-11 18:22 UTC)
+* Batch (3.7.305.0)
+	* This release adds the task properties field to attempt details and the name field on EKS container detail.
+* CloudFront (3.7.302.0)
+	* CloudFront origin access control extends support to AWS Lambda function URLs and AWS Elemental MediaPackage v2 origins.
+* CloudWatch (3.7.304.0)
+	* This release adds support for Metric Characteristics for CloudWatch Anomaly Detection. Anomaly Detector now takes Metric Characteristics object with Periodic Spikes boolean field that tells Anomaly Detection that spikes that repeat at the same time every week are part of the expected pattern.
+* CodeBuild (3.7.306.2)
+	* Support access tokens for Bitbucket sources
+* IdentityManagement (3.7.301.0)
+	* For CreateOpenIDConnectProvider API, the ThumbprintList parameter is no longer required.
+* MediaLive (3.7.307.0)
+	* AWS Elemental MediaLive introduces workflow monitor, a new feature that enables the visualization and monitoring of your media workflows. Create signal maps of your existing workflows and monitor them by creating notification and monitoring template groups.
+* Omics (3.7.301.0)
+	* This release adds support for retrieval of S3 direct access metadata on sequence stores and read sets, and adds support for SHA256up and SHA512up HealthOmics ETags.
+* Pipes (3.7.303.0)
+	* LogConfiguration ARN validation fixes
+* RDS (3.7.311.2)
+	* Updates Amazon RDS documentation for Standard Edition 2 support in RDS Custom for Oracle.
+* S3Control (3.7.305.39)
+	* Documentation updates for Amazon S3-control.
+* WAFV2 (3.7.304.0)
+	* Adds an updated version of smoke tests, including smithy trait, for SDK testing.
+* Core 3.7.303.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.787.0 (2024-04-10 18:19 UTC)
+* CleanRooms (3.7.304.0)
+	* AWS Clean Rooms Differential Privacy is now fully available. Differential privacy protects against user-identification attempts.
+* Connect (3.7.316.0)
+	* This release adds new Submit Auto Evaluation Action for Amazon Connect Rules.
+* NetworkMonitor (3.7.301.2)
+	* Examples were added to CloudWatch Network Monitor commands.
+* QConnect (3.7.304.0)
+	* This release adds a new QiC public API updateSession and updates an existing QiC public API createSession
+* Rekognition (3.7.302.0)
+	* Added support for ContentType to content moderation detections.
+* SupplyChain (3.7.301.0)
+	* This release includes API SendDataIntegrationEvent for AWS Supply Chain
+* WorkSpacesThinClient (3.7.302.0)
+	* Adding tags field to SoftwareSet. Removing tags fields from Summary objects. Changing the list of exceptions in tagging APIs. Fixing an issue where the SDK returns empty tags in Get APIs.
+* Core 3.7.303.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.786.0 (2024-04-09 18:17 UTC)
+* CodeBuild (3.7.306.0)
+	* Add new webhook filter types for GitHub webhooks
+* MediaConvert (3.7.304.0)
+	* This release includes support for bringing your own fonts to use for burn-in or DVB-Sub captioning workflows.
+* Pinpoint (3.7.301.0)
+	* The OrchestrationSendingRoleArn has been added to the email channel and is used to send emails from campaigns or journeys.
+* RDS (3.7.311.0)
+	* This release adds support for specifying the CA certificate to use for the new db instance when restoring from db snapshot, restoring from s3, restoring to point in time, and creating a db instance read replica.
+* Core 3.7.303.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.785.0 (2024-04-08 18:13 UTC)
+* ControlCatalog (3.7.300.0)
+	* This is the initial SDK release for AWS Control Catalog, a central catalog for AWS managed controls. This release includes 3 new APIs - ListDomains, ListObjectives, and ListCommonControls - that vend high-level data to categorize controls across the AWS platform.
+* Mgn (3.7.302.0)
+	* Added USE_SOURCE as default option to LaunchConfigurationTemplate bootMode parameter.
+* NetworkMonitor (3.7.301.0)
+	* Updated the allowed monitorName length for CloudWatch Network Monitor.
+* S3 (3.7.307.12)
+	* Update the GetObject and GetObjectMetadata operations to handle invalid timestamp formats in the expires header; a new property ExpiresString will contain the unparsed value returned from S3 (regardless if parsing succeeds or not) and should be used instead of Expires (which has been deprecated).
+* Core 3.7.303.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.784.0 (2024-04-05 18:14 UTC)
+* QuickSight (3.7.308.0)
+	* Adding IAMIdentityCenterInstanceArn parameter to CreateAccountSubscription
+* ResourceGroups (3.7.301.0)
+	* Added a new QueryErrorCode RESOURCE_TYPE_NOT_SUPPORTED that is returned by the ListGroupResources operation if the group query contains unsupported resource types.
+* VerifiedPermissions (3.7.305.0)
+	* Adding BatchIsAuthorizedWithToken API which supports multiple authorization requests against a PolicyStore given a bearer token.
+* Core 3.7.303.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.783.0 (2024-04-04 18:24 UTC)
 * B2bi (3.7.303.0)
 	* Adding support for X12 5010 HIPAA EDI version and associated transaction sets.

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Guardrail rules for an Amazon Q application. Amazon Q supports only one rule at a
-    /// time.
+    /// Guardrail rules for an Amazon Q Business application. Amazon Q Business supports only
+    /// one rule at a time.
     /// </summary>
     public partial class Rule
     {

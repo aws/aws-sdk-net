@@ -38,7 +38,13 @@ namespace Amazon.CloudFront.Model
         private string _originAccessIdentity;
 
         /// <summary>
-        /// Gets and sets the property OriginAccessIdentity. 
+        /// Gets and sets the property OriginAccessIdentity. <note> 
+        /// <para>
+        /// If you're using origin access control (OAC) instead of origin access identity, specify
+        /// an empty <c>OriginAccessIdentity</c> element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html">Restricting
+        /// access to an Amazon Web Services</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The CloudFront origin access identity to associate with the origin. Use an origin
         /// access identity to configure the origin so that viewers can <i>only</i> access objects
@@ -46,11 +52,11 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i> 
+        ///  <c>origin-access-identity/cloudfront/ID-of-origin-access-identity</c> 
         /// </para>
         ///  
         /// <para>
-        /// where <c> <i>ID-of-origin-access-identity</i> </c> is the value that CloudFront returned
+        /// The <c> <i>ID-of-origin-access-identity</i> </c> is the value that CloudFront returned
         /// in the <c>ID</c> element when you created the origin access identity.
         /// </para>
         ///  

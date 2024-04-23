@@ -66,6 +66,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAuditContext())
@@ -97,6 +98,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetParentResourceArn())
+                {
+                    context.Writer.WritePropertyName("ParentResourceArn");
+                    context.Writer.Write(publicRequest.ParentResourceArn);
+                }
+
                 if(publicRequest.IsSetPermissions())
                 {
                     context.Writer.WritePropertyName("Permissions");
@@ -123,6 +130,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Region");
                     context.Writer.Write(publicRequest.Region);
+                }
+
+                if(publicRequest.IsSetRootResourceArn())
+                {
+                    context.Writer.WritePropertyName("RootResourceArn");
+                    context.Writer.Write(publicRequest.RootResourceArn);
                 }
 
                 if(publicRequest.IsSetSupportedDialect())

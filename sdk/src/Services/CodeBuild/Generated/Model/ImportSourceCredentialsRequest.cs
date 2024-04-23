@@ -105,7 +105,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property Token. 
         /// <para>
         ///  For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket,
-        /// this is the app password. 
+        /// this is either the access token or the app password. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1)]

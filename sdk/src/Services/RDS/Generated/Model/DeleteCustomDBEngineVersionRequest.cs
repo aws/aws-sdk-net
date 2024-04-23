@@ -70,8 +70,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The database engine. The only supported engines are <c>custom-oracle-ee</c> and <c>custom-oracle-ee-cdb</c>.
+        /// The database engine. RDS Custom for Oracle supports the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>custom-oracle-ee</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-ee-cdb</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-se2</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-se2-cdb</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]
         public string Engine

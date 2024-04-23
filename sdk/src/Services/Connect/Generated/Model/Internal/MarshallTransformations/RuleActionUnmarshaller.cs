@@ -100,6 +100,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.SendNotificationAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SubmitAutoEvaluationAction", targetDepth))
+                {
+                    var unmarshaller = SubmitAutoEvaluationActionDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.SubmitAutoEvaluationAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TaskAction", targetDepth))
                 {
                     var unmarshaller = TaskActionDefinitionUnmarshaller.Instance;

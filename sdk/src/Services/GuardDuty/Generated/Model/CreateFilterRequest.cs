@@ -313,6 +313,10 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// service.action.awsApiCallAction.remoteIpDetails.ipAddressV6
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// service.action.awsApiCallAction.remoteIpDetails.organization.asn
         /// </para>
         ///  </li> <li> 
@@ -361,6 +365,10 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// service.action.networkConnectionAction.remoteIpDetails.ipAddressV6
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// service.action.networkConnectionAction.remoteIpDetails.organization.asn
         /// </para>
         ///  </li> <li> 
@@ -381,6 +389,10 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// service.action.kubernetesApiCallAction.namespace
         /// </para>
         ///  </li> <li> 
@@ -398,6 +410,10 @@ namespace Amazon.GuardDuty.Model
         ///  </li> <li> 
         /// <para>
         /// service.action.networkConnectionAction.localIpDetails.ipAddressV4
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.action.networkConnectionAction.localIpDetails.ipAddressV6
         /// </para>
         ///  </li> <li> 
         /// <para>

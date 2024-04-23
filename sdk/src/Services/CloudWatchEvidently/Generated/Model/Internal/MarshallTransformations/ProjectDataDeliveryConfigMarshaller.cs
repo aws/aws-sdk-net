@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProjectDataDeliveryConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchLogs())
             {
                 context.Writer.WritePropertyName("cloudWatchLogs");

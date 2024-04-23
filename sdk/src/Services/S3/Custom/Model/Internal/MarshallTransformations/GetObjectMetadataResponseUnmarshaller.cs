@@ -87,7 +87,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (responseData.IsHeaderPresent("Content-Type"))
                 response.Headers.ContentType = S3Transforms.ToString(responseData.GetHeaderValue("Content-Type"));
             if (responseData.IsHeaderPresent("Expires"))
-                response.RawExpires = S3Transforms.ToString(responseData.GetHeaderValue("Expires"));
+                response.ExpiresString = S3Transforms.ToString(responseData.GetHeaderValue("Expires"));
             if (responseData.IsHeaderPresent("x-amz-website-redirect-location"))
                 response.WebsiteRedirectLocation = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-website-redirect-location"));
             if (responseData.IsHeaderPresent("x-amz-server-side-encryption"))

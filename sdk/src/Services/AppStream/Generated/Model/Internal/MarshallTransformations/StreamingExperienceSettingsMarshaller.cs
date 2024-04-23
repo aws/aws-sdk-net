@@ -46,6 +46,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamingExperienceSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPreferredProtocol())
             {
                 context.Writer.WritePropertyName("PreferredProtocol");

@@ -36,6 +36,11 @@ namespace Amazon.EntityResolution.Model
         IListIdMappingWorkflowsPaginator ListIdMappingWorkflows(ListIdMappingWorkflowsRequest request);
 
         /// <summary>
+        /// Paginator for ListIdNamespaces operation
+        ///</summary>
+        IListIdNamespacesPaginator ListIdNamespaces(ListIdNamespacesRequest request);
+
+        /// <summary>
         /// Paginator for ListMatchingJobs operation
         ///</summary>
         IListMatchingJobsPaginator ListMatchingJobs(ListMatchingJobsRequest request);

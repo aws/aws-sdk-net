@@ -38,7 +38,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property SummaryMetricQueryResults. 
         /// <para>
-        /// The list of retrieved metrics.
+        /// The list of summary metrics that were retrieved.
         /// </para>
         /// </summary>
         public List<SummaryMetricQueryResult> SummaryMetricQueryResults

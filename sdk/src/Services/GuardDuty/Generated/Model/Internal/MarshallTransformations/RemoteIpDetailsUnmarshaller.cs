@@ -88,6 +88,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.IpAddressV4 = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ipAddressV6", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddressV6 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("organization", targetDepth))
                 {
                     var unmarshaller = OrganizationUnmarshaller.Instance;

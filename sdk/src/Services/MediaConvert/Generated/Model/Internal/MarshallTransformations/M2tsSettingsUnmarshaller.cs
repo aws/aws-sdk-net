@@ -226,6 +226,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.PmtPid = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("preventBufferUnderflow", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreventBufferUnderflow = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("privateMetadataPid", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

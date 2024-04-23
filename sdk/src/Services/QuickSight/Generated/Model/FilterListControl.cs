@@ -157,7 +157,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of <c>FilterListControl</c>. Choose one of the following options:
+        /// The type of the <c>FilterListControl</c>. Choose one of the following options:
         /// </para>
         ///  <ul> <li> 
         /// <para>

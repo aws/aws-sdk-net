@@ -46,6 +46,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConfiguredTableAnalysisRulePolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetV1())
             {
                 context.Writer.WritePropertyName("v1");

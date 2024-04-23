@@ -29,12 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about the action group being invoked.
+    /// Contains information about the action group being invoked. For more information about
+    /// the possible structures, see the InvocationInput tab in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-orchestration.html">OrchestrationTrace</a>
+    /// in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class ActionGroupInvocationInput
     {
         private string _actionGroupName;
         private string _apiPath;
+        private string _function;
         private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
         private RequestBody _requestBody;
         private string _verb;
@@ -75,6 +78,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetApiPath()
         {
             return this._apiPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Function. 
+        /// <para>
+        /// The function in the action group to call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string Function
+        {
+            get { return this._function; }
+            set { this._function = value; }
+        }
+
+        // Check to see if Function property is set
+        internal bool IsSetFunction()
+        {
+            return this._function != null;
         }
 
         /// <summary>

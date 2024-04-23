@@ -41,6 +41,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class CreateDataSourceRequest : AmazonBedrockAgentRequest
     {
         private string _clientToken;
+        private DataDeletionPolicy _dataDeletionPolicy;
         private DataSourceConfiguration _dataSourceConfiguration;
         private string _description;
         private string _knowledgeBaseId;
@@ -68,6 +69,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataDeletionPolicy. 
+        /// <para>
+        /// The deletion policy for the requested data source
+        /// </para>
+        /// </summary>
+        public DataDeletionPolicy DataDeletionPolicy
+        {
+            get { return this._dataDeletionPolicy; }
+            set { this._dataDeletionPolicy = value; }
+        }
+
+        // Check to see if DataDeletionPolicy property is set
+        internal bool IsSetDataDeletionPolicy()
+        {
+            return this._dataDeletionPolicy != null;
         }
 
         /// <summary>

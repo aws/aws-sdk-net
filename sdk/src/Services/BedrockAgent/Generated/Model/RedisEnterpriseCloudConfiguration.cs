@@ -43,8 +43,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property CredentialsSecretArn. 
         /// <para>
-        /// The ARN of the secret that you created in Secrets Manager that is linked to your Redis
-        /// Enterprise Cloud database.
+        /// The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that
+        /// is linked to your Redis Enterprise Cloud database.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

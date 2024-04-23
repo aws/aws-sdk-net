@@ -140,6 +140,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OpenIdIdpCommunicationError"))
+                {
+                    return OpenIdIdpCommunicationErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceFailure"))
                 {
                     return ServiceFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

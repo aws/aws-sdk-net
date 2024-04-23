@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateConnectionOAuthRequestParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthorizationEndpoint())
             {
                 context.Writer.WritePropertyName("AuthorizationEndpoint");

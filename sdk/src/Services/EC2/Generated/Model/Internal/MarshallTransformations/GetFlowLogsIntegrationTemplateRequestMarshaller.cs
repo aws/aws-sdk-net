@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                             if(publicRequestIntegrateServiceslistValue.IsSetPartitionEndDate())
                             {
-                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionEndDate", StringUtils.FromDateTimeToISO8601(publicRequestIntegrateServiceslistValue.PartitionEndDate));
+                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionEndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestIntegrateServiceslistValue.PartitionEndDate));
                             }
 #pragma warning restore CS0612,CS0618
                             if(publicRequestIntegrateServiceslistValue.IsSetPartitionLoadFrequency())
@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                             if(publicRequestIntegrateServiceslistValue.IsSetPartitionStartDate())
                             {
-                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionStartDate", StringUtils.FromDateTimeToISO8601(publicRequestIntegrateServiceslistValue.PartitionStartDate));
+                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionStartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestIntegrateServiceslistValue.PartitionStartDate));
                             }
 #pragma warning restore CS0612,CS0618
                             publicRequestIntegrateServiceslistValueIndex++;

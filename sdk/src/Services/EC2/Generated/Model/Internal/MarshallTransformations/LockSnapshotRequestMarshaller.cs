@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExpirationDate())
                 {
-                    request.Parameters.Add("ExpirationDate", StringUtils.FromDateTimeToISO8601(publicRequest.ExpirationDate));
+                    request.Parameters.Add("ExpirationDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpirationDate));
                 }
 #pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLockDuration())

@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// The option to relax the validation that is required to export each asset. When <c>StrictModeForAllResource</c>
-    /// is set to true, validation is skipped for specific UI errors.
+    /// is set to <c>false</c>, validation is skipped for specific UI errors.
     /// </summary>
     public partial class AssetBundleExportJobValidationStrategy
     {

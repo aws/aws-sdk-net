@@ -88,6 +88,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.StoppedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("taskProperties", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AttemptEcsTaskDetails, AttemptEcsTaskDetailsUnmarshaller>(AttemptEcsTaskDetailsUnmarshaller.Instance);
+                    unmarshalledObject.TaskProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

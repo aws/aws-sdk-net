@@ -70,6 +70,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetActionGroupExecutor())
@@ -121,6 +122,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetFunctionSchema())
+                {
+                    context.Writer.WritePropertyName("functionSchema");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FunctionSchemaMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FunctionSchema, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetParentActionGroupSignature())

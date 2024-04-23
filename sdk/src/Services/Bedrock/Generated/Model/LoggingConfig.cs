@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Configuration fields for invokation logging.
+    /// Configuration fields for invocation logging.
     /// </summary>
     public partial class LoggingConfig
     {

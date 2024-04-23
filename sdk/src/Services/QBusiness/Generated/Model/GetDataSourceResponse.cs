@@ -53,7 +53,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application.
+        /// The identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -277,7 +277,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property SyncSchedule. 
         /// <para>
-        /// The schedule for Amazon Q to update the index.
+        /// The schedule for Amazon Q Business to update the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=998)]

@@ -34,13 +34,33 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class ActionGroupExecutor
     {
+        private CustomControlMethod _customControl;
         private string _lambda;
+
+        /// <summary>
+        /// Gets and sets the property CustomControl. 
+        /// <para>
+        /// To return the action group invocation results directly in the <c>InvokeAgent</c> response,
+        /// specify <c>RETURN_CONTROL</c>.
+        /// </para>
+        /// </summary>
+        public CustomControlMethod CustomControl
+        {
+            get { return this._customControl; }
+            set { this._customControl = value; }
+        }
+
+        // Check to see if CustomControl property is set
+        internal bool IsSetCustomControl()
+        {
+            return this._customControl != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Lambda. 
         /// <para>
-        /// The ARN of the Lambda function containing the business logic that is carried out upon
-        /// invoking the action.
+        /// The Amazon Resource Name (ARN) of the Lambda function containing the business logic
+        /// that is carried out upon invoking the action.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

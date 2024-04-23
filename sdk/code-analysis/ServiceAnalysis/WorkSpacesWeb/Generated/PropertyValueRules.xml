@@ -254,6 +254,11 @@
     <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.CreatePortalRequest.MaxConcurrentSessions</property>
+    <min>1</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.CreatePortalResponse.PortalArn</property>
     <min>20</min>
     <max>2048</max>
@@ -754,6 +759,11 @@
     <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UpdatePortalRequest.MaxConcurrentSessions</property>
+    <min>1</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.UpdatePortalRequest.PortalArn</property>
     <min>20</min>
     <max>2048</max>
@@ -825,6 +835,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.BrowserSettings.CustomerManagedKey</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:kms:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:key\/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.BrowserSettingsSummary.BrowserSettingsArn</property>
@@ -910,6 +926,12 @@
     <pattern>^[^_][\p{L}\p{M}\p{S}\p{N}\p{P}][^_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.IpAccessSettings.CustomerManagedKey</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:kms:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:key\/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.IpAccessSettings.Description</property>
     <min>1</min>
     <max>256</max>
@@ -986,6 +1008,12 @@
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.Portal.CustomerManagedKey</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:kms:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:key\/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.Portal.DisplayName</property>
     <min>1</min>
     <max>64</max>
@@ -996,6 +1024,11 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.Portal.MaxConcurrentSessions</property>
+    <min>1</min>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.Portal.NetworkSettingsArn</property>
@@ -1056,6 +1089,11 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.PortalSummary.MaxConcurrentSessions</property>
+    <min>1</min>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.PortalSummary.NetworkSettingsArn</property>
@@ -1146,6 +1184,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UserSettings.CustomerManagedKey</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:kms:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:key\/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.UserSettings.DisconnectTimeoutInMinutes</property>

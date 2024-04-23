@@ -64,6 +64,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ContentTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ContentType, ContentTypeUnmarshaller>(ContentTypeUnmarshaller.Instance);
+                    unmarshalledObject.ContentTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DurationMillis", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

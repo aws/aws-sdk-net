@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VectorIngestionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChunkingConfiguration())
             {
                 context.Writer.WritePropertyName("chunkingConfiguration");

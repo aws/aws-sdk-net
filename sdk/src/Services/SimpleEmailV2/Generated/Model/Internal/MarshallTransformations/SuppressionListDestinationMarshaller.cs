@@ -46,6 +46,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SuppressionListDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSuppressionListImportAction())
             {
                 context.Writer.WritePropertyName("SuppressionListImportAction");

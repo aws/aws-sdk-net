@@ -30,7 +30,8 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the PutFeedback operation.
-    /// Enables your end user to to provide feedback on their Amazon Q generated chat responses.
+    /// Enables your end user to provide feedback on their Amazon Q Business generated chat
+    /// responses.
     /// </summary>
     public partial class PutFeedbackRequest : AmazonQBusinessRequest
     {
@@ -140,7 +141,7 @@ namespace Amazon.QBusiness.Model
         /// The identifier of the user giving the feedback.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string UserId
         {
             get { return this._userId; }

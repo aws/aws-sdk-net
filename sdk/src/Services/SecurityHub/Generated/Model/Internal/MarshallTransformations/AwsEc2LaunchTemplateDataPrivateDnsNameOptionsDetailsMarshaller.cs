@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnableResourceNameDnsAAAARecord())
             {
                 context.Writer.WritePropertyName("EnableResourceNameDnsAAAARecord");

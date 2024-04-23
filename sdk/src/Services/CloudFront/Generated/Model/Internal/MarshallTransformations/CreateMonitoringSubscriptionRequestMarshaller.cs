@@ -68,12 +68,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetMonitoringSubscription())
                 {
                     xmlWriter.WriteStartElement("MonitoringSubscription", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
-                
-                    if (publicRequest.MonitoringSubscription.RealtimeMetricsSubscriptionConfig != null) 
+                    if (publicRequest.MonitoringSubscription.RealtimeMetricsSubscriptionConfig != null)
                     {
-                        xmlWriter.WriteStartElement("RealtimeMetricsSubscriptionConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                        xmlWriter.WriteStartElement("RealtimeMetricsSubscriptionConfig");
                         if(publicRequest.MonitoringSubscription.RealtimeMetricsSubscriptionConfig.IsSetRealtimeMetricsSubscriptionStatus())
-                            xmlWriter.WriteElementString("RealtimeMetricsSubscriptionStatus", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.MonitoringSubscription.RealtimeMetricsSubscriptionConfig.RealtimeMetricsSubscriptionStatus));                 
+                            xmlWriter.WriteElementString("RealtimeMetricsSubscriptionStatus", StringUtils.FromString(publicRequest.MonitoringSubscription.RealtimeMetricsSubscriptionConfig.RealtimeMetricsSubscriptionStatus));                 
 
                         xmlWriter.WriteEndElement();
                     }

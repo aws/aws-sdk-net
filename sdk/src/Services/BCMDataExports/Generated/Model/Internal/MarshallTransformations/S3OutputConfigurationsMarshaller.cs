@@ -46,6 +46,8 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3OutputConfigurations requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");

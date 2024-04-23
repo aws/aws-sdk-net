@@ -366,7 +366,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             
             #line 164 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(member.IsNullable ? "?" : ""));
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.IsNullable && !member.UseNullable ? "?" : ""));
             
             #line default
             #line hidden
@@ -761,12 +761,6 @@ if(structureIsEvent || structureIsEventStream)
             
             #line 238 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
-            
-            #line default
-            #line hidden
-            
-            #line 238 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(member.UseNullable ? "?" : ""));
             
             #line default
             #line hidden

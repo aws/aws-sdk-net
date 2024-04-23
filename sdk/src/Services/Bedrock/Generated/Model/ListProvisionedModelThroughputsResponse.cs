@@ -39,7 +39,9 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Continuation token for the next request to list the next set of results.
+        /// If there are more results than the number you specified in the <c>maxResults</c> field,
+        /// this value is returned. To see the next batch of results, include this value in the
+        /// <c>nextToken</c> field in another list request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -58,7 +60,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ProvisionedModelSummaries. 
         /// <para>
-        /// List of summaries, one for each provisioned throughput in the response.
+        /// A list of summaries, one for each Provisioned Throughput in the response.
         /// </para>
         /// </summary>
         public List<ProvisionedModelSummary> ProvisionedModelSummaries

@@ -40,8 +40,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of an IAM role used by Amazon Q to access the OAuth 2.0 authentication credentials
-        /// stored in a Secrets Manager secret.
+        /// The ARN of an IAM role used by Amazon Q Business to access the OAuth 2.0 authentication
+        /// credentials stored in a Secrets Manager secret.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1284)]

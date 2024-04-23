@@ -101,7 +101,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
-        /// The ARN of the foundation model.
+        /// The Amazon Resource Name (ARN) of the foundation model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,7 +120,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The model Id of the foundation model.
+        /// The model ID of the foundation model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=140)]

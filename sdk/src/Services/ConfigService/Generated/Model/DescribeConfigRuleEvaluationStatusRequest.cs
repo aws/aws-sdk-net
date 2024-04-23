@@ -69,7 +69,7 @@ namespace Amazon.ConfigService.Model
         ///  
         /// <para>
         /// This parameter is required if the rule limit for your account is more than the default
-        /// of 150 rules.
+        /// of 1000 rules.
         /// </para>
         ///  
         /// <para>

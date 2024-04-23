@@ -46,6 +46,8 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3EncryptionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEncryptionMode())
             {
                 context.Writer.WritePropertyName("EncryptionMode");

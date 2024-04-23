@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteChatControlsConfiguration operation.
-    /// Deletes chat controls configured for an existing Amazon Q application.
+    /// Deletes chat controls configured for an existing Amazon Q Business application.
     /// </summary>
     public partial class DeleteChatControlsConfigurationRequest : AmazonQBusinessRequest
     {

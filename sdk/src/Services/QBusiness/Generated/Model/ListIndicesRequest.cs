@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIndices operation.
-    /// Lists the Amazon Q indices you have created.
+    /// Lists the Amazon Q Business indices you have created.
     /// </summary>
     public partial class ListIndicesRequest : AmazonQBusinessRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application connected to the index.
+        /// The identifier of the Amazon Q Business application connected to the index.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -80,8 +80,8 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the maxResults response was incomplete because there is more data to retrieve,
-        /// Amazon Q returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of Amazon Q indices.
+        /// Amazon Q Business returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of Amazon Q Business indices.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

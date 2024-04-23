@@ -101,7 +101,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property MaxGpus. 
         /// <para>
-        ///  The maximum GPUs that can be used by a run group. 
+        /// The maximum GPUs that can be used by a run group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]

@@ -64,6 +64,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("additionalEncryptionContext", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalEncryptionContext = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("authenticationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -88,16 +94,34 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customerManagedKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomerManagedKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("displayName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instanceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ipAccessSettingsArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpAccessSettingsArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("maxConcurrentSessions", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxConcurrentSessions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("networkSettingsArn", targetDepth))

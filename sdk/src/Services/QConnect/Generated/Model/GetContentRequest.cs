@@ -61,8 +61,7 @@ namespace Amazon.QConnect.Model
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
         /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
-        /// base if you're storing Amazon Q Content resource to it. Can be either the ID or the
-        /// ARN. URLs cannot contain the ARN.
+        /// base. Can be either the ID or the ARN. URLs cannot contain the ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

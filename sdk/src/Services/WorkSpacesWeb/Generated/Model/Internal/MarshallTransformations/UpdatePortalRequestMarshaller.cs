@@ -67,6 +67,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAuthenticationType())
@@ -79,6 +80,18 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("displayName");
                     context.Writer.Write(publicRequest.DisplayName);
+                }
+
+                if(publicRequest.IsSetInstanceType())
+                {
+                    context.Writer.WritePropertyName("instanceType");
+                    context.Writer.Write(publicRequest.InstanceType);
+                }
+
+                if(publicRequest.IsSetMaxConcurrentSessions())
+                {
+                    context.Writer.WritePropertyName("maxConcurrentSessions");
+                    context.Writer.Write(publicRequest.MaxConcurrentSessions);
                 }
 
                 writer.WriteObjectEnd();

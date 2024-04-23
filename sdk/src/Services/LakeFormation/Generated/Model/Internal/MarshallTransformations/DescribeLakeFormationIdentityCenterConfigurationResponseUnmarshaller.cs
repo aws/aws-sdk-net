@@ -76,6 +76,18 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     response.InstanceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceShare", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ResourceShare = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShareRecipients", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataLakePrincipal, DataLakePrincipalUnmarshaller>(DataLakePrincipalUnmarshaller.Instance);
+                    response.ShareRecipients = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

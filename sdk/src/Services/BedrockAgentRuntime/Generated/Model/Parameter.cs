@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// A parameter in the Lambda input event.
+    /// A parameter for the API request or function.
     /// </summary>
     public partial class Parameter
     {

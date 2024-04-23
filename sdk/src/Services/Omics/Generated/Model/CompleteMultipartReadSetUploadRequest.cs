@@ -41,7 +41,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Parts. 
         /// <para>
-        ///  The individual uploads or parts of a multipart upload. 
+        /// The individual uploads or parts of a multipart upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SequenceStoreId. 
         /// <para>
-        ///  The sequence store ID for the store involved in the multipart upload. 
+        /// The sequence store ID for the store involved in the multipart upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]
@@ -79,7 +79,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property UploadId. 
         /// <para>
-        ///  The ID for the multipart upload. 
+        /// The ID for the multipart upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]

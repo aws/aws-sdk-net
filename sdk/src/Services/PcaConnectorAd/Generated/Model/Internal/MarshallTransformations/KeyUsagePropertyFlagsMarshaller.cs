@@ -46,6 +46,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KeyUsagePropertyFlags requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDecrypt())
             {
                 context.Writer.WritePropertyName("Decrypt");

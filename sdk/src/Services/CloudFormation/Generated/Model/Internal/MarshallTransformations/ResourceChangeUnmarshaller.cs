@@ -61,6 +61,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AfterContext", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AfterContext = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("BeforeContext", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BeforeContext = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ChangeSetId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

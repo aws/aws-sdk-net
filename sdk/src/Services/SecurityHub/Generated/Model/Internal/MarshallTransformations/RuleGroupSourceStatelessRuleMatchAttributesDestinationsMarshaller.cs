@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RuleGroupSourceStatelessRuleMatchAttributesDestinations requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddressDefinition())
             {
                 context.Writer.WritePropertyName("AddressDefinition");

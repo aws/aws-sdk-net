@@ -76,6 +76,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     response.Metrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("outputSourceConfig", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<JobOutputSource, JobOutputSourceUnmarshaller>(JobOutputSourceUnmarshaller.Instance);
+                    response.OutputSourceConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

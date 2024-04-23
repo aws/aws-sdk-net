@@ -68,6 +68,7 @@ namespace Amazon.MediaConvert.Model
         private int? _pcrPid;
         private int? _pmtInterval;
         private int? _pmtPid;
+        private M2tsPreventBufferUnderflow _preventBufferUnderflow;
         private int? _privateMetadataPid;
         private int? _programNumber;
         private int? _ptsOffset;
@@ -557,6 +558,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetPmtPid()
         {
             return this._pmtPid.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreventBufferUnderflow. Specify whether MediaConvert automatically
+        /// attempts to prevent decoder buffer underflows in your transport stream output. Use
+        /// if you are seeing decoder buffer underflows in your output and are unable to increase
+        /// your transport stream's bitrate. For most workflows: We recommend that you keep the
+        /// default value, Disabled. To prevent decoder buffer underflows in your output, when
+        /// possible: Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow
+        /// in your output, output video quality is reduced and your job will take longer to complete.
+        /// </summary>
+        public M2tsPreventBufferUnderflow PreventBufferUnderflow
+        {
+            get { return this._preventBufferUnderflow; }
+            set { this._preventBufferUnderflow = value; }
+        }
+
+        // Check to see if PreventBufferUnderflow property is set
+        internal bool IsSetPreventBufferUnderflow()
+        {
+            return this._preventBufferUnderflow != null;
         }
 
         /// <summary>

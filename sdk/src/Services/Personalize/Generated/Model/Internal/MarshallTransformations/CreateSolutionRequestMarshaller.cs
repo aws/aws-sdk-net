@@ -66,6 +66,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDatasetGroupArn())
@@ -90,6 +91,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("performAutoML");
                     context.Writer.Write(publicRequest.PerformAutoML);
+                }
+
+                if(publicRequest.IsSetPerformAutoTraining())
+                {
+                    context.Writer.WritePropertyName("performAutoTraining");
+                    context.Writer.Write(publicRequest.PerformAutoTraining);
                 }
 
                 if(publicRequest.IsSetPerformHPO())

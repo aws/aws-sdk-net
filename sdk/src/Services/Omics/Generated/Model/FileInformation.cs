@@ -35,6 +35,7 @@ namespace Amazon.Omics.Model
     {
         private long? _contentLength;
         private long? _partSize;
+        private ReadSetS3Access _s3Access;
         private int? _totalParts;
 
         /// <summary>
@@ -73,6 +74,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetPartSize()
         {
             return this._partSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Access. 
+        /// <para>
+        /// The S3 URI metadata of a sequence store.
+        /// </para>
+        /// </summary>
+        public ReadSetS3Access S3Access
+        {
+            get { return this._s3Access; }
+            set { this._s3Access = value; }
+        }
+
+        // Check to see if S3Access property is set
+        internal bool IsSetS3Access()
+        {
+            return this._s3Access != null;
         }
 
         /// <summary>

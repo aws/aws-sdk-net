@@ -46,6 +46,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomPolicyDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnableDebugLogDelivery())
             {
                 context.Writer.WritePropertyName("EnableDebugLogDelivery");

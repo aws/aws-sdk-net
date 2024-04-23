@@ -46,6 +46,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SimpleScalingPolicyConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdjustmentType())
             {
                 context.Writer.WritePropertyName("AdjustmentType");

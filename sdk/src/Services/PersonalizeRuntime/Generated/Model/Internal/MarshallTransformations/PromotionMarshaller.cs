@@ -46,6 +46,8 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Promotion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilterArn())
             {
                 context.Writer.WritePropertyName("filterArn");

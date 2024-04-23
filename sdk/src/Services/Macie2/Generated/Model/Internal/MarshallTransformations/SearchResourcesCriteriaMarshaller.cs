@@ -46,6 +46,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SearchResourcesCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSimpleCriterion())
             {
                 context.Writer.WritePropertyName("simpleCriterion");

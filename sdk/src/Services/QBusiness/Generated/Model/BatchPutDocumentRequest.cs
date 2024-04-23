@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchPutDocument operation.
-    /// Adds one or more documents to an Amazon Q index.
+    /// Adds one or more documents to an Amazon Q Business index.
     /// 
     ///  
     /// <para>
@@ -39,15 +39,15 @@ namespace Amazon.QBusiness.Model
     ///  <ul> <li> 
     /// <para>
     /// ingest your structured and unstructured documents and documents stored in an Amazon
-    /// S3 bucket into an Amazon Q index.
+    /// S3 bucket into an Amazon Q Business index.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// add custom attributes to documents in an Amazon Q index.
+    /// add custom attributes to documents in an Amazon Q Business index.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// attach an access control list to the documents added to an Amazon Q index.
+    /// attach an access control list to the documents added to an Amazon Q Business index.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application.
+        /// The identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -123,7 +123,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the Amazon Q index to add the documents to. 
+        /// The identifier of the Amazon Q Business index to add the documents to. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

@@ -46,6 +46,8 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ApplicationCredential requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCredentialType())
             {
                 context.Writer.WritePropertyName("CredentialType");

@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property CollectionArn. 
         /// <para>
-        /// The ARN of the OpenSearch Service vector store.
+        /// The Amazon Resource Name (ARN) of the OpenSearch Service vector store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

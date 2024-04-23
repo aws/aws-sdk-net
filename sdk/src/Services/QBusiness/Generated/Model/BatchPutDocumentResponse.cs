@@ -38,8 +38,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property FailedDocuments. 
         /// <para>
-        ///  A list of documents that were not added to the Amazon Q index because the document
-        /// failed a validation check. Each document contains an error message that indicates
+        ///  A list of documents that were not added to the Amazon Q Business index because the
+        /// document failed a validation check. Each document contains an error message that indicates
         /// why the document couldn't be added to the index. 
         /// </para>
         /// </summary>

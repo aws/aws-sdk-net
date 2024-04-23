@@ -46,6 +46,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FlinkApplicationConfigurationUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCheckpointConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("CheckpointConfigurationUpdate");

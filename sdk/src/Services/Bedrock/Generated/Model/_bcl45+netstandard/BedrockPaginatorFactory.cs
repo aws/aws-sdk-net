@@ -44,6 +44,22 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Paginator for ListEvaluationJobs operation
+        ///</summary>
+        public IListEvaluationJobsPaginator ListEvaluationJobs(ListEvaluationJobsRequest request) 
+        {
+            return new ListEvaluationJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGuardrails operation
+        ///</summary>
+        public IListGuardrailsPaginator ListGuardrails(ListGuardrailsRequest request) 
+        {
+            return new ListGuardrailsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModelCustomizationJobs operation
         ///</summary>
         public IListModelCustomizationJobsPaginator ListModelCustomizationJobs(ListModelCustomizationJobsRequest request) 

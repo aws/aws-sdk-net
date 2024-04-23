@@ -46,6 +46,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PrefetchConsumption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailMatchingCriteria())
             {
                 context.Writer.WritePropertyName("AvailMatchingCriteria");

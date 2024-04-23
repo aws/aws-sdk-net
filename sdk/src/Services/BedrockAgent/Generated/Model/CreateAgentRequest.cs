@@ -39,12 +39,13 @@ namespace Amazon.BedrockAgent.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>agentResourceRoleArn</c> – The ARN of the role with permissions to create an agent.
+    ///  <c>agentResourceRoleArn</c> – The Amazon Resource Name (ARN) of the role with permissions
+    /// to invoke API operations on an agent.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (Optional) <c>customerEncryptionKeyArn</c> – The ARN of a KMS key to encrypt the creation
-    /// of the agent.
+    /// (Optional) <c>customerEncryptionKeyArn</c> – The Amazon Resource Name (ARN) of a KMS
+    /// key to encrypt the creation of the agent.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -101,11 +102,11 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentResourceRoleArn. 
         /// <para>
-        /// The ARN of the IAM role with permissions to create the agent. The ARN must begin with
-        /// <c>AmazonBedrockExecutionRoleForAgents_</c>.
+        /// The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations
+        /// on the agent.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string AgentResourceRoleArn
         {
             get { return this._agentResourceRoleArn; }
@@ -143,7 +144,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property CustomerEncryptionKeyArn. 
         /// <para>
-        /// The ARN of the KMS key with which to encrypt the agent.
+        /// The Amazon Resource Name (ARN) of the KMS key with which to encrypt the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property PartNumber. 
         /// <para>
-        ///  The number of the part being uploaded. 
+        /// The number of the part being uploaded.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10000)]
@@ -64,7 +64,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property PartSource. 
         /// <para>
-        ///  The source file for an upload part. 
+        /// The source file for an upload part.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +83,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        ///  The read set data to upload for a part. 
+        /// The read set data to upload for a part.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,7 +102,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SequenceStoreId. 
         /// <para>
-        ///  The Sequence Store ID used for the multipart upload. 
+        /// The Sequence Store ID used for the multipart upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]
@@ -121,7 +121,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property UploadId. 
         /// <para>
-        ///  The ID for the initiated multipart upload. 
+        /// The ID for the initiated multipart upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]

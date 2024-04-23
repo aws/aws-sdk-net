@@ -46,6 +46,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomAttribute requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetObjectIdentifier())
             {
                 context.Writer.WritePropertyName("ObjectIdentifier");

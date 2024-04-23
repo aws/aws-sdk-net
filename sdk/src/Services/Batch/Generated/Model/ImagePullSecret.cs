@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// References a Kubernetes configuration resource that holds a list of secrets. These
-    /// secrets help to gain access to pull an image from a private registry.
+    /// References a Kubernetes secret resource. This name of the secret must start and end
+    /// with an alphanumeric character, is required to be lowercase, can include periods (.)
+    /// and hyphens (-), and can't contain more than 253 characters.
     /// </summary>
     public partial class ImagePullSecret
     {

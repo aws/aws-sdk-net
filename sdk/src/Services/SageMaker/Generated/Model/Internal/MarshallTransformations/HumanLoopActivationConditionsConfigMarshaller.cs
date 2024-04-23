@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HumanLoopActivationConditionsConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHumanLoopActivationConditions())
             {
                 context.Writer.WritePropertyName("HumanLoopActivationConditions");

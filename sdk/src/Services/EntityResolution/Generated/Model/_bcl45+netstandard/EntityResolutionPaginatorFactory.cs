@@ -52,6 +52,14 @@ namespace Amazon.EntityResolution.Model
         }
 
         /// <summary>
+        /// Paginator for ListIdNamespaces operation
+        ///</summary>
+        public IListIdNamespacesPaginator ListIdNamespaces(ListIdNamespacesRequest request) 
+        {
+            return new ListIdNamespacesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMatchingJobs operation
         ///</summary>
         public IListMatchingJobsPaginator ListMatchingJobs(ListMatchingJobsRequest request) 

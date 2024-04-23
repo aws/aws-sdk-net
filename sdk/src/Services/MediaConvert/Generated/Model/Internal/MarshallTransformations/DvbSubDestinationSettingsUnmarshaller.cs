@@ -118,6 +118,30 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.FontColor = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fontFileBold", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FontFileBold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fontFileBoldItalic", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FontFileBoldItalic = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fontFileItalic", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FontFileItalic = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fontFileRegular", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FontFileRegular = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fontOpacity", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

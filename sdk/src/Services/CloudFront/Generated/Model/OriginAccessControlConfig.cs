@@ -60,7 +60,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A name to identify the origin access control.
+        /// A name to identify the origin access control. You can specify up to 64 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

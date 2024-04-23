@@ -130,6 +130,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsReviewOwnerUpdateAcknowledged = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JiraConfiguration", targetDepth))
+                {
+                    var unmarshaller = WorkloadJiraConfigurationOutputUnmarshaller.Instance;
+                    unmarshalledObject.JiraConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Lenses", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

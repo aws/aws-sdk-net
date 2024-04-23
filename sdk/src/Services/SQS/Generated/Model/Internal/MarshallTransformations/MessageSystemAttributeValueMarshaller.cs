@@ -46,6 +46,8 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MessageSystemAttributeValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBinaryListValues())
             {
                 context.Writer.WritePropertyName("BinaryListValues");

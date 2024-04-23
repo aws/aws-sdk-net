@@ -48,7 +48,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentAliasArn. 
         /// <para>
-        /// The ARN of the alias of the agent.
+        /// The Amazon Resource Name (ARN) of the alias of the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

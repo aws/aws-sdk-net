@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Configuration information for an Amazon Q index.
+    /// Configuration information for an Amazon Q Business index.
     /// </summary>
     public partial class NativeIndexConfiguration
     {
@@ -39,8 +39,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property BoostingOverride. 
         /// <para>
-        /// Overrides the default boosts applied by Amazon Q to supported document attribute data
-        /// types.
+        /// Overrides the default boosts applied by Amazon Q Business to supported document attribute
+        /// data types.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -59,7 +59,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier for the Amazon Q index.
+        /// The identifier for the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

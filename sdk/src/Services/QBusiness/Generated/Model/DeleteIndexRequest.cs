@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIndex operation.
-    /// Deletes an Amazon Q index.
+    /// Deletes an Amazon Q Business index.
     /// </summary>
     public partial class DeleteIndexRequest : AmazonQBusinessRequest
     {
@@ -40,7 +40,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application the Amazon Q index is linked to.
+        /// The identifier of the Amazon Q Business application the Amazon Q Business index is
+        /// linked to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -59,7 +60,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the Amazon Q index.
+        /// The identifier of the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

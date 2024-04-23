@@ -64,6 +64,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttachmentsConfiguration())
@@ -109,6 +110,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetIdentityCenterInstanceArn())
+                {
+                    context.Writer.WritePropertyName("identityCenterInstanceArn");
+                    context.Writer.Write(publicRequest.IdentityCenterInstanceArn);
                 }
 
                 if(publicRequest.IsSetRoleArn())

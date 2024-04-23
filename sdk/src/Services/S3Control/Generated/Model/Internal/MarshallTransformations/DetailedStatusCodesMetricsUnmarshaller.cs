@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DetailedStatusCodesMetrics Object
     /// </summary>  
-    public class DetailedStatusCodesMetricsUnmarshaller : IUnmarshaller<DetailedStatusCodesMetrics, XmlUnmarshallerContext>
+    public class DetailedStatusCodesMetricsUnmarshaller : IUnmarshaller<DetailedStatusCodesMetrics, XmlUnmarshallerContext>, IUnmarshaller<DetailedStatusCodesMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -69,6 +69,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public DetailedStatusCodesMetrics Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static DetailedStatusCodesMetricsUnmarshaller _instance = new DetailedStatusCodesMetricsUnmarshaller();        

@@ -67,6 +67,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetClientToken())
@@ -90,6 +91,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetTagFilter())
+                {
+                    context.Writer.WritePropertyName("tagFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TagFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TagFilter, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTags())
