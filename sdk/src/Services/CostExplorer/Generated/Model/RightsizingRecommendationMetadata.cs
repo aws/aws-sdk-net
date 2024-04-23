@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Metadata for this recommendation set.
+    /// Metadata for a recommendation set.
     /// </summary>
     public partial class RightsizingRecommendationMetadata
     {
@@ -60,7 +60,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GenerationTimestamp. 
         /// <para>
-        /// The timestamp for when Amazon Web Services made this recommendation.
+        /// The timestamp for when Amazon Web Services made the recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -80,7 +80,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property LookbackPeriodInDays. 
         /// <para>
         /// The number of days of previous usage that Amazon Web Services considers when making
-        /// this recommendation.
+        /// the recommendation.
         /// </para>
         /// </summary>
         public LookbackPeriodInDays LookbackPeriodInDays
@@ -98,7 +98,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property RecommendationId. 
         /// <para>
-        /// The ID for this specific recommendation.
+        /// The ID for the recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
