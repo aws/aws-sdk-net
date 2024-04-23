@@ -73,6 +73,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDataDeletionPolicy())
+                {
+                    context.Writer.WritePropertyName("dataDeletionPolicy");
+                    context.Writer.Write(publicRequest.DataDeletionPolicy);
+                }
+
                 if(publicRequest.IsSetDataSourceConfiguration())
                 {
                     context.Writer.WritePropertyName("dataSourceConfiguration");

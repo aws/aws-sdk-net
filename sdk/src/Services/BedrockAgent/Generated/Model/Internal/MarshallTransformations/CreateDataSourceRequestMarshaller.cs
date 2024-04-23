@@ -81,6 +81,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetDataDeletionPolicy())
+                {
+                    context.Writer.WritePropertyName("dataDeletionPolicy");
+                    context.Writer.Write(publicRequest.DataDeletionPolicy);
+                }
+
                 if(publicRequest.IsSetDataSourceConfiguration())
                 {
                     context.Writer.WritePropertyName("dataSourceConfiguration");

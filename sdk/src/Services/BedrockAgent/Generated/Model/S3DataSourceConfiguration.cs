@@ -34,6 +34,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class S3DataSourceConfiguration
     {
         private string _bucketArn;
+        private string _bucketOwnerAccountId;
         private List<string> _inclusionPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetBucketArn()
         {
             return this._bucketArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketOwnerAccountId. 
+        /// <para>
+        /// The account ID for the owner of the S3 bucket.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string BucketOwnerAccountId
+        {
+            get { return this._bucketOwnerAccountId; }
+            set { this._bucketOwnerAccountId = value; }
+        }
+
+        // Check to see if BucketOwnerAccountId property is set
+        internal bool IsSetBucketOwnerAccountId()
+        {
+            return this._bucketOwnerAccountId != null;
         }
 
         /// <summary>

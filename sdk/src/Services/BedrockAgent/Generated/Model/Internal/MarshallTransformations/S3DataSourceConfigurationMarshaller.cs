@@ -54,6 +54,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BucketArn);
             }
 
+            if(requestObject.IsSetBucketOwnerAccountId())
+            {
+                context.Writer.WritePropertyName("bucketOwnerAccountId");
+                context.Writer.Write(requestObject.BucketOwnerAccountId);
+            }
+
             if(requestObject.IsSetInclusionPrefixes())
             {
                 context.Writer.WritePropertyName("inclusionPrefixes");
