@@ -7,6 +7,11 @@
 	  "retentionInDays"
 	]
   },
+	"operationModifiers": {
+		"GetLogEvents": {
+			"stopPaginationOnSameToken": true
+		}
+	},
   "dataTypeSwap" : {
     "InputLogEvent" : {
 	  "timestamp" : {

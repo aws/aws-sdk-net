@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "CloudWatchLogs",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fixed a bug at GetLogEventsPaginator where it enters an infinite loop."
+      ]
+    }
+  ]
+}
