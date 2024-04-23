@@ -135,7 +135,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// To describe one or more versions of a specified launch template, you must specify
-        /// either the <c>LaunchTemplateId</c> or the <c>LaunchTemplateName</c>, but not both.
+        /// either the launch template ID or the launch template name, but not both.
         /// </para>
         ///  
         /// <para>
@@ -163,7 +163,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// To describe one or more versions of a specified launch template, you must specify
-        /// either the <c>LaunchTemplateName</c> or the <c>LaunchTemplateId</c>, but not both.
+        /// either the launch template name or the launch template ID, but not both.
         /// </para>
         ///  
         /// <para>

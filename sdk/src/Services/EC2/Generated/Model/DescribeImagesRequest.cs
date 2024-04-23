@@ -46,7 +46,12 @@ namespace Amazon.EC2.Model
     /// terminated, specifying the ID of the image will eventually return an error indicating
     /// that the AMI ID cannot be found.
     /// </para>
-    ///  <note> 
+    ///  <important> 
+    /// <para>
+    /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+    /// to throttling and timeouts.
+    /// </para>
+    ///  </important> <note> 
     /// <para>
     /// The order of the elements in the response, including those within nested structures,
     /// might vary. Applications should not assume the elements appear in a particular order.

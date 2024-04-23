@@ -42,7 +42,12 @@ namespace Amazon.EC2.Model
     /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon
     /// EBS volumes</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
-    ///  <note> 
+    ///  <important> 
+    /// <para>
+    /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+    /// to throttling and timeouts.
+    /// </para>
+    ///  </important> <note> 
     /// <para>
     /// The order of the elements in the response, including those within nested structures,
     /// might vary. Applications should not assume the elements appear in a particular order.
