@@ -1,0 +1,13 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Added support for Protocol Tests. This includes a new Protocol Test Generator and adjustments to the existing code generator to ensure the protocol tests are passing successfully."
+      ],
+	  "backwardIncompatibilitiesToIgnore": [		
+		"ThirdParty.Json.LitJson.JsonWriter/MethodOverloadAdded",
+		"Amazon.Runtime.Internal.Transform.NullableIntUnmarshaller/MethodOverloadAdded"
+	  ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+}
