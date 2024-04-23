@@ -26,7 +26,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public static void SetClockSkewCorrection(IClientConfig config, TimeSpan value)
         {
             var method = typeof(CorrectClockSkew).GetMethod("SetClockCorrectionForEndpoint", BindingFlags.Static | BindingFlags.NonPublic);
+#pragma warning disable CS0618
             method.Invoke(null, new object[] { config.DetermineServiceURL(), value });
+#pragma warning restore CS0618
         }
     }
 }

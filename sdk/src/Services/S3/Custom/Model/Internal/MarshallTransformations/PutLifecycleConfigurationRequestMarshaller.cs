@@ -23,12 +23,13 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 
-#pragma warning disable CS0612,CS0618
+#pragma warning disable 1591,CS0612,CS0618
+
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Put Bucket Lifecycle Request Marshaller
-    /// </summary>       
+    /// </summary>
     public class PutLifecycleConfigurationRequestMarshaller : IMarshaller<IRequest, PutLifecycleConfigurationRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
 	{
 		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
