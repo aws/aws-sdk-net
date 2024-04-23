@@ -82,6 +82,21 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             {
                 request.Headers["Content-Type"] = publicRequest.ContentType;
             }
+        
+            if (publicRequest.IsSetGuardrailIdentifier()) 
+            {
+                request.Headers["X-Amzn-Bedrock-GuardrailIdentifier"] = publicRequest.GuardrailIdentifier;
+            }
+        
+            if (publicRequest.IsSetGuardrailVersion()) 
+            {
+                request.Headers["X-Amzn-Bedrock-GuardrailVersion"] = publicRequest.GuardrailVersion;
+            }
+        
+            if (publicRequest.IsSetTrace()) 
+            {
+                request.Headers["X-Amzn-Bedrock-Trace"] = publicRequest.Trace;
+            }
 
             return request;
         }

@@ -39,8 +39,9 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// Inference response from the model in the format specified by Content-Type. To see
-        /// the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+        /// Inference response from the model in the format specified by the <c>contentType</c>
+        /// header. To see the format and content of this field for different models, refer to
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
         /// parameters</a>.
         /// </para>
         /// </summary>

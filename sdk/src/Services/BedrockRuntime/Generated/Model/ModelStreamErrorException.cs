@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// An error occurred while streaming the response.
+    /// An error occurred while streaming the response. Retry your request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
