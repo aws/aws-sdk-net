@@ -82,6 +82,18 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DisplayName);
                 }
 
+                if(publicRequest.IsSetInstanceType())
+                {
+                    context.Writer.WritePropertyName("instanceType");
+                    context.Writer.Write(publicRequest.InstanceType);
+                }
+
+                if(publicRequest.IsSetMaxConcurrentSessions())
+                {
+                    context.Writer.WritePropertyName("maxConcurrentSessions");
+                    context.Writer.Write(publicRequest.MaxConcurrentSessions);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

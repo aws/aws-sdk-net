@@ -43,7 +43,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The domain of the cookie.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=253)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=253)]
         public string Domain
         {
             get { return this._domain; }
@@ -62,7 +62,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The name of the cookie.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string Name
         {
             get { return this._name; }
@@ -81,7 +81,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The path of the cookie.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2000)]
         public string Path
         {
             get { return this._path; }

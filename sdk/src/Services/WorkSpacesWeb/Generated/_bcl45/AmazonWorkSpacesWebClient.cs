@@ -4201,6 +4201,9 @@ namespace Amazon.WorkSpacesWeb
         /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
         /// The resource cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
         /// There is a throttling error.
         /// </exception>
@@ -4238,6 +4241,9 @@ namespace Amazon.WorkSpacesWeb
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
         /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
         /// There is a throttling error.
