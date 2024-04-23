@@ -1,3 +1,27 @@
+### 3.7.795.0 (2024-04-23 18:30 UTC)
+* Bedrock (3.7.302.0)
+	* This release introduces Model Evaluation and Guardrails for Amazon Bedrock.
+* BedrockAgent (3.7.306.0)
+	* Introducing the ability to create multiple data sources per knowledge base, specify S3 buckets as data sources from external accounts, and exposing levers to define the deletion behavior of the underlying vector store data.
+* BedrockAgentRuntime (3.7.305.0)
+	* This release introduces zero-setup file upload support for the RetrieveAndGenerate API. This allows you to chat with your data without setting up a Knowledge Base.
+* BedrockRuntime (3.7.302.0)
+	* This release introduces Guardrails for Amazon Bedrock.
+* CostExplorer (3.7.303.0)
+	* Added additional metadata that might be applicable to your reservation recommendations.
+* EC2 (3.7.324.0)
+	* This release introduces EC2 AMI Deregistration Protection, a new AMI property that can be enabled by customers to protect an AMI against an unintended deregistration. This release also enables the AMI owners to view the AMI 'LastLaunchedTime' in DescribeImages API.
+* PI (3.7.300.80)
+	* Clarifies how aggregation works for GetResourceMetrics in the Performance Insights API.
+* RDS (3.7.311.8)
+	* Fix the example ARN for ModifyActivityStreamRequest
+* WorkSpacesWeb (3.7.301.0)
+	* Added InstanceType and MaxConcurrentSessions parameters on CreatePortal and UpdatePortal Operations as well as the ability to read Customer Managed Key & Additional Encryption Context parameters on supported resources (Portal, BrowserSettings, UserSettings, IPAccessSettings)
+* Core 3.7.303.20
+	* Added support for Protocol Tests. This includes a new Protocol Test Generator and adjustments to the existing code generator to ensure the protocol tests are passing successfully.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.794.0 (2024-04-22 18:21 UTC)
 * BedrockAgent (3.7.305.0)
 	* Releasing the support for simplified configuration and return of control
