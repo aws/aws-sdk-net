@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RetrieveAndGenerateConfiguration Marshaller
+    /// ExternalSourcesRetrieveAndGenerateConfiguration Marshaller
     /// </summary>
-    public class RetrieveAndGenerateConfigurationMarshaller : IRequestMarshaller<RetrieveAndGenerateConfiguration, JsonMarshallerContext> 
+    public class ExternalSourcesRetrieveAndGenerateConfigurationMarshaller : IRequestMarshaller<ExternalSourcesRetrieveAndGenerateConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,41 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RetrieveAndGenerateConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ExternalSourcesRetrieveAndGenerateConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetExternalSourcesConfiguration())
+            if(requestObject.IsSetGenerationConfiguration())
             {
-                context.Writer.WritePropertyName("externalSourcesConfiguration");
+                context.Writer.WritePropertyName("generationConfiguration");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ExternalSourcesRetrieveAndGenerateConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ExternalSourcesConfiguration, context);
+                var marshaller = ExternalSourcesGenerationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GenerationConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetKnowledgeBaseConfiguration())
+            if(requestObject.IsSetModelArn())
             {
-                context.Writer.WritePropertyName("knowledgeBaseConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = KnowledgeBaseRetrieveAndGenerateConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.KnowledgeBaseConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("modelArn");
+                context.Writer.Write(requestObject.ModelArn);
             }
 
-            if(requestObject.IsSetType())
+            if(requestObject.IsSetSources())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WritePropertyName("sources");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSourcesListValue in requestObject.Sources)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExternalSourceMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSourcesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -81,7 +86,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RetrieveAndGenerateConfigurationMarshaller Instance = new RetrieveAndGenerateConfigurationMarshaller();
+        public readonly static ExternalSourcesRetrieveAndGenerateConfigurationMarshaller Instance = new ExternalSourcesRetrieveAndGenerateConfigurationMarshaller();
 
     }
 }

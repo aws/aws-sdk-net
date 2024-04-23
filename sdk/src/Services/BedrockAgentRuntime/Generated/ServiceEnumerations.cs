@@ -75,6 +75,56 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type ExternalSourceType.
+    /// </summary>
+    public class ExternalSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYTE_CONTENT for ExternalSourceType
+        /// </summary>
+        public static readonly ExternalSourceType BYTE_CONTENT = new ExternalSourceType("BYTE_CONTENT");
+        /// <summary>
+        /// Constant S3 for ExternalSourceType
+        /// </summary>
+        public static readonly ExternalSourceType S3 = new ExternalSourceType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExternalSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExternalSourceType FindValue(string value)
+        {
+            return FindValue<ExternalSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExternalSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InvocationType.
     /// </summary>
     public class InvocationType : ConstantClass
@@ -288,6 +338,10 @@ namespace Amazon.BedrockAgentRuntime
     public class RetrieveAndGenerateType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant EXTERNAL_SOURCES for RetrieveAndGenerateType
+        /// </summary>
+        public static readonly RetrieveAndGenerateType EXTERNAL_SOURCES = new RetrieveAndGenerateType("EXTERNAL_SOURCES");
         /// <summary>
         /// Constant KNOWLEDGE_BASE for RetrieveAndGenerateType
         /// </summary>
