@@ -34,8 +34,8 @@ namespace Amazon.Bedrock.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
-    /// resources</a> in the Bedrock User Guide.
+    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+    /// resources</a> in the Amazon Bedrock User Guide.
     /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonBedrockRequest
@@ -45,7 +45,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the resource.
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]

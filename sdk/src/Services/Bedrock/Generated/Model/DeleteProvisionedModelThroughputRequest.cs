@@ -30,8 +30,9 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProvisionedModelThroughput operation.
-    /// Deletes a provisioned throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
-    /// throughput</a> in the Bedrock User Guide.
+    /// Deletes a Provisioned Throughput. You can't delete a Provisioned Throughput before
+    /// the commitment term is over. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+    /// Throughput</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class DeleteProvisionedModelThroughputRequest : AmazonBedrockRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ProvisionedModelId. 
         /// <para>
-        /// The ARN or name of the provisioned throughput.
+        /// The Amazon Resource Name (ARN) or name of the Provisioned Throughput.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

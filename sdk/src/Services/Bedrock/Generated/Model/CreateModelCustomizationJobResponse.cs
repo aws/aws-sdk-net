@@ -38,7 +38,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// ARN of the fine tuning job
+        /// Amazon Resource Name (ARN) of the fine tuning job
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]

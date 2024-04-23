@@ -77,7 +77,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The role ARN.
+        /// The role Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

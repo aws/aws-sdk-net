@@ -51,7 +51,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property BaseModelArn. 
         /// <para>
-        /// ARN of the base model.
+        /// Amazon Resource Name (ARN) of the base model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]
@@ -107,7 +107,9 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property HyperParameters. 
         /// <para>
-        /// Hyperparameter values associated with this model.
+        /// Hyperparameter values associated with this model. For details on the format for different
+        /// models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+        /// model hyperparameters</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> HyperParameters
@@ -125,7 +127,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// Job ARN associated with this model.
+        /// Job Amazon Resource Name (ARN) associated with this model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]
@@ -163,7 +165,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
-        /// ARN associated with this model.
+        /// Amazon Resource Name (ARN) associated with this model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]
@@ -239,7 +241,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property TrainingDataConfig. 
         /// <para>
-        /// Information about the training dataset.
+        /// Contains information about the training dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -258,7 +260,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property TrainingMetrics. 
         /// <para>
-        /// The training metrics from the job creation.
+        /// Contains training metrics from the job creation.
         /// </para>
         /// </summary>
         public TrainingMetrics TrainingMetrics
@@ -274,7 +276,10 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ValidationDataConfig.
+        /// Gets and sets the property ValidationDataConfig. 
+        /// <para>
+        /// Contains information about the validation dataset.
+        /// </para>
         /// </summary>
         public ValidationDataConfig ValidationDataConfig
         {

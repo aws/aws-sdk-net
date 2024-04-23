@@ -58,7 +58,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property BaseModelArn. 
         /// <para>
-        /// ARN of the base model.
+        /// Amazon Resource Name (ARN) of the base model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,7 +77,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The token that you specified in the CreateCustomizationJob request.
+        /// The token that you specified in the <c>CreateCustomizationJob</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -170,9 +170,9 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property HyperParameters. 
         /// <para>
-        /// The hyperparameter values for the job. For information about hyperparameters for specific
-        /// models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
-        /// for model customization</a>.
+        /// The hyperparameter values for the job. For details on the format for different models,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+        /// model hyperparameters</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -191,7 +191,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// The ARN of the customization job.
+        /// The Amazon Resource Name (ARN) of the customization job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]
@@ -266,7 +266,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property OutputModelArn. 
         /// <para>
-        /// The ARN of the output model.
+        /// The Amazon Resource Name (ARN) of the output model.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=1011)]
@@ -323,7 +323,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role.
+        /// The Amazon Resource Name (ARN) of the IAM role.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -360,7 +360,10 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrainingDataConfig.
+        /// Gets and sets the property TrainingDataConfig. 
+        /// <para>
+        /// Contains information about the training dataset.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public TrainingDataConfig TrainingDataConfig
@@ -376,7 +379,10 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrainingMetrics.
+        /// Gets and sets the property TrainingMetrics. 
+        /// <para>
+        /// Contains training metrics from the job creation.
+        /// </para>
         /// </summary>
         public TrainingMetrics TrainingMetrics
         {
@@ -391,7 +397,10 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ValidationDataConfig.
+        /// Gets and sets the property ValidationDataConfig. 
+        /// <para>
+        /// Contains information about the validation dataset.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ValidationDataConfig ValidationDataConfig

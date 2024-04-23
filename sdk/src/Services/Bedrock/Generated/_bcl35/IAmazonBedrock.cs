@@ -29,7 +29,8 @@ namespace Amazon.Bedrock
     /// <summary>
     /// <para>Interface for accessing Bedrock</para>
     ///
-    /// Describes the API operations for creating and managing Amazon Bedrock models.
+    /// Describes the API operations for creating, managing, fine-turning, and evaluating
+    /// Amazon Bedrock models.
     /// </summary>
     public partial interface IAmazonBedrock : IAmazonService, IDisposable
     {
@@ -44,6 +45,259 @@ namespace Amazon.Bedrock
 
 
         
+        #region  CreateEvaluationJob
+
+
+        /// <summary>
+        /// API operation for creating and managing Amazon Bedrock automatic model evaluation
+        /// jobs and model evaluation jobs that use human workers. To learn more about the requirements
+        /// for creating a model evaluation job see, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
+        /// evaluations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEvaluationJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateEvaluationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateEvaluationJob">REST API Reference for CreateEvaluationJob Operation</seealso>
+        CreateEvaluationJobResponse CreateEvaluationJob(CreateEvaluationJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEvaluationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEvaluationJob operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEvaluationJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateEvaluationJob">REST API Reference for CreateEvaluationJob Operation</seealso>
+        IAsyncResult BeginCreateEvaluationJob(CreateEvaluationJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEvaluationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEvaluationJob.</param>
+        /// 
+        /// <returns>Returns a  CreateEvaluationJobResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateEvaluationJob">REST API Reference for CreateEvaluationJob Operation</seealso>
+        CreateEvaluationJobResponse EndCreateEvaluationJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateGuardrail
+
+
+        /// <summary>
+        /// Creates a guardrail to block topics and to filter out harmful content.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify a <c>name</c> and optional <c>description</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify messages for when the guardrail successfully blocks a prompt or a model response
+        /// in the <c>blockedInputMessaging</c> and <c>blockedOutputsMessaging</c> fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify topics for the guardrail to deny in the <c>topicPolicyConfig</c> object. Each
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailTopicConfig.html">GuardrailTopicConfig</a>
+        /// object in the <c>topicsConfig</c> list pertains to one topic.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Give a <c>name</c> and <c>description</c> so that the guardrail can properly identify
+        /// the topic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify <c>DENY</c> in the <c>type</c> field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) Provide up to five prompts that you would categorize as belonging to the
+        /// topic in the <c>examples</c> list.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Specify filter strengths for the harmful categories defined in Amazon Bedrock in the
+        /// <c>contentPolicyConfig</c> object. Each <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>
+        /// object in the <c>filtersConfig</c> list pertains to a harmful category. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters">Content
+        /// filters</a>. For more information about the fields in a content filter, see <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify the category in the <c>type</c> field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify the strength of the filter for prompts in the <c>inputStrength</c> field and
+        /// for model responses in the <c>strength</c> field of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// (Optional) For security, include the ARN of a KMS key in the <c>kmsKeyId</c> field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) Attach any tags to the guardrail in the <c>tags</c> object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging">Tag resources</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGuardrail service method.</param>
+        /// 
+        /// <returns>The response from the CreateGuardrail service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrail">REST API Reference for CreateGuardrail Operation</seealso>
+        CreateGuardrailResponse CreateGuardrail(CreateGuardrailRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGuardrail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGuardrail operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGuardrail
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrail">REST API Reference for CreateGuardrail Operation</seealso>
+        IAsyncResult BeginCreateGuardrail(CreateGuardrailRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateGuardrail operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGuardrail.</param>
+        /// 
+        /// <returns>Returns a  CreateGuardrailResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrail">REST API Reference for CreateGuardrail Operation</seealso>
+        CreateGuardrailResponse EndCreateGuardrail(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateGuardrailVersion
+
+
+        /// <summary>
+        /// Creates a version of the guardrail. Use this API to create a snapshot of the guardrail
+        /// when you are satisfied with a configuration, or to compare the configuration with
+        /// another version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGuardrailVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateGuardrailVersion service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrailVersion">REST API Reference for CreateGuardrailVersion Operation</seealso>
+        CreateGuardrailVersionResponse CreateGuardrailVersion(CreateGuardrailVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGuardrailVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGuardrailVersion operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGuardrailVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrailVersion">REST API Reference for CreateGuardrailVersion Operation</seealso>
+        IAsyncResult BeginCreateGuardrailVersion(CreateGuardrailVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateGuardrailVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGuardrailVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateGuardrailVersionResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrailVersion">REST API Reference for CreateGuardrailVersion Operation</seealso>
+        CreateGuardrailVersionResponse EndCreateGuardrailVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateModelCustomizationJob
 
 
@@ -54,10 +308,13 @@ namespace Amazon.Bedrock
         /// <para>
         /// You specify the base foundation model and the location of the training data. After
         /// the model-customization job completes successfully, your custom model resource will
-        /// be ready to use. Training data contains input and output text for each record in a
-        /// JSONL format. Optionally, you can specify validation data in the same format as the
-        /// training data. Amazon Bedrock returns validation loss metrics and output generations
+        /// be ready to use. Amazon Bedrock returns validation loss metrics and output generations
         /// after the job completes. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information on the format of training and validation data, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html">Prepare
+        /// the datasets</a>.
         /// </para>
         ///  
         /// <para>
@@ -68,7 +325,7 @@ namespace Amazon.Bedrock
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Bedrock User Guide.
+        /// models</a> in the Amazon Bedrock User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateModelCustomizationJob service method.</param>
@@ -84,7 +341,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -135,14 +393,10 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Creates a provisioned throughput with dedicated capacity for a foundation model or
-        /// a fine-tuned model.
-        /// 
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
-        /// throughput</a> in the Bedrock User Guide.
-        /// </para>
+        /// Creates dedicated throughput for a base or custom model with the model units and for
+        /// the duration that you specify. For pricing details, see <a href="http://aws.amazon.com/bedrock/pricing/">Amazon
+        /// Bedrock Pricing</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+        /// Throughput</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisionedModelThroughput service method.</param>
         /// 
@@ -154,7 +408,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -206,7 +461,7 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Deletes a custom model that you created earlier. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Bedrock User Guide.
+        /// models</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomModel service method.</param>
         /// 
@@ -221,7 +476,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -257,6 +513,77 @@ namespace Amazon.Bedrock
         /// <returns>Returns a  DeleteCustomModelResult from Bedrock.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteCustomModel">REST API Reference for DeleteCustomModel Operation</seealso>
         DeleteCustomModelResponse EndDeleteCustomModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteGuardrail
+
+
+        /// <summary>
+        /// Deletes a guardrail.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// To delete a guardrail, only specify the ARN of the guardrail in the <c>guardrailIdentifier</c>
+        /// field. If you delete a guardrail, all of its versions will be deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To delete a version of a guardrail, specify the ARN of the guardrail in the <c>guardrailIdentifier</c>
+        /// field and the version in the <c>guardrailVersion</c> field.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGuardrail service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGuardrail service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteGuardrail">REST API Reference for DeleteGuardrail Operation</seealso>
+        DeleteGuardrailResponse DeleteGuardrail(DeleteGuardrailRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGuardrail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGuardrail operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGuardrail
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteGuardrail">REST API Reference for DeleteGuardrail Operation</seealso>
+        IAsyncResult BeginDeleteGuardrail(DeleteGuardrailRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteGuardrail operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGuardrail.</param>
+        /// 
+        /// <returns>Returns a  DeleteGuardrailResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteGuardrail">REST API Reference for DeleteGuardrail Operation</seealso>
+        DeleteGuardrailResponse EndDeleteGuardrail(IAsyncResult asyncResult);
 
         #endregion
         
@@ -313,8 +640,9 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Deletes a provisioned throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
-        /// throughput</a> in the Bedrock User Guide.
+        /// Deletes a Provisioned Throughput. You can't delete a Provisioned Throughput before
+        /// the commitment term is over. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+        /// Throughput</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProvisionedModelThroughput service method.</param>
         /// 
@@ -329,7 +657,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -374,7 +703,7 @@ namespace Amazon.Bedrock
         /// <summary>
         /// Get the properties associated with a Amazon Bedrock custom model that you have created.For
         /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Bedrock User Guide.
+        /// models</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCustomModel service method.</param>
         /// 
@@ -386,7 +715,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -425,6 +755,64 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetEvaluationJob
+
+
+        /// <summary>
+        /// Retrieves the properties associated with a model evaluation job, including the status
+        /// of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/latest/userguide/model-evaluation.html">Model
+        /// evaluations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEvaluationJob service method.</param>
+        /// 
+        /// <returns>The response from the GetEvaluationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetEvaluationJob">REST API Reference for GetEvaluationJob Operation</seealso>
+        GetEvaluationJobResponse GetEvaluationJob(GetEvaluationJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEvaluationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEvaluationJob operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEvaluationJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetEvaluationJob">REST API Reference for GetEvaluationJob Operation</seealso>
+        IAsyncResult BeginGetEvaluationJob(GetEvaluationJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEvaluationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEvaluationJob.</param>
+        /// 
+        /// <returns>Returns a  GetEvaluationJobResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetEvaluationJob">REST API Reference for GetEvaluationJob Operation</seealso>
+        GetEvaluationJobResponse EndGetEvaluationJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetFoundationModel
 
 
@@ -441,7 +829,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -480,13 +869,70 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetGuardrail
+
+
+        /// <summary>
+        /// Gets details about a guardrail. If you don't specify a version, the response returns
+        /// details for the <c>DRAFT</c> version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGuardrail service method.</param>
+        /// 
+        /// <returns>The response from the GetGuardrail service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetGuardrail">REST API Reference for GetGuardrail Operation</seealso>
+        GetGuardrailResponse GetGuardrail(GetGuardrailRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGuardrail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGuardrail operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGuardrail
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetGuardrail">REST API Reference for GetGuardrail Operation</seealso>
+        IAsyncResult BeginGetGuardrail(GetGuardrailRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetGuardrail operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGuardrail.</param>
+        /// 
+        /// <returns>Returns a  GetGuardrailResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetGuardrail">REST API Reference for GetGuardrail Operation</seealso>
+        GetGuardrailResponse EndGetGuardrail(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetModelCustomizationJob
 
 
         /// <summary>
         /// Retrieves the properties associated with a model-customization job, including the
         /// status of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Bedrock User Guide.
+        /// models</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetModelCustomizationJob service method.</param>
         /// 
@@ -498,7 +944,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -590,8 +1037,8 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Get details for a provisioned throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
-        /// throughput</a> in the Bedrock User Guide.
+        /// Returns details for a Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+        /// Throughput</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProvisionedModelThroughput service method.</param>
         /// 
@@ -603,7 +1050,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -652,7 +1100,7 @@ namespace Amazon.Bedrock
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Bedrock User Guide.
+        /// models</a> in the Amazon Bedrock User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomModels service method.</param>
@@ -701,13 +1149,65 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  ListEvaluationJobs
+
+
+        /// <summary>
+        /// Lists model evaluation jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEvaluationJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListEvaluationJobs service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEvaluationJobs">REST API Reference for ListEvaluationJobs Operation</seealso>
+        ListEvaluationJobsResponse ListEvaluationJobs(ListEvaluationJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEvaluationJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEvaluationJobs operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEvaluationJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEvaluationJobs">REST API Reference for ListEvaluationJobs Operation</seealso>
+        IAsyncResult BeginListEvaluationJobs(ListEvaluationJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEvaluationJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEvaluationJobs.</param>
+        /// 
+        /// <returns>Returns a  ListEvaluationJobsResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEvaluationJobs">REST API Reference for ListEvaluationJobs Operation</seealso>
+        ListEvaluationJobsResponse EndListEvaluationJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListFoundationModels
 
 
         /// <summary>
-        /// List of Amazon Bedrock foundation models that you can use. For more information, see
-        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation
-        /// models</a> in the Bedrock User Guide.
+        /// Lists Amazon Bedrock foundation models that you can use. You can filter the results
+        /// with the request parameters. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation
+        /// models</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFoundationModels service method.</param>
         /// 
@@ -755,6 +1255,73 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  ListGuardrails
+
+
+        /// <summary>
+        /// Lists details about all the guardrails in an account. To list the <c>DRAFT</c> version
+        /// of all your guardrails, don't specify the <c>guardrailIdentifier</c> field. To list
+        /// all versions of a guardrail, specify the ARN of the guardrail in the <c>guardrailIdentifier</c>
+        /// field.
+        /// 
+        ///  
+        /// <para>
+        /// You can set the maximum number of results to return in a response in the <c>maxResults</c>
+        /// field. If there are more results than the number you set, the response returns a <c>nextToken</c>
+        /// that you can send in another <c>ListGuardrails</c> request to see the next batch of
+        /// results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGuardrails service method.</param>
+        /// 
+        /// <returns>The response from the ListGuardrails service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListGuardrails">REST API Reference for ListGuardrails Operation</seealso>
+        ListGuardrailsResponse ListGuardrails(ListGuardrailsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGuardrails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGuardrails operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGuardrails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListGuardrails">REST API Reference for ListGuardrails Operation</seealso>
+        IAsyncResult BeginListGuardrails(ListGuardrailsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListGuardrails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGuardrails.</param>
+        /// 
+        /// <returns>Returns a  ListGuardrailsResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListGuardrails">REST API Reference for ListGuardrails Operation</seealso>
+        ListGuardrailsResponse EndListGuardrails(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListModelCustomizationJobs
 
 
@@ -765,7 +1332,7 @@ namespace Amazon.Bedrock
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Bedrock User Guide.
+        /// models</a> in the Amazon Bedrock User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListModelCustomizationJobs service method.</param>
@@ -818,8 +1385,8 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// List the provisioned capacities. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
-        /// throughput</a> in the Bedrock User Guide.
+        /// Lists the Provisioned Throughputs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+        /// Throughput</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProvisionedModelThroughputs service method.</param>
         /// 
@@ -875,8 +1442,8 @@ namespace Amazon.Bedrock
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
-        /// resources</a> in the Bedrock User Guide.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+        /// resources</a> in the Amazon Bedrock User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -889,7 +1456,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -980,12 +1548,71 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  StopEvaluationJob
+
+
+        /// <summary>
+        /// Stops an in progress model evaluation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopEvaluationJob service method.</param>
+        /// 
+        /// <returns>The response from the StopEvaluationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopEvaluationJob">REST API Reference for StopEvaluationJob Operation</seealso>
+        StopEvaluationJobResponse StopEvaluationJob(StopEvaluationJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopEvaluationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopEvaluationJob operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopEvaluationJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopEvaluationJob">REST API Reference for StopEvaluationJob Operation</seealso>
+        IAsyncResult BeginStopEvaluationJob(StopEvaluationJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopEvaluationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopEvaluationJob.</param>
+        /// 
+        /// <returns>Returns a  StopEvaluationJobResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopEvaluationJob">REST API Reference for StopEvaluationJob Operation</seealso>
+        StopEvaluationJobResponse EndStopEvaluationJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StopModelCustomizationJob
 
 
         /// <summary>
         /// Stops an active model customization job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Bedrock User Guide.
+        /// models</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopModelCustomizationJob service method.</param>
         /// 
@@ -1000,7 +1627,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1043,8 +1671,8 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
-        /// resources</a> in the Bedrock User Guide.
+        /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+        /// resources</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1056,7 +1684,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1104,8 +1733,8 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Remove one or more tags from a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
-        /// resources</a> in the Bedrock User Guide.
+        /// Remove one or more tags from a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+        /// resources</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1117,7 +1746,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -1156,12 +1786,132 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  UpdateGuardrail
+
+
+        /// <summary>
+        /// Updates a guardrail with the values you specify.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify a <c>name</c> and optional <c>description</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify messages for when the guardrail successfully blocks a prompt or a model response
+        /// in the <c>blockedInputMessaging</c> and <c>blockedOutputsMessaging</c> fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify topics for the guardrail to deny in the <c>topicPolicyConfig</c> object. Each
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailTopicConfig.html">GuardrailTopicConfig</a>
+        /// object in the <c>topicsConfig</c> list pertains to one topic.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Give a <c>name</c> and <c>description</c> so that the guardrail can properly identify
+        /// the topic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify <c>DENY</c> in the <c>type</c> field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) Provide up to five prompts that you would categorize as belonging to the
+        /// topic in the <c>examples</c> list.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Specify filter strengths for the harmful categories defined in Amazon Bedrock in the
+        /// <c>contentPolicyConfig</c> object. Each <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>
+        /// object in the <c>filtersConfig</c> list pertains to a harmful category. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters">Content
+        /// filters</a>. For more information about the fields in a content filter, see <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify the category in the <c>type</c> field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify the strength of the filter for prompts in the <c>inputStrength</c> field and
+        /// for model responses in the <c>strength</c> field of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// (Optional) For security, include the ARN of a KMS key in the <c>kmsKeyId</c> field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) Attach any tags to the guardrail in the <c>tags</c> object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging">Tag resources</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGuardrail service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGuardrail service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateGuardrail">REST API Reference for UpdateGuardrail Operation</seealso>
+        UpdateGuardrailResponse UpdateGuardrail(UpdateGuardrailRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGuardrail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGuardrail operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGuardrail
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateGuardrail">REST API Reference for UpdateGuardrail Operation</seealso>
+        IAsyncResult BeginUpdateGuardrail(UpdateGuardrailRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGuardrail operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGuardrail.</param>
+        /// 
+        /// <returns>Returns a  UpdateGuardrailResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateGuardrail">REST API Reference for UpdateGuardrail Operation</seealso>
+        UpdateGuardrailResponse EndUpdateGuardrail(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateProvisionedModelThroughput
 
 
         /// <summary>
-        /// Update a provisioned throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
-        /// throughput</a> in the Bedrock User Guide.
+        /// Updates the name or associated model for a Provisioned Throughput. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+        /// Throughput</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProvisionedModelThroughput service method.</param>
         /// 
@@ -1173,7 +1923,8 @@ namespace Amazon.Bedrock
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
